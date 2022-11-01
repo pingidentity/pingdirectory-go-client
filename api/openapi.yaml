@@ -1,0 +1,158 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData configuration API for the Location config object
+  title: PingData Location Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+servers:
+- url: https://localhost:1443/config
+tags:
+- description: Access Locations
+  name: location
+paths:
+  /locations:
+    post:
+      description: Add a new location to the config
+      operationId: addLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addLocation_request'
+        description: Create a new location in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+      security:
+      - basicAuth: []
+      summary: Add a new location to the config
+      tags:
+      - location
+  /locations/{locationName}:
+    delete:
+      description: delete a location
+      operationId: deleteLocation
+      parameters:
+      - description: Name of the location to be read
+        explode: false
+        in: path
+        name: locationName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+      security:
+      - basicAuth: []
+      summary: Deletes a location
+      tags:
+      - location
+    get:
+      description: Returns a single location
+      operationId: getLocation
+      parameters:
+      - description: Name of the location to be read
+        explode: false
+        in: path
+        name: locationName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getLocation_200_response'
+          description: successful operation
+      security:
+      - basicAuth: []
+      summary: Find location by name
+      tags:
+      - location
+    patch:
+      description: Update an existing location by name
+      operationId: updateLocation
+      parameters:
+      - description: Name of the location that needs to be updated
+        explode: false
+        in: path
+        name: locationName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Operations'
+        description: Update an existing location
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+      security:
+      - basicAuth: []
+      summary: Update an existing location
+      tags:
+      - location
+components:
+  schemas:
+    Operations:
+      items:
+        $ref: '#/components/schemas/Operation'
+      type: array
+    Operation:
+      example:
+        op: op
+        path: path
+        value: value
+      properties:
+        op:
+          type: string
+        path:
+          type: string
+        value:
+          type: string
+      type: object
+    Location:
+      properties:
+        id:
+          description: Name of the new location
+          type: string
+        description:
+          description: Description of the new location
+          type: string
+      type: object
+    addLocation_request:
+      properties:
+        locationName:
+          description: Name of the new location
+          type: string
+        description:
+          description: Description of the new location
+          type: string
+      required:
+      - name
+    getLocation_200_response:
+      example:
+        description: description
+        id: id
+      properties:
+        id:
+          description: Name of the location
+          type: string
+        description:
+          description: Description of the location
+          type: string
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http
