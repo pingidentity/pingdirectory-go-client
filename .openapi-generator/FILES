@@ -10,6 +10,7 @@ docs/GetLocation200Response.md
 docs/Location.md
 docs/LocationApi.md
 docs/Operation.md
+docs/UpdateLocationRequest.md
 git_push.sh
 go.mod
 go.sum
@@ -17,5 +18,7 @@ model_add_location_request.go
 model_get_location_200_response.go
 model_location.go
 model_operation.go
+model_update_location_request.go
 response.go
+test/api_location_test.go
 utils.go

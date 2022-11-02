@@ -322,12 +322,12 @@ type ApiUpdateLocationRequest struct {
 	ctx context.Context
 	ApiService *LocationApiService
 	locationName string
-	operation *[]Operation
+	updateLocationRequest *UpdateLocationRequest
 }
 
 // Update an existing location
-func (r ApiUpdateLocationRequest) Operation(operation []Operation) ApiUpdateLocationRequest {
-	r.operation = &operation
+func (r ApiUpdateLocationRequest) UpdateLocationRequest(updateLocationRequest UpdateLocationRequest) ApiUpdateLocationRequest {
+	r.updateLocationRequest = &updateLocationRequest
 	return r
 }
 
@@ -371,8 +371,8 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.operation == nil {
-		return nil, reportError("operation is required and must be specified")
+	if r.updateLocationRequest == nil {
+		return nil, reportError("updateLocationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -393,7 +393,7 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.operation
+	localVarPostBody = r.updateLocationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

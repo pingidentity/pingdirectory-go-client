@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
  - [GetLocation200Response](docs/GetLocation200Response.md)
  - [Location](docs/Location.md)
  - [Operation](docs/Operation.md)
+ - [UpdateLocationRequest](docs/UpdateLocationRequest.md)
 
 
 ## Documentation For Authorization
