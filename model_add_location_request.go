@@ -17,7 +17,7 @@ import (
 // AddLocationRequest struct for AddLocationRequest
 type AddLocationRequest struct {
 	// Name of the new location
-	LocationName *string `json:"locationName,omitempty"`
+	LocationName string `json:"locationName"`
 	// Description of the new location
 	Description *string `json:"description,omitempty"`
 }
@@ -26,8 +26,9 @@ type AddLocationRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocationRequest() *AddLocationRequest {
+func NewAddLocationRequest(locationName string) *AddLocationRequest {
 	this := AddLocationRequest{}
+	this.LocationName = locationName
 	return &this
 }
 
@@ -39,36 +40,28 @@ func NewAddLocationRequestWithDefaults() *AddLocationRequest {
 	return &this
 }
 
-// GetLocationName returns the LocationName field value if set, zero value otherwise.
+// GetLocationName returns the LocationName field value
 func (o *AddLocationRequest) GetLocationName() string {
-	if o == nil || isNil(o.LocationName) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.LocationName
+
+	return o.LocationName
 }
 
-// GetLocationNameOk returns a tuple with the LocationName field value if set, nil otherwise
+// GetLocationNameOk returns a tuple with the LocationName field value
 // and a boolean to check if the value has been set.
 func (o *AddLocationRequest) GetLocationNameOk() (*string, bool) {
-	if o == nil || isNil(o.LocationName) {
+	if o == nil {
     return nil, false
 	}
-	return o.LocationName, true
+	return &o.LocationName, true
 }
 
-// HasLocationName returns a boolean if a field has been set.
-func (o *AddLocationRequest) HasLocationName() bool {
-	if o != nil && !isNil(o.LocationName) {
-		return true
-	}
-
-	return false
-}
-
-// SetLocationName gets a reference to the given string and assigns it to the LocationName field.
+// SetLocationName sets field value
 func (o *AddLocationRequest) SetLocationName(v string) {
-	o.LocationName = &v
+	o.LocationName = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -105,7 +98,7 @@ func (o *AddLocationRequest) SetDescription(v string) {
 
 func (o AddLocationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.LocationName) {
+	if true {
 		toSerialize["locationName"] = o.LocationName
 	}
 	if !isNil(o.Description) {

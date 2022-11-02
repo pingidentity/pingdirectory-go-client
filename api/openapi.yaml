@@ -140,7 +140,7 @@ components:
           description: Description of the new location
           type: string
       required:
-      - name
+      - locationName
     getLocation_200_response:
       example:
         description: description

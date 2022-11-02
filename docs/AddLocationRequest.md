@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LocationName** | Pointer to **string** | Name of the new location | [optional] 
+**LocationName** | **string** | Name of the new location | 
 **Description** | Pointer to **string** | Description of the new location | [optional] 
 
 ## Methods
 
 ### NewAddLocationRequest
 
-`func NewAddLocationRequest() *AddLocationRequest`
+`func NewAddLocationRequest(locationName string, ) *AddLocationRequest`
 
 NewAddLocationRequest instantiates a new AddLocationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetLocationName sets LocationName field to given value.
 
-### HasLocationName
-
-`func (o *AddLocationRequest) HasLocationName() bool`
-
-HasLocationName returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-    addLocationRequest := *openapiclient.NewAddLocationRequest() // AddLocationRequest | Create a new location in the config
+    addLocationRequest := *openapiclient.NewAddLocationRequest("LocationName_example") // AddLocationRequest | Create a new location in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

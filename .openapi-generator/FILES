@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -19,5 +18,4 @@ model_get_location_200_response.go
 model_location.go
 model_operation.go
 response.go
-test/api_location_test.go
 utils.go
