@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## AddLocation
 
-> AddLocation(ctx).AddLocationRequest(addLocationRequest).Execute()
+> AddLocation200Response AddLocation(ctx).AddLocationRequest(addLocationRequest).Execute()
 
 Add a new location to the config
 
@@ -41,6 +41,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.AddLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `AddLocation`: AddLocation200Response
+    fmt.Fprintf(os.Stdout, "Response from `LocationApi.AddLocation`: %v\n", resp)
 }
 ```
 
@@ -59,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**AddLocation200Response**](AddLocation200Response.md)
 
 ### Authorization
 
@@ -68,7 +70,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -215,7 +217,7 @@ Name | Type | Description  | Notes
 
 ## UpdateLocation
 
-> UpdateLocation(ctx, locationName).UpdateLocationRequest(updateLocationRequest).Execute()
+> AddLocation200Response UpdateLocation(ctx, locationName).UpdateLocationRequest(updateLocationRequest).Execute()
 
 Update an existing location
 
@@ -244,6 +246,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.UpdateLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `UpdateLocation`: AddLocation200Response
+    fmt.Fprintf(os.Stdout, "Response from `LocationApi.UpdateLocation`: %v\n", resp)
 }
 ```
 
@@ -267,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**AddLocation200Response**](AddLocation200Response.md)
 
 ### Authorization
 
@@ -276,7 +280,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

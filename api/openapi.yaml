@@ -25,7 +25,15 @@ paths:
         required: true
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addLocation_200_response'
           description: Successful operation
+        "409":
+          description: Location already exists
+        "400":
+          description: Bad request
       security:
       - basicAuth: []
       summary: Add a new location to the config
@@ -33,7 +41,7 @@ paths:
       - location
   /locations/{locationName}:
     delete:
-      description: delete a location
+      description: Delete a location
       operationId: deleteLocation
       parameters:
       - description: Name of the location to be read
@@ -47,6 +55,10 @@ paths:
       responses:
         "200":
           description: Successful operation
+        "404":
+          description: Location does not exist
+        "409":
+          description: Location cannot be deleted exists
       security:
       - basicAuth: []
       summary: Deletes a location
@@ -71,6 +83,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/getLocation_200_response'
           description: successful operation
+        "404":
+          description: Location does not exist
       security:
       - basicAuth: []
       summary: Find location by name
@@ -97,7 +111,13 @@ paths:
         required: true
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addLocation_200_response'
           description: Successful operation
+        "400":
+          description: Invalid request
       security:
       - basicAuth: []
       summary: Update an existing location
@@ -156,6 +176,20 @@ components:
           type: array
       required:
       - operations
+      type: object
+    addLocation_200_response:
+      example:
+        description: description
+        id: id
+      properties:
+        id:
+          description: Name of the new location
+          type: string
+        description:
+          description: Description of the new location
+          type: string
+      required:
+      - id
       type: object
   securitySchemes:
     basicAuth:

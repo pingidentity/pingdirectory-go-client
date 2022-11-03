@@ -5,6 +5,7 @@ api/openapi.yaml
 api_location.go
 client.go
 configuration.go
+docs/AddLocation200Response.md
 docs/AddLocationRequest.md
 docs/GetLocation200Response.md
 docs/Location.md
@@ -14,6 +15,7 @@ docs/UpdateLocationRequest.md
 git_push.sh
 go.mod
 go.sum
+model_add_location_200_response.go
 model_add_location_request.go
 model_get_location_200_response.go
 model_location.go

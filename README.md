@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AddLocation200Response](docs/AddLocation200Response.md)
  - [AddLocationRequest](docs/AddLocationRequest.md)
  - [GetLocation200Response](docs/GetLocation200Response.md)
  - [Location](docs/Location.md)

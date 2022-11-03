@@ -35,7 +35,7 @@ func (r ApiAddLocationRequest) AddLocationRequest(addLocationRequest AddLocation
 	return r
 }
 
-func (r ApiAddLocationRequest) Execute() (*http.Response, error) {
+func (r ApiAddLocationRequest) Execute() (*AddLocation200Response, *http.Response, error) {
 	return r.ApiService.AddLocationExecute(r)
 }
 
@@ -55,16 +55,18 @@ func (a *LocationApiService) AddLocation(ctx context.Context) ApiAddLocationRequ
 }
 
 // Execute executes the request
-func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*http.Response, error) {
+//  @return AddLocation200Response
+func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*AddLocation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *AddLocation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.AddLocation")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/locations"
@@ -73,7 +75,7 @@ func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.addLocationRequest == nil {
-		return nil, reportError("addLocationRequest is required and must be specified")
+		return localVarReturnValue, nil, reportError("addLocationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -86,7 +88,7 @@ func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*http.
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -97,19 +99,19 @@ func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*http.
 	localVarPostBody = r.addLocationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -117,10 +119,19 @@ func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*http.
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiDeleteLocationRequest struct {
@@ -136,7 +147,7 @@ func (r ApiDeleteLocationRequest) Execute() (*http.Response, error) {
 /*
 DeleteLocation Deletes a location
 
-delete a location
+Delete a location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param locationName Name of the location to be read
@@ -331,7 +342,7 @@ func (r ApiUpdateLocationRequest) UpdateLocationRequest(updateLocationRequest Up
 	return r
 }
 
-func (r ApiUpdateLocationRequest) Execute() (*http.Response, error) {
+func (r ApiUpdateLocationRequest) Execute() (*AddLocation200Response, *http.Response, error) {
 	return r.ApiService.UpdateLocationExecute(r)
 }
 
@@ -353,16 +364,18 @@ func (a *LocationApiService) UpdateLocation(ctx context.Context, locationName st
 }
 
 // Execute executes the request
-func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*http.Response, error) {
+//  @return AddLocation200Response
+func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*AddLocation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *AddLocation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.UpdateLocation")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/locations/{locationName}"
@@ -372,7 +385,7 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.updateLocationRequest == nil {
-		return nil, reportError("updateLocationRequest is required and must be specified")
+		return localVarReturnValue, nil, reportError("updateLocationRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -385,7 +398,7 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -396,19 +409,19 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 	localVarPostBody = r.updateLocationRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -416,8 +429,17 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
