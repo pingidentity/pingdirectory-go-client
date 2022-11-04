@@ -30,10 +30,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/addLocation_200_response'
           description: Successful operation
-        "409":
-          description: Location already exists
         "400":
           description: Bad request
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have required privileges
+        "409":
+          description: Location already exists
       security:
       - basicAuth: []
       summary: Add a new location to the config
@@ -55,10 +59,14 @@ paths:
       responses:
         "200":
           description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have required privileges
         "404":
           description: Location does not exist
         "409":
-          description: Location cannot be deleted exists
+          description: Location cannot be deleted
       security:
       - basicAuth: []
       summary: Deletes a location
@@ -83,6 +91,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/getLocation_200_response'
           description: successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have required privileges
         "404":
           description: Location does not exist
       security:
@@ -118,6 +130,12 @@ paths:
           description: Successful operation
         "400":
           description: Invalid request
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have required privileges
+        "404":
+          description: Location not found
       security:
       - basicAuth: []
       summary: Update an existing location
