@@ -14,59 +14,59 @@ import (
 	"encoding/json"
 )
 
-// AddLocationRequest struct for AddLocationRequest
-type AddLocationRequest struct {
-	// Name of the new Location
-	LocationName string `json:"locationName"`
+// LocationResponse struct for LocationResponse
+type LocationResponse struct {
+	// Name of the Location
+	Id string `json:"id"`
 	Schemas []string `json:"schemas,omitempty"`
 	// A description for this Location
 	Description *string `json:"description,omitempty"`
 }
 
-// NewAddLocationRequest instantiates a new AddLocationRequest object
+// NewLocationResponse instantiates a new LocationResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddLocationRequest(locationName string) *AddLocationRequest {
-	this := AddLocationRequest{}
-	this.LocationName = locationName
+func NewLocationResponse(id string) *LocationResponse {
+	this := LocationResponse{}
+	this.Id = id
 	return &this
 }
 
-// NewAddLocationRequestWithDefaults instantiates a new AddLocationRequest object
+// NewLocationResponseWithDefaults instantiates a new LocationResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddLocationRequestWithDefaults() *AddLocationRequest {
-	this := AddLocationRequest{}
+func NewLocationResponseWithDefaults() *LocationResponse {
+	this := LocationResponse{}
 	return &this
 }
 
-// GetLocationName returns the LocationName field value
-func (o *AddLocationRequest) GetLocationName() string {
+// GetId returns the Id field value
+func (o *LocationResponse) GetId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.LocationName
+	return o.Id
 }
 
-// GetLocationNameOk returns a tuple with the LocationName field value
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AddLocationRequest) GetLocationNameOk() (*string, bool) {
+func (o *LocationResponse) GetIdOk() (*string, bool) {
 	if o == nil {
     return nil, false
 	}
-	return &o.LocationName, true
+	return &o.Id, true
 }
 
-// SetLocationName sets field value
-func (o *AddLocationRequest) SetLocationName(v string) {
-	o.LocationName = v
+// SetId sets field value
+func (o *LocationResponse) SetId(v string) {
+	o.Id = v
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
-func (o *AddLocationRequest) GetSchemas() []string {
+func (o *LocationResponse) GetSchemas() []string {
 	if o == nil || isNil(o.Schemas) {
 		var ret []string
 		return ret
@@ -76,7 +76,7 @@ func (o *AddLocationRequest) GetSchemas() []string {
 
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLocationRequest) GetSchemasOk() ([]string, bool) {
+func (o *LocationResponse) GetSchemasOk() ([]string, bool) {
 	if o == nil || isNil(o.Schemas) {
     return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *AddLocationRequest) GetSchemasOk() ([]string, bool) {
 }
 
 // HasSchemas returns a boolean if a field has been set.
-func (o *AddLocationRequest) HasSchemas() bool {
+func (o *LocationResponse) HasSchemas() bool {
 	if o != nil && !isNil(o.Schemas) {
 		return true
 	}
@@ -93,12 +93,12 @@ func (o *AddLocationRequest) HasSchemas() bool {
 }
 
 // SetSchemas gets a reference to the given []string and assigns it to the Schemas field.
-func (o *AddLocationRequest) SetSchemas(v []string) {
+func (o *LocationResponse) SetSchemas(v []string) {
 	o.Schemas = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *AddLocationRequest) GetDescription() string {
+func (o *LocationResponse) GetDescription() string {
 	if o == nil || isNil(o.Description) {
 		var ret string
 		return ret
@@ -108,7 +108,7 @@ func (o *AddLocationRequest) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddLocationRequest) GetDescriptionOk() (*string, bool) {
+func (o *LocationResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
     return nil, false
 	}
@@ -116,7 +116,7 @@ func (o *AddLocationRequest) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *AddLocationRequest) HasDescription() bool {
+func (o *LocationResponse) HasDescription() bool {
 	if o != nil && !isNil(o.Description) {
 		return true
 	}
@@ -125,14 +125,14 @@ func (o *AddLocationRequest) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *AddLocationRequest) SetDescription(v string) {
+func (o *LocationResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
-func (o AddLocationRequest) MarshalJSON() ([]byte, error) {
+func (o LocationResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["locationName"] = o.LocationName
+		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
@@ -143,38 +143,38 @@ func (o AddLocationRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAddLocationRequest struct {
-	value *AddLocationRequest
+type NullableLocationResponse struct {
+	value *LocationResponse
 	isSet bool
 }
 
-func (v NullableAddLocationRequest) Get() *AddLocationRequest {
+func (v NullableLocationResponse) Get() *LocationResponse {
 	return v.value
 }
 
-func (v *NullableAddLocationRequest) Set(val *AddLocationRequest) {
+func (v *NullableLocationResponse) Set(val *LocationResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddLocationRequest) IsSet() bool {
+func (v NullableLocationResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddLocationRequest) Unset() {
+func (v *NullableLocationResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddLocationRequest(val *AddLocationRequest) *NullableAddLocationRequest {
-	return &NullableAddLocationRequest{value: val, isSet: true}
+func NewNullableLocationResponse(val *LocationResponse) *NullableLocationResponse {
+	return &NullableLocationResponse{value: val, isSet: true}
 }
 
-func (v NullableAddLocationRequest) MarshalJSON() ([]byte, error) {
+func (v NullableLocationResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddLocationRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableLocationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -1,99 +1,78 @@
-# AddLocationRequest
+# LocationShared
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LocationName** | **string** | Name of the new Location | 
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **Description** | Pointer to **string** | A description for this Location | [optional] 
 
 ## Methods
 
-### NewAddLocationRequest
+### NewLocationShared
 
-`func NewAddLocationRequest(locationName string, ) *AddLocationRequest`
+`func NewLocationShared() *LocationShared`
 
-NewAddLocationRequest instantiates a new AddLocationRequest object
+NewLocationShared instantiates a new LocationShared object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddLocationRequestWithDefaults
+### NewLocationSharedWithDefaults
 
-`func NewAddLocationRequestWithDefaults() *AddLocationRequest`
+`func NewLocationSharedWithDefaults() *LocationShared`
 
-NewAddLocationRequestWithDefaults instantiates a new AddLocationRequest object
+NewLocationSharedWithDefaults instantiates a new LocationShared object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLocationName
-
-`func (o *AddLocationRequest) GetLocationName() string`
-
-GetLocationName returns the LocationName field if non-nil, zero value otherwise.
-
-### GetLocationNameOk
-
-`func (o *AddLocationRequest) GetLocationNameOk() (*string, bool)`
-
-GetLocationNameOk returns a tuple with the LocationName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLocationName
-
-`func (o *AddLocationRequest) SetLocationName(v string)`
-
-SetLocationName sets LocationName field to given value.
-
-
 ### GetSchemas
 
-`func (o *AddLocationRequest) GetSchemas() []string`
+`func (o *LocationShared) GetSchemas() []string`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *AddLocationRequest) GetSchemasOk() (*[]string, bool)`
+`func (o *LocationShared) GetSchemasOk() (*[]string, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *AddLocationRequest) SetSchemas(v []string)`
+`func (o *LocationShared) SetSchemas(v []string)`
 
 SetSchemas sets Schemas field to given value.
 
 ### HasSchemas
 
-`func (o *AddLocationRequest) HasSchemas() bool`
+`func (o *LocationShared) HasSchemas() bool`
 
 HasSchemas returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *AddLocationRequest) GetDescription() string`
+`func (o *LocationShared) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *AddLocationRequest) GetDescriptionOk() (*string, bool)`
+`func (o *LocationShared) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *AddLocationRequest) SetDescription(v string)`
+`func (o *LocationShared) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *AddLocationRequest) HasDescription() bool`
+`func (o *LocationShared) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 

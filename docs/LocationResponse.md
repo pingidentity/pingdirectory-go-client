@@ -1,99 +1,99 @@
-# AddLocationRequest
+# LocationResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LocationName** | **string** | Name of the new Location | 
+**Id** | **string** | Name of the Location | 
 **Schemas** | Pointer to **[]string** |  | [optional] 
 **Description** | Pointer to **string** | A description for this Location | [optional] 
 
 ## Methods
 
-### NewAddLocationRequest
+### NewLocationResponse
 
-`func NewAddLocationRequest(locationName string, ) *AddLocationRequest`
+`func NewLocationResponse(id string, ) *LocationResponse`
 
-NewAddLocationRequest instantiates a new AddLocationRequest object
+NewLocationResponse instantiates a new LocationResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewAddLocationRequestWithDefaults
+### NewLocationResponseWithDefaults
 
-`func NewAddLocationRequestWithDefaults() *AddLocationRequest`
+`func NewLocationResponseWithDefaults() *LocationResponse`
 
-NewAddLocationRequestWithDefaults instantiates a new AddLocationRequest object
+NewLocationResponseWithDefaults instantiates a new LocationResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetLocationName
+### GetId
 
-`func (o *AddLocationRequest) GetLocationName() string`
+`func (o *LocationResponse) GetId() string`
 
-GetLocationName returns the LocationName field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetLocationNameOk
+### GetIdOk
 
-`func (o *AddLocationRequest) GetLocationNameOk() (*string, bool)`
+`func (o *LocationResponse) GetIdOk() (*string, bool)`
 
-GetLocationNameOk returns a tuple with the LocationName field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLocationName
+### SetId
 
-`func (o *AddLocationRequest) SetLocationName(v string)`
+`func (o *LocationResponse) SetId(v string)`
 
-SetLocationName sets LocationName field to given value.
+SetId sets Id field to given value.
 
 
 ### GetSchemas
 
-`func (o *AddLocationRequest) GetSchemas() []string`
+`func (o *LocationResponse) GetSchemas() []string`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *AddLocationRequest) GetSchemasOk() (*[]string, bool)`
+`func (o *LocationResponse) GetSchemasOk() (*[]string, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *AddLocationRequest) SetSchemas(v []string)`
+`func (o *LocationResponse) SetSchemas(v []string)`
 
 SetSchemas sets Schemas field to given value.
 
 ### HasSchemas
 
-`func (o *AddLocationRequest) HasSchemas() bool`
+`func (o *LocationResponse) HasSchemas() bool`
 
 HasSchemas returns a boolean if a field has been set.
 
 ### GetDescription
 
-`func (o *AddLocationRequest) GetDescription() string`
+`func (o *LocationResponse) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *AddLocationRequest) GetDescriptionOk() (*string, bool)`
+`func (o *LocationResponse) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *AddLocationRequest) SetDescription(v string)`
+`func (o *LocationResponse) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *AddLocationRequest) HasDescription() bool`
+`func (o *LocationResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 

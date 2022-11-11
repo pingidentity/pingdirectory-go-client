@@ -1,7 +1,7 @@
 /*
 PingData Location Config - OpenAPI 3.0
 
-This is the PingData configuration API for the Location config object
+This is the PingData Configuration API for the Location config object
 
 API version: 0.1
 */
@@ -105,7 +105,7 @@ func NewConfiguration() *Configuration {
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "https://localhost:1443/config",
+				URL: "",
 				Description: "No description provided",
 			},
 		},

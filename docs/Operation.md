@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Op** | Pointer to **string** |  | [optional] 
-**Path** | Pointer to **string** |  | [optional] 
+**Op** | **string** |  | 
+**Path** | **string** |  | 
 **Value** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewOperation
 
-`func NewOperation() *Operation`
+`func NewOperation(op string, path string, ) *Operation`
 
 NewOperation instantiates a new Operation object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetOp sets Op field to given value.
 
-### HasOp
-
-`func (o *Operation) HasOp() bool`
-
-HasOp returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -71,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
-### HasPath
-
-`func (o *Operation) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
 
 ### GetValue
 

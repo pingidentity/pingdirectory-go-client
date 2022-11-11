@@ -1,23 +1,21 @@
 # \LocationApi
 
-All URIs are relative to *https://localhost:1443/config*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddLocation**](LocationApi.md#AddLocation) | **Post** /locations | Add a new location to the config
-[**DeleteLocation**](LocationApi.md#DeleteLocation) | **Delete** /locations/{locationName} | Deletes a location
-[**GetLocation**](LocationApi.md#GetLocation) | **Get** /locations/{locationName} | Find location by name
-[**UpdateLocation**](LocationApi.md#UpdateLocation) | **Patch** /locations/{locationName} | Update an existing location
+[**AddLocation**](LocationApi.md#AddLocation) | **Post** /locations | Add a new Location to the config
+[**DeleteLocation**](LocationApi.md#DeleteLocation) | **Delete** /locations/{location-name} | Delete a Location
+[**GetLocation**](LocationApi.md#GetLocation) | **Get** /locations/{location-name} | Returns a single Location
+[**UpdateLocation**](LocationApi.md#UpdateLocation) | **Patch** /locations/{location-name} | Update an existing Location by name
 
 
 
 ## AddLocation
 
-> AddLocation200Response AddLocation(ctx).AddLocationRequest(addLocationRequest).Execute()
+> LocationResponse AddLocation(ctx).AddLocationRequest(addLocationRequest).Execute()
 
-Add a new location to the config
-
-
+Add a new Location to the config
 
 ### Example
 
@@ -32,7 +30,7 @@ import (
 )
 
 func main() {
-    addLocationRequest := *openapiclient.NewAddLocationRequest("LocationName_example") // AddLocationRequest | Create a new location in the config
+    addLocationRequest := *openapiclient.NewAddLocationRequest("LocationName_example") // AddLocationRequest | Create a new Location in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +39,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.AddLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AddLocation`: AddLocation200Response
+    // response from `AddLocation`: LocationResponse
     fmt.Fprintf(os.Stdout, "Response from `LocationApi.AddLocation`: %v\n", resp)
 }
 ```
@@ -57,11 +55,11 @@ Other parameters are passed through a pointer to a apiAddLocationRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addLocationRequest** | [**AddLocationRequest**](AddLocationRequest.md) | Create a new location in the config | 
+ **addLocationRequest** | [**AddLocationRequest**](AddLocationRequest.md) | Create a new Location in the config | 
 
 ### Return type
 
-[**AddLocation200Response**](AddLocation200Response.md)
+[**LocationResponse**](LocationResponse.md)
 
 ### Authorization
 
@@ -81,9 +79,7 @@ Name | Type | Description  | Notes
 
 > DeleteLocation(ctx, locationName).Execute()
 
-Deletes a location
-
-
+Delete a Location
 
 ### Example
 
@@ -98,7 +94,7 @@ import (
 )
 
 func main() {
-    locationName := "locationName_example" // string | Name of the location to be read
+    locationName := "locationName_example" // string | Name of the Location to be deleted
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -116,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**locationName** | **string** | Name of the location to be read | 
+**locationName** | **string** | Name of the Location to be deleted | 
 
 ### Other Parameters
 
@@ -147,11 +143,9 @@ Name | Type | Description  | Notes
 
 ## GetLocation
 
-> GetLocation200Response GetLocation(ctx, locationName).Execute()
+> LocationResponse GetLocation(ctx, locationName).Execute()
 
-Find location by name
-
-
+Returns a single Location
 
 ### Example
 
@@ -166,7 +160,7 @@ import (
 )
 
 func main() {
-    locationName := "locationName_example" // string | Name of the location to be read
+    locationName := "locationName_example" // string | Name of the Location to be read
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -175,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.GetLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetLocation`: GetLocation200Response
+    // response from `GetLocation`: LocationResponse
     fmt.Fprintf(os.Stdout, "Response from `LocationApi.GetLocation`: %v\n", resp)
 }
 ```
@@ -186,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**locationName** | **string** | Name of the location to be read | 
+**locationName** | **string** | Name of the Location to be read | 
 
 ### Other Parameters
 
@@ -199,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetLocation200Response**](GetLocation200Response.md)
+[**LocationResponse**](LocationResponse.md)
 
 ### Authorization
 
@@ -217,11 +211,9 @@ Name | Type | Description  | Notes
 
 ## UpdateLocation
 
-> AddLocation200Response UpdateLocation(ctx, locationName).UpdateLocationRequest(updateLocationRequest).Execute()
+> LocationResponse UpdateLocation(ctx, locationName).UpdateLocationRequest(updateLocationRequest).Execute()
 
-Update an existing location
-
-
+Update an existing Location by name
 
 ### Example
 
@@ -236,8 +228,8 @@ import (
 )
 
 func main() {
-    locationName := "locationName_example" // string | Name of the location that needs to be updated
-    updateLocationRequest := *openapiclient.NewUpdateLocationRequest([]openapiclient.Operation{*openapiclient.NewOperation()}) // UpdateLocationRequest | Update an existing location
+    locationName := "locationName_example" // string | Name of the Location to be updated
+    updateLocationRequest := *openapiclient.NewUpdateLocationRequest([]openapiclient.Operation{*openapiclient.NewOperation("Op_example", "Path_example")}) // UpdateLocationRequest | Update an existing Location
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -246,7 +238,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.UpdateLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateLocation`: AddLocation200Response
+    // response from `UpdateLocation`: LocationResponse
     fmt.Fprintf(os.Stdout, "Response from `LocationApi.UpdateLocation`: %v\n", resp)
 }
 ```
@@ -257,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**locationName** | **string** | Name of the location that needs to be updated | 
+**locationName** | **string** | Name of the Location to be updated | 
 
 ### Other Parameters
 
@@ -267,11 +259,11 @@ Other parameters are passed through a pointer to a apiUpdateLocationRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateLocationRequest** | [**UpdateLocationRequest**](UpdateLocationRequest.md) | Update an existing location | 
+ **updateLocationRequest** | [**UpdateLocationRequest**](UpdateLocationRequest.md) | Update an existing Location | 
 
 ### Return type
 
-[**AddLocation200Response**](AddLocation200Response.md)
+[**LocationResponse**](LocationResponse.md)
 
 ### Authorization
 

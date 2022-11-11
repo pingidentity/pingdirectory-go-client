@@ -1,7 +1,7 @@
 /*
 PingData Location Config - OpenAPI 3.0
 
-This is the PingData configuration API for the Location config object
+This is the PingData Configuration API for the Location config object
 
 API version: 0.1
 */
@@ -16,8 +16,8 @@ import (
 
 // Operation struct for Operation
 type Operation struct {
-	Op *string `json:"op,omitempty"`
-	Path *string `json:"path,omitempty"`
+	Op string `json:"op"`
+	Path string `json:"path"`
 	Value *string `json:"value,omitempty"`
 }
 
@@ -25,8 +25,10 @@ type Operation struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOperation() *Operation {
+func NewOperation(op string, path string) *Operation {
 	this := Operation{}
+	this.Op = op
+	this.Path = path
 	return &this
 }
 
@@ -38,68 +40,52 @@ func NewOperationWithDefaults() *Operation {
 	return &this
 }
 
-// GetOp returns the Op field value if set, zero value otherwise.
+// GetOp returns the Op field value
 func (o *Operation) GetOp() string {
-	if o == nil || isNil(o.Op) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Op
+
+	return o.Op
 }
 
-// GetOpOk returns a tuple with the Op field value if set, nil otherwise
+// GetOpOk returns a tuple with the Op field value
 // and a boolean to check if the value has been set.
 func (o *Operation) GetOpOk() (*string, bool) {
-	if o == nil || isNil(o.Op) {
+	if o == nil {
     return nil, false
 	}
-	return o.Op, true
+	return &o.Op, true
 }
 
-// HasOp returns a boolean if a field has been set.
-func (o *Operation) HasOp() bool {
-	if o != nil && !isNil(o.Op) {
-		return true
-	}
-
-	return false
-}
-
-// SetOp gets a reference to the given string and assigns it to the Op field.
+// SetOp sets field value
 func (o *Operation) SetOp(v string) {
-	o.Op = &v
+	o.Op = v
 }
 
-// GetPath returns the Path field value if set, zero value otherwise.
+// GetPath returns the Path field value
 func (o *Operation) GetPath() string {
-	if o == nil || isNil(o.Path) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Path
+
+	return o.Path
 }
 
-// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// GetPathOk returns a tuple with the Path field value
 // and a boolean to check if the value has been set.
 func (o *Operation) GetPathOk() (*string, bool) {
-	if o == nil || isNil(o.Path) {
+	if o == nil {
     return nil, false
 	}
-	return o.Path, true
+	return &o.Path, true
 }
 
-// HasPath returns a boolean if a field has been set.
-func (o *Operation) HasPath() bool {
-	if o != nil && !isNil(o.Path) {
-		return true
-	}
-
-	return false
-}
-
-// SetPath gets a reference to the given string and assigns it to the Path field.
+// SetPath sets field value
 func (o *Operation) SetPath(v string) {
-	o.Path = &v
+	o.Path = v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -136,10 +122,10 @@ func (o *Operation) SetValue(v string) {
 
 func (o Operation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Op) {
+	if true {
 		toSerialize["op"] = o.Op
 	}
-	if !isNil(o.Path) {
+	if true {
 		toSerialize["path"] = o.Path
 	}
 	if !isNil(o.Value) {

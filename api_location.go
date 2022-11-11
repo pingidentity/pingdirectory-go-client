@@ -1,7 +1,7 @@
 /*
 PingData Location Config - OpenAPI 3.0
 
-This is the PingData configuration API for the Location config object
+This is the PingData Configuration API for the Location config object
 
 API version: 0.1
 */
@@ -29,20 +29,18 @@ type ApiAddLocationRequest struct {
 	addLocationRequest *AddLocationRequest
 }
 
-// Create a new location in the config
+// Create a new Location in the config
 func (r ApiAddLocationRequest) AddLocationRequest(addLocationRequest AddLocationRequest) ApiAddLocationRequest {
 	r.addLocationRequest = &addLocationRequest
 	return r
 }
 
-func (r ApiAddLocationRequest) Execute() (*AddLocation200Response, *http.Response, error) {
+func (r ApiAddLocationRequest) Execute() (*LocationResponse, *http.Response, error) {
 	return r.ApiService.AddLocationExecute(r)
 }
 
 /*
-AddLocation Add a new location to the config
-
-Add a new location to the config
+AddLocation Add a new Location to the config
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiAddLocationRequest
@@ -55,13 +53,13 @@ func (a *LocationApiService) AddLocation(ctx context.Context) ApiAddLocationRequ
 }
 
 // Execute executes the request
-//  @return AddLocation200Response
-func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*AddLocation200Response, *http.Response, error) {
+//  @return LocationResponse
+func (a *LocationApiService) AddLocationExecute(r ApiAddLocationRequest) (*LocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AddLocation200Response
+		localVarReturnValue  *LocationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.AddLocation")
@@ -145,12 +143,10 @@ func (r ApiDeleteLocationRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteLocation Deletes a location
-
-Delete a location
+DeleteLocation Delete a Location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param locationName Name of the location to be read
+ @param locationName Name of the Location to be deleted
  @return ApiDeleteLocationRequest
 */
 func (a *LocationApiService) DeleteLocation(ctx context.Context, locationName string) ApiDeleteLocationRequest {
@@ -174,8 +170,8 @@ func (a *LocationApiService) DeleteLocationExecute(r ApiDeleteLocationRequest) (
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/locations/{locationName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"locationName"+"}", url.PathEscape(parameterToString(r.locationName, "")), -1)
+	localVarPath := localBasePath + "/locations/{location-name}"
+	localVarPath = strings.Replace(localVarPath, "{"+"location-name"+"}", url.PathEscape(parameterToString(r.locationName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -232,17 +228,15 @@ type ApiGetLocationRequest struct {
 	locationName string
 }
 
-func (r ApiGetLocationRequest) Execute() (*GetLocation200Response, *http.Response, error) {
+func (r ApiGetLocationRequest) Execute() (*LocationResponse, *http.Response, error) {
 	return r.ApiService.GetLocationExecute(r)
 }
 
 /*
-GetLocation Find location by name
-
-Returns a single location
+GetLocation Returns a single Location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param locationName Name of the location to be read
+ @param locationName Name of the Location to be read
  @return ApiGetLocationRequest
 */
 func (a *LocationApiService) GetLocation(ctx context.Context, locationName string) ApiGetLocationRequest {
@@ -254,13 +248,13 @@ func (a *LocationApiService) GetLocation(ctx context.Context, locationName strin
 }
 
 // Execute executes the request
-//  @return GetLocation200Response
-func (a *LocationApiService) GetLocationExecute(r ApiGetLocationRequest) (*GetLocation200Response, *http.Response, error) {
+//  @return LocationResponse
+func (a *LocationApiService) GetLocationExecute(r ApiGetLocationRequest) (*LocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetLocation200Response
+		localVarReturnValue  *LocationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.GetLocation")
@@ -268,8 +262,8 @@ func (a *LocationApiService) GetLocationExecute(r ApiGetLocationRequest) (*GetLo
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/locations/{locationName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"locationName"+"}", url.PathEscape(parameterToString(r.locationName, "")), -1)
+	localVarPath := localBasePath + "/locations/{location-name}"
+	localVarPath = strings.Replace(localVarPath, "{"+"location-name"+"}", url.PathEscape(parameterToString(r.locationName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -336,23 +330,21 @@ type ApiUpdateLocationRequest struct {
 	updateLocationRequest *UpdateLocationRequest
 }
 
-// Update an existing location
+// Update an existing Location
 func (r ApiUpdateLocationRequest) UpdateLocationRequest(updateLocationRequest UpdateLocationRequest) ApiUpdateLocationRequest {
 	r.updateLocationRequest = &updateLocationRequest
 	return r
 }
 
-func (r ApiUpdateLocationRequest) Execute() (*AddLocation200Response, *http.Response, error) {
+func (r ApiUpdateLocationRequest) Execute() (*LocationResponse, *http.Response, error) {
 	return r.ApiService.UpdateLocationExecute(r)
 }
 
 /*
-UpdateLocation Update an existing location
-
-Update an existing location by name
+UpdateLocation Update an existing Location by name
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param locationName Name of the location that needs to be updated
+ @param locationName Name of the Location to be updated
  @return ApiUpdateLocationRequest
 */
 func (a *LocationApiService) UpdateLocation(ctx context.Context, locationName string) ApiUpdateLocationRequest {
@@ -364,13 +356,13 @@ func (a *LocationApiService) UpdateLocation(ctx context.Context, locationName st
 }
 
 // Execute executes the request
-//  @return AddLocation200Response
-func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*AddLocation200Response, *http.Response, error) {
+//  @return LocationResponse
+func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*LocationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AddLocation200Response
+		localVarReturnValue  *LocationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocationApiService.UpdateLocation")
@@ -378,8 +370,8 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/locations/{locationName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"locationName"+"}", url.PathEscape(parameterToString(r.locationName, "")), -1)
+	localVarPath := localBasePath + "/locations/{location-name}"
+	localVarPath = strings.Replace(localVarPath, "{"+"location-name"+"}", url.PathEscape(parameterToString(r.locationName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

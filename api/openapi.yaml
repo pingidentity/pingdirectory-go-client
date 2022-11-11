@@ -1,57 +1,55 @@
 openapi: 3.0.3
 info:
-  description: This is the PingData configuration API for the Location config object
+  description: This is the PingData Configuration API for the Location config object
   title: PingData Location Config - OpenAPI 3.0
   version: "0.1"
 externalDocs:
   description: PingDirectory Configuration API Docs
   url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
 servers:
-- url: https://localhost:1443/config
+- url: /
 tags:
-- description: Access Locations
+- description: Access locations
   name: location
 paths:
   /locations:
     post:
-      description: Add a new location to the config
-      operationId: addLocation
+      operationId: add-location
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/addLocation_request'
-        description: Create a new location in the config
+              $ref: '#/components/schemas/add-location-request'
+        description: Create a new Location in the config
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/addLocation_200_response'
+                $ref: '#/components/schemas/location-response'
           description: Successful operation
-        "400":
-          description: Bad request
         "401":
           description: Requestor cannot be authenticated
         "403":
-          description: Requestor does not have required privileges
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
         "409":
-          description: Location already exists
+          description: The Location already exists
       security:
       - basicAuth: []
-      summary: Add a new location to the config
+      summary: Add a new Location to the config
       tags:
       - location
-  /locations/{locationName}:
+  /locations/{location-name}:
     delete:
-      description: Delete a location
-      operationId: deleteLocation
+      operationId: delete-location
       parameters:
-      - description: Name of the location to be read
+      - description: Name of the Location to be deleted
         explode: false
         in: path
-        name: locationName
+        name: location-name
         required: true
         schema:
           type: string
@@ -62,24 +60,23 @@ paths:
         "401":
           description: Requestor cannot be authenticated
         "403":
-          description: Requestor does not have required privileges
+          description: Requestor does not have the required privileges
         "404":
-          description: Location does not exist
+          description: The Location does not exist
         "409":
-          description: Location cannot be deleted
+          description: The Location cannot be deleted
       security:
       - basicAuth: []
-      summary: Deletes a location
+      summary: Delete a Location
       tags:
       - location
     get:
-      description: Returns a single location
-      operationId: getLocation
+      operationId: get-location
       parameters:
-      - description: Name of the location to be read
+      - description: Name of the Location to be read
         explode: false
         in: path
-        name: locationName
+        name: location-name
         required: true
         schema:
           type: string
@@ -89,27 +86,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/getLocation_200_response'
-          description: successful operation
+                $ref: '#/components/schemas/location-response'
+          description: Successful operation
         "401":
           description: Requestor cannot be authenticated
         "403":
-          description: Requestor does not have required privileges
+          description: Requestor does not have the required privileges
         "404":
-          description: Location does not exist
+          description: The Location does not exist
       security:
       - basicAuth: []
-      summary: Find location by name
+      summary: Returns a single Location
       tags:
       - location
     patch:
-      description: Update an existing location by name
-      operationId: updateLocation
+      operationId: update-location
       parameters:
-      - description: Name of the location that needs to be updated
+      - description: Name of the Location to be updated
         explode: false
         in: path
-        name: locationName
+        name: location-name
         required: true
         schema:
           type: string
@@ -118,75 +114,70 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/updateLocation_request'
-        description: Update an existing location
+              $ref: '#/components/schemas/update-location-request'
+        description: Update an existing Location
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/addLocation_200_response'
+                $ref: '#/components/schemas/location-response'
           description: Successful operation
-        "400":
-          description: Invalid request
         "401":
           description: Requestor cannot be authenticated
         "403":
-          description: Requestor does not have required privileges
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
         "404":
-          description: Location not found
+          description: The Location does not exist
       security:
       - basicAuth: []
-      summary: Update an existing location
+      summary: Update an existing Location by name
       tags:
       - location
 components:
   schemas:
     Operation:
-      example:
-        op: op
-        path: path
-        value: value
       properties:
         op:
+          enum:
+          - add
+          - remove
+          - replace
           type: string
         path:
           type: string
         value:
           type: string
-      type: object
-    Location:
-      properties:
-        id:
-          description: Name of the new location
-          type: string
-        description:
-          description: Description of the new location
-          type: string
-      type: object
-    addLocation_request:
-      properties:
-        locationName:
-          description: Name of the new location
-          type: string
-        description:
-          description: Description of the new location
-          type: string
       required:
-      - locationName
-    getLocation_200_response:
-      example:
-        description: description
-        id: id
+      - op
+      - path
+      type: object
+    add-location-request:
+      allOf:
+      - $ref: '#/components/schemas/add_location_request_allOf'
+      - $ref: '#/components/schemas/location-shared'
+    location-response:
+      allOf:
+      - $ref: '#/components/schemas/location_response_allOf'
+      - $ref: '#/components/schemas/location-shared'
+    location-shared:
       properties:
-        id:
-          description: Name of the location
-          type: string
+        schemas:
+          items:
+            enum:
+            - urn:pingidentity:schemas:configuration:2.0:location
+            type: string
+          maxItems: 1
+          minItems: 1
+          type: array
         description:
-          description: Description of the location
+          description: A description for this Location
           type: string
-    updateLocation_request:
+      type: object
+    update-location-request:
       properties:
         operations:
           items:
@@ -195,20 +186,24 @@ components:
       required:
       - operations
       type: object
-    addLocation_200_response:
-      example:
-        description: description
-        id: id
+    add_location_request_allOf:
+      properties:
+        locationName:
+          description: Name of the new Location
+          type: string
+      required:
+      - locationName
+      type: object
+      example: null
+    location_response_allOf:
       properties:
         id:
-          description: Name of the new location
-          type: string
-        description:
-          description: Description of the new location
+          description: Name of the Location
           type: string
       required:
       - id
       type: object
+      example: null
   securitySchemes:
     basicAuth:
       scheme: Basic
