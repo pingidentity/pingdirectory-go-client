@@ -88,6 +88,8 @@ Class | Method | HTTP request | Description
 
  - [AddLocationRequest](docs/AddLocationRequest.md)
  - [AddLocationRequestAllOf](docs/AddLocationRequestAllOf.md)
+ - [EnumOperation](docs/EnumOperation.md)
+ - [EnumlocationSchemaUrn](docs/EnumlocationSchemaUrn.md)
  - [LocationResponse](docs/LocationResponse.md)
  - [LocationResponseAllOf](docs/LocationResponseAllOf.md)
  - [LocationShared](docs/LocationShared.md)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Schemas** | Pointer to **[]string** |  | [optional] 
+**Schemas** | Pointer to [**[]EnumlocationSchemaUrn**](EnumlocationSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Location | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSchemas
 
-`func (o *LocationShared) GetSchemas() []string`
+`func (o *LocationShared) GetSchemas() []EnumlocationSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *LocationShared) GetSchemasOk() (*[]string, bool)`
+`func (o *LocationShared) GetSchemasOk() (*[]EnumlocationSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *LocationShared) SetSchemas(v []string)`
+`func (o *LocationShared) SetSchemas(v []EnumlocationSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 

@@ -7,6 +7,8 @@ client.go
 configuration.go
 docs/AddLocationRequest.md
 docs/AddLocationRequestAllOf.md
+docs/EnumOperation.md
+docs/EnumlocationSchemaUrn.md
 docs/LocationApi.md
 docs/LocationResponse.md
 docs/LocationResponseAllOf.md
@@ -18,11 +20,12 @@ go.mod
 go.sum
 model_add_location_request.go
 model_add_location_request_all_of.go
+model_enum_operation.go
+model_enumlocation_schema_urn.go
 model_location_response.go
 model_location_response_all_of.go
 model_location_shared.go
 model_operation.go
 model_update_location_request.go
 response.go
-test/api_location_test.go
 utils.go

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **LocationName** | **string** | Name of the new Location | 
-**Schemas** | Pointer to **[]string** |  | [optional] 
+**Schemas** | Pointer to [**[]EnumlocationSchemaUrn**](EnumlocationSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Location | [optional] 
 
 ## Methods
@@ -49,20 +49,20 @@ SetLocationName sets LocationName field to given value.
 
 ### GetSchemas
 
-`func (o *AddLocationRequest) GetSchemas() []string`
+`func (o *AddLocationRequest) GetSchemas() []EnumlocationSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *AddLocationRequest) GetSchemasOk() (*[]string, bool)`
+`func (o *AddLocationRequest) GetSchemasOk() (*[]EnumlocationSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *AddLocationRequest) SetSchemas(v []string)`
+`func (o *AddLocationRequest) SetSchemas(v []EnumlocationSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 

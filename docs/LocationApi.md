@@ -229,7 +229,7 @@ import (
 
 func main() {
     locationName := "locationName_example" // string | Name of the Location to be updated
-    updateLocationRequest := *openapiclient.NewUpdateLocationRequest([]openapiclient.Operation{*openapiclient.NewOperation("Op_example", "Path_example")}) // UpdateLocationRequest | Update an existing Location
+    updateLocationRequest := *openapiclient.NewUpdateLocationRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateLocationRequest | Update an existing Location
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

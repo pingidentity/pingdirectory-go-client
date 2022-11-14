@@ -142,11 +142,7 @@ components:
     Operation:
       properties:
         op:
-          enum:
-          - add
-          - remove
-          - replace
-          type: string
+          $ref: '#/components/schemas/EnumOperation'
         path:
           type: string
         value:
@@ -167,9 +163,7 @@ components:
       properties:
         schemas:
           items:
-            enum:
-            - urn:pingidentity:schemas:configuration:2.0:location
-            type: string
+            $ref: '#/components/schemas/EnumlocationSchemaUrn'
           maxItems: 1
           minItems: 1
           type: array
@@ -177,6 +171,10 @@ components:
           description: A description for this Location
           type: string
       type: object
+    EnumlocationSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:location
+      type: string
     update-location-request:
       properties:
         operations:
@@ -186,6 +184,12 @@ components:
       required:
       - operations
       type: object
+    EnumOperation:
+      enum:
+      - add
+      - remove
+      - replace
+      type: string
     add_location_request_allOf:
       properties:
         locationName:

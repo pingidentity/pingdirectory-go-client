@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Op** | **string** |  | 
+**Op** | [**EnumOperation**](EnumOperation.md) |  | 
 **Path** | **string** |  | 
 **Value** | Pointer to **string** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewOperation
 
-`func NewOperation(op string, path string, ) *Operation`
+`func NewOperation(op EnumOperation, path string, ) *Operation`
 
 NewOperation instantiates a new Operation object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOp
 
-`func (o *Operation) GetOp() string`
+`func (o *Operation) GetOp() EnumOperation`
 
 GetOp returns the Op field if non-nil, zero value otherwise.
 
 ### GetOpOk
 
-`func (o *Operation) GetOpOk() (*string, bool)`
+`func (o *Operation) GetOpOk() (*EnumOperation, bool)`
 
 GetOpOk returns a tuple with the Op field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOp
 
-`func (o *Operation) SetOp(v string)`
+`func (o *Operation) SetOp(v EnumOperation)`
 
 SetOp sets Op field to given value.
 

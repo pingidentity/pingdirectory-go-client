@@ -18,7 +18,7 @@ import (
 type LocationResponse struct {
 	// Name of the Location
 	Id string `json:"id"`
-	Schemas []string `json:"schemas,omitempty"`
+	Schemas []EnumlocationSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Location
 	Description *string `json:"description,omitempty"`
 }
@@ -66,9 +66,9 @@ func (o *LocationResponse) SetId(v string) {
 }
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
-func (o *LocationResponse) GetSchemas() []string {
+func (o *LocationResponse) GetSchemas() []EnumlocationSchemaUrn {
 	if o == nil || isNil(o.Schemas) {
-		var ret []string
+		var ret []EnumlocationSchemaUrn
 		return ret
 	}
 	return o.Schemas
@@ -76,7 +76,7 @@ func (o *LocationResponse) GetSchemas() []string {
 
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocationResponse) GetSchemasOk() ([]string, bool) {
+func (o *LocationResponse) GetSchemasOk() ([]EnumlocationSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
     return nil, false
 	}
@@ -92,8 +92,8 @@ func (o *LocationResponse) HasSchemas() bool {
 	return false
 }
 
-// SetSchemas gets a reference to the given []string and assigns it to the Schemas field.
-func (o *LocationResponse) SetSchemas(v []string) {
+// SetSchemas gets a reference to the given []EnumlocationSchemaUrn and assigns it to the Schemas field.
+func (o *LocationResponse) SetSchemas(v []EnumlocationSchemaUrn) {
 	o.Schemas = v
 }
 

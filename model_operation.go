@@ -16,7 +16,7 @@ import (
 
 // Operation struct for Operation
 type Operation struct {
-	Op string `json:"op"`
+	Op EnumOperation `json:"op"`
 	Path string `json:"path"`
 	Value *string `json:"value,omitempty"`
 }
@@ -25,7 +25,7 @@ type Operation struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOperation(op string, path string) *Operation {
+func NewOperation(op EnumOperation, path string) *Operation {
 	this := Operation{}
 	this.Op = op
 	this.Path = path
@@ -41,9 +41,9 @@ func NewOperationWithDefaults() *Operation {
 }
 
 // GetOp returns the Op field value
-func (o *Operation) GetOp() string {
+func (o *Operation) GetOp() EnumOperation {
 	if o == nil {
-		var ret string
+		var ret EnumOperation
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *Operation) GetOp() string {
 
 // GetOpOk returns a tuple with the Op field value
 // and a boolean to check if the value has been set.
-func (o *Operation) GetOpOk() (*string, bool) {
+func (o *Operation) GetOpOk() (*EnumOperation, bool) {
 	if o == nil {
     return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *Operation) GetOpOk() (*string, bool) {
 }
 
 // SetOp sets field value
-func (o *Operation) SetOp(v string) {
+func (o *Operation) SetOp(v EnumOperation) {
 	o.Op = v
 }
 
