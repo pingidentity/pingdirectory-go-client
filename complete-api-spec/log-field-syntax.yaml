@@ -10,64 +10,7 @@ tags:
 - description: Access log-field-syntaxes
   name: log-field-syntax
 paths:
-  /log-field-syntaxes:
-    post:
-      summary: Add a new Log Field Syntax to the config
-      operationId: add-log-field-syntax
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-        description: Create a new Log Field Syntax in the config
-        required: true
-      responses:
-        "200":
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                oneOf:
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "400":
-          description: Bad request
-        "409":
-          description: The Log Field Syntax already exists
-      security:
-      - basicAuth: []
-      tags:
-      - location
   /log-field-syntaxes/{log-field-syntax-name}:
-    delete:
-      summary: Delete a Log Field Syntax
-      operationId: delete-log-field-syntax
-      parameters:
-      - description: Name of the Log Field Syntax to be deleted
-        explode: false
-        in: path
-        name: log-field-syntax-name
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: Successful operation
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "404":
-          description: The Log Field Syntax does not exist
-        "409":
-          description: The Log Field Syntax cannot be deleted
-      security:
-      - basicAuth: []
-      tags:
-      - location
     get:
       summary: Returns a single Log Field Syntax
       operationId: get-log-field-syntax
@@ -87,8 +30,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/json-response'
-                - $ref: '#/components/schemas/attribute-based-response'
+                - $ref: '#/components/schemas/json-log-field-syntax-response'
+                - $ref: '#/components/schemas/attribute-based-log-field-syntax-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -98,7 +41,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-field-syntax
     patch:
       summary: Update an existing Log Field Syntax by name
       operationId: update-log-field-syntax
@@ -115,7 +58,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-log-field-syntax-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Log Field Syntax
         required: true
       responses:
@@ -125,8 +68,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/json-response'
-                - $ref: '#/components/schemas/attribute-based-response'
+                - $ref: '#/components/schemas/json-log-field-syntax-response'
+                - $ref: '#/components/schemas/attribute-based-log-field-syntax-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -138,9 +81,95 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-field-syntax
 components:
   schemas:
+    json-log-field-syntax-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjson-log-field-syntaxSchemaUrn'
+        includedSensitiveField:
+          type: array
+          items:
+            type: string
+            description: >-
+                The names of the JSON fields that will be considered sensitive.
+        excludedSensitiveField:
+          type: array
+          items:
+            type: string
+            description: >-
+                The names of the JSON fields that will not be considered sensitive.
+        description:
+          type: string
+          description: >-
+              A description for this Log Field Syntax
+        defaultBehavior:
+          $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
+      required:
+      - schemas
+    Enumjson-log-field-syntaxSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:json"
+    attribute-based-log-field-syntax-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumattribute-based-log-field-syntaxSchemaUrn'
+        includedSensitiveAttribute:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of attribute types that will be considered sensitive.
+        excludedSensitiveAttribute:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of attribute types that will not be considered sensitive.
+        description:
+          type: string
+          description: >-
+              A description for this Log Field Syntax
+        defaultBehavior:
+          $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
+      required:
+      - schemas
+    Enumattribute-based-log-field-syntaxSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based"
+    Enumlog-field-syntax-defaultBehaviorProp:
+      type: string
+      enum:
+      - "preserve"
+      - "omit"
+      - "redact-entire-value"
+      - "redact-value-components"
+      - "tokenize-entire-value"
+      - "tokenize-value-components"
+      description: >-
+          The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -153,85 +182,6 @@ components:
       required:
       - op
       - path
-    json-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumjsonSchemaUrn'
-        includedSensitiveField:
-          type: array
-          items:
-            type: string
-            description: The names of the JSON fields that will be considered sensitive.
-        excludedSensitiveField:
-          type: array
-          items:
-            type: string
-            description: The names of the JSON fields that will not be considered sensitive.
-        description:
-          type: string
-          description: A description for this Log Field Syntax
-        defaultBehavior:
-          $ref: '#/components/schemas/EnumdefaultBehaviorProp'
-      required:
-      - schemas
-    EnumjsonSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:json"
-    attribute-based-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumattribute-basedSchemaUrn'
-        includedSensitiveAttribute:
-          type: array
-          items:
-            type: string
-            description: The set of attribute types that will be considered sensitive.
-        excludedSensitiveAttribute:
-          type: array
-          items:
-            type: string
-            description: The set of attribute types that will not be considered sensitive.
-        description:
-          type: string
-          description: A description for this Log Field Syntax
-        defaultBehavior:
-          $ref: '#/components/schemas/EnumdefaultBehaviorProp'
-      required:
-      - schemas
-    Enumattribute-basedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based"
-    update-log-field-syntax-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumdefaultBehaviorProp:
-      type: string
-      enum:
-      - "preserve"
-      - "omit"
-      - "redact-entire-value"
-      - "redact-value-components"
-      - "tokenize-entire-value"
-      - "tokenize-value-components"
-      description: The default behavior that the server should exhibit when logging fields with this syntax. This may be overridden on a per-field basis.
     EnumOperation:
       type: string
       enum:

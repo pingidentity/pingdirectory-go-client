@@ -19,8 +19,8 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-user-request'
-              - $ref: '#/components/schemas/add-group-request'
+              - $ref: '#/components/schemas/add-user-rest-resource-type-request'
+              - $ref: '#/components/schemas/add-group-rest-resource-type-request'
         description: Create a new REST Resource Type in the config
         required: true
       responses:
@@ -30,8 +30,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/user-response'
-                - $ref: '#/components/schemas/group-response'
+                - $ref: '#/components/schemas/user-rest-resource-type-response'
+                - $ref: '#/components/schemas/group-rest-resource-type-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -43,7 +43,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - rest-resource-type
   /rest-resource-types/{rest-resource-type-name}:
     delete:
       summary: Delete a REST Resource Type
@@ -71,7 +71,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - rest-resource-type
     get:
       summary: Returns a single REST Resource Type
       operationId: get-rest-resource-type
@@ -91,8 +91,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/user-response'
-                - $ref: '#/components/schemas/group-response'
+                - $ref: '#/components/schemas/user-rest-resource-type-response'
+                - $ref: '#/components/schemas/group-rest-resource-type-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -102,7 +102,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - rest-resource-type
     patch:
       summary: Update an existing REST Resource Type by name
       operationId: update-rest-resource-type
@@ -119,7 +119,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-rest-resource-type-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing REST Resource Type
         required: true
       responses:
@@ -129,8 +129,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/user-response'
-                - $ref: '#/components/schemas/group-response'
+                - $ref: '#/components/schemas/user-rest-resource-type-response'
+                - $ref: '#/components/schemas/group-rest-resource-type-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -142,9 +142,280 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - rest-resource-type
 components:
   schemas:
+    add-user-rest-resource-type-request:
+      allOf:
+      - type: object
+        properties:
+          typeName:
+            description: Name of the new REST Resource Type
+            type: string
+        required:
+        - typeName
+      - $ref: '#/components/schemas/user-rest-resource-type-shared'
+    user-rest-resource-type-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the REST Resource Type
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/user-rest-resource-type-shared'
+    user-rest-resource-type-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumuser-rest-resource-typeSchemaUrn'
+        passwordAttributeCategory:
+          type: string
+          description: >-
+              Specifies which attribute category the password belongs to.
+        passwordDisplayOrderIndex:
+          type: integer
+          description: >-
+              This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest.
+        description:
+          type: string
+          description: >-
+              A description for this REST Resource Type
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the REST Resource Type is enabled.
+        resourceEndpoint:
+          type: string
+          description: >-
+              The HTTP addressable endpoint of this REST Resource Type relative to a REST API base URL. Do not include a leading '/'.
+        structuralLDAPObjectclass:
+          type: string
+          description: >-
+              Specifies the LDAP structural object class that should be exposed by this REST Resource Type.
+        auxiliaryLDAPObjectclass:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
+        searchBaseDN:
+          type: string
+          description: >-
+              Specifies the base DN of the branch of the LDAP directory where resources of this type are located.
+        includeFilter:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
+        parentDN:
+          type: string
+          description: >-
+              Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type.
+        parentResourceType:
+          type: string
+          description: >-
+              Specifies the name of another resource type which may be a parent of new resources of this type. The search base DN of the parent resource type must be at or above the search base DN of this resource type.
+        relativeDNFromParentResource:
+          type: string
+          description: >-
+              Specifies a template for a relative DN from the parent resource which identifies the parent entry for a new resource of this type. If this property is not specified then new resources are created immediately below the parent resource or parent DN.
+        createRDNAttributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources.
+        postCreateConstructedAttribute:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
+        updateConstructedAttribute:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this REST Resource Type.
+        searchFilterPattern:
+          type: string
+          description: >-
+              Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition.
+        primaryDisplayAttributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition.
+        delegatedAdminSearchSizeLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that may be returned from a search request.
+        delegatedAdminReportSizeLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that may be included in a report.
+        membersColumnName:
+          type: string
+          description: >-
+              Specifies the name of the group member column that will be displayed in the Delegated Admin UI
+        nonmembersColumnName:
+          type: string
+          description: >-
+              Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
+      required:
+      - schemas
+      - enabled
+      - resourceEndpoint
+      - structuralLDAPObjectclass
+      - searchBaseDN
+    Enumuser-rest-resource-typeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:user"
+    add-group-rest-resource-type-request:
+      allOf:
+      - type: object
+        properties:
+          typeName:
+            description: Name of the new REST Resource Type
+            type: string
+        required:
+        - typeName
+      - $ref: '#/components/schemas/group-rest-resource-type-shared'
+    group-rest-resource-type-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the REST Resource Type
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/group-rest-resource-type-shared'
+    group-rest-resource-type-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroup-rest-resource-typeSchemaUrn'
+        membersColumnName:
+          type: string
+          description: >-
+              Specifies the name of the group member column that will be displayed in the Delegated Admin UI
+        nonmembersColumnName:
+          type: string
+          description: >-
+              Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
+        description:
+          type: string
+          description: >-
+              A description for this REST Resource Type
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the REST Resource Type is enabled.
+        resourceEndpoint:
+          type: string
+          description: >-
+              The HTTP addressable endpoint of this REST Resource Type relative to a REST API base URL. Do not include a leading '/'.
+        structuralLDAPObjectclass:
+          type: string
+          description: >-
+              Specifies the LDAP structural object class that should be exposed by this REST Resource Type.
+        auxiliaryLDAPObjectclass:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
+        searchBaseDN:
+          type: string
+          description: >-
+              Specifies the base DN of the branch of the LDAP directory where resources of this type are located.
+        includeFilter:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
+        parentDN:
+          type: string
+          description: >-
+              Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type.
+        parentResourceType:
+          type: string
+          description: >-
+              Specifies the name of another resource type which may be a parent of new resources of this type. The search base DN of the parent resource type must be at or above the search base DN of this resource type.
+        relativeDNFromParentResource:
+          type: string
+          description: >-
+              Specifies a template for a relative DN from the parent resource which identifies the parent entry for a new resource of this type. If this property is not specified then new resources are created immediately below the parent resource or parent DN.
+        createRDNAttributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources.
+        postCreateConstructedAttribute:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
+        updateConstructedAttribute:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this REST Resource Type.
+        searchFilterPattern:
+          type: string
+          description: >-
+              Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition.
+        primaryDisplayAttributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition.
+        delegatedAdminSearchSizeLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that may be returned from a search request.
+        delegatedAdminReportSizeLimit:
+          type: integer
+          description: >-
+              The maximum number of resources that may be included in a report.
+      required:
+      - schemas
+      - enabled
+      - resourceEndpoint
+      - structuralLDAPObjectclass
+      - searchBaseDN
+    Enumgroup-rest-resource-typeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -157,235 +428,6 @@ components:
       required:
       - op
       - path
-    add-user-request:
-      allOf:
-      - type: object
-        properties:
-          typeName:
-            description: Name of the new REST Resource Type
-            type: string
-        required:
-        - typeName
-      - $ref: '#/components/schemas/user-shared'
-    user-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the REST Resource Type
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/user-shared'
-    user-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumuserSchemaUrn'
-        passwordAttributeCategory:
-          type: string
-          description: Specifies which attribute category the password belongs to.
-        passwordDisplayOrderIndex:
-          type: integer
-          description: This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest.
-        description:
-          type: string
-          description: A description for this REST Resource Type
-        enabled:
-          type: boolean
-          description: Indicates whether the REST Resource Type is enabled.
-        resourceEndpoint:
-          type: string
-          description: The HTTP addressable endpoint of this REST Resource Type relative to a REST API base URL. Do not include a leading '/'.
-        structuralLDAPObjectclass:
-          type: string
-          description: Specifies the LDAP structural object class that should be exposed by this REST Resource Type.
-        auxiliaryLDAPObjectclass:
-          type: array
-          items:
-            type: string
-            description: Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
-        searchBaseDN:
-          type: string
-          description: Specifies the base DN of the branch of the LDAP directory where resources of this type are located.
-        includeFilter:
-          type: array
-          items:
-            type: string
-            description: The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
-        parentDN:
-          type: string
-          description: Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type.
-        parentResourceType:
-          type: string
-          description: Specifies the name of another resource type which may be a parent of new resources of this type. The search base DN of the parent resource type must be at or above the search base DN of this resource type.
-        relativeDNFromParentResource:
-          type: string
-          description: Specifies a template for a relative DN from the parent resource which identifies the parent entry for a new resource of this type. If this property is not specified then new resources are created immediately below the parent resource or parent DN.
-        createRDNAttributeType:
-          type: string
-          description: Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources.
-        postCreateConstructedAttribute:
-          type: array
-          items:
-            type: string
-            description: Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
-        updateConstructedAttribute:
-          type: array
-          items:
-            type: string
-            description: Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
-        displayName:
-          type: string
-          description: A human readable display name for this REST Resource Type.
-        searchFilterPattern:
-          type: string
-          description: Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition.
-        primaryDisplayAttributeType:
-          type: string
-          description: Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition.
-        delegatedAdminSearchSizeLimit:
-          type: integer
-          description: The maximum number of resources that may be returned from a search request.
-        delegatedAdminReportSizeLimit:
-          type: integer
-          description: The maximum number of resources that may be included in a report.
-        membersColumnName:
-          type: string
-          description: Specifies the name of the group member column that will be displayed in the Delegated Admin UI
-        nonmembersColumnName:
-          type: string
-          description: Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
-      required:
-      - schemas
-      - enabled
-      - resourceEndpoint
-      - structuralLDAPObjectclass
-      - searchBaseDN
-    EnumuserSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:user"
-    add-group-request:
-      allOf:
-      - type: object
-        properties:
-          typeName:
-            description: Name of the new REST Resource Type
-            type: string
-        required:
-        - typeName
-      - $ref: '#/components/schemas/group-shared'
-    group-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the REST Resource Type
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/group-shared'
-    group-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumgroupSchemaUrn'
-        membersColumnName:
-          type: string
-          description: Specifies the name of the group member column that will be displayed in the Delegated Admin UI
-        nonmembersColumnName:
-          type: string
-          description: Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
-        description:
-          type: string
-          description: A description for this REST Resource Type
-        enabled:
-          type: boolean
-          description: Indicates whether the REST Resource Type is enabled.
-        resourceEndpoint:
-          type: string
-          description: The HTTP addressable endpoint of this REST Resource Type relative to a REST API base URL. Do not include a leading '/'.
-        structuralLDAPObjectclass:
-          type: string
-          description: Specifies the LDAP structural object class that should be exposed by this REST Resource Type.
-        auxiliaryLDAPObjectclass:
-          type: array
-          items:
-            type: string
-            description: Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
-        searchBaseDN:
-          type: string
-          description: Specifies the base DN of the branch of the LDAP directory where resources of this type are located.
-        includeFilter:
-          type: array
-          items:
-            type: string
-            description: The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
-        parentDN:
-          type: string
-          description: Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type.
-        parentResourceType:
-          type: string
-          description: Specifies the name of another resource type which may be a parent of new resources of this type. The search base DN of the parent resource type must be at or above the search base DN of this resource type.
-        relativeDNFromParentResource:
-          type: string
-          description: Specifies a template for a relative DN from the parent resource which identifies the parent entry for a new resource of this type. If this property is not specified then new resources are created immediately below the parent resource or parent DN.
-        createRDNAttributeType:
-          type: string
-          description: Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources.
-        postCreateConstructedAttribute:
-          type: array
-          items:
-            type: string
-            description: Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
-        updateConstructedAttribute:
-          type: array
-          items:
-            type: string
-            description: Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
-        displayName:
-          type: string
-          description: A human readable display name for this REST Resource Type.
-        searchFilterPattern:
-          type: string
-          description: Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition.
-        primaryDisplayAttributeType:
-          type: string
-          description: Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition.
-        delegatedAdminSearchSizeLimit:
-          type: integer
-          description: The maximum number of resources that may be returned from a search request.
-        delegatedAdminReportSizeLimit:
-          type: integer
-          description: The maximum number of resources that may be included in a report.
-      required:
-      - schemas
-      - enabled
-      - resourceEndpoint
-      - structuralLDAPObjectclass
-      - searchBaseDN
-    EnumgroupSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group"
-    update-rest-resource-type-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

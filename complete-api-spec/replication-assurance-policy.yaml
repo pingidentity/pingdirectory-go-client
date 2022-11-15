@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - replication-assurance-policy
   /replication-assurance-policies/{replication-assurance-policy-name}:
     delete:
       summary: Delete a Replication Assurance Policy
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - replication-assurance-policy
     get:
       summary: Returns a single Replication Assurance Policy
       operationId: get-replication-assurance-policy
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - replication-assurance-policy
     patch:
       summary: Update an existing Replication Assurance Policy by name
       operationId: update-replication-assurance-policy
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-replication-assurance-policy-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Replication Assurance Policy
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - replication-assurance-policy
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-replication-assurance-policy-request:
       allOf:
       - type: object
@@ -180,26 +168,32 @@ components:
             $ref: '#/components/schemas/Enumreplication-assurance-policySchemaUrn'
         description:
           type: string
-          description: Description of the Replication Assurance Policy.
+          description: >-
+              Description of the Replication Assurance Policy.
         enabled:
           type: boolean
-          description: Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
+          description: >-
+              Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
         evaluationOrderIndex:
           type: integer
-          description: When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous.
+          description: >-
+              When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous.
         localLevel:
-          $ref: '#/components/schemas/EnumlocalLevelProp'
+          $ref: '#/components/schemas/Enumreplication-assurance-policy-localLevelProp'
         remoteLevel:
-          $ref: '#/components/schemas/EnumremoteLevelProp'
+          $ref: '#/components/schemas/Enumreplication-assurance-policy-remoteLevelProp'
         timeout:
           type: string
-          description: Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client.
+          description: >-
+              Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client.
         connectionCriteria:
           type: string
-          description: Specifies a connection criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
+          description: >-
+              Specifies a connection criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
         requestCriteria:
           type: string
-          description: Specifies a request criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
+          description: >-
+              Specifies a request criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
       required:
       - enabled
       - evaluationOrderIndex
@@ -210,7 +204,24 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:replication-assurance-policy"
-    update-replication-assurance-policy-request:
+    Enumreplication-assurance-policy-localLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "received-any-server"
+      - "processed-all-servers"
+      description: >-
+          Specifies the assurance level used to replicate to local servers. A local server is defined as one with the same value for the location setting in the global configuration.  The local-level must be set to an assurance level at least as strict as the remote-level. In other words, if remote-level is set to "received-any-remote-location" or "received-all-remote-locations", then local-level must be either "received-any-server" or "processed-all-servers". If remote-level is "processed-all-remote-servers", then local-level must be "processed-all-servers".
+    Enumreplication-assurance-policy-remoteLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "received-any-remote-location"
+      - "received-all-remote-locations"
+      - "processed-all-remote-servers"
+      description: >-
+          Specifies the assurance level used to replicate to remote servers. A remote server is defined as one with a different value for the location setting in the global configuration.
+    updateRequest:
       type: object
       properties:
         operations:
@@ -219,21 +230,18 @@ components:
             $ref: '#/components/schemas/Operation'
       required:
       - operations
-    EnumlocalLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "received-any-server"
-      - "processed-all-servers"
-      description: Specifies the assurance level used to replicate to local servers. A local server is defined as one with the same value for the location setting in the global configuration.  The local-level must be set to an assurance level at least as strict as the remote-level. In other words, if remote-level is set to "received-any-remote-location" or "received-all-remote-locations", then local-level must be either "received-any-server" or "processed-all-servers". If remote-level is "processed-all-remote-servers", then local-level must be "processed-all-servers".
-    EnumremoteLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "received-any-remote-location"
-      - "received-all-remote-locations"
-      - "processed-all-remote-servers"
-      description: Specifies the assurance level used to replicate to remote servers. A remote server is defined as one with a different value for the location setting in the global configuration.
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

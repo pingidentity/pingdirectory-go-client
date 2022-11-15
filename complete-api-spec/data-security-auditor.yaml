@@ -19,13 +19,13 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-expired-password-request'
-              - $ref: '#/components/schemas/add-multiple-password-request'
-              - $ref: '#/components/schemas/add-disabled-account-request'
-              - $ref: '#/components/schemas/add-weakly-encoded-password-request'
-              - $ref: '#/components/schemas/add-privilege-request'
-              - $ref: '#/components/schemas/add-locked-account-request'
-              - $ref: '#/components/schemas/add-access-control-request'
+              - $ref: '#/components/schemas/add-expired-password-data-security-auditor-request'
+              - $ref: '#/components/schemas/add-multiple-password-data-security-auditor-request'
+              - $ref: '#/components/schemas/add-disabled-account-data-security-auditor-request'
+              - $ref: '#/components/schemas/add-weakly-encoded-password-data-security-auditor-request'
+              - $ref: '#/components/schemas/add-privilege-data-security-auditor-request'
+              - $ref: '#/components/schemas/add-locked-account-data-security-auditor-request'
+              - $ref: '#/components/schemas/add-access-control-data-security-auditor-request'
         description: Create a new Data Security Auditor in the config
         required: true
       responses:
@@ -35,13 +35,13 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/expired-password-response'
-                - $ref: '#/components/schemas/multiple-password-response'
-                - $ref: '#/components/schemas/disabled-account-response'
-                - $ref: '#/components/schemas/weakly-encoded-password-response'
-                - $ref: '#/components/schemas/privilege-response'
-                - $ref: '#/components/schemas/locked-account-response'
-                - $ref: '#/components/schemas/access-control-response'
+                - $ref: '#/components/schemas/expired-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/multiple-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/disabled-account-data-security-auditor-response'
+                - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/privilege-data-security-auditor-response'
+                - $ref: '#/components/schemas/locked-account-data-security-auditor-response'
+                - $ref: '#/components/schemas/access-control-data-security-auditor-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -53,7 +53,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - data-security-auditor
   /data-security-auditors/{data-security-auditor-name}:
     delete:
       summary: Delete a Data Security Auditor
@@ -81,7 +81,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - data-security-auditor
     get:
       summary: Returns a single Data Security Auditor
       operationId: get-data-security-auditor
@@ -101,13 +101,13 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/expired-password-response'
-                - $ref: '#/components/schemas/multiple-password-response'
-                - $ref: '#/components/schemas/disabled-account-response'
-                - $ref: '#/components/schemas/weakly-encoded-password-response'
-                - $ref: '#/components/schemas/privilege-response'
-                - $ref: '#/components/schemas/locked-account-response'
-                - $ref: '#/components/schemas/access-control-response'
+                - $ref: '#/components/schemas/expired-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/multiple-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/disabled-account-data-security-auditor-response'
+                - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/privilege-data-security-auditor-response'
+                - $ref: '#/components/schemas/locked-account-data-security-auditor-response'
+                - $ref: '#/components/schemas/access-control-data-security-auditor-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -117,7 +117,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - data-security-auditor
     patch:
       summary: Update an existing Data Security Auditor by name
       operationId: update-data-security-auditor
@@ -134,7 +134,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-data-security-auditor-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Data Security Auditor
         required: true
       responses:
@@ -144,13 +144,13 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/expired-password-response'
-                - $ref: '#/components/schemas/multiple-password-response'
-                - $ref: '#/components/schemas/disabled-account-response'
-                - $ref: '#/components/schemas/weakly-encoded-password-response'
-                - $ref: '#/components/schemas/privilege-response'
-                - $ref: '#/components/schemas/locked-account-response'
-                - $ref: '#/components/schemas/access-control-response'
+                - $ref: '#/components/schemas/expired-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/multiple-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/disabled-account-data-security-auditor-response'
+                - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-response'
+                - $ref: '#/components/schemas/privilege-data-security-auditor-response'
+                - $ref: '#/components/schemas/locked-account-data-security-auditor-response'
+                - $ref: '#/components/schemas/access-control-data-security-auditor-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -162,22 +162,10 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - data-security-auditor
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
-    add-expired-password-request:
+    add-expired-password-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -186,8 +174,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/expired-password-shared'
-    expired-password-response:
+      - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+    expired-password-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -196,8 +184,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/expired-password-shared'
-    expired-password-shared:
+      - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+    expired-password-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -205,37 +193,42 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumexpired-passwordSchemaUrn'
+            $ref: '#/components/schemas/Enumexpired-password-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         passwordEvaluationAge:
           type: string
-          description: If set, the auditor will report all users with passwords older than the specified value even if password expiration is not enabled.
+          description: >-
+              If set, the auditor will report all users with passwords older than the specified value even if password expiration is not enabled.
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - enabled
-    Enumexpired-passwordSchemaUrn:
+    Enumexpired-password-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:expired-password"
-    add-multiple-password-request:
+    add-multiple-password-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -244,8 +237,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/multiple-password-shared'
-    multiple-password-response:
+      - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+    multiple-password-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -254,8 +247,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/multiple-password-shared'
-    multiple-password-shared:
+      - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+    multiple-password-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -263,34 +256,38 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enummultiple-passwordSchemaUrn'
+            $ref: '#/components/schemas/Enummultiple-password-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - enabled
-    Enummultiple-passwordSchemaUrn:
+    Enummultiple-password-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:multiple-password"
-    add-disabled-account-request:
+    add-disabled-account-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -299,8 +296,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/disabled-account-shared'
-    disabled-account-response:
+      - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+    disabled-account-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -309,8 +306,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/disabled-account-shared'
-    disabled-account-shared:
+      - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+    disabled-account-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -318,34 +315,38 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumdisabled-accountSchemaUrn'
+            $ref: '#/components/schemas/Enumdisabled-account-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - enabled
-    Enumdisabled-accountSchemaUrn:
+    Enumdisabled-account-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:disabled-account"
-    add-weakly-encoded-password-request:
+    add-weakly-encoded-password-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -354,8 +355,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/weakly-encoded-password-shared'
-    weakly-encoded-password-response:
+      - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+    weakly-encoded-password-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -364,8 +365,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/weakly-encoded-password-shared'
-    weakly-encoded-password-shared:
+      - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+    weakly-encoded-password-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -373,44 +374,49 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumweakly-encoded-passwordSchemaUrn'
+            $ref: '#/components/schemas/Enumweakly-encoded-password-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         weakPasswordStorageScheme:
           type: array
           items:
             type: string
-            description: The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
+            description: >-
+                The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
         weakCryptEncoding:
           type: array
           items:
-            $ref: '#/components/schemas/EnumweakCryptEncodingProp'
+            $ref: '#/components/schemas/Enumdata-security-auditor-weakCryptEncodingProp'
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - weakPasswordStorageScheme
       - enabled
-    Enumweakly-encoded-passwordSchemaUrn:
+    Enumweakly-encoded-password-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:weakly-encoded-password"
-    add-privilege-request:
+    add-privilege-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -419,8 +425,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/privilege-shared'
-    privilege-response:
+      - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+    privilege-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -429,8 +435,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/privilege-shared'
-    privilege-shared:
+      - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+    privilege-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -438,38 +444,42 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/EnumprivilegeSchemaUrn'
+            $ref: '#/components/schemas/Enumprivilege-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         includePrivilege:
           type: array
           items:
-            $ref: '#/components/schemas/EnumincludePrivilegeProp'
+            $ref: '#/components/schemas/Enumdata-security-auditor-includePrivilegeProp'
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - enabled
-    EnumprivilegeSchemaUrn:
+    Enumprivilege-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:privilege"
-    add-locked-account-request:
+    add-locked-account-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -478,8 +488,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/locked-account-shared'
-    locked-account-response:
+      - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+    locked-account-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -488,8 +498,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/locked-account-shared'
-    locked-account-shared:
+      - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+    locked-account-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -497,37 +507,42 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumlocked-accountSchemaUrn'
+            $ref: '#/components/schemas/Enumlocked-account-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         maximumIdleTime:
           type: string
-          description: If set, users that have not authenticated for more than the specified time will be reported even if idle account lockout is not configured. Note that users may only be reported if the last login time tracking is enabled.
+          description: >-
+              If set, users that have not authenticated for more than the specified time will be reported even if idle account lockout is not configured. Note that users may only be reported if the last login time tracking is enabled.
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - enabled
-    Enumlocked-accountSchemaUrn:
+    Enumlocked-account-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:locked-account"
-    add-access-control-request:
+    add-access-control-data-security-auditor-request:
       allOf:
       - type: object
         properties:
@@ -536,8 +551,8 @@ components:
             type: string
         required:
         - auditorName
-      - $ref: '#/components/schemas/access-control-shared'
-    access-control-response:
+      - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+    access-control-data-security-auditor-response:
       allOf:
       - type: object
         properties:
@@ -546,8 +561,8 @@ components:
             type: string
         required:
         - id
-      - $ref: '#/components/schemas/access-control-shared'
-    access-control-shared:
+      - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+    access-control-data-security-auditor-shared:
       type: object
       properties:
         schemas:
@@ -555,43 +570,38 @@ components:
           minItems: 1
           maxItems: 1
           items:
-            $ref: '#/components/schemas/Enumaccess-controlSchemaUrn'
+            $ref: '#/components/schemas/Enumaccess-control-data-security-auditorSchemaUrn'
         reportFile:
           type: string
-          description: Specifies the name of the detailed report file.
+          description: >-
+              Specifies the name of the detailed report file.
         includeAttribute:
           type: array
           items:
             type: string
-            description: Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+            description: >-
+                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         enabled:
           type: boolean
-          description: Indicates whether the Data Security Auditor is enabled for use.
+          description: >-
+              Indicates whether the Data Security Auditor is enabled for use.
         auditBackend:
           type: array
           items:
             type: string
-            description: Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+            description: >-
+                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
-          $ref: '#/components/schemas/EnumauditSeverityProp'
+          $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
       - schemas
       - reportFile
       - enabled
-    Enumaccess-controlSchemaUrn:
+    Enumaccess-control-data-security-auditorSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control"
-    update-data-security-auditor-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumincludePrivilegeProp:
+    Enumdata-security-auditor-includePrivilegeProp:
       type: string
       enum:
       - "audit-data-security"
@@ -631,22 +641,46 @@ components:
       - "collect-support-data"
       - "file-servlet-access"
       - "permit-replace-certificate-request"
-      description: If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
-    EnumauditSeverityProp:
+      description: >-
+          If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
+    Enumdata-security-auditor-auditSeverityProp:
       type: string
       enum:
       - "error"
       - "warning"
       - "notice"
       - "verbose"
-      description: Specifies the severity of events to include in the report.
-    EnumweakCryptEncodingProp:
+      description: >-
+          Specifies the severity of events to include in the report.
+    Enumdata-security-auditor-weakCryptEncodingProp:
       type: string
       enum:
       - "crypt"
       - "sha-2-256"
       - "sha-2-512"
-      description: Reporting on users with passwords encoded using the Crypt Password Storage scheme may be further limited by selecting one or more encoding mechanisms that are considered weak.
+      description: >-
+          Reporting on users with passwords encoded using the Crypt Password Storage scheme may be further limited by selecting one or more encoding mechanisms that are considered weak.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

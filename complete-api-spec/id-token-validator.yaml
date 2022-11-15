@@ -19,8 +19,8 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-ping-one-request'
-              - $ref: '#/components/schemas/add-openid-connect-request'
+              - $ref: '#/components/schemas/add-ping-one-id-token-validator-request'
+              - $ref: '#/components/schemas/add-openid-connect-id-token-validator-request'
         description: Create a new ID Token Validator in the config
         required: true
       responses:
@@ -30,8 +30,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ping-one-response'
-                - $ref: '#/components/schemas/openid-connect-response'
+                - $ref: '#/components/schemas/ping-one-id-token-validator-response'
+                - $ref: '#/components/schemas/openid-connect-id-token-validator-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -43,7 +43,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - id-token-validator
   /id-token-validators/{id-token-validator-name}:
     delete:
       summary: Delete a ID Token Validator
@@ -71,7 +71,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - id-token-validator
     get:
       summary: Returns a single ID Token Validator
       operationId: get-id-token-validator
@@ -91,8 +91,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ping-one-response'
-                - $ref: '#/components/schemas/openid-connect-response'
+                - $ref: '#/components/schemas/ping-one-id-token-validator-response'
+                - $ref: '#/components/schemas/openid-connect-id-token-validator-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -102,7 +102,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - id-token-validator
     patch:
       summary: Update an existing ID Token Validator by name
       operationId: update-id-token-validator
@@ -119,7 +119,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-id-token-validator-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing ID Token Validator
         required: true
       responses:
@@ -129,8 +129,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ping-one-response'
-                - $ref: '#/components/schemas/openid-connect-response'
+                - $ref: '#/components/schemas/ping-one-id-token-validator-response'
+                - $ref: '#/components/schemas/openid-connect-id-token-validator-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -142,9 +142,199 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - id-token-validator
 components:
   schemas:
+    add-ping-one-id-token-validator-request:
+      allOf:
+      - type: object
+        properties:
+          validatorName:
+            description: Name of the new ID Token Validator
+            type: string
+        required:
+        - validatorName
+      - $ref: '#/components/schemas/ping-one-id-token-validator-shared'
+    ping-one-id-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the ID Token Validator
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ping-one-id-token-validator-shared'
+    ping-one-id-token-validator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumping-one-id-token-validatorSchemaUrn'
+        issuerURL:
+          type: string
+          description: >-
+              Specifies a PingOne base issuer URL.
+        OpenIDConnectProvider:
+          type: string
+          description: >-
+              Specifies HTTPS connection settings for the PingOne OpenID Connect provider.
+        OpenIDConnectMetadataCacheDuration:
+          type: string
+          description: >-
+              How often the PingOne ID Token Validator should refresh its stored cache of OpenID Connect-related metadata.
+        description:
+          type: string
+          description: >-
+              A description for this ID Token Validator
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this ID Token Validator is enabled for use in the Directory Server.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the Identity Mapper that should be used to correlate an ID token subject value to a user entry. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+        subjectClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the subject; i.e., the authenticated user.
+        clockSkewGracePeriod:
+          type: string
+          description: >-
+              Specifies the amount of clock skew that is tolerated by the ID Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
+        jwksCacheDuration:
+          type: string
+          description: >-
+              How often the ID Token Validator should refresh its cache of JWKS token signing keys.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
+      required:
+      - schemas
+      - issuerURL
+      - OpenIDConnectProvider
+      - enabled
+      - identityMapper
+      - evaluationOrderIndex
+    Enumping-one-id-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:id-token-validator:ping-one"
+    add-openid-connect-id-token-validator-request:
+      allOf:
+      - type: object
+        properties:
+          validatorName:
+            description: Name of the new ID Token Validator
+            type: string
+        required:
+        - validatorName
+      - $ref: '#/components/schemas/openid-connect-id-token-validator-shared'
+    openid-connect-id-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the ID Token Validator
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/openid-connect-id-token-validator-shared'
+    openid-connect-id-token-validator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumopenid-connect-id-token-validatorSchemaUrn'
+        allowedSigningAlgorithm:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumid-token-validator-allowedSigningAlgorithmProp'
+        signingCertificate:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
+        OpenIDConnectProvider:
+          type: string
+          description: >-
+              Specifies the OpenID Connect provider that issues ID tokens handled by this OpenID Connect ID Token Validator. This property is used in conjunction with the jwks-endpoint-path property.
+        jwksEndpointPath:
+          type: string
+          description: >-
+              The relative path to the JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming ID token. This path is relative to the base_url property defined for the validator's OpenID Connect provider. If jwks-endpoint-path is specified, the OpenID Connect ID Token Validator will not consult locally stored certificates for validating token signatures.
+        description:
+          type: string
+          description: >-
+              A description for this ID Token Validator
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this ID Token Validator is enabled for use in the Directory Server.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the Identity Mapper that should be used to correlate an ID token subject value to a user entry. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+        subjectClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the subject; i.e., the authenticated user.
+        issuerURL:
+          type: string
+          description: >-
+              Specifies the OpenID Connect provider's issuer URL.
+        clockSkewGracePeriod:
+          type: string
+          description: >-
+              Specifies the amount of clock skew that is tolerated by the ID Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
+        jwksCacheDuration:
+          type: string
+          description: >-
+              How often the ID Token Validator should refresh its cache of JWKS token signing keys.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
+      required:
+      - schemas
+      - allowedSigningAlgorithm
+      - enabled
+      - identityMapper
+      - issuerURL
+      - evaluationOrderIndex
+    Enumopenid-connect-id-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect"
+    Enumid-token-validator-allowedSigningAlgorithmProp:
+      type: string
+      enum:
+      - "RS256"
+      - "RS384"
+      - "RS512"
+      - "ES256"
+      - "ES384"
+      - "ES512"
+      description: >-
+          Specifies an allow list of JWT signing algorithms that will be accepted by the OpenID Connect ID Token Validator.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -157,174 +347,6 @@ components:
       required:
       - op
       - path
-    add-ping-one-request:
-      allOf:
-      - type: object
-        properties:
-          validatorName:
-            description: Name of the new ID Token Validator
-            type: string
-        required:
-        - validatorName
-      - $ref: '#/components/schemas/ping-one-shared'
-    ping-one-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the ID Token Validator
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ping-one-shared'
-    ping-one-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumping-oneSchemaUrn'
-        issuerURL:
-          type: string
-          description: Specifies a PingOne base issuer URL.
-        OpenIDConnectProvider:
-          type: string
-          description: Specifies HTTPS connection settings for the PingOne OpenID Connect provider.
-        OpenIDConnectMetadataCacheDuration:
-          type: string
-          description: How often the PingOne ID Token Validator should refresh its stored cache of OpenID Connect-related metadata.
-        description:
-          type: string
-          description: A description for this ID Token Validator
-        enabled:
-          type: boolean
-          description: Indicates whether this ID Token Validator is enabled for use in the Directory Server.
-        identityMapper:
-          type: string
-          description: Specifies the name of the Identity Mapper that should be used to correlate an ID token subject value to a user entry. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
-        subjectClaimName:
-          type: string
-          description: The name of the token claim that contains the subject; i.e., the authenticated user.
-        clockSkewGracePeriod:
-          type: string
-          description: Specifies the amount of clock skew that is tolerated by the ID Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
-        jwksCacheDuration:
-          type: string
-          description: How often the ID Token Validator should refresh its cache of JWKS token signing keys.
-        evaluationOrderIndex:
-          type: integer
-          description: When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
-      required:
-      - schemas
-      - issuerURL
-      - OpenIDConnectProvider
-      - enabled
-      - identityMapper
-      - evaluationOrderIndex
-    Enumping-oneSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:id-token-validator:ping-one"
-    add-openid-connect-request:
-      allOf:
-      - type: object
-        properties:
-          validatorName:
-            description: Name of the new ID Token Validator
-            type: string
-        required:
-        - validatorName
-      - $ref: '#/components/schemas/openid-connect-shared'
-    openid-connect-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the ID Token Validator
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/openid-connect-shared'
-    openid-connect-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumopenid-connectSchemaUrn'
-        allowedSigningAlgorithm:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumallowedSigningAlgorithmProp'
-        signingCertificate:
-          type: array
-          items:
-            type: string
-            description: Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
-        OpenIDConnectProvider:
-          type: string
-          description: Specifies the OpenID Connect provider that issues ID tokens handled by this OpenID Connect ID Token Validator. This property is used in conjunction with the jwks-endpoint-path property.
-        jwksEndpointPath:
-          type: string
-          description: The relative path to the JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming ID token. This path is relative to the base_url property defined for the validator's OpenID Connect provider. If jwks-endpoint-path is specified, the OpenID Connect ID Token Validator will not consult locally stored certificates for validating token signatures.
-        description:
-          type: string
-          description: A description for this ID Token Validator
-        enabled:
-          type: boolean
-          description: Indicates whether this ID Token Validator is enabled for use in the Directory Server.
-        identityMapper:
-          type: string
-          description: Specifies the name of the Identity Mapper that should be used to correlate an ID token subject value to a user entry. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
-        subjectClaimName:
-          type: string
-          description: The name of the token claim that contains the subject; i.e., the authenticated user.
-        issuerURL:
-          type: string
-          description: Specifies the OpenID Connect provider's issuer URL.
-        clockSkewGracePeriod:
-          type: string
-          description: Specifies the amount of clock skew that is tolerated by the ID Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
-        jwksCacheDuration:
-          type: string
-          description: How often the ID Token Validator should refresh its cache of JWKS token signing keys.
-        evaluationOrderIndex:
-          type: integer
-          description: When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
-      required:
-      - schemas
-      - allowedSigningAlgorithm
-      - enabled
-      - identityMapper
-      - issuerURL
-      - evaluationOrderIndex
-    Enumopenid-connectSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect"
-    update-id-token-validator-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumallowedSigningAlgorithmProp:
-      type: string
-      enum:
-      - "RS256"
-      - "RS384"
-      - "RS512"
-      - "ES256"
-      - "ES384"
-      - "ES512"
-      description: Specifies an allow list of JWT signing algorithms that will be accepted by the OpenID Connect ID Token Validator.
     EnumOperation:
       type: string
       enum:

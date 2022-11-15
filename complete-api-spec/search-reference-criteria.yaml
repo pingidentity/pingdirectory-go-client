@@ -19,9 +19,9 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-simple-request'
-              - $ref: '#/components/schemas/add-aggregate-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-simple-search-reference-criteria-request'
+              - $ref: '#/components/schemas/add-aggregate-search-reference-criteria-request'
+              - $ref: '#/components/schemas/add-third-party-search-reference-criteria-request'
         description: Create a new Search Reference Criteria in the config
         required: true
       responses:
@@ -31,9 +31,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/simple-response'
-                - $ref: '#/components/schemas/aggregate-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/simple-search-reference-criteria-response'
+                - $ref: '#/components/schemas/aggregate-search-reference-criteria-response'
+                - $ref: '#/components/schemas/third-party-search-reference-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -45,7 +45,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - search-reference-criteria
   /search-reference-criteria/{search-reference-criteria-name}:
     delete:
       summary: Delete a Search Reference Criteria
@@ -73,7 +73,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - search-reference-criteria
     get:
       summary: Returns a single Search Reference Criteria
       operationId: get-search-reference-criteria
@@ -93,9 +93,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/simple-response'
-                - $ref: '#/components/schemas/aggregate-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/simple-search-reference-criteria-response'
+                - $ref: '#/components/schemas/aggregate-search-reference-criteria-response'
+                - $ref: '#/components/schemas/third-party-search-reference-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -105,7 +105,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - search-reference-criteria
     patch:
       summary: Update an existing Search Reference Criteria by name
       operationId: update-search-reference-criteria
@@ -122,7 +122,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-search-reference-criteria-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Search Reference Criteria
         required: true
       responses:
@@ -132,9 +132,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/simple-response'
-                - $ref: '#/components/schemas/aggregate-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/simple-search-reference-criteria-response'
+                - $ref: '#/components/schemas/aggregate-search-reference-criteria-response'
+                - $ref: '#/components/schemas/third-party-search-reference-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -146,9 +146,198 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - search-reference-criteria
 components:
   schemas:
+    add-simple-search-reference-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Search Reference Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/simple-search-reference-criteria-shared'
+    simple-search-reference-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Search Reference Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/simple-search-reference-criteria-shared'
+    simple-search-reference-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsimple-search-reference-criteriaSchemaUrn'
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
+        allIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
+        anyIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the OID of a control that may be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain at least one of those controls.
+        notAllIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
+        noneIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls.
+        description:
+          type: string
+          description: >-
+              A description for this Search Reference Criteria
+      required:
+      - schemas
+    Enumsimple-search-reference-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:simple"
+    add-aggregate-search-reference-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Search Reference Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/aggregate-search-reference-criteria-shared'
+    aggregate-search-reference-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Search Reference Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/aggregate-search-reference-criteria-shared'
+    aggregate-search-reference-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumaggregate-search-reference-criteriaSchemaUrn'
+        allIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
+        anyIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
+        notAllIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies a search reference criteria object that should not match the associated search result reference in order to match the aggregate search reference criteria. If one or more not-all-included search reference criteria objects are provided, then a search result reference must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate search reference criteria.
+        noneIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies a search reference criteria object that must not match the associated search result reference in order to match the aggregate search reference criteria. If one or more none-included search reference criteria objects are provided, then a search result reference must not match any of them in order to match the aggregate search reference criteria.
+        description:
+          type: string
+          description: >-
+              A description for this Search Reference Criteria
+      required:
+      - schemas
+    Enumaggregate-search-reference-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate"
+    add-third-party-search-reference-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Search Reference Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/third-party-search-reference-criteria-shared'
+    third-party-search-reference-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Search Reference Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-search-reference-criteria-shared'
+    third-party-search-reference-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-search-reference-criteriaSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Search Reference Criteria.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Search Reference Criteria
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-party-search-reference-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -161,181 +350,6 @@ components:
       required:
       - op
       - path
-    add-simple-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Search Reference Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/simple-shared'
-    simple-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Search Reference Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/simple-shared'
-    simple-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumsimpleSchemaUrn'
-        requestCriteria:
-          type: string
-          description: Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
-        allIncludedReferenceControl:
-          type: array
-          items:
-            type: string
-            description: Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
-        anyIncludedReferenceControl:
-          type: array
-          items:
-            type: string
-            description: Specifies the OID of a control that may be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain at least one of those controls.
-        notAllIncludedReferenceControl:
-          type: array
-          items:
-            type: string
-            description: Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
-        noneIncludedReferenceControl:
-          type: array
-          items:
-            type: string
-            description: Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls.
-        description:
-          type: string
-          description: A description for this Search Reference Criteria
-      required:
-      - schemas
-    EnumsimpleSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:simple"
-    add-aggregate-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Search Reference Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/aggregate-shared'
-    aggregate-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Search Reference Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/aggregate-shared'
-    aggregate-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumaggregateSchemaUrn'
-        allIncludedSearchReferenceCriteria:
-          type: array
-          items:
-            type: string
-            description: Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
-        anyIncludedSearchReferenceCriteria:
-          type: array
-          items:
-            type: string
-            description: Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
-        notAllIncludedSearchReferenceCriteria:
-          type: array
-          items:
-            type: string
-            description: Specifies a search reference criteria object that should not match the associated search result reference in order to match the aggregate search reference criteria. If one or more not-all-included search reference criteria objects are provided, then a search result reference must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate search reference criteria.
-        noneIncludedSearchReferenceCriteria:
-          type: array
-          items:
-            type: string
-            description: Specifies a search reference criteria object that must not match the associated search result reference in order to match the aggregate search reference criteria. If one or more none-included search reference criteria objects are provided, then a search result reference must not match any of them in order to match the aggregate search reference criteria.
-        description:
-          type: string
-          description: A description for this Search Reference Criteria
-      required:
-      - schemas
-    EnumaggregateSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Search Reference Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Search Reference Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Search Reference Criteria.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Search Reference Criteria
-      required:
-      - schemas
-      - extensionClass
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party"
-    update-search-reference-criteria-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

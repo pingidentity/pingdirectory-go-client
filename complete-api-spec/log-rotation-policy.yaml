@@ -19,10 +19,10 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-time-limit-request'
-              - $ref: '#/components/schemas/add-fixed-time-request'
-              - $ref: '#/components/schemas/add-never-rotate-request'
-              - $ref: '#/components/schemas/add-size-limit-request'
+              - $ref: '#/components/schemas/add-time-limit-log-rotation-policy-request'
+              - $ref: '#/components/schemas/add-fixed-time-log-rotation-policy-request'
+              - $ref: '#/components/schemas/add-never-rotate-log-rotation-policy-request'
+              - $ref: '#/components/schemas/add-size-limit-log-rotation-policy-request'
         description: Create a new Log Rotation Policy in the config
         required: true
       responses:
@@ -32,10 +32,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/time-limit-response'
-                - $ref: '#/components/schemas/fixed-time-response'
-                - $ref: '#/components/schemas/never-rotate-response'
-                - $ref: '#/components/schemas/size-limit-response'
+                - $ref: '#/components/schemas/time-limit-log-rotation-policy-response'
+                - $ref: '#/components/schemas/fixed-time-log-rotation-policy-response'
+                - $ref: '#/components/schemas/never-rotate-log-rotation-policy-response'
+                - $ref: '#/components/schemas/size-limit-log-rotation-policy-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -47,7 +47,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-rotation-policy
   /log-rotation-policies/{log-rotation-policy-name}:
     delete:
       summary: Delete a Log Rotation Policy
@@ -75,7 +75,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-rotation-policy
     get:
       summary: Returns a single Log Rotation Policy
       operationId: get-log-rotation-policy
@@ -95,10 +95,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/time-limit-response'
-                - $ref: '#/components/schemas/fixed-time-response'
-                - $ref: '#/components/schemas/never-rotate-response'
-                - $ref: '#/components/schemas/size-limit-response'
+                - $ref: '#/components/schemas/time-limit-log-rotation-policy-response'
+                - $ref: '#/components/schemas/fixed-time-log-rotation-policy-response'
+                - $ref: '#/components/schemas/never-rotate-log-rotation-policy-response'
+                - $ref: '#/components/schemas/size-limit-log-rotation-policy-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -108,7 +108,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-rotation-policy
     patch:
       summary: Update an existing Log Rotation Policy by name
       operationId: update-log-rotation-policy
@@ -125,7 +125,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-log-rotation-policy-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Log Rotation Policy
         required: true
       responses:
@@ -135,10 +135,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/time-limit-response'
-                - $ref: '#/components/schemas/fixed-time-response'
-                - $ref: '#/components/schemas/never-rotate-response'
-                - $ref: '#/components/schemas/size-limit-response'
+                - $ref: '#/components/schemas/time-limit-log-rotation-policy-response'
+                - $ref: '#/components/schemas/fixed-time-log-rotation-policy-response'
+                - $ref: '#/components/schemas/never-rotate-log-rotation-policy-response'
+                - $ref: '#/components/schemas/size-limit-log-rotation-policy-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -150,9 +150,191 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-rotation-policy
 components:
   schemas:
+    add-time-limit-log-rotation-policy-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Rotation Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/time-limit-log-rotation-policy-shared'
+    time-limit-log-rotation-policy-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Rotation Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/time-limit-log-rotation-policy-shared'
+    time-limit-log-rotation-policy-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumtime-limit-log-rotation-policySchemaUrn'
+        rotationInterval:
+          type: string
+          description: >-
+              Specifies the time interval between rotations.
+        description:
+          type: string
+          description: >-
+              A description for this Log Rotation Policy
+      required:
+      - schemas
+      - rotationInterval
+    Enumtime-limit-log-rotation-policySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:time-limit"
+    add-fixed-time-log-rotation-policy-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Rotation Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/fixed-time-log-rotation-policy-shared'
+    fixed-time-log-rotation-policy-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Rotation Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/fixed-time-log-rotation-policy-shared'
+    fixed-time-log-rotation-policy-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfixed-time-log-rotation-policySchemaUrn'
+        timeOfDay:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the time of day at which log rotation should occur.
+        description:
+          type: string
+          description: >-
+              A description for this Log Rotation Policy
+      required:
+      - schemas
+      - timeOfDay
+    Enumfixed-time-log-rotation-policySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:fixed-time"
+    add-never-rotate-log-rotation-policy-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Rotation Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/never-rotate-log-rotation-policy-shared'
+    never-rotate-log-rotation-policy-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Rotation Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/never-rotate-log-rotation-policy-shared'
+    never-rotate-log-rotation-policy-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumnever-rotate-log-rotation-policySchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Log Rotation Policy
+      required:
+      - schemas
+    Enumnever-rotate-log-rotation-policySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:never-rotate"
+    add-size-limit-log-rotation-policy-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Rotation Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/size-limit-log-rotation-policy-shared'
+    size-limit-log-rotation-policy-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Rotation Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/size-limit-log-rotation-policy-shared'
+    size-limit-log-rotation-policy-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsize-limit-log-rotation-policySchemaUrn'
+        fileSizeLimit:
+          type: string
+          description: >-
+              Specifies the maximum size that a log file can reach before it is rotated.
+        description:
+          type: string
+          description: >-
+              A description for this Log Rotation Policy
+      required:
+      - schemas
+      - fileSizeLimit
+    Enumsize-limit-log-rotation-policySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:size-limit"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -165,181 +347,6 @@ components:
       required:
       - op
       - path
-    add-time-limit-request:
-      allOf:
-      - type: object
-        properties:
-          policyName:
-            description: Name of the new Log Rotation Policy
-            type: string
-        required:
-        - policyName
-      - $ref: '#/components/schemas/time-limit-shared'
-    time-limit-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Log Rotation Policy
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/time-limit-shared'
-    time-limit-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumtime-limitSchemaUrn'
-        rotationInterval:
-          type: string
-          description: Specifies the time interval between rotations.
-        description:
-          type: string
-          description: A description for this Log Rotation Policy
-      required:
-      - schemas
-      - rotationInterval
-    Enumtime-limitSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:time-limit"
-    add-fixed-time-request:
-      allOf:
-      - type: object
-        properties:
-          policyName:
-            description: Name of the new Log Rotation Policy
-            type: string
-        required:
-        - policyName
-      - $ref: '#/components/schemas/fixed-time-shared'
-    fixed-time-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Log Rotation Policy
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/fixed-time-shared'
-    fixed-time-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumfixed-timeSchemaUrn'
-        timeOfDay:
-          type: array
-          items:
-            type: string
-            description: Specifies the time of day at which log rotation should occur.
-        description:
-          type: string
-          description: A description for this Log Rotation Policy
-      required:
-      - schemas
-      - timeOfDay
-    Enumfixed-timeSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:fixed-time"
-    add-never-rotate-request:
-      allOf:
-      - type: object
-        properties:
-          policyName:
-            description: Name of the new Log Rotation Policy
-            type: string
-        required:
-        - policyName
-      - $ref: '#/components/schemas/never-rotate-shared'
-    never-rotate-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Log Rotation Policy
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/never-rotate-shared'
-    never-rotate-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumnever-rotateSchemaUrn'
-        description:
-          type: string
-          description: A description for this Log Rotation Policy
-      required:
-      - schemas
-    Enumnever-rotateSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:never-rotate"
-    add-size-limit-request:
-      allOf:
-      - type: object
-        properties:
-          policyName:
-            description: Name of the new Log Rotation Policy
-            type: string
-        required:
-        - policyName
-      - $ref: '#/components/schemas/size-limit-shared'
-    size-limit-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Log Rotation Policy
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/size-limit-shared'
-    size-limit-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumsize-limitSchemaUrn'
-        fileSizeLimit:
-          type: string
-          description: Specifies the maximum size that a log file can reach before it is rotated.
-        description:
-          type: string
-          description: A description for this Log Rotation Policy
-      required:
-      - schemas
-      - fileSizeLimit
-    Enumsize-limitSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:size-limit"
-    update-log-rotation-policy-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

@@ -19,11 +19,11 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-default-request'
-              - $ref: '#/components/schemas/add-last-access-time-request'
-              - $ref: '#/components/schemas/add-filter-based-request'
-              - $ref: '#/components/schemas/add-groovy-scripted-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-default-uncached-entry-criteria-request'
+              - $ref: '#/components/schemas/add-last-access-time-uncached-entry-criteria-request'
+              - $ref: '#/components/schemas/add-filter-based-uncached-entry-criteria-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-uncached-entry-criteria-request'
+              - $ref: '#/components/schemas/add-third-party-uncached-entry-criteria-request'
         description: Create a new Uncached Entry Criteria in the config
         required: true
       responses:
@@ -33,11 +33,11 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/default-response'
-                - $ref: '#/components/schemas/last-access-time-response'
-                - $ref: '#/components/schemas/filter-based-response'
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/default-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/third-party-uncached-entry-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -49,7 +49,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-entry-criteria
   /uncached-entry-criteria/{uncached-entry-criteria-name}:
     delete:
       summary: Delete a Uncached Entry Criteria
@@ -77,7 +77,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-entry-criteria
     get:
       summary: Returns a single Uncached Entry Criteria
       operationId: get-uncached-entry-criteria
@@ -97,11 +97,11 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/default-response'
-                - $ref: '#/components/schemas/last-access-time-response'
-                - $ref: '#/components/schemas/filter-based-response'
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/default-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/third-party-uncached-entry-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -111,7 +111,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-entry-criteria
     patch:
       summary: Update an existing Uncached Entry Criteria by name
       operationId: update-uncached-entry-criteria
@@ -128,7 +128,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-uncached-entry-criteria-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Uncached Entry Criteria
         required: true
       responses:
@@ -138,11 +138,11 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/default-response'
-                - $ref: '#/components/schemas/last-access-time-response'
-                - $ref: '#/components/schemas/filter-based-response'
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/default-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-response'
+                - $ref: '#/components/schemas/third-party-uncached-entry-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -154,9 +154,275 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-entry-criteria
 components:
   schemas:
+    add-default-uncached-entry-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Entry Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/default-uncached-entry-criteria-shared'
+    default-uncached-entry-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Entry Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/default-uncached-entry-criteria-shared'
+    default-uncached-entry-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdefault-uncached-entry-criteriaSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Entry Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Entry Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - enabled
+    Enumdefault-uncached-entry-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:default"
+    add-last-access-time-uncached-entry-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Entry Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-shared'
+    last-access-time-uncached-entry-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Entry Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/last-access-time-uncached-entry-criteria-shared'
+    last-access-time-uncached-entry-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlast-access-time-uncached-entry-criteriaSchemaUrn'
+        accessTimeThreshold:
+          type: string
+          description: >-
+              Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Entry Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Entry Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - accessTimeThreshold
+      - enabled
+    Enumlast-access-time-uncached-entry-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:last-access-time"
+    add-filter-based-uncached-entry-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Entry Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-shared'
+    filter-based-uncached-entry-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Entry Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/filter-based-uncached-entry-criteria-shared'
+    filter-based-uncached-entry-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfilter-based-uncached-entry-criteriaSchemaUrn'
+        filter:
+          type: string
+          description: >-
+              Specifies the search filter that should be used to differentiate entries into cached and uncached sets.
+        filterIdentifiesUncachedEntries:
+          type: boolean
+          description: >-
+              Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false).
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Entry Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Entry Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - filter
+      - filterIdentifiesUncachedEntries
+      - enabled
+    Enumfilter-based-uncached-entry-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:filter-based"
+    add-groovy-scripted-uncached-entry-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Entry Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-shared'
+    groovy-scripted-uncached-entry-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Entry Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-uncached-entry-criteria-shared'
+    groovy-scripted-uncached-entry-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-uncached-entry-criteriaSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Entry Criteria.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Scripted Uncached Entry Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Entry Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Entry Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scripted-uncached-entry-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:groovy-scripted"
+    add-third-party-uncached-entry-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Entry Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/third-party-uncached-entry-criteria-shared'
+    third-party-uncached-entry-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Entry Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-uncached-entry-criteria-shared'
+    third-party-uncached-entry-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-uncached-entry-criteriaSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Uncached Entry Criteria.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Uncached Entry Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Entry Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Entry Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-uncached-entry-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:third-party"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -169,255 +435,6 @@ components:
       required:
       - op
       - path
-    add-default-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Entry Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/default-shared'
-    default-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Entry Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/default-shared'
-    default-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumdefaultSchemaUrn'
-        description:
-          type: string
-          description: A description for this Uncached Entry Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Entry Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - enabled
-    EnumdefaultSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:default"
-    add-last-access-time-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Entry Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/last-access-time-shared'
-    last-access-time-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Entry Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/last-access-time-shared'
-    last-access-time-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumlast-access-timeSchemaUrn'
-        accessTimeThreshold:
-          type: string
-          description: Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database.
-        description:
-          type: string
-          description: A description for this Uncached Entry Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Entry Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - accessTimeThreshold
-      - enabled
-    Enumlast-access-timeSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:last-access-time"
-    add-filter-based-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Entry Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/filter-based-shared'
-    filter-based-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Entry Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/filter-based-shared'
-    filter-based-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumfilter-basedSchemaUrn'
-        filter:
-          type: string
-          description: Specifies the search filter that should be used to differentiate entries into cached and uncached sets.
-        filterIdentifiesUncachedEntries:
-          type: boolean
-          description: Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false).
-        description:
-          type: string
-          description: A description for this Uncached Entry Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Entry Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - filter
-      - filterIdentifiesUncachedEntries
-      - enabled
-    Enumfilter-basedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:filter-based"
-    add-groovy-scripted-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Entry Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/groovy-scripted-shared'
-    groovy-scripted-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Entry Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/groovy-scripted-shared'
-    groovy-scripted-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
-        scriptClass:
-          type: string
-          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Entry Criteria.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Scripted Uncached Entry Criteria. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Uncached Entry Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Entry Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - scriptClass
-      - enabled
-    Enumgroovy-scriptedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:groovy-scripted"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Entry Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Entry Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Uncached Entry Criteria.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Uncached Entry Criteria. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Uncached Entry Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Entry Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - extensionClass
-      - enabled
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:third-party"
-    update-uncached-entry-criteria-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

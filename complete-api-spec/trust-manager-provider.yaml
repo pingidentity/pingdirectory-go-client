@@ -19,10 +19,10 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-blind-request'
-              - $ref: '#/components/schemas/add-file-based-request'
-              - $ref: '#/components/schemas/add-jvm-default-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-blind-trust-manager-provider-request'
+              - $ref: '#/components/schemas/add-file-based-trust-manager-provider-request'
+              - $ref: '#/components/schemas/add-jvm-default-trust-manager-provider-request'
+              - $ref: '#/components/schemas/add-third-party-trust-manager-provider-request'
         description: Create a new Trust Manager Provider in the config
         required: true
       responses:
@@ -32,10 +32,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/blind-response'
-                - $ref: '#/components/schemas/file-based-response'
-                - $ref: '#/components/schemas/jvm-default-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/blind-trust-manager-provider-response'
+                - $ref: '#/components/schemas/file-based-trust-manager-provider-response'
+                - $ref: '#/components/schemas/jvm-default-trust-manager-provider-response'
+                - $ref: '#/components/schemas/third-party-trust-manager-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -47,7 +47,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trust-manager-provider
   /trust-manager-providers/{trust-manager-provider-name}:
     delete:
       summary: Delete a Trust Manager Provider
@@ -75,7 +75,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trust-manager-provider
     get:
       summary: Returns a single Trust Manager Provider
       operationId: get-trust-manager-provider
@@ -95,10 +95,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/blind-response'
-                - $ref: '#/components/schemas/file-based-response'
-                - $ref: '#/components/schemas/jvm-default-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/blind-trust-manager-provider-response'
+                - $ref: '#/components/schemas/file-based-trust-manager-provider-response'
+                - $ref: '#/components/schemas/jvm-default-trust-manager-provider-response'
+                - $ref: '#/components/schemas/third-party-trust-manager-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -108,7 +108,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trust-manager-provider
     patch:
       summary: Update an existing Trust Manager Provider by name
       operationId: update-trust-manager-provider
@@ -125,7 +125,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-trust-manager-provider-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Trust Manager Provider
         required: true
       responses:
@@ -135,10 +135,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/blind-response'
-                - $ref: '#/components/schemas/file-based-response'
-                - $ref: '#/components/schemas/jvm-default-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/blind-trust-manager-provider-response'
+                - $ref: '#/components/schemas/file-based-trust-manager-provider-response'
+                - $ref: '#/components/schemas/jvm-default-trust-manager-provider-response'
+                - $ref: '#/components/schemas/third-party-trust-manager-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -150,9 +150,227 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trust-manager-provider
 components:
   schemas:
+    add-blind-trust-manager-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Trust Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/blind-trust-manager-provider-shared'
+    blind-trust-manager-provider-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Trust Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/blind-trust-manager-provider-shared'
+    blind-trust-manager-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumblind-trust-manager-providerSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicate whether the Trust Manager Provider is enabled for use.
+        includeJVMDefaultIssuers:
+          type: boolean
+          description: >-
+              Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
+      required:
+      - schemas
+      - enabled
+    Enumblind-trust-manager-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind"
+    add-file-based-trust-manager-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Trust Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/file-based-trust-manager-provider-shared'
+    file-based-trust-manager-provider-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Trust Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-based-trust-manager-provider-shared'
+    file-based-trust-manager-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-based-trust-manager-providerSchemaUrn'
+        trustStoreFile:
+          type: string
+          description: >-
+              Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root.
+        trustStoreType:
+          type: string
+          description: >-
+              Specifies the format for the data in the trust store file.
+        trustStorePin:
+          type: string
+          format: password
+          description: >-
+              Specifies the clear-text PIN needed to access the File Based Trust Manager Provider.
+        trustStorePinFile:
+          type: string
+          description: >-
+              Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Trust Manager Provider.
+        trustStorePinPassphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Trust Manager Provider.
+        enabled:
+          type: boolean
+          description: >-
+              Indicate whether the Trust Manager Provider is enabled for use.
+        includeJVMDefaultIssuers:
+          type: boolean
+          description: >-
+              Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
+      required:
+      - schemas
+      - trustStoreFile
+      - enabled
+    Enumfile-based-trust-manager-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:file-based"
+    add-jvm-default-trust-manager-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Trust Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
+    jvm-default-trust-manager-provider-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Trust Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
+    jvm-default-trust-manager-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjvm-default-trust-manager-providerSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicate whether the Trust Manager Provider is enabled for use.
+        includeJVMDefaultIssuers:
+          type: boolean
+          description: >-
+              Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
+      required:
+      - schemas
+      - enabled
+    Enumjvm-default-trust-manager-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:jvm-default"
+    add-third-party-trust-manager-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Trust Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-trust-manager-provider-shared'
+    third-party-trust-manager-provider-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Trust Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-trust-manager-provider-shared'
+    third-party-trust-manager-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-trust-manager-providerSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form 'name=value'.
+        enabled:
+          type: boolean
+          description: >-
+              Indicate whether the Trust Manager Provider is enabled for use.
+        includeJVMDefaultIssuers:
+          type: boolean
+          description: >-
+              Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-trust-manager-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:third-party"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -165,209 +383,6 @@ components:
       required:
       - op
       - path
-    add-blind-request:
-      allOf:
-      - type: object
-        properties:
-          providerName:
-            description: Name of the new Trust Manager Provider
-            type: string
-        required:
-        - providerName
-      - $ref: '#/components/schemas/blind-shared'
-    blind-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Trust Manager Provider
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/blind-shared'
-    blind-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumblindSchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicate whether the Trust Manager Provider is enabled for use.
-        includeJVMDefaultIssuers:
-          type: boolean
-          description: Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
-      required:
-      - schemas
-      - enabled
-    EnumblindSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind"
-    add-file-based-request:
-      allOf:
-      - type: object
-        properties:
-          providerName:
-            description: Name of the new Trust Manager Provider
-            type: string
-        required:
-        - providerName
-      - $ref: '#/components/schemas/file-based-shared'
-    file-based-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Trust Manager Provider
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/file-based-shared'
-    file-based-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumfile-basedSchemaUrn'
-        trustStoreFile:
-          type: string
-          description: Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root.
-        trustStoreType:
-          type: string
-          description: Specifies the format for the data in the trust store file.
-        trustStorePin:
-          type: string
-          format: password
-          description: Specifies the clear-text PIN needed to access the File Based Trust Manager Provider.
-        trustStorePinFile:
-          type: string
-          description: Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Trust Manager Provider.
-        trustStorePinPassphraseProvider:
-          type: string
-          description: The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Trust Manager Provider.
-        enabled:
-          type: boolean
-          description: Indicate whether the Trust Manager Provider is enabled for use.
-        includeJVMDefaultIssuers:
-          type: boolean
-          description: Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
-      required:
-      - schemas
-      - trustStoreFile
-      - enabled
-    Enumfile-basedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:file-based"
-    add-jvm-default-request:
-      allOf:
-      - type: object
-        properties:
-          providerName:
-            description: Name of the new Trust Manager Provider
-            type: string
-        required:
-        - providerName
-      - $ref: '#/components/schemas/jvm-default-shared'
-    jvm-default-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Trust Manager Provider
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/jvm-default-shared'
-    jvm-default-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumjvm-defaultSchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicate whether the Trust Manager Provider is enabled for use.
-        includeJVMDefaultIssuers:
-          type: boolean
-          description: Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
-      required:
-      - schemas
-      - enabled
-    Enumjvm-defaultSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:jvm-default"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          providerName:
-            description: Name of the new Trust Manager Provider
-            type: string
-        required:
-        - providerName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Trust Manager Provider
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form 'name=value'.
-        enabled:
-          type: boolean
-          description: Indicate whether the Trust Manager Provider is enabled for use.
-        includeJVMDefaultIssuers:
-          type: boolean
-          description: Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
-      required:
-      - schemas
-      - extensionClass
-      - enabled
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:third-party"
-    update-trust-manager-provider-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

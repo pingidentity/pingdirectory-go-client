@@ -18,7 +18,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add-statsd-request'
+              $ref: '#/components/schemas/add-statsd-monitoring-endpoint-request'
         description: Create a new Monitoring Endpoint in the config
         required: true
       responses:
@@ -27,7 +27,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/statsd-response'
+                $ref: '#/components/schemas/statsd-monitoring-endpoint-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - monitoring-endpoint
   /monitoring-endpoints/{monitoring-endpoint-name}:
     delete:
       summary: Delete a Monitoring Endpoint
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - monitoring-endpoint
     get:
       summary: Returns a single Monitoring Endpoint
       operationId: get-monitoring-endpoint
@@ -86,7 +86,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/statsd-response'
+                $ref: '#/components/schemas/statsd-monitoring-endpoint-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - monitoring-endpoint
     patch:
       summary: Update an existing Monitoring Endpoint by name
       operationId: update-monitoring-endpoint
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-monitoring-endpoint-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Monitoring Endpoint
         required: true
       responses:
@@ -122,7 +122,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/statsd-response'
+                $ref: '#/components/schemas/statsd-monitoring-endpoint-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -134,9 +134,88 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - monitoring-endpoint
 components:
   schemas:
+    add-statsd-monitoring-endpoint-request:
+      allOf:
+      - type: object
+        properties:
+          endpointName:
+            description: Name of the new Monitoring Endpoint
+            type: string
+        required:
+        - endpointName
+      - $ref: '#/components/schemas/statsd-monitoring-endpoint-shared'
+    statsd-monitoring-endpoint-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Monitoring Endpoint
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/statsd-monitoring-endpoint-shared'
+    statsd-monitoring-endpoint-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumstatsd-monitoring-endpointSchemaUrn'
+        hostname:
+          type: string
+          description: >-
+              The name of the host where this StatsD Monitoring Endpoint should send metric data.
+        serverPort:
+          type: integer
+          description: >-
+              Specifies the port number of the endpoint where metric data should be sent.
+        connectionType:
+          $ref: '#/components/schemas/Enummonitoring-endpoint-connectionTypeProp'
+        trustManagerProvider:
+          type: string
+          description: >-
+              The trust manager provider to use if SSL over TCP is to be used for connection-level security.
+        additionalTags:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format ("host:server1", for example).
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
+      required:
+      - hostname
+      - serverPort
+      - connectionType
+      - enabled
+    Enumstatsd-monitoring-endpointSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd"
+    Enummonitoring-endpoint-connectionTypeProp:
+      type: string
+      enum:
+      - "unencrypted-udp"
+      - "unencrypted-tcp"
+      - "ssl-over-tcp"
+      description: >-
+          Specifies the protocol and security that this StatsD Monitoring Endpoint should use to connect to the configured endpoint.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -149,79 +228,6 @@ components:
       required:
       - op
       - path
-    add-statsd-request:
-      allOf:
-      - type: object
-        properties:
-          endpointName:
-            description: Name of the new Monitoring Endpoint
-            type: string
-        required:
-        - endpointName
-      - $ref: '#/components/schemas/statsd-shared'
-    statsd-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Monitoring Endpoint
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/statsd-shared'
-    statsd-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumstatsdSchemaUrn'
-        hostname:
-          type: string
-          description: The name of the host where this StatsD Monitoring Endpoint should send metric data.
-        serverPort:
-          type: integer
-          description: Specifies the port number of the endpoint where metric data should be sent.
-        connectionType:
-          $ref: '#/components/schemas/EnumconnectionTypeProp'
-        trustManagerProvider:
-          type: string
-          description: The trust manager provider to use if SSL over TCP is to be used for connection-level security.
-        additionalTags:
-          type: array
-          items:
-            type: string
-            description: Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format ("host:server1", for example).
-        enabled:
-          type: boolean
-          description: Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
-      required:
-      - hostname
-      - serverPort
-      - connectionType
-      - enabled
-    EnumstatsdSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd"
-    update-monitoring-endpoint-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumconnectionTypeProp:
-      type: string
-      enum:
-      - "unencrypted-udp"
-      - "unencrypted-tcp"
-      - "ssl-over-tcp"
-      description: Specifies the protocol and security that this StatsD Monitoring Endpoint should use to connect to the configured endpoint.
     EnumOperation:
       type: string
       enum:

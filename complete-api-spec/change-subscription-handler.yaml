@@ -19,9 +19,9 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-groovy-scripted-request'
-              - $ref: '#/components/schemas/add-logging-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-change-subscription-handler-request'
+              - $ref: '#/components/schemas/add-logging-change-subscription-handler-request'
+              - $ref: '#/components/schemas/add-third-party-change-subscription-handler-request'
         description: Create a new Change Subscription Handler in the config
         required: true
       responses:
@@ -31,9 +31,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/logging-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-response'
+                - $ref: '#/components/schemas/logging-change-subscription-handler-response'
+                - $ref: '#/components/schemas/third-party-change-subscription-handler-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -45,7 +45,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - change-subscription-handler
   /change-subscription-handlers/{change-subscription-handler-name}:
     delete:
       summary: Delete a Change Subscription Handler
@@ -73,7 +73,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - change-subscription-handler
     get:
       summary: Returns a single Change Subscription Handler
       operationId: get-change-subscription-handler
@@ -93,9 +93,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/logging-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-response'
+                - $ref: '#/components/schemas/logging-change-subscription-handler-response'
+                - $ref: '#/components/schemas/third-party-change-subscription-handler-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -105,7 +105,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - change-subscription-handler
     patch:
       summary: Update an existing Change Subscription Handler by name
       operationId: update-change-subscription-handler
@@ -122,7 +122,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-change-subscription-handler-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Change Subscription Handler
         required: true
       responses:
@@ -132,9 +132,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/logging-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-response'
+                - $ref: '#/components/schemas/logging-change-subscription-handler-response'
+                - $ref: '#/components/schemas/third-party-change-subscription-handler-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -146,9 +146,195 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - change-subscription-handler
 components:
   schemas:
+    add-groovy-scripted-change-subscription-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Change Subscription Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
+    groovy-scripted-change-subscription-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
+    groovy-scripted-change-subscription-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-change-subscription-handlerSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Change Subscription Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this change subscription handler is enabled within the server.
+        changeSubscription:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scripted-change-subscription-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:groovy-scripted"
+    add-logging-change-subscription-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Change Subscription Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+    logging-change-subscription-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+    logging-change-subscription-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlogging-change-subscription-handlerSchemaUrn'
+        logFile:
+          type: string
+          description: >-
+              Specifies the log file in which the change notification messages will be written.
+        description:
+          type: string
+          description: >-
+              A description for this Change Subscription Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this change subscription handler is enabled within the server.
+        changeSubscription:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+      required:
+      - schemas
+      - logFile
+      - enabled
+    Enumlogging-change-subscription-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:logging"
+    add-third-party-change-subscription-handler-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Change Subscription Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
+    third-party-change-subscription-handler-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
+    third-party-change-subscription-handler-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-change-subscription-handlerSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Change Subscription Handler
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this change subscription handler is enabled within the server.
+        changeSubscription:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-change-subscription-handlerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -161,178 +347,6 @@ components:
       required:
       - op
       - path
-    add-groovy-scripted-request:
-      allOf:
-      - type: object
-        properties:
-          handlerName:
-            description: Name of the new Change Subscription Handler
-            type: string
-        required:
-        - handlerName
-      - $ref: '#/components/schemas/groovy-scripted-shared'
-    groovy-scripted-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Change Subscription Handler
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/groovy-scripted-shared'
-    groovy-scripted-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
-        scriptClass:
-          type: string
-          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Change Subscription Handler
-        enabled:
-          type: boolean
-          description: Indicates whether this change subscription handler is enabled within the server.
-        changeSubscription:
-          type: array
-          items:
-            type: string
-            description: The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
-      required:
-      - schemas
-      - scriptClass
-      - enabled
-    Enumgroovy-scriptedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:groovy-scripted"
-    add-logging-request:
-      allOf:
-      - type: object
-        properties:
-          handlerName:
-            description: Name of the new Change Subscription Handler
-            type: string
-        required:
-        - handlerName
-      - $ref: '#/components/schemas/logging-shared'
-    logging-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Change Subscription Handler
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/logging-shared'
-    logging-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumloggingSchemaUrn'
-        logFile:
-          type: string
-          description: Specifies the log file in which the change notification messages will be written.
-        description:
-          type: string
-          description: A description for this Change Subscription Handler
-        enabled:
-          type: boolean
-          description: Indicates whether this change subscription handler is enabled within the server.
-        changeSubscription:
-          type: array
-          items:
-            type: string
-            description: The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
-      required:
-      - schemas
-      - logFile
-      - enabled
-    EnumloggingSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:logging"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          handlerName:
-            description: Name of the new Change Subscription Handler
-            type: string
-        required:
-        - handlerName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Change Subscription Handler
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Change Subscription Handler
-        enabled:
-          type: boolean
-          description: Indicates whether this change subscription handler is enabled within the server.
-        changeSubscription:
-          type: array
-          items:
-            type: string
-            description: The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
-      required:
-      - schemas
-      - extensionClass
-      - enabled
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party"
-    update-change-subscription-handler-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

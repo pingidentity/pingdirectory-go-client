@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - dn-map
   /dn-maps/{dn-map-name}:
     delete:
       summary: Delete a DN Map
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - dn-map
     get:
       summary: Returns a single DN Map
       operationId: get-dn-map
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - dn-map
     patch:
       summary: Update an existing DN Map by name
       operationId: update-dn-map
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-dn-map-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing DN Map
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - dn-map
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-dn-map-request:
       allOf:
       - type: object
@@ -180,13 +168,16 @@ components:
             $ref: '#/components/schemas/Enumdn-mapSchemaUrn'
         description:
           type: string
-          description: A description for this DN Map
+          description: >-
+              A description for this DN Map
         fromDNPattern:
           type: string
-          description: Specifies the DN pattern to match when determining whether this map applies to a specific source DN. If the provided bind DN matches this pattern, then the to-dn-pattern will be used to perform the mapping. If the provided bind DN does not match this pattern, then no mapping will be performed.
+          description: >-
+              Specifies the DN pattern to match when determining whether this map applies to a specific source DN. If the provided bind DN matches this pattern, then the to-dn-pattern will be used to perform the mapping. If the provided bind DN does not match this pattern, then no mapping will be performed.
         toDNPattern:
           type: string
-          description: Specifies a pattern for constructing the DN value using fixed text, DN components matching wild-card values in from-dn-pattern, and attribute values from the source entry.
+          description: >-
+              Specifies a pattern for constructing the DN value using fixed text, DN components matching wild-card values in from-dn-pattern, and attribute values from the source entry.
       required:
       - fromDNPattern
       - toDNPattern
@@ -194,7 +185,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:dn-map"
-    update-dn-map-request:
+    updateRequest:
       type: object
       properties:
         operations:
@@ -203,6 +194,18 @@ components:
             $ref: '#/components/schemas/Operation'
       required:
       - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

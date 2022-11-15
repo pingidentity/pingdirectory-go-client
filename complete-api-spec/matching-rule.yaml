@@ -10,64 +10,7 @@ tags:
 - description: Access matching-rules
   name: matching-rule
 paths:
-  /matching-rules:
-    post:
-      summary: Add a new Matching Rule to the config
-      operationId: add-matching-rule
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-        description: Create a new Matching Rule in the config
-        required: true
-      responses:
-        "200":
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                oneOf:
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "400":
-          description: Bad request
-        "409":
-          description: The Matching Rule already exists
-      security:
-      - basicAuth: []
-      tags:
-      - location
   /matching-rules/{matching-rule-name}:
-    delete:
-      summary: Delete a Matching Rule
-      operationId: delete-matching-rule
-      parameters:
-      - description: Name of the Matching Rule to be deleted
-        explode: false
-        in: path
-        name: matching-rule-name
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: Successful operation
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "404":
-          description: The Matching Rule does not exist
-        "409":
-          description: The Matching Rule cannot be deleted
-      security:
-      - basicAuth: []
-      tags:
-      - location
     get:
       summary: Returns a single Matching Rule
       operationId: get-matching-rule
@@ -87,10 +30,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ordering-response'
-                - $ref: '#/components/schemas/approximate-response'
-                - $ref: '#/components/schemas/equality-response'
-                - $ref: '#/components/schemas/substring-response'
+                - $ref: '#/components/schemas/ordering-matching-rule-response'
+                - $ref: '#/components/schemas/approximate-matching-rule-response'
+                - $ref: '#/components/schemas/equality-matching-rule-response'
+                - $ref: '#/components/schemas/substring-matching-rule-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -100,7 +43,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - matching-rule
     patch:
       summary: Update an existing Matching Rule by name
       operationId: update-matching-rule
@@ -117,7 +60,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-matching-rule-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Matching Rule
         required: true
       responses:
@@ -127,10 +70,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ordering-response'
-                - $ref: '#/components/schemas/approximate-response'
-                - $ref: '#/components/schemas/equality-response'
-                - $ref: '#/components/schemas/substring-response'
+                - $ref: '#/components/schemas/ordering-matching-rule-response'
+                - $ref: '#/components/schemas/approximate-matching-rule-response'
+                - $ref: '#/components/schemas/equality-matching-rule-response'
+                - $ref: '#/components/schemas/substring-matching-rule-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -142,9 +85,98 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - matching-rule
 components:
   schemas:
+    ordering-matching-rule-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumordering-matching-ruleSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Matching Rule is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumordering-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
+    approximate-matching-rule-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumapproximate-matching-ruleSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Matching Rule is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumapproximate-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
+    equality-matching-rule-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumequality-matching-ruleSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Matching Rule is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumequality-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:equality"
+    substring-matching-rule-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsubstring-matching-ruleSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Matching Rule is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumsubstring-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:substring"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -157,91 +189,6 @@ components:
       required:
       - op
       - path
-    ordering-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumorderingSchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicates whether the Matching Rule is enabled for use.
-      required:
-      - schemas
-      - enabled
-    EnumorderingSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
-    approximate-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumapproximateSchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicates whether the Matching Rule is enabled for use.
-      required:
-      - schemas
-      - enabled
-    EnumapproximateSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
-    equality-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumequalitySchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicates whether the Matching Rule is enabled for use.
-      required:
-      - schemas
-      - enabled
-    EnumequalitySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:equality"
-    substring-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumsubstringSchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicates whether the Matching Rule is enabled for use.
-      required:
-      - schemas
-      - enabled
-    EnumsubstringSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:substring"
-    update-matching-rule-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

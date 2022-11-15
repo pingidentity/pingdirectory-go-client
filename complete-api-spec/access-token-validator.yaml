@@ -19,10 +19,10 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-ping-federate-request'
-              - $ref: '#/components/schemas/add-jwt-request'
-              - $ref: '#/components/schemas/add-mock-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-ping-federate-access-token-validator-request'
+              - $ref: '#/components/schemas/add-jwt-access-token-validator-request'
+              - $ref: '#/components/schemas/add-mock-access-token-validator-request'
+              - $ref: '#/components/schemas/add-third-party-access-token-validator-request'
         description: Create a new Access Token Validator in the config
         required: true
       responses:
@@ -32,10 +32,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ping-federate-response'
-                - $ref: '#/components/schemas/jwt-response'
-                - $ref: '#/components/schemas/mock-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
+                - $ref: '#/components/schemas/jwt-access-token-validator-response'
+                - $ref: '#/components/schemas/mock-access-token-validator-response'
+                - $ref: '#/components/schemas/third-party-access-token-validator-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -47,7 +47,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - access-token-validator
   /access-token-validators/{access-token-validator-name}:
     delete:
       summary: Delete a Access Token Validator
@@ -75,7 +75,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - access-token-validator
     get:
       summary: Returns a single Access Token Validator
       operationId: get-access-token-validator
@@ -95,10 +95,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ping-federate-response'
-                - $ref: '#/components/schemas/jwt-response'
-                - $ref: '#/components/schemas/mock-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
+                - $ref: '#/components/schemas/jwt-access-token-validator-response'
+                - $ref: '#/components/schemas/mock-access-token-validator-response'
+                - $ref: '#/components/schemas/third-party-access-token-validator-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -108,7 +108,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - access-token-validator
     patch:
       summary: Update an existing Access Token Validator by name
       operationId: update-access-token-validator
@@ -125,7 +125,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-access-token-validator-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Access Token Validator
         required: true
       responses:
@@ -135,10 +135,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/ping-federate-response'
-                - $ref: '#/components/schemas/jwt-response'
-                - $ref: '#/components/schemas/mock-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/ping-federate-access-token-validator-response'
+                - $ref: '#/components/schemas/jwt-access-token-validator-response'
+                - $ref: '#/components/schemas/mock-access-token-validator-response'
+                - $ref: '#/components/schemas/third-party-access-token-validator-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -150,9 +150,369 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - access-token-validator
 components:
   schemas:
+    add-ping-federate-access-token-validator-request:
+      allOf:
+      - type: object
+        properties:
+          validatorName:
+            description: Name of the new Access Token Validator
+            type: string
+        required:
+        - validatorName
+      - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+    ping-federate-access-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Access Token Validator
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+    ping-federate-access-token-validator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumping-federate-access-token-validatorSchemaUrn'
+        clientID:
+          type: string
+          description: >-
+              The client identifier to use when authenticating to the PingFederate authorization server.
+        clientSecret:
+          type: string
+          format: password
+          description: >-
+              The client secret to use when authenticating to the PingFederate authorization server.
+        clientSecretPassphraseProvider:
+          type: string
+          description: >-
+              The passphrase provider for obtaining the client secret to use when authenticating to the PingFederate authorization server.
+        includeAudParameter:
+          type: boolean
+          description: >-
+              Whether to include the incoming request URL as the "aud" parameter when calling the PingFederate introspection endpoint. This property is ignored if the access-token-manager-id property is set.
+        accessTokenManagerID:
+          type: string
+          description: >-
+              The Access Token Manager instance ID to specify when calling the PingFederate introspection endpoint. If this property is set the include-aud-parameter property is ignored.
+        endpointCacheRefresh:
+          type: string
+          description: >-
+              How often the Access Token Validator should refresh its stored value of the PingFederate server's token introspection endpoint.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              When multiple Ping Federate Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Ping Federate Access Token Validators defined within Directory Server but not necessarily contiguous. Ping Federate Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
+        authorizationServer:
+          type: string
+          description: >-
+              Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+        subjectClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
+        description:
+          type: string
+          description: >-
+              A description for this Access Token Validator
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Access Token Validator is enabled for use in Directory Server.
+      required:
+      - schemas
+      - clientID
+      - evaluationOrderIndex
+      - enabled
+    Enumping-federate-access-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:ping-federate"
+    add-jwt-access-token-validator-request:
+      allOf:
+      - type: object
+        properties:
+          validatorName:
+            description: Name of the new Access Token Validator
+            type: string
+        required:
+        - validatorName
+      - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+    jwt-access-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Access Token Validator
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+    jwt-access-token-validator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjwt-access-token-validatorSchemaUrn'
+        allowedSigningAlgorithm:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumaccess-token-validator-allowedSigningAlgorithmProp'
+        signingCertificate:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
+        jwksEndpointPath:
+          type: string
+          description: >-
+              The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
+        encryptionKeyPair:
+          type: string
+          description: >-
+              The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens.
+        allowedKeyEncryptionAlgorithm:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp'
+        allowedContentEncryptionAlgorithm:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp'
+        clockSkewGracePeriod:
+          type: string
+          description: >-
+              Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
+        clientIDClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the OAuth2 client Id.
+        scopeClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the scopes granted by the token.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              When multiple JWT Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all JWT Access Token Validators defined within Directory Server but not necessarily contiguous. JWT Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
+        authorizationServer:
+          type: string
+          description: >-
+              Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+        subjectClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
+        description:
+          type: string
+          description: >-
+              A description for this Access Token Validator
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Access Token Validator is enabled for use in Directory Server.
+      required:
+      - schemas
+      - allowedSigningAlgorithm
+      - allowedKeyEncryptionAlgorithm
+      - allowedContentEncryptionAlgorithm
+      - evaluationOrderIndex
+      - enabled
+    Enumjwt-access-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt"
+    add-mock-access-token-validator-request:
+      allOf:
+      - type: object
+        properties:
+          validatorName:
+            description: Name of the new Access Token Validator
+            type: string
+        required:
+        - validatorName
+      - $ref: '#/components/schemas/mock-access-token-validator-shared'
+    mock-access-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Access Token Validator
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/mock-access-token-validator-shared'
+    mock-access-token-validator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enummock-access-token-validatorSchemaUrn'
+        clientIDClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the OAuth2 client ID.
+        scopeClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the scopes granted by the token.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+        subjectClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
+        description:
+          type: string
+          description: >-
+              A description for this Access Token Validator
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Access Token Validator is enabled for use in Directory Server.
+      required:
+      - schemas
+      - evaluationOrderIndex
+      - enabled
+    Enummock-access-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:mock"
+    add-third-party-access-token-validator-request:
+      allOf:
+      - type: object
+        properties:
+          validatorName:
+            description: Name of the new Access Token Validator
+            type: string
+        required:
+        - validatorName
+      - $ref: '#/components/schemas/third-party-access-token-validator-shared'
+    third-party-access-token-validator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Access Token Validator
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-access-token-validator-shared'
+    third-party-access-token-validator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-access-token-validatorSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
+        identityMapper:
+          type: string
+          description: >-
+              Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
+        subjectClaimName:
+          type: string
+          description: >-
+              The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
+        description:
+          type: string
+          description: >-
+              A description for this Access Token Validator
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Access Token Validator is enabled for use in Directory Server.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+      - evaluationOrderIndex
+    Enumthird-party-access-token-validatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party"
+    Enumaccess-token-validator-allowedContentEncryptionAlgorithmProp:
+      type: string
+      enum:
+      - "A128CBC_HS256"
+      - "A192CBC_HS384"
+      - "A256CBC_HS512"
+      description: >-
+          Specifies an allow list of JWT content encryption algorithms that will be accepted by the JWT Access Token Validator.
+    Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp:
+      type: string
+      enum:
+      - "RSA_OAEP"
+      - "ECDH_ES"
+      - "ECDH_ES_A128KW"
+      - "ECDH_ES_A192KW"
+      - "ECDH_ES_A256KW"
+      description: >-
+          Specifies an allow list of JWT key encryption algorithms that will be accepted by the JWT Access Token Validator. This setting is only used if encryption-key-pair is set.
+    Enumaccess-token-validator-allowedSigningAlgorithmProp:
+      type: string
+      enum:
+      - "RS256"
+      - "RS384"
+      - "RS512"
+      - "ES256"
+      - "ES384"
+      - "ES512"
+      description: >-
+          Specifies an allow list of JWT signing algorithms that will be accepted by the JWT Access Token Validator.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -165,325 +525,6 @@ components:
       required:
       - op
       - path
-    add-ping-federate-request:
-      allOf:
-      - type: object
-        properties:
-          validatorName:
-            description: Name of the new Access Token Validator
-            type: string
-        required:
-        - validatorName
-      - $ref: '#/components/schemas/ping-federate-shared'
-    ping-federate-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Access Token Validator
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ping-federate-shared'
-    ping-federate-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumping-federateSchemaUrn'
-        clientID:
-          type: string
-          description: The client identifier to use when authenticating to the PingFederate authorization server.
-        clientSecret:
-          type: string
-          format: password
-          description: The client secret to use when authenticating to the PingFederate authorization server.
-        clientSecretPassphraseProvider:
-          type: string
-          description: The passphrase provider for obtaining the client secret to use when authenticating to the PingFederate authorization server.
-        includeAudParameter:
-          type: boolean
-          description: Whether to include the incoming request URL as the "aud" parameter when calling the PingFederate introspection endpoint. This property is ignored if the access-token-manager-id property is set.
-        accessTokenManagerID:
-          type: string
-          description: The Access Token Manager instance ID to specify when calling the PingFederate introspection endpoint. If this property is set the include-aud-parameter property is ignored.
-        endpointCacheRefresh:
-          type: string
-          description: How often the Access Token Validator should refresh its stored value of the PingFederate server's token introspection endpoint.
-        evaluationOrderIndex:
-          type: integer
-          description: When multiple Ping Federate Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Ping Federate Access Token Validators defined within Directory Server but not necessarily contiguous. Ping Federate Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-        authorizationServer:
-          type: string
-          description: Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
-        identityMapper:
-          type: string
-          description: Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
-        subjectClaimName:
-          type: string
-          description: The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
-        description:
-          type: string
-          description: A description for this Access Token Validator
-        enabled:
-          type: boolean
-          description: Indicates whether this Access Token Validator is enabled for use in Directory Server.
-      required:
-      - schemas
-      - clientID
-      - evaluationOrderIndex
-      - enabled
-    Enumping-federateSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:ping-federate"
-    add-jwt-request:
-      allOf:
-      - type: object
-        properties:
-          validatorName:
-            description: Name of the new Access Token Validator
-            type: string
-        required:
-        - validatorName
-      - $ref: '#/components/schemas/jwt-shared'
-    jwt-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Access Token Validator
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/jwt-shared'
-    jwt-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumjwtSchemaUrn'
-        allowedSigningAlgorithm:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumallowedSigningAlgorithmProp'
-        signingCertificate:
-          type: array
-          items:
-            type: string
-            description: Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
-        jwksEndpointPath:
-          type: string
-          description: The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
-        encryptionKeyPair:
-          type: string
-          description: The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens.
-        allowedKeyEncryptionAlgorithm:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumallowedKeyEncryptionAlgorithmProp'
-        allowedContentEncryptionAlgorithm:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumallowedContentEncryptionAlgorithmProp'
-        clockSkewGracePeriod:
-          type: string
-          description: Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
-        clientIDClaimName:
-          type: string
-          description: The name of the token claim that contains the OAuth2 client Id.
-        scopeClaimName:
-          type: string
-          description: The name of the token claim that contains the scopes granted by the token.
-        evaluationOrderIndex:
-          type: integer
-          description: When multiple JWT Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all JWT Access Token Validators defined within Directory Server but not necessarily contiguous. JWT Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-        authorizationServer:
-          type: string
-          description: Specifies the external server that will be used to aid in validating access tokens. In most cases this will be the Authorization Server that minted the token.
-        identityMapper:
-          type: string
-          description: Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
-        subjectClaimName:
-          type: string
-          description: The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
-        description:
-          type: string
-          description: A description for this Access Token Validator
-        enabled:
-          type: boolean
-          description: Indicates whether this Access Token Validator is enabled for use in Directory Server.
-      required:
-      - schemas
-      - allowedSigningAlgorithm
-      - allowedKeyEncryptionAlgorithm
-      - allowedContentEncryptionAlgorithm
-      - evaluationOrderIndex
-      - enabled
-    EnumjwtSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt"
-    add-mock-request:
-      allOf:
-      - type: object
-        properties:
-          validatorName:
-            description: Name of the new Access Token Validator
-            type: string
-        required:
-        - validatorName
-      - $ref: '#/components/schemas/mock-shared'
-    mock-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Access Token Validator
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/mock-shared'
-    mock-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnummockSchemaUrn'
-        clientIDClaimName:
-          type: string
-          description: The name of the token claim that contains the OAuth2 client ID.
-        scopeClaimName:
-          type: string
-          description: The name of the token claim that contains the scopes granted by the token.
-        evaluationOrderIndex:
-          type: integer
-          description: When multiple Mock Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Mock Access Token Validators defined within Directory Server but not necessarily contiguous. Mock Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-        identityMapper:
-          type: string
-          description: Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
-        subjectClaimName:
-          type: string
-          description: The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
-        description:
-          type: string
-          description: A description for this Access Token Validator
-        enabled:
-          type: boolean
-          description: Indicates whether this Access Token Validator is enabled for use in Directory Server.
-      required:
-      - schemas
-      - evaluationOrderIndex
-      - enabled
-    EnummockSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:mock"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          validatorName:
-            description: Name of the new Access Token Validator
-            type: string
-        required:
-        - validatorName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Access Token Validator
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
-        identityMapper:
-          type: string
-          description: Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
-        subjectClaimName:
-          type: string
-          description: The name of the token claim that contains the subject, i.e. the logged-in user in an access token. This property goes hand-in-hand with the identity-mapper property and tells the Identity Mapper which field to use to look up the user entry on the server.
-        description:
-          type: string
-          description: A description for this Access Token Validator
-        enabled:
-          type: boolean
-          description: Indicates whether this Access Token Validator is enabled for use in Directory Server.
-        evaluationOrderIndex:
-          type: integer
-          description: When multiple Access Token Validators are defined for a single Directory Server, this property determines the evaluation order for determining the correct validator class for an access token received by the Directory Server. Values of this property must be unique among all Access Token Validators defined within Directory Server but not necessarily contiguous. Access Token Validators with a smaller value will be evaluated first to determine if they are able to validate the access token.
-      required:
-      - schemas
-      - extensionClass
-      - enabled
-      - evaluationOrderIndex
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party"
-    update-access-token-validator-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumallowedContentEncryptionAlgorithmProp:
-      type: string
-      enum:
-      - "A128CBC_HS256"
-      - "A192CBC_HS384"
-      - "A256CBC_HS512"
-      description: Specifies an allow list of JWT content encryption algorithms that will be accepted by the JWT Access Token Validator.
-    EnumallowedKeyEncryptionAlgorithmProp:
-      type: string
-      enum:
-      - "RSA_OAEP"
-      - "ECDH_ES"
-      - "ECDH_ES_A128KW"
-      - "ECDH_ES_A192KW"
-      - "ECDH_ES_A256KW"
-      description: Specifies an allow list of JWT key encryption algorithms that will be accepted by the JWT Access Token Validator. This setting is only used if encryption-key-pair is set.
-    EnumallowedSigningAlgorithmProp:
-      type: string
-      enum:
-      - "RS256"
-      - "RS384"
-      - "RS512"
-      - "ES256"
-      - "ES384"
-      - "ES512"
-      description: Specifies an allow list of JWT signing algorithms that will be accepted by the JWT Access Token Validator.
     EnumOperation:
       type: string
       enum:

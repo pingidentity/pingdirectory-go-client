@@ -10,64 +10,7 @@ tags:
 - description: Access synchronization-providers
   name: synchronization-provider
 paths:
-  /synchronization-providers:
-    post:
-      summary: Add a new Synchronization Provider to the config
-      operationId: add-synchronization-provider
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-        description: Create a new Synchronization Provider in the config
-        required: true
-      responses:
-        "200":
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/replication-response'
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "400":
-          description: Bad request
-        "409":
-          description: The Synchronization Provider already exists
-      security:
-      - basicAuth: []
-      tags:
-      - location
   /synchronization-providers/{synchronization-provider-name}:
-    delete:
-      summary: Delete a Synchronization Provider
-      operationId: delete-synchronization-provider
-      parameters:
-      - description: Name of the Synchronization Provider to be deleted
-        explode: false
-        in: path
-        name: synchronization-provider-name
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: Successful operation
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "404":
-          description: The Synchronization Provider does not exist
-        "409":
-          description: The Synchronization Provider cannot be deleted
-      security:
-      - basicAuth: []
-      tags:
-      - location
     get:
       summary: Returns a single Synchronization Provider
       operationId: get-synchronization-provider
@@ -86,7 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replication-response'
+                $ref: '#/components/schemas/replication-synchronization-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -96,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - synchronization-provider
     patch:
       summary: Update an existing Synchronization Provider by name
       operationId: update-synchronization-provider
@@ -113,7 +56,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-synchronization-provider-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Synchronization Provider
         required: true
       responses:
@@ -122,7 +65,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/replication-response'
+                $ref: '#/components/schemas/replication-synchronization-provider-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -134,9 +77,45 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - synchronization-provider
 components:
   schemas:
+    replication-synchronization-provider-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumreplication-synchronization-providerSchemaUrn'
+        numUpdateReplayThreads:
+          type: integer
+          description: >-
+              Specifies the number of update replay threads.
+        description:
+          type: string
+          description: >-
+              A description for this Synchronization Provider
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Synchronization Provider is enabled for use.
+      required:
+      - enabled
+    Enumreplication-synchronization-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -149,39 +128,6 @@ components:
       required:
       - op
       - path
-    replication-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumreplicationSchemaUrn'
-        numUpdateReplayThreads:
-          type: integer
-          description: Specifies the number of update replay threads.
-        description:
-          type: string
-          description: A description for this Synchronization Provider
-        enabled:
-          type: boolean
-          description: Indicates whether the Synchronization Provider is enabled for use.
-      required:
-      - enabled
-    EnumreplicationSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication"
-    update-synchronization-provider-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

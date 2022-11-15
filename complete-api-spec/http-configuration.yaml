@@ -30,7 +30,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - http-configuration
     patch:
       summary: Update an existing HTTP Configuration by name
       operationId: update-http-configuration
@@ -38,7 +38,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-http-configuration-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing HTTP Configuration
         required: true
       responses:
@@ -59,9 +59,35 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - http-configuration
 components:
   schemas:
+    http-configuration-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhttp-configurationSchemaUrn'
+        includeStackTracesInErrorPages:
+          type: boolean
+          description: >-
+              Indicates whether exceptions thrown by servlet or web application extensions will be included in the resulting error page response. Stack traces can be helpful in diagnosing application errors, but in production they may reveal information that might be useful to a malicious attacker.
+    Enumhttp-configurationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-configuration"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -74,31 +100,6 @@ components:
       required:
       - op
       - path
-    http-configuration-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumhttp-configurationSchemaUrn'
-        includeStackTracesInErrorPages:
-          type: boolean
-          description: Indicates whether exceptions thrown by servlet or web application extensions will be included in the resulting error page response. Stack traces can be helpful in diagnosing application errors, but in production they may reveal information that might be useful to a malicious attacker.
-    Enumhttp-configurationSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:http-configuration"
-    update-http-configuration-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

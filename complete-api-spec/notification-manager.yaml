@@ -18,7 +18,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/add-third-party-request'
+              $ref: '#/components/schemas/add-third-party-notification-manager-request'
         description: Create a new Notification Manager in the config
         required: true
       responses:
@@ -27,7 +27,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/third-party-response'
+                $ref: '#/components/schemas/third-party-notification-manager-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - notification-manager
   /notification-managers/{notification-manager-name}:
     delete:
       summary: Delete a Notification Manager
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - notification-manager
     get:
       summary: Returns a single Notification Manager
       operationId: get-notification-manager
@@ -86,7 +86,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/third-party-response'
+                $ref: '#/components/schemas/third-party-notification-manager-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - notification-manager
     patch:
       summary: Update an existing Notification Manager by name
       operationId: update-notification-manager
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-notification-manager-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Notification Manager
         required: true
       responses:
@@ -122,7 +122,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/third-party-response'
+                $ref: '#/components/schemas/third-party-notification-manager-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -134,9 +134,92 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - notification-manager
 components:
   schemas:
+    add-third-party-notification-manager-request:
+      allOf:
+      - type: object
+        properties:
+          managerName:
+            description: Name of the new Notification Manager
+            type: string
+        required:
+        - managerName
+      - $ref: '#/components/schemas/third-party-notification-manager-shared'
+    third-party-notification-manager-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Notification Manager
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-notification-manager-shared'
+    third-party-notification-manager-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-notification-managerSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Notification Manager
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Notification Manager is enabled within the server.
+        subscriptionBaseDN:
+          type: string
+          description: >-
+              Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server.
+        transactionNotification:
+          $ref: '#/components/schemas/Enumnotification-manager-transactionNotificationProp'
+        monitorEntriesEnabled:
+          type: boolean
+          description: >-
+              Enables monitor entries for this Notification Manager.
+      required:
+      - extensionClass
+      - enabled
+      - subscriptionBaseDN
+      - transactionNotification
+    Enumthird-party-notification-managerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party"
+    Enumnotification-manager-transactionNotificationProp:
+      type: string
+      enum:
+      - "individual"
+      - "matched-operations"
+      - "all-operations"
+      description: >-
+          Specifies how the operations in an external transaction (e.g. a multi-update extended operation or an LDAP transaction) are notified for this Notification Manager.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -149,82 +232,6 @@ components:
       required:
       - op
       - path
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          managerName:
-            description: Name of the new Notification Manager
-            type: string
-        required:
-        - managerName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Notification Manager
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Notification Manager
-        enabled:
-          type: boolean
-          description: Indicates whether this Notification Manager is enabled within the server.
-        subscriptionBaseDN:
-          type: string
-          description: Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server.
-        transactionNotification:
-          $ref: '#/components/schemas/EnumtransactionNotificationProp'
-        monitorEntriesEnabled:
-          type: boolean
-          description: Enables monitor entries for this Notification Manager.
-      required:
-      - extensionClass
-      - enabled
-      - subscriptionBaseDN
-      - transactionNotification
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party"
-    update-notification-manager-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumtransactionNotificationProp:
-      type: string
-      enum:
-      - "individual"
-      - "matched-operations"
-      - "all-operations"
-      description: Specifies how the operations in an external transaction (e.g. a multi-update extended operation or an LDAP transaction) are notified for this Notification Manager.
     EnumOperation:
       type: string
       enum:

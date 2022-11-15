@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - client-connection-policy
   /client-connection-policies/{client-connection-policy-name}:
     delete:
       summary: Delete a Client Connection Policy
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - client-connection-policy
     get:
       summary: Returns a single Client Connection Policy
       operationId: get-client-connection-policy
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - client-connection-policy
     patch:
       summary: Update an existing Client Connection Policy by name
       operationId: update-client-connection-policy
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-client-connection-policy-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Client Connection Policy
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - client-connection-policy
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-client-connection-policy-request:
       allOf:
       - type: object
@@ -180,151 +168,186 @@ components:
             $ref: '#/components/schemas/Enumclient-connection-policySchemaUrn'
         policyID:
           type: string
-          description: Specifies a name which uniquely identifies this Client Connection Policy in the server.
+          description: >-
+              Specifies a name which uniquely identifies this Client Connection Policy in the server.
         description:
           type: string
-          description: A description for this Client Connection Policy
+          description: >-
+              A description for this Client Connection Policy
         enabled:
           type: boolean
-          description: Indicates whether this Client Connection Policy is enabled for use in the server. If a Client Connection Policy is disabled, then no new client connections will be associated with it.
+          description: >-
+              Indicates whether this Client Connection Policy is enabled for use in the server. If a Client Connection Policy is disabled, then no new client connections will be associated with it.
         evaluationOrderIndex:
           type: integer
-          description: Specifies the order in which Client Connection Policy definitions will be evaluated. A Client Connection Policy with a lower index will be evaluated before one with a higher index, and the first Client Connection Policy evaluated which may apply to a client connection will be used for that connection. Each Client Connection Policy must be assigned a unique evaluation order index value.
+          description: >-
+              Specifies the order in which Client Connection Policy definitions will be evaluated. A Client Connection Policy with a lower index will be evaluated before one with a higher index, and the first Client Connection Policy evaluated which may apply to a client connection will be used for that connection. Each Client Connection Policy must be assigned a unique evaluation order index value.
         connectionCriteria:
           type: string
-          description: Specifies a set of connection criteria that must match the associated client connection for it to be associated with this Client Connection Policy.
+          description: >-
+              Specifies a set of connection criteria that must match the associated client connection for it to be associated with this Client Connection Policy.
         terminateConnection:
           type: boolean
-          description: Indicates whether any client connection for which this Client Connection Policy is selected should be terminated. This makes it possible to define fine-grained criteria for clients that should not be allowed to connect to this Directory Server.
+          description: >-
+              Indicates whether any client connection for which this Client Connection Policy is selected should be terminated. This makes it possible to define fine-grained criteria for clients that should not be allowed to connect to this Directory Server.
         sensitiveAttribute:
           type: array
           items:
             type: string
-            description: Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
+            description: >-
+                Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
         excludeGlobalSensitiveAttribute:
           type: array
           items:
             type: string
-            description: Specifies the set of global sensitive attribute definitions that should not apply to this client connection policy.
+            description: >-
+                Specifies the set of global sensitive attribute definitions that should not apply to this client connection policy.
         resultCodeMap:
           type: string
-          description: Specifies the result code map that should be used for clients associated with this Client Connection Policy. If a value is defined for this property, then it will override any result code map referenced in the global configuration.
+          description: >-
+              Specifies the result code map that should be used for clients associated with this Client Connection Policy. If a value is defined for this property, then it will override any result code map referenced in the global configuration.
         includedBackendBaseDN:
           type: array
           items:
             type: string
-            description: Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
+            description: >-
+                Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
         excludedBackendBaseDN:
           type: array
           items:
             type: string
-            description: Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
+            description: >-
+                Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
         allowedOperation:
           type: array
           items:
-            $ref: '#/components/schemas/EnumallowedOperationProp'
+            $ref: '#/components/schemas/Enumclient-connection-policy-allowedOperationProp'
         requiredOperationRequestCriteria:
           type: string
-          description: Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
+          description: >-
+              Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
         prohibitedOperationRequestCriteria:
           type: string
-          description: Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
+          description: >-
+              Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
         allowedRequestControl:
           type: array
           items:
             type: string
-            description: Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests.
+            description: >-
+                Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests.
         deniedRequestControl:
           type: array
           items:
             type: string
-            description: Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests.
+            description: >-
+                Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests.
         allowedExtendedOperation:
           type: array
           items:
             type: string
-            description: Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
+            description: >-
+                Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
         deniedExtendedOperation:
           type: array
           items:
             type: string
-            description: Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
+            description: >-
+                Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
         allowedAuthType:
           type: array
           items:
-            $ref: '#/components/schemas/EnumallowedAuthTypeProp'
+            $ref: '#/components/schemas/Enumclient-connection-policy-allowedAuthTypeProp'
         allowedSASLMechanism:
           type: array
           items:
             type: string
-            description: Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
+            description: >-
+                Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
         deniedSASLMechanism:
           type: array
           items:
             type: string
-            description: Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
+            description: >-
+                Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
         allowedFilterType:
           type: array
           items:
-            $ref: '#/components/schemas/EnumallowedFilterTypeProp'
+            $ref: '#/components/schemas/Enumclient-connection-policy-allowedFilterTypeProp'
         allowUnindexedSearches:
           type: boolean
-          description: Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied.
+          description: >-
+              Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied.
         allowUnindexedSearchesWithControl:
           type: boolean
-          description: Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration).
+          description: >-
+              Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration).
         minimumSubstringLength:
           type: integer
-          description: Specifies the minimum number of consecutive bytes that must be present in any subInitial, subAny, or subFinal element of a substring filter component (i.e., the minimum number of consecutive bytes between wildcard characters in a substring filter). Any attempt to use a substring search with an element containing fewer than this number of bytes will be rejected.
+          description: >-
+              Specifies the minimum number of consecutive bytes that must be present in any subInitial, subAny, or subFinal element of a substring filter component (i.e., the minimum number of consecutive bytes between wildcard characters in a substring filter). Any attempt to use a substring search with an element containing fewer than this number of bytes will be rejected.
         maximumConcurrentConnections:
           type: integer
-          description: Specifies the maximum number of client connections which may be associated with this Client Connection Policy at any given time.
+          description: >-
+              Specifies the maximum number of client connections which may be associated with this Client Connection Policy at any given time.
         maximumConnectionDuration:
           type: string
-          description: Specifies the maximum length of time that a connection associated with this Client Connection Policy may be established. Any connection which is associated with this Client Connection Policy and has been established for longer than this period of time may be terminated.
+          description: >-
+              Specifies the maximum length of time that a connection associated with this Client Connection Policy may be established. Any connection which is associated with this Client Connection Policy and has been established for longer than this period of time may be terminated.
         maximumIdleConnectionDuration:
           type: string
-          description: Specifies the maximum length of time that a connection associated with this Client Connection Policy may remain established after the completion of the last operation processed on that connection. Any new operation requested on the connection will reset this timer. Any connection associated with this Client Connection Policy which has been idle for longer than this length of time may be terminated.
+          description: >-
+              Specifies the maximum length of time that a connection associated with this Client Connection Policy may remain established after the completion of the last operation processed on that connection. Any new operation requested on the connection will reset this timer. Any connection associated with this Client Connection Policy which has been idle for longer than this length of time may be terminated.
         maximumOperationCountPerConnection:
           type: integer
-          description: Specifies the maximum number of operations that may be requested by any client connection associated with this Client Connection Policy. If an attempt is made to process more than this number of operations on a client connection, then that connection will be terminated.
+          description: >-
+              Specifies the maximum number of operations that may be requested by any client connection associated with this Client Connection Policy. If an attempt is made to process more than this number of operations on a client connection, then that connection will be terminated.
         maximumConcurrentOperationsPerConnection:
           type: integer
-          description: Specifies the maximum number of concurrent operations that can be in progress for any connection. This can help prevent a single client connection from monopolizing server processing resources by sending a large number of concurrent asynchronous requests. A value of zero indicates that no limit will be placed on the number of concurrent requests for a single client.
+          description: >-
+              Specifies the maximum number of concurrent operations that can be in progress for any connection. This can help prevent a single client connection from monopolizing server processing resources by sending a large number of concurrent asynchronous requests. A value of zero indicates that no limit will be placed on the number of concurrent requests for a single client.
         maximumConcurrentOperationWaitTimeBeforeRejecting:
           type: string
-          description: Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a "busy" result.
+          description: >-
+              Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a "busy" result.
         maximumConcurrentOperationsPerConnectionExceededBehavior:
-          $ref: '#/components/schemas/EnummaximumConcurrentOperationsPerConnectionExceededBehaviorProp'
+          $ref: '#/components/schemas/Enumclient-connection-policy-maximumConcurrentOperationsPerConnectionExceededBehaviorProp'
         maximumConnectionOperationRate:
           type: array
           items:
             type: string
-            description: Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
+            description: >-
+                Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
         connectionOperationRateExceededBehavior:
-          $ref: '#/components/schemas/EnumconnectionOperationRateExceededBehaviorProp'
+          $ref: '#/components/schemas/Enumclient-connection-policy-connectionOperationRateExceededBehaviorProp'
         maximumPolicyOperationRate:
           type: array
           items:
             type: string
-            description: Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
+            description: >-
+                Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
         policyOperationRateExceededBehavior:
-          $ref: '#/components/schemas/EnumpolicyOperationRateExceededBehaviorProp'
+          $ref: '#/components/schemas/Enumclient-connection-policy-policyOperationRateExceededBehaviorProp'
         maximumSearchSizeLimit:
           type: integer
-          description: Specifies the maximum number of entries that may be returned for a search performed by a client associated with this Client Connection Policy.
+          description: >-
+              Specifies the maximum number of entries that may be returned for a search performed by a client associated with this Client Connection Policy.
         maximumSearchTimeLimit:
           type: string
-          description: Specifies the maximum length of time that the server should spend processing search operations requested by clients associated with this Client Connection Policy.
+          description: >-
+              Specifies the maximum length of time that the server should spend processing search operations requested by clients associated with this Client Connection Policy.
         maximumSearchLookthroughLimit:
           type: integer
-          description: Specifies the maximum number of entries that may be examined by a backend in the course of processing a search requested by clients associated with this Client Connection Policy.
+          description: >-
+              Specifies the maximum number of entries that may be examined by a backend in the course of processing a search requested by clients associated with this Client Connection Policy.
         maximumLDAPJoinSizeLimit:
           type: integer
-          description: Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy.
+          description: >-
+              Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy.
         maximumSortSizeLimitWithoutVLVIndex:
           type: integer
-          description: Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced.
+          description: >-
+              Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced.
       required:
       - policyID
       - enabled
@@ -335,16 +358,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:client-connection-policy"
-    update-client-connection-policy-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumconnectionOperationRateExceededBehaviorProp:
+    Enumclient-connection-policy-connectionOperationRateExceededBehaviorProp:
       type: string
       enum:
       - "disconnect"
@@ -354,8 +368,9 @@ components:
       - "reject-unavailable"
       - "reject-unwilling-to-perform"
       - "reject-other"
-      description: Specifies the behavior that the Directory Server should exhibit if a client connection attempts to exceed a rate defined in the maximum-connection-operation-rate property. If the configured behavior is one that will reject requested operations, then that behavior will persist until the end of the corresponding interval. The server will resume allowing that client to perform operations when that interval expires, as long as no other operation rate limits have been exceeded.
-    EnumpolicyOperationRateExceededBehaviorProp:
+      description: >-
+          Specifies the behavior that the Directory Server should exhibit if a client connection attempts to exceed a rate defined in the maximum-connection-operation-rate property. If the configured behavior is one that will reject requested operations, then that behavior will persist until the end of the corresponding interval. The server will resume allowing that client to perform operations when that interval expires, as long as no other operation rate limits have been exceeded.
+    Enumclient-connection-policy-policyOperationRateExceededBehaviorProp:
       type: string
       enum:
       - "disconnect"
@@ -365,8 +380,9 @@ components:
       - "reject-unavailable"
       - "reject-unwilling-to-perform"
       - "reject-other"
-      description: Specifies the behavior that the Directory Server should exhibit if a client connection attempts to exceed a rate defined in the maximum-policy-operation-rate property. If the configured behavior is one that will reject requested operations, then that behavior will persist until the end of the corresponding interval. The server will resume allowing clients associated with this Client Connection Policy to perform operations when that interval expires, as long as no other operation rate limits have been exceeded.
-    EnumallowedFilterTypeProp:
+      description: >-
+          Specifies the behavior that the Directory Server should exhibit if a client connection attempts to exceed a rate defined in the maximum-policy-operation-rate property. If the configured behavior is one that will reject requested operations, then that behavior will persist until the end of the corresponding interval. The server will resume allowing clients associated with this Client Connection Policy to perform operations when that interval expires, as long as no other operation rate limits have been exceeded.
+    Enumclient-connection-policy-allowedFilterTypeProp:
       type: string
       enum:
       - "and"
@@ -381,8 +397,9 @@ components:
       - "present"
       - "approximate-match"
       - "extensible-match"
-      description: Specifies the types of filter components that may be included in search requests from clients associated with this Client Connection Policy which have a non-baseObject scope.
-    EnummaximumConcurrentOperationsPerConnectionExceededBehaviorProp:
+      description: >-
+          Specifies the types of filter components that may be included in search requests from clients associated with this Client Connection Policy which have a non-baseObject scope.
+    Enumclient-connection-policy-maximumConcurrentOperationsPerConnectionExceededBehaviorProp:
       type: string
       enum:
       - "disconnect"
@@ -392,14 +409,16 @@ components:
       - "reject-unavailable"
       - "reject-unwilling-to-perform"
       - "reject-other"
-      description: Specifies the behavior that the Directory Server should exhibit if a client attempts to invoke more concurrent operations on a single connection than allowed by the maximum-concurrent-operations-per-connection property.
-    EnumallowedAuthTypeProp:
+      description: >-
+          Specifies the behavior that the Directory Server should exhibit if a client attempts to invoke more concurrent operations on a single connection than allowed by the maximum-concurrent-operations-per-connection property.
+    Enumclient-connection-policy-allowedAuthTypeProp:
       type: string
       enum:
       - "simple"
       - "sasl"
-      description: Specifies the types of authentication that clients associated with this Client Connection Policy will be allowed to request.
-    EnumallowedOperationProp:
+      description: >-
+          Specifies the types of authentication that clients associated with this Client Connection Policy will be allowed to request.
+    Enumclient-connection-policy-allowedOperationProp:
       type: string
       enum:
       - "abandon"
@@ -411,7 +430,29 @@ components:
       - "modify"
       - "modify-dn"
       - "search"
-      description: Specifies the types of operations that clients associated with this Client Connection Policy will be allowed to request.
+      description: >-
+          Specifies the types of operations that clients associated with this Client Connection Policy will be allowed to request.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

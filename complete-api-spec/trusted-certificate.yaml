@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trusted-certificate
   /trusted-certificates/{trusted-certificate-name}:
     delete:
       summary: Delete a Trusted Certificate
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trusted-certificate
     get:
       summary: Returns a single Trusted Certificate
       operationId: get-trusted-certificate
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trusted-certificate
     patch:
       summary: Update an existing Trusted Certificate by name
       operationId: update-trusted-certificate
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-trusted-certificate-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Trusted Certificate
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - trusted-certificate
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-trusted-certificate-request:
       allOf:
       - type: object
@@ -180,14 +168,15 @@ components:
             $ref: '#/components/schemas/Enumtrusted-certificateSchemaUrn'
         certificate:
           type: string
-          description: The PEM-encoded X.509v3 certificate.
+          description: >-
+              The PEM-encoded X.509v3 certificate.
       required:
       - certificate
     Enumtrusted-certificateSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:trusted-certificate"
-    update-trusted-certificate-request:
+    updateRequest:
       type: object
       properties:
         operations:
@@ -196,6 +185,18 @@ components:
             $ref: '#/components/schemas/Operation'
       required:
       - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

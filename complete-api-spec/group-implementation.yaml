@@ -10,64 +10,7 @@ tags:
 - description: Access group-implementations
   name: group-implementation
 paths:
-  /group-implementations:
-    post:
-      summary: Add a new Group Implementation to the config
-      operationId: add-group-implementation
-      requestBody:
-        content:
-          application/json:
-            schema:
-              oneOf:
-        description: Create a new Group Implementation in the config
-        required: true
-      responses:
-        "200":
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                oneOf:
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "400":
-          description: Bad request
-        "409":
-          description: The Group Implementation already exists
-      security:
-      - basicAuth: []
-      tags:
-      - location
   /group-implementations/{group-implementation-name}:
-    delete:
-      summary: Delete a Group Implementation
-      operationId: delete-group-implementation
-      parameters:
-      - description: Name of the Group Implementation to be deleted
-        explode: false
-        in: path
-        name: group-implementation-name
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: Successful operation
-        "401":
-          description: Requestor cannot be authenticated
-        "403":
-          description: Requestor does not have the required privileges
-        "404":
-          description: The Group Implementation does not exist
-        "409":
-          description: The Group Implementation cannot be deleted
-      security:
-      - basicAuth: []
-      tags:
-      - location
     get:
       summary: Returns a single Group Implementation
       operationId: get-group-implementation
@@ -87,9 +30,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/static-response'
-                - $ref: '#/components/schemas/virtual-static-response'
-                - $ref: '#/components/schemas/dynamic-response'
+                - $ref: '#/components/schemas/static-group-implementation-response'
+                - $ref: '#/components/schemas/virtual-static-group-implementation-response'
+                - $ref: '#/components/schemas/dynamic-group-implementation-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -99,7 +42,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - group-implementation
     patch:
       summary: Update an existing Group Implementation by name
       operationId: update-group-implementation
@@ -116,7 +59,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-group-implementation-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Group Implementation
         required: true
       responses:
@@ -126,9 +69,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/static-response'
-                - $ref: '#/components/schemas/virtual-static-response'
-                - $ref: '#/components/schemas/dynamic-response'
+                - $ref: '#/components/schemas/static-group-implementation-response'
+                - $ref: '#/components/schemas/virtual-static-group-implementation-response'
+                - $ref: '#/components/schemas/dynamic-group-implementation-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -140,9 +83,90 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - group-implementation
 components:
   schemas:
+    static-group-implementation-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumstatic-group-implementationSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Group Implementation
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Group Implementation is enabled.
+      required:
+      - schemas
+      - enabled
+    Enumstatic-group-implementationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
+    virtual-static-group-implementation-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumvirtual-static-group-implementationSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Group Implementation
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Group Implementation is enabled.
+      required:
+      - schemas
+      - enabled
+    Enumvirtual-static-group-implementationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:virtual-static"
+    dynamic-group-implementation-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdynamic-group-implementationSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Group Implementation
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Group Implementation is enabled.
+      required:
+      - schemas
+      - enabled
+    Enumdynamic-group-implementationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -155,81 +179,6 @@ components:
       required:
       - op
       - path
-    static-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumstaticSchemaUrn'
-        description:
-          type: string
-          description: A description for this Group Implementation
-        enabled:
-          type: boolean
-          description: Indicates whether the Group Implementation is enabled.
-      required:
-      - schemas
-      - enabled
-    EnumstaticSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
-    virtual-static-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumvirtual-staticSchemaUrn'
-        description:
-          type: string
-          description: A description for this Group Implementation
-        enabled:
-          type: boolean
-          description: Indicates whether the Group Implementation is enabled.
-      required:
-      - schemas
-      - enabled
-    Enumvirtual-staticSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:virtual-static"
-    dynamic-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumdynamicSchemaUrn'
-        description:
-          type: string
-          description: A description for this Group Implementation
-        enabled:
-          type: boolean
-          description: Indicates whether the Group Implementation is enabled.
-      required:
-      - schemas
-      - enabled
-    EnumdynamicSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic"
-    update-group-implementation-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

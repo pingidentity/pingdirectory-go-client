@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - key-pair
   /key-pairs/{key-pair-name}:
     delete:
       summary: Delete a Key Pair
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - key-pair
     get:
       summary: Returns a single Key Pair
       operationId: get-key-pair
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - key-pair
     patch:
       summary: Update an existing Key Pair by name
       operationId: update-key-pair
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-key-pair-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Key Pair
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - key-pair
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-key-pair-request:
       allOf:
       - type: object
@@ -179,36 +167,31 @@ components:
           items:
             $ref: '#/components/schemas/Enumkey-pairSchemaUrn'
         keyAlgorithm:
-          $ref: '#/components/schemas/EnumkeyAlgorithmProp'
+          $ref: '#/components/schemas/Enumkey-pair-keyAlgorithmProp'
         selfSignedCertificateValidity:
           type: string
-          description: The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
+          description: >-
+              The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
         subjectDN:
           type: string
-          description: The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair.
+          description: >-
+              The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair.
         certificateChain:
           type: string
-          description: The PEM-encoded X.509 certificate chain.
+          description: >-
+              The PEM-encoded X.509 certificate chain.
         privateKey:
           type: string
           format: password
-          description: The base64-encoded private key that is encrypted using the preferred encryption settings definition.
+          description: >-
+              The base64-encoded private key that is encrypted using the preferred encryption settings definition.
       required:
       - keyAlgorithm
     Enumkey-pairSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:key-pair"
-    update-key-pair-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumkeyAlgorithmProp:
+    Enumkey-pair-keyAlgorithmProp:
       type: string
       enum:
       - "RSA_2048"
@@ -217,7 +200,29 @@ components:
       - "EC_256"
       - "EC_384"
       - "EC_521"
-      description: The algorithm name and the length in bits of the key, e.g. RSA_2048.
+      description: >-
+          The algorithm name and the length in bits of the key, e.g. RSA_2048.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

@@ -19,17 +19,17 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-generate-server-profile-request'
-              - $ref: '#/components/schemas/add-leave-lockdown-mode-request'
-              - $ref: '#/components/schemas/add-backup-request'
-              - $ref: '#/components/schemas/add-delay-request'
-              - $ref: '#/components/schemas/add-statically-defined-request'
-              - $ref: '#/components/schemas/add-collect-support-data-request'
-              - $ref: '#/components/schemas/add-ldif-export-request'
-              - $ref: '#/components/schemas/add-enter-lockdown-mode-request'
-              - $ref: '#/components/schemas/add-exec-request'
-              - $ref: '#/components/schemas/add-file-retention-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-generate-server-profile-recurring-task-request'
+              - $ref: '#/components/schemas/add-leave-lockdown-mode-recurring-task-request'
+              - $ref: '#/components/schemas/add-backup-recurring-task-request'
+              - $ref: '#/components/schemas/add-delay-recurring-task-request'
+              - $ref: '#/components/schemas/add-statically-defined-recurring-task-request'
+              - $ref: '#/components/schemas/add-collect-support-data-recurring-task-request'
+              - $ref: '#/components/schemas/add-ldif-export-recurring-task-request'
+              - $ref: '#/components/schemas/add-enter-lockdown-mode-recurring-task-request'
+              - $ref: '#/components/schemas/add-exec-recurring-task-request'
+              - $ref: '#/components/schemas/add-file-retention-recurring-task-request'
+              - $ref: '#/components/schemas/add-third-party-recurring-task-request'
         description: Create a new Recurring Task in the config
         required: true
       responses:
@@ -39,17 +39,17 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/generate-server-profile-response'
-                - $ref: '#/components/schemas/leave-lockdown-mode-response'
-                - $ref: '#/components/schemas/backup-response'
-                - $ref: '#/components/schemas/delay-response'
-                - $ref: '#/components/schemas/statically-defined-response'
-                - $ref: '#/components/schemas/collect-support-data-response'
-                - $ref: '#/components/schemas/ldif-export-response'
-                - $ref: '#/components/schemas/enter-lockdown-mode-response'
-                - $ref: '#/components/schemas/exec-response'
-                - $ref: '#/components/schemas/file-retention-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/generate-server-profile-recurring-task-response'
+                - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/backup-recurring-task-response'
+                - $ref: '#/components/schemas/delay-recurring-task-response'
+                - $ref: '#/components/schemas/statically-defined-recurring-task-response'
+                - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
+                - $ref: '#/components/schemas/ldif-export-recurring-task-response'
+                - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/exec-recurring-task-response'
+                - $ref: '#/components/schemas/file-retention-recurring-task-response'
+                - $ref: '#/components/schemas/third-party-recurring-task-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -61,7 +61,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - recurring-task
   /recurring-tasks/{recurring-task-name}:
     delete:
       summary: Delete a Recurring Task
@@ -89,7 +89,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - recurring-task
     get:
       summary: Returns a single Recurring Task
       operationId: get-recurring-task
@@ -109,17 +109,17 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/generate-server-profile-response'
-                - $ref: '#/components/schemas/leave-lockdown-mode-response'
-                - $ref: '#/components/schemas/backup-response'
-                - $ref: '#/components/schemas/delay-response'
-                - $ref: '#/components/schemas/statically-defined-response'
-                - $ref: '#/components/schemas/collect-support-data-response'
-                - $ref: '#/components/schemas/ldif-export-response'
-                - $ref: '#/components/schemas/enter-lockdown-mode-response'
-                - $ref: '#/components/schemas/exec-response'
-                - $ref: '#/components/schemas/file-retention-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/generate-server-profile-recurring-task-response'
+                - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/backup-recurring-task-response'
+                - $ref: '#/components/schemas/delay-recurring-task-response'
+                - $ref: '#/components/schemas/statically-defined-recurring-task-response'
+                - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
+                - $ref: '#/components/schemas/ldif-export-recurring-task-response'
+                - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/exec-recurring-task-response'
+                - $ref: '#/components/schemas/file-retention-recurring-task-response'
+                - $ref: '#/components/schemas/third-party-recurring-task-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -129,7 +129,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - recurring-task
     patch:
       summary: Update an existing Recurring Task by name
       operationId: update-recurring-task
@@ -146,7 +146,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-recurring-task-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Recurring Task
         required: true
       responses:
@@ -156,17 +156,17 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/generate-server-profile-response'
-                - $ref: '#/components/schemas/leave-lockdown-mode-response'
-                - $ref: '#/components/schemas/backup-response'
-                - $ref: '#/components/schemas/delay-response'
-                - $ref: '#/components/schemas/statically-defined-response'
-                - $ref: '#/components/schemas/collect-support-data-response'
-                - $ref: '#/components/schemas/ldif-export-response'
-                - $ref: '#/components/schemas/enter-lockdown-mode-response'
-                - $ref: '#/components/schemas/exec-response'
-                - $ref: '#/components/schemas/file-retention-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/generate-server-profile-recurring-task-response'
+                - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/backup-recurring-task-response'
+                - $ref: '#/components/schemas/delay-recurring-task-response'
+                - $ref: '#/components/schemas/statically-defined-recurring-task-response'
+                - $ref: '#/components/schemas/collect-support-data-recurring-task-response'
+                - $ref: '#/components/schemas/ldif-export-recurring-task-response'
+                - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-response'
+                - $ref: '#/components/schemas/exec-recurring-task-response'
+                - $ref: '#/components/schemas/file-retention-recurring-task-response'
+                - $ref: '#/components/schemas/third-party-recurring-task-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -178,9 +178,1154 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - recurring-task
 components:
   schemas:
+    add-generate-server-profile-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
+    generate-server-profile-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
+    generate-server-profile-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgenerate-server-profile-recurring-taskSchemaUrn'
+        profileDirectory:
+          type: string
+          description: >-
+              The directory in which the generated server profiles will be placed. The files will be named with the pattern "server-profile-{timestamp}.zip", where "{timestamp}" represents the time that the profile was generated.
+        includePath:
+          type: array
+          items:
+            type: string
+            description: >-
+                An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
+        retainPreviousProfileCount:
+          type: integer
+          description: >-
+              The minimum number of previous server profile zip files that should be preserved after a new profile is generated.
+        retainPreviousProfileAge:
+          type: string
+          description: >-
+              The minimum age of previous server profile zip files that should be preserved after a new profile is generated.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - profileDirectory
+    Enumgenerate-server-profile-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:generate-server-profile"
+    add-leave-lockdown-mode-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
+    leave-lockdown-mode-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
+    leave-lockdown-mode-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumleave-lockdown-mode-recurring-taskSchemaUrn'
+        reason:
+          type: string
+          description: >-
+              The reason that the server is being taken out of in lockdown mode.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+    Enumleave-lockdown-mode-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:leave-lockdown-mode"
+    add-backup-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/backup-recurring-task-shared'
+    backup-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/backup-recurring-task-shared'
+    backup-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumbackup-recurring-taskSchemaUrn'
+        backupDirectory:
+          type: string
+          description: >-
+              The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID.
+        includedBackendID:
+          type: array
+          items:
+            type: string
+            description: >-
+                The backend IDs of any backends that should be included in the backup.
+        excludedBackendID:
+          type: array
+          items:
+            type: string
+            description: >-
+                The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included.
+        compress:
+          type: boolean
+          description: >-
+              Indicates whether to compress the data as it is written into the backup.
+        encrypt:
+          type: boolean
+          description: >-
+              Indicates whether to encrypt the data as it is written into the backup.
+        encryptionSettingsDefinitionID:
+          type: string
+          description: >-
+              The ID of an encryption settings definition to use to obtain the backup encryption key.
+        sign:
+          type: boolean
+          description: >-
+              Indicates whether to cryptographically sign backups, which will make it possible to detect whether the backup has been altered since it was created.
+        retainPreviousFullBackupCount:
+          type: integer
+          description: >-
+              The minimum number of previous full backups that should be preserved after a new backup completes successfully.
+        retainPreviousFullBackupAge:
+          type: string
+          description: >-
+              The minimum age of previous full backups that should be preserved after a new backup completes successfully.
+        maxMegabytesPerSecond:
+          type: integer
+          description: >-
+              The maximum rate, in megabytes per second, at which backups should be written.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - backupDirectory
+    Enumbackup-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:backup"
+    add-delay-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/delay-recurring-task-shared'
+    delay-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delay-recurring-task-shared'
+    delay-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelay-recurring-taskSchemaUrn'
+        sleepDuration:
+          type: string
+          description: >-
+              The length of time to sleep before the task completes.
+        durationToWaitForWorkQueueIdle:
+          type: string
+          description: >-
+              Indicates that task should wait for up to the specified length of time for the work queue to report that all worker threads are idle and there are no pending operations. Note that this primarily monitors operations that use worker threads, which does not include internal operations (for example, those invoked by extensions), and may not include requests from non-LDAP clients (for example, HTTP-based clients).
+        ldapURLForSearchExpectedToReturnEntries:
+          type: array
+          items:
+            type: string
+            description: >-
+                An LDAP URL that provides the criteria for a search request that is expected to return at least one entry. The search will be performed internally, and only the base DN, scope, and filter from the URL will be used; any host, port, or requested attributes included in the URL will be ignored.
+        searchInterval:
+          type: string
+          description: >-
+              The length of time the server should sleep between searches performed using the criteria from the ldap-url-for-search-expected-to-return-entries property.
+        searchTimeLimit:
+          type: string
+          description: >-
+              The length of time that the server will wait for a response to each internal search performed using the criteria from the ldap-url-for-search-expected-to-return-entries property.
+        durationToWaitForSearchToReturnEntries:
+          type: string
+          description: >-
+              The maximum length of time that the server will continue to perform internal searches using the criteria from the ldap-url-for-search-expected-to-return-entries property.
+        taskReturnStateIfTimeoutIsEncountered:
+          $ref: '#/components/schemas/Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp'
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+    Enumdelay-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:delay"
+    add-statically-defined-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
+    statically-defined-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
+    statically-defined-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumstatically-defined-recurring-taskSchemaUrn'
+        taskJavaClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class that provides the logic for the task to be invoked.
+        taskObjectClass:
+          type: array
+          items:
+            type: string
+            description: >-
+                The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry.
+        taskAttributeValue:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of attribute values that should be included in the tasks that are scheduled from this Statically Defined Recurring Task. Each value must be in the form {attribute-type}={value}, where {attribute-type} is the name or OID of an attribute type that is defined in the schema and permitted with the configured set of object classes, and {value} is a value to assign to an attribute with that type. A multivalued attribute can be created by providing multiple name-value pairs with the same name and different values.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - taskJavaClass
+      - taskObjectClass
+    Enumstatically-defined-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:statically-defined"
+    add-collect-support-data-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
+    collect-support-data-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
+    collect-support-data-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcollect-support-data-recurring-taskSchemaUrn'
+        outputDirectory:
+          type: string
+          description: >-
+              The directory in which the support data archive files will be placed. The path must be a directory, and that directory must already exist. Relative paths will be interpreted as relative to the server root.
+        encryptionPassphraseFile:
+          type: string
+          description: >-
+              The path to a file that contains the passphrase to encrypt the contents of the support data archive.
+        includeExpensiveData:
+          type: boolean
+          description: >-
+              Indicates whether the support data archive should include information that may be expensive to obtain, and that may temporarily affect the server's performance or responsiveness.
+        includeReplicationStateDump:
+          type: boolean
+          description: >-
+              Indicates whether the support data archive should include a replication state dump, which may be several megabytes in size.
+        includeBinaryFiles:
+          type: boolean
+          description: >-
+              Indicates whether the support data archive should include binary files that may not have otherwise been included. Note that it may not be possible to obscure or redact sensitive information in binary files.
+        includeExtensionSource:
+          type: boolean
+          description: >-
+              Indicates whether the support data archive should include the source code (if available) for any third-party extensions that may be installed in the server.
+        useSequentialMode:
+          type: boolean
+          description: >-
+              Indicates whether to capture support data information sequentially rather than in parallel. Capturing data in sequential mode may reduce the amount of memory that the tool requires to operate, at the cost of taking longer to run.
+        securityLevel:
+          $ref: '#/components/schemas/Enumrecurring-task-securityLevelProp'
+        jstackCount:
+          type: integer
+          description: >-
+              The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked.
+        reportCount:
+          type: integer
+          description: >-
+              The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information.
+        reportIntervalSeconds:
+          type: integer
+          description: >-
+              The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat.
+        logDuration:
+          type: string
+          description: >-
+              The maximum age (leading up to the time the collect-support-data tool was invoked) for log content to include in the support data archive.
+        logFileHeadCollectionSize:
+          type: string
+          description: >-
+              The amount of data to collect from the beginning of each log file included in the support data archive.
+        logFileTailCollectionSize:
+          type: string
+          description: >-
+              The amount of data to collect from the end of each log file included in the support data archive.
+        comment:
+          type: string
+          description: >-
+              An optional comment to include in a README file within the support data archive.
+        retainPreviousSupportDataArchiveCount:
+          type: integer
+          description: >-
+              The minimum number of previous support data archives that should be preserved after a new archive is generated.
+        retainPreviousSupportDataArchiveAge:
+          type: string
+          description: >-
+              The minimum age of previous support data archives that should be preserved after a new archive is generated.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - outputDirectory
+    Enumcollect-support-data-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:collect-support-data"
+    add-ldif-export-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+    ldif-export-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+    ldif-export-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldif-export-recurring-taskSchemaUrn'
+        ldifDirectory:
+          type: string
+          description: >-
+              The directory in which LDIF export files will be placed. The directory must already exist.
+        backendID:
+          type: array
+          items:
+            type: string
+            description: >-
+                The backend ID for a backend to be exported.
+        excludeBackendID:
+          type: array
+          items:
+            type: string
+            description: >-
+                The backend ID for a backend to be excluded from the export.
+        compress:
+          type: boolean
+          description: >-
+              Indicates whether to compress the LDIF data as it is exported.
+        encrypt:
+          type: boolean
+          description: >-
+              Indicates whether to encrypt the LDIF data as it exported.
+        encryptionSettingsDefinitionID:
+          type: string
+          description: >-
+              The ID of an encryption settings definition to use to obtain the LDIF export encryption key.
+        sign:
+          type: boolean
+          description: >-
+              Indicates whether to cryptographically sign the exported data, which will make it possible to detect whether the LDIF data has been altered since it was exported.
+        retainPreviousLDIFExportCount:
+          type: integer
+          description: >-
+              The minimum number of previous LDIF exports that should be preserved after a new export completes successfully.
+        retainPreviousLDIFExportAge:
+          type: string
+          description: >-
+              The minimum age of previous LDIF exports that should be preserved after a new export completes successfully.
+        maxMegabytesPerSecond:
+          type: integer
+          description: >-
+              The maximum rate, in megabytes per second, at which LDIF exports should be written.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - ldifDirectory
+    Enumldif-export-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:ldif-export"
+    add-enter-lockdown-mode-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
+    enter-lockdown-mode-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
+    enter-lockdown-mode-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumenter-lockdown-mode-recurring-taskSchemaUrn'
+        reason:
+          type: string
+          description: >-
+              The reason that the server is being placed in lockdown mode.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+    Enumenter-lockdown-mode-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:enter-lockdown-mode"
+    add-exec-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/exec-recurring-task-shared'
+    exec-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/exec-recurring-task-shared'
+    exec-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumexec-recurring-taskSchemaUrn'
+        commandPath:
+          type: string
+          description: >-
+              The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file.
+        commandArguments:
+          type: string
+          description: >-
+              A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces.
+        commandOutputFileBaseName:
+          type: string
+          description: >-
+              The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file.
+        retainPreviousOutputFileCount:
+          type: integer
+          description: >-
+              The minimum number of previous command output files that should be preserved after a new instance of the command is invoked.
+        retainPreviousOutputFileAge:
+          type: string
+          description: >-
+              The minimum age of previous command output files that should be preserved after a new instance of the command is invoked.
+        logCommandOutput:
+          type: boolean
+          description: >-
+              Indicates whether the command's output (both standard output and standard error) should be recorded in the server's error log.
+        taskCompletionStateForNonzeroExitCode:
+          $ref: '#/components/schemas/Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp'
+        workingDirectory:
+          type: string
+          description: >-
+              The absolute path to a working directory where the command should be executed. It must be an absolute path and the corresponding directory must exist.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - commandPath
+    Enumexec-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:exec"
+    add-file-retention-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/file-retention-recurring-task-shared'
+    file-retention-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-retention-recurring-task-shared'
+    file-retention-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-retention-recurring-taskSchemaUrn'
+        targetDirectory:
+          type: string
+          description: >-
+              The path to the directory containing the files to examine. The directory must exist.
+        filenamePattern:
+          type: string
+          description: >-
+              A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string "${timestamp}", which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally.
+        timestampFormat:
+          $ref: '#/components/schemas/Enumrecurring-task-timestampFormatProp'
+        retainFileCount:
+          type: integer
+          description: >-
+              The minimum number of files matching the pattern that will be retained.
+        retainFileAge:
+          type: string
+          description: >-
+              The minimum age of files matching the pattern that will be retained.
+        retainAggregateFileSize:
+          type: string
+          description: >-
+              The minimum aggregate size of files that will be retained. The size should be specified as an integer followed by a unit that is one of "b" or "bytes", "kb" or "kilobytes", "mb" or "megabytes", "gb" or "gigabytes", or "tb" or "terabytes". For example, a value of "1 gb" indicates that at least one gigabyte of files should be retained.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - targetDirectory
+      - filenamePattern
+      - timestampFormat
+    Enumfile-retention-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:file-retention"
+    add-third-party-recurring-task-request:
+      allOf:
+      - type: object
+        properties:
+          taskName:
+            description: Name of the new Recurring Task
+            type: string
+        required:
+        - taskName
+      - $ref: '#/components/schemas/third-party-recurring-task-shared'
+    third-party-recurring-task-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Recurring Task
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-recurring-task-shared'
+    third-party-recurring-task-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-recurring-taskSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Recurring Task.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Recurring Task. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Recurring Task
+        cancelOnTaskDependencyFailure:
+          type: boolean
+          description: >-
+              Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
+        emailOnStart:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnSuccess:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        emailOnFailure:
+          type: array
+          items:
+            type: string
+            description: >-
+                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+        alertOnStart:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
+        alertOnSuccess:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
+        alertOnFailure:
+          type: boolean
+          description: >-
+              Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-party-recurring-taskSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party"
+    Enumrecurring-task-securityLevelProp:
+      type: string
+      enum:
+      - "none"
+      - "obscure-secrets"
+      - "maximum"
+      description: >-
+          The security level to use when deciding which information to include in or exclude from the support data archive, and which included data should be obscured or redacted.
+    Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp:
+      type: string
+      enum:
+      - "stopped-by-error"
+      - "completed-with-errors"
+      - "completed-successfully"
+      description: >-
+          The final task state that a task instance should have if the task executes the specified command and that command completes with a nonzero exit code, which generally means that the command did not complete successfully.
+    Enumrecurring-task-timestampFormatProp:
+      type: string
+      enum:
+      - "generalized-time-utc-with-milliseconds"
+      - "generalized-time-utc-with-seconds"
+      - "generalized-time-utc-with-minutes"
+      - "local-time-with-milliseconds"
+      - "local-time-with-seconds"
+      - "local-time-with-minutes"
+      - "local-date"
+      description: >-
+          The format to use for the timestamp represented by the "${timestamp}" token in the filename pattern.
+    Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp:
+      type: string
+      enum:
+      - "stopped-by-error"
+      - "completed-with-errors"
+      - "completed-successfully"
+      description: >-
+          The return state to use if a timeout is encountered while waiting for the server work queue to become idle (if the duration-to-wait-for-work-queue-idle property has a value), or if the time specified by the duration-to-wait-for-search-to-return-entries elapses without the associated search returning any entries.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -193,994 +1338,6 @@ components:
       required:
       - op
       - path
-    add-generate-server-profile-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/generate-server-profile-shared'
-    generate-server-profile-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/generate-server-profile-shared'
-    generate-server-profile-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgenerate-server-profileSchemaUrn'
-        profileDirectory:
-          type: string
-          description: The directory in which the generated server profiles will be placed. The files will be named with the pattern "server-profile-{timestamp}.zip", where "{timestamp}" represents the time that the profile was generated.
-        includePath:
-          type: array
-          items:
-            type: string
-            description: An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
-        retainPreviousProfileCount:
-          type: integer
-          description: The minimum number of previous server profile zip files that should be preserved after a new profile is generated.
-        retainPreviousProfileAge:
-          type: string
-          description: The minimum age of previous server profile zip files that should be preserved after a new profile is generated.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - profileDirectory
-    Enumgenerate-server-profileSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:generate-server-profile"
-    add-leave-lockdown-mode-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/leave-lockdown-mode-shared'
-    leave-lockdown-mode-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/leave-lockdown-mode-shared'
-    leave-lockdown-mode-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumleave-lockdown-modeSchemaUrn'
-        reason:
-          type: string
-          description: The reason that the server is being taken out of in lockdown mode.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-    Enumleave-lockdown-modeSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:leave-lockdown-mode"
-    add-backup-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/backup-shared'
-    backup-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/backup-shared'
-    backup-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumbackupSchemaUrn'
-        backupDirectory:
-          type: string
-          description: The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID.
-        includedBackendID:
-          type: array
-          items:
-            type: string
-            description: The backend IDs of any backends that should be included in the backup.
-        excludedBackendID:
-          type: array
-          items:
-            type: string
-            description: The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included.
-        compress:
-          type: boolean
-          description: Indicates whether to compress the data as it is written into the backup.
-        encrypt:
-          type: boolean
-          description: Indicates whether to encrypt the data as it is written into the backup.
-        encryptionSettingsDefinitionID:
-          type: string
-          description: The ID of an encryption settings definition to use to obtain the backup encryption key.
-        sign:
-          type: boolean
-          description: Indicates whether to cryptographically sign backups, which will make it possible to detect whether the backup has been altered since it was created.
-        retainPreviousFullBackupCount:
-          type: integer
-          description: The minimum number of previous full backups that should be preserved after a new backup completes successfully.
-        retainPreviousFullBackupAge:
-          type: string
-          description: The minimum age of previous full backups that should be preserved after a new backup completes successfully.
-        maxMegabytesPerSecond:
-          type: integer
-          description: The maximum rate, in megabytes per second, at which backups should be written.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - backupDirectory
-    EnumbackupSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:backup"
-    add-delay-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/delay-shared'
-    delay-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/delay-shared'
-    delay-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumdelaySchemaUrn'
-        sleepDuration:
-          type: string
-          description: The length of time to sleep before the task completes.
-        durationToWaitForWorkQueueIdle:
-          type: string
-          description: Indicates that task should wait for up to the specified length of time for the work queue to report that all worker threads are idle and there are no pending operations. Note that this primarily monitors operations that use worker threads, which does not include internal operations (for example, those invoked by extensions), and may not include requests from non-LDAP clients (for example, HTTP-based clients).
-        ldapURLForSearchExpectedToReturnEntries:
-          type: array
-          items:
-            type: string
-            description: An LDAP URL that provides the criteria for a search request that is expected to return at least one entry. The search will be performed internally, and only the base DN, scope, and filter from the URL will be used; any host, port, or requested attributes included in the URL will be ignored.
-        searchInterval:
-          type: string
-          description: The length of time the server should sleep between searches performed using the criteria from the ldap-url-for-search-expected-to-return-entries property.
-        searchTimeLimit:
-          type: string
-          description: The length of time that the server will wait for a response to each internal search performed using the criteria from the ldap-url-for-search-expected-to-return-entries property.
-        durationToWaitForSearchToReturnEntries:
-          type: string
-          description: The maximum length of time that the server will continue to perform internal searches using the criteria from the ldap-url-for-search-expected-to-return-entries property.
-        taskReturnStateIfTimeoutIsEncountered:
-          $ref: '#/components/schemas/EnumtaskReturnStateIfTimeoutIsEncounteredProp'
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-    EnumdelaySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:delay"
-    add-statically-defined-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/statically-defined-shared'
-    statically-defined-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/statically-defined-shared'
-    statically-defined-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumstatically-definedSchemaUrn'
-        taskJavaClass:
-          type: string
-          description: The fully-qualified name of the Java class that provides the logic for the task to be invoked.
-        taskObjectClass:
-          type: array
-          items:
-            type: string
-            description: The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry.
-        taskAttributeValue:
-          type: array
-          items:
-            type: string
-            description: The set of attribute values that should be included in the tasks that are scheduled from this Statically Defined Recurring Task. Each value must be in the form {attribute-type}={value}, where {attribute-type} is the name or OID of an attribute type that is defined in the schema and permitted with the configured set of object classes, and {value} is a value to assign to an attribute with that type. A multivalued attribute can be created by providing multiple name-value pairs with the same name and different values.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - taskJavaClass
-      - taskObjectClass
-    Enumstatically-definedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:statically-defined"
-    add-collect-support-data-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/collect-support-data-shared'
-    collect-support-data-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/collect-support-data-shared'
-    collect-support-data-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumcollect-support-dataSchemaUrn'
-        outputDirectory:
-          type: string
-          description: The directory in which the support data archive files will be placed. The path must be a directory, and that directory must already exist. Relative paths will be interpreted as relative to the server root.
-        encryptionPassphraseFile:
-          type: string
-          description: The path to a file that contains the passphrase to encrypt the contents of the support data archive.
-        includeExpensiveData:
-          type: boolean
-          description: Indicates whether the support data archive should include information that may be expensive to obtain, and that may temporarily affect the server's performance or responsiveness.
-        includeReplicationStateDump:
-          type: boolean
-          description: Indicates whether the support data archive should include a replication state dump, which may be several megabytes in size.
-        includeBinaryFiles:
-          type: boolean
-          description: Indicates whether the support data archive should include binary files that may not have otherwise been included. Note that it may not be possible to obscure or redact sensitive information in binary files.
-        includeExtensionSource:
-          type: boolean
-          description: Indicates whether the support data archive should include the source code (if available) for any third-party extensions that may be installed in the server.
-        useSequentialMode:
-          type: boolean
-          description: Indicates whether to capture support data information sequentially rather than in parallel. Capturing data in sequential mode may reduce the amount of memory that the tool requires to operate, at the cost of taking longer to run.
-        securityLevel:
-          $ref: '#/components/schemas/EnumsecurityLevelProp'
-        jstackCount:
-          type: integer
-          description: The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked.
-        reportCount:
-          type: integer
-          description: The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information.
-        reportIntervalSeconds:
-          type: integer
-          description: The duration (in seconds) between each interval of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat.
-        logDuration:
-          type: string
-          description: The maximum age (leading up to the time the collect-support-data tool was invoked) for log content to include in the support data archive.
-        logFileHeadCollectionSize:
-          type: string
-          description: The amount of data to collect from the beginning of each log file included in the support data archive.
-        logFileTailCollectionSize:
-          type: string
-          description: The amount of data to collect from the end of each log file included in the support data archive.
-        comment:
-          type: string
-          description: An optional comment to include in a README file within the support data archive.
-        retainPreviousSupportDataArchiveCount:
-          type: integer
-          description: The minimum number of previous support data archives that should be preserved after a new archive is generated.
-        retainPreviousSupportDataArchiveAge:
-          type: string
-          description: The minimum age of previous support data archives that should be preserved after a new archive is generated.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - outputDirectory
-    Enumcollect-support-dataSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:collect-support-data"
-    add-ldif-export-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/ldif-export-shared'
-    ldif-export-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/ldif-export-shared'
-    ldif-export-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumldif-exportSchemaUrn'
-        ldifDirectory:
-          type: string
-          description: The directory in which LDIF export files will be placed. The directory must already exist.
-        backendID:
-          type: array
-          items:
-            type: string
-            description: The backend ID for a backend to be exported.
-        excludeBackendID:
-          type: array
-          items:
-            type: string
-            description: The backend ID for a backend to be excluded from the export.
-        compress:
-          type: boolean
-          description: Indicates whether to compress the LDIF data as it is exported.
-        encrypt:
-          type: boolean
-          description: Indicates whether to encrypt the LDIF data as it exported.
-        encryptionSettingsDefinitionID:
-          type: string
-          description: The ID of an encryption settings definition to use to obtain the LDIF export encryption key.
-        sign:
-          type: boolean
-          description: Indicates whether to cryptographically sign the exported data, which will make it possible to detect whether the LDIF data has been altered since it was exported.
-        retainPreviousLDIFExportCount:
-          type: integer
-          description: The minimum number of previous LDIF exports that should be preserved after a new export completes successfully.
-        retainPreviousLDIFExportAge:
-          type: string
-          description: The minimum age of previous LDIF exports that should be preserved after a new export completes successfully.
-        maxMegabytesPerSecond:
-          type: integer
-          description: The maximum rate, in megabytes per second, at which LDIF exports should be written.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - ldifDirectory
-    Enumldif-exportSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:ldif-export"
-    add-enter-lockdown-mode-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/enter-lockdown-mode-shared'
-    enter-lockdown-mode-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/enter-lockdown-mode-shared'
-    enter-lockdown-mode-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumenter-lockdown-modeSchemaUrn'
-        reason:
-          type: string
-          description: The reason that the server is being placed in lockdown mode.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-    Enumenter-lockdown-modeSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:enter-lockdown-mode"
-    add-exec-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/exec-shared'
-    exec-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/exec-shared'
-    exec-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumexecSchemaUrn'
-        commandPath:
-          type: string
-          description: The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file.
-        commandArguments:
-          type: string
-          description: A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces.
-        commandOutputFileBaseName:
-          type: string
-          description: The path and base name for a file to which the command output (both standard output and standard error) should be written. This may be left undefined if the command output should not be recorded into a file.
-        retainPreviousOutputFileCount:
-          type: integer
-          description: The minimum number of previous command output files that should be preserved after a new instance of the command is invoked.
-        retainPreviousOutputFileAge:
-          type: string
-          description: The minimum age of previous command output files that should be preserved after a new instance of the command is invoked.
-        logCommandOutput:
-          type: boolean
-          description: Indicates whether the command's output (both standard output and standard error) should be recorded in the server's error log.
-        taskCompletionStateForNonzeroExitCode:
-          $ref: '#/components/schemas/EnumtaskCompletionStateForNonzeroExitCodeProp'
-        workingDirectory:
-          type: string
-          description: The absolute path to a working directory where the command should be executed. It must be an absolute path and the corresponding directory must exist.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - commandPath
-    EnumexecSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:exec"
-    add-file-retention-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/file-retention-shared'
-    file-retention-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/file-retention-shared'
-    file-retention-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumfile-retentionSchemaUrn'
-        targetDirectory:
-          type: string
-          description: The path to the directory containing the files to examine. The directory must exist.
-        filenamePattern:
-          type: string
-          description: A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string "${timestamp}", which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally.
-        timestampFormat:
-          $ref: '#/components/schemas/EnumtimestampFormatProp'
-        retainFileCount:
-          type: integer
-          description: The minimum number of files matching the pattern that will be retained.
-        retainFileAge:
-          type: string
-          description: The minimum age of files matching the pattern that will be retained.
-        retainAggregateFileSize:
-          type: string
-          description: The minimum aggregate size of files that will be retained. The size should be specified as an integer followed by a unit that is one of "b" or "bytes", "kb" or "kilobytes", "mb" or "megabytes", "gb" or "gigabytes", or "tb" or "terabytes". For example, a value of "1 gb" indicates that at least one gigabyte of files should be retained.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - targetDirectory
-      - filenamePattern
-      - timestampFormat
-    Enumfile-retentionSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:file-retention"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          taskName:
-            description: Name of the new Recurring Task
-            type: string
-        required:
-        - taskName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Recurring Task
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Recurring Task.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Recurring Task. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Recurring Task
-        cancelOnTaskDependencyFailure:
-          type: boolean
-          description: Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
-        emailOnStart:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnSuccess:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        emailOnFailure:
-          type: array
-          items:
-            type: string
-            description: The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
-        alertOnStart:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
-        alertOnSuccess:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully.
-        alertOnFailure:
-          type: boolean
-          description: Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
-      required:
-      - schemas
-      - extensionClass
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party"
-    update-recurring-task-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumsecurityLevelProp:
-      type: string
-      enum:
-      - "none"
-      - "obscure-secrets"
-      - "maximum"
-      description: The security level to use when deciding which information to include in or exclude from the support data archive, and which included data should be obscured or redacted.
-    EnumtaskCompletionStateForNonzeroExitCodeProp:
-      type: string
-      enum:
-      - "stopped-by-error"
-      - "completed-with-errors"
-      - "completed-successfully"
-      description: The final task state that a task instance should have if the task executes the specified command and that command completes with a nonzero exit code, which generally means that the command did not complete successfully.
-    EnumtimestampFormatProp:
-      type: string
-      enum:
-      - "generalized-time-utc-with-milliseconds"
-      - "generalized-time-utc-with-seconds"
-      - "generalized-time-utc-with-minutes"
-      - "local-time-with-milliseconds"
-      - "local-time-with-seconds"
-      - "local-time-with-minutes"
-      - "local-date"
-      description: The format to use for the timestamp represented by the "${timestamp}" token in the filename pattern.
-    EnumtaskReturnStateIfTimeoutIsEncounteredProp:
-      type: string
-      enum:
-      - "stopped-by-error"
-      - "completed-with-errors"
-      - "completed-successfully"
-      description: The return state to use if a timeout is encountered while waiting for the server work queue to become idle (if the duration-to-wait-for-work-queue-idle property has a value), or if the time specified by the duration-to-wait-for-search-to-return-entries elapses without the associated search returning any entries.
     EnumOperation:
       type: string
       enum:

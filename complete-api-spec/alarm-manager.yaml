@@ -30,7 +30,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - alarm-manager
     patch:
       summary: Update an existing Alarm Manager by name
       operationId: update-alarm-manager
@@ -38,7 +38,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-alarm-manager-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Alarm Manager
         required: true
       responses:
@@ -59,9 +59,69 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - alarm-manager
 components:
   schemas:
+    alarm-manager-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumalarm-managerSchemaUrn'
+        defaultGaugeAlertLevel:
+          $ref: '#/components/schemas/Enumalarm-manager-defaultGaugeAlertLevelProp'
+        generatedAlertTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumalarm-manager-generatedAlertTypesProp'
+        suppressedAlarm:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumalarm-manager-suppressedAlarmProp'
+      required:
+      - defaultGaugeAlertLevel
+      - generatedAlertTypes
+    Enumalarm-managerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:alarm-manager"
+    Enumalarm-manager-generatedAlertTypesProp:
+      type: string
+      enum:
+      - "standard"
+      - "alarm"
+      description: >-
+          Indicates what kind of alert types should be generated.
+    Enumalarm-manager-defaultGaugeAlertLevelProp:
+      type: string
+      enum:
+      - "always"
+      - "warning-and-above"
+      - "minor-and-above"
+      - "major-and-above"
+      - "critical-only"
+      - "never"
+      description: >-
+          Specifies the level at which alerts are sent for alarms raised by the Alarm Manager.
+    Enumalarm-manager-suppressedAlarmProp:
+      type: string
+      enum:
+      - "no-enabled-alert-handlers"
+      - "pdp-unavailable"
+      description: >-
+          Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -74,63 +134,6 @@ components:
       required:
       - op
       - path
-    alarm-manager-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumalarm-managerSchemaUrn'
-        defaultGaugeAlertLevel:
-          $ref: '#/components/schemas/EnumdefaultGaugeAlertLevelProp'
-        generatedAlertTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumgeneratedAlertTypesProp'
-        suppressedAlarm:
-          type: array
-          items:
-            $ref: '#/components/schemas/EnumsuppressedAlarmProp'
-      required:
-      - defaultGaugeAlertLevel
-      - generatedAlertTypes
-    Enumalarm-managerSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:alarm-manager"
-    update-alarm-manager-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
-    EnumgeneratedAlertTypesProp:
-      type: string
-      enum:
-      - "standard"
-      - "alarm"
-      description: Indicates what kind of alert types should be generated.
-    EnumdefaultGaugeAlertLevelProp:
-      type: string
-      enum:
-      - "always"
-      - "warning-and-above"
-      - "minor-and-above"
-      - "major-and-above"
-      - "critical-only"
-      - "never"
-      description: Specifies the level at which alerts are sent for alarms raised by the Alarm Manager.
-    EnumsuppressedAlarmProp:
-      type: string
-      enum:
-      - "no-enabled-alert-handlers"
-      - "pdp-unavailable"
-      description: Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
     EnumOperation:
       type: string
       enum:

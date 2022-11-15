@@ -19,8 +19,8 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-access-request'
-              - $ref: '#/components/schemas/add-error-request'
+              - $ref: '#/components/schemas/add-access-log-field-mapping-request'
+              - $ref: '#/components/schemas/add-error-log-field-mapping-request'
         description: Create a new Log Field Mapping in the config
         required: true
       responses:
@@ -30,8 +30,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/access-response'
-                - $ref: '#/components/schemas/error-response'
+                - $ref: '#/components/schemas/access-log-field-mapping-response'
+                - $ref: '#/components/schemas/error-log-field-mapping-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -43,7 +43,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-field-mapping
   /log-field-mappings/{log-field-mapping-name}:
     delete:
       summary: Delete a Log Field Mapping
@@ -71,7 +71,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-field-mapping
     get:
       summary: Returns a single Log Field Mapping
       operationId: get-log-field-mapping
@@ -91,8 +91,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/access-response'
-                - $ref: '#/components/schemas/error-response'
+                - $ref: '#/components/schemas/access-log-field-mapping-response'
+                - $ref: '#/components/schemas/error-log-field-mapping-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -102,7 +102,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-field-mapping
     patch:
       summary: Update an existing Log Field Mapping by name
       operationId: update-log-field-mapping
@@ -119,7 +119,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-log-field-mapping-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Log Field Mapping
         required: true
       responses:
@@ -129,8 +129,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/access-response'
-                - $ref: '#/components/schemas/error-response'
+                - $ref: '#/components/schemas/access-log-field-mapping-response'
+                - $ref: '#/components/schemas/error-log-field-mapping-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -142,9 +142,336 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - log-field-mapping
 components:
   schemas:
+    add-access-log-field-mapping-request:
+      allOf:
+      - type: object
+        properties:
+          mappingName:
+            description: Name of the new Log Field Mapping
+            type: string
+        required:
+        - mappingName
+      - $ref: '#/components/schemas/access-log-field-mapping-shared'
+    access-log-field-mapping-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Field Mapping
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/access-log-field-mapping-shared'
+    access-log-field-mapping-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumaccess-log-field-mappingSchemaUrn'
+        logFieldTimestamp:
+          type: string
+          description: >-
+              The time that the operation was processed.
+        logFieldConnectionID:
+          type: string
+          description: >-
+              The connection ID assigned to the client connection.
+        logFieldStartupid:
+          type: string
+          description: >-
+              The startup ID for the Directory Server. A different value will be generated each time the server is started, and it may be used to distinguish between operations with the same connection ID and operation ID across server restarts.
+        logFieldProductName:
+          type: string
+          description: >-
+              The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
+        logFieldInstanceName:
+          type: string
+          description: >-
+              A name that uniquely identifies this Directory Server instance, which may be used to identify which instance was used to log the message if multiple server instances log to the same database table.
+        logFieldOperationID:
+          type: string
+          description: >-
+              The operation ID for the operation processed by the server.
+        logFieldMessageType:
+          type: string
+          description: >-
+              The type of log message. Message types may include "CONNECT", "DISCONNECT", "FORWARD", "RESULT", "ENTRY", or "REFERENCE".
+        logFieldOperationType:
+          type: string
+          description: >-
+              The type of operation that was processed.
+        logFieldMessageID:
+          type: string
+          description: >-
+              The message ID included in the client request.
+        logFieldResultCode:
+          type: string
+          description: >-
+              The numeric result code for the operation.
+        logFieldMessage:
+          type: string
+          description: >-
+              The diagnostic message for the operation.
+        logFieldOrigin:
+          type: string
+          description: >-
+              The origin for the operation. Values may include "replication" (if the operation was received via replication), "internal" (if it was an internal operation processed by a server component), or "external" (if it was a request from a client).
+        logFieldRequesterDN:
+          type: string
+          description: >-
+              The DN of the user that requested the operation.
+        logFieldDisconnectReason:
+          type: string
+          description: >-
+              The reason that the client connection was closed.
+        logFieldDeleteOldRDN:
+          type: string
+          description: >-
+              Indicates whether the old RDN values should be removed from an entry while processing a modify DN operation.
+        logFieldAuthenticatedUserDN:
+          type: string
+          description: >-
+              The DN of the user that authenticated to the server.
+        logFieldProcessingTime:
+          type: string
+          description: >-
+              The length of time (in milliseconds with microsecond accuracy) required to process the operation.
+        logFieldRequestedAttributes:
+          type: string
+          description: >-
+              The set of requested attributes for the search operation.
+        logFieldSASLMechanismName:
+          type: string
+          description: >-
+              The name of the SASL mechanism used to authenticate.
+        logFieldNewRDN:
+          type: string
+          description: >-
+              The new RDN to use for a modify DN operation.
+        logFieldBaseDN:
+          type: string
+          description: >-
+              The base DN for a search operation.
+        logFieldBindDN:
+          type: string
+          description: >-
+              The bind DN for a bind operation.
+        logFieldMatchedDN:
+          type: string
+          description: >-
+              The DN of the superior entry closest to the DN specified by the client.
+        logFieldRequesterIPAddress:
+          type: string
+          description: >-
+              The IP address of the client that requested the operation.
+        logFieldAuthenticationType:
+          type: string
+          description: >-
+              The type of authentication requested by the client.
+        logFieldNewSuperiorDN:
+          type: string
+          description: >-
+              The new superior DN from a modify DN operation.
+        logFieldFilter:
+          type: string
+          description: >-
+              The filter from a search operation.
+        logFieldAlternateAuthorizationDN:
+          type: string
+          description: >-
+              The DN of the alternate authorization identity used when processing the operation.
+        logFieldEntryDN:
+          type: string
+          description: >-
+              The DN of the entry targeted by the operation.
+        logFieldEntriesReturned:
+          type: string
+          description: >-
+              The number of search result entries returned to the client.
+        logFieldAuthenticationFailureID:
+          type: string
+          description: >-
+              The numeric identifier for the authentication failure reason.
+        logFieldRequestOID:
+          type: string
+          description: >-
+              The OID of an extended request.
+        logFieldResponseOID:
+          type: string
+          description: >-
+              The OID of an extended response.
+        logFieldTargetProtocol:
+          type: string
+          description: >-
+              The protocol used when forwarding the request to a backend server.
+        logFieldTargetPort:
+          type: string
+          description: >-
+              The network port of the Directory Server to which the client connection has been established, or of the backend server to which the request has been forwarded.
+        logFieldTargetAddress:
+          type: string
+          description: >-
+              The network address of the Directory Server to which the client connection has been established.
+        logFieldTargetAttribute:
+          type: string
+          description: >-
+              The name of the attribute targeted by a compare operation.
+        logFieldTargetHost:
+          type: string
+          description: >-
+              The address of the server to which the request has been forwarded.
+        logFieldProtocolVersion:
+          type: string
+          description: >-
+              The protocol version used by the client when communicating with the Directory Server.
+        logFieldProtocolName:
+          type: string
+          description: >-
+              The name of the protocol the client is using to communicate with the Directory Server.
+        logFieldAuthenticationFailureReason:
+          type: string
+          description: >-
+              A message explaining the reason that the authentication attempt failed.
+        logFieldAdditionalInformation:
+          type: string
+          description: >-
+              Additional information about the operation that was processed which was not returned to the client.
+        logFieldUnindexed:
+          type: string
+          description: >-
+              Indicates whether the requested search operation was unindexed.
+        logFieldScope:
+          type: string
+          description: >-
+              The scope for the search operation.
+        logFieldReferralUrls:
+          type: string
+          description: >-
+              The referral URLs returned to the client.
+        logFieldSourceAddress:
+          type: string
+          description: >-
+              The address of the client from which the connection was established.
+        logFieldMessageIDToAbandon:
+          type: string
+          description: >-
+              The message ID of the operation to be abandoned.
+        logFieldResponseControls:
+          type: string
+          description: >-
+              The OIDs of the response controls returned to the client.
+        logFieldRequestControls:
+          type: string
+          description: >-
+              The OIDs of the request controls returned to the client.
+        logFieldIntermediateClientResult:
+          type: string
+          description: >-
+              The contents of the intermediate client response control returned to the client.
+        logFieldIntermediateClientRequest:
+          type: string
+          description: >-
+              The contents of the intermediate client request control provided by the client.
+        logFieldReplicationChangeID:
+          type: string
+          description: >-
+              The replication change ID.
+        description:
+          type: string
+          description: >-
+              A description for this Log Field Mapping
+      required:
+      - schemas
+    Enumaccess-log-field-mappingSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access"
+    add-error-log-field-mapping-request:
+      allOf:
+      - type: object
+        properties:
+          mappingName:
+            description: Name of the new Log Field Mapping
+            type: string
+        required:
+        - mappingName
+      - $ref: '#/components/schemas/error-log-field-mapping-shared'
+    error-log-field-mapping-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Field Mapping
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/error-log-field-mapping-shared'
+    error-log-field-mapping-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumerror-log-field-mappingSchemaUrn'
+        logFieldTimestamp:
+          type: string
+          description: >-
+              The time that the log message was generated.
+        logFieldProductName:
+          type: string
+          description: >-
+              The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
+        logFieldInstanceName:
+          type: string
+          description: >-
+              A name that uniquely identifies this Directory Server instance, which may be used to identify which instance was used to log the message if multiple server instances log to the same database table.
+        logFieldStartupid:
+          type: string
+          description: >-
+              The startup ID for the Directory Server. A different value will be generated each time the server is started.
+        logFieldCategory:
+          type: string
+          description: >-
+              The category for the log message.
+        logFieldSeverity:
+          type: string
+          description: >-
+              The severity for the log message.
+        logFieldMessageID:
+          type: string
+          description: >-
+              The numeric value which uniquely identifies the type of message.
+        logFieldMessage:
+          type: string
+          description: >-
+              The text of the log message.
+        description:
+          type: string
+          description: >-
+              A description for this Log Field Mapping
+      required:
+      - schemas
+    Enumerror-log-field-mappingSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -157,271 +484,6 @@ components:
       required:
       - op
       - path
-    add-access-request:
-      allOf:
-      - type: object
-        properties:
-          mappingName:
-            description: Name of the new Log Field Mapping
-            type: string
-        required:
-        - mappingName
-      - $ref: '#/components/schemas/access-shared'
-    access-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Log Field Mapping
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/access-shared'
-    access-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumaccessSchemaUrn'
-        logFieldTimestamp:
-          type: string
-          description: The time that the operation was processed.
-        logFieldConnectionID:
-          type: string
-          description: The connection ID assigned to the client connection.
-        logFieldStartupid:
-          type: string
-          description: The startup ID for the Directory Server. A different value will be generated each time the server is started, and it may be used to distinguish between operations with the same connection ID and operation ID across server restarts.
-        logFieldProductName:
-          type: string
-          description: The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
-        logFieldInstanceName:
-          type: string
-          description: A name that uniquely identifies this Directory Server instance, which may be used to identify which instance was used to log the message if multiple server instances log to the same database table.
-        logFieldOperationID:
-          type: string
-          description: The operation ID for the operation processed by the server.
-        logFieldMessageType:
-          type: string
-          description: The type of log message. Message types may include "CONNECT", "DISCONNECT", "FORWARD", "RESULT", "ENTRY", or "REFERENCE".
-        logFieldOperationType:
-          type: string
-          description: The type of operation that was processed.
-        logFieldMessageID:
-          type: string
-          description: The message ID included in the client request.
-        logFieldResultCode:
-          type: string
-          description: The numeric result code for the operation.
-        logFieldMessage:
-          type: string
-          description: The diagnostic message for the operation.
-        logFieldOrigin:
-          type: string
-          description: The origin for the operation. Values may include "replication" (if the operation was received via replication), "internal" (if it was an internal operation processed by a server component), or "external" (if it was a request from a client).
-        logFieldRequesterDN:
-          type: string
-          description: The DN of the user that requested the operation.
-        logFieldDisconnectReason:
-          type: string
-          description: The reason that the client connection was closed.
-        logFieldDeleteOldRDN:
-          type: string
-          description: Indicates whether the old RDN values should be removed from an entry while processing a modify DN operation.
-        logFieldAuthenticatedUserDN:
-          type: string
-          description: The DN of the user that authenticated to the server.
-        logFieldProcessingTime:
-          type: string
-          description: The length of time (in milliseconds with microsecond accuracy) required to process the operation.
-        logFieldRequestedAttributes:
-          type: string
-          description: The set of requested attributes for the search operation.
-        logFieldSASLMechanismName:
-          type: string
-          description: The name of the SASL mechanism used to authenticate.
-        logFieldNewRDN:
-          type: string
-          description: The new RDN to use for a modify DN operation.
-        logFieldBaseDN:
-          type: string
-          description: The base DN for a search operation.
-        logFieldBindDN:
-          type: string
-          description: The bind DN for a bind operation.
-        logFieldMatchedDN:
-          type: string
-          description: The DN of the superior entry closest to the DN specified by the client.
-        logFieldRequesterIPAddress:
-          type: string
-          description: The IP address of the client that requested the operation.
-        logFieldAuthenticationType:
-          type: string
-          description: The type of authentication requested by the client.
-        logFieldNewSuperiorDN:
-          type: string
-          description: The new superior DN from a modify DN operation.
-        logFieldFilter:
-          type: string
-          description: The filter from a search operation.
-        logFieldAlternateAuthorizationDN:
-          type: string
-          description: The DN of the alternate authorization identity used when processing the operation.
-        logFieldEntryDN:
-          type: string
-          description: The DN of the entry targeted by the operation.
-        logFieldEntriesReturned:
-          type: string
-          description: The number of search result entries returned to the client.
-        logFieldAuthenticationFailureID:
-          type: string
-          description: The numeric identifier for the authentication failure reason.
-        logFieldRequestOID:
-          type: string
-          description: The OID of an extended request.
-        logFieldResponseOID:
-          type: string
-          description: The OID of an extended response.
-        logFieldTargetProtocol:
-          type: string
-          description: The protocol used when forwarding the request to a backend server.
-        logFieldTargetPort:
-          type: string
-          description: The network port of the Directory Server to which the client connection has been established, or of the backend server to which the request has been forwarded.
-        logFieldTargetAddress:
-          type: string
-          description: The network address of the Directory Server to which the client connection has been established.
-        logFieldTargetAttribute:
-          type: string
-          description: The name of the attribute targeted by a compare operation.
-        logFieldTargetHost:
-          type: string
-          description: The address of the server to which the request has been forwarded.
-        logFieldProtocolVersion:
-          type: string
-          description: The protocol version used by the client when communicating with the Directory Server.
-        logFieldProtocolName:
-          type: string
-          description: The name of the protocol the client is using to communicate with the Directory Server.
-        logFieldAuthenticationFailureReason:
-          type: string
-          description: A message explaining the reason that the authentication attempt failed.
-        logFieldAdditionalInformation:
-          type: string
-          description: Additional information about the operation that was processed which was not returned to the client.
-        logFieldUnindexed:
-          type: string
-          description: Indicates whether the requested search operation was unindexed.
-        logFieldScope:
-          type: string
-          description: The scope for the search operation.
-        logFieldReferralUrls:
-          type: string
-          description: The referral URLs returned to the client.
-        logFieldSourceAddress:
-          type: string
-          description: The address of the client from which the connection was established.
-        logFieldMessageIDToAbandon:
-          type: string
-          description: The message ID of the operation to be abandoned.
-        logFieldResponseControls:
-          type: string
-          description: The OIDs of the response controls returned to the client.
-        logFieldRequestControls:
-          type: string
-          description: The OIDs of the request controls returned to the client.
-        logFieldIntermediateClientResult:
-          type: string
-          description: The contents of the intermediate client response control returned to the client.
-        logFieldIntermediateClientRequest:
-          type: string
-          description: The contents of the intermediate client request control provided by the client.
-        logFieldReplicationChangeID:
-          type: string
-          description: The replication change ID.
-        description:
-          type: string
-          description: A description for this Log Field Mapping
-      required:
-      - schemas
-    EnumaccessSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access"
-    add-error-request:
-      allOf:
-      - type: object
-        properties:
-          mappingName:
-            description: Name of the new Log Field Mapping
-            type: string
-        required:
-        - mappingName
-      - $ref: '#/components/schemas/error-shared'
-    error-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Log Field Mapping
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/error-shared'
-    error-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumerrorSchemaUrn'
-        logFieldTimestamp:
-          type: string
-          description: The time that the log message was generated.
-        logFieldProductName:
-          type: string
-          description: The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
-        logFieldInstanceName:
-          type: string
-          description: A name that uniquely identifies this Directory Server instance, which may be used to identify which instance was used to log the message if multiple server instances log to the same database table.
-        logFieldStartupid:
-          type: string
-          description: The startup ID for the Directory Server. A different value will be generated each time the server is started.
-        logFieldCategory:
-          type: string
-          description: The category for the log message.
-        logFieldSeverity:
-          type: string
-          description: The severity for the log message.
-        logFieldMessageID:
-          type: string
-          description: The numeric value which uniquely identifies the type of message.
-        logFieldMessage:
-          type: string
-          description: The text of the log message.
-        description:
-          type: string
-          description: A description for this Log Field Mapping
-      required:
-      - schemas
-    EnumerrorSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error"
-    update-log-field-mapping-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

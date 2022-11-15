@@ -30,7 +30,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - root-dse-backend
     patch:
       summary: Update an existing Root DSE Backend by name
       operationId: update-root-dse-backend
@@ -38,7 +38,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-root-dse-backend-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Root DSE Backend
         required: true
       responses:
@@ -59,21 +59,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - root-dse-backend
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     root-dse-backend-response:
       type: object
       properties:
@@ -87,25 +75,29 @@ components:
           type: array
           items:
             type: string
-            description: Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
+            description: >-
+                Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
         additionalSupportedControlOID:
           type: array
           items:
             type: string
-            description: Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
+            description: >-
+                Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
         showAllAttributes:
           type: boolean
-          description: Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the Directory Server schema configuration.
+          description: >-
+              Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the Directory Server schema configuration.
         useLegacyVendorVersion:
           type: boolean
-          description: Indicates whether the server's root DSE should reflect current or legacy values for the vendorName and vendorVersion attributes.
+          description: >-
+              Indicates whether the server's root DSE should reflect current or legacy values for the vendorName and vendorVersion attributes.
       required:
       - showAllAttributes
     Enumroot-dse-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:root-dse-backend"
-    update-root-dse-backend-request:
+    updateRequest:
       type: object
       properties:
         operations:
@@ -114,6 +106,18 @@ components:
             $ref: '#/components/schemas/Operation'
       required:
       - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

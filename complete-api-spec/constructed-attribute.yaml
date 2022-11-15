@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - constructed-attribute
   /constructed-attributes/{constructed-attribute-name}:
     delete:
       summary: Delete a Constructed Attribute
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - constructed-attribute
     get:
       summary: Returns a single Constructed Attribute
       operationId: get-constructed-attribute
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - constructed-attribute
     patch:
       summary: Update an existing Constructed Attribute by name
       operationId: update-constructed-attribute
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-constructed-attribute-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Constructed Attribute
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - constructed-attribute
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-constructed-attribute-request:
       allOf:
       - type: object
@@ -180,15 +168,18 @@ components:
             $ref: '#/components/schemas/Enumconstructed-attributeSchemaUrn'
         description:
           type: string
-          description: A description for this Constructed Attribute
+          description: >-
+              A description for this Constructed Attribute
         attributeType:
           type: string
-          description: Specifies the attribute type for the attribute whose values are to be constructed.
+          description: >-
+              Specifies the attribute type for the attribute whose values are to be constructed.
         valuePattern:
           type: array
           items:
             type: string
-            description: Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry.
+            description: >-
+                Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry.
       required:
       - attributeType
       - valuePattern
@@ -196,7 +187,7 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:constructed-attribute"
-    update-constructed-attribute-request:
+    updateRequest:
       type: object
       properties:
         operations:
@@ -205,6 +196,18 @@ components:
             $ref: '#/components/schemas/Operation'
       required:
       - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

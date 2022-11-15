@@ -19,9 +19,9 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-delay-bind-response-request'
-              - $ref: '#/components/schemas/add-no-operation-request'
-              - $ref: '#/components/schemas/add-lock-account-request'
+              - $ref: '#/components/schemas/add-delay-bind-response-failure-lockout-action-request'
+              - $ref: '#/components/schemas/add-no-operation-failure-lockout-action-request'
+              - $ref: '#/components/schemas/add-lock-account-failure-lockout-action-request'
         description: Create a new Failure Lockout Action in the config
         required: true
       responses:
@@ -31,9 +31,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/delay-bind-response-response'
-                - $ref: '#/components/schemas/no-operation-response'
-                - $ref: '#/components/schemas/lock-account-response'
+                - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-response'
+                - $ref: '#/components/schemas/no-operation-failure-lockout-action-response'
+                - $ref: '#/components/schemas/lock-account-failure-lockout-action-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -45,7 +45,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - failure-lockout-action
   /failure-lockout-actions/{failure-lockout-action-name}:
     delete:
       summary: Delete a Failure Lockout Action
@@ -73,7 +73,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - failure-lockout-action
     get:
       summary: Returns a single Failure Lockout Action
       operationId: get-failure-lockout-action
@@ -93,9 +93,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/delay-bind-response-response'
-                - $ref: '#/components/schemas/no-operation-response'
-                - $ref: '#/components/schemas/lock-account-response'
+                - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-response'
+                - $ref: '#/components/schemas/no-operation-failure-lockout-action-response'
+                - $ref: '#/components/schemas/lock-account-failure-lockout-action-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -105,7 +105,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - failure-lockout-action
     patch:
       summary: Update an existing Failure Lockout Action by name
       operationId: update-failure-lockout-action
@@ -122,7 +122,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-failure-lockout-action-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Failure Lockout Action
         required: true
       responses:
@@ -132,9 +132,9 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/delay-bind-response-response'
-                - $ref: '#/components/schemas/no-operation-response'
-                - $ref: '#/components/schemas/lock-account-response'
+                - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-response'
+                - $ref: '#/components/schemas/no-operation-failure-lockout-action-response'
+                - $ref: '#/components/schemas/lock-account-failure-lockout-action-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -146,9 +146,152 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - failure-lockout-action
 components:
   schemas:
+    add-delay-bind-response-failure-lockout-action-request:
+      allOf:
+      - type: object
+        properties:
+          actionName:
+            description: Name of the new Failure Lockout Action
+            type: string
+        required:
+        - actionName
+      - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-shared'
+    delay-bind-response-failure-lockout-action-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Failure Lockout Action
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-shared'
+    delay-bind-response-failure-lockout-action-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelay-bind-response-failure-lockout-actionSchemaUrn'
+        delay:
+          type: string
+          description: >-
+              The length of time to delay the bind response for accounts with too many failed authentication attempts.
+        allowBlockingDelay:
+          type: boolean
+          description: >-
+              Indicates whether to delay the response for authentication attempts even if that delay may block the thread being used to process the attempt.
+        generateAccountStatusNotification:
+          type: boolean
+          description: >-
+              Indicates whether to generate an account status notification for cases in which a bind response is delayed because of failure lockout.
+        description:
+          type: string
+          description: >-
+              A description for this Failure Lockout Action
+      required:
+      - schemas
+      - delay
+    Enumdelay-bind-response-failure-lockout-actionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:delay-bind-response"
+    add-no-operation-failure-lockout-action-request:
+      allOf:
+      - type: object
+        properties:
+          actionName:
+            description: Name of the new Failure Lockout Action
+            type: string
+        required:
+        - actionName
+      - $ref: '#/components/schemas/no-operation-failure-lockout-action-shared'
+    no-operation-failure-lockout-action-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Failure Lockout Action
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/no-operation-failure-lockout-action-shared'
+    no-operation-failure-lockout-action-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumno-operation-failure-lockout-actionSchemaUrn'
+        generateAccountStatusNotification:
+          type: boolean
+          description: >-
+              Indicates whether to generate an account status notification for cases in which this failure lockout action is invoked for a bind attempt with too many outstanding authentication failures.
+        description:
+          type: string
+          description: >-
+              A description for this Failure Lockout Action
+      required:
+      - schemas
+    Enumno-operation-failure-lockout-actionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:no-operation"
+    add-lock-account-failure-lockout-action-request:
+      allOf:
+      - type: object
+        properties:
+          actionName:
+            description: Name of the new Failure Lockout Action
+            type: string
+        required:
+        - actionName
+      - $ref: '#/components/schemas/lock-account-failure-lockout-action-shared'
+    lock-account-failure-lockout-action-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Failure Lockout Action
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/lock-account-failure-lockout-action-shared'
+    lock-account-failure-lockout-action-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlock-account-failure-lockout-actionSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Failure Lockout Action
+      required:
+      - schemas
+    Enumlock-account-failure-lockout-actionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:lock-account"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -161,142 +304,6 @@ components:
       required:
       - op
       - path
-    add-delay-bind-response-request:
-      allOf:
-      - type: object
-        properties:
-          actionName:
-            description: Name of the new Failure Lockout Action
-            type: string
-        required:
-        - actionName
-      - $ref: '#/components/schemas/delay-bind-response-shared'
-    delay-bind-response-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Failure Lockout Action
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/delay-bind-response-shared'
-    delay-bind-response-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumdelay-bind-responseSchemaUrn'
-        delay:
-          type: string
-          description: The length of time to delay the bind response for accounts with too many failed authentication attempts.
-        allowBlockingDelay:
-          type: boolean
-          description: Indicates whether to delay the response for authentication attempts even if that delay may block the thread being used to process the attempt.
-        generateAccountStatusNotification:
-          type: boolean
-          description: Indicates whether to generate an account status notification for cases in which a bind response is delayed because of failure lockout.
-        description:
-          type: string
-          description: A description for this Failure Lockout Action
-      required:
-      - schemas
-      - delay
-    Enumdelay-bind-responseSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:delay-bind-response"
-    add-no-operation-request:
-      allOf:
-      - type: object
-        properties:
-          actionName:
-            description: Name of the new Failure Lockout Action
-            type: string
-        required:
-        - actionName
-      - $ref: '#/components/schemas/no-operation-shared'
-    no-operation-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Failure Lockout Action
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/no-operation-shared'
-    no-operation-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumno-operationSchemaUrn'
-        generateAccountStatusNotification:
-          type: boolean
-          description: Indicates whether to generate an account status notification for cases in which this failure lockout action is invoked for a bind attempt with too many outstanding authentication failures.
-        description:
-          type: string
-          description: A description for this Failure Lockout Action
-      required:
-      - schemas
-    Enumno-operationSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:no-operation"
-    add-lock-account-request:
-      allOf:
-      - type: object
-        properties:
-          actionName:
-            description: Name of the new Failure Lockout Action
-            type: string
-        required:
-        - actionName
-      - $ref: '#/components/schemas/lock-account-shared'
-    lock-account-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Failure Lockout Action
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/lock-account-shared'
-    lock-account-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumlock-accountSchemaUrn'
-        description:
-          type: string
-          description: A description for this Failure Lockout Action
-      required:
-      - schemas
-    Enumlock-accountSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:lock-account"
-    update-failure-lockout-action-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

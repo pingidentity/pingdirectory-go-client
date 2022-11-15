@@ -39,7 +39,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - delegated-admin-rights
   /delegated-admin-rights/{delegated-admin-rights-name}:
     delete:
       summary: Delete a Delegated Admin Rights
@@ -67,7 +67,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - delegated-admin-rights
     get:
       summary: Returns a single Delegated Admin Rights
       operationId: get-delegated-admin-rights
@@ -96,7 +96,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - delegated-admin-rights
     patch:
       summary: Update an existing Delegated Admin Rights by name
       operationId: update-delegated-admin-rights
@@ -113,7 +113,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-delegated-admin-rights-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Delegated Admin Rights
         required: true
       responses:
@@ -134,21 +134,9 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - delegated-admin-rights
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        op:
-          $ref: '#/components/schemas/EnumOperation'
-        path:
-          type: string
-        value:
-          type: string
-      required:
-      - op
-      - path
     add-delegated-admin-rights-request:
       allOf:
       - type: object
@@ -180,23 +168,27 @@ components:
             $ref: '#/components/schemas/Enumdelegated-admin-rightsSchemaUrn'
         description:
           type: string
-          description: A description for this Delegated Admin Rights
+          description: >-
+              A description for this Delegated Admin Rights
         enabled:
           type: boolean
-          description: Indicates whether the Delegated Admin Rights is enabled.
+          description: >-
+              Indicates whether the Delegated Admin Rights is enabled.
         adminUserDN:
           type: string
-          description: Specifies the DN of an administrative user who has authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
+          description: >-
+              Specifies the DN of an administrative user who has authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
         adminGroupDN:
           type: string
-          description: Specifies the DN of a group of administrative users who have authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
+          description: >-
+              Specifies the DN of a group of administrative users who have authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
       required:
       - enabled
     Enumdelegated-admin-rightsSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-rights"
-    update-delegated-admin-rights-request:
+    updateRequest:
       type: object
       properties:
         operations:
@@ -205,6 +197,18 @@ components:
             $ref: '#/components/schemas/Operation'
       required:
       - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
     EnumOperation:
       type: string
       enum:

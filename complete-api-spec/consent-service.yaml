@@ -30,7 +30,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - consent-service
     patch:
       summary: Update an existing Consent Service by name
       operationId: update-consent-service
@@ -38,7 +38,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-consent-service-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Consent Service
         required: true
       responses:
@@ -59,9 +59,73 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - consent-service
 components:
   schemas:
+    consent-service-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumconsent-serviceSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Consent Service is enabled.
+        baseDN:
+          type: string
+          description: >-
+              The base DN under which consent records are stored.
+        bindDN:
+          type: string
+          description: >-
+              The DN of an internal service account used by the Consent Service to make internal LDAP requests.
+        searchSizeLimit:
+          type: integer
+          description: >-
+              The maximum number of consent resources that may be returned from a search request.
+        consentRecordIdentityMapper:
+          type: array
+          items:
+            type: string
+            description: >-
+                If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used.
+        serviceAccountDN:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of account DNs that the Consent Service will consider to be privileged.
+        unprivilegedConsentScope:
+          type: string
+          description: >-
+              The name of a scope that must be present in an access token accepted by the Consent Service for unprivileged clients.
+        privilegedConsentScope:
+          type: string
+          description: >-
+              The name of a scope that must be present in an access token accepted by the Consent Service if the client is to be considered privileged.
+        audience:
+          type: string
+          description: >-
+              A string or URI that identifies the Consent Service in the context of OAuth2 authorization.
+      required:
+      - enabled
+    Enumconsent-serviceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:consent-service"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -74,61 +138,6 @@ components:
       required:
       - op
       - path
-    consent-service-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumconsent-serviceSchemaUrn'
-        enabled:
-          type: boolean
-          description: Indicates whether the Consent Service is enabled.
-        baseDN:
-          type: string
-          description: The base DN under which consent records are stored.
-        bindDN:
-          type: string
-          description: The DN of an internal service account used by the Consent Service to make internal LDAP requests.
-        searchSizeLimit:
-          type: integer
-          description: The maximum number of consent resources that may be returned from a search request.
-        consentRecordIdentityMapper:
-          type: array
-          items:
-            type: string
-            description: If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used.
-        serviceAccountDN:
-          type: array
-          items:
-            type: string
-            description: The set of account DNs that the Consent Service will consider to be privileged.
-        unprivilegedConsentScope:
-          type: string
-          description: The name of a scope that must be present in an access token accepted by the Consent Service for unprivileged clients.
-        privilegedConsentScope:
-          type: string
-          description: The name of a scope that must be present in an access token accepted by the Consent Service if the client is to be considered privileged.
-        audience:
-          type: string
-          description: A string or URI that identifies the Consent Service in the context of OAuth2 authorization.
-      required:
-      - enabled
-    Enumconsent-serviceSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:consent-service"
-    update-consent-service-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:

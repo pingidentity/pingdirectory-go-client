@@ -19,10 +19,10 @@ paths:
           application/json:
             schema:
               oneOf:
-              - $ref: '#/components/schemas/add-default-request'
-              - $ref: '#/components/schemas/add-groovy-scripted-request'
-              - $ref: '#/components/schemas/add-simple-request'
-              - $ref: '#/components/schemas/add-third-party-request'
+              - $ref: '#/components/schemas/add-default-uncached-attribute-criteria-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-uncached-attribute-criteria-request'
+              - $ref: '#/components/schemas/add-simple-uncached-attribute-criteria-request'
+              - $ref: '#/components/schemas/add-third-party-uncached-attribute-criteria-request'
         description: Create a new Uncached Attribute Criteria in the config
         required: true
       responses:
@@ -32,10 +32,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/default-response'
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/simple-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/default-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/simple-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -47,7 +47,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-attribute-criteria
   /uncached-attribute-criteria/{uncached-attribute-criteria-name}:
     delete:
       summary: Delete a Uncached Attribute Criteria
@@ -75,7 +75,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-attribute-criteria
     get:
       summary: Returns a single Uncached Attribute Criteria
       operationId: get-uncached-attribute-criteria
@@ -95,10 +95,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/default-response'
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/simple-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/default-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/simple-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -108,7 +108,7 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-attribute-criteria
     patch:
       summary: Update an existing Uncached Attribute Criteria by name
       operationId: update-uncached-attribute-criteria
@@ -125,7 +125,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/update-uncached-attribute-criteria-request'
+              $ref: '#/components/schemas/updateRequest'
         description: Update an existing Uncached Attribute Criteria
         required: true
       responses:
@@ -135,10 +135,10 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/default-response'
-                - $ref: '#/components/schemas/groovy-scripted-response'
-                - $ref: '#/components/schemas/simple-response'
-                - $ref: '#/components/schemas/third-party-response'
+                - $ref: '#/components/schemas/default-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/simple-uncached-attribute-criteria-response'
+                - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -150,9 +150,231 @@ paths:
       security:
       - basicAuth: []
       tags:
-      - location
+      - uncached-attribute-criteria
 components:
   schemas:
+    add-default-uncached-attribute-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Attribute Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/default-uncached-attribute-criteria-shared'
+    default-uncached-attribute-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Attribute Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/default-uncached-attribute-criteria-shared'
+    default-uncached-attribute-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdefault-uncached-attribute-criteriaSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Attribute Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - enabled
+    Enumdefault-uncached-attribute-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default"
+    add-groovy-scripted-uncached-attribute-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Attribute Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
+    groovy-scripted-uncached-attribute-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Attribute Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-uncached-attribute-criteria-shared'
+    groovy-scripted-uncached-attribute-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-uncached-attribute-criteriaSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Attribute Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scripted-uncached-attribute-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:groovy-scripted"
+    add-simple-uncached-attribute-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Attribute Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/simple-uncached-attribute-criteria-shared'
+    simple-uncached-attribute-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Attribute Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/simple-uncached-attribute-criteria-shared'
+    simple-uncached-attribute-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsimple-uncached-attribute-criteriaSchemaUrn'
+        attributeType:
+          type: array
+          items:
+            type: string
+            description: >-
+                Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
+        minValueCount:
+          type: integer
+          description: >-
+              Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database.
+        minTotalValueSize:
+          type: string
+          description: >-
+              Specifies the minimum total value size (i.e., the sum of the sizes of all values) that an attribute must have before it will be written into the uncached-id2entry database.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Attribute Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumsimple-uncached-attribute-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:simple"
+    add-third-party-uncached-attribute-criteria-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Uncached Attribute Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-shared'
+    third-party-uncached-attribute-criteria-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Uncached Attribute Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-uncached-attribute-criteria-shared'
+    third-party-uncached-attribute-criteria-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-uncached-attribute-criteriaSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Uncached Attribute Criteria.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: >-
+                The set of arguments used to customize the behavior for the Third Party Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Uncached Attribute Criteria
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-party-uncached-attribute-criteriaSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:third-party"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
     Operation:
       type: object
       properties:
@@ -165,213 +387,6 @@ components:
       required:
       - op
       - path
-    add-default-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Attribute Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/default-shared'
-    default-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Attribute Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/default-shared'
-    default-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumdefaultSchemaUrn'
-        description:
-          type: string
-          description: A description for this Uncached Attribute Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - enabled
-    EnumdefaultSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default"
-    add-groovy-scripted-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Attribute Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/groovy-scripted-shared'
-    groovy-scripted-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Attribute Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/groovy-scripted-shared'
-    groovy-scripted-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
-        scriptClass:
-          type: string
-          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
-        scriptArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Uncached Attribute Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - scriptClass
-      - enabled
-    Enumgroovy-scriptedSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:groovy-scripted"
-    add-simple-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Attribute Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/simple-shared'
-    simple-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Attribute Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/simple-shared'
-    simple-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumsimpleSchemaUrn'
-        attributeType:
-          type: array
-          items:
-            type: string
-            description: Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
-        minValueCount:
-          type: integer
-          description: Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database.
-        minTotalValueSize:
-          type: string
-          description: Specifies the minimum total value size (i.e., the sum of the sizes of all values) that an attribute must have before it will be written into the uncached-id2entry database.
-        description:
-          type: string
-          description: A description for this Uncached Attribute Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - attributeType
-      - enabled
-    EnumsimpleSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:simple"
-    add-third-party-request:
-      allOf:
-      - type: object
-        properties:
-          criteriaName:
-            description: Name of the new Uncached Attribute Criteria
-            type: string
-        required:
-        - criteriaName
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-response:
-      allOf:
-      - type: object
-        properties:
-          id:
-            description: Name of the Uncached Attribute Criteria
-            type: string
-        required:
-        - id
-      - $ref: '#/components/schemas/third-party-shared'
-    third-party-shared:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
-        extensionClass:
-          type: string
-          description: The fully-qualified name of the Java class providing the logic for the Third Party Uncached Attribute Criteria.
-        extensionArgument:
-          type: array
-          items:
-            type: string
-            description: The set of arguments used to customize the behavior for the Third Party Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
-        description:
-          type: string
-          description: A description for this Uncached Attribute Criteria
-        enabled:
-          type: boolean
-          description: Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
-      required:
-      - schemas
-      - extensionClass
-      - enabled
-    Enumthird-partySchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:third-party"
-    update-uncached-attribute-criteria-request:
-      type: object
-      properties:
-        operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-      required:
-      - operations
     EnumOperation:
       type: string
       enum:
