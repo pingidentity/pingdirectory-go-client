@@ -1,7 +1,7 @@
 /*
-PingData Location Config - OpenAPI 3.0
+PingData Config - OpenAPI 3.0
 
-This is the PingData Configuration API for the Location config object
+This is the PingData Configuration API
 
 API version: 0.1
 */
@@ -327,12 +327,12 @@ type ApiUpdateLocationRequest struct {
 	ctx context.Context
 	ApiService *LocationApiService
 	locationName string
-	updateLocationRequest *UpdateLocationRequest
+	updateRequest *UpdateRequest
 }
 
 // Update an existing Location
-func (r ApiUpdateLocationRequest) UpdateLocationRequest(updateLocationRequest UpdateLocationRequest) ApiUpdateLocationRequest {
-	r.updateLocationRequest = &updateLocationRequest
+func (r ApiUpdateLocationRequest) UpdateRequest(updateRequest UpdateRequest) ApiUpdateLocationRequest {
+	r.updateRequest = &updateRequest
 	return r
 }
 
@@ -376,8 +376,8 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updateLocationRequest == nil {
-		return localVarReturnValue, nil, reportError("updateLocationRequest is required and must be specified")
+	if r.updateRequest == nil {
+		return localVarReturnValue, nil, reportError("updateRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -398,7 +398,7 @@ func (a *LocationApiService) UpdateLocationExecute(r ApiUpdateLocationRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateLocationRequest
+	localVarPostBody = r.updateRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

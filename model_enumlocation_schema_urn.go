@@ -1,7 +1,7 @@
 /*
-PingData Location Config - OpenAPI 3.0
+PingData Config - OpenAPI 3.0
 
-This is the PingData Configuration API for the Location config object
+This is the PingData Configuration API
 
 API version: 0.1
 */

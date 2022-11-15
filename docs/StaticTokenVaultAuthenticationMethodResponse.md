@@ -1,0 +1,119 @@
+# StaticTokenVaultAuthenticationMethodResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** | Name of the Vault Authentication Method | 
+**Schemas** | [**[]EnumstaticTokenVaultAuthenticationMethodSchemaUrn**](EnumstaticTokenVaultAuthenticationMethodSchemaUrn.md) |  | 
+**VaultAccessToken** | **string** | The static token used to authenticate to the Vault server. | 
+**Description** | Pointer to **string** | A description for this Vault Authentication Method | [optional] 
+
+## Methods
+
+### NewStaticTokenVaultAuthenticationMethodResponse
+
+`func NewStaticTokenVaultAuthenticationMethodResponse(id string, schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn, vaultAccessToken string, ) *StaticTokenVaultAuthenticationMethodResponse`
+
+NewStaticTokenVaultAuthenticationMethodResponse instantiates a new StaticTokenVaultAuthenticationMethodResponse object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewStaticTokenVaultAuthenticationMethodResponseWithDefaults
+
+`func NewStaticTokenVaultAuthenticationMethodResponseWithDefaults() *StaticTokenVaultAuthenticationMethodResponse`
+
+NewStaticTokenVaultAuthenticationMethodResponseWithDefaults instantiates a new StaticTokenVaultAuthenticationMethodResponse object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
+
+### GetSchemas
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetSchemas() []EnumstaticTokenVaultAuthenticationMethodSchemaUrn`
+
+GetSchemas returns the Schemas field if non-nil, zero value otherwise.
+
+### GetSchemasOk
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetSchemasOk() (*[]EnumstaticTokenVaultAuthenticationMethodSchemaUrn, bool)`
+
+GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemas
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) SetSchemas(v []EnumstaticTokenVaultAuthenticationMethodSchemaUrn)`
+
+SetSchemas sets Schemas field to given value.
+
+
+### GetVaultAccessToken
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetVaultAccessToken() string`
+
+GetVaultAccessToken returns the VaultAccessToken field if non-nil, zero value otherwise.
+
+### GetVaultAccessTokenOk
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetVaultAccessTokenOk() (*string, bool)`
+
+GetVaultAccessTokenOk returns a tuple with the VaultAccessToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVaultAccessToken
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) SetVaultAccessToken(v string)`
+
+SetVaultAccessToken sets VaultAccessToken field to given value.
+
+
+### GetDescription
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *StaticTokenVaultAuthenticationMethodResponse) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

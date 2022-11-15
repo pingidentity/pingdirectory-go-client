@@ -1,0 +1,11 @@
+# EnumgroovyScriptedPasswordGeneratorSchemaUrn
+
+## Enum
+
+
+* `URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORGROOVY_SCRIPTED` (value: `"urn:pingidentity:schemas:configuration:2.0:password-generator:groovy-scripted"`)
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

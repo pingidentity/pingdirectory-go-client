@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## UpdateLocation
 
-> LocationResponse UpdateLocation(ctx, locationName).UpdateLocationRequest(updateLocationRequest).Execute()
+> LocationResponse UpdateLocation(ctx, locationName).UpdateRequest(updateRequest).Execute()
 
 Update an existing Location by name
 
@@ -229,11 +229,11 @@ import (
 
 func main() {
     locationName := "locationName_example" // string | Name of the Location to be updated
-    updateLocationRequest := *openapiclient.NewUpdateLocationRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateLocationRequest | Update an existing Location
+    updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Location
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LocationApi.UpdateLocation(context.Background(), locationName).UpdateLocationRequest(updateLocationRequest).Execute()
+    resp, r, err := apiClient.LocationApi.UpdateLocation(context.Background(), locationName).UpdateRequest(updateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LocationApi.UpdateLocation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -259,7 +259,7 @@ Other parameters are passed through a pointer to a apiUpdateLocationRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateLocationRequest** | [**UpdateLocationRequest**](UpdateLocationRequest.md) | Update an existing Location | 
+ **updateRequest** | [**UpdateRequest**](UpdateRequest.md) | Update an existing Location | 
 
 ### Return type
 

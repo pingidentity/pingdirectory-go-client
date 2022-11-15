@@ -1,0 +1,385 @@
+# AddSmtpAccountStatusNotificationHandlerRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**HandlerName** | **string** | Name of the new Account Status Notification Handler | 
+**Schemas** | [**[]EnumsmtpAccountStatusNotificationHandlerSchemaUrn**](EnumsmtpAccountStatusNotificationHandlerSchemaUrn.md) |  | 
+**EmailAddressAttributeType** | Pointer to **[]string** |  | [optional] 
+**EmailAddressJSONField** | Pointer to **string** | The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string. | [optional] 
+**EmailAddressJSONObjectFilter** | Pointer to **string** | A JSON object filter that may be used to identify which email address value to use when sending the message. | [optional] 
+**RecipientAddress** | Pointer to **[]string** |  | [optional] 
+**SendMessageWithoutEndUserAddress** | **bool** | Indicates whether an email notification message should be generated and sent to the set of notification recipients even if the user entry does not contain any values for any of the email address attributes (that is, in cases when it is not possible to notify the end user). | 
+**SenderAddress** | **string** | Specifies the email address from which the message is sent. Note that this does not necessarily have to be a legitimate email address. | 
+**MessageSubject** | **[]string** |  | 
+**MessageTemplateFile** | **[]string** |  | 
+**Description** | Pointer to **string** | A description for this Account Status Notification Handler | [optional] 
+**Enabled** | **bool** | Indicates whether the Account Status Notification Handler is enabled. Only enabled handlers are invoked whenever a related event occurs in the server. | 
+**Asynchronous** | Pointer to **bool** | Indicates whether the server should attempt to invoke this Account Status Notification Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver a message) will not delay processing for the operation that triggered the notification. | [optional] 
+**AccountCreationNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which add requests should result in account creation notifications for this handler. | [optional] 
+**AccountUpdateNotificationRequestCriteria** | Pointer to **string** | A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler. | [optional] 
+
+## Methods
+
+### NewAddSmtpAccountStatusNotificationHandlerRequest
+
+`func NewAddSmtpAccountStatusNotificationHandlerRequest(handlerName string, schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn, sendMessageWithoutEndUserAddress bool, senderAddress string, messageSubject []string, messageTemplateFile []string, enabled bool, ) *AddSmtpAccountStatusNotificationHandlerRequest`
+
+NewAddSmtpAccountStatusNotificationHandlerRequest instantiates a new AddSmtpAccountStatusNotificationHandlerRequest object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewAddSmtpAccountStatusNotificationHandlerRequestWithDefaults
+
+`func NewAddSmtpAccountStatusNotificationHandlerRequestWithDefaults() *AddSmtpAccountStatusNotificationHandlerRequest`
+
+NewAddSmtpAccountStatusNotificationHandlerRequestWithDefaults instantiates a new AddSmtpAccountStatusNotificationHandlerRequest object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetHandlerName
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerName() string`
+
+GetHandlerName returns the HandlerName field if non-nil, zero value otherwise.
+
+### GetHandlerNameOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool)`
+
+GetHandlerNameOk returns a tuple with the HandlerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHandlerName
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetHandlerName(v string)`
+
+SetHandlerName sets HandlerName field to given value.
+
+
+### GetSchemas
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSchemas() []EnumsmtpAccountStatusNotificationHandlerSchemaUrn`
+
+GetSchemas returns the Schemas field if non-nil, zero value otherwise.
+
+### GetSchemasOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSchemasOk() (*[]EnumsmtpAccountStatusNotificationHandlerSchemaUrn, bool)`
+
+GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchemas
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetSchemas(v []EnumsmtpAccountStatusNotificationHandlerSchemaUrn)`
+
+SetSchemas sets Schemas field to given value.
+
+
+### GetEmailAddressAttributeType
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttributeType() []string`
+
+GetEmailAddressAttributeType returns the EmailAddressAttributeType field if non-nil, zero value otherwise.
+
+### GetEmailAddressAttributeTypeOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttributeTypeOk() (*[]string, bool)`
+
+GetEmailAddressAttributeTypeOk returns a tuple with the EmailAddressAttributeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailAddressAttributeType
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEmailAddressAttributeType(v []string)`
+
+SetEmailAddressAttributeType sets EmailAddressAttributeType field to given value.
+
+### HasEmailAddressAttributeType
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasEmailAddressAttributeType() bool`
+
+HasEmailAddressAttributeType returns a boolean if a field has been set.
+
+### GetEmailAddressJSONField
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONField() string`
+
+GetEmailAddressJSONField returns the EmailAddressJSONField field if non-nil, zero value otherwise.
+
+### GetEmailAddressJSONFieldOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONFieldOk() (*string, bool)`
+
+GetEmailAddressJSONFieldOk returns a tuple with the EmailAddressJSONField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailAddressJSONField
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEmailAddressJSONField(v string)`
+
+SetEmailAddressJSONField sets EmailAddressJSONField field to given value.
+
+### HasEmailAddressJSONField
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasEmailAddressJSONField() bool`
+
+HasEmailAddressJSONField returns a boolean if a field has been set.
+
+### GetEmailAddressJSONObjectFilter
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObjectFilter() string`
+
+GetEmailAddressJSONObjectFilter returns the EmailAddressJSONObjectFilter field if non-nil, zero value otherwise.
+
+### GetEmailAddressJSONObjectFilterOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObjectFilterOk() (*string, bool)`
+
+GetEmailAddressJSONObjectFilterOk returns a tuple with the EmailAddressJSONObjectFilter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEmailAddressJSONObjectFilter
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEmailAddressJSONObjectFilter(v string)`
+
+SetEmailAddressJSONObjectFilter sets EmailAddressJSONObjectFilter field to given value.
+
+### HasEmailAddressJSONObjectFilter
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasEmailAddressJSONObjectFilter() bool`
+
+HasEmailAddressJSONObjectFilter returns a boolean if a field has been set.
+
+### GetRecipientAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddress() []string`
+
+GetRecipientAddress returns the RecipientAddress field if non-nil, zero value otherwise.
+
+### GetRecipientAddressOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddressOk() (*[]string, bool)`
+
+GetRecipientAddressOk returns a tuple with the RecipientAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecipientAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetRecipientAddress(v []string)`
+
+SetRecipientAddress sets RecipientAddress field to given value.
+
+### HasRecipientAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasRecipientAddress() bool`
+
+HasRecipientAddress returns a boolean if a field has been set.
+
+### GetSendMessageWithoutEndUserAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEndUserAddress() bool`
+
+GetSendMessageWithoutEndUserAddress returns the SendMessageWithoutEndUserAddress field if non-nil, zero value otherwise.
+
+### GetSendMessageWithoutEndUserAddressOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEndUserAddressOk() (*bool, bool)`
+
+GetSendMessageWithoutEndUserAddressOk returns a tuple with the SendMessageWithoutEndUserAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSendMessageWithoutEndUserAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetSendMessageWithoutEndUserAddress(v bool)`
+
+SetSendMessageWithoutEndUserAddress sets SendMessageWithoutEndUserAddress field to given value.
+
+
+### GetSenderAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSenderAddress() string`
+
+GetSenderAddress returns the SenderAddress field if non-nil, zero value otherwise.
+
+### GetSenderAddressOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSenderAddressOk() (*string, bool)`
+
+GetSenderAddressOk returns a tuple with the SenderAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSenderAddress
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetSenderAddress(v string)`
+
+SetSenderAddress sets SenderAddress field to given value.
+
+
+### GetMessageSubject
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageSubject() []string`
+
+GetMessageSubject returns the MessageSubject field if non-nil, zero value otherwise.
+
+### GetMessageSubjectOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageSubjectOk() (*[]string, bool)`
+
+GetMessageSubjectOk returns a tuple with the MessageSubject field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageSubject
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetMessageSubject(v []string)`
+
+SetMessageSubject sets MessageSubject field to given value.
+
+
+### GetMessageTemplateFile
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageTemplateFile() []string`
+
+GetMessageTemplateFile returns the MessageTemplateFile field if non-nil, zero value otherwise.
+
+### GetMessageTemplateFileOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageTemplateFileOk() (*[]string, bool)`
+
+GetMessageTemplateFileOk returns a tuple with the MessageTemplateFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessageTemplateFile
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetMessageTemplateFile(v []string)`
+
+SetMessageTemplateFile sets MessageTemplateFile field to given value.
+
+
+### GetDescription
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetEnabled
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+
+### GetAsynchronous
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronous() bool`
+
+GetAsynchronous returns the Asynchronous field if non-nil, zero value otherwise.
+
+### GetAsynchronousOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool)`
+
+GetAsynchronousOk returns a tuple with the Asynchronous field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAsynchronous
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAsynchronous(v bool)`
+
+SetAsynchronous sets Asynchronous field to given value.
+
+### HasAsynchronous
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAsynchronous() bool`
+
+HasAsynchronous returns a boolean if a field has been set.
+
+### GetAccountCreationNotificationRequestCriteria
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteria() string`
+
+GetAccountCreationNotificationRequestCriteria returns the AccountCreationNotificationRequestCriteria field if non-nil, zero value otherwise.
+
+### GetAccountCreationNotificationRequestCriteriaOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool)`
+
+GetAccountCreationNotificationRequestCriteriaOk returns a tuple with the AccountCreationNotificationRequestCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountCreationNotificationRequestCriteria
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAccountCreationNotificationRequestCriteria(v string)`
+
+SetAccountCreationNotificationRequestCriteria sets AccountCreationNotificationRequestCriteria field to given value.
+
+### HasAccountCreationNotificationRequestCriteria
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAccountCreationNotificationRequestCriteria() bool`
+
+HasAccountCreationNotificationRequestCriteria returns a boolean if a field has been set.
+
+### GetAccountUpdateNotificationRequestCriteria
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteria() string`
+
+GetAccountUpdateNotificationRequestCriteria returns the AccountUpdateNotificationRequestCriteria field if non-nil, zero value otherwise.
+
+### GetAccountUpdateNotificationRequestCriteriaOk
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool)`
+
+GetAccountUpdateNotificationRequestCriteriaOk returns a tuple with the AccountUpdateNotificationRequestCriteria field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAccountUpdateNotificationRequestCriteria
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) SetAccountUpdateNotificationRequestCriteria(v string)`
+
+SetAccountUpdateNotificationRequestCriteria sets AccountUpdateNotificationRequestCriteria field to given value.
+
+### HasAccountUpdateNotificationRequestCriteria
+
+`func (o *AddSmtpAccountStatusNotificationHandlerRequest) HasAccountUpdateNotificationRequestCriteria() bool`
+
+HasAccountUpdateNotificationRequestCriteria returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

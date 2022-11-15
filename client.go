@@ -1,7 +1,7 @@
 /*
-PingData Location Config - OpenAPI 3.0
+PingData Config - OpenAPI 3.0
 
-This is the PingData Configuration API for the Location config object
+This is the PingData Configuration API
 
 API version: 0.1
 */
@@ -41,7 +41,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the PingData Location Config - OpenAPI 3.0 API v0.1
+// APIClient manages communication with the PingData Config - OpenAPI 3.0 API v0.1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -49,7 +49,187 @@ type APIClient struct {
 
 	// API Services
 
+	AccessControlHandlerApi *AccessControlHandlerApiService
+
+	AccessTokenValidatorApi *AccessTokenValidatorApiService
+
+	AccountStatusNotificationHandlerApi *AccountStatusNotificationHandlerApiService
+
+	AlarmManagerApi *AlarmManagerApiService
+
+	AlertHandlerApi *AlertHandlerApiService
+
+	AttributeSyntaxApi *AttributeSyntaxApiService
+
+	AzureAuthenticationMethodApi *AzureAuthenticationMethodApiService
+
+	BackendApi *BackendApiService
+
+	CertificateMapperApi *CertificateMapperApiService
+
+	ChangeSubscriptionApi *ChangeSubscriptionApiService
+
+	ChangeSubscriptionHandlerApi *ChangeSubscriptionHandlerApiService
+
+	CipherStreamProviderApi *CipherStreamProviderApiService
+
+	ClientConnectionPolicyApi *ClientConnectionPolicyApiService
+
+	ConjurAuthenticationMethodApi *ConjurAuthenticationMethodApiService
+
+	ConnectionCriteriaApi *ConnectionCriteriaApiService
+
+	ConnectionHandlerApi *ConnectionHandlerApiService
+
+	ConsentDefinitionApi *ConsentDefinitionApiService
+
+	ConsentServiceApi *ConsentServiceApiService
+
+	ConstructedAttributeApi *ConstructedAttributeApiService
+
+	CryptoManagerApi *CryptoManagerApiService
+
+	DataSecurityAuditorApi *DataSecurityAuditorApiService
+
+	DelegatedAdminAttributeCategoryApi *DelegatedAdminAttributeCategoryApiService
+
+	DelegatedAdminRightsApi *DelegatedAdminRightsApiService
+
+	DnMapApi *DnMapApiService
+
+	EntryCacheApi *EntryCacheApiService
+
+	ExtendedOperationHandlerApi *ExtendedOperationHandlerApiService
+
+	ExternalServerApi *ExternalServerApiService
+
+	FailureLockoutActionApi *FailureLockoutActionApiService
+
+	GaugeApi *GaugeApiService
+
+	GaugeDataSourceApi *GaugeDataSourceApiService
+
+	GlobalConfigurationApi *GlobalConfigurationApiService
+
+	GroupImplementationApi *GroupImplementationApiService
+
+	HttpConfigurationApi *HttpConfigurationApiService
+
+	HttpServletCrossOriginPolicyApi *HttpServletCrossOriginPolicyApiService
+
+	HttpServletExtensionApi *HttpServletExtensionApiService
+
+	IdTokenValidatorApi *IdTokenValidatorApiService
+
+	IdentityMapperApi *IdentityMapperApiService
+
+	JsonAttributeConstraintsApi *JsonAttributeConstraintsApiService
+
+	KeyManagerProviderApi *KeyManagerProviderApiService
+
+	KeyPairApi *KeyPairApiService
+
+	LdapSdkDebugLoggerApi *LdapSdkDebugLoggerApiService
+
+	LicenseApi *LicenseApiService
+
 	LocationApi *LocationApiService
+
+	LogFieldBehaviorApi *LogFieldBehaviorApiService
+
+	LogFieldMappingApi *LogFieldMappingApiService
+
+	LogFieldSyntaxApi *LogFieldSyntaxApiService
+
+	LogFileRotationListenerApi *LogFileRotationListenerApiService
+
+	LogPublisherApi *LogPublisherApiService
+
+	LogRetentionPolicyApi *LogRetentionPolicyApiService
+
+	LogRotationPolicyApi *LogRotationPolicyApiService
+
+	MatchingRuleApi *MatchingRuleApiService
+
+	MonitorProviderApi *MonitorProviderApiService
+
+	MonitoringEndpointApi *MonitoringEndpointApiService
+
+	NotificationManagerApi *NotificationManagerApiService
+
+	OauthTokenHandlerApi *OauthTokenHandlerApiService
+
+	ObscuredValueApi *ObscuredValueApiService
+
+	OtpDeliveryMechanismApi *OtpDeliveryMechanismApiService
+
+	PassThroughAuthenticationHandlerApi *PassThroughAuthenticationHandlerApiService
+
+	PassphraseProviderApi *PassphraseProviderApiService
+
+	PasswordGeneratorApi *PasswordGeneratorApiService
+
+	PasswordPolicyApi *PasswordPolicyApiService
+
+	PasswordStorageSchemeApi *PasswordStorageSchemeApiService
+
+	PasswordValidatorApi *PasswordValidatorApiService
+
+	PluginRootApi *PluginRootApiService
+
+	RecurringTaskApi *RecurringTaskApiService
+
+	RecurringTaskChainApi *RecurringTaskChainApiService
+
+	ReplicationAssurancePolicyApi *ReplicationAssurancePolicyApiService
+
+	RequestCriteriaApi *RequestCriteriaApiService
+
+	RestResourceTypeApi *RestResourceTypeApiService
+
+	ResultCodeMapApi *ResultCodeMapApiService
+
+	ResultCriteriaApi *ResultCriteriaApiService
+
+	RootDnApi *RootDnApiService
+
+	RootDseBackendApi *RootDseBackendApiService
+
+	SaslMechanismHandlerApi *SaslMechanismHandlerApiService
+
+	ScimSchemaApi *ScimSchemaApiService
+
+	SearchEntryCriteriaApi *SearchEntryCriteriaApiService
+
+	SearchReferenceCriteriaApi *SearchReferenceCriteriaApiService
+
+	SensitiveAttributeApi *SensitiveAttributeApiService
+
+	ServerGroupApi *ServerGroupApiService
+
+	ServerInstanceApi *ServerInstanceApiService
+
+	SoftDeletePolicyApi *SoftDeletePolicyApiService
+
+	SynchronizationProviderApi *SynchronizationProviderApiService
+
+	TopologyAdminUserApi *TopologyAdminUserApiService
+
+	TrustManagerProviderApi *TrustManagerProviderApiService
+
+	TrustedCertificateApi *TrustedCertificateApiService
+
+	UncachedAttributeCriteriaApi *UncachedAttributeCriteriaApiService
+
+	UncachedEntryCriteriaApi *UncachedEntryCriteriaApiService
+
+	VaultAuthenticationMethodApi *VaultAuthenticationMethodApiService
+
+	VirtualAttributeApi *VirtualAttributeApiService
+
+	WebApplicationExtensionApi *WebApplicationExtensionApiService
+
+	WorkQueueApi *WorkQueueApiService
 }
 
 type service struct {
@@ -68,7 +248,97 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.AccessControlHandlerApi = (*AccessControlHandlerApiService)(&c.common)
+	c.AccessTokenValidatorApi = (*AccessTokenValidatorApiService)(&c.common)
+	c.AccountStatusNotificationHandlerApi = (*AccountStatusNotificationHandlerApiService)(&c.common)
+	c.AlarmManagerApi = (*AlarmManagerApiService)(&c.common)
+	c.AlertHandlerApi = (*AlertHandlerApiService)(&c.common)
+	c.AttributeSyntaxApi = (*AttributeSyntaxApiService)(&c.common)
+	c.AzureAuthenticationMethodApi = (*AzureAuthenticationMethodApiService)(&c.common)
+	c.BackendApi = (*BackendApiService)(&c.common)
+	c.CertificateMapperApi = (*CertificateMapperApiService)(&c.common)
+	c.ChangeSubscriptionApi = (*ChangeSubscriptionApiService)(&c.common)
+	c.ChangeSubscriptionHandlerApi = (*ChangeSubscriptionHandlerApiService)(&c.common)
+	c.CipherStreamProviderApi = (*CipherStreamProviderApiService)(&c.common)
+	c.ClientConnectionPolicyApi = (*ClientConnectionPolicyApiService)(&c.common)
+	c.ConjurAuthenticationMethodApi = (*ConjurAuthenticationMethodApiService)(&c.common)
+	c.ConnectionCriteriaApi = (*ConnectionCriteriaApiService)(&c.common)
+	c.ConnectionHandlerApi = (*ConnectionHandlerApiService)(&c.common)
+	c.ConsentDefinitionApi = (*ConsentDefinitionApiService)(&c.common)
+	c.ConsentServiceApi = (*ConsentServiceApiService)(&c.common)
+	c.ConstructedAttributeApi = (*ConstructedAttributeApiService)(&c.common)
+	c.CryptoManagerApi = (*CryptoManagerApiService)(&c.common)
+	c.DataSecurityAuditorApi = (*DataSecurityAuditorApiService)(&c.common)
+	c.DelegatedAdminAttributeCategoryApi = (*DelegatedAdminAttributeCategoryApiService)(&c.common)
+	c.DelegatedAdminRightsApi = (*DelegatedAdminRightsApiService)(&c.common)
+	c.DnMapApi = (*DnMapApiService)(&c.common)
+	c.EntryCacheApi = (*EntryCacheApiService)(&c.common)
+	c.ExtendedOperationHandlerApi = (*ExtendedOperationHandlerApiService)(&c.common)
+	c.ExternalServerApi = (*ExternalServerApiService)(&c.common)
+	c.FailureLockoutActionApi = (*FailureLockoutActionApiService)(&c.common)
+	c.GaugeApi = (*GaugeApiService)(&c.common)
+	c.GaugeDataSourceApi = (*GaugeDataSourceApiService)(&c.common)
+	c.GlobalConfigurationApi = (*GlobalConfigurationApiService)(&c.common)
+	c.GroupImplementationApi = (*GroupImplementationApiService)(&c.common)
+	c.HttpConfigurationApi = (*HttpConfigurationApiService)(&c.common)
+	c.HttpServletCrossOriginPolicyApi = (*HttpServletCrossOriginPolicyApiService)(&c.common)
+	c.HttpServletExtensionApi = (*HttpServletExtensionApiService)(&c.common)
+	c.IdTokenValidatorApi = (*IdTokenValidatorApiService)(&c.common)
+	c.IdentityMapperApi = (*IdentityMapperApiService)(&c.common)
+	c.JsonAttributeConstraintsApi = (*JsonAttributeConstraintsApiService)(&c.common)
+	c.KeyManagerProviderApi = (*KeyManagerProviderApiService)(&c.common)
+	c.KeyPairApi = (*KeyPairApiService)(&c.common)
+	c.LdapSdkDebugLoggerApi = (*LdapSdkDebugLoggerApiService)(&c.common)
+	c.LicenseApi = (*LicenseApiService)(&c.common)
 	c.LocationApi = (*LocationApiService)(&c.common)
+	c.LogFieldBehaviorApi = (*LogFieldBehaviorApiService)(&c.common)
+	c.LogFieldMappingApi = (*LogFieldMappingApiService)(&c.common)
+	c.LogFieldSyntaxApi = (*LogFieldSyntaxApiService)(&c.common)
+	c.LogFileRotationListenerApi = (*LogFileRotationListenerApiService)(&c.common)
+	c.LogPublisherApi = (*LogPublisherApiService)(&c.common)
+	c.LogRetentionPolicyApi = (*LogRetentionPolicyApiService)(&c.common)
+	c.LogRotationPolicyApi = (*LogRotationPolicyApiService)(&c.common)
+	c.MatchingRuleApi = (*MatchingRuleApiService)(&c.common)
+	c.MonitorProviderApi = (*MonitorProviderApiService)(&c.common)
+	c.MonitoringEndpointApi = (*MonitoringEndpointApiService)(&c.common)
+	c.NotificationManagerApi = (*NotificationManagerApiService)(&c.common)
+	c.OauthTokenHandlerApi = (*OauthTokenHandlerApiService)(&c.common)
+	c.ObscuredValueApi = (*ObscuredValueApiService)(&c.common)
+	c.OtpDeliveryMechanismApi = (*OtpDeliveryMechanismApiService)(&c.common)
+	c.PassThroughAuthenticationHandlerApi = (*PassThroughAuthenticationHandlerApiService)(&c.common)
+	c.PassphraseProviderApi = (*PassphraseProviderApiService)(&c.common)
+	c.PasswordGeneratorApi = (*PasswordGeneratorApiService)(&c.common)
+	c.PasswordPolicyApi = (*PasswordPolicyApiService)(&c.common)
+	c.PasswordStorageSchemeApi = (*PasswordStorageSchemeApiService)(&c.common)
+	c.PasswordValidatorApi = (*PasswordValidatorApiService)(&c.common)
+	c.PluginRootApi = (*PluginRootApiService)(&c.common)
+	c.RecurringTaskApi = (*RecurringTaskApiService)(&c.common)
+	c.RecurringTaskChainApi = (*RecurringTaskChainApiService)(&c.common)
+	c.ReplicationAssurancePolicyApi = (*ReplicationAssurancePolicyApiService)(&c.common)
+	c.RequestCriteriaApi = (*RequestCriteriaApiService)(&c.common)
+	c.RestResourceTypeApi = (*RestResourceTypeApiService)(&c.common)
+	c.ResultCodeMapApi = (*ResultCodeMapApiService)(&c.common)
+	c.ResultCriteriaApi = (*ResultCriteriaApiService)(&c.common)
+	c.RootDnApi = (*RootDnApiService)(&c.common)
+	c.RootDseBackendApi = (*RootDseBackendApiService)(&c.common)
+	c.SaslMechanismHandlerApi = (*SaslMechanismHandlerApiService)(&c.common)
+	c.ScimSchemaApi = (*ScimSchemaApiService)(&c.common)
+	c.SearchEntryCriteriaApi = (*SearchEntryCriteriaApiService)(&c.common)
+	c.SearchReferenceCriteriaApi = (*SearchReferenceCriteriaApiService)(&c.common)
+	c.SensitiveAttributeApi = (*SensitiveAttributeApiService)(&c.common)
+	c.ServerGroupApi = (*ServerGroupApiService)(&c.common)
+	c.ServerInstanceApi = (*ServerInstanceApiService)(&c.common)
+	c.SoftDeletePolicyApi = (*SoftDeletePolicyApiService)(&c.common)
+	c.SynchronizationProviderApi = (*SynchronizationProviderApiService)(&c.common)
+	c.TopologyAdminUserApi = (*TopologyAdminUserApiService)(&c.common)
+	c.TrustManagerProviderApi = (*TrustManagerProviderApiService)(&c.common)
+	c.TrustedCertificateApi = (*TrustedCertificateApiService)(&c.common)
+	c.UncachedAttributeCriteriaApi = (*UncachedAttributeCriteriaApiService)(&c.common)
+	c.UncachedEntryCriteriaApi = (*UncachedEntryCriteriaApiService)(&c.common)
+	c.VaultAuthenticationMethodApi = (*VaultAuthenticationMethodApiService)(&c.common)
+	c.VirtualAttributeApi = (*VirtualAttributeApiService)(&c.common)
+	c.WebApplicationExtensionApi = (*WebApplicationExtensionApiService)(&c.common)
+	c.WorkQueueApi = (*WorkQueueApiService)(&c.common)
 
 	return c
 }
