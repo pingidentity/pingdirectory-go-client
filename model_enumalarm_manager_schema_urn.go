@@ -20,7 +20,7 @@ type EnumalarmManagerSchemaUrn string
 
 // List of Enumalarm-managerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALARM_MANAGER EnumalarmManagerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alarm-manager"
+	ENUMALARMMANAGERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALARM_MANAGER EnumalarmManagerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alarm-manager"
 )
 
 // All allowed values of EnumalarmManagerSchemaUrn enum

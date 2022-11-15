@@ -20,7 +20,7 @@ type EnumrootDseRequestCriteriaSchemaUrn string
 
 // List of Enumroot-dse-request-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0REQUEST_CRITERIAROOT_DSE EnumrootDseRequestCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:request-criteria:root-dse"
+	ENUMROOTDSEREQUESTCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0REQUEST_CRITERIAROOT_DSE EnumrootDseRequestCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:request-criteria:root-dse"
 )
 
 // All allowed values of EnumrootDseRequestCriteriaSchemaUrn enum

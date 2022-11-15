@@ -20,9 +20,9 @@ type EnumglobalConfigurationWritabilityModeProp string
 
 // List of Enumglobal-configuration-writabilityModeProp
 const (
-	ENABLED EnumglobalConfigurationWritabilityModeProp = "enabled"
-	DISABLED EnumglobalConfigurationWritabilityModeProp = "disabled"
-	INTERNAL_ONLY EnumglobalConfigurationWritabilityModeProp = "internal-only"
+	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_ENABLED EnumglobalConfigurationWritabilityModeProp = "enabled"
+	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_DISABLED EnumglobalConfigurationWritabilityModeProp = "disabled"
+	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_INTERNAL_ONLY EnumglobalConfigurationWritabilityModeProp = "internal-only"
 )
 
 // All allowed values of EnumglobalConfigurationWritabilityModeProp enum

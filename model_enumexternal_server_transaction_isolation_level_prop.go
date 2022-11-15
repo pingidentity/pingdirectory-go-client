@@ -20,10 +20,10 @@ type EnumexternalServerTransactionIsolationLevelProp string
 
 // List of Enumexternal-server-transactionIsolationLevelProp
 const (
-	READ_COMMITTED EnumexternalServerTransactionIsolationLevelProp = "read-committed"
-	READ_UNCOMMITTED EnumexternalServerTransactionIsolationLevelProp = "read-uncommitted"
-	REPEATABLE_READ EnumexternalServerTransactionIsolationLevelProp = "repeatable-read"
-	SERIALIZABLE EnumexternalServerTransactionIsolationLevelProp = "serializable"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_READ_COMMITTED EnumexternalServerTransactionIsolationLevelProp = "read-committed"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_READ_UNCOMMITTED EnumexternalServerTransactionIsolationLevelProp = "read-uncommitted"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_REPEATABLE_READ EnumexternalServerTransactionIsolationLevelProp = "repeatable-read"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_SERIALIZABLE EnumexternalServerTransactionIsolationLevelProp = "serializable"
 )
 
 // All allowed values of EnumexternalServerTransactionIsolationLevelProp enum

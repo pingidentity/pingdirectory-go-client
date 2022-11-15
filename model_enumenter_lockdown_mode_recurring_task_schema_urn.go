@@ -20,7 +20,7 @@ type EnumenterLockdownModeRecurringTaskSchemaUrn string
 
 // List of Enumenter-lockdown-mode-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKENTER_LOCKDOWN_MODE EnumenterLockdownModeRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:enter-lockdown-mode"
+	ENUMENTERLOCKDOWNMODERECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKENTER_LOCKDOWN_MODE EnumenterLockdownModeRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:enter-lockdown-mode"
 )
 
 // All allowed values of EnumenterLockdownModeRecurringTaskSchemaUrn enum

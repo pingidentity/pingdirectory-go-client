@@ -20,9 +20,9 @@ type EnumresultCriteriaUsedAlternateAuthzidProp string
 
 // List of Enumresult-criteria-usedAlternateAuthzidProp
 const (
-	REQUIRED EnumresultCriteriaUsedAlternateAuthzidProp = "required"
-	PROHIBITED EnumresultCriteriaUsedAlternateAuthzidProp = "prohibited"
-	OPTIONAL EnumresultCriteriaUsedAlternateAuthzidProp = "optional"
+	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_REQUIRED EnumresultCriteriaUsedAlternateAuthzidProp = "required"
+	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_PROHIBITED EnumresultCriteriaUsedAlternateAuthzidProp = "prohibited"
+	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_OPTIONAL EnumresultCriteriaUsedAlternateAuthzidProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaUsedAlternateAuthzidProp enum

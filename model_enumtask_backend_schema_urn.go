@@ -20,7 +20,7 @@ type EnumtaskBackendSchemaUrn string
 
 // List of Enumtask-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDTASK EnumtaskBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:task"
+	ENUMTASKBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDTASK EnumtaskBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:task"
 )
 
 // All allowed values of EnumtaskBackendSchemaUrn enum

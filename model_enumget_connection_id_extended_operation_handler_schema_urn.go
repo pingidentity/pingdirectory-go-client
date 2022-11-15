@@ -20,7 +20,7 @@ type EnumgetConnectionIdExtendedOperationHandlerSchemaUrn string
 
 // List of Enumget-connection-id-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERGET_CONNECTION_ID EnumgetConnectionIdExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-connection-id"
+	ENUMGETCONNECTIONIDEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERGET_CONNECTION_ID EnumgetConnectionIdExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-connection-id"
 )
 
 // All allowed values of EnumgetConnectionIdExtendedOperationHandlerSchemaUrn enum

@@ -20,8 +20,8 @@ type EnumalertHandlerLongMessageBehaviorProp string
 
 // List of Enumalert-handler-longMessageBehaviorProp
 const (
-	TRUNCATE EnumalertHandlerLongMessageBehaviorProp = "truncate"
-	SEND_AS_MULTIPLE_MESSAGES EnumalertHandlerLongMessageBehaviorProp = "send-as-multiple-messages"
+	ENUMALERTHANDLERLONGMESSAGEBEHAVIORPROP_TRUNCATE EnumalertHandlerLongMessageBehaviorProp = "truncate"
+	ENUMALERTHANDLERLONGMESSAGEBEHAVIORPROP_SEND_AS_MULTIPLE_MESSAGES EnumalertHandlerLongMessageBehaviorProp = "send-as-multiple-messages"
 )
 
 // All allowed values of EnumalertHandlerLongMessageBehaviorProp enum

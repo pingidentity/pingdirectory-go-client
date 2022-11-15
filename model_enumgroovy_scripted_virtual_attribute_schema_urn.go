@@ -20,7 +20,7 @@ type EnumgroovyScriptedVirtualAttributeSchemaUrn string
 
 // List of Enumgroovy-scripted-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEGROOVY_SCRIPTED EnumgroovyScriptedVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:groovy-scripted"
+	ENUMGROOVYSCRIPTEDVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEGROOVY_SCRIPTED EnumgroovyScriptedVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedVirtualAttributeSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumsimpleSearchReferenceCriteriaSchemaUrn string
 
 // List of Enumsimple-search-reference-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SEARCH_REFERENCE_CRITERIASIMPLE EnumsimpleSearchReferenceCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:simple"
+	ENUMSIMPLESEARCHREFERENCECRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SEARCH_REFERENCE_CRITERIASIMPLE EnumsimpleSearchReferenceCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:simple"
 )
 
 // All allowed values of EnumsimpleSearchReferenceCriteriaSchemaUrn enum

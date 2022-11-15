@@ -20,7 +20,7 @@ type EnumlengthBasedPasswordValidatorSchemaUrn string
 
 // List of Enumlength-based-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORLENGTH_BASED EnumlengthBasedPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:length-based"
+	ENUMLENGTHBASEDPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORLENGTH_BASED EnumlengthBasedPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:length-based"
 )
 
 // All allowed values of EnumlengthBasedPasswordValidatorSchemaUrn enum

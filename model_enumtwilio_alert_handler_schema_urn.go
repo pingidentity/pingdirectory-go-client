@@ -20,7 +20,7 @@ type EnumtwilioAlertHandlerSchemaUrn string
 
 // List of Enumtwilio-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERTWILIO EnumtwilioAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:twilio"
+	ENUMTWILIOALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERTWILIO EnumtwilioAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:twilio"
 )
 
 // All allowed values of EnumtwilioAlertHandlerSchemaUrn enum

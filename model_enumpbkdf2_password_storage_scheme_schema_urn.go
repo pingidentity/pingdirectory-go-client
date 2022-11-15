@@ -20,7 +20,7 @@ type Enumpbkdf2PasswordStorageSchemeSchemaUrn string
 
 // List of Enumpbkdf2-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEPBKDF2 Enumpbkdf2PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:pbkdf2"
+	ENUMPBKDF2PASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEPBKDF2 Enumpbkdf2PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:pbkdf2"
 )
 
 // All allowed values of Enumpbkdf2PasswordStorageSchemeSchemaUrn enum

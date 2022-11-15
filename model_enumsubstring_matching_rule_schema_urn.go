@@ -20,7 +20,7 @@ type EnumsubstringMatchingRuleSchemaUrn string
 
 // List of Enumsubstring-matching-ruleSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULESUBSTRING EnumsubstringMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:substring"
+	ENUMSUBSTRINGMATCHINGRULESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULESUBSTRING EnumsubstringMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:substring"
 )
 
 // All allowed values of EnumsubstringMatchingRuleSchemaUrn enum

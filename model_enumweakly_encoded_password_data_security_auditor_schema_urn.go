@@ -20,7 +20,7 @@ type EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn string
 
 // List of Enumweakly-encoded-password-data-security-auditorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORWEAKLY_ENCODED_PASSWORD EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:weakly-encoded-password"
+	ENUMWEAKLYENCODEDPASSWORDDATASECURITYAUDITORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORWEAKLY_ENCODED_PASSWORD EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:weakly-encoded-password"
 )
 
 // All allowed values of EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumvaultExternalServerSchemaUrn string
 
 // List of Enumvault-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERVAULT EnumvaultExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
+	ENUMVAULTEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERVAULT EnumvaultExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:vault"
 )
 
 // All allowed values of EnumvaultExternalServerSchemaUrn enum

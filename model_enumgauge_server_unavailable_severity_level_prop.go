@@ -20,11 +20,11 @@ type EnumgaugeServerUnavailableSeverityLevelProp string
 
 // List of Enumgauge-serverUnavailableSeverityLevelProp
 const (
-	CRITICAL EnumgaugeServerUnavailableSeverityLevelProp = "critical"
-	MAJOR EnumgaugeServerUnavailableSeverityLevelProp = "major"
-	MINOR EnumgaugeServerUnavailableSeverityLevelProp = "minor"
-	WARNING EnumgaugeServerUnavailableSeverityLevelProp = "warning"
-	NONE EnumgaugeServerUnavailableSeverityLevelProp = "none"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_CRITICAL EnumgaugeServerUnavailableSeverityLevelProp = "critical"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_MAJOR EnumgaugeServerUnavailableSeverityLevelProp = "major"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_MINOR EnumgaugeServerUnavailableSeverityLevelProp = "minor"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_WARNING EnumgaugeServerUnavailableSeverityLevelProp = "warning"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_NONE EnumgaugeServerUnavailableSeverityLevelProp = "none"
 )
 
 // All allowed values of EnumgaugeServerUnavailableSeverityLevelProp enum

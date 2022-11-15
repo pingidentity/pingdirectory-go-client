@@ -20,7 +20,7 @@ type EnumobscuredValuePassphraseProviderSchemaUrn string
 
 // List of Enumobscured-value-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDEROBSCURED_VALUE EnumobscuredValuePassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:obscured-value"
+	ENUMOBSCUREDVALUEPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDEROBSCURED_VALUE EnumobscuredValuePassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:obscured-value"
 )
 
 // All allowed values of EnumobscuredValuePassphraseProviderSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn string
 
 // List of Enumunboundid-ms-chap-v2-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_MS_CHAP_V2 EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-ms-chap-v2"
+	ENUMUNBOUNDIDMSCHAPV2SASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_MS_CHAP_V2 EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-ms-chap-v2"
 )
 
 // All allowed values of EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn enum

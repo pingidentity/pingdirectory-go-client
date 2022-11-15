@@ -20,9 +20,9 @@ type EnumresultCriteriaAssuranceBehaviorAlteredByControlProp string
 
 // List of Enumresult-criteria-assuranceBehaviorAlteredByControlProp
 const (
-	ANY EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "any"
-	TRUE EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "true"
-	FALSE EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "false"
+	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_ANY EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "any"
+	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_TRUE EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "true"
+	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_FALSE EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "false"
 )
 
 // All allowed values of EnumresultCriteriaAssuranceBehaviorAlteredByControlProp enum

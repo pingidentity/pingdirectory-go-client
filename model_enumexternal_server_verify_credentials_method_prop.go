@@ -20,9 +20,9 @@ type EnumexternalServerVerifyCredentialsMethodProp string
 
 // List of Enumexternal-server-verifyCredentialsMethodProp
 const (
-	SEPARATE_CONNECTIONS EnumexternalServerVerifyCredentialsMethodProp = "separate-connections"
-	RETAIN_IDENTITY_CONTROL EnumexternalServerVerifyCredentialsMethodProp = "retain-identity-control"
-	BIND_ON_EXISTING_CONNECTIONS EnumexternalServerVerifyCredentialsMethodProp = "bind-on-existing-connections"
+	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_SEPARATE_CONNECTIONS EnumexternalServerVerifyCredentialsMethodProp = "separate-connections"
+	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_RETAIN_IDENTITY_CONTROL EnumexternalServerVerifyCredentialsMethodProp = "retain-identity-control"
+	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_BIND_ON_EXISTING_CONNECTIONS EnumexternalServerVerifyCredentialsMethodProp = "bind-on-existing-connections"
 )
 
 // All allowed values of EnumexternalServerVerifyCredentialsMethodProp enum

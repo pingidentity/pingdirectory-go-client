@@ -20,7 +20,7 @@ type EnumerrorLogAccountStatusNotificationHandlerSchemaUrn string
 
 // List of Enumerror-log-account-status-notification-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERERROR_LOG EnumerrorLogAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:error-log"
+	ENUMERRORLOGACCOUNTSTATUSNOTIFICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERERROR_LOG EnumerrorLogAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:error-log"
 )
 
 // All allowed values of EnumerrorLogAccountStatusNotificationHandlerSchemaUrn enum

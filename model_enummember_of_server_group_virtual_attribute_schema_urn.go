@@ -20,7 +20,7 @@ type EnummemberOfServerGroupVirtualAttributeSchemaUrn string
 
 // List of Enummember-of-server-group-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEMEMBER_OF_SERVER_GROUP EnummemberOfServerGroupVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:member-of-server-group"
+	ENUMMEMBEROFSERVERGROUPVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEMEMBER_OF_SERVER_GROUP EnummemberOfServerGroupVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:member-of-server-group"
 )
 
 // All allowed values of EnummemberOfServerGroupVirtualAttributeSchemaUrn enum

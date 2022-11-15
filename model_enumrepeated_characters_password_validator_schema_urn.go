@@ -20,7 +20,7 @@ type EnumrepeatedCharactersPasswordValidatorSchemaUrn string
 
 // List of Enumrepeated-characters-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORREPEATED_CHARACTERS EnumrepeatedCharactersPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:repeated-characters"
+	ENUMREPEATEDCHARACTERSPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORREPEATED_CHARACTERS EnumrepeatedCharactersPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:repeated-characters"
 )
 
 // All allowed values of EnumrepeatedCharactersPasswordValidatorSchemaUrn enum

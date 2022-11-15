@@ -20,7 +20,7 @@ type EnumappRoleVaultAuthenticationMethodSchemaUrn string
 
 // List of Enumapp-role-vault-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VAULT_AUTHENTICATION_METHODAPP_ROLE EnumappRoleVaultAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:app-role"
+	ENUMAPPROLEVAULTAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VAULT_AUTHENTICATION_METHODAPP_ROLE EnumappRoleVaultAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:app-role"
 )
 
 // All allowed values of EnumappRoleVaultAuthenticationMethodSchemaUrn enum

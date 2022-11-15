@@ -20,7 +20,7 @@ type EnumgroovyScriptedIdentityMapperSchemaUrn string
 
 // List of Enumgroovy-scripted-identity-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERGROOVY_SCRIPTED EnumgroovyScriptedIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
+	ENUMGROOVYSCRIPTEDIDENTITYMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERGROOVY_SCRIPTED EnumgroovyScriptedIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedIdentityMapperSchemaUrn enum

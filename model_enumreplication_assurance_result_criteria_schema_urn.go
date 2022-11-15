@@ -20,7 +20,7 @@ type EnumreplicationAssuranceResultCriteriaSchemaUrn string
 
 // List of Enumreplication-assurance-result-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RESULT_CRITERIAREPLICATION_ASSURANCE EnumreplicationAssuranceResultCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:result-criteria:replication-assurance"
+	ENUMREPLICATIONASSURANCERESULTCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RESULT_CRITERIAREPLICATION_ASSURANCE EnumreplicationAssuranceResultCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:result-criteria:replication-assurance"
 )
 
 // All allowed values of EnumreplicationAssuranceResultCriteriaSchemaUrn enum

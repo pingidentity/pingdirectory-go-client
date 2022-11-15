@@ -20,7 +20,7 @@ type EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn string
 
 // List of Enummulti-part-email-account-status-notification-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERMULTI_PART_EMAIL EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:multi-part-email"
+	ENUMMULTIPARTEMAILACCOUNTSTATUSNOTIFICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERMULTI_PART_EMAIL EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:multi-part-email"
 )
 
 // All allowed values of EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn enum

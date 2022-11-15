@@ -20,7 +20,7 @@ type EnumthirdPartyIdentityMapperSchemaUrn string
 
 // List of Enumthird-party-identity-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERTHIRD_PARTY EnumthirdPartyIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:third-party"
+	ENUMTHIRDPARTYIDENTITYMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERTHIRD_PARTY EnumthirdPartyIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:third-party"
 )
 
 // All allowed values of EnumthirdPartyIdentityMapperSchemaUrn enum

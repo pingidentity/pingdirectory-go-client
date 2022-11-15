@@ -20,8 +20,8 @@ type EnumclientConnectionPolicyAllowedAuthTypeProp string
 
 // List of Enumclient-connection-policy-allowedAuthTypeProp
 const (
-	SIMPLE EnumclientConnectionPolicyAllowedAuthTypeProp = "simple"
-	SASL EnumclientConnectionPolicyAllowedAuthTypeProp = "sasl"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDAUTHTYPEPROP_SIMPLE EnumclientConnectionPolicyAllowedAuthTypeProp = "simple"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDAUTHTYPEPROP_SASL EnumclientConnectionPolicyAllowedAuthTypeProp = "sasl"
 )
 
 // All allowed values of EnumclientConnectionPolicyAllowedAuthTypeProp enum

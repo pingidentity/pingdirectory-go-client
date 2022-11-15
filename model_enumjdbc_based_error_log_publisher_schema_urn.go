@@ -20,7 +20,7 @@ type EnumjdbcBasedErrorLogPublisherSchemaUrn string
 
 // List of Enumjdbc-based-error-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERJDBC_BASED_ERROR EnumjdbcBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:jdbc-based-error"
+	ENUMJDBCBASEDERRORLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERJDBC_BASED_ERROR EnumjdbcBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:jdbc-based-error"
 )
 
 // All allowed values of EnumjdbcBasedErrorLogPublisherSchemaUrn enum

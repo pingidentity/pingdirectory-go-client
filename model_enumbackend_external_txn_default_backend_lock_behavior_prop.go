@@ -20,10 +20,10 @@ type EnumbackendExternalTxnDefaultBackendLockBehaviorProp string
 
 // List of Enumbackend-externalTxnDefaultBackendLockBehaviorProp
 const (
-	DO_NOT_ACQUIRE EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "do-not-acquire"
-	ACQUIRE_AFTER_RETRIES EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-after-retries"
-	ACQUIRE_BEFORE_RETRIES EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-retries"
-	ACQUIRE_BEFORE_INITIAL_ATTEMPT EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-initial-attempt"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_DO_NOT_ACQUIRE EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "do-not-acquire"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_AFTER_RETRIES EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-after-retries"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_BEFORE_RETRIES EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-retries"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_BEFORE_INITIAL_ATTEMPT EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-initial-attempt"
 )
 
 // All allowed values of EnumbackendExternalTxnDefaultBackendLockBehaviorProp enum

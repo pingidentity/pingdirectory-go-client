@@ -20,7 +20,7 @@ type EnumstartTlsExtendedOperationHandlerSchemaUrn string
 
 // List of Enumstart-tls-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERSTART_TLS EnumstartTlsExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:start-tls"
+	ENUMSTARTTLSEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERSTART_TLS EnumstartTlsExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:start-tls"
 )
 
 // All allowed values of EnumstartTlsExtendedOperationHandlerSchemaUrn enum

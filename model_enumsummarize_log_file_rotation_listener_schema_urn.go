@@ -20,7 +20,7 @@ type EnumsummarizeLogFileRotationListenerSchemaUrn string
 
 // List of Enumsummarize-log-file-rotation-listenerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FILE_ROTATION_LISTENERSUMMARIZE EnumsummarizeLogFileRotationListenerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:summarize"
+	ENUMSUMMARIZELOGFILEROTATIONLISTENERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FILE_ROTATION_LISTENERSUMMARIZE EnumsummarizeLogFileRotationListenerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:summarize"
 )
 
 // All allowed values of EnumsummarizeLogFileRotationListenerSchemaUrn enum

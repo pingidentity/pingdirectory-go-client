@@ -20,9 +20,9 @@ type EnumresultCriteriaUsedAnyPrivilegeProp string
 
 // List of Enumresult-criteria-usedAnyPrivilegeProp
 const (
-	REQUIRED EnumresultCriteriaUsedAnyPrivilegeProp = "required"
-	PROHIBITED EnumresultCriteriaUsedAnyPrivilegeProp = "prohibited"
-	OPTIONAL EnumresultCriteriaUsedAnyPrivilegeProp = "optional"
+	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_REQUIRED EnumresultCriteriaUsedAnyPrivilegeProp = "required"
+	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_PROHIBITED EnumresultCriteriaUsedAnyPrivilegeProp = "prohibited"
+	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_OPTIONAL EnumresultCriteriaUsedAnyPrivilegeProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaUsedAnyPrivilegeProp enum

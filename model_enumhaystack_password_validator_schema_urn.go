@@ -20,7 +20,7 @@ type EnumhaystackPasswordValidatorSchemaUrn string
 
 // List of Enumhaystack-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORHAYSTACK EnumhaystackPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:haystack"
+	ENUMHAYSTACKPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORHAYSTACK EnumhaystackPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:haystack"
 )
 
 // All allowed values of EnumhaystackPasswordValidatorSchemaUrn enum

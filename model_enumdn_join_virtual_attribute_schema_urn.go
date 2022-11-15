@@ -20,7 +20,7 @@ type EnumdnJoinVirtualAttributeSchemaUrn string
 
 // List of Enumdn-join-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEDN_JOIN EnumdnJoinVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:dn-join"
+	ENUMDNJOINVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEDN_JOIN EnumdnJoinVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:dn-join"
 )
 
 // All allowed values of EnumdnJoinVirtualAttributeSchemaUrn enum

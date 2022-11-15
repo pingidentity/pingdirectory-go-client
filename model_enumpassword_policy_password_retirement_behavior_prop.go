@@ -20,9 +20,9 @@ type EnumpasswordPolicyPasswordRetirementBehaviorProp string
 
 // List of Enumpassword-policy-passwordRetirementBehaviorProp
 const (
-	SELF_CHANGE EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-self-change"
-	ADMINISTRATIVE_RESET EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-administrative-reset"
-	REQUEST_WITH_CONTROL EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-request-with-control"
+	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_SELF_CHANGE EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-self-change"
+	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_ADMINISTRATIVE_RESET EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-administrative-reset"
+	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_REQUEST_WITH_CONTROL EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-request-with-control"
 )
 
 // All allowed values of EnumpasswordPolicyPasswordRetirementBehaviorProp enum

@@ -20,7 +20,7 @@ type EnumclientConnectionPolicySchemaUrn string
 
 // List of Enumclient-connection-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CLIENT_CONNECTION_POLICY EnumclientConnectionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:client-connection-policy"
+	ENUMCLIENTCONNECTIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CLIENT_CONNECTION_POLICY EnumclientConnectionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:client-connection-policy"
 )
 
 // All allowed values of EnumclientConnectionPolicySchemaUrn enum

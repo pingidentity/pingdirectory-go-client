@@ -20,7 +20,7 @@ type EnumblindTrustManagerProviderSchemaUrn string
 
 // List of Enumblind-trust-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERBLIND EnumblindTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind"
+	ENUMBLINDTRUSTMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERBLIND EnumblindTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:blind"
 )
 
 // All allowed values of EnumblindTrustManagerProviderSchemaUrn enum

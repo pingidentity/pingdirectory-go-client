@@ -20,7 +20,7 @@ type EnumbackupRecurringTaskSchemaUrn string
 
 // List of Enumbackup-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKBACKUP EnumbackupRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:backup"
+	ENUMBACKUPRECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKBACKUP EnumbackupRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:backup"
 )
 
 // All allowed values of EnumbackupRecurringTaskSchemaUrn enum

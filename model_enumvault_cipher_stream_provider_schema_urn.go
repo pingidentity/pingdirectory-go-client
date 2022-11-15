@@ -20,7 +20,7 @@ type EnumvaultCipherStreamProviderSchemaUrn string
 
 // List of Enumvault-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERVAULT EnumvaultCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:vault"
+	ENUMVAULTCIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERVAULT EnumvaultCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:vault"
 )
 
 // All allowed values of EnumvaultCipherStreamProviderSchemaUrn enum

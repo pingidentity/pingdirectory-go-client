@@ -20,7 +20,7 @@ type EnumsizeLimitLogRetentionPolicySchemaUrn string
 
 // List of Enumsize-limit-log-retention-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYSIZE_LIMIT EnumsizeLimitLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:size-limit"
+	ENUMSIZELIMITLOGRETENTIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYSIZE_LIMIT EnumsizeLimitLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:size-limit"
 )
 
 // All allowed values of EnumsizeLimitLogRetentionPolicySchemaUrn enum

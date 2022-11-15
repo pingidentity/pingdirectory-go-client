@@ -20,7 +20,7 @@ type EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn string
 
 // List of Enumunboundid-yubikey-otp-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_YUBIKEY_OTP EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-yubikey-otp"
+	ENUMUNBOUNDIDYUBIKEYOTPSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_YUBIKEY_OTP EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-yubikey-otp"
 )
 
 // All allowed values of EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn enum

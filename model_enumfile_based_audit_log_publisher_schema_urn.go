@@ -20,7 +20,7 @@ type EnumfileBasedAuditLogPublisherSchemaUrn string
 
 // List of Enumfile-based-audit-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_AUDIT EnumfileBasedAuditLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-audit"
+	ENUMFILEBASEDAUDITLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_AUDIT EnumfileBasedAuditLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-audit"
 )
 
 // All allowed values of EnumfileBasedAuditLogPublisherSchemaUrn enum

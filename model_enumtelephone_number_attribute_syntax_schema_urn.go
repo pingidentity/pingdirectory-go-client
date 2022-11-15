@@ -20,7 +20,7 @@ type EnumtelephoneNumberAttributeSyntaxSchemaUrn string
 
 // List of Enumtelephone-number-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXTELEPHONE_NUMBER EnumtelephoneNumberAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:telephone-number"
+	ENUMTELEPHONENUMBERATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXTELEPHONE_NUMBER EnumtelephoneNumberAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:telephone-number"
 )
 
 // All allowed values of EnumtelephoneNumberAttributeSyntaxSchemaUrn enum

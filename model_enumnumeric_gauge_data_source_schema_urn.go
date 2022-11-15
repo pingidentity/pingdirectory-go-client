@@ -20,7 +20,7 @@ type EnumnumericGaugeDataSourceSchemaUrn string
 
 // List of Enumnumeric-gauge-data-sourceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GAUGE_DATA_SOURCENUMERIC EnumnumericGaugeDataSourceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:numeric"
+	ENUMNUMERICGAUGEDATASOURCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GAUGE_DATA_SOURCENUMERIC EnumnumericGaugeDataSourceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:numeric"
 )
 
 // All allowed values of EnumnumericGaugeDataSourceSchemaUrn enum

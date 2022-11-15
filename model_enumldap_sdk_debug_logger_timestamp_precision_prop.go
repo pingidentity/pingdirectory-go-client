@@ -20,8 +20,8 @@ type EnumldapSdkDebugLoggerTimestampPrecisionProp string
 
 // List of Enumldap-sdk-debug-logger-timestampPrecisionProp
 const (
-	SECONDS EnumldapSdkDebugLoggerTimestampPrecisionProp = "seconds"
-	MILLISECONDS EnumldapSdkDebugLoggerTimestampPrecisionProp = "milliseconds"
+	ENUMLDAPSDKDEBUGLOGGERTIMESTAMPPRECISIONPROP_SECONDS EnumldapSdkDebugLoggerTimestampPrecisionProp = "seconds"
+	ENUMLDAPSDKDEBUGLOGGERTIMESTAMPPRECISIONPROP_MILLISECONDS EnumldapSdkDebugLoggerTimestampPrecisionProp = "milliseconds"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerTimestampPrecisionProp enum

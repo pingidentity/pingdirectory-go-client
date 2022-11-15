@@ -20,7 +20,7 @@ type EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn string
 
 // List of Enumlast-access-time-uncached-entry-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ENTRY_CRITERIALAST_ACCESS_TIME EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:last-access-time"
+	ENUMLASTACCESSTIMEUNCACHEDENTRYCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ENTRY_CRITERIALAST_ACCESS_TIME EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:last-access-time"
 )
 
 // All allowed values of EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn enum

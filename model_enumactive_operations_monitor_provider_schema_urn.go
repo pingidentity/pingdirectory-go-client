@@ -20,7 +20,7 @@ type EnumactiveOperationsMonitorProviderSchemaUrn string
 
 // List of Enumactive-operations-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERACTIVE_OPERATIONS EnumactiveOperationsMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:active-operations"
+	ENUMACTIVEOPERATIONSMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERACTIVE_OPERATIONS EnumactiveOperationsMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:active-operations"
 )
 
 // All allowed values of EnumactiveOperationsMonitorProviderSchemaUrn enum

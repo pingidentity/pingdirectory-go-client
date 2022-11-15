@@ -20,7 +20,7 @@ type EnumconjurExternalServerSchemaUrn string
 
 // List of Enumconjur-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERCONJUR EnumconjurExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:conjur"
+	ENUMCONJUREXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERCONJUR EnumconjurExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:conjur"
 )
 
 // All allowed values of EnumconjurExternalServerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumpingOneHttpExternalServerSchemaUrn string
 
 // List of Enumping-one-http-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERPING_ONE_HTTP EnumpingOneHttpExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:ping-one-http"
+	ENUMPINGONEHTTPEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERPING_ONE_HTTP EnumpingOneHttpExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:ping-one-http"
 )
 
 // All allowed values of EnumpingOneHttpExternalServerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumuserRestResourceTypeSchemaUrn string
 
 // List of Enumuser-rest-resource-typeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0REST_RESOURCE_TYPEUSER EnumuserRestResourceTypeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:user"
+	ENUMUSERRESTRESOURCETYPESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0REST_RESOURCE_TYPEUSER EnumuserRestResourceTypeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:user"
 )
 
 // All allowed values of EnumuserRestResourceTypeSchemaUrn enum

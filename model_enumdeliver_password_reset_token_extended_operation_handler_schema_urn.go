@@ -20,7 +20,7 @@ type EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn string
 
 // List of Enumdeliver-password-reset-token-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERDELIVER_PASSWORD_RESET_TOKEN EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-password-reset-token"
+	ENUMDELIVERPASSWORDRESETTOKENEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERDELIVER_PASSWORD_RESET_TOKEN EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-password-reset-token"
 )
 
 // All allowed values of EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn enum

@@ -20,9 +20,9 @@ type EnumresultCriteriaRetiredPasswordUsedForBindProp string
 
 // List of Enumresult-criteria-retiredPasswordUsedForBindProp
 const (
-	ANY EnumresultCriteriaRetiredPasswordUsedForBindProp = "any"
-	RETIRED_PASSWORD_USED EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-used"
-	RETIRED_PASSWORD_NOT_USED EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-not-used"
+	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_ANY EnumresultCriteriaRetiredPasswordUsedForBindProp = "any"
+	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_RETIRED_PASSWORD_USED EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-used"
+	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_RETIRED_PASSWORD_NOT_USED EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-not-used"
 )
 
 // All allowed values of EnumresultCriteriaRetiredPasswordUsedForBindProp enum

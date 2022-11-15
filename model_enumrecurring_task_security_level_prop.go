@@ -20,9 +20,9 @@ type EnumrecurringTaskSecurityLevelProp string
 
 // List of Enumrecurring-task-securityLevelProp
 const (
-	NONE EnumrecurringTaskSecurityLevelProp = "none"
-	OBSCURE_SECRETS EnumrecurringTaskSecurityLevelProp = "obscure-secrets"
-	MAXIMUM EnumrecurringTaskSecurityLevelProp = "maximum"
+	ENUMRECURRINGTASKSECURITYLEVELPROP_NONE EnumrecurringTaskSecurityLevelProp = "none"
+	ENUMRECURRINGTASKSECURITYLEVELPROP_OBSCURE_SECRETS EnumrecurringTaskSecurityLevelProp = "obscure-secrets"
+	ENUMRECURRINGTASKSECURITYLEVELPROP_MAXIMUM EnumrecurringTaskSecurityLevelProp = "maximum"
 )
 
 // All allowed values of EnumrecurringTaskSecurityLevelProp enum

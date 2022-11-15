@@ -20,7 +20,7 @@ type EnumblowfishPasswordStorageSchemeSchemaUrn string
 
 // List of Enumblowfish-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEBLOWFISH EnumblowfishPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:blowfish"
+	ENUMBLOWFISHPASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEBLOWFISH EnumblowfishPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:blowfish"
 )
 
 // All allowed values of EnumblowfishPasswordStorageSchemeSchemaUrn enum

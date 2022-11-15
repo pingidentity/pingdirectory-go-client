@@ -20,10 +20,10 @@ type EnumrequestCriteriaIncludedSearchScopeProp string
 
 // List of Enumrequest-criteria-includedSearchScopeProp
 const (
-	BASE_OBJECT EnumrequestCriteriaIncludedSearchScopeProp = "base-object"
-	SINGLE_LEVEL EnumrequestCriteriaIncludedSearchScopeProp = "single-level"
-	WHOLE_SUBTREE EnumrequestCriteriaIncludedSearchScopeProp = "whole-subtree"
-	SUBORDINATE_SUBTREE EnumrequestCriteriaIncludedSearchScopeProp = "subordinate-subtree"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_BASE_OBJECT EnumrequestCriteriaIncludedSearchScopeProp = "base-object"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_SINGLE_LEVEL EnumrequestCriteriaIncludedSearchScopeProp = "single-level"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_WHOLE_SUBTREE EnumrequestCriteriaIncludedSearchScopeProp = "whole-subtree"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_SUBORDINATE_SUBTREE EnumrequestCriteriaIncludedSearchScopeProp = "subordinate-subtree"
 )
 
 // All allowed values of EnumrequestCriteriaIncludedSearchScopeProp enum

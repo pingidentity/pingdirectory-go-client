@@ -20,9 +20,9 @@ type EnumrecurringTaskChainScheduledDateSelectionTypeProp string
 
 // List of Enumrecurring-task-chain-scheduledDateSelectionTypeProp
 const (
-	EVERY_DAY EnumrecurringTaskChainScheduledDateSelectionTypeProp = "every-day"
-	SELECTED_DAYS_OF_THE_WEEK EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-week"
-	SELECTED_DAYS_OF_THE_MONTH EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-month"
+	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_EVERY_DAY EnumrecurringTaskChainScheduledDateSelectionTypeProp = "every-day"
+	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_SELECTED_DAYS_OF_THE_WEEK EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-week"
+	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_SELECTED_DAYS_OF_THE_MONTH EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-month"
 )
 
 // All allowed values of EnumrecurringTaskChainScheduledDateSelectionTypeProp enum

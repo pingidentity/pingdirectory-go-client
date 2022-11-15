@@ -20,9 +20,9 @@ type EnumhttpServletExtensionDebugTypeProp string
 
 // List of Enumhttp-servlet-extension-debugTypeProp
 const (
-	CODING_ERROR EnumhttpServletExtensionDebugTypeProp = "coding-error"
-	EXCEPTION EnumhttpServletExtensionDebugTypeProp = "exception"
-	OTHER EnumhttpServletExtensionDebugTypeProp = "other"
+	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_CODING_ERROR EnumhttpServletExtensionDebugTypeProp = "coding-error"
+	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_EXCEPTION EnumhttpServletExtensionDebugTypeProp = "exception"
+	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_OTHER EnumhttpServletExtensionDebugTypeProp = "other"
 )
 
 // All allowed values of EnumhttpServletExtensionDebugTypeProp enum

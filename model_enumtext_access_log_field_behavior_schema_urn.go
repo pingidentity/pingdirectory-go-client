@@ -20,7 +20,7 @@ type EnumtextAccessLogFieldBehaviorSchemaUrn string
 
 // List of Enumtext-access-log-field-behaviorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_BEHAVIORTEXT_ACCESS EnumtextAccessLogFieldBehaviorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-behavior:text-access"
+	ENUMTEXTACCESSLOGFIELDBEHAVIORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_BEHAVIORTEXT_ACCESS EnumtextAccessLogFieldBehaviorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-behavior:text-access"
 )
 
 // All allowed values of EnumtextAccessLogFieldBehaviorSchemaUrn enum

@@ -20,9 +20,9 @@ type EnumresultCriteriaResponseDelayedByAssuranceProp string
 
 // List of Enumresult-criteria-responseDelayedByAssuranceProp
 const (
-	ANY EnumresultCriteriaResponseDelayedByAssuranceProp = "any"
-	TRUE EnumresultCriteriaResponseDelayedByAssuranceProp = "true"
-	FALSE EnumresultCriteriaResponseDelayedByAssuranceProp = "false"
+	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_ANY EnumresultCriteriaResponseDelayedByAssuranceProp = "any"
+	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_TRUE EnumresultCriteriaResponseDelayedByAssuranceProp = "true"
+	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_FALSE EnumresultCriteriaResponseDelayedByAssuranceProp = "false"
 )
 
 // All allowed values of EnumresultCriteriaResponseDelayedByAssuranceProp enum

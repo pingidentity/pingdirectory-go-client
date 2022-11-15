@@ -20,7 +20,7 @@ type EnumldapPassThroughAuthenticationHandlerSchemaUrn string
 
 // List of Enumldap-pass-through-authentication-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASS_THROUGH_AUTHENTICATION_HANDLERLDAP EnumldapPassThroughAuthenticationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:ldap"
+	ENUMLDAPPASSTHROUGHAUTHENTICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASS_THROUGH_AUTHENTICATION_HANDLERLDAP EnumldapPassThroughAuthenticationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:ldap"
 )
 
 // All allowed values of EnumldapPassThroughAuthenticationHandlerSchemaUrn enum

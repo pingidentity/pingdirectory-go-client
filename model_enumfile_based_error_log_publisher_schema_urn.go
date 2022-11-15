@@ -20,7 +20,7 @@ type EnumfileBasedErrorLogPublisherSchemaUrn string
 
 // List of Enumfile-based-error-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_ERROR EnumfileBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-error"
+	ENUMFILEBASEDERRORLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_ERROR EnumfileBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-error"
 )
 
 // All allowed values of EnumfileBasedErrorLogPublisherSchemaUrn enum

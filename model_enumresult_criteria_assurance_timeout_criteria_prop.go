@@ -20,9 +20,9 @@ type EnumresultCriteriaAssuranceTimeoutCriteriaProp string
 
 // List of Enumresult-criteria-assuranceTimeoutCriteriaProp
 const (
-	ANY EnumresultCriteriaAssuranceTimeoutCriteriaProp = "any"
-	LESS_THAN_OR_EQUAL_TO EnumresultCriteriaAssuranceTimeoutCriteriaProp = "less-than-or-equal-to"
-	GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaAssuranceTimeoutCriteriaProp = "greater-than-or-equal-to"
+	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_ANY EnumresultCriteriaAssuranceTimeoutCriteriaProp = "any"
+	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_LESS_THAN_OR_EQUAL_TO EnumresultCriteriaAssuranceTimeoutCriteriaProp = "less-than-or-equal-to"
+	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaAssuranceTimeoutCriteriaProp = "greater-than-or-equal-to"
 )
 
 // All allowed values of EnumresultCriteriaAssuranceTimeoutCriteriaProp enum

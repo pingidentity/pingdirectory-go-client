@@ -20,7 +20,7 @@ type EnumusernamePasswordAzureAuthenticationMethodSchemaUrn string
 
 // List of Enumusername-password-azure-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0AZURE_AUTHENTICATION_METHODUSERNAME_PASSWORD EnumusernamePasswordAzureAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:username-password"
+	ENUMUSERNAMEPASSWORDAZUREAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0AZURE_AUTHENTICATION_METHODUSERNAME_PASSWORD EnumusernamePasswordAzureAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:username-password"
 )
 
 // All allowed values of EnumusernamePasswordAzureAuthenticationMethodSchemaUrn enum

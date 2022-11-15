@@ -20,7 +20,7 @@ type EnumhttpServletCrossOriginPolicySchemaUrn string
 
 // List of Enumhttp-servlet-cross-origin-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_CROSS_ORIGIN_POLICY EnumhttpServletCrossOriginPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-cross-origin-policy"
+	ENUMHTTPSERVLETCROSSORIGINPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_CROSS_ORIGIN_POLICY EnumhttpServletCrossOriginPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-cross-origin-policy"
 )
 
 // All allowed values of EnumhttpServletCrossOriginPolicySchemaUrn enum

@@ -20,7 +20,7 @@ type EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn string
 
 // List of Enumget-changelog-batch-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERGET_CHANGELOG_BATCH EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-changelog-batch"
+	ENUMGETCHANGELOGBATCHEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERGET_CHANGELOG_BATCH EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:get-changelog-batch"
 )
 
 // All allowed values of EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn enum

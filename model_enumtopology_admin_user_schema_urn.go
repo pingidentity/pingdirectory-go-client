@@ -20,7 +20,7 @@ type EnumtopologyAdminUserSchemaUrn string
 
 // List of Enumtopology-admin-userSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0TOPOLOGY_ADMIN_USER EnumtopologyAdminUserSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:topology-admin-user"
+	ENUMTOPOLOGYADMINUSERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0TOPOLOGY_ADMIN_USER EnumtopologyAdminUserSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:topology-admin-user"
 )
 
 // All allowed values of EnumtopologyAdminUserSchemaUrn enum

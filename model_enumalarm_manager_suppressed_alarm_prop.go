@@ -20,8 +20,8 @@ type EnumalarmManagerSuppressedAlarmProp string
 
 // List of Enumalarm-manager-suppressedAlarmProp
 const (
-	NO_ENABLED_ALERT_HANDLERS EnumalarmManagerSuppressedAlarmProp = "no-enabled-alert-handlers"
-	PDP_UNAVAILABLE EnumalarmManagerSuppressedAlarmProp = "pdp-unavailable"
+	ENUMALARMMANAGERSUPPRESSEDALARMPROP_NO_ENABLED_ALERT_HANDLERS EnumalarmManagerSuppressedAlarmProp = "no-enabled-alert-handlers"
+	ENUMALARMMANAGERSUPPRESSEDALARMPROP_PDP_UNAVAILABLE EnumalarmManagerSuppressedAlarmProp = "pdp-unavailable"
 )
 
 // All allowed values of EnumalarmManagerSuppressedAlarmProp enum

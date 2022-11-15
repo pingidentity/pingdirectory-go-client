@@ -20,7 +20,7 @@ type EnumfileRetentionRecurringTaskSchemaUrn string
 
 // List of Enumfile-retention-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKFILE_RETENTION EnumfileRetentionRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:file-retention"
+	ENUMFILERETENTIONRECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKFILE_RETENTION EnumfileRetentionRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:file-retention"
 )
 
 // All allowed values of EnumfileRetentionRecurringTaskSchemaUrn enum

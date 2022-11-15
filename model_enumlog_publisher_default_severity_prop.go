@@ -20,16 +20,16 @@ type EnumlogPublisherDefaultSeverityProp string
 
 // List of Enumlog-publisher-defaultSeverityProp
 const (
-	ALL EnumlogPublisherDefaultSeverityProp = "all"
-	NONE EnumlogPublisherDefaultSeverityProp = "none"
-	FATAL_ERROR EnumlogPublisherDefaultSeverityProp = "fatal-error"
-	INFO EnumlogPublisherDefaultSeverityProp = "info"
-	MILD_ERROR EnumlogPublisherDefaultSeverityProp = "mild-error"
-	MILD_WARNING EnumlogPublisherDefaultSeverityProp = "mild-warning"
-	NOTICE EnumlogPublisherDefaultSeverityProp = "notice"
-	SEVERE_ERROR EnumlogPublisherDefaultSeverityProp = "severe-error"
-	SEVERE_WARNING EnumlogPublisherDefaultSeverityProp = "severe-warning"
-	DEBUG EnumlogPublisherDefaultSeverityProp = "debug"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_ALL EnumlogPublisherDefaultSeverityProp = "all"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_NONE EnumlogPublisherDefaultSeverityProp = "none"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_FATAL_ERROR EnumlogPublisherDefaultSeverityProp = "fatal-error"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_INFO EnumlogPublisherDefaultSeverityProp = "info"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_MILD_ERROR EnumlogPublisherDefaultSeverityProp = "mild-error"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_MILD_WARNING EnumlogPublisherDefaultSeverityProp = "mild-warning"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_NOTICE EnumlogPublisherDefaultSeverityProp = "notice"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_SEVERE_ERROR EnumlogPublisherDefaultSeverityProp = "severe-error"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_SEVERE_WARNING EnumlogPublisherDefaultSeverityProp = "severe-warning"
+	ENUMLOGPUBLISHERDEFAULTSEVERITYPROP_DEBUG EnumlogPublisherDefaultSeverityProp = "debug"
 )
 
 // All allowed values of EnumlogPublisherDefaultSeverityProp enum

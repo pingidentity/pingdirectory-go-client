@@ -20,7 +20,7 @@ type EnumequalityMatchingRuleSchemaUrn string
 
 // List of Enumequality-matching-ruleSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULEEQUALITY EnumequalityMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:equality"
+	ENUMEQUALITYMATCHINGRULESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULEEQUALITY EnumequalityMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:equality"
 )
 
 // All allowed values of EnumequalityMatchingRuleSchemaUrn enum

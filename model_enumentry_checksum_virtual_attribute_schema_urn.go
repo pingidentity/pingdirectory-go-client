@@ -20,7 +20,7 @@ type EnumentryChecksumVirtualAttributeSchemaUrn string
 
 // List of Enumentry-checksum-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEENTRY_CHECKSUM EnumentryChecksumVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-checksum"
+	ENUMENTRYCHECKSUMVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEENTRY_CHECKSUM EnumentryChecksumVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-checksum"
 )
 
 // All allowed values of EnumentryChecksumVirtualAttributeSchemaUrn enum

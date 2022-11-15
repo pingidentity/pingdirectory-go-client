@@ -20,7 +20,7 @@ type Enumpkcs11CipherStreamProviderSchemaUrn string
 
 // List of Enumpkcs11-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERPKCS11 Enumpkcs11CipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:pkcs11"
+	ENUMPKCS11CIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERPKCS11 Enumpkcs11CipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:pkcs11"
 )
 
 // All allowed values of Enumpkcs11CipherStreamProviderSchemaUrn enum

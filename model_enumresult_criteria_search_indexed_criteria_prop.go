@@ -20,9 +20,9 @@ type EnumresultCriteriaSearchIndexedCriteriaProp string
 
 // List of Enumresult-criteria-searchIndexedCriteriaProp
 const (
-	ANY EnumresultCriteriaSearchIndexedCriteriaProp = "any"
-	INDEXED EnumresultCriteriaSearchIndexedCriteriaProp = "indexed"
-	UNINDEXED EnumresultCriteriaSearchIndexedCriteriaProp = "unindexed"
+	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_ANY EnumresultCriteriaSearchIndexedCriteriaProp = "any"
+	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_INDEXED EnumresultCriteriaSearchIndexedCriteriaProp = "indexed"
+	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_UNINDEXED EnumresultCriteriaSearchIndexedCriteriaProp = "unindexed"
 )
 
 // All allowed values of EnumresultCriteriaSearchIndexedCriteriaProp enum

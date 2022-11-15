@@ -20,7 +20,7 @@ type EnumjsonLogFieldSyntaxSchemaUrn string
 
 // List of Enumjson-log-field-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_SYNTAXJSON EnumjsonLogFieldSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:json"
+	ENUMJSONLOGFIELDSYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_SYNTAXJSON EnumjsonLogFieldSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:json"
 )
 
 // All allowed values of EnumjsonLogFieldSyntaxSchemaUrn enum

@@ -20,7 +20,7 @@ type EnummonitorBackendSchemaUrn string
 
 // List of Enummonitor-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDMONITOR EnummonitorBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:monitor"
+	ENUMMONITORBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDMONITOR EnummonitorBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:monitor"
 )
 
 // All allowed values of EnummonitorBackendSchemaUrn enum

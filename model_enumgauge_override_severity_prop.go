@@ -20,11 +20,11 @@ type EnumgaugeOverrideSeverityProp string
 
 // List of Enumgauge-overrideSeverityProp
 const (
-	NORMAL EnumgaugeOverrideSeverityProp = "normal"
-	WARNING EnumgaugeOverrideSeverityProp = "warning"
-	MINOR EnumgaugeOverrideSeverityProp = "minor"
-	MAJOR EnumgaugeOverrideSeverityProp = "major"
-	CRITICAL EnumgaugeOverrideSeverityProp = "critical"
+	ENUMGAUGEOVERRIDESEVERITYPROP_NORMAL EnumgaugeOverrideSeverityProp = "normal"
+	ENUMGAUGEOVERRIDESEVERITYPROP_WARNING EnumgaugeOverrideSeverityProp = "warning"
+	ENUMGAUGEOVERRIDESEVERITYPROP_MINOR EnumgaugeOverrideSeverityProp = "minor"
+	ENUMGAUGEOVERRIDESEVERITYPROP_MAJOR EnumgaugeOverrideSeverityProp = "major"
+	ENUMGAUGEOVERRIDESEVERITYPROP_CRITICAL EnumgaugeOverrideSeverityProp = "critical"
 )
 
 // All allowed values of EnumgaugeOverrideSeverityProp enum

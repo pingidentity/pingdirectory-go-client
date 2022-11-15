@@ -20,7 +20,7 @@ type EnumloggingChangeSubscriptionHandlerSchemaUrn string
 
 // List of Enumlogging-change-subscription-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION_HANDLERLOGGING EnumloggingChangeSubscriptionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:logging"
+	ENUMLOGGINGCHANGESUBSCRIPTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION_HANDLERLOGGING EnumloggingChangeSubscriptionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:logging"
 )
 
 // All allowed values of EnumloggingChangeSubscriptionHandlerSchemaUrn enum

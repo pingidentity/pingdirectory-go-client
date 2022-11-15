@@ -20,7 +20,7 @@ type EnumcurrentTimeVirtualAttributeSchemaUrn string
 
 // List of Enumcurrent-time-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTECURRENT_TIME EnumcurrentTimeVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:current-time"
+	ENUMCURRENTTIMEVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTECURRENT_TIME EnumcurrentTimeVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:current-time"
 )
 
 // All allowed values of EnumcurrentTimeVirtualAttributeSchemaUrn enum

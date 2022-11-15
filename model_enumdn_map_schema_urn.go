@@ -20,7 +20,7 @@ type EnumdnMapSchemaUrn string
 
 // List of Enumdn-mapSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DN_MAP EnumdnMapSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:dn-map"
+	ENUMDNMAPSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DN_MAP EnumdnMapSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:dn-map"
 )
 
 // All allowed values of EnumdnMapSchemaUrn enum

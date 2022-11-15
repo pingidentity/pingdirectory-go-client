@@ -20,7 +20,7 @@ type EnumvirtualStaticGroupImplementationSchemaUrn string
 
 // List of Enumvirtual-static-group-implementationSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GROUP_IMPLEMENTATIONVIRTUAL_STATIC EnumvirtualStaticGroupImplementationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:group-implementation:virtual-static"
+	ENUMVIRTUALSTATICGROUPIMPLEMENTATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GROUP_IMPLEMENTATIONVIRTUAL_STATIC EnumvirtualStaticGroupImplementationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:group-implementation:virtual-static"
 )
 
 // All allowed values of EnumvirtualStaticGroupImplementationSchemaUrn enum

@@ -20,8 +20,8 @@ type EnumexternalServerHostnameVerificationMethodProp string
 
 // List of Enumexternal-server-hostnameVerificationMethodProp
 const (
-	ALLOW_ALL EnumexternalServerHostnameVerificationMethodProp = "allow-all"
-	STRICT EnumexternalServerHostnameVerificationMethodProp = "strict"
+	ENUMEXTERNALSERVERHOSTNAMEVERIFICATIONMETHODPROP_ALLOW_ALL EnumexternalServerHostnameVerificationMethodProp = "allow-all"
+	ENUMEXTERNALSERVERHOSTNAMEVERIFICATIONMETHODPROP_STRICT EnumexternalServerHostnameVerificationMethodProp = "strict"
 )
 
 // All allowed values of EnumexternalServerHostnameVerificationMethodProp enum

@@ -20,7 +20,7 @@ type EnumlockAccountFailureLockoutActionSchemaUrn string
 
 // List of Enumlock-account-failure-lockout-actionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0FAILURE_LOCKOUT_ACTIONLOCK_ACCOUNT EnumlockAccountFailureLockoutActionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:lock-account"
+	ENUMLOCKACCOUNTFAILURELOCKOUTACTIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0FAILURE_LOCKOUT_ACTIONLOCK_ACCOUNT EnumlockAccountFailureLockoutActionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:lock-account"
 )
 
 // All allowed values of EnumlockAccountFailureLockoutActionSchemaUrn enum

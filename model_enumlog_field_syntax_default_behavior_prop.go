@@ -20,12 +20,12 @@ type EnumlogFieldSyntaxDefaultBehaviorProp string
 
 // List of Enumlog-field-syntax-defaultBehaviorProp
 const (
-	PRESERVE EnumlogFieldSyntaxDefaultBehaviorProp = "preserve"
-	OMIT EnumlogFieldSyntaxDefaultBehaviorProp = "omit"
-	REDACT_ENTIRE_VALUE EnumlogFieldSyntaxDefaultBehaviorProp = "redact-entire-value"
-	REDACT_VALUE_COMPONENTS EnumlogFieldSyntaxDefaultBehaviorProp = "redact-value-components"
-	TOKENIZE_ENTIRE_VALUE EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-entire-value"
-	TOKENIZE_VALUE_COMPONENTS EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-value-components"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_PRESERVE EnumlogFieldSyntaxDefaultBehaviorProp = "preserve"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_OMIT EnumlogFieldSyntaxDefaultBehaviorProp = "omit"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_REDACT_ENTIRE_VALUE EnumlogFieldSyntaxDefaultBehaviorProp = "redact-entire-value"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_REDACT_VALUE_COMPONENTS EnumlogFieldSyntaxDefaultBehaviorProp = "redact-value-components"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_TOKENIZE_ENTIRE_VALUE EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-entire-value"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_TOKENIZE_VALUE_COMPONENTS EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-value-components"
 )
 
 // All allowed values of EnumlogFieldSyntaxDefaultBehaviorProp enum

@@ -20,7 +20,7 @@ type EnumthirdPartyVirtualAttributeSchemaUrn string
 
 // List of Enumthird-party-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTETHIRD_PARTY EnumthirdPartyVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party"
+	ENUMTHIRDPARTYVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTETHIRD_PARTY EnumthirdPartyVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party"
 )
 
 // All allowed values of EnumthirdPartyVirtualAttributeSchemaUrn enum

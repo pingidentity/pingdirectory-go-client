@@ -20,7 +20,7 @@ type EnummirrorVirtualAttributeSchemaUrn string
 
 // List of Enummirror-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEMIRROR EnummirrorVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:mirror"
+	ENUMMIRRORVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEMIRROR EnummirrorVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:mirror"
 )
 
 // All allowed values of EnummirrorVirtualAttributeSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumrecurringTaskChainSchemaUrn string
 
 // List of Enumrecurring-task-chainSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASK_CHAIN EnumrecurringTaskChainSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task-chain"
+	ENUMRECURRINGTASKCHAINSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASK_CHAIN EnumrecurringTaskChainSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task-chain"
 )
 
 // All allowed values of EnumrecurringTaskChainSchemaUrn enum

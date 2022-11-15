@@ -20,7 +20,7 @@ type EnumthirdPartyAccessLogPublisherSchemaUrn string
 
 // List of Enumthird-party-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERTHIRD_PARTY_ACCESS EnumthirdPartyAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:third-party-access"
+	ENUMTHIRDPARTYACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERTHIRD_PARTY_ACCESS EnumthirdPartyAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:third-party-access"
 )
 
 // All allowed values of EnumthirdPartyAccessLogPublisherSchemaUrn enum

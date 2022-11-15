@@ -20,7 +20,7 @@ type EnumnumericGaugeSchemaUrn string
 
 // List of Enumnumeric-gaugeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GAUGENUMERIC EnumnumericGaugeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:gauge:numeric"
+	ENUMNUMERICGAUGESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GAUGENUMERIC EnumnumericGaugeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:gauge:numeric"
 )
 
 // All allowed values of EnumnumericGaugeSchemaUrn enum

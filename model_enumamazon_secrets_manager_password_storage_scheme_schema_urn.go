@@ -20,7 +20,7 @@ type EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn string
 
 // List of Enumamazon-secrets-manager-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEAMAZON_SECRETS_MANAGER EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:amazon-secrets-manager"
+	ENUMAMAZONSECRETSMANAGERPASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEAMAZON_SECRETS_MANAGER EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:amazon-secrets-manager"
 )
 
 // All allowed values of EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumamazonSecretsManagerCipherStreamProviderSchemaUrn string
 
 // List of Enumamazon-secrets-manager-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERAMAZON_SECRETS_MANAGER EnumamazonSecretsManagerCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-secrets-manager"
+	ENUMAMAZONSECRETSMANAGERCIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERAMAZON_SECRETS_MANAGER EnumamazonSecretsManagerCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-secrets-manager"
 )
 
 // All allowed values of EnumamazonSecretsManagerCipherStreamProviderSchemaUrn enum

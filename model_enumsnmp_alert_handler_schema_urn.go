@@ -20,7 +20,7 @@ type EnumsnmpAlertHandlerSchemaUrn string
 
 // List of Enumsnmp-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERSNMP EnumsnmpAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:snmp"
+	ENUMSNMPALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERSNMP EnumsnmpAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:snmp"
 )
 
 // All allowed values of EnumsnmpAlertHandlerSchemaUrn enum

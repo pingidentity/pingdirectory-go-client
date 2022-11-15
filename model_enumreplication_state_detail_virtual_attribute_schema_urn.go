@@ -20,7 +20,7 @@ type EnumreplicationStateDetailVirtualAttributeSchemaUrn string
 
 // List of Enumreplication-state-detail-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEREPLICATION_STATE_DETAIL EnumreplicationStateDetailVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:replication-state-detail"
+	ENUMREPLICATIONSTATEDETAILVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEREPLICATION_STATE_DETAIL EnumreplicationStateDetailVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:replication-state-detail"
 )
 
 // All allowed values of EnumreplicationStateDetailVirtualAttributeSchemaUrn enum

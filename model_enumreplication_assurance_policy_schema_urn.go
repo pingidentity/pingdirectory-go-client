@@ -20,7 +20,7 @@ type EnumreplicationAssurancePolicySchemaUrn string
 
 // List of Enumreplication-assurance-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0REPLICATION_ASSURANCE_POLICY EnumreplicationAssurancePolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:replication-assurance-policy"
+	ENUMREPLICATIONASSURANCEPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0REPLICATION_ASSURANCE_POLICY EnumreplicationAssurancePolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:replication-assurance-policy"
 )
 
 // All allowed values of EnumreplicationAssurancePolicySchemaUrn enum

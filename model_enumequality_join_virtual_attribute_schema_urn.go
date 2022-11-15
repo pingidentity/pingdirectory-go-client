@@ -20,7 +20,7 @@ type EnumequalityJoinVirtualAttributeSchemaUrn string
 
 // List of Enumequality-join-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEEQUALITY_JOIN EnumequalityJoinVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:equality-join"
+	ENUMEQUALITYJOINVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEEQUALITY_JOIN EnumequalityJoinVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:equality-join"
 )
 
 // All allowed values of EnumequalityJoinVirtualAttributeSchemaUrn enum

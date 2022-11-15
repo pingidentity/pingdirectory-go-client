@@ -20,8 +20,8 @@ type EnumbackendSoftDeleteEntryIncludedOperationProp string
 
 // List of Enumbackend-softDeleteEntryIncludedOperationProp
 const (
-	MODIFY EnumbackendSoftDeleteEntryIncludedOperationProp = "modify"
-	DELETE EnumbackendSoftDeleteEntryIncludedOperationProp = "delete"
+	ENUMBACKENDSOFTDELETEENTRYINCLUDEDOPERATIONPROP_MODIFY EnumbackendSoftDeleteEntryIncludedOperationProp = "modify"
+	ENUMBACKENDSOFTDELETEENTRYINCLUDEDOPERATIONPROP_DELETE EnumbackendSoftDeleteEntryIncludedOperationProp = "delete"
 )
 
 // All allowed values of EnumbackendSoftDeleteEntryIncludedOperationProp enum

@@ -20,7 +20,7 @@ type EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn string
 
 // List of Enumunboundid-certificate-plus-password-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_CERTIFICATE_PLUS_PASSWORD EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-certificate-plus-password"
+	ENUMUNBOUNDIDCERTIFICATEPLUSPASSWORDSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_CERTIFICATE_PLUS_PASSWORD EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-certificate-plus-password"
 )
 
 // All allowed values of EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn enum

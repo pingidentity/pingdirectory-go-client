@@ -20,7 +20,7 @@ type EnumreverseDnJoinVirtualAttributeSchemaUrn string
 
 // List of Enumreverse-dn-join-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEREVERSE_DN_JOIN EnumreverseDnJoinVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:reverse-dn-join"
+	ENUMREVERSEDNJOINVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEREVERSE_DN_JOIN EnumreverseDnJoinVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:reverse-dn-join"
 )
 
 // All allowed values of EnumreverseDnJoinVirtualAttributeSchemaUrn enum

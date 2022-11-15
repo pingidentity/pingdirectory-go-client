@@ -20,7 +20,7 @@ type EnumoracleUnifiedDirectoryExternalServerSchemaUrn string
 
 // List of Enumoracle-unified-directory-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERORACLE_UNIFIED_DIRECTORY EnumoracleUnifiedDirectoryExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:oracle-unified-directory"
+	ENUMORACLEUNIFIEDDIRECTORYEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERORACLE_UNIFIED_DIRECTORY EnumoracleUnifiedDirectoryExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:oracle-unified-directory"
 )
 
 // All allowed values of EnumoracleUnifiedDirectoryExternalServerSchemaUrn enum

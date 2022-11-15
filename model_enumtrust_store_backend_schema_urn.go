@@ -20,7 +20,7 @@ type EnumtrustStoreBackendSchemaUrn string
 
 // List of Enumtrust-store-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDTRUST_STORE EnumtrustStoreBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:trust-store"
+	ENUMTRUSTSTOREBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDTRUST_STORE EnumtrustStoreBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:trust-store"
 )
 
 // All allowed values of EnumtrustStoreBackendSchemaUrn enum

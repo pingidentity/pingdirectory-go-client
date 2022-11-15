@@ -20,7 +20,7 @@ type EnumnameAndOptionalUidAttributeSyntaxSchemaUrn string
 
 // List of Enumname-and-optional-uid-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXNAME_AND_OPTIONAL_UID EnumnameAndOptionalUidAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:name-and-optional-uid"
+	ENUMNAMEANDOPTIONALUIDATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXNAME_AND_OPTIONAL_UID EnumnameAndOptionalUidAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:name-and-optional-uid"
 )
 
 // All allowed values of EnumnameAndOptionalUidAttributeSyntaxSchemaUrn enum

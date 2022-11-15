@@ -20,7 +20,7 @@ type EnumregularExpressionPasswordValidatorSchemaUrn string
 
 // List of Enumregular-expression-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORREGULAR_EXPRESSION EnumregularExpressionPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:regular-expression"
+	ENUMREGULAREXPRESSIONPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORREGULAR_EXPRESSION EnumregularExpressionPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:regular-expression"
 )
 
 // All allowed values of EnumregularExpressionPasswordValidatorSchemaUrn enum

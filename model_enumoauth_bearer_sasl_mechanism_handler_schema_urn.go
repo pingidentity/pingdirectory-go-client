@@ -20,7 +20,7 @@ type EnumoauthBearerSaslMechanismHandlerSchemaUrn string
 
 // List of Enumoauth-bearer-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLEROAUTH_BEARER EnumoauthBearerSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:oauth-bearer"
+	ENUMOAUTHBEARERSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLEROAUTH_BEARER EnumoauthBearerSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:oauth-bearer"
 )
 
 // All allowed values of EnumoauthBearerSaslMechanismHandlerSchemaUrn enum

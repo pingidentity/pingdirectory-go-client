@@ -20,8 +20,8 @@ type EnumglobalConfigurationJmxValueBehaviorProp string
 
 // List of Enumglobal-configuration-jmxValueBehaviorProp
 const (
-	INFERRED EnumglobalConfigurationJmxValueBehaviorProp = "inferred"
-	STRING EnumglobalConfigurationJmxValueBehaviorProp = "string"
+	ENUMGLOBALCONFIGURATIONJMXVALUEBEHAVIORPROP_INFERRED EnumglobalConfigurationJmxValueBehaviorProp = "inferred"
+	ENUMGLOBALCONFIGURATIONJMXVALUEBEHAVIORPROP_STRING EnumglobalConfigurationJmxValueBehaviorProp = "string"
 )
 
 // All allowed values of EnumglobalConfigurationJmxValueBehaviorProp enum

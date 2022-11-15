@@ -20,12 +20,12 @@ type EnumkeyPairKeyAlgorithmProp string
 
 // List of Enumkey-pair-keyAlgorithmProp
 const (
-	RSA_2048 EnumkeyPairKeyAlgorithmProp = "RSA_2048"
-	RSA_3072 EnumkeyPairKeyAlgorithmProp = "RSA_3072"
-	RSA_4096 EnumkeyPairKeyAlgorithmProp = "RSA_4096"
-	EC_256 EnumkeyPairKeyAlgorithmProp = "EC_256"
-	EC_384 EnumkeyPairKeyAlgorithmProp = "EC_384"
-	EC_521 EnumkeyPairKeyAlgorithmProp = "EC_521"
+	ENUMKEYPAIRKEYALGORITHMPROP_RSA_2048 EnumkeyPairKeyAlgorithmProp = "RSA_2048"
+	ENUMKEYPAIRKEYALGORITHMPROP_RSA_3072 EnumkeyPairKeyAlgorithmProp = "RSA_3072"
+	ENUMKEYPAIRKEYALGORITHMPROP_RSA_4096 EnumkeyPairKeyAlgorithmProp = "RSA_4096"
+	ENUMKEYPAIRKEYALGORITHMPROP_EC_256 EnumkeyPairKeyAlgorithmProp = "EC_256"
+	ENUMKEYPAIRKEYALGORITHMPROP_EC_384 EnumkeyPairKeyAlgorithmProp = "EC_384"
+	ENUMKEYPAIRKEYALGORITHMPROP_EC_521 EnumkeyPairKeyAlgorithmProp = "EC_521"
 )
 
 // All allowed values of EnumkeyPairKeyAlgorithmProp enum

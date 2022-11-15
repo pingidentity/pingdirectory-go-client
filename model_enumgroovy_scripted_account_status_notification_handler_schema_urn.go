@@ -20,7 +20,7 @@ type EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn string
 
 // List of Enumgroovy-scripted-account-status-notification-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:groovy-scripted"
+	ENUMGROOVYSCRIPTEDACCOUNTSTATUSNOTIFICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn enum

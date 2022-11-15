@@ -20,7 +20,7 @@ type EnumavailabilityStateHttpServletExtensionSchemaUrn string
 
 // List of Enumavailability-state-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONAVAILABILITY_STATE EnumavailabilityStateHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state"
+	ENUMAVAILABILITYSTATEHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONAVAILABILITY_STATE EnumavailabilityStateHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state"
 )
 
 // All allowed values of EnumavailabilityStateHttpServletExtensionSchemaUrn enum

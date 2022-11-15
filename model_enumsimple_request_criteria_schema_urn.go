@@ -20,7 +20,7 @@ type EnumsimpleRequestCriteriaSchemaUrn string
 
 // List of Enumsimple-request-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0REQUEST_CRITERIASIMPLE EnumsimpleRequestCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:request-criteria:simple"
+	ENUMSIMPLEREQUESTCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0REQUEST_CRITERIASIMPLE EnumsimpleRequestCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:request-criteria:simple"
 )
 
 // All allowed values of EnumsimpleRequestCriteriaSchemaUrn enum

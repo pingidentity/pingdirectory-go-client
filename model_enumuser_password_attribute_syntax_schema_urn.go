@@ -20,7 +20,7 @@ type EnumuserPasswordAttributeSyntaxSchemaUrn string
 
 // List of Enumuser-password-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXUSER_PASSWORD EnumuserPasswordAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:user-password"
+	ENUMUSERPASSWORDATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXUSER_PASSWORD EnumuserPasswordAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:user-password"
 )
 
 // All allowed values of EnumuserPasswordAttributeSyntaxSchemaUrn enum

@@ -20,9 +20,9 @@ type EnumresultCriteriaProcessingTimeCriteriaProp string
 
 // List of Enumresult-criteria-processingTimeCriteriaProp
 const (
-	ANY EnumresultCriteriaProcessingTimeCriteriaProp = "any"
-	LESS_THAN_OR_EQUAL_TO EnumresultCriteriaProcessingTimeCriteriaProp = "less-than-or-equal-to"
-	GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaProcessingTimeCriteriaProp = "greater-than-or-equal-to"
+	ENUMRESULTCRITERIAPROCESSINGTIMECRITERIAPROP_ANY EnumresultCriteriaProcessingTimeCriteriaProp = "any"
+	ENUMRESULTCRITERIAPROCESSINGTIMECRITERIAPROP_LESS_THAN_OR_EQUAL_TO EnumresultCriteriaProcessingTimeCriteriaProp = "less-than-or-equal-to"
+	ENUMRESULTCRITERIAPROCESSINGTIMECRITERIAPROP_GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaProcessingTimeCriteriaProp = "greater-than-or-equal-to"
 )
 
 // All allowed values of EnumresultCriteriaProcessingTimeCriteriaProp enum

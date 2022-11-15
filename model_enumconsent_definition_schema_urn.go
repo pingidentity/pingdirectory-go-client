@@ -20,7 +20,7 @@ type EnumconsentDefinitionSchemaUrn string
 
 // List of Enumconsent-definitionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONSENT_DEFINITION EnumconsentDefinitionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:consent-definition"
+	ENUMCONSENTDEFINITIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONSENT_DEFINITION EnumconsentDefinitionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:consent-definition"
 )
 
 // All allowed values of EnumconsentDefinitionSchemaUrn enum

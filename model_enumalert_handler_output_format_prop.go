@@ -20,9 +20,9 @@ type EnumalertHandlerOutputFormatProp string
 
 // List of Enumalert-handler-outputFormatProp
 const (
-	LEGACY_TEXT EnumalertHandlerOutputFormatProp = "legacy-text"
-	SINGLE_LINE_JSON EnumalertHandlerOutputFormatProp = "single-line-json"
-	MULTI_LINE_JSON EnumalertHandlerOutputFormatProp = "multi-line-json"
+	ENUMALERTHANDLEROUTPUTFORMATPROP_LEGACY_TEXT EnumalertHandlerOutputFormatProp = "legacy-text"
+	ENUMALERTHANDLEROUTPUTFORMATPROP_SINGLE_LINE_JSON EnumalertHandlerOutputFormatProp = "single-line-json"
+	ENUMALERTHANDLEROUTPUTFORMATPROP_MULTI_LINE_JSON EnumalertHandlerOutputFormatProp = "multi-line-json"
 )
 
 // All allowed values of EnumalertHandlerOutputFormatProp enum

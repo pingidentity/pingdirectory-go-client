@@ -20,7 +20,7 @@ type EnumjsonErrorLogPublisherSchemaUrn string
 
 // List of Enumjson-error-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERJSON_ERROR EnumjsonErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:json-error"
+	ENUMJSONERRORLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERJSON_ERROR EnumjsonErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:json-error"
 )
 
 // All allowed values of EnumjsonErrorLogPublisherSchemaUrn enum

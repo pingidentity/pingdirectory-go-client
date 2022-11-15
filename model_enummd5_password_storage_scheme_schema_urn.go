@@ -20,7 +20,7 @@ type Enummd5PasswordStorageSchemeSchemaUrn string
 
 // List of Enummd5-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEMD5 Enummd5PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:md5"
+	ENUMMD5PASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEMD5 Enummd5PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:md5"
 )
 
 // All allowed values of Enummd5PasswordStorageSchemeSchemaUrn enum

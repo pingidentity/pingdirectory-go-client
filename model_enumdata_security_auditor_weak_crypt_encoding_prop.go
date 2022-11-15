@@ -20,9 +20,9 @@ type EnumdataSecurityAuditorWeakCryptEncodingProp string
 
 // List of Enumdata-security-auditor-weakCryptEncodingProp
 const (
-	CRYPT EnumdataSecurityAuditorWeakCryptEncodingProp = "crypt"
-	SHA_2_256 EnumdataSecurityAuditorWeakCryptEncodingProp = "sha-2-256"
-	SHA_2_512 EnumdataSecurityAuditorWeakCryptEncodingProp = "sha-2-512"
+	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_CRYPT EnumdataSecurityAuditorWeakCryptEncodingProp = "crypt"
+	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_SHA_2_256 EnumdataSecurityAuditorWeakCryptEncodingProp = "sha-2-256"
+	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_SHA_2_512 EnumdataSecurityAuditorWeakCryptEncodingProp = "sha-2-512"
 )
 
 // All allowed values of EnumdataSecurityAuditorWeakCryptEncodingProp enum

@@ -20,7 +20,7 @@ type EnumadminAlertAccessLogPublisherSchemaUrn string
 
 // List of Enumadmin-alert-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERADMIN_ALERT_ACCESS EnumadminAlertAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access"
+	ENUMADMINALERTACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERADMIN_ALERT_ACCESS EnumadminAlertAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:admin-alert-access"
 )
 
 // All allowed values of EnumadminAlertAccessLogPublisherSchemaUrn enum

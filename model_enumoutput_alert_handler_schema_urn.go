@@ -20,7 +20,7 @@ type EnumoutputAlertHandlerSchemaUrn string
 
 // List of Enumoutput-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLEROUTPUT EnumoutputAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:output"
+	ENUMOUTPUTALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLEROUTPUT EnumoutputAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:output"
 )
 
 // All allowed values of EnumoutputAlertHandlerSchemaUrn enum

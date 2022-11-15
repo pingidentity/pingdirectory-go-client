@@ -20,10 +20,10 @@ type EnumvirtualAttributeJoinScopeProp string
 
 // List of Enumvirtual-attribute-joinScopeProp
 const (
-	BASE_OBJECT EnumvirtualAttributeJoinScopeProp = "base-object"
-	SINGLE_LEVEL EnumvirtualAttributeJoinScopeProp = "single-level"
-	WHOLE_SUBTREE EnumvirtualAttributeJoinScopeProp = "whole-subtree"
-	SUBORDINATE_SUBTREE EnumvirtualAttributeJoinScopeProp = "subordinate-subtree"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_BASE_OBJECT EnumvirtualAttributeJoinScopeProp = "base-object"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_SINGLE_LEVEL EnumvirtualAttributeJoinScopeProp = "single-level"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_WHOLE_SUBTREE EnumvirtualAttributeJoinScopeProp = "whole-subtree"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_SUBORDINATE_SUBTREE EnumvirtualAttributeJoinScopeProp = "subordinate-subtree"
 )
 
 // All allowed values of EnumvirtualAttributeJoinScopeProp enum

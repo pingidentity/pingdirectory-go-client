@@ -20,9 +20,9 @@ type EnumexternalServerConnectionSecurityProp string
 
 // List of Enumexternal-server-connectionSecurityProp
 const (
-	NONE EnumexternalServerConnectionSecurityProp = "none"
-	SSL EnumexternalServerConnectionSecurityProp = "ssl"
-	STARTTLS EnumexternalServerConnectionSecurityProp = "starttls"
+	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_NONE EnumexternalServerConnectionSecurityProp = "none"
+	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_SSL EnumexternalServerConnectionSecurityProp = "ssl"
+	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_STARTTLS EnumexternalServerConnectionSecurityProp = "starttls"
 )
 
 // All allowed values of EnumexternalServerConnectionSecurityProp enum

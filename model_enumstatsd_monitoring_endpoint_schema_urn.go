@@ -20,7 +20,7 @@ type EnumstatsdMonitoringEndpointSchemaUrn string
 
 // List of Enumstatsd-monitoring-endpointSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITORING_ENDPOINTSTATSD EnumstatsdMonitoringEndpointSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd"
+	ENUMSTATSDMONITORINGENDPOINTSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITORING_ENDPOINTSTATSD EnumstatsdMonitoringEndpointSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd"
 )
 
 // All allowed values of EnumstatsdMonitoringEndpointSchemaUrn enum

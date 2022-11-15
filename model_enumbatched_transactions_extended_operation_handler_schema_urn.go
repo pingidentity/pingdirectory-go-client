@@ -20,7 +20,7 @@ type EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn string
 
 // List of Enumbatched-transactions-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERBATCHED_TRANSACTIONS EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:batched-transactions"
+	ENUMBATCHEDTRANSACTIONSEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERBATCHED_TRANSACTIONS EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:batched-transactions"
 )
 
 // All allowed values of EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn enum

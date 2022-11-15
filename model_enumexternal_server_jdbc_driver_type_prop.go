@@ -20,13 +20,13 @@ type EnumexternalServerJdbcDriverTypeProp string
 
 // List of Enumexternal-server-jdbcDriverTypeProp
 const (
-	ORACLETHIN EnumexternalServerJdbcDriverTypeProp = "oraclethin"
-	ORACLEOCI EnumexternalServerJdbcDriverTypeProp = "oracleoci"
-	MYSQL EnumexternalServerJdbcDriverTypeProp = "mysql"
-	DB2 EnumexternalServerJdbcDriverTypeProp = "db2"
-	SQLSERVER EnumexternalServerJdbcDriverTypeProp = "sqlserver"
-	POSTGRES EnumexternalServerJdbcDriverTypeProp = "postgres"
-	OTHER EnumexternalServerJdbcDriverTypeProp = "other"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_ORACLETHIN EnumexternalServerJdbcDriverTypeProp = "oraclethin"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_ORACLEOCI EnumexternalServerJdbcDriverTypeProp = "oracleoci"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_MYSQL EnumexternalServerJdbcDriverTypeProp = "mysql"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_DB2 EnumexternalServerJdbcDriverTypeProp = "db2"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_SQLSERVER EnumexternalServerJdbcDriverTypeProp = "sqlserver"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_POSTGRES EnumexternalServerJdbcDriverTypeProp = "postgres"
+	ENUMEXTERNALSERVERJDBCDRIVERTYPEPROP_OTHER EnumexternalServerJdbcDriverTypeProp = "other"
 )
 
 // All allowed values of EnumexternalServerJdbcDriverTypeProp enum

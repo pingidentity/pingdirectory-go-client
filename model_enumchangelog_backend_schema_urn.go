@@ -20,7 +20,7 @@ type EnumchangelogBackendSchemaUrn string
 
 // List of Enumchangelog-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDCHANGELOG EnumchangelogBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:changelog"
+	ENUMCHANGELOGBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDCHANGELOG EnumchangelogBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:changelog"
 )
 
 // All allowed values of EnumchangelogBackendSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumscimSchemaSchemaUrn string
 
 // List of Enumscim-schemaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SCIM_SCHEMA EnumscimSchemaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:scim-schema"
+	ENUMSCIMSCHEMASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SCIM_SCHEMA EnumscimSchemaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:scim-schema"
 )
 
 // All allowed values of EnumscimSchemaSchemaUrn enum

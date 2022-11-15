@@ -20,7 +20,7 @@ type EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn string
 
 // List of Enumgroovy-scripted-uncached-entry-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ENTRY_CRITERIAGROOVY_SCRIPTED EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:groovy-scripted"
+	ENUMGROOVYSCRIPTEDUNCACHEDENTRYCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ENTRY_CRITERIAGROOVY_SCRIPTED EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn enum

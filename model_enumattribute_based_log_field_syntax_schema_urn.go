@@ -20,7 +20,7 @@ type EnumattributeBasedLogFieldSyntaxSchemaUrn string
 
 // List of Enumattribute-based-log-field-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_SYNTAXATTRIBUTE_BASED EnumattributeBasedLogFieldSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based"
+	ENUMATTRIBUTEBASEDLOGFIELDSYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_SYNTAXATTRIBUTE_BASED EnumattributeBasedLogFieldSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based"
 )
 
 // All allowed values of EnumattributeBasedLogFieldSyntaxSchemaUrn enum

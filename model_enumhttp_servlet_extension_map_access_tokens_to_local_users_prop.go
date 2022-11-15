@@ -20,9 +20,9 @@ type EnumhttpServletExtensionMapAccessTokensToLocalUsersProp string
 
 // List of Enumhttp-servlet-extension-mapAccessTokensToLocalUsersProp
 const (
-	DISABLED EnumhttpServletExtensionMapAccessTokensToLocalUsersProp = "disabled"
-	OPTIONAL EnumhttpServletExtensionMapAccessTokensToLocalUsersProp = "optional"
-	REQUIRED EnumhttpServletExtensionMapAccessTokensToLocalUsersProp = "required"
+	ENUMHTTPSERVLETEXTENSIONMAPACCESSTOKENSTOLOCALUSERSPROP_DISABLED EnumhttpServletExtensionMapAccessTokensToLocalUsersProp = "disabled"
+	ENUMHTTPSERVLETEXTENSIONMAPACCESSTOKENSTOLOCALUSERSPROP_OPTIONAL EnumhttpServletExtensionMapAccessTokensToLocalUsersProp = "optional"
+	ENUMHTTPSERVLETEXTENSIONMAPACCESSTOKENSTOLOCALUSERSPROP_REQUIRED EnumhttpServletExtensionMapAccessTokensToLocalUsersProp = "required"
 )
 
 // All allowed values of EnumhttpServletExtensionMapAccessTokensToLocalUsersProp enum

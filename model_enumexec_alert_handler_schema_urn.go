@@ -20,7 +20,7 @@ type EnumexecAlertHandlerSchemaUrn string
 
 // List of Enumexec-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLEREXEC EnumexecAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:exec"
+	ENUMEXECALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLEREXEC EnumexecAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:exec"
 )
 
 // All allowed values of EnumexecAlertHandlerSchemaUrn enum

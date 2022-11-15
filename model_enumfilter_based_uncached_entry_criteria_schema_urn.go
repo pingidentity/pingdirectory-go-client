@@ -20,7 +20,7 @@ type EnumfilterBasedUncachedEntryCriteriaSchemaUrn string
 
 // List of Enumfilter-based-uncached-entry-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ENTRY_CRITERIAFILTER_BASED EnumfilterBasedUncachedEntryCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:filter-based"
+	ENUMFILTERBASEDUNCACHEDENTRYCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ENTRY_CRITERIAFILTER_BASED EnumfilterBasedUncachedEntryCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-entry-criteria:filter-based"
 )
 
 // All allowed values of EnumfilterBasedUncachedEntryCriteriaSchemaUrn enum

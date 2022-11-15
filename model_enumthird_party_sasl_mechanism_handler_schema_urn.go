@@ -20,7 +20,7 @@ type EnumthirdPartySaslMechanismHandlerSchemaUrn string
 
 // List of Enumthird-party-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERTHIRD_PARTY EnumthirdPartySaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:third-party"
+	ENUMTHIRDPARTYSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERTHIRD_PARTY EnumthirdPartySaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartySaslMechanismHandlerSchemaUrn enum

@@ -20,9 +20,9 @@ type EnumsaslMechanismHandlerAllowedQualityOfProtectionProp string
 
 // List of Enumsasl-mechanism-handler-allowedQualityOfProtectionProp
 const (
-	AUTH EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth"
-	AUTH_INT EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-int"
-	AUTH_CONF EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-conf"
+	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth"
+	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH_INT EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-int"
+	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH_CONF EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-conf"
 )
 
 // All allowed values of EnumsaslMechanismHandlerAllowedQualityOfProtectionProp enum

@@ -20,7 +20,7 @@ type EnumpwnedPasswordsPasswordValidatorSchemaUrn string
 
 // List of Enumpwned-passwords-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORPWNED_PASSWORDS EnumpwnedPasswordsPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:pwned-passwords"
+	ENUMPWNEDPASSWORDSPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORPWNED_PASSWORDS EnumpwnedPasswordsPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:pwned-passwords"
 )
 
 // All allowed values of EnumpwnedPasswordsPasswordValidatorSchemaUrn enum

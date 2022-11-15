@@ -20,7 +20,7 @@ type EnumtimeLimitLogRotationPolicySchemaUrn string
 
 // List of Enumtime-limit-log-rotation-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_ROTATION_POLICYTIME_LIMIT EnumtimeLimitLogRotationPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:time-limit"
+	ENUMTIMELIMITLOGROTATIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_ROTATION_POLICYTIME_LIMIT EnumtimeLimitLogRotationPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:time-limit"
 )
 
 // All allowed values of EnumtimeLimitLogRotationPolicySchemaUrn enum

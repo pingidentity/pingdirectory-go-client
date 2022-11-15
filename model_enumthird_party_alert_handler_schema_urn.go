@@ -20,7 +20,7 @@ type EnumthirdPartyAlertHandlerSchemaUrn string
 
 // List of Enumthird-party-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERTHIRD_PARTY EnumthirdPartyAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:third-party"
+	ENUMTHIRDPARTYALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERTHIRD_PARTY EnumthirdPartyAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartyAlertHandlerSchemaUrn enum

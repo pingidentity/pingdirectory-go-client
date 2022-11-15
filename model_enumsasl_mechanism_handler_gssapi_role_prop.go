@@ -20,8 +20,8 @@ type EnumsaslMechanismHandlerGssapiRoleProp string
 
 // List of Enumsasl-mechanism-handler-gssapiRoleProp
 const (
-	ACCEPTOR EnumsaslMechanismHandlerGssapiRoleProp = "acceptor"
-	INITIATOR EnumsaslMechanismHandlerGssapiRoleProp = "initiator"
+	ENUMSASLMECHANISMHANDLERGSSAPIROLEPROP_ACCEPTOR EnumsaslMechanismHandlerGssapiRoleProp = "acceptor"
+	ENUMSASLMECHANISMHANDLERGSSAPIROLEPROP_INITIATOR EnumsaslMechanismHandlerGssapiRoleProp = "initiator"
 )
 
 // All allowed values of EnumsaslMechanismHandlerGssapiRoleProp enum

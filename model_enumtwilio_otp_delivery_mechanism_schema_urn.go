@@ -20,7 +20,7 @@ type EnumtwilioOtpDeliveryMechanismSchemaUrn string
 
 // List of Enumtwilio-otp-delivery-mechanismSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0OTP_DELIVERY_MECHANISMTWILIO EnumtwilioOtpDeliveryMechanismSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:twilio"
+	ENUMTWILIOOTPDELIVERYMECHANISMSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0OTP_DELIVERY_MECHANISMTWILIO EnumtwilioOtpDeliveryMechanismSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:twilio"
 )
 
 // All allowed values of EnumtwilioOtpDeliveryMechanismSchemaUrn enum

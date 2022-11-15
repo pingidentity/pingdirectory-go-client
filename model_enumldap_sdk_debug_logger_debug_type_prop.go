@@ -20,14 +20,14 @@ type EnumldapSdkDebugLoggerDebugTypeProp string
 
 // List of Enumldap-sdk-debug-logger-debugTypeProp
 const (
-	ASN1 EnumldapSdkDebugLoggerDebugTypeProp = "asn1"
-	CODING_ERROR EnumldapSdkDebugLoggerDebugTypeProp = "coding-error"
-	CONNECT EnumldapSdkDebugLoggerDebugTypeProp = "connect"
-	EXCEPTION EnumldapSdkDebugLoggerDebugTypeProp = "exception"
-	LDAP EnumldapSdkDebugLoggerDebugTypeProp = "ldap"
-	LDIF EnumldapSdkDebugLoggerDebugTypeProp = "ldif"
-	MONITOR EnumldapSdkDebugLoggerDebugTypeProp = "monitor"
-	OTHER EnumldapSdkDebugLoggerDebugTypeProp = "other"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_ASN1 EnumldapSdkDebugLoggerDebugTypeProp = "asn1"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CODING_ERROR EnumldapSdkDebugLoggerDebugTypeProp = "coding-error"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CONNECT EnumldapSdkDebugLoggerDebugTypeProp = "connect"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_EXCEPTION EnumldapSdkDebugLoggerDebugTypeProp = "exception"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDAP EnumldapSdkDebugLoggerDebugTypeProp = "ldap"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDIF EnumldapSdkDebugLoggerDebugTypeProp = "ldif"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_MONITOR EnumldapSdkDebugLoggerDebugTypeProp = "monitor"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_OTHER EnumldapSdkDebugLoggerDebugTypeProp = "other"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerDebugTypeProp enum

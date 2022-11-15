@@ -20,7 +20,7 @@ type EnumstaticallyDefinedRecurringTaskSchemaUrn string
 
 // List of Enumstatically-defined-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKSTATICALLY_DEFINED EnumstaticallyDefinedRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:statically-defined"
+	ENUMSTATICALLYDEFINEDRECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKSTATICALLY_DEFINED EnumstaticallyDefinedRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:statically-defined"
 )
 
 // All allowed values of EnumstaticallyDefinedRecurringTaskSchemaUrn enum

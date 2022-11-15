@@ -20,7 +20,7 @@ type EnumconjurCipherStreamProviderSchemaUrn string
 
 // List of Enumconjur-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERCONJUR EnumconjurCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:conjur"
+	ENUMCONJURCIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERCONJUR EnumconjurCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:conjur"
 )
 
 // All allowed values of EnumconjurCipherStreamProviderSchemaUrn enum

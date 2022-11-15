@@ -20,12 +20,12 @@ type EnumidTokenValidatorAllowedSigningAlgorithmProp string
 
 // List of Enumid-token-validator-allowedSigningAlgorithmProp
 const (
-	RS256 EnumidTokenValidatorAllowedSigningAlgorithmProp = "RS256"
-	RS384 EnumidTokenValidatorAllowedSigningAlgorithmProp = "RS384"
-	RS512 EnumidTokenValidatorAllowedSigningAlgorithmProp = "RS512"
-	ES256 EnumidTokenValidatorAllowedSigningAlgorithmProp = "ES256"
-	ES384 EnumidTokenValidatorAllowedSigningAlgorithmProp = "ES384"
-	ES512 EnumidTokenValidatorAllowedSigningAlgorithmProp = "ES512"
+	ENUMIDTOKENVALIDATORALLOWEDSIGNINGALGORITHMPROP_RS256 EnumidTokenValidatorAllowedSigningAlgorithmProp = "RS256"
+	ENUMIDTOKENVALIDATORALLOWEDSIGNINGALGORITHMPROP_RS384 EnumidTokenValidatorAllowedSigningAlgorithmProp = "RS384"
+	ENUMIDTOKENVALIDATORALLOWEDSIGNINGALGORITHMPROP_RS512 EnumidTokenValidatorAllowedSigningAlgorithmProp = "RS512"
+	ENUMIDTOKENVALIDATORALLOWEDSIGNINGALGORITHMPROP_ES256 EnumidTokenValidatorAllowedSigningAlgorithmProp = "ES256"
+	ENUMIDTOKENVALIDATORALLOWEDSIGNINGALGORITHMPROP_ES384 EnumidTokenValidatorAllowedSigningAlgorithmProp = "ES384"
+	ENUMIDTOKENVALIDATORALLOWEDSIGNINGALGORITHMPROP_ES512 EnumidTokenValidatorAllowedSigningAlgorithmProp = "ES512"
 )
 
 // All allowed values of EnumidTokenValidatorAllowedSigningAlgorithmProp enum

@@ -20,7 +20,7 @@ type EnumthirdPartyMonitorProviderSchemaUrn string
 
 // List of Enumthird-party-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERTHIRD_PARTY EnumthirdPartyMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:third-party"
+	ENUMTHIRDPARTYMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERTHIRD_PARTY EnumthirdPartyMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:third-party"
 )
 
 // All allowed values of EnumthirdPartyMonitorProviderSchemaUrn enum

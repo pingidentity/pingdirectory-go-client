@@ -20,7 +20,7 @@ type EnumgroupRestResourceTypeSchemaUrn string
 
 // List of Enumgroup-rest-resource-typeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0REST_RESOURCE_TYPEGROUP EnumgroupRestResourceTypeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group"
+	ENUMGROUPRESTRESOURCETYPESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0REST_RESOURCE_TYPEGROUP EnumgroupRestResourceTypeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group"
 )
 
 // All allowed values of EnumgroupRestResourceTypeSchemaUrn enum

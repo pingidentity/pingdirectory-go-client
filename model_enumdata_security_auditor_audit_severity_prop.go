@@ -20,10 +20,10 @@ type EnumdataSecurityAuditorAuditSeverityProp string
 
 // List of Enumdata-security-auditor-auditSeverityProp
 const (
-	ERROR EnumdataSecurityAuditorAuditSeverityProp = "error"
-	WARNING EnumdataSecurityAuditorAuditSeverityProp = "warning"
-	NOTICE EnumdataSecurityAuditorAuditSeverityProp = "notice"
-	VERBOSE EnumdataSecurityAuditorAuditSeverityProp = "verbose"
+	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_ERROR EnumdataSecurityAuditorAuditSeverityProp = "error"
+	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_WARNING EnumdataSecurityAuditorAuditSeverityProp = "warning"
+	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_NOTICE EnumdataSecurityAuditorAuditSeverityProp = "notice"
+	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_VERBOSE EnumdataSecurityAuditorAuditSeverityProp = "verbose"
 )
 
 // All allowed values of EnumdataSecurityAuditorAuditSeverityProp enum

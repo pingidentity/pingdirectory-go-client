@@ -20,7 +20,7 @@ type EnumsmtpExternalServerSchemaUrn string
 
 // List of Enumsmtp-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERSMTP EnumsmtpExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:smtp"
+	ENUMSMTPEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERSMTP EnumsmtpExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:smtp"
 )
 
 // All allowed values of EnumsmtpExternalServerSchemaUrn enum

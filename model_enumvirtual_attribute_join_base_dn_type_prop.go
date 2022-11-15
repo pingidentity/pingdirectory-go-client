@@ -20,9 +20,9 @@ type EnumvirtualAttributeJoinBaseDNTypeProp string
 
 // List of Enumvirtual-attribute-joinBaseDNTypeProp
 const (
-	SEARCH_BASE_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-search-base-dn"
-	SOURCE_ENTRY_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-source-entry-dn"
-	CUSTOM_BASE_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-custom-base-dn"
+	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_SEARCH_BASE_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-search-base-dn"
+	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_SOURCE_ENTRY_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-source-entry-dn"
+	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_CUSTOM_BASE_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-custom-base-dn"
 )
 
 // All allowed values of EnumvirtualAttributeJoinBaseDNTypeProp enum

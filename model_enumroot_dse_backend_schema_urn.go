@@ -20,7 +20,7 @@ type EnumrootDseBackendSchemaUrn string
 
 // List of Enumroot-dse-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ROOT_DSE_BACKEND EnumrootDseBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:root-dse-backend"
+	ENUMROOTDSEBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ROOT_DSE_BACKEND EnumrootDseBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:root-dse-backend"
 )
 
 // All allowed values of EnumrootDseBackendSchemaUrn enum

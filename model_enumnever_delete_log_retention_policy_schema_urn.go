@@ -20,7 +20,7 @@ type EnumneverDeleteLogRetentionPolicySchemaUrn string
 
 // List of Enumnever-delete-log-retention-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYNEVER_DELETE EnumneverDeleteLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:never-delete"
+	ENUMNEVERDELETELOGRETENTIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYNEVER_DELETE EnumneverDeleteLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:never-delete"
 )
 
 // All allowed values of EnumneverDeleteLogRetentionPolicySchemaUrn enum

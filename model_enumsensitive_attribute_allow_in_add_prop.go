@@ -20,9 +20,9 @@ type EnumsensitiveAttributeAllowInAddProp string
 
 // List of Enumsensitive-attribute-allowInAddProp
 const (
-	ALLOW EnumsensitiveAttributeAllowInAddProp = "allow"
-	REJECT EnumsensitiveAttributeAllowInAddProp = "reject"
-	SECURE_ONLY EnumsensitiveAttributeAllowInAddProp = "secure-only"
+	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_ALLOW EnumsensitiveAttributeAllowInAddProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_REJECT EnumsensitiveAttributeAllowInAddProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_SECURE_ONLY EnumsensitiveAttributeAllowInAddProp = "secure-only"
 )
 
 // All allowed values of EnumsensitiveAttributeAllowInAddProp enum

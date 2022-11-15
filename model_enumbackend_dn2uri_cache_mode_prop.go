@@ -20,14 +20,14 @@ type EnumbackendDn2uriCacheModeProp string
 
 // List of Enumbackend-dn2uriCacheModeProp
 const (
-	CACHE_KEYS_AND_VALUES EnumbackendDn2uriCacheModeProp = "cache-keys-and-values"
-	CACHE_KEYS_ONLY EnumbackendDn2uriCacheModeProp = "cache-keys-only"
-	NO_CACHING EnumbackendDn2uriCacheModeProp = "no-caching"
-	KEEP_HOT EnumbackendDn2uriCacheModeProp = "keep-hot"
-	DEFAULT EnumbackendDn2uriCacheModeProp = "default"
-	MAKE_COLD EnumbackendDn2uriCacheModeProp = "make-cold"
-	EVICT_LEAF_IMMEDIATELY EnumbackendDn2uriCacheModeProp = "evict-leaf-immediately"
-	EVICT_BIN_IMMEDIATELY EnumbackendDn2uriCacheModeProp = "evict-bin-immediately"
+	ENUMBACKENDDN2URICACHEMODEPROP_CACHE_KEYS_AND_VALUES EnumbackendDn2uriCacheModeProp = "cache-keys-and-values"
+	ENUMBACKENDDN2URICACHEMODEPROP_CACHE_KEYS_ONLY EnumbackendDn2uriCacheModeProp = "cache-keys-only"
+	ENUMBACKENDDN2URICACHEMODEPROP_NO_CACHING EnumbackendDn2uriCacheModeProp = "no-caching"
+	ENUMBACKENDDN2URICACHEMODEPROP_KEEP_HOT EnumbackendDn2uriCacheModeProp = "keep-hot"
+	ENUMBACKENDDN2URICACHEMODEPROP_DEFAULT EnumbackendDn2uriCacheModeProp = "default"
+	ENUMBACKENDDN2URICACHEMODEPROP_MAKE_COLD EnumbackendDn2uriCacheModeProp = "make-cold"
+	ENUMBACKENDDN2URICACHEMODEPROP_EVICT_LEAF_IMMEDIATELY EnumbackendDn2uriCacheModeProp = "evict-leaf-immediately"
+	ENUMBACKENDDN2URICACHEMODEPROP_EVICT_BIN_IMMEDIATELY EnumbackendDn2uriCacheModeProp = "evict-bin-immediately"
 )
 
 // All allowed values of EnumbackendDn2uriCacheModeProp enum

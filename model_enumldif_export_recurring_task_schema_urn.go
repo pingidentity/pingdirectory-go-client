@@ -20,7 +20,7 @@ type EnumldifExportRecurringTaskSchemaUrn string
 
 // List of Enumldif-export-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKLDIF_EXPORT EnumldifExportRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:ldif-export"
+	ENUMLDIFEXPORTRECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKLDIF_EXPORT EnumldifExportRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:ldif-export"
 )
 
 // All allowed values of EnumldifExportRecurringTaskSchemaUrn enum

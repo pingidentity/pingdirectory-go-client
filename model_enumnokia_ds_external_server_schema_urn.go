@@ -20,7 +20,7 @@ type EnumnokiaDsExternalServerSchemaUrn string
 
 // List of Enumnokia-ds-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERNOKIA_DS EnumnokiaDsExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-ds"
+	ENUMNOKIADSEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERNOKIA_DS EnumnokiaDsExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-ds"
 )
 
 // All allowed values of EnumnokiaDsExternalServerSchemaUrn enum

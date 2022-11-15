@@ -20,7 +20,7 @@ type EnumhexStringAttributeSyntaxSchemaUrn string
 
 // List of Enumhex-string-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXHEX_STRING EnumhexStringAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:hex-string"
+	ENUMHEXSTRINGATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXHEX_STRING EnumhexStringAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:hex-string"
 )
 
 // All allowed values of EnumhexStringAttributeSyntaxSchemaUrn enum

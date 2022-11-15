@@ -20,7 +20,7 @@ type EnumerrorLogAlertHandlerSchemaUrn string
 
 // List of Enumerror-log-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERERROR_LOG EnumerrorLogAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:error-log"
+	ENUMERRORLOGALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERERROR_LOG EnumerrorLogAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:error-log"
 )
 
 // All allowed values of EnumerrorLogAlertHandlerSchemaUrn enum

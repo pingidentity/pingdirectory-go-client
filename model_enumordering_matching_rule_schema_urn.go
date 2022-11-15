@@ -20,7 +20,7 @@ type EnumorderingMatchingRuleSchemaUrn string
 
 // List of Enumordering-matching-ruleSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULEORDERING EnumorderingMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
+	ENUMORDERINGMATCHINGRULESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULEORDERING EnumorderingMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:ordering"
 )
 
 // All allowed values of EnumorderingMatchingRuleSchemaUrn enum

@@ -20,8 +20,8 @@ type EnumalarmManagerGeneratedAlertTypesProp string
 
 // List of Enumalarm-manager-generatedAlertTypesProp
 const (
-	STANDARD EnumalarmManagerGeneratedAlertTypesProp = "standard"
-	ALARM EnumalarmManagerGeneratedAlertTypesProp = "alarm"
+	ENUMALARMMANAGERGENERATEDALERTTYPESPROP_STANDARD EnumalarmManagerGeneratedAlertTypesProp = "standard"
+	ENUMALARMMANAGERGENERATEDALERTTYPESPROP_ALARM EnumalarmManagerGeneratedAlertTypesProp = "alarm"
 )
 
 // All allowed values of EnumalarmManagerGeneratedAlertTypesProp enum

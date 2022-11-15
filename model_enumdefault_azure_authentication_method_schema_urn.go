@@ -20,7 +20,7 @@ type EnumdefaultAzureAuthenticationMethodSchemaUrn string
 
 // List of Enumdefault-azure-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0AZURE_AUTHENTICATION_METHODDEFAULT EnumdefaultAzureAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:default"
+	ENUMDEFAULTAZUREAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0AZURE_AUTHENTICATION_METHODDEFAULT EnumdefaultAzureAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:default"
 )
 
 // All allowed values of EnumdefaultAzureAuthenticationMethodSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumsnmpSubAgentAlertHandlerSchemaUrn string
 
 // List of Enumsnmp-sub-agent-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERSNMP_SUB_AGENT EnumsnmpSubAgentAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:snmp-sub-agent"
+	ENUMSNMPSUBAGENTALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERSNMP_SUB_AGENT EnumsnmpSubAgentAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:snmp-sub-agent"
 )
 
 // All allowed values of EnumsnmpSubAgentAlertHandlerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn string
 
 // List of Enumgroovy-scripted-change-subscription-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:groovy-scripted"
+	ENUMGROOVYSCRIPTEDCHANGESUBSCRIPTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnummetricsEngineServerInstanceSchemaUrn string
 
 // List of Enummetrics-engine-server-instanceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEMETRICS_ENGINE EnummetricsEngineServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:metrics-engine"
+	ENUMMETRICSENGINESERVERINSTANCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEMETRICS_ENGINE EnummetricsEngineServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:metrics-engine"
 )
 
 // All allowed values of EnummetricsEngineServerInstanceSchemaUrn enum

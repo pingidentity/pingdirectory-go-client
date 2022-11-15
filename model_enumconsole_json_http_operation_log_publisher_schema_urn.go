@@ -20,7 +20,7 @@ type EnumconsoleJsonHttpOperationLogPublisherSchemaUrn string
 
 // List of Enumconsole-json-http-operation-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERCONSOLE_JSON_HTTP_OPERATION EnumconsoleJsonHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:console-json-http-operation"
+	ENUMCONSOLEJSONHTTPOPERATIONLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERCONSOLE_JSON_HTTP_OPERATION EnumconsoleJsonHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:console-json-http-operation"
 )
 
 // All allowed values of EnumconsoleJsonHttpOperationLogPublisherSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumtrustedCertificateSchemaUrn string
 
 // List of Enumtrusted-certificateSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUSTED_CERTIFICATE EnumtrustedCertificateSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trusted-certificate"
+	ENUMTRUSTEDCERTIFICATESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUSTED_CERTIFICATE EnumtrustedCertificateSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trusted-certificate"
 )
 
 // All allowed values of EnumtrustedCertificateSchemaUrn enum

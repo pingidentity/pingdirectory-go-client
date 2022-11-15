@@ -20,7 +20,7 @@ type EnumjdbcExternalServerSchemaUrn string
 
 // List of Enumjdbc-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERJDBC EnumjdbcExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:jdbc"
+	ENUMJDBCEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERJDBC EnumjdbcExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:jdbc"
 )
 
 // All allowed values of EnumjdbcExternalServerSchemaUrn enum

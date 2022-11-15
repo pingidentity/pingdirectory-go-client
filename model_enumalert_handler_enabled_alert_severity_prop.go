@@ -20,10 +20,10 @@ type EnumalertHandlerEnabledAlertSeverityProp string
 
 // List of Enumalert-handler-enabledAlertSeverityProp
 const (
-	INFO EnumalertHandlerEnabledAlertSeverityProp = "info"
-	WARNING EnumalertHandlerEnabledAlertSeverityProp = "warning"
-	ERROR EnumalertHandlerEnabledAlertSeverityProp = "error"
-	FATAL EnumalertHandlerEnabledAlertSeverityProp = "fatal"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_INFO EnumalertHandlerEnabledAlertSeverityProp = "info"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_WARNING EnumalertHandlerEnabledAlertSeverityProp = "warning"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_ERROR EnumalertHandlerEnabledAlertSeverityProp = "error"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_FATAL EnumalertHandlerEnabledAlertSeverityProp = "fatal"
 )
 
 // All allowed values of EnumalertHandlerEnabledAlertSeverityProp enum

@@ -20,7 +20,7 @@ type EnumgroovyScriptedHttpServletExtensionSchemaUrn string
 
 // List of Enumgroovy-scripted-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONGROOVY_SCRIPTED EnumgroovyScriptedHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
+	ENUMGROOVYSCRIPTEDHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONGROOVY_SCRIPTED EnumgroovyScriptedHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedHttpServletExtensionSchemaUrn enum

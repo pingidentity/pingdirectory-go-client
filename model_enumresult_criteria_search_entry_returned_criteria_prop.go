@@ -20,11 +20,11 @@ type EnumresultCriteriaSearchEntryReturnedCriteriaProp string
 
 // List of Enumresult-criteria-searchEntryReturnedCriteriaProp
 const (
-	ANY EnumresultCriteriaSearchEntryReturnedCriteriaProp = "any"
-	EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "equal-to"
-	NOT_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "not-equal-to"
-	LESS_THAN_OR_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "less-than-or-equal-to"
-	GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "greater-than-or-equal-to"
+	ENUMRESULTCRITERIASEARCHENTRYRETURNEDCRITERIAPROP_ANY EnumresultCriteriaSearchEntryReturnedCriteriaProp = "any"
+	ENUMRESULTCRITERIASEARCHENTRYRETURNEDCRITERIAPROP_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "equal-to"
+	ENUMRESULTCRITERIASEARCHENTRYRETURNEDCRITERIAPROP_NOT_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "not-equal-to"
+	ENUMRESULTCRITERIASEARCHENTRYRETURNEDCRITERIAPROP_LESS_THAN_OR_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "less-than-or-equal-to"
+	ENUMRESULTCRITERIASEARCHENTRYRETURNEDCRITERIAPROP_GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaSearchEntryReturnedCriteriaProp = "greater-than-or-equal-to"
 )
 
 // All allowed values of EnumresultCriteriaSearchEntryReturnedCriteriaProp enum

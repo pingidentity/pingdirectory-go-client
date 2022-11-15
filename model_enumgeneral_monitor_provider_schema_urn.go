@@ -20,7 +20,7 @@ type EnumgeneralMonitorProviderSchemaUrn string
 
 // List of Enumgeneral-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERGENERAL EnumgeneralMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:general"
+	ENUMGENERALMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERGENERAL EnumgeneralMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:general"
 )
 
 // All allowed values of EnumgeneralMonitorProviderSchemaUrn enum

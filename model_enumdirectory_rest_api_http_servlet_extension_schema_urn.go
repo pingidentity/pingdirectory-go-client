@@ -20,7 +20,7 @@ type EnumdirectoryRestApiHttpServletExtensionSchemaUrn string
 
 // List of Enumdirectory-rest-api-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONDIRECTORY_REST_API EnumdirectoryRestApiHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:directory-rest-api"
+	ENUMDIRECTORYRESTAPIHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONDIRECTORY_REST_API EnumdirectoryRestApiHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:directory-rest-api"
 )
 
 // All allowed values of EnumdirectoryRestApiHttpServletExtensionSchemaUrn enum

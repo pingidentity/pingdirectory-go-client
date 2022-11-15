@@ -20,7 +20,7 @@ type EnumldapMappedScimHttpServletExtensionSchemaUrn string
 
 // List of Enumldap-mapped-scim-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONLDAP_MAPPED_SCIM EnumldapMappedScimHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:ldap-mapped-scim"
+	ENUMLDAPMAPPEDSCIMHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONLDAP_MAPPED_SCIM EnumldapMappedScimHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:ldap-mapped-scim"
 )
 
 // All allowed values of EnumldapMappedScimHttpServletExtensionSchemaUrn enum

@@ -20,9 +20,9 @@ type EnumresultCriteriaMissingAnyPrivilegeProp string
 
 // List of Enumresult-criteria-missingAnyPrivilegeProp
 const (
-	REQUIRED EnumresultCriteriaMissingAnyPrivilegeProp = "required"
-	PROHIBITED EnumresultCriteriaMissingAnyPrivilegeProp = "prohibited"
-	OPTIONAL EnumresultCriteriaMissingAnyPrivilegeProp = "optional"
+	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_REQUIRED EnumresultCriteriaMissingAnyPrivilegeProp = "required"
+	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_PROHIBITED EnumresultCriteriaMissingAnyPrivilegeProp = "prohibited"
+	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_OPTIONAL EnumresultCriteriaMissingAnyPrivilegeProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaMissingAnyPrivilegeProp enum

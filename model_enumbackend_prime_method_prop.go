@@ -20,12 +20,12 @@ type EnumbackendPrimeMethodProp string
 
 // List of Enumbackend-primeMethodProp
 const (
-	NONE EnumbackendPrimeMethodProp = "none"
-	PRELOAD EnumbackendPrimeMethodProp = "preload"
-	PRELOAD_INTERNAL_NODES_ONLY EnumbackendPrimeMethodProp = "preload-internal-nodes-only"
-	CURSOR_ACROSS_INDEXES EnumbackendPrimeMethodProp = "cursor-across-indexes"
-	PRIME_TO_FILESYSTEM_CACHE EnumbackendPrimeMethodProp = "prime-to-filesystem-cache"
-	PRIME_TO_FILESYSTEM_CACHE_NON_SEQUENTIAL EnumbackendPrimeMethodProp = "prime-to-filesystem-cache-non-sequential"
+	ENUMBACKENDPRIMEMETHODPROP_NONE EnumbackendPrimeMethodProp = "none"
+	ENUMBACKENDPRIMEMETHODPROP_PRELOAD EnumbackendPrimeMethodProp = "preload"
+	ENUMBACKENDPRIMEMETHODPROP_PRELOAD_INTERNAL_NODES_ONLY EnumbackendPrimeMethodProp = "preload-internal-nodes-only"
+	ENUMBACKENDPRIMEMETHODPROP_CURSOR_ACROSS_INDEXES EnumbackendPrimeMethodProp = "cursor-across-indexes"
+	ENUMBACKENDPRIMEMETHODPROP_PRIME_TO_FILESYSTEM_CACHE EnumbackendPrimeMethodProp = "prime-to-filesystem-cache"
+	ENUMBACKENDPRIMEMETHODPROP_PRIME_TO_FILESYSTEM_CACHE_NON_SEQUENTIAL EnumbackendPrimeMethodProp = "prime-to-filesystem-cache-non-sequential"
 )
 
 // All allowed values of EnumbackendPrimeMethodProp enum

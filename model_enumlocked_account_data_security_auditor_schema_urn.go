@@ -20,7 +20,7 @@ type EnumlockedAccountDataSecurityAuditorSchemaUrn string
 
 // List of Enumlocked-account-data-security-auditorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORLOCKED_ACCOUNT EnumlockedAccountDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:locked-account"
+	ENUMLOCKEDACCOUNTDATASECURITYAUDITORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORLOCKED_ACCOUNT EnumlockedAccountDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:locked-account"
 )
 
 // All allowed values of EnumlockedAccountDataSecurityAuditorSchemaUrn enum

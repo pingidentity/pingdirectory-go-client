@@ -20,7 +20,7 @@ type EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn string
 
 // List of Enumthird-party-account-status-notification-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERTHIRD_PARTY EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:third-party"
+	ENUMTHIRDPARTYACCOUNTSTATUSNOTIFICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERTHIRD_PARTY EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn enum

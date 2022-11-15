@@ -20,9 +20,9 @@ type EnumconnectionCriteriaAuthenticationSecurityLevelProp string
 
 // List of Enumconnection-criteria-authenticationSecurityLevelProp
 const (
-	ANY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "any"
-	SECURE_ONLY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "secure-only"
-	INSECURE_ONLY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "insecure-only"
+	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_ANY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "any"
+	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_SECURE_ONLY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "secure-only"
+	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_INSECURE_ONLY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "insecure-only"
 )
 
 // All allowed values of EnumconnectionCriteriaAuthenticationSecurityLevelProp enum

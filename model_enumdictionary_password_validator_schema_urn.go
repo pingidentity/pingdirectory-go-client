@@ -20,7 +20,7 @@ type EnumdictionaryPasswordValidatorSchemaUrn string
 
 // List of Enumdictionary-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORDICTIONARY EnumdictionaryPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:dictionary"
+	ENUMDICTIONARYPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORDICTIONARY EnumdictionaryPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:dictionary"
 )
 
 // All allowed values of EnumdictionaryPasswordValidatorSchemaUrn enum

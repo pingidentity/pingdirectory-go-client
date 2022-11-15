@@ -20,9 +20,9 @@ type EnumexternalServerSmtpSecurityProp string
 
 // List of Enumexternal-server-smtpSecurityProp
 const (
-	NONE EnumexternalServerSmtpSecurityProp = "none"
-	STARTTLS EnumexternalServerSmtpSecurityProp = "starttls"
-	SSL EnumexternalServerSmtpSecurityProp = "ssl"
+	ENUMEXTERNALSERVERSMTPSECURITYPROP_NONE EnumexternalServerSmtpSecurityProp = "none"
+	ENUMEXTERNALSERVERSMTPSECURITYPROP_STARTTLS EnumexternalServerSmtpSecurityProp = "starttls"
+	ENUMEXTERNALSERVERSMTPSECURITYPROP_SSL EnumexternalServerSmtpSecurityProp = "ssl"
 )
 
 // All allowed values of EnumexternalServerSmtpSecurityProp enum

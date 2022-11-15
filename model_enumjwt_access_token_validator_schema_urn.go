@@ -20,7 +20,7 @@ type EnumjwtAccessTokenValidatorSchemaUrn string
 
 // List of Enumjwt-access-token-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORJWT EnumjwtAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt"
+	ENUMJWTACCESSTOKENVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORJWT EnumjwtAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt"
 )
 
 // All allowed values of EnumjwtAccessTokenValidatorSchemaUrn enum

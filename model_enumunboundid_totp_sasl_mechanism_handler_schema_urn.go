@@ -20,7 +20,7 @@ type EnumunboundidTotpSaslMechanismHandlerSchemaUrn string
 
 // List of Enumunboundid-totp-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_TOTP EnumunboundidTotpSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-totp"
+	ENUMUNBOUNDIDTOTPSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_TOTP EnumunboundidTotpSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-totp"
 )
 
 // All allowed values of EnumunboundidTotpSaslMechanismHandlerSchemaUrn enum

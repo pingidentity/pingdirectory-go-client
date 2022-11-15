@@ -20,7 +20,7 @@ type EnumaesPasswordStorageSchemeSchemaUrn string
 
 // List of Enumaes-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEAES EnumaesPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:aes"
+	ENUMAESPASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMEAES EnumaesPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:aes"
 )
 
 // All allowed values of EnumaesPasswordStorageSchemeSchemaUrn enum

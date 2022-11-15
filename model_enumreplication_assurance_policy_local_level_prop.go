@@ -20,9 +20,9 @@ type EnumreplicationAssurancePolicyLocalLevelProp string
 
 // List of Enumreplication-assurance-policy-localLevelProp
 const (
-	NONE EnumreplicationAssurancePolicyLocalLevelProp = "none"
-	RECEIVED_ANY_SERVER EnumreplicationAssurancePolicyLocalLevelProp = "received-any-server"
-	PROCESSED_ALL_SERVERS EnumreplicationAssurancePolicyLocalLevelProp = "processed-all-servers"
+	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_NONE EnumreplicationAssurancePolicyLocalLevelProp = "none"
+	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_RECEIVED_ANY_SERVER EnumreplicationAssurancePolicyLocalLevelProp = "received-any-server"
+	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_PROCESSED_ALL_SERVERS EnumreplicationAssurancePolicyLocalLevelProp = "processed-all-servers"
 )
 
 // All allowed values of EnumreplicationAssurancePolicyLocalLevelProp enum

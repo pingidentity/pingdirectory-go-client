@@ -20,9 +20,9 @@ type EnumresultCriteriaReferralReturnedProp string
 
 // List of Enumresult-criteria-referralReturnedProp
 const (
-	REQUIRED EnumresultCriteriaReferralReturnedProp = "required"
-	PROHIBITED EnumresultCriteriaReferralReturnedProp = "prohibited"
-	OPTIONAL EnumresultCriteriaReferralReturnedProp = "optional"
+	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_REQUIRED EnumresultCriteriaReferralReturnedProp = "required"
+	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_PROHIBITED EnumresultCriteriaReferralReturnedProp = "prohibited"
+	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_OPTIONAL EnumresultCriteriaReferralReturnedProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaReferralReturnedProp enum

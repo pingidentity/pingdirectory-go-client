@@ -20,13 +20,13 @@ type EnumrecurringTaskTimestampFormatProp string
 
 // List of Enumrecurring-task-timestampFormatProp
 const (
-	GENERALIZED_TIME_UTC_WITH_MILLISECONDS EnumrecurringTaskTimestampFormatProp = "generalized-time-utc-with-milliseconds"
-	GENERALIZED_TIME_UTC_WITH_SECONDS EnumrecurringTaskTimestampFormatProp = "generalized-time-utc-with-seconds"
-	GENERALIZED_TIME_UTC_WITH_MINUTES EnumrecurringTaskTimestampFormatProp = "generalized-time-utc-with-minutes"
-	LOCAL_TIME_WITH_MILLISECONDS EnumrecurringTaskTimestampFormatProp = "local-time-with-milliseconds"
-	LOCAL_TIME_WITH_SECONDS EnumrecurringTaskTimestampFormatProp = "local-time-with-seconds"
-	LOCAL_TIME_WITH_MINUTES EnumrecurringTaskTimestampFormatProp = "local-time-with-minutes"
-	LOCAL_DATE EnumrecurringTaskTimestampFormatProp = "local-date"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_GENERALIZED_TIME_UTC_WITH_MILLISECONDS EnumrecurringTaskTimestampFormatProp = "generalized-time-utc-with-milliseconds"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_GENERALIZED_TIME_UTC_WITH_SECONDS EnumrecurringTaskTimestampFormatProp = "generalized-time-utc-with-seconds"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_GENERALIZED_TIME_UTC_WITH_MINUTES EnumrecurringTaskTimestampFormatProp = "generalized-time-utc-with-minutes"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_LOCAL_TIME_WITH_MILLISECONDS EnumrecurringTaskTimestampFormatProp = "local-time-with-milliseconds"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_LOCAL_TIME_WITH_SECONDS EnumrecurringTaskTimestampFormatProp = "local-time-with-seconds"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_LOCAL_TIME_WITH_MINUTES EnumrecurringTaskTimestampFormatProp = "local-time-with-minutes"
+	ENUMRECURRINGTASKTIMESTAMPFORMATPROP_LOCAL_DATE EnumrecurringTaskTimestampFormatProp = "local-date"
 )
 
 // All allowed values of EnumrecurringTaskTimestampFormatProp enum

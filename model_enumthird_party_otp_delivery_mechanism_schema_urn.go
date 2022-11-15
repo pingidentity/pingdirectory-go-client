@@ -20,7 +20,7 @@ type EnumthirdPartyOtpDeliveryMechanismSchemaUrn string
 
 // List of Enumthird-party-otp-delivery-mechanismSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0OTP_DELIVERY_MECHANISMTHIRD_PARTY EnumthirdPartyOtpDeliveryMechanismSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:third-party"
+	ENUMTHIRDPARTYOTPDELIVERYMECHANISMSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0OTP_DELIVERY_MECHANISMTHIRD_PARTY EnumthirdPartyOtpDeliveryMechanismSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:third-party"
 )
 
 // All allowed values of EnumthirdPartyOtpDeliveryMechanismSchemaUrn enum

@@ -20,7 +20,7 @@ type EnummultiplePasswordDataSecurityAuditorSchemaUrn string
 
 // List of Enummultiple-password-data-security-auditorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORMULTIPLE_PASSWORD EnummultiplePasswordDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:multiple-password"
+	ENUMMULTIPLEPASSWORDDATASECURITYAUDITORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORMULTIPLE_PASSWORD EnummultiplePasswordDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:multiple-password"
 )
 
 // All allowed values of EnummultiplePasswordDataSecurityAuditorSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumclientSecretAzureAuthenticationMethodSchemaUrn string
 
 // List of Enumclient-secret-azure-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0AZURE_AUTHENTICATION_METHODCLIENT_SECRET EnumclientSecretAzureAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:client-secret"
+	ENUMCLIENTSECRETAZUREAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0AZURE_AUTHENTICATION_METHODCLIENT_SECRET EnumclientSecretAzureAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:azure-authentication-method:client-secret"
 )
 
 // All allowed values of EnumclientSecretAzureAuthenticationMethodSchemaUrn enum

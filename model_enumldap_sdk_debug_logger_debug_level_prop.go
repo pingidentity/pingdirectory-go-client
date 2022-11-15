@@ -20,13 +20,13 @@ type EnumldapSdkDebugLoggerDebugLevelProp string
 
 // List of Enumldap-sdk-debug-logger-debugLevelProp
 const (
-	SEVERE EnumldapSdkDebugLoggerDebugLevelProp = "severe"
-	WARNING EnumldapSdkDebugLoggerDebugLevelProp = "warning"
-	INFO EnumldapSdkDebugLoggerDebugLevelProp = "info"
-	CONFIG EnumldapSdkDebugLoggerDebugLevelProp = "config"
-	FINE EnumldapSdkDebugLoggerDebugLevelProp = "fine"
-	FINER EnumldapSdkDebugLoggerDebugLevelProp = "finer"
-	FINEST EnumldapSdkDebugLoggerDebugLevelProp = "finest"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_SEVERE EnumldapSdkDebugLoggerDebugLevelProp = "severe"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_WARNING EnumldapSdkDebugLoggerDebugLevelProp = "warning"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_INFO EnumldapSdkDebugLoggerDebugLevelProp = "info"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_CONFIG EnumldapSdkDebugLoggerDebugLevelProp = "config"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_FINE EnumldapSdkDebugLoggerDebugLevelProp = "fine"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_FINER EnumldapSdkDebugLoggerDebugLevelProp = "finer"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGLEVELPROP_FINEST EnumldapSdkDebugLoggerDebugLevelProp = "finest"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerDebugLevelProp enum

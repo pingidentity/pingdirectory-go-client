@@ -20,7 +20,7 @@ type EnumazureKeyVaultCipherStreamProviderSchemaUrn string
 
 // List of Enumazure-key-vault-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERAZURE_KEY_VAULT EnumazureKeyVaultCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:azure-key-vault"
+	ENUMAZUREKEYVAULTCIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERAZURE_KEY_VAULT EnumazureKeyVaultCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:azure-key-vault"
 )
 
 // All allowed values of EnumazureKeyVaultCipherStreamProviderSchemaUrn enum

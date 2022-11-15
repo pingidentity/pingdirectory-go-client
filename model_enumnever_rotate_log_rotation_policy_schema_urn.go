@@ -20,7 +20,7 @@ type EnumneverRotateLogRotationPolicySchemaUrn string
 
 // List of Enumnever-rotate-log-rotation-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_ROTATION_POLICYNEVER_ROTATE EnumneverRotateLogRotationPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:never-rotate"
+	ENUMNEVERROTATELOGROTATIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_ROTATION_POLICYNEVER_ROTATE EnumneverRotateLogRotationPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:never-rotate"
 )
 
 // All allowed values of EnumneverRotateLogRotationPolicySchemaUrn enum

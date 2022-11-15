@@ -20,10 +20,10 @@ type EnumpasswordStorageSchemeDigestAlgorithmProp string
 
 // List of Enumpassword-storage-scheme-digestAlgorithmProp
 const (
-	_1 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-1"
-	_256 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-256"
-	_384 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-384"
-	_512 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-512"
+	ENUMPASSWORDSTORAGESCHEMEDIGESTALGORITHMPROP__1 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-1"
+	ENUMPASSWORDSTORAGESCHEMEDIGESTALGORITHMPROP__256 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-256"
+	ENUMPASSWORDSTORAGESCHEMEDIGESTALGORITHMPROP__384 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-384"
+	ENUMPASSWORDSTORAGESCHEMEDIGESTALGORITHMPROP__512 EnumpasswordStorageSchemeDigestAlgorithmProp = "sha-512"
 )
 
 // All allowed values of EnumpasswordStorageSchemeDigestAlgorithmProp enum

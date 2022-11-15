@@ -20,10 +20,10 @@ type EnumresultCriteriaRemoteAssuranceLevelProp string
 
 // List of Enumresult-criteria-remoteAssuranceLevelProp
 const (
-	NONE EnumresultCriteriaRemoteAssuranceLevelProp = "none"
-	RECEIVED_ANY_REMOTE_LOCATION EnumresultCriteriaRemoteAssuranceLevelProp = "received-any-remote-location"
-	RECEIVED_ALL_REMOTE_LOCATIONS EnumresultCriteriaRemoteAssuranceLevelProp = "received-all-remote-locations"
-	PROCESSED_ALL_REMOTE_SERVERS EnumresultCriteriaRemoteAssuranceLevelProp = "processed-all-remote-servers"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_NONE EnumresultCriteriaRemoteAssuranceLevelProp = "none"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_RECEIVED_ANY_REMOTE_LOCATION EnumresultCriteriaRemoteAssuranceLevelProp = "received-any-remote-location"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_RECEIVED_ALL_REMOTE_LOCATIONS EnumresultCriteriaRemoteAssuranceLevelProp = "received-all-remote-locations"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_PROCESSED_ALL_REMOTE_SERVERS EnumresultCriteriaRemoteAssuranceLevelProp = "processed-all-remote-servers"
 )
 
 // All allowed values of EnumresultCriteriaRemoteAssuranceLevelProp enum

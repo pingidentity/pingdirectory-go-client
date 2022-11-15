@@ -20,8 +20,8 @@ type EnumpasswordValidatorMatchBehaviorProp string
 
 // List of Enumpassword-validator-matchBehaviorProp
 const (
-	REQUIRE_MATCH EnumpasswordValidatorMatchBehaviorProp = "require-match"
-	REJECT_MATCH EnumpasswordValidatorMatchBehaviorProp = "reject-match"
+	ENUMPASSWORDVALIDATORMATCHBEHAVIORPROP_REQUIRE_MATCH EnumpasswordValidatorMatchBehaviorProp = "require-match"
+	ENUMPASSWORDVALIDATORMATCHBEHAVIORPROP_REJECT_MATCH EnumpasswordValidatorMatchBehaviorProp = "reject-match"
 )
 
 // All allowed values of EnumpasswordValidatorMatchBehaviorProp enum

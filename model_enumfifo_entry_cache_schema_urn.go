@@ -20,7 +20,7 @@ type EnumfifoEntryCacheSchemaUrn string
 
 // List of Enumfifo-entry-cacheSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ENTRY_CACHEFIFO EnumfifoEntryCacheSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo"
+	ENUMFIFOENTRYCACHESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ENTRY_CACHEFIFO EnumfifoEntryCacheSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo"
 )
 
 // All allowed values of EnumfifoEntryCacheSchemaUrn enum

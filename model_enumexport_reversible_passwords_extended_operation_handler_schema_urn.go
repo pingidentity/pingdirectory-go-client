@@ -20,7 +20,7 @@ type EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn string
 
 // List of Enumexport-reversible-passwords-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLEREXPORT_REVERSIBLE_PASSWORDS EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:export-reversible-passwords"
+	ENUMEXPORTREVERSIBLEPASSWORDSEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLEREXPORT_REVERSIBLE_PASSWORDS EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:export-reversible-passwords"
 )
 
 // All allowed values of EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn enum

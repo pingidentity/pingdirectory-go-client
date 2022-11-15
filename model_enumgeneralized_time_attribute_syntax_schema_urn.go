@@ -20,7 +20,7 @@ type EnumgeneralizedTimeAttributeSyntaxSchemaUrn string
 
 // List of Enumgeneralized-time-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXGENERALIZED_TIME EnumgeneralizedTimeAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:generalized-time"
+	ENUMGENERALIZEDTIMEATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXGENERALIZED_TIME EnumgeneralizedTimeAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:generalized-time"
 )
 
 // All allowed values of EnumgeneralizedTimeAttributeSyntaxSchemaUrn enum

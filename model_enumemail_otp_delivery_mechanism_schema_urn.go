@@ -20,7 +20,7 @@ type EnumemailOtpDeliveryMechanismSchemaUrn string
 
 // List of Enumemail-otp-delivery-mechanismSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0OTP_DELIVERY_MECHANISMEMAIL EnumemailOtpDeliveryMechanismSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email"
+	ENUMEMAILOTPDELIVERYMECHANISMSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0OTP_DELIVERY_MECHANISMEMAIL EnumemailOtpDeliveryMechanismSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email"
 )
 
 // All allowed values of EnumemailOtpDeliveryMechanismSchemaUrn enum

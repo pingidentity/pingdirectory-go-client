@@ -20,7 +20,7 @@ type EnumsubjectEqualsDnCertificateMapperSchemaUrn string
 
 // List of Enumsubject-equals-dn-certificate-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERSUBJECT_EQUALS_DN EnumsubjectEqualsDnCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-equals-dn"
+	ENUMSUBJECTEQUALSDNCERTIFICATEMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERSUBJECT_EQUALS_DN EnumsubjectEqualsDnCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-equals-dn"
 )
 
 // All allowed values of EnumsubjectEqualsDnCertificateMapperSchemaUrn enum

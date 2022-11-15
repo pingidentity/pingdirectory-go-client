@@ -20,7 +20,7 @@ type EnumamazonAwsExternalServerSchemaUrn string
 
 // List of Enumamazon-aws-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERAMAZON_AWS EnumamazonAwsExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:amazon-aws"
+	ENUMAMAZONAWSEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERAMAZON_AWS EnumamazonAwsExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:amazon-aws"
 )
 
 // All allowed values of EnumamazonAwsExternalServerSchemaUrn enum

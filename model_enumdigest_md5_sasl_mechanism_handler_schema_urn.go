@@ -20,7 +20,7 @@ type EnumdigestMd5SaslMechanismHandlerSchemaUrn string
 
 // List of Enumdigest-md5-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERDIGEST_MD5 EnumdigestMd5SaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:digest-md5"
+	ENUMDIGESTMD5SASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERDIGEST_MD5 EnumdigestMd5SaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:digest-md5"
 )
 
 // All allowed values of EnumdigestMd5SaslMechanismHandlerSchemaUrn enum

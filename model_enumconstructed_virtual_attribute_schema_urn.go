@@ -20,7 +20,7 @@ type EnumconstructedVirtualAttributeSchemaUrn string
 
 // List of Enumconstructed-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTECONSTRUCTED EnumconstructedVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:constructed"
+	ENUMCONSTRUCTEDVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTECONSTRUCTED EnumconstructedVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:constructed"
 )
 
 // All allowed values of EnumconstructedVirtualAttributeSchemaUrn enum

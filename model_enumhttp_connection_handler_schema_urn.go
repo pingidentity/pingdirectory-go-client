@@ -20,7 +20,7 @@ type EnumhttpConnectionHandlerSchemaUrn string
 
 // List of Enumhttp-connection-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERHTTP EnumhttpConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:http"
+	ENUMHTTPCONNECTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERHTTP EnumhttpConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:http"
 )
 
 // All allowed values of EnumhttpConnectionHandlerSchemaUrn enum

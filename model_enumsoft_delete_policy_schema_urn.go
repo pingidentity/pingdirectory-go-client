@@ -20,7 +20,7 @@ type EnumsoftDeletePolicySchemaUrn string
 
 // List of Enumsoft-delete-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SOFT_DELETE_POLICY EnumsoftDeletePolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:soft-delete-policy"
+	ENUMSOFTDELETEPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SOFT_DELETE_POLICY EnumsoftDeletePolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:soft-delete-policy"
 )
 
 // All allowed values of EnumsoftDeletePolicySchemaUrn enum

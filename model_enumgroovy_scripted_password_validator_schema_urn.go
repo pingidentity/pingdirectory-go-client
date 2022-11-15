@@ -20,7 +20,7 @@ type EnumgroovyScriptedPasswordValidatorSchemaUrn string
 
 // List of Enumgroovy-scripted-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORGROOVY_SCRIPTED EnumgroovyScriptedPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:groovy-scripted"
+	ENUMGROOVYSCRIPTEDPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORGROOVY_SCRIPTED EnumgroovyScriptedPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedPasswordValidatorSchemaUrn enum

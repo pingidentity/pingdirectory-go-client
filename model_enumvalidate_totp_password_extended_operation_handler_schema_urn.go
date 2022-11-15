@@ -20,7 +20,7 @@ type EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn string
 
 // List of Enumvalidate-totp-password-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERVALIDATE_TOTP_PASSWORD EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:validate-totp-password"
+	ENUMVALIDATETOTPPASSWORDEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERVALIDATE_TOTP_PASSWORD EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:validate-totp-password"
 )
 
 // All allowed values of EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn enum

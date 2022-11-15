@@ -20,7 +20,7 @@ type EnumlocationSchemaUrn string
 
 // List of EnumlocationSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOCATION EnumlocationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:location"
+	ENUMLOCATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOCATION EnumlocationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:location"
 )
 
 // All allowed values of EnumlocationSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumvaultPassphraseProviderSchemaUrn string
 
 // List of Enumvault-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERVAULT EnumvaultPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:vault"
+	ENUMVAULTPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERVAULT EnumvaultPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:vault"
 )
 
 // All allowed values of EnumvaultPassphraseProviderSchemaUrn enum

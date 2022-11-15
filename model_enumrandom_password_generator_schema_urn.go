@@ -20,7 +20,7 @@ type EnumrandomPasswordGeneratorSchemaUrn string
 
 // List of Enumrandom-password-generatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORRANDOM EnumrandomPasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:random"
+	ENUMRANDOMPASSWORDGENERATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORRANDOM EnumrandomPasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:random"
 )
 
 // All allowed values of EnumrandomPasswordGeneratorSchemaUrn enum

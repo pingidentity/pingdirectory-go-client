@@ -20,7 +20,7 @@ type EnumfileCountLogRetentionPolicySchemaUrn string
 
 // List of Enumfile-count-log-retention-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYFILE_COUNT EnumfileCountLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count"
+	ENUMFILECOUNTLOGRETENTIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYFILE_COUNT EnumfileCountLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count"
 )
 
 // All allowed values of EnumfileCountLogRetentionPolicySchemaUrn enum

@@ -20,7 +20,7 @@ type EnumdelegatedAdminRightsSchemaUrn string
 
 // List of Enumdelegated-admin-rightsSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DELEGATED_ADMIN_RIGHTS EnumdelegatedAdminRightsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:delegated-admin-rights"
+	ENUMDELEGATEDADMINRIGHTSSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DELEGATED_ADMIN_RIGHTS EnumdelegatedAdminRightsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:delegated-admin-rights"
 )
 
 // All allowed values of EnumdelegatedAdminRightsSchemaUrn enum

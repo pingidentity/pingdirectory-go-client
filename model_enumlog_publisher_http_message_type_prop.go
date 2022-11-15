@@ -20,8 +20,8 @@ type EnumlogPublisherHttpMessageTypeProp string
 
 // List of Enumlog-publisher-httpMessageTypeProp
 const (
-	REQUEST EnumlogPublisherHttpMessageTypeProp = "request"
-	RESPONSE EnumlogPublisherHttpMessageTypeProp = "response"
+	ENUMLOGPUBLISHERHTTPMESSAGETYPEPROP_REQUEST EnumlogPublisherHttpMessageTypeProp = "request"
+	ENUMLOGPUBLISHERHTTPMESSAGETYPEPROP_RESPONSE EnumlogPublisherHttpMessageTypeProp = "response"
 )
 
 // All allowed values of EnumlogPublisherHttpMessageTypeProp enum

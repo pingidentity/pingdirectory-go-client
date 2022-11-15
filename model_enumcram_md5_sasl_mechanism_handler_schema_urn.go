@@ -20,7 +20,7 @@ type EnumcramMd5SaslMechanismHandlerSchemaUrn string
 
 // List of Enumcram-md5-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERCRAM_MD5 EnumcramMd5SaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:cram-md5"
+	ENUMCRAMMD5SASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERCRAM_MD5 EnumcramMd5SaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:cram-md5"
 )
 
 // All allowed values of EnumcramMd5SaslMechanismHandlerSchemaUrn enum

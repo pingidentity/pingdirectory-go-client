@@ -20,9 +20,9 @@ type EnumlogPublisherLogRequestParametersProp string
 
 // List of Enumlog-publisher-logRequestParametersProp
 const (
-	NONE EnumlogPublisherLogRequestParametersProp = "none"
-	PARAMETER_NAMES EnumlogPublisherLogRequestParametersProp = "parameter-names"
-	PARAMETER_NAMES_AND_VALUES EnumlogPublisherLogRequestParametersProp = "parameter-names-and-values"
+	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_NONE EnumlogPublisherLogRequestParametersProp = "none"
+	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_PARAMETER_NAMES EnumlogPublisherLogRequestParametersProp = "parameter-names"
+	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_PARAMETER_NAMES_AND_VALUES EnumlogPublisherLogRequestParametersProp = "parameter-names-and-values"
 )
 
 // All allowed values of EnumlogPublisherLogRequestParametersProp enum

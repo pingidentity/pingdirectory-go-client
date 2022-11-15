@@ -20,7 +20,7 @@ type EnumthirdPartyTrustManagerProviderSchemaUrn string
 
 // List of Enumthird-party-trust-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERTHIRD_PARTY EnumthirdPartyTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:third-party"
+	ENUMTHIRDPARTYTRUSTMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERTHIRD_PARTY EnumthirdPartyTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:third-party"
 )
 
 // All allowed values of EnumthirdPartyTrustManagerProviderSchemaUrn enum

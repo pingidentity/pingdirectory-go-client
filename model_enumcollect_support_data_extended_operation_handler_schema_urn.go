@@ -20,7 +20,7 @@ type EnumcollectSupportDataExtendedOperationHandlerSchemaUrn string
 
 // List of Enumcollect-support-data-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERCOLLECT_SUPPORT_DATA EnumcollectSupportDataExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:collect-support-data"
+	ENUMCOLLECTSUPPORTDATAEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERCOLLECT_SUPPORT_DATA EnumcollectSupportDataExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:collect-support-data"
 )
 
 // All allowed values of EnumcollectSupportDataExtendedOperationHandlerSchemaUrn enum

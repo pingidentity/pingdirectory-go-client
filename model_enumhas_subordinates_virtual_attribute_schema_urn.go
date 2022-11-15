@@ -20,7 +20,7 @@ type EnumhasSubordinatesVirtualAttributeSchemaUrn string
 
 // List of Enumhas-subordinates-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEHAS_SUBORDINATES EnumhasSubordinatesVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:has-subordinates"
+	ENUMHASSUBORDINATESVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEHAS_SUBORDINATES EnumhasSubordinatesVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:has-subordinates"
 )
 
 // All allowed values of EnumhasSubordinatesVirtualAttributeSchemaUrn enum

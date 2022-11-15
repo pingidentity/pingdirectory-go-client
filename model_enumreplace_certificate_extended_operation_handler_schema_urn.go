@@ -20,7 +20,7 @@ type EnumreplaceCertificateExtendedOperationHandlerSchemaUrn string
 
 // List of Enumreplace-certificate-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERREPLACE_CERTIFICATE EnumreplaceCertificateExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:replace-certificate"
+	ENUMREPLACECERTIFICATEEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERREPLACE_CERTIFICATE EnumreplaceCertificateExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:replace-certificate"
 )
 
 // All allowed values of EnumreplaceCertificateExtendedOperationHandlerSchemaUrn enum

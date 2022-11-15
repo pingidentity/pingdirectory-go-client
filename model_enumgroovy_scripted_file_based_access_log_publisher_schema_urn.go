@@ -20,7 +20,7 @@ type EnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn string
 
 // List of Enumgroovy-scripted-file-based-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_FILE_BASED_ACCESS EnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-file-based-access"
+	ENUMGROOVYSCRIPTEDFILEBASEDACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_FILE_BASED_ACCESS EnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-file-based-access"
 )
 
 // All allowed values of EnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn enum

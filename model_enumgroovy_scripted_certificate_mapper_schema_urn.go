@@ -20,7 +20,7 @@ type EnumgroovyScriptedCertificateMapperSchemaUrn string
 
 // List of Enumgroovy-scripted-certificate-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERGROOVY_SCRIPTED EnumgroovyScriptedCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:groovy-scripted"
+	ENUMGROOVYSCRIPTEDCERTIFICATEMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERGROOVY_SCRIPTED EnumgroovyScriptedCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedCertificateMapperSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumthirdPartyUncachedAttributeCriteriaSchemaUrn string
 
 // List of Enumthird-party-uncached-attribute-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ATTRIBUTE_CRITERIATHIRD_PARTY EnumthirdPartyUncachedAttributeCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:third-party"
+	ENUMTHIRDPARTYUNCACHEDATTRIBUTECRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ATTRIBUTE_CRITERIATHIRD_PARTY EnumthirdPartyUncachedAttributeCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:third-party"
 )
 
 // All allowed values of EnumthirdPartyUncachedAttributeCriteriaSchemaUrn enum

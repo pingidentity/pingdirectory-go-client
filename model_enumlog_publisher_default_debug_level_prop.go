@@ -20,12 +20,12 @@ type EnumlogPublisherDefaultDebugLevelProp string
 
 // List of Enumlog-publisher-defaultDebugLevelProp
 const (
-	DISABLED EnumlogPublisherDefaultDebugLevelProp = "disabled"
-	ERROR EnumlogPublisherDefaultDebugLevelProp = "error"
-	WARNING EnumlogPublisherDefaultDebugLevelProp = "warning"
-	INFO EnumlogPublisherDefaultDebugLevelProp = "info"
-	VERBOSE EnumlogPublisherDefaultDebugLevelProp = "verbose"
-	ALL EnumlogPublisherDefaultDebugLevelProp = "all"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_DISABLED EnumlogPublisherDefaultDebugLevelProp = "disabled"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_ERROR EnumlogPublisherDefaultDebugLevelProp = "error"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_WARNING EnumlogPublisherDefaultDebugLevelProp = "warning"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_INFO EnumlogPublisherDefaultDebugLevelProp = "info"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_VERBOSE EnumlogPublisherDefaultDebugLevelProp = "verbose"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_ALL EnumlogPublisherDefaultDebugLevelProp = "all"
 )
 
 // All allowed values of EnumlogPublisherDefaultDebugLevelProp enum

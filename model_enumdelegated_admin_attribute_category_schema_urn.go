@@ -20,7 +20,7 @@ type EnumdelegatedAdminAttributeCategorySchemaUrn string
 
 // List of Enumdelegated-admin-attribute-categorySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DELEGATED_ADMIN_ATTRIBUTE_CATEGORY EnumdelegatedAdminAttributeCategorySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute-category"
+	ENUMDELEGATEDADMINATTRIBUTECATEGORYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DELEGATED_ADMIN_ATTRIBUTE_CATEGORY EnumdelegatedAdminAttributeCategorySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute-category"
 )
 
 // All allowed values of EnumdelegatedAdminAttributeCategorySchemaUrn enum

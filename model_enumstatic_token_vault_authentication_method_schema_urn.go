@@ -20,7 +20,7 @@ type EnumstaticTokenVaultAuthenticationMethodSchemaUrn string
 
 // List of Enumstatic-token-vault-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VAULT_AUTHENTICATION_METHODSTATIC_TOKEN EnumstaticTokenVaultAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:static-token"
+	ENUMSTATICTOKENVAULTAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VAULT_AUTHENTICATION_METHODSTATIC_TOKEN EnumstaticTokenVaultAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:static-token"
 )
 
 // All allowed values of EnumstaticTokenVaultAuthenticationMethodSchemaUrn enum

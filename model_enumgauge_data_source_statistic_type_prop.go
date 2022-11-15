@@ -20,10 +20,10 @@ type EnumgaugeDataSourceStatisticTypeProp string
 
 // List of Enumgauge-data-source-statisticTypeProp
 const (
-	COUNT_PER_SECOND EnumgaugeDataSourceStatisticTypeProp = "count-per-second"
-	AVERAGE EnumgaugeDataSourceStatisticTypeProp = "average"
-	MINIMUM EnumgaugeDataSourceStatisticTypeProp = "minimum"
-	MAXIMUM EnumgaugeDataSourceStatisticTypeProp = "maximum"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_COUNT_PER_SECOND EnumgaugeDataSourceStatisticTypeProp = "count-per-second"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_AVERAGE EnumgaugeDataSourceStatisticTypeProp = "average"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_MINIMUM EnumgaugeDataSourceStatisticTypeProp = "minimum"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_MAXIMUM EnumgaugeDataSourceStatisticTypeProp = "maximum"
 )
 
 // All allowed values of EnumgaugeDataSourceStatisticTypeProp enum

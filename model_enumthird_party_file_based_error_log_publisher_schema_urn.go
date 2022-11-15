@@ -20,7 +20,7 @@ type EnumthirdPartyFileBasedErrorLogPublisherSchemaUrn string
 
 // List of Enumthird-party-file-based-error-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERTHIRD_PARTY_FILE_BASED_ERROR EnumthirdPartyFileBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:third-party-file-based-error"
+	ENUMTHIRDPARTYFILEBASEDERRORLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERTHIRD_PARTY_FILE_BASED_ERROR EnumthirdPartyFileBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:third-party-file-based-error"
 )
 
 // All allowed values of EnumthirdPartyFileBasedErrorLogPublisherSchemaUrn enum

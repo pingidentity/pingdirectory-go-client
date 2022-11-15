@@ -20,18 +20,18 @@ type EnumclientConnectionPolicyAllowedFilterTypeProp string
 
 // List of Enumclient-connection-policy-allowedFilterTypeProp
 const (
-	AND EnumclientConnectionPolicyAllowedFilterTypeProp = "and"
-	OR EnumclientConnectionPolicyAllowedFilterTypeProp = "or"
-	NOT EnumclientConnectionPolicyAllowedFilterTypeProp = "not"
-	EQUALITY EnumclientConnectionPolicyAllowedFilterTypeProp = "equality"
-	SUB_INITIAL EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-initial"
-	SUB_ANY EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-any"
-	SUB_FINAL EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-final"
-	GREATER_OR_EQUAL EnumclientConnectionPolicyAllowedFilterTypeProp = "greater-or-equal"
-	LESS_OR_EQUAL EnumclientConnectionPolicyAllowedFilterTypeProp = "less-or-equal"
-	PRESENT EnumclientConnectionPolicyAllowedFilterTypeProp = "present"
-	APPROXIMATE_MATCH EnumclientConnectionPolicyAllowedFilterTypeProp = "approximate-match"
-	EXTENSIBLE_MATCH EnumclientConnectionPolicyAllowedFilterTypeProp = "extensible-match"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_AND EnumclientConnectionPolicyAllowedFilterTypeProp = "and"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_OR EnumclientConnectionPolicyAllowedFilterTypeProp = "or"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_NOT EnumclientConnectionPolicyAllowedFilterTypeProp = "not"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_EQUALITY EnumclientConnectionPolicyAllowedFilterTypeProp = "equality"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_INITIAL EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-initial"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_ANY EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-any"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_FINAL EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-final"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_GREATER_OR_EQUAL EnumclientConnectionPolicyAllowedFilterTypeProp = "greater-or-equal"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_LESS_OR_EQUAL EnumclientConnectionPolicyAllowedFilterTypeProp = "less-or-equal"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_PRESENT EnumclientConnectionPolicyAllowedFilterTypeProp = "present"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_APPROXIMATE_MATCH EnumclientConnectionPolicyAllowedFilterTypeProp = "approximate-match"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_EXTENSIBLE_MATCH EnumclientConnectionPolicyAllowedFilterTypeProp = "extensible-match"
 )
 
 // All allowed values of EnumclientConnectionPolicyAllowedFilterTypeProp enum

@@ -20,7 +20,7 @@ type EnumsaltedSha384PasswordStorageSchemeSchemaUrn string
 
 // List of Enumsalted-sha384-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMESALTED_SHA384 EnumsaltedSha384PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:salted-sha384"
+	ENUMSALTEDSHA384PASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMESALTED_SHA384 EnumsaltedSha384PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:salted-sha384"
 )
 
 // All allowed values of EnumsaltedSha384PasswordStorageSchemeSchemaUrn enum

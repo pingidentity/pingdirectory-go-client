@@ -20,7 +20,7 @@ type EnumldapSdkDebugLoggerSchemaUrn string
 
 // List of Enumldap-sdk-debug-loggerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LDAP_SDK_DEBUG_LOGGER EnumldapSdkDebugLoggerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:ldap-sdk-debug-logger"
+	ENUMLDAPSDKDEBUGLOGGERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LDAP_SDK_DEBUG_LOGGER EnumldapSdkDebugLoggerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:ldap-sdk-debug-logger"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerSchemaUrn enum

@@ -20,9 +20,9 @@ type EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp string
 
 // List of Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp
 const (
-	STOPPED_BY_ERROR EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "stopped-by-error"
-	COMPLETED_WITH_ERRORS EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-with-errors"
-	COMPLETED_SUCCESSFULLY EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-successfully"
+	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_STOPPED_BY_ERROR EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "stopped-by-error"
+	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_COMPLETED_WITH_ERRORS EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-with-errors"
+	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_COMPLETED_SUCCESSFULLY EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-successfully"
 )
 
 // All allowed values of EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp enum

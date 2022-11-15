@@ -20,7 +20,7 @@ type EnumgroovyScriptedAccessLogPublisherSchemaUrn string
 
 // List of Enumgroovy-scripted-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_ACCESS EnumgroovyScriptedAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-access"
+	ENUMGROOVYSCRIPTEDACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_ACCESS EnumgroovyScriptedAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-access"
 )
 
 // All allowed values of EnumgroovyScriptedAccessLogPublisherSchemaUrn enum

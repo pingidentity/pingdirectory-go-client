@@ -20,7 +20,7 @@ type EnumerrorLogFieldMappingSchemaUrn string
 
 // List of Enumerror-log-field-mappingSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_MAPPINGERROR EnumerrorLogFieldMappingSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error"
+	ENUMERRORLOGFIELDMAPPINGSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_MAPPINGERROR EnumerrorLogFieldMappingSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:error"
 )
 
 // All allowed values of EnumerrorLogFieldMappingSchemaUrn enum

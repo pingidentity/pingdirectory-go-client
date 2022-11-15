@@ -20,7 +20,7 @@ type EnumstackTraceMonitorProviderSchemaUrn string
 
 // List of Enumstack-trace-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERSTACK_TRACE EnumstackTraceMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:stack-trace"
+	ENUMSTACKTRACEMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERSTACK_TRACE EnumstackTraceMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:stack-trace"
 )
 
 // All allowed values of EnumstackTraceMonitorProviderSchemaUrn enum

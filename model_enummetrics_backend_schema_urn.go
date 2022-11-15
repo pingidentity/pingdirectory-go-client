@@ -20,7 +20,7 @@ type EnummetricsBackendSchemaUrn string
 
 // List of Enummetrics-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDMETRICS EnummetricsBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:metrics"
+	ENUMMETRICSBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDMETRICS EnummetricsBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:metrics"
 )
 
 // All allowed values of EnummetricsBackendSchemaUrn enum

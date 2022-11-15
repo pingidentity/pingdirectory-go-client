@@ -20,9 +20,9 @@ type EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp string
 
 // List of Enumglobal-configuration-unrecoverableDatabaseErrorModeProp
 const (
-	ENTER_LOCKDOWN_MODE EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "enter-lockdown-mode"
-	RAISE_UNAVAILABLE_ALARM EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "raise-unavailable-alarm"
-	INITIATE_SERVER_SHUTDOWN EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "initiate-server-shutdown"
+	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_ENTER_LOCKDOWN_MODE EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "enter-lockdown-mode"
+	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_RAISE_UNAVAILABLE_ALARM EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "raise-unavailable-alarm"
+	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_INITIATE_SERVER_SHUTDOWN EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "initiate-server-shutdown"
 )
 
 // All allowed values of EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp enum

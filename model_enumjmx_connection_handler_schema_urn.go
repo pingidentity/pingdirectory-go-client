@@ -20,7 +20,7 @@ type EnumjmxConnectionHandlerSchemaUrn string
 
 // List of Enumjmx-connection-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERJMX EnumjmxConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:jmx"
+	ENUMJMXCONNECTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERJMX EnumjmxConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:jmx"
 )
 
 // All allowed values of EnumjmxConnectionHandlerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumactiveDirectoryExternalServerSchemaUrn string
 
 // List of Enumactive-directory-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERACTIVE_DIRECTORY EnumactiveDirectoryExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:active-directory"
+	ENUMACTIVEDIRECTORYEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERACTIVE_DIRECTORY EnumactiveDirectoryExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:active-directory"
 )
 
 // All allowed values of EnumactiveDirectoryExternalServerSchemaUrn enum

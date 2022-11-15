@@ -20,7 +20,7 @@ type EnumldifConnectionHandlerSchemaUrn string
 
 // List of Enumldif-connection-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERLDIF EnumldifConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:ldif"
+	ENUMLDIFCONNECTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERLDIF EnumldifConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:ldif"
 )
 
 // All allowed values of EnumldifConnectionHandlerSchemaUrn enum

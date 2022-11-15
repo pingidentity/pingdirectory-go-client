@@ -20,7 +20,7 @@ type EnummemoryUsageMonitorProviderSchemaUrn string
 
 // List of Enummemory-usage-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERMEMORY_USAGE EnummemoryUsageMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:memory-usage"
+	ENUMMEMORYUSAGEMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERMEMORY_USAGE EnummemoryUsageMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:memory-usage"
 )
 
 // All allowed values of EnummemoryUsageMonitorProviderSchemaUrn enum

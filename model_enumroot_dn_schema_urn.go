@@ -20,7 +20,7 @@ type EnumrootDnSchemaUrn string
 
 // List of Enumroot-dnSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ROOT_DN EnumrootDnSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:root-dn"
+	ENUMROOTDNSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ROOT_DN EnumrootDnSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:root-dn"
 )
 
 // All allowed values of EnumrootDnSchemaUrn enum

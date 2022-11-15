@@ -20,9 +20,9 @@ type EnumsensitiveAttributeAllowInFilterProp string
 
 // List of Enumsensitive-attribute-allowInFilterProp
 const (
-	ALLOW EnumsensitiveAttributeAllowInFilterProp = "allow"
-	REJECT EnumsensitiveAttributeAllowInFilterProp = "reject"
-	SECURE_ONLY EnumsensitiveAttributeAllowInFilterProp = "secure-only"
+	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_ALLOW EnumsensitiveAttributeAllowInFilterProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_REJECT EnumsensitiveAttributeAllowInFilterProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_SECURE_ONLY EnumsensitiveAttributeAllowInFilterProp = "secure-only"
 )
 
 // All allowed values of EnumsensitiveAttributeAllowInFilterProp enum

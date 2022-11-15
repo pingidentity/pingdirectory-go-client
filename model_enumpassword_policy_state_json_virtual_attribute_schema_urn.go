@@ -20,7 +20,7 @@ type EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn string
 
 // List of Enumpassword-policy-state-json-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEPASSWORD_POLICY_STATE_JSON EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:password-policy-state-json"
+	ENUMPASSWORDPOLICYSTATEJSONVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEPASSWORD_POLICY_STATE_JSON EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:password-policy-state-json"
 )
 
 // All allowed values of EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn enum

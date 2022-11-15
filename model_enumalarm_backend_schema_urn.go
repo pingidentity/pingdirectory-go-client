@@ -20,7 +20,7 @@ type EnumalarmBackendSchemaUrn string
 
 // List of Enumalarm-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDALARM EnumalarmBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:alarm"
+	ENUMALARMBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDALARM EnumalarmBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:alarm"
 )
 
 // All allowed values of EnumalarmBackendSchemaUrn enum

@@ -20,7 +20,7 @@ type EnummultiUpdateExtendedOperationHandlerSchemaUrn string
 
 // List of Enummulti-update-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERMULTI_UPDATE EnummultiUpdateExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:multi-update"
+	ENUMMULTIUPDATEEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERMULTI_UPDATE EnummultiUpdateExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:multi-update"
 )
 
 // All allowed values of EnummultiUpdateExtendedOperationHandlerSchemaUrn enum

@@ -20,8 +20,8 @@ type EnumlogPublisherOutputLocationProp string
 
 // List of Enumlog-publisher-outputLocationProp
 const (
-	OUTPUT EnumlogPublisherOutputLocationProp = "standard-output"
-	ERROR EnumlogPublisherOutputLocationProp = "standard-error"
+	ENUMLOGPUBLISHEROUTPUTLOCATIONPROP_OUTPUT EnumlogPublisherOutputLocationProp = "standard-output"
+	ENUMLOGPUBLISHEROUTPUTLOCATIONPROP_ERROR EnumlogPublisherOutputLocationProp = "standard-error"
 )
 
 // All allowed values of EnumlogPublisherOutputLocationProp enum

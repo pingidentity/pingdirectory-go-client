@@ -20,7 +20,7 @@ type EnumfileServerHttpServletExtensionSchemaUrn string
 
 // List of Enumfile-server-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONFILE_SERVER EnumfileServerHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
+	ENUMFILESERVERHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONFILE_SERVER EnumfileServerHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
 )
 
 // All allowed values of EnumfileServerHttpServletExtensionSchemaUrn enum

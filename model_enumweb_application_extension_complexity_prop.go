@@ -20,10 +20,10 @@ type EnumwebApplicationExtensionComplexityProp string
 
 // List of Enumweb-application-extension-complexityProp
 const (
-	BASIC EnumwebApplicationExtensionComplexityProp = "basic"
-	STANDARD EnumwebApplicationExtensionComplexityProp = "standard"
-	ADVANCED EnumwebApplicationExtensionComplexityProp = "advanced"
-	EXPERT EnumwebApplicationExtensionComplexityProp = "expert"
+	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_BASIC EnumwebApplicationExtensionComplexityProp = "basic"
+	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_STANDARD EnumwebApplicationExtensionComplexityProp = "standard"
+	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_ADVANCED EnumwebApplicationExtensionComplexityProp = "advanced"
+	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_EXPERT EnumwebApplicationExtensionComplexityProp = "expert"
 )
 
 // All allowed values of EnumwebApplicationExtensionComplexityProp enum

@@ -20,7 +20,7 @@ type EnumapiKeyConjurAuthenticationMethodSchemaUrn string
 
 // List of Enumapi-key-conjur-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONJUR_AUTHENTICATION_METHODAPI_KEY EnumapiKeyConjurAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key"
+	ENUMAPIKEYCONJURAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONJUR_AUTHENTICATION_METHODAPI_KEY EnumapiKeyConjurAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key"
 )
 
 // All allowed values of EnumapiKeyConjurAuthenticationMethodSchemaUrn enum

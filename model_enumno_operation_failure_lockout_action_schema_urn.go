@@ -20,7 +20,7 @@ type EnumnoOperationFailureLockoutActionSchemaUrn string
 
 // List of Enumno-operation-failure-lockout-actionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0FAILURE_LOCKOUT_ACTIONNO_OPERATION EnumnoOperationFailureLockoutActionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:no-operation"
+	ENUMNOOPERATIONFAILURELOCKOUTACTIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0FAILURE_LOCKOUT_ACTIONNO_OPERATION EnumnoOperationFailureLockoutActionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:no-operation"
 )
 
 // All allowed values of EnumnoOperationFailureLockoutActionSchemaUrn enum

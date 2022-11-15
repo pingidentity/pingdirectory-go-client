@@ -20,7 +20,7 @@ type EnumthirdPartyLogFileRotationListenerSchemaUrn string
 
 // List of Enumthird-party-log-file-rotation-listenerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FILE_ROTATION_LISTENERTHIRD_PARTY EnumthirdPartyLogFileRotationListenerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:third-party"
+	ENUMTHIRDPARTYLOGFILEROTATIONLISTENERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FILE_ROTATION_LISTENERTHIRD_PARTY EnumthirdPartyLogFileRotationListenerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:third-party"
 )
 
 // All allowed values of EnumthirdPartyLogFileRotationListenerSchemaUrn enum

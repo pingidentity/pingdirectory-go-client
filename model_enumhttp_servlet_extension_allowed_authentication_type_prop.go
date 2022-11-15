@@ -20,9 +20,9 @@ type EnumhttpServletExtensionAllowedAuthenticationTypeProp string
 
 // List of Enumhttp-servlet-extension-allowedAuthenticationTypeProp
 const (
-	BASIC EnumhttpServletExtensionAllowedAuthenticationTypeProp = "basic"
-	ACCESS_TOKEN EnumhttpServletExtensionAllowedAuthenticationTypeProp = "access-token"
-	ID_TOKEN EnumhttpServletExtensionAllowedAuthenticationTypeProp = "id-token"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_BASIC EnumhttpServletExtensionAllowedAuthenticationTypeProp = "basic"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_ACCESS_TOKEN EnumhttpServletExtensionAllowedAuthenticationTypeProp = "access-token"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_ID_TOKEN EnumhttpServletExtensionAllowedAuthenticationTypeProp = "id-token"
 )
 
 // All allowed values of EnumhttpServletExtensionAllowedAuthenticationTypeProp enum

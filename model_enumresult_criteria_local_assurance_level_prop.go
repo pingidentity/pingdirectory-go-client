@@ -20,9 +20,9 @@ type EnumresultCriteriaLocalAssuranceLevelProp string
 
 // List of Enumresult-criteria-localAssuranceLevelProp
 const (
-	NONE EnumresultCriteriaLocalAssuranceLevelProp = "none"
-	RECEIVED_ANY_SERVER EnumresultCriteriaLocalAssuranceLevelProp = "received-any-server"
-	PROCESSED_ALL_SERVERS EnumresultCriteriaLocalAssuranceLevelProp = "processed-all-servers"
+	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_NONE EnumresultCriteriaLocalAssuranceLevelProp = "none"
+	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_RECEIVED_ANY_SERVER EnumresultCriteriaLocalAssuranceLevelProp = "received-any-server"
+	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_PROCESSED_ALL_SERVERS EnumresultCriteriaLocalAssuranceLevelProp = "processed-all-servers"
 )
 
 // All allowed values of EnumresultCriteriaLocalAssuranceLevelProp enum

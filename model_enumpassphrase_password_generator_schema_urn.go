@@ -20,7 +20,7 @@ type EnumpassphrasePasswordGeneratorSchemaUrn string
 
 // List of Enumpassphrase-password-generatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORPASSPHRASE EnumpassphrasePasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:passphrase"
+	ENUMPASSPHRASEPASSWORDGENERATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORPASSPHRASE EnumpassphrasePasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:passphrase"
 )
 
 // All allowed values of EnumpassphrasePasswordGeneratorSchemaUrn enum

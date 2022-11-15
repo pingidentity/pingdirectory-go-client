@@ -20,7 +20,7 @@ type EnumreplicationSynchronizationProviderSchemaUrn string
 
 // List of Enumreplication-synchronization-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SYNCHRONIZATION_PROVIDERREPLICATION EnumreplicationSynchronizationProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication"
+	ENUMREPLICATIONSYNCHRONIZATIONPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SYNCHRONIZATION_PROVIDERREPLICATION EnumreplicationSynchronizationProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:synchronization-provider:replication"
 )
 
 // All allowed values of EnumreplicationSynchronizationProviderSchemaUrn enum

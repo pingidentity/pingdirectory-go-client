@@ -20,7 +20,7 @@ type EnumaggregateIdentityMapperSchemaUrn string
 
 // List of Enumaggregate-identity-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERAGGREGATE EnumaggregateIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:aggregate"
+	ENUMAGGREGATEIDENTITYMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERAGGREGATE EnumaggregateIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:aggregate"
 )
 
 // All allowed values of EnumaggregateIdentityMapperSchemaUrn enum

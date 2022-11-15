@@ -20,7 +20,7 @@ type EnumthirdPartyCipherStreamProviderSchemaUrn string
 
 // List of Enumthird-party-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERTHIRD_PARTY EnumthirdPartyCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:third-party"
+	ENUMTHIRDPARTYCIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERTHIRD_PARTY EnumthirdPartyCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:third-party"
 )
 
 // All allowed values of EnumthirdPartyCipherStreamProviderSchemaUrn enum

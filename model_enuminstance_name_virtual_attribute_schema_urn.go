@@ -20,7 +20,7 @@ type EnuminstanceNameVirtualAttributeSchemaUrn string
 
 // List of Enuminstance-name-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEINSTANCE_NAME EnuminstanceNameVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:instance-name"
+	ENUMINSTANCENAMEVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEINSTANCE_NAME EnuminstanceNameVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:instance-name"
 )
 
 // All allowed values of EnuminstanceNameVirtualAttributeSchemaUrn enum

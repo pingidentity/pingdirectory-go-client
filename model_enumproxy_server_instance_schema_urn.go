@@ -20,7 +20,7 @@ type EnumproxyServerInstanceSchemaUrn string
 
 // List of Enumproxy-server-instanceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEPROXY EnumproxyServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
+	ENUMPROXYSERVERINSTANCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEPROXY EnumproxyServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:proxy"
 )
 
 // All allowed values of EnumproxyServerInstanceSchemaUrn enum

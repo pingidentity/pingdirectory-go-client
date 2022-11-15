@@ -20,7 +20,7 @@ type EnumindicatorGaugeDataSourceSchemaUrn string
 
 // List of Enumindicator-gauge-data-sourceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GAUGE_DATA_SOURCEINDICATOR EnumindicatorGaugeDataSourceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:indicator"
+	ENUMINDICATORGAUGEDATASOURCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GAUGE_DATA_SOURCEINDICATOR EnumindicatorGaugeDataSourceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:indicator"
 )
 
 // All allowed values of EnumindicatorGaugeDataSourceSchemaUrn enum

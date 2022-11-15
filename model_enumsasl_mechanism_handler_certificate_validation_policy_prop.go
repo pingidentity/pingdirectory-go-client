@@ -20,9 +20,9 @@ type EnumsaslMechanismHandlerCertificateValidationPolicyProp string
 
 // List of Enumsasl-mechanism-handler-certificateValidationPolicyProp
 const (
-	ALWAYS EnumsaslMechanismHandlerCertificateValidationPolicyProp = "always"
-	IFPRESENT EnumsaslMechanismHandlerCertificateValidationPolicyProp = "ifpresent"
-	NEVER EnumsaslMechanismHandlerCertificateValidationPolicyProp = "never"
+	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_ALWAYS EnumsaslMechanismHandlerCertificateValidationPolicyProp = "always"
+	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_IFPRESENT EnumsaslMechanismHandlerCertificateValidationPolicyProp = "ifpresent"
+	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_NEVER EnumsaslMechanismHandlerCertificateValidationPolicyProp = "never"
 )
 
 // All allowed values of EnumsaslMechanismHandlerCertificateValidationPolicyProp enum

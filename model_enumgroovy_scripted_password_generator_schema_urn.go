@@ -20,7 +20,7 @@ type EnumgroovyScriptedPasswordGeneratorSchemaUrn string
 
 // List of Enumgroovy-scripted-password-generatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORGROOVY_SCRIPTED EnumgroovyScriptedPasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:groovy-scripted"
+	ENUMGROOVYSCRIPTEDPASSWORDGENERATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORGROOVY_SCRIPTED EnumgroovyScriptedPasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedPasswordGeneratorSchemaUrn enum

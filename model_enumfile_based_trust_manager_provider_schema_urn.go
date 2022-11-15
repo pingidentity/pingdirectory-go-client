@@ -20,7 +20,7 @@ type EnumfileBasedTrustManagerProviderSchemaUrn string
 
 // List of Enumfile-based-trust-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERFILE_BASED EnumfileBasedTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:file-based"
+	ENUMFILEBASEDTRUSTMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERFILE_BASED EnumfileBasedTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:file-based"
 )
 
 // All allowed values of EnumfileBasedTrustManagerProviderSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumthirdPartyPasswordStorageSchemeSchemaUrn string
 
 // List of Enumthird-party-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMETHIRD_PARTY EnumthirdPartyPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:third-party"
+	ENUMTHIRDPARTYPASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMETHIRD_PARTY EnumthirdPartyPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:third-party"
 )
 
 // All allowed values of EnumthirdPartyPasswordStorageSchemeSchemaUrn enum

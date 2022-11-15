@@ -20,7 +20,7 @@ type EnumconfigHttpServletExtensionSchemaUrn string
 
 // List of Enumconfig-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONCONFIG EnumconfigHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:config"
+	ENUMCONFIGHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONCONFIG EnumconfigHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:config"
 )
 
 // All allowed values of EnumconfigHttpServletExtensionSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumconsoleWebApplicationExtensionSchemaUrn string
 
 // List of Enumconsole-web-application-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0WEB_APPLICATION_EXTENSIONCONSOLE EnumconsoleWebApplicationExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:web-application-extension:console"
+	ENUMCONSOLEWEBAPPLICATIONEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0WEB_APPLICATION_EXTENSIONCONSOLE EnumconsoleWebApplicationExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:web-application-extension:console"
 )
 
 // All allowed values of EnumconsoleWebApplicationExtensionSchemaUrn enum

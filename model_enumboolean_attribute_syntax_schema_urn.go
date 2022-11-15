@@ -20,7 +20,7 @@ type EnumbooleanAttributeSyntaxSchemaUrn string
 
 // List of Enumboolean-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXBOOLEAN EnumbooleanAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:boolean"
+	ENUMBOOLEANATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXBOOLEAN EnumbooleanAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:boolean"
 )
 
 // All allowed values of EnumbooleanAttributeSyntaxSchemaUrn enum

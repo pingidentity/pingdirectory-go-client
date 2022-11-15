@@ -20,7 +20,7 @@ type EnumglobalConfigurationSchemaUrn string
 
 // List of Enumglobal-configurationSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GLOBAL_CONFIGURATION EnumglobalConfigurationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:global-configuration"
+	ENUMGLOBALCONFIGURATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GLOBAL_CONFIGURATION EnumglobalConfigurationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:global-configuration"
 )
 
 // All allowed values of EnumglobalConfigurationSchemaUrn enum

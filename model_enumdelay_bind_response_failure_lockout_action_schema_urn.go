@@ -20,7 +20,7 @@ type EnumdelayBindResponseFailureLockoutActionSchemaUrn string
 
 // List of Enumdelay-bind-response-failure-lockout-actionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0FAILURE_LOCKOUT_ACTIONDELAY_BIND_RESPONSE EnumdelayBindResponseFailureLockoutActionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:delay-bind-response"
+	ENUMDELAYBINDRESPONSEFAILURELOCKOUTACTIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0FAILURE_LOCKOUT_ACTIONDELAY_BIND_RESPONSE EnumdelayBindResponseFailureLockoutActionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:failure-lockout-action:delay-bind-response"
 )
 
 // All allowed values of EnumdelayBindResponseFailureLockoutActionSchemaUrn enum

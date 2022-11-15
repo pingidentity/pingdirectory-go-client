@@ -20,7 +20,7 @@ type EnumconstructedAttributeSchemaUrn string
 
 // List of Enumconstructed-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONSTRUCTED_ATTRIBUTE EnumconstructedAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:constructed-attribute"
+	ENUMCONSTRUCTEDATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONSTRUCTED_ATTRIBUTE EnumconstructedAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:constructed-attribute"
 )
 
 // All allowed values of EnumconstructedAttributeSchemaUrn enum

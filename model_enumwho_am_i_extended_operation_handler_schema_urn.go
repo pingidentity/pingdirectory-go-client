@@ -20,7 +20,7 @@ type EnumwhoAmIExtendedOperationHandlerSchemaUrn string
 
 // List of Enumwho-am-i-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERWHO_AM_I EnumwhoAmIExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:who-am-i"
+	ENUMWHOAMIEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERWHO_AM_I EnumwhoAmIExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:who-am-i"
 )
 
 // All allowed values of EnumwhoAmIExtendedOperationHandlerSchemaUrn enum

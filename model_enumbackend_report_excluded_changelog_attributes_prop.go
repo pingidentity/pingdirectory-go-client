@@ -20,9 +20,9 @@ type EnumbackendReportExcludedChangelogAttributesProp string
 
 // List of Enumbackend-reportExcludedChangelogAttributesProp
 const (
-	NONE EnumbackendReportExcludedChangelogAttributesProp = "none"
-	ATTRIBUTE_COUNTS EnumbackendReportExcludedChangelogAttributesProp = "attribute-counts"
-	ATTRIBUTE_NAMES EnumbackendReportExcludedChangelogAttributesProp = "attribute-names"
+	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_NONE EnumbackendReportExcludedChangelogAttributesProp = "none"
+	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_ATTRIBUTE_COUNTS EnumbackendReportExcludedChangelogAttributesProp = "attribute-counts"
+	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_ATTRIBUTE_NAMES EnumbackendReportExcludedChangelogAttributesProp = "attribute-names"
 )
 
 // All allowed values of EnumbackendReportExcludedChangelogAttributesProp enum

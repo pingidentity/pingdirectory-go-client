@@ -20,10 +20,10 @@ type EnumresultCriteriaResultCodeCriteriaProp string
 
 // List of Enumresult-criteria-resultCodeCriteriaProp
 const (
-	ALL_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "all-result-codes"
-	NON_FAILURE_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "non-failure-result-codes"
-	FAILURE_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "failure-result-codes"
-	SELECTED_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "selected-result-codes"
+	ENUMRESULTCRITERIARESULTCODECRITERIAPROP_ALL_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "all-result-codes"
+	ENUMRESULTCRITERIARESULTCODECRITERIAPROP_NON_FAILURE_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "non-failure-result-codes"
+	ENUMRESULTCRITERIARESULTCODECRITERIAPROP_FAILURE_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "failure-result-codes"
+	ENUMRESULTCRITERIARESULTCODECRITERIAPROP_SELECTED_RESULT_CODES EnumresultCriteriaResultCodeCriteriaProp = "selected-result-codes"
 )
 
 // All allowed values of EnumresultCriteriaResultCodeCriteriaProp enum

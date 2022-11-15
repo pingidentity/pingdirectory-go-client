@@ -20,7 +20,7 @@ type EnumidentifyReferencesVirtualAttributeSchemaUrn string
 
 // List of Enumidentify-references-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEIDENTIFY_REFERENCES EnumidentifyReferencesVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:identify-references"
+	ENUMIDENTIFYREFERENCESVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEIDENTIFY_REFERENCES EnumidentifyReferencesVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:identify-references"
 )
 
 // All allowed values of EnumidentifyReferencesVirtualAttributeSchemaUrn enum

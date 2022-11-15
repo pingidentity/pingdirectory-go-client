@@ -20,7 +20,7 @@ type EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn string
 
 // List of Enumgroovy-scripted-file-based-error-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_FILE_BASED_ERROR EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-file-based-error"
+	ENUMGROOVYSCRIPTEDFILEBASEDERRORLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_FILE_BASED_ERROR EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-file-based-error"
 )
 
 // All allowed values of EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn enum

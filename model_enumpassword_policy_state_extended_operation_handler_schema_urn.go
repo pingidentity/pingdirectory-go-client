@@ -20,7 +20,7 @@ type EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn string
 
 // List of Enumpassword-policy-state-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERPASSWORD_POLICY_STATE EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-policy-state"
+	ENUMPASSWORDPOLICYSTATEEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERPASSWORD_POLICY_STATE EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-policy-state"
 )
 
 // All allowed values of EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn enum

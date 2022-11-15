@@ -20,8 +20,8 @@ type EnumlogPublisherTimestampPrecisionProp string
 
 // List of Enumlog-publisher-timestampPrecisionProp
 const (
-	SECONDS EnumlogPublisherTimestampPrecisionProp = "seconds"
-	MILLISECONDS EnumlogPublisherTimestampPrecisionProp = "milliseconds"
+	ENUMLOGPUBLISHERTIMESTAMPPRECISIONPROP_SECONDS EnumlogPublisherTimestampPrecisionProp = "seconds"
+	ENUMLOGPUBLISHERTIMESTAMPPRECISIONPROP_MILLISECONDS EnumlogPublisherTimestampPrecisionProp = "milliseconds"
 )
 
 // All allowed values of EnumlogPublisherTimestampPrecisionProp enum

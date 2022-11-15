@@ -20,7 +20,7 @@ type EnumthirdPartyRecurringTaskSchemaUrn string
 
 // List of Enumthird-party-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKTHIRD_PARTY EnumthirdPartyRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party"
+	ENUMTHIRDPARTYRECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKTHIRD_PARTY EnumthirdPartyRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:third-party"
 )
 
 // All allowed values of EnumthirdPartyRecurringTaskSchemaUrn enum

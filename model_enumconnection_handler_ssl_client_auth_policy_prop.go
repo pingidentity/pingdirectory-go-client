@@ -20,9 +20,9 @@ type EnumconnectionHandlerSslClientAuthPolicyProp string
 
 // List of Enumconnection-handler-sslClientAuthPolicyProp
 const (
-	DISABLED EnumconnectionHandlerSslClientAuthPolicyProp = "disabled"
-	OPTIONAL EnumconnectionHandlerSslClientAuthPolicyProp = "optional"
-	REQUIRED EnumconnectionHandlerSslClientAuthPolicyProp = "required"
+	ENUMCONNECTIONHANDLERSSLCLIENTAUTHPOLICYPROP_DISABLED EnumconnectionHandlerSslClientAuthPolicyProp = "disabled"
+	ENUMCONNECTIONHANDLERSSLCLIENTAUTHPOLICYPROP_OPTIONAL EnumconnectionHandlerSslClientAuthPolicyProp = "optional"
+	ENUMCONNECTIONHANDLERSSLCLIENTAUTHPOLICYPROP_REQUIRED EnumconnectionHandlerSslClientAuthPolicyProp = "required"
 )
 
 // All allowed values of EnumconnectionHandlerSslClientAuthPolicyProp enum

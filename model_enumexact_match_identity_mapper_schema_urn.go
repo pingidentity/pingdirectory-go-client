@@ -20,7 +20,7 @@ type EnumexactMatchIdentityMapperSchemaUrn string
 
 // List of Enumexact-match-identity-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPEREXACT_MATCH EnumexactMatchIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:exact-match"
+	ENUMEXACTMATCHIDENTITYMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPEREXACT_MATCH EnumexactMatchIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:exact-match"
 )
 
 // All allowed values of EnumexactMatchIdentityMapperSchemaUrn enum

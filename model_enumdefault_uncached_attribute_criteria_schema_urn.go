@@ -20,7 +20,7 @@ type EnumdefaultUncachedAttributeCriteriaSchemaUrn string
 
 // List of Enumdefault-uncached-attribute-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ATTRIBUTE_CRITERIADEFAULT EnumdefaultUncachedAttributeCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default"
+	ENUMDEFAULTUNCACHEDATTRIBUTECRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0UNCACHED_ATTRIBUTE_CRITERIADEFAULT EnumdefaultUncachedAttributeCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:uncached-attribute-criteria:default"
 )
 
 // All allowed values of EnumdefaultUncachedAttributeCriteriaSchemaUrn enum

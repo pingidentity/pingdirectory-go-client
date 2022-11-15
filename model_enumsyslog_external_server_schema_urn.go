@@ -20,7 +20,7 @@ type EnumsyslogExternalServerSchemaUrn string
 
 // List of Enumsyslog-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERSYSLOG EnumsyslogExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:syslog"
+	ENUMSYSLOGEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERSYSLOG EnumsyslogExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:syslog"
 )
 
 // All allowed values of EnumsyslogExternalServerSchemaUrn enum

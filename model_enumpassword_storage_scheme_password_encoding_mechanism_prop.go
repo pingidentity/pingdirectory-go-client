@@ -20,10 +20,10 @@ type EnumpasswordStorageSchemePasswordEncodingMechanismProp string
 
 // List of Enumpassword-storage-scheme-passwordEncodingMechanismProp
 const (
-	CRYPT EnumpasswordStorageSchemePasswordEncodingMechanismProp = "crypt"
-	MD5 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "md5"
-	SHA_2_256 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "sha-2-256"
-	SHA_2_512 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "sha-2-512"
+	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_CRYPT EnumpasswordStorageSchemePasswordEncodingMechanismProp = "crypt"
+	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_MD5 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "md5"
+	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_SHA_2_256 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "sha-2-256"
+	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_SHA_2_512 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "sha-2-512"
 )
 
 // All allowed values of EnumpasswordStorageSchemePasswordEncodingMechanismProp enum

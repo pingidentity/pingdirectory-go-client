@@ -20,7 +20,7 @@ type EnumvelocityHttpServletExtensionSchemaUrn string
 
 // List of Enumvelocity-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONVELOCITY EnumvelocityHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:velocity"
+	ENUMVELOCITYHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONVELOCITY EnumvelocityHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:velocity"
 )
 
 // All allowed values of EnumvelocityHttpServletExtensionSchemaUrn enum

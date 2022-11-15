@@ -20,7 +20,7 @@ type EnumauthorizeServerInstanceSchemaUrn string
 
 // List of Enumauthorize-server-instanceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEAUTHORIZE EnumauthorizeServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:authorize"
+	ENUMAUTHORIZESERVERINSTANCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEAUTHORIZE EnumauthorizeServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:authorize"
 )
 
 // All allowed values of EnumauthorizeServerInstanceSchemaUrn enum

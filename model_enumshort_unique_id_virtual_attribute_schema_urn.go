@@ -20,7 +20,7 @@ type EnumshortUniqueIdVirtualAttributeSchemaUrn string
 
 // List of Enumshort-unique-id-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTESHORT_UNIQUE_ID EnumshortUniqueIdVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:short-unique-id"
+	ENUMSHORTUNIQUEIDVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTESHORT_UNIQUE_ID EnumshortUniqueIdVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:short-unique-id"
 )
 
 // All allowed values of EnumshortUniqueIdVirtualAttributeSchemaUrn enum

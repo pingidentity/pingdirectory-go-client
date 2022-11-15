@@ -20,8 +20,8 @@ type EnumldapSdkDebugLoggerLoggingErrorBehaviorProp string
 
 // List of Enumldap-sdk-debug-logger-loggingErrorBehaviorProp
 const (
-	STANDARD_ERROR EnumldapSdkDebugLoggerLoggingErrorBehaviorProp = "standard-error"
-	LOCKDOWN_MODE EnumldapSdkDebugLoggerLoggingErrorBehaviorProp = "lockdown-mode"
+	ENUMLDAPSDKDEBUGLOGGERLOGGINGERRORBEHAVIORPROP_STANDARD_ERROR EnumldapSdkDebugLoggerLoggingErrorBehaviorProp = "standard-error"
+	ENUMLDAPSDKDEBUGLOGGERLOGGINGERRORBEHAVIORPROP_LOCKDOWN_MODE EnumldapSdkDebugLoggerLoggingErrorBehaviorProp = "lockdown-mode"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerLoggingErrorBehaviorProp enum

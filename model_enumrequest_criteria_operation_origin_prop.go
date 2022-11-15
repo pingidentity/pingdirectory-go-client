@@ -20,9 +20,9 @@ type EnumrequestCriteriaOperationOriginProp string
 
 // List of Enumrequest-criteria-operationOriginProp
 const (
-	EXTERNAL_REQUEST EnumrequestCriteriaOperationOriginProp = "external-request"
-	INTERNAL_OPERATION EnumrequestCriteriaOperationOriginProp = "internal-operation"
-	REPLICATED_OPERATION EnumrequestCriteriaOperationOriginProp = "replicated-operation"
+	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_EXTERNAL_REQUEST EnumrequestCriteriaOperationOriginProp = "external-request"
+	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_INTERNAL_OPERATION EnumrequestCriteriaOperationOriginProp = "internal-operation"
+	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_REPLICATED_OPERATION EnumrequestCriteriaOperationOriginProp = "replicated-operation"
 )
 
 // All allowed values of EnumrequestCriteriaOperationOriginProp enum

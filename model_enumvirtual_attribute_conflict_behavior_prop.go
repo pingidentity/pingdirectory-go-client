@@ -20,9 +20,9 @@ type EnumvirtualAttributeConflictBehaviorProp string
 
 // List of Enumvirtual-attribute-conflictBehaviorProp
 const (
-	REAL_OVERRIDES_VIRTUAL EnumvirtualAttributeConflictBehaviorProp = "real-overrides-virtual"
-	VIRTUAL_OVERRIDES_REAL EnumvirtualAttributeConflictBehaviorProp = "virtual-overrides-real"
-	MERGE_REAL_AND_VIRTUAL EnumvirtualAttributeConflictBehaviorProp = "merge-real-and-virtual"
+	ENUMVIRTUALATTRIBUTECONFLICTBEHAVIORPROP_REAL_OVERRIDES_VIRTUAL EnumvirtualAttributeConflictBehaviorProp = "real-overrides-virtual"
+	ENUMVIRTUALATTRIBUTECONFLICTBEHAVIORPROP_VIRTUAL_OVERRIDES_REAL EnumvirtualAttributeConflictBehaviorProp = "virtual-overrides-real"
+	ENUMVIRTUALATTRIBUTECONFLICTBEHAVIORPROP_MERGE_REAL_AND_VIRTUAL EnumvirtualAttributeConflictBehaviorProp = "merge-real-and-virtual"
 )
 
 // All allowed values of EnumvirtualAttributeConflictBehaviorProp enum

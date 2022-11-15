@@ -20,7 +20,7 @@ type EnumconjurPassphraseProviderSchemaUrn string
 
 // List of Enumconjur-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERCONJUR EnumconjurPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:conjur"
+	ENUMCONJURPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERCONJUR EnumconjurPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:conjur"
 )
 
 // All allowed values of EnumconjurPassphraseProviderSchemaUrn enum

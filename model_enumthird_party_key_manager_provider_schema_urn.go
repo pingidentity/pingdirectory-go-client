@@ -20,7 +20,7 @@ type EnumthirdPartyKeyManagerProviderSchemaUrn string
 
 // List of Enumthird-party-key-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_MANAGER_PROVIDERTHIRD_PARTY EnumthirdPartyKeyManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:third-party"
+	ENUMTHIRDPARTYKEYMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_MANAGER_PROVIDERTHIRD_PARTY EnumthirdPartyKeyManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:third-party"
 )
 
 // All allowed values of EnumthirdPartyKeyManagerProviderSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumgroovyScriptedAlertHandlerSchemaUrn string
 
 // List of Enumgroovy-scripted-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:groovy-scripted"
+	ENUMGROOVYSCRIPTEDALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedAlertHandlerSchemaUrn enum

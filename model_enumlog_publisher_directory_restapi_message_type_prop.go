@@ -20,7 +20,7 @@ type EnumlogPublisherDirectoryRESTAPIMessageTypeProp string
 
 // List of Enumlog-publisher-directoryRESTAPIMessageTypeProp
 const (
-	ERROR EnumlogPublisherDirectoryRESTAPIMessageTypeProp = "error"
+	ENUMLOGPUBLISHERDIRECTORYRESTAPIMESSAGETYPEPROP_ERROR EnumlogPublisherDirectoryRESTAPIMessageTypeProp = "error"
 )
 
 // All allowed values of EnumlogPublisherDirectoryRESTAPIMessageTypeProp enum

@@ -20,9 +20,9 @@ type EnumpassThroughAuthenticationHandlerServerAccessModeProp string
 
 // List of Enumpass-through-authentication-handler-serverAccessModeProp
 const (
-	ROUND_ROBIN EnumpassThroughAuthenticationHandlerServerAccessModeProp = "round-robin"
-	FAILOVER_ON_UNAVAILABLE EnumpassThroughAuthenticationHandlerServerAccessModeProp = "failover-on-unavailable"
-	FAILOVER_ON_ANY_FAILURE EnumpassThroughAuthenticationHandlerServerAccessModeProp = "failover-on-any-failure"
+	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_ROUND_ROBIN EnumpassThroughAuthenticationHandlerServerAccessModeProp = "round-robin"
+	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_FAILOVER_ON_UNAVAILABLE EnumpassThroughAuthenticationHandlerServerAccessModeProp = "failover-on-unavailable"
+	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_FAILOVER_ON_ANY_FAILURE EnumpassThroughAuthenticationHandlerServerAccessModeProp = "failover-on-any-failure"
 )
 
 // All allowed values of EnumpassThroughAuthenticationHandlerServerAccessModeProp enum

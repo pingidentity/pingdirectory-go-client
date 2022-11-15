@@ -20,7 +20,7 @@ type EnumregularExpressionIdentityMapperSchemaUrn string
 
 // List of Enumregular-expression-identity-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERREGULAR_EXPRESSION EnumregularExpressionIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:regular-expression"
+	ENUMREGULAREXPRESSIONIDENTITYMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0IDENTITY_MAPPERREGULAR_EXPRESSION EnumregularExpressionIdentityMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:identity-mapper:regular-expression"
 )
 
 // All allowed values of EnumregularExpressionIdentityMapperSchemaUrn enum

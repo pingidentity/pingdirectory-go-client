@@ -20,7 +20,7 @@ type EnumcopyLogFileRotationListenerSchemaUrn string
 
 // List of Enumcopy-log-file-rotation-listenerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FILE_ROTATION_LISTENERCOPY EnumcopyLogFileRotationListenerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:copy"
+	ENUMCOPYLOGFILEROTATIONLISTENERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FILE_ROTATION_LISTENERCOPY EnumcopyLogFileRotationListenerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:copy"
 )
 
 // All allowed values of EnumcopyLogFileRotationListenerSchemaUrn enum

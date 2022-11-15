@@ -20,9 +20,9 @@ type EnumpasswordPolicyStateUpdateFailurePolicyProp string
 
 // List of Enumpassword-policy-stateUpdateFailurePolicyProp
 const (
-	IGNORE EnumpasswordPolicyStateUpdateFailurePolicyProp = "ignore"
-	REACTIVE EnumpasswordPolicyStateUpdateFailurePolicyProp = "reactive"
-	PROACTIVE EnumpasswordPolicyStateUpdateFailurePolicyProp = "proactive"
+	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_IGNORE EnumpasswordPolicyStateUpdateFailurePolicyProp = "ignore"
+	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_REACTIVE EnumpasswordPolicyStateUpdateFailurePolicyProp = "reactive"
+	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_PROACTIVE EnumpasswordPolicyStateUpdateFailurePolicyProp = "proactive"
 )
 
 // All allowed values of EnumpasswordPolicyStateUpdateFailurePolicyProp enum

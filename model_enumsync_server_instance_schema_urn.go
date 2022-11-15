@@ -20,7 +20,7 @@ type EnumsyncServerInstanceSchemaUrn string
 
 // List of Enumsync-server-instanceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCESYNC EnumsyncServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:sync"
+	ENUMSYNCSERVERINSTANCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCESYNC EnumsyncServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:sync"
 )
 
 // All allowed values of EnumsyncServerInstanceSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumisMemberOfVirtualAttributeSchemaUrn string
 
 // List of Enumis-member-of-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEIS_MEMBER_OF EnumisMemberOfVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:is-member-of"
+	ENUMISMEMBEROFVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEIS_MEMBER_OF EnumisMemberOfVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:is-member-of"
 )
 
 // All allowed values of EnumisMemberOfVirtualAttributeSchemaUrn enum

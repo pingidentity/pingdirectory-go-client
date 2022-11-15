@@ -20,7 +20,7 @@ type EnumhostSystemMonitorProviderSchemaUrn string
 
 // List of Enumhost-system-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERHOST_SYSTEM EnumhostSystemMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:host-system"
+	ENUMHOSTSYSTEMMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERHOST_SYSTEM EnumhostSystemMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:host-system"
 )
 
 // All allowed values of EnumhostSystemMonitorProviderSchemaUrn enum

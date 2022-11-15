@@ -20,7 +20,7 @@ type EnumjsonObjectAttributeSyntaxSchemaUrn string
 
 // List of Enumjson-object-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXJSON_OBJECT EnumjsonObjectAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:json-object"
+	ENUMJSONOBJECTATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXJSON_OBJECT EnumjsonObjectAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:json-object"
 )
 
 // All allowed values of EnumjsonObjectAttributeSyntaxSchemaUrn enum

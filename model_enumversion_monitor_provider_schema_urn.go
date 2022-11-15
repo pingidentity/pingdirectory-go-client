@@ -20,7 +20,7 @@ type EnumversionMonitorProviderSchemaUrn string
 
 // List of Enumversion-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERVERSION EnumversionMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:version"
+	ENUMVERSIONMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERVERSION EnumversionMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:version"
 )
 
 // All allowed values of EnumversionMonitorProviderSchemaUrn enum

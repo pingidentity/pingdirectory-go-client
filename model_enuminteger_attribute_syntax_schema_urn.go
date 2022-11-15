@@ -20,7 +20,7 @@ type EnumintegerAttributeSyntaxSchemaUrn string
 
 // List of Enuminteger-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXINTEGER EnumintegerAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:integer"
+	ENUMINTEGERATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXINTEGER EnumintegerAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:integer"
 )
 
 // All allowed values of EnumintegerAttributeSyntaxSchemaUrn enum

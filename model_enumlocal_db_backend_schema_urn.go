@@ -20,7 +20,7 @@ type EnumlocalDbBackendSchemaUrn string
 
 // List of Enumlocal-db-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDLOCAL_DB EnumlocalDbBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:local-db"
+	ENUMLOCALDBBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDLOCAL_DB EnumlocalDbBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:local-db"
 )
 
 // All allowed values of EnumlocalDbBackendSchemaUrn enum

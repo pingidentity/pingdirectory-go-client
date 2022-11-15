@@ -20,9 +20,9 @@ type EnumsensitiveAttributeAllowInReturnedEntriesProp string
 
 // List of Enumsensitive-attribute-allowInReturnedEntriesProp
 const (
-	ALLOW EnumsensitiveAttributeAllowInReturnedEntriesProp = "allow"
-	SUPPRESS EnumsensitiveAttributeAllowInReturnedEntriesProp = "suppress"
-	SECURE_ONLY EnumsensitiveAttributeAllowInReturnedEntriesProp = "secure-only"
+	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_ALLOW EnumsensitiveAttributeAllowInReturnedEntriesProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_SUPPRESS EnumsensitiveAttributeAllowInReturnedEntriesProp = "suppress"
+	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_SECURE_ONLY EnumsensitiveAttributeAllowInReturnedEntriesProp = "secure-only"
 )
 
 // All allowed values of EnumsensitiveAttributeAllowInReturnedEntriesProp enum

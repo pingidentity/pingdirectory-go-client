@@ -20,7 +20,7 @@ type EnumpingFederateAccessTokenValidatorSchemaUrn string
 
 // List of Enumping-federate-access-token-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORPING_FEDERATE EnumpingFederateAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:ping-federate"
+	ENUMPINGFEDERATEACCESSTOKENVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORPING_FEDERATE EnumpingFederateAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:ping-federate"
 )
 
 // All allowed values of EnumpingFederateAccessTokenValidatorSchemaUrn enum

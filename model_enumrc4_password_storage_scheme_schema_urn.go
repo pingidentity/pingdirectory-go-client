@@ -20,7 +20,7 @@ type Enumrc4PasswordStorageSchemeSchemaUrn string
 
 // List of Enumrc4-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMERC4 Enumrc4PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:rc4"
+	ENUMRC4PASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMERC4 Enumrc4PasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:rc4"
 )
 
 // All allowed values of Enumrc4PasswordStorageSchemeSchemaUrn enum

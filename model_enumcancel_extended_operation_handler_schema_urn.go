@@ -20,7 +20,7 @@ type EnumcancelExtendedOperationHandlerSchemaUrn string
 
 // List of Enumcancel-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERCANCEL EnumcancelExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:cancel"
+	ENUMCANCELEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERCANCEL EnumcancelExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:cancel"
 )
 
 // All allowed values of EnumcancelExtendedOperationHandlerSchemaUrn enum

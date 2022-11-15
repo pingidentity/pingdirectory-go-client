@@ -20,7 +20,7 @@ type EnumfileBasedPassphraseProviderSchemaUrn string
 
 // List of Enumfile-based-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERFILE_BASED EnumfileBasedPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:file-based"
+	ENUMFILEBASEDPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERFILE_BASED EnumfileBasedPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:file-based"
 )
 
 // All allowed values of EnumfileBasedPassphraseProviderSchemaUrn enum

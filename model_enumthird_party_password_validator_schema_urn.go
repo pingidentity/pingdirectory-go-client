@@ -20,7 +20,7 @@ type EnumthirdPartyPasswordValidatorSchemaUrn string
 
 // List of Enumthird-party-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORTHIRD_PARTY EnumthirdPartyPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:third-party"
+	ENUMTHIRDPARTYPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORTHIRD_PARTY EnumthirdPartyPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:third-party"
 )
 
 // All allowed values of EnumthirdPartyPasswordValidatorSchemaUrn enum

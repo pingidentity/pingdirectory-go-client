@@ -20,9 +20,9 @@ type EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp string
 
 // List of Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp
 const (
-	STOPPED_BY_ERROR EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "stopped-by-error"
-	COMPLETED_WITH_ERRORS EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-with-errors"
-	COMPLETED_SUCCESSFULLY EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-successfully"
+	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_STOPPED_BY_ERROR EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "stopped-by-error"
+	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_COMPLETED_WITH_ERRORS EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-with-errors"
+	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_COMPLETED_SUCCESSFULLY EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-successfully"
 )
 
 // All allowed values of EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp enum

@@ -20,9 +20,9 @@ type EnumpasswordPolicyReturnPasswordExpirationControlsProp string
 
 // List of Enumpassword-policy-returnPasswordExpirationControlsProp
 const (
-	UNLESS_PASSWORD_POLICY_CONTROL_IS_USED EnumpasswordPolicyReturnPasswordExpirationControlsProp = "unless-password-policy-control-is-used"
-	ALWAYS EnumpasswordPolicyReturnPasswordExpirationControlsProp = "always"
-	NEVER EnumpasswordPolicyReturnPasswordExpirationControlsProp = "never"
+	ENUMPASSWORDPOLICYRETURNPASSWORDEXPIRATIONCONTROLSPROP_UNLESS_PASSWORD_POLICY_CONTROL_IS_USED EnumpasswordPolicyReturnPasswordExpirationControlsProp = "unless-password-policy-control-is-used"
+	ENUMPASSWORDPOLICYRETURNPASSWORDEXPIRATIONCONTROLSPROP_ALWAYS EnumpasswordPolicyReturnPasswordExpirationControlsProp = "always"
+	ENUMPASSWORDPOLICYRETURNPASSWORDEXPIRATIONCONTROLSPROP_NEVER EnumpasswordPolicyReturnPasswordExpirationControlsProp = "never"
 )
 
 // All allowed values of EnumpasswordPolicyReturnPasswordExpirationControlsProp enum

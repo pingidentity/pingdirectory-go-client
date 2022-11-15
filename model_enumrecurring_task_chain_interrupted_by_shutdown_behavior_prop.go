@@ -20,8 +20,8 @@ type EnumrecurringTaskChainInterruptedByShutdownBehaviorProp string
 
 // List of Enumrecurring-task-chain-interruptedByShutdownBehaviorProp
 const (
-	INTERRUPTED_TASK_AND_DEPENDENCIES EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-interrupted-task-and-dependencies"
-	ONLY_INTERRUPTED_TASK_BUT_PRESERVE_DEPENDENCIES EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-only-interrupted-task-but-preserve-dependencies"
+	ENUMRECURRINGTASKCHAININTERRUPTEDBYSHUTDOWNBEHAVIORPROP_INTERRUPTED_TASK_AND_DEPENDENCIES EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-interrupted-task-and-dependencies"
+	ENUMRECURRINGTASKCHAININTERRUPTEDBYSHUTDOWNBEHAVIORPROP_ONLY_INTERRUPTED_TASK_BUT_PRESERVE_DEPENDENCIES EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-only-interrupted-task-but-preserve-dependencies"
 )
 
 // All allowed values of EnumrecurringTaskChainInterruptedByShutdownBehaviorProp enum

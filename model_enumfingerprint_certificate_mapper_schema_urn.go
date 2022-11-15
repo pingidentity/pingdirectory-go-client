@@ -20,7 +20,7 @@ type EnumfingerprintCertificateMapperSchemaUrn string
 
 // List of Enumfingerprint-certificate-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERFINGERPRINT EnumfingerprintCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint"
+	ENUMFINGERPRINTCERTIFICATEMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERFINGERPRINT EnumfingerprintCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint"
 )
 
 // All allowed values of EnumfingerprintCertificateMapperSchemaUrn enum

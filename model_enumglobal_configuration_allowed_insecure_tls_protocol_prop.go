@@ -20,7 +20,7 @@ type EnumglobalConfigurationAllowedInsecureTLSProtocolProp string
 
 // List of Enumglobal-configuration-allowedInsecureTLSProtocolProp
 const (
-	SSLV3 EnumglobalConfigurationAllowedInsecureTLSProtocolProp = "sslv3"
+	ENUMGLOBALCONFIGURATIONALLOWEDINSECURETLSPROTOCOLPROP_SSLV3 EnumglobalConfigurationAllowedInsecureTLSProtocolProp = "sslv3"
 )
 
 // All allowed values of EnumglobalConfigurationAllowedInsecureTLSProtocolProp enum

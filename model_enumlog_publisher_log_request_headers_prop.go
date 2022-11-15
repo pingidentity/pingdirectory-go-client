@@ -20,9 +20,9 @@ type EnumlogPublisherLogRequestHeadersProp string
 
 // List of Enumlog-publisher-logRequestHeadersProp
 const (
-	NONE EnumlogPublisherLogRequestHeadersProp = "none"
-	HEADER_NAMES EnumlogPublisherLogRequestHeadersProp = "header-names"
-	HEADER_NAMES_AND_VALUES EnumlogPublisherLogRequestHeadersProp = "header-names-and-values"
+	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_NONE EnumlogPublisherLogRequestHeadersProp = "none"
+	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_HEADER_NAMES EnumlogPublisherLogRequestHeadersProp = "header-names"
+	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_HEADER_NAMES_AND_VALUES EnumlogPublisherLogRequestHeadersProp = "header-names-and-values"
 )
 
 // All allowed values of EnumlogPublisherLogRequestHeadersProp enum

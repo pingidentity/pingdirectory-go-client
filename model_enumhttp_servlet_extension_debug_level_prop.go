@@ -20,13 +20,13 @@ type EnumhttpServletExtensionDebugLevelProp string
 
 // List of Enumhttp-servlet-extension-debugLevelProp
 const (
-	SEVERE EnumhttpServletExtensionDebugLevelProp = "severe"
-	WARNING EnumhttpServletExtensionDebugLevelProp = "warning"
-	INFO EnumhttpServletExtensionDebugLevelProp = "info"
-	CONFIG EnumhttpServletExtensionDebugLevelProp = "config"
-	FINE EnumhttpServletExtensionDebugLevelProp = "fine"
-	FINER EnumhttpServletExtensionDebugLevelProp = "finer"
-	FINEST EnumhttpServletExtensionDebugLevelProp = "finest"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_SEVERE EnumhttpServletExtensionDebugLevelProp = "severe"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_WARNING EnumhttpServletExtensionDebugLevelProp = "warning"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_INFO EnumhttpServletExtensionDebugLevelProp = "info"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_CONFIG EnumhttpServletExtensionDebugLevelProp = "config"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINE EnumhttpServletExtensionDebugLevelProp = "fine"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINER EnumhttpServletExtensionDebugLevelProp = "finer"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINEST EnumhttpServletExtensionDebugLevelProp = "finest"
 )
 
 // All allowed values of EnumhttpServletExtensionDebugLevelProp enum

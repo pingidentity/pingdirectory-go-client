@@ -20,7 +20,7 @@ type EnumcollectSupportDataRecurringTaskSchemaUrn string
 
 // List of Enumcollect-support-data-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKCOLLECT_SUPPORT_DATA EnumcollectSupportDataRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:collect-support-data"
+	ENUMCOLLECTSUPPORTDATARECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKCOLLECT_SUPPORT_DATA EnumcollectSupportDataRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:collect-support-data"
 )
 
 // All allowed values of EnumcollectSupportDataRecurringTaskSchemaUrn enum

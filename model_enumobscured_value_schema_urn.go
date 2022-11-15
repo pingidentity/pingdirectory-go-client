@@ -20,7 +20,7 @@ type EnumobscuredValueSchemaUrn string
 
 // List of Enumobscured-valueSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0OBSCURED_VALUE EnumobscuredValueSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:obscured-value"
+	ENUMOBSCUREDVALUESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0OBSCURED_VALUE EnumobscuredValueSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:obscured-value"
 )
 
 // All allowed values of EnumobscuredValueSchemaUrn enum

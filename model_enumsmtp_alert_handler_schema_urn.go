@@ -20,7 +20,7 @@ type EnumsmtpAlertHandlerSchemaUrn string
 
 // List of Enumsmtp-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERSMTP EnumsmtpAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:smtp"
+	ENUMSMTPALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERSMTP EnumsmtpAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:smtp"
 )
 
 // All allowed values of EnumsmtpAlertHandlerSchemaUrn enum

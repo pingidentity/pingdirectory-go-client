@@ -20,7 +20,7 @@ type EnumldapConnectionHandlerSchemaUrn string
 
 // List of Enumldap-connection-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERLDAP EnumldapConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:ldap"
+	ENUMLDAPCONNECTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_HANDLERLDAP EnumldapConnectionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-handler:ldap"
 )
 
 // All allowed values of EnumldapConnectionHandlerSchemaUrn enum

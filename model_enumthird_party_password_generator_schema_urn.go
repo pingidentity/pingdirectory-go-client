@@ -20,7 +20,7 @@ type EnumthirdPartyPasswordGeneratorSchemaUrn string
 
 // List of Enumthird-party-password-generatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORTHIRD_PARTY EnumthirdPartyPasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:third-party"
+	ENUMTHIRDPARTYPASSWORDGENERATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_GENERATORTHIRD_PARTY EnumthirdPartyPasswordGeneratorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-generator:third-party"
 )
 
 // All allowed values of EnumthirdPartyPasswordGeneratorSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumhighThroughputWorkQueueSchemaUrn string
 
 // List of Enumhigh-throughput-work-queueSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0WORK_QUEUEHIGH_THROUGHPUT EnumhighThroughputWorkQueueSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:work-queue:high-throughput"
+	ENUMHIGHTHROUGHPUTWORKQUEUESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0WORK_QUEUEHIGH_THROUGHPUT EnumhighThroughputWorkQueueSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:work-queue:high-throughput"
 )
 
 // All allowed values of EnumhighThroughputWorkQueueSchemaUrn enum

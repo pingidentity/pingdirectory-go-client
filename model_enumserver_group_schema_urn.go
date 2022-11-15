@@ -20,7 +20,7 @@ type EnumserverGroupSchemaUrn string
 
 // List of Enumserver-groupSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_GROUP EnumserverGroupSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-group"
+	ENUMSERVERGROUPSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_GROUP EnumserverGroupSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-group"
 )
 
 // All allowed values of EnumserverGroupSchemaUrn enum

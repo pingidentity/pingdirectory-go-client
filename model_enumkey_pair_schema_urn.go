@@ -20,7 +20,7 @@ type EnumkeyPairSchemaUrn string
 
 // List of Enumkey-pairSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_PAIR EnumkeyPairSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-pair"
+	ENUMKEYPAIRSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_PAIR EnumkeyPairSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-pair"
 )
 
 // All allowed values of EnumkeyPairSchemaUrn enum

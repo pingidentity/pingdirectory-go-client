@@ -20,7 +20,7 @@ type EnumaggregateConnectionCriteriaSchemaUrn string
 
 // List of Enumaggregate-connection-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_CRITERIAAGGREGATE EnumaggregateConnectionCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-criteria:aggregate"
+	ENUMAGGREGATECONNECTIONCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_CRITERIAAGGREGATE EnumaggregateConnectionCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-criteria:aggregate"
 )
 
 // All allowed values of EnumaggregateConnectionCriteriaSchemaUrn enum

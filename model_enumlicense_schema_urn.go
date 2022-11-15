@@ -20,7 +20,7 @@ type EnumlicenseSchemaUrn string
 
 // List of EnumlicenseSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LICENSE EnumlicenseSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:license"
+	ENUMLICENSESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LICENSE EnumlicenseSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:license"
 )
 
 // All allowed values of EnumlicenseSchemaUrn enum

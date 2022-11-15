@@ -20,9 +20,9 @@ type EnumsensitiveAttributeAllowInCompareProp string
 
 // List of Enumsensitive-attribute-allowInCompareProp
 const (
-	ALLOW EnumsensitiveAttributeAllowInCompareProp = "allow"
-	REJECT EnumsensitiveAttributeAllowInCompareProp = "reject"
-	SECURE_ONLY EnumsensitiveAttributeAllowInCompareProp = "secure-only"
+	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_ALLOW EnumsensitiveAttributeAllowInCompareProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_REJECT EnumsensitiveAttributeAllowInCompareProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_SECURE_ONLY EnumsensitiveAttributeAllowInCompareProp = "secure-only"
 )
 
 // All allowed values of EnumsensitiveAttributeAllowInCompareProp enum

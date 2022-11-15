@@ -20,7 +20,7 @@ type EnumthirdPartyHttpServletExtensionSchemaUrn string
 
 // List of Enumthird-party-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONTHIRD_PARTY EnumthirdPartyHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
+	ENUMTHIRDPARTYHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONTHIRD_PARTY EnumthirdPartyHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
 )
 
 // All allowed values of EnumthirdPartyHttpServletExtensionSchemaUrn enum

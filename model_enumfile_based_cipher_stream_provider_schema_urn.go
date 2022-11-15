@@ -20,7 +20,7 @@ type EnumfileBasedCipherStreamProviderSchemaUrn string
 
 // List of Enumfile-based-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERFILE_BASED EnumfileBasedCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:file-based"
+	ENUMFILEBASEDCIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERFILE_BASED EnumfileBasedCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:file-based"
 )
 
 // All allowed values of EnumfileBasedCipherStreamProviderSchemaUrn enum

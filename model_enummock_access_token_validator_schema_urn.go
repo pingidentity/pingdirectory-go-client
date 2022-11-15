@@ -20,7 +20,7 @@ type EnummockAccessTokenValidatorSchemaUrn string
 
 // List of Enummock-access-token-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORMOCK EnummockAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:mock"
+	ENUMMOCKACCESSTOKENVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORMOCK EnummockAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:mock"
 )
 
 // All allowed values of EnummockAccessTokenValidatorSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumaccessLogFieldMappingSchemaUrn string
 
 // List of Enumaccess-log-field-mappingSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_MAPPINGACCESS EnumaccessLogFieldMappingSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access"
+	ENUMACCESSLOGFIELDMAPPINGSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_MAPPINGACCESS EnumaccessLogFieldMappingSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-mapping:access"
 )
 
 // All allowed values of EnumaccessLogFieldMappingSchemaUrn enum

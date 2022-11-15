@@ -20,7 +20,7 @@ type EnumbackupBackendSchemaUrn string
 
 // List of Enumbackup-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDBACKUP EnumbackupBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:backup"
+	ENUMBACKUPBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDBACKUP EnumbackupBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:backup"
 )
 
 // All allowed values of EnumbackupBackendSchemaUrn enum

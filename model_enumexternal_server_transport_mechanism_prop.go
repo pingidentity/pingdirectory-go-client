@@ -20,9 +20,9 @@ type EnumexternalServerTransportMechanismProp string
 
 // List of Enumexternal-server-transportMechanismProp
 const (
-	UNENCRYPTED_UDP EnumexternalServerTransportMechanismProp = "unencrypted-udp"
-	UNENCRYPTED_TCP EnumexternalServerTransportMechanismProp = "unencrypted-tcp"
-	TLS_ENCRYPTED_TCP EnumexternalServerTransportMechanismProp = "tls-encrypted-tcp"
+	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_UNENCRYPTED_UDP EnumexternalServerTransportMechanismProp = "unencrypted-udp"
+	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_UNENCRYPTED_TCP EnumexternalServerTransportMechanismProp = "unencrypted-tcp"
+	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_TLS_ENCRYPTED_TCP EnumexternalServerTransportMechanismProp = "tls-encrypted-tcp"
 )
 
 // All allowed values of EnumexternalServerTransportMechanismProp enum

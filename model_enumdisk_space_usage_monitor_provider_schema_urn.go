@@ -20,7 +20,7 @@ type EnumdiskSpaceUsageMonitorProviderSchemaUrn string
 
 // List of Enumdisk-space-usage-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERDISK_SPACE_USAGE EnumdiskSpaceUsageMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage"
+	ENUMDISKSPACEUSAGEMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERDISK_SPACE_USAGE EnumdiskSpaceUsageMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage"
 )
 
 // All allowed values of EnumdiskSpaceUsageMonitorProviderSchemaUrn enum

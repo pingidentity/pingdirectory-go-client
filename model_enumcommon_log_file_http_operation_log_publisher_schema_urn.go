@@ -20,7 +20,7 @@ type EnumcommonLogFileHttpOperationLogPublisherSchemaUrn string
 
 // List of Enumcommon-log-file-http-operation-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERCOMMON_LOG_FILE_HTTP_OPERATION EnumcommonLogFileHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:common-log-file-http-operation"
+	ENUMCOMMONLOGFILEHTTPOPERATIONLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERCOMMON_LOG_FILE_HTTP_OPERATION EnumcommonLogFileHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:common-log-file-http-operation"
 )
 
 // All allowed values of EnumcommonLogFileHttpOperationLogPublisherSchemaUrn enum

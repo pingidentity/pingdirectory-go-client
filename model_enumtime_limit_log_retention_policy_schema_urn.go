@@ -20,7 +20,7 @@ type EnumtimeLimitLogRetentionPolicySchemaUrn string
 
 // List of Enumtime-limit-log-retention-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYTIME_LIMIT EnumtimeLimitLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:time-limit"
+	ENUMTIMELIMITLOGRETENTIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYTIME_LIMIT EnumtimeLimitLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:time-limit"
 )
 
 // All allowed values of EnumtimeLimitLogRetentionPolicySchemaUrn enum

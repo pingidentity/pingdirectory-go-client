@@ -20,11 +20,11 @@ type EnumserverInstanceServerInstanceTypeProp string
 
 // List of Enumserver-instance-serverInstanceTypeProp
 const (
-	DS EnumserverInstanceServerInstanceTypeProp = "ds"
-	PROXY EnumserverInstanceServerInstanceTypeProp = "proxy"
-	AUTHORIZE EnumserverInstanceServerInstanceTypeProp = "authorize"
-	METRICS EnumserverInstanceServerInstanceTypeProp = "metrics"
-	SYNC EnumserverInstanceServerInstanceTypeProp = "sync"
+	ENUMSERVERINSTANCESERVERINSTANCETYPEPROP_DS EnumserverInstanceServerInstanceTypeProp = "ds"
+	ENUMSERVERINSTANCESERVERINSTANCETYPEPROP_PROXY EnumserverInstanceServerInstanceTypeProp = "proxy"
+	ENUMSERVERINSTANCESERVERINSTANCETYPEPROP_AUTHORIZE EnumserverInstanceServerInstanceTypeProp = "authorize"
+	ENUMSERVERINSTANCESERVERINSTANCETYPEPROP_METRICS EnumserverInstanceServerInstanceTypeProp = "metrics"
+	ENUMSERVERINSTANCESERVERINSTANCETYPEPROP_SYNC EnumserverInstanceServerInstanceTypeProp = "sync"
 )
 
 // All allowed values of EnumserverInstanceServerInstanceTypeProp enum

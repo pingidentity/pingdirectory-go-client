@@ -20,7 +20,7 @@ type EnumencryptionSettingsBackendSchemaUrn string
 
 // List of Enumencryption-settings-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDENCRYPTION_SETTINGS EnumencryptionSettingsBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:encryption-settings"
+	ENUMENCRYPTIONSETTINGSBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDENCRYPTION_SETTINGS EnumencryptionSettingsBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:encryption-settings"
 )
 
 // All allowed values of EnumencryptionSettingsBackendSchemaUrn enum

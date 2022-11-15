@@ -20,7 +20,7 @@ type EnumthirdPartyAccessTokenValidatorSchemaUrn string
 
 // List of Enumthird-party-access-token-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORTHIRD_PARTY EnumthirdPartyAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party"
+	ENUMTHIRDPARTYACCESSTOKENVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORTHIRD_PARTY EnumthirdPartyAccessTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-token-validator:third-party"
 )
 
 // All allowed values of EnumthirdPartyAccessTokenValidatorSchemaUrn enum

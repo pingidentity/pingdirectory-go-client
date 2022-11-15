@@ -20,9 +20,9 @@ type EnumconnectionCriteriaCommunicationSecurityLevelProp string
 
 // List of Enumconnection-criteria-communicationSecurityLevelProp
 const (
-	ANY EnumconnectionCriteriaCommunicationSecurityLevelProp = "any"
-	SECURE_ONLY EnumconnectionCriteriaCommunicationSecurityLevelProp = "secure-only"
-	INSECURE_ONLY EnumconnectionCriteriaCommunicationSecurityLevelProp = "insecure-only"
+	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_ANY EnumconnectionCriteriaCommunicationSecurityLevelProp = "any"
+	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_SECURE_ONLY EnumconnectionCriteriaCommunicationSecurityLevelProp = "secure-only"
+	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_INSECURE_ONLY EnumconnectionCriteriaCommunicationSecurityLevelProp = "insecure-only"
 )
 
 // All allowed values of EnumconnectionCriteriaCommunicationSecurityLevelProp enum

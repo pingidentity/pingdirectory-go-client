@@ -20,7 +20,7 @@ type EnumhttpConfigurationSchemaUrn string
 
 // List of Enumhttp-configurationSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_CONFIGURATION EnumhttpConfigurationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-configuration"
+	ENUMHTTPCONFIGURATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_CONFIGURATION EnumhttpConfigurationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-configuration"
 )
 
 // All allowed values of EnumhttpConfigurationSchemaUrn enum

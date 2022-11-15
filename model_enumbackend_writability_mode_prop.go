@@ -20,9 +20,9 @@ type EnumbackendWritabilityModeProp string
 
 // List of Enumbackend-writabilityModeProp
 const (
-	ENABLED EnumbackendWritabilityModeProp = "enabled"
-	DISABLED EnumbackendWritabilityModeProp = "disabled"
-	INTERNAL_ONLY EnumbackendWritabilityModeProp = "internal-only"
+	ENUMBACKENDWRITABILITYMODEPROP_ENABLED EnumbackendWritabilityModeProp = "enabled"
+	ENUMBACKENDWRITABILITYMODEPROP_DISABLED EnumbackendWritabilityModeProp = "disabled"
+	ENUMBACKENDWRITABILITYMODEPROP_INTERNAL_ONLY EnumbackendWritabilityModeProp = "internal-only"
 )
 
 // All allowed values of EnumbackendWritabilityModeProp enum

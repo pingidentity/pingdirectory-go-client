@@ -20,7 +20,7 @@ type EnumfileBasedJsonHttpOperationLogPublisherSchemaUrn string
 
 // List of Enumfile-based-json-http-operation-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_JSON_HTTP_OPERATION EnumfileBasedJsonHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-json-http-operation"
+	ENUMFILEBASEDJSONHTTPOPERATIONLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_JSON_HTTP_OPERATION EnumfileBasedJsonHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-json-http-operation"
 )
 
 // All allowed values of EnumfileBasedJsonHttpOperationLogPublisherSchemaUrn enum

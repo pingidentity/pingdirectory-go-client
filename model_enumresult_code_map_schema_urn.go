@@ -20,7 +20,7 @@ type EnumresultCodeMapSchemaUrn string
 
 // List of Enumresult-code-mapSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RESULT_CODE_MAP EnumresultCodeMapSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:result-code-map"
+	ENUMRESULTCODEMAPSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RESULT_CODE_MAP EnumresultCodeMapSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:result-code-map"
 )
 
 // All allowed values of EnumresultCodeMapSchemaUrn enum

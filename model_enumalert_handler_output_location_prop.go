@@ -20,9 +20,9 @@ type EnumalertHandlerOutputLocationProp string
 
 // List of Enumalert-handler-outputLocationProp
 const (
-	SERVER_OUT_FILE EnumalertHandlerOutputLocationProp = "server-out-file"
-	STANDARD_OUTPUT EnumalertHandlerOutputLocationProp = "standard-output"
-	STANDARD_ERROR EnumalertHandlerOutputLocationProp = "standard-error"
+	ENUMALERTHANDLEROUTPUTLOCATIONPROP_SERVER_OUT_FILE EnumalertHandlerOutputLocationProp = "server-out-file"
+	ENUMALERTHANDLEROUTPUTLOCATIONPROP_STANDARD_OUTPUT EnumalertHandlerOutputLocationProp = "standard-output"
+	ENUMALERTHANDLEROUTPUTLOCATIONPROP_STANDARD_ERROR EnumalertHandlerOutputLocationProp = "standard-error"
 )
 
 // All allowed values of EnumalertHandlerOutputLocationProp enum

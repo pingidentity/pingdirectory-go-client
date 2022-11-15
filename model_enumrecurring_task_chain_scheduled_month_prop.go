@@ -20,18 +20,18 @@ type EnumrecurringTaskChainScheduledMonthProp string
 
 // List of Enumrecurring-task-chain-scheduledMonthProp
 const (
-	JANUARY EnumrecurringTaskChainScheduledMonthProp = "january"
-	FEBRUARY EnumrecurringTaskChainScheduledMonthProp = "february"
-	MARCH EnumrecurringTaskChainScheduledMonthProp = "march"
-	APRIL EnumrecurringTaskChainScheduledMonthProp = "april"
-	MAY EnumrecurringTaskChainScheduledMonthProp = "may"
-	JUNE EnumrecurringTaskChainScheduledMonthProp = "june"
-	JULY EnumrecurringTaskChainScheduledMonthProp = "july"
-	AUGUST EnumrecurringTaskChainScheduledMonthProp = "august"
-	SEPTEMBER EnumrecurringTaskChainScheduledMonthProp = "september"
-	OCTOBER EnumrecurringTaskChainScheduledMonthProp = "october"
-	NOVEMBER EnumrecurringTaskChainScheduledMonthProp = "november"
-	DECEMBER EnumrecurringTaskChainScheduledMonthProp = "december"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_JANUARY EnumrecurringTaskChainScheduledMonthProp = "january"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_FEBRUARY EnumrecurringTaskChainScheduledMonthProp = "february"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_MARCH EnumrecurringTaskChainScheduledMonthProp = "march"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_APRIL EnumrecurringTaskChainScheduledMonthProp = "april"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_MAY EnumrecurringTaskChainScheduledMonthProp = "may"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_JUNE EnumrecurringTaskChainScheduledMonthProp = "june"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_JULY EnumrecurringTaskChainScheduledMonthProp = "july"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_AUGUST EnumrecurringTaskChainScheduledMonthProp = "august"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_SEPTEMBER EnumrecurringTaskChainScheduledMonthProp = "september"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_OCTOBER EnumrecurringTaskChainScheduledMonthProp = "october"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_NOVEMBER EnumrecurringTaskChainScheduledMonthProp = "november"
+	ENUMRECURRINGTASKCHAINSCHEDULEDMONTHPROP_DECEMBER EnumrecurringTaskChainScheduledMonthProp = "december"
 )
 
 // All allowed values of EnumrecurringTaskChainScheduledMonthProp enum

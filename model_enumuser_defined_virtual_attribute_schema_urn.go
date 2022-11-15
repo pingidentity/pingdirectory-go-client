@@ -20,7 +20,7 @@ type EnumuserDefinedVirtualAttributeSchemaUrn string
 
 // List of Enumuser-defined-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEUSER_DEFINED EnumuserDefinedVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:user-defined"
+	ENUMUSERDEFINEDVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEUSER_DEFINED EnumuserDefinedVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:user-defined"
 )
 
 // All allowed values of EnumuserDefinedVirtualAttributeSchemaUrn enum

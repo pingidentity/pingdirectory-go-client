@@ -20,7 +20,7 @@ type EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn string
 
 // List of Enumsubject-attribute-to-user-attribute-certificate-mapperSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERSUBJECT_ATTRIBUTE_TO_USER_ATTRIBUTE EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-attribute-to-user-attribute"
+	ENUMSUBJECTATTRIBUTETOUSERATTRIBUTECERTIFICATEMAPPERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CERTIFICATE_MAPPERSUBJECT_ATTRIBUTE_TO_USER_ATTRIBUTE EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-attribute-to-user-attribute"
 )
 
 // All allowed values of EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn enum

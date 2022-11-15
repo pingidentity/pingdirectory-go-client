@@ -20,7 +20,7 @@ type EnumnokiaProxyServerExternalServerSchemaUrn string
 
 // List of Enumnokia-proxy-server-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERNOKIA_PROXY_SERVER EnumnokiaProxyServerExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-proxy-server"
+	ENUMNOKIAPROXYSERVEREXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVERNOKIA_PROXY_SERVER EnumnokiaProxyServerExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:nokia-proxy-server"
 )
 
 // All allowed values of EnumnokiaProxyServerExternalServerSchemaUrn enum

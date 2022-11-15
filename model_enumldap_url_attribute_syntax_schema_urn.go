@@ -20,7 +20,7 @@ type EnumldapUrlAttributeSyntaxSchemaUrn string
 
 // List of Enumldap-url-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXLDAP_URL EnumldapUrlAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:ldap-url"
+	ENUMLDAPURLATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXLDAP_URL EnumldapUrlAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:ldap-url"
 )
 
 // All allowed values of EnumldapUrlAttributeSyntaxSchemaUrn enum

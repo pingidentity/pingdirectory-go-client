@@ -20,7 +20,7 @@ type EnumstaticGroupImplementationSchemaUrn string
 
 // List of Enumstatic-group-implementationSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GROUP_IMPLEMENTATIONSTATIC EnumstaticGroupImplementationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
+	ENUMSTATICGROUPIMPLEMENTATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GROUP_IMPLEMENTATIONSTATIC EnumstaticGroupImplementationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
 )
 
 // All allowed values of EnumstaticGroupImplementationSchemaUrn enum

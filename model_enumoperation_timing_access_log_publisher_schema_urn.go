@@ -20,7 +20,7 @@ type EnumoperationTimingAccessLogPublisherSchemaUrn string
 
 // List of Enumoperation-timing-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHEROPERATION_TIMING_ACCESS EnumoperationTimingAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:operation-timing-access"
+	ENUMOPERATIONTIMINGACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHEROPERATION_TIMING_ACCESS EnumoperationTimingAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:operation-timing-access"
 )
 
 // All allowed values of EnumoperationTimingAccessLogPublisherSchemaUrn enum

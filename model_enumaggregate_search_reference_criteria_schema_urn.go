@@ -20,7 +20,7 @@ type EnumaggregateSearchReferenceCriteriaSchemaUrn string
 
 // List of Enumaggregate-search-reference-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SEARCH_REFERENCE_CRITERIAAGGREGATE EnumaggregateSearchReferenceCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate"
+	ENUMAGGREGATESEARCHREFERENCECRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SEARCH_REFERENCE_CRITERIAAGGREGATE EnumaggregateSearchReferenceCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate"
 )
 
 // All allowed values of EnumaggregateSearchReferenceCriteriaSchemaUrn enum

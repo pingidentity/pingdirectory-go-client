@@ -20,7 +20,7 @@ type EnumthirdPartyExtendedOperationHandlerSchemaUrn string
 
 // List of Enumthird-party-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERTHIRD_PARTY EnumthirdPartyExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party"
+	ENUMTHIRDPARTYEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERTHIRD_PARTY EnumthirdPartyExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartyExtendedOperationHandlerSchemaUrn enum

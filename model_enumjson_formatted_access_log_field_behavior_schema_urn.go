@@ -20,7 +20,7 @@ type EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn string
 
 // List of Enumjson-formatted-access-log-field-behaviorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_BEHAVIORJSON_FORMATTED_ACCESS EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access"
+	ENUMJSONFORMATTEDACCESSLOGFIELDBEHAVIORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_FIELD_BEHAVIORJSON_FORMATTED_ACCESS EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-field-behavior:json-formatted-access"
 )
 
 // All allowed values of EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn enum

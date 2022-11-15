@@ -20,7 +20,7 @@ type EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn string
 
 // List of Enumthird-party-pass-through-authentication-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASS_THROUGH_AUTHENTICATION_HANDLERTHIRD_PARTY EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:third-party"
+	ENUMTHIRDPARTYPASSTHROUGHAUTHENTICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASS_THROUGH_AUTHENTICATION_HANDLERTHIRD_PARTY EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn enum

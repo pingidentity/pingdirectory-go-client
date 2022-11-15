@@ -20,14 +20,14 @@ type EnumbackendDn2idCacheModeProp string
 
 // List of Enumbackend-dn2idCacheModeProp
 const (
-	CACHE_KEYS_AND_VALUES EnumbackendDn2idCacheModeProp = "cache-keys-and-values"
-	CACHE_KEYS_ONLY EnumbackendDn2idCacheModeProp = "cache-keys-only"
-	NO_CACHING EnumbackendDn2idCacheModeProp = "no-caching"
-	KEEP_HOT EnumbackendDn2idCacheModeProp = "keep-hot"
-	DEFAULT EnumbackendDn2idCacheModeProp = "default"
-	MAKE_COLD EnumbackendDn2idCacheModeProp = "make-cold"
-	EVICT_LEAF_IMMEDIATELY EnumbackendDn2idCacheModeProp = "evict-leaf-immediately"
-	EVICT_BIN_IMMEDIATELY EnumbackendDn2idCacheModeProp = "evict-bin-immediately"
+	ENUMBACKENDDN2IDCACHEMODEPROP_CACHE_KEYS_AND_VALUES EnumbackendDn2idCacheModeProp = "cache-keys-and-values"
+	ENUMBACKENDDN2IDCACHEMODEPROP_CACHE_KEYS_ONLY EnumbackendDn2idCacheModeProp = "cache-keys-only"
+	ENUMBACKENDDN2IDCACHEMODEPROP_NO_CACHING EnumbackendDn2idCacheModeProp = "no-caching"
+	ENUMBACKENDDN2IDCACHEMODEPROP_KEEP_HOT EnumbackendDn2idCacheModeProp = "keep-hot"
+	ENUMBACKENDDN2IDCACHEMODEPROP_DEFAULT EnumbackendDn2idCacheModeProp = "default"
+	ENUMBACKENDDN2IDCACHEMODEPROP_MAKE_COLD EnumbackendDn2idCacheModeProp = "make-cold"
+	ENUMBACKENDDN2IDCACHEMODEPROP_EVICT_LEAF_IMMEDIATELY EnumbackendDn2idCacheModeProp = "evict-leaf-immediately"
+	ENUMBACKENDDN2IDCACHEMODEPROP_EVICT_BIN_IMMEDIATELY EnumbackendDn2idCacheModeProp = "evict-bin-immediately"
 )
 
 // All allowed values of EnumbackendDn2idCacheModeProp enum

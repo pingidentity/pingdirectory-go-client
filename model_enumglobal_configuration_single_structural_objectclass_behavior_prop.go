@@ -20,9 +20,9 @@ type EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp string
 
 // List of Enumglobal-configuration-singleStructuralObjectclassBehaviorProp
 const (
-	ACCEPT EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "accept"
-	REJECT EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "reject"
-	WARN EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "warn"
+	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_ACCEPT EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "accept"
+	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_REJECT EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "reject"
+	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_WARN EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "warn"
 )
 
 // All allowed values of EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp enum

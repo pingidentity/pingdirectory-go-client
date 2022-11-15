@@ -20,7 +20,7 @@ type EnumtripleDesPasswordStorageSchemeSchemaUrn string
 
 // List of Enumtriple-des-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMETRIPLE_DES EnumtripleDesPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:triple-des"
+	ENUMTRIPLEDESPASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMETRIPLE_DES EnumtripleDesPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:triple-des"
 )
 
 // All allowed values of EnumtripleDesPasswordStorageSchemeSchemaUrn enum

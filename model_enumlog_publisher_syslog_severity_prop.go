@@ -20,14 +20,14 @@ type EnumlogPublisherSyslogSeverityProp string
 
 // List of Enumlog-publisher-syslogSeverityProp
 const (
-	EMERGENCY EnumlogPublisherSyslogSeverityProp = "emergency"
-	ALERT EnumlogPublisherSyslogSeverityProp = "alert"
-	CRITICAL EnumlogPublisherSyslogSeverityProp = "critical"
-	ERROR EnumlogPublisherSyslogSeverityProp = "error"
-	WARNING EnumlogPublisherSyslogSeverityProp = "warning"
-	NOTICE EnumlogPublisherSyslogSeverityProp = "notice"
-	INFORMATIONAL EnumlogPublisherSyslogSeverityProp = "informational"
-	DEBUG EnumlogPublisherSyslogSeverityProp = "debug"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_EMERGENCY EnumlogPublisherSyslogSeverityProp = "emergency"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_ALERT EnumlogPublisherSyslogSeverityProp = "alert"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_CRITICAL EnumlogPublisherSyslogSeverityProp = "critical"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_ERROR EnumlogPublisherSyslogSeverityProp = "error"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_WARNING EnumlogPublisherSyslogSeverityProp = "warning"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_NOTICE EnumlogPublisherSyslogSeverityProp = "notice"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_INFORMATIONAL EnumlogPublisherSyslogSeverityProp = "informational"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_DEBUG EnumlogPublisherSyslogSeverityProp = "debug"
 )
 
 // All allowed values of EnumlogPublisherSyslogSeverityProp enum

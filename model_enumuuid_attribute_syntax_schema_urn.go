@@ -20,7 +20,7 @@ type EnumuuidAttributeSyntaxSchemaUrn string
 
 // List of Enumuuid-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXUUID EnumuuidAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:uuid"
+	ENUMUUIDATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXUUID EnumuuidAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:uuid"
 )
 
 // All allowed values of EnumuuidAttributeSyntaxSchemaUrn enum

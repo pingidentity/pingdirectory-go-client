@@ -20,8 +20,8 @@ type EnumldapSdkDebugLoggerCompressionMechanismProp string
 
 // List of Enumldap-sdk-debug-logger-compressionMechanismProp
 const (
-	NONE EnumldapSdkDebugLoggerCompressionMechanismProp = "none"
-	GZIP EnumldapSdkDebugLoggerCompressionMechanismProp = "gzip"
+	ENUMLDAPSDKDEBUGLOGGERCOMPRESSIONMECHANISMPROP_NONE EnumldapSdkDebugLoggerCompressionMechanismProp = "none"
+	ENUMLDAPSDKDEBUGLOGGERCOMPRESSIONMECHANISMPROP_GZIP EnumldapSdkDebugLoggerCompressionMechanismProp = "gzip"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerCompressionMechanismProp enum

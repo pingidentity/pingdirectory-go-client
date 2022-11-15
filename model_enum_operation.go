@@ -20,9 +20,9 @@ type EnumOperation string
 
 // List of EnumOperation
 const (
-	ADD EnumOperation = "add"
-	REMOVE EnumOperation = "remove"
-	REPLACE EnumOperation = "replace"
+	ENUMOPERATION_ADD EnumOperation = "add"
+	ENUMOPERATION_REMOVE EnumOperation = "remove"
+	ENUMOPERATION_REPLACE EnumOperation = "replace"
 )
 
 // All allowed values of EnumOperation enum

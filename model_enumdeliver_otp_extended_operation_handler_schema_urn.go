@@ -20,7 +20,7 @@ type EnumdeliverOtpExtendedOperationHandlerSchemaUrn string
 
 // List of Enumdeliver-otp-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERDELIVER_OTP EnumdeliverOtpExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-otp"
+	ENUMDELIVEROTPEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERDELIVER_OTP EnumdeliverOtpExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:deliver-otp"
 )
 
 // All allowed values of EnumdeliverOtpExtendedOperationHandlerSchemaUrn enum

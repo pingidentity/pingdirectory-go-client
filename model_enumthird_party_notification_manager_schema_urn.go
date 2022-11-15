@@ -20,7 +20,7 @@ type EnumthirdPartyNotificationManagerSchemaUrn string
 
 // List of Enumthird-party-notification-managerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0NOTIFICATION_MANAGERTHIRD_PARTY EnumthirdPartyNotificationManagerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party"
+	ENUMTHIRDPARTYNOTIFICATIONMANAGERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0NOTIFICATION_MANAGERTHIRD_PARTY EnumthirdPartyNotificationManagerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:notification-manager:third-party"
 )
 
 // All allowed values of EnumthirdPartyNotificationManagerSchemaUrn enum

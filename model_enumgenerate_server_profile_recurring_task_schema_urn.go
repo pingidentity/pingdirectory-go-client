@@ -20,7 +20,7 @@ type EnumgenerateServerProfileRecurringTaskSchemaUrn string
 
 // List of Enumgenerate-server-profile-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKGENERATE_SERVER_PROFILE EnumgenerateServerProfileRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:generate-server-profile"
+	ENUMGENERATESERVERPROFILERECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKGENERATE_SERVER_PROFILE EnumgenerateServerProfileRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:generate-server-profile"
 )
 
 // All allowed values of EnumgenerateServerProfileRecurringTaskSchemaUrn enum

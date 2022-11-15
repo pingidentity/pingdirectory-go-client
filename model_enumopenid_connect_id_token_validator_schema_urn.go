@@ -20,7 +20,7 @@ type EnumopenidConnectIdTokenValidatorSchemaUrn string
 
 // List of Enumopenid-connect-id-token-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ID_TOKEN_VALIDATOROPENID_CONNECT EnumopenidConnectIdTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect"
+	ENUMOPENIDCONNECTIDTOKENVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ID_TOKEN_VALIDATOROPENID_CONNECT EnumopenidConnectIdTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:id-token-validator:openid-connect"
 )
 
 // All allowed values of EnumopenidConnectIdTokenValidatorSchemaUrn enum

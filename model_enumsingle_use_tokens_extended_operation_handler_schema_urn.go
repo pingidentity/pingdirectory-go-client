@@ -20,7 +20,7 @@ type EnumsingleUseTokensExtendedOperationHandlerSchemaUrn string
 
 // List of Enumsingle-use-tokens-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERSINGLE_USE_TOKENS EnumsingleUseTokensExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:single-use-tokens"
+	ENUMSINGLEUSETOKENSEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERSINGLE_USE_TOKENS EnumsingleUseTokensExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:single-use-tokens"
 )
 
 // All allowed values of EnumsingleUseTokensExtendedOperationHandlerSchemaUrn enum

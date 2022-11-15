@@ -20,7 +20,7 @@ type EnumsmtpAccountStatusNotificationHandlerSchemaUrn string
 
 // List of Enumsmtp-account-status-notification-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERSMTP EnumsmtpAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:smtp"
+	ENUMSMTPACCOUNTSTATUSNOTIFICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERSMTP EnumsmtpAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:smtp"
 )
 
 // All allowed values of EnumsmtpAccountStatusNotificationHandlerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumpluginRootSchemaUrn string
 
 // List of Enumplugin-rootSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PLUGIN_ROOT EnumpluginRootSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:plugin-root"
+	ENUMPLUGINROOTSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PLUGIN_ROOT EnumpluginRootSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:plugin-root"
 )
 
 // All allowed values of EnumpluginRootSchemaUrn enum

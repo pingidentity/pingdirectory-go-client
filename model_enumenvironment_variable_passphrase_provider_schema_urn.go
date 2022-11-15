@@ -20,7 +20,7 @@ type EnumenvironmentVariablePassphraseProviderSchemaUrn string
 
 // List of Enumenvironment-variable-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERENVIRONMENT_VARIABLE EnumenvironmentVariablePassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:environment-variable"
+	ENUMENVIRONMENTVARIABLEPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERENVIRONMENT_VARIABLE EnumenvironmentVariablePassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:environment-variable"
 )
 
 // All allowed values of EnumenvironmentVariablePassphraseProviderSchemaUrn enum

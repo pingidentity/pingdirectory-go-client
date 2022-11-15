@@ -20,7 +20,7 @@ type EnumthirdPartyOauthTokenHandlerSchemaUrn string
 
 // List of Enumthird-party-oauth-token-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0OAUTH_TOKEN_HANDLERTHIRD_PARTY EnumthirdPartyOauthTokenHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:third-party"
+	ENUMTHIRDPARTYOAUTHTOKENHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0OAUTH_TOKEN_HANDLERTHIRD_PARTY EnumthirdPartyOauthTokenHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartyOauthTokenHandlerSchemaUrn enum

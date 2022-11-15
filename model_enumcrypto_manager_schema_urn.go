@@ -20,7 +20,7 @@ type EnumcryptoManagerSchemaUrn string
 
 // List of Enumcrypto-managerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CRYPTO_MANAGER EnumcryptoManagerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:crypto-manager"
+	ENUMCRYPTOMANAGERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CRYPTO_MANAGER EnumcryptoManagerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:crypto-manager"
 )
 
 // All allowed values of EnumcryptoManagerSchemaUrn enum

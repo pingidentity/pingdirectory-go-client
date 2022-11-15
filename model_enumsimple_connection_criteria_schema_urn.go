@@ -20,7 +20,7 @@ type EnumsimpleConnectionCriteriaSchemaUrn string
 
 // List of Enumsimple-connection-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_CRITERIASIMPLE EnumsimpleConnectionCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-criteria:simple"
+	ENUMSIMPLECONNECTIONCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_CRITERIASIMPLE EnumsimpleConnectionCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-criteria:simple"
 )
 
 // All allowed values of EnumsimpleConnectionCriteriaSchemaUrn enum

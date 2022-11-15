@@ -20,7 +20,7 @@ type EnumbitStringAttributeSyntaxSchemaUrn string
 
 // List of Enumbit-string-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXBIT_STRING EnumbitStringAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:bit-string"
+	ENUMBITSTRINGATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXBIT_STRING EnumbitStringAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:bit-string"
 )
 
 // All allowed values of EnumbitStringAttributeSyntaxSchemaUrn enum

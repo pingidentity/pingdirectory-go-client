@@ -20,7 +20,7 @@ type EnumpasswordPolicySchemaUrn string
 
 // List of Enumpassword-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_POLICY EnumpasswordPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-policy"
+	ENUMPASSWORDPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_POLICY EnumpasswordPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-policy"
 )
 
 // All allowed values of EnumpasswordPolicySchemaUrn enum

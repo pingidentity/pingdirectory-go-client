@@ -20,7 +20,7 @@ type EnumjdbcBasedAccessLogPublisherSchemaUrn string
 
 // List of Enumjdbc-based-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERJDBC_BASED_ACCESS EnumjdbcBasedAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:jdbc-based-access"
+	ENUMJDBCBASEDACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERJDBC_BASED_ACCESS EnumjdbcBasedAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:jdbc-based-access"
 )
 
 // All allowed values of EnumjdbcBasedAccessLogPublisherSchemaUrn enum

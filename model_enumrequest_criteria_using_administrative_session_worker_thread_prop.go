@@ -20,9 +20,9 @@ type EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp string
 
 // List of Enumrequest-criteria-usingAdministrativeSessionWorkerThreadProp
 const (
-	TRUE EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "true"
-	FALSE EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "false"
-	ANY EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "any"
+	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_TRUE EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "true"
+	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_FALSE EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "false"
+	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_ANY EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "any"
 )
 
 // All allowed values of EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp enum

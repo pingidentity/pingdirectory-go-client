@@ -20,7 +20,7 @@ type EnumjvmDefaultTrustManagerProviderSchemaUrn string
 
 // List of Enumjvm-default-trust-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERJVM_DEFAULT EnumjvmDefaultTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:jvm-default"
+	ENUMJVMDEFAULTTRUSTMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0TRUST_MANAGER_PROVIDERJVM_DEFAULT EnumjvmDefaultTrustManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:trust-manager-provider:jvm-default"
 )
 
 // All allowed values of EnumjvmDefaultTrustManagerProviderSchemaUrn enum

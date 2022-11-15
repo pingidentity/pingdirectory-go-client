@@ -20,7 +20,7 @@ type EnumexpiredPasswordDataSecurityAuditorSchemaUrn string
 
 // List of Enumexpired-password-data-security-auditorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITOREXPIRED_PASSWORD EnumexpiredPasswordDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:expired-password"
+	ENUMEXPIREDPASSWORDDATASECURITYAUDITORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITOREXPIRED_PASSWORD EnumexpiredPasswordDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:expired-password"
 )
 
 // All allowed values of EnumexpiredPasswordDataSecurityAuditorSchemaUrn enum

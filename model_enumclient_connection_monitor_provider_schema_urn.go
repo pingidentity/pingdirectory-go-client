@@ -20,7 +20,7 @@ type EnumclientConnectionMonitorProviderSchemaUrn string
 
 // List of Enumclient-connection-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERCLIENT_CONNECTION EnumclientConnectionMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection"
+	ENUMCLIENTCONNECTIONMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERCLIENT_CONNECTION EnumclientConnectionMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection"
 )
 
 // All allowed values of EnumclientConnectionMonitorProviderSchemaUrn enum

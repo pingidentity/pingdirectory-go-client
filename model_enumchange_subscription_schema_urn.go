@@ -20,7 +20,7 @@ type EnumchangeSubscriptionSchemaUrn string
 
 // List of Enumchange-subscriptionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION EnumchangeSubscriptionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription"
+	ENUMCHANGESUBSCRIPTIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION EnumchangeSubscriptionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription"
 )
 
 // All allowed values of EnumchangeSubscriptionSchemaUrn enum

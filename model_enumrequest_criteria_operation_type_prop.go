@@ -20,11 +20,11 @@ type EnumrequestCriteriaOperationTypeProp string
 
 // List of Enumrequest-criteria-operationTypeProp
 const (
-	COMPARE EnumrequestCriteriaOperationTypeProp = "compare"
-	BASE_OBJECT_SEARCH EnumrequestCriteriaOperationTypeProp = "base-object-search"
-	SINGLE_LEVEL_SEARCH EnumrequestCriteriaOperationTypeProp = "single-level-search"
-	WHOLE_SUBTREE_SEARCH EnumrequestCriteriaOperationTypeProp = "whole-subtree-search"
-	SUBORDINATE_SUBTREE_SEARCH EnumrequestCriteriaOperationTypeProp = "subordinate-subtree-search"
+	ENUMREQUESTCRITERIAOPERATIONTYPEPROP_COMPARE EnumrequestCriteriaOperationTypeProp = "compare"
+	ENUMREQUESTCRITERIAOPERATIONTYPEPROP_BASE_OBJECT_SEARCH EnumrequestCriteriaOperationTypeProp = "base-object-search"
+	ENUMREQUESTCRITERIAOPERATIONTYPEPROP_SINGLE_LEVEL_SEARCH EnumrequestCriteriaOperationTypeProp = "single-level-search"
+	ENUMREQUESTCRITERIAOPERATIONTYPEPROP_WHOLE_SUBTREE_SEARCH EnumrequestCriteriaOperationTypeProp = "whole-subtree-search"
+	ENUMREQUESTCRITERIAOPERATIONTYPEPROP_SUBORDINATE_SUBTREE_SEARCH EnumrequestCriteriaOperationTypeProp = "subordinate-subtree-search"
 )
 
 // All allowed values of EnumrequestCriteriaOperationTypeProp enum

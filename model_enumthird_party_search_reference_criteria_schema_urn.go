@@ -20,7 +20,7 @@ type EnumthirdPartySearchReferenceCriteriaSchemaUrn string
 
 // List of Enumthird-party-search-reference-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SEARCH_REFERENCE_CRITERIATHIRD_PARTY EnumthirdPartySearchReferenceCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party"
+	ENUMTHIRDPARTYSEARCHREFERENCECRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SEARCH_REFERENCE_CRITERIATHIRD_PARTY EnumthirdPartySearchReferenceCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party"
 )
 
 // All allowed values of EnumthirdPartySearchReferenceCriteriaSchemaUrn enum

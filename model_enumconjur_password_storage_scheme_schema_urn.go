@@ -20,7 +20,7 @@ type EnumconjurPasswordStorageSchemeSchemaUrn string
 
 // List of Enumconjur-password-storage-schemeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMECONJUR EnumconjurPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:conjur"
+	ENUMCONJURPASSWORDSTORAGESCHEMESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_STORAGE_SCHEMECONJUR EnumconjurPasswordStorageSchemeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-storage-scheme:conjur"
 )
 
 // All allowed values of EnumconjurPasswordStorageSchemeSchemaUrn enum

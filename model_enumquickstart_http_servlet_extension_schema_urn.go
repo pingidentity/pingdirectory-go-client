@@ -20,7 +20,7 @@ type EnumquickstartHttpServletExtensionSchemaUrn string
 
 // List of Enumquickstart-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONQUICKSTART EnumquickstartHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:quickstart"
+	ENUMQUICKSTARTHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONQUICKSTART EnumquickstartHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:quickstart"
 )
 
 // All allowed values of EnumquickstartHttpServletExtensionSchemaUrn enum

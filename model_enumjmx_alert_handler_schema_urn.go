@@ -20,7 +20,7 @@ type EnumjmxAlertHandlerSchemaUrn string
 
 // List of Enumjmx-alert-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERJMX EnumjmxAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:jmx"
+	ENUMJMXALERTHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ALERT_HANDLERJMX EnumjmxAlertHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:alert-handler:jmx"
 )
 
 // All allowed values of EnumjmxAlertHandlerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumgroovyScriptedOauthTokenHandlerSchemaUrn string
 
 // List of Enumgroovy-scripted-oauth-token-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0OAUTH_TOKEN_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedOauthTokenHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:groovy-scripted"
+	ENUMGROOVYSCRIPTEDOAUTHTOKENHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0OAUTH_TOKEN_HANDLERGROOVY_SCRIPTED EnumgroovyScriptedOauthTokenHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:oauth-token-handler:groovy-scripted"
 )
 
 // All allowed values of EnumgroovyScriptedOauthTokenHandlerSchemaUrn enum

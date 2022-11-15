@@ -20,7 +20,7 @@ type EnumaccessControlDataSecurityAuditorSchemaUrn string
 
 // List of Enumaccess-control-data-security-auditorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORACCESS_CONTROL EnumaccessControlDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control"
+	ENUMACCESSCONTROLDATASECURITYAUDITORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORACCESS_CONTROL EnumaccessControlDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control"
 )
 
 // All allowed values of EnumaccessControlDataSecurityAuditorSchemaUrn enum

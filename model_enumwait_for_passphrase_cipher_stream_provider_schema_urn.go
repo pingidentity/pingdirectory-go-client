@@ -20,7 +20,7 @@ type EnumwaitForPassphraseCipherStreamProviderSchemaUrn string
 
 // List of Enumwait-for-passphrase-cipher-stream-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERWAIT_FOR_PASSPHRASE EnumwaitForPassphraseCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:wait-for-passphrase"
+	ENUMWAITFORPASSPHRASECIPHERSTREAMPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CIPHER_STREAM_PROVIDERWAIT_FOR_PASSPHRASE EnumwaitForPassphraseCipherStreamProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:wait-for-passphrase"
 )
 
 // All allowed values of EnumwaitForPassphraseCipherStreamProviderSchemaUrn enum

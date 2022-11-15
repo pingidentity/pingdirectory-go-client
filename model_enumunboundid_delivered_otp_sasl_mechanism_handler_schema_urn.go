@@ -20,7 +20,7 @@ type EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn string
 
 // List of Enumunboundid-delivered-otp-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_DELIVERED_OTP EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-delivered-otp"
+	ENUMUNBOUNDIDDELIVEREDOTPSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_DELIVERED_OTP EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-delivered-otp"
 )
 
 // All allowed values of EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn enum

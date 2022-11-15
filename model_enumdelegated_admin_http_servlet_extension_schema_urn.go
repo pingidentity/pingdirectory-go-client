@@ -20,7 +20,7 @@ type EnumdelegatedAdminHttpServletExtensionSchemaUrn string
 
 // List of Enumdelegated-admin-http-servlet-extensionSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONDELEGATED_ADMIN EnumdelegatedAdminHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:delegated-admin"
+	ENUMDELEGATEDADMINHTTPSERVLETEXTENSIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0HTTP_SERVLET_EXTENSIONDELEGATED_ADMIN EnumdelegatedAdminHttpServletExtensionSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:delegated-admin"
 )
 
 // All allowed values of EnumdelegatedAdminHttpServletExtensionSchemaUrn enum

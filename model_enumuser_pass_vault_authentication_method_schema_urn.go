@@ -20,7 +20,7 @@ type EnumuserPassVaultAuthenticationMethodSchemaUrn string
 
 // List of Enumuser-pass-vault-authentication-methodSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VAULT_AUTHENTICATION_METHODUSER_PASS EnumuserPassVaultAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:user-pass"
+	ENUMUSERPASSVAULTAUTHENTICATIONMETHODSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VAULT_AUTHENTICATION_METHODUSER_PASS EnumuserPassVaultAuthenticationMethodSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:user-pass"
 )
 
 // All allowed values of EnumuserPassVaultAuthenticationMethodSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn string
 
 // List of Enumunboundid-external-auth-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_EXTERNAL_AUTH EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-external-auth"
+	ENUMUNBOUNDIDEXTERNALAUTHSASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERUNBOUNDID_EXTERNAL_AUTH EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:unboundid-external-auth"
 )
 
 // All allowed values of EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn enum

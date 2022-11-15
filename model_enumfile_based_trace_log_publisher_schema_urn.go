@@ -20,7 +20,7 @@ type EnumfileBasedTraceLogPublisherSchemaUrn string
 
 // List of Enumfile-based-trace-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_TRACE EnumfileBasedTraceLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-trace"
+	ENUMFILEBASEDTRACELOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_TRACE EnumfileBasedTraceLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-trace"
 )
 
 // All allowed values of EnumfileBasedTraceLogPublisherSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumazureKeyVaultPassphraseProviderSchemaUrn string
 
 // List of Enumazure-key-vault-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERAZURE_KEY_VAULT EnumazureKeyVaultPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:azure-key-vault"
+	ENUMAZUREKEYVAULTPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERAZURE_KEY_VAULT EnumazureKeyVaultPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:azure-key-vault"
 )
 
 // All allowed values of EnumazureKeyVaultPassphraseProviderSchemaUrn enum

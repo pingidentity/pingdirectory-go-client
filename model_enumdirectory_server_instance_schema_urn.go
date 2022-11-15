@@ -20,7 +20,7 @@ type EnumdirectoryServerInstanceSchemaUrn string
 
 // List of Enumdirectory-server-instanceSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEDIRECTORY EnumdirectoryServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:directory"
+	ENUMDIRECTORYSERVERINSTANCESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SERVER_INSTANCEDIRECTORY EnumdirectoryServerInstanceSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:server-instance:directory"
 )
 
 // All allowed values of EnumdirectoryServerInstanceSchemaUrn enum

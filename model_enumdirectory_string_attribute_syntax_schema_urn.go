@@ -20,7 +20,7 @@ type EnumdirectoryStringAttributeSyntaxSchemaUrn string
 
 // List of Enumdirectory-string-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXDIRECTORY_STRING EnumdirectoryStringAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:directory-string"
+	ENUMDIRECTORYSTRINGATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXDIRECTORY_STRING EnumdirectoryStringAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:directory-string"
 )
 
 // All allowed values of EnumdirectoryStringAttributeSyntaxSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumfixedTimeLogRotationPolicySchemaUrn string
 
 // List of Enumfixed-time-log-rotation-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_ROTATION_POLICYFIXED_TIME EnumfixedTimeLogRotationPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:fixed-time"
+	ENUMFIXEDTIMELOGROTATIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_ROTATION_POLICYFIXED_TIME EnumfixedTimeLogRotationPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-rotation-policy:fixed-time"
 )
 
 // All allowed values of EnumfixedTimeLogRotationPolicySchemaUrn enum

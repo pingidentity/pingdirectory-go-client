@@ -20,7 +20,7 @@ type Enumpkcs11KeyManagerProviderSchemaUrn string
 
 // List of Enumpkcs11-key-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_MANAGER_PROVIDERPKCS11 Enumpkcs11KeyManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:pkcs11"
+	ENUMPKCS11KEYMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_MANAGER_PROVIDERPKCS11 Enumpkcs11KeyManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:pkcs11"
 )
 
 // All allowed values of Enumpkcs11KeyManagerProviderSchemaUrn enum

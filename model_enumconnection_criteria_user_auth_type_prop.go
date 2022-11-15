@@ -20,10 +20,10 @@ type EnumconnectionCriteriaUserAuthTypeProp string
 
 // List of Enumconnection-criteria-userAuthTypeProp
 const (
-	NONE EnumconnectionCriteriaUserAuthTypeProp = "none"
-	SIMPLE EnumconnectionCriteriaUserAuthTypeProp = "simple"
-	SASL EnumconnectionCriteriaUserAuthTypeProp = "sasl"
-	INTERNAL EnumconnectionCriteriaUserAuthTypeProp = "internal"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_NONE EnumconnectionCriteriaUserAuthTypeProp = "none"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_SIMPLE EnumconnectionCriteriaUserAuthTypeProp = "simple"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_SASL EnumconnectionCriteriaUserAuthTypeProp = "sasl"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_INTERNAL EnumconnectionCriteriaUserAuthTypeProp = "internal"
 )
 
 // All allowed values of EnumconnectionCriteriaUserAuthTypeProp enum

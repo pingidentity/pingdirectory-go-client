@@ -20,7 +20,7 @@ type EnumthirdPartyPassphraseProviderSchemaUrn string
 
 // List of Enumthird-party-passphrase-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERTHIRD_PARTY EnumthirdPartyPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:third-party"
+	ENUMTHIRDPARTYPASSPHRASEPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSPHRASE_PROVIDERTHIRD_PARTY EnumthirdPartyPassphraseProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:third-party"
 )
 
 // All allowed values of EnumthirdPartyPassphraseProviderSchemaUrn enum

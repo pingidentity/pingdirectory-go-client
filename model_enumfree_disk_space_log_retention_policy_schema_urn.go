@@ -20,7 +20,7 @@ type EnumfreeDiskSpaceLogRetentionPolicySchemaUrn string
 
 // List of Enumfree-disk-space-log-retention-policySchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYFREE_DISK_SPACE EnumfreeDiskSpaceLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:free-disk-space"
+	ENUMFREEDISKSPACELOGRETENTIONPOLICYSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_RETENTION_POLICYFREE_DISK_SPACE EnumfreeDiskSpaceLogRetentionPolicySchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:free-disk-space"
 )
 
 // All allowed values of EnumfreeDiskSpaceLogRetentionPolicySchemaUrn enum

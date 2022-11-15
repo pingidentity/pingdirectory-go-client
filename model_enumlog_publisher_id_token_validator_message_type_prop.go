@@ -20,11 +20,11 @@ type EnumlogPublisherIdTokenValidatorMessageTypeProp string
 
 // List of Enumlog-publisher-idTokenValidatorMessageTypeProp
 const (
-	EXTERNAL_SERVER_REQUEST EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-request"
-	EXTERNAL_SERVER_RESPONSE EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-response"
-	VALIDATION EnumlogPublisherIdTokenValidatorMessageTypeProp = "validation"
-	WARNING EnumlogPublisherIdTokenValidatorMessageTypeProp = "warning"
-	ERROR EnumlogPublisherIdTokenValidatorMessageTypeProp = "error"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_REQUEST EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-request"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_RESPONSE EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-response"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_VALIDATION EnumlogPublisherIdTokenValidatorMessageTypeProp = "validation"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_WARNING EnumlogPublisherIdTokenValidatorMessageTypeProp = "warning"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_ERROR EnumlogPublisherIdTokenValidatorMessageTypeProp = "error"
 )
 
 // All allowed values of EnumlogPublisherIdTokenValidatorMessageTypeProp enum

@@ -20,7 +20,7 @@ type EnumfileBasedKeyManagerProviderSchemaUrn string
 
 // List of Enumfile-based-key-manager-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_MANAGER_PROVIDERFILE_BASED EnumfileBasedKeyManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:file-based"
+	ENUMFILEBASEDKEYMANAGERPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0KEY_MANAGER_PROVIDERFILE_BASED EnumfileBasedKeyManagerProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:file-based"
 )
 
 // All allowed values of EnumfileBasedKeyManagerProviderSchemaUrn enum

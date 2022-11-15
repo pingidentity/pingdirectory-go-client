@@ -20,7 +20,7 @@ type EnumsensitiveAttributeSchemaUrn string
 
 // List of Enumsensitive-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SENSITIVE_ATTRIBUTE EnumsensitiveAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sensitive-attribute"
+	ENUMSENSITIVEATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SENSITIVE_ATTRIBUTE EnumsensitiveAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sensitive-attribute"
 )
 
 // All allowed values of EnumsensitiveAttributeSchemaUrn enum

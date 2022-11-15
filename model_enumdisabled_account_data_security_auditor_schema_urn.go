@@ -20,7 +20,7 @@ type EnumdisabledAccountDataSecurityAuditorSchemaUrn string
 
 // List of Enumdisabled-account-data-security-auditorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORDISABLED_ACCOUNT EnumdisabledAccountDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:disabled-account"
+	ENUMDISABLEDACCOUNTDATASECURITYAUDITORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0DATA_SECURITY_AUDITORDISABLED_ACCOUNT EnumdisabledAccountDataSecurityAuditorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:disabled-account"
 )
 
 // All allowed values of EnumdisabledAccountDataSecurityAuditorSchemaUrn enum

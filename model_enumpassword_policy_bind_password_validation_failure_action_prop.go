@@ -20,9 +20,9 @@ type EnumpasswordPolicyBindPasswordValidationFailureActionProp string
 
 // List of Enumpassword-policy-bindPasswordValidationFailureActionProp
 const (
-	REJECT_BIND EnumpasswordPolicyBindPasswordValidationFailureActionProp = "reject-bind"
-	FORCE_PASSWORD_CHANGE EnumpasswordPolicyBindPasswordValidationFailureActionProp = "force-password-change"
-	GENERATE_ACCOUNT_STATUS_NOTIFICATION EnumpasswordPolicyBindPasswordValidationFailureActionProp = "generate-account-status-notification"
+	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_REJECT_BIND EnumpasswordPolicyBindPasswordValidationFailureActionProp = "reject-bind"
+	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_FORCE_PASSWORD_CHANGE EnumpasswordPolicyBindPasswordValidationFailureActionProp = "force-password-change"
+	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_GENERATE_ACCOUNT_STATUS_NOTIFICATION EnumpasswordPolicyBindPasswordValidationFailureActionProp = "generate-account-status-notification"
 )
 
 // All allowed values of EnumpasswordPolicyBindPasswordValidationFailureActionProp enum

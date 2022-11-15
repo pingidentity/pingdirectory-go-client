@@ -20,7 +20,7 @@ type EnumdebugAccessLogPublisherSchemaUrn string
 
 // List of Enumdebug-access-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERDEBUG_ACCESS EnumdebugAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:debug-access"
+	ENUMDEBUGACCESSLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERDEBUG_ACCESS EnumdebugAccessLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:debug-access"
 )
 
 // All allowed values of EnumdebugAccessLogPublisherSchemaUrn enum

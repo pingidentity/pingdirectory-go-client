@@ -20,7 +20,7 @@ type EnumpingOneIdTokenValidatorSchemaUrn string
 
 // List of Enumping-one-id-token-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ID_TOKEN_VALIDATORPING_ONE EnumpingOneIdTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:id-token-validator:ping-one"
+	ENUMPINGONEIDTOKENVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ID_TOKEN_VALIDATORPING_ONE EnumpingOneIdTokenValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:id-token-validator:ping-one"
 )
 
 // All allowed values of EnumpingOneIdTokenValidatorSchemaUrn enum

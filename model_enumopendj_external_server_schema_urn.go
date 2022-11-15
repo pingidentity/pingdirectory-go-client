@@ -20,7 +20,7 @@ type EnumopendjExternalServerSchemaUrn string
 
 // List of Enumopendj-external-serverSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVEROPENDJ EnumopendjExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:opendj"
+	ENUMOPENDJEXTERNALSERVERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTERNAL_SERVEROPENDJ EnumopendjExternalServerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:external-server:opendj"
 )
 
 // All allowed values of EnumopendjExternalServerSchemaUrn enum

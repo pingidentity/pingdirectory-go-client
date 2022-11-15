@@ -20,8 +20,8 @@ type EnumlogPublisherCompressionMechanismProp string
 
 // List of Enumlog-publisher-compressionMechanismProp
 const (
-	NONE EnumlogPublisherCompressionMechanismProp = "none"
-	GZIP EnumlogPublisherCompressionMechanismProp = "gzip"
+	ENUMLOGPUBLISHERCOMPRESSIONMECHANISMPROP_NONE EnumlogPublisherCompressionMechanismProp = "none"
+	ENUMLOGPUBLISHERCOMPRESSIONMECHANISMPROP_GZIP EnumlogPublisherCompressionMechanismProp = "gzip"
 )
 
 // All allowed values of EnumlogPublisherCompressionMechanismProp enum

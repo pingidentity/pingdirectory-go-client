@@ -20,7 +20,7 @@ type EnumthirdPartyConnectionCriteriaSchemaUrn string
 
 // List of Enumthird-party-connection-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_CRITERIATHIRD_PARTY EnumthirdPartyConnectionCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-criteria:third-party"
+	ENUMTHIRDPARTYCONNECTIONCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CONNECTION_CRITERIATHIRD_PARTY EnumthirdPartyConnectionCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:connection-criteria:third-party"
 )
 
 // All allowed values of EnumthirdPartyConnectionCriteriaSchemaUrn enum

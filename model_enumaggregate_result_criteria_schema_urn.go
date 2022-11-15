@@ -20,7 +20,7 @@ type EnumaggregateResultCriteriaSchemaUrn string
 
 // List of Enumaggregate-result-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RESULT_CRITERIAAGGREGATE EnumaggregateResultCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:result-criteria:aggregate"
+	ENUMAGGREGATERESULTCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RESULT_CRITERIAAGGREGATE EnumaggregateResultCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:result-criteria:aggregate"
 )
 
 // All allowed values of EnumaggregateResultCriteriaSchemaUrn enum

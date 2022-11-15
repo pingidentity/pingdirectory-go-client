@@ -20,7 +20,7 @@ type EnumdseeCompatAccessControlHandlerSchemaUrn string
 
 // List of Enumdsee-compat-access-control-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_CONTROL_HANDLERDSEE_COMPAT EnumdseeCompatAccessControlHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-control-handler:dsee-compat"
+	ENUMDSEECOMPATACCESSCONTROLHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_CONTROL_HANDLERDSEE_COMPAT EnumdseeCompatAccessControlHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:access-control-handler:dsee-compat"
 )
 
 // All allowed values of EnumdseeCompatAccessControlHandlerSchemaUrn enum

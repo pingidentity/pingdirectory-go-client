@@ -20,10 +20,10 @@ type EnumlogPublisherExtensionMessageTypeProp string
 
 // List of Enumlog-publisher-extensionMessageTypeProp
 const (
-	ERROR EnumlogPublisherExtensionMessageTypeProp = "error"
-	WARNING EnumlogPublisherExtensionMessageTypeProp = "warning"
-	NOTICE EnumlogPublisherExtensionMessageTypeProp = "notice"
-	INFO EnumlogPublisherExtensionMessageTypeProp = "info"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_ERROR EnumlogPublisherExtensionMessageTypeProp = "error"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_WARNING EnumlogPublisherExtensionMessageTypeProp = "warning"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_NOTICE EnumlogPublisherExtensionMessageTypeProp = "notice"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_INFO EnumlogPublisherExtensionMessageTypeProp = "info"
 )
 
 // All allowed values of EnumlogPublisherExtensionMessageTypeProp enum

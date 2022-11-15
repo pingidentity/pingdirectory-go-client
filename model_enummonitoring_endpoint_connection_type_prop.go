@@ -20,9 +20,9 @@ type EnummonitoringEndpointConnectionTypeProp string
 
 // List of Enummonitoring-endpoint-connectionTypeProp
 const (
-	UNENCRYPTED_UDP EnummonitoringEndpointConnectionTypeProp = "unencrypted-udp"
-	UNENCRYPTED_TCP EnummonitoringEndpointConnectionTypeProp = "unencrypted-tcp"
-	SSL_OVER_TCP EnummonitoringEndpointConnectionTypeProp = "ssl-over-tcp"
+	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_UNENCRYPTED_UDP EnummonitoringEndpointConnectionTypeProp = "unencrypted-udp"
+	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_UNENCRYPTED_TCP EnummonitoringEndpointConnectionTypeProp = "unencrypted-tcp"
+	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_SSL_OVER_TCP EnummonitoringEndpointConnectionTypeProp = "ssl-over-tcp"
 )
 
 // All allowed values of EnummonitoringEndpointConnectionTypeProp enum

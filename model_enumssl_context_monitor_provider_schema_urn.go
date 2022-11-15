@@ -20,7 +20,7 @@ type EnumsslContextMonitorProviderSchemaUrn string
 
 // List of Enumssl-context-monitor-providerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERSSL_CONTEXT EnumsslContextMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:ssl-context"
+	ENUMSSLCONTEXTMONITORPROVIDERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MONITOR_PROVIDERSSL_CONTEXT EnumsslContextMonitorProviderSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:monitor-provider:ssl-context"
 )
 
 // All allowed values of EnumsslContextMonitorProviderSchemaUrn enum

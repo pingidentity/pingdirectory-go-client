@@ -20,7 +20,7 @@ type EnumdynamicGroupImplementationSchemaUrn string
 
 // List of Enumdynamic-group-implementationSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0GROUP_IMPLEMENTATIONDYNAMIC EnumdynamicGroupImplementationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic"
+	ENUMDYNAMICGROUPIMPLEMENTATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GROUP_IMPLEMENTATIONDYNAMIC EnumdynamicGroupImplementationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:group-implementation:dynamic"
 )
 
 // All allowed values of EnumdynamicGroupImplementationSchemaUrn enum

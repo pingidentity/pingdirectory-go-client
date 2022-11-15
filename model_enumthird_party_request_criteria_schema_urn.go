@@ -20,7 +20,7 @@ type EnumthirdPartyRequestCriteriaSchemaUrn string
 
 // List of Enumthird-party-request-criteriaSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0REQUEST_CRITERIATHIRD_PARTY EnumthirdPartyRequestCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party"
+	ENUMTHIRDPARTYREQUESTCRITERIASCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0REQUEST_CRITERIATHIRD_PARTY EnumthirdPartyRequestCriteriaSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party"
 )
 
 // All allowed values of EnumthirdPartyRequestCriteriaSchemaUrn enum

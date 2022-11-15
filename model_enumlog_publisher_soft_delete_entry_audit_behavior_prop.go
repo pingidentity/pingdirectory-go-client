@@ -20,8 +20,8 @@ type EnumlogPublisherSoftDeleteEntryAuditBehaviorProp string
 
 // List of Enumlog-publisher-softDeleteEntryAuditBehaviorProp
 const (
-	INCLUDED EnumlogPublisherSoftDeleteEntryAuditBehaviorProp = "included"
-	EXCLUDED EnumlogPublisherSoftDeleteEntryAuditBehaviorProp = "excluded"
+	ENUMLOGPUBLISHERSOFTDELETEENTRYAUDITBEHAVIORPROP_INCLUDED EnumlogPublisherSoftDeleteEntryAuditBehaviorProp = "included"
+	ENUMLOGPUBLISHERSOFTDELETEENTRYAUDITBEHAVIORPROP_EXCLUDED EnumlogPublisherSoftDeleteEntryAuditBehaviorProp = "excluded"
 )
 
 // All allowed values of EnumlogPublisherSoftDeleteEntryAuditBehaviorProp enum

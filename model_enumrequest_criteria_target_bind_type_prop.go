@@ -20,8 +20,8 @@ type EnumrequestCriteriaTargetBindTypeProp string
 
 // List of Enumrequest-criteria-targetBindTypeProp
 const (
-	SIMPLE EnumrequestCriteriaTargetBindTypeProp = "simple"
-	SASL EnumrequestCriteriaTargetBindTypeProp = "sasl"
+	ENUMREQUESTCRITERIATARGETBINDTYPEPROP_SIMPLE EnumrequestCriteriaTargetBindTypeProp = "simple"
+	ENUMREQUESTCRITERIATARGETBINDTYPEPROP_SASL EnumrequestCriteriaTargetBindTypeProp = "sasl"
 )
 
 // All allowed values of EnumrequestCriteriaTargetBindTypeProp enum

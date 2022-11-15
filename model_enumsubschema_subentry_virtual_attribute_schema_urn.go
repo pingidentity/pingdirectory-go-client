@@ -20,7 +20,7 @@ type EnumsubschemaSubentryVirtualAttributeSchemaUrn string
 
 // List of Enumsubschema-subentry-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTESUBSCHEMA_SUBENTRY EnumsubschemaSubentryVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:subschema-subentry"
+	ENUMSUBSCHEMASUBENTRYVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTESUBSCHEMA_SUBENTRY EnumsubschemaSubentryVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:subschema-subentry"
 )
 
 // All allowed values of EnumsubschemaSubentryVirtualAttributeSchemaUrn enum

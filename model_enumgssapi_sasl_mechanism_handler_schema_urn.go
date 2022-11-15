@@ -20,7 +20,7 @@ type EnumgssapiSaslMechanismHandlerSchemaUrn string
 
 // List of Enumgssapi-sasl-mechanism-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERGSSAPI EnumgssapiSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:gssapi"
+	ENUMGSSAPISASLMECHANISMHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0SASL_MECHANISM_HANDLERGSSAPI EnumgssapiSaslMechanismHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:sasl-mechanism-handler:gssapi"
 )
 
 // All allowed values of EnumgssapiSaslMechanismHandlerSchemaUrn enum

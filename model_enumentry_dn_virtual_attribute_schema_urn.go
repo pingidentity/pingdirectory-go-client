@@ -20,7 +20,7 @@ type EnumentryDnVirtualAttributeSchemaUrn string
 
 // List of Enumentry-dn-virtual-attributeSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEENTRY_DN EnumentryDnVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-dn"
+	ENUMENTRYDNVIRTUALATTRIBUTESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0VIRTUAL_ATTRIBUTEENTRY_DN EnumentryDnVirtualAttributeSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-dn"
 )
 
 // All allowed values of EnumentryDnVirtualAttributeSchemaUrn enum

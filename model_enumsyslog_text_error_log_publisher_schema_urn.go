@@ -20,7 +20,7 @@ type EnumsyslogTextErrorLogPublisherSchemaUrn string
 
 // List of Enumsyslog-text-error-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERSYSLOG_TEXT_ERROR EnumsyslogTextErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-text-error"
+	ENUMSYSLOGTEXTERRORLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERSYSLOG_TEXT_ERROR EnumsyslogTextErrorLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:syslog-text-error"
 )
 
 // All allowed values of EnumsyslogTextErrorLogPublisherSchemaUrn enum

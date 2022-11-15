@@ -20,7 +20,7 @@ type EnumapproximateMatchingRuleSchemaUrn string
 
 // List of Enumapproximate-matching-ruleSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULEAPPROXIMATE EnumapproximateMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
+	ENUMAPPROXIMATEMATCHINGRULESCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0MATCHING_RULEAPPROXIMATE EnumapproximateMatchingRuleSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:matching-rule:approximate"
 )
 
 // All allowed values of EnumapproximateMatchingRuleSchemaUrn enum

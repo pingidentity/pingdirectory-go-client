@@ -20,9 +20,9 @@ type EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp string
 
 // List of Enumglobal-configuration-invalidAttributeSyntaxBehaviorProp
 const (
-	ACCEPT EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "accept"
-	REJECT EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "reject"
-	WARN EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "warn"
+	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_ACCEPT EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "accept"
+	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_REJECT EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "reject"
+	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_WARN EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "warn"
 )
 
 // All allowed values of EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp enum

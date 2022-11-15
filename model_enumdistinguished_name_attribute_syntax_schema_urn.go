@@ -20,7 +20,7 @@ type EnumdistinguishedNameAttributeSyntaxSchemaUrn string
 
 // List of Enumdistinguished-name-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXDISTINGUISHED_NAME EnumdistinguishedNameAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:distinguished-name"
+	ENUMDISTINGUISHEDNAMEATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXDISTINGUISHED_NAME EnumdistinguishedNameAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:distinguished-name"
 )
 
 // All allowed values of EnumdistinguishedNameAttributeSyntaxSchemaUrn enum

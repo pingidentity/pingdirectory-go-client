@@ -20,7 +20,7 @@ type EnumjsonAttributeConstraintsSchemaUrn string
 
 // List of Enumjson-attribute-constraintsSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0JSON_ATTRIBUTE_CONSTRAINTS EnumjsonAttributeConstraintsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:json-attribute-constraints"
+	ENUMJSONATTRIBUTECONSTRAINTSSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0JSON_ATTRIBUTE_CONSTRAINTS EnumjsonAttributeConstraintsSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:json-attribute-constraints"
 )
 
 // All allowed values of EnumjsonAttributeConstraintsSchemaUrn enum

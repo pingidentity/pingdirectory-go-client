@@ -20,9 +20,9 @@ type EnumserverInstancePreferredSecurityProp string
 
 // List of Enumserver-instance-preferredSecurityProp
 const (
-	NONE EnumserverInstancePreferredSecurityProp = "none"
-	SSL EnumserverInstancePreferredSecurityProp = "ssl"
-	STARTTLS EnumserverInstancePreferredSecurityProp = "starttls"
+	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_NONE EnumserverInstancePreferredSecurityProp = "none"
+	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_SSL EnumserverInstancePreferredSecurityProp = "ssl"
+	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_STARTTLS EnumserverInstancePreferredSecurityProp = "starttls"
 )
 
 // All allowed values of EnumserverInstancePreferredSecurityProp enum

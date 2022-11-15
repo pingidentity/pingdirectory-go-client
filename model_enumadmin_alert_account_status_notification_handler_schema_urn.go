@@ -20,7 +20,7 @@ type EnumadminAlertAccountStatusNotificationHandlerSchemaUrn string
 
 // List of Enumadmin-alert-account-status-notification-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERADMIN_ALERT EnumadminAlertAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:admin-alert"
+	ENUMADMINALERTACCOUNTSTATUSNOTIFICATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCOUNT_STATUS_NOTIFICATION_HANDLERADMIN_ALERT EnumadminAlertAccountStatusNotificationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:account-status-notification-handler:admin-alert"
 )
 
 // All allowed values of EnumadminAlertAccountStatusNotificationHandlerSchemaUrn enum

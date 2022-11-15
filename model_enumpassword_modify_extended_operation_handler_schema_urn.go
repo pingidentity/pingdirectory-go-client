@@ -20,7 +20,7 @@ type EnumpasswordModifyExtendedOperationHandlerSchemaUrn string
 
 // List of Enumpassword-modify-extended-operation-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERPASSWORD_MODIFY EnumpasswordModifyExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-modify"
+	ENUMPASSWORDMODIFYEXTENDEDOPERATIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0EXTENDED_OPERATION_HANDLERPASSWORD_MODIFY EnumpasswordModifyExtendedOperationHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:extended-operation-handler:password-modify"
 )
 
 // All allowed values of EnumpasswordModifyExtendedOperationHandlerSchemaUrn enum

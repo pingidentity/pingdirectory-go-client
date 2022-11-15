@@ -20,7 +20,7 @@ type EnumthirdPartyChangeSubscriptionHandlerSchemaUrn string
 
 // List of Enumthird-party-change-subscription-handlerSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION_HANDLERTHIRD_PARTY EnumthirdPartyChangeSubscriptionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party"
+	ENUMTHIRDPARTYCHANGESUBSCRIPTIONHANDLERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0CHANGE_SUBSCRIPTION_HANDLERTHIRD_PARTY EnumthirdPartyChangeSubscriptionHandlerSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party"
 )
 
 // All allowed values of EnumthirdPartyChangeSubscriptionHandlerSchemaUrn enum

@@ -20,7 +20,7 @@ type EnumdelayRecurringTaskSchemaUrn string
 
 // List of Enumdelay-recurring-taskSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKDELAY EnumdelayRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:delay"
+	ENUMDELAYRECURRINGTASKSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0RECURRING_TASKDELAY EnumdelayRecurringTaskSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:recurring-task:delay"
 )
 
 // All allowed values of EnumdelayRecurringTaskSchemaUrn enum

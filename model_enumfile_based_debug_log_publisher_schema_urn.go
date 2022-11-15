@@ -20,7 +20,7 @@ type EnumfileBasedDebugLogPublisherSchemaUrn string
 
 // List of Enumfile-based-debug-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_DEBUG EnumfileBasedDebugLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-debug"
+	ENUMFILEBASEDDEBUGLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERFILE_BASED_DEBUG EnumfileBasedDebugLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:file-based-debug"
 )
 
 // All allowed values of EnumfileBasedDebugLogPublisherSchemaUrn enum

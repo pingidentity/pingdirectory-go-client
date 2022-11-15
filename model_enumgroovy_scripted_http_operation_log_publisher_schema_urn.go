@@ -20,7 +20,7 @@ type EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn string
 
 // List of Enumgroovy-scripted-http-operation-log-publisherSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_HTTP_OPERATION EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-http-operation"
+	ENUMGROOVYSCRIPTEDHTTPOPERATIONLOGPUBLISHERSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0LOG_PUBLISHERGROOVY_SCRIPTED_HTTP_OPERATION EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-http-operation"
 )
 
 // All allowed values of EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn enum

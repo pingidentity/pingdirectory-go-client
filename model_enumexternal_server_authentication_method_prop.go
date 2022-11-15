@@ -20,10 +20,10 @@ type EnumexternalServerAuthenticationMethodProp string
 
 // List of Enumexternal-server-authenticationMethodProp
 const (
-	NONE EnumexternalServerAuthenticationMethodProp = "none"
-	SIMPLE EnumexternalServerAuthenticationMethodProp = "simple"
-	EXTERNAL EnumexternalServerAuthenticationMethodProp = "external"
-	INTER_SERVER EnumexternalServerAuthenticationMethodProp = "inter-server"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_NONE EnumexternalServerAuthenticationMethodProp = "none"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_SIMPLE EnumexternalServerAuthenticationMethodProp = "simple"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_EXTERNAL EnumexternalServerAuthenticationMethodProp = "external"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_INTER_SERVER EnumexternalServerAuthenticationMethodProp = "inter-server"
 )
 
 // All allowed values of EnumexternalServerAuthenticationMethodProp enum

@@ -20,7 +20,7 @@ type EnumsimilarityBasedPasswordValidatorSchemaUrn string
 
 // List of Enumsimilarity-based-password-validatorSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORSIMILARITY_BASED EnumsimilarityBasedPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:similarity-based"
+	ENUMSIMILARITYBASEDPASSWORDVALIDATORSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0PASSWORD_VALIDATORSIMILARITY_BASED EnumsimilarityBasedPasswordValidatorSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:password-validator:similarity-based"
 )
 
 // All allowed values of EnumsimilarityBasedPasswordValidatorSchemaUrn enum

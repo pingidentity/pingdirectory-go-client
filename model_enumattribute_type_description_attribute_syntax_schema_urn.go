@@ -20,7 +20,7 @@ type EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn string
 
 // List of Enumattribute-type-description-attribute-syntaxSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXATTRIBUTE_TYPE_DESCRIPTION EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:attribute-type-description"
+	ENUMATTRIBUTETYPEDESCRIPTIONATTRIBUTESYNTAXSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0ATTRIBUTE_SYNTAXATTRIBUTE_TYPE_DESCRIPTION EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:attribute-type-description"
 )
 
 // All allowed values of EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn enum

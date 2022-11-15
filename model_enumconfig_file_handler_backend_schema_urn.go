@@ -20,7 +20,7 @@ type EnumconfigFileHandlerBackendSchemaUrn string
 
 // List of Enumconfig-file-handler-backendSchemaUrn
 const (
-	URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDCONFIG_FILE_HANDLER EnumconfigFileHandlerBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler"
+	ENUMCONFIGFILEHANDLERBACKENDSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0BACKENDCONFIG_FILE_HANDLER EnumconfigFileHandlerBackendSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler"
 )
 
 // All allowed values of EnumconfigFileHandlerBackendSchemaUrn enum
