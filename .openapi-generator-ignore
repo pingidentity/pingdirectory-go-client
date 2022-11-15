@@ -21,3 +21,11 @@
 #docs/*.md
 # Then explicitly reverse the ignore rule for a single file:
 #!docs/README.md
+
+# Don't generate files for ...Shared and ...AllOf enums. The generator creates these but they are not used.
+model_*_request_all_of.go
+model_*_response_all_of.go
+model_*_shared.go
+docs/Add*RequestAllOf.md
+docs/*ResponseAllOf.md
+docs/*Shared.md
