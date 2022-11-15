@@ -1,0 +1,1062 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the HTTP Servlet Extension config object
+  title: PingData HTTP Servlet Extension Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access http-servlet-extensions
+  name: http-servlet-extension
+paths:
+  /http-servlet-extensions:
+    post:
+      summary: Add a new HTTP Servlet Extension to the config
+      operationId: add-http-servlet-extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-quickstart-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-request'
+              - $ref: '#/components/schemas/add-availability-state-request'
+              - $ref: '#/components/schemas/add-file-server-request'
+              - $ref: '#/components/schemas/add-ldap-mapped-scim-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new HTTP Servlet Extension in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/quickstart-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/availability-state-response'
+                - $ref: '#/components/schemas/file-server-response'
+                - $ref: '#/components/schemas/ldap-mapped-scim-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The HTTP Servlet Extension already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /http-servlet-extensions/{http-servlet-extension-name}:
+    delete:
+      summary: Delete a HTTP Servlet Extension
+      operationId: delete-http-servlet-extension
+      parameters:
+      - description: Name of the HTTP Servlet Extension to be deleted
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The HTTP Servlet Extension does not exist
+        "409":
+          description: The HTTP Servlet Extension cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single HTTP Servlet Extension
+      operationId: get-http-servlet-extension
+      parameters:
+      - description: Name of the HTTP Servlet Extension to be read
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/delegated-admin-response'
+                - $ref: '#/components/schemas/quickstart-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/availability-state-response'
+                - $ref: '#/components/schemas/file-server-response'
+                - $ref: '#/components/schemas/velocity-response'
+                - $ref: '#/components/schemas/consent-response'
+                - $ref: '#/components/schemas/config-response'
+                - $ref: '#/components/schemas/scim2-response'
+                - $ref: '#/components/schemas/directory-rest-api-response'
+                - $ref: '#/components/schemas/ldap-mapped-scim-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The HTTP Servlet Extension does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing HTTP Servlet Extension by name
+      operationId: update-http-servlet-extension
+      parameters:
+      - description: Name of the HTTP Servlet Extension to be updated
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-http-servlet-extension-request'
+        description: Update an existing HTTP Servlet Extension
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/delegated-admin-response'
+                - $ref: '#/components/schemas/quickstart-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/availability-state-response'
+                - $ref: '#/components/schemas/file-server-response'
+                - $ref: '#/components/schemas/velocity-response'
+                - $ref: '#/components/schemas/consent-response'
+                - $ref: '#/components/schemas/config-response'
+                - $ref: '#/components/schemas/scim2-response'
+                - $ref: '#/components/schemas/directory-rest-api-response'
+                - $ref: '#/components/schemas/ldap-mapped-scim-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The HTTP Servlet Extension does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    delegated-admin-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelegated-adminSchemaUrn'
+        basicAuthEnabled:
+          type: boolean
+          description: Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+        identityMapper:
+          type: string
+          description: Specifies the Identity Mapper that is to be used for associating user entries with basic authentication user names.
+        accessTokenValidator:
+          type: array
+          items:
+            type: string
+            description: If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Delegated Admin HTTP Servlet Extension.
+        accessTokenScope:
+          type: string
+          description: The name of a scope that must be present in an access token accepted by the Delegated Admin HTTP Servlet Extension.
+        audience:
+          type: string
+          description: A string or URI that identifies the Delegated Admin HTTP Servlet Extension in the context of OAuth2 authorization.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+    Enumdelegated-adminSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:delegated-admin"
+    add-quickstart-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/quickstart-shared'
+    quickstart-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/quickstart-shared'
+    quickstart-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumquickstartSchemaUrn'
+        server:
+          type: string
+          description: Specifies the PingFederate server to be configured.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+    EnumquickstartSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:quickstart"
+    add-groovy-scripted-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
+        scriptClass:
+          type: string
+          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - scriptClass
+    Enumgroovy-scriptedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:groovy-scripted"
+    add-availability-state-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/availability-state-shared'
+    availability-state-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/availability-state-shared'
+    availability-state-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumavailability-stateSchemaUrn'
+        baseContextPath:
+          type: string
+          description: Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
+        availableStatusCode:
+          type: integer
+          description: Specifies the HTTP status code that the servlet should return if the server considers itself to be available.
+        degradedStatusCode:
+          type: integer
+          description: Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded.
+        unavailableStatusCode:
+          type: integer
+          description: Specifies the HTTP status code that the servlet should return if the server considers itself to be unavailable.
+        overrideStatusCode:
+          type: integer
+          description: Specifies a HTTP status code that the servlet should always return, regardless of the server's availability. If this value is defined, it will override the availability-based return codes.
+        includeResponseBody:
+          type: boolean
+          description: Indicates whether the response should include a body that is a JSON object.
+        additionalResponseContents:
+          type: string
+          description: A JSON-formatted string containing additional fields to be returned in the response body. For example, an additional-response-contents value of '{ "key": "value" }' would add the key and value to the root of the JSON response body.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - baseContextPath
+      - availableStatusCode
+      - degradedStatusCode
+      - unavailableStatusCode
+    Enumavailability-stateSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:availability-state"
+    add-file-server-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/file-server-shared'
+    file-server-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-server-shared'
+    file-server-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-serverSchemaUrn'
+        baseContextPath:
+          type: string
+          description: Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path.
+        documentRootDirectory:
+          type: string
+          description: Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory.
+        enableDirectoryIndexing:
+          type: boolean
+          description: Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file.
+        indexFile:
+          type: array
+          items:
+            type: string
+            description: Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file.
+        mimeTypesFile:
+          type: string
+          description: Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested file.
+        defaultMIMEType:
+          type: string
+          description: Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found.
+        requireAuthentication:
+          type: boolean
+          description: Indicates whether the servlet extension should only accept requests from authenticated clients.
+        allowedAuthenticationType:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumallowedAuthenticationTypeProp'
+        accessTokenValidator:
+          type: array
+          items:
+            type: string
+            description: The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token.
+        idTokenValidator:
+          type: array
+          items:
+            type: string
+            description: The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token.
+        requireFileServletAccessPrivilege:
+          type: boolean
+          description: Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege.
+        requireGroup:
+          type: array
+          items:
+            type: string
+            description: The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access.
+        identityMapper:
+          type: string
+          description: The identity mapper that will be used to identify the entry with which a username is associated.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - baseContextPath
+      - documentRootDirectory
+    Enumfile-serverSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:file-server"
+    velocity-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumvelocitySchemaUrn'
+        baseContextPath:
+          type: string
+          description: The context path to use to access all template-based and static content. The value must start with a forward slash and must represent a valid HTTP context path.
+        staticContextPath:
+          type: string
+          description: The path below the base context path by which static, non-template content such as images, CSS, and Javascript files are accessible.
+        staticContentDirectory:
+          type: string
+          description: Specifies the base directory in which static, non-template content such as images, CSS, and Javascript files are stored on the filesystem.
+        staticCustomDirectory:
+          type: string
+          description: Specifies the base directory in which custom static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. Files in this directory will override those with the same name in the directory specified by the static-content-directory property.
+        templateDirectory:
+          type: array
+          items:
+            type: string
+            description: Specifies an ordered list of directories in which to search for the template files.
+        exposeRequestAttributes:
+          type: boolean
+          description: Specifies whether the HTTP request will be exposed to templates.
+        exposeSessionAttributes:
+          type: boolean
+          description: Specifies whether the HTTP session will be exposed to templates.
+        exposeServerContext:
+          type: boolean
+          description: Specifies whether a server context will be exposed under context key 'ubid_server' for all template contexts.
+        allowContextOverride:
+          type: boolean
+          description: Indicates whether context providers may override existing context objects with new values.
+        mimeTypesFile:
+          type: string
+          description: Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested static content file.
+        defaultMIMEType:
+          type: string
+          description: Specifies the default value that will be used in the response's Content-Type header that indicates the type of content to return.
+        characterEncoding:
+          type: string
+          description: Specifies the value that will be used for all responses' Content-Type headers' charset parameter that indicates the character encoding of the document.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all template page requests.
+        staticResponseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for static content requests such as images and scripts.
+        requireAuthentication:
+          type: boolean
+          description: Require authentication when accessing Velocity templates.
+        identityMapper:
+          type: string
+          description: Specifies the name of the identity mapper that is to be used for associating basic authentication credentials with user entries.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - baseContextPath
+      - templateDirectory
+    EnumvelocitySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:velocity"
+    consent-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumconsentSchemaUrn'
+        bearerTokenAuthEnabled:
+          type: boolean
+          description: Enables HTTP bearer token authentication.
+        basicAuthEnabled:
+          type: boolean
+          description: Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+        identityMapper:
+          type: string
+          description: Specifies the Identity Mapper that is to be used for associating basic authentication usernames with DNs.
+        accessTokenValidator:
+          type: array
+          items:
+            type: string
+            description: If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Consent HTTP Servlet Extension.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+    EnumconsentSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:consent"
+    config-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumconfigSchemaUrn'
+        identityMapper:
+          type: string
+          description: Specifies the name of the identity mapper that is to be used for associating user entries with basic authentication user names.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+    EnumconfigSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:config"
+    scim2-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumscim2SchemaUrn'
+        baseContextPath:
+          type: string
+          description: The context path to use to access the SCIM 2.0 interface. The value must start with a forward slash and must represent a valid HTTP context path.
+        accessTokenValidator:
+          type: array
+          items:
+            type: string
+            description: If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this SCIM2 HTTP Servlet Extension.
+        mapAccessTokensToLocalUsers:
+          $ref: '#/components/schemas/EnummapAccessTokensToLocalUsersProp'
+        debugEnabled:
+          type: boolean
+          description: Enables debug logging of the SCIM 2.0 SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.broker.http.scim2.extension.SCIM2HTTPServletExtension.
+        debugLevel:
+          $ref: '#/components/schemas/EnumdebugLevelProp'
+        debugType:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumdebugTypeProp'
+        includeStackTrace:
+          type: boolean
+          description: Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
+        swaggerEnabled:
+          type: boolean
+          description: Indicates whether the SCIM2 HTTP Servlet Extension will generate a Swagger specification document.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - baseContextPath
+      - debugLevel
+      - debugType
+      - includeStackTrace
+    Enumscim2SchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:scim2"
+    directory-rest-api-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdirectory-rest-apiSchemaUrn'
+        basicAuthEnabled:
+          type: boolean
+          description: Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
+        identityMapper:
+          type: string
+          description: Specifies the Identity Mapper that is to be used for associating user entries with basic authentication usernames.
+        accessTokenValidator:
+          type: array
+          items:
+            type: string
+            description: If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Directory REST API HTTP Servlet Extension.
+        accessTokenScope:
+          type: string
+          description: The name of a scope that must be present in an access token accepted by the Directory REST API HTTP Servlet Extension.
+        audience:
+          type: string
+          description: A string or URI that identifies the Directory REST API HTTP Servlet Extension in the context of OAuth2 authorization.
+        maxPageSize:
+          type: integer
+          description: The maximum number of entries to be returned in one page of search results.
+        schemasEndpointObjectclass:
+          type: array
+          items:
+            type: string
+            description: The list of object classes which will be returned by the schemas endpoint.
+        defaultOperationalAttribute:
+          type: array
+          items:
+            type: string
+            description: A set of operational attributes that will be returned with entries by default.
+        rejectExpansionAttribute:
+          type: array
+          items:
+            type: string
+            description: A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups.
+        allowedControl:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumallowedControlProp'
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+    Enumdirectory-rest-apiSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:directory-rest-api"
+    add-ldap-mapped-scim-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/ldap-mapped-scim-shared'
+    ldap-mapped-scim-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ldap-mapped-scim-shared'
+    ldap-mapped-scim-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-mapped-scimSchemaUrn'
+        OAuthTokenHandler:
+          type: string
+          description: Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
+        basicAuthEnabled:
+          type: boolean
+          description: Enables HTTP Basic authentication, using a username and password.
+        identityMapper:
+          type: string
+          description: Specifies the name of the identity mapper that is to be used to match the username included in the HTTP Basic authentication header to the corresponding user in the directory.
+        resourceMappingFile:
+          type: string
+          description: The path to an XML file defining the resources supported by the SCIM interface and the SCIM-to-LDAP attribute mappings to use.
+        includeLDAPObjectclass:
+          type: array
+          items:
+            type: string
+            description: Specifies the LDAP object classes that should be exposed directly as SCIM resources.
+        excludeLDAPObjectclass:
+          type: array
+          items:
+            type: string
+            description: Specifies the LDAP object classes that should be not be exposed directly as SCIM resources.
+        includeLDAPBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches of the DIT that should be exposed via the Identity Access API.
+        excludeLDAPBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches of the DIT that should not be exposed via the Identity Access API.
+        entityTagLDAPAttribute:
+          type: string
+          description: Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support.
+        baseContextPath:
+          type: string
+          description: The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path.
+        temporaryDirectory:
+          type: string
+          description: Specifies the location of the directory that is used to create temporary files containing SCIM request data.
+        temporaryDirectoryPermissions:
+          type: string
+          description: Specifies the permissions that should be applied to the directory that is used to create temporary files.
+        maxResults:
+          type: integer
+          description: The maximum number of resources that are returned in a response.
+        bulkMaxOperations:
+          type: integer
+          description: The maximum number of operations that are permitted in a bulk request.
+        bulkMaxPayloadSize:
+          type: string
+          description: The maximum payload size in bytes of a bulk request.
+        bulkMaxConcurrentRequests:
+          type: integer
+          description: The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
+        debugEnabled:
+          type: boolean
+          description: Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
+        debugLevel:
+          $ref: '#/components/schemas/EnumdebugLevelProp'
+        debugType:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumdebugTypeProp'
+        includeStackTrace:
+          type: boolean
+          description: Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - baseContextPath
+      - temporaryDirectory
+      - temporaryDirectoryPermissions
+      - debugLevel
+      - debugType
+      - includeStackTrace
+    Enumldap-mapped-scimSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:ldap-mapped-scim"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new HTTP Servlet Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the HTTP Servlet Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this HTTP Servlet Extension
+        crossOriginPolicy:
+          type: string
+          description: The cross-origin request policy to use for the HTTP Servlet Extension.
+        responseHeader:
+          type: array
+          items:
+            type: string
+            description: Specifies HTTP header fields and values added to response headers for all requests.
+        correlationIDResponseHeader:
+          type: string
+          description: Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
+    update-http-servlet-extension-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumdebugLevelProp:
+      type: string
+      enum:
+      - "severe"
+      - "warning"
+      - "info"
+      - "config"
+      - "fine"
+      - "finer"
+      - "finest"
+      description: The minimum debug level that should be used for messages to be logged.
+    EnumdebugTypeProp:
+      type: string
+      enum:
+      - "coding-error"
+      - "exception"
+      - "other"
+      description: The types of debug messages that should be logged.
+    EnumallowedAuthenticationTypeProp:
+      type: string
+      enum:
+      - "basic"
+      - "access-token"
+      - "id-token"
+      description: The types of authentication that may be used to authenticate to the file servlet.
+    EnummapAccessTokensToLocalUsersProp:
+      type: string
+      enum:
+      - "disabled"
+      - "optional"
+      - "required"
+      description: Indicates whether the SCIM2 servlet should attempt to map the presented access token to a local user.
+    EnumallowedControlProp:
+      type: string
+      enum:
+      - "assertion"
+      - "assured-replication"
+      - "exclude-branch"
+      - "generate-password"
+      - "get-effective-rights"
+      - "ignore-no-user-modification"
+      - "intermediate-client"
+      - "join"
+      - "manage-dsa-it"
+      - "matched-values"
+      - "matching-entry-count"
+      - "name-with-entryuuid"
+      - "no-op"
+      - "operation-purpose"
+      - "password-update-behavior"
+      - "password-validation-details"
+      - "permissive-modify"
+      - "permit-unindexed-search"
+      - "post-read"
+      - "pre-read"
+      - "proxied-authorization-v1"
+      - "proxied-authorization-v2"
+      - "purge-password"
+      - "real-attributes-only"
+      - "reject-unindexed-search"
+      - "retire-password"
+      - "suppress-referential-integrity"
+      - "uniqueness"
+      - "virtual-attributes-only"
+      description: Specifies the names of any request controls that should be allowed by the Directory REST API. Any request that contains a critical control not in this list will be rejected. Any non-critical request control which is not supported by the Directory REST API will be removed from the request.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

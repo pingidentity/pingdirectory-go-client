@@ -1,0 +1,218 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Soft Delete Policy config object
+  title: PingData Soft Delete Policy Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access soft-delete-policies
+  name: soft-delete-policy
+paths:
+  /soft-delete-policies:
+    post:
+      summary: Add a new Soft Delete Policy to the config
+      operationId: add-soft-delete-policy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-soft-delete-policy-request'
+        description: Create a new Soft Delete Policy in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/soft-delete-policy-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Soft Delete Policy already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /soft-delete-policies/{soft-delete-policy-name}:
+    delete:
+      summary: Delete a Soft Delete Policy
+      operationId: delete-soft-delete-policy
+      parameters:
+      - description: Name of the Soft Delete Policy to be deleted
+        explode: false
+        in: path
+        name: soft-delete-policy-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Soft Delete Policy does not exist
+        "409":
+          description: The Soft Delete Policy cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Soft Delete Policy
+      operationId: get-soft-delete-policy
+      parameters:
+      - description: Name of the Soft Delete Policy to be read
+        explode: false
+        in: path
+        name: soft-delete-policy-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/soft-delete-policy-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Soft Delete Policy does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Soft Delete Policy by name
+      operationId: update-soft-delete-policy
+      parameters:
+      - description: Name of the Soft Delete Policy to be updated
+        explode: false
+        in: path
+        name: soft-delete-policy-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-soft-delete-policy-request'
+        description: Update an existing Soft Delete Policy
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/soft-delete-policy-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Soft Delete Policy does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-soft-delete-policy-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Soft Delete Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/soft-delete-policy-shared'
+    soft-delete-policy-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Soft Delete Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/soft-delete-policy-shared'
+    soft-delete-policy-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsoft-delete-policySchemaUrn'
+        description:
+          type: string
+          description: A description for this Soft Delete Policy
+        autoSoftDeleteConnectionCriteria:
+          type: string
+          description: Connection criteria used to automatically identify a delete operation for processing as a soft delete request.
+        autoSoftDeleteRequestCriteria:
+          type: string
+          description: Request criteria used to automatically identify a delete operation for processing as a soft delete request.
+        softDeleteRetentionTime:
+          type: string
+          description: Specifies the maximum length of time that soft delete entries are retained before they are eligible to purged automatically.
+        softDeleteRetainNumberOfEntries:
+          type: integer
+          description: Specifies the number of soft deleted entries to retain before the oldest entries are purged.
+    Enumsoft-delete-policySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:soft-delete-policy"
+    update-soft-delete-policy-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

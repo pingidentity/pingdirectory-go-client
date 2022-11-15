@@ -1,0 +1,203 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Topology Admin User config object
+  title: PingData Topology Admin User Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access topology-admin-users
+  name: topology-admin-user
+paths:
+  /topology-admin-users:
+    post:
+      summary: Add a new Topology Admin User to the config
+      operationId: add-topology-admin-user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-topology-admin-user-request'
+        description: Create a new Topology Admin User in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/topology-admin-user-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Topology Admin User already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /topology-admin-users/{topology-admin-user-name}:
+    delete:
+      summary: Delete a Topology Admin User
+      operationId: delete-topology-admin-user
+      parameters:
+      - description: Name of the Topology Admin User to be deleted
+        explode: false
+        in: path
+        name: topology-admin-user-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Topology Admin User does not exist
+        "409":
+          description: The Topology Admin User cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Topology Admin User
+      operationId: get-topology-admin-user
+      parameters:
+      - description: Name of the Topology Admin User to be read
+        explode: false
+        in: path
+        name: topology-admin-user-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/topology-admin-user-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Topology Admin User does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Topology Admin User by name
+      operationId: update-topology-admin-user
+      parameters:
+      - description: Name of the Topology Admin User to be updated
+        explode: false
+        in: path
+        name: topology-admin-user-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-topology-admin-user-request'
+        description: Update an existing Topology Admin User
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/topology-admin-user-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Topology Admin User does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-topology-admin-user-request:
+      allOf:
+      - type: object
+        properties:
+          userName:
+            description: Name of the new Topology Admin User
+            type: string
+        required:
+        - userName
+      - $ref: '#/components/schemas/topology-admin-user-shared'
+    topology-admin-user-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Topology Admin User
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/topology-admin-user-shared'
+    topology-admin-user-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumtopology-admin-userSchemaUrn'
+    Enumtopology-admin-userSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:topology-admin-user"
+    update-topology-admin-user-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

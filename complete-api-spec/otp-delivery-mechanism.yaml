@@ -1,0 +1,374 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the OTP Delivery Mechanism config object
+  title: PingData OTP Delivery Mechanism Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access otp-delivery-mechanisms
+  name: otp-delivery-mechanism
+paths:
+  /otp-delivery-mechanisms:
+    post:
+      summary: Add a new OTP Delivery Mechanism to the config
+      operationId: add-otp-delivery-mechanism
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-twilio-request'
+              - $ref: '#/components/schemas/add-email-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new OTP Delivery Mechanism in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/twilio-response'
+                - $ref: '#/components/schemas/email-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The OTP Delivery Mechanism already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /otp-delivery-mechanisms/{otp-delivery-mechanism-name}:
+    delete:
+      summary: Delete a OTP Delivery Mechanism
+      operationId: delete-otp-delivery-mechanism
+      parameters:
+      - description: Name of the OTP Delivery Mechanism to be deleted
+        explode: false
+        in: path
+        name: otp-delivery-mechanism-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The OTP Delivery Mechanism does not exist
+        "409":
+          description: The OTP Delivery Mechanism cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single OTP Delivery Mechanism
+      operationId: get-otp-delivery-mechanism
+      parameters:
+      - description: Name of the OTP Delivery Mechanism to be read
+        explode: false
+        in: path
+        name: otp-delivery-mechanism-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/twilio-response'
+                - $ref: '#/components/schemas/email-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The OTP Delivery Mechanism does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing OTP Delivery Mechanism by name
+      operationId: update-otp-delivery-mechanism
+      parameters:
+      - description: Name of the OTP Delivery Mechanism to be updated
+        explode: false
+        in: path
+        name: otp-delivery-mechanism-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-otp-delivery-mechanism-request'
+        description: Update an existing OTP Delivery Mechanism
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/twilio-response'
+                - $ref: '#/components/schemas/email-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The OTP Delivery Mechanism does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-twilio-request:
+      allOf:
+      - type: object
+        properties:
+          mechanismName:
+            description: Name of the new OTP Delivery Mechanism
+            type: string
+        required:
+        - mechanismName
+      - $ref: '#/components/schemas/twilio-shared'
+    twilio-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the OTP Delivery Mechanism
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/twilio-shared'
+    twilio-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumtwilioSchemaUrn'
+        twilioAccountSID:
+          type: string
+          description: The unique identifier assigned to the Twilio account that will be used.
+        twilioAuthToken:
+          type: string
+          format: password
+          description: The auth token for the Twilio account that will be used.
+        twilioAuthTokenPassphraseProvider:
+          type: string
+          description: The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used.
+        phoneNumberAttributeType:
+          type: string
+          description: The name or OID of the attribute in the user's entry that holds the phone number to which the message should be sent.
+        phoneNumberJSONField:
+          type: string
+          description: The name of the JSON field whose value is the phone number to which the message should be sent. The phone number must be contained in a top-level field whose value is a single string.
+        phoneNumberJSONObjectFilter:
+          type: string
+          description: A JSON object filter that may be used to identify which phone number value to use when sending the message.
+        senderPhoneNumber:
+          type: array
+          items:
+            type: string
+            description: The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
+        messageTextBeforeOTP:
+          type: string
+          description: Any text that should appear in the message before the one-time password value.
+        messageTextAfterOTP:
+          type: string
+          description: Any text that should appear in the message after the one-time password value.
+        description:
+          type: string
+          description: A description for this OTP Delivery Mechanism
+        enabled:
+          type: boolean
+          description: Indicates whether this OTP Delivery Mechanism is enabled for use in the server.
+      required:
+      - schemas
+      - twilioAccountSID
+      - phoneNumberAttributeType
+      - senderPhoneNumber
+      - enabled
+    EnumtwilioSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:twilio"
+    add-email-request:
+      allOf:
+      - type: object
+        properties:
+          mechanismName:
+            description: Name of the new OTP Delivery Mechanism
+            type: string
+        required:
+        - mechanismName
+      - $ref: '#/components/schemas/email-shared'
+    email-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the OTP Delivery Mechanism
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/email-shared'
+    email-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumemailSchemaUrn'
+        emailAddressAttributeType:
+          type: string
+          description: The name or OID of the attribute that holds the email address to which the message should be sent.
+        emailAddressJSONField:
+          type: string
+          description: The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string.
+        emailAddressJSONObjectFilter:
+          type: string
+          description: A JSON object filter that may be used to identify which email address value to use when sending the message.
+        senderAddress:
+          type: string
+          description: The e-mail address to use as the sender for the one-time password.
+        messageSubject:
+          type: string
+          description: The subject to use for the e-mail message.
+        messageTextBeforeOTP:
+          type: string
+          description: Any text that should appear in the message before the one-time password value.
+        messageTextAfterOTP:
+          type: string
+          description: Any text that should appear in the message after the one-time password value.
+        description:
+          type: string
+          description: A description for this OTP Delivery Mechanism
+        enabled:
+          type: boolean
+          description: Indicates whether this OTP Delivery Mechanism is enabled for use in the server.
+      required:
+      - schemas
+      - emailAddressAttributeType
+      - senderAddress
+      - messageSubject
+      - enabled
+    EnumemailSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:email"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          mechanismName:
+            description: Name of the new OTP Delivery Mechanism
+            type: string
+        required:
+        - mechanismName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the OTP Delivery Mechanism
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party OTP Delivery Mechanism.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party OTP Delivery Mechanism. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this OTP Delivery Mechanism
+        enabled:
+          type: boolean
+          description: Indicates whether this OTP Delivery Mechanism is enabled for use in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:otp-delivery-mechanism:third-party"
+    update-otp-delivery-mechanism-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

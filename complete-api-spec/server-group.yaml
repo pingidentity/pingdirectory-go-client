@@ -1,0 +1,208 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Server Group config object
+  title: PingData Server Group Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access server-groups
+  name: server-group
+paths:
+  /server-groups:
+    post:
+      summary: Add a new Server Group to the config
+      operationId: add-server-group
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-server-group-request'
+        description: Create a new Server Group in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-group-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Server Group already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /server-groups/{server-group-name}:
+    delete:
+      summary: Delete a Server Group
+      operationId: delete-server-group
+      parameters:
+      - description: Name of the Server Group to be deleted
+        explode: false
+        in: path
+        name: server-group-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Server Group does not exist
+        "409":
+          description: The Server Group cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Server Group
+      operationId: get-server-group
+      parameters:
+      - description: Name of the Server Group to be read
+        explode: false
+        in: path
+        name: server-group-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-group-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Server Group does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Server Group by name
+      operationId: update-server-group
+      parameters:
+      - description: Name of the Server Group to be updated
+        explode: false
+        in: path
+        name: server-group-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-server-group-request'
+        description: Update an existing Server Group
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/server-group-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Server Group does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-server-group-request:
+      allOf:
+      - type: object
+        properties:
+          groupName:
+            description: Name of the new Server Group
+            type: string
+        required:
+        - groupName
+      - $ref: '#/components/schemas/server-group-shared'
+    server-group-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Server Group
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/server-group-shared'
+    server-group-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumserver-groupSchemaUrn'
+        member:
+          type: array
+          items:
+            type: string
+            description: A server instance that is a member of this group.
+    Enumserver-groupSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-group"
+    update-server-group-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

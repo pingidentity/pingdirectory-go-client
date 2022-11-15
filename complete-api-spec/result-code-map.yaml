@@ -1,0 +1,218 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Result Code Map config object
+  title: PingData Result Code Map Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access result-code-maps
+  name: result-code-map
+paths:
+  /result-code-maps:
+    post:
+      summary: Add a new Result Code Map to the config
+      operationId: add-result-code-map
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-result-code-map-request'
+        description: Create a new Result Code Map in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-code-map-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Result Code Map already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /result-code-maps/{result-code-map-name}:
+    delete:
+      summary: Delete a Result Code Map
+      operationId: delete-result-code-map
+      parameters:
+      - description: Name of the Result Code Map to be deleted
+        explode: false
+        in: path
+        name: result-code-map-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Result Code Map does not exist
+        "409":
+          description: The Result Code Map cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Result Code Map
+      operationId: get-result-code-map
+      parameters:
+      - description: Name of the Result Code Map to be read
+        explode: false
+        in: path
+        name: result-code-map-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-code-map-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Result Code Map does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Result Code Map by name
+      operationId: update-result-code-map
+      parameters:
+      - description: Name of the Result Code Map to be updated
+        explode: false
+        in: path
+        name: result-code-map-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-result-code-map-request'
+        description: Update an existing Result Code Map
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/result-code-map-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Result Code Map does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-result-code-map-request:
+      allOf:
+      - type: object
+        properties:
+          mapName:
+            description: Name of the new Result Code Map
+            type: string
+        required:
+        - mapName
+      - $ref: '#/components/schemas/result-code-map-shared'
+    result-code-map-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Result Code Map
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/result-code-map-shared'
+    result-code-map-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumresult-code-mapSchemaUrn'
+        description:
+          type: string
+          description: A description for this Result Code Map
+        bindAccountLockedResultCode:
+          type: integer
+          description: Specifies the result code that should be returned if a bind attempt fails because the user's account is locked as a result of too many failed authentication attempts.
+        bindMissingUserResultCode:
+          type: integer
+          description: Specifies the result code that should be returned if a bind attempt fails because the target user entry does not exist in the server.
+        bindMissingPasswordResultCode:
+          type: integer
+          description: Specifies the result code that should be returned if a password-based bind attempt fails because the target user entry does not have a password.
+        serverErrorResultCode:
+          type: integer
+          description: Specifies the result code that should be returned if a generic error occurs within the server.
+    Enumresult-code-mapSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:result-code-map"
+    update-result-code-map-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

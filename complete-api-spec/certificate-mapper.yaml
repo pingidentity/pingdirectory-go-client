@@ -1,0 +1,503 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Certificate Mapper config object
+  title: PingData Certificate Mapper Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access certificate-mappers
+  name: certificate-mapper
+paths:
+  /certificate-mappers:
+    post:
+      summary: Add a new Certificate Mapper to the config
+      operationId: add-certificate-mapper
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-subject-equals-dn-request'
+              - $ref: '#/components/schemas/add-subject-dn-to-user-attribute-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-request'
+              - $ref: '#/components/schemas/add-subject-attribute-to-user-attribute-request'
+              - $ref: '#/components/schemas/add-fingerprint-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Certificate Mapper in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/subject-equals-dn-response'
+                - $ref: '#/components/schemas/subject-dn-to-user-attribute-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/subject-attribute-to-user-attribute-response'
+                - $ref: '#/components/schemas/fingerprint-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Certificate Mapper already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /certificate-mappers/{certificate-mapper-name}:
+    delete:
+      summary: Delete a Certificate Mapper
+      operationId: delete-certificate-mapper
+      parameters:
+      - description: Name of the Certificate Mapper to be deleted
+        explode: false
+        in: path
+        name: certificate-mapper-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Certificate Mapper does not exist
+        "409":
+          description: The Certificate Mapper cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Certificate Mapper
+      operationId: get-certificate-mapper
+      parameters:
+      - description: Name of the Certificate Mapper to be read
+        explode: false
+        in: path
+        name: certificate-mapper-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/subject-equals-dn-response'
+                - $ref: '#/components/schemas/subject-dn-to-user-attribute-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/subject-attribute-to-user-attribute-response'
+                - $ref: '#/components/schemas/fingerprint-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Certificate Mapper does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Certificate Mapper by name
+      operationId: update-certificate-mapper
+      parameters:
+      - description: Name of the Certificate Mapper to be updated
+        explode: false
+        in: path
+        name: certificate-mapper-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-certificate-mapper-request'
+        description: Update an existing Certificate Mapper
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/subject-equals-dn-response'
+                - $ref: '#/components/schemas/subject-dn-to-user-attribute-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/subject-attribute-to-user-attribute-response'
+                - $ref: '#/components/schemas/fingerprint-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Certificate Mapper does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-subject-equals-dn-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Certificate Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/subject-equals-dn-shared'
+    subject-equals-dn-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Certificate Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/subject-equals-dn-shared'
+    subject-equals-dn-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsubject-equals-dnSchemaUrn'
+        description:
+          type: string
+          description: A description for this Certificate Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Certificate Mapper is enabled.
+      required:
+      - schemas
+      - enabled
+    Enumsubject-equals-dnSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-equals-dn"
+    add-subject-dn-to-user-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Certificate Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/subject-dn-to-user-attribute-shared'
+    subject-dn-to-user-attribute-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Certificate Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/subject-dn-to-user-attribute-shared'
+    subject-dn-to-user-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsubject-dn-to-user-attributeSchemaUrn'
+        subjectAttribute:
+          type: string
+          description: Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN.
+        userBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
+        description:
+          type: string
+          description: A description for this Certificate Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Certificate Mapper is enabled.
+      required:
+      - schemas
+      - subjectAttribute
+      - enabled
+    Enumsubject-dn-to-user-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-dn-to-user-attribute"
+    add-groovy-scripted-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Certificate Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Certificate Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
+        scriptClass:
+          type: string
+          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Certificate Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Certificate Mapper is enabled.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scriptedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:groovy-scripted"
+    add-subject-attribute-to-user-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Certificate Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/subject-attribute-to-user-attribute-shared'
+    subject-attribute-to-user-attribute-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Certificate Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/subject-attribute-to-user-attribute-shared'
+    subject-attribute-to-user-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsubject-attribute-to-user-attributeSchemaUrn'
+        subjectAttributeMapping:
+          type: array
+          items:
+            type: string
+            description: Specifies a mapping between certificate attributes and user attributes.
+        userBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
+        description:
+          type: string
+          description: A description for this Certificate Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Certificate Mapper is enabled.
+      required:
+      - schemas
+      - subjectAttributeMapping
+      - enabled
+    Enumsubject-attribute-to-user-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:subject-attribute-to-user-attribute"
+    add-fingerprint-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Certificate Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/fingerprint-shared'
+    fingerprint-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Certificate Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/fingerprint-shared'
+    fingerprint-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumfingerprintSchemaUrn'
+        fingerprintAttribute:
+          type: string
+          description: Specifies the attribute in which to look for the fingerprint.
+        fingerprintAlgorithm:
+          $ref: '#/components/schemas/EnumfingerprintAlgorithmProp'
+        userBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the set of base DNs below which to search for users.
+        description:
+          type: string
+          description: A description for this Certificate Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Certificate Mapper is enabled.
+      required:
+      - schemas
+      - fingerprintAttribute
+      - fingerprintAlgorithm
+      - enabled
+    EnumfingerprintSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:fingerprint"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Certificate Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Certificate Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Certificate Mapper.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Certificate Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Certificate Mapper is enabled.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:certificate-mapper:third-party"
+    update-certificate-mapper-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumfingerprintAlgorithmProp:
+      type: string
+      enum:
+      - "md5"
+      - "sha1"
+      - "sha256"
+      description: Specifies the name of the digest algorithm to compute the fingerprint of client certificates.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

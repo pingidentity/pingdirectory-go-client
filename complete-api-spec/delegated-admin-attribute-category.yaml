@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Delegated Admin Attribute Category config object
+  title: PingData Delegated Admin Attribute Category Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access delegated-admin-attribute-categories
+  name: delegated-admin-attribute-category
+paths:
+  /delegated-admin-attribute-categories:
+    post:
+      summary: Add a new Delegated Admin Attribute Category to the config
+      operationId: add-delegated-admin-attribute-category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-delegated-admin-attribute-category-request'
+        description: Create a new Delegated Admin Attribute Category in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-attribute-category-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Delegated Admin Attribute Category already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name}:
+    delete:
+      summary: Delete a Delegated Admin Attribute Category
+      operationId: delete-delegated-admin-attribute-category
+      parameters:
+      - description: Name of the Delegated Admin Attribute Category to be deleted
+        explode: false
+        in: path
+        name: delegated-admin-attribute-category-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Attribute Category does not exist
+        "409":
+          description: The Delegated Admin Attribute Category cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Delegated Admin Attribute Category
+      operationId: get-delegated-admin-attribute-category
+      parameters:
+      - description: Name of the Delegated Admin Attribute Category to be read
+        explode: false
+        in: path
+        name: delegated-admin-attribute-category-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-attribute-category-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Attribute Category does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Delegated Admin Attribute Category by name
+      operationId: update-delegated-admin-attribute-category
+      parameters:
+      - description: Name of the Delegated Admin Attribute Category to be updated
+        explode: false
+        in: path
+        name: delegated-admin-attribute-category-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-delegated-admin-attribute-category-request'
+        description: Update an existing Delegated Admin Attribute Category
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-attribute-category-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Delegated Admin Attribute Category does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-delegated-admin-attribute-category-request:
+      allOf:
+      - type: object
+        properties:
+          displayName:
+            description: Name of the new Delegated Admin Attribute Category
+            type: string
+        required:
+        - displayName
+      - $ref: '#/components/schemas/delegated-admin-attribute-category-shared'
+    delegated-admin-attribute-category-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Attribute Category
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delegated-admin-attribute-category-shared'
+    delegated-admin-attribute-category-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-categorySchemaUrn'
+        description:
+          type: string
+          description: A description for this Delegated Admin Attribute Category
+        displayName:
+          type: string
+          description: A human readable display name for this Delegated Admin Attribute Category.
+        displayOrderIndex:
+          type: integer
+          description: Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest.
+      required:
+      - displayName
+      - displayOrderIndex
+    Enumdelegated-admin-attribute-categorySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute-category"
+    update-delegated-admin-attribute-category-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

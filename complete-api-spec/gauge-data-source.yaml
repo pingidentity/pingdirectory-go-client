@@ -1,0 +1,328 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Gauge Data Source config object
+  title: PingData Gauge Data Source Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access gauge-data-sources
+  name: gauge-data-source
+paths:
+  /gauge-data-sources:
+    post:
+      summary: Add a new Gauge Data Source to the config
+      operationId: add-gauge-data-source
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-indicator-request'
+              - $ref: '#/components/schemas/add-numeric-request'
+        description: Create a new Gauge Data Source in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/indicator-response'
+                - $ref: '#/components/schemas/numeric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Gauge Data Source already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /gauge-data-sources/{gauge-data-source-name}:
+    delete:
+      summary: Delete a Gauge Data Source
+      operationId: delete-gauge-data-source
+      parameters:
+      - description: Name of the Gauge Data Source to be deleted
+        explode: false
+        in: path
+        name: gauge-data-source-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Gauge Data Source does not exist
+        "409":
+          description: The Gauge Data Source cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Gauge Data Source
+      operationId: get-gauge-data-source
+      parameters:
+      - description: Name of the Gauge Data Source to be read
+        explode: false
+        in: path
+        name: gauge-data-source-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/indicator-response'
+                - $ref: '#/components/schemas/numeric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Gauge Data Source does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Gauge Data Source by name
+      operationId: update-gauge-data-source
+      parameters:
+      - description: Name of the Gauge Data Source to be updated
+        explode: false
+        in: path
+        name: gauge-data-source-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-gauge-data-source-request'
+        description: Update an existing Gauge Data Source
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/indicator-response'
+                - $ref: '#/components/schemas/numeric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Gauge Data Source does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-indicator-request:
+      allOf:
+      - type: object
+        properties:
+          sourceName:
+            description: Name of the new Gauge Data Source
+            type: string
+        required:
+        - sourceName
+      - $ref: '#/components/schemas/indicator-shared'
+    indicator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Gauge Data Source
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/indicator-shared'
+    indicator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumindicatorSchemaUrn'
+        description:
+          type: string
+          description: A description for this Gauge Data Source
+        additionalText:
+          type: string
+          description: Additional information about the source of this data that is added to alerts sent as a result of gauges that use this Gauge Data Source.
+        monitorObjectclass:
+          type: string
+          description: The object class name of the monitor entries to examine for generating gauge data.
+        monitorAttribute:
+          type: string
+          description: Specifies the attribute on the monitor entries from which to derive the current gauge value.
+        includeFilter:
+          type: string
+          description: An optional LDAP filter that can be used restrict which monitor entries are used to compute output.
+        resourceAttribute:
+          type: string
+          description: Specifies the attribute whose value is used to identify the specific resource being monitored (e.g. device name).
+        resourceType:
+          type: string
+          description: A string indicating the type of resource being monitored.
+        minimumUpdateInterval:
+          type: string
+          description: The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges.
+      required:
+      - schemas
+      - monitorObjectclass
+      - monitorAttribute
+    EnumindicatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:indicator"
+    add-numeric-request:
+      allOf:
+      - type: object
+        properties:
+          sourceName:
+            description: Name of the new Gauge Data Source
+            type: string
+        required:
+        - sourceName
+      - $ref: '#/components/schemas/numeric-shared'
+    numeric-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Gauge Data Source
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/numeric-shared'
+    numeric-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumnumericSchemaUrn'
+        dataOrientation:
+          $ref: '#/components/schemas/EnumdataOrientationProp'
+        statisticType:
+          $ref: '#/components/schemas/EnumstatisticTypeProp'
+        divideValueBy:
+          type: number
+          description: An optional floating point value that can be used to scale the resulting value.
+        divideValueByAttribute:
+          type: string
+          description: An optional property that can scale the resulting value by another attribute in the monitored entry.
+        divideValueByCounterAttribute:
+          type: string
+          description: An optional property that can scale the resulting value by another attribute whose value represents a counter in the monitored entry.
+        description:
+          type: string
+          description: A description for this Gauge Data Source
+        additionalText:
+          type: string
+          description: Additional information about the source of this data that is added to alerts sent as a result of gauges that use this Gauge Data Source.
+        monitorObjectclass:
+          type: string
+          description: The object class name of the monitor entries to examine for generating gauge data.
+        monitorAttribute:
+          type: string
+          description: Specifies the attribute on the monitor entries from which to derive the current gauge value.
+        includeFilter:
+          type: string
+          description: An optional LDAP filter that can be used restrict which monitor entries are used to compute output.
+        resourceAttribute:
+          type: string
+          description: Specifies the attribute whose value is used to identify the specific resource being monitored (e.g. device name).
+        resourceType:
+          type: string
+          description: A string indicating the type of resource being monitored.
+        minimumUpdateInterval:
+          type: string
+          description: The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges.
+      required:
+      - schemas
+      - statisticType
+      - monitorObjectclass
+      - monitorAttribute
+    EnumnumericSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:gauge-data-source:numeric"
+    update-gauge-data-source-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumdataOrientationProp:
+      type: string
+      enum:
+      - "lower-is-better"
+      - "higher-is-better"
+      description: Indicates whether a higher or lower value is a more severe condition.
+    EnumstatisticTypeProp:
+      type: string
+      enum:
+      - "count-per-second"
+      - "average"
+      - "minimum"
+      - "maximum"
+      description: Specifies the type of statistic to include in the output for the monitored attribute.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

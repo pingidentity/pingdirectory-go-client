@@ -1,0 +1,313 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Pass Through Authentication Handler config object
+  title: PingData Pass Through Authentication Handler Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access pass-through-authentication-handlers
+  name: pass-through-authentication-handler
+paths:
+  /pass-through-authentication-handlers:
+    post:
+      summary: Add a new Pass Through Authentication Handler to the config
+      operationId: add-pass-through-authentication-handler
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-ldap-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Pass Through Authentication Handler in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Pass Through Authentication Handler already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /pass-through-authentication-handlers/{pass-through-authentication-handler-name}:
+    delete:
+      summary: Delete a Pass Through Authentication Handler
+      operationId: delete-pass-through-authentication-handler
+      parameters:
+      - description: Name of the Pass Through Authentication Handler to be deleted
+        explode: false
+        in: path
+        name: pass-through-authentication-handler-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Pass Through Authentication Handler does not exist
+        "409":
+          description: The Pass Through Authentication Handler cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Pass Through Authentication Handler
+      operationId: get-pass-through-authentication-handler
+      parameters:
+      - description: Name of the Pass Through Authentication Handler to be read
+        explode: false
+        in: path
+        name: pass-through-authentication-handler-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Pass Through Authentication Handler does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Pass Through Authentication Handler by name
+      operationId: update-pass-through-authentication-handler
+      parameters:
+      - description: Name of the Pass Through Authentication Handler to be updated
+        explode: false
+        in: path
+        name: pass-through-authentication-handler-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-pass-through-authentication-handler-request'
+        description: Update an existing Pass Through Authentication Handler
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Pass Through Authentication Handler does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-ldap-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Pass Through Authentication Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/ldap-shared'
+    ldap-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Pass Through Authentication Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ldap-shared'
+    ldap-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumldapSchemaUrn'
+        server:
+          type: array
+          items:
+            type: string
+            description: Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
+        serverAccessMode:
+          $ref: '#/components/schemas/EnumserverAccessModeProp'
+        dnMap:
+          type: array
+          items:
+            type: string
+            description: Specifies one or more DN mappings that may be used to transform bind DNs before attempting to bind to the external servers.
+        bindDNPattern:
+          type: string
+          description: A pattern to use to construct the bind DN for the simple bind request to send to the remote server. This may consist of a combination of static text and attribute values and other directives enclosed in curly braces.  For example, the value "cn={cn},ou=People,dc=example,dc=com" indicates that the remote bind DN should be constructed from the text "cn=" followed by the value of the local entry's cn attribute followed by the text "ou=People,dc=example,dc=com". If an attribute contains the value to use as the bind DN for pass-through authentication, then the pattern may simply be the name of that attribute in curly braces (e.g., if the seeAlso attribute contains the bind DN for the target user, then a bind DN pattern of "{seeAlso}" would be appropriate).  Note that a bind DN pattern can be used to construct a bind DN that is not actually a valid LDAP distinguished name. For example, if authentication is being passed through to a Microsoft Active Directory server, then a bind DN pattern could be used to construct a user principal name (UPN) as an alternative to a distinguished name.
+        searchBaseDN:
+          type: string
+          description: The base DN to use when searching for the user entry using a filter constructed from the pattern defined in the search-filter-pattern property. If no base DN is specified, the null DN will be used as the search base DN.
+        searchFilterPattern:
+          type: string
+          description: A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, "(mail={uid:ldapFilterEscape}@example.com)" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before "@example.com" in the mail attribute in the external server. Note that the "ldapFilterEscape" modifier should almost always be used with attributes specified in the pattern.
+        initialConnections:
+          type: integer
+          description: Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
+        maxConnections:
+          type: integer
+          description: Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
+        useLocation:
+          type: boolean
+          description: Indicates whether to take server locations into account when prioritizing the servers to use for pass-through authentication attempts.
+        maximumAllowedLocalResponseTime:
+          type: string
+          description: The maximum length of time to wait for a response from an external server in the same location as this Directory Server before considering it unavailable.
+        maximumAllowedNonlocalResponseTime:
+          type: string
+          description: The maximum length of time to wait for a response from an external server in a different location from this Directory Server before considering it unavailable.
+        usePasswordPolicyControl:
+          type: boolean
+          description: Indicates whether to include the password policy request control (as defined in draft-behera-ldap-password-policy-10) in bind requests sent to the external server.
+        description:
+          type: string
+          description: A description for this Pass Through Authentication Handler
+      required:
+      - schemas
+      - server
+      - serverAccessMode
+      - initialConnections
+      - maxConnections
+    EnumldapSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:ldap"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Pass Through Authentication Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Pass Through Authentication Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Pass Through Authentication Handler. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Pass Through Authentication Handler
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:pass-through-authentication-handler:third-party"
+    update-pass-through-authentication-handler-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumserverAccessModeProp:
+      type: string
+      enum:
+      - "round-robin"
+      - "failover-on-unavailable"
+      - "failover-on-any-failure"
+      description: Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

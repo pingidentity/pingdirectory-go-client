@@ -1,0 +1,219 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Consent Definition config object
+  title: PingData Consent Definition Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access consent-definitions
+  name: consent-definition
+paths:
+  /consent-definitions:
+    post:
+      summary: Add a new Consent Definition to the config
+      operationId: add-consent-definition
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-consent-definition-request'
+        description: Create a new Consent Definition in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Consent Definition already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /consent-definitions/{consent-definition-name}:
+    delete:
+      summary: Delete a Consent Definition
+      operationId: delete-consent-definition
+      parameters:
+      - description: Name of the Consent Definition to be deleted
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Consent Definition does not exist
+        "409":
+          description: The Consent Definition cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Consent Definition
+      operationId: get-consent-definition
+      parameters:
+      - description: Name of the Consent Definition to be read
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Consent Definition does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Consent Definition by name
+      operationId: update-consent-definition
+      parameters:
+      - description: Name of the Consent Definition to be updated
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-consent-definition-request'
+        description: Update an existing Consent Definition
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Consent Definition does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-consent-definition-request:
+      allOf:
+      - type: object
+        properties:
+          definitionName:
+            description: Name of the new Consent Definition
+            type: string
+        required:
+        - definitionName
+      - $ref: '#/components/schemas/consent-definition-shared'
+    consent-definition-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Consent Definition
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/consent-definition-shared'
+    consent-definition-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumconsent-definitionSchemaUrn'
+        uniqueID:
+          type: string
+          description: A version-independent unique identifier for this Consent Definition.
+        displayName:
+          type: string
+          description: A human-readable display name for this Consent Definition.
+        parameter:
+          type: array
+          items:
+            type: string
+            description: Optional parameters for this Consent Definition.
+        description:
+          type: string
+          description: A description for this Consent Definition
+      required:
+      - uniqueID
+    Enumconsent-definitionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:consent-definition"
+    update-consent-definition-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

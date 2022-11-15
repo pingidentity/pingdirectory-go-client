@@ -1,0 +1,230 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Key Pair config object
+  title: PingData Key Pair Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access key-pairs
+  name: key-pair
+paths:
+  /key-pairs:
+    post:
+      summary: Add a new Key Pair to the config
+      operationId: add-key-pair
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-key-pair-request'
+        description: Create a new Key Pair in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-pair-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Key Pair already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /key-pairs/{key-pair-name}:
+    delete:
+      summary: Delete a Key Pair
+      operationId: delete-key-pair
+      parameters:
+      - description: Name of the Key Pair to be deleted
+        explode: false
+        in: path
+        name: key-pair-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Key Pair does not exist
+        "409":
+          description: The Key Pair cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Key Pair
+      operationId: get-key-pair
+      parameters:
+      - description: Name of the Key Pair to be read
+        explode: false
+        in: path
+        name: key-pair-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-pair-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Key Pair does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Key Pair by name
+      operationId: update-key-pair
+      parameters:
+      - description: Name of the Key Pair to be updated
+        explode: false
+        in: path
+        name: key-pair-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-key-pair-request'
+        description: Update an existing Key Pair
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/key-pair-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Key Pair does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-key-pair-request:
+      allOf:
+      - type: object
+        properties:
+          pairName:
+            description: Name of the new Key Pair
+            type: string
+        required:
+        - pairName
+      - $ref: '#/components/schemas/key-pair-shared'
+    key-pair-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Key Pair
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/key-pair-shared'
+    key-pair-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumkey-pairSchemaUrn'
+        keyAlgorithm:
+          $ref: '#/components/schemas/EnumkeyAlgorithmProp'
+        selfSignedCertificateValidity:
+          type: string
+          description: The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
+        subjectDN:
+          type: string
+          description: The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair.
+        certificateChain:
+          type: string
+          description: The PEM-encoded X.509 certificate chain.
+        privateKey:
+          type: string
+          format: password
+          description: The base64-encoded private key that is encrypted using the preferred encryption settings definition.
+      required:
+      - keyAlgorithm
+    Enumkey-pairSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:key-pair"
+    update-key-pair-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumkeyAlgorithmProp:
+      type: string
+      enum:
+      - "RSA_2048"
+      - "RSA_3072"
+      - "RSA_4096"
+      - "EC_256"
+      - "EC_384"
+      - "EC_521"
+      description: The algorithm name and the length in bits of the key, e.g. RSA_2048.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

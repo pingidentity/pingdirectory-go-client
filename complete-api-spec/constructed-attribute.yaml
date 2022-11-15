@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Constructed Attribute config object
+  title: PingData Constructed Attribute Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access constructed-attributes
+  name: constructed-attribute
+paths:
+  /constructed-attributes:
+    post:
+      summary: Add a new Constructed Attribute to the config
+      operationId: add-constructed-attribute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-constructed-attribute-request'
+        description: Create a new Constructed Attribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/constructed-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Constructed Attribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /constructed-attributes/{constructed-attribute-name}:
+    delete:
+      summary: Delete a Constructed Attribute
+      operationId: delete-constructed-attribute
+      parameters:
+      - description: Name of the Constructed Attribute to be deleted
+        explode: false
+        in: path
+        name: constructed-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Constructed Attribute does not exist
+        "409":
+          description: The Constructed Attribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Constructed Attribute
+      operationId: get-constructed-attribute
+      parameters:
+      - description: Name of the Constructed Attribute to be read
+        explode: false
+        in: path
+        name: constructed-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/constructed-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Constructed Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Constructed Attribute by name
+      operationId: update-constructed-attribute
+      parameters:
+      - description: Name of the Constructed Attribute to be updated
+        explode: false
+        in: path
+        name: constructed-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-constructed-attribute-request'
+        description: Update an existing Constructed Attribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/constructed-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Constructed Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-constructed-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeName:
+            description: Name of the new Constructed Attribute
+            type: string
+        required:
+        - attributeName
+      - $ref: '#/components/schemas/constructed-attribute-shared'
+    constructed-attribute-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Constructed Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/constructed-attribute-shared'
+    constructed-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumconstructed-attributeSchemaUrn'
+        description:
+          type: string
+          description: A description for this Constructed Attribute
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be constructed.
+        valuePattern:
+          type: array
+          items:
+            type: string
+            description: Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry.
+      required:
+      - attributeType
+      - valuePattern
+    Enumconstructed-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:constructed-attribute"
+    update-constructed-attribute-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

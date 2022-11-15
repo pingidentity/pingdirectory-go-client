@@ -1,0 +1,345 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Change Subscription Handler config object
+  title: PingData Change Subscription Handler Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access change-subscription-handlers
+  name: change-subscription-handler
+paths:
+  /change-subscription-handlers:
+    post:
+      summary: Add a new Change Subscription Handler to the config
+      operationId: add-change-subscription-handler
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-groovy-scripted-request'
+              - $ref: '#/components/schemas/add-logging-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Change Subscription Handler in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/logging-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Change Subscription Handler already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /change-subscription-handlers/{change-subscription-handler-name}:
+    delete:
+      summary: Delete a Change Subscription Handler
+      operationId: delete-change-subscription-handler
+      parameters:
+      - description: Name of the Change Subscription Handler to be deleted
+        explode: false
+        in: path
+        name: change-subscription-handler-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Change Subscription Handler does not exist
+        "409":
+          description: The Change Subscription Handler cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Change Subscription Handler
+      operationId: get-change-subscription-handler
+      parameters:
+      - description: Name of the Change Subscription Handler to be read
+        explode: false
+        in: path
+        name: change-subscription-handler-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/logging-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Change Subscription Handler does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Change Subscription Handler by name
+      operationId: update-change-subscription-handler
+      parameters:
+      - description: Name of the Change Subscription Handler to be updated
+        explode: false
+        in: path
+        name: change-subscription-handler-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-change-subscription-handler-request'
+        description: Update an existing Change Subscription Handler
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/logging-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Change Subscription Handler does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-groovy-scripted-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Change Subscription Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
+        scriptClass:
+          type: string
+          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Change Subscription Handler
+        enabled:
+          type: boolean
+          description: Indicates whether this change subscription handler is enabled within the server.
+        changeSubscription:
+          type: array
+          items:
+            type: string
+            description: The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scriptedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:groovy-scripted"
+    add-logging-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Change Subscription Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/logging-shared'
+    logging-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/logging-shared'
+    logging-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumloggingSchemaUrn'
+        logFile:
+          type: string
+          description: Specifies the log file in which the change notification messages will be written.
+        description:
+          type: string
+          description: A description for this Change Subscription Handler
+        enabled:
+          type: boolean
+          description: Indicates whether this change subscription handler is enabled within the server.
+        changeSubscription:
+          type: array
+          items:
+            type: string
+            description: The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+      required:
+      - schemas
+      - logFile
+      - enabled
+    EnumloggingSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:logging"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          handlerName:
+            description: Name of the new Change Subscription Handler
+            type: string
+        required:
+        - handlerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription Handler
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Change Subscription Handler
+        enabled:
+          type: boolean
+          description: Indicates whether this change subscription handler is enabled within the server.
+        changeSubscription:
+          type: array
+          items:
+            type: string
+            description: The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription-handler:third-party"
+    update-change-subscription-handler-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

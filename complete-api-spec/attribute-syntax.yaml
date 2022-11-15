@@ -1,0 +1,622 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Attribute Syntax config object
+  title: PingData Attribute Syntax Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access attribute-syntaxes
+  name: attribute-syntax
+paths:
+  /attribute-syntaxes:
+    post:
+      summary: Add a new Attribute Syntax to the config
+      operationId: add-attribute-syntax
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+        description: Create a new Attribute Syntax in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Attribute Syntax already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /attribute-syntaxes/{attribute-syntax-name}:
+    delete:
+      summary: Delete a Attribute Syntax
+      operationId: delete-attribute-syntax
+      parameters:
+      - description: Name of the Attribute Syntax to be deleted
+        explode: false
+        in: path
+        name: attribute-syntax-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Attribute Syntax does not exist
+        "409":
+          description: The Attribute Syntax cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Attribute Syntax
+      operationId: get-attribute-syntax
+      parameters:
+      - description: Name of the Attribute Syntax to be read
+        explode: false
+        in: path
+        name: attribute-syntax-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/attribute-type-description-response'
+                - $ref: '#/components/schemas/directory-string-response'
+                - $ref: '#/components/schemas/telephone-number-response'
+                - $ref: '#/components/schemas/distinguished-name-response'
+                - $ref: '#/components/schemas/generalized-time-response'
+                - $ref: '#/components/schemas/integer-response'
+                - $ref: '#/components/schemas/uuid-response'
+                - $ref: '#/components/schemas/json-object-response'
+                - $ref: '#/components/schemas/user-password-response'
+                - $ref: '#/components/schemas/boolean-response'
+                - $ref: '#/components/schemas/hex-string-response'
+                - $ref: '#/components/schemas/bit-string-response'
+                - $ref: '#/components/schemas/ldap-url-response'
+                - $ref: '#/components/schemas/name-and-optional-uid-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Attribute Syntax does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Attribute Syntax by name
+      operationId: update-attribute-syntax
+      parameters:
+      - description: Name of the Attribute Syntax to be updated
+        explode: false
+        in: path
+        name: attribute-syntax-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-attribute-syntax-request'
+        description: Update an existing Attribute Syntax
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/attribute-type-description-response'
+                - $ref: '#/components/schemas/directory-string-response'
+                - $ref: '#/components/schemas/telephone-number-response'
+                - $ref: '#/components/schemas/distinguished-name-response'
+                - $ref: '#/components/schemas/generalized-time-response'
+                - $ref: '#/components/schemas/integer-response'
+                - $ref: '#/components/schemas/uuid-response'
+                - $ref: '#/components/schemas/json-object-response'
+                - $ref: '#/components/schemas/user-password-response'
+                - $ref: '#/components/schemas/boolean-response'
+                - $ref: '#/components/schemas/hex-string-response'
+                - $ref: '#/components/schemas/bit-string-response'
+                - $ref: '#/components/schemas/ldap-url-response'
+                - $ref: '#/components/schemas/name-and-optional-uid-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Attribute Syntax does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    attribute-type-description-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumattribute-type-descriptionSchemaUrn'
+        stripSyntaxMinUpperBound:
+          type: boolean
+          description: Indicates whether the suggested minimum upper bound appended to an attribute's syntax OID in its schema definition Attribute Type Description should be stripped.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumattribute-type-descriptionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:attribute-type-description"
+    directory-string-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdirectory-stringSchemaUrn'
+        allowZeroLengthValues:
+          type: boolean
+          description: Indicates whether zero-length (that is, an empty string) values are allowed.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumdirectory-stringSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:directory-string"
+    telephone-number-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumtelephone-numberSchemaUrn'
+        strictFormat:
+          type: boolean
+          description: Indicates whether to require telephone number values to strictly comply with the standard definition for this syntax.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumtelephone-numberSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:telephone-number"
+    distinguished-name-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdistinguished-nameSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumdistinguished-nameSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:distinguished-name"
+    generalized-time-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgeneralized-timeSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumgeneralized-timeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:generalized-time"
+    integer-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumintegerSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    EnumintegerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:integer"
+    uuid-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumuuidSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    EnumuuidSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:uuid"
+    json-object-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjson-objectSchemaUrn'
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumjson-objectSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:json-object"
+    user-password-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumuser-passwordSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumuser-passwordSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:user-password"
+    boolean-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumbooleanSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    EnumbooleanSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:boolean"
+    hex-string-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhex-stringSchemaUrn'
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumhex-stringSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:hex-string"
+    bit-string-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumbit-stringSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumbit-stringSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:bit-string"
+    ldap-url-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumldap-urlSchemaUrn'
+        strictFormat:
+          type: boolean
+          description: Indicates whether values for attributes with this syntax will be required to be in the valid LDAP URL format. If this is set to false, then arbitrary strings will be allowed.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumldap-urlSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:ldap-url"
+    name-and-optional-uid-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumname-and-optional-uidSchemaUrn'
+        enableCompaction:
+          type: boolean
+          description: Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
+        includeAttributeInCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property.
+        excludeAttributeFromCompaction:
+          type: array
+          items:
+            type: string
+            description: Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property.
+        enabled:
+          type: boolean
+          description: Indicates whether the Attribute Syntax is enabled.
+        requireBinaryTransfer:
+          type: boolean
+          description: Indicates whether values of this attribute are required to have a "binary" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including ";binary" (e.g., "userCertificate;binary").
+      required:
+      - schemas
+      - enabled
+    Enumname-and-optional-uidSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:attribute-syntax:name-and-optional-uid"
+    update-attribute-syntax-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

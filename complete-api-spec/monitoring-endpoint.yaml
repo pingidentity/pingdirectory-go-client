@@ -1,0 +1,234 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Monitoring Endpoint config object
+  title: PingData Monitoring Endpoint Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access monitoring-endpoints
+  name: monitoring-endpoint
+paths:
+  /monitoring-endpoints:
+    post:
+      summary: Add a new Monitoring Endpoint to the config
+      operationId: add-monitoring-endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-statsd-request'
+        description: Create a new Monitoring Endpoint in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/statsd-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Monitoring Endpoint already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /monitoring-endpoints/{monitoring-endpoint-name}:
+    delete:
+      summary: Delete a Monitoring Endpoint
+      operationId: delete-monitoring-endpoint
+      parameters:
+      - description: Name of the Monitoring Endpoint to be deleted
+        explode: false
+        in: path
+        name: monitoring-endpoint-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Monitoring Endpoint does not exist
+        "409":
+          description: The Monitoring Endpoint cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Monitoring Endpoint
+      operationId: get-monitoring-endpoint
+      parameters:
+      - description: Name of the Monitoring Endpoint to be read
+        explode: false
+        in: path
+        name: monitoring-endpoint-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/statsd-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Monitoring Endpoint does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Monitoring Endpoint by name
+      operationId: update-monitoring-endpoint
+      parameters:
+      - description: Name of the Monitoring Endpoint to be updated
+        explode: false
+        in: path
+        name: monitoring-endpoint-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-monitoring-endpoint-request'
+        description: Update an existing Monitoring Endpoint
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/statsd-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Monitoring Endpoint does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-statsd-request:
+      allOf:
+      - type: object
+        properties:
+          endpointName:
+            description: Name of the new Monitoring Endpoint
+            type: string
+        required:
+        - endpointName
+      - $ref: '#/components/schemas/statsd-shared'
+    statsd-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Monitoring Endpoint
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/statsd-shared'
+    statsd-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumstatsdSchemaUrn'
+        hostname:
+          type: string
+          description: The name of the host where this StatsD Monitoring Endpoint should send metric data.
+        serverPort:
+          type: integer
+          description: Specifies the port number of the endpoint where metric data should be sent.
+        connectionType:
+          $ref: '#/components/schemas/EnumconnectionTypeProp'
+        trustManagerProvider:
+          type: string
+          description: The trust manager provider to use if SSL over TCP is to be used for connection-level security.
+        additionalTags:
+          type: array
+          items:
+            type: string
+            description: Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format ("host:server1", for example).
+        enabled:
+          type: boolean
+          description: Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
+      required:
+      - hostname
+      - serverPort
+      - connectionType
+      - enabled
+    EnumstatsdSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitoring-endpoint:statsd"
+    update-monitoring-endpoint-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumconnectionTypeProp:
+      type: string
+      enum:
+      - "unencrypted-udp"
+      - "unencrypted-tcp"
+      - "ssl-over-tcp"
+      description: Specifies the protocol and security that this StatsD Monitoring Endpoint should use to connect to the configured endpoint.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

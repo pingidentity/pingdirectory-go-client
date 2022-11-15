@@ -1,0 +1,325 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Vault Authentication Method config object
+  title: PingData Vault Authentication Method Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access vault-authentication-methods
+  name: vault-authentication-method
+paths:
+  /vault-authentication-methods:
+    post:
+      summary: Add a new Vault Authentication Method to the config
+      operationId: add-vault-authentication-method
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-static-token-request'
+              - $ref: '#/components/schemas/add-app-role-request'
+              - $ref: '#/components/schemas/add-user-pass-request'
+        description: Create a new Vault Authentication Method in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/static-token-response'
+                - $ref: '#/components/schemas/app-role-response'
+                - $ref: '#/components/schemas/user-pass-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Vault Authentication Method already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /vault-authentication-methods/{vault-authentication-method-name}:
+    delete:
+      summary: Delete a Vault Authentication Method
+      operationId: delete-vault-authentication-method
+      parameters:
+      - description: Name of the Vault Authentication Method to be deleted
+        explode: false
+        in: path
+        name: vault-authentication-method-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Vault Authentication Method does not exist
+        "409":
+          description: The Vault Authentication Method cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Vault Authentication Method
+      operationId: get-vault-authentication-method
+      parameters:
+      - description: Name of the Vault Authentication Method to be read
+        explode: false
+        in: path
+        name: vault-authentication-method-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/static-token-response'
+                - $ref: '#/components/schemas/app-role-response'
+                - $ref: '#/components/schemas/user-pass-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Vault Authentication Method does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Vault Authentication Method by name
+      operationId: update-vault-authentication-method
+      parameters:
+      - description: Name of the Vault Authentication Method to be updated
+        explode: false
+        in: path
+        name: vault-authentication-method-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-vault-authentication-method-request'
+        description: Update an existing Vault Authentication Method
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/static-token-response'
+                - $ref: '#/components/schemas/app-role-response'
+                - $ref: '#/components/schemas/user-pass-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Vault Authentication Method does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-static-token-request:
+      allOf:
+      - type: object
+        properties:
+          methodName:
+            description: Name of the new Vault Authentication Method
+            type: string
+        required:
+        - methodName
+      - $ref: '#/components/schemas/static-token-shared'
+    static-token-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Vault Authentication Method
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/static-token-shared'
+    static-token-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumstatic-tokenSchemaUrn'
+        vaultAccessToken:
+          type: string
+          format: password
+          description: The static token used to authenticate to the Vault server.
+        description:
+          type: string
+          description: A description for this Vault Authentication Method
+      required:
+      - schemas
+      - vaultAccessToken
+    Enumstatic-tokenSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:static-token"
+    add-app-role-request:
+      allOf:
+      - type: object
+        properties:
+          methodName:
+            description: Name of the new Vault Authentication Method
+            type: string
+        required:
+        - methodName
+      - $ref: '#/components/schemas/app-role-shared'
+    app-role-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Vault Authentication Method
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/app-role-shared'
+    app-role-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumapp-roleSchemaUrn'
+        vaultRoleID:
+          type: string
+          description: The role ID for the AppRole to authenticate.
+        vaultSecretID:
+          type: string
+          format: password
+          description: The secret ID for the AppRole to authenticate.
+        loginMechanismName:
+          type: string
+          description: The name used when enabling the desired AppRole authentication mechanism in the Vault server.
+        description:
+          type: string
+          description: A description for this Vault Authentication Method
+      required:
+      - schemas
+      - vaultRoleID
+      - vaultSecretID
+    Enumapp-roleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:app-role"
+    add-user-pass-request:
+      allOf:
+      - type: object
+        properties:
+          methodName:
+            description: Name of the new Vault Authentication Method
+            type: string
+        required:
+        - methodName
+      - $ref: '#/components/schemas/user-pass-shared'
+    user-pass-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Vault Authentication Method
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/user-pass-shared'
+    user-pass-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumuser-passSchemaUrn'
+        username:
+          type: string
+          description: The username for the user to authenticate.
+        password:
+          type: string
+          format: password
+          description: The password for the user to authenticate.
+        loginMechanismName:
+          type: string
+          description: The name used when enabling the desired UserPass authentication mechanism in the Vault server.
+        description:
+          type: string
+          description: A description for this Vault Authentication Method
+      required:
+      - schemas
+      - username
+      - password
+    Enumuser-passSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:vault-authentication-method:user-pass"
+    update-vault-authentication-method-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

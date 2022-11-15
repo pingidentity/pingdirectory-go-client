@@ -1,0 +1,396 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Log Retention Policy config object
+  title: PingData Log Retention Policy Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access log-retention-policies
+  name: log-retention-policy
+paths:
+  /log-retention-policies:
+    post:
+      summary: Add a new Log Retention Policy to the config
+      operationId: add-log-retention-policy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-time-limit-request'
+              - $ref: '#/components/schemas/add-never-delete-request'
+              - $ref: '#/components/schemas/add-file-count-request'
+              - $ref: '#/components/schemas/add-free-disk-space-request'
+              - $ref: '#/components/schemas/add-size-limit-request'
+        description: Create a new Log Retention Policy in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/time-limit-response'
+                - $ref: '#/components/schemas/never-delete-response'
+                - $ref: '#/components/schemas/file-count-response'
+                - $ref: '#/components/schemas/free-disk-space-response'
+                - $ref: '#/components/schemas/size-limit-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Log Retention Policy already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /log-retention-policies/{log-retention-policy-name}:
+    delete:
+      summary: Delete a Log Retention Policy
+      operationId: delete-log-retention-policy
+      parameters:
+      - description: Name of the Log Retention Policy to be deleted
+        explode: false
+        in: path
+        name: log-retention-policy-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Log Retention Policy does not exist
+        "409":
+          description: The Log Retention Policy cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Log Retention Policy
+      operationId: get-log-retention-policy
+      parameters:
+      - description: Name of the Log Retention Policy to be read
+        explode: false
+        in: path
+        name: log-retention-policy-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/time-limit-response'
+                - $ref: '#/components/schemas/never-delete-response'
+                - $ref: '#/components/schemas/file-count-response'
+                - $ref: '#/components/schemas/free-disk-space-response'
+                - $ref: '#/components/schemas/size-limit-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Log Retention Policy does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Log Retention Policy by name
+      operationId: update-log-retention-policy
+      parameters:
+      - description: Name of the Log Retention Policy to be updated
+        explode: false
+        in: path
+        name: log-retention-policy-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-log-retention-policy-request'
+        description: Update an existing Log Retention Policy
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/time-limit-response'
+                - $ref: '#/components/schemas/never-delete-response'
+                - $ref: '#/components/schemas/file-count-response'
+                - $ref: '#/components/schemas/free-disk-space-response'
+                - $ref: '#/components/schemas/size-limit-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Log Retention Policy does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-time-limit-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Retention Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/time-limit-shared'
+    time-limit-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Retention Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/time-limit-shared'
+    time-limit-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumtime-limitSchemaUrn'
+        retainDuration:
+          type: string
+          description: Specifies the desired minimum length of time that each log file should be retained.
+        description:
+          type: string
+          description: A description for this Log Retention Policy
+      required:
+      - schemas
+      - retainDuration
+    Enumtime-limitSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:time-limit"
+    add-never-delete-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Retention Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/never-delete-shared'
+    never-delete-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Retention Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/never-delete-shared'
+    never-delete-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumnever-deleteSchemaUrn'
+        description:
+          type: string
+          description: A description for this Log Retention Policy
+      required:
+      - schemas
+    Enumnever-deleteSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:never-delete"
+    add-file-count-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Retention Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/file-count-shared'
+    file-count-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Retention Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-count-shared'
+    file-count-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-countSchemaUrn'
+        numberOfFiles:
+          type: integer
+          description: Specifies the number of archived log files to retain before the oldest ones are cleaned.
+        description:
+          type: string
+          description: A description for this Log Retention Policy
+      required:
+      - schemas
+      - numberOfFiles
+    Enumfile-countSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:file-count"
+    add-free-disk-space-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Retention Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/free-disk-space-shared'
+    free-disk-space-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Retention Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/free-disk-space-shared'
+    free-disk-space-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfree-disk-spaceSchemaUrn'
+        freeDiskSpace:
+          type: string
+          description: Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored.
+        description:
+          type: string
+          description: A description for this Log Retention Policy
+      required:
+      - schemas
+      - freeDiskSpace
+    Enumfree-disk-spaceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:free-disk-space"
+    add-size-limit-request:
+      allOf:
+      - type: object
+        properties:
+          policyName:
+            description: Name of the new Log Retention Policy
+            type: string
+        required:
+        - policyName
+      - $ref: '#/components/schemas/size-limit-shared'
+    size-limit-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log Retention Policy
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/size-limit-shared'
+    size-limit-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsize-limitSchemaUrn'
+        diskSpaceUsed:
+          type: string
+          description: Specifies the maximum total disk space used by the log files.
+        description:
+          type: string
+          description: A description for this Log Retention Policy
+      required:
+      - schemas
+      - diskSpaceUsed
+    Enumsize-limitSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-retention-policy:size-limit"
+    update-log-retention-policy-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

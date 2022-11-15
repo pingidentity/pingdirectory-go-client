@@ -1,0 +1,463 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Identity Mapper config object
+  title: PingData Identity Mapper Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access identity-mappers
+  name: identity-mapper
+paths:
+  /identity-mappers:
+    post:
+      summary: Add a new Identity Mapper to the config
+      operationId: add-identity-mapper
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-exact-match-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-request'
+              - $ref: '#/components/schemas/add-regular-expression-request'
+              - $ref: '#/components/schemas/add-aggregate-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Identity Mapper in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/exact-match-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/regular-expression-response'
+                - $ref: '#/components/schemas/aggregate-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Identity Mapper already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /identity-mappers/{identity-mapper-name}:
+    delete:
+      summary: Delete a Identity Mapper
+      operationId: delete-identity-mapper
+      parameters:
+      - description: Name of the Identity Mapper to be deleted
+        explode: false
+        in: path
+        name: identity-mapper-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Identity Mapper does not exist
+        "409":
+          description: The Identity Mapper cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Identity Mapper
+      operationId: get-identity-mapper
+      parameters:
+      - description: Name of the Identity Mapper to be read
+        explode: false
+        in: path
+        name: identity-mapper-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/exact-match-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/regular-expression-response'
+                - $ref: '#/components/schemas/aggregate-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Identity Mapper does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Identity Mapper by name
+      operationId: update-identity-mapper
+      parameters:
+      - description: Name of the Identity Mapper to be updated
+        explode: false
+        in: path
+        name: identity-mapper-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-identity-mapper-request'
+        description: Update an existing Identity Mapper
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/exact-match-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/regular-expression-response'
+                - $ref: '#/components/schemas/aggregate-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Identity Mapper does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-exact-match-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Identity Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/exact-match-shared'
+    exact-match-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Identity Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/exact-match-shared'
+    exact-match-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumexact-matchSchemaUrn'
+        matchAttribute:
+          type: array
+          items:
+            type: string
+            description: Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
+        matchBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the set of base DNs below which to search for users.
+        matchFilter:
+          type: string
+          description: An optional filter that mapped users must match.
+        description:
+          type: string
+          description: A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - matchAttribute
+      - enabled
+    Enumexact-matchSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:exact-match"
+    add-groovy-scripted-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Identity Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Identity Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
+        scriptClass:
+          type: string
+          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+    Enumgroovy-scriptedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:groovy-scripted"
+    add-regular-expression-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Identity Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/regular-expression-shared'
+    regular-expression-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Identity Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/regular-expression-shared'
+    regular-expression-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumregular-expressionSchemaUrn'
+        matchAttribute:
+          type: array
+          items:
+            type: string
+            description: Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression.
+        matchBaseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs.
+        matchFilter:
+          type: string
+          description: An optional filter that mapped users must match.
+        matchPattern:
+          type: string
+          description: Specifies the regular expression pattern that is used to identify portions of the ID string that will be replaced.
+        replacePattern:
+          type: string
+          description: Specifies the replacement pattern that should be used for substrings in the ID string that match the provided regular expression pattern.
+        description:
+          type: string
+          description: A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - matchAttribute
+      - matchPattern
+      - enabled
+    Enumregular-expressionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:regular-expression"
+    add-aggregate-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Identity Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/aggregate-shared'
+    aggregate-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Identity Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/aggregate-shared'
+    aggregate-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumaggregateSchemaUrn'
+        allIncludedIdentityMapper:
+          type: array
+          items:
+            type: string
+            description: The set of identity mappers that must all match the target entry. Each identity mapper must uniquely match the same target entry. If any of the identity mappers match multiple entries, if any of them match zero entries, or if any of them match different entries, then the mapping will fail.
+        anyIncludedIdentityMapper:
+          type: array
+          items:
+            type: string
+            description: The set of identity mappers that will be used to identify the target entry. At least one identity mapper must uniquely match an entry. If multiple identity mappers match entries, then they must all uniquely match the same entry. If none of the identity mappers match any entries, if any of them match multiple entries, or if any of them match different entries, then the mapping will fail.
+        description:
+          type: string
+          description: A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - enabled
+    EnumaggregateSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:aggregate"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          mapperName:
+            description: Name of the new Identity Mapper
+            type: string
+        required:
+        - mapperName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Identity Mapper
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Identity Mapper.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Identity Mapper. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Identity Mapper
+        enabled:
+          type: boolean
+          description: Indicates whether the Identity Mapper is enabled for use.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:identity-mapper:third-party"
+    update-identity-mapper-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

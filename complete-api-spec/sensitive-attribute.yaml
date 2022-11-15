@@ -1,0 +1,261 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Sensitive Attribute config object
+  title: PingData Sensitive Attribute Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access sensitive-attributes
+  name: sensitive-attribute
+paths:
+  /sensitive-attributes:
+    post:
+      summary: Add a new Sensitive Attribute to the config
+      operationId: add-sensitive-attribute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-sensitive-attribute-request'
+        description: Create a new Sensitive Attribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sensitive-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Sensitive Attribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /sensitive-attributes/{sensitive-attribute-name}:
+    delete:
+      summary: Delete a Sensitive Attribute
+      operationId: delete-sensitive-attribute
+      parameters:
+      - description: Name of the Sensitive Attribute to be deleted
+        explode: false
+        in: path
+        name: sensitive-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Sensitive Attribute does not exist
+        "409":
+          description: The Sensitive Attribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Sensitive Attribute
+      operationId: get-sensitive-attribute
+      parameters:
+      - description: Name of the Sensitive Attribute to be read
+        explode: false
+        in: path
+        name: sensitive-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sensitive-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Sensitive Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Sensitive Attribute by name
+      operationId: update-sensitive-attribute
+      parameters:
+      - description: Name of the Sensitive Attribute to be updated
+        explode: false
+        in: path
+        name: sensitive-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-sensitive-attribute-request'
+        description: Update an existing Sensitive Attribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/sensitive-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Sensitive Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-sensitive-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeName:
+            description: Name of the new Sensitive Attribute
+            type: string
+        required:
+        - attributeName
+      - $ref: '#/components/schemas/sensitive-attribute-shared'
+    sensitive-attribute-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Sensitive Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/sensitive-attribute-shared'
+    sensitive-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsensitive-attributeSchemaUrn'
+        description:
+          type: string
+          description: A description for this Sensitive Attribute
+        attributeType:
+          type: array
+          items:
+            type: string
+            description: The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive.
+        includeDefaultSensitiveOperationalAttributes:
+          type: boolean
+          description: Indicates whether to automatically include any server-generated operational attributes that may contain sensitive data.
+        allowInReturnedEntries:
+          $ref: '#/components/schemas/EnumallowInReturnedEntriesProp'
+        allowInFilter:
+          $ref: '#/components/schemas/EnumallowInFilterProp'
+        allowInAdd:
+          $ref: '#/components/schemas/EnumallowInAddProp'
+        allowInCompare:
+          $ref: '#/components/schemas/EnumallowInCompareProp'
+        allowInModify:
+          $ref: '#/components/schemas/EnumallowInModifyProp'
+      required:
+      - attributeType
+    Enumsensitive-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:sensitive-attribute"
+    update-sensitive-attribute-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumallowInCompareProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: Indicates whether clients will be allowed to target sensitive attributes with compare requests.
+    EnumallowInFilterProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: Indicates whether clients will be allowed to include sensitive attributes in search filters. This also includes filters that may be used in other forms, including assertion and LDAP join request controls.
+    EnumallowInAddProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: Indicates whether clients will be allowed to include sensitive attributes in add requests.
+    EnumallowInReturnedEntriesProp:
+      type: string
+      enum:
+      - "allow"
+      - "suppress"
+      - "secure-only"
+      description: Indicates whether sensitive attributes should be included in entries returned to the client. This includes not only search result entries, but also other forms including in the values of controls like the pre-read, post-read, get authorization entry, and LDAP join response controls.
+    EnumallowInModifyProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: Indicates whether clients will be allowed to target sensitive attributes with modify requests.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

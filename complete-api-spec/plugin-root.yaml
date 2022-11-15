@@ -1,0 +1,258 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Plugin Root config object
+  title: PingData Plugin Root Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access the Plugin Root
+  name: plugin-root
+paths:
+  /plugin-root:
+    get:
+      summary: Returns a single Plugin Root
+      operationId: get-plugin-root
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plugin-root-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Plugin Root does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Plugin Root by name
+      operationId: update-plugin-root
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-plugin-root-request'
+        description: Update an existing Plugin Root
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/plugin-root-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Plugin Root does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    plugin-root-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumplugin-rootSchemaUrn'
+        pluginOrderStartup:
+          type: string
+          description: Specifies the order in which startup plug-ins are to be loaded and invoked.
+        pluginOrderShutdown:
+          type: string
+          description: Specifies the order in which shutdown plug-ins are to be loaded and invoked.
+        pluginOrderPostConnect:
+          type: string
+          description: Specifies the order in which post-connect plug-ins are to be loaded and invoked.
+        pluginOrderPostDisconnect:
+          type: string
+          description: Specifies the order in which post-disconnect plug-ins are to be loaded and invoked.
+        pluginOrderLDIFImport:
+          type: string
+          description: Specifies the order in which LDIF import plug-ins are to be loaded and invoked.
+        pluginOrderLDIFExport:
+          type: string
+          description: Specifies the order in which LDIF export plug-ins are to be loaded and invoked.
+        pluginOrderPreParseAbandon:
+          type: string
+          description: Specifies the order in which pre-parse abandon plug-ins are to be loaded and invoked.
+        pluginOrderPreParseAdd:
+          type: string
+          description: Specifies the order in which pre-parse add plug-ins are to be loaded and invoked.
+        pluginOrderPreParseBind:
+          type: string
+          description: Specifies the order in which pre-parse bind plug-ins are to be loaded and invoked.
+        pluginOrderPreParseCompare:
+          type: string
+          description: Specifies the order in which pre-parse compare plug-ins are to be loaded and invoked.
+        pluginOrderPreParseDelete:
+          type: string
+          description: Specifies the order in which pre-parse delete plug-ins are to be loaded and invoked.
+        pluginOrderPreParseExtended:
+          type: string
+          description: Specifies the order in which pre-parse extended operation plug-ins are to be loaded and invoked.
+        pluginOrderPreParseModify:
+          type: string
+          description: Specifies the order in which pre-parse modify plug-ins are to be loaded and invoked.
+        pluginOrderPreParseModifyDN:
+          type: string
+          description: Specifies the order in which pre-parse modify DN plug-ins are to be loaded and invoked.
+        pluginOrderPreParseSearch:
+          type: string
+          description: Specifies the order in which pre-parse search plug-ins are to be loaded and invoked.
+        pluginOrderPreParseUnbind:
+          type: string
+          description: Specifies the order in which pre-parse unbind plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationAdd:
+          type: string
+          description: Specifies the order in which pre-operation add plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationBind:
+          type: string
+          description: Specifies the order in which pre-operation bind plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationCompare:
+          type: string
+          description: Specifies the order in which pre-operation compare plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationDelete:
+          type: string
+          description: Specifies the order in which pre-operation delete plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationExtended:
+          type: string
+          description: Specifies the order in which pre-operation extended operation plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationModify:
+          type: string
+          description: Specifies the order in which pre-operation modify plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationModifyDN:
+          type: string
+          description: Specifies the order in which pre-operation modify DN plug-ins are to be loaded and invoked.
+        pluginOrderPreOperationSearch:
+          type: string
+          description: Specifies the order in which pre-operation search plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationAbandon:
+          type: string
+          description: Specifies the order in which post-operation abandon plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationAdd:
+          type: string
+          description: Specifies the order in which post-operation add plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationBind:
+          type: string
+          description: Specifies the order in which post-operation bind plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationCompare:
+          type: string
+          description: Specifies the order in which post-operation compare plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationDelete:
+          type: string
+          description: Specifies the order in which post-operation delete plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationExtended:
+          type: string
+          description: Specifies the order in which post-operation extended operation plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationModify:
+          type: string
+          description: Specifies the order in which post-operation modify plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationModifyDN:
+          type: string
+          description: Specifies the order in which post-operation modify DN plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationSearch:
+          type: string
+          description: Specifies the order in which post-operation search plug-ins are to be loaded and invoked.
+        pluginOrderPostOperationUnbind:
+          type: string
+          description: Specifies the order in which post-operation unbind plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseAdd:
+          type: string
+          description: Specifies the order in which post-response add plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseBind:
+          type: string
+          description: Specifies the order in which post-response bind plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseCompare:
+          type: string
+          description: Specifies the order in which post-response compare plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseDelete:
+          type: string
+          description: Specifies the order in which post-response delete plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseExtended:
+          type: string
+          description: Specifies the order in which post-response extended operation plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseModify:
+          type: string
+          description: Specifies the order in which post-response modify plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseModifyDN:
+          type: string
+          description: Specifies the order in which post-response modify DN plug-ins are to be loaded and invoked.
+        pluginOrderPostSynchronizationAdd:
+          type: string
+          description: Specifies the order in which post-synchronization add plug-ins are to be loaded and invoked.
+        pluginOrderPostSynchronizationDelete:
+          type: string
+          description: Specifies the order in which post-synchronization delete plug-ins are to be loaded and invoked.
+        pluginOrderPostSynchronizationModify:
+          type: string
+          description: Specifies the order in which post-synchronization modify plug-ins are to be loaded and invoked.
+        pluginOrderPostSynchronizationModifyDN:
+          type: string
+          description: Specifies the order in which post-synchronization modify DN plug-ins are to be loaded and invoked.
+        pluginOrderPostResponseSearch:
+          type: string
+          description: Specifies the order in which post-response search plug-ins are to be loaded and invoked.
+        pluginOrderSearchResultEntry:
+          type: string
+          description: Specifies the order in which search result entry plug-ins are to be loaded and invoked.
+        pluginOrderSearchResultReference:
+          type: string
+          description: Specifies the order in which search result reference plug-ins are to be loaded and invoked.
+        pluginOrderSubordinateModifyDN:
+          type: string
+          description: Specifies the order in which subordinate modify DN plug-ins are to be loaded and invoked.
+        pluginOrderIntermediateResponse:
+          type: string
+          description: Specifies the order in which intermediate response plug-ins are to be loaded and invoked.
+    Enumplugin-rootSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin-root"
+    update-plugin-root-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

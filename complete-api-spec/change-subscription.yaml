@@ -1,0 +1,218 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Change Subscription config object
+  title: PingData Change Subscription Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access change-subscriptions
+  name: change-subscription
+paths:
+  /change-subscriptions:
+    post:
+      summary: Add a new Change Subscription to the config
+      operationId: add-change-subscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-change-subscription-request'
+        description: Create a new Change Subscription in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscription-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Change Subscription already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /change-subscriptions/{change-subscription-name}:
+    delete:
+      summary: Delete a Change Subscription
+      operationId: delete-change-subscription
+      parameters:
+      - description: Name of the Change Subscription to be deleted
+        explode: false
+        in: path
+        name: change-subscription-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Change Subscription does not exist
+        "409":
+          description: The Change Subscription cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Change Subscription
+      operationId: get-change-subscription
+      parameters:
+      - description: Name of the Change Subscription to be read
+        explode: false
+        in: path
+        name: change-subscription-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscription-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Change Subscription does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Change Subscription by name
+      operationId: update-change-subscription
+      parameters:
+      - description: Name of the Change Subscription to be updated
+        explode: false
+        in: path
+        name: change-subscription-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-change-subscription-request'
+        description: Update an existing Change Subscription
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/change-subscription-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Change Subscription does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-change-subscription-request:
+      allOf:
+      - type: object
+        properties:
+          subscriptionName:
+            description: Name of the new Change Subscription
+            type: string
+        required:
+        - subscriptionName
+      - $ref: '#/components/schemas/change-subscription-shared'
+    change-subscription-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Change Subscription
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/change-subscription-shared'
+    change-subscription-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumchange-subscriptionSchemaUrn'
+        description:
+          type: string
+          description: A description for this Change Subscription
+        connectionCriteria:
+          type: string
+          description: Specifies a set of connection criteria that must match the client connection associated with an operation in order for that operation to be processed by a change subscription handler.
+        requestCriteria:
+          type: string
+          description: Specifies a set of request criteria that must match the request associated with an operation in order for that operation to be processed by a change subscription handler.
+        resultCriteria:
+          type: string
+          description: Specifies a set of result criteria that must match the result associated with an operation in order for that operation to be processed by a change subscription handler.
+        expirationTime:
+          type: string
+          description: Specifies a timestamp that provides an expiration time for this change subscription. If an expiration time is provided, then the change subscription will not be active after that time has passed.
+    Enumchange-subscriptionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:change-subscription"
+    update-change-subscription-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

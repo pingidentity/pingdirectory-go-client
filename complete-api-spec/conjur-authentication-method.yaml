@@ -1,0 +1,219 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Conjur Authentication Method config object
+  title: PingData Conjur Authentication Method Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access conjur-authentication-methods
+  name: conjur-authentication-method
+paths:
+  /conjur-authentication-methods:
+    post:
+      summary: Add a new Conjur Authentication Method to the config
+      operationId: add-conjur-authentication-method
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-api-key-request'
+        description: Create a new Conjur Authentication Method in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Conjur Authentication Method already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /conjur-authentication-methods/{conjur-authentication-method-name}:
+    delete:
+      summary: Delete a Conjur Authentication Method
+      operationId: delete-conjur-authentication-method
+      parameters:
+      - description: Name of the Conjur Authentication Method to be deleted
+        explode: false
+        in: path
+        name: conjur-authentication-method-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Conjur Authentication Method does not exist
+        "409":
+          description: The Conjur Authentication Method cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Conjur Authentication Method
+      operationId: get-conjur-authentication-method
+      parameters:
+      - description: Name of the Conjur Authentication Method to be read
+        explode: false
+        in: path
+        name: conjur-authentication-method-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Conjur Authentication Method does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Conjur Authentication Method by name
+      operationId: update-conjur-authentication-method
+      parameters:
+      - description: Name of the Conjur Authentication Method to be updated
+        explode: false
+        in: path
+        name: conjur-authentication-method-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-conjur-authentication-method-request'
+        description: Update an existing Conjur Authentication Method
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Conjur Authentication Method does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-api-key-request:
+      allOf:
+      - type: object
+        properties:
+          methodName:
+            description: Name of the new Conjur Authentication Method
+            type: string
+        required:
+        - methodName
+      - $ref: '#/components/schemas/api-key-shared'
+    api-key-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Conjur Authentication Method
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/api-key-shared'
+    api-key-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumapi-keySchemaUrn'
+        username:
+          type: string
+          description: The username for the user to authenticate.
+        password:
+          type: string
+          format: password
+          description: The password for the user to authenticate. This will be used to obtain an API key for the target user.
+        apiKey:
+          type: string
+          format: password
+          description: The API key for the user to authenticate.
+        description:
+          type: string
+          description: A description for this Conjur Authentication Method
+      required:
+      - username
+    Enumapi-keySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:conjur-authentication-method:api-key"
+    update-conjur-authentication-method-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

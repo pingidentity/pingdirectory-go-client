@@ -1,0 +1,391 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Gauge config object
+  title: PingData Gauge Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access gauges
+  name: gauge
+paths:
+  /gauges:
+    post:
+      summary: Add a new Gauge to the config
+      operationId: add-gauge
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-indicator-request'
+              - $ref: '#/components/schemas/add-numeric-request'
+        description: Create a new Gauge in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/indicator-response'
+                - $ref: '#/components/schemas/numeric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Gauge already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /gauges/{gauge-name}:
+    delete:
+      summary: Delete a Gauge
+      operationId: delete-gauge
+      parameters:
+      - description: Name of the Gauge to be deleted
+        explode: false
+        in: path
+        name: gauge-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Gauge does not exist
+        "409":
+          description: The Gauge cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Gauge
+      operationId: get-gauge
+      parameters:
+      - description: Name of the Gauge to be read
+        explode: false
+        in: path
+        name: gauge-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/indicator-response'
+                - $ref: '#/components/schemas/numeric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Gauge does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Gauge by name
+      operationId: update-gauge
+      parameters:
+      - description: Name of the Gauge to be updated
+        explode: false
+        in: path
+        name: gauge-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-gauge-request'
+        description: Update an existing Gauge
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/indicator-response'
+                - $ref: '#/components/schemas/numeric-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Gauge does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-indicator-request:
+      allOf:
+      - type: object
+        properties:
+          gaugeName:
+            description: Name of the new Gauge
+            type: string
+        required:
+        - gaugeName
+      - $ref: '#/components/schemas/indicator-shared'
+    indicator-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Gauge
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/indicator-shared'
+    indicator-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumindicatorSchemaUrn'
+        gaugeDataSource:
+          type: string
+          description: Specifies the source of data to use in determining this Indicator Gauge's severity and status.
+        criticalValue:
+          type: string
+          description: A regular expression pattern that is used to determine whether the current monitored value indicates this gauge's severity should be critical.
+        majorValue:
+          type: string
+          description: A regular expression pattern that is used to determine whether the current monitored value indicates this gauge's severity will be 'major'.
+        minorValue:
+          type: string
+          description: A regular expression pattern that is used to determine whether the current monitored value indicates this gauge's severity will be 'minor'.
+        warningValue:
+          type: string
+          description: A regular expression pattern that is used to determine whether the current monitored value indicates this gauge's severity will be 'warning'.
+        description:
+          type: string
+          description: A description for this Gauge
+        enabled:
+          type: boolean
+          description: Indicates whether this Gauge is enabled.
+        overrideSeverity:
+          $ref: '#/components/schemas/EnumoverrideSeverityProp'
+        alertLevel:
+          $ref: '#/components/schemas/EnumalertLevelProp'
+        updateInterval:
+          type: string
+          description: The frequency with which this Gauge is updated.
+        samplesPerUpdateInterval:
+          type: integer
+          description: Indicates the number of times the monitor data source value will be collected during the update interval.
+        includeResource:
+          type: array
+          items:
+            type: string
+            description: Specifies set of resources to be monitored.
+        excludeResource:
+          type: array
+          items:
+            type: string
+            description: Specifies resources to exclude from being monitored.
+        serverUnavailableSeverityLevel:
+          $ref: '#/components/schemas/EnumserverUnavailableSeverityLevelProp'
+        serverDegradedSeverityLevel:
+          $ref: '#/components/schemas/EnumserverDegradedSeverityLevelProp'
+      required:
+      - schemas
+      - gaugeDataSource
+      - enabled
+    EnumindicatorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:gauge:indicator"
+    add-numeric-request:
+      allOf:
+      - type: object
+        properties:
+          gaugeName:
+            description: Name of the new Gauge
+            type: string
+        required:
+        - gaugeName
+      - $ref: '#/components/schemas/numeric-shared'
+    numeric-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Gauge
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/numeric-shared'
+    numeric-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumnumericSchemaUrn'
+        gaugeDataSource:
+          type: string
+          description: Specifies the source of data to use in determining this gauge's current severity.
+        criticalValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'critical'.
+        criticalExitValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'critical'.
+        majorValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'major'.
+        majorExitValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'major'.
+        minorValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'minor'.
+        minorExitValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'minor'.
+        warningValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'warning'.
+        warningExitValue:
+          type: number
+          description: A value that is used to determine whether the current monitored value indicates this gauge's severity should no longer be 'warning'.
+        description:
+          type: string
+          description: A description for this Gauge
+        enabled:
+          type: boolean
+          description: Indicates whether this Gauge is enabled.
+        overrideSeverity:
+          $ref: '#/components/schemas/EnumoverrideSeverityProp'
+        alertLevel:
+          $ref: '#/components/schemas/EnumalertLevelProp'
+        updateInterval:
+          type: string
+          description: The frequency with which this Gauge is updated.
+        samplesPerUpdateInterval:
+          type: integer
+          description: Indicates the number of times the monitor data source value will be collected during the update interval.
+        includeResource:
+          type: array
+          items:
+            type: string
+            description: Specifies set of resources to be monitored.
+        excludeResource:
+          type: array
+          items:
+            type: string
+            description: Specifies resources to exclude from being monitored.
+        serverUnavailableSeverityLevel:
+          $ref: '#/components/schemas/EnumserverUnavailableSeverityLevelProp'
+        serverDegradedSeverityLevel:
+          $ref: '#/components/schemas/EnumserverDegradedSeverityLevelProp'
+      required:
+      - schemas
+      - gaugeDataSource
+      - enabled
+    EnumnumericSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:gauge:numeric"
+    update-gauge-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumalertLevelProp:
+      type: string
+      enum:
+      - "always"
+      - "warning-and-above"
+      - "minor-and-above"
+      - "major-and-above"
+      - "critical-only"
+      - "never"
+      description: Specifies the level at which alerts are sent for alarms raised by this Gauge.
+    EnumserverUnavailableSeverityLevelProp:
+      type: string
+      enum:
+      - "critical"
+      - "major"
+      - "minor"
+      - "warning"
+      - "none"
+      description: Specifies the alarm severity level at or above which the server is considered unavailable.
+    EnumoverrideSeverityProp:
+      type: string
+      enum:
+      - "normal"
+      - "warning"
+      - "minor"
+      - "major"
+      - "critical"
+      description: When defined, causes this Gauge to assume the specified severity, overriding its computed severity. This is useful for testing alarms generated by Gauges as well as suppressing alarms for known conditions.
+    EnumserverDegradedSeverityLevelProp:
+      type: string
+      enum:
+      - "critical"
+      - "major"
+      - "minor"
+      - "warning"
+      - "none"
+      description: Specifies the alarm severity level at or above which the server is considered degraded.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

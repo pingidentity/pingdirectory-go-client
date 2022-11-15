@@ -1,0 +1,1994 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Virtual Attribute config object
+  title: PingData Virtual Attribute Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access virtual-attributes
+  name: virtual-attribute
+paths:
+  /virtual-attributes:
+    post:
+      summary: Add a new Virtual Attribute to the config
+      operationId: add-virtual-attribute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-mirror-request'
+              - $ref: '#/components/schemas/add-constructed-request'
+              - $ref: '#/components/schemas/add-is-member-of-request'
+              - $ref: '#/components/schemas/add-reverse-dn-join-request'
+              - $ref: '#/components/schemas/add-identify-references-request'
+              - $ref: '#/components/schemas/add-user-defined-request'
+              - $ref: '#/components/schemas/add-entry-dn-request'
+              - $ref: '#/components/schemas/add-equality-join-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-request'
+              - $ref: '#/components/schemas/add-member-request'
+              - $ref: '#/components/schemas/add-password-policy-state-json-request'
+              - $ref: '#/components/schemas/add-dn-join-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Virtual Attribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/mirror-response'
+                - $ref: '#/components/schemas/constructed-response'
+                - $ref: '#/components/schemas/is-member-of-response'
+                - $ref: '#/components/schemas/reverse-dn-join-response'
+                - $ref: '#/components/schemas/identify-references-response'
+                - $ref: '#/components/schemas/user-defined-response'
+                - $ref: '#/components/schemas/entry-dn-response'
+                - $ref: '#/components/schemas/equality-join-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/member-response'
+                - $ref: '#/components/schemas/password-policy-state-json-response'
+                - $ref: '#/components/schemas/dn-join-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Virtual Attribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /virtual-attributes/{virtual-attribute-name}:
+    delete:
+      summary: Delete a Virtual Attribute
+      operationId: delete-virtual-attribute
+      parameters:
+      - description: Name of the Virtual Attribute to be deleted
+        explode: false
+        in: path
+        name: virtual-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Virtual Attribute does not exist
+        "409":
+          description: The Virtual Attribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Virtual Attribute
+      operationId: get-virtual-attribute
+      parameters:
+      - description: Name of the Virtual Attribute to be read
+        explode: false
+        in: path
+        name: virtual-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/mirror-response'
+                - $ref: '#/components/schemas/entry-checksum-response'
+                - $ref: '#/components/schemas/member-of-server-group-response'
+                - $ref: '#/components/schemas/constructed-response'
+                - $ref: '#/components/schemas/is-member-of-response'
+                - $ref: '#/components/schemas/num-subordinates-response'
+                - $ref: '#/components/schemas/reverse-dn-join-response'
+                - $ref: '#/components/schemas/identify-references-response'
+                - $ref: '#/components/schemas/user-defined-response'
+                - $ref: '#/components/schemas/current-time-response'
+                - $ref: '#/components/schemas/short-unique-id-response'
+                - $ref: '#/components/schemas/entry-dn-response'
+                - $ref: '#/components/schemas/has-subordinates-response'
+                - $ref: '#/components/schemas/equality-join-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/instance-name-response'
+                - $ref: '#/components/schemas/replication-state-detail-response'
+                - $ref: '#/components/schemas/member-response'
+                - $ref: '#/components/schemas/password-policy-state-json-response'
+                - $ref: '#/components/schemas/subschema-subentry-response'
+                - $ref: '#/components/schemas/dn-join-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Virtual Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Virtual Attribute by name
+      operationId: update-virtual-attribute
+      parameters:
+      - description: Name of the Virtual Attribute to be updated
+        explode: false
+        in: path
+        name: virtual-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-virtual-attribute-request'
+        description: Update an existing Virtual Attribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/mirror-response'
+                - $ref: '#/components/schemas/entry-checksum-response'
+                - $ref: '#/components/schemas/member-of-server-group-response'
+                - $ref: '#/components/schemas/constructed-response'
+                - $ref: '#/components/schemas/is-member-of-response'
+                - $ref: '#/components/schemas/num-subordinates-response'
+                - $ref: '#/components/schemas/reverse-dn-join-response'
+                - $ref: '#/components/schemas/identify-references-response'
+                - $ref: '#/components/schemas/user-defined-response'
+                - $ref: '#/components/schemas/current-time-response'
+                - $ref: '#/components/schemas/short-unique-id-response'
+                - $ref: '#/components/schemas/entry-dn-response'
+                - $ref: '#/components/schemas/has-subordinates-response'
+                - $ref: '#/components/schemas/equality-join-response'
+                - $ref: '#/components/schemas/groovy-scripted-response'
+                - $ref: '#/components/schemas/instance-name-response'
+                - $ref: '#/components/schemas/replication-state-detail-response'
+                - $ref: '#/components/schemas/member-response'
+                - $ref: '#/components/schemas/password-policy-state-json-response'
+                - $ref: '#/components/schemas/subschema-subentry-response'
+                - $ref: '#/components/schemas/dn-join-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Virtual Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-mirror-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/mirror-shared'
+    mirror-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/mirror-shared'
+    mirror-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnummirrorSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        sourceAttribute:
+          type: string
+          description: Specifies the source attribute containing the values to use for this virtual attribute.
+        sourceEntryDNAttribute:
+          type: string
+          description: Specifies the attribute containing the DN of another entry from which to obtain the source attribute providing the values for this virtual attribute.
+        sourceEntryDNMap:
+          type: string
+          description: Specifies a DN map that will be used to identify the entry from which to obtain the source attribute providing the values for this virtual attribute.
+        bypassAccessControlForSearches:
+          type: boolean
+          description: Indicates whether searches performed by this virtual attribute provider should be exempted from access control restrictions.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - sourceAttribute
+      - enabled
+      - attributeType
+    EnummirrorSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:mirror"
+    entry-checksum-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumentry-checksumSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        excludeOperationalAttributes:
+          type: boolean
+          description: Indicates whether all operational attributes should be excluded from the generated checksum.
+        excludedAttribute:
+          type: array
+          items:
+            type: string
+            description: Specifies the attributes that should be excluded from the checksum calculation.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumentry-checksumSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-checksum"
+    member-of-server-group-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enummember-of-server-groupSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enummember-of-server-groupSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:member-of-server-group"
+    add-constructed-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/constructed-shared'
+    constructed-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/constructed-shared'
+    constructed-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumconstructedSchemaUrn'
+        valuePattern:
+          type: array
+          items:
+            type: string
+            description: Specifies a pattern for constructing the virtual attribute value using fixed text and attribute values from the entry.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - valuePattern
+      - enabled
+      - attributeType
+    EnumconstructedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:constructed"
+    add-is-member-of-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/is-member-of-shared'
+    is-member-of-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/is-member-of-shared'
+    is-member-of-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumis-member-ofSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        directMembershipsOnly:
+          type: boolean
+          description: Specifies whether to only include groups in which the user is directly associated with and the membership maybe modified via the group entry. Groups in which the user's membership is derived dynamically or through nested groups will not be included.
+        includedGroupFilter:
+          type: string
+          description: A search filter that will be used to identify which groups should be included in the values of the virtual attribute. With no value defined (which is the default behavior), all groups that contain the target user will be included.
+        rewriteSearchFilters:
+          $ref: '#/components/schemas/EnumrewriteSearchFiltersProp'
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumis-member-ofSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:is-member-of"
+    num-subordinates-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumnum-subordinatesSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumnum-subordinatesSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:num-subordinates"
+    add-reverse-dn-join-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/reverse-dn-join-shared'
+    reverse-dn-join-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/reverse-dn-join-shared'
+    reverse-dn-join-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumreverse-dn-joinSchemaUrn'
+        joinDNAttribute:
+          type: string
+          description: The attribute in related entries whose set of values must contain the DN of the search result entry to be joined with that entry.
+        joinBaseDNType:
+          $ref: '#/components/schemas/EnumjoinBaseDNTypeProp'
+        joinCustomBaseDN:
+          type: string
+          description: The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
+        joinScope:
+          $ref: '#/components/schemas/EnumjoinScopeProp'
+        joinSizeLimit:
+          type: integer
+          description: The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry.
+        joinFilter:
+          type: string
+          description: An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry.
+        joinAttribute:
+          type: array
+          items:
+            type: string
+            description: An optional set of the names of the attributes to include with joined entries.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - joinDNAttribute
+      - joinBaseDNType
+      - enabled
+      - attributeType
+    Enumreverse-dn-joinSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:reverse-dn-join"
+    add-identify-references-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/identify-references-shared'
+    identify-references-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/identify-references-shared'
+    identify-references-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumidentify-referencesSchemaUrn'
+        referencedByAttribute:
+          type: array
+          items:
+            type: string
+            description: The name or OID of an attribute type whose values will be searched for references to the target entry. The attribute type must be defined in the server schema, must have a syntax of either "distinguished name" or "name and optional UID", and must be indexed for equality.
+        referenceSearchBaseDN:
+          type: array
+          items:
+            type: string
+            description: The base DN that will be used when searching for references to the target entry. If no reference search base DN is specified, the default behavior will be to search below all public naming contexts configured in the server.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - referencedByAttribute
+      - enabled
+      - attributeType
+    Enumidentify-referencesSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:identify-references"
+    add-user-defined-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/user-defined-shared'
+    user-defined-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/user-defined-shared'
+    user-defined-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumuser-definedSchemaUrn'
+        value:
+          type: array
+          items:
+            type: string
+            description: Specifies the values to be included in the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - value
+      - enabled
+      - attributeType
+    Enumuser-definedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:user-defined"
+    current-time-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcurrent-timeSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        returnUtcTime:
+          type: boolean
+          description: Indicates whether to return current time in UTC.
+        includeMilliseconds:
+          type: boolean
+          description: Indicates whether the current time includes millisecond precision.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumcurrent-timeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:current-time"
+    short-unique-id-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumshort-unique-idSchemaUrn'
+        sequenceNumberAttribute:
+          type: string
+          description: Specifies the name or OID of the attribute which contains the sequence number from which unique identifiers are generated. The attribute should have Integer syntax or a String syntax permitting integer values. If this property is modified then the filter property should be updated accordingly so that only entries containing the sequence number attribute are eligible to have a value generated for this virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - sequenceNumberAttribute
+      - enabled
+      - attributeType
+    Enumshort-unique-idSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:short-unique-id"
+    add-entry-dn-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/entry-dn-shared'
+    entry-dn-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/entry-dn-shared'
+    entry-dn-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumentry-dnSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumentry-dnSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:entry-dn"
+    has-subordinates-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhas-subordinatesSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumhas-subordinatesSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:has-subordinates"
+    add-equality-join-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/equality-join-shared'
+    equality-join-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/equality-join-shared'
+    equality-join-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumequality-joinSchemaUrn'
+        joinSourceAttribute:
+          type: string
+          description: The attribute containing the value(s) in the source entry to use to identify related entries.
+        joinTargetAttribute:
+          type: string
+          description: The attribute in target entries whose value(s) match values of the source attribute in the source entry.
+        joinMatchAll:
+          type: boolean
+          description: Indicates whether joined entries will be required to have all values for the source attribute, or only at least one of its values.
+        joinBaseDNType:
+          $ref: '#/components/schemas/EnumjoinBaseDNTypeProp'
+        joinCustomBaseDN:
+          type: string
+          description: The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
+        joinScope:
+          $ref: '#/components/schemas/EnumjoinScopeProp'
+        joinSizeLimit:
+          type: integer
+          description: The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry.
+        joinFilter:
+          type: string
+          description: An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry.
+        joinAttribute:
+          type: array
+          items:
+            type: string
+            description: An optional set of the names of the attributes to include with joined entries.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - joinSourceAttribute
+      - joinTargetAttribute
+      - joinBaseDNType
+      - enabled
+      - attributeType
+    Enumequality-joinSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:equality-join"
+    add-groovy-scripted-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-shared'
+    groovy-scripted-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scriptedSchemaUrn'
+        scriptClass:
+          type: string
+          description: The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Virtual Attribute.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Scripted Virtual Attribute. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+      - attributeType
+    Enumgroovy-scriptedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:groovy-scripted"
+    instance-name-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enuminstance-nameSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enuminstance-nameSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:instance-name"
+    replication-state-detail-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumreplication-state-detailSchemaUrn'
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - enabled
+      - attributeType
+    Enumreplication-state-detailSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:replication-state-detail"
+    add-member-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/member-shared'
+    member-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/member-shared'
+    member-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnummemberSchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        allowRetrievingMembership:
+          type: boolean
+          description: Indicates whether to handle requests that request all values for the virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+      required:
+      - schemas
+      - allowRetrievingMembership
+      - enabled
+      - attributeType
+    EnummemberSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:member"
+    add-password-policy-state-json-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/password-policy-state-json-shared'
+    password-policy-state-json-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/password-policy-state-json-shared'
+    password-policy-state-json-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpassword-policy-state-jsonSchemaUrn'
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - enabled
+      - attributeType
+    Enumpassword-policy-state-jsonSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:password-policy-state-json"
+    subschema-subentry-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsubschema-subentrySchemaUrn'
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - attributeType
+      - enabled
+    Enumsubschema-subentrySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:subschema-subentry"
+    add-dn-join-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/dn-join-shared'
+    dn-join-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/dn-join-shared'
+    dn-join-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdn-joinSchemaUrn'
+        joinDNAttribute:
+          type: string
+          description: The attribute whose values are the DNs of the entries to be joined with the search result entry.
+        joinBaseDNType:
+          $ref: '#/components/schemas/EnumjoinBaseDNTypeProp'
+        joinCustomBaseDN:
+          type: string
+          description: The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
+        joinScope:
+          $ref: '#/components/schemas/EnumjoinScopeProp'
+        joinSizeLimit:
+          type: integer
+          description: The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry.
+        joinFilter:
+          type: string
+          description: An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry.
+        joinAttribute:
+          type: array
+          items:
+            type: string
+            description: An optional set of the names of the attributes to include with joined entries.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - joinDNAttribute
+      - joinBaseDNType
+      - enabled
+      - attributeType
+    Enumdn-joinSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:dn-join"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          name:
+            description: Name of the new Virtual Attribute
+            type: string
+        required:
+        - name
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Virtual Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Virtual Attribute.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Virtual Attribute. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Virtual Attribute
+        enabled:
+          type: boolean
+          description: Indicates whether the Virtual Attribute is enabled for use.
+        attributeType:
+          type: string
+          description: Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
+        baseDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+        groupDN:
+          type: array
+          items:
+            type: string
+            description: Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+        filter:
+          type: array
+          items:
+            type: string
+            description: Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+        clientConnectionPolicy:
+          type: array
+          items:
+            type: string
+            description: Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+        conflictBehavior:
+          $ref: '#/components/schemas/EnumconflictBehaviorProp'
+        requireExplicitRequestByName:
+          type: boolean
+          description: Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
+        multipleVirtualAttributeEvaluationOrderIndex:
+          type: integer
+          description: Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
+        multipleVirtualAttributeMergeBehavior:
+          $ref: '#/components/schemas/EnummultipleVirtualAttributeMergeBehaviorProp'
+        allowIndexConflicts:
+          type: boolean
+          description: Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+      - attributeType
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party"
+    update-virtual-attribute-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumconflictBehaviorProp:
+      type: string
+      enum:
+      - "real-overrides-virtual"
+      - "virtual-overrides-real"
+      - "merge-real-and-virtual"
+      description: Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
+    EnumrewriteSearchFiltersProp:
+      type: string
+      enum:
+      - "always"
+      - "within-group-scope"
+      - "never"
+      description: Search filters that include Is Member Of Virtual Attribute searches on dynamic groups can be updated to include the dynamic group filter in the search filter itself. This can allow the backend to more efficiently process the search filter by using attribute indexes sooner in the search processing.
+    EnumjoinScopeProp:
+      type: string
+      enum:
+      - "base-object"
+      - "single-level"
+      - "whole-subtree"
+      - "subordinate-subtree"
+      description: The scope for searches used to identify joined entries.
+    EnummultipleVirtualAttributeMergeBehaviorProp:
+      type: string
+      enum:
+      - "use-first-definition"
+      - "use-only-definitions-with-the-lowest-evaluation-order-index"
+      - "use-all-definitions"
+      description: Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
+    EnumjoinBaseDNTypeProp:
+      type: string
+      enum:
+      - "use-search-base-dn"
+      - "use-source-entry-dn"
+      - "use-custom-base-dn"
+      description: Specifies how server should determine the base DN for the internal searches used to identify joined entries.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

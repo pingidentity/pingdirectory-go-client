@@ -1,0 +1,625 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Passphrase Provider config object
+  title: PingData Passphrase Provider Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access passphrase-providers
+  name: passphrase-provider
+paths:
+  /passphrase-providers:
+    post:
+      summary: Add a new Passphrase Provider to the config
+      operationId: add-passphrase-provider
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-environment-variable-request'
+              - $ref: '#/components/schemas/add-amazon-secrets-manager-request'
+              - $ref: '#/components/schemas/add-obscured-value-request'
+              - $ref: '#/components/schemas/add-azure-key-vault-request'
+              - $ref: '#/components/schemas/add-file-based-request'
+              - $ref: '#/components/schemas/add-conjur-request'
+              - $ref: '#/components/schemas/add-vault-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Passphrase Provider in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/environment-variable-response'
+                - $ref: '#/components/schemas/amazon-secrets-manager-response'
+                - $ref: '#/components/schemas/obscured-value-response'
+                - $ref: '#/components/schemas/azure-key-vault-response'
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/conjur-response'
+                - $ref: '#/components/schemas/vault-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Passphrase Provider already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /passphrase-providers/{passphrase-provider-name}:
+    delete:
+      summary: Delete a Passphrase Provider
+      operationId: delete-passphrase-provider
+      parameters:
+      - description: Name of the Passphrase Provider to be deleted
+        explode: false
+        in: path
+        name: passphrase-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Passphrase Provider does not exist
+        "409":
+          description: The Passphrase Provider cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Passphrase Provider
+      operationId: get-passphrase-provider
+      parameters:
+      - description: Name of the Passphrase Provider to be read
+        explode: false
+        in: path
+        name: passphrase-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/environment-variable-response'
+                - $ref: '#/components/schemas/amazon-secrets-manager-response'
+                - $ref: '#/components/schemas/obscured-value-response'
+                - $ref: '#/components/schemas/azure-key-vault-response'
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/conjur-response'
+                - $ref: '#/components/schemas/vault-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Passphrase Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Passphrase Provider by name
+      operationId: update-passphrase-provider
+      parameters:
+      - description: Name of the Passphrase Provider to be updated
+        explode: false
+        in: path
+        name: passphrase-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-passphrase-provider-request'
+        description: Update an existing Passphrase Provider
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/environment-variable-response'
+                - $ref: '#/components/schemas/amazon-secrets-manager-response'
+                - $ref: '#/components/schemas/obscured-value-response'
+                - $ref: '#/components/schemas/azure-key-vault-response'
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/conjur-response'
+                - $ref: '#/components/schemas/vault-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Passphrase Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-environment-variable-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/environment-variable-shared'
+    environment-variable-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/environment-variable-shared'
+    environment-variable-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumenvironment-variableSchemaUrn'
+        environmentVariable:
+          type: string
+          description: The name of the environment variable that is expected to hold the passphrase.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - environmentVariable
+      - enabled
+    Enumenvironment-variableSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:environment-variable"
+    add-amazon-secrets-manager-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/amazon-secrets-manager-shared'
+    amazon-secrets-manager-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/amazon-secrets-manager-shared'
+    amazon-secrets-manager-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumamazon-secrets-managerSchemaUrn'
+        awsExternalServer:
+          type: string
+          description: The external server with information to use when interacting with the AWS Secrets Manager.
+        secretID:
+          type: string
+          description: The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved.
+        secretFieldName:
+          type: string
+          description: The name of the JSON field whose value is the passphrase that will be retrieved.
+        secretVersionID:
+          type: string
+          description: The unique identifier for the version of the secret to be retrieved.
+        secretVersionStage:
+          type: string
+          description: The staging label for the version of the secret to be retrieved.
+        maxCacheDuration:
+          type: string
+          description: The maximum length of time that the passphrase provider may cache the passphrase that has been read from Vault. A value of zero seconds indicates that the provider should always attempt to read the passphrase from Vault.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - awsExternalServer
+      - secretID
+      - secretFieldName
+      - enabled
+    Enumamazon-secrets-managerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:amazon-secrets-manager"
+    add-obscured-value-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/obscured-value-shared'
+    obscured-value-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/obscured-value-shared'
+    obscured-value-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumobscured-valueSchemaUrn'
+        obscuredValue:
+          type: string
+          format: password
+          description: The value to be stored in an obscured form.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - obscuredValue
+      - enabled
+    Enumobscured-valueSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:obscured-value"
+    add-azure-key-vault-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/azure-key-vault-shared'
+    azure-key-vault-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/azure-key-vault-shared'
+    azure-key-vault-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumazure-key-vaultSchemaUrn'
+        keyVaultURI:
+          type: string
+          description: The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
+        azureAuthenticationMethod:
+          type: string
+          description: The mechanism used to authenticate to the Azure service.
+        secretName:
+          type: string
+          description: The name of the secret to retrieve.
+        maxCacheDuration:
+          type: string
+          description: The maximum length of time that the passphrase provider may cache the passphrase that has been read from Azure Key Vault. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the Azure service.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - keyVaultURI
+      - azureAuthenticationMethod
+      - secretName
+      - enabled
+    Enumazure-key-vaultSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:azure-key-vault"
+    add-file-based-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/file-based-shared'
+    file-based-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-based-shared'
+    file-based-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-basedSchemaUrn'
+        passwordFile:
+          type: string
+          description: The path to the file containing the passphrase.
+        maxCacheDuration:
+          type: string
+          description: The maximum length of time that the passphrase provider may cache the passphrase that has been read from the target file. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the file.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - passwordFile
+      - enabled
+    Enumfile-basedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:file-based"
+    add-conjur-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/conjur-shared'
+    conjur-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/conjur-shared'
+    conjur-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumconjurSchemaUrn'
+        conjurExternalServer:
+          type: string
+          description: An external server definition with information needed to connect and authenticate to the Conjur instance containing the passphrase.
+        conjurSecretRelativePath:
+          type: string
+          description: The portion of the path that follows the account name in the URI needed to obtain the desired secret. Any special characters in the path must be URL-encoded.
+        maxCacheDuration:
+          type: string
+          description: The maximum length of time that the passphrase provider may cache the passphrase that has been read from Conjur. A value of zero seconds indicates that the provider should always attempt to read the passphrase from Conjur.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - conjurExternalServer
+      - conjurSecretRelativePath
+      - enabled
+    EnumconjurSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:conjur"
+    add-vault-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/vault-shared'
+    vault-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/vault-shared'
+    vault-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumvaultSchemaUrn'
+        vaultExternalServer:
+          type: string
+          description: An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
+        vaultSecretPath:
+          type: string
+          description: The path to the desired secret in the Vault service. This will be appended to the value of the base-url property for the associated Vault external server.
+        vaultSecretFieldName:
+          type: string
+          description: The name of the field in the Vault secret record that contains the passphrase to use to generate the encryption key.
+        maxCacheDuration:
+          type: string
+          description: The maximum length of time that the passphrase provider may cache the passphrase that has been read from Vault. A value of zero seconds indicates that the provider should always attempt to read the passphrase from Vault.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - vaultExternalServer
+      - vaultSecretPath
+      - vaultSecretFieldName
+      - enabled
+    EnumvaultSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:vault"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Passphrase Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Passphrase Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Passphrase Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Passphrase Provider. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Passphrase Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Passphrase Provider is enabled for use in the server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:passphrase-provider:third-party"
+    update-passphrase-provider-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

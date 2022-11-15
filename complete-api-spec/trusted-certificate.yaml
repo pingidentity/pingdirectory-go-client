@@ -1,0 +1,208 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Trusted Certificate config object
+  title: PingData Trusted Certificate Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access trusted-certificates
+  name: trusted-certificate
+paths:
+  /trusted-certificates:
+    post:
+      summary: Add a new Trusted Certificate to the config
+      operationId: add-trusted-certificate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-trusted-certificate-request'
+        description: Create a new Trusted Certificate in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trusted-certificate-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Trusted Certificate already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /trusted-certificates/{trusted-certificate-name}:
+    delete:
+      summary: Delete a Trusted Certificate
+      operationId: delete-trusted-certificate
+      parameters:
+      - description: Name of the Trusted Certificate to be deleted
+        explode: false
+        in: path
+        name: trusted-certificate-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Trusted Certificate does not exist
+        "409":
+          description: The Trusted Certificate cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Trusted Certificate
+      operationId: get-trusted-certificate
+      parameters:
+      - description: Name of the Trusted Certificate to be read
+        explode: false
+        in: path
+        name: trusted-certificate-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trusted-certificate-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Trusted Certificate does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Trusted Certificate by name
+      operationId: update-trusted-certificate
+      parameters:
+      - description: Name of the Trusted Certificate to be updated
+        explode: false
+        in: path
+        name: trusted-certificate-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-trusted-certificate-request'
+        description: Update an existing Trusted Certificate
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trusted-certificate-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Trusted Certificate does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-trusted-certificate-request:
+      allOf:
+      - type: object
+        properties:
+          certificateName:
+            description: Name of the new Trusted Certificate
+            type: string
+        required:
+        - certificateName
+      - $ref: '#/components/schemas/trusted-certificate-shared'
+    trusted-certificate-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Trusted Certificate
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/trusted-certificate-shared'
+    trusted-certificate-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumtrusted-certificateSchemaUrn'
+        certificate:
+          type: string
+          description: The PEM-encoded X.509v3 certificate.
+      required:
+      - certificate
+    Enumtrusted-certificateSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:trusted-certificate"
+    update-trusted-certificate-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

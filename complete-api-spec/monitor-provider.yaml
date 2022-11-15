@@ -1,0 +1,500 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Monitor Provider config object
+  title: PingData Monitor Provider Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access monitor-providers
+  name: monitor-provider
+paths:
+  /monitor-providers:
+    post:
+      summary: Add a new Monitor Provider to the config
+      operationId: add-monitor-provider
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Monitor Provider in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Monitor Provider already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /monitor-providers/{monitor-provider-name}:
+    delete:
+      summary: Delete a Monitor Provider
+      operationId: delete-monitor-provider
+      parameters:
+      - description: Name of the Monitor Provider to be deleted
+        explode: false
+        in: path
+        name: monitor-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Monitor Provider does not exist
+        "409":
+          description: The Monitor Provider cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Monitor Provider
+      operationId: get-monitor-provider
+      parameters:
+      - description: Name of the Monitor Provider to be read
+        explode: false
+        in: path
+        name: monitor-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/general-response'
+                - $ref: '#/components/schemas/memory-usage-response'
+                - $ref: '#/components/schemas/stack-trace-response'
+                - $ref: '#/components/schemas/disk-space-usage-response'
+                - $ref: '#/components/schemas/system-info-response'
+                - $ref: '#/components/schemas/active-operations-response'
+                - $ref: '#/components/schemas/ssl-context-response'
+                - $ref: '#/components/schemas/client-connection-response'
+                - $ref: '#/components/schemas/version-response'
+                - $ref: '#/components/schemas/host-system-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Monitor Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Monitor Provider by name
+      operationId: update-monitor-provider
+      parameters:
+      - description: Name of the Monitor Provider to be updated
+        explode: false
+        in: path
+        name: monitor-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-monitor-provider-request'
+        description: Update an existing Monitor Provider
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/general-response'
+                - $ref: '#/components/schemas/memory-usage-response'
+                - $ref: '#/components/schemas/stack-trace-response'
+                - $ref: '#/components/schemas/disk-space-usage-response'
+                - $ref: '#/components/schemas/system-info-response'
+                - $ref: '#/components/schemas/active-operations-response'
+                - $ref: '#/components/schemas/ssl-context-response'
+                - $ref: '#/components/schemas/client-connection-response'
+                - $ref: '#/components/schemas/version-response'
+                - $ref: '#/components/schemas/host-system-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Monitor Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    general-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumgeneralSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    EnumgeneralSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:general"
+    memory-usage-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enummemory-usageSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enummemory-usageSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:memory-usage"
+    stack-trace-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumstack-traceSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumstack-traceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:stack-trace"
+    disk-space-usage-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdisk-space-usageSchemaUrn'
+        lowSpaceWarningSizeThreshold:
+          type: string
+          description: Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
+        lowSpaceWarningPercentThreshold:
+          type: integer
+          description: Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
+        lowSpaceErrorSizeThreshold:
+          type: string
+          description: Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
+        lowSpaceErrorPercentThreshold:
+          type: integer
+          description: Specifies the low space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
+        outOfSpaceErrorSizeThreshold:
+          type: string
+          description: Specifies the out of space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
+        outOfSpaceErrorPercentThreshold:
+          type: integer
+          description: Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
+        alertFrequency:
+          type: string
+          description: Specifies the length of time between administrative alerts generated in response to lack of usable disk space. Administrative alerts will be generated whenever the amount of usable space drops below any threshold, and they will also be generated at regular intervals as long as the amount of usable space remains below the threshold value. A value of zero indicates that alerts should only be generated when the amount of usable space drops below a configured threshold.
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - alertFrequency
+      - enabled
+    Enumdisk-space-usageSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage"
+    system-info-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsystem-infoSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumsystem-infoSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:system-info"
+    active-operations-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumactive-operationsSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumactive-operationsSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:active-operations"
+    ssl-context-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumssl-contextSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumssl-contextSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:ssl-context"
+    client-connection-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumclient-connectionSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumclient-connectionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection"
+    version-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumversionSchemaUrn'
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    EnumversionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:version"
+    host-system-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumhost-systemSchemaUrn'
+        enabled:
+          type: boolean
+          description: Indicates whether the Host System Monitor Provider is enabled for use.
+        diskDevices:
+          type: array
+          items:
+            type: string
+            description: Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d.
+        networkDevices:
+          type: array
+          items:
+            type: string
+            description: Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i.
+        systemUtilizationMonitorLogDirectory:
+          type: string
+          description: Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process.
+        description:
+          type: string
+          description: A description for this Monitor Provider
+      required:
+      - schemas
+      - enabled
+      - systemUtilizationMonitorLogDirectory
+    Enumhost-systemSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:host-system"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Monitor Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Monitor Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Monitor Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Monitor Provider is enabled for use.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:third-party"
+    update-monitor-provider-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

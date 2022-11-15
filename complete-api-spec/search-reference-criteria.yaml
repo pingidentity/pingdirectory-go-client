@@ -1,0 +1,348 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Search Reference Criteria config object
+  title: PingData Search Reference Criteria Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access search-reference-criteria
+  name: search-reference-criteria
+paths:
+  /search-reference-criteria:
+    post:
+      summary: Add a new Search Reference Criteria to the config
+      operationId: add-search-reference-criteria
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-simple-request'
+              - $ref: '#/components/schemas/add-aggregate-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Search Reference Criteria in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/simple-response'
+                - $ref: '#/components/schemas/aggregate-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Search Reference Criteria already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /search-reference-criteria/{search-reference-criteria-name}:
+    delete:
+      summary: Delete a Search Reference Criteria
+      operationId: delete-search-reference-criteria
+      parameters:
+      - description: Name of the Search Reference Criteria to be deleted
+        explode: false
+        in: path
+        name: search-reference-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Search Reference Criteria does not exist
+        "409":
+          description: The Search Reference Criteria cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Search Reference Criteria
+      operationId: get-search-reference-criteria
+      parameters:
+      - description: Name of the Search Reference Criteria to be read
+        explode: false
+        in: path
+        name: search-reference-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/simple-response'
+                - $ref: '#/components/schemas/aggregate-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Search Reference Criteria does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Search Reference Criteria by name
+      operationId: update-search-reference-criteria
+      parameters:
+      - description: Name of the Search Reference Criteria to be updated
+        explode: false
+        in: path
+        name: search-reference-criteria-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-search-reference-criteria-request'
+        description: Update an existing Search Reference Criteria
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/simple-response'
+                - $ref: '#/components/schemas/aggregate-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Search Reference Criteria does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-simple-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Search Reference Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/simple-shared'
+    simple-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Search Reference Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/simple-shared'
+    simple-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumsimpleSchemaUrn'
+        requestCriteria:
+          type: string
+          description: Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
+        allIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
+        anyIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: Specifies the OID of a control that may be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain at least one of those controls.
+        notAllIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
+        noneIncludedReferenceControl:
+          type: array
+          items:
+            type: string
+            description: Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls.
+        description:
+          type: string
+          description: A description for this Search Reference Criteria
+      required:
+      - schemas
+    EnumsimpleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:simple"
+    add-aggregate-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Search Reference Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/aggregate-shared'
+    aggregate-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Search Reference Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/aggregate-shared'
+    aggregate-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumaggregateSchemaUrn'
+        allIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
+        anyIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
+        notAllIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: Specifies a search reference criteria object that should not match the associated search result reference in order to match the aggregate search reference criteria. If one or more not-all-included search reference criteria objects are provided, then a search result reference must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate search reference criteria.
+        noneIncludedSearchReferenceCriteria:
+          type: array
+          items:
+            type: string
+            description: Specifies a search reference criteria object that must not match the associated search result reference in order to match the aggregate search reference criteria. If one or more none-included search reference criteria objects are provided, then a search result reference must not match any of them in order to match the aggregate search reference criteria.
+        description:
+          type: string
+          description: A description for this Search Reference Criteria
+      required:
+      - schemas
+    EnumaggregateSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:aggregate"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          criteriaName:
+            description: Name of the new Search Reference Criteria
+            type: string
+        required:
+        - criteriaName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Search Reference Criteria
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Search Reference Criteria.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Search Reference Criteria
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:search-reference-criteria:third-party"
+    update-search-reference-criteria-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

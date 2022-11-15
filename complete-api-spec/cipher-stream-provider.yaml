@@ -1,0 +1,731 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Cipher Stream Provider config object
+  title: PingData Cipher Stream Provider Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access cipher-stream-providers
+  name: cipher-stream-provider
+paths:
+  /cipher-stream-providers:
+    post:
+      summary: Add a new Cipher Stream Provider to the config
+      operationId: add-cipher-stream-provider
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-amazon-key-management-service-request'
+              - $ref: '#/components/schemas/add-amazon-secrets-manager-request'
+              - $ref: '#/components/schemas/add-azure-key-vault-request'
+              - $ref: '#/components/schemas/add-file-based-request'
+              - $ref: '#/components/schemas/add-wait-for-passphrase-request'
+              - $ref: '#/components/schemas/add-conjur-request'
+              - $ref: '#/components/schemas/add-pkcs11-request'
+              - $ref: '#/components/schemas/add-vault-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Cipher Stream Provider in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/amazon-key-management-service-response'
+                - $ref: '#/components/schemas/amazon-secrets-manager-response'
+                - $ref: '#/components/schemas/azure-key-vault-response'
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/wait-for-passphrase-response'
+                - $ref: '#/components/schemas/conjur-response'
+                - $ref: '#/components/schemas/pkcs11-response'
+                - $ref: '#/components/schemas/vault-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Cipher Stream Provider already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /cipher-stream-providers/{cipher-stream-provider-name}:
+    delete:
+      summary: Delete a Cipher Stream Provider
+      operationId: delete-cipher-stream-provider
+      parameters:
+      - description: Name of the Cipher Stream Provider to be deleted
+        explode: false
+        in: path
+        name: cipher-stream-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Cipher Stream Provider does not exist
+        "409":
+          description: The Cipher Stream Provider cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Cipher Stream Provider
+      operationId: get-cipher-stream-provider
+      parameters:
+      - description: Name of the Cipher Stream Provider to be read
+        explode: false
+        in: path
+        name: cipher-stream-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/amazon-key-management-service-response'
+                - $ref: '#/components/schemas/amazon-secrets-manager-response'
+                - $ref: '#/components/schemas/azure-key-vault-response'
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/wait-for-passphrase-response'
+                - $ref: '#/components/schemas/conjur-response'
+                - $ref: '#/components/schemas/pkcs11-response'
+                - $ref: '#/components/schemas/vault-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Cipher Stream Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Cipher Stream Provider by name
+      operationId: update-cipher-stream-provider
+      parameters:
+      - description: Name of the Cipher Stream Provider to be updated
+        explode: false
+        in: path
+        name: cipher-stream-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-cipher-stream-provider-request'
+        description: Update an existing Cipher Stream Provider
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/amazon-key-management-service-response'
+                - $ref: '#/components/schemas/amazon-secrets-manager-response'
+                - $ref: '#/components/schemas/azure-key-vault-response'
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/wait-for-passphrase-response'
+                - $ref: '#/components/schemas/conjur-response'
+                - $ref: '#/components/schemas/pkcs11-response'
+                - $ref: '#/components/schemas/vault-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Cipher Stream Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-amazon-key-management-service-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/amazon-key-management-service-shared'
+    amazon-key-management-service-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/amazon-key-management-service-shared'
+    amazon-key-management-service-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumamazon-key-management-serviceSchemaUrn'
+        encryptedPassphraseFile:
+          type: string
+          description: The path to a file that will hold the encrypted passphrase used by this cipher stream provider.
+        awsExternalServer:
+          type: string
+          description: The external server with information to use when interacting with the Amazon Key Management Service.
+        awsAccessKeyID:
+          type: string
+          description: The access key ID that will be used if this cipher stream provider will authenticate to the Amazon Key Management Service using an access key rather than an IAM role associated with an EC2 instance.
+        awsSecretAccessKey:
+          type: string
+          format: password
+          description: The secret access key that will be used if this cipher stream provider will authenticate to the Amazon Key Management Service using an access key rather than an IAM role associated with an EC2 instance.
+        awsRegionName:
+          type: string
+          description: The name of the Amazon Web Services region that holds the encryption key. This is optional, and if it is not provided, then the server will attempt to determine the region from the key ARN.
+        kmsEncryptionKeyArn:
+          type: string
+          description: The Amazon resource name (ARN) for the KMS key that will be used to encrypt the contents of the passphrase file. This key must exist, and the AWS client must have access to encrypt and decrypt data using this key.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - encryptedPassphraseFile
+      - kmsEncryptionKeyArn
+      - enabled
+    Enumamazon-key-management-serviceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-key-management-service"
+    add-amazon-secrets-manager-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/amazon-secrets-manager-shared'
+    amazon-secrets-manager-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/amazon-secrets-manager-shared'
+    amazon-secrets-manager-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumamazon-secrets-managerSchemaUrn'
+        awsExternalServer:
+          type: string
+          description: The external server with information to use when interacting with the AWS Secrets Manager.
+        secretID:
+          type: string
+          description: The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved.
+        secretFieldName:
+          type: string
+          description: The name of the JSON field whose value is the passphrase that will be used to generate the encryption key for protecting the contents of the encryption settings database.
+        secretVersionID:
+          type: string
+          description: The unique identifier for the version of the secret to be retrieved.
+        secretVersionStage:
+          type: string
+          description: The staging label for the version of the secret to be retrieved.
+        encryptionMetadataFile:
+          type: string
+          description: The path to a file that will hold metadata about the encryption performed by this Amazon Secrets Manager Cipher Stream Provider.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - awsExternalServer
+      - secretID
+      - secretFieldName
+      - encryptionMetadataFile
+      - enabled
+    Enumamazon-secrets-managerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:amazon-secrets-manager"
+    add-azure-key-vault-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/azure-key-vault-shared'
+    azure-key-vault-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/azure-key-vault-shared'
+    azure-key-vault-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumazure-key-vaultSchemaUrn'
+        keyVaultURI:
+          type: string
+          description: The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
+        azureAuthenticationMethod:
+          type: string
+          description: The mechanism used to authenticate to the Azure service.
+        secretName:
+          type: string
+          description: The name of the secret to retrieve.
+        encryptionMetadataFile:
+          type: string
+          description: The path to a file that will hold metadata about the encryption performed by this Azure Key Vault Cipher Stream Provider.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - keyVaultURI
+      - azureAuthenticationMethod
+      - secretName
+      - encryptionMetadataFile
+      - enabled
+    Enumazure-key-vaultSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:azure-key-vault"
+    add-file-based-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/file-based-shared'
+    file-based-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-based-shared'
+    file-based-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-basedSchemaUrn'
+        passwordFile:
+          type: string
+          description: The path to the file containing the password to use when generating ciphers.
+        waitForPasswordFile:
+          type: boolean
+          description: Indicates whether the server should wait for the password file to become available if it does not exist.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - passwordFile
+      - enabled
+    Enumfile-basedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:file-based"
+    add-wait-for-passphrase-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/wait-for-passphrase-shared'
+    wait-for-passphrase-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/wait-for-passphrase-shared'
+    wait-for-passphrase-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumwait-for-passphraseSchemaUrn'
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - enabled
+    Enumwait-for-passphraseSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:wait-for-passphrase"
+    add-conjur-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/conjur-shared'
+    conjur-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/conjur-shared'
+    conjur-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumconjurSchemaUrn'
+        conjurExternalServer:
+          type: string
+          description: An external server definition with information needed to connect and authenticate to the Conjur server.
+        conjurSecretRelativePath:
+          type: string
+          description: The portion of the path that follows the account name in the URI needed to obtain the secret passphrase to use to generate the encryption key. Any special characters in the path must be URL-encoded.
+        encryptionMetadataFile:
+          type: string
+          description: The path to a file that will hold metadata about the encryption performed by this Conjur Cipher Stream Provider.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - conjurExternalServer
+      - conjurSecretRelativePath
+      - encryptionMetadataFile
+      - enabled
+    EnumconjurSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:conjur"
+    add-pkcs11-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/pkcs11-shared'
+    pkcs11-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/pkcs11-shared'
+    pkcs11-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpkcs11SchemaUrn'
+        pkcs11ProviderClass:
+          type: string
+          description: The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
+        pkcs11ProviderConfigurationFile:
+          type: string
+          description: The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
+        keyStorePin:
+          type: string
+          format: password
+          description: The clear-text user PIN needed to interact with the PKCS #11 token.
+        keyStorePinFile:
+          type: string
+          description: The path to a file containing the user PIN needed to interact with the PKCS #11 token. The file must exist and must contain exactly one line with a clear-text representation of the PIN.
+        keyStorePinEnvironmentVariable:
+          type: string
+          description: The name of an environment variable whose value is the user PIN needed to interact with the PKCS #11 token. The environment variable must be defined and must contain a clear-text representation of the PIN.
+        pkcs11KeyStoreType:
+          type: string
+          description: The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token.
+        sslCertNickname:
+          type: string
+          description: The alias for the certificate in the PKCS #11 token that will be used to wrap the encryption key. The target certificate must exist in the PKCS #11 token, and it must have an RSA key pair because the JVM does not currently provide adequate key wrapping support for elliptic curve key pairs.  If you have also configured the server to use a PKCS #11 token for accessing listener certificates, we strongly recommend that you use a different certificate to protect the contents of the encryption settings database than you use for negotiating TLS sessions with clients. It is imperative that the certificate used by this PKCS11 Cipher Stream Provider remain constant for the life of the provider because if the certificate were to be replaced, then the contents of the encryption settings database could become inaccessible. Unlike with listener certificates used for TLS negotiation that need to be replaced on a regular basis, this PKCS11 Cipher Stream Provider does not consider the validity period for the associated certificate, and it will continue to function even after the certificate has expired.  If you need to rotate the certificate used to protect the server's encryption settings database, you should first install the desired new certificate in the PKCS #11 token under a different alias. Then, you should create a new instance of this PKCS11 Cipher Stream Provider that is configured to use that certificate, and that also uses a different value for the encryption-metadata-file because the information in that file is tied to the certificate used to generate it. Finally, you will need to update the global configuration so that the encryption-settings-cipher-stream-provider property references the new cipher stream provider rather than this one. The update to the global configuration must be done with the server online so that it can properly re-encrypt the contents of the encryption settings database with the correct key tied to the new certificate.
+        encryptionMetadataFile:
+          type: string
+          description: The path to a file that will hold metadata about the encryption performed by this PKCS11 Cipher Stream Provider.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - sslCertNickname
+      - encryptionMetadataFile
+      - enabled
+    Enumpkcs11SchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:pkcs11"
+    add-vault-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/vault-shared'
+    vault-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/vault-shared'
+    vault-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumvaultSchemaUrn'
+        vaultExternalServer:
+          type: string
+          description: An external server definition with information needed to connect and authenticate to the Vault server.
+        vaultServerBaseURI:
+          type: array
+          items:
+            type: string
+            description: The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
+        vaultAuthenticationMethod:
+          type: string
+          description: The mechanism used to authenticate to the Vault server.
+        vaultSecretPath:
+          type: string
+          description: The path to the desired secret in the Vault service. This will be appended to the value of the base-url property for the associated Vault external server.
+        vaultSecretFieldName:
+          type: string
+          description: The name of the field in the Vault secret record that contains the passphrase to use to generate the encryption key.
+        vaultEncryptionMetadataFile:
+          type: string
+          description: The path to a file that will hold metadata about the encryption performed by this Vault Cipher Stream Provider.
+        trustStoreFile:
+          type: string
+          description: The path to a file containing the information needed to trust the certificate presented by the Vault servers.
+        trustStorePin:
+          type: string
+          format: password
+          description: The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
+        trustStoreType:
+          type: string
+          description: The store type for the specified trust store file. The value should likely be one of "JKS" or "PKCS12".
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - vaultSecretPath
+      - vaultSecretFieldName
+      - vaultEncryptionMetadataFile
+      - enabled
+    EnumvaultSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:vault"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Cipher Stream Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Cipher Stream Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Cipher Stream Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Cipher Stream Provider. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Cipher Stream Provider
+        enabled:
+          type: boolean
+          description: Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-stream-provider:third-party"
+    update-cipher-stream-provider-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

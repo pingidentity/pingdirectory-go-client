@@ -1,0 +1,327 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Log File Rotation Listener config object
+  title: PingData Log File Rotation Listener Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access log-file-rotation-listeners
+  name: log-file-rotation-listener
+paths:
+  /log-file-rotation-listeners:
+    post:
+      summary: Add a new Log File Rotation Listener to the config
+      operationId: add-log-file-rotation-listener
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-summarize-request'
+              - $ref: '#/components/schemas/add-copy-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Log File Rotation Listener in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/summarize-response'
+                - $ref: '#/components/schemas/copy-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Log File Rotation Listener already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /log-file-rotation-listeners/{log-file-rotation-listener-name}:
+    delete:
+      summary: Delete a Log File Rotation Listener
+      operationId: delete-log-file-rotation-listener
+      parameters:
+      - description: Name of the Log File Rotation Listener to be deleted
+        explode: false
+        in: path
+        name: log-file-rotation-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Log File Rotation Listener does not exist
+        "409":
+          description: The Log File Rotation Listener cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Log File Rotation Listener
+      operationId: get-log-file-rotation-listener
+      parameters:
+      - description: Name of the Log File Rotation Listener to be read
+        explode: false
+        in: path
+        name: log-file-rotation-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/summarize-response'
+                - $ref: '#/components/schemas/copy-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Log File Rotation Listener does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Log File Rotation Listener by name
+      operationId: update-log-file-rotation-listener
+      parameters:
+      - description: Name of the Log File Rotation Listener to be updated
+        explode: false
+        in: path
+        name: log-file-rotation-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-log-file-rotation-listener-request'
+        description: Update an existing Log File Rotation Listener
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/summarize-response'
+                - $ref: '#/components/schemas/copy-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Log File Rotation Listener does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-summarize-request:
+      allOf:
+      - type: object
+        properties:
+          listenerName:
+            description: Name of the new Log File Rotation Listener
+            type: string
+        required:
+        - listenerName
+      - $ref: '#/components/schemas/summarize-shared'
+    summarize-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log File Rotation Listener
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/summarize-shared'
+    summarize-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumsummarizeSchemaUrn'
+        outputDirectory:
+          type: string
+          description: The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file.
+        description:
+          type: string
+          description: A description for this Log File Rotation Listener
+        enabled:
+          type: boolean
+          description: Indicates whether the Log File Rotation Listener is enabled for use.
+      required:
+      - schemas
+      - enabled
+    EnumsummarizeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:summarize"
+    add-copy-request:
+      allOf:
+      - type: object
+        properties:
+          listenerName:
+            description: Name of the new Log File Rotation Listener
+            type: string
+        required:
+        - listenerName
+      - $ref: '#/components/schemas/copy-shared'
+    copy-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log File Rotation Listener
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/copy-shared'
+    copy-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumcopySchemaUrn'
+        copyToDirectory:
+          type: string
+          description: The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied.
+        compressOnCopy:
+          type: boolean
+          description: Indicates whether the file should be gzip-compressed as it is copied into the destination directory.
+        description:
+          type: string
+          description: A description for this Log File Rotation Listener
+        enabled:
+          type: boolean
+          description: Indicates whether the Log File Rotation Listener is enabled for use.
+      required:
+      - schemas
+      - copyToDirectory
+      - enabled
+    EnumcopySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:copy"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          listenerName:
+            description: Name of the new Log File Rotation Listener
+            type: string
+        required:
+        - listenerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Log File Rotation Listener
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Log File Rotation Listener
+        enabled:
+          type: boolean
+          description: Indicates whether the Log File Rotation Listener is enabled for use.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-file-rotation-listener:third-party"
+    update-log-file-rotation-listener-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

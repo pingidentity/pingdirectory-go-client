@@ -1,0 +1,245 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Entry Cache config object
+  title: PingData Entry Cache Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access entry-caches
+  name: entry-cache
+paths:
+  /entry-caches:
+    post:
+      summary: Add a new Entry Cache to the config
+      operationId: add-entry-cache
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-fifo-request'
+        description: Create a new Entry Cache in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fifo-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Entry Cache already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /entry-caches/{entry-cache-name}:
+    delete:
+      summary: Delete a Entry Cache
+      operationId: delete-entry-cache
+      parameters:
+      - description: Name of the Entry Cache to be deleted
+        explode: false
+        in: path
+        name: entry-cache-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Entry Cache does not exist
+        "409":
+          description: The Entry Cache cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Entry Cache
+      operationId: get-entry-cache
+      parameters:
+      - description: Name of the Entry Cache to be read
+        explode: false
+        in: path
+        name: entry-cache-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fifo-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Entry Cache does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Entry Cache by name
+      operationId: update-entry-cache
+      parameters:
+      - description: Name of the Entry Cache to be updated
+        explode: false
+        in: path
+        name: entry-cache-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-entry-cache-request'
+        description: Update an existing Entry Cache
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fifo-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Entry Cache does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-fifo-request:
+      allOf:
+      - type: object
+        properties:
+          cacheName:
+            description: Name of the new Entry Cache
+            type: string
+        required:
+        - cacheName
+      - $ref: '#/components/schemas/fifo-shared'
+    fifo-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Entry Cache
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/fifo-shared'
+    fifo-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/EnumfifoSchemaUrn'
+        maxMemoryPercent:
+          type: integer
+          description: Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged.
+        maxEntries:
+          type: integer
+          description: Specifies the maximum number of entries that will be allowed in the cache. Once the cache reaches this size, then adding new entries will cause existing entries to be purged, starting with the oldest.
+        onlyCacheFrequentlyAccessed:
+          type: boolean
+          description: Specifies that the cache should only store entries which are accessed much more frequently than the average entry. The cache will observe attempts to place entries in the cache and compare an entry's accesses to the average entry's.
+        includeFilter:
+          type: array
+          items:
+            type: string
+            description: The set of filters that define the entries that should be included in the cache.
+        excludeFilter:
+          type: array
+          items:
+            type: string
+            description: The set of filters that define the entries that should be excluded from the cache.
+        minCacheEntryValueCount:
+          type: integer
+          description: Specifies the minimum number of attribute values (optionally across a specified subset of attributes as defined in the min-cache-entry-attributes property) for entries that should be held in the cache. Entries with fewer than this number of attribute values will be excluded from the cache.
+        minCacheEntryAttribute:
+          type: array
+          items:
+            type: string
+            description: Specifies the names of the attribute types for which the min-cache-entry-value-count property should apply. If no attribute types are specified, then all user attributes will be examined.
+        description:
+          type: string
+          description: A description for this Entry Cache
+        enabled:
+          type: boolean
+          description: Indicates whether the Entry Cache is enabled.
+        cacheLevel:
+          type: integer
+          description: Specifies the cache level in the cache order if more than one instance of the cache is configured.
+        cacheUnindexedSearchResults:
+          type: boolean
+          description: Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
+      required:
+      - enabled
+      - cacheLevel
+    EnumfifoSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:entry-cache:fifo"
+    update-entry-cache-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

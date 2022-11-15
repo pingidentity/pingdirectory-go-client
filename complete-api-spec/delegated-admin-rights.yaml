@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Delegated Admin Rights config object
+  title: PingData Delegated Admin Rights Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access delegated-admin-rights
+  name: delegated-admin-rights
+paths:
+  /delegated-admin-rights:
+    post:
+      summary: Add a new Delegated Admin Rights to the config
+      operationId: add-delegated-admin-rights
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-delegated-admin-rights-request'
+        description: Create a new Delegated Admin Rights in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-rights-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Delegated Admin Rights already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /delegated-admin-rights/{delegated-admin-rights-name}:
+    delete:
+      summary: Delete a Delegated Admin Rights
+      operationId: delete-delegated-admin-rights
+      parameters:
+      - description: Name of the Delegated Admin Rights to be deleted
+        explode: false
+        in: path
+        name: delegated-admin-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Rights does not exist
+        "409":
+          description: The Delegated Admin Rights cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Delegated Admin Rights
+      operationId: get-delegated-admin-rights
+      parameters:
+      - description: Name of the Delegated Admin Rights to be read
+        explode: false
+        in: path
+        name: delegated-admin-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-rights-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Rights does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Delegated Admin Rights by name
+      operationId: update-delegated-admin-rights
+      parameters:
+      - description: Name of the Delegated Admin Rights to be updated
+        explode: false
+        in: path
+        name: delegated-admin-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-delegated-admin-rights-request'
+        description: Update an existing Delegated Admin Rights
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-rights-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Delegated Admin Rights does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-delegated-admin-rights-request:
+      allOf:
+      - type: object
+        properties:
+          rightsName:
+            description: Name of the new Delegated Admin Rights
+            type: string
+        required:
+        - rightsName
+      - $ref: '#/components/schemas/delegated-admin-rights-shared'
+    delegated-admin-rights-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Rights
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delegated-admin-rights-shared'
+    delegated-admin-rights-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-rightsSchemaUrn'
+        description:
+          type: string
+          description: A description for this Delegated Admin Rights
+        enabled:
+          type: boolean
+          description: Indicates whether the Delegated Admin Rights is enabled.
+        adminUserDN:
+          type: string
+          description: Specifies the DN of an administrative user who has authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
+        adminGroupDN:
+          type: string
+          description: Specifies the DN of a group of administrative users who have authority to manage resources. Either admin-user-dn or admin-group-dn must be specified, but not both.
+      required:
+      - enabled
+    Enumdelegated-admin-rightsSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-rights"
+    update-delegated-admin-rights-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the DN Map config object
+  title: PingData DN Map Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access dn-maps
+  name: dn-map
+paths:
+  /dn-maps:
+    post:
+      summary: Add a new DN Map to the config
+      operationId: add-dn-map
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-dn-map-request'
+        description: Create a new DN Map in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dn-map-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The DN Map already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /dn-maps/{dn-map-name}:
+    delete:
+      summary: Delete a DN Map
+      operationId: delete-dn-map
+      parameters:
+      - description: Name of the DN Map to be deleted
+        explode: false
+        in: path
+        name: dn-map-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The DN Map does not exist
+        "409":
+          description: The DN Map cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single DN Map
+      operationId: get-dn-map
+      parameters:
+      - description: Name of the DN Map to be read
+        explode: false
+        in: path
+        name: dn-map-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dn-map-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The DN Map does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing DN Map by name
+      operationId: update-dn-map
+      parameters:
+      - description: Name of the DN Map to be updated
+        explode: false
+        in: path
+        name: dn-map-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-dn-map-request'
+        description: Update an existing DN Map
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dn-map-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The DN Map does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-dn-map-request:
+      allOf:
+      - type: object
+        properties:
+          mapName:
+            description: Name of the new DN Map
+            type: string
+        required:
+        - mapName
+      - $ref: '#/components/schemas/dn-map-shared'
+    dn-map-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the DN Map
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/dn-map-shared'
+    dn-map-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdn-mapSchemaUrn'
+        description:
+          type: string
+          description: A description for this DN Map
+        fromDNPattern:
+          type: string
+          description: Specifies the DN pattern to match when determining whether this map applies to a specific source DN. If the provided bind DN matches this pattern, then the to-dn-pattern will be used to perform the mapping. If the provided bind DN does not match this pattern, then no mapping will be performed.
+        toDNPattern:
+          type: string
+          description: Specifies a pattern for constructing the DN value using fixed text, DN components matching wild-card values in from-dn-pattern, and attribute values from the source entry.
+      required:
+      - fromDNPattern
+      - toDNPattern
+    Enumdn-mapSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:dn-map"
+    update-dn-map-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

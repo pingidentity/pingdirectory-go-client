@@ -1,0 +1,146 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Access Control Handler config object
+  title: PingData Access Control Handler Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access the Access Control Handler
+  name: access-control-handler
+paths:
+  /access-control-handler:
+    get:
+      summary: Returns a single Access Control Handler
+      operationId: get-access-control-handler
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dsee-compat-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Access Control Handler does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Access Control Handler by name
+      operationId: update-access-control-handler
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-access-control-handler-request'
+        description: Update an existing Access Control Handler
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/dsee-compat-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Access Control Handler does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    dsee-compat-response:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdsee-compatSchemaUrn'
+        globalACI:
+          type: array
+          items:
+            type: string
+            description: Defines global access control rules.
+        allowedBindControl:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnumallowedBindControlProp'
+        allowedBindControlOID:
+          type: array
+          items:
+            type: string
+            description: Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests.
+        enabled:
+          type: boolean
+          description: Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem.
+      required:
+      - enabled
+    Enumdsee-compatSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:access-control-handler:dsee-compat"
+    update-access-control-handler-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumallowedBindControlProp:
+      type: string
+      enum:
+      - "administrative-operation"
+      - "authorization-identity"
+      - "get-authorization-entry"
+      - "get-backend-set-id"
+      - "get-password-policy-state-issues"
+      - "get-recent-login-history"
+      - "get-server-id"
+      - "get-user-resource-limits"
+      - "intermediate-client"
+      - "operation-purpose"
+      - "password-policy"
+      - "retain-identity"
+      - "route-to-backend-set"
+      - "route-to-server"
+      - "suppress-operational-attribute-update"
+      description: Specifies a set of controls that clients should be allowed to include in bind requests. As bind requests are evaluated as the unauthenticated user, any controls included in this set will be permitted for any bind attempt. If you wish to grant permission for any bind controls not listed here, then the allowed-bind-control-oid property may be used to accomplish that.
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

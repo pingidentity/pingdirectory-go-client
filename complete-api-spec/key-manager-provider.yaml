@@ -1,0 +1,363 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Key Manager Provider config object
+  title: PingData Key Manager Provider Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access key-manager-providers
+  name: key-manager-provider
+paths:
+  /key-manager-providers:
+    post:
+      summary: Add a new Key Manager Provider to the config
+      operationId: add-key-manager-provider
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-file-based-request'
+              - $ref: '#/components/schemas/add-pkcs11-request'
+              - $ref: '#/components/schemas/add-third-party-request'
+        description: Create a new Key Manager Provider in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/pkcs11-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Key Manager Provider already exists
+      security:
+      - basicAuth: []
+      tags:
+      - location
+  /key-manager-providers/{key-manager-provider-name}:
+    delete:
+      summary: Delete a Key Manager Provider
+      operationId: delete-key-manager-provider
+      parameters:
+      - description: Name of the Key Manager Provider to be deleted
+        explode: false
+        in: path
+        name: key-manager-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Key Manager Provider does not exist
+        "409":
+          description: The Key Manager Provider cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    get:
+      summary: Returns a single Key Manager Provider
+      operationId: get-key-manager-provider
+      parameters:
+      - description: Name of the Key Manager Provider to be read
+        explode: false
+        in: path
+        name: key-manager-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/pkcs11-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Key Manager Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+    patch:
+      summary: Update an existing Key Manager Provider by name
+      operationId: update-key-manager-provider
+      parameters:
+      - description: Name of the Key Manager Provider to be updated
+        explode: false
+        in: path
+        name: key-manager-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-key-manager-provider-request'
+        description: Update an existing Key Manager Provider
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/file-based-response'
+                - $ref: '#/components/schemas/pkcs11-response'
+                - $ref: '#/components/schemas/third-party-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Key Manager Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - location
+components:
+  schemas:
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    add-file-based-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Key Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/file-based-shared'
+    file-based-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Key Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/file-based-shared'
+    file-based-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumfile-basedSchemaUrn'
+        keyStoreFile:
+          type: string
+          description: Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the Directory Server instance root.
+        keyStoreType:
+          type: string
+          description: Specifies the format for the data in the key store file.
+        keyStorePin:
+          type: string
+          format: password
+          description: Specifies the PIN needed to access the File Based Key Manager Provider.
+        keyStorePinFile:
+          type: string
+          description: Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Key Manager Provider.
+        keyStorePinPassphraseProvider:
+          type: string
+          description: The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider.
+        privateKeyPin:
+          type: string
+          format: password
+          description: Specifies the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN.
+        privateKeyPinFile:
+          type: string
+          description: Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN.
+        privateKeyPinPassphraseProvider:
+          type: string
+          description: The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Key Manager Provider private key. If no private key PIN is specified the PIN defaults to the key store PIN.
+        description:
+          type: string
+          description: A description for this Key Manager Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Key Manager Provider is enabled for use.
+      required:
+      - schemas
+      - keyStoreFile
+      - enabled
+    Enumfile-basedSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:file-based"
+    add-pkcs11-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Key Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/pkcs11-shared'
+    pkcs11-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Key Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/pkcs11-shared'
+    pkcs11-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpkcs11SchemaUrn'
+        pkcs11ProviderClass:
+          type: string
+          description: The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
+        pkcs11ProviderConfigurationFile:
+          type: string
+          description: The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
+        pkcs11KeyStoreType:
+          type: string
+          description: The key store type to use when obtaining an instance of a key store for interacting with a PKCS #11 token.
+        keyStorePin:
+          type: string
+          format: password
+          description: Specifies the PIN needed to access the PKCS11 Key Manager Provider.
+        keyStorePinFile:
+          type: string
+          description: Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the PKCS11 Key Manager Provider.
+        keyStorePinPassphraseProvider:
+          type: string
+          description: The passphrase provider to use to obtain the clear-text PIN needed to access the PKCS11 Key Manager Provider.
+        description:
+          type: string
+          description: A description for this Key Manager Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Key Manager Provider is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumpkcs11SchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:pkcs11"
+    add-third-party-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Key Manager Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-response:
+      allOf:
+      - type: object
+        properties:
+          id:
+            description: Name of the Key Manager Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-shared'
+    third-party-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-partySchemaUrn'
+        extensionClass:
+          type: string
+          description: The fully-qualified name of the Java class providing the logic for the Third Party Key Manager Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+            description: The set of arguments used to customize the behavior for the Third Party Key Manager Provider. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: A description for this Key Manager Provider
+        enabled:
+          type: boolean
+          description: Indicates whether the Key Manager Provider is enabled for use.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+    Enumthird-partySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:key-manager-provider:third-party"
+    update-key-manager-provider-request:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http
