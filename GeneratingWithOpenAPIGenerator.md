@@ -1,13 +1,6 @@
 # Generating this client with [OpenAPI Generator](https://openapi-generator.tech/)
 This client is created with OpenAPI Generator. This document shows the command used to regenerate the client when the OpenAPI spec has been updated.
 
-The following command should be run from the root of the repository to regenerate the client:
-```
-openapi-generator generate -i api/openapi.yaml -g go --git-host github.com --git-repo-id pingdata-config-api-go-client --git-user-id pingidentity
-```
+Use the `scripts/generateClient.sh` script to regenerate the client. Be sure to run this command from the root of this repository.
 
-This generates a `test/` directory that, so far, I haven't been able to get working correctly. So just remove that directory (for now):
-
-```
-rm -r test/
-```
+This generates a `test/` directory that, so far, I haven't been able to get working correctly. So the script just removes that directory (for now).

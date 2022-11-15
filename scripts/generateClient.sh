@@ -2,16 +2,6 @@
 
 set -x
 
-fileArguments=()
+openapi-generator generate -i complete-api-spec/openapi.yaml -g go --git-host github.com --git-repo-id pingdata-config-api-go-client --git-user-id pingidentity
 
-for yaml in complete-api-spec/*.yaml; do
-    fileArguments+=("-i")
-    fileArguments+=($yaml)
-done
-
-openapi-generator generate \
-    -g go \
-    --git-host github.com \
-    --git-repo-id pingdata-config-api-go-client \
-    --git-user-id pingidentity \
-    "${fileArguments[@]}"
+rm -r test/
