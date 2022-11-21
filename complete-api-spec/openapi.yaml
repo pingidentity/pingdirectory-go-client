@@ -11852,7 +11852,7 @@ components:
     Enumglobal-configurationSchemaUrn:
       type: string
       enum:
-      - "urn:pingidentity:schemas:configuration:2.0:global-configuration"
+      - "urn:pingidentity:schemas:configuration:2.0:global"
     Enumglobal-configuration-disabledPrivilegeProp:
       type: string
       enum:

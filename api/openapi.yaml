@@ -10820,7 +10820,7 @@ components:
       type: object
     Enumglobal-configurationSchemaUrn:
       enum:
-      - urn:pingidentity:schemas:configuration:2.0:global-configuration
+      - urn:pingidentity:schemas:configuration:2.0:global
       type: string
     Enumglobal-configuration-disabledPrivilegeProp:
       description: Specifies the name of a privilege that should not be evaluated

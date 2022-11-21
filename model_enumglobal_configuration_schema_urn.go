@@ -20,12 +20,12 @@ type EnumglobalConfigurationSchemaUrn string
 
 // List of Enumglobal-configurationSchemaUrn
 const (
-	ENUMGLOBALCONFIGURATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GLOBAL_CONFIGURATION EnumglobalConfigurationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:global-configuration"
+	ENUMGLOBALCONFIGURATIONSCHEMAURN_URNPINGIDENTITYSCHEMASCONFIGURATION2_0GLOBAL EnumglobalConfigurationSchemaUrn = "urn:pingidentity:schemas:configuration:2.0:global"
 )
 
 // All allowed values of EnumglobalConfigurationSchemaUrn enum
 var AllowedEnumglobalConfigurationSchemaUrnEnumValues = []EnumglobalConfigurationSchemaUrn{
-	"urn:pingidentity:schemas:configuration:2.0:global-configuration",
+	"urn:pingidentity:schemas:configuration:2.0:global",
 }
 
 func (v *EnumglobalConfigurationSchemaUrn) UnmarshalJSON(src []byte) error {
