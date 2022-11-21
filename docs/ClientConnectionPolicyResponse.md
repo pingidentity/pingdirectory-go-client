@@ -12,21 +12,21 @@ Name | Type | Description | Notes
 **EvaluationOrderIndex** | **int32** | Specifies the order in which Client Connection Policy definitions will be evaluated. A Client Connection Policy with a lower index will be evaluated before one with a higher index, and the first Client Connection Policy evaluated which may apply to a client connection will be used for that connection. Each Client Connection Policy must be assigned a unique evaluation order index value. | 
 **ConnectionCriteria** | Pointer to **string** | Specifies a set of connection criteria that must match the associated client connection for it to be associated with this Client Connection Policy. | [optional] 
 **TerminateConnection** | Pointer to **bool** | Indicates whether any client connection for which this Client Connection Policy is selected should be terminated. This makes it possible to define fine-grained criteria for clients that should not be allowed to connect to this Directory Server. | [optional] 
-**SensitiveAttribute** | Pointer to **[]string** |  | [optional] 
-**ExcludeGlobalSensitiveAttribute** | Pointer to **[]string** |  | [optional] 
+**SensitiveAttribute** | Pointer to **[]string** | Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes. | [optional] 
+**ExcludeGlobalSensitiveAttribute** | Pointer to **[]string** | Specifies the set of global sensitive attribute definitions that should not apply to this client connection policy. | [optional] 
 **ResultCodeMap** | Pointer to **string** | Specifies the result code map that should be used for clients associated with this Client Connection Policy. If a value is defined for this property, then it will override any result code map referenced in the global configuration. | [optional] 
-**IncludedBackendBaseDN** | Pointer to **[]string** |  | [optional] 
-**ExcludedBackendBaseDN** | Pointer to **[]string** |  | [optional] 
+**IncludedBackendBaseDN** | Pointer to **[]string** | Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy. | [optional] 
+**ExcludedBackendBaseDN** | Pointer to **[]string** | Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy. | [optional] 
 **AllowedOperation** | [**[]EnumclientConnectionPolicyAllowedOperationProp**](EnumclientConnectionPolicyAllowedOperationProp.md) |  | 
 **RequiredOperationRequestCriteria** | Pointer to **string** | Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected. | [optional] 
 **ProhibitedOperationRequestCriteria** | Pointer to **string** | Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected. | [optional] 
-**AllowedRequestControl** | Pointer to **[]string** |  | [optional] 
-**DeniedRequestControl** | Pointer to **[]string** |  | [optional] 
-**AllowedExtendedOperation** | Pointer to **[]string** |  | [optional] 
-**DeniedExtendedOperation** | Pointer to **[]string** |  | [optional] 
+**AllowedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests. | [optional] 
+**DeniedRequestControl** | Pointer to **[]string** | Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests. | [optional] 
+**AllowedExtendedOperation** | Pointer to **[]string** | Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request. | [optional] 
+**DeniedExtendedOperation** | Pointer to **[]string** | Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request. | [optional] 
 **AllowedAuthType** | [**[]EnumclientConnectionPolicyAllowedAuthTypeProp**](EnumclientConnectionPolicyAllowedAuthTypeProp.md) |  | 
-**AllowedSASLMechanism** | Pointer to **[]string** |  | [optional] 
-**DeniedSASLMechanism** | Pointer to **[]string** |  | [optional] 
+**AllowedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request. | [optional] 
+**DeniedSASLMechanism** | Pointer to **[]string** | Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request. | [optional] 
 **AllowedFilterType** | Pointer to [**[]EnumclientConnectionPolicyAllowedFilterTypeProp**](EnumclientConnectionPolicyAllowedFilterTypeProp.md) |  | [optional] 
 **AllowUnindexedSearches** | Pointer to **bool** | Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied. | [optional] 
 **AllowUnindexedSearchesWithControl** | Pointer to **bool** | Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration). | [optional] 
@@ -38,15 +38,16 @@ Name | Type | Description | Notes
 **MaximumConcurrentOperationsPerConnection** | Pointer to **int32** | Specifies the maximum number of concurrent operations that can be in progress for any connection. This can help prevent a single client connection from monopolizing server processing resources by sending a large number of concurrent asynchronous requests. A value of zero indicates that no limit will be placed on the number of concurrent requests for a single client. | [optional] 
 **MaximumConcurrentOperationWaitTimeBeforeRejecting** | Pointer to **string** | Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a \&quot;busy\&quot; result. | [optional] 
 **MaximumConcurrentOperationsPerConnectionExceededBehavior** | Pointer to [**EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp**](EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp.md) |  | [optional] 
-**MaximumConnectionOperationRate** | Pointer to **[]string** |  | [optional] 
+**MaximumConnectionOperationRate** | Pointer to **[]string** | Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property. | [optional] 
 **ConnectionOperationRateExceededBehavior** | Pointer to [**EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp**](EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp.md) |  | [optional] 
-**MaximumPolicyOperationRate** | Pointer to **[]string** |  | [optional] 
+**MaximumPolicyOperationRate** | Pointer to **[]string** | Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property. | [optional] 
 **PolicyOperationRateExceededBehavior** | Pointer to [**EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp**](EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp.md) |  | [optional] 
 **MaximumSearchSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be returned for a search performed by a client associated with this Client Connection Policy. | [optional] 
 **MaximumSearchTimeLimit** | Pointer to **string** | Specifies the maximum length of time that the server should spend processing search operations requested by clients associated with this Client Connection Policy. | [optional] 
 **MaximumSearchLookthroughLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be examined by a backend in the course of processing a search requested by clients associated with this Client Connection Policy. | [optional] 
 **MaximumLDAPJoinSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be joined with any single search result entry for a search request performed by a client associated with this Client Connection Policy. | [optional] 
 **MaximumSortSizeLimitWithoutVLVIndex** | Pointer to **int32** | Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -1111,6 +1112,31 @@ SetMaximumSortSizeLimitWithoutVLVIndex sets MaximumSortSizeLimitWithoutVLVIndex 
 `func (o *ClientConnectionPolicyResponse) HasMaximumSortSizeLimitWithoutVLVIndex() bool`
 
 HasMaximumSortSizeLimitWithoutVLVIndex returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *ClientConnectionPolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

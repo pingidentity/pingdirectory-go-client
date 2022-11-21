@@ -33,8 +33,11 @@ type AddDebugAccessLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this Debug Access Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the Debug Access Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the Debug Access Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -47,6 +50,7 @@ type AddDebugAccessLogPublisherRequest struct {
 	Append *bool `json:"append,omitempty"`
 	// Indicates whether the resulting log file should attempt to obscure content that may be considered sensitive. This primarily includes the credentials for bind requests, the values of password modify extended requests and responses, and the values of any attributes specified in the obscure-attribute property. Note that the use of this option does not guarantee no sensitive information will be exposed, so the log output should still be carefully guarded.
 	ObscureSensitiveContent *bool `json:"obscureSensitiveContent,omitempty"`
+	// Specifies the names of any attribute types that should have their values obscured if the obscure-sensitive-content property has a value of true.
 	ObscureAttribute []string `json:"obscureAttribute,omitempty"`
 	// Indicates whether to include debugging information about ACIs being used by the operations being logged.
 	DebugACIEnabled *bool `json:"debugACIEnabled,omitempty"`

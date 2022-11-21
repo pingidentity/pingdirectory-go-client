@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnummonitorBackendSchemaUrn**](EnummonitorBackendSchemaUrn.md) |  | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
-**BaseDN** | **[]string** |  | 
+**BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 

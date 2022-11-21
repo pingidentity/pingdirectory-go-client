@@ -20,6 +20,7 @@ type SyslogJsonErrorLogPublisherResponse struct {
 	Id string `json:"id"`
 	Schemas []EnumsyslogJsonErrorLogPublisherSchemaUrn `json:"schemas"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string `json:"syslogExternalServer"`
 	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
 	SyslogSeverity *EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity,omitempty"`
@@ -41,12 +42,14 @@ type SyslogJsonErrorLogPublisherResponse struct {
 	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
 	// Indicates whether to use the generified version of the log message string (which may use placeholders like %s for a string or %d for an integer), rather than the version of the message with those placeholders replaced with specific values that would normally be written to the log.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
+	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSyslogJsonErrorLogPublisherResponse instantiates a new SyslogJsonErrorLogPublisherResponse object
@@ -639,6 +642,38 @@ func (o *SyslogJsonErrorLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogP
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SyslogJsonErrorLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SyslogJsonErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SyslogJsonErrorLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SyslogJsonErrorLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o SyslogJsonErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -697,6 +732,9 @@ func (o SyslogJsonErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

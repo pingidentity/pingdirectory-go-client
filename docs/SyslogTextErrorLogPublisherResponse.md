@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Log Publisher | 
 **Schemas** | [**[]EnumsyslogTextErrorLogPublisherSchemaUrn**](EnumsyslogTextErrorLogPublisherSchemaUrn.md) |  | 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
-**SyslogExternalServer** | **[]string** |  | 
+**SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
 **SyslogFacility** | [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | 
 **SyslogSeverity** | Pointer to [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | [optional] 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog Text Error Log Publisher. | [optional] 
@@ -19,10 +19,11 @@ Name | Type | Description | Notes
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use the generified version of the log message string (which may use placeholders like %s for a string or %d for an integer), rather than the version of the message with those placeholders replaced with specific values that would normally be written to the log. | [optional] 
 **TimestampPrecision** | Pointer to [**EnumlogPublisherTimestampPrecisionProp**](EnumlogPublisherTimestampPrecisionProp.md) |  | [optional] 
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
-**OverrideSeverity** | Pointer to **[]string** |  | [optional] 
+**OverrideSeverity** | Pointer to **[]string** | Specifies the override severity levels for the logger based on the category of the messages. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **Enabled** | **bool** | Indicates whether the Log Publisher is enabled for use. | 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -492,6 +493,31 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *SyslogTextErrorLogPublisherResponse) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *SyslogTextErrorLogPublisherResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *SyslogTextErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *SyslogTextErrorLogPublisherResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *SyslogTextErrorLogPublisherResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -23,8 +23,11 @@ type ThirdPartyFileBasedAccessLogPublisherResponse struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this Third Party File Based Access Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the Third Party File Based Access Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the Third Party File Based Access Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -37,6 +40,7 @@ type ThirdPartyFileBasedAccessLogPublisherResponse struct {
 	Append *bool `json:"append,omitempty"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party File Based Access Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party File Based Access Log Publisher. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// Indicates whether the Third Party File Based Access Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
@@ -87,6 +91,7 @@ type ThirdPartyFileBasedAccessLogPublisherResponse struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewThirdPartyFileBasedAccessLogPublisherResponse instantiates a new ThirdPartyFileBasedAccessLogPublisherResponse object
@@ -1291,6 +1296,38 @@ func (o *ThirdPartyFileBasedAccessLogPublisherResponse) SetLoggingErrorBehavior(
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartyFileBasedAccessLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyFileBasedAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartyFileBasedAccessLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartyFileBasedAccessLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ThirdPartyFileBasedAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1409,6 +1446,9 @@ func (o ThirdPartyFileBasedAccessLogPublisherResponse) MarshalJSON() ([]byte, er
 	}
 	if !isNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

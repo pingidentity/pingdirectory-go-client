@@ -21,6 +21,7 @@ type AddGroovyScriptedAccountStatusNotificationHandlerRequest struct {
 	Schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Account Status Notification Handler. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Account Status Notification Handler
 	Description *string `json:"description,omitempty"`

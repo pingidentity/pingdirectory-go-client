@@ -21,11 +21,13 @@ type GroovyScriptedCertificateMapperResponse struct {
 	Schemas []EnumgroovyScriptedCertificateMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewGroovyScriptedCertificateMapperResponse instantiates a new GroovyScriptedCertificateMapperResponse object
@@ -209,6 +211,38 @@ func (o *GroovyScriptedCertificateMapperResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GroovyScriptedCertificateMapperResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedCertificateMapperResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GroovyScriptedCertificateMapperResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GroovyScriptedCertificateMapperResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o GroovyScriptedCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -228,6 +262,9 @@ func (o GroovyScriptedCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

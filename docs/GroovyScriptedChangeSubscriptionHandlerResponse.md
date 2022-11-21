@@ -7,10 +7,11 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Change Subscription Handler | 
 **Schemas** | [**[]EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn**](EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Change Subscription Handler | [optional] 
 **Enabled** | **bool** | Indicates whether this change subscription handler is enabled within the server. | 
-**ChangeSubscription** | Pointer to **[]string** |  | [optional] 
+**ChangeSubscription** | Pointer to **[]string** | The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -185,6 +186,31 @@ SetChangeSubscription sets ChangeSubscription field to given value.
 `func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasChangeSubscription() bool`
 
 HasChangeSubscription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

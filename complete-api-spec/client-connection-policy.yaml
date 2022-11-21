@@ -157,6 +157,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/client-connection-policy-shared'
+      - $ref: '#/components/schemas/meta'
     client-connection-policy-shared:
       type: object
       properties:
@@ -194,14 +195,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
+          description: >-
+              Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
         excludeGlobalSensitiveAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of global sensitive attribute definitions that should not apply to this client connection policy.
+          description: >-
+              Specifies the set of global sensitive attribute definitions that should not apply to this client connection policy.
         resultCodeMap:
           type: string
           description: >-
@@ -210,14 +211,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
+          description: >-
+              Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
         excludedBackendBaseDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
+          description: >-
+              Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
         allowedOperation:
           type: array
           items:
@@ -234,26 +235,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests.
+          description: >-
+              Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests.
         deniedRequestControl:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests.
+          description: >-
+              Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests.
         allowedExtendedOperation:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
+          description: >-
+              Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
         deniedExtendedOperation:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
+          description: >-
+              Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
         allowedAuthType:
           type: array
           items:
@@ -262,14 +263,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
+          description: >-
+              Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
         deniedSASLMechanism:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
+          description: >-
+              Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
         allowedFilterType:
           type: array
           items:
@@ -316,16 +317,16 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
+          description: >-
+              Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
         connectionOperationRateExceededBehavior:
           $ref: '#/components/schemas/Enumclient-connection-policy-connectionOperationRateExceededBehaviorProp'
         maximumPolicyOperationRate:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
+          description: >-
+              Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
         policyOperationRateExceededBehavior:
           $ref: '#/components/schemas/Enumclient-connection-policy-policyOperationRateExceededBehaviorProp'
         maximumSearchSizeLimit:
@@ -459,6 +460,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

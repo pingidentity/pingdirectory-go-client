@@ -8,15 +8,16 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumthirdPartyCertificateMapperSchemaUrn**](EnumthirdPartyCertificateMapperSchemaUrn.md) |  | 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **SubjectAttribute** | **string** | Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN. | 
-**UserBaseDN** | Pointer to **[]string** |  | [optional] 
+**UserBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
-**SubjectAttributeMapping** | **[]string** |  | 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
+**SubjectAttributeMapping** | **[]string** | Specifies a mapping between certificate attributes and user attributes. | 
 **FingerprintAttribute** | **string** | Specifies the attribute in which to look for the fingerprint. | 
 **FingerprintAlgorithm** | [**EnumcertificateMapperFingerprintAlgorithmProp**](EnumcertificateMapperFingerprintAlgorithmProp.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Certificate Mapper. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 
@@ -121,6 +122,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetMeta
+
+`func (o *AddCertificateMapper200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddCertificateMapper200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddCertificateMapper200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddCertificateMapper200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetSubjectAttribute
 

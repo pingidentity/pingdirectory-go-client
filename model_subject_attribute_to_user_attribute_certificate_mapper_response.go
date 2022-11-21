@@ -19,12 +19,15 @@ type SubjectAttributeToUserAttributeCertificateMapperResponse struct {
 	// Name of the Certificate Mapper
 	Id string `json:"id"`
 	Schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
+	// Specifies a mapping between certificate attributes and user attributes.
 	SubjectAttributeMapping []string `json:"subjectAttributeMapping"`
+	// Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSubjectAttributeToUserAttributeCertificateMapperResponse instantiates a new SubjectAttributeToUserAttributeCertificateMapperResponse object
@@ -208,6 +211,38 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetEnabled(v 
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o SubjectAttributeToUserAttributeCertificateMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -227,6 +262,9 @@ func (o SubjectAttributeToUserAttributeCertificateMapperResponse) MarshalJSON() 
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -21,6 +21,7 @@ type AddThirdPartySaslMechanismHandlerRequest struct {
 	Schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party SASL Mechanism Handler.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party SASL Mechanism Handler. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// The identity mapper that may be used to map usernames to user entries. If the custom SASL mechanism involves a username or some other form of authentication and/or authorization identity, then this may be used to map that ID to an entry for that user.
 	IdentityMapper *string `json:"identityMapper,omitempty"`

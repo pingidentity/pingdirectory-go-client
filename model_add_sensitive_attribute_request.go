@@ -21,6 +21,7 @@ type AddSensitiveAttributeRequest struct {
 	Schemas []EnumsensitiveAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Sensitive Attribute
 	Description *string `json:"description,omitempty"`
+	// The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive.
 	AttributeType []string `json:"attributeType"`
 	// Indicates whether to automatically include any server-generated operational attributes that may contain sensitive data.
 	IncludeDefaultSensitiveOperationalAttributes *bool `json:"includeDefaultSensitiveOperationalAttributes,omitempty"`

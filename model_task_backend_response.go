@@ -19,6 +19,7 @@ type TaskBackendResponse struct {
 	Schemas []EnumtaskBackendSchemaUrn `json:"schemas"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Specifies the path to the backing file for storing information about the tasks configured in the server.

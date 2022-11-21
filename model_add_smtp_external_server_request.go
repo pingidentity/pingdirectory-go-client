@@ -32,6 +32,7 @@ type AddSmtpExternalServerRequest struct {
 	PassphraseProvider *string `json:"passphraseProvider,omitempty"`
 	// Specifies the maximum length of time that a connection or attempted connection to a SMTP server may take.
 	SmtpTimeout *string `json:"smtpTimeout,omitempty"`
+	// Specifies the connection properties for the smtp server.
 	SmtpConnectionProperties []string `json:"smtpConnectionProperties,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`

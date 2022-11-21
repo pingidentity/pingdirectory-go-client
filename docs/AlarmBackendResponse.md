@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumalarmBackendSchemaUrn**](EnumalarmBackendSchemaUrn.md) |  | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
-**BaseDN** | **[]string** |  | 
+**BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **LdifFile** | **string** | Specifies the path to the LDIF file that serves as the backing file for this backend. | 
 **AlarmRetentionTime** | **string** | Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged. | 
 **MaxAlarms** | Pointer to **int32** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 

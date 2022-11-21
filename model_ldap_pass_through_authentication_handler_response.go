@@ -19,8 +19,10 @@ type LdapPassThroughAuthenticationHandlerResponse struct {
 	// Name of the Pass Through Authentication Handler
 	Id string `json:"id"`
 	Schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
+	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
 	Server []string `json:"server"`
 	ServerAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp `json:"serverAccessMode"`
+	// Specifies one or more DN mappings that may be used to transform bind DNs before attempting to bind to the external servers.
 	DnMap []string `json:"dnMap,omitempty"`
 	// A pattern to use to construct the bind DN for the simple bind request to send to the remote server. This may consist of a combination of static text and attribute values and other directives enclosed in curly braces.  For example, the value \"cn={cn},ou=People,dc=example,dc=com\" indicates that the remote bind DN should be constructed from the text \"cn=\" followed by the value of the local entry's cn attribute followed by the text \"ou=People,dc=example,dc=com\". If an attribute contains the value to use as the bind DN for pass-through authentication, then the pattern may simply be the name of that attribute in curly braces (e.g., if the seeAlso attribute contains the bind DN for the target user, then a bind DN pattern of \"{seeAlso}\" would be appropriate).  Note that a bind DN pattern can be used to construct a bind DN that is not actually a valid LDAP distinguished name. For example, if authentication is being passed through to a Microsoft Active Directory server, then a bind DN pattern could be used to construct a user principal name (UPN) as an alternative to a distinguished name.
 	BindDNPattern *string `json:"bindDNPattern,omitempty"`
@@ -42,6 +44,7 @@ type LdapPassThroughAuthenticationHandlerResponse struct {
 	UsePasswordPolicyControl *bool `json:"usePasswordPolicyControl,omitempty"`
 	// A description for this Pass Through Authentication Handler
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewLdapPassThroughAuthenticationHandlerResponse instantiates a new LdapPassThroughAuthenticationHandlerResponse object
@@ -499,6 +502,38 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) SetDescription(v string) 
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *LdapPassThroughAuthenticationHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *LdapPassThroughAuthenticationHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o LdapPassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -545,6 +580,9 @@ func (o LdapPassThroughAuthenticationHandlerResponse) MarshalJSON() ([]byte, err
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

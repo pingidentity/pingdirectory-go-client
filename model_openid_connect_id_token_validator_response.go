@@ -20,6 +20,7 @@ type OpenidConnectIdTokenValidatorResponse struct {
 	Id string `json:"id"`
 	Schemas []EnumopenidConnectIdTokenValidatorSchemaUrn `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
+	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// Specifies the OpenID Connect provider that issues ID tokens handled by this OpenID Connect ID Token Validator. This property is used in conjunction with the jwks-endpoint-path property.
 	OpenIDConnectProvider *string `json:"OpenIDConnectProvider,omitempty"`
@@ -41,6 +42,7 @@ type OpenidConnectIdTokenValidatorResponse struct {
 	JwksCacheDuration *string `json:"jwksCacheDuration,omitempty"`
 	// When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
 	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewOpenidConnectIdTokenValidatorResponse instantiates a new OpenidConnectIdTokenValidatorResponse object
@@ -459,6 +461,38 @@ func (o *OpenidConnectIdTokenValidatorResponse) SetEvaluationOrderIndex(v int32)
 	o.EvaluationOrderIndex = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *OpenidConnectIdTokenValidatorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *OpenidConnectIdTokenValidatorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *OpenidConnectIdTokenValidatorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o OpenidConnectIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -502,6 +536,9 @@ func (o OpenidConnectIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

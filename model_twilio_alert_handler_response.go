@@ -27,7 +27,9 @@ type TwilioAlertHandlerResponse struct {
 	TwilioAuthToken *string `json:"twilioAuthToken,omitempty"`
 	// The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used.
 	TwilioAuthTokenPassphraseProvider *string `json:"twilioAuthTokenPassphraseProvider,omitempty"`
+	// The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
 	SenderPhoneNumber []string `json:"senderPhoneNumber"`
+	// The phone number to which alert notifications should be delivered.
 	RecipientPhoneNumber []string `json:"recipientPhoneNumber"`
 	LongMessageBehavior EnumalertHandlerLongMessageBehaviorProp `json:"longMessageBehavior"`
 	// A description for this Alert Handler
@@ -37,6 +39,7 @@ type TwilioAlertHandlerResponse struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
 	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewTwilioAlertHandlerResponse instantiates a new TwilioAlertHandlerResponse object
@@ -455,6 +458,38 @@ func (o *TwilioAlertHandlerResponse) SetDisabledAlertType(v []EnumalertHandlerDi
 	o.DisabledAlertType = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *TwilioAlertHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TwilioAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *TwilioAlertHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *TwilioAlertHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o TwilioAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -498,6 +533,9 @@ func (o TwilioAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

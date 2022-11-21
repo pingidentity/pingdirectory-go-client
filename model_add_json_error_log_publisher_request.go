@@ -23,8 +23,11 @@ type AddJsonErrorLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this JSON Error Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the JSON Error Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the JSON Error Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -58,6 +61,7 @@ type AddJsonErrorLogPublisherRequest struct {
 	// Indicates whether to use the generified version of the log message string (which may use placeholders like %s for a string or %d for an integer), rather than the version of the message with those placeholders replaced with specific values that would normally be written to the log.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`

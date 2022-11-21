@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **VaultExternalServer** | **string** | An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase. | 
 **DefaultField** | Pointer to **string** | The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Enhanced Password Storage Scheme. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Enhanced Password Storage Scheme. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **IterationCount** | **int32** | Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000. | 
 **ParallelismFactor** | **int32** | The number of concurrent threads that will be used in the course of encoding each password. | 
 **MemoryUsageKb** | **int32** | The number of kilobytes of memory that must be used in the course of encoding each password. | 

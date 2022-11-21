@@ -19,12 +19,15 @@ type AggregateIdentityMapperResponse struct {
 	// Name of the Identity Mapper
 	Id string `json:"id"`
 	Schemas []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
+	// The set of identity mappers that must all match the target entry. Each identity mapper must uniquely match the same target entry. If any of the identity mappers match multiple entries, if any of them match zero entries, or if any of them match different entries, then the mapping will fail.
 	AllIncludedIdentityMapper []string `json:"allIncludedIdentityMapper,omitempty"`
+	// The set of identity mappers that will be used to identify the target entry. At least one identity mapper must uniquely match an entry. If multiple identity mappers match entries, then they must all uniquely match the same entry. If none of the identity mappers match any entries, if any of them match multiple entries, or if any of them match different entries, then the mapping will fail.
 	AnyIncludedIdentityMapper []string `json:"anyIncludedIdentityMapper,omitempty"`
 	// A description for this Identity Mapper
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Identity Mapper is enabled for use.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewAggregateIdentityMapperResponse instantiates a new AggregateIdentityMapperResponse object
@@ -215,6 +218,38 @@ func (o *AggregateIdentityMapperResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *AggregateIdentityMapperResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AggregateIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *AggregateIdentityMapperResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *AggregateIdentityMapperResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o AggregateIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -234,6 +269,9 @@ func (o AggregateIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

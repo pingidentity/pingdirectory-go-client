@@ -31,9 +31,11 @@ type AddUserRestResourceTypeRequest struct {
 	ResourceEndpoint string `json:"resourceEndpoint"`
 	// Specifies the LDAP structural object class that should be exposed by this REST Resource Type.
 	StructuralLDAPObjectclass string `json:"structuralLDAPObjectclass"`
+	// Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
 	AuxiliaryLDAPObjectclass []string `json:"auxiliaryLDAPObjectclass,omitempty"`
 	// Specifies the base DN of the branch of the LDAP directory where resources of this type are located.
 	SearchBaseDN string `json:"searchBaseDN"`
+	// The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
 	IncludeFilter []string `json:"includeFilter,omitempty"`
 	// Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type.
 	ParentDN *string `json:"parentDN,omitempty"`
@@ -43,7 +45,9 @@ type AddUserRestResourceTypeRequest struct {
 	RelativeDNFromParentResource *string `json:"relativeDNFromParentResource,omitempty"`
 	// Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources.
 	CreateRDNAttributeType *string `json:"createRDNAttributeType,omitempty"`
+	// Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
 	PostCreateConstructedAttribute []string `json:"postCreateConstructedAttribute,omitempty"`
+	// Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
 	UpdateConstructedAttribute []string `json:"updateConstructedAttribute,omitempty"`
 	// A human readable display name for this REST Resource Type.
 	DisplayName *string `json:"displayName,omitempty"`

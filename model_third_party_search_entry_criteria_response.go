@@ -21,9 +21,11 @@ type ThirdPartySearchEntryCriteriaResponse struct {
 	Schemas []EnumthirdPartySearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Search Entry Criteria.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Search Entry Criteria. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Search Entry Criteria
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewThirdPartySearchEntryCriteriaResponse instantiates a new ThirdPartySearchEntryCriteriaResponse object
@@ -182,6 +184,38 @@ func (o *ThirdPartySearchEntryCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartySearchEntryCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartySearchEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartySearchEntryCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartySearchEntryCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ThirdPartySearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -198,6 +232,9 @@ func (o ThirdPartySearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

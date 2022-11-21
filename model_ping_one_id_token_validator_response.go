@@ -39,6 +39,7 @@ type PingOneIdTokenValidatorResponse struct {
 	JwksCacheDuration *string `json:"jwksCacheDuration,omitempty"`
 	// When multiple ID Token Validators are defined for a single Directory Server, this property determines the order in which the ID Token Validators are consulted. Values of this property must be unique among all ID Token Validators defined within Directory Server but not necessarily contiguous. ID Token Validators with lower values will be evaluated first to determine if they are able to validate the ID token.
 	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewPingOneIdTokenValidatorResponse instantiates a new PingOneIdTokenValidatorResponse object
@@ -393,6 +394,38 @@ func (o *PingOneIdTokenValidatorResponse) SetEvaluationOrderIndex(v int32) {
 	o.EvaluationOrderIndex = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *PingOneIdTokenValidatorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PingOneIdTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *PingOneIdTokenValidatorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *PingOneIdTokenValidatorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o PingOneIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -430,6 +463,9 @@ func (o PingOneIdTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -19,7 +19,9 @@ type AddExactMatchIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
 	MapperName string `json:"mapperName"`
 	Schemas []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
+	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
 	MatchAttribute []string `json:"matchAttribute"`
+	// Specifies the set of base DNs below which to search for users.
 	MatchBaseDN []string `json:"matchBaseDN,omitempty"`
 	// An optional filter that mapped users must match.
 	MatchFilter *string `json:"matchFilter,omitempty"`

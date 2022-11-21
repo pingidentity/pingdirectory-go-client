@@ -10,14 +10,15 @@ Name | Type | Description | Notes
 **TwilioAccountSID** | **string** | The unique identifier assigned to the Twilio account that will be used. | 
 **TwilioAuthToken** | Pointer to **string** | The auth token for the Twilio account that will be used. | [optional] 
 **TwilioAuthTokenPassphraseProvider** | Pointer to **string** | The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used. | [optional] 
-**SenderPhoneNumber** | **[]string** |  | 
-**RecipientPhoneNumber** | **[]string** |  | 
+**SenderPhoneNumber** | **[]string** | The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account. | 
+**RecipientPhoneNumber** | **[]string** | The phone number to which alert notifications should be delivered. | 
 **LongMessageBehavior** | [**EnumalertHandlerLongMessageBehaviorProp**](EnumalertHandlerLongMessageBehaviorProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 
 **EnabledAlertSeverity** | Pointer to [**[]EnumalertHandlerEnabledAlertSeverityProp**](EnumalertHandlerEnabledAlertSeverityProp.md) |  | [optional] 
 **EnabledAlertType** | Pointer to [**[]EnumalertHandlerEnabledAlertTypeProp**](EnumalertHandlerEnabledAlertTypeProp.md) |  | [optional] 
 **DisabledAlertType** | Pointer to [**[]EnumalertHandlerDisabledAlertTypeProp**](EnumalertHandlerDisabledAlertTypeProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -352,6 +353,31 @@ SetDisabledAlertType sets DisabledAlertType field to given value.
 `func (o *TwilioAlertHandlerResponse) HasDisabledAlertType() bool`
 
 HasDisabledAlertType returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *TwilioAlertHandlerResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *TwilioAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *TwilioAlertHandlerResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *TwilioAlertHandlerResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

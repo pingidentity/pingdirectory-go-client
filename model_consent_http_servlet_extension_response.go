@@ -23,11 +23,13 @@ type ConsentHttpServletExtensionResponse struct {
 	BasicAuthEnabled *bool `json:"basicAuthEnabled,omitempty"`
 	// Specifies the Identity Mapper that is to be used for associating basic authentication usernames with DNs.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
+	// If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Consent HTTP Servlet Extension.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

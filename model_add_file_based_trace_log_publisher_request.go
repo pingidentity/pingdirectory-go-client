@@ -23,8 +23,11 @@ type AddFileBasedTraceLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this File Based Trace Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the File Based Trace Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the File Based Trace Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -53,7 +56,9 @@ type AddFileBasedTraceLogPublisherRequest struct {
 	ConsentMessageType []EnumlogPublisherConsentMessageTypeProp `json:"consentMessageType,omitempty"`
 	DirectoryRESTAPIMessageType []EnumlogPublisherDirectoryRESTAPIMessageTypeProp `json:"directoryRESTAPIMessageType,omitempty"`
 	ExtensionMessageType []EnumlogPublisherExtensionMessageTypeProp `json:"extensionMessageType,omitempty"`
+	// Specifies a set of HTTP request URL paths to determine whether log messages are included for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
 	IncludePathPattern []string `json:"includePathPattern,omitempty"`
+	// Specifies a set of HTTP request URL paths to determine whether log messages are excluded for a HTTP request. Log messages are included for a HTTP request if the request path does not match any exclude-path-pattern, and the request path does match an include-path-pattern (or no include-path-pattern is specified).
 	ExcludePathPattern []string `json:"excludePathPattern,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`

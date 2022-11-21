@@ -23,8 +23,11 @@ type AddJsonAccessLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this JSON Access Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the JSON Access Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the JSON Access Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.

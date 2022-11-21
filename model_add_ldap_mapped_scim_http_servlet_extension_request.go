@@ -27,9 +27,13 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	IdentityMapper *string `json:"identityMapper,omitempty"`
 	// The path to an XML file defining the resources supported by the SCIM interface and the SCIM-to-LDAP attribute mappings to use.
 	ResourceMappingFile *string `json:"resourceMappingFile,omitempty"`
+	// Specifies the LDAP object classes that should be exposed directly as SCIM resources.
 	IncludeLDAPObjectclass []string `json:"includeLDAPObjectclass,omitempty"`
+	// Specifies the LDAP object classes that should be not be exposed directly as SCIM resources.
 	ExcludeLDAPObjectclass []string `json:"excludeLDAPObjectclass,omitempty"`
+	// Specifies the base DNs for the branches of the DIT that should be exposed via the Identity Access API.
 	IncludeLDAPBaseDN []string `json:"includeLDAPBaseDN,omitempty"`
+	// Specifies the base DNs for the branches of the DIT that should not be exposed via the Identity Access API.
 	ExcludeLDAPBaseDN []string `json:"excludeLDAPBaseDN,omitempty"`
 	// Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support.
 	EntityTagLDAPAttribute *string `json:"entityTagLDAPAttribute,omitempty"`
@@ -57,6 +61,7 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

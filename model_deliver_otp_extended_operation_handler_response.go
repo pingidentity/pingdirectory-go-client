@@ -23,11 +23,13 @@ type DeliverOtpExtendedOperationHandlerResponse struct {
 	IdentityMapper string `json:"identityMapper"`
 	// The password generator that will be used to create the one-time password values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
+	// The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms.
 	DefaultOTPDeliveryMechanism []string `json:"defaultOTPDeliveryMechanism"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewDeliverOtpExtendedOperationHandlerResponse instantiates a new DeliverOtpExtendedOperationHandlerResponse object
@@ -229,6 +231,38 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *DeliverOtpExtendedOperationHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeliverOtpExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *DeliverOtpExtendedOperationHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *DeliverOtpExtendedOperationHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o DeliverOtpExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -251,6 +285,9 @@ func (o DeliverOtpExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

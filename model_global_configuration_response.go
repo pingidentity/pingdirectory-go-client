@@ -41,6 +41,7 @@ type GlobalConfigurationResponse struct {
 	AutomaticallyCompressEncryptedLDIFExports *bool `json:"automaticallyCompressEncryptedLDIFExports,omitempty"`
 	// Indicates whether the values of sensitive configuration properties should be redacted when logging configuration changes, including in the configuration audit log, the error log, and the server.out log file.
 	RedactSensitiveValuesInConfigLogs *bool `json:"redactSensitiveValuesInConfigLogs,omitempty"`
+	// Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
 	SensitiveAttribute []string `json:"sensitiveAttribute,omitempty"`
 	// Indicates whether the Directory Server should reject any LDAP request (other than StartTLS) received from a client that is not using an encrypted connection.
 	RejectInsecureRequests *bool `json:"rejectInsecureRequests,omitempty"`
@@ -93,6 +94,7 @@ type GlobalConfigurationResponse struct {
 	// Indicates whether the Directory Server should allow underscores in attribute names and allow attribute names to begin with numeric digits (both of which are violations of the LDAP standards).
 	AllowAttributeNameExceptions *bool `json:"allowAttributeNameExceptions,omitempty"`
 	InvalidAttributeSyntaxBehavior *EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp `json:"invalidAttributeSyntaxBehavior,omitempty"`
+	// Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax.
 	PermitSyntaxViolationsForAttribute []string `json:"permitSyntaxViolationsForAttribute,omitempty"`
 	SingleStructuralObjectclassBehavior *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp `json:"singleStructuralObjectclassBehavior,omitempty"`
 	AttributesModifiableWithIgnoreNoUserModificationRequestControl []EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp `json:"attributesModifiableWithIgnoreNoUserModificationRequestControl,omitempty"`
@@ -153,6 +155,7 @@ type GlobalConfigurationResponse struct {
 	AllowInheritedReplicationOfSubordinateBackends bool `json:"allowInheritedReplicationOfSubordinateBackends"`
 	// Indicates whether state about obsolete replicas is automatically purged.
 	ReplicationPurgeObsoleteReplicas *bool `json:"replicationPurgeObsoleteReplicas,omitempty"`
+	// Specifies the set of servers that will be used to send email messages. The order in which the servers are listed indicates the order in which the Directory Server will attempt to use them in the course of sending a message. The first attempt will always go to the server at the top of the list, and servers further down the list will only be used if none of the servers listed above it were able to successfully send the message.
 	SmtpServer []string `json:"smtpServer,omitempty"`
 	// The maximum number of SMTP connections that will be maintained for delivering email messages.
 	MaxSMTPConnectionCount *int32 `json:"maxSMTPConnectionCount,omitempty"`
@@ -160,6 +163,7 @@ type GlobalConfigurationResponse struct {
 	MaxSMTPConnectionAge *string `json:"maxSMTPConnectionAge,omitempty"`
 	// The length of time between checks to ensure that available SMTP connections are still valid.
 	SmtpConnectionHealthCheckInterval *string `json:"smtpConnectionHealthCheckInterval,omitempty"`
+	// Specifies the fully-qualified name of a Java class that may be invoked in the server.
 	AllowedTask []string `json:"allowedTask,omitempty"`
 	// Indicates whether the Directory Server should attempt to record information about the length of time required to process various phases of an operation. Enabling this feature may impact performance, but could make it easier to identify potential bottlenecks in operation processing.
 	EnableSubOperationTimer *bool `json:"enableSubOperationTimer,omitempty"`
@@ -169,6 +173,7 @@ type GlobalConfigurationResponse struct {
 	NetworkAddressCacheTTL *string `json:"networkAddressCacheTTL,omitempty"`
 	// Specifies whether the Directory Server should cache the last valid IP addresses associated with the names of systems with which it interacts with when the domain name service returns an unknown host exception. Java may return an unknown host exception when there is unexpected interruption in domain name service so this setting protects the Directory Server from temporary DNS server outages if previous results have been cached.
 	NetworkAddressOutageCacheEnabled *bool `json:"networkAddressOutageCacheEnabled,omitempty"`
+	// Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application.
 	TrackedApplication []string `json:"trackedApplication,omitempty"`
 	JmxValueBehavior *EnumglobalConfigurationJmxValueBehaviorProp `json:"jmxValueBehavior,omitempty"`
 	// When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \"Rdn1\" and \"Rdn2\" instead of the recommended \"type\" and \"name\" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.

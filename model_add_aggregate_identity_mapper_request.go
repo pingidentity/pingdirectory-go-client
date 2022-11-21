@@ -19,7 +19,9 @@ type AddAggregateIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
 	MapperName string `json:"mapperName"`
 	Schemas []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
+	// The set of identity mappers that must all match the target entry. Each identity mapper must uniquely match the same target entry. If any of the identity mappers match multiple entries, if any of them match zero entries, or if any of them match different entries, then the mapping will fail.
 	AllIncludedIdentityMapper []string `json:"allIncludedIdentityMapper,omitempty"`
+	// The set of identity mappers that will be used to identify the target entry. At least one identity mapper must uniquely match an entry. If multiple identity mappers match entries, then they must all uniquely match the same entry. If none of the identity mappers match any entries, if any of them match multiple entries, or if any of them match different entries, then the mapping will fail.
 	AnyIncludedIdentityMapper []string `json:"anyIncludedIdentityMapper,omitempty"`
 	// A description for this Identity Mapper
 	Description *string `json:"description,omitempty"`

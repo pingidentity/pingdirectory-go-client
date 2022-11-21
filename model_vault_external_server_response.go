@@ -19,6 +19,7 @@ type VaultExternalServerResponse struct {
 	// Name of the External Server
 	Id string `json:"id"`
 	Schemas []EnumvaultExternalServerSchemaUrn `json:"schemas"`
+	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
 	VaultServerBaseURI []string `json:"vaultServerBaseURI"`
 	// The mechanism used to authenticate to the Vault server.
 	VaultAuthenticationMethod string `json:"vaultAuthenticationMethod"`
@@ -30,6 +31,7 @@ type VaultExternalServerResponse struct {
 	TrustStoreType *string `json:"trustStoreType,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewVaultExternalServerResponse instantiates a new VaultExternalServerResponse object
@@ -277,6 +279,38 @@ func (o *VaultExternalServerResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *VaultExternalServerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VaultExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *VaultExternalServerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *VaultExternalServerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o VaultExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -302,6 +336,9 @@ func (o VaultExternalServerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

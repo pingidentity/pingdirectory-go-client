@@ -31,9 +31,11 @@ type GroupRestResourceTypeResponse struct {
 	ResourceEndpoint string `json:"resourceEndpoint"`
 	// Specifies the LDAP structural object class that should be exposed by this REST Resource Type.
 	StructuralLDAPObjectclass string `json:"structuralLDAPObjectclass"`
+	// Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
 	AuxiliaryLDAPObjectclass []string `json:"auxiliaryLDAPObjectclass,omitempty"`
 	// Specifies the base DN of the branch of the LDAP directory where resources of this type are located.
 	SearchBaseDN string `json:"searchBaseDN"`
+	// The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
 	IncludeFilter []string `json:"includeFilter,omitempty"`
 	// Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type.
 	ParentDN *string `json:"parentDN,omitempty"`
@@ -43,7 +45,9 @@ type GroupRestResourceTypeResponse struct {
 	RelativeDNFromParentResource *string `json:"relativeDNFromParentResource,omitempty"`
 	// Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources.
 	CreateRDNAttributeType *string `json:"createRDNAttributeType,omitempty"`
+	// Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
 	PostCreateConstructedAttribute []string `json:"postCreateConstructedAttribute,omitempty"`
+	// Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
 	UpdateConstructedAttribute []string `json:"updateConstructedAttribute,omitempty"`
 	// A human readable display name for this REST Resource Type.
 	DisplayName *string `json:"displayName,omitempty"`
@@ -55,6 +59,7 @@ type GroupRestResourceTypeResponse struct {
 	DelegatedAdminSearchSizeLimit *int32 `json:"delegatedAdminSearchSizeLimit,omitempty"`
 	// The maximum number of resources that may be included in a report.
 	DelegatedAdminReportSizeLimit *int32 `json:"delegatedAdminReportSizeLimit,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewGroupRestResourceTypeResponse instantiates a new GroupRestResourceTypeResponse object
@@ -736,6 +741,38 @@ func (o *GroupRestResourceTypeResponse) SetDelegatedAdminReportSizeLimit(v int32
 	o.DelegatedAdminReportSizeLimit = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GroupRestResourceTypeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroupRestResourceTypeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GroupRestResourceTypeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GroupRestResourceTypeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o GroupRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -803,6 +840,9 @@ func (o GroupRestResourceTypeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DelegatedAdminReportSizeLimit) {
 		toSerialize["delegatedAdminReportSizeLimit"] = o.DelegatedAdminReportSizeLimit
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

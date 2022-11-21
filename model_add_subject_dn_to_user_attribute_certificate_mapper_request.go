@@ -21,6 +21,7 @@ type AddSubjectDnToUserAttributeCertificateMapperRequest struct {
 	Schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN.
 	SubjectAttribute string `json:"subjectAttribute"`
+	// Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`

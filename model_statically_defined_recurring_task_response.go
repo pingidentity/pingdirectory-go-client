@@ -21,14 +21,19 @@ type StaticallyDefinedRecurringTaskResponse struct {
 	Schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class that provides the logic for the task to be invoked.
 	TaskJavaClass string `json:"taskJavaClass"`
+	// The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry.
 	TaskObjectClass []string `json:"taskObjectClass"`
+	// The set of attribute values that should be included in the tasks that are scheduled from this Statically Defined Recurring Task. Each value must be in the form {attribute-type}={value}, where {attribute-type} is the name or OID of an attribute type that is defined in the schema and permitted with the configured set of object classes, and {value} is a value to assign to an attribute with that type. A multivalued attribute can be created by providing multiple name-value pairs with the same name and different values.
 	TaskAttributeValue []string `json:"taskAttributeValue,omitempty"`
 	// A description for this Recurring Task
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
 	CancelOnTaskDependencyFailure *bool `json:"cancelOnTaskDependencyFailure,omitempty"`
+	// The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnStart []string `json:"emailOnStart,omitempty"`
+	// The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnSuccess []string `json:"emailOnSuccess,omitempty"`
+	// The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnFailure []string `json:"emailOnFailure,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
 	AlertOnStart *bool `json:"alertOnStart,omitempty"`
@@ -36,6 +41,7 @@ type StaticallyDefinedRecurringTaskResponse struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewStaticallyDefinedRecurringTaskResponse instantiates a new StaticallyDefinedRecurringTaskResponse object
@@ -443,6 +449,38 @@ func (o *StaticallyDefinedRecurringTaskResponse) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *StaticallyDefinedRecurringTaskResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *StaticallyDefinedRecurringTaskResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o StaticallyDefinedRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -483,6 +521,9 @@ func (o StaticallyDefinedRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

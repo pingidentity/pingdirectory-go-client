@@ -21,6 +21,7 @@ type AddGroovyScriptedPasswordGeneratorRequest struct {
 	Schemas []EnumgroovyScriptedPasswordGeneratorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Generator.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Password Generator. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Password Generator
 	Description *string `json:"description,omitempty"`

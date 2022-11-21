@@ -19,11 +19,14 @@ type SchemaBackendResponse struct {
 	Schemas []EnumschemaBackendSchemaUrn `json:"schemas"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
+	// Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property.
 	SchemaEntryDN []string `json:"schemaEntryDN,omitempty"`
 	// Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration.
 	ShowAllAttributes bool `json:"showAllAttributes"`
+	// Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients.
 	ReadOnlySchemaFile []string `json:"readOnlySchemaFile,omitempty"`
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`

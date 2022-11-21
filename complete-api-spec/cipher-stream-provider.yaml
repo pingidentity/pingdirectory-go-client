@@ -193,6 +193,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     amazon-key-management-service-cipher-stream-provider-shared:
       type: object
       properties:
@@ -264,6 +265,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     amazon-secrets-manager-cipher-stream-provider-shared:
       type: object
       properties:
@@ -336,6 +338,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     azure-key-vault-cipher-stream-provider-shared:
       type: object
       properties:
@@ -400,6 +403,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     file-based-cipher-stream-provider-shared:
       type: object
       properties:
@@ -453,6 +457,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/wait-for-passphrase-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     wait-for-passphrase-cipher-stream-provider-shared:
       type: object
       properties:
@@ -497,6 +502,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/conjur-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     conjur-cipher-stream-provider-shared:
       type: object
       properties:
@@ -556,6 +562,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     pkcs11-cipher-stream-provider-shared:
       type: object
       properties:
@@ -635,6 +642,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/vault-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     vault-cipher-stream-provider-shared:
       type: object
       properties:
@@ -652,8 +660,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
+          description: >-
+              The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
         vaultAuthenticationMethod:
           type: string
           description: >-
@@ -721,6 +729,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-cipher-stream-provider-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-cipher-stream-provider-shared:
       type: object
       properties:
@@ -738,8 +747,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Cipher Stream Provider. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Cipher Stream Provider. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -783,6 +792,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

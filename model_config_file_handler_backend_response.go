@@ -19,8 +19,10 @@ type ConfigFileHandlerBackendResponse struct {
 	Schemas []EnumconfigFileHandlerBackendSchemaUrn `json:"schemas"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
+	// The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
 	InsignificantConfigArchiveAttribute []string `json:"insignificantConfigArchiveAttribute,omitempty"`
 	// Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
 	MirroredSubtreePeerPollingInterval *string `json:"mirroredSubtreePeerPollingInterval,omitempty"`

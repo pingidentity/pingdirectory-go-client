@@ -12,18 +12,19 @@ Name | Type | Description | Notes
 **PhoneNumberAttributeType** | **string** | The name or OID of the attribute in the user&#39;s entry that holds the phone number to which the message should be sent. | 
 **PhoneNumberJSONField** | Pointer to **string** | The name of the JSON field whose value is the phone number to which the message should be sent. The phone number must be contained in a top-level field whose value is a single string. | [optional] 
 **PhoneNumberJSONObjectFilter** | Pointer to **string** | A JSON object filter that may be used to identify which phone number value to use when sending the message. | [optional] 
-**SenderPhoneNumber** | **[]string** |  | 
+**SenderPhoneNumber** | **[]string** | The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account. | 
 **MessageTextBeforeOTP** | Pointer to **string** | Any text that should appear in the message before the one-time password value. | [optional] 
 **MessageTextAfterOTP** | Pointer to **string** | Any text that should appear in the message after the one-time password value. | [optional] 
 **Description** | Pointer to **string** | A description for this OTP Delivery Mechanism | [optional] 
 **Enabled** | **bool** | Indicates whether this OTP Delivery Mechanism is enabled for use in the server. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **EmailAddressAttributeType** | **string** | The name or OID of the attribute that holds the email address to which the message should be sent. | 
 **EmailAddressJSONField** | Pointer to **string** | The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string. | [optional] 
 **EmailAddressJSONObjectFilter** | Pointer to **string** | A JSON object filter that may be used to identify which email address value to use when sending the message. | [optional] 
 **SenderAddress** | **string** | The e-mail address to use as the sender for the one-time password. | 
 **MessageSubject** | **string** | The subject to use for the e-mail message. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party OTP Delivery Mechanism. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party OTP Delivery Mechanism. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 
@@ -338,6 +339,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetMeta
+
+`func (o *AddOtpDeliveryMechanism200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddOtpDeliveryMechanism200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddOtpDeliveryMechanism200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddOtpDeliveryMechanism200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetEmailAddressAttributeType
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PolicyName** | **string** | Name of the new Log Rotation Policy | 
 **Schemas** | [**[]EnumfixedTimeLogRotationPolicySchemaUrn**](EnumfixedTimeLogRotationPolicySchemaUrn.md) |  | 
-**TimeOfDay** | **[]string** |  | 
+**TimeOfDay** | **[]string** | Specifies the time of day at which log rotation should occur. | 
 **Description** | Pointer to **string** | A description for this Log Rotation Policy | [optional] 
 
 ## Methods

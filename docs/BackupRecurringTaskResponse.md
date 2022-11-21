@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Recurring Task | 
 **Schemas** | [**[]EnumbackupRecurringTaskSchemaUrn**](EnumbackupRecurringTaskSchemaUrn.md) |  | 
 **BackupDirectory** | **string** | The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID. | 
-**IncludedBackendID** | Pointer to **[]string** |  | [optional] 
-**ExcludedBackendID** | Pointer to **[]string** |  | [optional] 
+**IncludedBackendID** | Pointer to **[]string** | The backend IDs of any backends that should be included in the backup. | [optional] 
+**ExcludedBackendID** | Pointer to **[]string** | The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included. | [optional] 
 **Compress** | Pointer to **bool** | Indicates whether to compress the data as it is written into the backup. | [optional] 
 **Encrypt** | Pointer to **bool** | Indicates whether to encrypt the data as it is written into the backup. | [optional] 
 **EncryptionSettingsDefinitionID** | Pointer to **string** | The ID of an encryption settings definition to use to obtain the backup encryption key. | [optional] 
@@ -18,12 +18,13 @@ Name | Type | Description | Notes
 **MaxMegabytesPerSecond** | Pointer to **int32** | The maximum rate, in megabytes per second, at which backups should be written. | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task | [optional] 
 **CancelOnTaskDependencyFailure** | Pointer to **bool** | Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running). | [optional] 
-**EmailOnStart** | Pointer to **[]string** |  | [optional] 
-**EmailOnSuccess** | Pointer to **[]string** |  | [optional] 
-**EmailOnFailure** | Pointer to **[]string** |  | [optional] 
+**EmailOnStart** | Pointer to **[]string** | The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration. | [optional] 
+**EmailOnSuccess** | Pointer to **[]string** | The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration. | [optional] 
+**EmailOnFailure** | Pointer to **[]string** | The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration. | [optional] 
 **AlertOnStart** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running. | [optional] 
 **AlertOnSuccess** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task completes successfully. | [optional] 
 **AlertOnFailure** | Pointer to **bool** | Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -528,6 +529,31 @@ SetAlertOnFailure sets AlertOnFailure field to given value.
 `func (o *BackupRecurringTaskResponse) HasAlertOnFailure() bool`
 
 HasAlertOnFailure returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *BackupRecurringTaskResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *BackupRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *BackupRecurringTaskResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *BackupRecurringTaskResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

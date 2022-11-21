@@ -21,7 +21,9 @@ type AddBackupRecurringTaskRequest struct {
 	Schemas []EnumbackupRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID.
 	BackupDirectory string `json:"backupDirectory"`
+	// The backend IDs of any backends that should be included in the backup.
 	IncludedBackendID []string `json:"includedBackendID,omitempty"`
+	// The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included.
 	ExcludedBackendID []string `json:"excludedBackendID,omitempty"`
 	// Indicates whether to compress the data as it is written into the backup.
 	Compress *bool `json:"compress,omitempty"`
@@ -41,8 +43,11 @@ type AddBackupRecurringTaskRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
 	CancelOnTaskDependencyFailure *bool `json:"cancelOnTaskDependencyFailure,omitempty"`
+	// The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnStart []string `json:"emailOnStart,omitempty"`
+	// The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnSuccess []string `json:"emailOnSuccess,omitempty"`
+	// The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnFailure []string `json:"emailOnFailure,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
 	AlertOnStart *bool `json:"alertOnStart,omitempty"`

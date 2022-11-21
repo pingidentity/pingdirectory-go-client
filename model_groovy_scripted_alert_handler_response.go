@@ -21,6 +21,7 @@ type GroovyScriptedAlertHandlerResponse struct {
 	Schemas []EnumgroovyScriptedAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Alert Handler.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
@@ -31,6 +32,7 @@ type GroovyScriptedAlertHandlerResponse struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
 	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewGroovyScriptedAlertHandlerResponse instantiates a new GroovyScriptedAlertHandlerResponse object
@@ -342,6 +344,38 @@ func (o *GroovyScriptedAlertHandlerResponse) SetDisabledAlertType(v []EnumalertH
 	o.DisabledAlertType = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GroovyScriptedAlertHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GroovyScriptedAlertHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GroovyScriptedAlertHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o GroovyScriptedAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -373,6 +407,9 @@ func (o GroovyScriptedAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

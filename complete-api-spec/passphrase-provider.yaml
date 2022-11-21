@@ -189,6 +189,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/environment-variable-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     environment-variable-passphrase-provider-shared:
       type: object
       properties:
@@ -238,6 +239,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-secrets-manager-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     amazon-secrets-manager-passphrase-provider-shared:
       type: object
       properties:
@@ -309,6 +311,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/obscured-value-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     obscured-value-passphrase-provider-shared:
       type: object
       properties:
@@ -359,6 +362,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/azure-key-vault-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     azure-key-vault-passphrase-provider-shared:
       type: object
       properties:
@@ -422,6 +426,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     file-based-passphrase-provider-shared:
       type: object
       properties:
@@ -475,6 +480,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/conjur-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     conjur-passphrase-provider-shared:
       type: object
       properties:
@@ -533,6 +539,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/vault-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     vault-passphrase-provider-shared:
       type: object
       properties:
@@ -596,6 +603,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-passphrase-provider-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-passphrase-provider-shared:
       type: object
       properties:
@@ -613,8 +621,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Passphrase Provider. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Passphrase Provider. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -658,6 +666,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -21,14 +21,17 @@ type ThirdPartyErrorLogPublisherResponse struct {
 	Schemas []EnumthirdPartyErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Error Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Error Log Publisher. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewThirdPartyErrorLogPublisherResponse instantiates a new ThirdPartyErrorLogPublisherResponse object
@@ -308,6 +311,38 @@ func (o *ThirdPartyErrorLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogP
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartyErrorLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartyErrorLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartyErrorLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ThirdPartyErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -336,6 +371,9 @@ func (o ThirdPartyErrorLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

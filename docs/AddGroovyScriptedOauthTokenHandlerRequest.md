@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HandlerName** | **string** | Name of the new OAuth Token Handler | 
 **Schemas** | [**[]EnumgroovyScriptedOauthTokenHandlerSchemaUrn**](EnumgroovyScriptedOauthTokenHandlerSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted OAuth Token Handler. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted OAuth Token Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this OAuth Token Handler | [optional] 
 
 ## Methods

@@ -19,7 +19,9 @@ type ServerGroupResponse struct {
 	// Name of the Server Group
 	Id string `json:"id"`
 	Schemas []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
+	// A server instance that is a member of this group.
 	Member []string `json:"member,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewServerGroupResponse instantiates a new ServerGroupResponse object
@@ -128,6 +130,38 @@ func (o *ServerGroupResponse) SetMember(v []string) {
 	o.Member = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ServerGroupResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServerGroupResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ServerGroupResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ServerGroupResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ServerGroupResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -138,6 +172,9 @@ func (o ServerGroupResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Member) {
 		toSerialize["member"] = o.Member
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

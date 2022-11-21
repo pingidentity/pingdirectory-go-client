@@ -23,8 +23,11 @@ type FileBasedJsonAuditLogPublisherResponse struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this File Based JSON Audit Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the File Based JSON Audit Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the File Based JSON Audit Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -54,7 +57,9 @@ type FileBasedJsonAuditLogPublisherResponse struct {
 	IncludeOperationPurposeRequestControl *bool `json:"includeOperationPurposeRequestControl,omitempty"`
 	// Indicates whether to include information about any intermediate client request control that may have been included in the request.
 	IncludeIntermediateClientRequestControl *bool `json:"includeIntermediateClientRequestControl,omitempty"`
+	// Specifies the names of any attribute types that should have their values obscured in the audit log because they may be considered sensitive.
 	ObscureAttribute []string `json:"obscureAttribute,omitempty"`
+	// Specifies the names of any attribute types that should be excluded from the audit log.
 	ExcludeAttribute []string `json:"excludeAttribute,omitempty"`
 	// Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
 	SuppressInternalOperations *bool `json:"suppressInternalOperations,omitempty"`
@@ -113,6 +118,7 @@ type FileBasedJsonAuditLogPublisherResponse struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewFileBasedJsonAuditLogPublisherResponse instantiates a new FileBasedJsonAuditLogPublisherResponse object
@@ -1772,6 +1778,38 @@ func (o *FileBasedJsonAuditLogPublisherResponse) SetLoggingErrorBehavior(v Enuml
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *FileBasedJsonAuditLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileBasedJsonAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *FileBasedJsonAuditLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *FileBasedJsonAuditLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o FileBasedJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1932,6 +1970,9 @@ func (o FileBasedJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

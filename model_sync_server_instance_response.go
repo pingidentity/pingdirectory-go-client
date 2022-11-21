@@ -44,6 +44,7 @@ type SyncServerInstanceResponse struct {
 	ReplicationPort *int32 `json:"replicationPort,omitempty"`
 	// Specifies a unique identifier for the replication server on this server instance.
 	ReplicationServerID *int32 `json:"replicationServerID,omitempty"`
+	// Specifies a unique identifier for the Directory Server within the replication domain.
 	ReplicationDomainServerID []int32 `json:"replicationDomainServerID,omitempty"`
 	// The TCP port on which this server is listening for JMX connections.
 	JmxPort *int32 `json:"jmxPort,omitempty"`
@@ -52,7 +53,9 @@ type SyncServerInstanceResponse struct {
 	PreferredSecurity *EnumserverInstancePreferredSecurityProp `json:"preferredSecurity,omitempty"`
 	// Indicates whether StartTLS is enabled on this server.
 	StartTLSEnabled *bool `json:"startTLSEnabled,omitempty"`
+	// The set of base DNs under the root DSE.
 	BaseDN []string `json:"baseDN,omitempty"`
+	// The set of groups of which this server is a member.
 	MemberOfServerGroup []string `json:"memberOfServerGroup,omitempty"`
 }
 

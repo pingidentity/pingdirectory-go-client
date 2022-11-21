@@ -123,8 +123,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
+          description: >-
+              Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
         rejectInsecureRequests:
           type: boolean
           description: >-
@@ -235,8 +235,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax.
+          description: >-
+              Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax.
         singleStructuralObjectclassBehavior:
           $ref: '#/components/schemas/Enumglobal-configuration-singleStructuralObjectclassBehaviorProp'
         attributesModifiableWithIgnoreNoUserModificationRequestControl:
@@ -361,8 +361,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of servers that will be used to send email messages. The order in which the servers are listed indicates the order in which the Directory Server will attempt to use them in the course of sending a message. The first attempt will always go to the server at the top of the list, and servers further down the list will only be used if none of the servers listed above it were able to successfully send the message.
+          description: >-
+              Specifies the set of servers that will be used to send email messages. The order in which the servers are listed indicates the order in which the Directory Server will attempt to use them in the course of sending a message. The first attempt will always go to the server at the top of the list, and servers further down the list will only be used if none of the servers listed above it were able to successfully send the message.
         maxSMTPConnectionCount:
           type: integer
           description: >-
@@ -379,8 +379,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the fully-qualified name of a Java class that may be invoked in the server.
+          description: >-
+              Specifies the fully-qualified name of a Java class that may be invoked in the server.
         enableSubOperationTimer:
           type: boolean
           description: >-
@@ -401,8 +401,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application.
+          description: >-
+              Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application.
         jmxValueBehavior:
           $ref: '#/components/schemas/Enumglobal-configuration-jmxValueBehaviorProp'
         jmxUseLegacyMbeanNames:
@@ -564,6 +564,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

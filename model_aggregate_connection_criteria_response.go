@@ -19,12 +19,17 @@ type AggregateConnectionCriteriaResponse struct {
 	// Name of the Connection Criteria
 	Id string `json:"id"`
 	Schemas []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
+	// Specifies a connection criteria object that must match the associated client connection in order to match the aggregate connection criteria. If one or more all-included connection criteria objects are provided, then a client connection must match all of them in order to match the aggregate connection criteria.
 	AllIncludedConnectionCriteria []string `json:"allIncludedConnectionCriteria,omitempty"`
+	// Specifies a connection criteria object that may match the associated client connection in order to match the aggregate connection criteria. If one or more any-included connection criteria objects are provided, then a client connection must match at least one of them in order to match the aggregate connection criteria.
 	AnyIncludedConnectionCriteria []string `json:"anyIncludedConnectionCriteria,omitempty"`
+	// Specifies a connection criteria object that should not match the associated client connection in order to match the aggregate connection criteria. If one or more not-all-included connection criteria objects are provided, then a client connection must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate connection criteria.
 	NotAllIncludedConnectionCriteria []string `json:"notAllIncludedConnectionCriteria,omitempty"`
+	// Specifies a connection criteria object that must not match the associated client connection in order to match the aggregate connection criteria. If one or more none-included connection criteria objects are provided, then a client connection must not match any of them in order to match the aggregate connection criteria.
 	NoneIncludedConnectionCriteria []string `json:"noneIncludedConnectionCriteria,omitempty"`
 	// A description for this Connection Criteria
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewAggregateConnectionCriteriaResponse instantiates a new AggregateConnectionCriteriaResponse object
@@ -254,6 +259,38 @@ func (o *AggregateConnectionCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *AggregateConnectionCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AggregateConnectionCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *AggregateConnectionCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *AggregateConnectionCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o AggregateConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -276,6 +313,9 @@ func (o AggregateConnectionCriteriaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

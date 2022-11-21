@@ -17,7 +17,9 @@ import (
 // AttributeBasedLogFieldSyntaxResponse struct for AttributeBasedLogFieldSyntaxResponse
 type AttributeBasedLogFieldSyntaxResponse struct {
 	Schemas []EnumattributeBasedLogFieldSyntaxSchemaUrn `json:"schemas"`
+	// The set of attribute types that will be considered sensitive.
 	IncludedSensitiveAttribute []string `json:"includedSensitiveAttribute,omitempty"`
+	// The set of attribute types that will not be considered sensitive.
 	ExcludedSensitiveAttribute []string `json:"excludedSensitiveAttribute,omitempty"`
 	// A description for this Log Field Syntax
 	Description *string `json:"description,omitempty"`

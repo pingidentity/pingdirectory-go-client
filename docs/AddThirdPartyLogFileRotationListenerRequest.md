@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ListenerName** | **string** | Name of the new Log File Rotation Listener | 
 **Schemas** | [**[]EnumthirdPartyLogFileRotationListenerSchemaUrn**](EnumthirdPartyLogFileRotationListenerSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Log File Rotation Listener | [optional] 
 **Enabled** | **bool** | Indicates whether the Log File Rotation Listener is enabled for use. | 
 

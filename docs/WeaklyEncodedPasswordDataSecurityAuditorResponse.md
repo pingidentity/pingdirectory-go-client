@@ -7,12 +7,13 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Data Security Auditor | 
 **Schemas** | [**[]EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn**](EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn.md) |  | 
 **ReportFile** | **string** | Specifies the name of the detailed report file. | 
-**WeakPasswordStorageScheme** | **[]string** |  | 
+**WeakPasswordStorageScheme** | **[]string** | The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report. | 
 **WeakCryptEncoding** | Pointer to [**[]EnumdataSecurityAuditorWeakCryptEncodingProp**](EnumdataSecurityAuditorWeakCryptEncodingProp.md) |  | [optional] 
 **Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
-**IncludeAttribute** | Pointer to **[]string** |  | [optional] 
-**AuditBackend** | Pointer to **[]string** |  | [optional] 
+**IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
+**AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -232,6 +233,31 @@ SetAuditSeverity sets AuditSeverity field to given value.
 `func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasAuditSeverity() bool`
 
 HasAuditSeverity returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

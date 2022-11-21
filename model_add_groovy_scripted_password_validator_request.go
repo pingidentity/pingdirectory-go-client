@@ -21,6 +21,7 @@ type AddGroovyScriptedPasswordValidatorRequest struct {
 	Schemas []EnumgroovyScriptedPasswordValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Validator.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Password Validator. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`

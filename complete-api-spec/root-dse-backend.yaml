@@ -75,14 +75,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
+          description: >-
+              Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
         additionalSupportedControlOID:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
+          description: >-
+              Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
         showAllAttributes:
           type: boolean
           description: >-
@@ -124,6 +124,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -8,13 +8,14 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumthirdPartyTrustManagerProviderSchemaUrn**](EnumthirdPartyTrustManagerProviderSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicate whether the Trust Manager Provider is enabled for use. | 
 **IncludeJVMDefaultIssuers** | Pointer to **bool** | Indicates whether certificates issued by an authority included in the JVM&#39;s set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **TrustStoreFile** | **string** | Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root. | 
 **TrustStoreType** | Pointer to **string** | Specifies the format for the data in the trust store file. | [optional] 
 **TrustStorePin** | Pointer to **string** | Specifies the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
 **TrustStorePinFile** | Pointer to **string** | Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
 **TrustStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the File Based Trust Manager Provider. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 
@@ -119,6 +120,31 @@ SetIncludeJVMDefaultIssuers sets IncludeJVMDefaultIssuers field to given value.
 `func (o *AddTrustManagerProvider200Response) HasIncludeJVMDefaultIssuers() bool`
 
 HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddTrustManagerProvider200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddTrustManagerProvider200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddTrustManagerProvider200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddTrustManagerProvider200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetTrustStoreFile
 

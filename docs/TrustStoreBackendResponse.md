@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumtrustStoreBackendSchemaUrn**](EnumtrustStoreBackendSchemaUrn.md) |  | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
-**BaseDN** | **[]string** |  | 
+**BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **TrustStoreFile** | **string** | Specifies the path to the file that stores the trust information. | 
 **TrustStoreType** | Pointer to **string** | Specifies the format for the data in the key store file. | [optional] 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumjvmDefaultTrustManagerProviderSchemaUrn**](EnumjvmDefaultTrustManagerProviderSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicate whether the Trust Manager Provider is enabled for use. | 
 **IncludeJVMDefaultIssuers** | Pointer to **bool** | Indicates whether certificates issued by an authority included in the JVM&#39;s set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -112,6 +113,31 @@ SetIncludeJVMDefaultIssuers sets IncludeJVMDefaultIssuers field to given value.
 `func (o *JvmDefaultTrustManagerProviderResponse) HasIncludeJVMDefaultIssuers() bool`
 
 HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *JvmDefaultTrustManagerProviderResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *JvmDefaultTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *JvmDefaultTrustManagerProviderResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *JvmDefaultTrustManagerProviderResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

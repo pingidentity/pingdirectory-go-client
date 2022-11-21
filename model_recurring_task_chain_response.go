@@ -23,16 +23,19 @@ type RecurringTaskChainResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
 	Enabled bool `json:"enabled"`
+	// The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed.
 	RecurringTask []string `json:"recurringTask"`
 	ScheduledMonth []EnumrecurringTaskChainScheduledMonthProp `json:"scheduledMonth"`
 	ScheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp `json:"scheduledDateSelectionType"`
 	ScheduledDayOfTheWeek []EnumrecurringTaskChainScheduledDayOfTheWeekProp `json:"scheduledDayOfTheWeek,omitempty"`
 	ScheduledDayOfTheMonth []EnumrecurringTaskChainScheduledDayOfTheMonthProp `json:"scheduledDayOfTheMonth,omitempty"`
+	// The time of day at which instances of the Recurring Task Chain should be eligible to start running. Values should be in the format HH:MM (where HH is a two-digit representation of the hour of the day, between 00 and 23, inclusive), and MM is a two-digit representation of the minute of the hour (between 00 and 59, inclusive). Alternately, the value can be in the form *:MM, which indicates that the task should be eligible to start at the specified minute of every hour. At least one value must be provided, but multiple values may be given to indicate multiple start times within the same day.
 	ScheduledTimeOfDay []string `json:"scheduledTimeOfDay"`
 	// The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM's default time zone will be used.
 	TimeZone *string `json:"timeZone,omitempty"`
 	InterruptedByShutdownBehavior *EnumrecurringTaskChainInterruptedByShutdownBehaviorProp `json:"interruptedByShutdownBehavior,omitempty"`
 	ServerOfflineAtStartTimeBehavior *EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp `json:"serverOfflineAtStartTimeBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewRecurringTaskChainResponse instantiates a new RecurringTaskChainResponse object
@@ -426,6 +429,38 @@ func (o *RecurringTaskChainResponse) SetServerOfflineAtStartTimeBehavior(v Enumr
 	o.ServerOfflineAtStartTimeBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *RecurringTaskChainResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *RecurringTaskChainResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *RecurringTaskChainResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o RecurringTaskChainResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -466,6 +501,9 @@ func (o RecurringTaskChainResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ServerOfflineAtStartTimeBehavior) {
 		toSerialize["serverOfflineAtStartTimeBehavior"] = o.ServerOfflineAtStartTimeBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -8,15 +8,16 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumrecurringTaskChainSchemaUrn**](EnumrecurringTaskChainSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task Chain | [optional] 
 **Enabled** | **bool** | Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired. | 
-**RecurringTask** | **[]string** |  | 
+**RecurringTask** | **[]string** | The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed. | 
 **ScheduledMonth** | [**[]EnumrecurringTaskChainScheduledMonthProp**](EnumrecurringTaskChainScheduledMonthProp.md) |  | 
 **ScheduledDateSelectionType** | [**EnumrecurringTaskChainScheduledDateSelectionTypeProp**](EnumrecurringTaskChainScheduledDateSelectionTypeProp.md) |  | 
 **ScheduledDayOfTheWeek** | Pointer to [**[]EnumrecurringTaskChainScheduledDayOfTheWeekProp**](EnumrecurringTaskChainScheduledDayOfTheWeekProp.md) |  | [optional] 
 **ScheduledDayOfTheMonth** | Pointer to [**[]EnumrecurringTaskChainScheduledDayOfTheMonthProp**](EnumrecurringTaskChainScheduledDayOfTheMonthProp.md) |  | [optional] 
-**ScheduledTimeOfDay** | **[]string** |  | 
+**ScheduledTimeOfDay** | **[]string** | The time of day at which instances of the Recurring Task Chain should be eligible to start running. Values should be in the format HH:MM (where HH is a two-digit representation of the hour of the day, between 00 and 23, inclusive), and MM is a two-digit representation of the minute of the hour (between 00 and 59, inclusive). Alternately, the value can be in the form *:MM, which indicates that the task should be eligible to start at the specified minute of every hour. At least one value must be provided, but multiple values may be given to indicate multiple start times within the same day. | 
 **TimeZone** | Pointer to **string** | The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM&#39;s default time zone will be used. | [optional] 
 **InterruptedByShutdownBehavior** | Pointer to [**EnumrecurringTaskChainInterruptedByShutdownBehaviorProp**](EnumrecurringTaskChainInterruptedByShutdownBehaviorProp.md) |  | [optional] 
 **ServerOfflineAtStartTimeBehavior** | Pointer to [**EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp**](EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -331,6 +332,31 @@ SetServerOfflineAtStartTimeBehavior sets ServerOfflineAtStartTimeBehavior field 
 `func (o *RecurringTaskChainResponse) HasServerOfflineAtStartTimeBehavior() bool`
 
 HasServerOfflineAtStartTimeBehavior returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *RecurringTaskChainResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *RecurringTaskChainResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *RecurringTaskChainResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

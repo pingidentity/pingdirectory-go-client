@@ -24,9 +24,12 @@ type PrivilegeDataSecurityAuditorResponse struct {
 	IncludePrivilege []EnumdataSecurityAuditorIncludePrivilegeProp `json:"includePrivilege,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
+	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend []string `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewPrivilegeDataSecurityAuditorResponse instantiates a new PrivilegeDataSecurityAuditorResponse object
@@ -274,6 +277,38 @@ func (o *PrivilegeDataSecurityAuditorResponse) SetAuditSeverity(v EnumdataSecuri
 	o.AuditSeverity = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *PrivilegeDataSecurityAuditorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrivilegeDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *PrivilegeDataSecurityAuditorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *PrivilegeDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o PrivilegeDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -299,6 +334,9 @@ func (o PrivilegeDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

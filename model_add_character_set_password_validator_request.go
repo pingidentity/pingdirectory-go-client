@@ -19,6 +19,7 @@ type AddCharacterSetPasswordValidatorRequest struct {
 	// Name of the new Password Validator
 	ValidatorName string `json:"validatorName"`
 	Schemas []EnumcharacterSetPasswordValidatorSchemaUrn `json:"schemas"`
+	// Specifies a character set containing characters that a password may contain and a value indicating the minimum number of characters required from that set.
 	CharacterSet []string `json:"characterSet"`
 	// Indicates whether this password validator allows passwords to contain characters outside of any of the user-defined character sets.
 	AllowUnclassifiedCharacters bool `json:"allowUnclassifiedCharacters"`

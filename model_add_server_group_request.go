@@ -19,6 +19,7 @@ type AddServerGroupRequest struct {
 	// Name of the new Server Group
 	GroupName string `json:"groupName"`
 	Schemas []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
+	// A server instance that is a member of this group.
 	Member []string `json:"member,omitempty"`
 }
 

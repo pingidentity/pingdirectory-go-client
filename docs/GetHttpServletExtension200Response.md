@@ -7,17 +7,18 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumthirdPartyHttpServletExtensionSchemaUrn**](EnumthirdPartyHttpServletExtensionSchemaUrn.md) |  | 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the name of the identity mapper that is to be used to match the username included in the HTTP Basic authentication header to the corresponding user in the directory. | [optional] 
-**AccessTokenValidator** | Pointer to **[]string** |  | [optional] 
+**AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Directory REST API HTTP Servlet Extension. | [optional] 
 **AccessTokenScope** | Pointer to **string** | The name of a scope that must be present in an access token accepted by the Directory REST API HTTP Servlet Extension. | [optional] 
 **Audience** | Pointer to **string** | A string or URI that identifies the Directory REST API HTTP Servlet Extension in the context of OAuth2 authorization. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
-**ResponseHeader** | Pointer to **[]string** |  | [optional] 
+**ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 **Id** | **string** | Name of the HTTP Servlet Extension | 
 **Server** | Pointer to **string** | Specifies the PingFederate server to be configured. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **BaseContextPath** | **string** | The context path to use to access the SCIM interface. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **AvailableStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be available. | 
 **DegradedStatusCode** | **int32** | Specifies the HTTP status code that the servlet should return if the server considers itself to be degraded. | 
@@ -27,24 +28,24 @@ Name | Type | Description | Notes
 **AdditionalResponseContents** | Pointer to **string** | A JSON-formatted string containing additional fields to be returned in the response body. For example, an additional-response-contents value of &#39;{ \&quot;key\&quot;: \&quot;value\&quot; }&#39; would add the key and value to the root of the JSON response body. | [optional] 
 **DocumentRootDirectory** | **string** | Specifies the path to the directory on the local filesystem containing the files to be served by this File Server HTTP Servlet Extension. The path must exist, and it must be a directory. | 
 **EnableDirectoryIndexing** | Pointer to **bool** | Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file. | [optional] 
-**IndexFile** | Pointer to **[]string** |  | [optional] 
+**IndexFile** | Pointer to **[]string** | Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file. | [optional] 
 **MimeTypesFile** | Pointer to **string** | Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested static content file. | [optional] 
 **DefaultMIMEType** | Pointer to **string** | Specifies the default value that will be used in the response&#39;s Content-Type header that indicates the type of content to return. | [optional] 
 **RequireAuthentication** | Pointer to **bool** | Require authentication when accessing Velocity templates. | [optional] 
 **AllowedAuthenticationType** | Pointer to [**[]EnumhttpServletExtensionAllowedAuthenticationTypeProp**](EnumhttpServletExtensionAllowedAuthenticationTypeProp.md) |  | [optional] 
-**IdTokenValidator** | Pointer to **[]string** |  | [optional] 
+**IdTokenValidator** | Pointer to **[]string** | The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token. | [optional] 
 **RequireFileServletAccessPrivilege** | Pointer to **bool** | Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege. | [optional] 
-**RequireGroup** | Pointer to **[]string** |  | [optional] 
+**RequireGroup** | Pointer to **[]string** | The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access. | [optional] 
 **StaticContextPath** | Pointer to **string** | The path below the base context path by which static, non-template content such as images, CSS, and Javascript files are accessible. | [optional] 
 **StaticContentDirectory** | Pointer to **string** | Specifies the base directory in which static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. | [optional] 
 **StaticCustomDirectory** | Pointer to **string** | Specifies the base directory in which custom static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. Files in this directory will override those with the same name in the directory specified by the static-content-directory property. | [optional] 
-**TemplateDirectory** | **[]string** |  | 
+**TemplateDirectory** | **[]string** | Specifies an ordered list of directories in which to search for the template files. | 
 **ExposeRequestAttributes** | Pointer to **bool** | Specifies whether the HTTP request will be exposed to templates. | [optional] 
 **ExposeSessionAttributes** | Pointer to **bool** | Specifies whether the HTTP session will be exposed to templates. | [optional] 
 **ExposeServerContext** | Pointer to **bool** | Specifies whether a server context will be exposed under context key &#39;ubid_server&#39; for all template contexts. | [optional] 
 **AllowContextOverride** | Pointer to **bool** | Indicates whether context providers may override existing context objects with new values. | [optional] 
 **CharacterEncoding** | Pointer to **string** | Specifies the value that will be used for all responses&#39; Content-Type headers&#39; charset parameter that indicates the character encoding of the document. | [optional] 
-**StaticResponseHeader** | Pointer to **[]string** |  | [optional] 
+**StaticResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for static content requests such as images and scripts. | [optional] 
 **BearerTokenAuthEnabled** | Pointer to **bool** | Enables HTTP bearer token authentication. | [optional] 
 **MapAccessTokensToLocalUsers** | Pointer to [**EnumhttpServletExtensionMapAccessTokensToLocalUsersProp**](EnumhttpServletExtensionMapAccessTokensToLocalUsersProp.md) |  | [optional] 
 **DebugEnabled** | Pointer to **bool** | Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension. | [optional] 
@@ -53,16 +54,16 @@ Name | Type | Description | Notes
 **IncludeStackTrace** | **bool** | Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages. | 
 **SwaggerEnabled** | Pointer to **bool** | Indicates whether the SCIM2 HTTP Servlet Extension will generate a Swagger specification document. | [optional] 
 **MaxPageSize** | Pointer to **int32** | The maximum number of entries to be returned in one page of search results. | [optional] 
-**SchemasEndpointObjectclass** | Pointer to **[]string** |  | [optional] 
-**DefaultOperationalAttribute** | Pointer to **[]string** |  | [optional] 
-**RejectExpansionAttribute** | Pointer to **[]string** |  | [optional] 
+**SchemasEndpointObjectclass** | Pointer to **[]string** | The list of object classes which will be returned by the schemas endpoint. | [optional] 
+**DefaultOperationalAttribute** | Pointer to **[]string** | A set of operational attributes that will be returned with entries by default. | [optional] 
+**RejectExpansionAttribute** | Pointer to **[]string** | A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups. | [optional] 
 **AllowedControl** | Pointer to [**[]EnumhttpServletExtensionAllowedControlProp**](EnumhttpServletExtensionAllowedControlProp.md) |  | [optional] 
 **OAuthTokenHandler** | Pointer to **string** | Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request. | [optional] 
 **ResourceMappingFile** | Pointer to **string** | The path to an XML file defining the resources supported by the SCIM interface and the SCIM-to-LDAP attribute mappings to use. | [optional] 
-**IncludeLDAPObjectclass** | Pointer to **[]string** |  | [optional] 
-**ExcludeLDAPObjectclass** | Pointer to **[]string** |  | [optional] 
-**IncludeLDAPBaseDN** | Pointer to **[]string** |  | [optional] 
-**ExcludeLDAPBaseDN** | Pointer to **[]string** |  | [optional] 
+**IncludeLDAPObjectclass** | Pointer to **[]string** | Specifies the LDAP object classes that should be exposed directly as SCIM resources. | [optional] 
+**ExcludeLDAPObjectclass** | Pointer to **[]string** | Specifies the LDAP object classes that should be not be exposed directly as SCIM resources. | [optional] 
+**IncludeLDAPBaseDN** | Pointer to **[]string** | Specifies the base DNs for the branches of the DIT that should be exposed via the Identity Access API. | [optional] 
+**ExcludeLDAPBaseDN** | Pointer to **[]string** | Specifies the base DNs for the branches of the DIT that should not be exposed via the Identity Access API. | [optional] 
 **EntityTagLDAPAttribute** | Pointer to **string** | Specifies the LDAP attribute whose value should be used as the entity tag value to enable SCIM resource versioning support. | [optional] 
 **TemporaryDirectory** | **string** | Specifies the location of the directory that is used to create temporary files containing SCIM request data. | 
 **TemporaryDirectoryPermissions** | **string** | Specifies the permissions that should be applied to the directory that is used to create temporary files. | 
@@ -71,7 +72,7 @@ Name | Type | Description | Notes
 **BulkMaxPayloadSize** | Pointer to **string** | The maximum payload size in bytes of a bulk request. | [optional] 
 **BulkMaxConcurrentRequests** | Pointer to **int32** | The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503. | [optional] 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 
@@ -381,6 +382,31 @@ SetServer sets Server field to given value.
 `func (o *GetHttpServletExtension200Response) HasServer() bool`
 
 HasServer returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *GetHttpServletExtension200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GetHttpServletExtension200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GetHttpServletExtension200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GetHttpServletExtension200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetScriptClass
 

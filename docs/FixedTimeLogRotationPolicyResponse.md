@@ -6,8 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Log Rotation Policy | 
 **Schemas** | [**[]EnumfixedTimeLogRotationPolicySchemaUrn**](EnumfixedTimeLogRotationPolicySchemaUrn.md) |  | 
-**TimeOfDay** | **[]string** |  | 
+**TimeOfDay** | **[]string** | Specifies the time of day at which log rotation should occur. | 
 **Description** | Pointer to **string** | A description for this Log Rotation Policy | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -112,6 +113,31 @@ SetDescription sets Description field to given value.
 `func (o *FixedTimeLogRotationPolicyResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *FixedTimeLogRotationPolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *FixedTimeLogRotationPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *FixedTimeLogRotationPolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *FixedTimeLogRotationPolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

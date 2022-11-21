@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ProviderName** | **string** | Name of the new Passphrase Provider | 
 **Schemas** | [**[]EnumthirdPartyPassphraseProviderSchemaUrn**](EnumthirdPartyPassphraseProviderSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Passphrase Provider. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Passphrase Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
 

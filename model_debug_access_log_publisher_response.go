@@ -33,8 +33,11 @@ type DebugAccessLogPublisherResponse struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this Debug Access Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the Debug Access Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the Debug Access Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -47,6 +50,7 @@ type DebugAccessLogPublisherResponse struct {
 	Append *bool `json:"append,omitempty"`
 	// Indicates whether the resulting log file should attempt to obscure content that may be considered sensitive. This primarily includes the credentials for bind requests, the values of password modify extended requests and responses, and the values of any attributes specified in the obscure-attribute property. Note that the use of this option does not guarantee no sensitive information will be exposed, so the log output should still be carefully guarded.
 	ObscureSensitiveContent *bool `json:"obscureSensitiveContent,omitempty"`
+	// Specifies the names of any attribute types that should have their values obscured if the obscure-sensitive-content property has a value of true.
 	ObscureAttribute []string `json:"obscureAttribute,omitempty"`
 	// Indicates whether to include debugging information about ACIs being used by the operations being logged.
 	DebugACIEnabled *bool `json:"debugACIEnabled,omitempty"`
@@ -91,6 +95,7 @@ type DebugAccessLogPublisherResponse struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewDebugAccessLogPublisherResponse instantiates a new DebugAccessLogPublisherResponse object
@@ -1366,6 +1371,38 @@ func (o *DebugAccessLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogPubli
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *DebugAccessLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DebugAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *DebugAccessLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *DebugAccessLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o DebugAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1490,6 +1527,9 @@ func (o DebugAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

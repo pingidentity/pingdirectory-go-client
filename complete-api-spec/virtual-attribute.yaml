@@ -227,6 +227,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/mirror-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     mirror-virtual-attribute-shared:
       type: object
       properties:
@@ -270,26 +271,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -336,8 +337,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes that should be excluded from the checksum calculation.
+          description: >-
+              Specifies the attributes that should be excluded from the checksum calculation.
         description:
           type: string
           description: >-
@@ -350,26 +351,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -419,26 +420,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -481,6 +482,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/constructed-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     constructed-virtual-attribute-shared:
       type: object
       properties:
@@ -494,8 +496,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a pattern for constructing the virtual attribute value using fixed text and attribute values from the entry.
+          description: >-
+              Specifies a pattern for constructing the virtual attribute value using fixed text and attribute values from the entry.
         description:
           type: string
           description: >-
@@ -512,26 +514,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -577,6 +579,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/is-member-of-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     is-member-of-virtual-attribute-shared:
       type: object
       properties:
@@ -614,26 +617,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -683,26 +686,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -745,6 +748,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/reverse-dn-join-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     reverse-dn-join-virtual-attribute-shared:
       type: object
       properties:
@@ -778,8 +782,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                An optional set of the names of the attributes to include with joined entries.
+          description: >-
+              An optional set of the names of the attributes to include with joined entries.
         description:
           type: string
           description: >-
@@ -796,26 +800,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -862,6 +866,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/identify-references-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     identify-references-virtual-attribute-shared:
       type: object
       properties:
@@ -875,14 +880,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The name or OID of an attribute type whose values will be searched for references to the target entry. The attribute type must be defined in the server schema, must have a syntax of either "distinguished name" or "name and optional UID", and must be indexed for equality.
+          description: >-
+              The name or OID of an attribute type whose values will be searched for references to the target entry. The attribute type must be defined in the server schema, must have a syntax of either "distinguished name" or "name and optional UID", and must be indexed for equality.
         referenceSearchBaseDN:
           type: array
           items:
             type: string
-            description: >-
-                The base DN that will be used when searching for references to the target entry. If no reference search base DN is specified, the default behavior will be to search below all public naming contexts configured in the server.
+          description: >-
+              The base DN that will be used when searching for references to the target entry. If no reference search base DN is specified, the default behavior will be to search below all public naming contexts configured in the server.
         description:
           type: string
           description: >-
@@ -899,26 +904,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -964,6 +969,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/user-defined-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     user-defined-virtual-attribute-shared:
       type: object
       properties:
@@ -977,8 +983,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the values to be included in the virtual attribute.
+          description: >-
+              Specifies the values to be included in the virtual attribute.
         description:
           type: string
           description: >-
@@ -995,26 +1001,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -1075,26 +1081,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1146,26 +1152,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -1211,6 +1217,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/entry-dn-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     entry-dn-virtual-attribute-shared:
       type: object
       properties:
@@ -1238,26 +1245,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1307,26 +1314,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1369,6 +1376,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/equality-join-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     equality-join-virtual-attribute-shared:
       type: object
       properties:
@@ -1410,8 +1418,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                An optional set of the names of the attributes to include with joined entries.
+          description: >-
+              An optional set of the names of the attributes to include with joined entries.
         description:
           type: string
           description: >-
@@ -1428,26 +1436,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -1495,6 +1503,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     groovy-scripted-virtual-attribute-shared:
       type: object
       properties:
@@ -1512,8 +1521,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Scripted Virtual Attribute. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Virtual Attribute. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -1530,26 +1539,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -1602,26 +1611,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1669,26 +1678,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -1733,6 +1742,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/member-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     member-virtual-attribute-shared:
       type: object
       properties:
@@ -1752,8 +1762,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         allowIndexConflicts:
           type: boolean
           description: >-
@@ -1774,20 +1784,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1827,6 +1837,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/password-policy-state-json-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     password-policy-state-json-virtual-attribute-shared:
       type: object
       properties:
@@ -1852,26 +1863,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -1923,26 +1934,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         requireExplicitRequestByName:
           type: boolean
           description: >-
@@ -1985,6 +1996,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/dn-join-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     dn-join-virtual-attribute-shared:
       type: object
       properties:
@@ -2018,8 +2030,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                An optional set of the names of the attributes to include with joined entries.
+          description: >-
+              An optional set of the names of the attributes to include with joined entries.
         description:
           type: string
           description: >-
@@ -2036,26 +2048,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -2102,6 +2114,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-virtual-attribute-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-virtual-attribute-shared:
       type: object
       properties:
@@ -2119,8 +2132,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Virtual Attribute. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Virtual Attribute. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -2137,26 +2150,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
+          description: >-
+              Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
         groupDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
+          description: >-
+              Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
         filter:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
+          description: >-
+              Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
         clientConnectionPolicy:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
+          description: >-
+              Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
         conflictBehavior:
           $ref: '#/components/schemas/Enumvirtual-attribute-conflictBehaviorProp'
         requireExplicitRequestByName:
@@ -2250,6 +2263,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

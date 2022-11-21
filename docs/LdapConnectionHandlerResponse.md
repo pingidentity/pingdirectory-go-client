@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Connection Handler | 
 **Schemas** | [**[]EnumldapConnectionHandlerSchemaUrn**](EnumldapConnectionHandlerSchemaUrn.md) |  | 
-**ListenAddress** | Pointer to **[]string** |  | [optional] 
+**ListenAddress** | Pointer to **[]string** | Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients. | [optional] 
 **ListenPort** | **int32** | Specifies the port number on which the LDAP Connection Handler will listen for connections from clients. | 
 **UseSSL** | Pointer to **bool** | Indicates whether the LDAP Connection Handler should use SSL. | [optional] 
 **AllowStartTLS** | Pointer to **bool** | Indicates whether clients are allowed to use StartTLS. | [optional] 
@@ -23,16 +23,17 @@ Name | Type | Description | Notes
 **NumRequestHandlers** | Pointer to **int32** | Specifies the number of request handlers that are used to read requests from clients. | [optional] 
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
 **AcceptBacklog** | Pointer to **int32** | Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts. | [optional] 
-**SslProtocol** | Pointer to **[]string** |  | [optional] 
-**SslCipherSuite** | Pointer to **[]string** |  | [optional] 
+**SslProtocol** | Pointer to **[]string** | Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry. | [optional] 
+**SslCipherSuite** | Pointer to **[]string** | Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry. | [optional] 
 **MaxBlockedWriteTimeLimit** | Pointer to **string** | Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block. | [optional] 
 **AutoAuthenticateUsingClientCertificate** | Pointer to **bool** | Indicates whether to attempt to automatically authenticate a client connection that has established a secure communication channel (using either SSL or StartTLS) and presented its own client certificate. Generally, clients should use the SASL EXTERNAL mechanism to authenticate using a client certificate, but some clients may not support that capability and/or may expect automatic authentication. | [optional] 
 **CloseConnectionsWhenUnavailable** | Pointer to **bool** | Indicates whether all connections associated with this LDAP Connection Handler should be closed and no new connections accepted when the server has determined that it is \&quot;unavailable.\&quot; This allows clients (or a network load balancer) to route requests to another server. | [optional] 
 **CloseConnectionsOnExplicitGC** | Pointer to **bool** | Indicates whether all connections associated with this LDAP Connection Handler should be closed before an explicit garbage collection is performed to allow clients to route requests to another server. | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
-**AllowedClient** | Pointer to **[]string** |  | [optional] 
-**DeniedClient** | Pointer to **[]string** |  | [optional] 
+**AllowedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler. | [optional] 
+**DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -757,6 +758,31 @@ SetDeniedClient sets DeniedClient field to given value.
 `func (o *LdapConnectionHandlerResponse) HasDeniedClient() bool`
 
 HasDeniedClient returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *LdapConnectionHandlerResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *LdapConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *LdapConnectionHandlerResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *LdapConnectionHandlerResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

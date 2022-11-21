@@ -21,6 +21,7 @@ type ThirdPartyNotificationManagerResponse struct {
 	Schemas []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas,omitempty"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Notification Manager. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Notification Manager
 	Description *string `json:"description,omitempty"`
@@ -31,6 +32,7 @@ type ThirdPartyNotificationManagerResponse struct {
 	TransactionNotification EnumnotificationManagerTransactionNotificationProp `json:"transactionNotification"`
 	// Enables monitor entries for this Notification Manager.
 	MonitorEntriesEnabled *bool `json:"monitorEntriesEnabled,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewThirdPartyNotificationManagerResponse instantiates a new ThirdPartyNotificationManagerResponse object
@@ -303,6 +305,38 @@ func (o *ThirdPartyNotificationManagerResponse) SetMonitorEntriesEnabled(v bool)
 	o.MonitorEntriesEnabled = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartyNotificationManagerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyNotificationManagerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartyNotificationManagerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartyNotificationManagerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ThirdPartyNotificationManagerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -331,6 +365,9 @@ func (o ThirdPartyNotificationManagerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.MonitorEntriesEnabled) {
 		toSerialize["monitorEntriesEnabled"] = o.MonitorEntriesEnabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

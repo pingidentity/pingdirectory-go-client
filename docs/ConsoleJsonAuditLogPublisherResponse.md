@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **SoftDeleteEntryAuditBehavior** | Pointer to [**EnumlogPublisherSoftDeleteEntryAuditBehaviorProp**](EnumlogPublisherSoftDeleteEntryAuditBehaviorProp.md) |  | [optional] 
 **IncludeOperationPurposeRequestControl** | Pointer to **bool** | Indicates whether to include information about any operation purpose request control that may have been included in the request. | [optional] 
 **IncludeIntermediateClientRequestControl** | Pointer to **bool** | Indicates whether to include information about any intermediate client request control that may have been included in the request. | [optional] 
-**ObscureAttribute** | Pointer to **[]string** |  | [optional] 
-**ExcludeAttribute** | Pointer to **[]string** |  | [optional] 
+**ObscureAttribute** | Pointer to **[]string** | Specifies the names of any attribute types that should have their values obscured in the audit log because they may be considered sensitive. | [optional] 
+**ExcludeAttribute** | Pointer to **[]string** | Specifies the names of any attribute types that should be excluded from the audit log. | [optional] 
 **SuppressInternalOperations** | Pointer to **bool** | Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users. | [optional] 
 **IncludeProductName** | Pointer to **bool** | Indicates whether log messages should include the product name for the Directory Server. | [optional] 
 **IncludeInstanceName** | Pointer to **bool** | Indicates whether log messages should include the instance name for the Directory Server. | [optional] 
@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **SearchReferenceCriteria** | Pointer to **string** | Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Publisher | [optional] 
 **LoggingErrorBehavior** | Pointer to [**EnumlogPublisherLoggingErrorBehaviorProp**](EnumlogPublisherLoggingErrorBehaviorProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -1022,6 +1023,31 @@ SetLoggingErrorBehavior sets LoggingErrorBehavior field to given value.
 `func (o *ConsoleJsonAuditLogPublisherResponse) HasLoggingErrorBehavior() bool`
 
 HasLoggingErrorBehavior returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *ConsoleJsonAuditLogPublisherResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *ConsoleJsonAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *ConsoleJsonAuditLogPublisherResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *ConsoleJsonAuditLogPublisherResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -20,6 +20,7 @@ type AddSyslogTextErrorLogPublisherRequest struct {
 	PublisherName string `json:"publisherName"`
 	Schemas []EnumsyslogTextErrorLogPublisherSchemaUrn `json:"schemas"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string `json:"syslogExternalServer"`
 	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
 	SyslogSeverity *EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity,omitempty"`
@@ -40,6 +41,7 @@ type AddSyslogTextErrorLogPublisherRequest struct {
 	TimestampPrecision *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
+	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`

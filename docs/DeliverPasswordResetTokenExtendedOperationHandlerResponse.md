@@ -7,10 +7,11 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Extended Operation Handler | 
 **Schemas** | [**[]EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn**](EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn.md) |  | 
 **PasswordGenerator** | **string** | The password generator that will be used to create the password reset token values to be delivered to the end user. | 
-**DefaultTokenDeliveryMechanism** | **[]string** |  | 
+**DefaultTokenDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms. | 
 **PasswordResetTokenValidityDuration** | **string** | The maximum length of time that a password reset token should be considered valid. | 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -175,6 +176,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetMeta
+
+`func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *DeliverPasswordResetTokenExtendedOperationHandlerResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

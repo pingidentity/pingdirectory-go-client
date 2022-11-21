@@ -169,6 +169,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/summarize-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
     summarize-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -217,6 +218,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/copy-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
     copy-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -270,6 +272,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-log-file-rotation-listener-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -287,8 +290,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -332,6 +335,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

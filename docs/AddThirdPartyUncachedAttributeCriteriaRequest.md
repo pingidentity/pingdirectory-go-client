@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CriteriaName** | **string** | Name of the new Uncached Attribute Criteria | 
 **Schemas** | [**[]EnumthirdPartyUncachedAttributeCriteriaSchemaUrn**](EnumthirdPartyUncachedAttributeCriteriaSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Uncached Attribute Criteria. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Uncached Attribute Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Attribute Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Attribute Criteria is enabled for use in the server. | 
 

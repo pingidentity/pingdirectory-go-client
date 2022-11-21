@@ -19,6 +19,7 @@ type AddSimpleUncachedAttributeCriteriaRequest struct {
 	// Name of the new Uncached Attribute Criteria
 	CriteriaName string `json:"criteriaName"`
 	Schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
+	// Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
 	AttributeType []string `json:"attributeType"`
 	// Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database.
 	MinValueCount *int32 `json:"minValueCount,omitempty"`

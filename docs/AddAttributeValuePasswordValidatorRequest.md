@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Password Validator | 
 **Schemas** | [**[]EnumattributeValuePasswordValidatorSchemaUrn**](EnumattributeValuePasswordValidatorSchemaUrn.md) |  | 
-**MatchAttribute** | Pointer to **[]string** |  | [optional] 
+**MatchAttribute** | Pointer to **[]string** | Specifies the name(s) of the attribute(s) whose values should be checked to determine whether they match the provided password. If no values are provided, then the server checks if the proposed password matches the value of any user attribute in the target user&#39;s entry. | [optional] 
 **TestPasswordSubstringOfAttributeValue** | Pointer to **bool** | Indicates whether to reject any proposed password that is a substring of a value in one of the match attributes in the target user&#39;s entry. | [optional] 
 **TestAttributeValueSubstringOfPassword** | Pointer to **bool** | Indicates whether to reject any proposed password in which a value in one of the match attributes in the target user&#39;s entry is a substring of that password. | [optional] 
 **MinimumAttributeValueLengthForSubstringMatches** | Pointer to **int32** | The minimum length that an attribute value must have for it to be considered when rejecting passwords that contain the value of another attribute as a substring. | [optional] 

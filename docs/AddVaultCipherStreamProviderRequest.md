@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ProviderName** | **string** | Name of the new Cipher Stream Provider | 
 **Schemas** | [**[]EnumvaultCipherStreamProviderSchemaUrn**](EnumvaultCipherStreamProviderSchemaUrn.md) |  | 
 **VaultExternalServer** | Pointer to **string** | An external server definition with information needed to connect and authenticate to the Vault server. | [optional] 
-**VaultServerBaseURI** | Pointer to **[]string** |  | [optional] 
+**VaultServerBaseURI** | Pointer to **[]string** | The base URL needed to access the Vault server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://vault.example.com:8200/\&quot;. | [optional] 
 **VaultAuthenticationMethod** | Pointer to **string** | The mechanism used to authenticate to the Vault server. | [optional] 
 **VaultSecretPath** | **string** | The path to the desired secret in the Vault service. This will be appended to the value of the base-url property for the associated Vault external server. | 
 **VaultSecretFieldName** | **string** | The name of the field in the Vault secret record that contains the passphrase to use to generate the encryption key. | 

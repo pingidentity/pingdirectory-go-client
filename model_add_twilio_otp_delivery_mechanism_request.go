@@ -31,6 +31,7 @@ type AddTwilioOtpDeliveryMechanismRequest struct {
 	PhoneNumberJSONField *string `json:"phoneNumberJSONField,omitempty"`
 	// A JSON object filter that may be used to identify which phone number value to use when sending the message.
 	PhoneNumberJSONObjectFilter *string `json:"phoneNumberJSONObjectFilter,omitempty"`
+	// The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
 	SenderPhoneNumber []string `json:"senderPhoneNumber"`
 	// Any text that should appear in the message before the one-time password value.
 	MessageTextBeforeOTP *string `json:"messageTextBeforeOTP,omitempty"`

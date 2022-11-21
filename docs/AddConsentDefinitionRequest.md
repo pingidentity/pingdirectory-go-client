@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumconsentDefinitionSchemaUrn**](EnumconsentDefinitionSchemaUrn.md) |  | [optional] 
 **UniqueID** | **string** | A version-independent unique identifier for this Consent Definition. | 
 **DisplayName** | Pointer to **string** | A human-readable display name for this Consent Definition. | [optional] 
-**Parameter** | Pointer to **[]string** |  | [optional] 
+**Parameter** | Pointer to **[]string** | Optional parameters for this Consent Definition. | [optional] 
 **Description** | Pointer to **string** | A description for this Consent Definition | [optional] 
 
 ## Methods

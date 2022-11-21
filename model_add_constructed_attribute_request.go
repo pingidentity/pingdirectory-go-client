@@ -23,6 +23,7 @@ type AddConstructedAttributeRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be constructed.
 	AttributeType string `json:"attributeType"`
+	// Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry.
 	ValuePattern []string `json:"valuePattern"`
 }
 

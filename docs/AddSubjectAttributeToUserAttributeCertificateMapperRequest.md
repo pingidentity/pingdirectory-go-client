@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn**](EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn.md) |  | 
-**SubjectAttributeMapping** | **[]string** |  | 
-**UserBaseDN** | Pointer to **[]string** |  | [optional] 
+**SubjectAttributeMapping** | **[]string** | Specifies a mapping between certificate attributes and user attributes. | 
+**UserBaseDN** | Pointer to **[]string** | Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
 

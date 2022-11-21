@@ -21,6 +21,7 @@ type AddSingleUseTokensExtendedOperationHandlerRequest struct {
 	Schemas []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the single-use token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
+	// The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
 	DefaultOTPDeliveryMechanism []string `json:"defaultOTPDeliveryMechanism"`
 	// The default length of time that a single-use token will be considered valid by the server if the client doesn't specify a duration in the deliver single-use token request.
 	DefaultSingleUseTokenValidityDuration *string `json:"defaultSingleUseTokenValidityDuration,omitempty"`

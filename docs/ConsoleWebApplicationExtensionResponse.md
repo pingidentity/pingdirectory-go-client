@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **DocumentRootDirectory** | Pointer to **string** | Specifies the path to the directory on the local filesystem containing the files to be served by this Web Application Extension. The path must exist, and it must be a directory. | [optional] 
 **DeploymentDescriptorFile** | Pointer to **string** | Specifies the path to the deployment descriptor file when used with document-root-directory. | [optional] 
 **TemporaryDirectory** | Pointer to **string** | Specifies the path to the directory that may be used to store temporary files such as extracted WAR files and compiled JSP files. | [optional] 
-**InitParameter** | Pointer to **[]string** |  | [optional] 
+**InitParameter** | Pointer to **[]string** | Specifies an initialization parameter to pass into the web application during startup. | [optional] 
 
 ## Methods
 

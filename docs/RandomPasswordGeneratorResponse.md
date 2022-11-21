@@ -6,10 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | Name of the Password Generator | 
 **Schemas** | [**[]EnumrandomPasswordGeneratorSchemaUrn**](EnumrandomPasswordGeneratorSchemaUrn.md) |  | 
-**PasswordCharacterSet** | **[]string** |  | 
+**PasswordCharacterSet** | **[]string** | Specifies one or more named character sets. | 
 **PasswordFormat** | **string** | Specifies the format to use for the generated password. | 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -154,6 +155,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetMeta
+
+`func (o *RandomPasswordGeneratorResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *RandomPasswordGeneratorResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *RandomPasswordGeneratorResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *RandomPasswordGeneratorResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

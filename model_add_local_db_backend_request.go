@@ -37,6 +37,7 @@ type AddLocalDbBackendRequest struct {
 	DbDirectory string `json:"dbDirectory"`
 	// Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend.
 	DbDirectoryPermissions *string `json:"dbDirectoryPermissions,omitempty"`
+	// Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage.
 	CompactCommonParentDN []string `json:"compactCommonParentDN,omitempty"`
 	// Indicates whether the backend should attempt to compress entries before storing them in the database.
 	CompressEntries *bool `json:"compressEntries,omitempty"`
@@ -58,6 +59,7 @@ type AddLocalDbBackendRequest struct {
 	DbLogFileMax *string `json:"dbLogFileMax,omitempty"`
 	// Specifies the log level that should be used by the database when it is writing information into the je.info file.
 	DbLoggingLevel *string `json:"dbLoggingLevel,omitempty"`
+	// Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
 	JeProperty []string `json:"jeProperty,omitempty"`
 	// Specifies the percentage of JVM memory to allocate to the database cache.
 	DbCachePercent *int32 `json:"dbCachePercent,omitempty"`
@@ -112,6 +114,7 @@ type AddLocalDbBackendRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
 	Enabled bool `json:"enabled"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
 	SetDegradedAlertWhenDisabled *bool `json:"setDegradedAlertWhenDisabled,omitempty"`

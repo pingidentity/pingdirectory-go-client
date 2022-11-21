@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AttributeName** | **string** | Name of the new Sensitive Attribute | 
 **Schemas** | Pointer to [**[]EnumsensitiveAttributeSchemaUrn**](EnumsensitiveAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Sensitive Attribute | [optional] 
-**AttributeType** | **[]string** |  | 
+**AttributeType** | **[]string** | The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive. | 
 **IncludeDefaultSensitiveOperationalAttributes** | Pointer to **bool** | Indicates whether to automatically include any server-generated operational attributes that may contain sensitive data. | [optional] 
 **AllowInReturnedEntries** | Pointer to [**EnumsensitiveAttributeAllowInReturnedEntriesProp**](EnumsensitiveAttributeAllowInReturnedEntriesProp.md) |  | [optional] 
 **AllowInFilter** | Pointer to [**EnumsensitiveAttributeAllowInFilterProp**](EnumsensitiveAttributeAllowInFilterProp.md) |  | [optional] 

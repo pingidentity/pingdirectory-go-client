@@ -21,6 +21,7 @@ type AddGroovyScriptedUncachedAttributeCriteriaRequest struct {
 	Schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Uncached Attribute Criteria
 	Description *string `json:"description,omitempty"`

@@ -12,15 +12,15 @@ Name | Type | Description | Notes
 **Enabled** | **bool** | Indicates whether the REST Resource Type is enabled. | 
 **ResourceEndpoint** | **string** | The HTTP addressable endpoint of this REST Resource Type relative to a REST API base URL. Do not include a leading &#39;/&#39;. | 
 **StructuralLDAPObjectclass** | **string** | Specifies the LDAP structural object class that should be exposed by this REST Resource Type. | 
-**AuxiliaryLDAPObjectclass** | Pointer to **[]string** |  | [optional] 
+**AuxiliaryLDAPObjectclass** | Pointer to **[]string** | Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type. | [optional] 
 **SearchBaseDN** | **string** | Specifies the base DN of the branch of the LDAP directory where resources of this type are located. | 
-**IncludeFilter** | Pointer to **[]string** |  | [optional] 
+**IncludeFilter** | Pointer to **[]string** | The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type. | [optional] 
 **ParentDN** | Pointer to **string** | Specifies the DN of the parent entry for new resources of this type, when a parent resource is not provided by the app. The parent DN must be at or below the search base of this resource type. | [optional] 
 **ParentResourceType** | Pointer to **string** | Specifies the name of another resource type which may be a parent of new resources of this type. The search base DN of the parent resource type must be at or above the search base DN of this resource type. | [optional] 
 **RelativeDNFromParentResource** | Pointer to **string** | Specifies a template for a relative DN from the parent resource which identifies the parent entry for a new resource of this type. If this property is not specified then new resources are created immediately below the parent resource or parent DN. | [optional] 
 **CreateRDNAttributeType** | Pointer to **string** | Specifies the name or OID of the LDAP attribute type to be used as the RDN of new resources. | [optional] 
-**PostCreateConstructedAttribute** | Pointer to **[]string** |  | [optional] 
-**UpdateConstructedAttribute** | Pointer to **[]string** |  | [optional] 
+**PostCreateConstructedAttribute** | Pointer to **[]string** | Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here. | [optional] 
+**UpdateConstructedAttribute** | Pointer to **[]string** | Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute. | [optional] 
 **DisplayName** | Pointer to **string** | A human readable display name for this REST Resource Type. | [optional] 
 **SearchFilterPattern** | Pointer to **string** | Specifies the LDAP filter that should be used when searching for resources matching provided search text. All attribute types in the filter pattern referencing the search text must have a Delegated Admin Attribute definition. | [optional] 
 **PrimaryDisplayAttributeType** | Pointer to **string** | Specifies the name or OID of the LDAP attribute type which is the primary display attribute. This attribute type must be in the search filter pattern and must have a Delegated Admin Attribute definition. | [optional] 
@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **DelegatedAdminReportSizeLimit** | Pointer to **int32** | The maximum number of resources that may be included in a report. | [optional] 
 **MembersColumnName** | Pointer to **string** | Specifies the name of the group member column that will be displayed in the Delegated Admin UI | [optional] 
 **NonmembersColumnName** | Pointer to **string** | Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -617,6 +618,31 @@ SetNonmembersColumnName sets NonmembersColumnName field to given value.
 `func (o *UserRestResourceTypeResponse) HasNonmembersColumnName() bool`
 
 HasNonmembersColumnName returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *UserRestResourceTypeResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *UserRestResourceTypeResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *UserRestResourceTypeResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *UserRestResourceTypeResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

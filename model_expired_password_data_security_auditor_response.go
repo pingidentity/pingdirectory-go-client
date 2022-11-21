@@ -21,13 +21,16 @@ type ExpiredPasswordDataSecurityAuditorResponse struct {
 	Schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
+	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// If set, the auditor will report all users with passwords older than the specified value even if password expiration is not enabled.
 	PasswordEvaluationAge *string `json:"passwordEvaluationAge,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend []string `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewExpiredPasswordDataSecurityAuditorResponse instantiates a new ExpiredPasswordDataSecurityAuditorResponse object
@@ -275,6 +278,38 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) SetAuditSeverity(v Enumdata
 	o.AuditSeverity = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ExpiredPasswordDataSecurityAuditorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ExpiredPasswordDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ExpiredPasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -300,6 +335,9 @@ func (o ExpiredPasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte, error
 	}
 	if !isNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

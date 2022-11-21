@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumdirectoryServerInstanceSchemaUrn**](EnumdirectoryServerInstanceSchemaUrn.md) |  | 
 **ServerInstanceType** | Pointer to [**EnumserverInstanceServerInstanceTypeProp**](EnumserverInstanceServerInstanceTypeProp.md) |  | [optional] 
 **ReplicationSetName** | Pointer to **string** | The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name. | [optional] 
-**LoadBalancingAlgorithmName** | Pointer to **[]string** |  | [optional] 
+**LoadBalancingAlgorithmName** | Pointer to **[]string** | The name of the configuration object for a load-balancing algorithm that should include this server. | [optional] 
 **ServerInstanceName** | **string** | The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed. | 
 **ClusterName** | **string** | The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration. | 
 **ServerInstanceLocation** | Pointer to **string** | Specifies the location for the Server Instance. | [optional] 
@@ -21,13 +21,13 @@ Name | Type | Description | Notes
 **HttpsPort** | Pointer to **int32** | The TCP port on which this server is listening for HTTPS connections. | [optional] 
 **ReplicationPort** | Pointer to **int32** | The replication TCP port. | [optional] 
 **ReplicationServerID** | Pointer to **int32** | Specifies a unique identifier for the replication server on this server instance. | [optional] 
-**ReplicationDomainServerID** | Pointer to **[]int32** |  | [optional] 
+**ReplicationDomainServerID** | Pointer to **[]int32** | Specifies a unique identifier for the Directory Server within the replication domain. | [optional] 
 **JmxPort** | Pointer to **int32** | The TCP port on which this server is listening for JMX connections. | [optional] 
 **JmxsPort** | Pointer to **int32** | The TCP port on which this server is listening for JMX secure connections. | [optional] 
 **PreferredSecurity** | Pointer to [**EnumserverInstancePreferredSecurityProp**](EnumserverInstancePreferredSecurityProp.md) |  | [optional] 
 **StartTLSEnabled** | Pointer to **bool** | Indicates whether StartTLS is enabled on this server. | [optional] 
-**BaseDN** | Pointer to **[]string** |  | [optional] 
-**MemberOfServerGroup** | Pointer to **[]string** |  | [optional] 
+**BaseDN** | Pointer to **[]string** | The set of base DNs under the root DSE. | [optional] 
+**MemberOfServerGroup** | Pointer to **[]string** | The set of groups of which this server is a member. | [optional] 
 
 ## Methods
 

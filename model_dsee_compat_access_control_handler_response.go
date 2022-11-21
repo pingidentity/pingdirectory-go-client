@@ -17,8 +17,10 @@ import (
 // DseeCompatAccessControlHandlerResponse struct for DseeCompatAccessControlHandlerResponse
 type DseeCompatAccessControlHandlerResponse struct {
 	Schemas []EnumdseeCompatAccessControlHandlerSchemaUrn `json:"schemas,omitempty"`
+	// Defines global access control rules.
 	GlobalACI []string `json:"globalACI,omitempty"`
 	AllowedBindControl []EnumaccessControlHandlerAllowedBindControlProp `json:"allowedBindControl,omitempty"`
+	// Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests.
 	AllowedBindControlOID []string `json:"allowedBindControlOID,omitempty"`
 	// Indicates whether this Access Control Handler is enabled. If set to FALSE, then no access control is enforced, and any client (including unauthenticated or anonymous clients) could be allowed to perform any operation if not subject to other restrictions, such as those enforced by the privilege subsystem.
 	Enabled bool `json:"enabled"`

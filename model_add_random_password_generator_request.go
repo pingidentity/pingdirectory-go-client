@@ -19,6 +19,7 @@ type AddRandomPasswordGeneratorRequest struct {
 	// Name of the new Password Generator
 	GeneratorName string `json:"generatorName"`
 	Schemas []EnumrandomPasswordGeneratorSchemaUrn `json:"schemas"`
+	// Specifies one or more named character sets.
 	PasswordCharacterSet []string `json:"passwordCharacterSet"`
 	// Specifies the format to use for the generated password.
 	PasswordFormat string `json:"passwordFormat"`

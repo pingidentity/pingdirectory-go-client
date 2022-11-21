@@ -21,8 +21,8 @@ Name | Type | Description | Notes
 **AlertLevel** | Pointer to [**EnumgaugeAlertLevelProp**](EnumgaugeAlertLevelProp.md) |  | [optional] 
 **UpdateInterval** | Pointer to **string** | The frequency with which this Gauge is updated. | [optional] 
 **SamplesPerUpdateInterval** | Pointer to **int32** | Indicates the number of times the monitor data source value will be collected during the update interval. | [optional] 
-**IncludeResource** | Pointer to **[]string** |  | [optional] 
-**ExcludeResource** | Pointer to **[]string** |  | [optional] 
+**IncludeResource** | Pointer to **[]string** | Specifies set of resources to be monitored. | [optional] 
+**ExcludeResource** | Pointer to **[]string** | Specifies resources to exclude from being monitored. | [optional] 
 **ServerUnavailableSeverityLevel** | Pointer to [**EnumgaugeServerUnavailableSeverityLevelProp**](EnumgaugeServerUnavailableSeverityLevelProp.md) |  | [optional] 
 **ServerDegradedSeverityLevel** | Pointer to [**EnumgaugeServerDegradedSeverityLevelProp**](EnumgaugeServerDegradedSeverityLevelProp.md) |  | [optional] 
 

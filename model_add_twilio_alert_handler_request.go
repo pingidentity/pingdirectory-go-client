@@ -27,7 +27,9 @@ type AddTwilioAlertHandlerRequest struct {
 	TwilioAuthToken *string `json:"twilioAuthToken,omitempty"`
 	// The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used.
 	TwilioAuthTokenPassphraseProvider *string `json:"twilioAuthTokenPassphraseProvider,omitempty"`
+	// The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
 	SenderPhoneNumber []string `json:"senderPhoneNumber"`
+	// The phone number to which alert notifications should be delivered.
 	RecipientPhoneNumber []string `json:"recipientPhoneNumber"`
 	LongMessageBehavior EnumalertHandlerLongMessageBehaviorProp `json:"longMessageBehavior"`
 	// A description for this Alert Handler

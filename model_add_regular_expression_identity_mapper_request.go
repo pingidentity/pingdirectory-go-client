@@ -19,7 +19,9 @@ type AddRegularExpressionIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
 	MapperName string `json:"mapperName"`
 	Schemas []EnumregularExpressionIdentityMapperSchemaUrn `json:"schemas"`
+	// Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression.
 	MatchAttribute []string `json:"matchAttribute"`
+	// Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs.
 	MatchBaseDN []string `json:"matchBaseDN,omitempty"`
 	// An optional filter that mapped users must match.
 	MatchFilter *string `json:"matchFilter,omitempty"`

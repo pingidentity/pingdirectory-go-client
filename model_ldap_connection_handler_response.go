@@ -19,6 +19,7 @@ type LdapConnectionHandlerResponse struct {
 	// Name of the Connection Handler
 	Id string `json:"id"`
 	Schemas []EnumldapConnectionHandlerSchemaUrn `json:"schemas"`
+	// Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
 	ListenAddress []string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the LDAP Connection Handler will listen for connections from clients.
 	ListenPort int32 `json:"listenPort"`
@@ -51,7 +52,9 @@ type LdapConnectionHandlerResponse struct {
 	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
 	AcceptBacklog *int32 `json:"acceptBacklog,omitempty"`
+	// Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
 	SslProtocol []string `json:"sslProtocol,omitempty"`
+	// Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
 	SslCipherSuite []string `json:"sslCipherSuite,omitempty"`
 	// Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block.
 	MaxBlockedWriteTimeLimit *string `json:"maxBlockedWriteTimeLimit,omitempty"`
@@ -65,8 +68,11 @@ type LdapConnectionHandlerResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
+	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
+	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewLdapConnectionHandlerResponse instantiates a new LdapConnectionHandlerResponse object
@@ -986,6 +992,38 @@ func (o *LdapConnectionHandlerResponse) SetDeniedClient(v []string) {
 	o.DeniedClient = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *LdapConnectionHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LdapConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *LdapConnectionHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *LdapConnectionHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o LdapConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1074,6 +1112,9 @@ func (o LdapConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DeniedClient) {
 		toSerialize["deniedClient"] = o.DeniedClient
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

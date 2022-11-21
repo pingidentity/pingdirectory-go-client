@@ -19,12 +19,17 @@ type AggregateRequestCriteriaResponse struct {
 	// Name of the Request Criteria
 	Id string `json:"id"`
 	Schemas []EnumaggregateRequestCriteriaSchemaUrn `json:"schemas"`
+	// Specifies a request criteria object that must match the associated operation request in order to match the aggregate request criteria. If one or more all-included request criteria objects are provided, then an operation request must match all of them in order to match the aggregate request criteria.
 	AllIncludedRequestCriteria []string `json:"allIncludedRequestCriteria,omitempty"`
+	// Specifies a request criteria object that may match the associated operation request in order to the this aggregate request criteria. If one or more any-included request criteria objects are provided, then an operation request must match at least one of them in order to match the aggregate request criteria.
 	AnyIncludedRequestCriteria []string `json:"anyIncludedRequestCriteria,omitempty"`
+	// Specifies a request criteria object that should not match the associated operation request in order to match the aggregate request criteria. If one or more not-all-included request criteria objects are provided, then an operation request must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate request criteria.
 	NotAllIncludedRequestCriteria []string `json:"notAllIncludedRequestCriteria,omitempty"`
+	// Specifies a request criteria object that must not match the associated operation request in order to match the aggregate request criteria. If one or more none-included request criteria objects are provided, then an operation request must not match any of them in order to match the aggregate request criteria.
 	NoneIncludedRequestCriteria []string `json:"noneIncludedRequestCriteria,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewAggregateRequestCriteriaResponse instantiates a new AggregateRequestCriteriaResponse object
@@ -254,6 +259,38 @@ func (o *AggregateRequestCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *AggregateRequestCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AggregateRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *AggregateRequestCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *AggregateRequestCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o AggregateRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -276,6 +313,9 @@ func (o AggregateRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -193,6 +193,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/unboundid-ms-chap-v2-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
     unboundid-ms-chap-v2-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -297,8 +298,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The base URL of the validation server to use to verify one-time passwords. You should only need to change the value if you wish to use your own validation server instead of using one of the Yubico servers. The server must use the YubiKey Validation Protocol version 2.0.
+          description: >-
+              The base URL of the validation server to use to verify one-time passwords. You should only need to change the value if you wish to use your own validation server instead of using one of the Yubico servers. The server must use the YubiKey Validation Protocol version 2.0.
         identityMapper:
           type: string
           description: >-
@@ -454,6 +455,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/unboundid-delivered-otp-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
     unboundid-delivered-otp-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -590,6 +592,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/oauth-bearer-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
     oauth-bearer-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -603,14 +606,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
+          description: >-
+              An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
         idTokenValidator:
           type: array
           items:
             type: string
-            description: >-
-                An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry.
+          description: >-
+              An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry.
         requireBothAccessTokenAndIDToken:
           type: boolean
           description: >-
@@ -625,14 +628,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of OAuth scopes that will all be required for any access tokens that will be allowed for authentication.
+          description: >-
+              The set of OAuth scopes that will all be required for any access tokens that will be allowed for authentication.
         anyRequiredScope:
           type: array
           items:
             type: string
-            description: >-
-                The set of OAuth scopes that a token may have to be allowed for authentication.
+          description: >-
+              The set of OAuth scopes that a token may have to be allowed for authentication.
         serverFqdn:
           type: string
           description: >-
@@ -772,6 +775,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-sasl-mechanism-handler-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-sasl-mechanism-handler-shared:
       type: object
       properties:
@@ -789,8 +793,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party SASL Mechanism Handler. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party SASL Mechanism Handler. Each configuration property should be given in the form 'name=value'.
         identityMapper:
           type: string
           description: >-
@@ -869,6 +873,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

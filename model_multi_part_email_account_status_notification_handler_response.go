@@ -63,6 +63,7 @@ type MultiPartEmailAccountStatusNotificationHandlerResponse struct {
 	AccountCreationNotificationRequestCriteria *string `json:"accountCreationNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria *string `json:"accountUpdateNotificationRequestCriteria,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewMultiPartEmailAccountStatusNotificationHandlerResponse instantiates a new MultiPartEmailAccountStatusNotificationHandlerResponse object
@@ -829,6 +830,38 @@ func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetAccountUpdat
 	o.AccountUpdateNotificationRequestCriteria = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *MultiPartEmailAccountStatusNotificationHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o MultiPartEmailAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -902,6 +935,9 @@ func (o MultiPartEmailAccountStatusNotificationHandlerResponse) MarshalJSON() ([
 	}
 	if !isNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

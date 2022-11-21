@@ -23,8 +23,11 @@ type AddFileBasedJsonAuditLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this File Based JSON Audit Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the File Based JSON Audit Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the File Based JSON Audit Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -54,7 +57,9 @@ type AddFileBasedJsonAuditLogPublisherRequest struct {
 	IncludeOperationPurposeRequestControl *bool `json:"includeOperationPurposeRequestControl,omitempty"`
 	// Indicates whether to include information about any intermediate client request control that may have been included in the request.
 	IncludeIntermediateClientRequestControl *bool `json:"includeIntermediateClientRequestControl,omitempty"`
+	// Specifies the names of any attribute types that should have their values obscured in the audit log because they may be considered sensitive.
 	ObscureAttribute []string `json:"obscureAttribute,omitempty"`
+	// Specifies the names of any attribute types that should be excluded from the audit log.
 	ExcludeAttribute []string `json:"excludeAttribute,omitempty"`
 	// Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
 	SuppressInternalOperations *bool `json:"suppressInternalOperations,omitempty"`

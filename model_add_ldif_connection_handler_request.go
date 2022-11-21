@@ -19,7 +19,9 @@ type AddLdifConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
 	HandlerName string `json:"handlerName"`
 	Schemas []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
+	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
+	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
 	// Specifies the path to the directory in which the LDIF files should be placed.
 	LdifDirectory string `json:"ldifDirectory"`

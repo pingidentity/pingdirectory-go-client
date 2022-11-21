@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumregularExpressionIdentityMapperSchemaUrn**](EnumregularExpressionIdentityMapperSchemaUrn.md) |  | 
-**MatchAttribute** | **[]string** |  | 
-**MatchBaseDN** | Pointer to **[]string** |  | [optional] 
+**MatchAttribute** | **[]string** | Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression. | 
+**MatchBaseDN** | Pointer to **[]string** | Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs. | [optional] 
 **MatchFilter** | Pointer to **string** | An optional filter that mapped users must match. | [optional] 
 **MatchPattern** | **string** | Specifies the regular expression pattern that is used to identify portions of the ID string that will be replaced. | 
 **ReplacePattern** | Pointer to **string** | Specifies the replacement pattern that should be used for substrings in the ID string that match the provided regular expression pattern. | [optional] 

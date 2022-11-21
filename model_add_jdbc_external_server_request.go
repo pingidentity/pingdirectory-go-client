@@ -38,6 +38,7 @@ type AddJdbcExternalServerRequest struct {
 	ValidationQuery *string `json:"validationQuery,omitempty"`
 	// Specifies the amount of time to wait for a response from the database when executing the validation query, if one is set. If the timeout is exceeded, the Directory Server will drop the connection and obtain a new one. A value of zero indicates no timeout.
 	ValidationQueryTimeout *string `json:"validationQueryTimeout,omitempty"`
+	// Specifies the connection properties for the JDBC datasource.
 	JdbcConnectionProperties []string `json:"jdbcConnectionProperties,omitempty"`
 	TransactionIsolationLevel *EnumexternalServerTransactionIsolationLevelProp `json:"transactionIsolationLevel,omitempty"`
 	// A description for this External Server

@@ -25,6 +25,7 @@ type FileServerHttpServletExtensionResponse struct {
 	DocumentRootDirectory string `json:"documentRootDirectory"`
 	// Indicates whether to generate a default HTML page with a listing of available files if the requested path refers to a directory rather than a file, and that directory does not contain an index file.
 	EnableDirectoryIndexing *bool `json:"enableDirectoryIndexing,omitempty"`
+	// Specifies the name of a file whose contents may be returned to the client if the requested path refers to a directory rather than a file.
 	IndexFile []string `json:"indexFile,omitempty"`
 	// Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested file.
 	MimeTypesFile *string `json:"mimeTypesFile,omitempty"`
@@ -33,10 +34,13 @@ type FileServerHttpServletExtensionResponse struct {
 	// Indicates whether the servlet extension should only accept requests from authenticated clients.
 	RequireAuthentication *bool `json:"requireAuthentication,omitempty"`
 	AllowedAuthenticationType []EnumhttpServletExtensionAllowedAuthenticationTypeProp `json:"allowedAuthenticationType,omitempty"`
+	// The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
+	// The ID token validators that may be used to verify the authenticity of an of an OpenID Connect ID token.
 	IdTokenValidator []string `json:"idTokenValidator,omitempty"`
 	// Indicates whether the servlet extension should only accept requests from authenticated clients that have the file-servlet-access privilege.
 	RequireFileServletAccessPrivilege *bool `json:"requireFileServletAccessPrivilege,omitempty"`
+	// The DN of a group whose members will be permitted to access to the associated files. If multiple group DNs are configured, then anyone who is a member of at least one of those groups will be granted access.
 	RequireGroup []string `json:"requireGroup,omitempty"`
 	// The identity mapper that will be used to identify the entry with which a username is associated.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
@@ -44,9 +48,11 @@ type FileServerHttpServletExtensionResponse struct {
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewFileServerHttpServletExtensionResponse instantiates a new FileServerHttpServletExtensionResponse object
@@ -646,6 +652,38 @@ func (o *FileServerHttpServletExtensionResponse) SetCorrelationIDResponseHeader(
 	o.CorrelationIDResponseHeader = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *FileServerHttpServletExtensionResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FileServerHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *FileServerHttpServletExtensionResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *FileServerHttpServletExtensionResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o FileServerHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -704,6 +742,9 @@ func (o FileServerHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.CorrelationIDResponseHeader) {
 		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

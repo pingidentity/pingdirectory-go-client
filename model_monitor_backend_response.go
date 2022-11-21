@@ -19,6 +19,7 @@ type MonitorBackendResponse struct {
 	Schemas []EnummonitorBackendSchemaUrn `json:"schemas"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`

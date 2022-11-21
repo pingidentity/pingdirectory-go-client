@@ -21,13 +21,17 @@ type WeaklyEncodedPasswordDataSecurityAuditorResponse struct {
 	Schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
+	// The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
 	WeakPasswordStorageScheme []string `json:"weakPasswordStorageScheme"`
 	WeakCryptEncoding []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
+	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend []string `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewWeaklyEncodedPasswordDataSecurityAuditorResponse instantiates a new WeaklyEncodedPasswordDataSecurityAuditorResponse object
@@ -300,6 +304,38 @@ func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetAuditSeverity(v En
 	o.AuditSeverity = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *WeaklyEncodedPasswordDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o WeaklyEncodedPasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -328,6 +364,9 @@ func (o WeaklyEncodedPasswordDataSecurityAuditorResponse) MarshalJSON() ([]byte,
 	}
 	if !isNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **PolicyName** | **string** | Name of the new HTTP Servlet Cross Origin Policy | 
 **Schemas** | Pointer to [**[]EnumhttpServletCrossOriginPolicySchemaUrn**](EnumhttpServletCrossOriginPolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Cross Origin Policy | [optional] 
-**CorsAllowedMethods** | Pointer to **[]string** |  | [optional] 
-**CorsAllowedOrigins** | Pointer to **[]string** |  | [optional] 
-**CorsExposedHeaders** | Pointer to **[]string** |  | [optional] 
-**CorsAllowedHeaders** | Pointer to **[]string** |  | [optional] 
+**CorsAllowedMethods** | Pointer to **[]string** | A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc. | [optional] 
+**CorsAllowedOrigins** | Pointer to **[]string** | A list of origins that are allowed to execute cross-origin requests. | [optional] 
+**CorsExposedHeaders** | Pointer to **[]string** | A list of HTTP headers other than the simple response headers that browsers are allowed to access. | [optional] 
+**CorsAllowedHeaders** | Pointer to **[]string** | A list of HTTP headers that are supported by the resource and can be specified in a cross-origin request. | [optional] 
 **CorsPreflightMaxAge** | Pointer to **string** | The maximum amount of time that a preflight request can be cached by a client. | [optional] 
 **CorsAllowCredentials** | Pointer to **bool** | Indicates whether the servlet extension allows CORS requests with username/password credentials. | [optional] 
 

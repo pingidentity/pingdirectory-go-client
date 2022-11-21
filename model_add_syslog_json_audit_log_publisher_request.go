@@ -19,6 +19,7 @@ type AddSyslogJsonAuditLogPublisherRequest struct {
 	// Name of the new Log Publisher
 	PublisherName string `json:"publisherName"`
 	Schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn `json:"schemas"`
+	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string `json:"syslogExternalServer"`
 	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
 	SyslogSeverity EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`
@@ -37,7 +38,9 @@ type AddSyslogJsonAuditLogPublisherRequest struct {
 	IncludeOperationPurposeRequestControl *bool `json:"includeOperationPurposeRequestControl,omitempty"`
 	// Indicates whether to include information about any intermediate client request control that may have been included in the request.
 	IncludeIntermediateClientRequestControl *bool `json:"includeIntermediateClientRequestControl,omitempty"`
+	// Specifies the names of any attribute types that should have their values obscured in the audit log because they may be considered sensitive.
 	ObscureAttribute []string `json:"obscureAttribute,omitempty"`
+	// Specifies the names of any attribute types that should be excluded from the audit log.
 	ExcludeAttribute []string `json:"excludeAttribute,omitempty"`
 	// Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
 	SuppressInternalOperations *bool `json:"suppressInternalOperations,omitempty"`

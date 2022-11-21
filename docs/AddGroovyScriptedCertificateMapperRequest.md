@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **MapperName** | **string** | Name of the new Certificate Mapper | 
 **Schemas** | [**[]EnumgroovyScriptedCertificateMapperSchemaUrn**](EnumgroovyScriptedCertificateMapperSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
 

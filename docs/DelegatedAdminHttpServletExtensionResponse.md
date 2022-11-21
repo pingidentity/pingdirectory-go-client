@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumdelegatedAdminHttpServletExtensionSchemaUrn**](EnumdelegatedAdminHttpServletExtensionSchemaUrn.md) |  | 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the Identity Mapper that is to be used for associating user entries with basic authentication user names. | [optional] 
-**AccessTokenValidator** | Pointer to **[]string** |  | [optional] 
+**AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Delegated Admin HTTP Servlet Extension. | [optional] 
 **AccessTokenScope** | Pointer to **string** | The name of a scope that must be present in an access token accepted by the Delegated Admin HTTP Servlet Extension. | [optional] 
 **Audience** | Pointer to **string** | A string or URI that identifies the Delegated Admin HTTP Servlet Extension in the context of OAuth2 authorization. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
-**ResponseHeader** | Pointer to **[]string** |  | [optional] 
+**ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all requests. | [optional] 
 **CorrelationIDResponseHeader** | Pointer to **string** | Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \&quot;Correlation-Id\&quot;, \&quot;X-Amzn-Trace-Id\&quot;, and \&quot;X-Request-Id\&quot;. | [optional] 
 
 ## Methods

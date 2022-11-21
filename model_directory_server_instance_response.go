@@ -20,6 +20,7 @@ type DirectoryServerInstanceResponse struct {
 	ServerInstanceType *EnumserverInstanceServerInstanceTypeProp `json:"serverInstanceType,omitempty"`
 	// The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name.
 	ReplicationSetName *string `json:"replicationSetName,omitempty"`
+	// The name of the configuration object for a load-balancing algorithm that should include this server.
 	LoadBalancingAlgorithmName []string `json:"loadBalancingAlgorithmName,omitempty"`
 	// The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
 	ServerInstanceName string `json:"serverInstanceName"`
@@ -47,6 +48,7 @@ type DirectoryServerInstanceResponse struct {
 	ReplicationPort *int32 `json:"replicationPort,omitempty"`
 	// Specifies a unique identifier for the replication server on this server instance.
 	ReplicationServerID *int32 `json:"replicationServerID,omitempty"`
+	// Specifies a unique identifier for the Directory Server within the replication domain.
 	ReplicationDomainServerID []int32 `json:"replicationDomainServerID,omitempty"`
 	// The TCP port on which this server is listening for JMX connections.
 	JmxPort *int32 `json:"jmxPort,omitempty"`
@@ -55,7 +57,9 @@ type DirectoryServerInstanceResponse struct {
 	PreferredSecurity *EnumserverInstancePreferredSecurityProp `json:"preferredSecurity,omitempty"`
 	// Indicates whether StartTLS is enabled on this server.
 	StartTLSEnabled *bool `json:"startTLSEnabled,omitempty"`
+	// The set of base DNs under the root DSE.
 	BaseDN []string `json:"baseDN,omitempty"`
+	// The set of groups of which this server is a member.
 	MemberOfServerGroup []string `json:"memberOfServerGroup,omitempty"`
 }
 

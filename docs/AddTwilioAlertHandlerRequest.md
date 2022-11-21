@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **TwilioAccountSID** | **string** | The unique identifier assigned to the Twilio account that will be used. | 
 **TwilioAuthToken** | Pointer to **string** | The auth token for the Twilio account that will be used. | [optional] 
 **TwilioAuthTokenPassphraseProvider** | Pointer to **string** | The passphrase provider that may be used to obtain the auth token for the Twilio account that will be used. | [optional] 
-**SenderPhoneNumber** | **[]string** |  | 
-**RecipientPhoneNumber** | **[]string** |  | 
+**SenderPhoneNumber** | **[]string** | The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account. | 
+**RecipientPhoneNumber** | **[]string** | The phone number to which alert notifications should be delivered. | 
 **LongMessageBehavior** | [**EnumalertHandlerLongMessageBehaviorProp**](EnumalertHandlerLongMessageBehaviorProp.md) |  | 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Alert Handler is enabled. | 

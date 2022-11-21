@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumfingerprintCertificateMapperSchemaUrn**](EnumfingerprintCertificateMapperSchemaUrn.md) |  | 
 **FingerprintAttribute** | **string** | Specifies the attribute in which to look for the fingerprint. | 
 **FingerprintAlgorithm** | [**EnumcertificateMapperFingerprintAlgorithmProp**](EnumcertificateMapperFingerprintAlgorithmProp.md) |  | 
-**UserBaseDN** | Pointer to **[]string** |  | [optional] 
+**UserBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **Description** | Pointer to **string** | A description for this Certificate Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Certificate Mapper is enabled. | 
 

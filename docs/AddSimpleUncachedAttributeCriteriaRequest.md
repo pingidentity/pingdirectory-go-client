@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CriteriaName** | **string** | Name of the new Uncached Attribute Criteria | 
 **Schemas** | [**[]EnumsimpleUncachedAttributeCriteriaSchemaUrn**](EnumsimpleUncachedAttributeCriteriaSchemaUrn.md) |  | 
-**AttributeType** | **[]string** |  | 
+**AttributeType** | **[]string** | Specifies the attribute types for attributes that may be written to the uncached-id2entry database. | 
 **MinValueCount** | Pointer to **int32** | Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
 **MinTotalValueSize** | Pointer to **string** | Specifies the minimum total value size (i.e., the sum of the sizes of all values) that an attribute must have before it will be written into the uncached-id2entry database. | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Attribute Criteria | [optional] 

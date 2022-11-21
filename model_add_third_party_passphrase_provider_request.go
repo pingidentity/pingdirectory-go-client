@@ -21,6 +21,7 @@ type AddThirdPartyPassphraseProviderRequest struct {
 	Schemas []EnumthirdPartyPassphraseProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Passphrase Provider.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Passphrase Provider. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Passphrase Provider
 	Description *string `json:"description,omitempty"`

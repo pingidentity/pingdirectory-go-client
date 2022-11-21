@@ -239,6 +239,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/validate-totp-password-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     validate-totp-password-extended-operation-handler-shared:
       type: object
       properties:
@@ -299,6 +300,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/replace-certificate-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     replace-certificate-extended-operation-handler-shared:
       type: object
       properties:
@@ -460,6 +462,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/collect-support-data-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     collect-support-data-extended-operation-handler-shared:
       type: object
       properties:
@@ -504,6 +507,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/export-reversible-passwords-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     export-reversible-passwords-extended-operation-handler-shared:
       type: object
       properties:
@@ -620,6 +624,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/single-use-tokens-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     single-use-tokens-extended-operation-handler-shared:
       type: object
       properties:
@@ -637,8 +642,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
+          description: >-
+              The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
         defaultSingleUseTokenValidityDuration:
           type: string
           description: >-
@@ -769,6 +774,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/deliver-password-reset-token-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     deliver-password-reset-token-extended-operation-handler-shared:
       type: object
       properties:
@@ -786,8 +792,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms.
+          description: >-
+              The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms.
         passwordResetTokenValidityDuration:
           type: string
           description: >-
@@ -878,6 +884,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/deliver-otp-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     deliver-otp-extended-operation-handler-shared:
       type: object
       properties:
@@ -899,8 +906,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms.
+          description: >-
+              The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms.
         description:
           type: string
           description: >-
@@ -939,6 +946,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-extended-operation-handler-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-extended-operation-handler-shared:
       type: object
       properties:
@@ -956,8 +964,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -1010,6 +1018,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -25,6 +25,7 @@ type VelocityHttpServletExtensionResponse struct {
 	StaticContentDirectory *string `json:"staticContentDirectory,omitempty"`
 	// Specifies the base directory in which custom static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. Files in this directory will override those with the same name in the directory specified by the static-content-directory property.
 	StaticCustomDirectory *string `json:"staticCustomDirectory,omitempty"`
+	// Specifies an ordered list of directories in which to search for the template files.
 	TemplateDirectory []string `json:"templateDirectory"`
 	// Specifies whether the HTTP request will be exposed to templates.
 	ExposeRequestAttributes *bool `json:"exposeRequestAttributes,omitempty"`
@@ -40,7 +41,9 @@ type VelocityHttpServletExtensionResponse struct {
 	DefaultMIMEType *string `json:"defaultMIMEType,omitempty"`
 	// Specifies the value that will be used for all responses' Content-Type headers' charset parameter that indicates the character encoding of the document.
 	CharacterEncoding *string `json:"characterEncoding,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all template page requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for static content requests such as images and scripts.
 	StaticResponseHeader []string `json:"staticResponseHeader,omitempty"`
 	// Require authentication when accessing Velocity templates.
 	RequireAuthentication *bool `json:"requireAuthentication,omitempty"`

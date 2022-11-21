@@ -21,11 +21,13 @@ type ThirdPartyTrustManagerProviderResponse struct {
 	Schemas []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
 	IncludeJVMDefaultIssuers *bool `json:"includeJVMDefaultIssuers,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewThirdPartyTrustManagerProviderResponse instantiates a new ThirdPartyTrustManagerProviderResponse object
@@ -209,6 +211,38 @@ func (o *ThirdPartyTrustManagerProviderResponse) SetIncludeJVMDefaultIssuers(v b
 	o.IncludeJVMDefaultIssuers = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartyTrustManagerProviderResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartyTrustManagerProviderResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartyTrustManagerProviderResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ThirdPartyTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -228,6 +262,9 @@ func (o ThirdPartyTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.IncludeJVMDefaultIssuers) {
 		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

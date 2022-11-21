@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **SubjectDN** | Pointer to **string** | The DN that should be used as the subject for the self-signed certificate and certificate signing request. This is not used when importing an existing key-pair. | [optional] 
 **CertificateChain** | Pointer to **string** | The PEM-encoded X.509 certificate chain. | [optional] 
 **PrivateKey** | Pointer to **string** | The base64-encoded private key that is encrypted using the preferred encryption settings definition. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -195,6 +196,31 @@ SetPrivateKey sets PrivateKey field to given value.
 `func (o *KeyPairResponse) HasPrivateKey() bool`
 
 HasPrivateKey returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *KeyPairResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *KeyPairResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *KeyPairResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *KeyPairResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

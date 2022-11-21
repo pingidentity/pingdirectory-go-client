@@ -19,6 +19,7 @@ type AddAttributeValuePasswordValidatorRequest struct {
 	// Name of the new Password Validator
 	ValidatorName string `json:"validatorName"`
 	Schemas []EnumattributeValuePasswordValidatorSchemaUrn `json:"schemas"`
+	// Specifies the name(s) of the attribute(s) whose values should be checked to determine whether they match the provided password. If no values are provided, then the server checks if the proposed password matches the value of any user attribute in the target user's entry.
 	MatchAttribute []string `json:"matchAttribute,omitempty"`
 	// Indicates whether to reject any proposed password that is a substring of a value in one of the match attributes in the target user's entry.
 	TestPasswordSubstringOfAttributeValue *bool `json:"testPasswordSubstringOfAttributeValue,omitempty"`

@@ -185,6 +185,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     expired-password-data-security-auditor-shared:
       type: object
       properties:
@@ -202,8 +203,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         passwordEvaluationAge:
           type: string
           description: >-
@@ -216,8 +217,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -248,6 +249,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     multiple-password-data-security-auditor-shared:
       type: object
       properties:
@@ -269,14 +271,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -307,6 +309,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     disabled-account-data-security-auditor-shared:
       type: object
       properties:
@@ -328,14 +331,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -366,6 +369,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     weakly-encoded-password-data-security-auditor-shared:
       type: object
       properties:
@@ -383,8 +387,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
+          description: >-
+              The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
         weakCryptEncoding:
           type: array
           items:
@@ -397,14 +401,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -436,6 +440,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     privilege-data-security-auditor-shared:
       type: object
       properties:
@@ -461,14 +466,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         auditBackend:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -499,6 +504,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     locked-account-data-security-auditor-shared:
       type: object
       properties:
@@ -516,8 +522,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         maximumIdleTime:
           type: string
           description: >-
@@ -530,8 +536,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -562,6 +568,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
+      - $ref: '#/components/schemas/meta'
     access-control-data-security-auditor-shared:
       type: object
       properties:
@@ -579,8 +586,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
+          description: >-
+              Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
         enabled:
           type: boolean
           description: >-
@@ -589,8 +596,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
+          description: >-
+              Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
         auditSeverity:
           $ref: '#/components/schemas/Enumdata-security-auditor-auditSeverityProp'
       required:
@@ -687,6 +694,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumexactMatchIdentityMapperSchemaUrn**](EnumexactMatchIdentityMapperSchemaUrn.md) |  | 
-**MatchAttribute** | **[]string** |  | 
-**MatchBaseDN** | Pointer to **[]string** |  | [optional] 
+**MatchAttribute** | **[]string** | Specifies the attribute whose value should exactly match the ID string provided to this identity mapper. | 
+**MatchBaseDN** | Pointer to **[]string** | Specifies the set of base DNs below which to search for users. | [optional] 
 **MatchFilter** | Pointer to **string** | An optional filter that mapped users must match. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Identity Mapper is enabled for use. | 

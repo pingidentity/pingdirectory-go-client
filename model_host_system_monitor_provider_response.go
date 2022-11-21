@@ -19,7 +19,9 @@ type HostSystemMonitorProviderResponse struct {
 	Schemas []EnumhostSystemMonitorProviderSchemaUrn `json:"schemas"`
 	// Indicates whether the Host System Monitor Provider is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d.
 	DiskDevices []string `json:"diskDevices,omitempty"`
+	// Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i.
 	NetworkDevices []string `json:"networkDevices,omitempty"`
 	// Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process.
 	SystemUtilizationMonitorLogDirectory string `json:"systemUtilizationMonitorLogDirectory"`

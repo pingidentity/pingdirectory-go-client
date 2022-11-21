@@ -239,6 +239,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/smtp-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     smtp-alert-handler-shared:
       type: object
       properties:
@@ -260,8 +261,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an email address to which the messages should be sent.
+          description: >-
+              Specifies an email address to which the messages should be sent.
         messageSubject:
           type: string
           description: >-
@@ -325,6 +326,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jmx-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     jmx-alert-handler-shared:
       type: object
       properties:
@@ -385,6 +387,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     groovy-scripted-alert-handler-shared:
       type: object
       properties:
@@ -402,8 +405,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -456,6 +459,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/snmp-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     snmp-alert-handler-shared:
       type: object
       properties:
@@ -531,6 +535,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/twilio-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     twilio-alert-handler-shared:
       type: object
       properties:
@@ -561,14 +566,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
+          description: >-
+              The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
         recipientPhoneNumber:
           type: array
           items:
             type: string
-            description: >-
-                The phone number to which alert notifications should be delivered.
+          description: >-
+              The phone number to which alert notifications should be delivered.
         longMessageBehavior:
           $ref: '#/components/schemas/Enumalert-handler-longMessageBehaviorProp'
         description:
@@ -622,6 +627,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/error-log-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     error-log-alert-handler-shared:
       type: object
       properties:
@@ -682,6 +688,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/snmp-sub-agent-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     snmp-sub-agent-alert-handler-shared:
       type: object
       properties:
@@ -742,6 +749,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/exec-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     exec-alert-handler-shared:
       type: object
       properties:
@@ -807,6 +815,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-alert-handler-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-alert-handler-shared:
       type: object
       properties:
@@ -824,8 +833,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Alert Handler. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Alert Handler. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -1293,6 +1302,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

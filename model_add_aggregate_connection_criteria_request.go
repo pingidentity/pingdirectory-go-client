@@ -19,9 +19,13 @@ type AddAggregateConnectionCriteriaRequest struct {
 	// Name of the new Connection Criteria
 	CriteriaName string `json:"criteriaName"`
 	Schemas []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
+	// Specifies a connection criteria object that must match the associated client connection in order to match the aggregate connection criteria. If one or more all-included connection criteria objects are provided, then a client connection must match all of them in order to match the aggregate connection criteria.
 	AllIncludedConnectionCriteria []string `json:"allIncludedConnectionCriteria,omitempty"`
+	// Specifies a connection criteria object that may match the associated client connection in order to match the aggregate connection criteria. If one or more any-included connection criteria objects are provided, then a client connection must match at least one of them in order to match the aggregate connection criteria.
 	AnyIncludedConnectionCriteria []string `json:"anyIncludedConnectionCriteria,omitempty"`
+	// Specifies a connection criteria object that should not match the associated client connection in order to match the aggregate connection criteria. If one or more not-all-included connection criteria objects are provided, then a client connection must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate connection criteria.
 	NotAllIncludedConnectionCriteria []string `json:"notAllIncludedConnectionCriteria,omitempty"`
+	// Specifies a connection criteria object that must not match the associated client connection in order to match the aggregate connection criteria. If one or more none-included connection criteria objects are provided, then a client connection must not match any of them in order to match the aggregate connection criteria.
 	NoneIncludedConnectionCriteria []string `json:"noneIncludedConnectionCriteria,omitempty"`
 	// A description for this Connection Criteria
 	Description *string `json:"description,omitempty"`

@@ -173,6 +173,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
     ping-federate-access-token-validator-shared:
       type: object
       properties:
@@ -260,6 +261,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
     jwt-access-token-validator-shared:
       type: object
       properties:
@@ -277,8 +279,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
+          description: >-
+              Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
         jwksEndpointPath:
           type: string
           description: >-
@@ -362,6 +364,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
     mock-access-token-validator-shared:
       type: object
       properties:
@@ -427,6 +430,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-access-token-validator-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-access-token-validator-shared:
       type: object
       properties:
@@ -444,8 +448,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
         identityMapper:
           type: string
           description: >-
@@ -531,6 +535,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

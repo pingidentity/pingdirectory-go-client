@@ -47,7 +47,9 @@ type AddNumericGaugeRequest struct {
 	UpdateInterval *string `json:"updateInterval,omitempty"`
 	// Indicates the number of times the monitor data source value will be collected during the update interval.
 	SamplesPerUpdateInterval *int32 `json:"samplesPerUpdateInterval,omitempty"`
+	// Specifies set of resources to be monitored.
 	IncludeResource []string `json:"includeResource,omitempty"`
+	// Specifies resources to exclude from being monitored.
 	ExcludeResource []string `json:"excludeResource,omitempty"`
 	ServerUnavailableSeverityLevel *EnumgaugeServerUnavailableSeverityLevelProp `json:"serverUnavailableSeverityLevel,omitempty"`
 	ServerDegradedSeverityLevel *EnumgaugeServerDegradedSeverityLevelProp `json:"serverDegradedSeverityLevel,omitempty"`

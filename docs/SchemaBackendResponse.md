@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumschemaBackendSchemaUrn**](EnumschemaBackendSchemaUrn.md) |  | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
-**BaseDN** | **[]string** |  | 
+**BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
-**SchemaEntryDN** | Pointer to **[]string** |  | [optional] 
+**SchemaEntryDN** | Pointer to **[]string** | Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property. | [optional] 
 **ShowAllAttributes** | **bool** | Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration. | 
-**ReadOnlySchemaFile** | Pointer to **[]string** |  | [optional] 
+**ReadOnlySchemaFile** | Pointer to **[]string** | Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients. | [optional] 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
 **SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 

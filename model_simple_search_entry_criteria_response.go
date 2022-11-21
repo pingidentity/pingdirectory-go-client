@@ -21,22 +21,37 @@ type SimpleSearchEntryCriteriaResponse struct {
 	Schemas []EnumsimpleSearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for entries included in this Simple Search Entry Criteria. of them.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Specifies the OID of a control that must be present in search result entries included in this Simple Search Entry Criteria. If any control OIDs are provided, then the entry must contain all of those controls.
 	AllIncludedEntryControl []string `json:"allIncludedEntryControl,omitempty"`
+	// Specifies the OID of a control that may be present in search result entries included in this Simple Search Entry Criteria. If any control OIDs are provided, then the entry must contain at least one of those controls.
 	AnyIncludedEntryControl []string `json:"anyIncludedEntryControl,omitempty"`
+	// Specifies the OID of a control that should not be present in search result entries included in this Simple Search Entry Criteria. If any control OIDs are provided, then the entry must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
 	NotAllIncludedEntryControl []string `json:"notAllIncludedEntryControl,omitempty"`
+	// Specifies the OID of a control that must not be present in search result entries included in this Simple Search Entry Criteria. If any control OIDs are provided, then the entry must not contain any of those controls.
 	NoneIncludedEntryControl []string `json:"noneIncludedEntryControl,omitempty"`
+	// Specifies a base DN below which entries included in this Simple Search Entry Criteria may exist.
 	IncludedEntryBaseDN []string `json:"includedEntryBaseDN,omitempty"`
+	// Specifies a base DN below which entries included in this Simple Search Entry Criteria may not exist.
 	ExcludedEntryBaseDN []string `json:"excludedEntryBaseDN,omitempty"`
+	// Specifies a search filter that must match search result entries included in this Simple Search Entry Criteria. Note that this matching will be performed against the entry that is actually returned to the client and may not reflect the complete entry stored in the server. If any filters are provided, then the returned entry must match all of those filters.
 	AllIncludedEntryFilter []string `json:"allIncludedEntryFilter,omitempty"`
+	// Specifies a search filter that may match search result entries included in this Simple Search Entry Criteria. Note that this matching will be performed against the entry that is actually returned to the client and may not reflect the complete entry stored in the server. If any filters are provided, then the entry must match at least one of those filters.
 	AnyIncludedEntryFilter []string `json:"anyIncludedEntryFilter,omitempty"`
+	// Specifies a search filter that should not match search result entries included in this Simple Search Entry Criteria. Note that this matching will be performed against the entry that is actually returned to the client and may not reflect the complete entry stored in the server. If any filters are provided, then the entry must not match at least one of those filters (that is, the entry may match zero or more of those filters, but not of all of them).
 	NotAllIncludedEntryFilter []string `json:"notAllIncludedEntryFilter,omitempty"`
+	// Specifies a search filter that must not match search result entries included in this Simple Search Entry Criteria. Note that this matching will be performed against the entry that is actually returned to the client and may not reflect the complete entry stored in the server. If any filters are provided, then the entry must not match any of those filters.
 	NoneIncludedEntryFilter []string `json:"noneIncludedEntryFilter,omitempty"`
+	// Specifies the DN of a group in which the user associated with the entry must be a member to be included in this Simple Search Entry Criteria. If any group DNs are provided, then the entry must be a member of all of them.
 	AllIncludedEntryGroupDN []string `json:"allIncludedEntryGroupDN,omitempty"`
+	// Specifies the DN of a group in which the user associated with the entry may be a member to be included in this Simple Search Entry Criteria. If any group DNs are provided, then the entry must be a member of at least one of them.
 	AnyIncludedEntryGroupDN []string `json:"anyIncludedEntryGroupDN,omitempty"`
+	// Specifies the DN of a group in which the user associated with the entry should not be a member to be included in this Simple Search Entry Criteria. If any group DNs are provided, then the entry must not be a member of at least one of them (that is, the entry may be a member of zero or more of the specified groups, but not of all of them).
 	NotAllIncludedEntryGroupDN []string `json:"notAllIncludedEntryGroupDN,omitempty"`
+	// Specifies the DN of a group in which the user associated with the entry must not be a member to be included in this Simple Search Entry Criteria. If any group DNs are provided, then the entry must not be a member of any of them.
 	NoneIncludedEntryGroupDN []string `json:"noneIncludedEntryGroupDN,omitempty"`
 	// A description for this Search Entry Criteria
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSimpleSearchEntryCriteriaResponse instantiates a new SimpleSearchEntryCriteriaResponse object
@@ -618,6 +633,38 @@ func (o *SimpleSearchEntryCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SimpleSearchEntryCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleSearchEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SimpleSearchEntryCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SimpleSearchEntryCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o SimpleSearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -673,6 +720,9 @@ func (o SimpleSearchEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

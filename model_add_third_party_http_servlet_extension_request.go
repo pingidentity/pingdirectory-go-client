@@ -21,11 +21,13 @@ type AddThirdPartyHttpServletExtensionRequest struct {
 	Schemas []EnumthirdPartyHttpServletExtensionSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party HTTP Servlet Extension. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

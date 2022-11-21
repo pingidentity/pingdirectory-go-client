@@ -19,14 +19,18 @@ type AddOauthBearerSaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
 	HandlerName string `json:"handlerName"`
 	Schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	// An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
+	// An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry.
 	IdTokenValidator []string `json:"idTokenValidator,omitempty"`
 	// Indicates whether bind requests will be required to have both an OAuth access token (in the \"auth\" element of the bind request) and an OpenID Connect ID token (in the \"pingidentityidtoken\" element of the bind request).
 	RequireBothAccessTokenAndIDToken *bool `json:"requireBothAccessTokenAndIDToken,omitempty"`
 	ValidateAccessTokenWhenIDTokenIsAlsoProvided *EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp `json:"validateAccessTokenWhenIDTokenIsAlsoProvided,omitempty"`
 	// The identity mapper that will be used to map an alternate authorization identity (provided in the GS2 header of the encoded OAUTHBEARER bind request credentials) to the corresponding local entry.
 	AlternateAuthorizationIdentityMapper *string `json:"alternateAuthorizationIdentityMapper,omitempty"`
+	// The set of OAuth scopes that will all be required for any access tokens that will be allowed for authentication.
 	AllRequiredScope []string `json:"allRequiredScope,omitempty"`
+	// The set of OAuth scopes that a token may have to be allowed for authentication.
 	AnyRequiredScope []string `json:"anyRequiredScope,omitempty"`
 	// The fully-qualified name that clients are expected to use when communicating with the server.
 	ServerFqdn *string `json:"serverFqdn,omitempty"`

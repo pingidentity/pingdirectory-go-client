@@ -25,7 +25,9 @@ type ConsentServiceResponse struct {
 	BindDN *string `json:"bindDN,omitempty"`
 	// The maximum number of consent resources that may be returned from a search request.
 	SearchSizeLimit *int32 `json:"searchSizeLimit,omitempty"`
+	// If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used.
 	ConsentRecordIdentityMapper []string `json:"consentRecordIdentityMapper,omitempty"`
+	// The set of account DNs that the Consent Service will consider to be privileged.
 	ServiceAccountDN []string `json:"serviceAccountDN,omitempty"`
 	// The name of a scope that must be present in an access token accepted by the Consent Service for unprivileged clients.
 	UnprivilegedConsentScope *string `json:"unprivilegedConsentScope,omitempty"`

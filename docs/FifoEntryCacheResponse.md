@@ -9,14 +9,15 @@ Name | Type | Description | Notes
 **MaxMemoryPercent** | Pointer to **int32** | Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged. | [optional] 
 **MaxEntries** | Pointer to **int32** | Specifies the maximum number of entries that will be allowed in the cache. Once the cache reaches this size, then adding new entries will cause existing entries to be purged, starting with the oldest. | [optional] 
 **OnlyCacheFrequentlyAccessed** | Pointer to **bool** | Specifies that the cache should only store entries which are accessed much more frequently than the average entry. The cache will observe attempts to place entries in the cache and compare an entry&#39;s accesses to the average entry&#39;s. | [optional] 
-**IncludeFilter** | Pointer to **[]string** |  | [optional] 
-**ExcludeFilter** | Pointer to **[]string** |  | [optional] 
+**IncludeFilter** | Pointer to **[]string** | The set of filters that define the entries that should be included in the cache. | [optional] 
+**ExcludeFilter** | Pointer to **[]string** | The set of filters that define the entries that should be excluded from the cache. | [optional] 
 **MinCacheEntryValueCount** | Pointer to **int32** | Specifies the minimum number of attribute values (optionally across a specified subset of attributes as defined in the min-cache-entry-attributes property) for entries that should be held in the cache. Entries with fewer than this number of attribute values will be excluded from the cache. | [optional] 
-**MinCacheEntryAttribute** | Pointer to **[]string** |  | [optional] 
+**MinCacheEntryAttribute** | Pointer to **[]string** | Specifies the names of the attribute types for which the min-cache-entry-value-count property should apply. If no attribute types are specified, then all user attributes will be examined. | [optional] 
 **Description** | Pointer to **string** | A description for this Entry Cache | [optional] 
 **Enabled** | **bool** | Indicates whether the Entry Cache is enabled. | 
 **CacheLevel** | **int32** | Specifies the cache level in the cache order if more than one instance of the cache is configured. | 
 **CacheUnindexedSearchResults** | Pointer to **bool** | Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -346,6 +347,31 @@ SetCacheUnindexedSearchResults sets CacheUnindexedSearchResults field to given v
 `func (o *FifoEntryCacheResponse) HasCacheUnindexedSearchResults() bool`
 
 HasCacheUnindexedSearchResults returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *FifoEntryCacheResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *FifoEntryCacheResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *FifoEntryCacheResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *FifoEntryCacheResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

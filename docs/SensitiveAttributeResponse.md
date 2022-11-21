@@ -7,13 +7,14 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Sensitive Attribute | 
 **Schemas** | Pointer to [**[]EnumsensitiveAttributeSchemaUrn**](EnumsensitiveAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Sensitive Attribute | [optional] 
-**AttributeType** | **[]string** |  | 
+**AttributeType** | **[]string** | The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive. | 
 **IncludeDefaultSensitiveOperationalAttributes** | Pointer to **bool** | Indicates whether to automatically include any server-generated operational attributes that may contain sensitive data. | [optional] 
 **AllowInReturnedEntries** | Pointer to [**EnumsensitiveAttributeAllowInReturnedEntriesProp**](EnumsensitiveAttributeAllowInReturnedEntriesProp.md) |  | [optional] 
 **AllowInFilter** | Pointer to [**EnumsensitiveAttributeAllowInFilterProp**](EnumsensitiveAttributeAllowInFilterProp.md) |  | [optional] 
 **AllowInAdd** | Pointer to [**EnumsensitiveAttributeAllowInAddProp**](EnumsensitiveAttributeAllowInAddProp.md) |  | [optional] 
 **AllowInCompare** | Pointer to [**EnumsensitiveAttributeAllowInCompareProp**](EnumsensitiveAttributeAllowInCompareProp.md) |  | [optional] 
 **AllowInModify** | Pointer to [**EnumsensitiveAttributeAllowInModifyProp**](EnumsensitiveAttributeAllowInModifyProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -273,6 +274,31 @@ SetAllowInModify sets AllowInModify field to given value.
 `func (o *SensitiveAttributeResponse) HasAllowInModify() bool`
 
 HasAllowInModify returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *SensitiveAttributeResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *SensitiveAttributeResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *SensitiveAttributeResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *SensitiveAttributeResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

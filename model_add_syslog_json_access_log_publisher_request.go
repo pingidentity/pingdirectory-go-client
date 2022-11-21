@@ -19,6 +19,7 @@ type AddSyslogJsonAccessLogPublisherRequest struct {
 	// Name of the new Log Publisher
 	PublisherName string `json:"publisherName"`
 	Schemas []EnumsyslogJsonAccessLogPublisherSchemaUrn `json:"schemas"`
+	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string `json:"syslogExternalServer"`
 	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
 	SyslogSeverity EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`

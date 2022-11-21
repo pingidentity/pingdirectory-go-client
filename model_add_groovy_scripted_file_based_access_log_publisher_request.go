@@ -25,8 +25,11 @@ type AddGroovyScriptedFileBasedAccessLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this Scripted File Based Access Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the Scripted File Based Access Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the Scripted File Based Access Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -37,6 +40,7 @@ type AddGroovyScriptedFileBasedAccessLogPublisherRequest struct {
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
 	// Specifies whether to append to existing log files.
 	Append *bool `json:"append,omitempty"`
+	// The set of arguments used to customize the behavior for the Scripted File Based Access Log Publisher. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// Indicates whether the Scripted File Based Access Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`

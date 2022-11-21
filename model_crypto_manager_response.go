@@ -29,9 +29,13 @@ type CryptoManagerResponse struct {
 	CipherKeyLength *int32 `json:"cipherKeyLength,omitempty"`
 	// The preferred key wrapping transformation for the Directory Server. This value must be the same for all server instances in a replication topology.
 	KeyWrappingTransformation *string `json:"keyWrappingTransformation,omitempty"`
+	// Specifies the names of TLS protocols that are allowed for use in secure communication.
 	SslProtocol []string `json:"sslProtocol,omitempty"`
+	// Specifies the names of the TLS cipher suites that are allowed for use in secure communication.
 	SslCipherSuite []string `json:"sslCipherSuite,omitempty"`
+	// Specifies the names of the TLS protocols that will be enabled for outbound connections initiated by the Directory Server.
 	OutboundSSLProtocol []string `json:"outboundSSLProtocol,omitempty"`
+	// Specifies the names of the TLS cipher suites that will be enabled for outbound connections initiated by the Directory Server.
 	OutboundSSLCipherSuite []string `json:"outboundSSLCipherSuite,omitempty"`
 	// Indicates whether to enable support for TLS cipher suites that use the SHA-1 digest algorithm. The SHA-1 digest algorithm is no longer considered secure and is not recommended for use.
 	EnableSha1CipherSuites *bool `json:"enableSha1CipherSuites,omitempty"`

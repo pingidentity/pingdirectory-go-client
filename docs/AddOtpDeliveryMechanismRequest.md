@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **PhoneNumberAttributeType** | **string** | The name or OID of the attribute in the user&#39;s entry that holds the phone number to which the message should be sent. | 
 **PhoneNumberJSONField** | Pointer to **string** | The name of the JSON field whose value is the phone number to which the message should be sent. The phone number must be contained in a top-level field whose value is a single string. | [optional] 
 **PhoneNumberJSONObjectFilter** | Pointer to **string** | A JSON object filter that may be used to identify which phone number value to use when sending the message. | [optional] 
-**SenderPhoneNumber** | **[]string** |  | 
+**SenderPhoneNumber** | **[]string** | The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account. | 
 **MessageTextBeforeOTP** | Pointer to **string** | Any text that should appear in the message before the one-time password value. | [optional] 
 **MessageTextAfterOTP** | Pointer to **string** | Any text that should appear in the message after the one-time password value. | [optional] 
 **Description** | Pointer to **string** | A description for this OTP Delivery Mechanism | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **SenderAddress** | **string** | The e-mail address to use as the sender for the one-time password. | 
 **MessageSubject** | **string** | The subject to use for the e-mail message. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party OTP Delivery Mechanism. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party OTP Delivery Mechanism. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 

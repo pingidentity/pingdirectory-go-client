@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Trusted Certificate | 
 **Schemas** | Pointer to [**[]EnumtrustedCertificateSchemaUrn**](EnumtrustedCertificateSchemaUrn.md) |  | [optional] 
 **Certificate** | **string** | The PEM-encoded X.509v3 certificate. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -91,6 +92,31 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+
+### GetMeta
+
+`func (o *TrustedCertificateResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *TrustedCertificateResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *TrustedCertificateResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *TrustedCertificateResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

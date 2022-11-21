@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CriteriaName** | **string** | Name of the new Uncached Attribute Criteria | 
 **Schemas** | [**[]EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn**](EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Uncached Attribute Criteria. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Uncached Attribute Criteria | [optional] 
 **Enabled** | **bool** | Indicates whether this Uncached Attribute Criteria is enabled for use in the server. | 
 

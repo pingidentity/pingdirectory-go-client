@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **AllowZeroLengthValues** | Pointer to **bool** | Indicates whether zero-length (that is, an empty string) values are allowed. | [optional] 
 **StrictFormat** | Pointer to **bool** | Indicates whether values for attributes with this syntax will be required to be in the valid LDAP URL format. If this is set to false, then arbitrary strings will be allowed. | [optional] 
 **EnableCompaction** | Pointer to **bool** | Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database. | [optional] 
-**IncludeAttributeInCompaction** | Pointer to **[]string** |  | [optional] 
-**ExcludeAttributeFromCompaction** | Pointer to **[]string** |  | [optional] 
+**IncludeAttributeInCompaction** | Pointer to **[]string** | Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property. | [optional] 
+**ExcludeAttributeFromCompaction** | Pointer to **[]string** | Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property. | [optional] 
 
 ## Methods
 

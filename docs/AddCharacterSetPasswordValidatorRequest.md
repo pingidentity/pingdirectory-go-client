@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ValidatorName** | **string** | Name of the new Password Validator | 
 **Schemas** | [**[]EnumcharacterSetPasswordValidatorSchemaUrn**](EnumcharacterSetPasswordValidatorSchemaUrn.md) |  | 
-**CharacterSet** | **[]string** |  | 
+**CharacterSet** | **[]string** | Specifies a character set containing characters that a password may contain and a value indicating the minimum number of characters required from that set. | 
 **AllowUnclassifiedCharacters** | **bool** | Indicates whether this password validator allows passwords to contain characters outside of any of the user-defined character sets. | 
 **MinimumRequiredCharacterSets** | Pointer to **int32** | Specifies the minimum number of character sets that must be represented in a proposed password. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Validator | [optional] 

@@ -21,11 +21,14 @@ type AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct {
 	Schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
+	// The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
 	WeakPasswordStorageScheme []string `json:"weakPasswordStorageScheme"`
 	WeakCryptEncoding []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
+	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend []string `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }

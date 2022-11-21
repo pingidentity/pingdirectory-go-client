@@ -21,10 +21,11 @@ Name | Type | Description | Notes
 **AlertLevel** | Pointer to [**EnumgaugeAlertLevelProp**](EnumgaugeAlertLevelProp.md) |  | [optional] 
 **UpdateInterval** | Pointer to **string** | The frequency with which this Gauge is updated. | [optional] 
 **SamplesPerUpdateInterval** | Pointer to **int32** | Indicates the number of times the monitor data source value will be collected during the update interval. | [optional] 
-**IncludeResource** | Pointer to **[]string** |  | [optional] 
-**ExcludeResource** | Pointer to **[]string** |  | [optional] 
+**IncludeResource** | Pointer to **[]string** | Specifies set of resources to be monitored. | [optional] 
+**ExcludeResource** | Pointer to **[]string** | Specifies resources to exclude from being monitored. | [optional] 
 **ServerUnavailableSeverityLevel** | Pointer to [**EnumgaugeServerUnavailableSeverityLevelProp**](EnumgaugeServerUnavailableSeverityLevelProp.md) |  | [optional] 
 **ServerDegradedSeverityLevel** | Pointer to [**EnumgaugeServerDegradedSeverityLevelProp**](EnumgaugeServerDegradedSeverityLevelProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -549,6 +550,31 @@ SetServerDegradedSeverityLevel sets ServerDegradedSeverityLevel field to given v
 `func (o *NumericGaugeResponse) HasServerDegradedSeverityLevel() bool`
 
 HasServerDegradedSeverityLevel returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *NumericGaugeResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *NumericGaugeResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *NumericGaugeResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *NumericGaugeResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -37,6 +37,7 @@ type AddAvailabilityStateHttpServletExtensionRequest struct {
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

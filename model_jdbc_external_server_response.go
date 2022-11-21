@@ -38,10 +38,12 @@ type JdbcExternalServerResponse struct {
 	ValidationQuery *string `json:"validationQuery,omitempty"`
 	// Specifies the amount of time to wait for a response from the database when executing the validation query, if one is set. If the timeout is exceeded, the Directory Server will drop the connection and obtain a new one. A value of zero indicates no timeout.
 	ValidationQueryTimeout *string `json:"validationQueryTimeout,omitempty"`
+	// Specifies the connection properties for the JDBC datasource.
 	JdbcConnectionProperties []string `json:"jdbcConnectionProperties,omitempty"`
 	TransactionIsolationLevel *EnumexternalServerTransactionIsolationLevelProp `json:"transactionIsolationLevel,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewJdbcExternalServerResponse instantiates a new JdbcExternalServerResponse object
@@ -520,6 +522,38 @@ func (o *JdbcExternalServerResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *JdbcExternalServerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JdbcExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *JdbcExternalServerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *JdbcExternalServerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o JdbcExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -566,6 +600,9 @@ func (o JdbcExternalServerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

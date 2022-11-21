@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **MapperName** | **string** | Name of the new Identity Mapper | 
 **Schemas** | [**[]EnumthirdPartyIdentityMapperSchemaUrn**](EnumthirdPartyIdentityMapperSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Identity Mapper. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Identity Mapper. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Identity Mapper | [optional] 
 **Enabled** | **bool** | Indicates whether the Identity Mapper is enabled for use. | 
 

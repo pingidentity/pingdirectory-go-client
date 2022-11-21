@@ -21,6 +21,7 @@ type VaultCipherStreamProviderResponse struct {
 	Schemas []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault server.
 	VaultExternalServer *string `json:"vaultExternalServer,omitempty"`
+	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
 	VaultServerBaseURI []string `json:"vaultServerBaseURI,omitempty"`
 	// The mechanism used to authenticate to the Vault server.
 	VaultAuthenticationMethod *string `json:"vaultAuthenticationMethod,omitempty"`
@@ -40,6 +41,7 @@ type VaultCipherStreamProviderResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewVaultCipherStreamProviderResponse instantiates a new VaultCipherStreamProviderResponse object
@@ -433,6 +435,38 @@ func (o *VaultCipherStreamProviderResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *VaultCipherStreamProviderResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VaultCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *VaultCipherStreamProviderResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *VaultCipherStreamProviderResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o VaultCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -473,6 +507,9 @@ func (o VaultCipherStreamProviderResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

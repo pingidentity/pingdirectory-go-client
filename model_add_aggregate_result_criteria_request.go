@@ -19,9 +19,13 @@ type AddAggregateResultCriteriaRequest struct {
 	// Name of the new Result Criteria
 	CriteriaName string `json:"criteriaName"`
 	Schemas []EnumaggregateResultCriteriaSchemaUrn `json:"schemas"`
+	// Specifies a result criteria object that must match the associated operation result in order to match the aggregate result criteria. If one or more all-included result criteria objects are provided, then an operation result must match all of them in order to match the aggregate result criteria.
 	AllIncludedResultCriteria []string `json:"allIncludedResultCriteria,omitempty"`
+	// Specifies a result criteria object that may match the associated operation result in order to match the aggregate result criteria. If one or more any-included result criteria objects are provided, then an operation result must match at least one of them in order to match the aggregate result criteria.
 	AnyIncludedResultCriteria []string `json:"anyIncludedResultCriteria,omitempty"`
+	// Specifies a result criteria object that should not match the associated operation result in order to match the aggregate result criteria. If one or more not-all-included result criteria objects are provided, then an operation result must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate result criteria.
 	NotAllIncludedResultCriteria []string `json:"notAllIncludedResultCriteria,omitempty"`
+	// Specifies a result criteria object that must not match the associated operation result in order to match the aggregate result criteria. If one or more none-included result criteria objects are provided, then an operation result must not match any of them in order to match the aggregate result criteria.
 	NoneIncludedResultCriteria []string `json:"noneIncludedResultCriteria,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **HandlerName** | **string** | Name of the new Extended Operation Handler | 
 **Schemas** | [**[]EnumsingleUseTokensExtendedOperationHandlerSchemaUrn**](EnumsingleUseTokensExtendedOperationHandlerSchemaUrn.md) |  | 
 **PasswordGenerator** | **string** | The password generator that will be used to create the single-use token values to be delivered to the end user. | 
-**DefaultOTPDeliveryMechanism** | **[]string** |  | 
+**DefaultOTPDeliveryMechanism** | **[]string** | The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms. | 
 **DefaultSingleUseTokenValidityDuration** | Pointer to **string** | The default length of time that a single-use token will be considered valid by the server if the client doesn&#39;t specify a duration in the deliver single-use token request. | [optional] 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 

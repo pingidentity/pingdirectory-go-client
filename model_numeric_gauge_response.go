@@ -47,10 +47,13 @@ type NumericGaugeResponse struct {
 	UpdateInterval *string `json:"updateInterval,omitempty"`
 	// Indicates the number of times the monitor data source value will be collected during the update interval.
 	SamplesPerUpdateInterval *int32 `json:"samplesPerUpdateInterval,omitempty"`
+	// Specifies set of resources to be monitored.
 	IncludeResource []string `json:"includeResource,omitempty"`
+	// Specifies resources to exclude from being monitored.
 	ExcludeResource []string `json:"excludeResource,omitempty"`
 	ServerUnavailableSeverityLevel *EnumgaugeServerUnavailableSeverityLevelProp `json:"serverUnavailableSeverityLevel,omitempty"`
 	ServerDegradedSeverityLevel *EnumgaugeServerDegradedSeverityLevelProp `json:"serverDegradedSeverityLevel,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewNumericGaugeResponse instantiates a new NumericGaugeResponse object
@@ -714,6 +717,38 @@ func (o *NumericGaugeResponse) SetServerDegradedSeverityLevel(v EnumgaugeServerD
 	o.ServerDegradedSeverityLevel = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *NumericGaugeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NumericGaugeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *NumericGaugeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *NumericGaugeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o NumericGaugeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -778,6 +813,9 @@ func (o NumericGaugeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ServerDegradedSeverityLevel) {
 		toSerialize["serverDegradedSeverityLevel"] = o.ServerDegradedSeverityLevel
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

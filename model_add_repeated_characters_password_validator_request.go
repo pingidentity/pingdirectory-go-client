@@ -23,6 +23,7 @@ type AddRepeatedCharactersPasswordValidatorRequest struct {
 	MaxConsecutiveLength int32 `json:"maxConsecutiveLength"`
 	// Indicates whether this password validator should treat password characters in a case-sensitive manner.
 	CaseSensitiveValidation bool `json:"caseSensitiveValidation"`
+	// Specifies a set of characters that should be considered equivalent for the purpose of this password validator. This can be used, for example, to ensure that passwords contain no more than three consecutive digits.
 	CharacterSet []string `json:"characterSet,omitempty"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`

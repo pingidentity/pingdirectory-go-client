@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumfileCountLogRetentionPolicySchemaUrn**](EnumfileCountLogRetentionPolicySchemaUrn.md) |  | 
 **NumberOfFiles** | **int32** | Specifies the number of archived log files to retain before the oldest ones are cleaned. | 
 **Description** | Pointer to **string** | A description for this Log Retention Policy | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -112,6 +113,31 @@ SetDescription sets Description field to given value.
 `func (o *FileCountLogRetentionPolicyResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *FileCountLogRetentionPolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *FileCountLogRetentionPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *FileCountLogRetentionPolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *FileCountLogRetentionPolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

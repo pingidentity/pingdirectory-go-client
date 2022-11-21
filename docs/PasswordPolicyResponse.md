@@ -9,16 +9,16 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Password Policy | [optional] 
 **RequireSecureAuthentication** | Pointer to **bool** | Indicates whether users with the associated password policy are required to authenticate in a secure manner. | [optional] 
 **RequireSecurePasswordChanges** | Pointer to **bool** | Indicates whether users with the associated password policy are required to change their password in a secure manner that does not expose the credentials. | [optional] 
-**AccountStatusNotificationHandler** | Pointer to **[]string** |  | [optional] 
+**AccountStatusNotificationHandler** | Pointer to **[]string** | Specifies the names of the account status notification handlers that are used with the associated password storage scheme. | [optional] 
 **StateUpdateFailurePolicy** | Pointer to [**EnumpasswordPolicyStateUpdateFailurePolicyProp**](EnumpasswordPolicyStateUpdateFailurePolicyProp.md) |  | [optional] 
 **EnableDebug** | Pointer to **bool** | Indicates whether to enable debugging for the password policy state. | [optional] 
 **PasswordAttribute** | **string** | Specifies the attribute type used to hold user passwords. | 
-**DefaultPasswordStorageScheme** | **[]string** |  | 
-**DeprecatedPasswordStorageScheme** | Pointer to **[]string** |  | [optional] 
+**DefaultPasswordStorageScheme** | **[]string** | Specifies the names of the password storage schemes that are used to encode clear-text passwords for this password policy. | 
+**DeprecatedPasswordStorageScheme** | Pointer to **[]string** | Specifies the names of the password storage schemes that are considered deprecated for this password policy. | [optional] 
 **AllowMultiplePasswordValues** | Pointer to **bool** | Indicates whether user entries can have multiple distinct values for the password attribute. | [optional] 
 **AllowPreEncodedPasswords** | Pointer to **bool** | Indicates whether users can change their passwords by providing a pre-encoded value. | [optional] 
-**PasswordValidator** | Pointer to **[]string** |  | [optional] 
-**BindPasswordValidator** | Pointer to **[]string** |  | [optional] 
+**PasswordValidator** | Pointer to **[]string** | Specifies the names of the password validators that are used with the associated password storage scheme. | [optional] 
+**BindPasswordValidator** | Pointer to **[]string** | Specifies the names of the password validators that should be invoked for bind operations. | [optional] 
 **MinimumBindPasswordValidationFrequency** | Pointer to **string** | Indicates how frequently password validation should be performed during bind operations for each user to whom this password policy is assigned. | [optional] 
 **BindPasswordValidationFailureAction** | Pointer to [**EnumpasswordPolicyBindPasswordValidationFailureActionProp**](EnumpasswordPolicyBindPasswordValidationFailureActionProp.md) |  | [optional] 
 **PasswordGenerator** | Pointer to **string** | Specifies the name of the password generator that is used with the associated password policy. | [optional] 
@@ -55,7 +55,8 @@ Name | Type | Description | Notes
 **LastLoginIPAddressAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the IP address of the client from which the user last authenticated. | [optional] 
 **LastLoginTimeAttribute** | Pointer to **string** | Specifies the name or OID of the attribute type that is used to hold the last login time for users with the associated password policy. | [optional] 
 **LastLoginTimeFormat** | Pointer to **string** | Specifies the format string that is used to generate the last login time value for users with the associated password policy. Last login time values will be written using the UTC (also known as GMT, or Greenwich Mean Time) time zone. | [optional] 
-**PreviousLastLoginTimeFormat** | Pointer to **[]string** |  | [optional] 
+**PreviousLastLoginTimeFormat** | Pointer to **[]string** | Specifies the format string(s) that might have been used with the last login time at any point in the past for users associated with the password policy. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -1360,6 +1361,31 @@ SetPreviousLastLoginTimeFormat sets PreviousLastLoginTimeFormat field to given v
 `func (o *PasswordPolicyResponse) HasPreviousLastLoginTimeFormat() bool`
 
 HasPreviousLastLoginTimeFormat returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *PasswordPolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *PasswordPolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *PasswordPolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *PasswordPolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

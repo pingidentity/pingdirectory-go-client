@@ -173,6 +173,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jmx-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
     jmx-connection-handler-shared:
       type: object
       properties:
@@ -210,14 +211,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
         deniedClient:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
       required:
       - schemas
       - listenPort
@@ -246,6 +247,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldap-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
     ldap-connection-handler-shared:
       type: object
       properties:
@@ -259,8 +261,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
+          description: >-
+              Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
         listenPort:
           type: integer
           description: >-
@@ -327,14 +329,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
+          description: >-
+              Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
         sslCipherSuite:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
+          description: >-
+              Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
         maxBlockedWriteTimeLimit:
           type: string
           description: >-
@@ -363,14 +365,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
         deniedClient:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
       required:
       - schemas
       - listenPort
@@ -399,6 +401,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
     ldif-connection-handler-shared:
       type: object
       properties:
@@ -412,14 +415,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
         deniedClient:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
         ldifDirectory:
           type: string
           description: >-
@@ -465,6 +468,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/http-connection-handler-shared'
+      - $ref: '#/components/schemas/meta'
     http-connection-handler-shared:
       type: object
       properties:
@@ -494,32 +498,32 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies information about servlets that will be provided via this connection handler.
+          description: >-
+              Specifies information about servlets that will be provided via this connection handler.
         webApplicationExtension:
           type: array
           items:
             type: string
-            description: >-
-                Specifies information about web applications that will be provided via this connection handler.
+          description: >-
+              Specifies information about web applications that will be provided via this connection handler.
         httpOperationLogPublisher:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of HTTP operation loggers that should be used to log information about requests and responses for operations processed through this HTTP Connection Handler.
+          description: >-
+              Specifies the set of HTTP operation loggers that should be used to log information about requests and responses for operations processed through this HTTP Connection Handler.
         sslProtocol:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the SSL protocols that are allowed for use in SSL communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
+          description: >-
+              Specifies the names of the SSL protocols that are allowed for use in SSL communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
         sslCipherSuite:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the SSL cipher suites that are allowed for use in SSL communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
+          description: >-
+              Specifies the names of the SSL cipher suites that are allowed for use in SSL communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
         keyManagerProvider:
           type: string
           description: >-
@@ -572,8 +576,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies HTTP header fields and values added to response headers for all requests.
+          description: >-
+              Specifies HTTP header fields and values added to response headers for all requests.
         useCorrelationIDHeader:
           type: boolean
           description: >-
@@ -586,8 +590,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
+          description: >-
+              Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         sslClientAuthPolicy:
           $ref: '#/components/schemas/Enumconnection-handler-sslClientAuthPolicyProp'
         description:
@@ -602,14 +606,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
         deniedClient:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
+          description: >-
+              Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
       required:
       - schemas
       - listenPort
@@ -653,6 +657,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

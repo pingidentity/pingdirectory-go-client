@@ -27,6 +27,7 @@ type JsonAttributeConstraintsResponse struct {
 	AttributeType string `json:"attributeType"`
 	// Indicates whether JSON objects stored as values of attributes with the associated attribute-type will be permitted to include fields for which there is no subordinate json-field-constraints definition. If unnamed fields are allowed, then no constraints will be imposed on the values of those fields. However, if unnamed fields are not allowed, then the server will reject any attempt to store a JSON object with a field for which there is no corresponding json-fields-constraints definition.
 	AllowUnnamedFields *bool `json:"allowUnnamedFields,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewJsonAttributeConstraintsResponse instantiates a new JsonAttributeConstraintsResponse object
@@ -224,6 +225,38 @@ func (o *JsonAttributeConstraintsResponse) SetAllowUnnamedFields(v bool) {
 	o.AllowUnnamedFields = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *JsonAttributeConstraintsResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonAttributeConstraintsResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *JsonAttributeConstraintsResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *JsonAttributeConstraintsResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o JsonAttributeConstraintsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -243,6 +276,9 @@ func (o JsonAttributeConstraintsResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AllowUnnamedFields) {
 		toSerialize["allowUnnamedFields"] = o.AllowUnnamedFields
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

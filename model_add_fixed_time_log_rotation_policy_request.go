@@ -19,6 +19,7 @@ type AddFixedTimeLogRotationPolicyRequest struct {
 	// Name of the new Log Rotation Policy
 	PolicyName string `json:"policyName"`
 	Schemas []EnumfixedTimeLogRotationPolicySchemaUrn `json:"schemas"`
+	// Specifies the time of day at which log rotation should occur.
 	TimeOfDay []string `json:"timeOfDay"`
 	// A description for this Log Rotation Policy
 	Description *string `json:"description,omitempty"`

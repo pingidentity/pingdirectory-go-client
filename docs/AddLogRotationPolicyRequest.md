@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsizeLimitLogRotationPolicySchemaUrn**](EnumsizeLimitLogRotationPolicySchemaUrn.md) |  | 
 **RotationInterval** | **string** | Specifies the time interval between rotations. | 
 **Description** | Pointer to **string** | A description for this Log Rotation Policy | [optional] 
-**TimeOfDay** | **[]string** |  | 
+**TimeOfDay** | **[]string** | Specifies the time of day at which log rotation should occur. | 
 **FileSizeLimit** | **string** | Specifies the maximum size that a log file can reach before it is rotated. | 
 
 ## Methods

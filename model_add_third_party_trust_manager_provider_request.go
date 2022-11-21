@@ -21,6 +21,7 @@ type AddThirdPartyTrustManagerProviderRequest struct {
 	Schemas []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`

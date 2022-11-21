@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **LogFile** | **string** | Specifies the log file in which the change notification messages will be written. | 
 **Description** | Pointer to **string** | A description for this Change Subscription Handler | [optional] 
 **Enabled** | **bool** | Indicates whether this change subscription handler is enabled within the server. | 
-**ChangeSubscription** | Pointer to **[]string** |  | [optional] 
+**ChangeSubscription** | Pointer to **[]string** | The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server. | [optional] 
 
 ## Methods
 

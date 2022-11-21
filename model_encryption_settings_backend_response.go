@@ -17,6 +17,7 @@ import (
 // EncryptionSettingsBackendResponse struct for EncryptionSettingsBackendResponse
 type EncryptionSettingsBackendResponse struct {
 	Schemas []EnumencryptionSettingsBackendSchemaUrn `json:"schemas"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`

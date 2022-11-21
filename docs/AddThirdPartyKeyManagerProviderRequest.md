@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ProviderName** | **string** | Name of the new Key Manager Provider | 
 **Schemas** | [**[]EnumthirdPartyKeyManagerProviderSchemaUrn**](EnumthirdPartyKeyManagerProviderSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Key Manager Provider. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Key Manager Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Key Manager Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Key Manager Provider is enabled for use. | 
 

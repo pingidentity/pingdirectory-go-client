@@ -19,6 +19,7 @@ type AddConjurExternalServerRequest struct {
 	// Name of the new External Server
 	ServerName string `json:"serverName"`
 	Schemas []EnumconjurExternalServerSchemaUrn `json:"schemas"`
+	// The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://conjur.example.com:8443/\".
 	ConjurServerBaseURI []string `json:"conjurServerBaseURI"`
 	// The mechanism used to authenticate to the Conjur server.
 	ConjurAuthenticationMethod string `json:"conjurAuthenticationMethod"`

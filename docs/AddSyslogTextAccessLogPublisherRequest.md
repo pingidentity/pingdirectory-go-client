@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumsyslogTextAccessLogPublisherSchemaUrn**](EnumsyslogTextAccessLogPublisherSchemaUrn.md) |  | 
-**SyslogExternalServer** | **[]string** |  | 
+**SyslogExternalServer** | **[]string** | The syslog server to which messages should be sent. | 
 **SyslogFacility** | [**EnumlogPublisherSyslogFacilityProp**](EnumlogPublisherSyslogFacilityProp.md) |  | 
 **SyslogSeverity** | [**EnumlogPublisherSyslogSeverityProp**](EnumlogPublisherSyslogSeverityProp.md) |  | 
 **SyslogMessageHostName** | Pointer to **string** | The local host name that will be included in syslog messages that are logged by this Syslog Text Access Log Publisher. | [optional] 

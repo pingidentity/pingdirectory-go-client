@@ -17,10 +17,11 @@ Name | Type | Description | Notes
 **AlertLevel** | Pointer to [**EnumgaugeAlertLevelProp**](EnumgaugeAlertLevelProp.md) |  | [optional] 
 **UpdateInterval** | Pointer to **string** | The frequency with which this Gauge is updated. | [optional] 
 **SamplesPerUpdateInterval** | Pointer to **int32** | Indicates the number of times the monitor data source value will be collected during the update interval. | [optional] 
-**IncludeResource** | Pointer to **[]string** |  | [optional] 
-**ExcludeResource** | Pointer to **[]string** |  | [optional] 
+**IncludeResource** | Pointer to **[]string** | Specifies set of resources to be monitored. | [optional] 
+**ExcludeResource** | Pointer to **[]string** | Specifies resources to exclude from being monitored. | [optional] 
 **ServerUnavailableSeverityLevel** | Pointer to [**EnumgaugeServerUnavailableSeverityLevelProp**](EnumgaugeServerUnavailableSeverityLevelProp.md) |  | [optional] 
 **ServerDegradedSeverityLevel** | Pointer to [**EnumgaugeServerDegradedSeverityLevelProp**](EnumgaugeServerDegradedSeverityLevelProp.md) |  | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **CriticalExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;critical&#39;. | [optional] 
 **MajorExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;major&#39;. | [optional] 
 **MinorExitValue** | Pointer to **float32** | A value that is used to determine whether the current monitored value indicates this gauge&#39;s severity should no longer be &#39;minor&#39;. | [optional] 
@@ -449,6 +450,31 @@ SetServerDegradedSeverityLevel sets ServerDegradedSeverityLevel field to given v
 `func (o *AddGauge200Response) HasServerDegradedSeverityLevel() bool`
 
 HasServerDegradedSeverityLevel returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddGauge200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddGauge200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddGauge200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddGauge200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetCriticalExitValue
 

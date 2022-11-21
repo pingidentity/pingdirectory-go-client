@@ -169,6 +169,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/simple-search-reference-criteria-shared'
+      - $ref: '#/components/schemas/meta'
     simple-search-reference-criteria-shared:
       type: object
       properties:
@@ -186,26 +187,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
+          description: >-
+              Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
         anyIncludedReferenceControl:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OID of a control that may be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain at least one of those controls.
+          description: >-
+              Specifies the OID of a control that may be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain at least one of those controls.
         notAllIncludedReferenceControl:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
+          description: >-
+              Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
         noneIncludedReferenceControl:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls.
+          description: >-
+              Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls.
         description:
           type: string
           description: >-
@@ -236,6 +237,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/aggregate-search-reference-criteria-shared'
+      - $ref: '#/components/schemas/meta'
     aggregate-search-reference-criteria-shared:
       type: object
       properties:
@@ -249,26 +251,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
+          description: >-
+              Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
         anyIncludedSearchReferenceCriteria:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
+          description: >-
+              Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
         notAllIncludedSearchReferenceCriteria:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a search reference criteria object that should not match the associated search result reference in order to match the aggregate search reference criteria. If one or more not-all-included search reference criteria objects are provided, then a search result reference must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate search reference criteria.
+          description: >-
+              Specifies a search reference criteria object that should not match the associated search result reference in order to match the aggregate search reference criteria. If one or more not-all-included search reference criteria objects are provided, then a search result reference must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate search reference criteria.
         noneIncludedSearchReferenceCriteria:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a search reference criteria object that must not match the associated search result reference in order to match the aggregate search reference criteria. If one or more none-included search reference criteria objects are provided, then a search result reference must not match any of them in order to match the aggregate search reference criteria.
+          description: >-
+              Specifies a search reference criteria object that must not match the associated search result reference in order to match the aggregate search reference criteria. If one or more none-included search reference criteria objects are provided, then a search result reference must not match any of them in order to match the aggregate search reference criteria.
         description:
           type: string
           description: >-
@@ -299,6 +301,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-search-reference-criteria-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-search-reference-criteria-shared:
       type: object
       properties:
@@ -316,8 +319,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -356,6 +359,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

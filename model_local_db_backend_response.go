@@ -37,6 +37,7 @@ type LocalDbBackendResponse struct {
 	DbDirectory string `json:"dbDirectory"`
 	// Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend.
 	DbDirectoryPermissions *string `json:"dbDirectoryPermissions,omitempty"`
+	// Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage.
 	CompactCommonParentDN []string `json:"compactCommonParentDN,omitempty"`
 	// Indicates whether the backend should attempt to compress entries before storing them in the database.
 	CompressEntries *bool `json:"compressEntries,omitempty"`
@@ -58,6 +59,7 @@ type LocalDbBackendResponse struct {
 	DbLogFileMax *string `json:"dbLogFileMax,omitempty"`
 	// Specifies the log level that should be used by the database when it is writing information into the je.info file.
 	DbLoggingLevel *string `json:"dbLoggingLevel,omitempty"`
+	// Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
 	JeProperty []string `json:"jeProperty,omitempty"`
 	// Specifies the percentage of JVM memory to allocate to the database cache.
 	DbCachePercent *int32 `json:"dbCachePercent,omitempty"`
@@ -112,6 +114,7 @@ type LocalDbBackendResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
 	Enabled bool `json:"enabled"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
 	SetDegradedAlertWhenDisabled *bool `json:"setDegradedAlertWhenDisabled,omitempty"`
@@ -121,6 +124,7 @@ type LocalDbBackendResponse struct {
 	BackupFilePermissions *string `json:"backupFilePermissions,omitempty"`
 	// Specifies a notification manager for changes resulting from operations processed through this Backend
 	NotificationManager *string `json:"notificationManager,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewLocalDbBackendResponse instantiates a new LocalDbBackendResponse object
@@ -2036,6 +2040,38 @@ func (o *LocalDbBackendResponse) SetNotificationManager(v string) {
 	o.NotificationManager = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *LocalDbBackendResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LocalDbBackendResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *LocalDbBackendResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *LocalDbBackendResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o LocalDbBackendResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -2220,6 +2256,9 @@ func (o LocalDbBackendResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.NotificationManager) {
 		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

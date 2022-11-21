@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumhostSystemMonitorProviderSchemaUrn**](EnumhostSystemMonitorProviderSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicates whether the Host System Monitor Provider is enabled for use. | 
-**DiskDevices** | Pointer to **[]string** |  | [optional] 
-**NetworkDevices** | Pointer to **[]string** |  | [optional] 
+**DiskDevices** | Pointer to **[]string** | Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d. | [optional] 
+**NetworkDevices** | Pointer to **[]string** | Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i. | [optional] 
 **SystemUtilizationMonitorLogDirectory** | **string** | Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process. | 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 

@@ -23,33 +23,56 @@ type SimpleRequestCriteriaResponse struct {
 	OperationOrigin []EnumrequestCriteriaOperationOriginProp `json:"operationOrigin,omitempty"`
 	// Specifies a connection criteria object that must match the associated client connection for operations included in this Simple Request Criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
+	// Specifies the OID of a control that must be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must contain all of those controls.
 	AllIncludedRequestControl []string `json:"allIncludedRequestControl,omitempty"`
+	// Specifies the OID of a control that may be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must contain at least one of those controls.
 	AnyIncludedRequestControl []string `json:"anyIncludedRequestControl,omitempty"`
+	// Specifies the OID of a control that should not be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must not contain at least one of those controls (that is, the request may contain zero or more of those controls, but not all of them).
 	NotAllIncludedRequestControl []string `json:"notAllIncludedRequestControl,omitempty"`
+	// Specifies the OID of a control that must not be present in the request from the client for operations included in this Simple Request Criteria. If any control OIDs are provided, then the request must not contain any of those controls.
 	NoneIncludedRequestControl []string `json:"noneIncludedRequestControl,omitempty"`
+	// Specifies a base DN below which targeted entries may exist for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations.
 	IncludedTargetEntryDN []string `json:"includedTargetEntryDN,omitempty"`
+	// Specifies a base DN below which targeted entries may not exist for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations.
 	ExcludedTargetEntryDN []string `json:"excludedTargetEntryDN,omitempty"`
+	// Specifies a search filter that must match the target entry for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any filters are provided, then the target entry must match all of those filters.
 	AllIncludedTargetEntryFilter []string `json:"allIncludedTargetEntryFilter,omitempty"`
+	// Specifies a search filter that may match the target entry for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any filters are provided, then the target entry must match at least one of those filters.
 	AnyIncludedTargetEntryFilter []string `json:"anyIncludedTargetEntryFilter,omitempty"`
+	// Specifies a search filter that should not match the target entry for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any filters are provided, then the target entry must not match at least one of those filters (that is, the request may match zero or more of those filters, but not of all of them).
 	NotAllIncludedTargetEntryFilter []string `json:"notAllIncludedTargetEntryFilter,omitempty"`
+	// Specifies a search filter that must not match the target entry for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any filters are provided, then the target entry must not match any of those filters.
 	NoneIncludedTargetEntryFilter []string `json:"noneIncludedTargetEntryFilter,omitempty"`
+	// Specifies the DN of a group in which the user associated with the target entry must be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must be a member of all of those groups.
 	AllIncludedTargetEntryGroupDN []string `json:"allIncludedTargetEntryGroupDN,omitempty"`
+	// Specifies the DN of a group in which the user associated with the target entry may be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must be a member of at least one of those groups.
 	AnyIncludedTargetEntryGroupDN []string `json:"anyIncludedTargetEntryGroupDN,omitempty"`
+	// Specifies the DN of a group in which the user associated with the target entry should not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of at least one of those groups (that is, the target entry may be a member of zero or more of those groups, but not all of them).
 	NotAllIncludedTargetEntryGroupDN []string `json:"notAllIncludedTargetEntryGroupDN,omitempty"`
+	// Specifies the DN of a group in which the user associated with the target entry must not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of any of those groups.
 	NoneIncludedTargetEntryGroupDN []string `json:"noneIncludedTargetEntryGroupDN,omitempty"`
 	TargetBindType []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
+	// Specifies the name of a SASL mechanism for bind requests included in this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
 	IncludedTargetSASLMechanism []string `json:"includedTargetSASLMechanism,omitempty"`
+	// Specifies the name of a SASL mechanism for bind requests excluded from this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
 	ExcludedTargetSASLMechanism []string `json:"excludedTargetSASLMechanism,omitempty"`
+	// Specifies the name or OID of an attribute type which must be targeted by requests included in this Simple Request Criteria. This will only be taken into account for add, compare, modify, modify DN, and search operations. It will be ignored for abandon, bind, delete, extended, and unbind operations.
 	IncludedTargetAttribute []string `json:"includedTargetAttribute,omitempty"`
+	// Specifies the name or OID of an attribute type which must not be targeted by requests included in this Simple Request Criteria. This will only be taken into account for add, compare, modify, modify DN, and search operations. It will be ignored for abandon, bind, delete, extended, and unbind operations.
 	ExcludedTargetAttribute []string `json:"excludedTargetAttribute,omitempty"`
+	// Specifies the request OID for extended requests included in this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
 	IncludedExtendedOperationOID []string `json:"includedExtendedOperationOID,omitempty"`
+	// Specifies the request OID for extended requests excluded from this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
 	ExcludedExtendedOperationOID []string `json:"excludedExtendedOperationOID,omitempty"`
 	IncludedSearchScope []EnumrequestCriteriaIncludedSearchScopeProp `json:"includedSearchScope,omitempty"`
 	UsingAdministrativeSessionWorkerThread *EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp `json:"usingAdministrativeSessionWorkerThread,omitempty"`
+	// Specifies an application name for requests included in this Simple Request Criteria.
 	IncludedApplicationName []string `json:"includedApplicationName,omitempty"`
+	// Specifies an application name for requests excluded from this Simple Request Criteria.
 	ExcludedApplicationName []string `json:"excludedApplicationName,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSimpleRequestCriteriaResponse instantiates a new SimpleRequestCriteriaResponse object
@@ -1047,6 +1070,38 @@ func (o *SimpleRequestCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SimpleRequestCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SimpleRequestCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SimpleRequestCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o SimpleRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1141,6 +1196,9 @@ func (o SimpleRequestCriteriaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

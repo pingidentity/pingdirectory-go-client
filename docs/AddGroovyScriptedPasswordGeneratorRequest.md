@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **GeneratorName** | **string** | Name of the new Password Generator | 
 **Schemas** | [**[]EnumgroovyScriptedPasswordGeneratorSchemaUrn**](EnumgroovyScriptedPasswordGeneratorSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Generator. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Password Generator. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 
 

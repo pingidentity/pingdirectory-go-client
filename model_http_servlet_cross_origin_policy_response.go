@@ -21,14 +21,19 @@ type HttpServletCrossOriginPolicyResponse struct {
 	Schemas []EnumhttpServletCrossOriginPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this HTTP Servlet Cross Origin Policy
 	Description *string `json:"description,omitempty"`
+	// A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc.
 	CorsAllowedMethods []string `json:"corsAllowedMethods,omitempty"`
+	// A list of origins that are allowed to execute cross-origin requests.
 	CorsAllowedOrigins []string `json:"corsAllowedOrigins,omitempty"`
+	// A list of HTTP headers other than the simple response headers that browsers are allowed to access.
 	CorsExposedHeaders []string `json:"corsExposedHeaders,omitempty"`
+	// A list of HTTP headers that are supported by the resource and can be specified in a cross-origin request.
 	CorsAllowedHeaders []string `json:"corsAllowedHeaders,omitempty"`
 	// The maximum amount of time that a preflight request can be cached by a client.
 	CorsPreflightMaxAge *string `json:"corsPreflightMaxAge,omitempty"`
 	// Indicates whether the servlet extension allows CORS requests with username/password credentials.
 	CorsAllowCredentials *bool `json:"corsAllowCredentials,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewHttpServletCrossOriginPolicyResponse instantiates a new HttpServletCrossOriginPolicyResponse object
@@ -329,6 +334,38 @@ func (o *HttpServletCrossOriginPolicyResponse) SetCorsAllowCredentials(v bool) {
 	o.CorsAllowCredentials = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *HttpServletCrossOriginPolicyResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpServletCrossOriginPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *HttpServletCrossOriginPolicyResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *HttpServletCrossOriginPolicyResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o HttpServletCrossOriginPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -357,6 +394,9 @@ func (o HttpServletCrossOriginPolicyResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.CorsAllowCredentials) {
 		toSerialize["corsAllowCredentials"] = o.CorsAllowCredentials
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -25,10 +25,13 @@ type FifoEntryCacheResponse struct {
 	MaxEntries *int32 `json:"maxEntries,omitempty"`
 	// Specifies that the cache should only store entries which are accessed much more frequently than the average entry. The cache will observe attempts to place entries in the cache and compare an entry's accesses to the average entry's.
 	OnlyCacheFrequentlyAccessed *bool `json:"onlyCacheFrequentlyAccessed,omitempty"`
+	// The set of filters that define the entries that should be included in the cache.
 	IncludeFilter []string `json:"includeFilter,omitempty"`
+	// The set of filters that define the entries that should be excluded from the cache.
 	ExcludeFilter []string `json:"excludeFilter,omitempty"`
 	// Specifies the minimum number of attribute values (optionally across a specified subset of attributes as defined in the min-cache-entry-attributes property) for entries that should be held in the cache. Entries with fewer than this number of attribute values will be excluded from the cache.
 	MinCacheEntryValueCount *int32 `json:"minCacheEntryValueCount,omitempty"`
+	// Specifies the names of the attribute types for which the min-cache-entry-value-count property should apply. If no attribute types are specified, then all user attributes will be examined.
 	MinCacheEntryAttribute []string `json:"minCacheEntryAttribute,omitempty"`
 	// A description for this Entry Cache
 	Description *string `json:"description,omitempty"`
@@ -38,6 +41,7 @@ type FifoEntryCacheResponse struct {
 	CacheLevel int32 `json:"cacheLevel"`
 	// Indicates whether the entry cache should be updated with entries that have been returned to the client during the course of processing an unindexed search.
 	CacheUnindexedSearchResults *bool `json:"cacheUnindexedSearchResults,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewFifoEntryCacheResponse instantiates a new FifoEntryCacheResponse object
@@ -452,6 +456,38 @@ func (o *FifoEntryCacheResponse) SetCacheUnindexedSearchResults(v bool) {
 	o.CacheUnindexedSearchResults = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *FifoEntryCacheResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FifoEntryCacheResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *FifoEntryCacheResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *FifoEntryCacheResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o FifoEntryCacheResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -492,6 +528,9 @@ func (o FifoEntryCacheResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.CacheUnindexedSearchResults) {
 		toSerialize["cacheUnindexedSearchResults"] = o.CacheUnindexedSearchResults
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -25,19 +25,24 @@ type PasswordPolicyResponse struct {
 	RequireSecureAuthentication *bool `json:"requireSecureAuthentication,omitempty"`
 	// Indicates whether users with the associated password policy are required to change their password in a secure manner that does not expose the credentials.
 	RequireSecurePasswordChanges *bool `json:"requireSecurePasswordChanges,omitempty"`
+	// Specifies the names of the account status notification handlers that are used with the associated password storage scheme.
 	AccountStatusNotificationHandler []string `json:"accountStatusNotificationHandler,omitempty"`
 	StateUpdateFailurePolicy *EnumpasswordPolicyStateUpdateFailurePolicyProp `json:"stateUpdateFailurePolicy,omitempty"`
 	// Indicates whether to enable debugging for the password policy state.
 	EnableDebug *bool `json:"enableDebug,omitempty"`
 	// Specifies the attribute type used to hold user passwords.
 	PasswordAttribute string `json:"passwordAttribute"`
+	// Specifies the names of the password storage schemes that are used to encode clear-text passwords for this password policy.
 	DefaultPasswordStorageScheme []string `json:"defaultPasswordStorageScheme"`
+	// Specifies the names of the password storage schemes that are considered deprecated for this password policy.
 	DeprecatedPasswordStorageScheme []string `json:"deprecatedPasswordStorageScheme,omitempty"`
 	// Indicates whether user entries can have multiple distinct values for the password attribute.
 	AllowMultiplePasswordValues *bool `json:"allowMultiplePasswordValues,omitempty"`
 	// Indicates whether users can change their passwords by providing a pre-encoded value.
 	AllowPreEncodedPasswords *bool `json:"allowPreEncodedPasswords,omitempty"`
+	// Specifies the names of the password validators that are used with the associated password storage scheme.
 	PasswordValidator []string `json:"passwordValidator,omitempty"`
+	// Specifies the names of the password validators that should be invoked for bind operations.
 	BindPasswordValidator []string `json:"bindPasswordValidator,omitempty"`
 	// Indicates how frequently password validation should be performed during bind operations for each user to whom this password policy is assigned.
 	MinimumBindPasswordValidationFrequency *string `json:"minimumBindPasswordValidationFrequency,omitempty"`
@@ -106,7 +111,9 @@ type PasswordPolicyResponse struct {
 	LastLoginTimeAttribute *string `json:"lastLoginTimeAttribute,omitempty"`
 	// Specifies the format string that is used to generate the last login time value for users with the associated password policy. Last login time values will be written using the UTC (also known as GMT, or Greenwich Mean Time) time zone.
 	LastLoginTimeFormat *string `json:"lastLoginTimeFormat,omitempty"`
+	// Specifies the format string(s) that might have been used with the last login time at any point in the past for users associated with the password policy.
 	PreviousLastLoginTimeFormat []string `json:"previousLastLoginTimeFormat,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewPasswordPolicyResponse instantiates a new PasswordPolicyResponse object
@@ -1769,6 +1776,38 @@ func (o *PasswordPolicyResponse) SetPreviousLastLoginTimeFormat(v []string) {
 	o.PreviousLastLoginTimeFormat = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *PasswordPolicyResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PasswordPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *PasswordPolicyResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *PasswordPolicyResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o PasswordPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1926,6 +1965,9 @@ func (o PasswordPolicyResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.PreviousLastLoginTimeFormat) {
 		toSerialize["previousLastLoginTimeFormat"] = o.PreviousLastLoginTimeFormat
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -165,6 +165,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/user-rest-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
     user-rest-resource-type-shared:
       type: object
       properties:
@@ -202,8 +203,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
+          description: >-
+              Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
         searchBaseDN:
           type: string
           description: >-
@@ -212,8 +213,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
+          description: >-
+              The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
         parentDN:
           type: string
           description: >-
@@ -234,14 +235,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
+          description: >-
+              Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
         updateConstructedAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
+          description: >-
+              Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
         displayName:
           type: string
           description: >-
@@ -300,6 +301,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/group-rest-resource-type-shared'
+      - $ref: '#/components/schemas/meta'
     group-rest-resource-type-shared:
       type: object
       properties:
@@ -337,8 +339,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
+          description: >-
+              Specifies an auxiliary LDAP object class that should be exposed by this REST Resource Type.
         searchBaseDN:
           type: string
           description: >-
@@ -347,8 +349,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
+          description: >-
+              The set of LDAP filters that define the LDAP entries that should be included in this REST Resource Type.
         parentDN:
           type: string
           description: >-
@@ -369,14 +371,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
+          description: >-
+              Specifies an attribute whose values are to be constructed when a new resource is created. The values are only set at creation time. Subsequent modifications to attributes in the constructed attribute value-pattern are not propagated here.
         updateConstructedAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
+          description: >-
+              Specifies an attribute whose values are to be constructed when a resource is updated. The constructed values replace any existing values of the attribute.
         displayName:
           type: string
           description: >-
@@ -434,6 +436,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

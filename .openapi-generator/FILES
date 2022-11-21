@@ -1322,6 +1322,8 @@ docs/Md5PasswordStorageSchemeResponse.md
 docs/MemberOfServerGroupVirtualAttributeResponse.md
 docs/MemberVirtualAttributeResponse.md
 docs/MemoryUsageMonitorProviderResponse.md
+docs/Meta.md
+docs/MetaMeta.md
 docs/MetricsBackendResponse.md
 docs/MetricsEngineServerInstanceResponse.md
 docs/MirrorVirtualAttributeResponse.md
@@ -2728,6 +2730,8 @@ model_md5_password_storage_scheme_response.go
 model_member_of_server_group_virtual_attribute_response.go
 model_member_virtual_attribute_response.go
 model_memory_usage_monitor_provider_response.go
+model_meta.go
+model_meta_meta.go
 model_metrics_backend_response.go
 model_metrics_engine_server_instance_response.go
 model_mirror_virtual_attribute_response.go

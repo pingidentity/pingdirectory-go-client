@@ -99,26 +99,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of TLS protocols that are allowed for use in secure communication.
+          description: >-
+              Specifies the names of TLS protocols that are allowed for use in secure communication.
         sslCipherSuite:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the TLS cipher suites that are allowed for use in secure communication.
+          description: >-
+              Specifies the names of the TLS cipher suites that are allowed for use in secure communication.
         outboundSSLProtocol:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the TLS protocols that will be enabled for outbound connections initiated by the Directory Server.
+          description: >-
+              Specifies the names of the TLS protocols that will be enabled for outbound connections initiated by the Directory Server.
         outboundSSLCipherSuite:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the TLS cipher suites that will be enabled for outbound connections initiated by the Directory Server.
+          description: >-
+              Specifies the names of the TLS cipher suites that will be enabled for outbound connections initiated by the Directory Server.
         enableSha1CipherSuites:
           type: boolean
           description: >-
@@ -162,6 +162,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

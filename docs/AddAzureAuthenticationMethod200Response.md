@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **TenantID** | **string** | The tenant ID to use to authenticate. | 
 **ClientID** | **string** | The client ID to use to authenticate. | 
 **Description** | Pointer to **string** | A description for this Azure Authentication Method | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **ClientSecret** | **string** | The client secret to use to authenticate. | 
 **Username** | **string** | The username for the user to authenticate. | 
 **Password** | **string** | The password for the user to authenticate. | 
@@ -136,6 +137,31 @@ SetDescription sets Description field to given value.
 `func (o *AddAzureAuthenticationMethod200Response) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddAzureAuthenticationMethod200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddAzureAuthenticationMethod200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddAzureAuthenticationMethod200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddAzureAuthenticationMethod200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetClientSecret
 

@@ -31,7 +31,9 @@ type AddJmxConnectionHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
+	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
+	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
 }
 

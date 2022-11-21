@@ -19,6 +19,7 @@ type SyslogJsonAuditLogPublisherResponse struct {
 	// Name of the Log Publisher
 	Id string `json:"id"`
 	Schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn `json:"schemas"`
+	// The syslog server to which messages should be sent.
 	SyslogExternalServer []string `json:"syslogExternalServer"`
 	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
 	SyslogSeverity EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`
@@ -37,7 +38,9 @@ type SyslogJsonAuditLogPublisherResponse struct {
 	IncludeOperationPurposeRequestControl *bool `json:"includeOperationPurposeRequestControl,omitempty"`
 	// Indicates whether to include information about any intermediate client request control that may have been included in the request.
 	IncludeIntermediateClientRequestControl *bool `json:"includeIntermediateClientRequestControl,omitempty"`
+	// Specifies the names of any attribute types that should have their values obscured in the audit log because they may be considered sensitive.
 	ObscureAttribute []string `json:"obscureAttribute,omitempty"`
+	// Specifies the names of any attribute types that should be excluded from the audit log.
 	ExcludeAttribute []string `json:"excludeAttribute,omitempty"`
 	// Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
 	SuppressInternalOperations *bool `json:"suppressInternalOperations,omitempty"`
@@ -96,6 +99,7 @@ type SyslogJsonAuditLogPublisherResponse struct {
 	// Indicates whether the Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSyslogJsonAuditLogPublisherResponse instantiates a new SyslogJsonAuditLogPublisherResponse object
@@ -1481,6 +1485,38 @@ func (o *SyslogJsonAuditLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogP
 	o.LoggingErrorBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SyslogJsonAuditLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SyslogJsonAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SyslogJsonAuditLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SyslogJsonAuditLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o SyslogJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1614,6 +1650,9 @@ func (o SyslogJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.LoggingErrorBehavior) {
 		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

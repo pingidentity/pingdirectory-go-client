@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumsizeLimitLogRotationPolicySchemaUrn**](EnumsizeLimitLogRotationPolicySchemaUrn.md) |  | 
 **RotationInterval** | **string** | Specifies the time interval between rotations. | 
 **Description** | Pointer to **string** | A description for this Log Rotation Policy | [optional] 
-**TimeOfDay** | **[]string** |  | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**TimeOfDay** | **[]string** | Specifies the time of day at which log rotation should occur. | 
 **FileSizeLimit** | **string** | Specifies the maximum size that a log file can reach before it is rotated. | 
 
 ## Methods
@@ -114,6 +115,31 @@ SetDescription sets Description field to given value.
 `func (o *AddLogRotationPolicy200Response) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddLogRotationPolicy200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddLogRotationPolicy200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddLogRotationPolicy200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddLogRotationPolicy200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetTimeOfDay
 

@@ -19,6 +19,7 @@ type AddVaultExternalServerRequest struct {
 	// Name of the new External Server
 	ServerName string `json:"serverName"`
 	Schemas []EnumvaultExternalServerSchemaUrn `json:"schemas"`
+	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
 	VaultServerBaseURI []string `json:"vaultServerBaseURI"`
 	// The mechanism used to authenticate to the Vault server.
 	VaultAuthenticationMethod string `json:"vaultAuthenticationMethod"`

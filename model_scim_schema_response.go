@@ -25,6 +25,7 @@ type ScimSchemaResponse struct {
 	SchemaURN string `json:"schemaURN"`
 	// The human readable name for this SCIM Schema.
 	DisplayName *string `json:"displayName,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewScimSchemaResponse instantiates a new ScimSchemaResponse object
@@ -190,6 +191,38 @@ func (o *ScimSchemaResponse) SetDisplayName(v string) {
 	o.DisplayName = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ScimSchemaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ScimSchemaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ScimSchemaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ScimSchemaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ScimSchemaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -206,6 +239,9 @@ func (o ScimSchemaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DisplayName) {
 		toSerialize["displayName"] = o.DisplayName
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

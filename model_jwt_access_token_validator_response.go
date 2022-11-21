@@ -20,6 +20,7 @@ type JwtAccessTokenValidatorResponse struct {
 	Id string `json:"id"`
 	Schemas []EnumjwtAccessTokenValidatorSchemaUrn `json:"schemas"`
 	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
+	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
 	JwksEndpointPath *string `json:"jwksEndpointPath,omitempty"`
@@ -45,6 +46,7 @@ type JwtAccessTokenValidatorResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Access Token Validator is enabled for use in Directory Server.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewJwtAccessTokenValidatorResponse instantiates a new JwtAccessTokenValidatorResponse object
@@ -559,6 +561,38 @@ func (o *JwtAccessTokenValidatorResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *JwtAccessTokenValidatorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JwtAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *JwtAccessTokenValidatorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *JwtAccessTokenValidatorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o JwtAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -611,6 +645,9 @@ func (o JwtAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

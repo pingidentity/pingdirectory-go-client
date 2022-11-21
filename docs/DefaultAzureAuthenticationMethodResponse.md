@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **TenantID** | Pointer to **string** | The tenant ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_TENANT_ID environment variable. | [optional] 
 **ClientID** | Pointer to **string** | The client ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_CLIENT_ID | [optional] 
 **Description** | Pointer to **string** | A description for this Azure Authentication Method | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -143,6 +144,31 @@ SetDescription sets Description field to given value.
 `func (o *DefaultAzureAuthenticationMethodResponse) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *DefaultAzureAuthenticationMethodResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *DefaultAzureAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *DefaultAzureAuthenticationMethodResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *DefaultAzureAuthenticationMethodResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnumattributeBasedLogFieldSyntaxSchemaUrn**](EnumattributeBasedLogFieldSyntaxSchemaUrn.md) |  | 
-**IncludedSensitiveField** | Pointer to **[]string** |  | [optional] 
-**ExcludedSensitiveField** | Pointer to **[]string** |  | [optional] 
+**IncludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will be considered sensitive. | [optional] 
+**ExcludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will not be considered sensitive. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Syntax | [optional] 
 **DefaultBehavior** | Pointer to [**EnumlogFieldSyntaxDefaultBehaviorProp**](EnumlogFieldSyntaxDefaultBehaviorProp.md) |  | [optional] 
-**IncludedSensitiveAttribute** | Pointer to **[]string** |  | [optional] 
-**ExcludedSensitiveAttribute** | Pointer to **[]string** |  | [optional] 
+**IncludedSensitiveAttribute** | Pointer to **[]string** | The set of attribute types that will be considered sensitive. | [optional] 
+**ExcludedSensitiveAttribute** | Pointer to **[]string** | The set of attribute types that will not be considered sensitive. | [optional] 
 
 ## Methods
 

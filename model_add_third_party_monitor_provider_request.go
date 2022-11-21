@@ -21,6 +21,7 @@ type AddThirdPartyMonitorProviderRequest struct {
 	Schemas []EnumthirdPartyMonitorProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Monitor Provider. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Monitor Provider
 	Description *string `json:"description,omitempty"`

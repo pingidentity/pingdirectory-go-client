@@ -31,6 +31,7 @@ type AddDictionaryPasswordValidatorRequest struct {
 	IgnoreTrailingNonAlphabeticCharacters *bool `json:"ignoreTrailingNonAlphabeticCharacters,omitempty"`
 	// Indicates whether to strip characters of any diacritical marks (like accents, cedillas, circumflexes, diaereses, tildes, and umlauts) they may contain. Any characters with a diacritical mark would be replaced with a base version
 	StripDiacriticalMarks *bool `json:"stripDiacriticalMarks,omitempty"`
+	// Provides a set of character substitutions that can be applied to the proposed password when checking to see if it is in the provided dictionary. Each mapping should consist of a single character followed by a colon and a list of the alternative characters that may be used in place of that character.
 	AlternativePasswordCharacterMapping []string `json:"alternativePasswordCharacterMapping,omitempty"`
 	// The maximum allowed percent of a proposed password that any single dictionary word is allowed to comprise. A value of 100 indicates that a proposed password will only be rejected if the dictionary contains the entire proposed password (after any configured transformations have been applied).
 	MaximumAllowedPercentOfPassword *int32 `json:"maximumAllowedPercentOfPassword,omitempty"`

@@ -21,6 +21,7 @@ type AddGroovyScriptedAccessLogPublisherRequest struct {
 	Schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Access Log Publisher.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Access Log Publisher. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// Indicates whether to log information about connections established to the server.
 	LogConnects *bool `json:"logConnects,omitempty"`

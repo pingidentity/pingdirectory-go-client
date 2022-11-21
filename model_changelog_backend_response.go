@@ -17,6 +17,7 @@ import (
 // ChangelogBackendResponse struct for ChangelogBackendResponse
 type ChangelogBackendResponse struct {
 	Schemas []EnumchangelogBackendSchemaUrn `json:"schemas"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id.
 	DbDirectory *string `json:"dbDirectory,omitempty"`
@@ -24,6 +25,7 @@ type ChangelogBackendResponse struct {
 	DbDirectoryPermissions *string `json:"dbDirectoryPermissions,omitempty"`
 	// Specifies the percentage of JVM memory to allocate to the changelog database cache.
 	DbCachePercent *int32 `json:"dbCachePercent,omitempty"`
+	// Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend.
 	JeProperty []string `json:"jeProperty,omitempty"`
 	// Specifies the number of changelog entries written in a single database transaction.
 	ChangelogWriteBatchSize *int32 `json:"changelogWriteBatchSize,omitempty"`
@@ -31,20 +33,31 @@ type ChangelogBackendResponse struct {
 	ChangelogPurgeBatchSize *int32 `json:"changelogPurgeBatchSize,omitempty"`
 	// Specifies the capacity of the changelog write queue in number of changes.
 	ChangelogWriteQueueCapacity *int32 `json:"changelogWriteQueueCapacity,omitempty"`
+	// Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed.
 	IndexIncludeAttribute []string `json:"indexIncludeAttribute,omitempty"`
+	// Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values \"*\" and \"+\".
 	IndexExcludeAttribute []string `json:"indexExcludeAttribute,omitempty"`
 	// Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk.
 	ChangelogMaximumAge string `json:"changelogMaximumAge"`
 	// The changelog database is allowed to grow up to this size on disk even if changes are older than the configured changelog-maximum-age.
 	TargetDatabaseSize *string `json:"targetDatabaseSize,omitempty"`
+	// The base DNs for branches in the data for which to record changes in the changelog.
 	ChangelogEntryIncludeBaseDN []string `json:"changelogEntryIncludeBaseDN,omitempty"`
+	// The base DNs for branches in the data for which no changelog records should be generated.
 	ChangelogEntryExcludeBaseDN []string `json:"changelogEntryExcludeBaseDN,omitempty"`
+	// A filter that indicates which changelog entries should actually be stored in the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
 	ChangelogEntryIncludeFilter []string `json:"changelogEntryIncludeFilter,omitempty"`
+	// A filter that indicates which changelog entries should be excluded from the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
 	ChangelogEntryExcludeFilter []string `json:"changelogEntryExcludeFilter,omitempty"`
+	// Specifies which attribute types will be included in a changelog entry for ADD and MODIFY operations.
 	ChangelogIncludeAttribute []string `json:"changelogIncludeAttribute,omitempty"`
+	// Specifies a set of attribute types that should be excluded in a changelog entry for ADD and MODIFY operations.
 	ChangelogExcludeAttribute []string `json:"changelogExcludeAttribute,omitempty"`
+	// Specifies a set of attribute types that should be included in a changelog entry for DELETE operations.
 	ChangelogDeletedEntryIncludeAttribute []string `json:"changelogDeletedEntryIncludeAttribute,omitempty"`
+	// Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations.
 	ChangelogDeletedEntryExcludeAttribute []string `json:"changelogDeletedEntryExcludeAttribute,omitempty"`
+	// Specifies which attribute types will be included in a changelog entry on every change.
 	ChangelogIncludeKeyAttribute []string `json:"changelogIncludeKeyAttribute,omitempty"`
 	// This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry.
 	ChangelogMaxBeforeAfterValues *int32 `json:"changelogMaxBeforeAfterValues,omitempty"`

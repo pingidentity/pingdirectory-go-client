@@ -21,6 +21,7 @@ type AddThirdPartyAccessTokenValidatorRequest struct {
 	Schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// Specifies the name of the Identity Mapper that should be used for associating user entries with Bearer token subject names. The claim name from which to obtain the subject (i.e. the currently logged-in user) may be configured using the subject-claim-name property.
 	IdentityMapper *string `json:"identityMapper,omitempty"`

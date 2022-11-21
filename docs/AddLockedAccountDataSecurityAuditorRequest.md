@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **AuditorName** | **string** | Name of the new Data Security Auditor | 
 **Schemas** | [**[]EnumlockedAccountDataSecurityAuditorSchemaUrn**](EnumlockedAccountDataSecurityAuditorSchemaUrn.md) |  | 
 **ReportFile** | **string** | Specifies the name of the detailed report file. | 
-**IncludeAttribute** | Pointer to **[]string** |  | [optional] 
+**IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
 **MaximumIdleTime** | Pointer to **string** | If set, users that have not authenticated for more than the specified time will be reported even if idle account lockout is not configured. Note that users may only be reported if the last login time tracking is enabled. | [optional] 
 **Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
-**AuditBackend** | Pointer to **[]string** |  | [optional] 
+**AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 
 ## Methods

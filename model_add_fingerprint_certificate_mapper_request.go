@@ -22,6 +22,7 @@ type AddFingerprintCertificateMapperRequest struct {
 	// Specifies the attribute in which to look for the fingerprint.
 	FingerprintAttribute string `json:"fingerprintAttribute"`
 	FingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp `json:"fingerprintAlgorithm"`
+	// Specifies the set of base DNs below which to search for users.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`

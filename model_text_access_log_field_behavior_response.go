@@ -20,20 +20,27 @@ type TextAccessLogFieldBehaviorResponse struct {
 	Id string `json:"id"`
 	Schemas []EnumtextAccessLogFieldBehaviorSchemaUrn `json:"schemas"`
 	PreserveField []EnumlogFieldBehaviorPreserveFieldProp `json:"preserveField,omitempty"`
+	// The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions).
 	PreserveFieldName []string `json:"preserveFieldName,omitempty"`
 	OmitField []EnumlogFieldBehaviorOmitFieldProp `json:"omitField,omitempty"`
+	// The names of any custom fields that should be omitted from log messages. This should generally only be used for fields that are not available through the omit-field property (for example, custom log fields defined in Server SDK extensions).
 	OmitFieldName []string `json:"omitFieldName,omitempty"`
 	RedactEntireValueField []EnumlogFieldBehaviorRedactEntireValueFieldProp `json:"redactEntireValueField,omitempty"`
+	// The names of any custom fields whose values should be completely redacted. This should generally only be used for fields that are not available through the redact-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
 	RedactEntireValueFieldName []string `json:"redactEntireValueFieldName,omitempty"`
 	RedactValueComponentsField []EnumlogFieldBehaviorRedactValueComponentsFieldProp `json:"redactValueComponentsField,omitempty"`
+	// The names of any custom fields for which to redact components within the value. This should generally only be used for fields that are not available through the redact-value-components-field property (for example, custom log fields defined in Server SDK extensions).
 	RedactValueComponentsFieldName []string `json:"redactValueComponentsFieldName,omitempty"`
 	TokenizeEntireValueField []EnumlogFieldBehaviorTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
+	// The names of any custom fields whose values should be completely tokenized. This should generally only be used for fields that are not available through the tokenize-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
 	TokenizeEntireValueFieldName []string `json:"tokenizeEntireValueFieldName,omitempty"`
 	TokenizeValueComponentsField []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp `json:"tokenizeValueComponentsField,omitempty"`
+	// The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions).
 	TokenizeValueComponentsFieldName []string `json:"tokenizeValueComponentsFieldName,omitempty"`
 	// A description for this Log Field Behavior
 	Description *string `json:"description,omitempty"`
 	DefaultBehavior *EnumlogFieldBehaviorDefaultBehaviorProp `json:"defaultBehavior,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewTextAccessLogFieldBehaviorResponse instantiates a new TextAccessLogFieldBehaviorResponse object
@@ -551,6 +558,38 @@ func (o *TextAccessLogFieldBehaviorResponse) SetDefaultBehavior(v EnumlogFieldBe
 	o.DefaultBehavior = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *TextAccessLogFieldBehaviorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TextAccessLogFieldBehaviorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *TextAccessLogFieldBehaviorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *TextAccessLogFieldBehaviorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o TextAccessLogFieldBehaviorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -600,6 +639,9 @@ func (o TextAccessLogFieldBehaviorResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DefaultBehavior) {
 		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

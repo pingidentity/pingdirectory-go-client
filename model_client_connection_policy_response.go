@@ -31,23 +31,33 @@ type ClientConnectionPolicyResponse struct {
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// Indicates whether any client connection for which this Client Connection Policy is selected should be terminated. This makes it possible to define fine-grained criteria for clients that should not be allowed to connect to this Directory Server.
 	TerminateConnection *bool `json:"terminateConnection,omitempty"`
+	// Provides the ability to indicate that some attributes should be considered sensitive and additional protection should be in place when interacting with those attributes.
 	SensitiveAttribute []string `json:"sensitiveAttribute,omitempty"`
+	// Specifies the set of global sensitive attribute definitions that should not apply to this client connection policy.
 	ExcludeGlobalSensitiveAttribute []string `json:"excludeGlobalSensitiveAttribute,omitempty"`
 	// Specifies the result code map that should be used for clients associated with this Client Connection Policy. If a value is defined for this property, then it will override any result code map referenced in the global configuration.
 	ResultCodeMap *string `json:"resultCodeMap,omitempty"`
+	// Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
 	IncludedBackendBaseDN []string `json:"includedBackendBaseDN,omitempty"`
+	// Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
 	ExcludedBackendBaseDN []string `json:"excludedBackendBaseDN,omitempty"`
 	AllowedOperation []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation"`
 	// Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
 	RequiredOperationRequestCriteria *string `json:"requiredOperationRequestCriteria,omitempty"`
 	// Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
 	ProhibitedOperationRequestCriteria *string `json:"prohibitedOperationRequestCriteria,omitempty"`
+	// Specifies the OIDs of the controls that clients associated with this Client Connection Policy will be allowed to include in requests.
 	AllowedRequestControl []string `json:"allowedRequestControl,omitempty"`
+	// Specifies the OIDs of the controls that clients associated with this Client Connection Policy will not be allowed to include in requests.
 	DeniedRequestControl []string `json:"deniedRequestControl,omitempty"`
+	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedExtendedOperation []string `json:"allowedExtendedOperation,omitempty"`
+	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
 	DeniedExtendedOperation []string `json:"deniedExtendedOperation,omitempty"`
 	AllowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType"`
+	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedSASLMechanism []string `json:"allowedSASLMechanism,omitempty"`
+	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
 	DeniedSASLMechanism []string `json:"deniedSASLMechanism,omitempty"`
 	AllowedFilterType []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied.
@@ -69,8 +79,10 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a \"busy\" result.
 	MaximumConcurrentOperationWaitTimeBeforeRejecting *string `json:"maximumConcurrentOperationWaitTimeBeforeRejecting,omitempty"`
 	MaximumConcurrentOperationsPerConnectionExceededBehavior *EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp `json:"maximumConcurrentOperationsPerConnectionExceededBehavior,omitempty"`
+	// Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
 	MaximumConnectionOperationRate []string `json:"maximumConnectionOperationRate,omitempty"`
 	ConnectionOperationRateExceededBehavior *EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp `json:"connectionOperationRateExceededBehavior,omitempty"`
+	// Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
 	MaximumPolicyOperationRate []string `json:"maximumPolicyOperationRate,omitempty"`
 	PolicyOperationRateExceededBehavior *EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp `json:"policyOperationRateExceededBehavior,omitempty"`
 	// Specifies the maximum number of entries that may be returned for a search performed by a client associated with this Client Connection Policy.
@@ -83,6 +95,7 @@ type ClientConnectionPolicyResponse struct {
 	MaximumLDAPJoinSizeLimit *int32 `json:"maximumLDAPJoinSizeLimit,omitempty"`
 	// Specifies the maximum number of entries that the server will attempt to sort without the benefit of a VLV index. A value of zero indicates that no limit should be enforced.
 	MaximumSortSizeLimitWithoutVLVIndex *int32 `json:"maximumSortSizeLimitWithoutVLVIndex,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewClientConnectionPolicyResponse instantiates a new ClientConnectionPolicyResponse object
@@ -1436,6 +1449,38 @@ func (o *ClientConnectionPolicyResponse) SetMaximumSortSizeLimitWithoutVLVIndex(
 	o.MaximumSortSizeLimitWithoutVLVIndex = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ClientConnectionPolicyResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ClientConnectionPolicyResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ClientConnectionPolicyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1566,6 +1611,9 @@ func (o ClientConnectionPolicyResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
 		toSerialize["maximumSortSizeLimitWithoutVLVIndex"] = o.MaximumSortSizeLimitWithoutVLVIndex
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

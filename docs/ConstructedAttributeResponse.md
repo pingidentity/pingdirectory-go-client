@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumconstructedAttributeSchemaUrn**](EnumconstructedAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Constructed Attribute | [optional] 
 **AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be constructed. | 
-**ValuePattern** | **[]string** |  | 
+**ValuePattern** | **[]string** | Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -138,6 +139,31 @@ and a boolean to check if the value has been set.
 
 SetValuePattern sets ValuePattern field to given value.
 
+
+### GetMeta
+
+`func (o *ConstructedAttributeResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *ConstructedAttributeResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *ConstructedAttributeResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *ConstructedAttributeResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

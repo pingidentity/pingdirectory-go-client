@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **KeyManagerProvider** | Pointer to **string** | Specifies the name of the key manager that should be used with this JMX Connection Handler . | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
-**AllowedClient** | Pointer to **[]string** |  | [optional] 
-**DeniedClient** | Pointer to **[]string** |  | [optional] 
+**AllowedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler. | [optional] 
+**DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
 
 ## Methods
 

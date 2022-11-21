@@ -19,8 +19,10 @@ type BackupBackendResponse struct {
 	Schemas []EnumbackupBackendSchemaUrn `json:"schemas"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
+	// Specifies the path to a backup directory containing one or more backups for a particular backend.
 	BackupDirectory []string `json:"backupDirectory"`
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`

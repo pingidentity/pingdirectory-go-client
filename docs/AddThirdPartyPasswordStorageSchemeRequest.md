@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **SchemeName** | **string** | Name of the new Password Storage Scheme | 
 **Schemas** | [**[]EnumthirdPartyPasswordStorageSchemeSchemaUrn**](EnumthirdPartyPasswordStorageSchemeSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Password Storage Scheme. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Password Storage Scheme. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 

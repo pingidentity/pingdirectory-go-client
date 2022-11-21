@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **StaticContextPath** | Pointer to **string** | The path below the base context path by which static, non-template content such as images, CSS, and Javascript files are accessible. | [optional] 
 **StaticContentDirectory** | Pointer to **string** | Specifies the base directory in which static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. | [optional] 
 **StaticCustomDirectory** | Pointer to **string** | Specifies the base directory in which custom static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. Files in this directory will override those with the same name in the directory specified by the static-content-directory property. | [optional] 
-**TemplateDirectory** | **[]string** |  | 
+**TemplateDirectory** | **[]string** | Specifies an ordered list of directories in which to search for the template files. | 
 **ExposeRequestAttributes** | Pointer to **bool** | Specifies whether the HTTP request will be exposed to templates. | [optional] 
 **ExposeSessionAttributes** | Pointer to **bool** | Specifies whether the HTTP session will be exposed to templates. | [optional] 
 **ExposeServerContext** | Pointer to **bool** | Specifies whether a server context will be exposed under context key &#39;ubid_server&#39; for all template contexts. | [optional] 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **MimeTypesFile** | Pointer to **string** | Specifies the path to a file that contains MIME type mappings that will be used to determine the appropriate value to return for the Content-Type header based on the extension of the requested static content file. | [optional] 
 **DefaultMIMEType** | Pointer to **string** | Specifies the default value that will be used in the response&#39;s Content-Type header that indicates the type of content to return. | [optional] 
 **CharacterEncoding** | Pointer to **string** | Specifies the value that will be used for all responses&#39; Content-Type headers&#39; charset parameter that indicates the character encoding of the document. | [optional] 
-**ResponseHeader** | Pointer to **[]string** |  | [optional] 
-**StaticResponseHeader** | Pointer to **[]string** |  | [optional] 
+**ResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for all template page requests. | [optional] 
+**StaticResponseHeader** | Pointer to **[]string** | Specifies HTTP header fields and values added to response headers for static content requests such as images and scripts. | [optional] 
 **RequireAuthentication** | Pointer to **bool** | Require authentication when accessing Velocity templates. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the name of the identity mapper that is to be used for associating basic authentication credentials with user entries. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 

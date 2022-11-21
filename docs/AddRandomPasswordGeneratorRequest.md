@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GeneratorName** | **string** | Name of the new Password Generator | 
 **Schemas** | [**[]EnumrandomPasswordGeneratorSchemaUrn**](EnumrandomPasswordGeneratorSchemaUrn.md) |  | 
-**PasswordCharacterSet** | **[]string** |  | 
+**PasswordCharacterSet** | **[]string** | Specifies one or more named character sets. | 
 **PasswordFormat** | **string** | Specifies the format to use for the generated password. | 
 **Description** | Pointer to **string** | A description for this Password Generator | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Generator is enabled for use. | 

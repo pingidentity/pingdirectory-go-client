@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GroupName** | **string** | Name of the new Server Group | 
 **Schemas** | Pointer to [**[]EnumserverGroupSchemaUrn**](EnumserverGroupSchemaUrn.md) |  | [optional] 
-**Member** | Pointer to **[]string** |  | [optional] 
+**Member** | Pointer to **[]string** | A server instance that is a member of this group. | [optional] 
 
 ## Methods
 

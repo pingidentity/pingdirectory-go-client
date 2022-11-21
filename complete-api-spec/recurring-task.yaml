@@ -201,6 +201,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     generate-server-profile-recurring-task-shared:
       type: object
       properties:
@@ -218,8 +219,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
+          description: >-
+              An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
         retainPreviousProfileCount:
           type: integer
           description: >-
@@ -240,20 +241,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -293,6 +294,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     leave-lockdown-mode-recurring-task-shared:
       type: object
       properties:
@@ -318,20 +320,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -370,6 +372,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/backup-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     backup-recurring-task-shared:
       type: object
       properties:
@@ -387,14 +390,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The backend IDs of any backends that should be included in the backup.
+          description: >-
+              The backend IDs of any backends that should be included in the backup.
         excludedBackendID:
           type: array
           items:
             type: string
-            description: >-
-                The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included.
+          description: >-
+              The backend IDs of any backends that should be excluded from the backup. All backends that support backups and are not listed will be included.
         compress:
           type: boolean
           description: >-
@@ -435,20 +438,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -488,6 +491,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/delay-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     delay-recurring-task-shared:
       type: object
       properties:
@@ -509,8 +513,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                An LDAP URL that provides the criteria for a search request that is expected to return at least one entry. The search will be performed internally, and only the base DN, scope, and filter from the URL will be used; any host, port, or requested attributes included in the URL will be ignored.
+          description: >-
+              An LDAP URL that provides the criteria for a search request that is expected to return at least one entry. The search will be performed internally, and only the base DN, scope, and filter from the URL will be used; any host, port, or requested attributes included in the URL will be ignored.
         searchInterval:
           type: string
           description: >-
@@ -537,20 +541,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -589,6 +593,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     statically-defined-recurring-task-shared:
       type: object
       properties:
@@ -606,14 +611,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry.
+          description: >-
+              The names or OIDs of the object classes to include in the tasks that are scheduled from this Statically Defined Recurring Task. All object classes must be defined in the server schema, and the combination of object classes must be valid for a task entry.
         taskAttributeValue:
           type: array
           items:
             type: string
-            description: >-
-                The set of attribute values that should be included in the tasks that are scheduled from this Statically Defined Recurring Task. Each value must be in the form {attribute-type}={value}, where {attribute-type} is the name or OID of an attribute type that is defined in the schema and permitted with the configured set of object classes, and {value} is a value to assign to an attribute with that type. A multivalued attribute can be created by providing multiple name-value pairs with the same name and different values.
+          description: >-
+              The set of attribute values that should be included in the tasks that are scheduled from this Statically Defined Recurring Task. Each value must be in the form {attribute-type}={value}, where {attribute-type} is the name or OID of an attribute type that is defined in the schema and permitted with the configured set of object classes, and {value} is a value to assign to an attribute with that type. A multivalued attribute can be created by providing multiple name-value pairs with the same name and different values.
         description:
           type: string
           description: >-
@@ -626,20 +631,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -680,6 +685,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     collect-support-data-recurring-task-shared:
       type: object
       properties:
@@ -767,20 +773,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -820,6 +826,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     ldif-export-recurring-task-shared:
       type: object
       properties:
@@ -837,14 +844,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The backend ID for a backend to be exported.
+          description: >-
+              The backend ID for a backend to be exported.
         excludeBackendID:
           type: array
           items:
             type: string
-            description: >-
-                The backend ID for a backend to be excluded from the export.
+          description: >-
+              The backend ID for a backend to be excluded from the export.
         compress:
           type: boolean
           description: >-
@@ -885,20 +892,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -938,6 +945,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     enter-lockdown-mode-recurring-task-shared:
       type: object
       properties:
@@ -963,20 +971,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -1015,6 +1023,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/exec-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     exec-recurring-task-shared:
       type: object
       properties:
@@ -1066,20 +1075,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -1119,6 +1128,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-retention-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     file-retention-recurring-task-shared:
       type: object
       properties:
@@ -1162,20 +1172,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -1217,6 +1227,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-recurring-task-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-recurring-task-shared:
       type: object
       properties:
@@ -1234,8 +1245,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Recurring Task. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Recurring Task. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -1248,20 +1259,20 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnSuccess:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         emailOnFailure:
           type: array
           items:
             type: string
-            description: >-
-                The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
+          description: >-
+              The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
         alertOnStart:
           type: boolean
           description: >-
@@ -1344,6 +1355,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

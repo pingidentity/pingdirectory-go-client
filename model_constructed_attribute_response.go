@@ -23,7 +23,9 @@ type ConstructedAttributeResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be constructed.
 	AttributeType string `json:"attributeType"`
+	// Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry.
 	ValuePattern []string `json:"valuePattern"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewConstructedAttributeResponse instantiates a new ConstructedAttributeResponse object
@@ -182,6 +184,38 @@ func (o *ConstructedAttributeResponse) SetValuePattern(v []string) {
 	o.ValuePattern = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ConstructedAttributeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConstructedAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ConstructedAttributeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ConstructedAttributeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ConstructedAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -198,6 +232,9 @@ func (o ConstructedAttributeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["valuePattern"] = o.ValuePattern
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

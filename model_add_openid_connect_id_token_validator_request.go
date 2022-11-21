@@ -20,6 +20,7 @@ type AddOpenidConnectIdTokenValidatorRequest struct {
 	ValidatorName string `json:"validatorName"`
 	Schemas []EnumopenidConnectIdTokenValidatorSchemaUrn `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
+	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// Specifies the OpenID Connect provider that issues ID tokens handled by this OpenID Connect ID Token Validator. This property is used in conjunction with the jwks-endpoint-path property.
 	OpenIDConnectProvider *string `json:"OpenIDConnectProvider,omitempty"`

@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **HandlerName** | **string** | Name of the new Change Subscription Handler | 
 **Schemas** | [**[]EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn**](EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn.md) |  | 
 **ScriptClass** | **string** | The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler. | 
-**ScriptArgument** | Pointer to **[]string** |  | [optional] 
+**ScriptArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this Change Subscription Handler | [optional] 
 **Enabled** | **bool** | Indicates whether this change subscription handler is enabled within the server. | 
-**ChangeSubscription** | Pointer to **[]string** |  | [optional] 
+**ChangeSubscription** | Pointer to **[]string** | The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server. | [optional] 
 
 ## Methods
 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute Category | [optional] 
 **DisplayName** | **string** | A human readable display name for this Delegated Admin Attribute Category. | 
 **DisplayOrderIndex** | **int32** | Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -138,6 +139,31 @@ and a boolean to check if the value has been set.
 
 SetDisplayOrderIndex sets DisplayOrderIndex field to given value.
 
+
+### GetMeta
+
+`func (o *DelegatedAdminAttributeCategoryResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *DelegatedAdminAttributeCategoryResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *DelegatedAdminAttributeCategoryResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *DelegatedAdminAttributeCategoryResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

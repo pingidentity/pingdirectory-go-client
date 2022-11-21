@@ -38,8 +38,11 @@ type ExecRecurringTaskResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
 	CancelOnTaskDependencyFailure *bool `json:"cancelOnTaskDependencyFailure,omitempty"`
+	// The email addresses to which a message should be sent whenever an instance of this Recurring Task starts running. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnStart []string `json:"emailOnStart,omitempty"`
+	// The email addresses to which a message should be sent whenever an instance of this Recurring Task completes successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnSuccess []string `json:"emailOnSuccess,omitempty"`
+	// The email addresses to which a message should be sent if an instance of this Recurring Task fails to complete successfully. If this option is used, then at least one smtp-server must be configured in the global configuration.
 	EmailOnFailure []string `json:"emailOnFailure,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task starts running.
 	AlertOnStart *bool `json:"alertOnStart,omitempty"`
@@ -47,6 +50,7 @@ type ExecRecurringTaskResponse struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewExecRecurringTaskResponse instantiates a new ExecRecurringTaskResponse object
@@ -621,6 +625,38 @@ func (o *ExecRecurringTaskResponse) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ExecRecurringTaskResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExecRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ExecRecurringTaskResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ExecRecurringTaskResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ExecRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -676,6 +712,9 @@ func (o ExecRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

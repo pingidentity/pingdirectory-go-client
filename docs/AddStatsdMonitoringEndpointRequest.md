@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ServerPort** | **int32** | Specifies the port number of the endpoint where metric data should be sent. | 
 **ConnectionType** | [**EnummonitoringEndpointConnectionTypeProp**](EnummonitoringEndpointConnectionTypeProp.md) |  | 
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use if SSL over TCP is to be used for connection-level security. | [optional] 
-**AdditionalTags** | Pointer to **[]string** |  | [optional] 
+**AdditionalTags** | Pointer to **[]string** | Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format (\&quot;host:server1\&quot;, for example). | [optional] 
 **Enabled** | **bool** | Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server. | 
 
 ## Methods

@@ -157,8 +157,8 @@ components:
           type: array
           items:
             type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
+          description: >-
+              Specifies a unique identifier for the Directory Server within the replication domain.
         jmxPort:
           type: integer
           description: >-
@@ -177,14 +177,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of base DNs under the root DSE.
+          description: >-
+              The set of base DNs under the root DSE.
         memberOfServerGroup:
           type: array
           items:
             type: string
-            description: >-
-                The set of groups of which this server is a member.
+          description: >-
+              The set of groups of which this server is a member.
       required:
       - schemas
       - serverInstanceName
@@ -261,8 +261,8 @@ components:
           type: array
           items:
             type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
+          description: >-
+              Specifies a unique identifier for the Directory Server within the replication domain.
         jmxPort:
           type: integer
           description: >-
@@ -281,14 +281,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of base DNs under the root DSE.
+          description: >-
+              The set of base DNs under the root DSE.
         memberOfServerGroup:
           type: array
           items:
             type: string
-            description: >-
-                The set of groups of which this server is a member.
+          description: >-
+              The set of groups of which this server is a member.
       required:
       - schemas
       - serverInstanceName
@@ -365,8 +365,8 @@ components:
           type: array
           items:
             type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
+          description: >-
+              Specifies a unique identifier for the Directory Server within the replication domain.
         jmxPort:
           type: integer
           description: >-
@@ -385,14 +385,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of base DNs under the root DSE.
+          description: >-
+              The set of base DNs under the root DSE.
         memberOfServerGroup:
           type: array
           items:
             type: string
-            description: >-
-                The set of groups of which this server is a member.
+          description: >-
+              The set of groups of which this server is a member.
       required:
       - schemas
       - serverInstanceName
@@ -421,8 +421,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The name of the configuration object for a load-balancing algorithm that should include this server.
+          description: >-
+              The name of the configuration object for a load-balancing algorithm that should include this server.
         serverInstanceName:
           type: string
           description: >-
@@ -479,8 +479,8 @@ components:
           type: array
           items:
             type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
+          description: >-
+              Specifies a unique identifier for the Directory Server within the replication domain.
         jmxPort:
           type: integer
           description: >-
@@ -499,14 +499,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of base DNs under the root DSE.
+          description: >-
+              The set of base DNs under the root DSE.
         memberOfServerGroup:
           type: array
           items:
             type: string
-            description: >-
-                The set of groups of which this server is a member.
+          description: >-
+              The set of groups of which this server is a member.
       required:
       - schemas
       - serverInstanceName
@@ -583,8 +583,8 @@ components:
           type: array
           items:
             type: integer
-            description: >-
-                Specifies a unique identifier for the Directory Server within the replication domain.
+          description: >-
+              Specifies a unique identifier for the Directory Server within the replication domain.
         jmxPort:
           type: integer
           description: >-
@@ -603,14 +603,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of base DNs under the root DSE.
+          description: >-
+              The set of base DNs under the root DSE.
         memberOfServerGroup:
           type: array
           items:
             type: string
-            description: >-
-                The set of groups of which this server is a member.
+          description: >-
+              The set of groups of which this server is a member.
       required:
       - schemas
       - serverInstanceName
@@ -665,6 +665,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

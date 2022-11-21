@@ -19,15 +19,15 @@ Name | Type | Description | Notes
 **HttpsPort** | Pointer to **int32** | The TCP port on which this server is listening for HTTPS connections. | [optional] 
 **ReplicationPort** | Pointer to **int32** | The replication TCP port. | [optional] 
 **ReplicationServerID** | Pointer to **int32** | Specifies a unique identifier for the replication server on this server instance. | [optional] 
-**ReplicationDomainServerID** | Pointer to **[]int32** |  | [optional] 
+**ReplicationDomainServerID** | Pointer to **[]int32** | Specifies a unique identifier for the Directory Server within the replication domain. | [optional] 
 **JmxPort** | Pointer to **int32** | The TCP port on which this server is listening for JMX connections. | [optional] 
 **JmxsPort** | Pointer to **int32** | The TCP port on which this server is listening for JMX secure connections. | [optional] 
 **PreferredSecurity** | Pointer to [**EnumserverInstancePreferredSecurityProp**](EnumserverInstancePreferredSecurityProp.md) |  | [optional] 
 **StartTLSEnabled** | Pointer to **bool** | Indicates whether StartTLS is enabled on this server. | [optional] 
-**BaseDN** | Pointer to **[]string** |  | [optional] 
-**MemberOfServerGroup** | Pointer to **[]string** |  | [optional] 
+**BaseDN** | Pointer to **[]string** | The set of base DNs under the root DSE. | [optional] 
+**MemberOfServerGroup** | Pointer to **[]string** | The set of groups of which this server is a member. | [optional] 
 **ReplicationSetName** | Pointer to **string** | The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name. | [optional] 
-**LoadBalancingAlgorithmName** | Pointer to **[]string** |  | [optional] 
+**LoadBalancingAlgorithmName** | Pointer to **[]string** | The name of the configuration object for a load-balancing algorithm that should include this server. | [optional] 
 
 ## Methods
 

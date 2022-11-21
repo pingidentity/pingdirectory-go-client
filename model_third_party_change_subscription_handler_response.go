@@ -21,12 +21,15 @@ type ThirdPartyChangeSubscriptionHandlerResponse struct {
 	Schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Change Subscription Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this change subscription handler is enabled within the server.
 	Enabled bool `json:"enabled"`
+	// The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
 	ChangeSubscription []string `json:"changeSubscription,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewThirdPartyChangeSubscriptionHandlerResponse instantiates a new ThirdPartyChangeSubscriptionHandlerResponse object
@@ -242,6 +245,38 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) SetChangeSubscription(v []
 	o.ChangeSubscription = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ThirdPartyChangeSubscriptionHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ThirdPartyChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -264,6 +299,9 @@ func (o ThirdPartyChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, erro
 	}
 	if !isNil(o.ChangeSubscription) {
 		toSerialize["changeSubscription"] = o.ChangeSubscription
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

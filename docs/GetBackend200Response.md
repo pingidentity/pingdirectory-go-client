@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schemas** | [**[]EnummetricsBackendSchemaUrn**](EnummetricsBackendSchemaUrn.md) |  | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
-**BaseDN** | **[]string** |  | 
+**BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
-**InsignificantConfigArchiveAttribute** | Pointer to **[]string** |  | [optional] 
+**InsignificantConfigArchiveAttribute** | Pointer to **[]string** | The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive. | [optional] 
 **MirroredSubtreePeerPollingInterval** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
 **MirroredSubtreeEntryUpdateTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
 **MirroredSubtreeSearchTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures. | [optional] 
@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
 **BackupFilePermissions** | Pointer to **string** | Specifies the permissions that should be applied to files and directories created by a backup of the backend. | [optional] 
 **NotificationManager** | Pointer to **string** | Specifies a notification manager for changes resulting from operations processed through this Backend | [optional] 
-**SchemaEntryDN** | Pointer to **[]string** |  | [optional] 
+**SchemaEntryDN** | Pointer to **[]string** | Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property. | [optional] 
 **ShowAllAttributes** | **bool** | Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration. | 
-**ReadOnlySchemaFile** | Pointer to **[]string** |  | [optional] 
-**BackupDirectory** | **[]string** |  | 
+**ReadOnlySchemaFile** | Pointer to **[]string** | Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients. | [optional] 
+**BackupDirectory** | **[]string** | Specifies the path to a backup directory containing one or more backups for a particular backend. | 
 **TaskBackingFile** | **string** | Specifies the path to the backing file for storing information about the tasks configured in the server. | 
 **MaximumInitialTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
 **MaximumFinalTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
@@ -41,23 +41,23 @@ Name | Type | Description | Notes
 **DbDirectory** | **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | 
 **DbDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend. | [optional] 
 **DbCachePercent** | Pointer to **int32** | Specifies the percentage of JVM memory to allocate to the database cache. | [optional] 
-**JeProperty** | Pointer to **[]string** |  | [optional] 
+**JeProperty** | Pointer to **[]string** | Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend. | [optional] 
 **ChangelogWriteBatchSize** | Pointer to **int32** | Specifies the number of changelog entries written in a single database transaction. | [optional] 
 **ChangelogPurgeBatchSize** | Pointer to **int32** | Specifies the number of changelog entries purged in a single database transaction. | [optional] 
 **ChangelogWriteQueueCapacity** | Pointer to **int32** | Specifies the capacity of the changelog write queue in number of changes. | [optional] 
-**IndexIncludeAttribute** | Pointer to **[]string** |  | [optional] 
-**IndexExcludeAttribute** | Pointer to **[]string** |  | [optional] 
+**IndexIncludeAttribute** | Pointer to **[]string** | Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed. | [optional] 
+**IndexExcludeAttribute** | Pointer to **[]string** | Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values \&quot;*\&quot; and \&quot;+\&quot;. | [optional] 
 **ChangelogMaximumAge** | **string** | Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk. | 
 **TargetDatabaseSize** | Pointer to **string** | The changelog database is allowed to grow up to this size on disk even if changes are older than the configured changelog-maximum-age. | [optional] 
-**ChangelogEntryIncludeBaseDN** | Pointer to **[]string** |  | [optional] 
-**ChangelogEntryExcludeBaseDN** | Pointer to **[]string** |  | [optional] 
-**ChangelogEntryIncludeFilter** | Pointer to **[]string** |  | [optional] 
-**ChangelogEntryExcludeFilter** | Pointer to **[]string** |  | [optional] 
-**ChangelogIncludeAttribute** | Pointer to **[]string** |  | [optional] 
-**ChangelogExcludeAttribute** | Pointer to **[]string** |  | [optional] 
-**ChangelogDeletedEntryIncludeAttribute** | Pointer to **[]string** |  | [optional] 
-**ChangelogDeletedEntryExcludeAttribute** | Pointer to **[]string** |  | [optional] 
-**ChangelogIncludeKeyAttribute** | Pointer to **[]string** |  | [optional] 
+**ChangelogEntryIncludeBaseDN** | Pointer to **[]string** | The base DNs for branches in the data for which to record changes in the changelog. | [optional] 
+**ChangelogEntryExcludeBaseDN** | Pointer to **[]string** | The base DNs for branches in the data for which no changelog records should be generated. | [optional] 
+**ChangelogEntryIncludeFilter** | Pointer to **[]string** | A filter that indicates which changelog entries should actually be stored in the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation. | [optional] 
+**ChangelogEntryExcludeFilter** | Pointer to **[]string** | A filter that indicates which changelog entries should be excluded from the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation. | [optional] 
+**ChangelogIncludeAttribute** | Pointer to **[]string** | Specifies which attribute types will be included in a changelog entry for ADD and MODIFY operations. | [optional] 
+**ChangelogExcludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be excluded in a changelog entry for ADD and MODIFY operations. | [optional] 
+**ChangelogDeletedEntryIncludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be included in a changelog entry for DELETE operations. | [optional] 
+**ChangelogDeletedEntryExcludeAttribute** | Pointer to **[]string** | Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations. | [optional] 
+**ChangelogIncludeKeyAttribute** | Pointer to **[]string** | Specifies which attribute types will be included in a changelog entry on every change. | [optional] 
 **ChangelogMaxBeforeAfterValues** | Pointer to **int32** | This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry. | [optional] 
 **WriteLastmodAttributes** | Pointer to **bool** | Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries. | [optional] 
 **UseReversibleForm** | Pointer to **bool** | Specifies whether the changelog should provide enough information to be able to revert the changes if desired. | [optional] 
@@ -73,7 +73,7 @@ Name | Type | Description | Notes
 **ReturnUnavailableForUntrustedIndex** | Pointer to **bool** | Determines whether the Directory Server returns UNAVAILABLE for any LDAP search operation in this Local DB Backend that would use an index whose contents cannot be trusted. | [optional] 
 **ProcessFiltersWithUndefinedAttributeTypes** | Pointer to **bool** | Determines whether the Directory Server should continue filter processing for LDAP search operations in this Local DB Backend that includes a search filter with an attribute that is not defined in the schema. This will only apply if check-schema is enabled in the global configuration. | [optional] 
 **IsPrivateBackend** | Pointer to **bool** | Indicates whether this backend should be considered a private backend in the server. Private backends are meant for storing server-internal information and should not be used for user or application data. | [optional] 
-**CompactCommonParentDN** | Pointer to **[]string** |  | [optional] 
+**CompactCommonParentDN** | Pointer to **[]string** | Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage. | [optional] 
 **CompressEntries** | Pointer to **bool** | Indicates whether the backend should attempt to compress entries before storing them in the database. | [optional] 
 **HashEntries** | Pointer to **bool** | Indicates whether to calculate and store a message digest of the entry contents along with the entry data, in order to provide a means of verifying the integrity of the entry data. | [optional] 
 **DbNumCleanerThreads** | Pointer to **int32** | Specifies the number of threads that the backend should maintain to keep the database log files at or near the desired utilization. A value of zero indicates that the number of cleaner threads should be automatically configured based on the number of available CPUs. | [optional] 
@@ -112,10 +112,11 @@ Name | Type | Description | Notes
 **SubtreeDeleteSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
 **NumRecentChanges** | Pointer to **int32** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
 **OfflineProcessDatabaseOpenTimeout** | Pointer to **string** | Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **StorageDir** | **string** | Specifies the path to the directory that will be used to store queued samples. | 
 **MetricsDir** | **string** | Specifies the path to the directory that contains metric definitions. | 
 **SampleFlushInterval** | Pointer to **string** | Period when samples are flushed to disk. | [optional] 
-**RetentionPolicy** | **[]string** |  | 
+**RetentionPolicy** | **[]string** | The retention policy to use for the Metrics Backend . | 
 
 ## Methods
 
@@ -2755,6 +2756,31 @@ SetOfflineProcessDatabaseOpenTimeout sets OfflineProcessDatabaseOpenTimeout fiel
 `func (o *GetBackend200Response) HasOfflineProcessDatabaseOpenTimeout() bool`
 
 HasOfflineProcessDatabaseOpenTimeout returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *GetBackend200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GetBackend200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GetBackend200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GetBackend200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetStorageDir
 

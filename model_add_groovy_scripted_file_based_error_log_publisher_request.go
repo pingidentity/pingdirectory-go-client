@@ -25,8 +25,11 @@ type AddGroovyScriptedFileBasedErrorLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this Scripted File Based Error Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the Scripted File Based Error Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the Scripted File Based Error Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -37,6 +40,7 @@ type AddGroovyScriptedFileBasedErrorLogPublisherRequest struct {
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
 	// Specifies whether to append to existing log files.
 	Append *bool `json:"append,omitempty"`
+	// The set of arguments used to customize the behavior for the Scripted File Based Error Log Publisher. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// Indicates whether the Scripted File Based Error Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
@@ -49,6 +53,7 @@ type AddGroovyScriptedFileBasedErrorLogPublisherRequest struct {
 	// Specifies the interval at which to check whether the log files need to be rotated.
 	TimeInterval *string `json:"timeInterval,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`

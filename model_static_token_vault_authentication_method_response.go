@@ -23,6 +23,7 @@ type StaticTokenVaultAuthenticationMethodResponse struct {
 	VaultAccessToken string `json:"vaultAccessToken"`
 	// A description for this Vault Authentication Method
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewStaticTokenVaultAuthenticationMethodResponse instantiates a new StaticTokenVaultAuthenticationMethodResponse object
@@ -149,6 +150,38 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) SetDescription(v string) 
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *StaticTokenVaultAuthenticationMethodResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StaticTokenVaultAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *StaticTokenVaultAuthenticationMethodResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *StaticTokenVaultAuthenticationMethodResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o StaticTokenVaultAuthenticationMethodResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -162,6 +195,9 @@ func (o StaticTokenVaultAuthenticationMethodResponse) MarshalJSON() ([]byte, err
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

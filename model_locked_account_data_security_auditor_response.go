@@ -21,13 +21,16 @@ type LockedAccountDataSecurityAuditorResponse struct {
 	Schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
+	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// If set, users that have not authenticated for more than the specified time will be reported even if idle account lockout is not configured. Note that users may only be reported if the last login time tracking is enabled.
 	MaximumIdleTime *string `json:"maximumIdleTime,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
 	AuditBackend []string `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewLockedAccountDataSecurityAuditorResponse instantiates a new LockedAccountDataSecurityAuditorResponse object
@@ -275,6 +278,38 @@ func (o *LockedAccountDataSecurityAuditorResponse) SetAuditSeverity(v EnumdataSe
 	o.AuditSeverity = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *LockedAccountDataSecurityAuditorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LockedAccountDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *LockedAccountDataSecurityAuditorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *LockedAccountDataSecurityAuditorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o LockedAccountDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -300,6 +335,9 @@ func (o LockedAccountDataSecurityAuditorResponse) MarshalJSON() ([]byte, error) 
 	}
 	if !isNil(o.AuditSeverity) {
 		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

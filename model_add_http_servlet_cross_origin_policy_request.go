@@ -21,9 +21,13 @@ type AddHttpServletCrossOriginPolicyRequest struct {
 	Schemas []EnumhttpServletCrossOriginPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this HTTP Servlet Cross Origin Policy
 	Description *string `json:"description,omitempty"`
+	// A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc.
 	CorsAllowedMethods []string `json:"corsAllowedMethods,omitempty"`
+	// A list of origins that are allowed to execute cross-origin requests.
 	CorsAllowedOrigins []string `json:"corsAllowedOrigins,omitempty"`
+	// A list of HTTP headers other than the simple response headers that browsers are allowed to access.
 	CorsExposedHeaders []string `json:"corsExposedHeaders,omitempty"`
+	// A list of HTTP headers that are supported by the resource and can be specified in a cross-origin request.
 	CorsAllowedHeaders []string `json:"corsAllowedHeaders,omitempty"`
 	// The maximum amount of time that a preflight request can be cached by a client.
 	CorsPreflightMaxAge *string `json:"corsPreflightMaxAge,omitempty"`

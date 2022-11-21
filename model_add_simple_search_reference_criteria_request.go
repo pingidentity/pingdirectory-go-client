@@ -21,9 +21,13 @@ type AddSimpleSearchReferenceCriteriaRequest struct {
 	Schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
+	// Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
 	AllIncludedReferenceControl []string `json:"allIncludedReferenceControl,omitempty"`
+	// Specifies the OID of a control that may be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain at least one of those controls.
 	AnyIncludedReferenceControl []string `json:"anyIncludedReferenceControl,omitempty"`
+	// Specifies the OID of a control that should not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain at least one of those controls (that is, it may contain zero or more of those controls, but not all of them).
 	NotAllIncludedReferenceControl []string `json:"notAllIncludedReferenceControl,omitempty"`
+	// Specifies the OID of a control that must not be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must not contain any of those controls.
 	NoneIncludedReferenceControl []string `json:"noneIncludedReferenceControl,omitempty"`
 	// A description for this Search Reference Criteria
 	Description *string `json:"description,omitempty"`

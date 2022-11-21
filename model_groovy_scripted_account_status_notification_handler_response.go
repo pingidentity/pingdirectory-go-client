@@ -21,6 +21,7 @@ type GroovyScriptedAccountStatusNotificationHandlerResponse struct {
 	Schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Account Status Notification Handler. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Account Status Notification Handler
 	Description *string `json:"description,omitempty"`
@@ -32,6 +33,7 @@ type GroovyScriptedAccountStatusNotificationHandlerResponse struct {
 	AccountCreationNotificationRequestCriteria *string `json:"accountCreationNotificationRequestCriteria,omitempty"`
 	// A request criteria object that identifies which modify and modify DN requests should result in account update notifications for this handler.
 	AccountUpdateNotificationRequestCriteria *string `json:"accountUpdateNotificationRequestCriteria,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewGroovyScriptedAccountStatusNotificationHandlerResponse instantiates a new GroovyScriptedAccountStatusNotificationHandlerResponse object
@@ -311,6 +313,38 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetAccountUpdat
 	o.AccountUpdateNotificationRequestCriteria = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o GroovyScriptedAccountStatusNotificationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -339,6 +373,9 @@ func (o GroovyScriptedAccountStatusNotificationHandlerResponse) MarshalJSON() ([
 	}
 	if !isNil(o.AccountUpdateNotificationRequestCriteria) {
 		toSerialize["accountUpdateNotificationRequestCriteria"] = o.AccountUpdateNotificationRequestCriteria
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

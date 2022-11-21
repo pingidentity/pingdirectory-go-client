@@ -30,6 +30,7 @@ type ExecAlertHandlerResponse struct {
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
 	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
 	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewExecAlertHandlerResponse instantiates a new ExecAlertHandlerResponse object
@@ -309,6 +310,38 @@ func (o *ExecAlertHandlerResponse) SetDisabledAlertType(v []EnumalertHandlerDisa
 	o.DisabledAlertType = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ExecAlertHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExecAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ExecAlertHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ExecAlertHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ExecAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -337,6 +370,9 @@ func (o ExecAlertHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DisabledAlertType) {
 		toSerialize["disabledAlertType"] = o.DisabledAlertType
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

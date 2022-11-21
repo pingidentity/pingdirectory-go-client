@@ -19,6 +19,7 @@ type AddConstructedVirtualAttributeRequest struct {
 	// Name of the new Virtual Attribute
 	Name string `json:"name"`
 	Schemas []EnumconstructedVirtualAttributeSchemaUrn `json:"schemas"`
+	// Specifies a pattern for constructing the virtual attribute value using fixed text and attribute values from the entry.
 	ValuePattern []string `json:"valuePattern"`
 	// A description for this Virtual Attribute
 	Description *string `json:"description,omitempty"`
@@ -26,9 +27,13 @@ type AddConstructedVirtualAttributeRequest struct {
 	Enabled bool `json:"enabled"`
 	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
 	AttributeType string `json:"attributeType"`
+	// Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
 	BaseDN []string `json:"baseDN,omitempty"`
+	// Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
 	GroupDN []string `json:"groupDN,omitempty"`
+	// Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
 	Filter []string `json:"filter,omitempty"`
+	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
 	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.

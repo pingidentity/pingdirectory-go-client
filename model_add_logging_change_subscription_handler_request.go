@@ -25,6 +25,7 @@ type AddLoggingChangeSubscriptionHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this change subscription handler is enabled within the server.
 	Enabled bool `json:"enabled"`
+	// The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
 	ChangeSubscription []string `json:"changeSubscription,omitempty"`
 }
 

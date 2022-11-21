@@ -19,7 +19,9 @@ type ExactMatchIdentityMapperResponse struct {
 	// Name of the Identity Mapper
 	Id string `json:"id"`
 	Schemas []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
+	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
 	MatchAttribute []string `json:"matchAttribute"`
+	// Specifies the set of base DNs below which to search for users.
 	MatchBaseDN []string `json:"matchBaseDN,omitempty"`
 	// An optional filter that mapped users must match.
 	MatchFilter *string `json:"matchFilter,omitempty"`
@@ -27,6 +29,7 @@ type ExactMatchIdentityMapperResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Identity Mapper is enabled for use.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewExactMatchIdentityMapperResponse instantiates a new ExactMatchIdentityMapperResponse object
@@ -242,6 +245,38 @@ func (o *ExactMatchIdentityMapperResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ExactMatchIdentityMapperResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ExactMatchIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ExactMatchIdentityMapperResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ExactMatchIdentityMapperResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ExactMatchIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -264,6 +299,9 @@ func (o ExactMatchIdentityMapperResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

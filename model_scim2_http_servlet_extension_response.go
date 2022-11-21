@@ -19,6 +19,7 @@ type Scim2HttpServletExtensionResponse struct {
 	Schemas []Enumscim2HttpServletExtensionSchemaUrn `json:"schemas"`
 	// The context path to use to access the SCIM 2.0 interface. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
+	// If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this SCIM2 HTTP Servlet Extension.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
 	MapAccessTokensToLocalUsers *EnumhttpServletExtensionMapAccessTokensToLocalUsersProp `json:"mapAccessTokensToLocalUsers,omitempty"`
 	// Enables debug logging of the SCIM 2.0 SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.broker.http.scim2.extension.SCIM2HTTPServletExtension.
@@ -33,6 +34,7 @@ type Scim2HttpServletExtensionResponse struct {
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CriteriaName** | **string** | Name of the new Search Entry Criteria | 
 **Schemas** | [**[]EnumaggregateSearchEntryCriteriaSchemaUrn**](EnumaggregateSearchEntryCriteriaSchemaUrn.md) |  | 
-**AllIncludedSearchEntryCriteria** | Pointer to **[]string** |  | [optional] 
-**AnyIncludedSearchEntryCriteria** | Pointer to **[]string** |  | [optional] 
-**NotAllIncludedSearchEntryCriteria** | Pointer to **[]string** |  | [optional] 
-**NoneIncludedSearchEntryCriteria** | Pointer to **[]string** |  | [optional] 
+**AllIncludedSearchEntryCriteria** | Pointer to **[]string** | Specifies a search entry criteria object that must match the associated search result entry in order to match the aggregate search entry criteria. If one or more all-included search entry criteria objects are provided, then a search result entry must match all of them in order to match the aggregate search entry criteria. | [optional] 
+**AnyIncludedSearchEntryCriteria** | Pointer to **[]string** | Specifies a search entry criteria object that may match the associated search result entry in order to match the aggregate search entry criteria. If one or more any-included search entry criteria objects are provided, then a search result entry must match at least one of them in order to match the aggregate search entry criteria. | [optional] 
+**NotAllIncludedSearchEntryCriteria** | Pointer to **[]string** | Specifies a search entry criteria object that should not match the associated search result entry in order to match the aggregate search entry criteria. If one or more not-all-included search entry criteria objects are provided, then a search result entry must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate search entry criteria. | [optional] 
+**NoneIncludedSearchEntryCriteria** | Pointer to **[]string** | Specifies a search entry criteria object that must not match the associated search result entry in order to match the aggregate search entry criteria. If one or more none-included search entry criteria objects are provided, then a search result entry must not match any of them in order to match the aggregate search entry criteria. | [optional] 
 **Description** | Pointer to **string** | A description for this Search Entry Criteria | [optional] 
 
 ## Methods

@@ -21,6 +21,7 @@ type AddGroovyScriptedHttpOperationLogPublisherRequest struct {
 	Schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Operation Log Publisher.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted HTTP Operation Log Publisher. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`

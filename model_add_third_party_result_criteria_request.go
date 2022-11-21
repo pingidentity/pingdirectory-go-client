@@ -21,6 +21,7 @@ type AddThirdPartyResultCriteriaRequest struct {
 	Schemas []EnumthirdPartyResultCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Result Criteria.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Result Criteria. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`

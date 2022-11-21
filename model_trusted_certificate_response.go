@@ -21,6 +21,7 @@ type TrustedCertificateResponse struct {
 	Schemas []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
 	// The PEM-encoded X.509v3 certificate.
 	Certificate string `json:"certificate"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewTrustedCertificateResponse instantiates a new TrustedCertificateResponse object
@@ -122,6 +123,38 @@ func (o *TrustedCertificateResponse) SetCertificate(v string) {
 	o.Certificate = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *TrustedCertificateResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TrustedCertificateResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *TrustedCertificateResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *TrustedCertificateResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o TrustedCertificateResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -132,6 +165,9 @@ func (o TrustedCertificateResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["certificate"] = o.Certificate
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

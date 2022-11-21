@@ -179,16 +179,16 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         insignificantConfigArchiveAttribute:
           type: array
           items:
             type: string
-            description: >-
-                The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
+          description: >-
+              The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
         mirroredSubtreePeerPollingInterval:
           type: string
           description: >-
@@ -252,16 +252,16 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         schemaEntryDN:
           type: array
           items:
             type: string
-            description: >-
-                Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property.
+          description: >-
+              Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property.
         showAllAttributes:
           type: boolean
           description: >-
@@ -270,8 +270,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients.
+          description: >-
+              Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients.
         description:
           type: string
           description: >-
@@ -324,16 +324,16 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         backupDirectory:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the path to a backup directory containing one or more backups for a particular backend.
+          description: >-
+              Specifies the path to a backup directory containing one or more backups for a particular backend.
         description:
           type: string
           description: >-
@@ -386,8 +386,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         taskBackingFile:
@@ -462,8 +462,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         ldifFile:
           type: string
           description: >-
@@ -531,8 +531,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         backendID:
           type: string
           description: >-
@@ -590,8 +590,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         trustStoreFile:
@@ -667,8 +667,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         ldifFile:
           type: string
           description: >-
@@ -732,8 +732,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         dbDirectory:
           type: string
           description: >-
@@ -750,8 +750,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend.
+          description: >-
+              Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend.
         changelogWriteBatchSize:
           type: integer
           description: >-
@@ -768,14 +768,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed.
+          description: >-
+              Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed.
         indexExcludeAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values "*" and "+".
+          description: >-
+              Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values "*" and "+".
         changelogMaximumAge:
           type: string
           description: >-
@@ -788,56 +788,56 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The base DNs for branches in the data for which to record changes in the changelog.
+          description: >-
+              The base DNs for branches in the data for which to record changes in the changelog.
         changelogEntryExcludeBaseDN:
           type: array
           items:
             type: string
-            description: >-
-                The base DNs for branches in the data for which no changelog records should be generated.
+          description: >-
+              The base DNs for branches in the data for which no changelog records should be generated.
         changelogEntryIncludeFilter:
           type: array
           items:
             type: string
-            description: >-
-                A filter that indicates which changelog entries should actually be stored in the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
+          description: >-
+              A filter that indicates which changelog entries should actually be stored in the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
         changelogEntryExcludeFilter:
           type: array
           items:
             type: string
-            description: >-
-                A filter that indicates which changelog entries should be excluded from the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
+          description: >-
+              A filter that indicates which changelog entries should be excluded from the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
         changelogIncludeAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which attribute types will be included in a changelog entry for ADD and MODIFY operations.
+          description: >-
+              Specifies which attribute types will be included in a changelog entry for ADD and MODIFY operations.
         changelogExcludeAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of attribute types that should be excluded in a changelog entry for ADD and MODIFY operations.
+          description: >-
+              Specifies a set of attribute types that should be excluded in a changelog entry for ADD and MODIFY operations.
         changelogDeletedEntryIncludeAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of attribute types that should be included in a changelog entry for DELETE operations.
+          description: >-
+              Specifies a set of attribute types that should be included in a changelog entry for DELETE operations.
         changelogDeletedEntryExcludeAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations.
+          description: >-
+              Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations.
         changelogIncludeKeyAttribute:
           type: array
           items:
             type: string
-            description: >-
-                Specifies which attribute types will be included in a changelog entry on every change.
+          description: >-
+              Specifies which attribute types will be included in a changelog entry on every change.
         changelogMaxBeforeAfterValues:
           type: integer
           description: >-
@@ -922,8 +922,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         description:
           type: string
           description: >-
@@ -980,6 +980,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/local-db-backend-shared'
+      - $ref: '#/components/schemas/meta'
     local-db-backend-shared:
       type: object
       properties:
@@ -1029,8 +1030,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage.
+          description: >-
+              Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage.
         compressEntries:
           type: boolean
           description: >-
@@ -1075,8 +1076,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
+          description: >-
+              Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
         dbCachePercent:
           type: integer
           description: >-
@@ -1193,8 +1194,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         setDegradedAlertWhenDisabled:
           type: boolean
           description: >-
@@ -1252,8 +1253,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The retention policy to use for the Metrics Backend .
+          description: >-
+              The retention policy to use for the Metrics Backend .
         description:
           type: string
           description: >-
@@ -1266,8 +1267,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
+          description: >-
+              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         setDegradedAlertWhenDisabled:
@@ -1686,6 +1687,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

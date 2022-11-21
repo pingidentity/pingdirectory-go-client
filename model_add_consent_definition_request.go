@@ -23,6 +23,7 @@ type AddConsentDefinitionRequest struct {
 	UniqueID string `json:"uniqueID"`
 	// A human-readable display name for this Consent Definition.
 	DisplayName *string `json:"displayName,omitempty"`
+	// Optional parameters for this Consent Definition.
 	Parameter []string `json:"parameter,omitempty"`
 	// A description for this Consent Definition
 	Description *string `json:"description,omitempty"`

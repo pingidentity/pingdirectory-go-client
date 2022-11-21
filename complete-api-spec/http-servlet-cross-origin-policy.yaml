@@ -157,6 +157,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/http-servlet-cross-origin-policy-shared'
+      - $ref: '#/components/schemas/meta'
     http-servlet-cross-origin-policy-shared:
       type: object
       properties:
@@ -174,26 +175,26 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc.
+          description: >-
+              A list of HTTP methods allowed for cross-origin access to resources. i.e. one or more of GET, POST, PUT, DELETE, etc.
         corsAllowedOrigins:
           type: array
           items:
             type: string
-            description: >-
-                A list of origins that are allowed to execute cross-origin requests.
+          description: >-
+              A list of origins that are allowed to execute cross-origin requests.
         corsExposedHeaders:
           type: array
           items:
             type: string
-            description: >-
-                A list of HTTP headers other than the simple response headers that browsers are allowed to access.
+          description: >-
+              A list of HTTP headers other than the simple response headers that browsers are allowed to access.
         corsAllowedHeaders:
           type: array
           items:
             type: string
-            description: >-
-                A list of HTTP headers that are supported by the resource and can be specified in a cross-origin request.
+          description: >-
+              A list of HTTP headers that are supported by the resource and can be specified in a cross-origin request.
         corsPreflightMaxAge:
           type: string
           description: >-
@@ -233,6 +234,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

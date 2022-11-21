@@ -19,6 +19,7 @@ type AlertBackendResponse struct {
 	Schemas []EnumalertBackendSchemaUrn `json:"schemas"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// Specifies the path to the LDIF file that serves as the backing file for this backend.
 	LdifFile string `json:"ldifFile"`

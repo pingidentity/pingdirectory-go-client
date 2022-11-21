@@ -21,6 +21,7 @@ type AddThirdPartyPasswordGeneratorRequest struct {
 	Schemas []EnumthirdPartyPasswordGeneratorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Password Generator.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Password Generator. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Password Generator
 	Description *string `json:"description,omitempty"`

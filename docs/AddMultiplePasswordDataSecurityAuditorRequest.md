@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnummultiplePasswordDataSecurityAuditorSchemaUrn**](EnummultiplePasswordDataSecurityAuditorSchemaUrn.md) |  | 
 **ReportFile** | **string** | Specifies the name of the detailed report file. | 
 **Enabled** | **bool** | Indicates whether the Data Security Auditor is enabled for use. | 
-**IncludeAttribute** | Pointer to **[]string** |  | [optional] 
-**AuditBackend** | Pointer to **[]string** |  | [optional] 
+**IncludeAttribute** | Pointer to **[]string** | Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included. | [optional] 
+**AuditBackend** | Pointer to **[]string** | Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler). | [optional] 
 **AuditSeverity** | Pointer to [**EnumdataSecurityAuditorAuditSeverityProp**](EnumdataSecurityAuditorAuditSeverityProp.md) |  | [optional] 
 
 ## Methods

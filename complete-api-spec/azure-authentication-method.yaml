@@ -169,6 +169,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/default-azure-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
     default-azure-authentication-method-shared:
       type: object
       properties:
@@ -216,6 +217,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/client-secret-azure-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
     client-secret-azure-authentication-method-shared:
       type: object
       properties:
@@ -271,6 +273,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/username-password-azure-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
     username-password-azure-authentication-method-shared:
       type: object
       properties:
@@ -338,6 +341,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

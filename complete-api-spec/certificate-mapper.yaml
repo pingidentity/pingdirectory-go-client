@@ -181,6 +181,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-equals-dn-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
     subject-equals-dn-certificate-mapper-shared:
       type: object
       properties:
@@ -225,6 +226,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
     subject-dn-to-user-attribute-certificate-mapper-shared:
       type: object
       properties:
@@ -242,8 +244,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
+          description: >-
+              Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
         description:
           type: string
           description: >-
@@ -280,6 +282,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
     groovy-scripted-certificate-mapper-shared:
       type: object
       properties:
@@ -297,8 +300,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -335,6 +338,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-attribute-to-user-attribute-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
     subject-attribute-to-user-attribute-certificate-mapper-shared:
       type: object
       properties:
@@ -348,14 +352,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies a mapping between certificate attributes and user attributes.
+          description: >-
+              Specifies a mapping between certificate attributes and user attributes.
         userBaseDN:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
+          description: >-
+              Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
         description:
           type: string
           description: >-
@@ -392,6 +396,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
     fingerprint-certificate-mapper-shared:
       type: object
       properties:
@@ -411,8 +416,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the set of base DNs below which to search for users.
+          description: >-
+              Specifies the set of base DNs below which to search for users.
         description:
           type: string
           description: >-
@@ -450,6 +455,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-certificate-mapper-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-certificate-mapper-shared:
       type: object
       properties:
@@ -467,8 +473,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Certificate Mapper. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -520,6 +526,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

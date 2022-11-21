@@ -21,6 +21,7 @@ type AddThirdPartyLogFileRotationListenerRequest struct {
 	Schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Log File Rotation Listener
 	Description *string `json:"description,omitempty"`

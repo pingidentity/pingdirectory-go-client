@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Password** | Pointer to **string** | The login password for the specified user name. Both username and password must be supplied if this attribute is set. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
 **SmtpTimeout** | Pointer to **string** | Specifies the maximum length of time that a connection or attempted connection to a SMTP server may take. | [optional] 
-**SmtpConnectionProperties** | Pointer to **[]string** |  | [optional] 
+**SmtpConnectionProperties** | Pointer to **[]string** | Specifies the connection properties for the smtp server. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 
 ## Methods

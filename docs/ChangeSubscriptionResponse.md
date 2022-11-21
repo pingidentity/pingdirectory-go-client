@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **RequestCriteria** | Pointer to **string** | Specifies a set of request criteria that must match the request associated with an operation in order for that operation to be processed by a change subscription handler. | [optional] 
 **ResultCriteria** | Pointer to **string** | Specifies a set of result criteria that must match the result associated with an operation in order for that operation to be processed by a change subscription handler. | [optional] 
 **ExpirationTime** | Pointer to **string** | Specifies a timestamp that provides an expiration time for this change subscription. If an expiration time is provided, then the change subscription will not be active after that time has passed. | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -200,6 +201,31 @@ SetExpirationTime sets ExpirationTime field to given value.
 `func (o *ChangeSubscriptionResponse) HasExpirationTime() bool`
 
 HasExpirationTime returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *ChangeSubscriptionResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *ChangeSubscriptionResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *ChangeSubscriptionResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *ChangeSubscriptionResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

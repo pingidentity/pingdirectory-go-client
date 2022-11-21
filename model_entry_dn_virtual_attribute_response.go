@@ -26,9 +26,13 @@ type EntryDnVirtualAttributeResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Virtual Attribute is enabled for use.
 	Enabled bool `json:"enabled"`
+	// Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
 	BaseDN []string `json:"baseDN,omitempty"`
+	// Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
 	GroupDN []string `json:"groupDN,omitempty"`
+	// Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
 	Filter []string `json:"filter,omitempty"`
+	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
 	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
@@ -37,6 +41,7 @@ type EntryDnVirtualAttributeResponse struct {
 	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewEntryDnVirtualAttributeResponse instantiates a new EntryDnVirtualAttributeResponse object
@@ -476,6 +481,38 @@ func (o *EntryDnVirtualAttributeResponse) SetAllowIndexConflicts(v bool) {
 	o.AllowIndexConflicts = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *EntryDnVirtualAttributeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *EntryDnVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *EntryDnVirtualAttributeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *EntryDnVirtualAttributeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o EntryDnVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -519,6 +556,9 @@ func (o EntryDnVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AllowIndexConflicts) {
 		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

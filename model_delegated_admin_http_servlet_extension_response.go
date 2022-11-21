@@ -21,6 +21,7 @@ type DelegatedAdminHttpServletExtensionResponse struct {
 	BasicAuthEnabled *bool `json:"basicAuthEnabled,omitempty"`
 	// Specifies the Identity Mapper that is to be used for associating user entries with basic authentication user names.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
+	// If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Delegated Admin HTTP Servlet Extension.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
 	// The name of a scope that must be present in an access token accepted by the Delegated Admin HTTP Servlet Extension.
 	AccessTokenScope *string `json:"accessTokenScope,omitempty"`
@@ -30,6 +31,7 @@ type DelegatedAdminHttpServletExtensionResponse struct {
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

@@ -21,6 +21,7 @@ type AddVaultCipherStreamProviderRequest struct {
 	Schemas []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault server.
 	VaultExternalServer *string `json:"vaultExternalServer,omitempty"`
+	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
 	VaultServerBaseURI []string `json:"vaultServerBaseURI,omitempty"`
 	// The mechanism used to authenticate to the Vault server.
 	VaultAuthenticationMethod *string `json:"vaultAuthenticationMethod,omitempty"`

@@ -27,10 +27,15 @@ type HttpConnectionHandlerResponse struct {
 	UseSSL *bool `json:"useSSL,omitempty"`
 	// Specifies the nickname (also called the alias) of the certificate that the HTTP Connection Handler should use when performing SSL communication.
 	SslCertNickname *string `json:"sslCertNickname,omitempty"`
+	// Specifies information about servlets that will be provided via this connection handler.
 	HttpServletExtension []string `json:"httpServletExtension,omitempty"`
+	// Specifies information about web applications that will be provided via this connection handler.
 	WebApplicationExtension []string `json:"webApplicationExtension,omitempty"`
+	// Specifies the set of HTTP operation loggers that should be used to log information about requests and responses for operations processed through this HTTP Connection Handler.
 	HttpOperationLogPublisher []string `json:"httpOperationLogPublisher,omitempty"`
+	// Specifies the names of the SSL protocols that are allowed for use in SSL communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
 	SslProtocol []string `json:"sslProtocol,omitempty"`
+	// Specifies the names of the SSL cipher suites that are allowed for use in SSL communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
 	SslCipherSuite []string `json:"sslCipherSuite,omitempty"`
 	// Specifies the key manager provider that will be used to obtain the certificate to present to HTTPS clients.
 	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
@@ -56,19 +61,24 @@ type HttpConnectionHandlerResponse struct {
 	UseForwardedHeaders *bool `json:"useForwardedHeaders,omitempty"`
 	// Specifies the maximum buffer size of an http request including the request uri and all of the request headers.
 	HttpRequestHeaderSize *int32 `json:"httpRequestHeaderSize,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// If enabled, a correlation ID header will be added to outgoing HTTP responses.
 	UseCorrelationIDHeader *bool `json:"useCorrelationIDHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
+	// Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDRequestHeader []string `json:"correlationIDRequestHeader,omitempty"`
 	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// A description for this Connection Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
+	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
+	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewHttpConnectionHandlerResponse instantiates a new HttpConnectionHandlerResponse object
@@ -1084,6 +1094,38 @@ func (o *HttpConnectionHandlerResponse) SetDeniedClient(v []string) {
 	o.DeniedClient = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *HttpConnectionHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *HttpConnectionHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *HttpConnectionHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o HttpConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1181,6 +1223,9 @@ func (o HttpConnectionHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.DeniedClient) {
 		toSerialize["deniedClient"] = o.DeniedClient
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

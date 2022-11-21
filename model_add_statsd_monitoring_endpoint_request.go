@@ -26,6 +26,7 @@ type AddStatsdMonitoringEndpointRequest struct {
 	ConnectionType EnummonitoringEndpointConnectionTypeProp `json:"connectionType"`
 	// The trust manager provider to use if SSL over TCP is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
+	// Specifies any optional additional tags to include in StatsD messages. Any additional tags will be appended to the end of each StatsD message, separated by commas. Tags should be written in a [key]:[value] format (\"host:server1\", for example).
 	AdditionalTags []string `json:"additionalTags,omitempty"`
 	// Indicates whether this Monitoring Endpoint is enabled for use in the Directory Server.
 	Enabled bool `json:"enabled"`

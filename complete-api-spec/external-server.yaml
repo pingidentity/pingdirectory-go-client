@@ -205,6 +205,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/opendj-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     opendj-external-server-shared:
       type: object
       properties:
@@ -327,6 +328,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/smtp-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     smtp-external-server-shared:
       type: object
       properties:
@@ -367,8 +369,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the connection properties for the smtp server.
+          description: >-
+              Specifies the connection properties for the smtp server.
         description:
           type: string
           description: >-
@@ -400,6 +402,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     nokia-ds-external-server-shared:
       type: object
       properties:
@@ -526,6 +529,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     ping-one-http-external-server-shared:
       type: object
       properties:
@@ -592,6 +596,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/active-directory-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     active-directory-external-server-shared:
       type: object
       properties:
@@ -714,6 +719,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     oracle-unified-directory-external-server-shared:
       type: object
       properties:
@@ -836,6 +842,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/conjur-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     conjur-external-server-shared:
       type: object
       properties:
@@ -849,8 +856,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://conjur.example.com:8443/".
+          description: >-
+              The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://conjur.example.com:8443/".
         conjurAuthenticationMethod:
           type: string
           description: >-
@@ -905,6 +912,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jdbc-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     jdbc-external-server-shared:
       type: object
       properties:
@@ -957,8 +965,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the connection properties for the JDBC datasource.
+          description: >-
+              Specifies the connection properties for the JDBC datasource.
         transactionIsolationLevel:
           $ref: '#/components/schemas/Enumexternal-server-transactionIsolationLevelProp'
         description:
@@ -992,6 +1000,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     amazon-aws-external-server-shared:
       type: object
       properties:
@@ -1045,6 +1054,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     syslog-external-server-shared:
       type: object
       properties:
@@ -1111,6 +1121,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     nokia-proxy-server-external-server-shared:
       type: object
       properties:
@@ -1237,6 +1248,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/vault-external-server-shared'
+      - $ref: '#/components/schemas/meta'
     vault-external-server-shared:
       type: object
       properties:
@@ -1250,8 +1262,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
+          description: >-
+              The base URL needed to access the Vault server. The base URL should consist of the protocol ("http" or "https"), the server address (resolvable name or IP address), and the port number. For example, "https://vault.example.com:8200/".
         vaultAuthenticationMethod:
           type: string
           description: >-
@@ -1449,6 +1461,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

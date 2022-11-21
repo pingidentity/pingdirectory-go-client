@@ -91,14 +91,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used.
+          description: >-
+              If specified, the Identity Mapper(s) that may be used to map consent record subject and actor values to DNs. This is typically only needed if privileged API clients will be used.
         serviceAccountDN:
           type: array
           items:
             type: string
-            description: >-
-                The set of account DNs that the Consent Service will consider to be privileged.
+          description: >-
+              The set of account DNs that the Consent Service will consider to be privileged.
         unprivilegedConsentScope:
           type: string
           description: >-
@@ -144,6 +144,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

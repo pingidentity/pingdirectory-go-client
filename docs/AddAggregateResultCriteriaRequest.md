@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CriteriaName** | **string** | Name of the new Result Criteria | 
 **Schemas** | [**[]EnumaggregateResultCriteriaSchemaUrn**](EnumaggregateResultCriteriaSchemaUrn.md) |  | 
-**AllIncludedResultCriteria** | Pointer to **[]string** |  | [optional] 
-**AnyIncludedResultCriteria** | Pointer to **[]string** |  | [optional] 
-**NotAllIncludedResultCriteria** | Pointer to **[]string** |  | [optional] 
-**NoneIncludedResultCriteria** | Pointer to **[]string** |  | [optional] 
+**AllIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that must match the associated operation result in order to match the aggregate result criteria. If one or more all-included result criteria objects are provided, then an operation result must match all of them in order to match the aggregate result criteria. | [optional] 
+**AnyIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that may match the associated operation result in order to match the aggregate result criteria. If one or more any-included result criteria objects are provided, then an operation result must match at least one of them in order to match the aggregate result criteria. | [optional] 
+**NotAllIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that should not match the associated operation result in order to match the aggregate result criteria. If one or more not-all-included result criteria objects are provided, then an operation result must not match all of them (that is, it may match zero or more of them, but it must not match all of them) in order to match the aggregate result criteria. | [optional] 
+**NoneIncludedResultCriteria** | Pointer to **[]string** | Specifies a result criteria object that must not match the associated operation result in order to match the aggregate result criteria. If one or more none-included result criteria objects are provided, then an operation result must not match any of them in order to match the aggregate result criteria. | [optional] 
 **Description** | Pointer to **string** | A description for this Result Criteria | [optional] 
 
 ## Methods

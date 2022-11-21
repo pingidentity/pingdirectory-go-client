@@ -25,11 +25,13 @@ type MetricsBackendResponse struct {
 	MetricsDir string `json:"metricsDir"`
 	// Period when samples are flushed to disk.
 	SampleFlushInterval *string `json:"sampleFlushInterval,omitempty"`
+	// The retention policy to use for the Metrics Backend .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
 	Enabled bool `json:"enabled"`
+	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.

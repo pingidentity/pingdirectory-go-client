@@ -29,6 +29,7 @@ type ChangeSubscriptionResponse struct {
 	ResultCriteria *string `json:"resultCriteria,omitempty"`
 	// Specifies a timestamp that provides an expiration time for this change subscription. If an expiration time is provided, then the change subscription will not be active after that time has passed.
 	ExpirationTime *string `json:"expirationTime,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewChangeSubscriptionResponse instantiates a new ChangeSubscriptionResponse object
@@ -265,6 +266,38 @@ func (o *ChangeSubscriptionResponse) SetExpirationTime(v string) {
 	o.ExpirationTime = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ChangeSubscriptionResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ChangeSubscriptionResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ChangeSubscriptionResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ChangeSubscriptionResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o ChangeSubscriptionResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -287,6 +320,9 @@ func (o ChangeSubscriptionResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ExpirationTime) {
 		toSerialize["expirationTime"] = o.ExpirationTime
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

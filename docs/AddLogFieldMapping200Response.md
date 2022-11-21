@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **LogFieldIntermediateClientRequest** | Pointer to **string** | The contents of the intermediate client request control provided by the client. | [optional] 
 **LogFieldReplicationChangeID** | Pointer to **string** | The replication change ID. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Mapping | [optional] 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **LogFieldCategory** | Pointer to **string** | The category for the log message. | [optional] 
 **LogFieldSeverity** | Pointer to **string** | The severity for the log message. | [optional] 
 
@@ -1445,6 +1446,31 @@ SetDescription sets Description field to given value.
 `func (o *AddLogFieldMapping200Response) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *AddLogFieldMapping200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddLogFieldMapping200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddLogFieldMapping200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddLogFieldMapping200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetLogFieldCategory
 

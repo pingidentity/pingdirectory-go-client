@@ -41,8 +41,11 @@ type LdapSdkDebugLoggerResponse struct {
 	BufferSize *string `json:"bufferSize,omitempty"`
 	// Specifies whether to append to existing log files.
 	Append *bool `json:"append,omitempty"`
+	// The rotation policy to use for the LDAP SDK Debug Logger .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the LDAP SDK Debug Logger .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumldapSdkDebugLoggerCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.

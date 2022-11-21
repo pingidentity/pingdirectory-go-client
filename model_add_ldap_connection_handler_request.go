@@ -19,6 +19,7 @@ type AddLdapConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
 	HandlerName string `json:"handlerName"`
 	Schemas []EnumldapConnectionHandlerSchemaUrn `json:"schemas"`
+	// Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
 	ListenAddress []string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the LDAP Connection Handler will listen for connections from clients.
 	ListenPort int32 `json:"listenPort"`
@@ -51,7 +52,9 @@ type AddLdapConnectionHandlerRequest struct {
 	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
 	AcceptBacklog *int32 `json:"acceptBacklog,omitempty"`
+	// Specifies the names of the SSL protocols that are allowed for use in SSL or StartTLS communication. The set of supported ssl protocols can be viewed via the ssl context monitor entry.
 	SslProtocol []string `json:"sslProtocol,omitempty"`
+	// Specifies the names of the SSL cipher suites that are allowed for use in SSL or StartTLS communication. The set of supported cipher suites can be viewed via the ssl context monitor entry.
 	SslCipherSuite []string `json:"sslCipherSuite,omitempty"`
 	// Specifies the maximum length of time that attempts to write data to LDAP clients should be allowed to block.
 	MaxBlockedWriteTimeLimit *string `json:"maxBlockedWriteTimeLimit,omitempty"`
@@ -65,7 +68,9 @@ type AddLdapConnectionHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
+	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
+	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
 	DeniedClient []string `json:"deniedClient,omitempty"`
 }
 

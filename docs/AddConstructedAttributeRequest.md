@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Schemas** | Pointer to [**[]EnumconstructedAttributeSchemaUrn**](EnumconstructedAttributeSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Constructed Attribute | [optional] 
 **AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be constructed. | 
-**ValuePattern** | **[]string** |  | 
+**ValuePattern** | **[]string** | Specifies a pattern for constructing the attribute value using fixed text and attribute values from the entry. | 
 
 ## Methods
 

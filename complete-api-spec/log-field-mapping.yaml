@@ -165,6 +165,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/access-log-field-mapping-shared'
+      - $ref: '#/components/schemas/meta'
     access-log-field-mapping-shared:
       type: object
       properties:
@@ -412,6 +413,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/error-log-field-mapping-shared'
+      - $ref: '#/components/schemas/meta'
     error-log-field-mapping-shared:
       type: object
       properties:
@@ -490,6 +492,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

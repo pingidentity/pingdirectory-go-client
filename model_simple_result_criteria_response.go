@@ -30,9 +30,13 @@ type SimpleResultCriteriaResponse struct {
 	// Specifies the boundary value to use for the time an operation spent on the work queue when determining whether to include that operation in this Simple Result Criteria. This will be ignored if the \"queue-time-criteria\" property has a value of \"any\".
 	QueueTimeValue *string `json:"queueTimeValue,omitempty"`
 	ReferralReturned *EnumresultCriteriaReferralReturnedProp `json:"referralReturned,omitempty"`
+	// Specifies the OID of a control that must be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must contain all of those controls.
 	AllIncludedResponseControl []string `json:"allIncludedResponseControl,omitempty"`
+	// Specifies the OID of a control that may be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must contain at least one of those controls.
 	AnyIncludedResponseControl []string `json:"anyIncludedResponseControl,omitempty"`
+	// Specifies the OID of a control that should not be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must not contain at least one of those controls (that is, the response may contain zero or more of those controls, but not all of them).
 	NotAllIncludedResponseControl []string `json:"notAllIncludedResponseControl,omitempty"`
+	// Specifies the OID of a control that must not be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must not contain any of those controls.
 	NoneIncludedResponseControl []string `json:"noneIncludedResponseControl,omitempty"`
 	UsedAlternateAuthzid *EnumresultCriteriaUsedAlternateAuthzidProp `json:"usedAlternateAuthzid,omitempty"`
 	UsedAnyPrivilege *EnumresultCriteriaUsedAnyPrivilegeProp `json:"usedAnyPrivilege,omitempty"`
@@ -47,14 +51,21 @@ type SimpleResultCriteriaResponse struct {
 	// Specifies the target number of references returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \"search-reference-criteria\" property has a value of \"any\".
 	SearchReferenceReturnedCount *int32 `json:"searchReferenceReturnedCount,omitempty"`
 	SearchIndexedCriteria *EnumresultCriteriaSearchIndexedCriteriaProp `json:"searchIndexedCriteria,omitempty"`
+	// Specifies a base DN below which authorization user entries may exist for operations included in this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	IncludedAuthzUserBaseDN []string `json:"includedAuthzUserBaseDN,omitempty"`
+	// Specifies a base DN below which authorization user entries may exist for operations excluded from this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	ExcludedAuthzUserBaseDN []string `json:"excludedAuthzUserBaseDN,omitempty"`
+	// Specifies the DN of a group in which authorization users must exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must be a member of all of those groups. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	AllIncludedAuthzUserGroupDN []string `json:"allIncludedAuthzUserGroupDN,omitempty"`
+	// Specifies the DN of a group in which authorization users may exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must be a member of at least one of those groups. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	AnyIncludedAuthzUserGroupDN []string `json:"anyIncludedAuthzUserGroupDN,omitempty"`
+	// Specifies the DN of a group in which authorization users should not exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must not be a member of at least one of those groups (that is, the user may be a member of zero or more of those groups, but not of all of them). The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	NotAllIncludedAuthzUserGroupDN []string `json:"notAllIncludedAuthzUserGroupDN,omitempty"`
+	// Specifies the DN of a group in which authorization users must not exist for operations included in this Simple Result Criteria. If any group DNs are provided, then the authorization user must not be a member any of those groups. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	NoneIncludedAuthzUserGroupDN []string `json:"noneIncludedAuthzUserGroupDN,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSimpleResultCriteriaResponse instantiates a new SimpleResultCriteriaResponse object
@@ -1084,6 +1095,38 @@ func (o *SimpleResultCriteriaResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SimpleResultCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleResultCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SimpleResultCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SimpleResultCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o SimpleResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1181,6 +1224,9 @@ func (o SimpleResultCriteriaResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **MechanismName** | **string** | Name of the new OTP Delivery Mechanism | 
 **Schemas** | [**[]EnumthirdPartyOtpDeliveryMechanismSchemaUrn**](EnumthirdPartyOtpDeliveryMechanismSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party OTP Delivery Mechanism. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party OTP Delivery Mechanism. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **Description** | Pointer to **string** | A description for this OTP Delivery Mechanism | [optional] 
 **Enabled** | **bool** | Indicates whether this OTP Delivery Mechanism is enabled for use in the server. | 
 

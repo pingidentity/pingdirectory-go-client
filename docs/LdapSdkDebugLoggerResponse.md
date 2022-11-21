@@ -18,9 +18,9 @@ Name | Type | Description | Notes
 **QueueSize** | Pointer to **int32** | The maximum number of log records that can be stored in the asynchronous queue. | [optional] 
 **BufferSize** | Pointer to **string** | Specifies the log file buffer size. | [optional] 
 **Append** | Pointer to **bool** | Specifies whether to append to existing log files. | [optional] 
-**RotationPolicy** | **[]string** |  | 
-**RotationListener** | Pointer to **[]string** |  | [optional] 
-**RetentionPolicy** | **[]string** |  | 
+**RotationPolicy** | **[]string** | The rotation policy to use for the LDAP SDK Debug Logger . | 
+**RotationListener** | Pointer to **[]string** | A listener that should be notified whenever a log file is rotated out of service. | [optional] 
+**RetentionPolicy** | **[]string** | The retention policy to use for the LDAP SDK Debug Logger . | 
 **CompressionMechanism** | Pointer to [**EnumldapSdkDebugLoggerCompressionMechanismProp**](EnumldapSdkDebugLoggerCompressionMechanismProp.md) |  | [optional] 
 **SignLog** | Pointer to **bool** | Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner. | [optional] 
 **EncryptLog** | Pointer to **bool** | Indicates whether log files should be encrypted so that their content is not available to unauthorized users. | [optional] 

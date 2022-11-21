@@ -21,6 +21,7 @@ type AddThirdPartyAlertHandlerRequest struct {
 	Schemas []EnumthirdPartyAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Alert Handler.
 	ExtensionClass string `json:"extensionClass"`
+	// The set of arguments used to customize the behavior for the Third Party Alert Handler. Each configuration property should be given in the form 'name=value'.
 	ExtensionArgument []string `json:"extensionArgument,omitempty"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`

@@ -169,6 +169,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
+      - $ref: '#/components/schemas/meta'
     groovy-scripted-change-subscription-handler-shared:
       type: object
       properties:
@@ -186,8 +187,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -200,8 +201,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+          description: >-
+              The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
       required:
       - schemas
       - scriptClass
@@ -230,6 +231,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
+      - $ref: '#/components/schemas/meta'
     logging-change-subscription-handler-shared:
       type: object
       properties:
@@ -255,8 +257,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+          description: >-
+              The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
       required:
       - schemas
       - logFile
@@ -285,6 +287,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
+      - $ref: '#/components/schemas/meta'
     third-party-change-subscription-handler-shared:
       type: object
       properties:
@@ -302,8 +305,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
         description:
           type: string
           description: >-
@@ -316,8 +319,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
+          description: >-
+              The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
       required:
       - schemas
       - extensionClass
@@ -353,6 +356,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

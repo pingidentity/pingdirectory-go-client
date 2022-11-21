@@ -157,6 +157,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/api-key-conjur-authentication-method-shared'
+      - $ref: '#/components/schemas/meta'
     api-key-conjur-authentication-method-shared:
       type: object
       properties:
@@ -217,6 +218,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

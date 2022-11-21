@@ -23,8 +23,11 @@ type AddFileBasedJsonHttpOperationLogPublisherRequest struct {
 	LogFile string `json:"logFile"`
 	// The UNIX permissions of the log files created by this File Based JSON HTTP Operation Log Publisher.
 	LogFilePermissions string `json:"logFilePermissions"`
+	// The rotation policy to use for the File Based JSON HTTP Operation Log Publisher .
 	RotationPolicy []string `json:"rotationPolicy"`
+	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
+	// The retention policy to use for the File Based JSON HTTP Operation Log Publisher .
 	RetentionPolicy []string `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
@@ -60,8 +63,10 @@ type AddFileBasedJsonHttpOperationLogPublisherRequest struct {
 	// Indicates whether result log messages should include all of the elements of request log messages. This may be used to record a single message per operation with details about both the request and response.
 	IncludeRequestDetailsInResultMessages *bool `json:"includeRequestDetailsInResultMessages,omitempty"`
 	LogRequestHeaders *EnumlogPublisherLogRequestHeadersProp `json:"logRequestHeaders,omitempty"`
+	// Specifies the case-insensitive names of request headers that should be omitted from log messages (e.g., for the purpose of brevity or security). This will only be used if the log-request-headers property has a value of true.
 	SuppressedRequestHeaderName []string `json:"suppressedRequestHeaderName,omitempty"`
 	LogResponseHeaders *EnumlogPublisherLogResponseHeadersProp `json:"logResponseHeaders,omitempty"`
+	// Specifies the case-insensitive names of response headers that should be omitted from log messages (e.g., for the purpose of brevity or security). This will only be used if the log-response-headers property has a value of true.
 	SuppressedResponseHeaderName []string `json:"suppressedResponseHeaderName,omitempty"`
 	// Indicates whether to log the type of credentials given if an \"Authorization\" header was included in the request. Logging the authorization type may be useful, and is much more secure than logging the entire value of the \"Authorization\" header.
 	LogRequestAuthorizationType *bool `json:"logRequestAuthorizationType,omitempty"`
@@ -70,6 +75,7 @@ type AddFileBasedJsonHttpOperationLogPublisherRequest struct {
 	// Indicates whether to log the names of any cookies set in an HTTP response. Logging cookie names may be useful and is much more secure than logging the entire content of the cookies (which may include sensitive information).
 	LogResponseCookieNames *bool `json:"logResponseCookieNames,omitempty"`
 	LogRequestParameters *EnumlogPublisherLogRequestParametersProp `json:"logRequestParameters,omitempty"`
+	// Specifies the case-insensitive names of request parameters that should be omitted from log messages (e.g., for the purpose of brevity or security). This will only be used if the log-request-parameters property has a value of parameter-names or parameter-names-and-values.
 	SuppressedRequestParameterName []string `json:"suppressedRequestParameterName,omitempty"`
 	// Indicates whether request log messages should include information about the HTTP version specified in the request.
 	LogRequestProtocol *bool `json:"logRequestProtocol,omitempty"`

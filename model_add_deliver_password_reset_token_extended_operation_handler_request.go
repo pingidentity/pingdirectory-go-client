@@ -21,6 +21,7 @@ type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
 	Schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the password reset token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
+	// The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms.
 	DefaultTokenDeliveryMechanism []string `json:"defaultTokenDeliveryMechanism"`
 	// The maximum length of time that a password reset token should be considered valid.
 	PasswordResetTokenValidityDuration string `json:"passwordResetTokenValidityDuration"`

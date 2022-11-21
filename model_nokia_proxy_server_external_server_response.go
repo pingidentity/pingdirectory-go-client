@@ -59,6 +59,7 @@ type NokiaProxyServerExternalServerResponse struct {
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewNokiaProxyServerExternalServerResponse instantiates a new NokiaProxyServerExternalServerResponse object
@@ -776,6 +777,38 @@ func (o *NokiaProxyServerExternalServerResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *NokiaProxyServerExternalServerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NokiaProxyServerExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *NokiaProxyServerExternalServerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *NokiaProxyServerExternalServerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o NokiaProxyServerExternalServerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -849,6 +882,9 @@ func (o NokiaProxyServerExternalServerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

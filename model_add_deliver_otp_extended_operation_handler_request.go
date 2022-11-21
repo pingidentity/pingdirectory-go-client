@@ -23,6 +23,7 @@ type AddDeliverOtpExtendedOperationHandlerRequest struct {
 	IdentityMapper string `json:"identityMapper"`
 	// The password generator that will be used to create the one-time password values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
+	// The set of delivery mechanisms that may be used to deliver one-time passwords to users in requests that do not specify one or more preferred delivery mechanisms.
 	DefaultOTPDeliveryMechanism []string `json:"defaultOTPDeliveryMechanism"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`

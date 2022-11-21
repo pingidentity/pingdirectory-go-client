@@ -21,6 +21,7 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	BasicAuthEnabled *bool `json:"basicAuthEnabled,omitempty"`
 	// Specifies the Identity Mapper that is to be used for associating user entries with basic authentication usernames.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
+	// If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Directory REST API HTTP Servlet Extension.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
 	// The name of a scope that must be present in an access token accepted by the Directory REST API HTTP Servlet Extension.
 	AccessTokenScope *string `json:"accessTokenScope,omitempty"`
@@ -28,14 +29,18 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	Audience *string `json:"audience,omitempty"`
 	// The maximum number of entries to be returned in one page of search results.
 	MaxPageSize *int32 `json:"maxPageSize,omitempty"`
+	// The list of object classes which will be returned by the schemas endpoint.
 	SchemasEndpointObjectclass []string `json:"schemasEndpointObjectclass,omitempty"`
+	// A set of operational attributes that will be returned with entries by default.
 	DefaultOperationalAttribute []string `json:"defaultOperationalAttribute,omitempty"`
+	// A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups.
 	RejectExpansionAttribute []string `json:"rejectExpansionAttribute,omitempty"`
 	AllowedControl []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
 	CrossOriginPolicy *string `json:"crossOriginPolicy,omitempty"`
+	// Specifies HTTP header fields and values added to response headers for all requests.
 	ResponseHeader []string `json:"responseHeader,omitempty"`
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`

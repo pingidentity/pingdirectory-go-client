@@ -20,6 +20,7 @@ type AddJwtAccessTokenValidatorRequest struct {
 	ValidatorName string `json:"validatorName"`
 	Schemas []EnumjwtAccessTokenValidatorSchemaUrn `json:"schemas"`
 	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
+	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
 	JwksEndpointPath *string `json:"jwksEndpointPath,omitempty"`

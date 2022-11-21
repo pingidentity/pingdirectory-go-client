@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **PublisherName** | **string** | Name of the new Log Publisher | 
 **Schemas** | [**[]EnumthirdPartyAccessLogPublisherSchemaUrn**](EnumthirdPartyAccessLogPublisherSchemaUrn.md) |  | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Access Log Publisher. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Access Log Publisher. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 **LogConnects** | Pointer to **bool** | Indicates whether to log information about connections established to the server. | [optional] 
 **LogDisconnects** | Pointer to **bool** | Indicates whether to log information about connections that have been closed by the client or terminated by the server. | [optional] 
 **LogSecurityNegotiation** | Pointer to **bool** | Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed. | [optional] 

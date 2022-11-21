@@ -21,6 +21,7 @@ type AddGroovyScriptedOauthTokenHandlerRequest struct {
 	Schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted OAuth Token Handler.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted OAuth Token Handler. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this OAuth Token Handler
 	Description *string `json:"description,omitempty"`

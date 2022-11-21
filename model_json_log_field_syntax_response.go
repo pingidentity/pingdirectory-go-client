@@ -17,7 +17,9 @@ import (
 // JsonLogFieldSyntaxResponse struct for JsonLogFieldSyntaxResponse
 type JsonLogFieldSyntaxResponse struct {
 	Schemas []EnumjsonLogFieldSyntaxSchemaUrn `json:"schemas"`
+	// The names of the JSON fields that will be considered sensitive.
 	IncludedSensitiveField []string `json:"includedSensitiveField,omitempty"`
+	// The names of the JSON fields that will not be considered sensitive.
 	ExcludedSensitiveField []string `json:"excludedSensitiveField,omitempty"`
 	// A description for this Log Field Syntax
 	Description *string `json:"description,omitempty"`

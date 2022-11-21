@@ -157,6 +157,7 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/fifo-entry-cache-shared'
+      - $ref: '#/components/schemas/meta'
     fifo-entry-cache-shared:
       type: object
       properties:
@@ -182,14 +183,14 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                The set of filters that define the entries that should be included in the cache.
+          description: >-
+              The set of filters that define the entries that should be included in the cache.
         excludeFilter:
           type: array
           items:
             type: string
-            description: >-
-                The set of filters that define the entries that should be excluded from the cache.
+          description: >-
+              The set of filters that define the entries that should be excluded from the cache.
         minCacheEntryValueCount:
           type: integer
           description: >-
@@ -198,8 +199,8 @@ components:
           type: array
           items:
             type: string
-            description: >-
-                Specifies the names of the attribute types for which the min-cache-entry-value-count property should apply. If no attribute types are specified, then all user attributes will be examined.
+          description: >-
+              Specifies the names of the attribute types for which the min-cache-entry-value-count property should apply. If no attribute types are specified, then all user attributes will be examined.
         description:
           type: string
           description: >-
@@ -250,6 +251,16 @@ components:
       - "add"
       - "remove"
       - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

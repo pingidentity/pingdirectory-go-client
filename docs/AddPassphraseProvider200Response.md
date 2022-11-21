@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **EnvironmentVariable** | **string** | The name of the environment variable that is expected to hold the passphrase. | 
 **Description** | Pointer to **string** | A description for this Passphrase Provider | [optional] 
 **Enabled** | **bool** | Indicates whether this Passphrase Provider is enabled for use in the server. | 
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **AwsExternalServer** | **string** | The external server with information to use when interacting with the AWS Secrets Manager. | 
 **SecretID** | **string** | The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved. | 
 **SecretFieldName** | **string** | The name of the JSON field whose value is the passphrase that will be retrieved. | 
@@ -26,7 +27,7 @@ Name | Type | Description | Notes
 **VaultSecretPath** | **string** | The path to the desired secret in the Vault service. This will be appended to the value of the base-url property for the associated Vault external server. | 
 **VaultSecretFieldName** | **string** | The name of the field in the Vault secret record that contains the passphrase to use to generate the encryption key. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Passphrase Provider. | 
-**ExtensionArgument** | Pointer to **[]string** |  | [optional] 
+**ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Passphrase Provider. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
 
 ## Methods
 
@@ -151,6 +152,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetMeta
+
+`func (o *AddPassphraseProvider200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *AddPassphraseProvider200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *AddPassphraseProvider200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *AddPassphraseProvider200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 ### GetAwsExternalServer
 

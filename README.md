@@ -1835,6 +1835,8 @@ Class | Method | HTTP request | Description
  - [MemberVirtualAttributeResponse](docs/MemberVirtualAttributeResponse.md)
  - [MemberVirtualAttributeShared](docs/MemberVirtualAttributeShared.md)
  - [MemoryUsageMonitorProviderResponse](docs/MemoryUsageMonitorProviderResponse.md)
+ - [Meta](docs/Meta.md)
+ - [MetaMeta](docs/MetaMeta.md)
  - [MetricsBackendResponse](docs/MetricsBackendResponse.md)
  - [MetricsEngineServerInstanceResponse](docs/MetricsEngineServerInstanceResponse.md)
  - [MirrorVirtualAttributeResponse](docs/MirrorVirtualAttributeResponse.md)

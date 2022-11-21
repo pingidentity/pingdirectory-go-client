@@ -17,7 +17,9 @@ import (
 // RootDseBackendResponse struct for RootDseBackendResponse
 type RootDseBackendResponse struct {
 	Schemas []EnumrootDseBackendSchemaUrn `json:"schemas,omitempty"`
+	// Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
 	SubordinateBaseDN []string `json:"subordinateBaseDN,omitempty"`
+	// Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
 	AdditionalSupportedControlOID []string `json:"additionalSupportedControlOID,omitempty"`
 	// Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the Directory Server schema configuration.
 	ShowAllAttributes bool `json:"showAllAttributes"`

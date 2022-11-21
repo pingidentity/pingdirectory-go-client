@@ -21,6 +21,7 @@ type AddGroovyScriptedIdentityMapperRequest struct {
 	Schemas []EnumgroovyScriptedIdentityMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
 	ScriptClass string `json:"scriptClass"`
+	// The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this Identity Mapper
 	Description *string `json:"description,omitempty"`

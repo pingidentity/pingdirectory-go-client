@@ -60,6 +60,7 @@ type ConsoleWebApplicationExtensionResponse struct {
 	DeploymentDescriptorFile *string `json:"deploymentDescriptorFile,omitempty"`
 	// Specifies the path to the directory that may be used to store temporary files such as extracted WAR files and compiled JSP files.
 	TemporaryDirectory *string `json:"temporaryDirectory,omitempty"`
+	// Specifies an initialization parameter to pass into the web application during startup.
 	InitParameter []string `json:"initParameter,omitempty"`
 }
 

@@ -19,14 +19,18 @@ type OauthBearerSaslMechanismHandlerResponse struct {
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	Schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	// An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
+	// An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry.
 	IdTokenValidator []string `json:"idTokenValidator,omitempty"`
 	// Indicates whether bind requests will be required to have both an OAuth access token (in the \"auth\" element of the bind request) and an OpenID Connect ID token (in the \"pingidentityidtoken\" element of the bind request).
 	RequireBothAccessTokenAndIDToken *bool `json:"requireBothAccessTokenAndIDToken,omitempty"`
 	ValidateAccessTokenWhenIDTokenIsAlsoProvided *EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp `json:"validateAccessTokenWhenIDTokenIsAlsoProvided,omitempty"`
 	// The identity mapper that will be used to map an alternate authorization identity (provided in the GS2 header of the encoded OAUTHBEARER bind request credentials) to the corresponding local entry.
 	AlternateAuthorizationIdentityMapper *string `json:"alternateAuthorizationIdentityMapper,omitempty"`
+	// The set of OAuth scopes that will all be required for any access tokens that will be allowed for authentication.
 	AllRequiredScope []string `json:"allRequiredScope,omitempty"`
+	// The set of OAuth scopes that a token may have to be allowed for authentication.
 	AnyRequiredScope []string `json:"anyRequiredScope,omitempty"`
 	// The fully-qualified name that clients are expected to use when communicating with the server.
 	ServerFqdn *string `json:"serverFqdn,omitempty"`
@@ -34,6 +38,7 @@ type OauthBearerSaslMechanismHandlerResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the SASL mechanism handler is enabled for use.
 	Enabled bool `json:"enabled"`
+	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewOauthBearerSaslMechanismHandlerResponse instantiates a new OauthBearerSaslMechanismHandlerResponse object
@@ -416,6 +421,38 @@ func (o *OauthBearerSaslMechanismHandlerResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *OauthBearerSaslMechanismHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OauthBearerSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *OauthBearerSaslMechanismHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *OauthBearerSaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
 func (o OauthBearerSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -453,6 +490,9 @@ func (o OauthBearerSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
+	}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }
