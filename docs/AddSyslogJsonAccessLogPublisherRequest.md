@@ -43,7 +43,6 @@ Name | Type | Description | Notes
 **IncludeRequestControls** | Pointer to **bool** | Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request. | [optional] 
 **IncludeResponseControls** | Pointer to **bool** | Indicates whether log messages for operation results should include a list of the OIDs of any controls included in the result. | [optional] 
 **IncludeReplicationChangeID** | Pointer to **bool** | Indicates whether to log information about the replication change ID. | [optional] 
-**WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers. | [optional] 
 **GenerifyMessageStringsWhenPossible** | Pointer to **bool** | Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values. | [optional] 
 **MaxStringLength** | Pointer to **int32** | Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written. | [optional] 
 **LogFieldBehavior** | Pointer to **string** | The behavior to use for determining which fields to log and whether to transform the values of those fields in any way. | [optional] 
@@ -1024,31 +1023,6 @@ SetIncludeReplicationChangeID sets IncludeReplicationChangeID field to given val
 `func (o *AddSyslogJsonAccessLogPublisherRequest) HasIncludeReplicationChangeID() bool`
 
 HasIncludeReplicationChangeID returns a boolean if a field has been set.
-
-### GetWriteMultiLineMessages
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetWriteMultiLineMessages() bool`
-
-GetWriteMultiLineMessages returns the WriteMultiLineMessages field if non-nil, zero value otherwise.
-
-### GetWriteMultiLineMessagesOk
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) GetWriteMultiLineMessagesOk() (*bool, bool)`
-
-GetWriteMultiLineMessagesOk returns a tuple with the WriteMultiLineMessages field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWriteMultiLineMessages
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) SetWriteMultiLineMessages(v bool)`
-
-SetWriteMultiLineMessages sets WriteMultiLineMessages field to given value.
-
-### HasWriteMultiLineMessages
-
-`func (o *AddSyslogJsonAccessLogPublisherRequest) HasWriteMultiLineMessages() bool`
-
-HasWriteMultiLineMessages returns a boolean if a field has been set.
 
 ### GetGenerifyMessageStringsWhenPossible
 

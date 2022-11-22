@@ -21,8 +21,6 @@ type JvmDefaultTrustManagerProviderResponse struct {
 	Schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
-	// Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
-	IncludeJVMDefaultIssuers *bool `json:"includeJVMDefaultIssuers,omitempty"`
 	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
@@ -118,38 +116,6 @@ func (o *JvmDefaultTrustManagerProviderResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
-func (o *JvmDefaultTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-		var ret bool
-		return ret
-	}
-	return *o.IncludeJVMDefaultIssuers
-}
-
-// GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *JvmDefaultTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
-	}
-	return o.IncludeJVMDefaultIssuers, true
-}
-
-// HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
-func (o *JvmDefaultTrustManagerProviderResponse) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
-		return true
-	}
-
-	return false
-}
-
-// SetIncludeJVMDefaultIssuers gets a reference to the given bool and assigns it to the IncludeJVMDefaultIssuers field.
-func (o *JvmDefaultTrustManagerProviderResponse) SetIncludeJVMDefaultIssuers(v bool) {
-	o.IncludeJVMDefaultIssuers = &v
-}
-
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *JvmDefaultTrustManagerProviderResponse) GetMeta() MetaMeta {
 	if o == nil || isNil(o.Meta) {
@@ -192,9 +158,6 @@ func (o JvmDefaultTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
 	}
 	if !isNil(o.Meta) {
 		toSerialize["meta"] = o.Meta

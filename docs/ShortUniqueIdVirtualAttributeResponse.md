@@ -13,8 +13,6 @@ Name | Type | Description | Notes
 **GroupDN** | Pointer to **[]string** | Specifies the DNs of the groups whose members can be eligible to use this virtual attribute. | [optional] 
 **Filter** | Pointer to **[]string** | Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries. | [optional] 
 **ClientConnectionPolicy** | Pointer to **[]string** | Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies. | [optional] 
-**ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
-**RequireExplicitRequestByName** | Pointer to **bool** | Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type. | [optional] 
 **MultipleVirtualAttributeEvaluationOrderIndex** | Pointer to **int32** | Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry. | [optional] 
 **MultipleVirtualAttributeMergeBehavior** | Pointer to [**EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp**](EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp.md) |  | [optional] 
 **AllowIndexConflicts** | Pointer to **bool** | Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server. | [optional] 
@@ -242,56 +240,6 @@ SetClientConnectionPolicy sets ClientConnectionPolicy field to given value.
 `func (o *ShortUniqueIdVirtualAttributeResponse) HasClientConnectionPolicy() bool`
 
 HasClientConnectionPolicy returns a boolean if a field has been set.
-
-### GetConflictBehavior
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp`
-
-GetConflictBehavior returns the ConflictBehavior field if non-nil, zero value otherwise.
-
-### GetConflictBehaviorOk
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool)`
-
-GetConflictBehaviorOk returns a tuple with the ConflictBehavior field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConflictBehavior
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) SetConflictBehavior(v EnumvirtualAttributeConflictBehaviorProp)`
-
-SetConflictBehavior sets ConflictBehavior field to given value.
-
-### HasConflictBehavior
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) HasConflictBehavior() bool`
-
-HasConflictBehavior returns a boolean if a field has been set.
-
-### GetRequireExplicitRequestByName
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) GetRequireExplicitRequestByName() bool`
-
-GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field if non-nil, zero value otherwise.
-
-### GetRequireExplicitRequestByNameOk
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool)`
-
-GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequireExplicitRequestByName
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) SetRequireExplicitRequestByName(v bool)`
-
-SetRequireExplicitRequestByName sets RequireExplicitRequestByName field to given value.
-
-### HasRequireExplicitRequestByName
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) HasRequireExplicitRequestByName() bool`
-
-HasRequireExplicitRequestByName returns a boolean if a field has been set.
 
 ### GetMultipleVirtualAttributeEvaluationOrderIndex
 

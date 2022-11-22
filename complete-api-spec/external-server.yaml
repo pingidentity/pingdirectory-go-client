@@ -553,25 +553,12 @@ components:
           type: string
           description: >-
               Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne.
-        baseURL:
-          type: string
-          description: >-
-              The base URL of the external server, optionally including port number, for example "https://externalService:9031".
-        keyManagerProvider:
-          type: string
-          description: >-
-              The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-        sslCertNickname:
-          type: string
-          description: >-
-              The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
         description:
           type: string
           description: >-
               A description for this External Server
       required:
       - schemas
-      - baseURL
     Enumping-one-http-external-serverSchemaUrn:
       type: string
       enum:

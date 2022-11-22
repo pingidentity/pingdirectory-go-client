@@ -10,16 +10,13 @@ Name | Type | Description | Notes
 **TrustManagerProvider** | Pointer to **string** | The trust manager provider to use for HTTPS connection-level security. | [optional] 
 **ConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established before aborting a request to PingOne. | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne. | [optional] 
-**BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
-**KeyManagerProvider** | Pointer to **string** | The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
-**SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **Description** | Pointer to **string** | A description for this External Server | [optional] 
 
 ## Methods
 
 ### NewAddPingOneHttpExternalServerRequest
 
-`func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []EnumpingOneHttpExternalServerSchemaUrn, baseURL string, ) *AddPingOneHttpExternalServerRequest`
+`func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []EnumpingOneHttpExternalServerSchemaUrn, ) *AddPingOneHttpExternalServerRequest`
 
 NewAddPingOneHttpExternalServerRequest instantiates a new AddPingOneHttpExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -173,76 +170,6 @@ SetResponseTimeout sets ResponseTimeout field to given value.
 `func (o *AddPingOneHttpExternalServerRequest) HasResponseTimeout() bool`
 
 HasResponseTimeout returns a boolean if a field has been set.
-
-### GetBaseURL
-
-`func (o *AddPingOneHttpExternalServerRequest) GetBaseURL() string`
-
-GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
-
-### GetBaseURLOk
-
-`func (o *AddPingOneHttpExternalServerRequest) GetBaseURLOk() (*string, bool)`
-
-GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBaseURL
-
-`func (o *AddPingOneHttpExternalServerRequest) SetBaseURL(v string)`
-
-SetBaseURL sets BaseURL field to given value.
-
-
-### GetKeyManagerProvider
-
-`func (o *AddPingOneHttpExternalServerRequest) GetKeyManagerProvider() string`
-
-GetKeyManagerProvider returns the KeyManagerProvider field if non-nil, zero value otherwise.
-
-### GetKeyManagerProviderOk
-
-`func (o *AddPingOneHttpExternalServerRequest) GetKeyManagerProviderOk() (*string, bool)`
-
-GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetKeyManagerProvider
-
-`func (o *AddPingOneHttpExternalServerRequest) SetKeyManagerProvider(v string)`
-
-SetKeyManagerProvider sets KeyManagerProvider field to given value.
-
-### HasKeyManagerProvider
-
-`func (o *AddPingOneHttpExternalServerRequest) HasKeyManagerProvider() bool`
-
-HasKeyManagerProvider returns a boolean if a field has been set.
-
-### GetSslCertNickname
-
-`func (o *AddPingOneHttpExternalServerRequest) GetSslCertNickname() string`
-
-GetSslCertNickname returns the SslCertNickname field if non-nil, zero value otherwise.
-
-### GetSslCertNicknameOk
-
-`func (o *AddPingOneHttpExternalServerRequest) GetSslCertNicknameOk() (*string, bool)`
-
-GetSslCertNicknameOk returns a tuple with the SslCertNickname field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslCertNickname
-
-`func (o *AddPingOneHttpExternalServerRequest) SetSslCertNickname(v string)`
-
-SetSslCertNickname sets SslCertNickname field to given value.
-
-### HasSslCertNickname
-
-`func (o *AddPingOneHttpExternalServerRequest) HasSslCertNickname() bool`
-
-HasSslCertNickname returns a boolean if a field has been set.
 
 ### GetDescription
 

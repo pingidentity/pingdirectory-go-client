@@ -34,8 +34,6 @@ Name | Type | Description | Notes
 **SslClientAuthPolicy** | Pointer to [**EnumconnectionHandlerSslClientAuthPolicyProp**](EnumconnectionHandlerSslClientAuthPolicyProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Connection Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Connection Handler is enabled. | 
-**AllowedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler. | [optional] 
-**DeniedClient** | Pointer to **[]string** | Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler. | [optional] 
 
 ## Methods
 
@@ -785,56 +783,6 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
-
-### GetAllowedClient
-
-`func (o *AddHttpConnectionHandlerRequest) GetAllowedClient() []string`
-
-GetAllowedClient returns the AllowedClient field if non-nil, zero value otherwise.
-
-### GetAllowedClientOk
-
-`func (o *AddHttpConnectionHandlerRequest) GetAllowedClientOk() (*[]string, bool)`
-
-GetAllowedClientOk returns a tuple with the AllowedClient field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAllowedClient
-
-`func (o *AddHttpConnectionHandlerRequest) SetAllowedClient(v []string)`
-
-SetAllowedClient sets AllowedClient field to given value.
-
-### HasAllowedClient
-
-`func (o *AddHttpConnectionHandlerRequest) HasAllowedClient() bool`
-
-HasAllowedClient returns a boolean if a field has been set.
-
-### GetDeniedClient
-
-`func (o *AddHttpConnectionHandlerRequest) GetDeniedClient() []string`
-
-GetDeniedClient returns the DeniedClient field if non-nil, zero value otherwise.
-
-### GetDeniedClientOk
-
-`func (o *AddHttpConnectionHandlerRequest) GetDeniedClientOk() (*[]string, bool)`
-
-GetDeniedClientOk returns a tuple with the DeniedClient field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeniedClient
-
-`func (o *AddHttpConnectionHandlerRequest) SetDeniedClient(v []string)`
-
-SetDeniedClient sets DeniedClient field to given value.
-
-### HasDeniedClient
-
-`func (o *AddHttpConnectionHandlerRequest) HasDeniedClient() bool`
-
-HasDeniedClient returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

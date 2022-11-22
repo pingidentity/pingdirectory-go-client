@@ -12,18 +12,15 @@ Name | Type | Description | Notes
 **RetentionPolicy** | **[]string** | The retention policy to use for the Metrics Backend . | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
-**BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
-**SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
-**BackupFilePermissions** | Pointer to **string** | Specifies the permissions that should be applied to files and directories created by a backup of the backend. | [optional] 
 **NotificationManager** | Pointer to **string** | Specifies a notification manager for changes resulting from operations processed through this Backend | [optional] 
 
 ## Methods
 
 ### NewMetricsBackendResponse
 
-`func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, backendID string, storageDir string, metricsDir string, retentionPolicy []string, enabled bool, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, ) *MetricsBackendResponse`
+`func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, backendID string, storageDir string, metricsDir string, retentionPolicy []string, enabled bool, writabilityMode EnumbackendWritabilityModeProp, ) *MetricsBackendResponse`
 
 NewMetricsBackendResponse instantiates a new MetricsBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -208,26 +205,6 @@ and a boolean to check if the value has been set.
 SetEnabled sets Enabled field to given value.
 
 
-### GetBaseDN
-
-`func (o *MetricsBackendResponse) GetBaseDN() []string`
-
-GetBaseDN returns the BaseDN field if non-nil, zero value otherwise.
-
-### GetBaseDNOk
-
-`func (o *MetricsBackendResponse) GetBaseDNOk() (*[]string, bool)`
-
-GetBaseDNOk returns a tuple with the BaseDN field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBaseDN
-
-`func (o *MetricsBackendResponse) SetBaseDN(v []string)`
-
-SetBaseDN sets BaseDN field to given value.
-
-
 ### GetWritabilityMode
 
 `func (o *MetricsBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeProp`
@@ -247,31 +224,6 @@ and a boolean to check if the value has been set.
 
 SetWritabilityMode sets WritabilityMode field to given value.
 
-
-### GetSetDegradedAlertWhenDisabled
-
-`func (o *MetricsBackendResponse) GetSetDegradedAlertWhenDisabled() bool`
-
-GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field if non-nil, zero value otherwise.
-
-### GetSetDegradedAlertWhenDisabledOk
-
-`func (o *MetricsBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool)`
-
-GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSetDegradedAlertWhenDisabled
-
-`func (o *MetricsBackendResponse) SetSetDegradedAlertWhenDisabled(v bool)`
-
-SetSetDegradedAlertWhenDisabled sets SetDegradedAlertWhenDisabled field to given value.
-
-### HasSetDegradedAlertWhenDisabled
-
-`func (o *MetricsBackendResponse) HasSetDegradedAlertWhenDisabled() bool`
-
-HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 
 ### GetReturnUnavailableWhenDisabled
 
@@ -297,31 +249,6 @@ SetReturnUnavailableWhenDisabled sets ReturnUnavailableWhenDisabled field to giv
 `func (o *MetricsBackendResponse) HasReturnUnavailableWhenDisabled() bool`
 
 HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
-
-### GetBackupFilePermissions
-
-`func (o *MetricsBackendResponse) GetBackupFilePermissions() string`
-
-GetBackupFilePermissions returns the BackupFilePermissions field if non-nil, zero value otherwise.
-
-### GetBackupFilePermissionsOk
-
-`func (o *MetricsBackendResponse) GetBackupFilePermissionsOk() (*string, bool)`
-
-GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackupFilePermissions
-
-`func (o *MetricsBackendResponse) SetBackupFilePermissions(v string)`
-
-SetBackupFilePermissions sets BackupFilePermissions field to given value.
-
-### HasBackupFilePermissions
-
-`func (o *MetricsBackendResponse) HasBackupFilePermissions() bool`
-
-HasBackupFilePermissions returns a boolean if a field has been set.
 
 ### GetNotificationManager
 

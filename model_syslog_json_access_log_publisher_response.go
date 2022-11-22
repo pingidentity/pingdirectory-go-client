@@ -91,8 +91,6 @@ type SyslogJsonAccessLogPublisherResponse struct {
 	IncludeResponseControls *bool `json:"includeResponseControls,omitempty"`
 	// Indicates whether to log information about the replication change ID.
 	IncludeReplicationChangeID *bool `json:"includeReplicationChangeID,omitempty"`
-	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
-	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
 	// Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
 	GenerifyMessageStringsWhenPossible *bool `json:"generifyMessageStringsWhenPossible,omitempty"`
 	// Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
@@ -1348,38 +1346,6 @@ func (o *SyslogJsonAccessLogPublisherResponse) SetIncludeReplicationChangeID(v b
 	o.IncludeReplicationChangeID = &v
 }
 
-// GetWriteMultiLineMessages returns the WriteMultiLineMessages field value if set, zero value otherwise.
-func (o *SyslogJsonAccessLogPublisherResponse) GetWriteMultiLineMessages() bool {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
-		var ret bool
-		return ret
-	}
-	return *o.WriteMultiLineMessages
-}
-
-// GetWriteMultiLineMessagesOk returns a tuple with the WriteMultiLineMessages field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SyslogJsonAccessLogPublisherResponse) GetWriteMultiLineMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
-    return nil, false
-	}
-	return o.WriteMultiLineMessages, true
-}
-
-// HasWriteMultiLineMessages returns a boolean if a field has been set.
-func (o *SyslogJsonAccessLogPublisherResponse) HasWriteMultiLineMessages() bool {
-	if o != nil && !isNil(o.WriteMultiLineMessages) {
-		return true
-	}
-
-	return false
-}
-
-// SetWriteMultiLineMessages gets a reference to the given bool and assigns it to the WriteMultiLineMessages field.
-func (o *SyslogJsonAccessLogPublisherResponse) SetWriteMultiLineMessages(v bool) {
-	o.WriteMultiLineMessages = &v
-}
-
 // GetGenerifyMessageStringsWhenPossible returns the GenerifyMessageStringsWhenPossible field value if set, zero value otherwise.
 func (o *SyslogJsonAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPossible() bool {
 	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
@@ -1874,9 +1840,6 @@ func (o SyslogJsonAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.IncludeReplicationChangeID) {
 		toSerialize["includeReplicationChangeID"] = o.IncludeReplicationChangeID
-	}
-	if !isNil(o.WriteMultiLineMessages) {
-		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
 	}
 	if !isNil(o.GenerifyMessageStringsWhenPossible) {
 		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible

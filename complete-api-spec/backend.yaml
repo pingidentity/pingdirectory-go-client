@@ -350,10 +350,6 @@ components:
           type: boolean
           description: >-
               Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
         notificationManager:
           type: string
           description: >-
@@ -545,8 +541,6 @@ components:
           type: boolean
           description: >-
               Indicates whether the backend is enabled in the server.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         setDegradedAlertWhenDisabled:
           type: boolean
           description: >-
@@ -568,7 +562,6 @@ components:
       - baseDN
       - backendID
       - enabled
-      - writabilityMode
     Enumencryption-settings-backendSchemaUrn:
       type: string
       enum:
@@ -876,8 +869,6 @@ components:
           type: boolean
           description: >-
               Indicates whether the backend is enabled in the server.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         setDegradedAlertWhenDisabled:
           type: boolean
           description: >-
@@ -886,10 +877,6 @@ components:
           type: boolean
           description: >-
               Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
         notificationManager:
           type: string
           description: >-
@@ -900,7 +887,6 @@ components:
       - changelogMaximumAge
       - backendID
       - enabled
-      - writabilityMode
     Enumchangelog-backendSchemaUrn:
       type: string
       enum:
@@ -932,8 +918,6 @@ components:
           type: boolean
           description: >-
               Indicates whether the backend is enabled in the server.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
         setDegradedAlertWhenDisabled:
           type: boolean
           description: >-
@@ -942,10 +926,6 @@ components:
           type: boolean
           description: >-
               Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
         notificationManager:
           type: string
           description: >-
@@ -955,7 +935,6 @@ components:
       - backendID
       - baseDN
       - enabled
-      - writabilityMode
     Enummonitor-backendSchemaUrn:
       type: string
       enum:
@@ -1204,10 +1183,6 @@ components:
           type: boolean
           description: >-
               Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
         notificationManager:
           type: string
           description: >-
@@ -1263,26 +1238,12 @@ components:
           type: boolean
           description: >-
               Indicates whether the backend is enabled in the server.
-        baseDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
         writabilityMode:
           $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
         returnUnavailableWhenDisabled:
           type: boolean
           description: >-
               Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
         notificationManager:
           type: string
           description: >-
@@ -1294,7 +1255,6 @@ components:
       - metricsDir
       - retentionPolicy
       - enabled
-      - baseDN
       - writabilityMode
     Enummetrics-backendSchemaUrn:
       type: string

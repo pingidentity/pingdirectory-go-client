@@ -602,18 +602,6 @@ components:
           type: boolean
           description: >-
               Indicates whether the Connection Handler is enabled.
-        allowedClient:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
-        deniedClient:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
       required:
       - schemas
       - listenPort

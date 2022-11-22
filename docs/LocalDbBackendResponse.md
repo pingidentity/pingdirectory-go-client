@@ -63,7 +63,6 @@ Name | Type | Description | Notes
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
-**BackupFilePermissions** | Pointer to **string** | Specifies the permissions that should be applied to files and directories created by a backup of the backend. | [optional] 
 **NotificationManager** | Pointer to **string** | Specifies a notification manager for changes resulting from operations processed through this Backend | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
@@ -1520,31 +1519,6 @@ SetReturnUnavailableWhenDisabled sets ReturnUnavailableWhenDisabled field to giv
 `func (o *LocalDbBackendResponse) HasReturnUnavailableWhenDisabled() bool`
 
 HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
-
-### GetBackupFilePermissions
-
-`func (o *LocalDbBackendResponse) GetBackupFilePermissions() string`
-
-GetBackupFilePermissions returns the BackupFilePermissions field if non-nil, zero value otherwise.
-
-### GetBackupFilePermissionsOk
-
-`func (o *LocalDbBackendResponse) GetBackupFilePermissionsOk() (*string, bool)`
-
-GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackupFilePermissions
-
-`func (o *LocalDbBackendResponse) SetBackupFilePermissions(v string)`
-
-SetBackupFilePermissions sets BackupFilePermissions field to given value.
-
-### HasBackupFilePermissions
-
-`func (o *LocalDbBackendResponse) HasBackupFilePermissions() bool`
-
-HasBackupFilePermissions returns a boolean if a field has been set.
 
 ### GetNotificationManager
 

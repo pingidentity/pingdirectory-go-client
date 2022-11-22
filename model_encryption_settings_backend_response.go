@@ -25,7 +25,6 @@ type EncryptionSettingsBackendResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
 	Enabled bool `json:"enabled"`
-	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
 	SetDegradedAlertWhenDisabled *bool `json:"setDegradedAlertWhenDisabled,omitempty"`
 	// Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
@@ -40,13 +39,12 @@ type EncryptionSettingsBackendResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, baseDN []string, backendID string, enabled bool, writabilityMode EnumbackendWritabilityModeProp) *EncryptionSettingsBackendResponse {
+func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, baseDN []string, backendID string, enabled bool) *EncryptionSettingsBackendResponse {
 	this := EncryptionSettingsBackendResponse{}
 	this.Schemas = schemas
 	this.BaseDN = baseDN
 	this.BackendID = backendID
 	this.Enabled = enabled
-	this.WritabilityMode = writabilityMode
 	return &this
 }
 
@@ -184,30 +182,6 @@ func (o *EncryptionSettingsBackendResponse) GetEnabledOk() (*bool, bool) {
 // SetEnabled sets field value
 func (o *EncryptionSettingsBackendResponse) SetEnabled(v bool) {
 	o.Enabled = v
-}
-
-// GetWritabilityMode returns the WritabilityMode field value
-func (o *EncryptionSettingsBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeProp {
-	if o == nil {
-		var ret EnumbackendWritabilityModeProp
-		return ret
-	}
-
-	return o.WritabilityMode
-}
-
-// GetWritabilityModeOk returns a tuple with the WritabilityMode field value
-// and a boolean to check if the value has been set.
-func (o *EncryptionSettingsBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return &o.WritabilityMode, true
-}
-
-// SetWritabilityMode sets field value
-func (o *EncryptionSettingsBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModeProp) {
-	o.WritabilityMode = v
 }
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
@@ -354,9 +328,6 @@ func (o EncryptionSettingsBackendResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
 	}
 	if !isNil(o.SetDegradedAlertWhenDisabled) {
 		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled

@@ -36,17 +36,15 @@ Name | Type | Description | Notes
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
-**WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
-**BackupFilePermissions** | Pointer to **string** | Specifies the permissions that should be applied to files and directories created by a backup of the backend. | [optional] 
 **NotificationManager** | Pointer to **string** | Specifies a notification manager for changes resulting from operations processed through this Backend | [optional] 
 
 ## Methods
 
 ### NewChangelogBackendResponse
 
-`func NewChangelogBackendResponse(schemas []EnumchangelogBackendSchemaUrn, baseDN []string, changelogMaximumAge string, backendID string, enabled bool, writabilityMode EnumbackendWritabilityModeProp, ) *ChangelogBackendResponse`
+`func NewChangelogBackendResponse(schemas []EnumchangelogBackendSchemaUrn, baseDN []string, changelogMaximumAge string, backendID string, enabled bool, ) *ChangelogBackendResponse`
 
 NewChangelogBackendResponse instantiates a new ChangelogBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -836,26 +834,6 @@ and a boolean to check if the value has been set.
 SetEnabled sets Enabled field to given value.
 
 
-### GetWritabilityMode
-
-`func (o *ChangelogBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeProp`
-
-GetWritabilityMode returns the WritabilityMode field if non-nil, zero value otherwise.
-
-### GetWritabilityModeOk
-
-`func (o *ChangelogBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool)`
-
-GetWritabilityModeOk returns a tuple with the WritabilityMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWritabilityMode
-
-`func (o *ChangelogBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModeProp)`
-
-SetWritabilityMode sets WritabilityMode field to given value.
-
-
 ### GetSetDegradedAlertWhenDisabled
 
 `func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabled() bool`
@@ -905,31 +883,6 @@ SetReturnUnavailableWhenDisabled sets ReturnUnavailableWhenDisabled field to giv
 `func (o *ChangelogBackendResponse) HasReturnUnavailableWhenDisabled() bool`
 
 HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
-
-### GetBackupFilePermissions
-
-`func (o *ChangelogBackendResponse) GetBackupFilePermissions() string`
-
-GetBackupFilePermissions returns the BackupFilePermissions field if non-nil, zero value otherwise.
-
-### GetBackupFilePermissionsOk
-
-`func (o *ChangelogBackendResponse) GetBackupFilePermissionsOk() (*string, bool)`
-
-GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBackupFilePermissions
-
-`func (o *ChangelogBackendResponse) SetBackupFilePermissions(v string)`
-
-SetBackupFilePermissions sets BackupFilePermissions field to given value.
-
-### HasBackupFilePermissions
-
-`func (o *ChangelogBackendResponse) HasBackupFilePermissions() bool`
-
-HasBackupFilePermissions returns a boolean if a field has been set.
 
 ### GetNotificationManager
 

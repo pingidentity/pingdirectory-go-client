@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Id** | **string** | Name of the Trust Manager Provider | 
 **Schemas** | [**[]EnumjvmDefaultTrustManagerProviderSchemaUrn**](EnumjvmDefaultTrustManagerProviderSchemaUrn.md) |  | 
 **Enabled** | **bool** | Indicate whether the Trust Manager Provider is enabled for use. | 
-**IncludeJVMDefaultIssuers** | Pointer to **bool** | Indicates whether certificates issued by an authority included in the JVM&#39;s set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider. | [optional] 
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
@@ -88,31 +87,6 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
-
-### GetIncludeJVMDefaultIssuers
-
-`func (o *JvmDefaultTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool`
-
-GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field if non-nil, zero value otherwise.
-
-### GetIncludeJVMDefaultIssuersOk
-
-`func (o *JvmDefaultTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool)`
-
-GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeJVMDefaultIssuers
-
-`func (o *JvmDefaultTrustManagerProviderResponse) SetIncludeJVMDefaultIssuers(v bool)`
-
-SetIncludeJVMDefaultIssuers sets IncludeJVMDefaultIssuers field to given value.
-
-### HasIncludeJVMDefaultIssuers
-
-`func (o *JvmDefaultTrustManagerProviderResponse) HasIncludeJVMDefaultIssuers() bool`
-
-HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 
 ### GetMeta
 

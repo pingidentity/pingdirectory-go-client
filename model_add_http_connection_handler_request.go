@@ -74,10 +74,6 @@ type AddHttpConnectionHandlerRequest struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
 	Enabled bool `json:"enabled"`
-	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
-	AllowedClient []string `json:"allowedClient,omitempty"`
-	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
-	DeniedClient []string `json:"deniedClient,omitempty"`
 }
 
 // NewAddHttpConnectionHandlerRequest instantiates a new AddHttpConnectionHandlerRequest object
@@ -1029,70 +1025,6 @@ func (o *AddHttpConnectionHandlerRequest) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetAllowedClient returns the AllowedClient field value if set, zero value otherwise.
-func (o *AddHttpConnectionHandlerRequest) GetAllowedClient() []string {
-	if o == nil || isNil(o.AllowedClient) {
-		var ret []string
-		return ret
-	}
-	return o.AllowedClient
-}
-
-// GetAllowedClientOk returns a tuple with the AllowedClient field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddHttpConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedClient) {
-    return nil, false
-	}
-	return o.AllowedClient, true
-}
-
-// HasAllowedClient returns a boolean if a field has been set.
-func (o *AddHttpConnectionHandlerRequest) HasAllowedClient() bool {
-	if o != nil && !isNil(o.AllowedClient) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllowedClient gets a reference to the given []string and assigns it to the AllowedClient field.
-func (o *AddHttpConnectionHandlerRequest) SetAllowedClient(v []string) {
-	o.AllowedClient = v
-}
-
-// GetDeniedClient returns the DeniedClient field value if set, zero value otherwise.
-func (o *AddHttpConnectionHandlerRequest) GetDeniedClient() []string {
-	if o == nil || isNil(o.DeniedClient) {
-		var ret []string
-		return ret
-	}
-	return o.DeniedClient
-}
-
-// GetDeniedClientOk returns a tuple with the DeniedClient field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddHttpConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedClient) {
-    return nil, false
-	}
-	return o.DeniedClient, true
-}
-
-// HasDeniedClient returns a boolean if a field has been set.
-func (o *AddHttpConnectionHandlerRequest) HasDeniedClient() bool {
-	if o != nil && !isNil(o.DeniedClient) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeniedClient gets a reference to the given []string and assigns it to the DeniedClient field.
-func (o *AddHttpConnectionHandlerRequest) SetDeniedClient(v []string) {
-	o.DeniedClient = v
-}
-
 func (o AddHttpConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -1184,12 +1116,6 @@ func (o AddHttpConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AllowedClient) {
-		toSerialize["allowedClient"] = o.AllowedClient
-	}
-	if !isNil(o.DeniedClient) {
-		toSerialize["deniedClient"] = o.DeniedClient
 	}
 	return json.Marshal(toSerialize)
 }

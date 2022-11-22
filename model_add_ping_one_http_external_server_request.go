@@ -26,12 +26,6 @@ type AddPingOneHttpExternalServerRequest struct {
 	ConnectTimeout *string `json:"connectTimeout,omitempty"`
 	// Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne.
 	ResponseTimeout *string `json:"responseTimeout,omitempty"`
-	// The base URL of the external server, optionally including port number, for example \"https://externalService:9031\".
-	BaseURL string `json:"baseURL"`
-	// The key manager provider to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property (except when using the Null key manager provider) you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-	KeyManagerProvider *string `json:"keyManagerProvider,omitempty"`
-	// The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server's public certificate by adding this server's public certificate to the external server's trust store.
-	SslCertNickname *string `json:"sslCertNickname,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
 }
@@ -40,11 +34,10 @@ type AddPingOneHttpExternalServerRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []EnumpingOneHttpExternalServerSchemaUrn, baseURL string) *AddPingOneHttpExternalServerRequest {
+func NewAddPingOneHttpExternalServerRequest(serverName string, schemas []EnumpingOneHttpExternalServerSchemaUrn) *AddPingOneHttpExternalServerRequest {
 	this := AddPingOneHttpExternalServerRequest{}
 	this.ServerName = serverName
 	this.Schemas = schemas
-	this.BaseURL = baseURL
 	return &this
 }
 
@@ -232,94 +225,6 @@ func (o *AddPingOneHttpExternalServerRequest) SetResponseTimeout(v string) {
 	o.ResponseTimeout = &v
 }
 
-// GetBaseURL returns the BaseURL field value
-func (o *AddPingOneHttpExternalServerRequest) GetBaseURL() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.BaseURL
-}
-
-// GetBaseURLOk returns a tuple with the BaseURL field value
-// and a boolean to check if the value has been set.
-func (o *AddPingOneHttpExternalServerRequest) GetBaseURLOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return &o.BaseURL, true
-}
-
-// SetBaseURL sets field value
-func (o *AddPingOneHttpExternalServerRequest) SetBaseURL(v string) {
-	o.BaseURL = v
-}
-
-// GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
-func (o *AddPingOneHttpExternalServerRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
-		var ret string
-		return ret
-	}
-	return *o.KeyManagerProvider
-}
-
-// GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPingOneHttpExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
-	}
-	return o.KeyManagerProvider, true
-}
-
-// HasKeyManagerProvider returns a boolean if a field has been set.
-func (o *AddPingOneHttpExternalServerRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
-		return true
-	}
-
-	return false
-}
-
-// SetKeyManagerProvider gets a reference to the given string and assigns it to the KeyManagerProvider field.
-func (o *AddPingOneHttpExternalServerRequest) SetKeyManagerProvider(v string) {
-	o.KeyManagerProvider = &v
-}
-
-// GetSslCertNickname returns the SslCertNickname field value if set, zero value otherwise.
-func (o *AddPingOneHttpExternalServerRequest) GetSslCertNickname() string {
-	if o == nil || isNil(o.SslCertNickname) {
-		var ret string
-		return ret
-	}
-	return *o.SslCertNickname
-}
-
-// GetSslCertNicknameOk returns a tuple with the SslCertNickname field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AddPingOneHttpExternalServerRequest) GetSslCertNicknameOk() (*string, bool) {
-	if o == nil || isNil(o.SslCertNickname) {
-    return nil, false
-	}
-	return o.SslCertNickname, true
-}
-
-// HasSslCertNickname returns a boolean if a field has been set.
-func (o *AddPingOneHttpExternalServerRequest) HasSslCertNickname() bool {
-	if o != nil && !isNil(o.SslCertNickname) {
-		return true
-	}
-
-	return false
-}
-
-// SetSslCertNickname gets a reference to the given string and assigns it to the SslCertNickname field.
-func (o *AddPingOneHttpExternalServerRequest) SetSslCertNickname(v string) {
-	o.SslCertNickname = &v
-}
-
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPingOneHttpExternalServerRequest) GetDescription() string {
 	if o == nil || isNil(o.Description) {
@@ -371,15 +276,6 @@ func (o AddPingOneHttpExternalServerRequest) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ResponseTimeout) {
 		toSerialize["responseTimeout"] = o.ResponseTimeout
-	}
-	if true {
-		toSerialize["baseURL"] = o.BaseURL
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.SslCertNickname) {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description

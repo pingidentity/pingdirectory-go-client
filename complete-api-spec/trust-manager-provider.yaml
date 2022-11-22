@@ -299,10 +299,6 @@ components:
           type: boolean
           description: >-
               Indicate whether the Trust Manager Provider is enabled for use.
-        includeJVMDefaultIssuers:
-          type: boolean
-          description: >-
-              Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
       required:
       - schemas
       - enabled

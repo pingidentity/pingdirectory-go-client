@@ -35,8 +35,6 @@ Name | Type | Description | Notes
 **UseAdministrativeOperationControl** | Pointer to **bool** | Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients. | [optional] 
 **HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
 **ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne. | [optional] 
-**BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
-**SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
 **ConjurServerBaseURI** | **[]string** | The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://conjur.example.com:8443/\&quot;. | 
 **ConjurAuthenticationMethod** | **string** | The mechanism used to authenticate to the Conjur server. | 
 **ConjurAccountName** | **string** | The name of the account with which the desired secrets are associated. | 
@@ -61,7 +59,7 @@ Name | Type | Description | Notes
 
 ### NewAddExternalServer200Response
 
-`func NewAddExternalServer200Response(id string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, trustManagerProvider string, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, awsRegionName string, transportMechanism EnumexternalServerTransportMechanismProp, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServer200Response`
+`func NewAddExternalServer200Response(id string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, trustManagerProvider string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, awsRegionName string, transportMechanism EnumexternalServerTransportMechanismProp, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServer200Response`
 
 NewAddExternalServer200Response instantiates a new AddExternalServer200Response object
 This constructor will assign default values to properties that have it defined,
@@ -795,51 +793,6 @@ SetResponseTimeout sets ResponseTimeout field to given value.
 `func (o *AddExternalServer200Response) HasResponseTimeout() bool`
 
 HasResponseTimeout returns a boolean if a field has been set.
-
-### GetBaseURL
-
-`func (o *AddExternalServer200Response) GetBaseURL() string`
-
-GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
-
-### GetBaseURLOk
-
-`func (o *AddExternalServer200Response) GetBaseURLOk() (*string, bool)`
-
-GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBaseURL
-
-`func (o *AddExternalServer200Response) SetBaseURL(v string)`
-
-SetBaseURL sets BaseURL field to given value.
-
-
-### GetSslCertNickname
-
-`func (o *AddExternalServer200Response) GetSslCertNickname() string`
-
-GetSslCertNickname returns the SslCertNickname field if non-nil, zero value otherwise.
-
-### GetSslCertNicknameOk
-
-`func (o *AddExternalServer200Response) GetSslCertNicknameOk() (*string, bool)`
-
-GetSslCertNicknameOk returns a tuple with the SslCertNickname field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSslCertNickname
-
-`func (o *AddExternalServer200Response) SetSslCertNickname(v string)`
-
-SetSslCertNickname sets SslCertNickname field to given value.
-
-### HasSslCertNickname
-
-`func (o *AddExternalServer200Response) HasSslCertNickname() bool`
-
-HasSslCertNickname returns a boolean if a field has been set.
 
 ### GetConjurServerBaseURI
 

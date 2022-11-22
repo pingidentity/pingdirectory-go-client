@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
-**WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
 **SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
 **BackupFilePermissions** | Pointer to **string** | Specifies the permissions that should be applied to files and directories created by a backup of the backend. | [optional] 
@@ -19,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewEncryptionSettingsBackendResponse
 
-`func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, baseDN []string, backendID string, enabled bool, writabilityMode EnumbackendWritabilityModeProp, ) *EncryptionSettingsBackendResponse`
+`func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, baseDN []string, backendID string, enabled bool, ) *EncryptionSettingsBackendResponse`
 
 NewEncryptionSettingsBackendResponse instantiates a new EncryptionSettingsBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -137,26 +136,6 @@ and a boolean to check if the value has been set.
 `func (o *EncryptionSettingsBackendResponse) SetEnabled(v bool)`
 
 SetEnabled sets Enabled field to given value.
-
-
-### GetWritabilityMode
-
-`func (o *EncryptionSettingsBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeProp`
-
-GetWritabilityMode returns the WritabilityMode field if non-nil, zero value otherwise.
-
-### GetWritabilityModeOk
-
-`func (o *EncryptionSettingsBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool)`
-
-GetWritabilityModeOk returns a tuple with the WritabilityMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWritabilityMode
-
-`func (o *EncryptionSettingsBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModeProp)`
-
-SetWritabilityMode sets WritabilityMode field to given value.
 
 
 ### GetSetDegradedAlertWhenDisabled

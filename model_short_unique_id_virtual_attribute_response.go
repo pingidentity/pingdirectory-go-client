@@ -33,9 +33,6 @@ type ShortUniqueIdVirtualAttributeResponse struct {
 	Filter []string `json:"filter,omitempty"`
 	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
 	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
-	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
-	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
-	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
 	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
 	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
@@ -320,70 +317,6 @@ func (o *ShortUniqueIdVirtualAttributeResponse) SetClientConnectionPolicy(v []st
 	o.ClientConnectionPolicy = v
 }
 
-// GetConflictBehavior returns the ConflictBehavior field value if set, zero value otherwise.
-func (o *ShortUniqueIdVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp {
-	if o == nil || isNil(o.ConflictBehavior) {
-		var ret EnumvirtualAttributeConflictBehaviorProp
-		return ret
-	}
-	return *o.ConflictBehavior
-}
-
-// GetConflictBehaviorOk returns a tuple with the ConflictBehavior field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ShortUniqueIdVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
-	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
-	}
-	return o.ConflictBehavior, true
-}
-
-// HasConflictBehavior returns a boolean if a field has been set.
-func (o *ShortUniqueIdVirtualAttributeResponse) HasConflictBehavior() bool {
-	if o != nil && !isNil(o.ConflictBehavior) {
-		return true
-	}
-
-	return false
-}
-
-// SetConflictBehavior gets a reference to the given EnumvirtualAttributeConflictBehaviorProp and assigns it to the ConflictBehavior field.
-func (o *ShortUniqueIdVirtualAttributeResponse) SetConflictBehavior(v EnumvirtualAttributeConflictBehaviorProp) {
-	o.ConflictBehavior = &v
-}
-
-// GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
-func (o *ShortUniqueIdVirtualAttributeResponse) GetRequireExplicitRequestByName() bool {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
-		var ret bool
-		return ret
-	}
-	return *o.RequireExplicitRequestByName
-}
-
-// GetRequireExplicitRequestByNameOk returns a tuple with the RequireExplicitRequestByName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ShortUniqueIdVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
-	}
-	return o.RequireExplicitRequestByName, true
-}
-
-// HasRequireExplicitRequestByName returns a boolean if a field has been set.
-func (o *ShortUniqueIdVirtualAttributeResponse) HasRequireExplicitRequestByName() bool {
-	if o != nil && !isNil(o.RequireExplicitRequestByName) {
-		return true
-	}
-
-	return false
-}
-
-// SetRequireExplicitRequestByName gets a reference to the given bool and assigns it to the RequireExplicitRequestByName field.
-func (o *ShortUniqueIdVirtualAttributeResponse) SetRequireExplicitRequestByName(v bool) {
-	o.RequireExplicitRequestByName = &v
-}
-
 // GetMultipleVirtualAttributeEvaluationOrderIndex returns the MultipleVirtualAttributeEvaluationOrderIndex field value if set, zero value otherwise.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndex() int32 {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
@@ -508,12 +441,6 @@ func (o ShortUniqueIdVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ClientConnectionPolicy) {
 		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
-	}
-	if !isNil(o.ConflictBehavior) {
-		toSerialize["conflictBehavior"] = o.ConflictBehavior
-	}
-	if !isNil(o.RequireExplicitRequestByName) {
-		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
 	}
 	if !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex

@@ -23,8 +23,6 @@ type PasswordPolicyStateJsonVirtualAttributeResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Virtual Attribute is enabled for use.
 	Enabled bool `json:"enabled"`
-	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
-	AttributeType string `json:"attributeType"`
 	// Specifies the base DNs for the branches containing entries that are eligible to use this virtual attribute.
 	BaseDN []string `json:"baseDN,omitempty"`
 	// Specifies the DNs of the groups whose members can be eligible to use this virtual attribute.
@@ -33,14 +31,10 @@ type PasswordPolicyStateJsonVirtualAttributeResponse struct {
 	Filter []string `json:"filter,omitempty"`
 	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
 	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
-	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
 	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
-	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
-	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
 	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
@@ -48,12 +42,11 @@ type PasswordPolicyStateJsonVirtualAttributeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPasswordPolicyStateJsonVirtualAttributeResponse(id string, schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, enabled bool, attributeType string) *PasswordPolicyStateJsonVirtualAttributeResponse {
+func NewPasswordPolicyStateJsonVirtualAttributeResponse(id string, schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, enabled bool) *PasswordPolicyStateJsonVirtualAttributeResponse {
 	this := PasswordPolicyStateJsonVirtualAttributeResponse{}
 	this.Id = id
 	this.Schemas = schemas
 	this.Enabled = enabled
-	this.AttributeType = attributeType
 	return &this
 }
 
@@ -167,30 +160,6 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetEnabledOk() (*bool,
 // SetEnabled sets field value
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetEnabled(v bool) {
 	o.Enabled = v
-}
-
-// GetAttributeType returns the AttributeType field value
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetAttributeType() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.AttributeType
-}
-
-// GetAttributeTypeOk returns a tuple with the AttributeType field value
-// and a boolean to check if the value has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetAttributeTypeOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return &o.AttributeType, true
-}
-
-// SetAttributeType sets field value
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetAttributeType(v string) {
-	o.AttributeType = v
 }
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
@@ -321,38 +290,6 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetClientConnectionPol
 	o.ClientConnectionPolicy = v
 }
 
-// GetConflictBehavior returns the ConflictBehavior field value if set, zero value otherwise.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttributeConflictBehaviorProp {
-	if o == nil || isNil(o.ConflictBehavior) {
-		var ret EnumvirtualAttributeConflictBehaviorProp
-		return ret
-	}
-	return *o.ConflictBehavior
-}
-
-// GetConflictBehaviorOk returns a tuple with the ConflictBehavior field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
-	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
-	}
-	return o.ConflictBehavior, true
-}
-
-// HasConflictBehavior returns a boolean if a field has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) HasConflictBehavior() bool {
-	if o != nil && !isNil(o.ConflictBehavior) {
-		return true
-	}
-
-	return false
-}
-
-// SetConflictBehavior gets a reference to the given EnumvirtualAttributeConflictBehaviorProp and assigns it to the ConflictBehavior field.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetConflictBehavior(v EnumvirtualAttributeConflictBehaviorProp) {
-	o.ConflictBehavior = &v
-}
-
 // GetRequireExplicitRequestByName returns the RequireExplicitRequestByName field value if set, zero value otherwise.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetRequireExplicitRequestByName() bool {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
@@ -417,70 +354,6 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetMultipleVirtualAttr
 	o.MultipleVirtualAttributeEvaluationOrderIndex = &v
 }
 
-// GetMultipleVirtualAttributeMergeBehavior returns the MultipleVirtualAttributeMergeBehavior field value if set, zero value otherwise.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavior() EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		var ret EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp
-		return ret
-	}
-	return *o.MultipleVirtualAttributeMergeBehavior
-}
-
-// GetMultipleVirtualAttributeMergeBehaviorOk returns a tuple with the MultipleVirtualAttributeMergeBehavior field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
-	}
-	return o.MultipleVirtualAttributeMergeBehavior, true
-}
-
-// HasMultipleVirtualAttributeMergeBehavior returns a boolean if a field has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) HasMultipleVirtualAttributeMergeBehavior() bool {
-	if o != nil && !isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		return true
-	}
-
-	return false
-}
-
-// SetMultipleVirtualAttributeMergeBehavior gets a reference to the given EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp and assigns it to the MultipleVirtualAttributeMergeBehavior field.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetMultipleVirtualAttributeMergeBehavior(v EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp) {
-	o.MultipleVirtualAttributeMergeBehavior = &v
-}
-
-// GetAllowIndexConflicts returns the AllowIndexConflicts field value if set, zero value otherwise.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetAllowIndexConflicts() bool {
-	if o == nil || isNil(o.AllowIndexConflicts) {
-		var ret bool
-		return ret
-	}
-	return *o.AllowIndexConflicts
-}
-
-// GetAllowIndexConflictsOk returns a tuple with the AllowIndexConflicts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
-	}
-	return o.AllowIndexConflicts, true
-}
-
-// HasAllowIndexConflicts returns a boolean if a field has been set.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) HasAllowIndexConflicts() bool {
-	if o != nil && !isNil(o.AllowIndexConflicts) {
-		return true
-	}
-
-	return false
-}
-
-// SetAllowIndexConflicts gets a reference to the given bool and assigns it to the AllowIndexConflicts field.
-func (o *PasswordPolicyStateJsonVirtualAttributeResponse) SetAllowIndexConflicts(v bool) {
-	o.AllowIndexConflicts = &v
-}
-
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMeta() MetaMeta {
 	if o == nil || isNil(o.Meta) {
@@ -527,9 +400,6 @@ func (o PasswordPolicyStateJsonVirtualAttributeResponse) MarshalJSON() ([]byte, 
 	if true {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
 	if !isNil(o.BaseDN) {
 		toSerialize["baseDN"] = o.BaseDN
 	}
@@ -542,20 +412,11 @@ func (o PasswordPolicyStateJsonVirtualAttributeResponse) MarshalJSON() ([]byte, 
 	if !isNil(o.ClientConnectionPolicy) {
 		toSerialize["clientConnectionPolicy"] = o.ClientConnectionPolicy
 	}
-	if !isNil(o.ConflictBehavior) {
-		toSerialize["conflictBehavior"] = o.ConflictBehavior
-	}
 	if !isNil(o.RequireExplicitRequestByName) {
 		toSerialize["requireExplicitRequestByName"] = o.RequireExplicitRequestByName
 	}
 	if !isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
 		toSerialize["multipleVirtualAttributeEvaluationOrderIndex"] = o.MultipleVirtualAttributeEvaluationOrderIndex
-	}
-	if !isNil(o.MultipleVirtualAttributeMergeBehavior) {
-		toSerialize["multipleVirtualAttributeMergeBehavior"] = o.MultipleVirtualAttributeMergeBehavior
-	}
-	if !isNil(o.AllowIndexConflicts) {
-		toSerialize["allowIndexConflicts"] = o.AllowIndexConflicts
 	}
 	if !isNil(o.Meta) {
 		toSerialize["meta"] = o.Meta

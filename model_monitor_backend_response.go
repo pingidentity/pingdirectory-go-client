@@ -25,13 +25,10 @@ type MonitorBackendResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
 	Enabled bool `json:"enabled"`
-	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
 	SetDegradedAlertWhenDisabled *bool `json:"setDegradedAlertWhenDisabled,omitempty"`
 	// Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
 	ReturnUnavailableWhenDisabled *bool `json:"returnUnavailableWhenDisabled,omitempty"`
-	// Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-	BackupFilePermissions *string `json:"backupFilePermissions,omitempty"`
 	// Specifies a notification manager for changes resulting from operations processed through this Backend
 	NotificationManager *string `json:"notificationManager,omitempty"`
 }
@@ -40,13 +37,12 @@ type MonitorBackendResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMonitorBackendResponse(schemas []EnummonitorBackendSchemaUrn, backendID string, baseDN []string, enabled bool, writabilityMode EnumbackendWritabilityModeProp) *MonitorBackendResponse {
+func NewMonitorBackendResponse(schemas []EnummonitorBackendSchemaUrn, backendID string, baseDN []string, enabled bool) *MonitorBackendResponse {
 	this := MonitorBackendResponse{}
 	this.Schemas = schemas
 	this.BackendID = backendID
 	this.BaseDN = baseDN
 	this.Enabled = enabled
-	this.WritabilityMode = writabilityMode
 	return &this
 }
 
@@ -186,30 +182,6 @@ func (o *MonitorBackendResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetWritabilityMode returns the WritabilityMode field value
-func (o *MonitorBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeProp {
-	if o == nil {
-		var ret EnumbackendWritabilityModeProp
-		return ret
-	}
-
-	return o.WritabilityMode
-}
-
-// GetWritabilityModeOk returns a tuple with the WritabilityMode field value
-// and a boolean to check if the value has been set.
-func (o *MonitorBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return &o.WritabilityMode, true
-}
-
-// SetWritabilityMode sets field value
-func (o *MonitorBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModeProp) {
-	o.WritabilityMode = v
-}
-
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *MonitorBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
@@ -274,38 +246,6 @@ func (o *MonitorBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 	o.ReturnUnavailableWhenDisabled = &v
 }
 
-// GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
-func (o *MonitorBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
-		var ret string
-		return ret
-	}
-	return *o.BackupFilePermissions
-}
-
-// GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MonitorBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
-	}
-	return o.BackupFilePermissions, true
-}
-
-// HasBackupFilePermissions returns a boolean if a field has been set.
-func (o *MonitorBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupFilePermissions gets a reference to the given string and assigns it to the BackupFilePermissions field.
-func (o *MonitorBackendResponse) SetBackupFilePermissions(v string) {
-	o.BackupFilePermissions = &v
-}
-
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *MonitorBackendResponse) GetNotificationManager() string {
 	if o == nil || isNil(o.NotificationManager) {
@@ -355,17 +295,11 @@ func (o MonitorBackendResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
 	if !isNil(o.SetDegradedAlertWhenDisabled) {
 		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
 	}
 	if !isNil(o.ReturnUnavailableWhenDisabled) {
 		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
 	}
 	if !isNil(o.NotificationManager) {
 		toSerialize["notificationManager"] = o.NotificationManager

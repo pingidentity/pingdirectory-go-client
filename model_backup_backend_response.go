@@ -32,8 +32,6 @@ type BackupBackendResponse struct {
 	SetDegradedAlertWhenDisabled *bool `json:"setDegradedAlertWhenDisabled,omitempty"`
 	// Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
 	ReturnUnavailableWhenDisabled *bool `json:"returnUnavailableWhenDisabled,omitempty"`
-	// Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-	BackupFilePermissions *string `json:"backupFilePermissions,omitempty"`
 	// Specifies a notification manager for changes resulting from operations processed through this Backend
 	NotificationManager *string `json:"notificationManager,omitempty"`
 }
@@ -301,38 +299,6 @@ func (o *BackupBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 	o.ReturnUnavailableWhenDisabled = &v
 }
 
-// GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
-func (o *BackupBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
-		var ret string
-		return ret
-	}
-	return *o.BackupFilePermissions
-}
-
-// GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BackupBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
-	}
-	return o.BackupFilePermissions, true
-}
-
-// HasBackupFilePermissions returns a boolean if a field has been set.
-func (o *BackupBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupFilePermissions gets a reference to the given string and assigns it to the BackupFilePermissions field.
-func (o *BackupBackendResponse) SetBackupFilePermissions(v string) {
-	o.BackupFilePermissions = &v
-}
-
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *BackupBackendResponse) GetNotificationManager() string {
 	if o == nil || isNil(o.NotificationManager) {
@@ -393,9 +359,6 @@ func (o BackupBackendResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ReturnUnavailableWhenDisabled) {
 		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
 	}
 	if !isNil(o.NotificationManager) {
 		toSerialize["notificationManager"] = o.NotificationManager

@@ -31,15 +31,9 @@ type MetricsBackendResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
 	Enabled bool `json:"enabled"`
-	// Specifies the base DN(s) for the data that the backend handles.
-	BaseDN []string `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
-	// Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-	SetDegradedAlertWhenDisabled *bool `json:"setDegradedAlertWhenDisabled,omitempty"`
 	// Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
 	ReturnUnavailableWhenDisabled *bool `json:"returnUnavailableWhenDisabled,omitempty"`
-	// Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-	BackupFilePermissions *string `json:"backupFilePermissions,omitempty"`
 	// Specifies a notification manager for changes resulting from operations processed through this Backend
 	NotificationManager *string `json:"notificationManager,omitempty"`
 }
@@ -48,7 +42,7 @@ type MetricsBackendResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, backendID string, storageDir string, metricsDir string, retentionPolicy []string, enabled bool, baseDN []string, writabilityMode EnumbackendWritabilityModeProp) *MetricsBackendResponse {
+func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, backendID string, storageDir string, metricsDir string, retentionPolicy []string, enabled bool, writabilityMode EnumbackendWritabilityModeProp) *MetricsBackendResponse {
 	this := MetricsBackendResponse{}
 	this.Schemas = schemas
 	this.BackendID = backendID
@@ -56,7 +50,6 @@ func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, backendID 
 	this.MetricsDir = metricsDir
 	this.RetentionPolicy = retentionPolicy
 	this.Enabled = enabled
-	this.BaseDN = baseDN
 	this.WritabilityMode = writabilityMode
 	return &this
 }
@@ -277,30 +270,6 @@ func (o *MetricsBackendResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetBaseDN returns the BaseDN field value
-func (o *MetricsBackendResponse) GetBaseDN() []string {
-	if o == nil {
-		var ret []string
-		return ret
-	}
-
-	return o.BaseDN
-}
-
-// GetBaseDNOk returns a tuple with the BaseDN field value
-// and a boolean to check if the value has been set.
-func (o *MetricsBackendResponse) GetBaseDNOk() ([]string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.BaseDN, true
-}
-
-// SetBaseDN sets field value
-func (o *MetricsBackendResponse) SetBaseDN(v []string) {
-	o.BaseDN = v
-}
-
 // GetWritabilityMode returns the WritabilityMode field value
 func (o *MetricsBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeProp {
 	if o == nil {
@@ -323,38 +292,6 @@ func (o *MetricsBackendResponse) GetWritabilityModeOk() (*EnumbackendWritability
 // SetWritabilityMode sets field value
 func (o *MetricsBackendResponse) SetWritabilityMode(v EnumbackendWritabilityModeProp) {
 	o.WritabilityMode = v
-}
-
-// GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
-func (o *MetricsBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-		var ret bool
-		return ret
-	}
-	return *o.SetDegradedAlertWhenDisabled
-}
-
-// GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MetricsBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
-	}
-	return o.SetDegradedAlertWhenDisabled, true
-}
-
-// HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
-func (o *MetricsBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetSetDegradedAlertWhenDisabled gets a reference to the given bool and assigns it to the SetDegradedAlertWhenDisabled field.
-func (o *MetricsBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
-	o.SetDegradedAlertWhenDisabled = &v
 }
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
@@ -387,38 +324,6 @@ func (o *MetricsBackendResponse) HasReturnUnavailableWhenDisabled() bool {
 // SetReturnUnavailableWhenDisabled gets a reference to the given bool and assigns it to the ReturnUnavailableWhenDisabled field.
 func (o *MetricsBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 	o.ReturnUnavailableWhenDisabled = &v
-}
-
-// GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
-func (o *MetricsBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
-		var ret string
-		return ret
-	}
-	return *o.BackupFilePermissions
-}
-
-// GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MetricsBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
-	}
-	return o.BackupFilePermissions, true
-}
-
-// HasBackupFilePermissions returns a boolean if a field has been set.
-func (o *MetricsBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
-		return true
-	}
-
-	return false
-}
-
-// SetBackupFilePermissions gets a reference to the given string and assigns it to the BackupFilePermissions field.
-func (o *MetricsBackendResponse) SetBackupFilePermissions(v string) {
-	o.BackupFilePermissions = &v
 }
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
@@ -480,19 +385,10 @@ func (o MetricsBackendResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["enabled"] = o.Enabled
 	}
 	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
 		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
 	}
 	if !isNil(o.ReturnUnavailableWhenDisabled) {
 		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
 	}
 	if !isNil(o.NotificationManager) {
 		toSerialize["notificationManager"] = o.NotificationManager
