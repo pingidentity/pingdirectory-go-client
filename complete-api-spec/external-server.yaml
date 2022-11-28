@@ -197,6 +197,7 @@ components:
       - $ref: '#/components/schemas/opendj-external-server-shared'
     opendj-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -205,7 +206,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/opendj-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     opendj-external-server-shared:
       type: object
       properties:
@@ -320,6 +320,7 @@ components:
       - $ref: '#/components/schemas/smtp-external-server-shared'
     smtp-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -328,7 +329,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/smtp-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     smtp-external-server-shared:
       type: object
       properties:
@@ -394,6 +394,7 @@ components:
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
     nokia-ds-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -402,7 +403,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     nokia-ds-external-server-shared:
       type: object
       properties:
@@ -521,6 +521,7 @@ components:
       - $ref: '#/components/schemas/ping-one-http-external-server-shared'
     ping-one-http-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -529,7 +530,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-one-http-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     ping-one-http-external-server-shared:
       type: object
       properties:
@@ -575,6 +575,7 @@ components:
       - $ref: '#/components/schemas/active-directory-external-server-shared'
     active-directory-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -583,7 +584,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/active-directory-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     active-directory-external-server-shared:
       type: object
       properties:
@@ -698,6 +698,7 @@ components:
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
     oracle-unified-directory-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -706,7 +707,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     oracle-unified-directory-external-server-shared:
       type: object
       properties:
@@ -821,6 +821,7 @@ components:
       - $ref: '#/components/schemas/conjur-external-server-shared'
     conjur-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -829,7 +830,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/conjur-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     conjur-external-server-shared:
       type: object
       properties:
@@ -891,6 +891,7 @@ components:
       - $ref: '#/components/schemas/jdbc-external-server-shared'
     jdbc-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -899,7 +900,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jdbc-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     jdbc-external-server-shared:
       type: object
       properties:
@@ -979,6 +979,7 @@ components:
       - $ref: '#/components/schemas/amazon-aws-external-server-shared'
     amazon-aws-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -987,7 +988,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-aws-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     amazon-aws-external-server-shared:
       type: object
       properties:
@@ -1033,6 +1033,7 @@ components:
       - $ref: '#/components/schemas/syslog-external-server-shared'
     syslog-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1041,7 +1042,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-external-server-shared:
       type: object
       properties:
@@ -1100,6 +1100,7 @@ components:
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
     nokia-proxy-server-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1108,7 +1109,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     nokia-proxy-server-external-server-shared:
       type: object
       properties:
@@ -1227,6 +1227,7 @@ components:
       - $ref: '#/components/schemas/vault-external-server-shared'
     vault-external-server-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1235,7 +1236,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/vault-external-server-shared'
-      - $ref: '#/components/schemas/meta'
     vault-external-server-shared:
       type: object
       properties:
@@ -1458,6 +1458,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

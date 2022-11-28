@@ -177,6 +177,7 @@ components:
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
     expired-password-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -185,7 +186,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/expired-password-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     expired-password-data-security-auditor-shared:
       type: object
       properties:
@@ -241,6 +241,7 @@ components:
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
     multiple-password-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -249,7 +250,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/multiple-password-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     multiple-password-data-security-auditor-shared:
       type: object
       properties:
@@ -301,6 +301,7 @@ components:
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
     disabled-account-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -309,7 +310,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/disabled-account-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     disabled-account-data-security-auditor-shared:
       type: object
       properties:
@@ -361,6 +361,7 @@ components:
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
     weakly-encoded-password-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -369,7 +370,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/weakly-encoded-password-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     weakly-encoded-password-data-security-auditor-shared:
       type: object
       properties:
@@ -432,6 +432,7 @@ components:
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
     privilege-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -440,7 +441,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/privilege-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     privilege-data-security-auditor-shared:
       type: object
       properties:
@@ -496,6 +496,7 @@ components:
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
     locked-account-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -504,7 +505,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/locked-account-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     locked-account-data-security-auditor-shared:
       type: object
       properties:
@@ -560,6 +560,7 @@ components:
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
     access-control-data-security-auditor-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -568,7 +569,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/access-control-data-security-auditor-shared'
-      - $ref: '#/components/schemas/meta'
     access-control-data-security-auditor-shared:
       type: object
       properties:
@@ -704,6 +704,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -16,7 +16,11 @@ import (
 
 // SaltedMd5PasswordStorageSchemeResponse struct for SaltedMd5PasswordStorageSchemeResponse
 type SaltedMd5PasswordStorageSchemeResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumsaltedMd5PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	// Name of the Password Storage Scheme
+	Id *string `json:"id,omitempty"`
 	// Indicates whether the Salted MD5 Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies the number of bytes to use for the generated salt.
@@ -44,6 +48,70 @@ func NewSaltedMd5PasswordStorageSchemeResponseWithDefaults() *SaltedMd5PasswordS
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SaltedMd5PasswordStorageSchemeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SaltedMd5PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SaltedMd5PasswordStorageSchemeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SaltedMd5PasswordStorageSchemeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *SaltedMd5PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SaltedMd5PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *SaltedMd5PasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *SaltedMd5PasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 // GetSchemas returns the Schemas field value
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetSchemas() []EnumsaltedMd5PasswordStorageSchemeSchemaUrn {
 	if o == nil {
@@ -66,6 +134,38 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetSchemasOk() ([]EnumsaltedMd5
 // SetSchemas sets field value
 func (o *SaltedMd5PasswordStorageSchemeResponse) SetSchemas(v []EnumsaltedMd5PasswordStorageSchemeSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *SaltedMd5PasswordStorageSchemeResponse) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SaltedMd5PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+    return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *SaltedMd5PasswordStorageSchemeResponse) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *SaltedMd5PasswordStorageSchemeResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetEnabled returns the Enabled field value
@@ -158,8 +258,17 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) SetDescription(v string) {
 
 func (o SaltedMd5PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled

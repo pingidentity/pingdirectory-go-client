@@ -16,6 +16,8 @@ import (
 
 // Aes256PasswordStorageSchemeResponse struct for Aes256PasswordStorageSchemeResponse
 type Aes256PasswordStorageSchemeResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	Schemas []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
@@ -25,7 +27,6 @@ type Aes256PasswordStorageSchemeResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewAes256PasswordStorageSchemeResponse instantiates a new Aes256PasswordStorageSchemeResponse object
@@ -46,6 +47,70 @@ func NewAes256PasswordStorageSchemeResponse(id string, schemas []Enumaes256Passw
 func NewAes256PasswordStorageSchemeResponseWithDefaults() *Aes256PasswordStorageSchemeResponse {
 	this := Aes256PasswordStorageSchemeResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *Aes256PasswordStorageSchemeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Aes256PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *Aes256PasswordStorageSchemeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *Aes256PasswordStorageSchemeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *Aes256PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Aes256PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *Aes256PasswordStorageSchemeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *Aes256PasswordStorageSchemeResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -184,40 +249,14 @@ func (o *Aes256PasswordStorageSchemeResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *Aes256PasswordStorageSchemeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Aes256PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *Aes256PasswordStorageSchemeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *Aes256PasswordStorageSchemeResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o Aes256PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -232,9 +271,6 @@ func (o Aes256PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

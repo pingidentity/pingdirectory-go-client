@@ -173,6 +173,7 @@ components:
       - $ref: '#/components/schemas/subject-equals-dn-certificate-mapper-shared'
     subject-equals-dn-certificate-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -181,7 +182,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-equals-dn-certificate-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     subject-equals-dn-certificate-mapper-shared:
       type: object
       properties:
@@ -218,6 +218,7 @@ components:
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
     subject-dn-to-user-attribute-certificate-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -226,7 +227,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-dn-to-user-attribute-certificate-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     subject-dn-to-user-attribute-certificate-mapper-shared:
       type: object
       properties:
@@ -274,6 +274,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-certificate-mapper-shared'
     groovy-scripted-certificate-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -282,7 +283,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-certificate-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-certificate-mapper-shared:
       type: object
       properties:
@@ -330,6 +330,7 @@ components:
       - $ref: '#/components/schemas/subject-attribute-to-user-attribute-certificate-mapper-shared'
     subject-attribute-to-user-attribute-certificate-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -338,7 +339,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/subject-attribute-to-user-attribute-certificate-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     subject-attribute-to-user-attribute-certificate-mapper-shared:
       type: object
       properties:
@@ -388,6 +388,7 @@ components:
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
     fingerprint-certificate-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -396,7 +397,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/fingerprint-certificate-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     fingerprint-certificate-mapper-shared:
       type: object
       properties:
@@ -447,6 +447,7 @@ components:
       - $ref: '#/components/schemas/third-party-certificate-mapper-shared'
     third-party-certificate-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -455,7 +456,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-certificate-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-certificate-mapper-shared:
       type: object
       properties:
@@ -536,6 +536,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

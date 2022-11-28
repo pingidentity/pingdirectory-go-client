@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/file-based-key-manager-provider-shared'
     file-based-key-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-key-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-key-manager-provider-shared:
       type: object
       properties:
@@ -241,6 +241,7 @@ components:
       - $ref: '#/components/schemas/pkcs11-key-manager-provider-shared'
     pkcs11-key-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -249,7 +250,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/pkcs11-key-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     pkcs11-key-manager-provider-shared:
       type: object
       properties:
@@ -311,6 +311,7 @@ components:
       - $ref: '#/components/schemas/third-party-key-manager-provider-shared'
     third-party-key-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -319,7 +320,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-key-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-key-manager-provider-shared:
       type: object
       properties:
@@ -392,6 +392,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

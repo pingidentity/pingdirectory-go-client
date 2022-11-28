@@ -169,6 +169,7 @@ components:
       - $ref: '#/components/schemas/exact-match-identity-mapper-shared'
     exact-match-identity-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -177,7 +178,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/exact-match-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     exact-match-identity-mapper-shared:
       type: object
       properties:
@@ -231,6 +231,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
     groovy-scripted-identity-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -239,7 +240,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-identity-mapper-shared:
       type: object
       properties:
@@ -287,6 +287,7 @@ components:
       - $ref: '#/components/schemas/regular-expression-identity-mapper-shared'
     regular-expression-identity-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -295,7 +296,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/regular-expression-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     regular-expression-identity-mapper-shared:
       type: object
       properties:
@@ -358,6 +358,7 @@ components:
       - $ref: '#/components/schemas/aggregate-identity-mapper-shared'
     aggregate-identity-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -366,7 +367,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/aggregate-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     aggregate-identity-mapper-shared:
       type: object
       properties:
@@ -415,6 +415,7 @@ components:
       - $ref: '#/components/schemas/third-party-identity-mapper-shared'
     third-party-identity-mapper-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -423,7 +424,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-identity-mapper-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-identity-mapper-shared:
       type: object
       properties:
@@ -496,6 +496,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

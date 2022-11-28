@@ -16,7 +16,11 @@ import (
 
 // ConsoleJsonAccessLogPublisherResponse struct for ConsoleJsonAccessLogPublisherResponse
 type ConsoleJsonAccessLogPublisherResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn `json:"schemas"`
+	// Name of the Log Publisher
+	Id *string `json:"id,omitempty"`
 	// Indicates whether the Console JSON Access Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
@@ -122,6 +126,70 @@ func NewConsoleJsonAccessLogPublisherResponseWithDefaults() *ConsoleJsonAccessLo
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *ConsoleJsonAccessLogPublisherResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConsoleJsonAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *ConsoleJsonAccessLogPublisherResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *ConsoleJsonAccessLogPublisherResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *ConsoleJsonAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConsoleJsonAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *ConsoleJsonAccessLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *ConsoleJsonAccessLogPublisherResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 // GetSchemas returns the Schemas field value
 func (o *ConsoleJsonAccessLogPublisherResponse) GetSchemas() []EnumconsoleJsonAccessLogPublisherSchemaUrn {
 	if o == nil {
@@ -144,6 +212,38 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetSchemasOk() ([]EnumconsoleJso
 // SetSchemas sets field value
 func (o *ConsoleJsonAccessLogPublisherResponse) SetSchemas(v []EnumconsoleJsonAccessLogPublisherSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ConsoleJsonAccessLogPublisherResponse) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConsoleJsonAccessLogPublisherResponse) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+    return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *ConsoleJsonAccessLogPublisherResponse) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ConsoleJsonAccessLogPublisherResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetEnabled returns the Enabled field value
@@ -1516,8 +1616,17 @@ func (o *ConsoleJsonAccessLogPublisherResponse) SetLoggingErrorBehavior(v Enumlo
 
 func (o ConsoleJsonAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled

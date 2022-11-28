@@ -181,6 +181,7 @@ components:
       - $ref: '#/components/schemas/environment-variable-passphrase-provider-shared'
     environment-variable-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -189,7 +190,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/environment-variable-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     environment-variable-passphrase-provider-shared:
       type: object
       properties:
@@ -231,6 +231,7 @@ components:
       - $ref: '#/components/schemas/amazon-secrets-manager-passphrase-provider-shared'
     amazon-secrets-manager-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -239,7 +240,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-secrets-manager-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     amazon-secrets-manager-passphrase-provider-shared:
       type: object
       properties:
@@ -303,6 +303,7 @@ components:
       - $ref: '#/components/schemas/obscured-value-passphrase-provider-shared'
     obscured-value-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -311,7 +312,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/obscured-value-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     obscured-value-passphrase-provider-shared:
       type: object
       properties:
@@ -354,6 +354,7 @@ components:
       - $ref: '#/components/schemas/azure-key-vault-passphrase-provider-shared'
     azure-key-vault-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -362,7 +363,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/azure-key-vault-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     azure-key-vault-passphrase-provider-shared:
       type: object
       properties:
@@ -418,6 +418,7 @@ components:
       - $ref: '#/components/schemas/file-based-passphrase-provider-shared'
     file-based-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -426,7 +427,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-passphrase-provider-shared:
       type: object
       properties:
@@ -472,6 +472,7 @@ components:
       - $ref: '#/components/schemas/conjur-passphrase-provider-shared'
     conjur-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -480,7 +481,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/conjur-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     conjur-passphrase-provider-shared:
       type: object
       properties:
@@ -531,6 +531,7 @@ components:
       - $ref: '#/components/schemas/vault-passphrase-provider-shared'
     vault-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -539,7 +540,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/vault-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     vault-passphrase-provider-shared:
       type: object
       properties:
@@ -595,6 +595,7 @@ components:
       - $ref: '#/components/schemas/third-party-passphrase-provider-shared'
     third-party-passphrase-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -603,7 +604,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-passphrase-provider-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-passphrase-provider-shared:
       type: object
       properties:
@@ -676,6 +676,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

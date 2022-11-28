@@ -165,6 +165,7 @@ components:
       - $ref: '#/components/schemas/simple-result-criteria-shared'
     simple-result-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -173,7 +174,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/simple-result-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     simple-result-criteria-shared:
       type: object
       properties:
@@ -319,6 +319,7 @@ components:
       - $ref: '#/components/schemas/aggregate-result-criteria-shared'
     aggregate-result-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -327,7 +328,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/aggregate-result-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     aggregate-result-criteria-shared:
       type: object
       properties:
@@ -383,6 +383,7 @@ components:
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
     replication-assurance-result-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -391,7 +392,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/replication-assurance-result-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     replication-assurance-result-criteria-shared:
       type: object
       properties:
@@ -445,6 +445,7 @@ components:
       - $ref: '#/components/schemas/third-party-result-criteria-shared'
     third-party-result-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -453,7 +454,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-result-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-result-criteria-shared:
       type: object
       properties:
@@ -822,6 +822,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

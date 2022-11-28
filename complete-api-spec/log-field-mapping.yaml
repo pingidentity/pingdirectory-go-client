@@ -157,6 +157,7 @@ components:
       - $ref: '#/components/schemas/access-log-field-mapping-shared'
     access-log-field-mapping-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -165,7 +166,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/access-log-field-mapping-shared'
-      - $ref: '#/components/schemas/meta'
     access-log-field-mapping-shared:
       type: object
       properties:
@@ -405,6 +405,7 @@ components:
       - $ref: '#/components/schemas/error-log-field-mapping-shared'
     error-log-field-mapping-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -413,7 +414,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/error-log-field-mapping-shared'
-      - $ref: '#/components/schemas/meta'
     error-log-field-mapping-shared:
       type: object
       properties:
@@ -502,6 +502,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

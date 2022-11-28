@@ -16,6 +16,8 @@ import (
 
 // StaticallyDefinedRecurringTaskResponse struct for StaticallyDefinedRecurringTaskResponse
 type StaticallyDefinedRecurringTaskResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task
 	Id string `json:"id"`
 	Schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn `json:"schemas"`
@@ -41,7 +43,6 @@ type StaticallyDefinedRecurringTaskResponse struct {
 	AlertOnSuccess *bool `json:"alertOnSuccess,omitempty"`
 	// Indicates whether the server should generate an administrative alert whenever an instance of this Recurring Task fails to complete successfully.
 	AlertOnFailure *bool `json:"alertOnFailure,omitempty"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewStaticallyDefinedRecurringTaskResponse instantiates a new StaticallyDefinedRecurringTaskResponse object
@@ -63,6 +64,70 @@ func NewStaticallyDefinedRecurringTaskResponse(id string, schemas []Enumstatical
 func NewStaticallyDefinedRecurringTaskResponseWithDefaults() *StaticallyDefinedRecurringTaskResponse {
 	this := StaticallyDefinedRecurringTaskResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *StaticallyDefinedRecurringTaskResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *StaticallyDefinedRecurringTaskResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *StaticallyDefinedRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *StaticallyDefinedRecurringTaskResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *StaticallyDefinedRecurringTaskResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -449,40 +514,14 @@ func (o *StaticallyDefinedRecurringTaskResponse) SetAlertOnFailure(v bool) {
 	o.AlertOnFailure = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *StaticallyDefinedRecurringTaskResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *StaticallyDefinedRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *StaticallyDefinedRecurringTaskResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *StaticallyDefinedRecurringTaskResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o StaticallyDefinedRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -521,9 +560,6 @@ func (o StaticallyDefinedRecurringTaskResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AlertOnFailure) {
 		toSerialize["alertOnFailure"] = o.AlertOnFailure
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

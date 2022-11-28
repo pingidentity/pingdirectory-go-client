@@ -63,27 +63,29 @@ paths:
 components:
   schemas:
     alarm-manager-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumalarm-managerSchemaUrn'
-        defaultGaugeAlertLevel:
-          $ref: '#/components/schemas/Enumalarm-manager-defaultGaugeAlertLevelProp'
-        generatedAlertTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumalarm-manager-generatedAlertTypesProp'
-        suppressedAlarm:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumalarm-manager-suppressedAlarmProp'
-      required:
-      - defaultGaugeAlertLevel
-      - generatedAlertTypes
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumalarm-managerSchemaUrn'
+          defaultGaugeAlertLevel:
+            $ref: '#/components/schemas/Enumalarm-manager-defaultGaugeAlertLevelProp'
+          generatedAlertTypes:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumalarm-manager-generatedAlertTypesProp'
+          suppressedAlarm:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumalarm-manager-suppressedAlarmProp'
+        required:
+        - defaultGaugeAlertLevel
+        - generatedAlertTypes
     Enumalarm-managerSchemaUrn:
       type: string
       enum:
@@ -150,6 +152,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

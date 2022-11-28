@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Soft Delete Policy | 
 **Schemas** | Pointer to [**[]EnumsoftDeletePolicySchemaUrn**](EnumsoftDeletePolicySchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Soft Delete Policy | [optional] 
@@ -11,7 +13,6 @@ Name | Type | Description | Notes
 **AutoSoftDeleteRequestCriteria** | Pointer to **string** | Request criteria used to automatically identify a delete operation for processing as a soft delete request. | [optional] 
 **SoftDeleteRetentionTime** | Pointer to **string** | Specifies the maximum length of time that soft delete entries are retained before they are eligible to purged automatically. | [optional] 
 **SoftDeleteRetainNumberOfEntries** | Pointer to **int32** | Specifies the number of soft deleted entries to retain before the oldest entries are purged. | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -31,6 +32,56 @@ will change when the set of required properties is changed
 NewSoftDeletePolicyResponseWithDefaults instantiates a new SoftDeletePolicyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMeta
+
+`func (o *SoftDeletePolicyResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *SoftDeletePolicyResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *SoftDeletePolicyResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *SoftDeletePolicyResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *SoftDeletePolicyResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *SoftDeletePolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *SoftDeletePolicyResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *SoftDeletePolicyResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -201,31 +252,6 @@ SetSoftDeleteRetainNumberOfEntries sets SoftDeleteRetainNumberOfEntries field to
 `func (o *SoftDeletePolicyResponse) HasSoftDeleteRetainNumberOfEntries() bool`
 
 HasSoftDeleteRetainNumberOfEntries returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *SoftDeletePolicyResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *SoftDeletePolicyResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *SoftDeletePolicyResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *SoftDeletePolicyResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

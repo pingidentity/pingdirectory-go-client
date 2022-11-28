@@ -297,6 +297,7 @@ components:
       - $ref: '#/components/schemas/syslog-json-audit-log-publisher-shared'
     syslog-json-audit-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -305,7 +306,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-audit-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-json-audit-log-publisher-shared:
       type: object
       properties:
@@ -459,6 +459,7 @@ components:
       - $ref: '#/components/schemas/syslog-based-error-log-publisher-shared'
     syslog-based-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -467,7 +468,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-based-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-based-error-log-publisher-shared:
       type: object
       properties:
@@ -544,6 +544,7 @@ components:
       - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-shared'
     third-party-file-based-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -552,7 +553,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-file-based-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-file-based-access-log-publisher-shared:
       type: object
       properties:
@@ -739,6 +739,7 @@ components:
       - $ref: '#/components/schemas/operation-timing-access-log-publisher-shared'
     operation-timing-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -747,7 +748,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/operation-timing-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     operation-timing-access-log-publisher-shared:
       type: object
       properties:
@@ -919,6 +919,7 @@ components:
       - $ref: '#/components/schemas/third-party-http-operation-log-publisher-shared'
     third-party-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -927,7 +928,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -977,6 +977,7 @@ components:
       - $ref: '#/components/schemas/admin-alert-access-log-publisher-shared'
     admin-alert-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -985,7 +986,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/admin-alert-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     admin-alert-access-log-publisher-shared:
       type: object
       properties:
@@ -1193,6 +1193,7 @@ components:
       - $ref: '#/components/schemas/file-based-trace-log-publisher-shared'
     file-based-trace-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1201,7 +1202,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-trace-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-trace-log-publisher-shared:
       type: object
       properties:
@@ -1353,6 +1353,7 @@ components:
       - $ref: '#/components/schemas/jdbc-based-error-log-publisher-shared'
     jdbc-based-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1361,7 +1362,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jdbc-based-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     jdbc-based-error-log-publisher-shared:
       type: object
       properties:
@@ -1429,6 +1429,7 @@ components:
       - $ref: '#/components/schemas/jdbc-based-access-log-publisher-shared'
     jdbc-based-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1437,7 +1438,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jdbc-based-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     jdbc-based-access-log-publisher-shared:
       type: object
       properties:
@@ -1563,6 +1563,7 @@ components:
       - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-shared'
     common-log-file-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1571,7 +1572,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/common-log-file-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     common-log-file-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -1668,63 +1668,68 @@ components:
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:common-log-file-http-operation"
     console-json-error-log-publisher-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumconsole-json-error-log-publisherSchemaUrn'
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Console JSON Error Log Publisher is enabled for use.
-        defaultSeverity:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
-        writeMultiLineMessages:
-          type: boolean
-          description: >-
-              Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
-        outputLocation:
-          $ref: '#/components/schemas/Enumlog-publisher-outputLocationProp'
-        includeProductName:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the product name for the Directory Server.
-        includeInstanceName:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the instance name for the Directory Server.
-        includeStartupID:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the startup ID for the Directory Server, which is a value assigned to the server instance at startup and may be used to identify when the server has been restarted.
-        includeThreadID:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the thread ID for the Directory Server in each log message. This ID can be used to correlate log messages from the same thread within a single log as well as generated by the same thread across different types of log files. More information about the thread with a specific ID can be obtained using the cn=JVM Stack Trace,cn=monitor entry.
-        generifyMessageStringsWhenPossible:
-          type: boolean
-          description: >-
-              Indicates whether to use the generified version of the log message string (which may use placeholders like %s for a string or %d for an integer), rather than the version of the message with those placeholders replaced with specific values that would normally be written to the log.
-        overrideSeverity:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumconsole-json-error-log-publisherSchemaUrn'
+          id:
+            description: Name of the Log Publisher
             type: string
-          description: >-
-              Specifies the override severity levels for the logger based on the category of the messages.
-        description:
-          type: string
-          description: >-
-              A description for this Log Publisher
-        loggingErrorBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
-      required:
-      - schemas
-      - enabled
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Console JSON Error Log Publisher is enabled for use.
+          defaultSeverity:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumlog-publisher-defaultSeverityProp'
+          writeMultiLineMessages:
+            type: boolean
+            description: >-
+                Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
+          outputLocation:
+            $ref: '#/components/schemas/Enumlog-publisher-outputLocationProp'
+          includeProductName:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the product name for the Directory Server.
+          includeInstanceName:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the instance name for the Directory Server.
+          includeStartupID:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the startup ID for the Directory Server, which is a value assigned to the server instance at startup and may be used to identify when the server has been restarted.
+          includeThreadID:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the thread ID for the Directory Server in each log message. This ID can be used to correlate log messages from the same thread within a single log as well as generated by the same thread across different types of log files. More information about the thread with a specific ID can be obtained using the cn=JVM Stack Trace,cn=monitor entry.
+          generifyMessageStringsWhenPossible:
+            type: boolean
+            description: >-
+                Indicates whether to use the generified version of the log message string (which may use placeholders like %s for a string or %d for an integer), rather than the version of the message with those placeholders replaced with specific values that would normally be written to the log.
+          overrideSeverity:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the override severity levels for the logger based on the category of the messages.
+          description:
+            type: string
+            description: >-
+                A description for this Log Publisher
+          loggingErrorBehavior:
+            $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
+        required:
+        - schemas
+        - enabled
     Enumconsole-json-error-log-publisherSchemaUrn:
       type: string
       enum:
@@ -1741,6 +1746,7 @@ components:
       - $ref: '#/components/schemas/syslog-text-error-log-publisher-shared'
     syslog-text-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1749,7 +1755,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-text-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-text-error-log-publisher-shared:
       type: object
       properties:
@@ -1844,6 +1849,7 @@ components:
       - $ref: '#/components/schemas/syslog-based-access-log-publisher-shared'
     syslog-based-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1852,7 +1858,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-based-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-based-access-log-publisher-shared:
       type: object
       properties:
@@ -2075,6 +2080,7 @@ components:
       - $ref: '#/components/schemas/file-based-json-audit-log-publisher-shared'
     file-based-json-audit-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -2083,7 +2089,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-json-audit-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-json-audit-log-publisher-shared:
       type: object
       properties:
@@ -2281,6 +2286,7 @@ components:
       - $ref: '#/components/schemas/file-based-debug-log-publisher-shared'
     file-based-debug-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -2289,7 +2295,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-debug-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-debug-log-publisher-shared:
       type: object
       properties:
@@ -2422,6 +2427,7 @@ components:
       - $ref: '#/components/schemas/file-based-error-log-publisher-shared'
     file-based-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -2430,7 +2436,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-error-log-publisher-shared:
       type: object
       properties:
@@ -2570,6 +2575,7 @@ components:
       - $ref: '#/components/schemas/third-party-error-log-publisher-shared'
     third-party-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -2578,7 +2584,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-error-log-publisher-shared:
       type: object
       properties:
@@ -2638,6 +2643,7 @@ components:
       - $ref: '#/components/schemas/syslog-text-access-log-publisher-shared'
     syslog-text-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -2646,7 +2652,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-text-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-text-access-log-publisher-shared:
       type: object
       properties:
@@ -2877,6 +2882,7 @@ components:
       - $ref: '#/components/schemas/detailed-http-operation-log-publisher-shared'
     detailed-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -2885,7 +2891,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/detailed-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     detailed-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -3069,6 +3074,7 @@ components:
       - $ref: '#/components/schemas/json-access-log-publisher-shared'
     json-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -3077,7 +3083,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/json-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     json-access-log-publisher-shared:
       type: object
       properties:
@@ -3345,6 +3350,7 @@ components:
       - $ref: '#/components/schemas/debug-access-log-publisher-shared'
     debug-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -3353,7 +3359,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/debug-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     debug-access-log-publisher-shared:
       type: object
       properties:
@@ -3547,6 +3552,7 @@ components:
       - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-shared'
     syslog-json-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -3555,7 +3561,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-json-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -3695,6 +3700,7 @@ components:
       - $ref: '#/components/schemas/third-party-access-log-publisher-shared'
     third-party-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -3703,7 +3709,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-access-log-publisher-shared:
       type: object
       properties:
@@ -3821,6 +3826,7 @@ components:
       - $ref: '#/components/schemas/file-based-audit-log-publisher-shared'
     file-based-audit-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -3829,7 +3835,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-audit-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-audit-log-publisher-shared:
       type: object
       properties:
@@ -4025,6 +4030,7 @@ components:
       - $ref: '#/components/schemas/json-error-log-publisher-shared'
     json-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -4033,7 +4039,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/json-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     json-error-log-publisher-shared:
       type: object
       properties:
@@ -4175,6 +4180,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-shared'
     groovy-scripted-file-based-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -4183,7 +4189,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-file-based-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-file-based-access-log-publisher-shared:
       type: object
       properties:
@@ -4370,6 +4375,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-shared'
     groovy-scripted-file-based-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -4378,7 +4384,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-file-based-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-file-based-error-log-publisher-shared:
       type: object
       properties:
@@ -4507,6 +4512,7 @@ components:
       - $ref: '#/components/schemas/syslog-json-access-log-publisher-shared'
     syslog-json-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -4515,7 +4521,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-json-access-log-publisher-shared:
       type: object
       properties:
@@ -4735,6 +4740,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-access-log-publisher-shared'
     groovy-scripted-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -4743,7 +4749,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-access-log-publisher-shared:
       type: object
       properties:
@@ -4861,6 +4866,7 @@ components:
       - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-shared'
     third-party-file-based-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -4869,7 +4875,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-file-based-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-file-based-error-log-publisher-shared:
       type: object
       properties:
@@ -4998,6 +5003,7 @@ components:
       - $ref: '#/components/schemas/console-json-audit-log-publisher-shared'
     console-json-audit-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -5006,7 +5012,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/console-json-audit-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     console-json-audit-log-publisher-shared:
       type: object
       properties:
@@ -5137,6 +5142,7 @@ components:
       - $ref: '#/components/schemas/console-json-http-operation-log-publisher-shared'
     console-json-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -5145,7 +5151,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/console-json-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     console-json-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -5251,185 +5256,190 @@ components:
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:console-json-http-operation"
     console-json-access-log-publisher-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumconsole-json-access-log-publisherSchemaUrn'
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Console JSON Access Log Publisher is enabled for use.
-        writeMultiLineMessages:
-          type: boolean
-          description: >-
-              Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
-        outputLocation:
-          $ref: '#/components/schemas/Enumlog-publisher-outputLocationProp'
-        includeProductName:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the product name for the Directory Server.
-        includeInstanceName:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the instance name for the Directory Server.
-        includeStartupID:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the startup ID for the Directory Server, which is a value assigned to the server instance at startup and may be used to identify when the server has been restarted.
-        includeThreadID:
-          type: boolean
-          description: >-
-              Indicates whether log messages should include the thread ID for the Directory Server in each log message. This ID can be used to correlate log messages from the same thread within a single log as well as generated by the same thread across different types of log files. More information about the thread with a specific ID can be obtained using the cn=JVM Stack Trace,cn=monitor entry.
-        includeRequesterDN:
-          type: boolean
-          description: >-
-              Indicates whether log messages for operation requests should include the DN of the authenticated user for the client connection on which the operation was requested.
-        includeRequesterIPAddress:
-          type: boolean
-          description: >-
-              Indicates whether log messages for operation requests should include the IP address of the client that requested the operation.
-        includeRequestDetailsInResultMessages:
-          type: boolean
-          description: >-
-              Indicates whether log messages for operation results should include information about both the request and the result.
-        includeRequestDetailsInSearchEntryMessages:
-          type: boolean
-          description: >-
-              Indicates whether log messages for search result entries should include information about the associated search request.
-        includeRequestDetailsInSearchReferenceMessages:
-          type: boolean
-          description: >-
-              Indicates whether log messages for search result references should include information about the associated search request.
-        includeRequestDetailsInIntermediateResponseMessages:
-          type: boolean
-          description: >-
-              Indicates whether log messages for intermediate responses should include information about the associated operation request.
-        includeResultCodeNames:
-          type: boolean
-          description: >-
-              Indicates whether result log messages should include human-readable names for result codes in addition to their numeric values.
-        includeExtendedSearchRequestDetails:
-          type: boolean
-          description: >-
-              Indicates whether log messages for search requests should include extended information from the request, including the requested size limit, time limit, alias dereferencing behavior, and types only behavior.
-        includeAddAttributeNames:
-          type: boolean
-          description: >-
-              Indicates whether log messages for add requests should include a list of the names of the attributes included in the entry to add.
-        includeModifyAttributeNames:
-          type: boolean
-          description: >-
-              Indicates whether log messages for modify requests should include a list of the names of the attributes to be modified.
-        includeSearchEntryAttributeNames:
-          type: boolean
-          description: >-
-              Indicates whether log messages for search result entries should include a list of the names of the attributes included in the entry that was returned.
-        includeRequestControls:
-          type: boolean
-          description: >-
-              Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request.
-        includeResponseControls:
-          type: boolean
-          description: >-
-              Indicates whether log messages for operation results should include a list of the OIDs of any controls included in the result.
-        includeReplicationChangeID:
-          type: boolean
-          description: >-
-              Indicates whether to log information about the replication change ID.
-        generifyMessageStringsWhenPossible:
-          type: boolean
-          description: >-
-              Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
-        maxStringLength:
-          type: integer
-          description: >-
-              Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
-        logFieldBehavior:
-          type: string
-          description: >-
-              The behavior to use for determining which fields to log and whether to transform the values of those fields in any way.
-        logConnects:
-          type: boolean
-          description: >-
-              Indicates whether to log information about connections established to the server.
-        logDisconnects:
-          type: boolean
-          description: >-
-              Indicates whether to log information about connections that have been closed by the client or terminated by the server.
-        logSecurityNegotiation:
-          type: boolean
-          description: >-
-              Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
-        logClientCertificates:
-          type: boolean
-          description: >-
-              Indicates whether to log information about any client certificates presented to the server.
-        logRequests:
-          type: boolean
-          description: >-
-              Indicates whether to log information about requests received from clients.
-        logResults:
-          type: boolean
-          description: >-
-              Indicates whether to log information about the results of client requests.
-        logSearchEntries:
-          type: boolean
-          description: >-
-              Indicates whether to log information about search result entries sent to the client.
-        logSearchReferences:
-          type: boolean
-          description: >-
-              Indicates whether to log information about search result references sent to the client.
-        logIntermediateResponses:
-          type: boolean
-          description: >-
-              Indicates whether to log information about intermediate responses sent to the client.
-        suppressInternalOperations:
-          type: boolean
-          description: >-
-              Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
-        suppressReplicationOperations:
-          type: boolean
-          description: >-
-              Indicates whether access messages that are generated by replication operations should be suppressed.
-        correlateRequestsAndResults:
-          type: boolean
-          description: >-
-              Indicates whether to automatically log result messages for any operation in which the corresponding request was logged. In such cases, the result, entry, and reference criteria will be ignored, although the log-responses, log-search-entries, and log-search-references properties will be honored.
-        connectionCriteria:
-          type: string
-          description: >-
-              Specifies a set of connection criteria that must match the associated client connection in order for a connect, disconnect, request, or result message to be logged.
-        requestCriteria:
-          type: string
-          description: >-
-              Specifies a set of request criteria that must match the associated operation request in order for a request or result to be logged by this Access Log Publisher.
-        resultCriteria:
-          type: string
-          description: >-
-              Specifies a set of result criteria that must match the associated operation result in order for that result to be logged by this Access Log Publisher.
-        searchEntryCriteria:
-          type: string
-          description: >-
-              Specifies a set of search entry criteria that must match the associated search result entry in order for that it to be logged by this Access Log Publisher.
-        searchReferenceCriteria:
-          type: string
-          description: >-
-              Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher.
-        description:
-          type: string
-          description: >-
-              A description for this Log Publisher
-        loggingErrorBehavior:
-          $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumconsole-json-access-log-publisherSchemaUrn'
+          id:
+            description: Name of the Log Publisher
+            type: string
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Console JSON Access Log Publisher is enabled for use.
+          writeMultiLineMessages:
+            type: boolean
+            description: >-
+                Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
+          outputLocation:
+            $ref: '#/components/schemas/Enumlog-publisher-outputLocationProp'
+          includeProductName:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the product name for the Directory Server.
+          includeInstanceName:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the instance name for the Directory Server.
+          includeStartupID:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the startup ID for the Directory Server, which is a value assigned to the server instance at startup and may be used to identify when the server has been restarted.
+          includeThreadID:
+            type: boolean
+            description: >-
+                Indicates whether log messages should include the thread ID for the Directory Server in each log message. This ID can be used to correlate log messages from the same thread within a single log as well as generated by the same thread across different types of log files. More information about the thread with a specific ID can be obtained using the cn=JVM Stack Trace,cn=monitor entry.
+          includeRequesterDN:
+            type: boolean
+            description: >-
+                Indicates whether log messages for operation requests should include the DN of the authenticated user for the client connection on which the operation was requested.
+          includeRequesterIPAddress:
+            type: boolean
+            description: >-
+                Indicates whether log messages for operation requests should include the IP address of the client that requested the operation.
+          includeRequestDetailsInResultMessages:
+            type: boolean
+            description: >-
+                Indicates whether log messages for operation results should include information about both the request and the result.
+          includeRequestDetailsInSearchEntryMessages:
+            type: boolean
+            description: >-
+                Indicates whether log messages for search result entries should include information about the associated search request.
+          includeRequestDetailsInSearchReferenceMessages:
+            type: boolean
+            description: >-
+                Indicates whether log messages for search result references should include information about the associated search request.
+          includeRequestDetailsInIntermediateResponseMessages:
+            type: boolean
+            description: >-
+                Indicates whether log messages for intermediate responses should include information about the associated operation request.
+          includeResultCodeNames:
+            type: boolean
+            description: >-
+                Indicates whether result log messages should include human-readable names for result codes in addition to their numeric values.
+          includeExtendedSearchRequestDetails:
+            type: boolean
+            description: >-
+                Indicates whether log messages for search requests should include extended information from the request, including the requested size limit, time limit, alias dereferencing behavior, and types only behavior.
+          includeAddAttributeNames:
+            type: boolean
+            description: >-
+                Indicates whether log messages for add requests should include a list of the names of the attributes included in the entry to add.
+          includeModifyAttributeNames:
+            type: boolean
+            description: >-
+                Indicates whether log messages for modify requests should include a list of the names of the attributes to be modified.
+          includeSearchEntryAttributeNames:
+            type: boolean
+            description: >-
+                Indicates whether log messages for search result entries should include a list of the names of the attributes included in the entry that was returned.
+          includeRequestControls:
+            type: boolean
+            description: >-
+                Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request.
+          includeResponseControls:
+            type: boolean
+            description: >-
+                Indicates whether log messages for operation results should include a list of the OIDs of any controls included in the result.
+          includeReplicationChangeID:
+            type: boolean
+            description: >-
+                Indicates whether to log information about the replication change ID.
+          generifyMessageStringsWhenPossible:
+            type: boolean
+            description: >-
+                Indicates whether to use generified version of certain message strings, including diagnostic messages, additional information messages, authentication failure reasons, and disconnect messages. Generified versions of those strings may use placeholders (like %s for a string or %d for an integer) rather than the version of the string with those placeholders replaced with specific values.
+          maxStringLength:
+            type: integer
+            description: >-
+                Specifies the maximum number of characters that may be included in any string in a log message before that string is truncated and replaced with a placeholder indicating the number of characters that were omitted. This can help prevent extremely long log messages from being written.
+          logFieldBehavior:
+            type: string
+            description: >-
+                The behavior to use for determining which fields to log and whether to transform the values of those fields in any way.
+          logConnects:
+            type: boolean
+            description: >-
+                Indicates whether to log information about connections established to the server.
+          logDisconnects:
+            type: boolean
+            description: >-
+                Indicates whether to log information about connections that have been closed by the client or terminated by the server.
+          logSecurityNegotiation:
+            type: boolean
+            description: >-
+                Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
+          logClientCertificates:
+            type: boolean
+            description: >-
+                Indicates whether to log information about any client certificates presented to the server.
+          logRequests:
+            type: boolean
+            description: >-
+                Indicates whether to log information about requests received from clients.
+          logResults:
+            type: boolean
+            description: >-
+                Indicates whether to log information about the results of client requests.
+          logSearchEntries:
+            type: boolean
+            description: >-
+                Indicates whether to log information about search result entries sent to the client.
+          logSearchReferences:
+            type: boolean
+            description: >-
+                Indicates whether to log information about search result references sent to the client.
+          logIntermediateResponses:
+            type: boolean
+            description: >-
+                Indicates whether to log information about intermediate responses sent to the client.
+          suppressInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
+          suppressReplicationOperations:
+            type: boolean
+            description: >-
+                Indicates whether access messages that are generated by replication operations should be suppressed.
+          correlateRequestsAndResults:
+            type: boolean
+            description: >-
+                Indicates whether to automatically log result messages for any operation in which the corresponding request was logged. In such cases, the result, entry, and reference criteria will be ignored, although the log-responses, log-search-entries, and log-search-references properties will be honored.
+          connectionCriteria:
+            type: string
+            description: >-
+                Specifies a set of connection criteria that must match the associated client connection in order for a connect, disconnect, request, or result message to be logged.
+          requestCriteria:
+            type: string
+            description: >-
+                Specifies a set of request criteria that must match the associated operation request in order for a request or result to be logged by this Access Log Publisher.
+          resultCriteria:
+            type: string
+            description: >-
+                Specifies a set of result criteria that must match the associated operation result in order for that result to be logged by this Access Log Publisher.
+          searchEntryCriteria:
+            type: string
+            description: >-
+                Specifies a set of search entry criteria that must match the associated search result entry in order for that it to be logged by this Access Log Publisher.
+          searchReferenceCriteria:
+            type: string
+            description: >-
+                Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher.
+          description:
+            type: string
+            description: >-
+                A description for this Log Publisher
+          loggingErrorBehavior:
+            $ref: '#/components/schemas/Enumlog-publisher-loggingErrorBehaviorProp'
+        required:
+        - schemas
+        - enabled
     Enumconsole-json-access-log-publisherSchemaUrn:
       type: string
       enum:
@@ -5446,6 +5456,7 @@ components:
       - $ref: '#/components/schemas/file-based-access-log-publisher-shared'
     file-based-access-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -5454,7 +5465,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-access-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-access-log-publisher-shared:
       type: object
       properties:
@@ -5720,6 +5730,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-error-log-publisher-shared'
     groovy-scripted-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -5728,7 +5739,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-error-log-publisher-shared:
       type: object
       properties:
@@ -5788,6 +5798,7 @@ components:
       - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-shared'
     file-based-json-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -5796,7 +5807,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-json-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-json-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -5980,6 +5990,7 @@ components:
       - $ref: '#/components/schemas/syslog-json-error-log-publisher-shared'
     syslog-json-error-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -5988,7 +5999,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/syslog-json-error-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     syslog-json-error-log-publisher-shared:
       type: object
       properties:
@@ -6081,6 +6091,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-http-operation-log-publisher-shared'
     groovy-scripted-http-operation-log-publisher-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -6089,7 +6100,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-http-operation-log-publisher-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-http-operation-log-publisher-shared:
       type: object
       properties:
@@ -6396,6 +6406,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

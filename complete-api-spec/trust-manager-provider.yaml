@@ -165,6 +165,7 @@ components:
       - $ref: '#/components/schemas/blind-trust-manager-provider-shared'
     blind-trust-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -173,7 +174,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/blind-trust-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     blind-trust-manager-provider-shared:
       type: object
       properties:
@@ -210,6 +210,7 @@ components:
       - $ref: '#/components/schemas/file-based-trust-manager-provider-shared'
     file-based-trust-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -218,7 +219,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-trust-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-trust-manager-provider-shared:
       type: object
       properties:
@@ -277,6 +277,7 @@ components:
       - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
     jvm-default-trust-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -285,7 +286,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jvm-default-trust-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     jvm-default-trust-manager-provider-shared:
       type: object
       properties:
@@ -318,6 +318,7 @@ components:
       - $ref: '#/components/schemas/third-party-trust-manager-provider-shared'
     third-party-trust-manager-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -326,7 +327,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-trust-manager-provider-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-trust-manager-provider-shared:
       type: object
       properties:
@@ -399,6 +399,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

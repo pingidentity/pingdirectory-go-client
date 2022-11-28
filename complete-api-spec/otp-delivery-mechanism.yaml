@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-shared'
     twilio-otp-delivery-mechanism-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/twilio-otp-delivery-mechanism-shared'
-      - $ref: '#/components/schemas/meta'
     twilio-otp-delivery-mechanism-shared:
       type: object
       properties:
@@ -248,6 +248,7 @@ components:
       - $ref: '#/components/schemas/email-otp-delivery-mechanism-shared'
     email-otp-delivery-mechanism-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -256,7 +257,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/email-otp-delivery-mechanism-shared'
-      - $ref: '#/components/schemas/meta'
     email-otp-delivery-mechanism-shared:
       type: object
       properties:
@@ -324,6 +324,7 @@ components:
       - $ref: '#/components/schemas/third-party-otp-delivery-mechanism-shared'
     third-party-otp-delivery-mechanism-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -332,7 +333,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-otp-delivery-mechanism-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-otp-delivery-mechanism-shared:
       type: object
       properties:
@@ -405,6 +405,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

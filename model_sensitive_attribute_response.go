@@ -16,6 +16,8 @@ import (
 
 // SensitiveAttributeResponse struct for SensitiveAttributeResponse
 type SensitiveAttributeResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Sensitive Attribute
 	Id string `json:"id"`
 	Schemas []EnumsensitiveAttributeSchemaUrn `json:"schemas,omitempty"`
@@ -30,7 +32,6 @@ type SensitiveAttributeResponse struct {
 	AllowInAdd *EnumsensitiveAttributeAllowInAddProp `json:"allowInAdd,omitempty"`
 	AllowInCompare *EnumsensitiveAttributeAllowInCompareProp `json:"allowInCompare,omitempty"`
 	AllowInModify *EnumsensitiveAttributeAllowInModifyProp `json:"allowInModify,omitempty"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewSensitiveAttributeResponse instantiates a new SensitiveAttributeResponse object
@@ -50,6 +51,70 @@ func NewSensitiveAttributeResponse(id string, attributeType []string) *Sensitive
 func NewSensitiveAttributeResponseWithDefaults() *SensitiveAttributeResponse {
 	this := SensitiveAttributeResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *SensitiveAttributeResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SensitiveAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *SensitiveAttributeResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *SensitiveAttributeResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *SensitiveAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SensitiveAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *SensitiveAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *SensitiveAttributeResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -356,40 +421,14 @@ func (o *SensitiveAttributeResponse) SetAllowInModify(v EnumsensitiveAttributeAl
 	o.AllowInModify = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *SensitiveAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SensitiveAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *SensitiveAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *SensitiveAttributeResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o SensitiveAttributeResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -419,9 +458,6 @@ func (o SensitiveAttributeResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AllowInModify) {
 		toSerialize["allowInModify"] = o.AllowInModify
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

@@ -16,6 +16,8 @@ import (
 
 // FilterBasedUncachedEntryCriteriaResponse struct for FilterBasedUncachedEntryCriteriaResponse
 type FilterBasedUncachedEntryCriteriaResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Entry Criteria
 	Id string `json:"id"`
 	Schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
@@ -27,7 +29,6 @@ type FilterBasedUncachedEntryCriteriaResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Entry Criteria is enabled for use in the server.
 	Enabled bool `json:"enabled"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewFilterBasedUncachedEntryCriteriaResponse instantiates a new FilterBasedUncachedEntryCriteriaResponse object
@@ -50,6 +51,70 @@ func NewFilterBasedUncachedEntryCriteriaResponse(id string, schemas []Enumfilter
 func NewFilterBasedUncachedEntryCriteriaResponseWithDefaults() *FilterBasedUncachedEntryCriteriaResponse {
 	this := FilterBasedUncachedEntryCriteriaResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *FilterBasedUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FilterBasedUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *FilterBasedUncachedEntryCriteriaResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *FilterBasedUncachedEntryCriteriaResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *FilterBasedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *FilterBasedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *FilterBasedUncachedEntryCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *FilterBasedUncachedEntryCriteriaResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -204,40 +269,14 @@ func (o *FilterBasedUncachedEntryCriteriaResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *FilterBasedUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *FilterBasedUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *FilterBasedUncachedEntryCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *FilterBasedUncachedEntryCriteriaResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o FilterBasedUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -255,9 +294,6 @@ func (o FilterBasedUncachedEntryCriteriaResponse) MarshalJSON() ([]byte, error) 
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

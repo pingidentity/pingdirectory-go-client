@@ -16,6 +16,8 @@ import (
 
 // PassphrasePasswordGeneratorResponse struct for PassphrasePasswordGeneratorResponse
 type PassphrasePasswordGeneratorResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Generator
 	Id string `json:"id"`
 	Schemas []EnumpassphrasePasswordGeneratorSchemaUrn `json:"schemas"`
@@ -31,7 +33,6 @@ type PassphrasePasswordGeneratorResponse struct {
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Password Generator is enabled for use.
 	Enabled bool `json:"enabled"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewPassphrasePasswordGeneratorResponse instantiates a new PassphrasePasswordGeneratorResponse object
@@ -53,6 +54,70 @@ func NewPassphrasePasswordGeneratorResponse(id string, schemas []EnumpassphraseP
 func NewPassphrasePasswordGeneratorResponseWithDefaults() *PassphrasePasswordGeneratorResponse {
 	this := PassphrasePasswordGeneratorResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *PassphrasePasswordGeneratorResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PassphrasePasswordGeneratorResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *PassphrasePasswordGeneratorResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *PassphrasePasswordGeneratorResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *PassphrasePasswordGeneratorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PassphrasePasswordGeneratorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *PassphrasePasswordGeneratorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *PassphrasePasswordGeneratorResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -279,40 +344,14 @@ func (o *PassphrasePasswordGeneratorResponse) SetEnabled(v bool) {
 	o.Enabled = v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *PassphrasePasswordGeneratorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PassphrasePasswordGeneratorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *PassphrasePasswordGeneratorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *PassphrasePasswordGeneratorResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o PassphrasePasswordGeneratorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -336,9 +375,6 @@ func (o PassphrasePasswordGeneratorResponse) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

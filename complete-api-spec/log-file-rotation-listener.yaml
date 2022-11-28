@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/summarize-log-file-rotation-listener-shared'
     summarize-log-file-rotation-listener-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/summarize-log-file-rotation-listener-shared'
-      - $ref: '#/components/schemas/meta'
     summarize-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -210,6 +210,7 @@ components:
       - $ref: '#/components/schemas/copy-log-file-rotation-listener-shared'
     copy-log-file-rotation-listener-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -218,7 +219,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/copy-log-file-rotation-listener-shared'
-      - $ref: '#/components/schemas/meta'
     copy-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -264,6 +264,7 @@ components:
       - $ref: '#/components/schemas/third-party-log-file-rotation-listener-shared'
     third-party-log-file-rotation-listener-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -272,7 +273,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-log-file-rotation-listener-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-log-file-rotation-listener-shared:
       type: object
       properties:
@@ -345,6 +345,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

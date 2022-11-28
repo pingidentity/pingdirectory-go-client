@@ -163,778 +163,828 @@ paths:
 components:
   schemas:
     config-file-handler-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumconfig-file-handler-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumconfig-file-handler-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        insignificantConfigArchiveAttribute:
-          type: array
-          items:
+          backendID:
             type: string
-          description: >-
-              The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
-        mirroredSubtreePeerPollingInterval:
-          type: string
-          description: >-
-              Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
-        mirroredSubtreeEntryUpdateTimeout:
-          type: string
-          description: >-
-              Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
-        mirroredSubtreeSearchTimeout:
-          type: string
-          description: >-
-              Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - writabilityMode
-      - enabled
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          insignificantConfigArchiveAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
+          mirroredSubtreePeerPollingInterval:
+            type: string
+            description: >-
+                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
+          mirroredSubtreeEntryUpdateTimeout:
+            type: string
+            description: >-
+                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
+          mirroredSubtreeSearchTimeout:
+            type: string
+            description: >-
+                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - enabled
     Enumconfig-file-handler-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler"
     schema-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumschema-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumschema-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        schemaEntryDN:
-          type: array
-          items:
+          backendID:
             type: string
-          description: >-
-              Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property.
-        showAllAttributes:
-          type: boolean
-          description: >-
-              Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration.
-        readOnlySchemaFile:
-          type: array
-          items:
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          schemaEntryDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property.
+          showAllAttributes:
+            type: boolean
+            description: >-
+                Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration.
+          readOnlySchemaFile:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients.
+          description:
             type: string
-          description: >-
-              Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - writabilityMode
-      - showAllAttributes
-      - enabled
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - showAllAttributes
+        - enabled
     Enumschema-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:schema"
     backup-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumbackup-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumbackup-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        backupDirectory:
-          type: array
-          items:
+          backendID:
             type: string
-          description: >-
-              Specifies the path to a backup directory containing one or more backups for a particular backend.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - writabilityMode
-      - backupDirectory
-      - enabled
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          backupDirectory:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the path to a backup directory containing one or more backups for a particular backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - backupDirectory
+        - enabled
     Enumbackup-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:backup"
     task-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumtask-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumtask-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        taskBackingFile:
-          type: string
-          description: >-
-              Specifies the path to the backing file for storing information about the tasks configured in the server.
-        maximumInitialTaskLogMessagesToRetain:
-          type: integer
-          description: >-
-              The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
-        maximumFinalTaskLogMessagesToRetain:
-          type: integer
-          description: >-
-              The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
-        taskRetentionTime:
-          type: string
-          description: >-
-              Specifies the length of time that task entries should be retained after processing on the associated task has been completed.
-        notificationSenderAddress:
-          type: string
-          description: >-
-              Specifies the email address to use as the sender address (that is, the "From:" address) for notification mail messages generated when a task completes execution.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - writabilityMode
-      - taskBackingFile
-      - enabled
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          taskBackingFile:
+            type: string
+            description: >-
+                Specifies the path to the backing file for storing information about the tasks configured in the server.
+          maximumInitialTaskLogMessagesToRetain:
+            type: integer
+            description: >-
+                The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
+          maximumFinalTaskLogMessagesToRetain:
+            type: integer
+            description: >-
+                The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
+          taskRetentionTime:
+            type: string
+            description: >-
+                Specifies the length of time that task entries should be retained after processing on the associated task has been completed.
+          notificationSenderAddress:
+            type: string
+            description: >-
+                Specifies the email address to use as the sender address (that is, the "From:" address) for notification mail messages generated when a task completes execution.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - taskBackingFile
+        - enabled
     Enumtask-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:task"
     alert-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumalert-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumalert-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        ldifFile:
-          type: string
-          description: >-
-              Specifies the path to the LDIF file that serves as the backing file for this backend.
-        alertRetentionTime:
-          type: string
-          description: >-
-              Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
-        maxAlerts:
-          type: integer
-          description: >-
-              Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
-        disabledAlertType:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - ldifFile
-      - alertRetentionTime
-      - writabilityMode
-      - enabled
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          ldifFile:
+            type: string
+            description: >-
+                Specifies the path to the LDIF file that serves as the backing file for this backend.
+          alertRetentionTime:
+            type: string
+            description: >-
+                Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
+          maxAlerts:
+            type: integer
+            description: >-
+                Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
+          disabledAlertType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - ldifFile
+        - alertRetentionTime
+        - writabilityMode
+        - enabled
     Enumalert-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:alert"
     encryption-settings-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumencryption-settings-backendSchemaUrn'
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumencryption-settings-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - baseDN
-      - backendID
-      - enabled
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - baseDN
+        - backendID
+        - enabled
     Enumencryption-settings-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:encryption-settings"
     trust-store-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumtrust-store-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumtrust-store-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        trustStoreFile:
-          type: string
-          description: >-
-              Specifies the path to the file that stores the trust information.
-        trustStoreType:
-          type: string
-          description: >-
-              Specifies the format for the data in the key store file.
-        trustStorePin:
-          type: string
-          format: password
-          description: >-
-              Specifies the clear-text PIN needed to access the Trust Store Backend.
-        trustStorePinFile:
-          type: string
-          description: >-
-              Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the Trust Store Backend.
-        trustStorePinPassphraseProvider:
-          type: string
-          description: >-
-              The passphrase provider to use to obtain the clear-text PIN needed to access the Trust Store Backend.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - writabilityMode
-      - trustStoreFile
-      - enabled
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          trustStoreFile:
+            type: string
+            description: >-
+                Specifies the path to the file that stores the trust information.
+          trustStoreType:
+            type: string
+            description: >-
+                Specifies the format for the data in the key store file.
+          trustStorePin:
+            type: string
+            format: password
+            description: >-
+                Specifies the clear-text PIN needed to access the Trust Store Backend.
+          trustStorePinFile:
+            type: string
+            description: >-
+                Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the Trust Store Backend.
+          trustStorePinPassphraseProvider:
+            type: string
+            description: >-
+                The passphrase provider to use to obtain the clear-text PIN needed to access the Trust Store Backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - trustStoreFile
+        - enabled
     Enumtrust-store-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:trust-store"
     alarm-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumalarm-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumalarm-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        ldifFile:
-          type: string
-          description: >-
-              Specifies the path to the LDIF file that serves as the backing file for this backend.
-        alarmRetentionTime:
-          type: string
-          description: >-
-              Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged.
-        maxAlarms:
-          type: integer
-          description: >-
-              Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        backupFilePermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - ldifFile
-      - alarmRetentionTime
-      - writabilityMode
-      - enabled
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          ldifFile:
+            type: string
+            description: >-
+                Specifies the path to the LDIF file that serves as the backing file for this backend.
+          alarmRetentionTime:
+            type: string
+            description: >-
+                Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged.
+          maxAlarms:
+            type: integer
+            description: >-
+                Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - ldifFile
+        - alarmRetentionTime
+        - writabilityMode
+        - enabled
     Enumalarm-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:alarm"
     changelog-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumchangelog-backendSchemaUrn'
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumchangelog-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        dbDirectory:
-          type: string
-          description: >-
-              Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id.
-        dbDirectoryPermissions:
-          type: string
-          description: >-
-              Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup of the backend.
-        dbCachePercent:
-          type: integer
-          description: >-
-              Specifies the percentage of JVM memory to allocate to the changelog database cache.
-        jeProperty:
-          type: array
-          items:
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          dbDirectory:
             type: string
-          description: >-
-              Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend.
-        changelogWriteBatchSize:
-          type: integer
-          description: >-
-              Specifies the number of changelog entries written in a single database transaction.
-        changelogPurgeBatchSize:
-          type: integer
-          description: >-
-              Specifies the number of changelog entries purged in a single database transaction.
-        changelogWriteQueueCapacity:
-          type: integer
-          description: >-
-              Specifies the capacity of the changelog write queue in number of changes.
-        indexIncludeAttribute:
-          type: array
-          items:
+            description: >-
+                Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id.
+          dbDirectoryPermissions:
             type: string
-          description: >-
-              Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed.
-        indexExcludeAttribute:
-          type: array
-          items:
+            description: >-
+                Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup of the backend.
+          dbCachePercent:
+            type: integer
+            description: >-
+                Specifies the percentage of JVM memory to allocate to the changelog database cache.
+          jeProperty:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the database and environment properties for the Berkeley DB Java Edition database for this changelog backend.
+          changelogWriteBatchSize:
+            type: integer
+            description: >-
+                Specifies the number of changelog entries written in a single database transaction.
+          changelogPurgeBatchSize:
+            type: integer
+            description: >-
+                Specifies the number of changelog entries purged in a single database transaction.
+          changelogWriteQueueCapacity:
+            type: integer
+            description: >-
+                Specifies the capacity of the changelog write queue in number of changes.
+          indexIncludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies which attribute types are to be specifically included in the set of attribute indexes maintained on the changelog. If this property does not have any values then no attribute types are indexed.
+          indexExcludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values "*" and "+".
+          changelogMaximumAge:
             type: string
-          description: >-
-              Specifies which attribute types are to be specifically excluded from the set of attribute indexes maintained on the changelog. This property is useful when the index-include-attribute property contains one of the special values "*" and "+".
-        changelogMaximumAge:
-          type: string
-          description: >-
-              Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk.
-        targetDatabaseSize:
-          type: string
-          description: >-
-              The changelog database is allowed to grow up to this size on disk even if changes are older than the configured changelog-maximum-age.
-        changelogEntryIncludeBaseDN:
-          type: array
-          items:
+            description: >-
+                Changes are guaranteed to be maintained in the changelog database for at least this duration. Setting target-database-size can allow additional changes to be maintained up to the configured size on disk.
+          targetDatabaseSize:
             type: string
-          description: >-
-              The base DNs for branches in the data for which to record changes in the changelog.
-        changelogEntryExcludeBaseDN:
-          type: array
-          items:
+            description: >-
+                The changelog database is allowed to grow up to this size on disk even if changes are older than the configured changelog-maximum-age.
+          changelogEntryIncludeBaseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                The base DNs for branches in the data for which to record changes in the changelog.
+          changelogEntryExcludeBaseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                The base DNs for branches in the data for which no changelog records should be generated.
+          changelogEntryIncludeFilter:
+            type: array
+            items:
+              type: string
+            description: >-
+                A filter that indicates which changelog entries should actually be stored in the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
+          changelogEntryExcludeFilter:
+            type: array
+            items:
+              type: string
+            description: >-
+                A filter that indicates which changelog entries should be excluded from the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
+          changelogIncludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies which attribute types will be included in a changelog entry for ADD and MODIFY operations.
+          changelogExcludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies a set of attribute types that should be excluded in a changelog entry for ADD and MODIFY operations.
+          changelogDeletedEntryIncludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies a set of attribute types that should be included in a changelog entry for DELETE operations.
+          changelogDeletedEntryExcludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations.
+          changelogIncludeKeyAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies which attribute types will be included in a changelog entry on every change.
+          changelogMaxBeforeAfterValues:
+            type: integer
+            description: >-
+                This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry.
+          writeLastmodAttributes:
+            type: boolean
+            description: >-
+                Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries.
+          useReversibleForm:
+            type: boolean
+            description: >-
+                Specifies whether the changelog should provide enough information to be able to revert the changes if desired.
+          includeVirtualAttributes:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-includeVirtualAttributesProp'
+          applyAccessControlsToChangelogEntryContents:
+            type: boolean
+            description: >-
+                Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry.
+          reportExcludedChangelogAttributes:
+            $ref: '#/components/schemas/Enumbackend-reportExcludedChangelogAttributesProp'
+          softDeleteEntryIncludedOperation:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-softDeleteEntryIncludedOperationProp'
+          backendID:
             type: string
-          description: >-
-              The base DNs for branches in the data for which no changelog records should be generated.
-        changelogEntryIncludeFilter:
-          type: array
-          items:
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
             type: string
-          description: >-
-              A filter that indicates which changelog entries should actually be stored in the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
-        changelogEntryExcludeFilter:
-          type: array
-          items:
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
             type: string
-          description: >-
-              A filter that indicates which changelog entries should be excluded from the changelog. Note that this filter is evaluated against the changelog entry itself and not against the entry that was the target of the change referenced by the changelog entry. This filter may target any attributes that appear in changelog entries with the exception of the changeNumber and entry-size-bytes attributes, since they will not be known at the time of the filter evaluation.
-        changelogIncludeAttribute:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies which attribute types will be included in a changelog entry for ADD and MODIFY operations.
-        changelogExcludeAttribute:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies a set of attribute types that should be excluded in a changelog entry for ADD and MODIFY operations.
-        changelogDeletedEntryIncludeAttribute:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies a set of attribute types that should be included in a changelog entry for DELETE operations.
-        changelogDeletedEntryExcludeAttribute:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies a set of attribute types that should be excluded from a changelog entry for DELETE operations.
-        changelogIncludeKeyAttribute:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies which attribute types will be included in a changelog entry on every change.
-        changelogMaxBeforeAfterValues:
-          type: integer
-          description: >-
-              This controls whether all attribute values for a modified attribute (even those values that have not changed) will be included in the changelog entry. If the number of attribute values does not exceed this limit, then all values for the modified attribute will be included in the changelog entry.
-        writeLastmodAttributes:
-          type: boolean
-          description: >-
-              Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries.
-        useReversibleForm:
-          type: boolean
-          description: >-
-              Specifies whether the changelog should provide enough information to be able to revert the changes if desired.
-        includeVirtualAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumbackend-includeVirtualAttributesProp'
-        applyAccessControlsToChangelogEntryContents:
-          type: boolean
-          description: >-
-              Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry.
-        reportExcludedChangelogAttributes:
-          $ref: '#/components/schemas/Enumbackend-reportExcludedChangelogAttributesProp'
-        softDeleteEntryIncludedOperation:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumbackend-softDeleteEntryIncludedOperationProp'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - baseDN
-      - changelogMaximumAge
-      - backendID
-      - enabled
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - baseDN
+        - changelogMaximumAge
+        - backendID
+        - enabled
     Enumchangelog-backendSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:changelog"
     monitor-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enummonitor-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        baseDN:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummonitor-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              Specifies the base DN(s) for the data that the backend handles.
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        setDegradedAlertWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - baseDN
-      - enabled
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - enabled
     Enummonitor-backendSchemaUrn:
       type: string
       enum:
@@ -951,6 +1001,7 @@ components:
       - $ref: '#/components/schemas/local-db-backend-shared'
     local-db-backend-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -959,7 +1010,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/local-db-backend-shared'
-      - $ref: '#/components/schemas/meta'
     local-db-backend-shared:
       type: object
       properties:
@@ -1200,62 +1250,67 @@ components:
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:local-db"
     metrics-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enummetrics-backendSchemaUrn'
-        backendID:
-          type: string
-          description: >-
-              Specifies a name to identify the associated backend.
-        storageDir:
-          type: string
-          description: >-
-              Specifies the path to the directory that will be used to store queued samples.
-        metricsDir:
-          type: string
-          description: >-
-              Specifies the path to the directory that contains metric definitions.
-        sampleFlushInterval:
-          type: string
-          description: >-
-              Period when samples are flushed to disk.
-        retentionPolicy:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummetrics-backendSchemaUrn'
+          id:
+            description: Name of the Backend
             type: string
-          description: >-
-              The retention policy to use for the Metrics Backend .
-        description:
-          type: string
-          description: >-
-              A description for this Backend
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the backend is enabled in the server.
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        returnUnavailableWhenDisabled:
-          type: boolean
-          description: >-
-              Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-        notificationManager:
-          type: string
-          description: >-
-              Specifies a notification manager for changes resulting from operations processed through this Backend
-      required:
-      - schemas
-      - backendID
-      - storageDir
-      - metricsDir
-      - retentionPolicy
-      - enabled
-      - writabilityMode
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          storageDir:
+            type: string
+            description: >-
+                Specifies the path to the directory that will be used to store queued samples.
+          metricsDir:
+            type: string
+            description: >-
+                Specifies the path to the directory that contains metric definitions.
+          sampleFlushInterval:
+            type: string
+            description: >-
+                Period when samples are flushed to disk.
+          retentionPolicy:
+            type: array
+            items:
+              type: string
+            description: >-
+                The retention policy to use for the Metrics Backend .
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - storageDir
+        - metricsDir
+        - retentionPolicy
+        - enabled
+        - writabilityMode
     Enummetrics-backendSchemaUrn:
       type: string
       enum:
@@ -1657,6 +1712,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -157,6 +157,7 @@ components:
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
     ldap-pass-through-authentication-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -165,7 +166,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldap-pass-through-authentication-handler-shared'
-      - $ref: '#/components/schemas/meta'
     ldap-pass-through-authentication-handler-shared:
       type: object
       properties:
@@ -251,6 +251,7 @@ components:
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-shared'
     third-party-pass-through-authentication-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -259,7 +260,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-pass-through-authentication-handler-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-pass-through-authentication-handler-shared:
       type: object
       properties:
@@ -335,6 +335,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

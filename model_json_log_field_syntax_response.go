@@ -16,7 +16,11 @@ import (
 
 // JsonLogFieldSyntaxResponse struct for JsonLogFieldSyntaxResponse
 type JsonLogFieldSyntaxResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumjsonLogFieldSyntaxSchemaUrn `json:"schemas"`
+	// Name of the Log Field Syntax
+	Id *string `json:"id,omitempty"`
 	// The names of the JSON fields that will be considered sensitive.
 	IncludedSensitiveField []string `json:"includedSensitiveField,omitempty"`
 	// The names of the JSON fields that will not be considered sensitive.
@@ -44,6 +48,70 @@ func NewJsonLogFieldSyntaxResponseWithDefaults() *JsonLogFieldSyntaxResponse {
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *JsonLogFieldSyntaxResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonLogFieldSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *JsonLogFieldSyntaxResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *JsonLogFieldSyntaxResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *JsonLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *JsonLogFieldSyntaxResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *JsonLogFieldSyntaxResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 // GetSchemas returns the Schemas field value
 func (o *JsonLogFieldSyntaxResponse) GetSchemas() []EnumjsonLogFieldSyntaxSchemaUrn {
 	if o == nil {
@@ -66,6 +134,38 @@ func (o *JsonLogFieldSyntaxResponse) GetSchemasOk() ([]EnumjsonLogFieldSyntaxSch
 // SetSchemas sets field value
 func (o *JsonLogFieldSyntaxResponse) SetSchemas(v []EnumjsonLogFieldSyntaxSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *JsonLogFieldSyntaxResponse) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *JsonLogFieldSyntaxResponse) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+    return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *JsonLogFieldSyntaxResponse) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *JsonLogFieldSyntaxResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetIncludedSensitiveField returns the IncludedSensitiveField field value if set, zero value otherwise.
@@ -198,8 +298,17 @@ func (o *JsonLogFieldSyntaxResponse) SetDefaultBehavior(v EnumlogFieldSyntaxDefa
 
 func (o JsonLogFieldSyntaxResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.IncludedSensitiveField) {
 		toSerialize["includedSensitiveField"] = o.IncludedSensitiveField

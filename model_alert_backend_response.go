@@ -16,7 +16,11 @@ import (
 
 // AlertBackendResponse struct for AlertBackendResponse
 type AlertBackendResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumalertBackendSchemaUrn `json:"schemas"`
+	// Name of the Backend
+	Id *string `json:"id,omitempty"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// Specifies the base DN(s) for the data that the backend handles.
@@ -67,6 +71,70 @@ func NewAlertBackendResponseWithDefaults() *AlertBackendResponse {
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *AlertBackendResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertBackendResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *AlertBackendResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *AlertBackendResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *AlertBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *AlertBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *AlertBackendResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 // GetSchemas returns the Schemas field value
 func (o *AlertBackendResponse) GetSchemas() []EnumalertBackendSchemaUrn {
 	if o == nil {
@@ -89,6 +157,38 @@ func (o *AlertBackendResponse) GetSchemasOk() ([]EnumalertBackendSchemaUrn, bool
 // SetSchemas sets field value
 func (o *AlertBackendResponse) SetSchemas(v []EnumalertBackendSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AlertBackendResponse) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AlertBackendResponse) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+    return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *AlertBackendResponse) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *AlertBackendResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetBackendID returns the BackendID field value
@@ -461,8 +561,17 @@ func (o *AlertBackendResponse) SetNotificationManager(v string) {
 
 func (o AlertBackendResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if true {
 		toSerialize["backendID"] = o.BackendID

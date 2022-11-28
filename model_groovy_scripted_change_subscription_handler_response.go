@@ -16,6 +16,8 @@ import (
 
 // GroovyScriptedChangeSubscriptionHandlerResponse struct for GroovyScriptedChangeSubscriptionHandlerResponse
 type GroovyScriptedChangeSubscriptionHandlerResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Change Subscription Handler
 	Id string `json:"id"`
 	Schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
@@ -29,7 +31,6 @@ type GroovyScriptedChangeSubscriptionHandlerResponse struct {
 	Enabled bool `json:"enabled"`
 	// The set of change subscriptions for which this change subscription handler should be notified. If no values are provided then it will be notified for all change subscriptions defined in the server.
 	ChangeSubscription []string `json:"changeSubscription,omitempty"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewGroovyScriptedChangeSubscriptionHandlerResponse instantiates a new GroovyScriptedChangeSubscriptionHandlerResponse object
@@ -51,6 +52,70 @@ func NewGroovyScriptedChangeSubscriptionHandlerResponse(id string, schemas []Enu
 func NewGroovyScriptedChangeSubscriptionHandlerResponseWithDefaults() *GroovyScriptedChangeSubscriptionHandlerResponse {
 	this := GroovyScriptedChangeSubscriptionHandlerResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -245,40 +310,14 @@ func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetChangeSubscription(
 	o.ChangeSubscription = v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *GroovyScriptedChangeSubscriptionHandlerResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o GroovyScriptedChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -299,9 +338,6 @@ func (o GroovyScriptedChangeSubscriptionHandlerResponse) MarshalJSON() ([]byte, 
 	}
 	if !isNil(o.ChangeSubscription) {
 		toSerialize["changeSubscription"] = o.ChangeSubscription
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

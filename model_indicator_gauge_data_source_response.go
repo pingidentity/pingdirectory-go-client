@@ -16,6 +16,8 @@ import (
 
 // IndicatorGaugeDataSourceResponse struct for IndicatorGaugeDataSourceResponse
 type IndicatorGaugeDataSourceResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Gauge Data Source
 	Id string `json:"id"`
 	Schemas []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
@@ -35,7 +37,6 @@ type IndicatorGaugeDataSourceResponse struct {
 	ResourceType *string `json:"resourceType,omitempty"`
 	// The minimum frequency with which gauges using this Gauge Data Source can be configured for update. In order to prevent undesirable side effects, some Gauge Data Sources may use this property to impose a higher bound on the update frequency of gauges.
 	MinimumUpdateInterval *string `json:"minimumUpdateInterval,omitempty"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewIndicatorGaugeDataSourceResponse instantiates a new IndicatorGaugeDataSourceResponse object
@@ -57,6 +58,70 @@ func NewIndicatorGaugeDataSourceResponse(id string, schemas []EnumindicatorGauge
 func NewIndicatorGaugeDataSourceResponseWithDefaults() *IndicatorGaugeDataSourceResponse {
 	this := IndicatorGaugeDataSourceResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *IndicatorGaugeDataSourceResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IndicatorGaugeDataSourceResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *IndicatorGaugeDataSourceResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *IndicatorGaugeDataSourceResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *IndicatorGaugeDataSourceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *IndicatorGaugeDataSourceResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -347,40 +412,14 @@ func (o *IndicatorGaugeDataSourceResponse) SetMinimumUpdateInterval(v string) {
 	o.MinimumUpdateInterval = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *IndicatorGaugeDataSourceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *IndicatorGaugeDataSourceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *IndicatorGaugeDataSourceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *IndicatorGaugeDataSourceResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o IndicatorGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -410,9 +449,6 @@ func (o IndicatorGaugeDataSourceResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.MinimumUpdateInterval) {
 		toSerialize["minimumUpdateInterval"] = o.MinimumUpdateInterval
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

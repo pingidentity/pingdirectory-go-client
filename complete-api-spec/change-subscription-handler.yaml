@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
     groovy-scripted-change-subscription-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-change-subscription-handler-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-change-subscription-handler-shared:
       type: object
       properties:
@@ -223,6 +223,7 @@ components:
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
     logging-change-subscription-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -231,7 +232,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/logging-change-subscription-handler-shared'
-      - $ref: '#/components/schemas/meta'
     logging-change-subscription-handler-shared:
       type: object
       properties:
@@ -279,6 +279,7 @@ components:
       - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
     third-party-change-subscription-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -287,7 +288,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-change-subscription-handler-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-change-subscription-handler-shared:
       type: object
       properties:
@@ -366,6 +366,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

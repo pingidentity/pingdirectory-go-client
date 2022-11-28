@@ -185,6 +185,7 @@ components:
       - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-shared'
     amazon-key-management-service-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -193,7 +194,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-key-management-service-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     amazon-key-management-service-cipher-stream-provider-shared:
       type: object
       properties:
@@ -257,6 +257,7 @@ components:
       - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-shared'
     amazon-secrets-manager-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -265,7 +266,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/amazon-secrets-manager-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     amazon-secrets-manager-cipher-stream-provider-shared:
       type: object
       properties:
@@ -330,6 +330,7 @@ components:
       - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-shared'
     azure-key-vault-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -338,7 +339,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/azure-key-vault-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     azure-key-vault-cipher-stream-provider-shared:
       type: object
       properties:
@@ -395,6 +395,7 @@ components:
       - $ref: '#/components/schemas/file-based-cipher-stream-provider-shared'
     file-based-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -403,7 +404,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-based-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     file-based-cipher-stream-provider-shared:
       type: object
       properties:
@@ -449,6 +449,7 @@ components:
       - $ref: '#/components/schemas/wait-for-passphrase-cipher-stream-provider-shared'
     wait-for-passphrase-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -457,7 +458,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/wait-for-passphrase-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     wait-for-passphrase-cipher-stream-provider-shared:
       type: object
       properties:
@@ -494,6 +494,7 @@ components:
       - $ref: '#/components/schemas/conjur-cipher-stream-provider-shared'
     conjur-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -502,7 +503,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/conjur-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     conjur-cipher-stream-provider-shared:
       type: object
       properties:
@@ -554,6 +554,7 @@ components:
       - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-shared'
     pkcs11-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -562,7 +563,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/pkcs11-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     pkcs11-cipher-stream-provider-shared:
       type: object
       properties:
@@ -634,6 +634,7 @@ components:
       - $ref: '#/components/schemas/vault-cipher-stream-provider-shared'
     vault-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -642,7 +643,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/vault-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     vault-cipher-stream-provider-shared:
       type: object
       properties:
@@ -721,6 +721,7 @@ components:
       - $ref: '#/components/schemas/third-party-cipher-stream-provider-shared'
     third-party-cipher-stream-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -729,7 +730,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-cipher-stream-provider-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-cipher-stream-provider-shared:
       type: object
       properties:
@@ -802,6 +802,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

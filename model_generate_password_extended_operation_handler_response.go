@@ -16,7 +16,11 @@ import (
 
 // GeneratePasswordExtendedOperationHandlerResponse struct for GeneratePasswordExtendedOperationHandlerResponse
 type GeneratePasswordExtendedOperationHandlerResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	// Name of the Extended Operation Handler
+	Id *string `json:"id,omitempty"`
 	// The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration.
 	DefaultPasswordPolicy *string `json:"defaultPasswordPolicy,omitempty"`
 	// The default password generator that will be used if the selected password policy is not configured with a password generator.
@@ -51,6 +55,70 @@ func NewGeneratePasswordExtendedOperationHandlerResponseWithDefaults() *Generate
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 // GetSchemas returns the Schemas field value
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetSchemas() []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn {
 	if o == nil {
@@ -73,6 +141,38 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetSchemasOk() ([]Enu
 // SetSchemas sets field value
 func (o *GeneratePasswordExtendedOperationHandlerResponse) SetSchemas(v []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+    return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *GeneratePasswordExtendedOperationHandlerResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetDefaultPasswordPolicy returns the DefaultPasswordPolicy field value if set, zero value otherwise.
@@ -253,8 +353,17 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) SetEnabled(v bool) {
 
 func (o GeneratePasswordExtendedOperationHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.DefaultPasswordPolicy) {
 		toSerialize["defaultPasswordPolicy"] = o.DefaultPasswordPolicy

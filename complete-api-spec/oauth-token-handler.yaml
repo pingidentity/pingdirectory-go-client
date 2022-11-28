@@ -157,6 +157,7 @@ components:
       - $ref: '#/components/schemas/groovy-scripted-oauth-token-handler-shared'
     groovy-scripted-oauth-token-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -165,7 +166,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/groovy-scripted-oauth-token-handler-shared'
-      - $ref: '#/components/schemas/meta'
     groovy-scripted-oauth-token-handler-shared:
       type: object
       properties:
@@ -208,6 +208,7 @@ components:
       - $ref: '#/components/schemas/third-party-oauth-token-handler-shared'
     third-party-oauth-token-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -216,7 +217,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-oauth-token-handler-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-oauth-token-handler-shared:
       type: object
       properties:
@@ -284,6 +284,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

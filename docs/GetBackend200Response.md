@@ -4,7 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnummetricsBackendSchemaUrn**](EnummetricsBackendSchemaUrn.md) |  | 
+**Id** | **string** | Name of the Backend | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
@@ -65,7 +68,6 @@ Name | Type | Description | Notes
 **ApplyAccessControlsToChangelogEntryContents** | Pointer to **bool** | Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry. | [optional] 
 **ReportExcludedChangelogAttributes** | Pointer to [**EnumbackendReportExcludedChangelogAttributesProp**](EnumbackendReportExcludedChangelogAttributesProp.md) |  | [optional] 
 **SoftDeleteEntryIncludedOperation** | Pointer to [**[]EnumbackendSoftDeleteEntryIncludedOperationProp**](EnumbackendSoftDeleteEntryIncludedOperationProp.md) |  | [optional] 
-**Id** | **string** | Name of the Backend | 
 **UncachedId2entryCacheMode** | Pointer to [**EnumbackendUncachedId2entryCacheModeProp**](EnumbackendUncachedId2entryCacheModeProp.md) |  | [optional] 
 **UncachedAttributeCriteria** | Pointer to **string** | The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached. | [optional] 
 **UncachedEntryCriteria** | Pointer to **string** | The criteria that will be used to identify entries that should be written into the uncached-id2entry database rather than the id2entry database. | [optional] 
@@ -112,7 +114,6 @@ Name | Type | Description | Notes
 **SubtreeDeleteSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
 **NumRecentChanges** | Pointer to **int32** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
 **OfflineProcessDatabaseOpenTimeout** | Pointer to **string** | Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif. | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **StorageDir** | **string** | Specifies the path to the directory that will be used to store queued samples. | 
 **MetricsDir** | **string** | Specifies the path to the directory that contains metric definitions. | 
 **SampleFlushInterval** | Pointer to **string** | Period when samples are flushed to disk. | [optional] 
@@ -122,7 +123,7 @@ Name | Type | Description | Notes
 
 ### NewGetBackend200Response
 
-`func NewGetBackend200Response(schemas []EnummetricsBackendSchemaUrn, backendID string, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, showAllAttributes bool, backupDirectory []string, taskBackingFile string, ldifFile string, alertRetentionTime string, trustStoreFile string, alarmRetentionTime string, dbDirectory string, changelogMaximumAge string, id string, importTempDirectory string, storageDir string, metricsDir string, retentionPolicy []string, ) *GetBackend200Response`
+`func NewGetBackend200Response(schemas []EnummetricsBackendSchemaUrn, id string, backendID string, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, showAllAttributes bool, backupDirectory []string, taskBackingFile string, ldifFile string, alertRetentionTime string, trustStoreFile string, alarmRetentionTime string, dbDirectory string, changelogMaximumAge string, importTempDirectory string, storageDir string, metricsDir string, retentionPolicy []string, ) *GetBackend200Response`
 
 NewGetBackend200Response instantiates a new GetBackend200Response object
 This constructor will assign default values to properties that have it defined,
@@ -136,6 +137,56 @@ will change when the set of required properties is changed
 NewGetBackend200ResponseWithDefaults instantiates a new GetBackend200Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMeta
+
+`func (o *GetBackend200Response) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *GetBackend200Response) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *GetBackend200Response) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *GetBackend200Response) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GetBackend200Response) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *GetBackend200Response) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GetBackend200Response) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *GetBackend200Response) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetSchemas
 
@@ -155,6 +206,26 @@ and a boolean to check if the value has been set.
 `func (o *GetBackend200Response) SetSchemas(v []EnummetricsBackendSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
+
+
+### GetId
+
+`func (o *GetBackend200Response) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *GetBackend200Response) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *GetBackend200Response) SetId(v string)`
+
+SetId sets Id field to given value.
 
 
 ### GetBackendID
@@ -1592,26 +1663,6 @@ SetSoftDeleteEntryIncludedOperation sets SoftDeleteEntryIncludedOperation field 
 
 HasSoftDeleteEntryIncludedOperation returns a boolean if a field has been set.
 
-### GetId
-
-`func (o *GetBackend200Response) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GetBackend200Response) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GetBackend200Response) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
 ### GetUncachedId2entryCacheMode
 
 `func (o *GetBackend200Response) GetUncachedId2entryCacheMode() EnumbackendUncachedId2entryCacheModeProp`
@@ -2756,31 +2807,6 @@ SetOfflineProcessDatabaseOpenTimeout sets OfflineProcessDatabaseOpenTimeout fiel
 `func (o *GetBackend200Response) HasOfflineProcessDatabaseOpenTimeout() bool`
 
 HasOfflineProcessDatabaseOpenTimeout returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *GetBackend200Response) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *GetBackend200Response) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *GetBackend200Response) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *GetBackend200Response) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
 
 ### GetStorageDir
 

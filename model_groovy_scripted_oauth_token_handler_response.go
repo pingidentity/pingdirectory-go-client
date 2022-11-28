@@ -16,6 +16,8 @@ import (
 
 // GroovyScriptedOauthTokenHandlerResponse struct for GroovyScriptedOauthTokenHandlerResponse
 type GroovyScriptedOauthTokenHandlerResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the OAuth Token Handler
 	Id string `json:"id"`
 	Schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
@@ -25,7 +27,6 @@ type GroovyScriptedOauthTokenHandlerResponse struct {
 	ScriptArgument []string `json:"scriptArgument,omitempty"`
 	// A description for this OAuth Token Handler
 	Description *string `json:"description,omitempty"`
-	Meta *MetaMeta `json:"meta,omitempty"`
 }
 
 // NewGroovyScriptedOauthTokenHandlerResponse instantiates a new GroovyScriptedOauthTokenHandlerResponse object
@@ -46,6 +47,70 @@ func NewGroovyScriptedOauthTokenHandlerResponse(id string, schemas []EnumgroovyS
 func NewGroovyScriptedOauthTokenHandlerResponseWithDefaults() *GroovyScriptedOauthTokenHandlerResponse {
 	this := GroovyScriptedOauthTokenHandlerResponse{}
 	return &this
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *GroovyScriptedOauthTokenHandlerResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedOauthTokenHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *GroovyScriptedOauthTokenHandlerResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *GroovyScriptedOauthTokenHandlerResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *GroovyScriptedOauthTokenHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GroovyScriptedOauthTokenHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *GroovyScriptedOauthTokenHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *GroovyScriptedOauthTokenHandlerResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
 // GetId returns the Id field value
@@ -184,40 +249,14 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *GroovyScriptedOauthTokenHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
-		var ret MetaMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GroovyScriptedOauthTokenHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
-    return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *GroovyScriptedOauthTokenHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
-func (o *GroovyScriptedOauthTokenHandlerResponse) SetMeta(v MetaMeta) {
-	o.Meta = &v
-}
-
 func (o GroovyScriptedOauthTokenHandlerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["id"] = o.Id
 	}
@@ -232,9 +271,6 @@ func (o GroovyScriptedOauthTokenHandlerResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
 	}
 	return json.Marshal(toSerialize)
 }

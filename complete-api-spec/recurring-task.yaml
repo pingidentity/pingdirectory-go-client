@@ -193,6 +193,7 @@ components:
       - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
     generate-server-profile-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -201,7 +202,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/generate-server-profile-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     generate-server-profile-recurring-task-shared:
       type: object
       properties:
@@ -286,6 +286,7 @@ components:
       - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
     leave-lockdown-mode-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -294,7 +295,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/leave-lockdown-mode-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     leave-lockdown-mode-recurring-task-shared:
       type: object
       properties:
@@ -364,6 +364,7 @@ components:
       - $ref: '#/components/schemas/backup-recurring-task-shared'
     backup-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -372,7 +373,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/backup-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     backup-recurring-task-shared:
       type: object
       properties:
@@ -483,6 +483,7 @@ components:
       - $ref: '#/components/schemas/delay-recurring-task-shared'
     delay-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -491,7 +492,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/delay-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     delay-recurring-task-shared:
       type: object
       properties:
@@ -585,6 +585,7 @@ components:
       - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
     statically-defined-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -593,7 +594,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/statically-defined-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     statically-defined-recurring-task-shared:
       type: object
       properties:
@@ -677,6 +677,7 @@ components:
       - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
     collect-support-data-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -685,7 +686,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/collect-support-data-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     collect-support-data-recurring-task-shared:
       type: object
       properties:
@@ -818,6 +818,7 @@ components:
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
     ldif-export-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -826,7 +827,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldif-export-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     ldif-export-recurring-task-shared:
       type: object
       properties:
@@ -937,6 +937,7 @@ components:
       - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
     enter-lockdown-mode-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -945,7 +946,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/enter-lockdown-mode-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     enter-lockdown-mode-recurring-task-shared:
       type: object
       properties:
@@ -1015,6 +1015,7 @@ components:
       - $ref: '#/components/schemas/exec-recurring-task-shared'
     exec-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1023,7 +1024,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/exec-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     exec-recurring-task-shared:
       type: object
       properties:
@@ -1120,6 +1120,7 @@ components:
       - $ref: '#/components/schemas/file-retention-recurring-task-shared'
     file-retention-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1128,7 +1129,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-retention-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     file-retention-recurring-task-shared:
       type: object
       properties:
@@ -1219,6 +1219,7 @@ components:
       - $ref: '#/components/schemas/third-party-recurring-task-shared'
     third-party-recurring-task-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -1227,7 +1228,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-recurring-task-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-recurring-task-shared:
       type: object
       properties:
@@ -1365,6 +1365,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

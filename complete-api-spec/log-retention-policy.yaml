@@ -169,6 +169,7 @@ components:
       - $ref: '#/components/schemas/time-limit-log-retention-policy-shared'
     time-limit-log-retention-policy-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -177,7 +178,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/time-limit-log-retention-policy-shared'
-      - $ref: '#/components/schemas/meta'
     time-limit-log-retention-policy-shared:
       type: object
       properties:
@@ -214,6 +214,7 @@ components:
       - $ref: '#/components/schemas/never-delete-log-retention-policy-shared'
     never-delete-log-retention-policy-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -222,7 +223,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/never-delete-log-retention-policy-shared'
-      - $ref: '#/components/schemas/meta'
     never-delete-log-retention-policy-shared:
       type: object
       properties:
@@ -254,6 +254,7 @@ components:
       - $ref: '#/components/schemas/file-count-log-retention-policy-shared'
     file-count-log-retention-policy-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -262,7 +263,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/file-count-log-retention-policy-shared'
-      - $ref: '#/components/schemas/meta'
     file-count-log-retention-policy-shared:
       type: object
       properties:
@@ -299,6 +299,7 @@ components:
       - $ref: '#/components/schemas/free-disk-space-log-retention-policy-shared'
     free-disk-space-log-retention-policy-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -307,7 +308,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/free-disk-space-log-retention-policy-shared'
-      - $ref: '#/components/schemas/meta'
     free-disk-space-log-retention-policy-shared:
       type: object
       properties:
@@ -344,6 +344,7 @@ components:
       - $ref: '#/components/schemas/size-limit-log-retention-policy-shared'
     size-limit-log-retention-policy-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -352,7 +353,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/size-limit-log-retention-policy-shared'
-      - $ref: '#/components/schemas/meta'
     size-limit-log-retention-policy-shared:
       type: object
       properties:
@@ -414,6 +414,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

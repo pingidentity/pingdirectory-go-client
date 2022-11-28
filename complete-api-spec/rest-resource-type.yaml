@@ -157,6 +157,7 @@ components:
       - $ref: '#/components/schemas/user-rest-resource-type-shared'
     user-rest-resource-type-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -165,7 +166,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/user-rest-resource-type-shared'
-      - $ref: '#/components/schemas/meta'
     user-rest-resource-type-shared:
       type: object
       properties:
@@ -293,6 +293,7 @@ components:
       - $ref: '#/components/schemas/group-rest-resource-type-shared'
     group-rest-resource-type-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -301,7 +302,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/group-rest-resource-type-shared'
-      - $ref: '#/components/schemas/meta'
     group-rest-resource-type-shared:
       type: object
       properties:
@@ -446,6 +446,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

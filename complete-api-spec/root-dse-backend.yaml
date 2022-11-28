@@ -63,36 +63,38 @@ paths:
 components:
   schemas:
     root-dse-backend-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumroot-dse-backendSchemaUrn'
-        subordinateBaseDN:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
-        additionalSupportedControlOID:
-          type: array
-          items:
-            type: string
-          description: >-
-              Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
-        showAllAttributes:
-          type: boolean
-          description: >-
-              Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the Directory Server schema configuration.
-        useLegacyVendorVersion:
-          type: boolean
-          description: >-
-              Indicates whether the server's root DSE should reflect current or legacy values for the vendorName and vendorVersion attributes.
-      required:
-      - showAllAttributes
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumroot-dse-backendSchemaUrn'
+          subordinateBaseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
+          additionalSupportedControlOID:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
+          showAllAttributes:
+            type: boolean
+            description: >-
+                Indicates whether all attributes in the root DSE are to be treated like user attributes (and therefore returned to clients by default) regardless of the Directory Server schema configuration.
+          useLegacyVendorVersion:
+            type: boolean
+            description: >-
+                Indicates whether the server's root DSE should reflect current or legacy values for the vendorName and vendorVersion attributes.
+        required:
+        - showAllAttributes
     Enumroot-dse-backendSchemaUrn:
       type: string
       enum:
@@ -134,6 +136,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

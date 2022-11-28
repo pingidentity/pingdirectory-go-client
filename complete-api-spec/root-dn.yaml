@@ -63,18 +63,20 @@ paths:
 components:
   schemas:
     root-dn-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumroot-dnSchemaUrn'
-        defaultRootPrivilegeName:
-          type: array
-          items:
-            $ref: '#/components/schemas/Enumroot-dn-defaultRootPrivilegeNameProp'
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumroot-dnSchemaUrn'
+          defaultRootPrivilegeName:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumroot-dn-defaultRootPrivilegeNameProp'
     Enumroot-dnSchemaUrn:
       type: string
       enum:
@@ -161,6 +163,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

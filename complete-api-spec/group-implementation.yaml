@@ -87,73 +87,88 @@ paths:
 components:
   schemas:
     static-group-implementation-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumstatic-group-implementationSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Group Implementation
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Group Implementation is enabled.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstatic-group-implementationSchemaUrn'
+          id:
+            description: Name of the Group Implementation
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Group Implementation
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Group Implementation is enabled.
+        required:
+        - schemas
+        - enabled
     Enumstatic-group-implementationSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:static"
     virtual-static-group-implementation-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumvirtual-static-group-implementationSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Group Implementation
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Group Implementation is enabled.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumvirtual-static-group-implementationSchemaUrn'
+          id:
+            description: Name of the Group Implementation
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Group Implementation
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Group Implementation is enabled.
+        required:
+        - schemas
+        - enabled
     Enumvirtual-static-group-implementationSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:group-implementation:virtual-static"
     dynamic-group-implementation-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumdynamic-group-implementationSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Group Implementation
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Group Implementation is enabled.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumdynamic-group-implementationSchemaUrn'
+          id:
+            description: Name of the Group Implementation
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Group Implementation
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Group Implementation is enabled.
+        required:
+        - schemas
+        - enabled
     Enumdynamic-group-implementationSchemaUrn:
       type: string
       enum:
@@ -195,6 +210,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

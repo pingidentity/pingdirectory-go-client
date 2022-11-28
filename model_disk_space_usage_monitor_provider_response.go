@@ -16,7 +16,11 @@ import (
 
 // DiskSpaceUsageMonitorProviderResponse struct for DiskSpaceUsageMonitorProviderResponse
 type DiskSpaceUsageMonitorProviderResponse struct {
+	Meta *MetaMeta `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumdiskSpaceUsageMonitorProviderSchemaUrn `json:"schemas"`
+	// Name of the Monitor Provider
+	Id *string `json:"id,omitempty"`
 	// Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
 	LowSpaceWarningSizeThreshold *string `json:"lowSpaceWarningSizeThreshold,omitempty"`
 	// Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
@@ -57,6 +61,70 @@ func NewDiskSpaceUsageMonitorProviderResponseWithDefaults() *DiskSpaceUsageMonit
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *DiskSpaceUsageMonitorProviderResponse) GetMeta() MetaMeta {
+	if o == nil || isNil(o.Meta) {
+		var ret MetaMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DiskSpaceUsageMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
+	if o == nil || isNil(o.Meta) {
+    return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *DiskSpaceUsageMonitorProviderResponse) HasMeta() bool {
+	if o != nil && !isNil(o.Meta) {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given MetaMeta and assigns it to the Meta field.
+func (o *DiskSpaceUsageMonitorProviderResponse) SetMeta(v MetaMeta) {
+	o.Meta = &v
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
+func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		var ret MetaUrnPingidentitySchemasConfigurationMessages20
+		return ret
+	}
+	return *o.Urnpingidentityschemasconfigurationmessages20
+}
+
+// GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
+	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+    return nil, false
+	}
+	return o.Urnpingidentityschemasconfigurationmessages20, true
+}
+
+// HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
+func (o *DiskSpaceUsageMonitorProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
+	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrnpingidentityschemasconfigurationmessages20 gets a reference to the given MetaUrnPingidentitySchemasConfigurationMessages20 and assigns it to the Urnpingidentityschemasconfigurationmessages20 field.
+func (o *DiskSpaceUsageMonitorProviderResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20) {
+	o.Urnpingidentityschemasconfigurationmessages20 = &v
+}
+
 // GetSchemas returns the Schemas field value
 func (o *DiskSpaceUsageMonitorProviderResponse) GetSchemas() []EnumdiskSpaceUsageMonitorProviderSchemaUrn {
 	if o == nil {
@@ -79,6 +147,38 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetSchemasOk() ([]EnumdiskSpaceU
 // SetSchemas sets field value
 func (o *DiskSpaceUsageMonitorProviderResponse) SetSchemas(v []EnumdiskSpaceUsageMonitorProviderSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *DiskSpaceUsageMonitorProviderResponse) GetId() string {
+	if o == nil || isNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DiskSpaceUsageMonitorProviderResponse) GetIdOk() (*string, bool) {
+	if o == nil || isNil(o.Id) {
+    return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *DiskSpaceUsageMonitorProviderResponse) HasId() bool {
+	if o != nil && !isNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *DiskSpaceUsageMonitorProviderResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetLowSpaceWarningSizeThreshold returns the LowSpaceWarningSizeThreshold field value if set, zero value otherwise.
@@ -355,8 +455,17 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetEnabled(v bool) {
 
 func (o DiskSpaceUsageMonitorProviderResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if !isNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
 	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.LowSpaceWarningSizeThreshold) {
 		toSerialize["lowSpaceWarningSizeThreshold"] = o.LowSpaceWarningSizeThreshold

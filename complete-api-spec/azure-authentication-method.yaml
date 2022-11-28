@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/default-azure-authentication-method-shared'
     default-azure-authentication-method-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/default-azure-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
     default-azure-authentication-method-shared:
       type: object
       properties:
@@ -209,6 +209,7 @@ components:
       - $ref: '#/components/schemas/client-secret-azure-authentication-method-shared'
     client-secret-azure-authentication-method-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -217,7 +218,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/client-secret-azure-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
     client-secret-azure-authentication-method-shared:
       type: object
       properties:
@@ -265,6 +265,7 @@ components:
       - $ref: '#/components/schemas/username-password-azure-authentication-method-shared'
     username-password-azure-authentication-method-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -273,7 +274,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/username-password-azure-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
     username-password-azure-authentication-method-shared:
       type: object
       properties:
@@ -351,6 +351,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

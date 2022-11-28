@@ -165,6 +165,7 @@ components:
       - $ref: '#/components/schemas/jmx-connection-handler-shared'
     jmx-connection-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -173,7 +174,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jmx-connection-handler-shared'
-      - $ref: '#/components/schemas/meta'
     jmx-connection-handler-shared:
       type: object
       properties:
@@ -239,6 +239,7 @@ components:
       - $ref: '#/components/schemas/ldap-connection-handler-shared'
     ldap-connection-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -247,7 +248,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldap-connection-handler-shared'
-      - $ref: '#/components/schemas/meta'
     ldap-connection-handler-shared:
       type: object
       properties:
@@ -393,6 +393,7 @@ components:
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
     ldif-connection-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -401,7 +402,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ldif-connection-handler-shared'
-      - $ref: '#/components/schemas/meta'
     ldif-connection-handler-shared:
       type: object
       properties:
@@ -460,6 +460,7 @@ components:
       - $ref: '#/components/schemas/http-connection-handler-shared'
     http-connection-handler-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -468,7 +469,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/http-connection-handler-shared'
-      - $ref: '#/components/schemas/meta'
     http-connection-handler-shared:
       type: object
       properties:
@@ -655,6 +655,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -157,6 +157,7 @@ components:
       - $ref: '#/components/schemas/text-access-log-field-behavior-shared'
     text-access-log-field-behavior-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -165,7 +166,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/text-access-log-field-behavior-shared'
-      - $ref: '#/components/schemas/meta'
     text-access-log-field-behavior-shared:
       type: object
       properties:
@@ -259,6 +259,7 @@ components:
       - $ref: '#/components/schemas/json-formatted-access-log-field-behavior-shared'
     json-formatted-access-log-field-behavior-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -267,7 +268,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/json-formatted-access-log-field-behavior-shared'
-      - $ref: '#/components/schemas/meta'
     json-formatted-access-log-field-behavior-shared:
       type: object
       properties:
@@ -1951,6 +1951,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

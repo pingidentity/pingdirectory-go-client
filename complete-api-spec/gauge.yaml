@@ -157,6 +157,7 @@ components:
       - $ref: '#/components/schemas/indicator-gauge-shared'
     indicator-gauge-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -165,7 +166,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/indicator-gauge-shared'
-      - $ref: '#/components/schemas/meta'
     indicator-gauge-shared:
       type: object
       properties:
@@ -251,6 +251,7 @@ components:
       - $ref: '#/components/schemas/numeric-gauge-shared'
     numeric-gauge-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -259,7 +260,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/numeric-gauge-shared'
-      - $ref: '#/components/schemas/meta'
     numeric-gauge-shared:
       type: object
       properties:
@@ -427,6 +427,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

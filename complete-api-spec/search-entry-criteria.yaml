@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/simple-search-entry-criteria-shared'
     simple-search-entry-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/simple-search-entry-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     simple-search-entry-criteria-shared:
       type: object
       properties:
@@ -289,6 +289,7 @@ components:
       - $ref: '#/components/schemas/aggregate-search-entry-criteria-shared'
     aggregate-search-entry-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -297,7 +298,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/aggregate-search-entry-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     aggregate-search-entry-criteria-shared:
       type: object
       properties:
@@ -353,6 +353,7 @@ components:
       - $ref: '#/components/schemas/third-party-search-entry-criteria-shared'
     third-party-search-entry-criteria-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -361,7 +362,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-search-entry-criteria-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-search-entry-criteria-shared:
       type: object
       properties:
@@ -429,6 +429,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

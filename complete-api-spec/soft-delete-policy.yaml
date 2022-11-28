@@ -149,6 +149,7 @@ components:
       - $ref: '#/components/schemas/soft-delete-policy-shared'
     soft-delete-policy-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -157,7 +158,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/soft-delete-policy-shared'
-      - $ref: '#/components/schemas/meta'
     soft-delete-policy-shared:
       type: object
       properties:
@@ -228,6 +228,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

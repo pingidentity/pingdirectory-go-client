@@ -63,18 +63,20 @@ paths:
 components:
   schemas:
     license-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/EnumlicenseSchemaUrn'
-        directoryPlatformLicenseKey:
-          type: string
-          description: >-
-              License key enabling use of Directory Server, Directory Proxy Server, Data Sync Server, and Data Metrics Server products.
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/EnumlicenseSchemaUrn'
+          directoryPlatformLicenseKey:
+            type: string
+            description: >-
+                License key enabling use of Directory Server, Directory Proxy Server, Data Sync Server, and Data Metrics Server products.
     EnumlicenseSchemaUrn:
       type: string
       enum:
@@ -116,6 +118,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

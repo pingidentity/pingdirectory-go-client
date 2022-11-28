@@ -149,6 +149,7 @@ components:
       - $ref: '#/components/schemas/server-group-shared'
     server-group-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -157,7 +158,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/server-group-shared'
-      - $ref: '#/components/schemas/meta'
     server-group-shared:
       type: object
       properties:
@@ -214,6 +214,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

@@ -63,74 +63,76 @@ paths:
 components:
   schemas:
     crypto-manager-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumcrypto-managerSchemaUrn'
-        digestAlgorithm:
-          type: string
-          description: >-
-              Specifies the preferred message digest algorithm for the Directory Server.
-        macAlgorithm:
-          type: string
-          description: >-
-              Specifies the preferred MAC algorithm for the Directory Server.
-        macKeyLength:
-          type: integer
-          description: >-
-              Specifies the key length in bits for the preferred MAC algorithm.
-        cipherTransformation:
-          type: string
-          description: >-
-              Specifies the cipher for the Directory Server using the syntax algorithm/mode/padding.
-        cipherKeyLength:
-          type: integer
-          description: >-
-              Specifies the key length in bits for the preferred cipher.
-        keyWrappingTransformation:
-          type: string
-          description: >-
-              The preferred key wrapping transformation for the Directory Server. This value must be the same for all server instances in a replication topology.
-        sslProtocol:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcrypto-managerSchemaUrn'
+          digestAlgorithm:
             type: string
-          description: >-
-              Specifies the names of TLS protocols that are allowed for use in secure communication.
-        sslCipherSuite:
-          type: array
-          items:
+            description: >-
+                Specifies the preferred message digest algorithm for the Directory Server.
+          macAlgorithm:
             type: string
-          description: >-
-              Specifies the names of the TLS cipher suites that are allowed for use in secure communication.
-        outboundSSLProtocol:
-          type: array
-          items:
+            description: >-
+                Specifies the preferred MAC algorithm for the Directory Server.
+          macKeyLength:
+            type: integer
+            description: >-
+                Specifies the key length in bits for the preferred MAC algorithm.
+          cipherTransformation:
             type: string
-          description: >-
-              Specifies the names of the TLS protocols that will be enabled for outbound connections initiated by the Directory Server.
-        outboundSSLCipherSuite:
-          type: array
-          items:
+            description: >-
+                Specifies the cipher for the Directory Server using the syntax algorithm/mode/padding.
+          cipherKeyLength:
+            type: integer
+            description: >-
+                Specifies the key length in bits for the preferred cipher.
+          keyWrappingTransformation:
             type: string
-          description: >-
-              Specifies the names of the TLS cipher suites that will be enabled for outbound connections initiated by the Directory Server.
-        enableSha1CipherSuites:
-          type: boolean
-          description: >-
-              Indicates whether to enable support for TLS cipher suites that use the SHA-1 digest algorithm. The SHA-1 digest algorithm is no longer considered secure and is not recommended for use.
-        enableRsaKeyExchangeCipherSuites:
-          type: boolean
-          description: >-
-              Indicates whether to enable support for TLS cipher suites that use the RSA key exchange algorithm. Cipher suites that rely on RSA key exchange are not recommended because they do not support forward secrecy, which means that if the private key is compromised, then any communication negotiated using that private key should also be considered compromised.
-        sslCertNickname:
-          type: string
-          description: >-
-              Specifies the nickname (also called the alias) of the certificate that the Crypto Manager should use when performing SSL communication.
+            description: >-
+                The preferred key wrapping transformation for the Directory Server. This value must be the same for all server instances in a replication topology.
+          sslProtocol:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of TLS protocols that are allowed for use in secure communication.
+          sslCipherSuite:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of the TLS cipher suites that are allowed for use in secure communication.
+          outboundSSLProtocol:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of the TLS protocols that will be enabled for outbound connections initiated by the Directory Server.
+          outboundSSLCipherSuite:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of the TLS cipher suites that will be enabled for outbound connections initiated by the Directory Server.
+          enableSha1CipherSuites:
+            type: boolean
+            description: >-
+                Indicates whether to enable support for TLS cipher suites that use the SHA-1 digest algorithm. The SHA-1 digest algorithm is no longer considered secure and is not recommended for use.
+          enableRsaKeyExchangeCipherSuites:
+            type: boolean
+            description: >-
+                Indicates whether to enable support for TLS cipher suites that use the RSA key exchange algorithm. Cipher suites that rely on RSA key exchange are not recommended because they do not support forward secrecy, which means that if the private key is compromised, then any communication negotiated using that private key should also be considered compromised.
+          sslCertNickname:
+            type: string
+            description: >-
+                Specifies the nickname (also called the alias) of the certificate that the Crypto Manager should use when performing SSL communication.
     Enumcrypto-managerSchemaUrn:
       type: string
       enum:
@@ -172,6 +174,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

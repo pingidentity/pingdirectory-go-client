@@ -165,6 +165,7 @@ components:
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
     ping-federate-access-token-validator-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -173,7 +174,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/ping-federate-access-token-validator-shared'
-      - $ref: '#/components/schemas/meta'
     ping-federate-access-token-validator-shared:
       type: object
       properties:
@@ -253,6 +253,7 @@ components:
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
     jwt-access-token-validator-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -261,7 +262,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/jwt-access-token-validator-shared'
-      - $ref: '#/components/schemas/meta'
     jwt-access-token-validator-shared:
       type: object
       properties:
@@ -356,6 +356,7 @@ components:
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
     mock-access-token-validator-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -364,7 +365,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/mock-access-token-validator-shared'
-      - $ref: '#/components/schemas/meta'
     mock-access-token-validator-shared:
       type: object
       properties:
@@ -422,6 +422,7 @@ components:
       - $ref: '#/components/schemas/third-party-access-token-validator-shared'
     third-party-access-token-validator-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -430,7 +431,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-access-token-validator-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-access-token-validator-shared:
       type: object
       properties:
@@ -545,6 +545,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

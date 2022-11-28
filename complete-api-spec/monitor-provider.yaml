@@ -161,287 +161,337 @@ paths:
 components:
   schemas:
     general-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumgeneral-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumgeneral-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumgeneral-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:general"
     memory-usage-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enummemory-usage-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummemory-usage-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enummemory-usage-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:memory-usage"
     stack-trace-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumstack-trace-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstack-trace-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumstack-trace-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:stack-trace"
     disk-space-usage-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumdisk-space-usage-monitor-providerSchemaUrn'
-        lowSpaceWarningSizeThreshold:
-          type: string
-          description: >-
-              Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
-        lowSpaceWarningPercentThreshold:
-          type: integer
-          description: >-
-              Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
-        lowSpaceErrorSizeThreshold:
-          type: string
-          description: >-
-              Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
-        lowSpaceErrorPercentThreshold:
-          type: integer
-          description: >-
-              Specifies the low space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
-        outOfSpaceErrorSizeThreshold:
-          type: string
-          description: >-
-              Specifies the out of space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
-        outOfSpaceErrorPercentThreshold:
-          type: integer
-          description: >-
-              Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
-        alertFrequency:
-          type: string
-          description: >-
-              Specifies the length of time between administrative alerts generated in response to lack of usable disk space. Administrative alerts will be generated whenever the amount of usable space drops below any threshold, and they will also be generated at regular intervals as long as the amount of usable space remains below the threshold value. A value of zero indicates that alerts should only be generated when the amount of usable space drops below a configured threshold.
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - alertFrequency
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumdisk-space-usage-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          lowSpaceWarningSizeThreshold:
+            type: string
+            description: >-
+                Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
+          lowSpaceWarningPercentThreshold:
+            type: integer
+            description: >-
+                Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
+          lowSpaceErrorSizeThreshold:
+            type: string
+            description: >-
+                Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
+          lowSpaceErrorPercentThreshold:
+            type: integer
+            description: >-
+                Specifies the low space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users.
+          outOfSpaceErrorSizeThreshold:
+            type: string
+            description: >-
+                Specifies the out of space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
+          outOfSpaceErrorPercentThreshold:
+            type: integer
+            description: >-
+                Specifies the out of space error threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will shut itself down to avoid problems that may occur from complete exhaustion of usable space.
+          alertFrequency:
+            type: string
+            description: >-
+                Specifies the length of time between administrative alerts generated in response to lack of usable disk space. Administrative alerts will be generated whenever the amount of usable space drops below any threshold, and they will also be generated at regular intervals as long as the amount of usable space remains below the threshold value. A value of zero indicates that alerts should only be generated when the amount of usable space drops below a configured threshold.
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - alertFrequency
+        - enabled
     Enumdisk-space-usage-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:disk-space-usage"
     system-info-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumsystem-info-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumsystem-info-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumsystem-info-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:system-info"
     active-operations-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumactive-operations-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumactive-operations-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumactive-operations-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:active-operations"
     ssl-context-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumssl-context-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumssl-context-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumssl-context-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:ssl-context"
     client-connection-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumclient-connection-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumclient-connection-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumclient-connection-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:client-connection"
     version-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumversion-monitor-providerSchemaUrn'
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Monitor Provider is enabled for use.
-      required:
-      - schemas
-      - enabled
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumversion-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Monitor Provider is enabled for use.
+        required:
+        - schemas
+        - enabled
     Enumversion-monitor-providerSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:monitor-provider:version"
     host-system-monitor-provider-response:
-      type: object
-      properties:
-        schemas:
-          type: array
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/Enumhost-system-monitor-providerSchemaUrn'
-        enabled:
-          type: boolean
-          description: >-
-              Indicates whether the Host System Monitor Provider is enabled for use.
-        diskDevices:
-          type: array
-          items:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumhost-system-monitor-providerSchemaUrn'
+          id:
+            description: Name of the Monitor Provider
             type: string
-          description: >-
-              Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d.
-        networkDevices:
-          type: array
-          items:
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Host System Monitor Provider is enabled for use.
+          diskDevices:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d.
+          networkDevices:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i.
+          systemUtilizationMonitorLogDirectory:
             type: string
-          description: >-
-              Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i.
-        systemUtilizationMonitorLogDirectory:
-          type: string
-          description: >-
-              Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process.
-        description:
-          type: string
-          description: >-
-              A description for this Monitor Provider
-      required:
-      - schemas
-      - enabled
-      - systemUtilizationMonitorLogDirectory
+            description: >-
+                Specifies a relative or absolute path to the directory on the local filesystem containing the log files used by the system utilization monitor. The path must exist, and it must be a writable directory by the server process.
+          description:
+            type: string
+            description: >-
+                A description for this Monitor Provider
+        required:
+        - schemas
+        - enabled
+        - systemUtilizationMonitorLogDirectory
     Enumhost-system-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -458,6 +508,7 @@ components:
       - $ref: '#/components/schemas/third-party-monitor-provider-shared'
     third-party-monitor-provider-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -466,7 +517,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/third-party-monitor-provider-shared'
-      - $ref: '#/components/schemas/meta'
     third-party-monitor-provider-shared:
       type: object
       properties:
@@ -539,6 +589,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

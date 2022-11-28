@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-shared'
     delay-bind-response-failure-lockout-action-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/delay-bind-response-failure-lockout-action-shared'
-      - $ref: '#/components/schemas/meta'
     delay-bind-response-failure-lockout-action-shared:
       type: object
       properties:
@@ -214,6 +214,7 @@ components:
       - $ref: '#/components/schemas/no-operation-failure-lockout-action-shared'
     no-operation-failure-lockout-action-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -222,7 +223,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/no-operation-failure-lockout-action-shared'
-      - $ref: '#/components/schemas/meta'
     no-operation-failure-lockout-action-shared:
       type: object
       properties:
@@ -258,6 +258,7 @@ components:
       - $ref: '#/components/schemas/lock-account-failure-lockout-action-shared'
     lock-account-failure-lockout-action-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -266,7 +267,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/lock-account-failure-lockout-action-shared'
-      - $ref: '#/components/schemas/meta'
     lock-account-failure-lockout-action-shared:
       type: object
       properties:
@@ -323,6 +323,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic

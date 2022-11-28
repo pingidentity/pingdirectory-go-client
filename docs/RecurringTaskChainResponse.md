@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
+**Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Recurring Task Chain | 
 **Schemas** | Pointer to [**[]EnumrecurringTaskChainSchemaUrn**](EnumrecurringTaskChainSchemaUrn.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Recurring Task Chain | [optional] 
@@ -17,7 +19,6 @@ Name | Type | Description | Notes
 **TimeZone** | Pointer to **string** | The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM&#39;s default time zone will be used. | [optional] 
 **InterruptedByShutdownBehavior** | Pointer to [**EnumrecurringTaskChainInterruptedByShutdownBehaviorProp**](EnumrecurringTaskChainInterruptedByShutdownBehaviorProp.md) |  | [optional] 
 **ServerOfflineAtStartTimeBehavior** | Pointer to [**EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp**](EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp.md) |  | [optional] 
-**Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -37,6 +38,56 @@ will change when the set of required properties is changed
 NewRecurringTaskChainResponseWithDefaults instantiates a new RecurringTaskChainResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetMeta
+
+`func (o *RecurringTaskChainResponse) GetMeta() MetaMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *RecurringTaskChainResponse) SetMeta(v MetaMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *RecurringTaskChainResponse) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### GetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20`
+
+GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field if non-nil, zero value otherwise.
+
+### GetUrnpingidentityschemasconfigurationmessages20Ok
+
+`func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool)`
+
+GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrnpingidentityschemasconfigurationmessages20
+
+`func (o *RecurringTaskChainResponse) SetUrnpingidentityschemasconfigurationmessages20(v MetaUrnPingidentitySchemasConfigurationMessages20)`
+
+SetUrnpingidentityschemasconfigurationmessages20 sets Urnpingidentityschemasconfigurationmessages20 field to given value.
+
+### HasUrnpingidentityschemasconfigurationmessages20
+
+`func (o *RecurringTaskChainResponse) HasUrnpingidentityschemasconfigurationmessages20() bool`
+
+HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 
 ### GetId
 
@@ -332,31 +383,6 @@ SetServerOfflineAtStartTimeBehavior sets ServerOfflineAtStartTimeBehavior field 
 `func (o *RecurringTaskChainResponse) HasServerOfflineAtStartTimeBehavior() bool`
 
 HasServerOfflineAtStartTimeBehavior returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *RecurringTaskChainResponse) GetMeta() MetaMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *RecurringTaskChainResponse) SetMeta(v MetaMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *RecurringTaskChainResponse) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

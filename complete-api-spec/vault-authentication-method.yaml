@@ -161,6 +161,7 @@ components:
       - $ref: '#/components/schemas/static-token-vault-authentication-method-shared'
     static-token-vault-authentication-method-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -169,7 +170,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/static-token-vault-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
     static-token-vault-authentication-method-shared:
       type: object
       properties:
@@ -207,6 +207,7 @@ components:
       - $ref: '#/components/schemas/app-role-vault-authentication-method-shared'
     app-role-vault-authentication-method-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -215,7 +216,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/app-role-vault-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
     app-role-vault-authentication-method-shared:
       type: object
       properties:
@@ -262,6 +262,7 @@ components:
       - $ref: '#/components/schemas/user-pass-vault-authentication-method-shared'
     user-pass-vault-authentication-method-response:
       allOf:
+      - $ref: '#/components/schemas/meta'
       - type: object
         properties:
           id:
@@ -270,7 +271,6 @@ components:
         required:
         - id
       - $ref: '#/components/schemas/user-pass-vault-authentication-method-shared'
-      - $ref: '#/components/schemas/meta'
     user-pass-vault-authentication-method-shared:
       type: object
       properties:
@@ -342,6 +342,13 @@ components:
               type: string
             location:
               type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
   securitySchemes:
     basicAuth:
       scheme: Basic
