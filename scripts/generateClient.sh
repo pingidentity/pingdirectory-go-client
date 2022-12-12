@@ -3,9 +3,9 @@
 set -x
 
 # First remove any existing files that were generated. If we want to edit files post-generation, this section will need to be removed
-rm ./api_*.go
-rm ./model_*.go
-rm -r docs/
+# rm ./api_*.go
+# rm ./model_*.go
+# rm -r docs/
 
 openapi-generator generate \
     -i complete-api-spec/openapi.yaml \
