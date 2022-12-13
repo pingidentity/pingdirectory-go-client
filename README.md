@@ -1905,6 +1905,7 @@ Class | Method | HTTP request | Description
  - [Meta](docs/Meta.md)
  - [MetaMeta](docs/MetaMeta.md)
  - [MetaUrnPingidentitySchemasConfigurationMessages20](docs/MetaUrnPingidentitySchemasConfigurationMessages20.md)
+ - [MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner](docs/MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner.md)
  - [MetricsBackendResponse](docs/MetricsBackendResponse.md)
  - [MetricsBackendResponseAllOf](docs/MetricsBackendResponseAllOf.md)
  - [MetricsEngineServerInstanceResponse](docs/MetricsEngineServerInstanceResponse.md)

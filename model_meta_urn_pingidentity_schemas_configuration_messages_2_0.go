@@ -17,6 +17,7 @@ import (
 // MetaUrnPingidentitySchemasConfigurationMessages20 struct for MetaUrnPingidentitySchemasConfigurationMessages20
 type MetaUrnPingidentitySchemasConfigurationMessages20 struct {
 	Notifications []string `json:"notifications,omitempty"`
+	RequiredActions []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner `json:"requiredActions,omitempty"`
 }
 
 // NewMetaUrnPingidentitySchemasConfigurationMessages20 instantiates a new MetaUrnPingidentitySchemasConfigurationMessages20 object
@@ -68,10 +69,45 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20) SetNotifications(v [
 	o.Notifications = v
 }
 
+// GetRequiredActions returns the RequiredActions field value if set, zero value otherwise.
+func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetRequiredActions() []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner {
+	if o == nil || isNil(o.RequiredActions) {
+		var ret []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner
+		return ret
+	}
+	return o.RequiredActions
+}
+
+// GetRequiredActionsOk returns a tuple with the RequiredActions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetRequiredActionsOk() ([]MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner, bool) {
+	if o == nil || isNil(o.RequiredActions) {
+    return nil, false
+	}
+	return o.RequiredActions, true
+}
+
+// HasRequiredActions returns a boolean if a field has been set.
+func (o *MetaUrnPingidentitySchemasConfigurationMessages20) HasRequiredActions() bool {
+	if o != nil && !isNil(o.RequiredActions) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequiredActions gets a reference to the given []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner and assigns it to the RequiredActions field.
+func (o *MetaUrnPingidentitySchemasConfigurationMessages20) SetRequiredActions(v []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) {
+	o.RequiredActions = v
+}
+
 func (o MetaUrnPingidentitySchemasConfigurationMessages20) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Notifications) {
 		toSerialize["notifications"] = o.Notifications
+	}
+	if !isNil(o.RequiredActions) {
+		toSerialize["requiredActions"] = o.RequiredActions
 	}
 	return json.Marshal(toSerialize)
 }

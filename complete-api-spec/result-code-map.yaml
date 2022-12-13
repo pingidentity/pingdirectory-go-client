@@ -235,6 +235,20 @@ components:
               type: array
               items:
                 type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
   securitySchemes:
     basicAuth:
       scheme: Basic

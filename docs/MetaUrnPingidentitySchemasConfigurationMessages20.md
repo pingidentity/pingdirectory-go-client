@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Notifications** | Pointer to **[]string** |  | [optional] 
+**RequiredActions** | Pointer to [**[]MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner**](MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetNotifications sets Notifications field to given value.
 `func (o *MetaUrnPingidentitySchemasConfigurationMessages20) HasNotifications() bool`
 
 HasNotifications returns a boolean if a field has been set.
+
+### GetRequiredActions
+
+`func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetRequiredActions() []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner`
+
+GetRequiredActions returns the RequiredActions field if non-nil, zero value otherwise.
+
+### GetRequiredActionsOk
+
+`func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetRequiredActionsOk() (*[]MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner, bool)`
+
+GetRequiredActionsOk returns a tuple with the RequiredActions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequiredActions
+
+`func (o *MetaUrnPingidentitySchemasConfigurationMessages20) SetRequiredActions(v []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner)`
+
+SetRequiredActions sets RequiredActions field to given value.
+
+### HasRequiredActions
+
+`func (o *MetaUrnPingidentitySchemasConfigurationMessages20) HasRequiredActions() bool`
+
+HasRequiredActions returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

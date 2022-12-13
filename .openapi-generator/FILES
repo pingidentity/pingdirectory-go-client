@@ -1325,6 +1325,7 @@ docs/MemoryUsageMonitorProviderResponse.md
 docs/Meta.md
 docs/MetaMeta.md
 docs/MetaUrnPingidentitySchemasConfigurationMessages20.md
+docs/MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner.md
 docs/MetricsBackendResponse.md
 docs/MetricsEngineServerInstanceResponse.md
 docs/MirrorVirtualAttributeResponse.md
@@ -2734,6 +2735,7 @@ model_memory_usage_monitor_provider_response.go
 model_meta.go
 model_meta_meta.go
 model_meta_urn_pingidentity_schemas_configuration_messages_2_0.go
+model_meta_urn_pingidentity_schemas_configuration_messages_2_0_required_actions_inner.go
 model_metrics_backend_response.go
 model_metrics_engine_server_instance_response.go
 model_mirror_virtual_attribute_response.go

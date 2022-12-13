@@ -45511,11 +45511,27 @@ components:
         location:
           type: string
       type: object
+    meta_urn_pingidentity_schemas_configuration_messages_2_0_requiredActions_inner:
+      properties:
+        property:
+          type: string
+        type:
+          type: string
+        synopsis:
+          type: string
+      required:
+      - synopsis
+      - type
+      type: object
     meta_urn_pingidentity_schemas_configuration_messages_2_0:
       properties:
         notifications:
           items:
             type: string
+          type: array
+        requiredActions:
+          items:
+            $ref: '#/components/schemas/meta_urn_pingidentity_schemas_configuration_messages_2_0_requiredActions_inner'
           type: array
       type: object
   securitySchemes:
