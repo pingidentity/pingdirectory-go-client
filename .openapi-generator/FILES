@@ -1,5 +1,4 @@
 .gitignore
-.travis.yml
 README.md
 api/openapi.yaml
 api_access_control_handler.go
@@ -1553,8 +1552,6 @@ docs/WeaklyEncodedPasswordDataSecurityAuditorResponse.md
 docs/WebApplicationExtensionApi.md
 docs/WhoAmIExtendedOperationHandlerResponse.md
 docs/WorkQueueApi.md
-git_push.sh
-go.mod
 go.sum
 model_access_control_data_security_auditor_response.go
 model_access_log_field_mapping_response.go

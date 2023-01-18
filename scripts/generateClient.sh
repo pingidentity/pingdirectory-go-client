@@ -11,7 +11,7 @@ openapi-generator generate \
     -i complete-api-spec/openapi.yaml \
     -g go \
     --git-host github.com \
-    --git-repo-id pingdata-config-api-go-client \
+    --git-repo-id pingdirectory-go-client \
     --git-user-id pingidentity \
     --additional-properties=enumClassPrefix=true
 

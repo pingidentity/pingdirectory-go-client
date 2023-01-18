@@ -1,4 +1,4 @@
-module github.com/pingidentity/pingdata-config-api-go-client
+module github.com/pingidentity/pingdirectory-go-client
 
 go 1.13
 

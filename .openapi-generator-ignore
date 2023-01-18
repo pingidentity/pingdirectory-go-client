@@ -29,3 +29,10 @@ model_*_shared.go
 docs/Add*RequestAllOf.md
 docs/*ResponseAllOf.md
 docs/*Shared.md
+
+# Unused files
+git_push.sh
+.travis.yml
+
+# Ignore go.mod so that the version specifier (like v9.1.0.0) doesn't get overwritten in branches
+go.mod
