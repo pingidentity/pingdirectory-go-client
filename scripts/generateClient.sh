@@ -16,3 +16,6 @@ openapi-generator generate \
     --additional-properties=enumClassPrefix=true
 
 rm -r test/
+
+# Generate Stringer implementations
+scripts/generateStringerImplementation.py
