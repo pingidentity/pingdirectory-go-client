@@ -118,6 +118,7 @@ components:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
         required:
         - schemas
+        - id
     Enumjson-log-field-syntaxSchemaUrn:
       type: string
       enum:
@@ -156,6 +157,7 @@ components:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
         required:
         - schemas
+        - id
     Enumattribute-based-log-field-syntaxSchemaUrn:
       type: string
       enum:

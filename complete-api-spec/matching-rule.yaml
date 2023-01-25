@@ -109,6 +109,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumordering-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -134,6 +135,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumapproximate-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -159,6 +161,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumequality-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -184,6 +187,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsubstring-matching-ruleSchemaUrn:
       type: string
       enum:

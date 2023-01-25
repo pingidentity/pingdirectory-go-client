@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumencryptionSettingsBackendSchemaUrn**](EnumencryptionSettingsBackendSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Backend | [optional] 
+**Id** | **string** | Name of the Backend | 
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewEncryptionSettingsBackendResponse
 
-`func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, baseDN []string, backendID string, enabled bool, ) *EncryptionSettingsBackendResponse`
+`func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, id string, baseDN []string, backendID string, enabled bool, ) *EncryptionSettingsBackendResponse`
 
 NewEncryptionSettingsBackendResponse instantiates a new EncryptionSettingsBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -125,11 +125,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *EncryptionSettingsBackendResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBaseDN
 

@@ -195,6 +195,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumproxy-server-instanceSchemaUrn:
       type: string
       enum:
@@ -304,6 +305,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enummetrics-engine-server-instanceSchemaUrn:
       type: string
       enum:
@@ -413,6 +415,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumauthorize-server-instanceSchemaUrn:
       type: string
       enum:
@@ -532,6 +535,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumdirectory-server-instanceSchemaUrn:
       type: string
       enum:
@@ -641,6 +645,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumsync-server-instanceSchemaUrn:
       type: string
       enum:

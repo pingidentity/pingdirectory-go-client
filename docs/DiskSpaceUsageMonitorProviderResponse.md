@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumdiskSpaceUsageMonitorProviderSchemaUrn**](EnumdiskSpaceUsageMonitorProviderSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Monitor Provider | [optional] 
+**Id** | **string** | Name of the Monitor Provider | 
 **LowSpaceWarningSizeThreshold** | Pointer to **string** | Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
 **LowSpaceWarningPercentThreshold** | Pointer to **int32** | Specifies the low space warning threshold value as a percentage of total space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications. | [optional] 
 **LowSpaceErrorSizeThreshold** | Pointer to **string** | Specifies the low space error threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will start rejecting operations requested by non-root users. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewDiskSpaceUsageMonitorProviderResponse
 
-`func NewDiskSpaceUsageMonitorProviderResponse(schemas []EnumdiskSpaceUsageMonitorProviderSchemaUrn, alertFrequency string, enabled bool, ) *DiskSpaceUsageMonitorProviderResponse`
+`func NewDiskSpaceUsageMonitorProviderResponse(schemas []EnumdiskSpaceUsageMonitorProviderSchemaUrn, id string, alertFrequency string, enabled bool, ) *DiskSpaceUsageMonitorProviderResponse`
 
 NewDiskSpaceUsageMonitorProviderResponse instantiates a new DiskSpaceUsageMonitorProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -126,11 +126,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *DiskSpaceUsageMonitorProviderResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetLowSpaceWarningSizeThreshold
 

@@ -229,6 +229,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumdelegated-admin-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -658,6 +659,7 @@ components:
         - schemas
         - baseContextPath
         - templateDirectory
+        - id
     Enumvelocity-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -714,6 +716,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumconsent-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -756,6 +759,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumconfig-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -828,6 +832,7 @@ components:
         - debugLevel
         - debugType
         - includeStackTrace
+        - id
     Enumscim2-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -914,6 +919,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumdirectory-rest-api-http-servlet-extensionSchemaUrn:
       type: string
       enum:

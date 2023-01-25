@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumdigestMd5SaslMechanismHandlerSchemaUrn**](EnumdigestMd5SaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **Realm** | Pointer to **string** | Specifies the realm that is to be used by the server for DIGEST-MD5 authentication. | [optional] 
 **IdentityMapper** | **string** | Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the authentication or authorization ID included in the SASL bind request to the corresponding user in the directory. | 
 **ServerFqdn** | Pointer to **string** | Specifies the DNS-resolvable fully-qualified domain name for the server that is used when validating the digest-uri parameter during the authentication process. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewDigestMd5SaslMechanismHandlerResponse
 
-`func NewDigestMd5SaslMechanismHandlerResponse(schemas []EnumdigestMd5SaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *DigestMd5SaslMechanismHandlerResponse`
+`func NewDigestMd5SaslMechanismHandlerResponse(schemas []EnumdigestMd5SaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool, ) *DigestMd5SaslMechanismHandlerResponse`
 
 NewDigestMd5SaslMechanismHandlerResponse instantiates a new DigestMd5SaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -122,11 +122,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *DigestMd5SaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetRealm
 

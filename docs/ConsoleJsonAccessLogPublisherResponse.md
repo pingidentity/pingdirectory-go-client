@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumconsoleJsonAccessLogPublisherSchemaUrn**](EnumconsoleJsonAccessLogPublisherSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Log Publisher | [optional] 
+**Id** | **string** | Name of the Log Publisher | 
 **Enabled** | **bool** | Indicates whether the Console JSON Access Log Publisher is enabled for use. | 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers. | [optional] 
 **OutputLocation** | Pointer to [**EnumlogPublisherOutputLocationProp**](EnumlogPublisherOutputLocationProp.md) |  | [optional] 
@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 
 ### NewConsoleJsonAccessLogPublisherResponse
 
-`func NewConsoleJsonAccessLogPublisherResponse(schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn, enabled bool, ) *ConsoleJsonAccessLogPublisherResponse`
+`func NewConsoleJsonAccessLogPublisherResponse(schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn, id string, enabled bool, ) *ConsoleJsonAccessLogPublisherResponse`
 
 NewConsoleJsonAccessLogPublisherResponse instantiates a new ConsoleJsonAccessLogPublisherResponse object
 This constructor will assign default values to properties that have it defined,
@@ -160,11 +160,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ConsoleJsonAccessLogPublisherResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

@@ -20,7 +20,7 @@ type JsonObjectAttributeSyntaxResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumjsonObjectAttributeSyntaxSchemaUrn `json:"schemas"`
 	// Name of the Attribute Syntax
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Indicates whether the Attribute Syntax is enabled.
 	Enabled bool `json:"enabled"`
 	// Indicates whether values of this attribute are required to have a \"binary\" transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including \";binary\" (e.g., \"userCertificate;binary\").
@@ -31,9 +31,10 @@ type JsonObjectAttributeSyntaxResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJsonObjectAttributeSyntaxResponse(schemas []EnumjsonObjectAttributeSyntaxSchemaUrn, enabled bool) *JsonObjectAttributeSyntaxResponse {
+func NewJsonObjectAttributeSyntaxResponse(schemas []EnumjsonObjectAttributeSyntaxSchemaUrn, id string, enabled bool) *JsonObjectAttributeSyntaxResponse {
 	this := JsonObjectAttributeSyntaxResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.Enabled = enabled
 	return &this
 }
@@ -134,36 +135,28 @@ func (o *JsonObjectAttributeSyntaxResponse) SetSchemas(v []EnumjsonObjectAttribu
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *JsonObjectAttributeSyntaxResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *JsonObjectAttributeSyntaxResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *JsonObjectAttributeSyntaxResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetEnabled returns the Enabled field value
@@ -233,7 +226,7 @@ func (o JsonObjectAttributeSyntaxResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

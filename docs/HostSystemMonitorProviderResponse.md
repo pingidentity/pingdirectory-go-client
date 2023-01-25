@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumhostSystemMonitorProviderSchemaUrn**](EnumhostSystemMonitorProviderSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Monitor Provider | [optional] 
+**Id** | **string** | Name of the Monitor Provider | 
 **Enabled** | **bool** | Indicates whether the Host System Monitor Provider is enabled for use. | 
 **DiskDevices** | Pointer to **[]string** | Specifies which disk devices to monitor for I/O activity. Should be the device name as displayed by iostat -d. | [optional] 
 **NetworkDevices** | Pointer to **[]string** | Specifies which network interfaces to monitor for I/O activity. Should be the device name as displayed by netstat -i. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewHostSystemMonitorProviderResponse
 
-`func NewHostSystemMonitorProviderResponse(schemas []EnumhostSystemMonitorProviderSchemaUrn, enabled bool, systemUtilizationMonitorLogDirectory string, ) *HostSystemMonitorProviderResponse`
+`func NewHostSystemMonitorProviderResponse(schemas []EnumhostSystemMonitorProviderSchemaUrn, id string, enabled bool, systemUtilizationMonitorLogDirectory string, ) *HostSystemMonitorProviderResponse`
 
 NewHostSystemMonitorProviderResponse instantiates a new HostSystemMonitorProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -122,11 +122,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *HostSystemMonitorProviderResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

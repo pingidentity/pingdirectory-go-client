@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumattributeBasedLogFieldSyntaxSchemaUrn**](EnumattributeBasedLogFieldSyntaxSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Log Field Syntax | [optional] 
+**Id** | **string** | Name of the Log Field Syntax | 
 **IncludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will be considered sensitive. | [optional] 
 **ExcludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will not be considered sensitive. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Syntax | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewGetLogFieldSyntax200Response
 
-`func NewGetLogFieldSyntax200Response(schemas []EnumattributeBasedLogFieldSyntaxSchemaUrn, ) *GetLogFieldSyntax200Response`
+`func NewGetLogFieldSyntax200Response(schemas []EnumattributeBasedLogFieldSyntaxSchemaUrn, id string, ) *GetLogFieldSyntax200Response`
 
 NewGetLogFieldSyntax200Response instantiates a new GetLogFieldSyntax200Response object
 This constructor will assign default values to properties that have it defined,
@@ -123,11 +123,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *GetLogFieldSyntax200Response) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIncludedSensitiveField
 

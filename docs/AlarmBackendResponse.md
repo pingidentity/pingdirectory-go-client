@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumalarmBackendSchemaUrn**](EnumalarmBackendSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Backend | [optional] 
+**Id** | **string** | Name of the Backend | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **LdifFile** | **string** | Specifies the path to the LDIF file that serves as the backing file for this backend. | 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewAlarmBackendResponse
 
-`func NewAlarmBackendResponse(schemas []EnumalarmBackendSchemaUrn, backendID string, baseDN []string, ldifFile string, alarmRetentionTime string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, ) *AlarmBackendResponse`
+`func NewAlarmBackendResponse(schemas []EnumalarmBackendSchemaUrn, id string, backendID string, baseDN []string, ldifFile string, alarmRetentionTime string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, ) *AlarmBackendResponse`
 
 NewAlarmBackendResponse instantiates a new AlarmBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -129,11 +129,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *AlarmBackendResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBackendID
 

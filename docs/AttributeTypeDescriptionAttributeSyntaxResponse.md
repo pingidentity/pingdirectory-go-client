@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn**](EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Attribute Syntax | [optional] 
+**Id** | **string** | Name of the Attribute Syntax | 
 **StripSyntaxMinUpperBound** | Pointer to **bool** | Indicates whether the suggested minimum upper bound appended to an attribute&#39;s syntax OID in its schema definition Attribute Type Description should be stripped. | [optional] 
 **Enabled** | **bool** | Indicates whether the Attribute Syntax is enabled. | 
 **RequireBinaryTransfer** | Pointer to **bool** | Indicates whether values of this attribute are required to have a \&quot;binary\&quot; transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including \&quot;;binary\&quot; (e.g., \&quot;userCertificate;binary\&quot;). | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewAttributeTypeDescriptionAttributeSyntaxResponse
 
-`func NewAttributeTypeDescriptionAttributeSyntaxResponse(schemas []EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn, enabled bool, ) *AttributeTypeDescriptionAttributeSyntaxResponse`
+`func NewAttributeTypeDescriptionAttributeSyntaxResponse(schemas []EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn, id string, enabled bool, ) *AttributeTypeDescriptionAttributeSyntaxResponse`
 
 NewAttributeTypeDescriptionAttributeSyntaxResponse instantiates a new AttributeTypeDescriptionAttributeSyntaxResponse object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *AttributeTypeDescriptionAttributeSyntaxResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetStripSyntaxMinUpperBound
 

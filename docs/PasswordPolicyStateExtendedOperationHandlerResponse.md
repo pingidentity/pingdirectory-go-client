@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn**](EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Extended Operation Handler | [optional] 
+**Id** | **string** | Name of the Extended Operation Handler | 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewPasswordPolicyStateExtendedOperationHandlerResponse
 
-`func NewPasswordPolicyStateExtendedOperationHandlerResponse(schemas []EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn, enabled bool, ) *PasswordPolicyStateExtendedOperationHandlerResponse`
+`func NewPasswordPolicyStateExtendedOperationHandlerResponse(schemas []EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn, id string, enabled bool, ) *PasswordPolicyStateExtendedOperationHandlerResponse`
 
 NewPasswordPolicyStateExtendedOperationHandlerResponse instantiates a new PasswordPolicyStateExtendedOperationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *PasswordPolicyStateExtendedOperationHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

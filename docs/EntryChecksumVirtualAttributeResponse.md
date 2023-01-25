@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumentryChecksumVirtualAttributeSchemaUrn**](EnumentryChecksumVirtualAttributeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Virtual Attribute | [optional] 
+**Id** | **string** | Name of the Virtual Attribute | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
 **AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | 
 **ExcludeOperationalAttributes** | Pointer to **bool** | Indicates whether all operational attributes should be excluded from the generated checksum. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewEntryChecksumVirtualAttributeResponse
 
-`func NewEntryChecksumVirtualAttributeResponse(schemas []EnumentryChecksumVirtualAttributeSchemaUrn, attributeType string, enabled bool, ) *EntryChecksumVirtualAttributeResponse`
+`func NewEntryChecksumVirtualAttributeResponse(schemas []EnumentryChecksumVirtualAttributeSchemaUrn, id string, attributeType string, enabled bool, ) *EntryChecksumVirtualAttributeResponse`
 
 NewEntryChecksumVirtualAttributeResponse instantiates a new EntryChecksumVirtualAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -131,11 +131,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *EntryChecksumVirtualAttributeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetConflictBehavior
 

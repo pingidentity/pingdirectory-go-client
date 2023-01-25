@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]Enumbase64PasswordStorageSchemeSchemaUrn**](Enumbase64PasswordStorageSchemeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Password Storage Scheme | [optional] 
+**Id** | **string** | Name of the Password Storage Scheme | 
 **Enabled** | **bool** | Indicates whether the Base64 Password Storage Scheme is enabled for use. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBase64PasswordStorageSchemeResponse
 
-`func NewBase64PasswordStorageSchemeResponse(schemas []Enumbase64PasswordStorageSchemeSchemaUrn, enabled bool, ) *Base64PasswordStorageSchemeResponse`
+`func NewBase64PasswordStorageSchemeResponse(schemas []Enumbase64PasswordStorageSchemeSchemaUrn, id string, enabled bool, ) *Base64PasswordStorageSchemeResponse`
 
 NewBase64PasswordStorageSchemeResponse instantiates a new Base64PasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Base64PasswordStorageSchemeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumconsentHttpServletExtensionSchemaUrn**](EnumconsentHttpServletExtensionSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the HTTP Servlet Extension | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **BearerTokenAuthEnabled** | Pointer to **bool** | Enables HTTP bearer token authentication. | [optional] 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the Identity Mapper that is to be used for associating basic authentication usernames with DNs. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewConsentHttpServletExtensionResponse
 
-`func NewConsentHttpServletExtensionResponse(schemas []EnumconsentHttpServletExtensionSchemaUrn, ) *ConsentHttpServletExtensionResponse`
+`func NewConsentHttpServletExtensionResponse(schemas []EnumconsentHttpServletExtensionSchemaUrn, id string, ) *ConsentHttpServletExtensionResponse`
 
 NewConsentHttpServletExtensionResponse instantiates a new ConsentHttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -125,11 +125,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ConsentHttpServletExtensionResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBearerTokenAuthEnabled
 

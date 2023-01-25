@@ -20,7 +20,7 @@ type GssapiSaslMechanismHandlerResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumgssapiSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Specifies the realm to be used for GSSAPI authentication.
 	Realm *string `json:"realm,omitempty"`
 	// Specifies the address of the KDC that is to be used for Kerberos processing.
@@ -53,9 +53,10 @@ type GssapiSaslMechanismHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGssapiSaslMechanismHandlerResponse(schemas []EnumgssapiSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *GssapiSaslMechanismHandlerResponse {
+func NewGssapiSaslMechanismHandlerResponse(schemas []EnumgssapiSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool) *GssapiSaslMechanismHandlerResponse {
 	this := GssapiSaslMechanismHandlerResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
 	return &this
@@ -157,36 +158,28 @@ func (o *GssapiSaslMechanismHandlerResponse) SetSchemas(v []EnumgssapiSaslMechan
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *GssapiSaslMechanismHandlerResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *GssapiSaslMechanismHandlerResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *GssapiSaslMechanismHandlerResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetRealm returns the Realm field value if set, zero value otherwise.
@@ -632,7 +625,7 @@ func (o GssapiSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.Realm) {

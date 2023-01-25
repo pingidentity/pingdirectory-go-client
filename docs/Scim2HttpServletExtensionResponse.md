@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]Enumscim2HttpServletExtensionSchemaUrn**](Enumscim2HttpServletExtensionSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the HTTP Servlet Extension | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **BaseContextPath** | **string** | The context path to use to access the SCIM 2.0 interface. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this SCIM2 HTTP Servlet Extension. | [optional] 
 **MapAccessTokensToLocalUsers** | Pointer to [**EnumhttpServletExtensionMapAccessTokensToLocalUsersProp**](EnumhttpServletExtensionMapAccessTokensToLocalUsersProp.md) |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewScim2HttpServletExtensionResponse
 
-`func NewScim2HttpServletExtensionResponse(schemas []Enumscim2HttpServletExtensionSchemaUrn, baseContextPath string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool, ) *Scim2HttpServletExtensionResponse`
+`func NewScim2HttpServletExtensionResponse(schemas []Enumscim2HttpServletExtensionSchemaUrn, id string, baseContextPath string, debugLevel EnumhttpServletExtensionDebugLevelProp, debugType []EnumhttpServletExtensionDebugTypeProp, includeStackTrace bool, ) *Scim2HttpServletExtensionResponse`
 
 NewScim2HttpServletExtensionResponse instantiates a new Scim2HttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -129,11 +129,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Scim2HttpServletExtensionResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBaseContextPath
 

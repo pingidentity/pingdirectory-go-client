@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn**](EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **CertificateMapper** | **string** | The certificate mapper that will be used to identify the target user based on the certificate that was presented to the server. | 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse
 
-`func NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse(schemas []EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn, certificateMapper string, enabled bool, ) *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse`
+`func NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse(schemas []EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn, id string, certificateMapper string, enabled bool, ) *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse`
 
 NewUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse instantiates a new UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCertificateMapper
 

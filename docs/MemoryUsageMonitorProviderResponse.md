@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnummemoryUsageMonitorProviderSchemaUrn**](EnummemoryUsageMonitorProviderSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Monitor Provider | [optional] 
+**Id** | **string** | Name of the Monitor Provider | 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewMemoryUsageMonitorProviderResponse
 
-`func NewMemoryUsageMonitorProviderResponse(schemas []EnummemoryUsageMonitorProviderSchemaUrn, enabled bool, ) *MemoryUsageMonitorProviderResponse`
+`func NewMemoryUsageMonitorProviderResponse(schemas []EnummemoryUsageMonitorProviderSchemaUrn, id string, enabled bool, ) *MemoryUsageMonitorProviderResponse`
 
 NewMemoryUsageMonitorProviderResponse instantiates a new MemoryUsageMonitorProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *MemoryUsageMonitorProviderResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

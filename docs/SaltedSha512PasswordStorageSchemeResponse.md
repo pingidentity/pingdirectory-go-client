@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumsaltedSha512PasswordStorageSchemeSchemaUrn**](EnumsaltedSha512PasswordStorageSchemeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Password Storage Scheme | [optional] 
+**Id** | **string** | Name of the Password Storage Scheme | 
 **SaltLengthBytes** | Pointer to **int32** | Specifies the number of bytes to use for the generated salt. | [optional] 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewSaltedSha512PasswordStorageSchemeResponse
 
-`func NewSaltedSha512PasswordStorageSchemeResponse(schemas []EnumsaltedSha512PasswordStorageSchemeSchemaUrn, enabled bool, ) *SaltedSha512PasswordStorageSchemeResponse`
+`func NewSaltedSha512PasswordStorageSchemeResponse(schemas []EnumsaltedSha512PasswordStorageSchemeSchemaUrn, id string, enabled bool, ) *SaltedSha512PasswordStorageSchemeResponse`
 
 NewSaltedSha512PasswordStorageSchemeResponse instantiates a new SaltedSha512PasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *SaltedSha512PasswordStorageSchemeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetSaltLengthBytes
 

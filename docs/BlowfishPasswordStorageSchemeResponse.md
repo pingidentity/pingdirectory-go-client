@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumblowfishPasswordStorageSchemeSchemaUrn**](EnumblowfishPasswordStorageSchemeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Password Storage Scheme | [optional] 
+**Id** | **string** | Name of the Password Storage Scheme | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 **Enabled** | **bool** | Indicates whether the Password Storage Scheme is enabled for use. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBlowfishPasswordStorageSchemeResponse
 
-`func NewBlowfishPasswordStorageSchemeResponse(schemas []EnumblowfishPasswordStorageSchemeSchemaUrn, enabled bool, ) *BlowfishPasswordStorageSchemeResponse`
+`func NewBlowfishPasswordStorageSchemeResponse(schemas []EnumblowfishPasswordStorageSchemeSchemaUrn, id string, enabled bool, ) *BlowfishPasswordStorageSchemeResponse`
 
 NewBlowfishPasswordStorageSchemeResponse instantiates a new BlowfishPasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *BlowfishPasswordStorageSchemeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

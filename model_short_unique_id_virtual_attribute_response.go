@@ -20,7 +20,7 @@ type ShortUniqueIdVirtualAttributeResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumshortUniqueIdVirtualAttributeSchemaUrn `json:"schemas"`
 	// Name of the Virtual Attribute
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Specifies the name or OID of the attribute which contains the sequence number from which unique identifiers are generated. The attribute should have Integer syntax or a String syntax permitting integer values. If this property is modified then the filter property should be updated accordingly so that only entries containing the sequence number attribute are eligible to have a value generated for this virtual attribute.
 	SequenceNumberAttribute string `json:"sequenceNumberAttribute"`
 	// A description for this Virtual Attribute
@@ -48,9 +48,10 @@ type ShortUniqueIdVirtualAttributeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShortUniqueIdVirtualAttributeResponse(schemas []EnumshortUniqueIdVirtualAttributeSchemaUrn, sequenceNumberAttribute string, enabled bool, attributeType string) *ShortUniqueIdVirtualAttributeResponse {
+func NewShortUniqueIdVirtualAttributeResponse(schemas []EnumshortUniqueIdVirtualAttributeSchemaUrn, id string, sequenceNumberAttribute string, enabled bool, attributeType string) *ShortUniqueIdVirtualAttributeResponse {
 	this := ShortUniqueIdVirtualAttributeResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.SequenceNumberAttribute = sequenceNumberAttribute
 	this.Enabled = enabled
 	this.AttributeType = attributeType
@@ -153,36 +154,28 @@ func (o *ShortUniqueIdVirtualAttributeResponse) SetSchemas(v []EnumshortUniqueId
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ShortUniqueIdVirtualAttributeResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ShortUniqueIdVirtualAttributeResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *ShortUniqueIdVirtualAttributeResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetSequenceNumberAttribute returns the SequenceNumberAttribute field value
@@ -524,7 +517,7 @@ func (o ShortUniqueIdVirtualAttributeResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

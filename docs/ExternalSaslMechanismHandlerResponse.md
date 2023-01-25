@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumexternalSaslMechanismHandlerSchemaUrn**](EnumexternalSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **CertificateValidationPolicy** | [**EnumsaslMechanismHandlerCertificateValidationPolicyProp**](EnumsaslMechanismHandlerCertificateValidationPolicyProp.md) |  | 
 **CertificateAttribute** | Pointer to **string** | Specifies the name of the attribute to hold user certificates. | [optional] 
 **CertificateMapper** | **string** | Specifies the name of the certificate mapper that should be used to match client certificates to user entries. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewExternalSaslMechanismHandlerResponse
 
-`func NewExternalSaslMechanismHandlerResponse(schemas []EnumexternalSaslMechanismHandlerSchemaUrn, certificateValidationPolicy EnumsaslMechanismHandlerCertificateValidationPolicyProp, certificateMapper string, enabled bool, ) *ExternalSaslMechanismHandlerResponse`
+`func NewExternalSaslMechanismHandlerResponse(schemas []EnumexternalSaslMechanismHandlerSchemaUrn, id string, certificateValidationPolicy EnumsaslMechanismHandlerCertificateValidationPolicyProp, certificateMapper string, enabled bool, ) *ExternalSaslMechanismHandlerResponse`
 
 NewExternalSaslMechanismHandlerResponse instantiates a new ExternalSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -122,11 +122,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ExternalSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCertificateValidationPolicy
 

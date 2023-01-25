@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]Enummd5PasswordStorageSchemeSchemaUrn**](Enummd5PasswordStorageSchemeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Password Storage Scheme | [optional] 
+**Id** | **string** | Name of the Password Storage Scheme | 
 **Enabled** | **bool** | Indicates whether the MD5 Password Storage Scheme is enabled for use. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewMd5PasswordStorageSchemeResponse
 
-`func NewMd5PasswordStorageSchemeResponse(schemas []Enummd5PasswordStorageSchemeSchemaUrn, enabled bool, ) *Md5PasswordStorageSchemeResponse`
+`func NewMd5PasswordStorageSchemeResponse(schemas []Enummd5PasswordStorageSchemeSchemaUrn, id string, enabled bool, ) *Md5PasswordStorageSchemeResponse`
 
 NewMd5PasswordStorageSchemeResponse instantiates a new Md5PasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *Md5PasswordStorageSchemeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

@@ -20,7 +20,7 @@ type UnboundidTotpSaslMechanismHandlerResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumunboundidTotpSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
 	// The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing.
@@ -43,9 +43,10 @@ type UnboundidTotpSaslMechanismHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnboundidTotpSaslMechanismHandlerResponse(schemas []EnumunboundidTotpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *UnboundidTotpSaslMechanismHandlerResponse {
+func NewUnboundidTotpSaslMechanismHandlerResponse(schemas []EnumunboundidTotpSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool) *UnboundidTotpSaslMechanismHandlerResponse {
 	this := UnboundidTotpSaslMechanismHandlerResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
 	return &this
@@ -147,36 +148,28 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) SetSchemas(v []Enumunboundid
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *UnboundidTotpSaslMechanismHandlerResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *UnboundidTotpSaslMechanismHandlerResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetIdentityMapper returns the IdentityMapper field value
@@ -430,7 +423,7 @@ func (o UnboundidTotpSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error)
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

@@ -20,7 +20,7 @@ type ReplicationStateDetailVirtualAttributeResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumreplicationStateDetailVirtualAttributeSchemaUrn `json:"schemas"`
 	// Name of the Virtual Attribute
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Indicates whether the Virtual Attribute is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
@@ -31,9 +31,10 @@ type ReplicationStateDetailVirtualAttributeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReplicationStateDetailVirtualAttributeResponse(schemas []EnumreplicationStateDetailVirtualAttributeSchemaUrn, enabled bool) *ReplicationStateDetailVirtualAttributeResponse {
+func NewReplicationStateDetailVirtualAttributeResponse(schemas []EnumreplicationStateDetailVirtualAttributeSchemaUrn, id string, enabled bool) *ReplicationStateDetailVirtualAttributeResponse {
 	this := ReplicationStateDetailVirtualAttributeResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.Enabled = enabled
 	return &this
 }
@@ -134,36 +135,28 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) SetSchemas(v []Enumrepl
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ReplicationStateDetailVirtualAttributeResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *ReplicationStateDetailVirtualAttributeResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetEnabled returns the Enabled field value
@@ -233,7 +226,7 @@ func (o ReplicationStateDetailVirtualAttributeResponse) MarshalJSON() ([]byte, e
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

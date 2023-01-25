@@ -220,6 +220,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumcancel-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -371,6 +372,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-connection-id-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -400,6 +402,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enummulti-update-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -429,6 +432,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumnotification-subscription-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -463,6 +467,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumpassword-modify-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -582,6 +587,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumbatched-transactions-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -611,6 +617,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-changelog-batch-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -640,6 +647,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-supported-otp-delivery-mechanisms-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -747,6 +755,7 @@ components:
         - schemas
         - defaultPasswordGenerator
         - enabled
+        - id
     Enumgenerate-password-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -776,6 +785,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumwho-am-i-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -805,6 +815,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumstart-tls-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -896,6 +907,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumpassword-policy-state-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -925,6 +937,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-password-quality-requirements-extended-operation-handlerSchemaUrn:
       type: string
       enum:
