@@ -236,6 +236,7 @@ components:
         - baseDN
         - writabilityMode
         - enabled
+        - id
     Enumconfig-file-handler-backendSchemaUrn:
       type: string
       enum:
@@ -313,6 +314,7 @@ components:
         - writabilityMode
         - showAllAttributes
         - enabled
+        - id
     Enumschema-backendSchemaUrn:
       type: string
       enum:
@@ -376,6 +378,7 @@ components:
         - writabilityMode
         - backupDirectory
         - enabled
+        - id
     Enumbackup-backendSchemaUrn:
       type: string
       enum:
@@ -457,6 +460,7 @@ components:
         - writabilityMode
         - taskBackingFile
         - enabled
+        - id
     Enumtask-backendSchemaUrn:
       type: string
       enum:
@@ -535,6 +539,7 @@ components:
         - alertRetentionTime
         - writabilityMode
         - enabled
+        - id
     Enumalert-backendSchemaUrn:
       type: string
       enum:
@@ -592,6 +597,7 @@ components:
         - baseDN
         - backendID
         - enabled
+        - id
     Enumencryption-settings-backendSchemaUrn:
       type: string
       enum:
@@ -674,6 +680,7 @@ components:
         - writabilityMode
         - trustStoreFile
         - enabled
+        - id
     Enumtrust-store-backendSchemaUrn:
       type: string
       enum:
@@ -748,6 +755,7 @@ components:
         - alarmRetentionTime
         - writabilityMode
         - enabled
+        - id
     Enumalarm-backendSchemaUrn:
       type: string
       enum:
@@ -932,6 +940,7 @@ components:
         - changelogMaximumAge
         - backendID
         - enabled
+        - id
     Enumchangelog-backendSchemaUrn:
       type: string
       enum:
@@ -985,6 +994,7 @@ components:
         - backendID
         - baseDN
         - enabled
+        - id
     Enummonitor-backendSchemaUrn:
       type: string
       enum:
@@ -1311,6 +1321,7 @@ components:
         - retentionPolicy
         - enabled
         - writabilityMode
+        - id
     Enummetrics-backendSchemaUrn:
       type: string
       enum:

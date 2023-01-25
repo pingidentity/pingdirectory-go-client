@@ -220,6 +220,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumoutput-alert-handlerSchemaUrn:
       type: string
       enum:

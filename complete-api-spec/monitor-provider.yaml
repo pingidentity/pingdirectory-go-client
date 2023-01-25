@@ -185,6 +185,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumgeneral-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -214,6 +215,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enummemory-usage-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -243,6 +245,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumstack-trace-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -301,6 +304,7 @@ components:
         - schemas
         - alertFrequency
         - enabled
+        - id
     Enumdisk-space-usage-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -330,6 +334,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsystem-info-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -359,6 +364,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumactive-operations-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -388,6 +394,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumssl-context-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -417,6 +424,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumclient-connection-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -446,6 +454,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumversion-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -492,6 +501,7 @@ components:
         - schemas
         - enabled
         - systemUtilizationMonitorLogDirectory
+        - id
     Enumhost-system-monitor-providerSchemaUrn:
       type: string
       enum:

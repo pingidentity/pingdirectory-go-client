@@ -20,7 +20,7 @@ type ActiveOperationsMonitorProviderResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumactiveOperationsMonitorProviderSchemaUrn `json:"schemas"`
 	// Name of the Monitor Provider
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// A description for this Monitor Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Monitor Provider is enabled for use.
@@ -31,9 +31,10 @@ type ActiveOperationsMonitorProviderResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewActiveOperationsMonitorProviderResponse(schemas []EnumactiveOperationsMonitorProviderSchemaUrn, enabled bool) *ActiveOperationsMonitorProviderResponse {
+func NewActiveOperationsMonitorProviderResponse(schemas []EnumactiveOperationsMonitorProviderSchemaUrn, id string, enabled bool) *ActiveOperationsMonitorProviderResponse {
 	this := ActiveOperationsMonitorProviderResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.Enabled = enabled
 	return &this
 }
@@ -134,36 +135,28 @@ func (o *ActiveOperationsMonitorProviderResponse) SetSchemas(v []EnumactiveOpera
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ActiveOperationsMonitorProviderResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ActiveOperationsMonitorProviderResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ActiveOperationsMonitorProviderResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *ActiveOperationsMonitorProviderResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -233,7 +226,7 @@ func (o ActiveOperationsMonitorProviderResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.Description) {

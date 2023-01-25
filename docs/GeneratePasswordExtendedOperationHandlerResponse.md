@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumgeneratePasswordExtendedOperationHandlerSchemaUrn**](EnumgeneratePasswordExtendedOperationHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Extended Operation Handler | [optional] 
+**Id** | **string** | Name of the Extended Operation Handler | 
 **DefaultPasswordPolicy** | Pointer to **string** | The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration. | [optional] 
 **DefaultPasswordGenerator** | **string** | The default password generator that will be used if the selected password policy is not configured with a password generator. | 
 **MaximumPasswordsPerRequest** | Pointer to **int32** | The maximum number of passwords that may be generated and returned to the client for a single request. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewGeneratePasswordExtendedOperationHandlerResponse
 
-`func NewGeneratePasswordExtendedOperationHandlerResponse(schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn, defaultPasswordGenerator string, enabled bool, ) *GeneratePasswordExtendedOperationHandlerResponse`
+`func NewGeneratePasswordExtendedOperationHandlerResponse(schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn, id string, defaultPasswordGenerator string, enabled bool, ) *GeneratePasswordExtendedOperationHandlerResponse`
 
 NewGeneratePasswordExtendedOperationHandlerResponse instantiates a new GeneratePasswordExtendedOperationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -123,11 +123,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *GeneratePasswordExtendedOperationHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDefaultPasswordPolicy
 

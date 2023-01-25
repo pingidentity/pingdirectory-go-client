@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumconsoleJsonErrorLogPublisherSchemaUrn**](EnumconsoleJsonErrorLogPublisherSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Log Publisher | [optional] 
+**Id** | **string** | Name of the Log Publisher | 
 **Enabled** | **bool** | Indicates whether the Console JSON Error Log Publisher is enabled for use. | 
 **DefaultSeverity** | Pointer to [**[]EnumlogPublisherDefaultSeverityProp**](EnumlogPublisherDefaultSeverityProp.md) |  | [optional] 
 **WriteMultiLineMessages** | Pointer to **bool** | Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers. | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewConsoleJsonErrorLogPublisherResponse
 
-`func NewConsoleJsonErrorLogPublisherResponse(schemas []EnumconsoleJsonErrorLogPublisherSchemaUrn, enabled bool, ) *ConsoleJsonErrorLogPublisherResponse`
+`func NewConsoleJsonErrorLogPublisherResponse(schemas []EnumconsoleJsonErrorLogPublisherSchemaUrn, id string, enabled bool, ) *ConsoleJsonErrorLogPublisherResponse`
 
 NewConsoleJsonErrorLogPublisherResponse instantiates a new ConsoleJsonErrorLogPublisherResponse object
 This constructor will assign default values to properties that have it defined,
@@ -129,11 +129,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ConsoleJsonErrorLogPublisherResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

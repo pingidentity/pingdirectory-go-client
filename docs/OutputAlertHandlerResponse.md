@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumoutputAlertHandlerSchemaUrn**](EnumoutputAlertHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Alert Handler | [optional] 
+**Id** | **string** | Name of the Alert Handler | 
 **OutputLocation** | Pointer to [**EnumalertHandlerOutputLocationProp**](EnumalertHandlerOutputLocationProp.md) |  | [optional] 
 **OutputFormat** | Pointer to [**EnumalertHandlerOutputFormatProp**](EnumalertHandlerOutputFormatProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Alert Handler | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewOutputAlertHandlerResponse
 
-`func NewOutputAlertHandlerResponse(schemas []EnumoutputAlertHandlerSchemaUrn, enabled bool, ) *OutputAlertHandlerResponse`
+`func NewOutputAlertHandlerResponse(schemas []EnumoutputAlertHandlerSchemaUrn, id string, enabled bool, ) *OutputAlertHandlerResponse`
 
 NewOutputAlertHandlerResponse instantiates a new OutputAlertHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -125,11 +125,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *OutputAlertHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetOutputLocation
 

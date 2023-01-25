@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumgssapiSaslMechanismHandlerSchemaUrn**](EnumgssapiSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **Realm** | Pointer to **string** | Specifies the realm to be used for GSSAPI authentication. | [optional] 
 **KdcAddress** | Pointer to **string** | Specifies the address of the KDC that is to be used for Kerberos processing. | [optional] 
 **Keytab** | Pointer to **string** | Specifies the keytab file that should be used for Kerberos processing. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewGssapiSaslMechanismHandlerResponse
 
-`func NewGssapiSaslMechanismHandlerResponse(schemas []EnumgssapiSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *GssapiSaslMechanismHandlerResponse`
+`func NewGssapiSaslMechanismHandlerResponse(schemas []EnumgssapiSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool, ) *GssapiSaslMechanismHandlerResponse`
 
 NewGssapiSaslMechanismHandlerResponse instantiates a new GssapiSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -131,11 +131,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *GssapiSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetRealm
 

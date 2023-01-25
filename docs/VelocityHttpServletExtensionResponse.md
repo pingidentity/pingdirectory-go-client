@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumvelocityHttpServletExtensionSchemaUrn**](EnumvelocityHttpServletExtensionSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the HTTP Servlet Extension | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **BaseContextPath** | **string** | The context path to use to access all template-based and static content. The value must start with a forward slash and must represent a valid HTTP context path. | 
 **StaticContextPath** | Pointer to **string** | The path below the base context path by which static, non-template content such as images, CSS, and Javascript files are accessible. | [optional] 
 **StaticContentDirectory** | Pointer to **string** | Specifies the base directory in which static, non-template content such as images, CSS, and Javascript files are stored on the filesystem. | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewVelocityHttpServletExtensionResponse
 
-`func NewVelocityHttpServletExtensionResponse(schemas []EnumvelocityHttpServletExtensionSchemaUrn, baseContextPath string, templateDirectory []string, ) *VelocityHttpServletExtensionResponse`
+`func NewVelocityHttpServletExtensionResponse(schemas []EnumvelocityHttpServletExtensionSchemaUrn, id string, baseContextPath string, templateDirectory []string, ) *VelocityHttpServletExtensionResponse`
 
 NewVelocityHttpServletExtensionResponse instantiates a new VelocityHttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -136,11 +136,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *VelocityHttpServletExtensionResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBaseContextPath
 

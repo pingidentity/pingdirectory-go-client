@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn**](EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Extended Operation Handler | [optional] 
+**Id** | **string** | Name of the Extended Operation Handler | 
 **Description** | Pointer to **string** | A description for this Extended Operation Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server). | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBatchedTransactionsExtendedOperationHandlerResponse
 
-`func NewBatchedTransactionsExtendedOperationHandlerResponse(schemas []EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn, enabled bool, ) *BatchedTransactionsExtendedOperationHandlerResponse`
+`func NewBatchedTransactionsExtendedOperationHandlerResponse(schemas []EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn, id string, enabled bool, ) *BatchedTransactionsExtendedOperationHandlerResponse`
 
 NewBatchedTransactionsExtendedOperationHandlerResponse instantiates a new BatchedTransactionsExtendedOperationHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *BatchedTransactionsExtendedOperationHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

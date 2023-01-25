@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnummetricsBackendSchemaUrn**](EnummetricsBackendSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Backend | [optional] 
+**Id** | **string** | Name of the Backend | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **StorageDir** | **string** | Specifies the path to the directory that will be used to store queued samples. | 
 **MetricsDir** | **string** | Specifies the path to the directory that contains metric definitions. | 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewMetricsBackendResponse
 
-`func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, backendID string, storageDir string, metricsDir string, retentionPolicy []string, enabled bool, writabilityMode EnumbackendWritabilityModeProp, ) *MetricsBackendResponse`
+`func NewMetricsBackendResponse(schemas []EnummetricsBackendSchemaUrn, id string, backendID string, storageDir string, metricsDir string, retentionPolicy []string, enabled bool, writabilityMode EnumbackendWritabilityModeProp, ) *MetricsBackendResponse`
 
 NewMetricsBackendResponse instantiates a new MetricsBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -127,11 +127,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *MetricsBackendResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBackendID
 

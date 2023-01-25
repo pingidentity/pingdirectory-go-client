@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumdirectoryServerInstanceSchemaUrn**](EnumdirectoryServerInstanceSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Server Instance | [optional] 
+**Id** | **string** | Name of the Server Instance | 
 **ServerInstanceType** | Pointer to [**EnumserverInstanceServerInstanceTypeProp**](EnumserverInstanceServerInstanceTypeProp.md) |  | [optional] 
 **ReplicationSetName** | Pointer to **string** | The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name. | [optional] 
 **LoadBalancingAlgorithmName** | Pointer to **[]string** | The name of the configuration object for a load-balancing algorithm that should include this server. | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewDirectoryServerInstanceResponse
 
-`func NewDirectoryServerInstanceResponse(schemas []EnumdirectoryServerInstanceSchemaUrn, serverInstanceName string, clusterName string, serverVersion string, ) *DirectoryServerInstanceResponse`
+`func NewDirectoryServerInstanceResponse(schemas []EnumdirectoryServerInstanceSchemaUrn, id string, serverInstanceName string, clusterName string, serverVersion string, ) *DirectoryServerInstanceResponse`
 
 NewDirectoryServerInstanceResponse instantiates a new DirectoryServerInstanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -140,11 +140,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *DirectoryServerInstanceResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetServerInstanceType
 

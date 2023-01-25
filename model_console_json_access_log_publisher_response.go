@@ -20,7 +20,7 @@ type ConsoleJsonAccessLogPublisherResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn `json:"schemas"`
 	// Name of the Log Publisher
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Indicates whether the Console JSON Access Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
@@ -111,9 +111,10 @@ type ConsoleJsonAccessLogPublisherResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsoleJsonAccessLogPublisherResponse(schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn, enabled bool) *ConsoleJsonAccessLogPublisherResponse {
+func NewConsoleJsonAccessLogPublisherResponse(schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn, id string, enabled bool) *ConsoleJsonAccessLogPublisherResponse {
 	this := ConsoleJsonAccessLogPublisherResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.Enabled = enabled
 	return &this
 }
@@ -214,36 +215,28 @@ func (o *ConsoleJsonAccessLogPublisherResponse) SetSchemas(v []EnumconsoleJsonAc
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ConsoleJsonAccessLogPublisherResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ConsoleJsonAccessLogPublisherResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *ConsoleJsonAccessLogPublisherResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetEnabled returns the Enabled field value
@@ -1625,7 +1618,7 @@ func (o ConsoleJsonAccessLogPublisherResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

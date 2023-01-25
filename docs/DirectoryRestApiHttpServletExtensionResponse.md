@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumdirectoryRestApiHttpServletExtensionSchemaUrn**](EnumdirectoryRestApiHttpServletExtensionSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the HTTP Servlet Extension | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the Identity Mapper that is to be used for associating user entries with basic authentication usernames. | [optional] 
 **AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Directory REST API HTTP Servlet Extension. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewDirectoryRestApiHttpServletExtensionResponse
 
-`func NewDirectoryRestApiHttpServletExtensionResponse(schemas []EnumdirectoryRestApiHttpServletExtensionSchemaUrn, ) *DirectoryRestApiHttpServletExtensionResponse`
+`func NewDirectoryRestApiHttpServletExtensionResponse(schemas []EnumdirectoryRestApiHttpServletExtensionSchemaUrn, id string, ) *DirectoryRestApiHttpServletExtensionResponse`
 
 NewDirectoryRestApiHttpServletExtensionResponse instantiates a new DirectoryRestApiHttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -131,11 +131,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *DirectoryRestApiHttpServletExtensionResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBasicAuthEnabled
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumdelegatedAdminHttpServletExtensionSchemaUrn**](EnumdelegatedAdminHttpServletExtensionSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the HTTP Servlet Extension | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **BasicAuthEnabled** | Pointer to **bool** | Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN. | [optional] 
 **IdentityMapper** | Pointer to **string** | Specifies the Identity Mapper that is to be used for associating user entries with basic authentication user names. | [optional] 
 **AccessTokenValidator** | Pointer to **[]string** | If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this Delegated Admin HTTP Servlet Extension. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewDelegatedAdminHttpServletExtensionResponse
 
-`func NewDelegatedAdminHttpServletExtensionResponse(schemas []EnumdelegatedAdminHttpServletExtensionSchemaUrn, ) *DelegatedAdminHttpServletExtensionResponse`
+`func NewDelegatedAdminHttpServletExtensionResponse(schemas []EnumdelegatedAdminHttpServletExtensionSchemaUrn, id string, ) *DelegatedAdminHttpServletExtensionResponse`
 
 NewDelegatedAdminHttpServletExtensionResponse instantiates a new DelegatedAdminHttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -126,11 +126,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *DelegatedAdminHttpServletExtensionResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBasicAuthEnabled
 

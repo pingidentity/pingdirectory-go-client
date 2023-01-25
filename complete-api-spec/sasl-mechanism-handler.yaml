@@ -273,6 +273,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumunboundid-totp-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -339,6 +340,7 @@ components:
         - yubikeyValidationServerBaseURL
         - identityMapper
         - enabled
+        - id
     Enumunboundid-yubikey-otp-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -380,6 +382,7 @@ components:
         - certificateValidationPolicy
         - certificateMapper
         - enabled
+        - id
     Enumexternal-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -422,6 +425,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumdigest-md5-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -456,6 +460,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumplain-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -545,6 +550,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumunboundid-external-auth-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -574,6 +580,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumanonymous-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -608,6 +615,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumcram-md5-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -725,6 +733,7 @@ components:
         - schemas
         - certificateMapper
         - enabled
+        - id
     Enumunboundid-certificate-plus-password-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -801,6 +810,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumgssapi-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:

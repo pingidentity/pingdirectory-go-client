@@ -1730,6 +1730,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumconsole-json-error-log-publisherSchemaUrn:
       type: string
       enum:
@@ -5440,6 +5441,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumconsole-json-access-log-publisherSchemaUrn:
       type: string
       enum:

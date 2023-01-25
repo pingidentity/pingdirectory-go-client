@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumhasSubordinatesVirtualAttributeSchemaUrn**](EnumhasSubordinatesVirtualAttributeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Virtual Attribute | [optional] 
+**Id** | **string** | Name of the Virtual Attribute | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
 **AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewHasSubordinatesVirtualAttributeResponse
 
-`func NewHasSubordinatesVirtualAttributeResponse(schemas []EnumhasSubordinatesVirtualAttributeSchemaUrn, attributeType string, enabled bool, ) *HasSubordinatesVirtualAttributeResponse`
+`func NewHasSubordinatesVirtualAttributeResponse(schemas []EnumhasSubordinatesVirtualAttributeSchemaUrn, id string, attributeType string, enabled bool, ) *HasSubordinatesVirtualAttributeResponse`
 
 NewHasSubordinatesVirtualAttributeResponse instantiates a new HasSubordinatesVirtualAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -129,11 +129,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *HasSubordinatesVirtualAttributeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetConflictBehavior
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumauthorizeServerInstanceSchemaUrn**](EnumauthorizeServerInstanceSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Server Instance | [optional] 
+**Id** | **string** | Name of the Server Instance | 
 **ServerInstanceType** | Pointer to [**EnumserverInstanceServerInstanceTypeProp**](EnumserverInstanceServerInstanceTypeProp.md) |  | [optional] 
 **ServerInstanceName** | **string** | The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed. | 
 **ClusterName** | **string** | The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration. | 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewAuthorizeServerInstanceResponse
 
-`func NewAuthorizeServerInstanceResponse(schemas []EnumauthorizeServerInstanceSchemaUrn, serverInstanceName string, clusterName string, serverVersion string, ) *AuthorizeServerInstanceResponse`
+`func NewAuthorizeServerInstanceResponse(schemas []EnumauthorizeServerInstanceSchemaUrn, id string, serverInstanceName string, clusterName string, serverVersion string, ) *AuthorizeServerInstanceResponse`
 
 NewAuthorizeServerInstanceResponse instantiates a new AuthorizeServerInstanceResponse object
 This constructor will assign default values to properties that have it defined,
@@ -138,11 +138,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *AuthorizeServerInstanceResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetServerInstanceType
 

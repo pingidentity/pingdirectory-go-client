@@ -20,7 +20,7 @@ type PasswordModifyExtendedOperationHandlerResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumpasswordModifyExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Specifies the name of the identity mapper that should be used in conjunction with the password modify extended operation.
 	IdentityMapper string `json:"identityMapper"`
 	// A description for this Extended Operation Handler
@@ -33,9 +33,10 @@ type PasswordModifyExtendedOperationHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPasswordModifyExtendedOperationHandlerResponse(schemas []EnumpasswordModifyExtendedOperationHandlerSchemaUrn, identityMapper string, enabled bool) *PasswordModifyExtendedOperationHandlerResponse {
+func NewPasswordModifyExtendedOperationHandlerResponse(schemas []EnumpasswordModifyExtendedOperationHandlerSchemaUrn, id string, identityMapper string, enabled bool) *PasswordModifyExtendedOperationHandlerResponse {
 	this := PasswordModifyExtendedOperationHandlerResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
 	return &this
@@ -137,36 +138,28 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) SetSchemas(v []Enumpass
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *PasswordModifyExtendedOperationHandlerResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *PasswordModifyExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetIdentityMapper returns the IdentityMapper field value
@@ -260,7 +253,7 @@ func (o PasswordModifyExtendedOperationHandlerResponse) MarshalJSON() ([]byte, e
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

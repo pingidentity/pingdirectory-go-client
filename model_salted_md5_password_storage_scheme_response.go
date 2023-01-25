@@ -20,7 +20,7 @@ type SaltedMd5PasswordStorageSchemeResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumsaltedMd5PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Name of the Password Storage Scheme
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Indicates whether the Salted MD5 Password Storage Scheme is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies the number of bytes to use for the generated salt.
@@ -33,9 +33,10 @@ type SaltedMd5PasswordStorageSchemeResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSaltedMd5PasswordStorageSchemeResponse(schemas []EnumsaltedMd5PasswordStorageSchemeSchemaUrn, enabled bool) *SaltedMd5PasswordStorageSchemeResponse {
+func NewSaltedMd5PasswordStorageSchemeResponse(schemas []EnumsaltedMd5PasswordStorageSchemeSchemaUrn, id string, enabled bool) *SaltedMd5PasswordStorageSchemeResponse {
 	this := SaltedMd5PasswordStorageSchemeResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.Enabled = enabled
 	return &this
 }
@@ -136,36 +137,28 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) SetSchemas(v []EnumsaltedMd5Pas
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SaltedMd5PasswordStorageSchemeResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *SaltedMd5PasswordStorageSchemeResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetEnabled returns the Enabled field value
@@ -267,7 +260,7 @@ func (o SaltedMd5PasswordStorageSchemeResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

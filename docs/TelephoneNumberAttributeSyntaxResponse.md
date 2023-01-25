@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumtelephoneNumberAttributeSyntaxSchemaUrn**](EnumtelephoneNumberAttributeSyntaxSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Attribute Syntax | [optional] 
+**Id** | **string** | Name of the Attribute Syntax | 
 **StrictFormat** | Pointer to **bool** | Indicates whether to require telephone number values to strictly comply with the standard definition for this syntax. | [optional] 
 **Enabled** | **bool** | Indicates whether the Attribute Syntax is enabled. | 
 **RequireBinaryTransfer** | Pointer to **bool** | Indicates whether values of this attribute are required to have a \&quot;binary\&quot; transfer option as described in RFC 4522. Attributes with this syntax will generally be referenced with names including \&quot;;binary\&quot; (e.g., \&quot;userCertificate;binary\&quot;). | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewTelephoneNumberAttributeSyntaxResponse
 
-`func NewTelephoneNumberAttributeSyntaxResponse(schemas []EnumtelephoneNumberAttributeSyntaxSchemaUrn, enabled bool, ) *TelephoneNumberAttributeSyntaxResponse`
+`func NewTelephoneNumberAttributeSyntaxResponse(schemas []EnumtelephoneNumberAttributeSyntaxSchemaUrn, id string, enabled bool, ) *TelephoneNumberAttributeSyntaxResponse`
 
 NewTelephoneNumberAttributeSyntaxResponse instantiates a new TelephoneNumberAttributeSyntaxResponse object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *TelephoneNumberAttributeSyntaxResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetStrictFormat
 

@@ -137,6 +137,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumattribute-type-description-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -170,6 +171,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumdirectory-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -203,6 +205,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumtelephone-number-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -248,6 +251,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumdistinguished-name-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -293,6 +297,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumgeneralized-time-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -338,6 +343,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enuminteger-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -383,6 +389,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumuuid-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -412,6 +419,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumjson-object-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -457,6 +465,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumuser-password-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -502,6 +511,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumboolean-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -531,6 +541,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumhex-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -576,6 +587,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumbit-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -609,6 +621,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumldap-url-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -654,6 +667,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumname-and-optional-uid-attribute-syntaxSchemaUrn:
       type: string
       enum:
