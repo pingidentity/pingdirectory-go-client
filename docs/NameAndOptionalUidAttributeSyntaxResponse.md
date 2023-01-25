@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumnameAndOptionalUidAttributeSyntaxSchemaUrn**](EnumnameAndOptionalUidAttributeSyntaxSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Attribute Syntax | [optional] 
+**Id** | **string** | Name of the Attribute Syntax | 
 **EnableCompaction** | Pointer to **bool** | Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database. | [optional] 
 **IncludeAttributeInCompaction** | Pointer to **[]string** | Specifies the specific attributes (which should be associated with this syntax) whose values should be compacted. If one or more include attributes are specified, then only those attributes will have their values compacted. If not set then all attributes will have their values compacted. The exclude-attribute-from-compaction property takes precedence over this property. | [optional] 
 **ExcludeAttributeFromCompaction** | Pointer to **[]string** | Specifies the specific attributes (which should be associated with this syntax) whose values should not be compacted. If one or more exclude attributes are specified, then values of those attributes will not have their values compacted. This property takes precedence over the include-attribute-in-compaction property. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewNameAndOptionalUidAttributeSyntaxResponse
 
-`func NewNameAndOptionalUidAttributeSyntaxResponse(schemas []EnumnameAndOptionalUidAttributeSyntaxSchemaUrn, enabled bool, ) *NameAndOptionalUidAttributeSyntaxResponse`
+`func NewNameAndOptionalUidAttributeSyntaxResponse(schemas []EnumnameAndOptionalUidAttributeSyntaxSchemaUrn, id string, enabled bool, ) *NameAndOptionalUidAttributeSyntaxResponse`
 
 NewNameAndOptionalUidAttributeSyntaxResponse instantiates a new NameAndOptionalUidAttributeSyntaxResponse object
 This constructor will assign default values to properties that have it defined,
@@ -122,11 +122,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *NameAndOptionalUidAttributeSyntaxResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnableCompaction
 

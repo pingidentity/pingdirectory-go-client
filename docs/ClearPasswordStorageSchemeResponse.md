@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumclearPasswordStorageSchemeSchemaUrn**](EnumclearPasswordStorageSchemeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Password Storage Scheme | [optional] 
+**Id** | **string** | Name of the Password Storage Scheme | 
 **Enabled** | **bool** | Indicates whether the Clear Password Storage Scheme is enabled for use. | 
 **Description** | Pointer to **string** | A description for this Password Storage Scheme | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewClearPasswordStorageSchemeResponse
 
-`func NewClearPasswordStorageSchemeResponse(schemas []EnumclearPasswordStorageSchemeSchemaUrn, enabled bool, ) *ClearPasswordStorageSchemeResponse`
+`func NewClearPasswordStorageSchemeResponse(schemas []EnumclearPasswordStorageSchemeSchemaUrn, id string, enabled bool, ) *ClearPasswordStorageSchemeResponse`
 
 NewClearPasswordStorageSchemeResponse instantiates a new ClearPasswordStorageSchemeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ClearPasswordStorageSchemeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

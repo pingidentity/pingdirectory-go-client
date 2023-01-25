@@ -20,7 +20,7 @@ type PlainSaslMechanismHandlerResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumplainSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the authentication or authorization ID included in the SASL bind request to the corresponding user in the directory.
 	IdentityMapper string `json:"identityMapper"`
 	// A description for this SASL Mechanism Handler
@@ -33,9 +33,10 @@ type PlainSaslMechanismHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPlainSaslMechanismHandlerResponse(schemas []EnumplainSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool) *PlainSaslMechanismHandlerResponse {
+func NewPlainSaslMechanismHandlerResponse(schemas []EnumplainSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool) *PlainSaslMechanismHandlerResponse {
 	this := PlainSaslMechanismHandlerResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.IdentityMapper = identityMapper
 	this.Enabled = enabled
 	return &this
@@ -137,36 +138,28 @@ func (o *PlainSaslMechanismHandlerResponse) SetSchemas(v []EnumplainSaslMechanis
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *PlainSaslMechanismHandlerResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *PlainSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *PlainSaslMechanismHandlerResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *PlainSaslMechanismHandlerResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetIdentityMapper returns the IdentityMapper field value
@@ -260,7 +253,7 @@ func (o PlainSaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

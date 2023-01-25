@@ -20,7 +20,7 @@ type GeneratePasswordExtendedOperationHandlerResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration.
 	DefaultPasswordPolicy *string `json:"defaultPasswordPolicy,omitempty"`
 	// The default password generator that will be used if the selected password policy is not configured with a password generator.
@@ -39,9 +39,10 @@ type GeneratePasswordExtendedOperationHandlerResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGeneratePasswordExtendedOperationHandlerResponse(schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn, defaultPasswordGenerator string, enabled bool) *GeneratePasswordExtendedOperationHandlerResponse {
+func NewGeneratePasswordExtendedOperationHandlerResponse(schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn, id string, defaultPasswordGenerator string, enabled bool) *GeneratePasswordExtendedOperationHandlerResponse {
 	this := GeneratePasswordExtendedOperationHandlerResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.DefaultPasswordGenerator = defaultPasswordGenerator
 	this.Enabled = enabled
 	return &this
@@ -143,36 +144,28 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) SetSchemas(v []Enumge
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *GeneratePasswordExtendedOperationHandlerResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *GeneratePasswordExtendedOperationHandlerResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetDefaultPasswordPolicy returns the DefaultPasswordPolicy field value if set, zero value otherwise.
@@ -362,7 +355,7 @@ func (o GeneratePasswordExtendedOperationHandlerResponse) MarshalJSON() ([]byte,
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.DefaultPasswordPolicy) {

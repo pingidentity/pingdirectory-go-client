@@ -20,7 +20,7 @@ type ConfigHttpServletExtensionResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumconfigHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Name of the HTTP Servlet Extension
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Specifies the name of the identity mapper that is to be used for associating user entries with basic authentication user names.
 	IdentityMapper *string `json:"identityMapper,omitempty"`
 	// A description for this HTTP Servlet Extension
@@ -37,9 +37,10 @@ type ConfigHttpServletExtensionResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConfigHttpServletExtensionResponse(schemas []EnumconfigHttpServletExtensionSchemaUrn) *ConfigHttpServletExtensionResponse {
+func NewConfigHttpServletExtensionResponse(schemas []EnumconfigHttpServletExtensionSchemaUrn, id string) *ConfigHttpServletExtensionResponse {
 	this := ConfigHttpServletExtensionResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -139,36 +140,28 @@ func (o *ConfigHttpServletExtensionResponse) SetSchemas(v []EnumconfigHttpServle
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *ConfigHttpServletExtensionResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *ConfigHttpServletExtensionResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *ConfigHttpServletExtensionResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
@@ -342,7 +335,7 @@ func (o ConfigHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.IdentityMapper) {

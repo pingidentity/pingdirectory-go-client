@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumjsonLogFieldSyntaxSchemaUrn**](EnumjsonLogFieldSyntaxSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Log Field Syntax | [optional] 
+**Id** | **string** | Name of the Log Field Syntax | 
 **IncludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will be considered sensitive. | [optional] 
 **ExcludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will not be considered sensitive. | [optional] 
 **Description** | Pointer to **string** | A description for this Log Field Syntax | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewJsonLogFieldSyntaxResponse
 
-`func NewJsonLogFieldSyntaxResponse(schemas []EnumjsonLogFieldSyntaxSchemaUrn, ) *JsonLogFieldSyntaxResponse`
+`func NewJsonLogFieldSyntaxResponse(schemas []EnumjsonLogFieldSyntaxSchemaUrn, id string, ) *JsonLogFieldSyntaxResponse`
 
 NewJsonLogFieldSyntaxResponse instantiates a new JsonLogFieldSyntaxResponse object
 This constructor will assign default values to properties that have it defined,
@@ -121,11 +121,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *JsonLogFieldSyntaxResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIncludedSensitiveField
 

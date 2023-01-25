@@ -15499,6 +15499,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumproxy-server-instanceSchemaUrn:
       type: string
       enum:
@@ -15608,6 +15609,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enummetrics-engine-server-instanceSchemaUrn:
       type: string
       enum:
@@ -15717,6 +15719,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumauthorize-server-instanceSchemaUrn:
       type: string
       enum:
@@ -15836,6 +15839,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumdirectory-server-instanceSchemaUrn:
       type: string
       enum:
@@ -15945,6 +15949,7 @@ components:
         - serverInstanceName
         - clusterName
         - serverVersion
+        - id
     Enumsync-server-instanceSchemaUrn:
       type: string
       enum:
@@ -18207,6 +18212,7 @@ components:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
         required:
         - schemas
+        - id
     Enumjson-log-field-syntaxSchemaUrn:
       type: string
       enum:
@@ -18245,6 +18251,7 @@ components:
             $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
         required:
         - schemas
+        - id
     Enumattribute-based-log-field-syntaxSchemaUrn:
       type: string
       enum:
@@ -18285,6 +18292,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumcancel-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18436,6 +18444,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-connection-id-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18465,6 +18474,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enummulti-update-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18494,6 +18504,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumnotification-subscription-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18528,6 +18539,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumpassword-modify-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18647,6 +18659,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumbatched-transactions-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18676,6 +18689,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-changelog-batch-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18705,6 +18719,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-supported-otp-delivery-mechanisms-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18812,6 +18827,7 @@ components:
         - schemas
         - defaultPasswordGenerator
         - enabled
+        - id
     Enumgenerate-password-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18841,6 +18857,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumwho-am-i-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18870,6 +18887,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumstart-tls-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18961,6 +18979,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumpassword-policy-state-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -18990,6 +19009,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumget-password-quality-requirements-extended-operation-handlerSchemaUrn:
       type: string
       enum:
@@ -20640,6 +20660,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumoutput-alert-handlerSchemaUrn:
       type: string
       enum:
@@ -27300,6 +27321,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumconsole-json-error-log-publisherSchemaUrn:
       type: string
       enum:
@@ -31010,6 +31032,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumconsole-json-access-log-publisherSchemaUrn:
       type: string
       enum:
@@ -33840,6 +33863,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumgeneral-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -33869,6 +33893,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enummemory-usage-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -33898,6 +33923,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumstack-trace-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -33956,6 +33982,7 @@ components:
         - schemas
         - alertFrequency
         - enabled
+        - id
     Enumdisk-space-usage-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -33985,6 +34012,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsystem-info-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -34014,6 +34042,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumactive-operations-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -34043,6 +34072,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumssl-context-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -34072,6 +34102,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumclient-connection-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -34101,6 +34132,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumversion-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -34147,6 +34179,7 @@ components:
         - schemas
         - enabled
         - systemUtilizationMonitorLogDirectory
+        - id
     Enumhost-system-monitor-providerSchemaUrn:
       type: string
       enum:
@@ -34232,6 +34265,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumstatic-group-implementationSchemaUrn:
       type: string
       enum:
@@ -34261,6 +34295,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumvirtual-static-group-implementationSchemaUrn:
       type: string
       enum:
@@ -34290,6 +34325,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumdynamic-group-implementationSchemaUrn:
       type: string
       enum:
@@ -34541,6 +34577,7 @@ components:
         - baseDN
         - writabilityMode
         - enabled
+        - id
     Enumconfig-file-handler-backendSchemaUrn:
       type: string
       enum:
@@ -34618,6 +34655,7 @@ components:
         - writabilityMode
         - showAllAttributes
         - enabled
+        - id
     Enumschema-backendSchemaUrn:
       type: string
       enum:
@@ -34681,6 +34719,7 @@ components:
         - writabilityMode
         - backupDirectory
         - enabled
+        - id
     Enumbackup-backendSchemaUrn:
       type: string
       enum:
@@ -34762,6 +34801,7 @@ components:
         - writabilityMode
         - taskBackingFile
         - enabled
+        - id
     Enumtask-backendSchemaUrn:
       type: string
       enum:
@@ -34840,6 +34880,7 @@ components:
         - alertRetentionTime
         - writabilityMode
         - enabled
+        - id
     Enumalert-backendSchemaUrn:
       type: string
       enum:
@@ -34897,6 +34938,7 @@ components:
         - baseDN
         - backendID
         - enabled
+        - id
     Enumencryption-settings-backendSchemaUrn:
       type: string
       enum:
@@ -34979,6 +35021,7 @@ components:
         - writabilityMode
         - trustStoreFile
         - enabled
+        - id
     Enumtrust-store-backendSchemaUrn:
       type: string
       enum:
@@ -35053,6 +35096,7 @@ components:
         - alarmRetentionTime
         - writabilityMode
         - enabled
+        - id
     Enumalarm-backendSchemaUrn:
       type: string
       enum:
@@ -35237,6 +35281,7 @@ components:
         - changelogMaximumAge
         - backendID
         - enabled
+        - id
     Enumchangelog-backendSchemaUrn:
       type: string
       enum:
@@ -35290,6 +35335,7 @@ components:
         - backendID
         - baseDN
         - enabled
+        - id
     Enummonitor-backendSchemaUrn:
       type: string
       enum:
@@ -35616,6 +35662,7 @@ components:
         - retentionPolicy
         - enabled
         - writabilityMode
+        - id
     Enummetrics-backendSchemaUrn:
       type: string
       enum:
@@ -36009,6 +36056,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumattribute-type-description-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36042,6 +36090,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumdirectory-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36075,6 +36124,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumtelephone-number-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36120,6 +36170,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumdistinguished-name-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36165,6 +36216,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumgeneralized-time-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36210,6 +36262,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enuminteger-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36255,6 +36308,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumuuid-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36284,6 +36338,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumjson-object-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36329,6 +36384,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumuser-password-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36374,6 +36430,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumboolean-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36403,6 +36460,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumhex-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36448,6 +36506,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumbit-string-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36481,6 +36540,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumldap-url-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36526,6 +36586,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumname-and-optional-uid-attribute-syntaxSchemaUrn:
       type: string
       enum:
@@ -36911,6 +36972,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumdelegated-admin-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -37340,6 +37402,7 @@ components:
         - schemas
         - baseContextPath
         - templateDirectory
+        - id
     Enumvelocity-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -37396,6 +37459,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumconsent-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -37438,6 +37502,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumconfig-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -37510,6 +37575,7 @@ components:
         - debugLevel
         - debugType
         - includeStackTrace
+        - id
     Enumscim2-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -37596,6 +37662,7 @@ components:
                 Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are "Correlation-Id", "X-Amzn-Trace-Id", and "X-Request-Id".
         required:
         - schemas
+        - id
     Enumdirectory-rest-api-http-servlet-extensionSchemaUrn:
       type: string
       enum:
@@ -38198,6 +38265,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumordering-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -38223,6 +38291,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumapproximate-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -38248,6 +38317,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumequality-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -38273,6 +38343,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsubstring-matching-ruleSchemaUrn:
       type: string
       enum:
@@ -38464,6 +38535,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumentry-checksum-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -38538,6 +38610,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enummember-of-server-group-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -38809,6 +38882,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumnum-subordinates-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -39209,6 +39283,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumcurrent-time-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -39282,6 +39357,7 @@ components:
         - sequenceNumberAttribute
         - enabled
         - attributeType
+        - id
     Enumshort-unique-id-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -39446,6 +39522,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumhas-subordinates-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -39748,6 +39825,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enuminstance-name-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -39777,6 +39855,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumreplication-state-detail-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -40023,6 +40102,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumsubschema-subentry-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -42807,6 +42887,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumunboundid-totp-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -42873,6 +42954,7 @@ components:
         - yubikeyValidationServerBaseURL
         - identityMapper
         - enabled
+        - id
     Enumunboundid-yubikey-otp-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -42914,6 +42996,7 @@ components:
         - certificateValidationPolicy
         - certificateMapper
         - enabled
+        - id
     Enumexternal-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -42956,6 +43039,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumdigest-md5-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -42990,6 +43074,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumplain-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -43079,6 +43164,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumunboundid-external-auth-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -43108,6 +43194,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumanonymous-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -43142,6 +43229,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumcram-md5-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -43259,6 +43347,7 @@ components:
         - schemas
         - certificateMapper
         - enabled
+        - id
     Enumunboundid-certificate-plus-password-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -43335,6 +43424,7 @@ components:
         - schemas
         - identityMapper
         - enabled
+        - id
     Enumgssapi-sasl-mechanism-handlerSchemaUrn:
       type: string
       enum:
@@ -44032,6 +44122,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsalted-sha256-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44116,6 +44207,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumbase64-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44149,6 +44241,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsalted-md5-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44178,6 +44271,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumaes-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44509,6 +44603,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumrc4-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44542,6 +44637,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsalted-sha384-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44571,6 +44667,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumtriple-des-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44600,6 +44697,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumclear-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44727,6 +44825,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumblowfish-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44756,6 +44855,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsha1-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44948,6 +45048,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsalted-sha1-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -44981,6 +45082,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumsalted-sha512-password-storage-schemeSchemaUrn:
       type: string
       enum:
@@ -45071,6 +45173,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enummd5-password-storage-schemeSchemaUrn:
       type: string
       enum:

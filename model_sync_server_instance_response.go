@@ -20,7 +20,7 @@ type SyncServerInstanceResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumsyncServerInstanceSchemaUrn `json:"schemas"`
 	// Name of the Server Instance
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	ServerInstanceType *EnumserverInstanceServerInstanceTypeProp `json:"serverInstanceType,omitempty"`
 	// The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
 	ServerInstanceName string `json:"serverInstanceName"`
@@ -67,9 +67,10 @@ type SyncServerInstanceResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSyncServerInstanceResponse(schemas []EnumsyncServerInstanceSchemaUrn, serverInstanceName string, clusterName string, serverVersion string) *SyncServerInstanceResponse {
+func NewSyncServerInstanceResponse(schemas []EnumsyncServerInstanceSchemaUrn, id string, serverInstanceName string, clusterName string, serverVersion string) *SyncServerInstanceResponse {
 	this := SyncServerInstanceResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.ServerInstanceName = serverInstanceName
 	this.ClusterName = clusterName
 	this.ServerVersion = serverVersion
@@ -172,36 +173,28 @@ func (o *SyncServerInstanceResponse) SetSchemas(v []EnumsyncServerInstanceSchema
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *SyncServerInstanceResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *SyncServerInstanceResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *SyncServerInstanceResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetServerInstanceType returns the ServerInstanceType field value if set, zero value otherwise.
@@ -863,7 +856,7 @@ func (o SyncServerInstanceResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.ServerInstanceType) {

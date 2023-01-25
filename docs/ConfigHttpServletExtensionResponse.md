@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumconfigHttpServletExtensionSchemaUrn**](EnumconfigHttpServletExtensionSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the HTTP Servlet Extension | [optional] 
+**Id** | **string** | Name of the HTTP Servlet Extension | 
 **IdentityMapper** | Pointer to **string** | Specifies the name of the identity mapper that is to be used for associating user entries with basic authentication user names. | [optional] 
 **Description** | Pointer to **string** | A description for this HTTP Servlet Extension | [optional] 
 **CrossOriginPolicy** | Pointer to **string** | The cross-origin request policy to use for the HTTP Servlet Extension. | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewConfigHttpServletExtensionResponse
 
-`func NewConfigHttpServletExtensionResponse(schemas []EnumconfigHttpServletExtensionSchemaUrn, ) *ConfigHttpServletExtensionResponse`
+`func NewConfigHttpServletExtensionResponse(schemas []EnumconfigHttpServletExtensionSchemaUrn, id string, ) *ConfigHttpServletExtensionResponse`
 
 NewConfigHttpServletExtensionResponse instantiates a new ConfigHttpServletExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -122,11 +122,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ConfigHttpServletExtensionResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIdentityMapper
 

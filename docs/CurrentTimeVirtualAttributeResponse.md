@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumcurrentTimeVirtualAttributeSchemaUrn**](EnumcurrentTimeVirtualAttributeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Virtual Attribute | [optional] 
+**Id** | **string** | Name of the Virtual Attribute | 
 **ConflictBehavior** | Pointer to [**EnumvirtualAttributeConflictBehaviorProp**](EnumvirtualAttributeConflictBehaviorProp.md) |  | [optional] 
 **AttributeType** | **string** | Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute. | 
 **ReturnUtcTime** | Pointer to **bool** | Indicates whether to return current time in UTC. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewCurrentTimeVirtualAttributeResponse
 
-`func NewCurrentTimeVirtualAttributeResponse(schemas []EnumcurrentTimeVirtualAttributeSchemaUrn, attributeType string, enabled bool, ) *CurrentTimeVirtualAttributeResponse`
+`func NewCurrentTimeVirtualAttributeResponse(schemas []EnumcurrentTimeVirtualAttributeSchemaUrn, id string, attributeType string, enabled bool, ) *CurrentTimeVirtualAttributeResponse`
 
 NewCurrentTimeVirtualAttributeResponse instantiates a new CurrentTimeVirtualAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -131,11 +131,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *CurrentTimeVirtualAttributeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetConflictBehavior
 

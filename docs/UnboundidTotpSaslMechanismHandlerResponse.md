@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumunboundidTotpSaslMechanismHandlerSchemaUrn**](EnumunboundidTotpSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **IdentityMapper** | **string** | The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \&quot;u:\&quot;-style identities. | 
 **SharedSecretAttributeType** | Pointer to **string** | The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing. | [optional] 
 **TimeIntervalDuration** | Pointer to **string** | The duration of the time interval used for TOTP processing. | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewUnboundidTotpSaslMechanismHandlerResponse
 
-`func NewUnboundidTotpSaslMechanismHandlerResponse(schemas []EnumunboundidTotpSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *UnboundidTotpSaslMechanismHandlerResponse`
+`func NewUnboundidTotpSaslMechanismHandlerResponse(schemas []EnumunboundidTotpSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool, ) *UnboundidTotpSaslMechanismHandlerResponse`
 
 NewUnboundidTotpSaslMechanismHandlerResponse instantiates a new UnboundidTotpSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -125,11 +125,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *UnboundidTotpSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIdentityMapper
 

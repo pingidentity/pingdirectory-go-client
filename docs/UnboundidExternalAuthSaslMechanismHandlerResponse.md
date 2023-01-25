@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn**](EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **IdentityMapper** | **string** | The identity mapper that should be used to identify the user targeted by the authentication ID contained in the bind request. This will only be used for \&quot;u:\&quot;-style authentication ID values. | 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewUnboundidExternalAuthSaslMechanismHandlerResponse
 
-`func NewUnboundidExternalAuthSaslMechanismHandlerResponse(schemas []EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *UnboundidExternalAuthSaslMechanismHandlerResponse`
+`func NewUnboundidExternalAuthSaslMechanismHandlerResponse(schemas []EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool, ) *UnboundidExternalAuthSaslMechanismHandlerResponse`
 
 NewUnboundidExternalAuthSaslMechanismHandlerResponse instantiates a new UnboundidExternalAuthSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIdentityMapper
 

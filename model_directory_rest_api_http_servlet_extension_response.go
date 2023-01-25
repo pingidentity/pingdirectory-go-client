@@ -20,7 +20,7 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumdirectoryRestApiHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Name of the HTTP Servlet Extension
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
 	BasicAuthEnabled *bool `json:"basicAuthEnabled,omitempty"`
 	// Specifies the Identity Mapper that is to be used for associating user entries with basic authentication usernames.
@@ -54,9 +54,10 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDirectoryRestApiHttpServletExtensionResponse(schemas []EnumdirectoryRestApiHttpServletExtensionSchemaUrn) *DirectoryRestApiHttpServletExtensionResponse {
+func NewDirectoryRestApiHttpServletExtensionResponse(schemas []EnumdirectoryRestApiHttpServletExtensionSchemaUrn, id string) *DirectoryRestApiHttpServletExtensionResponse {
 	this := DirectoryRestApiHttpServletExtensionResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	return &this
 }
 
@@ -156,36 +157,28 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) SetSchemas(v []Enumdirect
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *DirectoryRestApiHttpServletExtensionResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *DirectoryRestApiHttpServletExtensionResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetBasicAuthEnabled returns the BasicAuthEnabled field value if set, zero value otherwise.
@@ -647,7 +640,7 @@ func (o DirectoryRestApiHttpServletExtensionResponse) MarshalJSON() ([]byte, err
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.BasicAuthEnabled) {

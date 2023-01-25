@@ -20,7 +20,7 @@ type VelocityHttpServletExtensionResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumvelocityHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Name of the HTTP Servlet Extension
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// The context path to use to access all template-based and static content. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
 	// The path below the base context path by which static, non-template content such as images, CSS, and Javascript files are accessible.
@@ -65,9 +65,10 @@ type VelocityHttpServletExtensionResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVelocityHttpServletExtensionResponse(schemas []EnumvelocityHttpServletExtensionSchemaUrn, baseContextPath string, templateDirectory []string) *VelocityHttpServletExtensionResponse {
+func NewVelocityHttpServletExtensionResponse(schemas []EnumvelocityHttpServletExtensionSchemaUrn, id string, baseContextPath string, templateDirectory []string) *VelocityHttpServletExtensionResponse {
 	this := VelocityHttpServletExtensionResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.BaseContextPath = baseContextPath
 	this.TemplateDirectory = templateDirectory
 	return &this
@@ -169,36 +170,28 @@ func (o *VelocityHttpServletExtensionResponse) SetSchemas(v []EnumvelocityHttpSe
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *VelocityHttpServletExtensionResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *VelocityHttpServletExtensionResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *VelocityHttpServletExtensionResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetBaseContextPath returns the BaseContextPath field value
@@ -804,7 +797,7 @@ func (o VelocityHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

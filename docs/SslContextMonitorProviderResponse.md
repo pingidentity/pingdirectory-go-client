@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumsslContextMonitorProviderSchemaUrn**](EnumsslContextMonitorProviderSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Monitor Provider | [optional] 
+**Id** | **string** | Name of the Monitor Provider | 
 **Description** | Pointer to **string** | A description for this Monitor Provider | [optional] 
 **Enabled** | **bool** | Indicates whether the Monitor Provider is enabled for use. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewSslContextMonitorProviderResponse
 
-`func NewSslContextMonitorProviderResponse(schemas []EnumsslContextMonitorProviderSchemaUrn, enabled bool, ) *SslContextMonitorProviderResponse`
+`func NewSslContextMonitorProviderResponse(schemas []EnumsslContextMonitorProviderSchemaUrn, id string, enabled bool, ) *SslContextMonitorProviderResponse`
 
 NewSslContextMonitorProviderResponse instantiates a new SslContextMonitorProviderResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *SslContextMonitorProviderResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumshortUniqueIdVirtualAttributeSchemaUrn**](EnumshortUniqueIdVirtualAttributeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Virtual Attribute | [optional] 
+**Id** | **string** | Name of the Virtual Attribute | 
 **SequenceNumberAttribute** | **string** | Specifies the name or OID of the attribute which contains the sequence number from which unique identifiers are generated. The attribute should have Integer syntax or a String syntax permitting integer values. If this property is modified then the filter property should be updated accordingly so that only entries containing the sequence number attribute are eligible to have a value generated for this virtual attribute. | 
 **Description** | Pointer to **string** | A description for this Virtual Attribute | [optional] 
 **Enabled** | **bool** | Indicates whether the Virtual Attribute is enabled for use. | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewShortUniqueIdVirtualAttributeResponse
 
-`func NewShortUniqueIdVirtualAttributeResponse(schemas []EnumshortUniqueIdVirtualAttributeSchemaUrn, sequenceNumberAttribute string, enabled bool, attributeType string, ) *ShortUniqueIdVirtualAttributeResponse`
+`func NewShortUniqueIdVirtualAttributeResponse(schemas []EnumshortUniqueIdVirtualAttributeSchemaUrn, id string, sequenceNumberAttribute string, enabled bool, attributeType string, ) *ShortUniqueIdVirtualAttributeResponse`
 
 NewShortUniqueIdVirtualAttributeResponse instantiates a new ShortUniqueIdVirtualAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -128,11 +128,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ShortUniqueIdVirtualAttributeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetSequenceNumberAttribute
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumstaticGroupImplementationSchemaUrn**](EnumstaticGroupImplementationSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Group Implementation | [optional] 
+**Id** | **string** | Name of the Group Implementation | 
 **Description** | Pointer to **string** | A description for this Group Implementation | [optional] 
 **Enabled** | **bool** | Indicates whether the Group Implementation is enabled. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewStaticGroupImplementationResponse
 
-`func NewStaticGroupImplementationResponse(schemas []EnumstaticGroupImplementationSchemaUrn, enabled bool, ) *StaticGroupImplementationResponse`
+`func NewStaticGroupImplementationResponse(schemas []EnumstaticGroupImplementationSchemaUrn, id string, enabled bool, ) *StaticGroupImplementationResponse`
 
 NewStaticGroupImplementationResponse instantiates a new StaticGroupImplementationResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *StaticGroupImplementationResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

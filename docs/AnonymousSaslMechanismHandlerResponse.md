@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumanonymousSaslMechanismHandlerSchemaUrn**](EnumanonymousSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAnonymousSaslMechanismHandlerResponse
 
-`func NewAnonymousSaslMechanismHandlerResponse(schemas []EnumanonymousSaslMechanismHandlerSchemaUrn, enabled bool, ) *AnonymousSaslMechanismHandlerResponse`
+`func NewAnonymousSaslMechanismHandlerResponse(schemas []EnumanonymousSaslMechanismHandlerSchemaUrn, id string, enabled bool, ) *AnonymousSaslMechanismHandlerResponse`
 
 NewAnonymousSaslMechanismHandlerResponse instantiates a new AnonymousSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *AnonymousSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetDescription
 

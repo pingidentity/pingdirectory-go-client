@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumreplicationStateDetailVirtualAttributeSchemaUrn**](EnumreplicationStateDetailVirtualAttributeSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Virtual Attribute | [optional] 
+**Id** | **string** | Name of the Virtual Attribute | 
 **Enabled** | **bool** | Indicates whether the Virtual Attribute is enabled for use. | 
 **RequireExplicitRequestByName** | Pointer to **bool** | Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type. | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewReplicationStateDetailVirtualAttributeResponse
 
-`func NewReplicationStateDetailVirtualAttributeResponse(schemas []EnumreplicationStateDetailVirtualAttributeSchemaUrn, enabled bool, ) *ReplicationStateDetailVirtualAttributeResponse`
+`func NewReplicationStateDetailVirtualAttributeResponse(schemas []EnumreplicationStateDetailVirtualAttributeSchemaUrn, id string, enabled bool, ) *ReplicationStateDetailVirtualAttributeResponse`
 
 NewReplicationStateDetailVirtualAttributeResponse instantiates a new ReplicationStateDetailVirtualAttributeResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +119,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ReplicationStateDetailVirtualAttributeResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

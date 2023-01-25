@@ -394,6 +394,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumentry-checksum-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -468,6 +469,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enummember-of-server-group-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -739,6 +741,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumnum-subordinates-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1139,6 +1142,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumcurrent-time-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1212,6 +1216,7 @@ components:
         - sequenceNumberAttribute
         - enabled
         - attributeType
+        - id
     Enumshort-unique-id-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1376,6 +1381,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumhas-subordinates-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1678,6 +1684,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enuminstance-name-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1707,6 +1714,7 @@ components:
         required:
         - schemas
         - enabled
+        - id
     Enumreplication-state-detail-virtual-attributeSchemaUrn:
       type: string
       enum:
@@ -1953,6 +1961,7 @@ components:
         - schemas
         - attributeType
         - enabled
+        - id
     Enumsubschema-subentry-virtual-attributeSchemaUrn:
       type: string
       enum:

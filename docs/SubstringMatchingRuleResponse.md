@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumsubstringMatchingRuleSchemaUrn**](EnumsubstringMatchingRuleSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Matching Rule | [optional] 
+**Id** | **string** | Name of the Matching Rule | 
 **Enabled** | **bool** | Indicates whether the Matching Rule is enabled for use. | 
 
 ## Methods
 
 ### NewSubstringMatchingRuleResponse
 
-`func NewSubstringMatchingRuleResponse(schemas []EnumsubstringMatchingRuleSchemaUrn, enabled bool, ) *SubstringMatchingRuleResponse`
+`func NewSubstringMatchingRuleResponse(schemas []EnumsubstringMatchingRuleSchemaUrn, id string, enabled bool, ) *SubstringMatchingRuleResponse`
 
 NewSubstringMatchingRuleResponse instantiates a new SubstringMatchingRuleResponse object
 This constructor will assign default values to properties that have it defined,
@@ -118,11 +118,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *SubstringMatchingRuleResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetEnabled
 

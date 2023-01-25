@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumchangelogBackendSchemaUrn**](EnumchangelogBackendSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Backend | [optional] 
+**Id** | **string** | Name of the Backend | 
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **DbDirectory** | Pointer to **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | [optional] 
 **DbDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup of the backend. | [optional] 
@@ -47,7 +47,7 @@ Name | Type | Description | Notes
 
 ### NewChangelogBackendResponse
 
-`func NewChangelogBackendResponse(schemas []EnumchangelogBackendSchemaUrn, baseDN []string, changelogMaximumAge string, backendID string, enabled bool, ) *ChangelogBackendResponse`
+`func NewChangelogBackendResponse(schemas []EnumchangelogBackendSchemaUrn, id string, baseDN []string, changelogMaximumAge string, backendID string, enabled bool, ) *ChangelogBackendResponse`
 
 NewChangelogBackendResponse instantiates a new ChangelogBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -151,11 +151,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ChangelogBackendResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBaseDN
 

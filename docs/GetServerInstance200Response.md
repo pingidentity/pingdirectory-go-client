@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumsyncServerInstanceSchemaUrn**](EnumsyncServerInstanceSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Server Instance | [optional] 
+**Id** | **string** | Name of the Server Instance | 
 **ServerInstanceType** | Pointer to [**EnumserverInstanceServerInstanceTypeProp**](EnumserverInstanceServerInstanceTypeProp.md) |  | [optional] 
 **ServerInstanceName** | **string** | The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed. | 
 **ClusterName** | **string** | The name of the cluster to which this Server Instance belongs. Server instances within the same cluster will share the same cluster-wide configuration. | 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewGetServerInstance200Response
 
-`func NewGetServerInstance200Response(schemas []EnumsyncServerInstanceSchemaUrn, serverInstanceName string, clusterName string, serverVersion string, ) *GetServerInstance200Response`
+`func NewGetServerInstance200Response(schemas []EnumsyncServerInstanceSchemaUrn, id string, serverInstanceName string, clusterName string, serverVersion string, ) *GetServerInstance200Response`
 
 NewGetServerInstance200Response instantiates a new GetServerInstance200Response object
 This constructor will assign default values to properties that have it defined,
@@ -140,11 +140,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *GetServerInstance200Response) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetServerInstanceType
 

@@ -20,7 +20,7 @@ type EncryptionSettingsBackendResponse struct {
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	Schemas []EnumencryptionSettingsBackendSchemaUrn `json:"schemas"`
 	// Name of the Backend
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Specifies the base DN(s) for the data that the backend handles.
 	BaseDN []string `json:"baseDN"`
 	// Specifies a name to identify the associated backend.
@@ -43,9 +43,10 @@ type EncryptionSettingsBackendResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, baseDN []string, backendID string, enabled bool) *EncryptionSettingsBackendResponse {
+func NewEncryptionSettingsBackendResponse(schemas []EnumencryptionSettingsBackendSchemaUrn, id string, baseDN []string, backendID string, enabled bool) *EncryptionSettingsBackendResponse {
 	this := EncryptionSettingsBackendResponse{}
 	this.Schemas = schemas
+	this.Id = id
 	this.BaseDN = baseDN
 	this.BackendID = backendID
 	this.Enabled = enabled
@@ -148,36 +149,28 @@ func (o *EncryptionSettingsBackendResponse) SetSchemas(v []EnumencryptionSetting
 	o.Schemas = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
+// GetId returns the Id field value
 func (o *EncryptionSettingsBackendResponse) GetId() string {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Id
+
+	return o.Id
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetIdOk() (*string, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil {
     return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *EncryptionSettingsBackendResponse) HasId() bool {
-	if o != nil && !isNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
+// SetId sets field value
 func (o *EncryptionSettingsBackendResponse) SetId(v string) {
-	o.Id = &v
+	o.Id = v
 }
 
 // GetBaseDN returns the BaseDN field value
@@ -423,7 +416,7 @@ func (o EncryptionSettingsBackendResponse) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["schemas"] = o.Schemas
 	}
-	if !isNil(o.Id) {
+	if true {
 		toSerialize["id"] = o.Id
 	}
 	if true {

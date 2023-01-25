@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumconfigFileHandlerBackendSchemaUrn**](EnumconfigFileHandlerBackendSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the Backend | [optional] 
+**Id** | **string** | Name of the Backend | 
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewConfigFileHandlerBackendResponse
 
-`func NewConfigFileHandlerBackendResponse(schemas []EnumconfigFileHandlerBackendSchemaUrn, backendID string, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, ) *ConfigFileHandlerBackendResponse`
+`func NewConfigFileHandlerBackendResponse(schemas []EnumconfigFileHandlerBackendSchemaUrn, id string, backendID string, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, ) *ConfigFileHandlerBackendResponse`
 
 NewConfigFileHandlerBackendResponse instantiates a new ConfigFileHandlerBackendResponse object
 This constructor will assign default values to properties that have it defined,
@@ -130,11 +130,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *ConfigFileHandlerBackendResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetBackendID
 

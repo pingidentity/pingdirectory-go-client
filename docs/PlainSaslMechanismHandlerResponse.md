@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Schemas** | [**[]EnumplainSaslMechanismHandlerSchemaUrn**](EnumplainSaslMechanismHandlerSchemaUrn.md) |  | 
-**Id** | Pointer to **string** | Name of the SASL Mechanism Handler | [optional] 
+**Id** | **string** | Name of the SASL Mechanism Handler | 
 **IdentityMapper** | **string** | Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the authentication or authorization ID included in the SASL bind request to the corresponding user in the directory. | 
 **Description** | Pointer to **string** | A description for this SASL Mechanism Handler | [optional] 
 **Enabled** | **bool** | Indicates whether the SASL mechanism handler is enabled for use. | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewPlainSaslMechanismHandlerResponse
 
-`func NewPlainSaslMechanismHandlerResponse(schemas []EnumplainSaslMechanismHandlerSchemaUrn, identityMapper string, enabled bool, ) *PlainSaslMechanismHandlerResponse`
+`func NewPlainSaslMechanismHandlerResponse(schemas []EnumplainSaslMechanismHandlerSchemaUrn, id string, identityMapper string, enabled bool, ) *PlainSaslMechanismHandlerResponse`
 
 NewPlainSaslMechanismHandlerResponse instantiates a new PlainSaslMechanismHandlerResponse object
 This constructor will assign default values to properties that have it defined,
@@ -120,11 +120,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *PlainSaslMechanismHandlerResponse) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetIdentityMapper
 
