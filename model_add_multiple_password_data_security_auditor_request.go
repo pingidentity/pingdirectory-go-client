@@ -17,8 +17,8 @@ import (
 // AddMultiplePasswordDataSecurityAuditorRequest struct for AddMultiplePasswordDataSecurityAuditorRequest
 type AddMultiplePasswordDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
-	AuditorName string `json:"auditorName"`
-	Schemas []EnummultiplePasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
+	AuditorName string                                             `json:"auditorName"`
+	Schemas     []EnummultiplePasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// Indicates whether the Data Security Auditor is enabled for use.
@@ -26,7 +26,7 @@ type AddMultiplePasswordDataSecurityAuditorRequest struct {
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -65,7 +65,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetAuditorName() string 
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuditorName, true
 }
@@ -89,7 +89,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetSchemas() []Enummulti
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetSchemasOk() ([]EnummultiplePasswordDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -137,7 +137,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -160,7 +160,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetIncludeAttribute() []
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -192,7 +192,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetAuditBackend() []stri
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -224,7 +224,7 @@ func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetAuditSeverity() Enumd
 // and a boolean to check if the value has been set.
 func (o *AddMultiplePasswordDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -304,5 +304,3 @@ func (v *NullableAddMultiplePasswordDataSecurityAuditorRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

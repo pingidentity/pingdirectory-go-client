@@ -16,15 +16,15 @@ import (
 
 // SmtpExternalServerResponse struct for SmtpExternalServerResponse
 type SmtpExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
+	Id      string                            `json:"id"`
 	Schemas []EnumsmtpExternalServerSchemaUrn `json:"schemas"`
 	// The host name of the smtp server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number where the smtp server listens for requests.
-	ServerPort *int32 `json:"serverPort,omitempty"`
+	ServerPort   *int32                              `json:"serverPort,omitempty"`
 	SmtpSecurity *EnumexternalServerSmtpSecurityProp `json:"smtpSecurity,omitempty"`
 	// The name of the login account to use when connecting to the smtp server. Both username and password must be supplied if this attribute is set.
 	UserName *string `json:"userName,omitempty"`
@@ -73,7 +73,7 @@ func (o *SmtpExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *SmtpExternalServerResponse) GetUrnpingidentityschemasconfigurationmessa
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *SmtpExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -162,7 +162,7 @@ func (o *SmtpExternalServerResponse) GetSchemas() []EnumsmtpExternalServerSchema
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetSchemasOk() ([]EnumsmtpExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -186,7 +186,7 @@ func (o *SmtpExternalServerResponse) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -209,7 +209,7 @@ func (o *SmtpExternalServerResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerPort, true
 }
@@ -241,7 +241,7 @@ func (o *SmtpExternalServerResponse) GetSmtpSecurity() EnumexternalServerSmtpSec
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetSmtpSecurityOk() (*EnumexternalServerSmtpSecurityProp, bool) {
 	if o == nil || isNil(o.SmtpSecurity) {
-    return nil, false
+		return nil, false
 	}
 	return o.SmtpSecurity, true
 }
@@ -273,7 +273,7 @@ func (o *SmtpExternalServerResponse) GetUserName() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetUserNameOk() (*string, bool) {
 	if o == nil || isNil(o.UserName) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserName, true
 }
@@ -305,7 +305,7 @@ func (o *SmtpExternalServerResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -337,7 +337,7 @@ func (o *SmtpExternalServerResponse) GetPassphraseProvider() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -369,7 +369,7 @@ func (o *SmtpExternalServerResponse) GetSmtpTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetSmtpTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.SmtpTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.SmtpTimeout, true
 }
@@ -401,7 +401,7 @@ func (o *SmtpExternalServerResponse) GetSmtpConnectionProperties() []string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetSmtpConnectionPropertiesOk() ([]string, bool) {
 	if o == nil || isNil(o.SmtpConnectionProperties) {
-    return nil, false
+		return nil, false
 	}
 	return o.SmtpConnectionProperties, true
 }
@@ -433,7 +433,7 @@ func (o *SmtpExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -531,5 +531,3 @@ func (v *NullableSmtpExternalServerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

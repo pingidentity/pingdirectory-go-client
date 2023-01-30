@@ -17,8 +17,8 @@ import (
 
 // AddSearchReferenceCriteria200Response - struct for AddSearchReferenceCriteria200Response
 type AddSearchReferenceCriteria200Response struct {
-	AggregateSearchReferenceCriteriaResponse *AggregateSearchReferenceCriteriaResponse
-	SimpleSearchReferenceCriteriaResponse *SimpleSearchReferenceCriteriaResponse
+	AggregateSearchReferenceCriteriaResponse  *AggregateSearchReferenceCriteriaResponse
+	SimpleSearchReferenceCriteriaResponse     *SimpleSearchReferenceCriteriaResponse
 	ThirdPartySearchReferenceCriteriaResponse *ThirdPartySearchReferenceCriteriaResponse
 }
 
@@ -42,7 +42,6 @@ func ThirdPartySearchReferenceCriteriaResponseAsAddSearchReferenceCriteria200Res
 		ThirdPartySearchReferenceCriteriaResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSearchReferenceCriteria200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddSearchReferenceCriteria200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddSearchReferenceCriteria200Response) GetActualInstance() (interface{}) {
+func (obj *AddSearchReferenceCriteria200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddSearchReferenceCriteria200Response) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

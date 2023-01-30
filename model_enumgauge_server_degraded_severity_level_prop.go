@@ -21,10 +21,10 @@ type EnumgaugeServerDegradedSeverityLevelProp string
 // List of Enumgauge-serverDegradedSeverityLevelProp
 const (
 	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_CRITICAL EnumgaugeServerDegradedSeverityLevelProp = "critical"
-	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_MAJOR EnumgaugeServerDegradedSeverityLevelProp = "major"
-	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_MINOR EnumgaugeServerDegradedSeverityLevelProp = "minor"
-	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_WARNING EnumgaugeServerDegradedSeverityLevelProp = "warning"
-	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_NONE EnumgaugeServerDegradedSeverityLevelProp = "none"
+	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_MAJOR    EnumgaugeServerDegradedSeverityLevelProp = "major"
+	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_MINOR    EnumgaugeServerDegradedSeverityLevelProp = "minor"
+	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_WARNING  EnumgaugeServerDegradedSeverityLevelProp = "warning"
+	ENUMGAUGESERVERDEGRADEDSEVERITYLEVELPROP_NONE     EnumgaugeServerDegradedSeverityLevelProp = "none"
 )
 
 // All allowed values of EnumgaugeServerDegradedSeverityLevelProp enum
@@ -114,4 +114,3 @@ func (v *NullableEnumgaugeServerDegradedSeverityLevelProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

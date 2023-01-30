@@ -20,9 +20,9 @@ type EnumvirtualAttributeJoinScopeProp string
 
 // List of Enumvirtual-attribute-joinScopeProp
 const (
-	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_BASE_OBJECT EnumvirtualAttributeJoinScopeProp = "base-object"
-	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_SINGLE_LEVEL EnumvirtualAttributeJoinScopeProp = "single-level"
-	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_WHOLE_SUBTREE EnumvirtualAttributeJoinScopeProp = "whole-subtree"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_BASE_OBJECT         EnumvirtualAttributeJoinScopeProp = "base-object"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_SINGLE_LEVEL        EnumvirtualAttributeJoinScopeProp = "single-level"
+	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_WHOLE_SUBTREE       EnumvirtualAttributeJoinScopeProp = "whole-subtree"
 	ENUMVIRTUALATTRIBUTEJOINSCOPEPROP_SUBORDINATE_SUBTREE EnumvirtualAttributeJoinScopeProp = "subordinate-subtree"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumvirtualAttributeJoinScopeProp) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

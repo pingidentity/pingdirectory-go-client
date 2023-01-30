@@ -20,7 +20,7 @@ type EnumldapSdkDebugLoggerTimestampPrecisionProp string
 
 // List of Enumldap-sdk-debug-logger-timestampPrecisionProp
 const (
-	ENUMLDAPSDKDEBUGLOGGERTIMESTAMPPRECISIONPROP_SECONDS EnumldapSdkDebugLoggerTimestampPrecisionProp = "seconds"
+	ENUMLDAPSDKDEBUGLOGGERTIMESTAMPPRECISIONPROP_SECONDS      EnumldapSdkDebugLoggerTimestampPrecisionProp = "seconds"
 	ENUMLDAPSDKDEBUGLOGGERTIMESTAMPPRECISIONPROP_MILLISECONDS EnumldapSdkDebugLoggerTimestampPrecisionProp = "milliseconds"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumldapSdkDebugLoggerTimestampPrecisionProp) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

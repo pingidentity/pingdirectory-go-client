@@ -21,10 +21,10 @@ type EnumgaugeServerUnavailableSeverityLevelProp string
 // List of Enumgauge-serverUnavailableSeverityLevelProp
 const (
 	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_CRITICAL EnumgaugeServerUnavailableSeverityLevelProp = "critical"
-	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_MAJOR EnumgaugeServerUnavailableSeverityLevelProp = "major"
-	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_MINOR EnumgaugeServerUnavailableSeverityLevelProp = "minor"
-	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_WARNING EnumgaugeServerUnavailableSeverityLevelProp = "warning"
-	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_NONE EnumgaugeServerUnavailableSeverityLevelProp = "none"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_MAJOR    EnumgaugeServerUnavailableSeverityLevelProp = "major"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_MINOR    EnumgaugeServerUnavailableSeverityLevelProp = "minor"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_WARNING  EnumgaugeServerUnavailableSeverityLevelProp = "warning"
+	ENUMGAUGESERVERUNAVAILABLESEVERITYLEVELPROP_NONE     EnumgaugeServerUnavailableSeverityLevelProp = "none"
 )
 
 // All allowed values of EnumgaugeServerUnavailableSeverityLevelProp enum
@@ -114,4 +114,3 @@ func (v *NullableEnumgaugeServerUnavailableSeverityLevelProp) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

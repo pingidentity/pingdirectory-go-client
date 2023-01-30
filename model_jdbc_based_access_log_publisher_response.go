@@ -16,10 +16,10 @@ import (
 
 // JdbcBasedAccessLogPublisherResponse struct for JdbcBasedAccessLogPublisherResponse
 type JdbcBasedAccessLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumjdbcBasedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The JDBC-based Database Server to use for a connection.
 	Server string `json:"server"`
@@ -66,7 +66,7 @@ type JdbcBasedAccessLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -106,7 +106,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -138,7 +138,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -171,7 +171,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -195,7 +195,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetSchemas() []EnumjdbcBasedAccess
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetSchemasOk() ([]EnumjdbcBasedAccessLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -219,7 +219,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetServer() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Server, true
 }
@@ -243,7 +243,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogFieldMapping() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogFieldMappingOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFieldMapping, true
 }
@@ -267,7 +267,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogTableName() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogTableNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogTableName, true
 }
@@ -290,7 +290,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -322,7 +322,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogConnects() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogConnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogConnects, true
 }
@@ -354,7 +354,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogDisconnects() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogDisconnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDisconnects, true
 }
@@ -386,7 +386,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogSecurityNegotiation() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -418,7 +418,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogClientCertificates() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogClientCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogClientCertificates, true
 }
@@ -450,7 +450,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogRequests, true
 }
@@ -482,7 +482,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogResults() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogResults, true
 }
@@ -514,7 +514,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogSearchEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchEntries, true
 }
@@ -546,7 +546,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogSearchReferences() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchReferences) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchReferences, true
 }
@@ -578,7 +578,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLogIntermediateResponses() bool
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -610,7 +610,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetSuppressInternalOperations() bo
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -642,7 +642,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetSuppressReplicationOperations()
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -674,7 +674,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetCorrelateRequestsAndResults() b
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorrelateRequestsAndResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
 }
@@ -706,7 +706,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -738,7 +738,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -770,7 +770,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -802,7 +802,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetSearchEntryCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryCriteria, true
 }
@@ -834,7 +834,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetSearchReferenceCriteria() strin
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
 }
@@ -866,7 +866,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -899,7 +899,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -922,7 +922,7 @@ func (o *JdbcBasedAccessLogPublisherResponse) GetLoggingErrorBehavior() EnumlogP
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1065,5 +1065,3 @@ func (v *NullableJdbcBasedAccessLogPublisherResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

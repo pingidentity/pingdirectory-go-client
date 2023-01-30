@@ -17,18 +17,18 @@ import (
 // AddSimpleResultCriteriaRequest struct for AddSimpleResultCriteriaRequest
 type AddSimpleResultCriteriaRequest struct {
 	// Name of the new Result Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumsimpleResultCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                              `json:"criteriaName"`
+	Schemas      []EnumsimpleResultCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for operations included in this Simple Result Criteria.
-	RequestCriteria *string `json:"requestCriteria,omitempty"`
-	ResultCodeCriteria *EnumresultCriteriaResultCodeCriteriaProp `json:"resultCodeCriteria,omitempty"`
-	ResultCodeValue []EnumresultCriteriaResultCodeValueProp `json:"resultCodeValue,omitempty"`
+	RequestCriteria        *string                                       `json:"requestCriteria,omitempty"`
+	ResultCodeCriteria     *EnumresultCriteriaResultCodeCriteriaProp     `json:"resultCodeCriteria,omitempty"`
+	ResultCodeValue        []EnumresultCriteriaResultCodeValueProp       `json:"resultCodeValue,omitempty"`
 	ProcessingTimeCriteria *EnumresultCriteriaProcessingTimeCriteriaProp `json:"processingTimeCriteria,omitempty"`
 	// Specifies the boundary value to use for the operation processing time when determining whether to include that operation in this Simple Result Criteria. This will be ignored if the \"processing-time-criteria\" property has a value of \"any\".
-	ProcessingTimeValue *string `json:"processingTimeValue,omitempty"`
-	QueueTimeCriteria *EnumresultCriteriaQueueTimeCriteriaProp `json:"queueTimeCriteria,omitempty"`
+	ProcessingTimeValue *string                                  `json:"processingTimeValue,omitempty"`
+	QueueTimeCriteria   *EnumresultCriteriaQueueTimeCriteriaProp `json:"queueTimeCriteria,omitempty"`
 	// Specifies the boundary value to use for the time an operation spent on the work queue when determining whether to include that operation in this Simple Result Criteria. This will be ignored if the \"queue-time-criteria\" property has a value of \"any\".
-	QueueTimeValue *string `json:"queueTimeValue,omitempty"`
+	QueueTimeValue   *string                                 `json:"queueTimeValue,omitempty"`
 	ReferralReturned *EnumresultCriteriaReferralReturnedProp `json:"referralReturned,omitempty"`
 	// Specifies the OID of a control that must be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must contain all of those controls.
 	AllIncludedResponseControl []string `json:"allIncludedResponseControl,omitempty"`
@@ -37,20 +37,20 @@ type AddSimpleResultCriteriaRequest struct {
 	// Specifies the OID of a control that should not be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must not contain at least one of those controls (that is, the response may contain zero or more of those controls, but not all of them).
 	NotAllIncludedResponseControl []string `json:"notAllIncludedResponseControl,omitempty"`
 	// Specifies the OID of a control that must not be present in the response to the client for operations included in this Simple Result Criteria. If any control OIDs are provided, then the response must not contain any of those controls.
-	NoneIncludedResponseControl []string `json:"noneIncludedResponseControl,omitempty"`
-	UsedAlternateAuthzid *EnumresultCriteriaUsedAlternateAuthzidProp `json:"usedAlternateAuthzid,omitempty"`
-	UsedAnyPrivilege *EnumresultCriteriaUsedAnyPrivilegeProp `json:"usedAnyPrivilege,omitempty"`
-	UsedPrivilege []EnumresultCriteriaUsedPrivilegeProp `json:"usedPrivilege,omitempty"`
-	MissingAnyPrivilege *EnumresultCriteriaMissingAnyPrivilegeProp `json:"missingAnyPrivilege,omitempty"`
-	MissingPrivilege []EnumresultCriteriaMissingPrivilegeProp `json:"missingPrivilege,omitempty"`
-	RetiredPasswordUsedForBind *EnumresultCriteriaRetiredPasswordUsedForBindProp `json:"retiredPasswordUsedForBind,omitempty"`
+	NoneIncludedResponseControl []string                                           `json:"noneIncludedResponseControl,omitempty"`
+	UsedAlternateAuthzid        *EnumresultCriteriaUsedAlternateAuthzidProp        `json:"usedAlternateAuthzid,omitempty"`
+	UsedAnyPrivilege            *EnumresultCriteriaUsedAnyPrivilegeProp            `json:"usedAnyPrivilege,omitempty"`
+	UsedPrivilege               []EnumresultCriteriaUsedPrivilegeProp              `json:"usedPrivilege,omitempty"`
+	MissingAnyPrivilege         *EnumresultCriteriaMissingAnyPrivilegeProp         `json:"missingAnyPrivilege,omitempty"`
+	MissingPrivilege            []EnumresultCriteriaMissingPrivilegeProp           `json:"missingPrivilege,omitempty"`
+	RetiredPasswordUsedForBind  *EnumresultCriteriaRetiredPasswordUsedForBindProp  `json:"retiredPasswordUsedForBind,omitempty"`
 	SearchEntryReturnedCriteria *EnumresultCriteriaSearchEntryReturnedCriteriaProp `json:"searchEntryReturnedCriteria,omitempty"`
 	// Specifies the target number of entries returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \"search-entry-criteria\" property has a value of \"any\".
-	SearchEntryReturnedCount *int32 `json:"searchEntryReturnedCount,omitempty"`
+	SearchEntryReturnedCount        *int32                                                 `json:"searchEntryReturnedCount,omitempty"`
 	SearchReferenceReturnedCriteria *EnumresultCriteriaSearchReferenceReturnedCriteriaProp `json:"searchReferenceReturnedCriteria,omitempty"`
 	// Specifies the target number of references returned for use when determining whether a search operation should be included in this Simple Result Criteria. This will be ignored for all operations other than search, and it will be ignored for search operations if the \"search-reference-criteria\" property has a value of \"any\".
-	SearchReferenceReturnedCount *int32 `json:"searchReferenceReturnedCount,omitempty"`
-	SearchIndexedCriteria *EnumresultCriteriaSearchIndexedCriteriaProp `json:"searchIndexedCriteria,omitempty"`
+	SearchReferenceReturnedCount *int32                                       `json:"searchReferenceReturnedCount,omitempty"`
+	SearchIndexedCriteria        *EnumresultCriteriaSearchIndexedCriteriaProp `json:"searchIndexedCriteria,omitempty"`
 	// Specifies a base DN below which authorization user entries may exist for operations included in this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
 	IncludedAuthzUserBaseDN []string `json:"includedAuthzUserBaseDN,omitempty"`
 	// Specifies a base DN below which authorization user entries may exist for operations excluded from this Simple Result Criteria. The authorization user could be the currently authenticated user on the connection (the user that performed the Bind operation), or different if proxied authorization was used to request that the operation be performed under the authorization of another user (as is the case for operations that come through a Directory Proxy Server). This property will be ignored for operations where no authentication or authorization has been performed.
@@ -100,7 +100,7 @@ func (o *AddSimpleResultCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -124,7 +124,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSchemas() []EnumsimpleResultCriteria
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetSchemasOk() ([]EnumsimpleResultCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -147,7 +147,7 @@ func (o *AddSimpleResultCriteriaRequest) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -179,7 +179,7 @@ func (o *AddSimpleResultCriteriaRequest) GetResultCodeCriteria() EnumresultCrite
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetResultCodeCriteriaOk() (*EnumresultCriteriaResultCodeCriteriaProp, bool) {
 	if o == nil || isNil(o.ResultCodeCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCodeCriteria, true
 }
@@ -211,7 +211,7 @@ func (o *AddSimpleResultCriteriaRequest) GetResultCodeValue() []EnumresultCriter
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetResultCodeValueOk() ([]EnumresultCriteriaResultCodeValueProp, bool) {
 	if o == nil || isNil(o.ResultCodeValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCodeValue, true
 }
@@ -243,7 +243,7 @@ func (o *AddSimpleResultCriteriaRequest) GetProcessingTimeCriteria() EnumresultC
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetProcessingTimeCriteriaOk() (*EnumresultCriteriaProcessingTimeCriteriaProp, bool) {
 	if o == nil || isNil(o.ProcessingTimeCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ProcessingTimeCriteria, true
 }
@@ -275,7 +275,7 @@ func (o *AddSimpleResultCriteriaRequest) GetProcessingTimeValue() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetProcessingTimeValueOk() (*string, bool) {
 	if o == nil || isNil(o.ProcessingTimeValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.ProcessingTimeValue, true
 }
@@ -307,7 +307,7 @@ func (o *AddSimpleResultCriteriaRequest) GetQueueTimeCriteria() EnumresultCriter
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetQueueTimeCriteriaOk() (*EnumresultCriteriaQueueTimeCriteriaProp, bool) {
 	if o == nil || isNil(o.QueueTimeCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueTimeCriteria, true
 }
@@ -339,7 +339,7 @@ func (o *AddSimpleResultCriteriaRequest) GetQueueTimeValue() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetQueueTimeValueOk() (*string, bool) {
 	if o == nil || isNil(o.QueueTimeValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueTimeValue, true
 }
@@ -371,7 +371,7 @@ func (o *AddSimpleResultCriteriaRequest) GetReferralReturned() EnumresultCriteri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetReferralReturnedOk() (*EnumresultCriteriaReferralReturnedProp, bool) {
 	if o == nil || isNil(o.ReferralReturned) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReferralReturned, true
 }
@@ -403,7 +403,7 @@ func (o *AddSimpleResultCriteriaRequest) GetAllIncludedResponseControl() []strin
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetAllIncludedResponseControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedResponseControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedResponseControl, true
 }
@@ -435,7 +435,7 @@ func (o *AddSimpleResultCriteriaRequest) GetAnyIncludedResponseControl() []strin
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetAnyIncludedResponseControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedResponseControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedResponseControl, true
 }
@@ -467,7 +467,7 @@ func (o *AddSimpleResultCriteriaRequest) GetNotAllIncludedResponseControl() []st
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetNotAllIncludedResponseControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedResponseControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedResponseControl, true
 }
@@ -499,7 +499,7 @@ func (o *AddSimpleResultCriteriaRequest) GetNoneIncludedResponseControl() []stri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetNoneIncludedResponseControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedResponseControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedResponseControl, true
 }
@@ -531,7 +531,7 @@ func (o *AddSimpleResultCriteriaRequest) GetUsedAlternateAuthzid() EnumresultCri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetUsedAlternateAuthzidOk() (*EnumresultCriteriaUsedAlternateAuthzidProp, bool) {
 	if o == nil || isNil(o.UsedAlternateAuthzid) {
-    return nil, false
+		return nil, false
 	}
 	return o.UsedAlternateAuthzid, true
 }
@@ -563,7 +563,7 @@ func (o *AddSimpleResultCriteriaRequest) GetUsedAnyPrivilege() EnumresultCriteri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetUsedAnyPrivilegeOk() (*EnumresultCriteriaUsedAnyPrivilegeProp, bool) {
 	if o == nil || isNil(o.UsedAnyPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.UsedAnyPrivilege, true
 }
@@ -595,7 +595,7 @@ func (o *AddSimpleResultCriteriaRequest) GetUsedPrivilege() []EnumresultCriteria
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetUsedPrivilegeOk() ([]EnumresultCriteriaUsedPrivilegeProp, bool) {
 	if o == nil || isNil(o.UsedPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.UsedPrivilege, true
 }
@@ -627,7 +627,7 @@ func (o *AddSimpleResultCriteriaRequest) GetMissingAnyPrivilege() EnumresultCrit
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetMissingAnyPrivilegeOk() (*EnumresultCriteriaMissingAnyPrivilegeProp, bool) {
 	if o == nil || isNil(o.MissingAnyPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.MissingAnyPrivilege, true
 }
@@ -659,7 +659,7 @@ func (o *AddSimpleResultCriteriaRequest) GetMissingPrivilege() []EnumresultCrite
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetMissingPrivilegeOk() ([]EnumresultCriteriaMissingPrivilegeProp, bool) {
 	if o == nil || isNil(o.MissingPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.MissingPrivilege, true
 }
@@ -691,7 +691,7 @@ func (o *AddSimpleResultCriteriaRequest) GetRetiredPasswordUsedForBind() Enumres
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetRetiredPasswordUsedForBindOk() (*EnumresultCriteriaRetiredPasswordUsedForBindProp, bool) {
 	if o == nil || isNil(o.RetiredPasswordUsedForBind) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetiredPasswordUsedForBind, true
 }
@@ -723,7 +723,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCriteria() Enumre
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCriteriaOk() (*EnumresultCriteriaSearchEntryReturnedCriteriaProp, bool) {
 	if o == nil || isNil(o.SearchEntryReturnedCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryReturnedCriteria, true
 }
@@ -755,7 +755,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetSearchEntryReturnedCountOk() (*int32, bool) {
 	if o == nil || isNil(o.SearchEntryReturnedCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryReturnedCount, true
 }
@@ -787,7 +787,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCriteria() En
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCriteriaOk() (*EnumresultCriteriaSearchReferenceReturnedCriteriaProp, bool) {
 	if o == nil || isNil(o.SearchReferenceReturnedCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceReturnedCriteria, true
 }
@@ -819,7 +819,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCount() int32
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetSearchReferenceReturnedCountOk() (*int32, bool) {
 	if o == nil || isNil(o.SearchReferenceReturnedCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceReturnedCount, true
 }
@@ -851,7 +851,7 @@ func (o *AddSimpleResultCriteriaRequest) GetSearchIndexedCriteria() EnumresultCr
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetSearchIndexedCriteriaOk() (*EnumresultCriteriaSearchIndexedCriteriaProp, bool) {
 	if o == nil || isNil(o.SearchIndexedCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchIndexedCriteria, true
 }
@@ -883,7 +883,7 @@ func (o *AddSimpleResultCriteriaRequest) GetIncludedAuthzUserBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetIncludedAuthzUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedAuthzUserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedAuthzUserBaseDN, true
 }
@@ -915,7 +915,7 @@ func (o *AddSimpleResultCriteriaRequest) GetExcludedAuthzUserBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetExcludedAuthzUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedAuthzUserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedAuthzUserBaseDN, true
 }
@@ -947,7 +947,7 @@ func (o *AddSimpleResultCriteriaRequest) GetAllIncludedAuthzUserGroupDN() []stri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetAllIncludedAuthzUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedAuthzUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedAuthzUserGroupDN, true
 }
@@ -979,7 +979,7 @@ func (o *AddSimpleResultCriteriaRequest) GetAnyIncludedAuthzUserGroupDN() []stri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetAnyIncludedAuthzUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedAuthzUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedAuthzUserGroupDN, true
 }
@@ -1011,7 +1011,7 @@ func (o *AddSimpleResultCriteriaRequest) GetNotAllIncludedAuthzUserGroupDN() []s
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetNotAllIncludedAuthzUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedAuthzUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedAuthzUserGroupDN, true
 }
@@ -1043,7 +1043,7 @@ func (o *AddSimpleResultCriteriaRequest) GetNoneIncludedAuthzUserGroupDN() []str
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetNoneIncludedAuthzUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedAuthzUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedAuthzUserGroupDN, true
 }
@@ -1075,7 +1075,7 @@ func (o *AddSimpleResultCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleResultCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1230,5 +1230,3 @@ func (v *NullableAddSimpleResultCriteriaRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

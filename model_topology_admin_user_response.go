@@ -16,10 +16,10 @@ import (
 
 // TopologyAdminUserResponse struct for TopologyAdminUserResponse
 type TopologyAdminUserResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Topology Admin User
-	Id string `json:"id"`
+	Id      string                           `json:"id"`
 	Schemas []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
 }
 
@@ -54,7 +54,7 @@ func (o *TopologyAdminUserResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TopologyAdminUserResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -86,7 +86,7 @@ func (o *TopologyAdminUserResponse) GetUrnpingidentityschemasconfigurationmessag
 // and a boolean to check if the value has been set.
 func (o *TopologyAdminUserResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -119,7 +119,7 @@ func (o *TopologyAdminUserResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TopologyAdminUserResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -142,7 +142,7 @@ func (o *TopologyAdminUserResponse) GetSchemas() []EnumtopologyAdminUserSchemaUr
 // and a boolean to check if the value has been set.
 func (o *TopologyAdminUserResponse) GetSchemasOk() ([]EnumtopologyAdminUserSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -213,5 +213,3 @@ func (v *NullableTopologyAdminUserResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

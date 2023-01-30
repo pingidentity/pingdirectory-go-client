@@ -17,8 +17,8 @@ import (
 // AddFileBasedTrustManagerProviderRequest struct for AddFileBasedTrustManagerProviderRequest
 type AddFileBasedTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumfileBasedTrustManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                       `json:"providerName"`
+	Schemas      []EnumfileBasedTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root.
 	TrustStoreFile string `json:"trustStoreFile"`
 	// Specifies the format for the data in the trust store file.
@@ -70,7 +70,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -94,7 +94,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetSchemas() []EnumfileBasedTr
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetSchemasOk() ([]EnumfileBasedTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TrustStoreFile, true
 }
@@ -141,7 +141,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -173,7 +173,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -205,7 +205,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinFile() string 
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinFile, true
 }
@@ -237,7 +237,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinPassphraseProv
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
 }
@@ -270,7 +270,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -293,7 +293,7 @@ func (o *AddFileBasedTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() 
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
 }
@@ -379,5 +379,3 @@ func (v *NullableAddFileBasedTrustManagerProviderRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

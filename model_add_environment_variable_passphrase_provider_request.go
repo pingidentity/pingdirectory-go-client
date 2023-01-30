@@ -17,8 +17,8 @@ import (
 // AddEnvironmentVariablePassphraseProviderRequest struct for AddEnvironmentVariablePassphraseProviderRequest
 type AddEnvironmentVariablePassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                               `json:"providerName"`
+	Schemas      []EnumenvironmentVariablePassphraseProviderSchemaUrn `json:"schemas"`
 	// The name of the environment variable that is expected to hold the passphrase.
 	EnvironmentVariable string `json:"environmentVariable"`
 	// A description for this Passphrase Provider
@@ -62,7 +62,7 @@ func (o *AddEnvironmentVariablePassphraseProviderRequest) GetProviderName() stri
 // and a boolean to check if the value has been set.
 func (o *AddEnvironmentVariablePassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -86,7 +86,7 @@ func (o *AddEnvironmentVariablePassphraseProviderRequest) GetSchemas() []Enumenv
 // and a boolean to check if the value has been set.
 func (o *AddEnvironmentVariablePassphraseProviderRequest) GetSchemasOk() ([]EnumenvironmentVariablePassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddEnvironmentVariablePassphraseProviderRequest) GetEnvironmentVariable
 // and a boolean to check if the value has been set.
 func (o *AddEnvironmentVariablePassphraseProviderRequest) GetEnvironmentVariableOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EnvironmentVariable, true
 }
@@ -133,7 +133,7 @@ func (o *AddEnvironmentVariablePassphraseProviderRequest) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *AddEnvironmentVariablePassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -166,7 +166,7 @@ func (o *AddEnvironmentVariablePassphraseProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddEnvironmentVariablePassphraseProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -231,5 +231,3 @@ func (v *NullableAddEnvironmentVariablePassphraseProviderRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

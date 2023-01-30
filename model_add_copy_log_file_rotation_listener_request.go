@@ -17,8 +17,8 @@ import (
 // AddCopyLogFileRotationListenerRequest struct for AddCopyLogFileRotationListenerRequest
 type AddCopyLogFileRotationListenerRequest struct {
 	// Name of the new Log File Rotation Listener
-	ListenerName string `json:"listenerName"`
-	Schemas []EnumcopyLogFileRotationListenerSchemaUrn `json:"schemas"`
+	ListenerName string                                     `json:"listenerName"`
+	Schemas      []EnumcopyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied.
 	CopyToDirectory string `json:"copyToDirectory"`
 	// Indicates whether the file should be gzip-compressed as it is copied into the destination directory.
@@ -64,7 +64,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetListenerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ListenerName, true
 }
@@ -88,7 +88,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetSchemas() []EnumcopyLogFileRo
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetSchemasOk() ([]EnumcopyLogFileRotationListenerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetCopyToDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetCopyToDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CopyToDirectory, true
 }
@@ -135,7 +135,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetCompressOnCopy() bool {
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetCompressOnCopyOk() (*bool, bool) {
 	if o == nil || isNil(o.CompressOnCopy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompressOnCopy, true
 }
@@ -167,7 +167,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddCopyLogFileRotationListenerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddCopyLogFileRotationListenerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddCopyLogFileRotationListenerRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

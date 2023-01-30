@@ -20,9 +20,9 @@ type EnumalertHandlerOutputFormatProp string
 
 // List of Enumalert-handler-outputFormatProp
 const (
-	ENUMALERTHANDLEROUTPUTFORMATPROP_LEGACY_TEXT EnumalertHandlerOutputFormatProp = "legacy-text"
+	ENUMALERTHANDLEROUTPUTFORMATPROP_LEGACY_TEXT      EnumalertHandlerOutputFormatProp = "legacy-text"
 	ENUMALERTHANDLEROUTPUTFORMATPROP_SINGLE_LINE_JSON EnumalertHandlerOutputFormatProp = "single-line-json"
-	ENUMALERTHANDLEROUTPUTFORMATPROP_MULTI_LINE_JSON EnumalertHandlerOutputFormatProp = "multi-line-json"
+	ENUMALERTHANDLEROUTPUTFORMATPROP_MULTI_LINE_JSON  EnumalertHandlerOutputFormatProp = "multi-line-json"
 )
 
 // All allowed values of EnumalertHandlerOutputFormatProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumalertHandlerOutputFormatProp) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

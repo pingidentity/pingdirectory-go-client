@@ -17,8 +17,8 @@ import (
 // AddAdminAlertAccountStatusNotificationHandlerRequest struct for AddAdminAlertAccountStatusNotificationHandlerRequest
 type AddAdminAlertAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	HandlerName                   string                                                                  `json:"handlerName"`
+	Schemas                       []EnumadminAlertAccountStatusNotificationHandlerSchemaUrn               `json:"schemas"`
 	AccountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp `json:"accountStatusNotificationType"`
 	// A description for this Account Status Notification Handler
 	Description *string `json:"description,omitempty"`
@@ -67,7 +67,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetHandlerName() 
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -91,7 +91,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetSchemas() []En
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetSchemasOk() ([]EnumadminAlertAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAccountStatusN
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAccountStatusNotificationTypeOk() ([]EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountStatusNotificationType, true
 }
@@ -138,7 +138,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetDescription() 
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -171,7 +171,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetEnabled() bool
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -194,7 +194,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAsynchronous()
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -226,7 +226,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAccountCreatio
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -258,7 +258,7 @@ func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAccountUpdateN
 // and a boolean to check if the value has been set.
 func (o *AddAdminAlertAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -341,5 +341,3 @@ func (v *NullableAddAdminAlertAccountStatusNotificationHandlerRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

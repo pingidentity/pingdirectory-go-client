@@ -106,4 +106,3 @@ func (v *NullableEnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

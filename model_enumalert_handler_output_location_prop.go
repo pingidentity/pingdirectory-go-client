@@ -22,7 +22,7 @@ type EnumalertHandlerOutputLocationProp string
 const (
 	ENUMALERTHANDLEROUTPUTLOCATIONPROP_SERVER_OUT_FILE EnumalertHandlerOutputLocationProp = "server-out-file"
 	ENUMALERTHANDLEROUTPUTLOCATIONPROP_STANDARD_OUTPUT EnumalertHandlerOutputLocationProp = "standard-output"
-	ENUMALERTHANDLEROUTPUTLOCATIONPROP_STANDARD_ERROR EnumalertHandlerOutputLocationProp = "standard-error"
+	ENUMALERTHANDLEROUTPUTLOCATIONPROP_STANDARD_ERROR  EnumalertHandlerOutputLocationProp = "standard-error"
 )
 
 // All allowed values of EnumalertHandlerOutputLocationProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumalertHandlerOutputLocationProp) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

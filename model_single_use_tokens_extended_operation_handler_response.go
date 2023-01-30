@@ -16,10 +16,10 @@ import (
 
 // SingleUseTokensExtendedOperationHandlerResponse struct for SingleUseTokensExtendedOperationHandlerResponse
 type SingleUseTokensExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Extended Operation Handler
-	Id string `json:"id"`
+	Id      string                                                 `json:"id"`
 	Schemas []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the single-use token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
@@ -68,7 +68,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetUrnpingidentitysche
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetSchemas() []Enumsin
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumsingleUseTokensExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetPasswordGenerator()
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetPasswordGeneratorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordGenerator, true
 }
@@ -205,7 +205,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetDefaultOTPDeliveryM
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetDefaultOTPDeliveryMechanismOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultOTPDeliveryMechanism, true
 }
@@ -228,7 +228,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetDefaultSingleUseTok
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetDefaultSingleUseTokenValidityDurationOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultSingleUseTokenValidityDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSingleUseTokenValidityDuration, true
 }
@@ -260,7 +260,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -293,7 +293,7 @@ func (o *SingleUseTokensExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SingleUseTokensExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -370,5 +370,3 @@ func (v *NullableSingleUseTokensExtendedOperationHandlerResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

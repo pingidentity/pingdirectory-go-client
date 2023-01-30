@@ -17,8 +17,8 @@ import (
 // AddSmtpAccountStatusNotificationHandlerRequest struct for AddSmtpAccountStatusNotificationHandlerRequest
 type AddSmtpAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumsmtpAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                              `json:"handlerName"`
+	Schemas     []EnumsmtpAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// Specifies which attribute in the user's entries may be used to obtain the email address when notifying the end user.
 	EmailAddressAttributeType []string `json:"emailAddressAttributeType,omitempty"`
 	// The name of the JSON field whose value is the email address to which the message should be sent. The email address must be contained in a top-level field whose value is a single string.
@@ -85,7 +85,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerName() string
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -109,7 +109,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSchemas() []Enumsmtp
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSchemasOk() ([]EnumsmtpAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -132,7 +132,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttribut
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressAttributeTypeOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailAddressAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailAddressAttributeType, true
 }
@@ -164,7 +164,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONFiel
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONFieldOk() (*string, bool) {
 	if o == nil || isNil(o.EmailAddressJSONField) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailAddressJSONField, true
 }
@@ -196,7 +196,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObje
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEmailAddressJSONObjectFilterOk() (*string, bool) {
 	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailAddressJSONObjectFilter, true
 }
@@ -228,7 +228,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddress() [
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetRecipientAddressOk() ([]string, bool) {
 	if o == nil || isNil(o.RecipientAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.RecipientAddress, true
 }
@@ -261,7 +261,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEn
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSendMessageWithoutEndUserAddressOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SendMessageWithoutEndUserAddress, true
 }
@@ -285,7 +285,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSenderAddress() stri
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetSenderAddressOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SenderAddress, true
 }
@@ -309,7 +309,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageSubject() []s
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageSubjectOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MessageSubject, true
 }
@@ -333,7 +333,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageTemplateFile(
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetMessageTemplateFileOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MessageTemplateFile, true
 }
@@ -356,7 +356,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescription() string
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -389,7 +389,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -412,7 +412,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronous() bool 
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -444,7 +444,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotif
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -476,7 +476,7 @@ func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotific
 // and a boolean to check if the value has been set.
 func (o *AddSmtpAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -580,5 +580,3 @@ func (v *NullableAddSmtpAccountStatusNotificationHandlerRequest) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddDefaultUncachedAttributeCriteriaRequest struct for AddDefaultUncachedAttributeCriteriaRequest
 type AddDefaultUncachedAttributeCriteriaRequest struct {
 	// Name of the new Uncached Attribute Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumdefaultUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                          `json:"criteriaName"`
+	Schemas      []EnumdefaultUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// A description for this Uncached Attribute Criteria
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Uncached Attribute Criteria is enabled for use in the server.
@@ -59,7 +59,7 @@ func (o *AddDefaultUncachedAttributeCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -83,7 +83,7 @@ func (o *AddDefaultUncachedAttributeCriteriaRequest) GetSchemas() []EnumdefaultU
 // and a boolean to check if the value has been set.
 func (o *AddDefaultUncachedAttributeCriteriaRequest) GetSchemasOk() ([]EnumdefaultUncachedAttributeCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -106,7 +106,7 @@ func (o *AddDefaultUncachedAttributeCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultUncachedAttributeCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -139,7 +139,7 @@ func (o *AddDefaultUncachedAttributeCriteriaRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultUncachedAttributeCriteriaRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddDefaultUncachedAttributeCriteriaRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

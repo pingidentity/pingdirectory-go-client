@@ -17,8 +17,8 @@ import (
 // AddLockedAccountDataSecurityAuditorRequest struct for AddLockedAccountDataSecurityAuditorRequest
 type AddLockedAccountDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
-	AuditorName string `json:"auditorName"`
-	Schemas []EnumlockedAccountDataSecurityAuditorSchemaUrn `json:"schemas"`
+	AuditorName string                                          `json:"auditorName"`
+	Schemas     []EnumlockedAccountDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
@@ -28,7 +28,7 @@ type AddLockedAccountDataSecurityAuditorRequest struct {
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuditorName, true
 }
@@ -91,7 +91,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetSchemas() []EnumlockedAc
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetSchemasOk() ([]EnumlockedAccountDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -138,7 +138,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetIncludeAttribute() []str
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -170,7 +170,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetMaximumIdleTime() string
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetMaximumIdleTimeOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumIdleTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumIdleTime, true
 }
@@ -203,7 +203,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -226,7 +226,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditBackend() []string 
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -258,7 +258,7 @@ func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditSeverity() Enumdata
 // and a boolean to check if the value has been set.
 func (o *AddLockedAccountDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -341,5 +341,3 @@ func (v *NullableAddLockedAccountDataSecurityAuditorRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

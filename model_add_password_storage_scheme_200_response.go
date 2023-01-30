@@ -17,18 +17,18 @@ import (
 
 // AddPasswordStorageScheme200Response - struct for AddPasswordStorageScheme200Response
 type AddPasswordStorageScheme200Response struct {
-	Aes256PasswordStorageSchemeResponse *Aes256PasswordStorageSchemeResponse
+	Aes256PasswordStorageSchemeResponse               *Aes256PasswordStorageSchemeResponse
 	AmazonSecretsManagerPasswordStorageSchemeResponse *AmazonSecretsManagerPasswordStorageSchemeResponse
-	Argon2PasswordStorageSchemeResponse *Argon2PasswordStorageSchemeResponse
-	AzureKeyVaultPasswordStorageSchemeResponse *AzureKeyVaultPasswordStorageSchemeResponse
-	BcryptPasswordStorageSchemeResponse *BcryptPasswordStorageSchemeResponse
-	ConjurPasswordStorageSchemeResponse *ConjurPasswordStorageSchemeResponse
-	CryptPasswordStorageSchemeResponse *CryptPasswordStorageSchemeResponse
-	Pbkdf2PasswordStorageSchemeResponse *Pbkdf2PasswordStorageSchemeResponse
-	ScryptPasswordStorageSchemeResponse *ScryptPasswordStorageSchemeResponse
-	ThirdPartyEnhancedPasswordStorageSchemeResponse *ThirdPartyEnhancedPasswordStorageSchemeResponse
-	ThirdPartyPasswordStorageSchemeResponse *ThirdPartyPasswordStorageSchemeResponse
-	VaultPasswordStorageSchemeResponse *VaultPasswordStorageSchemeResponse
+	Argon2PasswordStorageSchemeResponse               *Argon2PasswordStorageSchemeResponse
+	AzureKeyVaultPasswordStorageSchemeResponse        *AzureKeyVaultPasswordStorageSchemeResponse
+	BcryptPasswordStorageSchemeResponse               *BcryptPasswordStorageSchemeResponse
+	ConjurPasswordStorageSchemeResponse               *ConjurPasswordStorageSchemeResponse
+	CryptPasswordStorageSchemeResponse                *CryptPasswordStorageSchemeResponse
+	Pbkdf2PasswordStorageSchemeResponse               *Pbkdf2PasswordStorageSchemeResponse
+	ScryptPasswordStorageSchemeResponse               *ScryptPasswordStorageSchemeResponse
+	ThirdPartyEnhancedPasswordStorageSchemeResponse   *ThirdPartyEnhancedPasswordStorageSchemeResponse
+	ThirdPartyPasswordStorageSchemeResponse           *ThirdPartyPasswordStorageSchemeResponse
+	VaultPasswordStorageSchemeResponse                *VaultPasswordStorageSchemeResponse
 }
 
 // Aes256PasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response is a convenience function that returns Aes256PasswordStorageSchemeResponse wrapped in AddPasswordStorageScheme200Response
@@ -114,7 +114,6 @@ func VaultPasswordStorageSchemeResponseAsAddPasswordStorageScheme200Response(v *
 		VaultPasswordStorageSchemeResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPasswordStorageScheme200Response) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src AddPasswordStorageScheme200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPasswordStorageScheme200Response) GetActualInstance() (interface{}) {
+func (obj *AddPasswordStorageScheme200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableAddPasswordStorageScheme200Response) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

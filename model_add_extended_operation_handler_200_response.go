@@ -17,14 +17,14 @@ import (
 
 // AddExtendedOperationHandler200Response - struct for AddExtendedOperationHandler200Response
 type AddExtendedOperationHandler200Response struct {
-	CollectSupportDataExtendedOperationHandlerResponse *CollectSupportDataExtendedOperationHandlerResponse
-	DeliverOtpExtendedOperationHandlerResponse *DeliverOtpExtendedOperationHandlerResponse
+	CollectSupportDataExtendedOperationHandlerResponse        *CollectSupportDataExtendedOperationHandlerResponse
+	DeliverOtpExtendedOperationHandlerResponse                *DeliverOtpExtendedOperationHandlerResponse
 	DeliverPasswordResetTokenExtendedOperationHandlerResponse *DeliverPasswordResetTokenExtendedOperationHandlerResponse
 	ExportReversiblePasswordsExtendedOperationHandlerResponse *ExportReversiblePasswordsExtendedOperationHandlerResponse
-	ReplaceCertificateExtendedOperationHandlerResponse *ReplaceCertificateExtendedOperationHandlerResponse
-	SingleUseTokensExtendedOperationHandlerResponse *SingleUseTokensExtendedOperationHandlerResponse
-	ThirdPartyExtendedOperationHandlerResponse *ThirdPartyExtendedOperationHandlerResponse
-	ValidateTotpPasswordExtendedOperationHandlerResponse *ValidateTotpPasswordExtendedOperationHandlerResponse
+	ReplaceCertificateExtendedOperationHandlerResponse        *ReplaceCertificateExtendedOperationHandlerResponse
+	SingleUseTokensExtendedOperationHandlerResponse           *SingleUseTokensExtendedOperationHandlerResponse
+	ThirdPartyExtendedOperationHandlerResponse                *ThirdPartyExtendedOperationHandlerResponse
+	ValidateTotpPasswordExtendedOperationHandlerResponse      *ValidateTotpPasswordExtendedOperationHandlerResponse
 }
 
 // CollectSupportDataExtendedOperationHandlerResponseAsAddExtendedOperationHandler200Response is a convenience function that returns CollectSupportDataExtendedOperationHandlerResponse wrapped in AddExtendedOperationHandler200Response
@@ -82,7 +82,6 @@ func ValidateTotpPasswordExtendedOperationHandlerResponseAsAddExtendedOperationH
 		ValidateTotpPasswordExtendedOperationHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddExtendedOperationHandler200Response) UnmarshalJSON(data []byte) error {
@@ -249,7 +248,7 @@ func (src AddExtendedOperationHandler200Response) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *AddExtendedOperationHandler200Response) GetActualInstance() (interface{}) {
+func (obj *AddExtendedOperationHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -324,5 +323,3 @@ func (v *NullableAddExtendedOperationHandler200Response) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

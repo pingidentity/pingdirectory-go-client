@@ -20,9 +20,9 @@ type EnumresultCriteriaUsedAlternateAuthzidProp string
 
 // List of Enumresult-criteria-usedAlternateAuthzidProp
 const (
-	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_REQUIRED EnumresultCriteriaUsedAlternateAuthzidProp = "required"
+	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_REQUIRED   EnumresultCriteriaUsedAlternateAuthzidProp = "required"
 	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_PROHIBITED EnumresultCriteriaUsedAlternateAuthzidProp = "prohibited"
-	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_OPTIONAL EnumresultCriteriaUsedAlternateAuthzidProp = "optional"
+	ENUMRESULTCRITERIAUSEDALTERNATEAUTHZIDPROP_OPTIONAL   EnumresultCriteriaUsedAlternateAuthzidProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaUsedAlternateAuthzidProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaUsedAlternateAuthzidProp) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

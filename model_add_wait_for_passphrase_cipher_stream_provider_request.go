@@ -17,8 +17,8 @@ import (
 // AddWaitForPassphraseCipherStreamProviderRequest struct for AddWaitForPassphraseCipherStreamProviderRequest
 type AddWaitForPassphraseCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                               `json:"providerName"`
+	Schemas      []EnumwaitForPassphraseCipherStreamProviderSchemaUrn `json:"schemas"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Cipher Stream Provider is enabled for use in the Directory Server.
@@ -59,7 +59,7 @@ func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderName() stri
 // and a boolean to check if the value has been set.
 func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -83,7 +83,7 @@ func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetSchemas() []Enumwai
 // and a boolean to check if the value has been set.
 func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetSchemasOk() ([]EnumwaitForPassphraseCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -106,7 +106,7 @@ func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -139,7 +139,7 @@ func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddWaitForPassphraseCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddWaitForPassphraseCipherStreamProviderRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

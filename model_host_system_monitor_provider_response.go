@@ -16,9 +16,9 @@ import (
 
 // HostSystemMonitorProviderResponse struct for HostSystemMonitorProviderResponse
 type HostSystemMonitorProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumhostSystemMonitorProviderSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumhostSystemMonitorProviderSchemaUrn           `json:"schemas"`
 	// Name of the Monitor Provider
 	Id string `json:"id"`
 	// Indicates whether the Host System Monitor Provider is enabled for use.
@@ -67,7 +67,7 @@ func (o *HostSystemMonitorProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *HostSystemMonitorProviderResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *HostSystemMonitorProviderResponse) GetSchemas() []EnumhostSystemMonitor
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetSchemasOk() ([]EnumhostSystemMonitorProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -156,7 +156,7 @@ func (o *HostSystemMonitorProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -180,7 +180,7 @@ func (o *HostSystemMonitorProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -203,7 +203,7 @@ func (o *HostSystemMonitorProviderResponse) GetDiskDevices() []string {
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetDiskDevicesOk() ([]string, bool) {
 	if o == nil || isNil(o.DiskDevices) {
-    return nil, false
+		return nil, false
 	}
 	return o.DiskDevices, true
 }
@@ -235,7 +235,7 @@ func (o *HostSystemMonitorProviderResponse) GetNetworkDevices() []string {
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetNetworkDevicesOk() ([]string, bool) {
 	if o == nil || isNil(o.NetworkDevices) {
-    return nil, false
+		return nil, false
 	}
 	return o.NetworkDevices, true
 }
@@ -268,7 +268,7 @@ func (o *HostSystemMonitorProviderResponse) GetSystemUtilizationMonitorLogDirect
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetSystemUtilizationMonitorLogDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SystemUtilizationMonitorLogDirectory, true
 }
@@ -291,7 +291,7 @@ func (o *HostSystemMonitorProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *HostSystemMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -377,5 +377,3 @@ func (v *NullableHostSystemMonitorProviderResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

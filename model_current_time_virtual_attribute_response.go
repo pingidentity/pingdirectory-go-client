@@ -16,11 +16,11 @@ import (
 
 // CurrentTimeVirtualAttributeResponse struct for CurrentTimeVirtualAttributeResponse
 type CurrentTimeVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumcurrentTimeVirtualAttributeSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumcurrentTimeVirtualAttributeSchemaUrn         `json:"schemas"`
 	// Name of the Virtual Attribute
-	Id string `json:"id"`
+	Id               string                                    `json:"id"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be dynamically assigned by the virtual attribute.
 	AttributeType string `json:"attributeType"`
@@ -43,8 +43,8 @@ type CurrentTimeVirtualAttributeResponse struct {
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
 }
@@ -83,7 +83,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetSchemas() []EnumcurrentTimeVirt
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetSchemasOk() ([]EnumcurrentTimeVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -172,7 +172,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -195,7 +195,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetConflictBehavior() EnumvirtualA
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
 	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConflictBehavior, true
 }
@@ -228,7 +228,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -251,7 +251,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetReturnUtcTime() bool {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetReturnUtcTimeOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUtcTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUtcTime, true
 }
@@ -283,7 +283,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetIncludeMilliseconds() bool {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetIncludeMillisecondsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeMilliseconds) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeMilliseconds, true
 }
@@ -315,7 +315,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -348,7 +348,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -371,7 +371,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -403,7 +403,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetGroupDN() []string {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -435,7 +435,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -467,7 +467,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetClientConnectionPolicy() []stri
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -499,7 +499,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetRequireExplicitRequestByName() 
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -531,7 +531,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluat
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -563,7 +563,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBe
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
 }
@@ -595,7 +595,7 @@ func (o *CurrentTimeVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // and a boolean to check if the value has been set.
 func (o *CurrentTimeVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowIndexConflicts, true
 }
@@ -708,5 +708,3 @@ func (v *NullableCurrentTimeVirtualAttributeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

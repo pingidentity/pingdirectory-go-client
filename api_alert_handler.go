@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // AlertHandlerApiService AlertHandlerApi service
 type AlertHandlerApiService service
 
 type ApiAddAlertHandlerRequest struct {
-	ctx context.Context
-	ApiService *AlertHandlerApiService
+	ctx                    context.Context
+	ApiService             *AlertHandlerApiService
 	addAlertHandlerRequest *AddAlertHandlerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddAlertHandlerRequest) Execute() (*AddAlertHandler200Response, *http
 /*
 AddAlertHandler Add a new Alert Handler to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddAlertHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) AddAlertHandler(ctx context.Context) ApiAddAlertHandlerRequest {
 	return ApiAddAlertHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddAlertHandler200Response
+//
+//	@return AddAlertHandler200Response
 func (a *AlertHandlerApiService) AddAlertHandlerExecute(r ApiAddAlertHandlerRequest) (*AddAlertHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddAlertHandler200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddAlertHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.AddAlertHandler")
@@ -133,8 +133,8 @@ func (a *AlertHandlerApiService) AddAlertHandlerExecute(r ApiAddAlertHandlerRequ
 }
 
 type ApiDeleteAlertHandlerRequest struct {
-	ctx context.Context
-	ApiService *AlertHandlerApiService
+	ctx              context.Context
+	ApiService       *AlertHandlerApiService
 	alertHandlerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteAlertHandlerRequest) Execute() (*http.Response, error) {
 /*
 DeleteAlertHandler Delete a Alert Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param alertHandlerName Name of the Alert Handler to be deleted
- @return ApiDeleteAlertHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param alertHandlerName Name of the Alert Handler to be deleted
+	@return ApiDeleteAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) DeleteAlertHandler(ctx context.Context, alertHandlerName string) ApiDeleteAlertHandlerRequest {
 	return ApiDeleteAlertHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		alertHandlerName: alertHandlerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *AlertHandlerApiService) DeleteAlertHandler(ctx context.Context, alertHa
 // Execute executes the request
 func (a *AlertHandlerApiService) DeleteAlertHandlerExecute(r ApiDeleteAlertHandlerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.DeleteAlertHandler")
@@ -223,8 +223,8 @@ func (a *AlertHandlerApiService) DeleteAlertHandlerExecute(r ApiDeleteAlertHandl
 }
 
 type ApiGetAlertHandlerRequest struct {
-	ctx context.Context
-	ApiService *AlertHandlerApiService
+	ctx              context.Context
+	ApiService       *AlertHandlerApiService
 	alertHandlerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetAlertHandlerRequest) Execute() (*GetAlertHandler200Response, *http
 /*
 GetAlertHandler Returns a single Alert Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param alertHandlerName Name of the Alert Handler to be read
- @return ApiGetAlertHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param alertHandlerName Name of the Alert Handler to be read
+	@return ApiGetAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) GetAlertHandler(ctx context.Context, alertHandlerName string) ApiGetAlertHandlerRequest {
 	return ApiGetAlertHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		alertHandlerName: alertHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return GetAlertHandler200Response
+//
+//	@return GetAlertHandler200Response
 func (a *AlertHandlerApiService) GetAlertHandlerExecute(r ApiGetAlertHandlerRequest) (*GetAlertHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAlertHandler200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAlertHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.GetAlertHandler")
@@ -324,10 +325,10 @@ func (a *AlertHandlerApiService) GetAlertHandlerExecute(r ApiGetAlertHandlerRequ
 }
 
 type ApiUpdateAlertHandlerRequest struct {
-	ctx context.Context
-	ApiService *AlertHandlerApiService
+	ctx              context.Context
+	ApiService       *AlertHandlerApiService
 	alertHandlerName string
-	updateRequest *UpdateRequest
+	updateRequest    *UpdateRequest
 }
 
 // Update an existing Alert Handler
@@ -343,26 +344,27 @@ func (r ApiUpdateAlertHandlerRequest) Execute() (*GetAlertHandler200Response, *h
 /*
 UpdateAlertHandler Update an existing Alert Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param alertHandlerName Name of the Alert Handler to be updated
- @return ApiUpdateAlertHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param alertHandlerName Name of the Alert Handler to be updated
+	@return ApiUpdateAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) UpdateAlertHandler(ctx context.Context, alertHandlerName string) ApiUpdateAlertHandlerRequest {
 	return ApiUpdateAlertHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		alertHandlerName: alertHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return GetAlertHandler200Response
+//
+//	@return GetAlertHandler200Response
 func (a *AlertHandlerApiService) UpdateAlertHandlerExecute(r ApiUpdateAlertHandlerRequest) (*GetAlertHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAlertHandler200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAlertHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlertHandlerApiService.UpdateAlertHandler")

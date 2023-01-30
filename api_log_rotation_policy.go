@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // LogRotationPolicyApiService LogRotationPolicyApi service
 type LogRotationPolicyApiService service
 
 type ApiAddLogRotationPolicyRequest struct {
-	ctx context.Context
-	ApiService *LogRotationPolicyApiService
+	ctx                         context.Context
+	ApiService                  *LogRotationPolicyApiService
 	addLogRotationPolicyRequest *AddLogRotationPolicyRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddLogRotationPolicyRequest) Execute() (*AddLogRotationPolicy200Respo
 /*
 AddLogRotationPolicy Add a new Log Rotation Policy to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddLogRotationPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) AddLogRotationPolicy(ctx context.Context) ApiAddLogRotationPolicyRequest {
 	return ApiAddLogRotationPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogRotationPolicy200Response
+//
+//	@return AddLogRotationPolicy200Response
 func (a *LogRotationPolicyApiService) AddLogRotationPolicyExecute(r ApiAddLogRotationPolicyRequest) (*AddLogRotationPolicy200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogRotationPolicy200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogRotationPolicy200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRotationPolicyApiService.AddLogRotationPolicy")
@@ -133,8 +133,8 @@ func (a *LogRotationPolicyApiService) AddLogRotationPolicyExecute(r ApiAddLogRot
 }
 
 type ApiDeleteLogRotationPolicyRequest struct {
-	ctx context.Context
-	ApiService *LogRotationPolicyApiService
+	ctx                   context.Context
+	ApiService            *LogRotationPolicyApiService
 	logRotationPolicyName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteLogRotationPolicyRequest) Execute() (*http.Response, error) {
 /*
 DeleteLogRotationPolicy Delete a Log Rotation Policy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logRotationPolicyName Name of the Log Rotation Policy to be deleted
- @return ApiDeleteLogRotationPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logRotationPolicyName Name of the Log Rotation Policy to be deleted
+	@return ApiDeleteLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) DeleteLogRotationPolicy(ctx context.Context, logRotationPolicyName string) ApiDeleteLogRotationPolicyRequest {
 	return ApiDeleteLogRotationPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		logRotationPolicyName: logRotationPolicyName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *LogRotationPolicyApiService) DeleteLogRotationPolicy(ctx context.Contex
 // Execute executes the request
 func (a *LogRotationPolicyApiService) DeleteLogRotationPolicyExecute(r ApiDeleteLogRotationPolicyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRotationPolicyApiService.DeleteLogRotationPolicy")
@@ -223,8 +223,8 @@ func (a *LogRotationPolicyApiService) DeleteLogRotationPolicyExecute(r ApiDelete
 }
 
 type ApiGetLogRotationPolicyRequest struct {
-	ctx context.Context
-	ApiService *LogRotationPolicyApiService
+	ctx                   context.Context
+	ApiService            *LogRotationPolicyApiService
 	logRotationPolicyName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetLogRotationPolicyRequest) Execute() (*AddLogRotationPolicy200Respo
 /*
 GetLogRotationPolicy Returns a single Log Rotation Policy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logRotationPolicyName Name of the Log Rotation Policy to be read
- @return ApiGetLogRotationPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logRotationPolicyName Name of the Log Rotation Policy to be read
+	@return ApiGetLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) GetLogRotationPolicy(ctx context.Context, logRotationPolicyName string) ApiGetLogRotationPolicyRequest {
 	return ApiGetLogRotationPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		logRotationPolicyName: logRotationPolicyName,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogRotationPolicy200Response
+//
+//	@return AddLogRotationPolicy200Response
 func (a *LogRotationPolicyApiService) GetLogRotationPolicyExecute(r ApiGetLogRotationPolicyRequest) (*AddLogRotationPolicy200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogRotationPolicy200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogRotationPolicy200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRotationPolicyApiService.GetLogRotationPolicy")
@@ -324,10 +325,10 @@ func (a *LogRotationPolicyApiService) GetLogRotationPolicyExecute(r ApiGetLogRot
 }
 
 type ApiUpdateLogRotationPolicyRequest struct {
-	ctx context.Context
-	ApiService *LogRotationPolicyApiService
+	ctx                   context.Context
+	ApiService            *LogRotationPolicyApiService
 	logRotationPolicyName string
-	updateRequest *UpdateRequest
+	updateRequest         *UpdateRequest
 }
 
 // Update an existing Log Rotation Policy
@@ -343,26 +344,27 @@ func (r ApiUpdateLogRotationPolicyRequest) Execute() (*AddLogRotationPolicy200Re
 /*
 UpdateLogRotationPolicy Update an existing Log Rotation Policy by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logRotationPolicyName Name of the Log Rotation Policy to be updated
- @return ApiUpdateLogRotationPolicyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logRotationPolicyName Name of the Log Rotation Policy to be updated
+	@return ApiUpdateLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) UpdateLogRotationPolicy(ctx context.Context, logRotationPolicyName string) ApiUpdateLogRotationPolicyRequest {
 	return ApiUpdateLogRotationPolicyRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		logRotationPolicyName: logRotationPolicyName,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogRotationPolicy200Response
+//
+//	@return AddLogRotationPolicy200Response
 func (a *LogRotationPolicyApiService) UpdateLogRotationPolicyExecute(r ApiUpdateLogRotationPolicyRequest) (*AddLogRotationPolicy200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogRotationPolicy200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogRotationPolicy200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogRotationPolicyApiService.UpdateLogRotationPolicy")

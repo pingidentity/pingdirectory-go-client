@@ -20,8 +20,8 @@ type EnumglobalConfigurationWritabilityModeProp string
 
 // List of Enumglobal-configuration-writabilityModeProp
 const (
-	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_ENABLED EnumglobalConfigurationWritabilityModeProp = "enabled"
-	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_DISABLED EnumglobalConfigurationWritabilityModeProp = "disabled"
+	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_ENABLED       EnumglobalConfigurationWritabilityModeProp = "enabled"
+	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_DISABLED      EnumglobalConfigurationWritabilityModeProp = "disabled"
 	ENUMGLOBALCONFIGURATIONWRITABILITYMODEPROP_INTERNAL_ONLY EnumglobalConfigurationWritabilityModeProp = "internal-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumglobalConfigurationWritabilityModeProp) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,8 +17,8 @@ import (
 // AddJvmDefaultTrustManagerProviderRequest struct for AddJvmDefaultTrustManagerProviderRequest
 type AddJvmDefaultTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumjvmDefaultTrustManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                        `json:"providerName"`
+	Schemas      []EnumjvmDefaultTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
 }
@@ -57,7 +57,7 @@ func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddJvmDefaultTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -81,7 +81,7 @@ func (o *AddJvmDefaultTrustManagerProviderRequest) GetSchemas() []EnumjvmDefault
 // and a boolean to check if the value has been set.
 func (o *AddJvmDefaultTrustManagerProviderRequest) GetSchemasOk() ([]EnumjvmDefaultTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -105,7 +105,7 @@ func (o *AddJvmDefaultTrustManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddJvmDefaultTrustManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -164,5 +164,3 @@ func (v *NullableAddJvmDefaultTrustManagerProviderRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

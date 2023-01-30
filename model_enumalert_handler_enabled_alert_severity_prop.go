@@ -20,10 +20,10 @@ type EnumalertHandlerEnabledAlertSeverityProp string
 
 // List of Enumalert-handler-enabledAlertSeverityProp
 const (
-	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_INFO EnumalertHandlerEnabledAlertSeverityProp = "info"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_INFO    EnumalertHandlerEnabledAlertSeverityProp = "info"
 	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_WARNING EnumalertHandlerEnabledAlertSeverityProp = "warning"
-	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_ERROR EnumalertHandlerEnabledAlertSeverityProp = "error"
-	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_FATAL EnumalertHandlerEnabledAlertSeverityProp = "fatal"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_ERROR   EnumalertHandlerEnabledAlertSeverityProp = "error"
+	ENUMALERTHANDLERENABLEDALERTSEVERITYPROP_FATAL   EnumalertHandlerEnabledAlertSeverityProp = "fatal"
 )
 
 // All allowed values of EnumalertHandlerEnabledAlertSeverityProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumalertHandlerEnabledAlertSeverityProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

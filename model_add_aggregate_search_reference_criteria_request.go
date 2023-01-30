@@ -17,8 +17,8 @@ import (
 // AddAggregateSearchReferenceCriteriaRequest struct for AddAggregateSearchReferenceCriteriaRequest
 type AddAggregateSearchReferenceCriteriaRequest struct {
 	// Name of the new Search Reference Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumaggregateSearchReferenceCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                          `json:"criteriaName"`
+	Schemas      []EnumaggregateSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a search reference criteria object that must match the associated search result reference in order to match the aggregate search reference criteria. If one or more all-included search reference criteria objects are provided, then a search result reference must match all of them in order to match the aggregate search reference criteria.
 	AllIncludedSearchReferenceCriteria []string `json:"allIncludedSearchReferenceCriteria,omitempty"`
 	// Specifies a search reference criteria object that may match the associated search result reference in order to match the aggregate search reference criteria. If one or more any-included search reference criteria objects are provided, then a search result reference must match at least one of them in order to match the aggregate search reference criteria.
@@ -64,7 +64,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -88,7 +88,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetSchemas() []Enumaggregat
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetSchemasOk() ([]EnumaggregateSearchReferenceCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetAllIncludedSearchReferen
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetAllIncludedSearchReferenceCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedSearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedSearchReferenceCriteria, true
 }
@@ -143,7 +143,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetAnyIncludedSearchReferen
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetAnyIncludedSearchReferenceCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedSearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedSearchReferenceCriteria, true
 }
@@ -175,7 +175,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetNotAllIncludedSearchRefe
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetNotAllIncludedSearchReferenceCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedSearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedSearchReferenceCriteria, true
 }
@@ -207,7 +207,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetNoneIncludedSearchRefere
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetNoneIncludedSearchReferenceCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedSearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedSearchReferenceCriteria, true
 }
@@ -239,7 +239,7 @@ func (o *AddAggregateSearchReferenceCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchReferenceCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -319,5 +319,3 @@ func (v *NullableAddAggregateSearchReferenceCriteriaRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

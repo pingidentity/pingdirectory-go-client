@@ -16,17 +16,17 @@ import (
 
 // OauthBearerSaslMechanismHandlerResponse struct for OauthBearerSaslMechanismHandlerResponse
 type OauthBearerSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the SASL Mechanism Handler
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumoauthBearerSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// An access token validator that will ensure that each presented OAuth access token is authentic and trustworthy. It must be configured with an identity mapper that will be used to map the access token to a local entry.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
 	// An ID token validator that will ensure that each presented OpenID Connect ID token is authentic and trustworthy, and that will map the token to a local entry.
 	IdTokenValidator []string `json:"idTokenValidator,omitempty"`
 	// Indicates whether bind requests will be required to have both an OAuth access token (in the \"auth\" element of the bind request) and an OpenID Connect ID token (in the \"pingidentityidtoken\" element of the bind request).
-	RequireBothAccessTokenAndIDToken *bool `json:"requireBothAccessTokenAndIDToken,omitempty"`
+	RequireBothAccessTokenAndIDToken             *bool                                                                     `json:"requireBothAccessTokenAndIDToken,omitempty"`
 	ValidateAccessTokenWhenIDTokenIsAlsoProvided *EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp `json:"validateAccessTokenWhenIDTokenIsAlsoProvided,omitempty"`
 	// The identity mapper that will be used to map an alternate authorization identity (provided in the GS2 header of the encoded OAUTHBEARER bind request credentials) to the corresponding local entry.
 	AlternateAuthorizationIdentityMapper *string `json:"alternateAuthorizationIdentityMapper,omitempty"`
@@ -75,7 +75,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -140,7 +140,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -164,7 +164,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetSchemas() []EnumoauthBearer
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumoauthBearerSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -187,7 +187,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetAccessTokenValidator() []st
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetAccessTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.AccessTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenValidator, true
 }
@@ -219,7 +219,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetIdTokenValidator() []string
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetIdTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.IdTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdTokenValidator, true
 }
@@ -251,7 +251,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetRequireBothAccessTokenAndID
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetRequireBothAccessTokenAndIDTokenOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBothAccessTokenAndIDToken) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBothAccessTokenAndIDToken, true
 }
@@ -283,7 +283,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetValidateAccessTokenWhenIDTo
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetValidateAccessTokenWhenIDTokenIsAlsoProvidedOk() (*EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp, bool) {
 	if o == nil || isNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidateAccessTokenWhenIDTokenIsAlsoProvided, true
 }
@@ -315,7 +315,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetAlternateAuthorizationIdent
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.AlternateAuthorizationIdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlternateAuthorizationIdentityMapper, true
 }
@@ -347,7 +347,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetAllRequiredScope() []string
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetAllRequiredScopeOk() ([]string, bool) {
 	if o == nil || isNil(o.AllRequiredScope) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllRequiredScope, true
 }
@@ -379,7 +379,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetAnyRequiredScope() []string
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetAnyRequiredScopeOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyRequiredScope) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyRequiredScope, true
 }
@@ -411,7 +411,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetServerFqdn() string {
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool) {
 	if o == nil || isNil(o.ServerFqdn) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerFqdn, true
 }
@@ -443,7 +443,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -476,7 +476,7 @@ func (o *OauthBearerSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *OauthBearerSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -568,5 +568,3 @@ func (v *NullableOauthBearerSaslMechanismHandlerResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

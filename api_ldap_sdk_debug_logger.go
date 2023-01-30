@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // LdapSdkDebugLoggerApiService LdapSdkDebugLoggerApi service
 type LdapSdkDebugLoggerApiService service
 
 type ApiGetLdapSdkDebugLoggerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LdapSdkDebugLoggerApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetLdapSdkDebugLoggerRequest) Execute() (*LdapSdkDebugLoggerResponse,
 /*
 GetLdapSdkDebugLogger Returns a single LDAP SDK Debug Logger
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLdapSdkDebugLoggerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLdapSdkDebugLoggerRequest
 */
 func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLogger(ctx context.Context) ApiGetLdapSdkDebugLoggerRequest {
 	return ApiGetLdapSdkDebugLoggerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LdapSdkDebugLoggerResponse
+//
+//	@return LdapSdkDebugLoggerResponse
 func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLoggerExecute(r ApiGetLdapSdkDebugLoggerRequest) (*LdapSdkDebugLoggerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LdapSdkDebugLoggerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LdapSdkDebugLoggerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapSdkDebugLoggerApiService.GetLdapSdkDebugLogger")
@@ -120,8 +120,8 @@ func (a *LdapSdkDebugLoggerApiService) GetLdapSdkDebugLoggerExecute(r ApiGetLdap
 }
 
 type ApiUpdateLdapSdkDebugLoggerRequest struct {
-	ctx context.Context
-	ApiService *LdapSdkDebugLoggerApiService
+	ctx           context.Context
+	ApiService    *LdapSdkDebugLoggerApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateLdapSdkDebugLoggerRequest) Execute() (*LdapSdkDebugLoggerRespon
 /*
 UpdateLdapSdkDebugLogger Update an existing LDAP SDK Debug Logger by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateLdapSdkDebugLoggerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateLdapSdkDebugLoggerRequest
 */
 func (a *LdapSdkDebugLoggerApiService) UpdateLdapSdkDebugLogger(ctx context.Context) ApiUpdateLdapSdkDebugLoggerRequest {
 	return ApiUpdateLdapSdkDebugLoggerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LdapSdkDebugLoggerResponse
+//
+//	@return LdapSdkDebugLoggerResponse
 func (a *LdapSdkDebugLoggerApiService) UpdateLdapSdkDebugLoggerExecute(r ApiUpdateLdapSdkDebugLoggerRequest) (*LdapSdkDebugLoggerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LdapSdkDebugLoggerResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LdapSdkDebugLoggerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LdapSdkDebugLoggerApiService.UpdateLdapSdkDebugLogger")

@@ -17,7 +17,7 @@ import (
 
 // AddPassThroughAuthenticationHandler200Response - struct for AddPassThroughAuthenticationHandler200Response
 type AddPassThroughAuthenticationHandler200Response struct {
-	LdapPassThroughAuthenticationHandlerResponse *LdapPassThroughAuthenticationHandlerResponse
+	LdapPassThroughAuthenticationHandlerResponse       *LdapPassThroughAuthenticationHandlerResponse
 	ThirdPartyPassThroughAuthenticationHandlerResponse *ThirdPartyPassThroughAuthenticationHandlerResponse
 }
 
@@ -34,7 +34,6 @@ func ThirdPartyPassThroughAuthenticationHandlerResponseAsAddPassThroughAuthentic
 		ThirdPartyPassThroughAuthenticationHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPassThroughAuthenticationHandler200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddPassThroughAuthenticationHandler200Response) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *AddPassThroughAuthenticationHandler200Response) GetActualInstance() (interface{}) {
+func (obj *AddPassThroughAuthenticationHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddPassThroughAuthenticationHandler200Response) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

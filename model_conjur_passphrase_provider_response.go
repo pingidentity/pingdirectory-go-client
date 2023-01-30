@@ -16,10 +16,10 @@ import (
 
 // ConjurPassphraseProviderResponse struct for ConjurPassphraseProviderResponse
 type ConjurPassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnumconjurPassphraseProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing the passphrase.
 	ConjurExternalServer string `json:"conjurExternalServer"`
@@ -68,7 +68,7 @@ func (o *ConjurPassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *ConjurPassphraseProviderResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *ConjurPassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *ConjurPassphraseProviderResponse) GetSchemas() []EnumconjurPassphrasePr
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetSchemasOk() ([]EnumconjurPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *ConjurPassphraseProviderResponse) GetConjurExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetConjurExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurExternalServer, true
 }
@@ -205,7 +205,7 @@ func (o *ConjurPassphraseProviderResponse) GetConjurSecretRelativePath() string 
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetConjurSecretRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurSecretRelativePath, true
 }
@@ -228,7 +228,7 @@ func (o *ConjurPassphraseProviderResponse) GetMaxCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -260,7 +260,7 @@ func (o *ConjurPassphraseProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -293,7 +293,7 @@ func (o *ConjurPassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConjurPassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -370,5 +370,3 @@ func (v *NullableConjurPassphraseProviderResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

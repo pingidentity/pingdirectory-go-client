@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // IdTokenValidatorApiService IdTokenValidatorApi service
 type IdTokenValidatorApiService service
 
 type ApiAddIdTokenValidatorRequest struct {
-	ctx context.Context
-	ApiService *IdTokenValidatorApiService
+	ctx                        context.Context
+	ApiService                 *IdTokenValidatorApiService
 	addIdTokenValidatorRequest *AddIdTokenValidatorRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddIdTokenValidatorRequest) Execute() (*AddIdTokenValidator200Respons
 /*
 AddIdTokenValidator Add a new ID Token Validator to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddIdTokenValidatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) AddIdTokenValidator(ctx context.Context) ApiAddIdTokenValidatorRequest {
 	return ApiAddIdTokenValidatorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdTokenValidator200Response
+//
+//	@return AddIdTokenValidator200Response
 func (a *IdTokenValidatorApiService) AddIdTokenValidatorExecute(r ApiAddIdTokenValidatorRequest) (*AddIdTokenValidator200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdTokenValidator200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdTokenValidator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdTokenValidatorApiService.AddIdTokenValidator")
@@ -133,8 +133,8 @@ func (a *IdTokenValidatorApiService) AddIdTokenValidatorExecute(r ApiAddIdTokenV
 }
 
 type ApiDeleteIdTokenValidatorRequest struct {
-	ctx context.Context
-	ApiService *IdTokenValidatorApiService
+	ctx                  context.Context
+	ApiService           *IdTokenValidatorApiService
 	idTokenValidatorName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteIdTokenValidatorRequest) Execute() (*http.Response, error) {
 /*
 DeleteIdTokenValidator Delete a ID Token Validator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param idTokenValidatorName Name of the ID Token Validator to be deleted
- @return ApiDeleteIdTokenValidatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param idTokenValidatorName Name of the ID Token Validator to be deleted
+	@return ApiDeleteIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) DeleteIdTokenValidator(ctx context.Context, idTokenValidatorName string) ApiDeleteIdTokenValidatorRequest {
 	return ApiDeleteIdTokenValidatorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		idTokenValidatorName: idTokenValidatorName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *IdTokenValidatorApiService) DeleteIdTokenValidator(ctx context.Context,
 // Execute executes the request
 func (a *IdTokenValidatorApiService) DeleteIdTokenValidatorExecute(r ApiDeleteIdTokenValidatorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdTokenValidatorApiService.DeleteIdTokenValidator")
@@ -223,8 +223,8 @@ func (a *IdTokenValidatorApiService) DeleteIdTokenValidatorExecute(r ApiDeleteId
 }
 
 type ApiGetIdTokenValidatorRequest struct {
-	ctx context.Context
-	ApiService *IdTokenValidatorApiService
+	ctx                  context.Context
+	ApiService           *IdTokenValidatorApiService
 	idTokenValidatorName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetIdTokenValidatorRequest) Execute() (*AddIdTokenValidator200Respons
 /*
 GetIdTokenValidator Returns a single ID Token Validator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param idTokenValidatorName Name of the ID Token Validator to be read
- @return ApiGetIdTokenValidatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param idTokenValidatorName Name of the ID Token Validator to be read
+	@return ApiGetIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) GetIdTokenValidator(ctx context.Context, idTokenValidatorName string) ApiGetIdTokenValidatorRequest {
 	return ApiGetIdTokenValidatorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		idTokenValidatorName: idTokenValidatorName,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdTokenValidator200Response
+//
+//	@return AddIdTokenValidator200Response
 func (a *IdTokenValidatorApiService) GetIdTokenValidatorExecute(r ApiGetIdTokenValidatorRequest) (*AddIdTokenValidator200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdTokenValidator200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdTokenValidator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdTokenValidatorApiService.GetIdTokenValidator")
@@ -324,10 +325,10 @@ func (a *IdTokenValidatorApiService) GetIdTokenValidatorExecute(r ApiGetIdTokenV
 }
 
 type ApiUpdateIdTokenValidatorRequest struct {
-	ctx context.Context
-	ApiService *IdTokenValidatorApiService
+	ctx                  context.Context
+	ApiService           *IdTokenValidatorApiService
 	idTokenValidatorName string
-	updateRequest *UpdateRequest
+	updateRequest        *UpdateRequest
 }
 
 // Update an existing ID Token Validator
@@ -343,26 +344,27 @@ func (r ApiUpdateIdTokenValidatorRequest) Execute() (*AddIdTokenValidator200Resp
 /*
 UpdateIdTokenValidator Update an existing ID Token Validator by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param idTokenValidatorName Name of the ID Token Validator to be updated
- @return ApiUpdateIdTokenValidatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param idTokenValidatorName Name of the ID Token Validator to be updated
+	@return ApiUpdateIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) UpdateIdTokenValidator(ctx context.Context, idTokenValidatorName string) ApiUpdateIdTokenValidatorRequest {
 	return ApiUpdateIdTokenValidatorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		idTokenValidatorName: idTokenValidatorName,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdTokenValidator200Response
+//
+//	@return AddIdTokenValidator200Response
 func (a *IdTokenValidatorApiService) UpdateIdTokenValidatorExecute(r ApiUpdateIdTokenValidatorRequest) (*AddIdTokenValidator200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdTokenValidator200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdTokenValidator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdTokenValidatorApiService.UpdateIdTokenValidator")

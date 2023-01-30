@@ -16,10 +16,10 @@ import (
 
 // MultiplePasswordDataSecurityAuditorResponse struct for MultiplePasswordDataSecurityAuditorResponse
 type MultiplePasswordDataSecurityAuditorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Data Security Auditor
-	Id string `json:"id"`
+	Id      string                                             `json:"id"`
 	Schemas []EnummultiplePasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
@@ -28,7 +28,7 @@ type MultiplePasswordDataSecurityAuditorResponse struct {
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -66,7 +66,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -155,7 +155,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetSchemas() []Enummultipl
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetSchemasOk() ([]EnummultiplePasswordDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -203,7 +203,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -226,7 +226,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetIncludeAttribute() []st
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -258,7 +258,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditBackend() []string
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -290,7 +290,7 @@ func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditSeverity() Enumdat
 // and a boolean to check if the value has been set.
 func (o *MultiplePasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -376,5 +376,3 @@ func (v *NullableMultiplePasswordDataSecurityAuditorResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

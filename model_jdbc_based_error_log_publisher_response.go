@@ -16,10 +16,10 @@ import (
 
 // JdbcBasedErrorLogPublisherResponse struct for JdbcBasedErrorLogPublisherResponse
 type JdbcBasedErrorLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumjdbcBasedErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The JDBC-based Database Server to use for a connection.
 	Server string `json:"server"`
@@ -28,14 +28,14 @@ type JdbcBasedErrorLogPublisherResponse struct {
 	// The table name to log entries to the database server.
 	LogTableName string `json:"logTableName"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize       *int32                                `json:"queueSize,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -75,7 +75,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -140,7 +140,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -164,7 +164,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetSchemas() []EnumjdbcBasedErrorLo
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetSchemasOk() ([]EnumjdbcBasedErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -188,7 +188,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetServer() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Server, true
 }
@@ -212,7 +212,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetLogFieldMapping() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetLogFieldMappingOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFieldMapping, true
 }
@@ -236,7 +236,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetLogTableName() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetLogTableNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogTableName, true
 }
@@ -259,7 +259,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -291,7 +291,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetDefaultSeverity() []EnumlogPubli
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -323,7 +323,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetOverrideSeverity() []string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -355,7 +355,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -388,7 +388,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -411,7 +411,7 @@ func (o *JdbcBasedErrorLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPu
 // and a boolean to check if the value has been set.
 func (o *JdbcBasedErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -509,5 +509,3 @@ func (v *NullableJdbcBasedErrorLogPublisherResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

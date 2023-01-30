@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedUncachedEntryCriteriaRequest struct for AddGroovyScriptedUncachedEntryCriteriaRequest
 type AddGroovyScriptedUncachedEntryCriteriaRequest struct {
 	// Name of the new Uncached Entry Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                             `json:"criteriaName"`
+	Schemas      []EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Entry Criteria.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Uncached Entry Criteria. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetCriteriaName() string
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -88,7 +88,7 @@ func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetSchemas() []Enumgroov
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetSchemasOk() ([]EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetScriptClass() string 
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetScriptArgument() []st
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedUncachedEntryCriteriaRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddGroovyScriptedUncachedEntryCriteriaRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

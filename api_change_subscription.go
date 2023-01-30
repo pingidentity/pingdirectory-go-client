@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ChangeSubscriptionApiService ChangeSubscriptionApi service
 type ChangeSubscriptionApiService service
 
 type ApiAddChangeSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *ChangeSubscriptionApiService
+	ctx                          context.Context
+	ApiService                   *ChangeSubscriptionApiService
 	addChangeSubscriptionRequest *AddChangeSubscriptionRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddChangeSubscriptionRequest) Execute() (*ChangeSubscriptionResponse,
 /*
 AddChangeSubscription Add a new Change Subscription to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddChangeSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) AddChangeSubscription(ctx context.Context) ApiAddChangeSubscriptionRequest {
 	return ApiAddChangeSubscriptionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ChangeSubscriptionResponse
+//
+//	@return ChangeSubscriptionResponse
 func (a *ChangeSubscriptionApiService) AddChangeSubscriptionExecute(r ApiAddChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChangeSubscriptionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChangeSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.AddChangeSubscription")
@@ -133,8 +133,8 @@ func (a *ChangeSubscriptionApiService) AddChangeSubscriptionExecute(r ApiAddChan
 }
 
 type ApiDeleteChangeSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *ChangeSubscriptionApiService
+	ctx                    context.Context
+	ApiService             *ChangeSubscriptionApiService
 	changeSubscriptionName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteChangeSubscriptionRequest) Execute() (*http.Response, error) {
 /*
 DeleteChangeSubscription Delete a Change Subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param changeSubscriptionName Name of the Change Subscription to be deleted
- @return ApiDeleteChangeSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param changeSubscriptionName Name of the Change Subscription to be deleted
+	@return ApiDeleteChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) DeleteChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiDeleteChangeSubscriptionRequest {
 	return ApiDeleteChangeSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		changeSubscriptionName: changeSubscriptionName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ChangeSubscriptionApiService) DeleteChangeSubscription(ctx context.Cont
 // Execute executes the request
 func (a *ChangeSubscriptionApiService) DeleteChangeSubscriptionExecute(r ApiDeleteChangeSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.DeleteChangeSubscription")
@@ -223,8 +223,8 @@ func (a *ChangeSubscriptionApiService) DeleteChangeSubscriptionExecute(r ApiDele
 }
 
 type ApiGetChangeSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *ChangeSubscriptionApiService
+	ctx                    context.Context
+	ApiService             *ChangeSubscriptionApiService
 	changeSubscriptionName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetChangeSubscriptionRequest) Execute() (*ChangeSubscriptionResponse,
 /*
 GetChangeSubscription Returns a single Change Subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param changeSubscriptionName Name of the Change Subscription to be read
- @return ApiGetChangeSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param changeSubscriptionName Name of the Change Subscription to be read
+	@return ApiGetChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) GetChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiGetChangeSubscriptionRequest {
 	return ApiGetChangeSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		changeSubscriptionName: changeSubscriptionName,
 	}
 }
 
 // Execute executes the request
-//  @return ChangeSubscriptionResponse
+//
+//	@return ChangeSubscriptionResponse
 func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChangeSubscriptionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChangeSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.GetChangeSubscription")
@@ -324,10 +325,10 @@ func (a *ChangeSubscriptionApiService) GetChangeSubscriptionExecute(r ApiGetChan
 }
 
 type ApiUpdateChangeSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *ChangeSubscriptionApiService
+	ctx                    context.Context
+	ApiService             *ChangeSubscriptionApiService
 	changeSubscriptionName string
-	updateRequest *UpdateRequest
+	updateRequest          *UpdateRequest
 }
 
 // Update an existing Change Subscription
@@ -343,26 +344,27 @@ func (r ApiUpdateChangeSubscriptionRequest) Execute() (*ChangeSubscriptionRespon
 /*
 UpdateChangeSubscription Update an existing Change Subscription by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param changeSubscriptionName Name of the Change Subscription to be updated
- @return ApiUpdateChangeSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param changeSubscriptionName Name of the Change Subscription to be updated
+	@return ApiUpdateChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) UpdateChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiUpdateChangeSubscriptionRequest {
 	return ApiUpdateChangeSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		changeSubscriptionName: changeSubscriptionName,
 	}
 }
 
 // Execute executes the request
-//  @return ChangeSubscriptionResponse
+//
+//	@return ChangeSubscriptionResponse
 func (a *ChangeSubscriptionApiService) UpdateChangeSubscriptionExecute(r ApiUpdateChangeSubscriptionRequest) (*ChangeSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ChangeSubscriptionResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ChangeSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChangeSubscriptionApiService.UpdateChangeSubscription")

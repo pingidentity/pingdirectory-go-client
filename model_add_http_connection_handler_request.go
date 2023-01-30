@@ -17,8 +17,8 @@ import (
 // AddHttpConnectionHandlerRequest struct for AddHttpConnectionHandlerRequest
 type AddHttpConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumhttpConnectionHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                               `json:"handlerName"`
+	Schemas     []EnumhttpConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the address on which to listen for connections from HTTP clients. If no value is defined, the server will listen on all addresses on all interfaces.
 	ListenAddress *string `json:"listenAddress,omitempty"`
 	// Specifies the port number on which the HTTP Connection Handler will listen for connections from clients.
@@ -68,8 +68,8 @@ type AddHttpConnectionHandlerRequest struct {
 	// Specifies the name of the HTTP response header that will contain a correlation ID value. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
 	CorrelationIDResponseHeader *string `json:"correlationIDResponseHeader,omitempty"`
 	// Specifies the set of HTTP request headers that may contain a value to be used as the correlation ID. Example values are \"Correlation-Id\", \"X-Amzn-Trace-Id\", and \"X-Request-Id\".
-	CorrelationIDRequestHeader []string `json:"correlationIDRequestHeader,omitempty"`
-	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
+	CorrelationIDRequestHeader []string                                      `json:"correlationIDRequestHeader,omitempty"`
+	SslClientAuthPolicy        *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// A description for this Connection Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Connection Handler is enabled.
@@ -111,7 +111,7 @@ func (o *AddHttpConnectionHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -135,7 +135,7 @@ func (o *AddHttpConnectionHandlerRequest) GetSchemas() []EnumhttpConnectionHandl
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetSchemasOk() ([]EnumhttpConnectionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -158,7 +158,7 @@ func (o *AddHttpConnectionHandlerRequest) GetListenAddress() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetListenAddressOk() (*string, bool) {
 	if o == nil || isNil(o.ListenAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.ListenAddress, true
 }
@@ -191,7 +191,7 @@ func (o *AddHttpConnectionHandlerRequest) GetListenPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetListenPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ListenPort, true
 }
@@ -214,7 +214,7 @@ func (o *AddHttpConnectionHandlerRequest) GetUseSSL() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetUseSSLOk() (*bool, bool) {
 	if o == nil || isNil(o.UseSSL) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseSSL, true
 }
@@ -246,7 +246,7 @@ func (o *AddHttpConnectionHandlerRequest) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil || isNil(o.SslCertNickname) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertNickname, true
 }
@@ -278,7 +278,7 @@ func (o *AddHttpConnectionHandlerRequest) GetHttpServletExtension() []string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetHttpServletExtensionOk() ([]string, bool) {
 	if o == nil || isNil(o.HttpServletExtension) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpServletExtension, true
 }
@@ -310,7 +310,7 @@ func (o *AddHttpConnectionHandlerRequest) GetWebApplicationExtension() []string 
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetWebApplicationExtensionOk() ([]string, bool) {
 	if o == nil || isNil(o.WebApplicationExtension) {
-    return nil, false
+		return nil, false
 	}
 	return o.WebApplicationExtension, true
 }
@@ -342,7 +342,7 @@ func (o *AddHttpConnectionHandlerRequest) GetHttpOperationLogPublisher() []strin
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetHttpOperationLogPublisherOk() ([]string, bool) {
 	if o == nil || isNil(o.HttpOperationLogPublisher) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpOperationLogPublisher, true
 }
@@ -374,7 +374,7 @@ func (o *AddHttpConnectionHandlerRequest) GetSslProtocol() []string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetSslProtocolOk() ([]string, bool) {
 	if o == nil || isNil(o.SslProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslProtocol, true
 }
@@ -406,7 +406,7 @@ func (o *AddHttpConnectionHandlerRequest) GetSslCipherSuite() []string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetSslCipherSuiteOk() ([]string, bool) {
 	if o == nil || isNil(o.SslCipherSuite) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCipherSuite, true
 }
@@ -438,7 +438,7 @@ func (o *AddHttpConnectionHandlerRequest) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -470,7 +470,7 @@ func (o *AddHttpConnectionHandlerRequest) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -502,7 +502,7 @@ func (o *AddHttpConnectionHandlerRequest) GetNumRequestHandlers() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetNumRequestHandlersOk() (*int32, bool) {
 	if o == nil || isNil(o.NumRequestHandlers) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumRequestHandlers, true
 }
@@ -534,7 +534,7 @@ func (o *AddHttpConnectionHandlerRequest) GetKeepStats() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetKeepStatsOk() (*bool, bool) {
 	if o == nil || isNil(o.KeepStats) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeepStats, true
 }
@@ -566,7 +566,7 @@ func (o *AddHttpConnectionHandlerRequest) GetAcceptBacklog() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetAcceptBacklogOk() (*int32, bool) {
 	if o == nil || isNil(o.AcceptBacklog) {
-    return nil, false
+		return nil, false
 	}
 	return o.AcceptBacklog, true
 }
@@ -598,7 +598,7 @@ func (o *AddHttpConnectionHandlerRequest) GetAllowTCPReuseAddress() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetAllowTCPReuseAddressOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowTCPReuseAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowTCPReuseAddress, true
 }
@@ -630,7 +630,7 @@ func (o *AddHttpConnectionHandlerRequest) GetIdleTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetIdleTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.IdleTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdleTimeLimit, true
 }
@@ -662,7 +662,7 @@ func (o *AddHttpConnectionHandlerRequest) GetLowResourcesConnectionThreshold() i
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetLowResourcesConnectionThresholdOk() (*int32, bool) {
 	if o == nil || isNil(o.LowResourcesConnectionThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.LowResourcesConnectionThreshold, true
 }
@@ -694,7 +694,7 @@ func (o *AddHttpConnectionHandlerRequest) GetLowResourcesIdleTimeLimit() string 
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetLowResourcesIdleTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.LowResourcesIdleTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.LowResourcesIdleTimeLimit, true
 }
@@ -726,7 +726,7 @@ func (o *AddHttpConnectionHandlerRequest) GetEnableMultipartMIMEParameters() boo
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetEnableMultipartMIMEParametersOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableMultipartMIMEParameters) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableMultipartMIMEParameters, true
 }
@@ -758,7 +758,7 @@ func (o *AddHttpConnectionHandlerRequest) GetUseForwardedHeaders() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetUseForwardedHeadersOk() (*bool, bool) {
 	if o == nil || isNil(o.UseForwardedHeaders) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseForwardedHeaders, true
 }
@@ -790,7 +790,7 @@ func (o *AddHttpConnectionHandlerRequest) GetHttpRequestHeaderSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetHttpRequestHeaderSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.HttpRequestHeaderSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpRequestHeaderSize, true
 }
@@ -822,7 +822,7 @@ func (o *AddHttpConnectionHandlerRequest) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -854,7 +854,7 @@ func (o *AddHttpConnectionHandlerRequest) GetUseCorrelationIDHeader() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetUseCorrelationIDHeaderOk() (*bool, bool) {
 	if o == nil || isNil(o.UseCorrelationIDHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseCorrelationIDHeader, true
 }
@@ -886,7 +886,7 @@ func (o *AddHttpConnectionHandlerRequest) GetCorrelationIDResponseHeader() strin
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -918,7 +918,7 @@ func (o *AddHttpConnectionHandlerRequest) GetCorrelationIDRequestHeader() []stri
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetCorrelationIDRequestHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.CorrelationIDRequestHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDRequestHeader, true
 }
@@ -950,7 +950,7 @@ func (o *AddHttpConnectionHandlerRequest) GetSslClientAuthPolicy() Enumconnectio
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetSslClientAuthPolicyOk() (*EnumconnectionHandlerSslClientAuthPolicyProp, bool) {
 	if o == nil || isNil(o.SslClientAuthPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslClientAuthPolicy, true
 }
@@ -982,7 +982,7 @@ func (o *AddHttpConnectionHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1015,7 +1015,7 @@ func (o *AddHttpConnectionHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHttpConnectionHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1155,5 +1155,3 @@ func (v *NullableAddHttpConnectionHandlerRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

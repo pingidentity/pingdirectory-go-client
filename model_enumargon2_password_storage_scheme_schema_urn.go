@@ -106,4 +106,3 @@ func (v *NullableEnumargon2PasswordStorageSchemeSchemaUrn) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

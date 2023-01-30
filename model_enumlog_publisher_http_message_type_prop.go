@@ -20,7 +20,7 @@ type EnumlogPublisherHttpMessageTypeProp string
 
 // List of Enumlog-publisher-httpMessageTypeProp
 const (
-	ENUMLOGPUBLISHERHTTPMESSAGETYPEPROP_REQUEST EnumlogPublisherHttpMessageTypeProp = "request"
+	ENUMLOGPUBLISHERHTTPMESSAGETYPEPROP_REQUEST  EnumlogPublisherHttpMessageTypeProp = "request"
 	ENUMLOGPUBLISHERHTTPMESSAGETYPEPROP_RESPONSE EnumlogPublisherHttpMessageTypeProp = "response"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumlogPublisherHttpMessageTypeProp) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

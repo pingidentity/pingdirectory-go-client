@@ -17,28 +17,28 @@ import (
 
 // GetVirtualAttribute200Response - struct for GetVirtualAttribute200Response
 type GetVirtualAttribute200Response struct {
-	ConstructedVirtualAttributeResponse *ConstructedVirtualAttributeResponse
-	CurrentTimeVirtualAttributeResponse *CurrentTimeVirtualAttributeResponse
-	DnJoinVirtualAttributeResponse *DnJoinVirtualAttributeResponse
-	EntryChecksumVirtualAttributeResponse *EntryChecksumVirtualAttributeResponse
-	EntryDnVirtualAttributeResponse *EntryDnVirtualAttributeResponse
-	EqualityJoinVirtualAttributeResponse *EqualityJoinVirtualAttributeResponse
-	GroovyScriptedVirtualAttributeResponse *GroovyScriptedVirtualAttributeResponse
-	HasSubordinatesVirtualAttributeResponse *HasSubordinatesVirtualAttributeResponse
-	IdentifyReferencesVirtualAttributeResponse *IdentifyReferencesVirtualAttributeResponse
-	InstanceNameVirtualAttributeResponse *InstanceNameVirtualAttributeResponse
-	IsMemberOfVirtualAttributeResponse *IsMemberOfVirtualAttributeResponse
-	MemberOfServerGroupVirtualAttributeResponse *MemberOfServerGroupVirtualAttributeResponse
-	MemberVirtualAttributeResponse *MemberVirtualAttributeResponse
-	MirrorVirtualAttributeResponse *MirrorVirtualAttributeResponse
-	NumSubordinatesVirtualAttributeResponse *NumSubordinatesVirtualAttributeResponse
+	ConstructedVirtualAttributeResponse             *ConstructedVirtualAttributeResponse
+	CurrentTimeVirtualAttributeResponse             *CurrentTimeVirtualAttributeResponse
+	DnJoinVirtualAttributeResponse                  *DnJoinVirtualAttributeResponse
+	EntryChecksumVirtualAttributeResponse           *EntryChecksumVirtualAttributeResponse
+	EntryDnVirtualAttributeResponse                 *EntryDnVirtualAttributeResponse
+	EqualityJoinVirtualAttributeResponse            *EqualityJoinVirtualAttributeResponse
+	GroovyScriptedVirtualAttributeResponse          *GroovyScriptedVirtualAttributeResponse
+	HasSubordinatesVirtualAttributeResponse         *HasSubordinatesVirtualAttributeResponse
+	IdentifyReferencesVirtualAttributeResponse      *IdentifyReferencesVirtualAttributeResponse
+	InstanceNameVirtualAttributeResponse            *InstanceNameVirtualAttributeResponse
+	IsMemberOfVirtualAttributeResponse              *IsMemberOfVirtualAttributeResponse
+	MemberOfServerGroupVirtualAttributeResponse     *MemberOfServerGroupVirtualAttributeResponse
+	MemberVirtualAttributeResponse                  *MemberVirtualAttributeResponse
+	MirrorVirtualAttributeResponse                  *MirrorVirtualAttributeResponse
+	NumSubordinatesVirtualAttributeResponse         *NumSubordinatesVirtualAttributeResponse
 	PasswordPolicyStateJsonVirtualAttributeResponse *PasswordPolicyStateJsonVirtualAttributeResponse
-	ReplicationStateDetailVirtualAttributeResponse *ReplicationStateDetailVirtualAttributeResponse
-	ReverseDnJoinVirtualAttributeResponse *ReverseDnJoinVirtualAttributeResponse
-	ShortUniqueIdVirtualAttributeResponse *ShortUniqueIdVirtualAttributeResponse
-	SubschemaSubentryVirtualAttributeResponse *SubschemaSubentryVirtualAttributeResponse
-	ThirdPartyVirtualAttributeResponse *ThirdPartyVirtualAttributeResponse
-	UserDefinedVirtualAttributeResponse *UserDefinedVirtualAttributeResponse
+	ReplicationStateDetailVirtualAttributeResponse  *ReplicationStateDetailVirtualAttributeResponse
+	ReverseDnJoinVirtualAttributeResponse           *ReverseDnJoinVirtualAttributeResponse
+	ShortUniqueIdVirtualAttributeResponse           *ShortUniqueIdVirtualAttributeResponse
+	SubschemaSubentryVirtualAttributeResponse       *SubschemaSubentryVirtualAttributeResponse
+	ThirdPartyVirtualAttributeResponse              *ThirdPartyVirtualAttributeResponse
+	UserDefinedVirtualAttributeResponse             *UserDefinedVirtualAttributeResponse
 }
 
 // ConstructedVirtualAttributeResponseAsGetVirtualAttribute200Response is a convenience function that returns ConstructedVirtualAttributeResponse wrapped in GetVirtualAttribute200Response
@@ -194,7 +194,6 @@ func UserDefinedVirtualAttributeResponseAsGetVirtualAttribute200Response(v *User
 		UserDefinedVirtualAttributeResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetVirtualAttribute200Response) UnmarshalJSON(data []byte) error {
@@ -613,7 +612,7 @@ func (src GetVirtualAttribute200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetVirtualAttribute200Response) GetActualInstance() (interface{}) {
+func (obj *GetVirtualAttribute200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -744,5 +743,3 @@ func (v *NullableGetVirtualAttribute200Response) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

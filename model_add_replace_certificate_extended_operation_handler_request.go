@@ -17,11 +17,11 @@ import (
 // AddReplaceCertificateExtendedOperationHandlerRequest struct for AddReplaceCertificateExtendedOperationHandlerRequest
 type AddReplaceCertificateExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                    `json:"handlerName"`
+	Schemas     []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request.
-	AllowRemotelyProvidedCertificates *bool `json:"allowRemotelyProvidedCertificates,omitempty"`
-	AllowedOperation []EnumextendedOperationHandlerAllowedOperationProp `json:"allowedOperation,omitempty"`
+	AllowRemotelyProvidedCertificates *bool                                              `json:"allowRemotelyProvidedCertificates,omitempty"`
+	AllowedOperation                  []EnumextendedOperationHandlerAllowedOperationProp `json:"allowedOperation,omitempty"`
 	// A set of criteria that client connections must satisfy before they will be allowed to request the associated extended operations.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A set of criteria that the extended requests must satisfy before they will be processed by the server.
@@ -66,7 +66,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetHandlerName() 
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -90,7 +90,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetSchemas() []En
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumreplaceCertificateExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowRemotelyP
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowRemotelyProvidedCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowRemotelyProvidedCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowRemotelyProvidedCertificates, true
 }
@@ -145,7 +145,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowedOperati
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetAllowedOperationOk() ([]EnumextendedOperationHandlerAllowedOperationProp, bool) {
 	if o == nil || isNil(o.AllowedOperation) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedOperation, true
 }
@@ -177,7 +177,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetConnectionCrit
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -209,7 +209,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetRequestCriteri
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -241,7 +241,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetDescription() 
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -274,7 +274,7 @@ func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetEnabled() bool
 // and a boolean to check if the value has been set.
 func (o *AddReplaceCertificateExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -348,5 +348,3 @@ func (v *NullableAddReplaceCertificateExtendedOperationHandlerRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,9 +16,9 @@ import (
 
 // AttributeBasedLogFieldSyntaxResponse struct for AttributeBasedLogFieldSyntaxResponse
 type AttributeBasedLogFieldSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumattributeBasedLogFieldSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumattributeBasedLogFieldSyntaxSchemaUrn        `json:"schemas"`
 	// Name of the Log Field Syntax
 	Id string `json:"id"`
 	// The set of attribute types that will be considered sensitive.
@@ -26,7 +26,7 @@ type AttributeBasedLogFieldSyntaxResponse struct {
 	// The set of attribute types that will not be considered sensitive.
 	ExcludedSensitiveAttribute []string `json:"excludedSensitiveAttribute,omitempty"`
 	// A description for this Log Field Syntax
-	Description *string `json:"description,omitempty"`
+	Description     *string                                `json:"description,omitempty"`
 	DefaultBehavior *EnumlogFieldSyntaxDefaultBehaviorProp `json:"defaultBehavior,omitempty"`
 }
 
@@ -62,7 +62,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetSchemas() []EnumattributeBased
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetSchemasOk() ([]EnumattributeBasedLogFieldSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetIncludedSensitiveAttribute() [
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetIncludedSensitiveAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedSensitiveAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedSensitiveAttribute, true
 }
@@ -206,7 +206,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetExcludedSensitiveAttribute() [
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetExcludedSensitiveAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedSensitiveAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedSensitiveAttribute, true
 }
@@ -238,7 +238,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -270,7 +270,7 @@ func (o *AttributeBasedLogFieldSyntaxResponse) GetDefaultBehavior() EnumlogField
 // and a boolean to check if the value has been set.
 func (o *AttributeBasedLogFieldSyntaxResponse) GetDefaultBehaviorOk() (*EnumlogFieldSyntaxDefaultBehaviorProp, bool) {
 	if o == nil || isNil(o.DefaultBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultBehavior, true
 }
@@ -353,5 +353,3 @@ func (v *NullableAttributeBasedLogFieldSyntaxResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

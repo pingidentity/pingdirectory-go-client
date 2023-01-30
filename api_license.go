@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // LicenseApiService LicenseApi service
 type LicenseApiService service
 
 type ApiGetLicenseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LicenseApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetLicenseRequest) Execute() (*LicenseResponse, *http.Response, error
 /*
 GetLicense Returns a single License
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetLicenseRequest
 */
 func (a *LicenseApiService) GetLicense(ctx context.Context) ApiGetLicenseRequest {
 	return ApiGetLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LicenseResponse
+//
+//	@return LicenseResponse
 func (a *LicenseApiService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LicenseResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LicenseResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseApiService.GetLicense")
@@ -120,8 +120,8 @@ func (a *LicenseApiService) GetLicenseExecute(r ApiGetLicenseRequest) (*LicenseR
 }
 
 type ApiUpdateLicenseRequest struct {
-	ctx context.Context
-	ApiService *LicenseApiService
+	ctx           context.Context
+	ApiService    *LicenseApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateLicenseRequest) Execute() (*LicenseResponse, *http.Response, er
 /*
 UpdateLicense Update an existing License by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateLicenseRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateLicenseRequest
 */
 func (a *LicenseApiService) UpdateLicense(ctx context.Context) ApiUpdateLicenseRequest {
 	return ApiUpdateLicenseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return LicenseResponse
+//
+//	@return LicenseResponse
 func (a *LicenseApiService) UpdateLicenseExecute(r ApiUpdateLicenseRequest) (*LicenseResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *LicenseResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *LicenseResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LicenseApiService.UpdateLicense")

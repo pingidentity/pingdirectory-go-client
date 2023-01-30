@@ -16,9 +16,9 @@ import (
 
 // SystemInfoMonitorProviderResponse struct for SystemInfoMonitorProviderResponse
 type SystemInfoMonitorProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumsystemInfoMonitorProviderSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumsystemInfoMonitorProviderSchemaUrn           `json:"schemas"`
 	// Name of the Monitor Provider
 	Id string `json:"id"`
 	// A description for this Monitor Provider
@@ -60,7 +60,7 @@ func (o *SystemInfoMonitorProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SystemInfoMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *SystemInfoMonitorProviderResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *SystemInfoMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *SystemInfoMonitorProviderResponse) GetSchemas() []EnumsystemInfoMonitor
 // and a boolean to check if the value has been set.
 func (o *SystemInfoMonitorProviderResponse) GetSchemasOk() ([]EnumsystemInfoMonitorProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *SystemInfoMonitorProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SystemInfoMonitorProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *SystemInfoMonitorProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SystemInfoMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *SystemInfoMonitorProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SystemInfoMonitorProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableSystemInfoMonitorProviderResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

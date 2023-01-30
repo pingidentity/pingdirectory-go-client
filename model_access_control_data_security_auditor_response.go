@@ -16,10 +16,10 @@ import (
 
 // AccessControlDataSecurityAuditorResponse struct for AccessControlDataSecurityAuditorResponse
 type AccessControlDataSecurityAuditorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Data Security Auditor
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumaccessControlDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
@@ -28,7 +28,7 @@ type AccessControlDataSecurityAuditorResponse struct {
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -66,7 +66,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -155,7 +155,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetSchemas() []EnumaccessCont
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetSchemasOk() ([]EnumaccessControlDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -202,7 +202,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetIncludeAttribute() []strin
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -235,7 +235,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -258,7 +258,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetAuditBackend() []string {
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -290,7 +290,7 @@ func (o *AccessControlDataSecurityAuditorResponse) GetAuditSeverity() EnumdataSe
 // and a boolean to check if the value has been set.
 func (o *AccessControlDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -376,5 +376,3 @@ func (v *NullableAccessControlDataSecurityAuditorResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

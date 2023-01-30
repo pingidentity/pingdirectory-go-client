@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // MonitorProviderApiService MonitorProviderApi service
 type MonitorProviderApiService service
 
 type ApiAddMonitorProviderRequest struct {
-	ctx context.Context
-	ApiService *MonitorProviderApiService
+	ctx                                 context.Context
+	ApiService                          *MonitorProviderApiService
 	addThirdPartyMonitorProviderRequest *AddThirdPartyMonitorProviderRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddMonitorProviderRequest) Execute() (*AddMonitorProvider200Response,
 /*
 AddMonitorProvider Add a new Monitor Provider to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddMonitorProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) AddMonitorProvider(ctx context.Context) ApiAddMonitorProviderRequest {
 	return ApiAddMonitorProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddMonitorProvider200Response
+//
+//	@return AddMonitorProvider200Response
 func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorProviderRequest) (*AddMonitorProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddMonitorProvider200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddMonitorProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.AddMonitorProvider")
@@ -133,8 +133,8 @@ func (a *MonitorProviderApiService) AddMonitorProviderExecute(r ApiAddMonitorPro
 }
 
 type ApiDeleteMonitorProviderRequest struct {
-	ctx context.Context
-	ApiService *MonitorProviderApiService
+	ctx                 context.Context
+	ApiService          *MonitorProviderApiService
 	monitorProviderName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteMonitorProviderRequest) Execute() (*http.Response, error) {
 /*
 DeleteMonitorProvider Delete a Monitor Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param monitorProviderName Name of the Monitor Provider to be deleted
- @return ApiDeleteMonitorProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param monitorProviderName Name of the Monitor Provider to be deleted
+	@return ApiDeleteMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) DeleteMonitorProvider(ctx context.Context, monitorProviderName string) ApiDeleteMonitorProviderRequest {
 	return ApiDeleteMonitorProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		monitorProviderName: monitorProviderName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *MonitorProviderApiService) DeleteMonitorProvider(ctx context.Context, m
 // Execute executes the request
 func (a *MonitorProviderApiService) DeleteMonitorProviderExecute(r ApiDeleteMonitorProviderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.DeleteMonitorProvider")
@@ -223,8 +223,8 @@ func (a *MonitorProviderApiService) DeleteMonitorProviderExecute(r ApiDeleteMoni
 }
 
 type ApiGetMonitorProviderRequest struct {
-	ctx context.Context
-	ApiService *MonitorProviderApiService
+	ctx                 context.Context
+	ApiService          *MonitorProviderApiService
 	monitorProviderName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetMonitorProviderRequest) Execute() (*GetMonitorProvider200Response,
 /*
 GetMonitorProvider Returns a single Monitor Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param monitorProviderName Name of the Monitor Provider to be read
- @return ApiGetMonitorProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param monitorProviderName Name of the Monitor Provider to be read
+	@return ApiGetMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) GetMonitorProvider(ctx context.Context, monitorProviderName string) ApiGetMonitorProviderRequest {
 	return ApiGetMonitorProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		monitorProviderName: monitorProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return GetMonitorProvider200Response
+//
+//	@return GetMonitorProvider200Response
 func (a *MonitorProviderApiService) GetMonitorProviderExecute(r ApiGetMonitorProviderRequest) (*GetMonitorProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetMonitorProvider200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetMonitorProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.GetMonitorProvider")
@@ -324,10 +325,10 @@ func (a *MonitorProviderApiService) GetMonitorProviderExecute(r ApiGetMonitorPro
 }
 
 type ApiUpdateMonitorProviderRequest struct {
-	ctx context.Context
-	ApiService *MonitorProviderApiService
+	ctx                 context.Context
+	ApiService          *MonitorProviderApiService
 	monitorProviderName string
-	updateRequest *UpdateRequest
+	updateRequest       *UpdateRequest
 }
 
 // Update an existing Monitor Provider
@@ -343,26 +344,27 @@ func (r ApiUpdateMonitorProviderRequest) Execute() (*GetMonitorProvider200Respon
 /*
 UpdateMonitorProvider Update an existing Monitor Provider by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param monitorProviderName Name of the Monitor Provider to be updated
- @return ApiUpdateMonitorProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param monitorProviderName Name of the Monitor Provider to be updated
+	@return ApiUpdateMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) UpdateMonitorProvider(ctx context.Context, monitorProviderName string) ApiUpdateMonitorProviderRequest {
 	return ApiUpdateMonitorProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		monitorProviderName: monitorProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return GetMonitorProvider200Response
+//
+//	@return GetMonitorProvider200Response
 func (a *MonitorProviderApiService) UpdateMonitorProviderExecute(r ApiUpdateMonitorProviderRequest) (*GetMonitorProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetMonitorProvider200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetMonitorProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitorProviderApiService.UpdateMonitorProvider")

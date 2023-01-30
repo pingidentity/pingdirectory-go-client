@@ -16,10 +16,10 @@ import (
 
 // BlindTrustManagerProviderResponse struct for BlindTrustManagerProviderResponse
 type BlindTrustManagerProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Trust Manager Provider
-	Id string `json:"id"`
+	Id      string                                   `json:"id"`
 	Schemas []EnumblindTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
@@ -60,7 +60,7 @@ func (o *BlindTrustManagerProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *BlindTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *BlindTrustManagerProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *BlindTrustManagerProviderResponse) GetSchemas() []EnumblindTrustManager
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetSchemasOk() ([]EnumblindTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *BlindTrustManagerProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -196,7 +196,7 @@ func (o *BlindTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool {
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
 }
@@ -273,5 +273,3 @@ func (v *NullableBlindTrustManagerProviderResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

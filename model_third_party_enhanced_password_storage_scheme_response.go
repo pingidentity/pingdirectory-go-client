@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyEnhancedPasswordStorageSchemeResponse struct for ThirdPartyEnhancedPasswordStorageSchemeResponse
 type ThirdPartyEnhancedPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                                 `json:"id"`
 	Schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Enhanced Password Storage Scheme.
 	ExtensionClass string `json:"extensionClass"`
@@ -65,7 +65,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetUrnpingidentitysche
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetSchemas() []Enumthi
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetExtensionClass() st
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -201,7 +201,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetExtensionArgument()
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -233,7 +233,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyEnhancedPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableThirdPartyEnhancedPasswordStorageSchemeResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

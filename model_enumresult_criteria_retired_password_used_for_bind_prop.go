@@ -20,8 +20,8 @@ type EnumresultCriteriaRetiredPasswordUsedForBindProp string
 
 // List of Enumresult-criteria-retiredPasswordUsedForBindProp
 const (
-	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_ANY EnumresultCriteriaRetiredPasswordUsedForBindProp = "any"
-	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_RETIRED_PASSWORD_USED EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-used"
+	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_ANY                       EnumresultCriteriaRetiredPasswordUsedForBindProp = "any"
+	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_RETIRED_PASSWORD_USED     EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-used"
 	ENUMRESULTCRITERIARETIREDPASSWORDUSEDFORBINDPROP_RETIRED_PASSWORD_NOT_USED EnumresultCriteriaRetiredPasswordUsedForBindProp = "retired-password-not-used"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaRetiredPasswordUsedForBindProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

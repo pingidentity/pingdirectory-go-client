@@ -17,8 +17,8 @@ import (
 // AddSimpleSearchReferenceCriteriaRequest struct for AddSimpleSearchReferenceCriteriaRequest
 type AddSimpleSearchReferenceCriteriaRequest struct {
 	// Name of the new Search Reference Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                       `json:"criteriaName"`
+	Schemas      []EnumsimpleSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// Specifies the OID of a control that must be present in search result references included in this Simple Search Reference Criteria. If any control OIDs are provided, then the reference must contain all of those controls.
@@ -66,7 +66,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -90,7 +90,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetSchemas() []EnumsimpleSearc
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetSchemasOk() ([]EnumsimpleSearchReferenceCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -145,7 +145,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetAllIncludedReferenceControl
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetAllIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedReferenceControl, true
 }
@@ -177,7 +177,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetAnyIncludedReferenceControl
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetAnyIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedReferenceControl, true
 }
@@ -209,7 +209,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetNotAllIncludedReferenceCont
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetNotAllIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedReferenceControl, true
 }
@@ -241,7 +241,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetNoneIncludedReferenceContro
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetNoneIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedReferenceControl, true
 }
@@ -273,7 +273,7 @@ func (o *AddSimpleSearchReferenceCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchReferenceCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -356,5 +356,3 @@ func (v *NullableAddSimpleSearchReferenceCriteriaRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

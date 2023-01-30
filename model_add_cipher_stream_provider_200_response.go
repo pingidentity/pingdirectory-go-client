@@ -18,14 +18,14 @@ import (
 // AddCipherStreamProvider200Response - struct for AddCipherStreamProvider200Response
 type AddCipherStreamProvider200Response struct {
 	AmazonKeyManagementServiceCipherStreamProviderResponse *AmazonKeyManagementServiceCipherStreamProviderResponse
-	AmazonSecretsManagerCipherStreamProviderResponse *AmazonSecretsManagerCipherStreamProviderResponse
-	AzureKeyVaultCipherStreamProviderResponse *AzureKeyVaultCipherStreamProviderResponse
-	ConjurCipherStreamProviderResponse *ConjurCipherStreamProviderResponse
-	FileBasedCipherStreamProviderResponse *FileBasedCipherStreamProviderResponse
-	Pkcs11CipherStreamProviderResponse *Pkcs11CipherStreamProviderResponse
-	ThirdPartyCipherStreamProviderResponse *ThirdPartyCipherStreamProviderResponse
-	VaultCipherStreamProviderResponse *VaultCipherStreamProviderResponse
-	WaitForPassphraseCipherStreamProviderResponse *WaitForPassphraseCipherStreamProviderResponse
+	AmazonSecretsManagerCipherStreamProviderResponse       *AmazonSecretsManagerCipherStreamProviderResponse
+	AzureKeyVaultCipherStreamProviderResponse              *AzureKeyVaultCipherStreamProviderResponse
+	ConjurCipherStreamProviderResponse                     *ConjurCipherStreamProviderResponse
+	FileBasedCipherStreamProviderResponse                  *FileBasedCipherStreamProviderResponse
+	Pkcs11CipherStreamProviderResponse                     *Pkcs11CipherStreamProviderResponse
+	ThirdPartyCipherStreamProviderResponse                 *ThirdPartyCipherStreamProviderResponse
+	VaultCipherStreamProviderResponse                      *VaultCipherStreamProviderResponse
+	WaitForPassphraseCipherStreamProviderResponse          *WaitForPassphraseCipherStreamProviderResponse
 }
 
 // AmazonKeyManagementServiceCipherStreamProviderResponseAsAddCipherStreamProvider200Response is a convenience function that returns AmazonKeyManagementServiceCipherStreamProviderResponse wrapped in AddCipherStreamProvider200Response
@@ -90,7 +90,6 @@ func WaitForPassphraseCipherStreamProviderResponseAsAddCipherStreamProvider200Re
 		WaitForPassphraseCipherStreamProviderResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCipherStreamProvider200Response) UnmarshalJSON(data []byte) error {
@@ -275,7 +274,7 @@ func (src AddCipherStreamProvider200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddCipherStreamProvider200Response) GetActualInstance() (interface{}) {
+func (obj *AddCipherStreamProvider200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -354,5 +353,3 @@ func (v *NullableAddCipherStreamProvider200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

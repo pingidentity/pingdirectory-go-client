@@ -17,8 +17,8 @@ import (
 // AddThirdPartyLogFileRotationListenerRequest struct for AddThirdPartyLogFileRotationListenerRequest
 type AddThirdPartyLogFileRotationListenerRequest struct {
 	// Name of the new Log File Rotation Listener
-	ListenerName string `json:"listenerName"`
-	Schemas []EnumthirdPartyLogFileRotationListenerSchemaUrn `json:"schemas"`
+	ListenerName string                                           `json:"listenerName"`
+	Schemas      []EnumthirdPartyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Log File Rotation Listener.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Log File Rotation Listener. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyLogFileRotationListenerRequest) GetListenerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ListenerName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) GetSchemas() []EnumthirdPa
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyLogFileRotationListenerRequest) GetSchemasOk() ([]EnumthirdPartyLogFileRotationListenerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) GetExtensionClass() string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyLogFileRotationListenerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) GetExtensionArgument() []s
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyLogFileRotationListenerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyLogFileRotationListenerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyLogFileRotationListenerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyLogFileRotationListenerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyLogFileRotationListenerRequest) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

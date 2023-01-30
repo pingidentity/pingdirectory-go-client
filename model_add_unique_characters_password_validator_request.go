@@ -17,8 +17,8 @@ import (
 // AddUniqueCharactersPasswordValidatorRequest struct for AddUniqueCharactersPasswordValidatorRequest
 type AddUniqueCharactersPasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                           `json:"validatorName"`
+	Schemas       []EnumuniqueCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum number of unique characters that a password will be allowed to contain.
 	MinUniqueCharacters int32 `json:"minUniqueCharacters"`
 	// Indicates whether this password validator should treat password characters in a case-sensitive manner.
@@ -69,7 +69,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetValidatorName() string 
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -93,7 +93,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetSchemas() []EnumuniqueC
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetSchemasOk() ([]EnumuniqueCharactersPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -117,7 +117,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetMinUniqueCharacters() i
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetMinUniqueCharactersOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MinUniqueCharacters, true
 }
@@ -141,7 +141,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetCaseSensitiveValidation
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetCaseSensitiveValidationOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CaseSensitiveValidation, true
 }
@@ -164,7 +164,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -197,7 +197,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -220,7 +220,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetValidatorRequirementDes
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -252,7 +252,7 @@ func (o *AddUniqueCharactersPasswordValidatorRequest) GetValidatorFailureMessage
 // and a boolean to check if the value has been set.
 func (o *AddUniqueCharactersPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -335,5 +335,3 @@ func (v *NullableAddUniqueCharactersPasswordValidatorRequest) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

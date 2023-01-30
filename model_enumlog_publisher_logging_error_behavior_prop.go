@@ -21,7 +21,7 @@ type EnumlogPublisherLoggingErrorBehaviorProp string
 // List of Enumlog-publisher-loggingErrorBehaviorProp
 const (
 	ENUMLOGPUBLISHERLOGGINGERRORBEHAVIORPROP_STANDARD_ERROR EnumlogPublisherLoggingErrorBehaviorProp = "standard-error"
-	ENUMLOGPUBLISHERLOGGINGERRORBEHAVIORPROP_LOCKDOWN_MODE EnumlogPublisherLoggingErrorBehaviorProp = "lockdown-mode"
+	ENUMLOGPUBLISHERLOGGINGERRORBEHAVIORPROP_LOCKDOWN_MODE  EnumlogPublisherLoggingErrorBehaviorProp = "lockdown-mode"
 )
 
 // All allowed values of EnumlogPublisherLoggingErrorBehaviorProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumlogPublisherLoggingErrorBehaviorProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

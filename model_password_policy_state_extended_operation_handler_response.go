@@ -16,9 +16,9 @@ import (
 
 // PasswordPolicyStateExtendedOperationHandlerResponse struct for PasswordPolicyStateExtendedOperationHandlerResponse
 type PasswordPolicyStateExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                                  `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20         `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetMeta() MetaMeta
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetUrnpingidentity
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetSchemas() []Enu
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetDescription() s
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetEnabled() bool 
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullablePasswordPolicyStateExtendedOperationHandlerResponse) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

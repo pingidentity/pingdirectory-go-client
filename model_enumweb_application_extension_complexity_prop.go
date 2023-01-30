@@ -20,10 +20,10 @@ type EnumwebApplicationExtensionComplexityProp string
 
 // List of Enumweb-application-extension-complexityProp
 const (
-	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_BASIC EnumwebApplicationExtensionComplexityProp = "basic"
+	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_BASIC    EnumwebApplicationExtensionComplexityProp = "basic"
 	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_STANDARD EnumwebApplicationExtensionComplexityProp = "standard"
 	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_ADVANCED EnumwebApplicationExtensionComplexityProp = "advanced"
-	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_EXPERT EnumwebApplicationExtensionComplexityProp = "expert"
+	ENUMWEBAPPLICATIONEXTENSIONCOMPLEXITYPROP_EXPERT   EnumwebApplicationExtensionComplexityProp = "expert"
 )
 
 // All allowed values of EnumwebApplicationExtensionComplexityProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumwebApplicationExtensionComplexityProp) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

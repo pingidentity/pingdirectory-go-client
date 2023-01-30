@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedFileBasedErrorLogPublisherResponse struct for GroovyScriptedFileBasedErrorLogPublisherResponse
 type GroovyScriptedFileBasedErrorLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                                  `json:"id"`
 	Schemas []EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted File Based Error Log Publisher.
 	ScriptClass string `json:"scriptClass"`
@@ -32,7 +32,7 @@ type GroovyScriptedFileBasedErrorLogPublisherResponse struct {
 	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
 	// The retention policy to use for the Scripted File Based Error Log Publisher .
-	RetentionPolicy []string `json:"retentionPolicy"`
+	RetentionPolicy      []string                                  `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
 	SignLog *bool `json:"signLog,omitempty"`
@@ -53,14 +53,14 @@ type GroovyScriptedFileBasedErrorLogPublisherResponse struct {
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
-	TimeInterval *string `json:"timeInterval,omitempty"`
+	TimeInterval    *string                               `json:"timeInterval,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -103,7 +103,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -135,7 +135,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetUrnpingidentitysch
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -168,7 +168,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -192,7 +192,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetSchemas() []Enumgr
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetSchemasOk() ([]EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -216,7 +216,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetScriptClass() stri
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -240,7 +240,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetLogFile() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetLogFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFile, true
 }
@@ -264,7 +264,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetLogFilePermissions
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetLogFilePermissionsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFilePermissions, true
 }
@@ -288,7 +288,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetRotationPolicy() [
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetRotationPolicyOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RotationPolicy, true
 }
@@ -311,7 +311,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetRotationListener()
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetRotationListenerOk() ([]string, bool) {
 	if o == nil || isNil(o.RotationListener) {
-    return nil, false
+		return nil, false
 	}
 	return o.RotationListener, true
 }
@@ -344,7 +344,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetRetentionPolicy() 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetRetentionPolicyOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RetentionPolicy, true
 }
@@ -367,7 +367,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetCompressionMechani
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
 	if o == nil || isNil(o.CompressionMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompressionMechanism, true
 }
@@ -399,7 +399,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetSignLog() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetSignLogOk() (*bool, bool) {
 	if o == nil || isNil(o.SignLog) {
-    return nil, false
+		return nil, false
 	}
 	return o.SignLog, true
 }
@@ -431,7 +431,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetEncryptLog() bool 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
 	if o == nil || isNil(o.EncryptLog) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptLog, true
 }
@@ -463,7 +463,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetEncryptionSettings
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
 }
@@ -495,7 +495,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetAppend() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetAppendOk() (*bool, bool) {
 	if o == nil || isNil(o.Append) {
-    return nil, false
+		return nil, false
 	}
 	return o.Append, true
 }
@@ -527,7 +527,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetScriptArgument() [
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -560,7 +560,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetAsynchronous() boo
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Asynchronous, true
 }
@@ -583,7 +583,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetAutoFlush() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
 	if o == nil || isNil(o.AutoFlush) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoFlush, true
 }
@@ -615,7 +615,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetBufferSize() strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
 	if o == nil || isNil(o.BufferSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.BufferSize, true
 }
@@ -647,7 +647,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetQueueSize() int32 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -679,7 +679,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetTimeInterval() str
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.TimeInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeInterval, true
 }
@@ -711,7 +711,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetDefaultSeverity() 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -743,7 +743,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetOverrideSeverity()
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -775,7 +775,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetDescription() stri
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -808,7 +808,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -831,7 +831,7 @@ func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetLoggingErrorBehavi
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedFileBasedErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -968,5 +968,3 @@ func (v *NullableGroovyScriptedFileBasedErrorLogPublisherResponse) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

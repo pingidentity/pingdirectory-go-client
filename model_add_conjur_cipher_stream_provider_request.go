@@ -17,8 +17,8 @@ import (
 // AddConjurCipherStreamProviderRequest struct for AddConjurCipherStreamProviderRequest
 type AddConjurCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumconjurCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                    `json:"providerName"`
+	Schemas      []EnumconjurCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur server.
 	ConjurExternalServer string `json:"conjurExternalServer"`
 	// The portion of the path that follows the account name in the URI needed to obtain the secret passphrase to use to generate the encryption key. Any special characters in the path must be URL-encoded.
@@ -68,7 +68,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -92,7 +92,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetSchemas() []EnumconjurCipherSt
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetSchemasOk() ([]EnumconjurCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetConjurExternalServer() string 
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetConjurExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurExternalServer, true
 }
@@ -140,7 +140,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetConjurSecretRelativePath() str
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetConjurSecretRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurSecretRelativePath, true
 }
@@ -164,7 +164,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFile() strin
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptionMetadataFile, true
 }
@@ -187,7 +187,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -220,7 +220,7 @@ func (o *AddConjurCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddConjurCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -291,5 +291,3 @@ func (v *NullableAddConjurCipherStreamProviderRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

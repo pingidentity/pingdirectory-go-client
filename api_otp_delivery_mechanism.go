@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // OtpDeliveryMechanismApiService OtpDeliveryMechanismApi service
 type OtpDeliveryMechanismApiService service
 
 type ApiAddOtpDeliveryMechanismRequest struct {
-	ctx context.Context
-	ApiService *OtpDeliveryMechanismApiService
+	ctx                            context.Context
+	ApiService                     *OtpDeliveryMechanismApiService
 	addOtpDeliveryMechanismRequest *AddOtpDeliveryMechanismRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddOtpDeliveryMechanismRequest) Execute() (*AddOtpDeliveryMechanism20
 /*
 AddOtpDeliveryMechanism Add a new OTP Delivery Mechanism to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOtpDeliveryMechanismRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) AddOtpDeliveryMechanism(ctx context.Context) ApiAddOtpDeliveryMechanismRequest {
 	return ApiAddOtpDeliveryMechanismRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddOtpDeliveryMechanism200Response
+//
+//	@return AddOtpDeliveryMechanism200Response
 func (a *OtpDeliveryMechanismApiService) AddOtpDeliveryMechanismExecute(r ApiAddOtpDeliveryMechanismRequest) (*AddOtpDeliveryMechanism200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddOtpDeliveryMechanism200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddOtpDeliveryMechanism200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OtpDeliveryMechanismApiService.AddOtpDeliveryMechanism")
@@ -133,8 +133,8 @@ func (a *OtpDeliveryMechanismApiService) AddOtpDeliveryMechanismExecute(r ApiAdd
 }
 
 type ApiDeleteOtpDeliveryMechanismRequest struct {
-	ctx context.Context
-	ApiService *OtpDeliveryMechanismApiService
+	ctx                      context.Context
+	ApiService               *OtpDeliveryMechanismApiService
 	otpDeliveryMechanismName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteOtpDeliveryMechanismRequest) Execute() (*http.Response, error) 
 /*
 DeleteOtpDeliveryMechanism Delete a OTP Delivery Mechanism
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be deleted
- @return ApiDeleteOtpDeliveryMechanismRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be deleted
+	@return ApiDeleteOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) DeleteOtpDeliveryMechanism(ctx context.Context, otpDeliveryMechanismName string) ApiDeleteOtpDeliveryMechanismRequest {
 	return ApiDeleteOtpDeliveryMechanismRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		otpDeliveryMechanismName: otpDeliveryMechanismName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *OtpDeliveryMechanismApiService) DeleteOtpDeliveryMechanism(ctx context.
 // Execute executes the request
 func (a *OtpDeliveryMechanismApiService) DeleteOtpDeliveryMechanismExecute(r ApiDeleteOtpDeliveryMechanismRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OtpDeliveryMechanismApiService.DeleteOtpDeliveryMechanism")
@@ -223,8 +223,8 @@ func (a *OtpDeliveryMechanismApiService) DeleteOtpDeliveryMechanismExecute(r Api
 }
 
 type ApiGetOtpDeliveryMechanismRequest struct {
-	ctx context.Context
-	ApiService *OtpDeliveryMechanismApiService
+	ctx                      context.Context
+	ApiService               *OtpDeliveryMechanismApiService
 	otpDeliveryMechanismName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetOtpDeliveryMechanismRequest) Execute() (*AddOtpDeliveryMechanism20
 /*
 GetOtpDeliveryMechanism Returns a single OTP Delivery Mechanism
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be read
- @return ApiGetOtpDeliveryMechanismRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be read
+	@return ApiGetOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) GetOtpDeliveryMechanism(ctx context.Context, otpDeliveryMechanismName string) ApiGetOtpDeliveryMechanismRequest {
 	return ApiGetOtpDeliveryMechanismRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		otpDeliveryMechanismName: otpDeliveryMechanismName,
 	}
 }
 
 // Execute executes the request
-//  @return AddOtpDeliveryMechanism200Response
+//
+//	@return AddOtpDeliveryMechanism200Response
 func (a *OtpDeliveryMechanismApiService) GetOtpDeliveryMechanismExecute(r ApiGetOtpDeliveryMechanismRequest) (*AddOtpDeliveryMechanism200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddOtpDeliveryMechanism200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddOtpDeliveryMechanism200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OtpDeliveryMechanismApiService.GetOtpDeliveryMechanism")
@@ -324,10 +325,10 @@ func (a *OtpDeliveryMechanismApiService) GetOtpDeliveryMechanismExecute(r ApiGet
 }
 
 type ApiUpdateOtpDeliveryMechanismRequest struct {
-	ctx context.Context
-	ApiService *OtpDeliveryMechanismApiService
+	ctx                      context.Context
+	ApiService               *OtpDeliveryMechanismApiService
 	otpDeliveryMechanismName string
-	updateRequest *UpdateRequest
+	updateRequest            *UpdateRequest
 }
 
 // Update an existing OTP Delivery Mechanism
@@ -343,26 +344,27 @@ func (r ApiUpdateOtpDeliveryMechanismRequest) Execute() (*AddOtpDeliveryMechanis
 /*
 UpdateOtpDeliveryMechanism Update an existing OTP Delivery Mechanism by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be updated
- @return ApiUpdateOtpDeliveryMechanismRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be updated
+	@return ApiUpdateOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) UpdateOtpDeliveryMechanism(ctx context.Context, otpDeliveryMechanismName string) ApiUpdateOtpDeliveryMechanismRequest {
 	return ApiUpdateOtpDeliveryMechanismRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		otpDeliveryMechanismName: otpDeliveryMechanismName,
 	}
 }
 
 // Execute executes the request
-//  @return AddOtpDeliveryMechanism200Response
+//
+//	@return AddOtpDeliveryMechanism200Response
 func (a *OtpDeliveryMechanismApiService) UpdateOtpDeliveryMechanismExecute(r ApiUpdateOtpDeliveryMechanismRequest) (*AddOtpDeliveryMechanism200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddOtpDeliveryMechanism200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddOtpDeliveryMechanism200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OtpDeliveryMechanismApiService.UpdateOtpDeliveryMechanism")

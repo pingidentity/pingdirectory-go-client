@@ -17,8 +17,8 @@ import (
 
 // AddConnectionCriteria200Response - struct for AddConnectionCriteria200Response
 type AddConnectionCriteria200Response struct {
-	AggregateConnectionCriteriaResponse *AggregateConnectionCriteriaResponse
-	SimpleConnectionCriteriaResponse *SimpleConnectionCriteriaResponse
+	AggregateConnectionCriteriaResponse  *AggregateConnectionCriteriaResponse
+	SimpleConnectionCriteriaResponse     *SimpleConnectionCriteriaResponse
 	ThirdPartyConnectionCriteriaResponse *ThirdPartyConnectionCriteriaResponse
 }
 
@@ -42,7 +42,6 @@ func ThirdPartyConnectionCriteriaResponseAsAddConnectionCriteria200Response(v *T
 		ThirdPartyConnectionCriteriaResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddConnectionCriteria200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddConnectionCriteria200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddConnectionCriteria200Response) GetActualInstance() (interface{}) {
+func (obj *AddConnectionCriteria200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddConnectionCriteria200Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

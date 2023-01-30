@@ -20,11 +20,11 @@ type EnumbackendSystemIndexToPrimeProp string
 
 // List of Enumbackend-systemIndexToPrimeProp
 const (
-	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_DN2ID EnumbackendSystemIndexToPrimeProp = "dn2id"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_ID2ENTRY EnumbackendSystemIndexToPrimeProp = "id2entry"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_DN2ID       EnumbackendSystemIndexToPrimeProp = "dn2id"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_ID2ENTRY    EnumbackendSystemIndexToPrimeProp = "id2entry"
 	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_ID2CHILDREN EnumbackendSystemIndexToPrimeProp = "id2children"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_ID2SUBTREE EnumbackendSystemIndexToPrimeProp = "id2subtree"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_DN2URI EnumbackendSystemIndexToPrimeProp = "dn2uri"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_ID2SUBTREE  EnumbackendSystemIndexToPrimeProp = "id2subtree"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEPROP_DN2URI      EnumbackendSystemIndexToPrimeProp = "dn2uri"
 )
 
 // All allowed values of EnumbackendSystemIndexToPrimeProp enum
@@ -114,4 +114,3 @@ func (v *NullableEnumbackendSystemIndexToPrimeProp) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

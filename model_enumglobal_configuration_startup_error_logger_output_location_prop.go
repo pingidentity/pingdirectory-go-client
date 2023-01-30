@@ -20,12 +20,12 @@ type EnumglobalConfigurationStartupErrorLoggerOutputLocationProp string
 
 // List of Enumglobal-configuration-startupErrorLoggerOutputLocationProp
 const (
-	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_OUTPUT EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-output"
-	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_ERROR EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-error"
-	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_SERVER_OUT_FILE EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "server-out-file"
+	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_OUTPUT                     EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-output"
+	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_ERROR                      EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-error"
+	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_SERVER_OUT_FILE                     EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "server-out-file"
 	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_OUTPUT_AND_SERVER_OUT_FILE EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-output-and-server-out-file"
-	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_ERROR_AND_SERVER_OUT_FILE EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-error-and-server-out-file"
-	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_DISABLED EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "disabled"
+	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_STANDARD_ERROR_AND_SERVER_OUT_FILE  EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "standard-error-and-server-out-file"
+	ENUMGLOBALCONFIGURATIONSTARTUPERRORLOGGEROUTPUTLOCATIONPROP_DISABLED                            EnumglobalConfigurationStartupErrorLoggerOutputLocationProp = "disabled"
 )
 
 // All allowed values of EnumglobalConfigurationStartupErrorLoggerOutputLocationProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumglobalConfigurationStartupErrorLoggerOutputLocationProp) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

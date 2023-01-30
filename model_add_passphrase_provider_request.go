@@ -18,13 +18,13 @@ import (
 // AddPassphraseProviderRequest - struct for AddPassphraseProviderRequest
 type AddPassphraseProviderRequest struct {
 	AddAmazonSecretsManagerPassphraseProviderRequest *AddAmazonSecretsManagerPassphraseProviderRequest
-	AddAzureKeyVaultPassphraseProviderRequest *AddAzureKeyVaultPassphraseProviderRequest
-	AddConjurPassphraseProviderRequest *AddConjurPassphraseProviderRequest
-	AddEnvironmentVariablePassphraseProviderRequest *AddEnvironmentVariablePassphraseProviderRequest
-	AddFileBasedPassphraseProviderRequest *AddFileBasedPassphraseProviderRequest
-	AddObscuredValuePassphraseProviderRequest *AddObscuredValuePassphraseProviderRequest
-	AddThirdPartyPassphraseProviderRequest *AddThirdPartyPassphraseProviderRequest
-	AddVaultPassphraseProviderRequest *AddVaultPassphraseProviderRequest
+	AddAzureKeyVaultPassphraseProviderRequest        *AddAzureKeyVaultPassphraseProviderRequest
+	AddConjurPassphraseProviderRequest               *AddConjurPassphraseProviderRequest
+	AddEnvironmentVariablePassphraseProviderRequest  *AddEnvironmentVariablePassphraseProviderRequest
+	AddFileBasedPassphraseProviderRequest            *AddFileBasedPassphraseProviderRequest
+	AddObscuredValuePassphraseProviderRequest        *AddObscuredValuePassphraseProviderRequest
+	AddThirdPartyPassphraseProviderRequest           *AddThirdPartyPassphraseProviderRequest
+	AddVaultPassphraseProviderRequest                *AddVaultPassphraseProviderRequest
 }
 
 // AddAmazonSecretsManagerPassphraseProviderRequestAsAddPassphraseProviderRequest is a convenience function that returns AddAmazonSecretsManagerPassphraseProviderRequest wrapped in AddPassphraseProviderRequest
@@ -82,7 +82,6 @@ func AddVaultPassphraseProviderRequestAsAddPassphraseProviderRequest(v *AddVault
 		AddVaultPassphraseProviderRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPassphraseProviderRequest) UnmarshalJSON(data []byte) error {
@@ -249,7 +248,7 @@ func (src AddPassphraseProviderRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPassphraseProviderRequest) GetActualInstance() (interface{}) {
+func (obj *AddPassphraseProviderRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -324,5 +323,3 @@ func (v *NullableAddPassphraseProviderRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

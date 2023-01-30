@@ -106,4 +106,3 @@ func (v *NullableEnumthirdPartyExtendedOperationHandlerSchemaUrn) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,20 +16,20 @@ import (
 
 // Scim2HttpServletExtensionResponse struct for Scim2HttpServletExtensionResponse
 type Scim2HttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []Enumscim2HttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas                                       []Enumscim2HttpServletExtensionSchemaUrn           `json:"schemas"`
 	// Name of the HTTP Servlet Extension
 	Id string `json:"id"`
 	// The context path to use to access the SCIM 2.0 interface. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
 	// If specified, the Access Token Validator(s) that may be used to validate access tokens for requests submitted to this SCIM2 HTTP Servlet Extension.
-	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
+	AccessTokenValidator        []string                                                 `json:"accessTokenValidator,omitempty"`
 	MapAccessTokensToLocalUsers *EnumhttpServletExtensionMapAccessTokensToLocalUsersProp `json:"mapAccessTokensToLocalUsers,omitempty"`
 	// Enables debug logging of the SCIM 2.0 SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.broker.http.scim2.extension.SCIM2HTTPServletExtension.
-	DebugEnabled *bool `json:"debugEnabled,omitempty"`
-	DebugLevel EnumhttpServletExtensionDebugLevelProp `json:"debugLevel"`
-	DebugType []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
+	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
+	DebugLevel   EnumhttpServletExtensionDebugLevelProp  `json:"debugLevel"`
+	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
 	// Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
 	IncludeStackTrace bool `json:"includeStackTrace"`
 	// Indicates whether the SCIM2 HTTP Servlet Extension will generate a Swagger specification document.
@@ -80,7 +80,7 @@ func (o *Scim2HttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -112,7 +112,7 @@ func (o *Scim2HttpServletExtensionResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -145,7 +145,7 @@ func (o *Scim2HttpServletExtensionResponse) GetSchemas() []Enumscim2HttpServletE
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetSchemasOk() ([]Enumscim2HttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -169,7 +169,7 @@ func (o *Scim2HttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -193,7 +193,7 @@ func (o *Scim2HttpServletExtensionResponse) GetBaseContextPath() string {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetBaseContextPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BaseContextPath, true
 }
@@ -216,7 +216,7 @@ func (o *Scim2HttpServletExtensionResponse) GetAccessTokenValidator() []string {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.AccessTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenValidator, true
 }
@@ -248,7 +248,7 @@ func (o *Scim2HttpServletExtensionResponse) GetMapAccessTokensToLocalUsers() Enu
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetMapAccessTokensToLocalUsersOk() (*EnumhttpServletExtensionMapAccessTokensToLocalUsersProp, bool) {
 	if o == nil || isNil(o.MapAccessTokensToLocalUsers) {
-    return nil, false
+		return nil, false
 	}
 	return o.MapAccessTokensToLocalUsers, true
 }
@@ -280,7 +280,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDebugEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetDebugEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.DebugEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.DebugEnabled, true
 }
@@ -313,7 +313,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDebugLevel() EnumhttpServletExten
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetDebugLevelOk() (*EnumhttpServletExtensionDebugLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DebugLevel, true
 }
@@ -337,7 +337,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDebugType() []EnumhttpServletExte
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetDebugTypeOk() ([]EnumhttpServletExtensionDebugTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DebugType, true
 }
@@ -361,7 +361,7 @@ func (o *Scim2HttpServletExtensionResponse) GetIncludeStackTrace() bool {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetIncludeStackTraceOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IncludeStackTrace, true
 }
@@ -384,7 +384,7 @@ func (o *Scim2HttpServletExtensionResponse) GetSwaggerEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetSwaggerEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SwaggerEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SwaggerEnabled, true
 }
@@ -416,7 +416,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -448,7 +448,7 @@ func (o *Scim2HttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -480,7 +480,7 @@ func (o *Scim2HttpServletExtensionResponse) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -512,7 +512,7 @@ func (o *Scim2HttpServletExtensionResponse) GetCorrelationIDResponseHeader() str
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -619,5 +619,3 @@ func (v *NullableScim2HttpServletExtensionResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

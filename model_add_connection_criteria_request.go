@@ -17,8 +17,8 @@ import (
 
 // AddConnectionCriteriaRequest - struct for AddConnectionCriteriaRequest
 type AddConnectionCriteriaRequest struct {
-	AddAggregateConnectionCriteriaRequest *AddAggregateConnectionCriteriaRequest
-	AddSimpleConnectionCriteriaRequest *AddSimpleConnectionCriteriaRequest
+	AddAggregateConnectionCriteriaRequest  *AddAggregateConnectionCriteriaRequest
+	AddSimpleConnectionCriteriaRequest     *AddSimpleConnectionCriteriaRequest
 	AddThirdPartyConnectionCriteriaRequest *AddThirdPartyConnectionCriteriaRequest
 }
 
@@ -42,7 +42,6 @@ func AddThirdPartyConnectionCriteriaRequestAsAddConnectionCriteriaRequest(v *Add
 		AddThirdPartyConnectionCriteriaRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddConnectionCriteriaRequest) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddConnectionCriteriaRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddConnectionCriteriaRequest) GetActualInstance() (interface{}) {
+func (obj *AddConnectionCriteriaRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddConnectionCriteriaRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

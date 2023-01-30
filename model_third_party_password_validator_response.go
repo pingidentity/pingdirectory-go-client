@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyPasswordValidatorResponse struct for ThirdPartyPasswordValidatorResponse
 type ThirdPartyPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumthirdPartyPasswordValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Password Validator.
 	ExtensionClass string `json:"extensionClass"`
@@ -69,7 +69,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -158,7 +158,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetSchemas() []EnumthirdPartyPassw
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetSchemasOk() ([]EnumthirdPartyPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -205,7 +205,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -237,7 +237,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -270,7 +270,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -293,7 +293,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetValidatorRequirementDescription
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -325,7 +325,7 @@ func (o *ThirdPartyPasswordValidatorResponse) GetValidatorFailureMessage() strin
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -414,5 +414,3 @@ func (v *NullableThirdPartyPasswordValidatorResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

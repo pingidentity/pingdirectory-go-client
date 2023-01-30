@@ -116,4 +116,3 @@ func (v *NullableEnumaccessTokenValidatorAllowedSigningAlgorithmProp) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

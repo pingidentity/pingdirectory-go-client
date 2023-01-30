@@ -16,11 +16,11 @@ import (
 
 // ExternalSaslMechanismHandlerResponse struct for ExternalSaslMechanismHandlerResponse
 type ExternalSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumexternalSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumexternalSaslMechanismHandlerSchemaUrn        `json:"schemas"`
 	// Name of the SASL Mechanism Handler
-	Id string `json:"id"`
+	Id                          string                                                  `json:"id"`
 	CertificateValidationPolicy EnumsaslMechanismHandlerCertificateValidationPolicyProp `json:"certificateValidationPolicy"`
 	// Specifies the name of the attribute to hold user certificates.
 	CertificateAttribute *string `json:"certificateAttribute,omitempty"`
@@ -67,7 +67,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetSchemas() []EnumexternalSaslMe
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumexternalSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -156,7 +156,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -180,7 +180,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetCertificateValidationPolicy() 
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetCertificateValidationPolicyOk() (*EnumsaslMechanismHandlerCertificateValidationPolicyProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CertificateValidationPolicy, true
 }
@@ -203,7 +203,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetCertificateAttribute() string 
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetCertificateAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.CertificateAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.CertificateAttribute, true
 }
@@ -236,7 +236,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetCertificateMapper() string {
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetCertificateMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CertificateMapper, true
 }
@@ -259,7 +259,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -292,7 +292,7 @@ func (o *ExternalSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ExternalSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -369,5 +369,3 @@ func (v *NullableExternalSaslMechanismHandlerResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

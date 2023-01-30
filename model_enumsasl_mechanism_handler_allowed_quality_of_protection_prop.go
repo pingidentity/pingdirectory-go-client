@@ -20,8 +20,8 @@ type EnumsaslMechanismHandlerAllowedQualityOfProtectionProp string
 
 // List of Enumsasl-mechanism-handler-allowedQualityOfProtectionProp
 const (
-	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth"
-	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH_INT EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-int"
+	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH      EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth"
+	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH_INT  EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-int"
 	ENUMSASLMECHANISMHANDLERALLOWEDQUALITYOFPROTECTIONPROP_AUTH_CONF EnumsaslMechanismHandlerAllowedQualityOfProtectionProp = "auth-conf"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumsaslMechanismHandlerAllowedQualityOfProtectionProp) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

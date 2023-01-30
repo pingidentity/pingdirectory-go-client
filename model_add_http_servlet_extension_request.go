@@ -18,11 +18,11 @@ import (
 // AddHttpServletExtensionRequest - struct for AddHttpServletExtensionRequest
 type AddHttpServletExtensionRequest struct {
 	AddAvailabilityStateHttpServletExtensionRequest *AddAvailabilityStateHttpServletExtensionRequest
-	AddFileServerHttpServletExtensionRequest *AddFileServerHttpServletExtensionRequest
-	AddGroovyScriptedHttpServletExtensionRequest *AddGroovyScriptedHttpServletExtensionRequest
-	AddLdapMappedScimHttpServletExtensionRequest *AddLdapMappedScimHttpServletExtensionRequest
-	AddQuickstartHttpServletExtensionRequest *AddQuickstartHttpServletExtensionRequest
-	AddThirdPartyHttpServletExtensionRequest *AddThirdPartyHttpServletExtensionRequest
+	AddFileServerHttpServletExtensionRequest        *AddFileServerHttpServletExtensionRequest
+	AddGroovyScriptedHttpServletExtensionRequest    *AddGroovyScriptedHttpServletExtensionRequest
+	AddLdapMappedScimHttpServletExtensionRequest    *AddLdapMappedScimHttpServletExtensionRequest
+	AddQuickstartHttpServletExtensionRequest        *AddQuickstartHttpServletExtensionRequest
+	AddThirdPartyHttpServletExtensionRequest        *AddThirdPartyHttpServletExtensionRequest
 }
 
 // AddAvailabilityStateHttpServletExtensionRequestAsAddHttpServletExtensionRequest is a convenience function that returns AddAvailabilityStateHttpServletExtensionRequest wrapped in AddHttpServletExtensionRequest
@@ -66,7 +66,6 @@ func AddThirdPartyHttpServletExtensionRequestAsAddHttpServletExtensionRequest(v 
 		AddThirdPartyHttpServletExtensionRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddHttpServletExtensionRequest) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src AddHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddHttpServletExtensionRequest) GetActualInstance() (interface{}) {
+func (obj *AddHttpServletExtensionRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableAddHttpServletExtensionRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

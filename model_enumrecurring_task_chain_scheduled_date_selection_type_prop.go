@@ -20,8 +20,8 @@ type EnumrecurringTaskChainScheduledDateSelectionTypeProp string
 
 // List of Enumrecurring-task-chain-scheduledDateSelectionTypeProp
 const (
-	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_EVERY_DAY EnumrecurringTaskChainScheduledDateSelectionTypeProp = "every-day"
-	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_SELECTED_DAYS_OF_THE_WEEK EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-week"
+	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_EVERY_DAY                  EnumrecurringTaskChainScheduledDateSelectionTypeProp = "every-day"
+	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_SELECTED_DAYS_OF_THE_WEEK  EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-week"
 	ENUMRECURRINGTASKCHAINSCHEDULEDDATESELECTIONTYPEPROP_SELECTED_DAYS_OF_THE_MONTH EnumrecurringTaskChainScheduledDateSelectionTypeProp = "selected-days-of-the-month"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumrecurringTaskChainScheduledDateSelectionTypeProp) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

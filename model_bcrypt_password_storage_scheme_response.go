@@ -16,10 +16,10 @@ import (
 
 // BcryptPasswordStorageSchemeResponse struct for BcryptPasswordStorageSchemeResponse
 type BcryptPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive.
 	BcryptCostFactor *int32 `json:"bcryptCostFactor,omitempty"`
@@ -62,7 +62,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetSchemas() []EnumbcryptPasswordS
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumbcryptPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -174,7 +174,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactor() int32 {
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetBcryptCostFactorOk() (*int32, bool) {
 	if o == nil || isNil(o.BcryptCostFactor) {
-    return nil, false
+		return nil, false
 	}
 	return o.BcryptCostFactor, true
 }
@@ -206,7 +206,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -239,7 +239,7 @@ func (o *BcryptPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BcryptPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -310,5 +310,3 @@ func (v *NullableBcryptPasswordStorageSchemeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

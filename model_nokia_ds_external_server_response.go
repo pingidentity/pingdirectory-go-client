@@ -16,11 +16,11 @@ import (
 
 // NokiaDsExternalServerResponse struct for NokiaDsExternalServerResponse
 type NokiaDsExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
-	Schemas []EnumnokiaDsExternalServerSchemaUrn `json:"schemas"`
+	Id                      string                                        `json:"id"`
+	Schemas                 []EnumnokiaDsExternalServerSchemaUrn          `json:"schemas"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
 	// Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
 	UseAdministrativeOperationControl *bool `json:"useAdministrativeOperationControl,omitempty"`
@@ -35,8 +35,8 @@ type NokiaDsExternalServerResponse struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider *string `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity EnumexternalServerConnectionSecurityProp `json:"connectionSecurity"`
+	PassphraseProvider   *string                                    `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity   EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -55,7 +55,7 @@ type NokiaDsExternalServerResponse struct {
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
 	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -103,7 +103,7 @@ func (o *NokiaDsExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -135,7 +135,7 @@ func (o *NokiaDsExternalServerResponse) GetUrnpingidentityschemasconfigurationme
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -168,7 +168,7 @@ func (o *NokiaDsExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -192,7 +192,7 @@ func (o *NokiaDsExternalServerResponse) GetSchemas() []EnumnokiaDsExternalServer
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetSchemasOk() ([]EnumnokiaDsExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -216,7 +216,7 @@ func (o *NokiaDsExternalServerResponse) GetVerifyCredentialsMethod() Enumexterna
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VerifyCredentialsMethod, true
 }
@@ -239,7 +239,7 @@ func (o *NokiaDsExternalServerResponse) GetUseAdministrativeOperationControl() b
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetUseAdministrativeOperationControlOk() (*bool, bool) {
 	if o == nil || isNil(o.UseAdministrativeOperationControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseAdministrativeOperationControl, true
 }
@@ -272,7 +272,7 @@ func (o *NokiaDsExternalServerResponse) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -296,7 +296,7 @@ func (o *NokiaDsExternalServerResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -319,7 +319,7 @@ func (o *NokiaDsExternalServerResponse) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -351,7 +351,7 @@ func (o *NokiaDsExternalServerResponse) GetBindDN() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetBindDNOk() (*string, bool) {
 	if o == nil || isNil(o.BindDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindDN, true
 }
@@ -383,7 +383,7 @@ func (o *NokiaDsExternalServerResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -415,7 +415,7 @@ func (o *NokiaDsExternalServerResponse) GetPassphraseProvider() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -448,7 +448,7 @@ func (o *NokiaDsExternalServerResponse) GetConnectionSecurity() EnumexternalServ
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectionSecurity, true
 }
@@ -472,7 +472,7 @@ func (o *NokiaDsExternalServerResponse) GetAuthenticationMethod() EnumexternalSe
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuthenticationMethod, true
 }
@@ -495,7 +495,7 @@ func (o *NokiaDsExternalServerResponse) GetHealthCheckConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetHealthCheckConnectTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.HealthCheckConnectTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
 }
@@ -528,7 +528,7 @@ func (o *NokiaDsExternalServerResponse) GetMaxConnectionAge() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -551,7 +551,7 @@ func (o *NokiaDsExternalServerResponse) GetMinExpiredConnectionDisconnectInterva
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
 }
@@ -584,7 +584,7 @@ func (o *NokiaDsExternalServerResponse) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -608,7 +608,7 @@ func (o *NokiaDsExternalServerResponse) GetMaxResponseSize() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetMaxResponseSizeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxResponseSize, true
 }
@@ -631,7 +631,7 @@ func (o *NokiaDsExternalServerResponse) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -663,7 +663,7 @@ func (o *NokiaDsExternalServerResponse) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -695,7 +695,7 @@ func (o *NokiaDsExternalServerResponse) GetInitialConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetInitialConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.InitialConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.InitialConnections, true
 }
@@ -727,7 +727,7 @@ func (o *NokiaDsExternalServerResponse) GetMaxConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetMaxConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxConnections, true
 }
@@ -759,7 +759,7 @@ func (o *NokiaDsExternalServerResponse) GetDefunctConnectionResultCode() []Enume
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
 	if o == nil || isNil(o.DefunctConnectionResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
 }
@@ -791,7 +791,7 @@ func (o *NokiaDsExternalServerResponse) GetAbandonOnTimeout() bool {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetAbandonOnTimeoutOk() (*bool, bool) {
 	if o == nil || isNil(o.AbandonOnTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.AbandonOnTimeout, true
 }
@@ -823,7 +823,7 @@ func (o *NokiaDsExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *NokiaDsExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -960,5 +960,3 @@ func (v *NullableNokiaDsExternalServerResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

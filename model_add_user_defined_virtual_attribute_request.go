@@ -17,7 +17,7 @@ import (
 // AddUserDefinedVirtualAttributeRequest struct for AddUserDefinedVirtualAttributeRequest
 type AddUserDefinedVirtualAttributeRequest struct {
 	// Name of the new Virtual Attribute
-	Name string `json:"name"`
+	Name    string                                     `json:"name"`
 	Schemas []EnumuserDefinedVirtualAttributeSchemaUrn `json:"schemas"`
 	// Specifies the values to be included in the virtual attribute.
 	Value []string `json:"value"`
@@ -34,13 +34,13 @@ type AddUserDefinedVirtualAttributeRequest struct {
 	// Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
 	Filter []string `json:"filter,omitempty"`
 	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
-	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
-	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
+	ClientConnectionPolicy []string                                  `json:"clientConnectionPolicy,omitempty"`
+	ConflictBehavior       *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
 }
@@ -81,7 +81,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetName() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Name, true
 }
@@ -105,7 +105,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetSchemas() []EnumuserDefinedVi
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetSchemasOk() ([]EnumuserDefinedVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -129,7 +129,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetValue() []string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetValueOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Value, true
 }
@@ -152,7 +152,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -185,7 +185,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -209,7 +209,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -232,7 +232,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -264,7 +264,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetGroupDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -296,7 +296,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -328,7 +328,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetClientConnectionPolicy() []st
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -360,7 +360,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetConflictBehavior() Enumvirtua
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
 	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConflictBehavior, true
 }
@@ -392,7 +392,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetRequireExplicitRequestByName(
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -424,7 +424,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetMultipleVirtualAttributeEvalu
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -456,7 +456,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetMultipleVirtualAttributeMerge
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
 }
@@ -488,7 +488,7 @@ func (o *AddUserDefinedVirtualAttributeRequest) GetAllowIndexConflicts() bool {
 // and a boolean to check if the value has been set.
 func (o *AddUserDefinedVirtualAttributeRequest) GetAllowIndexConflictsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowIndexConflicts, true
 }
@@ -592,5 +592,3 @@ func (v *NullableAddUserDefinedVirtualAttributeRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

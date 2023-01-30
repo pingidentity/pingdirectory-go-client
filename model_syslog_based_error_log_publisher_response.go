@@ -16,10 +16,10 @@ import (
 
 // SyslogBasedErrorLogPublisherResponse struct for SyslogBasedErrorLogPublisherResponse
 type SyslogBasedErrorLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumsyslogBasedErrorLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Syslog Based Error Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
@@ -34,12 +34,12 @@ type SyslogBasedErrorLogPublisherResponse struct {
 	// Indicates whether the Syslog Based Error Log Publisher will publish records asynchronously.
 	Asynchronous bool `json:"asynchronous"`
 	// The maximum number of log records that can be stored in the asynchronous queue.
-	QueueSize *int32 `json:"queueSize,omitempty"`
+	QueueSize       *int32                                `json:"queueSize,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
-	Description *string `json:"description,omitempty"`
+	Description          *string                                   `json:"description,omitempty"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -80,7 +80,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -112,7 +112,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -145,7 +145,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -169,7 +169,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetSchemas() []EnumsyslogBasedErr
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetSchemasOk() ([]EnumsyslogBasedErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -193,7 +193,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -217,7 +217,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -241,7 +241,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -265,7 +265,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacility() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetSyslogFacilityOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SyslogFacility, true
 }
@@ -288,7 +288,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetAutoFlush() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
 	if o == nil || isNil(o.AutoFlush) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoFlush, true
 }
@@ -321,7 +321,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Asynchronous, true
 }
@@ -344,7 +344,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -376,7 +376,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetDefaultSeverity() []EnumlogPub
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -408,7 +408,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetOverrideSeverity() []string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -440,7 +440,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -472,7 +472,7 @@ func (o *SyslogBasedErrorLogPublisherResponse) GetLoggingErrorBehavior() Enumlog
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -576,5 +576,3 @@ func (v *NullableSyslogBasedErrorLogPublisherResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

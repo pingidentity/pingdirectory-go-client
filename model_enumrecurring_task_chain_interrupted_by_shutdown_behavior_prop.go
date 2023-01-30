@@ -20,7 +20,7 @@ type EnumrecurringTaskChainInterruptedByShutdownBehaviorProp string
 
 // List of Enumrecurring-task-chain-interruptedByShutdownBehaviorProp
 const (
-	ENUMRECURRINGTASKCHAININTERRUPTEDBYSHUTDOWNBEHAVIORPROP_INTERRUPTED_TASK_AND_DEPENDENCIES EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-interrupted-task-and-dependencies"
+	ENUMRECURRINGTASKCHAININTERRUPTEDBYSHUTDOWNBEHAVIORPROP_INTERRUPTED_TASK_AND_DEPENDENCIES               EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-interrupted-task-and-dependencies"
 	ENUMRECURRINGTASKCHAININTERRUPTEDBYSHUTDOWNBEHAVIORPROP_ONLY_INTERRUPTED_TASK_BUT_PRESERVE_DEPENDENCIES EnumrecurringTaskChainInterruptedByShutdownBehaviorProp = "cancel-only-interrupted-task-but-preserve-dependencies"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumrecurringTaskChainInterruptedByShutdownBehaviorProp) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

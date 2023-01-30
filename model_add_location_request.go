@@ -17,8 +17,8 @@ import (
 // AddLocationRequest struct for AddLocationRequest
 type AddLocationRequest struct {
 	// Name of the new Location
-	LocationName string `json:"locationName"`
-	Schemas []EnumlocationSchemaUrn `json:"schemas,omitempty"`
+	LocationName string                  `json:"locationName"`
+	Schemas      []EnumlocationSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Location
 	Description *string `json:"description,omitempty"`
 }
@@ -55,7 +55,7 @@ func (o *AddLocationRequest) GetLocationName() string {
 // and a boolean to check if the value has been set.
 func (o *AddLocationRequest) GetLocationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LocationName, true
 }
@@ -78,7 +78,7 @@ func (o *AddLocationRequest) GetSchemas() []EnumlocationSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddLocationRequest) GetSchemasOk() ([]EnumlocationSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddLocationRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddLocationRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -178,5 +178,3 @@ func (v *NullableAddLocationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

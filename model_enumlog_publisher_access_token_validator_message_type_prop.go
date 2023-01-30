@@ -20,11 +20,11 @@ type EnumlogPublisherAccessTokenValidatorMessageTypeProp string
 
 // List of Enumlog-publisher-accessTokenValidatorMessageTypeProp
 const (
-	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_SUBJECT_LOOKUP EnumlogPublisherAccessTokenValidatorMessageTypeProp = "subject-lookup"
-	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_REQUEST EnumlogPublisherAccessTokenValidatorMessageTypeProp = "external-server-request"
+	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_SUBJECT_LOOKUP           EnumlogPublisherAccessTokenValidatorMessageTypeProp = "subject-lookup"
+	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_REQUEST  EnumlogPublisherAccessTokenValidatorMessageTypeProp = "external-server-request"
 	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_RESPONSE EnumlogPublisherAccessTokenValidatorMessageTypeProp = "external-server-response"
-	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_VALIDATION EnumlogPublisherAccessTokenValidatorMessageTypeProp = "validation"
-	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_ERROR EnumlogPublisherAccessTokenValidatorMessageTypeProp = "error"
+	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_VALIDATION               EnumlogPublisherAccessTokenValidatorMessageTypeProp = "validation"
+	ENUMLOGPUBLISHERACCESSTOKENVALIDATORMESSAGETYPEPROP_ERROR                    EnumlogPublisherAccessTokenValidatorMessageTypeProp = "error"
 )
 
 // All allowed values of EnumlogPublisherAccessTokenValidatorMessageTypeProp enum
@@ -114,4 +114,3 @@ func (v *NullableEnumlogPublisherAccessTokenValidatorMessageTypeProp) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

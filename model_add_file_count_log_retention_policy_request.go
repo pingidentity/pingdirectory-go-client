@@ -17,8 +17,8 @@ import (
 // AddFileCountLogRetentionPolicyRequest struct for AddFileCountLogRetentionPolicyRequest
 type AddFileCountLogRetentionPolicyRequest struct {
 	// Name of the new Log Retention Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                     `json:"policyName"`
+	Schemas    []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the number of archived log files to retain before the oldest ones are cleaned.
 	NumberOfFiles int32 `json:"numberOfFiles"`
 	// A description for this Log Retention Policy
@@ -59,7 +59,7 @@ func (o *AddFileCountLogRetentionPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileCountLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddFileCountLogRetentionPolicyRequest) GetSchemas() []EnumfileCountLogR
 // and a boolean to check if the value has been set.
 func (o *AddFileCountLogRetentionPolicyRequest) GetSchemasOk() ([]EnumfileCountLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddFileCountLogRetentionPolicyRequest) GetNumberOfFiles() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddFileCountLogRetentionPolicyRequest) GetNumberOfFilesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.NumberOfFiles, true
 }
@@ -130,7 +130,7 @@ func (o *AddFileCountLogRetentionPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileCountLogRetentionPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddFileCountLogRetentionPolicyRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

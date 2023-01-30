@@ -17,8 +17,8 @@ import (
 // AddAttributeValuePasswordValidatorRequest struct for AddAttributeValuePasswordValidatorRequest
 type AddAttributeValuePasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumattributeValuePasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                         `json:"validatorName"`
+	Schemas       []EnumattributeValuePasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the name(s) of the attribute(s) whose values should be checked to determine whether they match the provided password. If no values are provided, then the server checks if the proposed password matches the value of any user attribute in the target user's entry.
 	MatchAttribute []string `json:"matchAttribute,omitempty"`
 	// Indicates whether to reject any proposed password that is a substring of a value in one of the match attributes in the target user's entry.
@@ -74,7 +74,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -98,7 +98,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetSchemas() []Enumattribute
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetSchemasOk() ([]EnumattributeValuePasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -121,7 +121,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetMatchAttribute() []string
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetMatchAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.MatchAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchAttribute, true
 }
@@ -153,7 +153,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetTestPasswordSubstringOfAt
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetTestPasswordSubstringOfAttributeValueOk() (*bool, bool) {
 	if o == nil || isNil(o.TestPasswordSubstringOfAttributeValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.TestPasswordSubstringOfAttributeValue, true
 }
@@ -185,7 +185,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetTestAttributeValueSubstri
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetTestAttributeValueSubstringOfPasswordOk() (*bool, bool) {
 	if o == nil || isNil(o.TestAttributeValueSubstringOfPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.TestAttributeValueSubstringOfPassword, true
 }
@@ -217,7 +217,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLeng
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int32, bool) {
 	if o == nil || isNil(o.MinimumAttributeValueLengthForSubstringMatches) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumAttributeValueLengthForSubstringMatches, true
 }
@@ -250,7 +250,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetTestReversedPassword() bo
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetTestReversedPasswordOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TestReversedPassword, true
 }
@@ -273,7 +273,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -306,7 +306,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -329,7 +329,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetValidatorRequirementDescr
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -361,7 +361,7 @@ func (o *AddAttributeValuePasswordValidatorRequest) GetValidatorFailureMessage()
 // and a boolean to check if the value has been set.
 func (o *AddAttributeValuePasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -453,5 +453,3 @@ func (v *NullableAddAttributeValuePasswordValidatorRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

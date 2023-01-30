@@ -16,10 +16,10 @@ import (
 
 // DeliverOtpExtendedOperationHandlerResponse struct for DeliverOtpExtendedOperationHandlerResponse
 type DeliverOtpExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Extended Operation Handler
-	Id string `json:"id"`
+	Id      string                                            `json:"id"`
 	Schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for \"u:\"-style authentication identities.
 	IdentityMapper string `json:"identityMapper"`
@@ -69,7 +69,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetUrnpingidentityschemasco
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -158,7 +158,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetSchemas() []EnumdeliverO
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumdeliverOtpExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetIdentityMapper() string 
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -206,7 +206,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetPasswordGenerator() stri
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetPasswordGeneratorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordGenerator, true
 }
@@ -230,7 +230,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetDefaultOTPDeliveryMechan
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetDefaultOTPDeliveryMechanismOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultOTPDeliveryMechanism, true
 }
@@ -253,7 +253,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -286,7 +286,7 @@ func (o *DeliverOtpExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DeliverOtpExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -363,5 +363,3 @@ func (v *NullableDeliverOtpExtendedOperationHandlerResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

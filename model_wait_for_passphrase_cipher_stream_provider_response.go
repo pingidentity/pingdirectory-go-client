@@ -16,10 +16,10 @@ import (
 
 // WaitForPassphraseCipherStreamProviderResponse struct for WaitForPassphraseCipherStreamProviderResponse
 type WaitForPassphraseCipherStreamProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Cipher Stream Provider
-	Id string `json:"id"`
+	Id      string                                               `json:"id"`
 	Schemas []EnumwaitForPassphraseCipherStreamProviderSchemaUrn `json:"schemas"`
 	// A description for this Cipher Stream Provider
 	Description *string `json:"description,omitempty"`
@@ -60,7 +60,7 @@ func (o *WaitForPassphraseCipherStreamProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *WaitForPassphraseCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *WaitForPassphraseCipherStreamProviderResponse) GetUrnpingidentityschema
 // and a boolean to check if the value has been set.
 func (o *WaitForPassphraseCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *WaitForPassphraseCipherStreamProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *WaitForPassphraseCipherStreamProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *WaitForPassphraseCipherStreamProviderResponse) GetSchemas() []EnumwaitF
 // and a boolean to check if the value has been set.
 func (o *WaitForPassphraseCipherStreamProviderResponse) GetSchemasOk() ([]EnumwaitForPassphraseCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -172,7 +172,7 @@ func (o *WaitForPassphraseCipherStreamProviderResponse) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *WaitForPassphraseCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *WaitForPassphraseCipherStreamProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *WaitForPassphraseCipherStreamProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableWaitForPassphraseCipherStreamProviderResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

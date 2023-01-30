@@ -20,8 +20,8 @@ type EnumserverInstancePreferredSecurityProp string
 
 // List of Enumserver-instance-preferredSecurityProp
 const (
-	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_NONE EnumserverInstancePreferredSecurityProp = "none"
-	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_SSL EnumserverInstancePreferredSecurityProp = "ssl"
+	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_NONE     EnumserverInstancePreferredSecurityProp = "none"
+	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_SSL      EnumserverInstancePreferredSecurityProp = "ssl"
 	ENUMSERVERINSTANCEPREFERREDSECURITYPROP_STARTTLS EnumserverInstancePreferredSecurityProp = "starttls"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumserverInstancePreferredSecurityProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

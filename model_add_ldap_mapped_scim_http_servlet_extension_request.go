@@ -17,8 +17,8 @@ import (
 // AddLdapMappedScimHttpServletExtensionRequest struct for AddLdapMappedScimHttpServletExtensionRequest
 type AddLdapMappedScimHttpServletExtensionRequest struct {
 	// Name of the new HTTP Servlet Extension
-	ExtensionName string `json:"extensionName"`
-	Schemas []EnumldapMappedScimHttpServletExtensionSchemaUrn `json:"schemas"`
+	ExtensionName string                                            `json:"extensionName"`
+	Schemas       []EnumldapMappedScimHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the OAuth Token Handler implementation that should be used to validate OAuth 2.0 bearer tokens when they are included in a SCIM request.
 	OAuthTokenHandler *string `json:"OAuthTokenHandler,omitempty"`
 	// Enables HTTP Basic authentication, using a username and password.
@@ -52,9 +52,9 @@ type AddLdapMappedScimHttpServletExtensionRequest struct {
 	// The maximum number of bulk requests that may be processed concurrently by the server. Any bulk request that would cause this limit to be exceeded is rejected with HTTP status code 503.
 	BulkMaxConcurrentRequests *int32 `json:"bulkMaxConcurrentRequests,omitempty"`
 	// Enables debug logging of the SCIM SDK. Debug messages will be forwarded to the Directory Server debug logger with the scope of com.unboundid.directory.server.extensions.scim.SCIMHTTPServletExtension.
-	DebugEnabled *bool `json:"debugEnabled,omitempty"`
-	DebugLevel EnumhttpServletExtensionDebugLevelProp `json:"debugLevel"`
-	DebugType []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
+	DebugEnabled *bool                                   `json:"debugEnabled,omitempty"`
+	DebugLevel   EnumhttpServletExtensionDebugLevelProp  `json:"debugLevel"`
+	DebugType    []EnumhttpServletExtensionDebugTypeProp `json:"debugType"`
 	// Indicates whether a stack trace of the thread which called the debug method should be included in debug log messages.
 	IncludeStackTrace bool `json:"includeStackTrace"`
 	// A description for this HTTP Servlet Extension
@@ -106,7 +106,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionName() string
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionName, true
 }
@@ -130,7 +130,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetSchemas() []EnumldapMa
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetSchemasOk() ([]EnumldapMappedScimHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -153,7 +153,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetOAuthTokenHandler() st
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetOAuthTokenHandlerOk() (*string, bool) {
 	if o == nil || isNil(o.OAuthTokenHandler) {
-    return nil, false
+		return nil, false
 	}
 	return o.OAuthTokenHandler, true
 }
@@ -185,7 +185,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBasicAuthEnabled() boo
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBasicAuthEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.BasicAuthEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.BasicAuthEnabled, true
 }
@@ -217,7 +217,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIdentityMapper() strin
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -249,7 +249,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetResourceMappingFile() 
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetResourceMappingFileOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceMappingFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceMappingFile, true
 }
@@ -281,7 +281,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeLDAPObjectclass
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeLDAPObjectclassOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeLDAPObjectclass) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeLDAPObjectclass, true
 }
@@ -313,7 +313,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExcludeLDAPObjectclass
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExcludeLDAPObjectclassOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeLDAPObjectclass) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeLDAPObjectclass, true
 }
@@ -345,7 +345,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeLDAPBaseDN() []
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeLDAPBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeLDAPBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeLDAPBaseDN, true
 }
@@ -377,7 +377,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExcludeLDAPBaseDN() []
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetExcludeLDAPBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeLDAPBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeLDAPBaseDN, true
 }
@@ -409,7 +409,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetEntityTagLDAPAttribute
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetEntityTagLDAPAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.EntityTagLDAPAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.EntityTagLDAPAttribute, true
 }
@@ -442,7 +442,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBaseContextPath() stri
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBaseContextPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BaseContextPath, true
 }
@@ -466,7 +466,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectory() s
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TemporaryDirectory, true
 }
@@ -490,7 +490,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectoryPerm
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetTemporaryDirectoryPermissionsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TemporaryDirectoryPermissions, true
 }
@@ -513,7 +513,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResults() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetMaxResultsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxResults, true
 }
@@ -545,7 +545,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperations() in
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxOperationsOk() (*int32, bool) {
 	if o == nil || isNil(o.BulkMaxOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.BulkMaxOperations, true
 }
@@ -577,7 +577,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxPayloadSize() s
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxPayloadSizeOk() (*string, bool) {
 	if o == nil || isNil(o.BulkMaxPayloadSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.BulkMaxPayloadSize, true
 }
@@ -609,7 +609,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentReque
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetBulkMaxConcurrentRequestsOk() (*int32, bool) {
 	if o == nil || isNil(o.BulkMaxConcurrentRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.BulkMaxConcurrentRequests, true
 }
@@ -641,7 +641,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.DebugEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.DebugEnabled, true
 }
@@ -674,7 +674,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugLevel() EnumhttpS
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugLevelOk() (*EnumhttpServletExtensionDebugLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DebugLevel, true
 }
@@ -698,7 +698,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugType() []Enumhttp
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDebugTypeOk() ([]EnumhttpServletExtensionDebugTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DebugType, true
 }
@@ -722,7 +722,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeStackTrace() bo
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetIncludeStackTraceOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IncludeStackTrace, true
 }
@@ -745,7 +745,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -777,7 +777,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetCrossOriginPolicy() st
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -809,7 +809,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetResponseHeader() []str
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -841,7 +841,7 @@ func (o *AddLdapMappedScimHttpServletExtensionRequest) GetCorrelationIDResponseH
 // and a boolean to check if the value has been set.
 func (o *AddLdapMappedScimHttpServletExtensionRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -978,5 +978,3 @@ func (v *NullableAddLdapMappedScimHttpServletExtensionRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type EnumrequestCriteriaIncludedSearchScopeProp string
 
 // List of Enumrequest-criteria-includedSearchScopeProp
 const (
-	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_BASE_OBJECT EnumrequestCriteriaIncludedSearchScopeProp = "base-object"
-	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_SINGLE_LEVEL EnumrequestCriteriaIncludedSearchScopeProp = "single-level"
-	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_WHOLE_SUBTREE EnumrequestCriteriaIncludedSearchScopeProp = "whole-subtree"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_BASE_OBJECT         EnumrequestCriteriaIncludedSearchScopeProp = "base-object"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_SINGLE_LEVEL        EnumrequestCriteriaIncludedSearchScopeProp = "single-level"
+	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_WHOLE_SUBTREE       EnumrequestCriteriaIncludedSearchScopeProp = "whole-subtree"
 	ENUMREQUESTCRITERIAINCLUDEDSEARCHSCOPEPROP_SUBORDINATE_SUBTREE EnumrequestCriteriaIncludedSearchScopeProp = "subordinate-subtree"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumrequestCriteriaIncludedSearchScopeProp) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

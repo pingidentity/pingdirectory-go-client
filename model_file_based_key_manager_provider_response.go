@@ -16,10 +16,10 @@ import (
 
 // FileBasedKeyManagerProviderResponse struct for FileBasedKeyManagerProviderResponse
 type FileBasedKeyManagerProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Key Manager Provider
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumfileBasedKeyManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the Directory Server instance root.
 	KeyStoreFile string `json:"keyStoreFile"`
@@ -77,7 +77,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -109,7 +109,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -142,7 +142,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -166,7 +166,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetSchemas() []EnumfileBasedKeyMan
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetSchemasOk() ([]EnumfileBasedKeyManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -190,7 +190,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyStoreFile, true
 }
@@ -213,7 +213,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStoreType, true
 }
@@ -245,7 +245,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePin, true
 }
@@ -277,7 +277,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinFile, true
 }
@@ -309,7 +309,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinPassphraseProvider()
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinPassphraseProvider, true
 }
@@ -341,7 +341,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPin() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKeyPin) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKeyPin, true
 }
@@ -373,7 +373,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinFileOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKeyPinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKeyPinFile, true
 }
@@ -405,7 +405,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinPassphraseProvider
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKeyPinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKeyPinPassphraseProvider, true
 }
@@ -437,7 +437,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -470,7 +470,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -562,5 +562,3 @@ func (v *NullableFileBasedKeyManagerProviderResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

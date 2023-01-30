@@ -16,9 +16,9 @@ import (
 
 // GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse struct for GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse
 type GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                                                `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20                       `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetM
 // and a boolean to check if the value has been set.
 func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetU
 // and a boolean to check if the value has been set.
 func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetS
 // and a boolean to check if the value has been set.
 func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetI
 // and a boolean to check if the value has been set.
 func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetD
 // and a boolean to check if the value has been set.
 func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetE
 // and a boolean to check if the value has been set.
 func (o *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableGetSupportedOtpDeliveryMechanismsExtendedOperationHandlerRespon
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

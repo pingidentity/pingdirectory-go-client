@@ -17,8 +17,8 @@ import (
 // AddExecAlertHandlerRequest struct for AddExecAlertHandlerRequest
 type AddExecAlertHandlerRequest struct {
 	// Name of the new Alert Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                          `json:"handlerName"`
+	Schemas     []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
 	// Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability.
 	Command string `json:"command"`
 	// Indicates whether the server should attempt to invoke this Exec Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
@@ -26,10 +26,10 @@ type AddExecAlertHandlerRequest struct {
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                       `json:"enabled"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewAddExecAlertHandlerRequest instantiates a new AddExecAlertHandlerRequest object
@@ -67,7 +67,7 @@ func (o *AddExecAlertHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -91,7 +91,7 @@ func (o *AddExecAlertHandlerRequest) GetSchemas() []EnumexecAlertHandlerSchemaUr
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetSchemasOk() ([]EnumexecAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddExecAlertHandlerRequest) GetCommand() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetCommandOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Command, true
 }
@@ -138,7 +138,7 @@ func (o *AddExecAlertHandlerRequest) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -170,7 +170,7 @@ func (o *AddExecAlertHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -203,7 +203,7 @@ func (o *AddExecAlertHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -226,7 +226,7 @@ func (o *AddExecAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHandle
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -258,7 +258,7 @@ func (o *AddExecAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerEna
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -290,7 +290,7 @@ func (o *AddExecAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandlerDi
 // and a boolean to check if the value has been set.
 func (o *AddExecAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -376,5 +376,3 @@ func (v *NullableAddExecAlertHandlerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

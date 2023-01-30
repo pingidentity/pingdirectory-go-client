@@ -17,8 +17,8 @@ import (
 // AddAmazonSecretsManagerCipherStreamProviderRequest struct for AddAmazonSecretsManagerCipherStreamProviderRequest
 type AddAmazonSecretsManagerCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                                  `json:"providerName"`
+	Schemas      []EnumamazonSecretsManagerCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager.
 	AwsExternalServer string `json:"awsExternalServer"`
 	// The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved.
@@ -75,7 +75,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderName() s
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -99,7 +99,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSchemas() []Enum
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSchemasOk() ([]EnumamazonSecretsManagerCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -123,7 +123,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetAwsExternalServe
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetAwsExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AwsExternalServer, true
 }
@@ -147,7 +147,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretID() strin
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SecretID, true
 }
@@ -171,7 +171,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretFieldName(
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretFieldNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SecretFieldName, true
 }
@@ -194,7 +194,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionID(
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionIDOk() (*string, bool) {
 	if o == nil || isNil(o.SecretVersionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.SecretVersionID, true
 }
@@ -226,7 +226,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionSta
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetSecretVersionStageOk() (*string, bool) {
 	if o == nil || isNil(o.SecretVersionStage) {
-    return nil, false
+		return nil, false
 	}
 	return o.SecretVersionStage, true
 }
@@ -259,7 +259,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEncryptionMetada
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptionMetadataFile, true
 }
@@ -282,7 +282,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetDescription() st
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -315,7 +315,7 @@ func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -395,5 +395,3 @@ func (v *NullableAddAmazonSecretsManagerCipherStreamProviderRequest) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

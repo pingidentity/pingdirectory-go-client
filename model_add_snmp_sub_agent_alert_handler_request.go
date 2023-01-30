@@ -17,17 +17,17 @@ import (
 // AddSnmpSubAgentAlertHandlerRequest struct for AddSnmpSubAgentAlertHandlerRequest
 type AddSnmpSubAgentAlertHandlerRequest struct {
 	// Name of the new Alert Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumsnmpSubAgentAlertHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                  `json:"handlerName"`
+	Schemas     []EnumsnmpSubAgentAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this SNMP Sub Agent Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                       `json:"enabled"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewAddSnmpSubAgentAlertHandlerRequest instantiates a new AddSnmpSubAgentAlertHandlerRequest object
@@ -64,7 +64,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -88,7 +88,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetSchemas() []EnumsnmpSubAgentAler
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetSchemasOk() ([]EnumsnmpSubAgentAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -143,7 +143,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -176,7 +176,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -199,7 +199,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertSeverity() []Enumale
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -231,7 +231,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertType() []EnumalertHa
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -263,7 +263,7 @@ func (o *AddSnmpSubAgentAlertHandlerRequest) GetDisabledAlertType() []EnumalertH
 // and a boolean to check if the value has been set.
 func (o *AddSnmpSubAgentAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -346,5 +346,3 @@ func (v *NullableAddSnmpSubAgentAlertHandlerRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

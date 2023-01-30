@@ -17,8 +17,8 @@ import (
 // AddNeverDeleteLogRetentionPolicyRequest struct for AddNeverDeleteLogRetentionPolicyRequest
 type AddNeverDeleteLogRetentionPolicyRequest struct {
 	// Name of the new Log Retention Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumneverDeleteLogRetentionPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                       `json:"policyName"`
+	Schemas    []EnumneverDeleteLogRetentionPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Retention Policy
 	Description *string `json:"description,omitempty"`
 }
@@ -56,7 +56,7 @@ func (o *AddNeverDeleteLogRetentionPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNeverDeleteLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -80,7 +80,7 @@ func (o *AddNeverDeleteLogRetentionPolicyRequest) GetSchemas() []EnumneverDelete
 // and a boolean to check if the value has been set.
 func (o *AddNeverDeleteLogRetentionPolicyRequest) GetSchemasOk() ([]EnumneverDeleteLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -103,7 +103,7 @@ func (o *AddNeverDeleteLogRetentionPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddNeverDeleteLogRetentionPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -171,5 +171,3 @@ func (v *NullableAddNeverDeleteLogRetentionPolicyRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

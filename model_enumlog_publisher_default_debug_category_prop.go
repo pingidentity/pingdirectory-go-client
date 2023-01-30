@@ -20,15 +20,15 @@ type EnumlogPublisherDefaultDebugCategoryProp string
 
 // List of Enumlog-publisher-defaultDebugCategoryProp
 const (
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_CAUGHT EnumlogPublisherDefaultDebugCategoryProp = "caught"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_CONSTRUCTOR EnumlogPublisherDefaultDebugCategoryProp = "constructor"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_DATA EnumlogPublisherDefaultDebugCategoryProp = "data"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_CAUGHT          EnumlogPublisherDefaultDebugCategoryProp = "caught"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_CONSTRUCTOR     EnumlogPublisherDefaultDebugCategoryProp = "constructor"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_DATA            EnumlogPublisherDefaultDebugCategoryProp = "data"
 	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_DATABASE_ACCESS EnumlogPublisherDefaultDebugCategoryProp = "database-access"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_ENTER EnumlogPublisherDefaultDebugCategoryProp = "enter"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_EXIT EnumlogPublisherDefaultDebugCategoryProp = "exit"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_MESSAGE EnumlogPublisherDefaultDebugCategoryProp = "message"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_PROTOCOL EnumlogPublisherDefaultDebugCategoryProp = "protocol"
-	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_THROWN EnumlogPublisherDefaultDebugCategoryProp = "thrown"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_ENTER           EnumlogPublisherDefaultDebugCategoryProp = "enter"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_EXIT            EnumlogPublisherDefaultDebugCategoryProp = "exit"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_MESSAGE         EnumlogPublisherDefaultDebugCategoryProp = "message"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_PROTOCOL        EnumlogPublisherDefaultDebugCategoryProp = "protocol"
+	ENUMLOGPUBLISHERDEFAULTDEBUGCATEGORYPROP_THROWN          EnumlogPublisherDefaultDebugCategoryProp = "thrown"
 )
 
 // All allowed values of EnumlogPublisherDefaultDebugCategoryProp enum
@@ -122,4 +122,3 @@ func (v *NullableEnumlogPublisherDefaultDebugCategoryProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

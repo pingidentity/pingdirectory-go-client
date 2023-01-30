@@ -17,16 +17,16 @@ import (
 // AddReplicationAssuranceResultCriteriaRequest struct for AddReplicationAssuranceResultCriteriaRequest
 type AddReplicationAssuranceResultCriteriaRequest struct {
 	// Name of the new Result Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
-	LocalAssuranceLevel []EnumresultCriteriaLocalAssuranceLevelProp `json:"localAssuranceLevel"`
-	RemoteAssuranceLevel []EnumresultCriteriaRemoteAssuranceLevelProp `json:"remoteAssuranceLevel"`
-	AssuranceTimeoutCriteria *EnumresultCriteriaAssuranceTimeoutCriteriaProp `json:"assuranceTimeoutCriteria,omitempty"`
+	CriteriaName             string                                            `json:"criteriaName"`
+	Schemas                  []EnumreplicationAssuranceResultCriteriaSchemaUrn `json:"schemas"`
+	LocalAssuranceLevel      []EnumresultCriteriaLocalAssuranceLevelProp       `json:"localAssuranceLevel"`
+	RemoteAssuranceLevel     []EnumresultCriteriaRemoteAssuranceLevelProp      `json:"remoteAssuranceLevel"`
+	AssuranceTimeoutCriteria *EnumresultCriteriaAssuranceTimeoutCriteriaProp   `json:"assuranceTimeoutCriteria,omitempty"`
 	// The value to use for performing matching based on the assurance timeout. This will be ignored if the assurance-timeout-criteria is \"any\".
-	AssuranceTimeoutValue *string `json:"assuranceTimeoutValue,omitempty"`
-	ResponseDelayedByAssurance *EnumresultCriteriaResponseDelayedByAssuranceProp `json:"responseDelayedByAssurance,omitempty"`
+	AssuranceTimeoutValue             *string                                                  `json:"assuranceTimeoutValue,omitempty"`
+	ResponseDelayedByAssurance        *EnumresultCriteriaResponseDelayedByAssuranceProp        `json:"responseDelayedByAssurance,omitempty"`
 	AssuranceBehaviorAlteredByControl *EnumresultCriteriaAssuranceBehaviorAlteredByControlProp `json:"assuranceBehaviorAlteredByControl,omitempty"`
-	AssuranceSatisfied *EnumresultCriteriaAssuranceSatisfiedProp `json:"assuranceSatisfied,omitempty"`
+	AssuranceSatisfied                *EnumresultCriteriaAssuranceSatisfiedProp                `json:"assuranceSatisfied,omitempty"`
 	// A description for this Result Criteria
 	Description *string `json:"description,omitempty"`
 }
@@ -66,7 +66,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaName() string 
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -90,7 +90,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetSchemas() []Enumreplic
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetSchemasOk() ([]EnumreplicationAssuranceResultCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevel() 
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetLocalAssuranceLevelOk() ([]EnumresultCriteriaLocalAssuranceLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LocalAssuranceLevel, true
 }
@@ -138,7 +138,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevel()
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetRemoteAssuranceLevelOk() ([]EnumresultCriteriaRemoteAssuranceLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RemoteAssuranceLevel, true
 }
@@ -161,7 +161,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutCriter
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutCriteriaOk() (*EnumresultCriteriaAssuranceTimeoutCriteriaProp, bool) {
 	if o == nil || isNil(o.AssuranceTimeoutCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AssuranceTimeoutCriteria, true
 }
@@ -193,7 +193,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutValue(
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceTimeoutValueOk() (*string, bool) {
 	if o == nil || isNil(o.AssuranceTimeoutValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.AssuranceTimeoutValue, true
 }
@@ -225,7 +225,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetResponseDelayedByAssur
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetResponseDelayedByAssuranceOk() (*EnumresultCriteriaResponseDelayedByAssuranceProp, bool) {
 	if o == nil || isNil(o.ResponseDelayedByAssurance) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseDelayedByAssurance, true
 }
@@ -257,7 +257,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceBehaviorAlter
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceBehaviorAlteredByControlOk() (*EnumresultCriteriaAssuranceBehaviorAlteredByControlProp, bool) {
 	if o == nil || isNil(o.AssuranceBehaviorAlteredByControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AssuranceBehaviorAlteredByControl, true
 }
@@ -289,7 +289,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceSatisfied() E
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetAssuranceSatisfiedOk() (*EnumresultCriteriaAssuranceSatisfiedProp, bool) {
 	if o == nil || isNil(o.AssuranceSatisfied) {
-    return nil, false
+		return nil, false
 	}
 	return o.AssuranceSatisfied, true
 }
@@ -321,7 +321,7 @@ func (o *AddReplicationAssuranceResultCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssuranceResultCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -410,5 +410,3 @@ func (v *NullableAddReplicationAssuranceResultCriteriaRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

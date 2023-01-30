@@ -17,18 +17,18 @@ import (
 
 // AddPasswordValidatorRequest - struct for AddPasswordValidatorRequest
 type AddPasswordValidatorRequest struct {
-	AddAttributeValuePasswordValidatorRequest *AddAttributeValuePasswordValidatorRequest
-	AddCharacterSetPasswordValidatorRequest *AddCharacterSetPasswordValidatorRequest
-	AddDictionaryPasswordValidatorRequest *AddDictionaryPasswordValidatorRequest
-	AddGroovyScriptedPasswordValidatorRequest *AddGroovyScriptedPasswordValidatorRequest
-	AddHaystackPasswordValidatorRequest *AddHaystackPasswordValidatorRequest
-	AddLengthBasedPasswordValidatorRequest *AddLengthBasedPasswordValidatorRequest
-	AddPwnedPasswordsPasswordValidatorRequest *AddPwnedPasswordsPasswordValidatorRequest
-	AddRegularExpressionPasswordValidatorRequest *AddRegularExpressionPasswordValidatorRequest
+	AddAttributeValuePasswordValidatorRequest     *AddAttributeValuePasswordValidatorRequest
+	AddCharacterSetPasswordValidatorRequest       *AddCharacterSetPasswordValidatorRequest
+	AddDictionaryPasswordValidatorRequest         *AddDictionaryPasswordValidatorRequest
+	AddGroovyScriptedPasswordValidatorRequest     *AddGroovyScriptedPasswordValidatorRequest
+	AddHaystackPasswordValidatorRequest           *AddHaystackPasswordValidatorRequest
+	AddLengthBasedPasswordValidatorRequest        *AddLengthBasedPasswordValidatorRequest
+	AddPwnedPasswordsPasswordValidatorRequest     *AddPwnedPasswordsPasswordValidatorRequest
+	AddRegularExpressionPasswordValidatorRequest  *AddRegularExpressionPasswordValidatorRequest
 	AddRepeatedCharactersPasswordValidatorRequest *AddRepeatedCharactersPasswordValidatorRequest
-	AddSimilarityBasedPasswordValidatorRequest *AddSimilarityBasedPasswordValidatorRequest
-	AddThirdPartyPasswordValidatorRequest *AddThirdPartyPasswordValidatorRequest
-	AddUniqueCharactersPasswordValidatorRequest *AddUniqueCharactersPasswordValidatorRequest
+	AddSimilarityBasedPasswordValidatorRequest    *AddSimilarityBasedPasswordValidatorRequest
+	AddThirdPartyPasswordValidatorRequest         *AddThirdPartyPasswordValidatorRequest
+	AddUniqueCharactersPasswordValidatorRequest   *AddUniqueCharactersPasswordValidatorRequest
 }
 
 // AddAttributeValuePasswordValidatorRequestAsAddPasswordValidatorRequest is a convenience function that returns AddAttributeValuePasswordValidatorRequest wrapped in AddPasswordValidatorRequest
@@ -114,7 +114,6 @@ func AddUniqueCharactersPasswordValidatorRequestAsAddPasswordValidatorRequest(v 
 		AddUniqueCharactersPasswordValidatorRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPasswordValidatorRequest) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src AddPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPasswordValidatorRequest) GetActualInstance() (interface{}) {
+func (obj *AddPasswordValidatorRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableAddPasswordValidatorRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

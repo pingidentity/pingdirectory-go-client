@@ -16,10 +16,10 @@ import (
 
 // BackupRecurringTaskResponse struct for BackupRecurringTaskResponse
 type BackupRecurringTaskResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task
-	Id string `json:"id"`
+	Id      string                             `json:"id"`
 	Schemas []EnumbackupRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which backup files will be placed. When backing up a single backend, the backup files will be placed directly in this directory. When backing up multiple backends, the backup files for each backend will be placed in a subdirectory whose name is the corresponding backend ID.
 	BackupDirectory string `json:"backupDirectory"`
@@ -92,7 +92,7 @@ func (o *BackupRecurringTaskResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -124,7 +124,7 @@ func (o *BackupRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmess
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -157,7 +157,7 @@ func (o *BackupRecurringTaskResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -181,7 +181,7 @@ func (o *BackupRecurringTaskResponse) GetSchemas() []EnumbackupRecurringTaskSche
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetSchemasOk() ([]EnumbackupRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -205,7 +205,7 @@ func (o *BackupRecurringTaskResponse) GetBackupDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetBackupDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackupDirectory, true
 }
@@ -228,7 +228,7 @@ func (o *BackupRecurringTaskResponse) GetIncludedBackendID() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetIncludedBackendIDOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedBackendID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedBackendID, true
 }
@@ -260,7 +260,7 @@ func (o *BackupRecurringTaskResponse) GetExcludedBackendID() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetExcludedBackendIDOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedBackendID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedBackendID, true
 }
@@ -292,7 +292,7 @@ func (o *BackupRecurringTaskResponse) GetCompress() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetCompressOk() (*bool, bool) {
 	if o == nil || isNil(o.Compress) {
-    return nil, false
+		return nil, false
 	}
 	return o.Compress, true
 }
@@ -324,7 +324,7 @@ func (o *BackupRecurringTaskResponse) GetEncrypt() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetEncryptOk() (*bool, bool) {
 	if o == nil || isNil(o.Encrypt) {
-    return nil, false
+		return nil, false
 	}
 	return o.Encrypt, true
 }
@@ -356,7 +356,7 @@ func (o *BackupRecurringTaskResponse) GetEncryptionSettingsDefinitionID() string
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
 }
@@ -388,7 +388,7 @@ func (o *BackupRecurringTaskResponse) GetSign() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetSignOk() (*bool, bool) {
 	if o == nil || isNil(o.Sign) {
-    return nil, false
+		return nil, false
 	}
 	return o.Sign, true
 }
@@ -420,7 +420,7 @@ func (o *BackupRecurringTaskResponse) GetRetainPreviousFullBackupCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetRetainPreviousFullBackupCountOk() (*int32, bool) {
 	if o == nil || isNil(o.RetainPreviousFullBackupCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousFullBackupCount, true
 }
@@ -452,7 +452,7 @@ func (o *BackupRecurringTaskResponse) GetRetainPreviousFullBackupAge() string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetRetainPreviousFullBackupAgeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainPreviousFullBackupAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousFullBackupAge, true
 }
@@ -484,7 +484,7 @@ func (o *BackupRecurringTaskResponse) GetMaxMegabytesPerSecond() int32 {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetMaxMegabytesPerSecondOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxMegabytesPerSecond) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxMegabytesPerSecond, true
 }
@@ -516,7 +516,7 @@ func (o *BackupRecurringTaskResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -548,7 +548,7 @@ func (o *BackupRecurringTaskResponse) GetCancelOnTaskDependencyFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -580,7 +580,7 @@ func (o *BackupRecurringTaskResponse) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -612,7 +612,7 @@ func (o *BackupRecurringTaskResponse) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -644,7 +644,7 @@ func (o *BackupRecurringTaskResponse) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -676,7 +676,7 @@ func (o *BackupRecurringTaskResponse) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -708,7 +708,7 @@ func (o *BackupRecurringTaskResponse) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -740,7 +740,7 @@ func (o *BackupRecurringTaskResponse) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -865,5 +865,3 @@ func (v *NullableBackupRecurringTaskResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

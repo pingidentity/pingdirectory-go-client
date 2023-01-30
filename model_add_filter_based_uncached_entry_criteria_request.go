@@ -17,8 +17,8 @@ import (
 // AddFilterBasedUncachedEntryCriteriaRequest struct for AddFilterBasedUncachedEntryCriteriaRequest
 type AddFilterBasedUncachedEntryCriteriaRequest struct {
 	// Name of the new Uncached Entry Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumfilterBasedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                          `json:"criteriaName"`
+	Schemas      []EnumfilterBasedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the search filter that should be used to differentiate entries into cached and uncached sets.
 	Filter string `json:"filter"`
 	// Indicates whether the associated filter identifies those entries which should be stored in the uncached-id2entry database (if true) or entries which should be stored in the id2entry database (if false).
@@ -65,7 +65,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -89,7 +89,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetSchemas() []EnumfilterBa
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetSchemasOk() ([]EnumfilterBasedUncachedEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilter() string {
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Filter, true
 }
@@ -137,7 +137,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncached
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncachedEntriesOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FilterIdentifiesUncachedEntries, true
 }
@@ -160,7 +160,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -193,7 +193,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -261,5 +261,3 @@ func (v *NullableAddFilterBasedUncachedEntryCriteriaRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

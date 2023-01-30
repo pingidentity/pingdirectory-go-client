@@ -17,19 +17,19 @@ import (
 
 // AddVirtualAttributeRequest - struct for AddVirtualAttributeRequest
 type AddVirtualAttributeRequest struct {
-	AddConstructedVirtualAttributeRequest *AddConstructedVirtualAttributeRequest
-	AddDnJoinVirtualAttributeRequest *AddDnJoinVirtualAttributeRequest
-	AddEntryDnVirtualAttributeRequest *AddEntryDnVirtualAttributeRequest
-	AddEqualityJoinVirtualAttributeRequest *AddEqualityJoinVirtualAttributeRequest
-	AddGroovyScriptedVirtualAttributeRequest *AddGroovyScriptedVirtualAttributeRequest
-	AddIdentifyReferencesVirtualAttributeRequest *AddIdentifyReferencesVirtualAttributeRequest
-	AddIsMemberOfVirtualAttributeRequest *AddIsMemberOfVirtualAttributeRequest
-	AddMemberVirtualAttributeRequest *AddMemberVirtualAttributeRequest
-	AddMirrorVirtualAttributeRequest *AddMirrorVirtualAttributeRequest
+	AddConstructedVirtualAttributeRequest             *AddConstructedVirtualAttributeRequest
+	AddDnJoinVirtualAttributeRequest                  *AddDnJoinVirtualAttributeRequest
+	AddEntryDnVirtualAttributeRequest                 *AddEntryDnVirtualAttributeRequest
+	AddEqualityJoinVirtualAttributeRequest            *AddEqualityJoinVirtualAttributeRequest
+	AddGroovyScriptedVirtualAttributeRequest          *AddGroovyScriptedVirtualAttributeRequest
+	AddIdentifyReferencesVirtualAttributeRequest      *AddIdentifyReferencesVirtualAttributeRequest
+	AddIsMemberOfVirtualAttributeRequest              *AddIsMemberOfVirtualAttributeRequest
+	AddMemberVirtualAttributeRequest                  *AddMemberVirtualAttributeRequest
+	AddMirrorVirtualAttributeRequest                  *AddMirrorVirtualAttributeRequest
 	AddPasswordPolicyStateJsonVirtualAttributeRequest *AddPasswordPolicyStateJsonVirtualAttributeRequest
-	AddReverseDnJoinVirtualAttributeRequest *AddReverseDnJoinVirtualAttributeRequest
-	AddThirdPartyVirtualAttributeRequest *AddThirdPartyVirtualAttributeRequest
-	AddUserDefinedVirtualAttributeRequest *AddUserDefinedVirtualAttributeRequest
+	AddReverseDnJoinVirtualAttributeRequest           *AddReverseDnJoinVirtualAttributeRequest
+	AddThirdPartyVirtualAttributeRequest              *AddThirdPartyVirtualAttributeRequest
+	AddUserDefinedVirtualAttributeRequest             *AddUserDefinedVirtualAttributeRequest
 }
 
 // AddConstructedVirtualAttributeRequestAsAddVirtualAttributeRequest is a convenience function that returns AddConstructedVirtualAttributeRequest wrapped in AddVirtualAttributeRequest
@@ -122,7 +122,6 @@ func AddUserDefinedVirtualAttributeRequestAsAddVirtualAttributeRequest(v *AddUse
 		AddUserDefinedVirtualAttributeRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVirtualAttributeRequest) UnmarshalJSON(data []byte) error {
@@ -379,7 +378,7 @@ func (src AddVirtualAttributeRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddVirtualAttributeRequest) GetActualInstance() (interface{}) {
+func (obj *AddVirtualAttributeRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -474,5 +473,3 @@ func (v *NullableAddVirtualAttributeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

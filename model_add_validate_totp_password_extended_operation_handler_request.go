@@ -17,8 +17,8 @@ import (
 // AddValidateTotpPasswordExtendedOperationHandlerRequest struct for AddValidateTotpPasswordExtendedOperationHandlerRequest
 type AddValidateTotpPasswordExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                      `json:"handlerName"`
+	Schemas     []EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The name or OID of the attribute that will be used to hold the shared secret key used during TOTP processing.
 	SharedSecretAttributeType *string `json:"sharedSecretAttributeType,omitempty"`
 	// The duration of the time interval used for TOTP processing.
@@ -67,7 +67,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetHandlerName(
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -91,7 +91,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSchemas() []
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSharedSecret
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSharedSecretAttributeTypeOk() (*string, bool) {
 	if o == nil || isNil(o.SharedSecretAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.SharedSecretAttributeType, true
 }
@@ -146,7 +146,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetTimeInterval
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetTimeIntervalDurationOk() (*string, bool) {
 	if o == nil || isNil(o.TimeIntervalDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeIntervalDuration, true
 }
@@ -178,7 +178,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentInte
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheckOk() (*int32, bool) {
 	if o == nil || isNil(o.AdjacentIntervalsToCheck) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdjacentIntervalsToCheck, true
 }
@@ -210,7 +210,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetPreventTOTPR
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetPreventTOTPReuseOk() (*bool, bool) {
 	if o == nil || isNil(o.PreventTOTPReuse) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreventTOTPReuse, true
 }
@@ -242,7 +242,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetDescription(
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -275,7 +275,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetEnabled() bo
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -349,5 +349,3 @@ func (v *NullableAddValidateTotpPasswordExtendedOperationHandlerRequest) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ConnectionHandlerApiService ConnectionHandlerApi service
 type ConnectionHandlerApiService service
 
 type ApiAddConnectionHandlerRequest struct {
-	ctx context.Context
-	ApiService *ConnectionHandlerApiService
+	ctx                         context.Context
+	ApiService                  *ConnectionHandlerApiService
 	addConnectionHandlerRequest *AddConnectionHandlerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddConnectionHandlerRequest) Execute() (*AddConnectionHandler200Respo
 /*
 AddConnectionHandler Add a new Connection Handler to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddConnectionHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) AddConnectionHandler(ctx context.Context) ApiAddConnectionHandlerRequest {
 	return ApiAddConnectionHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddConnectionHandler200Response
+//
+//	@return AddConnectionHandler200Response
 func (a *ConnectionHandlerApiService) AddConnectionHandlerExecute(r ApiAddConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddConnectionHandler200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddConnectionHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.AddConnectionHandler")
@@ -133,8 +133,8 @@ func (a *ConnectionHandlerApiService) AddConnectionHandlerExecute(r ApiAddConnec
 }
 
 type ApiDeleteConnectionHandlerRequest struct {
-	ctx context.Context
-	ApiService *ConnectionHandlerApiService
+	ctx                   context.Context
+	ApiService            *ConnectionHandlerApiService
 	connectionHandlerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteConnectionHandlerRequest) Execute() (*http.Response, error) {
 /*
 DeleteConnectionHandler Delete a Connection Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionHandlerName Name of the Connection Handler to be deleted
- @return ApiDeleteConnectionHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionHandlerName Name of the Connection Handler to be deleted
+	@return ApiDeleteConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) DeleteConnectionHandler(ctx context.Context, connectionHandlerName string) ApiDeleteConnectionHandlerRequest {
 	return ApiDeleteConnectionHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		connectionHandlerName: connectionHandlerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ConnectionHandlerApiService) DeleteConnectionHandler(ctx context.Contex
 // Execute executes the request
 func (a *ConnectionHandlerApiService) DeleteConnectionHandlerExecute(r ApiDeleteConnectionHandlerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.DeleteConnectionHandler")
@@ -223,8 +223,8 @@ func (a *ConnectionHandlerApiService) DeleteConnectionHandlerExecute(r ApiDelete
 }
 
 type ApiGetConnectionHandlerRequest struct {
-	ctx context.Context
-	ApiService *ConnectionHandlerApiService
+	ctx                   context.Context
+	ApiService            *ConnectionHandlerApiService
 	connectionHandlerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetConnectionHandlerRequest) Execute() (*AddConnectionHandler200Respo
 /*
 GetConnectionHandler Returns a single Connection Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionHandlerName Name of the Connection Handler to be read
- @return ApiGetConnectionHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionHandlerName Name of the Connection Handler to be read
+	@return ApiGetConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) GetConnectionHandler(ctx context.Context, connectionHandlerName string) ApiGetConnectionHandlerRequest {
 	return ApiGetConnectionHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		connectionHandlerName: connectionHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddConnectionHandler200Response
+//
+//	@return AddConnectionHandler200Response
 func (a *ConnectionHandlerApiService) GetConnectionHandlerExecute(r ApiGetConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddConnectionHandler200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddConnectionHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.GetConnectionHandler")
@@ -324,10 +325,10 @@ func (a *ConnectionHandlerApiService) GetConnectionHandlerExecute(r ApiGetConnec
 }
 
 type ApiUpdateConnectionHandlerRequest struct {
-	ctx context.Context
-	ApiService *ConnectionHandlerApiService
+	ctx                   context.Context
+	ApiService            *ConnectionHandlerApiService
 	connectionHandlerName string
-	updateRequest *UpdateRequest
+	updateRequest         *UpdateRequest
 }
 
 // Update an existing Connection Handler
@@ -343,26 +344,27 @@ func (r ApiUpdateConnectionHandlerRequest) Execute() (*AddConnectionHandler200Re
 /*
 UpdateConnectionHandler Update an existing Connection Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param connectionHandlerName Name of the Connection Handler to be updated
- @return ApiUpdateConnectionHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param connectionHandlerName Name of the Connection Handler to be updated
+	@return ApiUpdateConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) UpdateConnectionHandler(ctx context.Context, connectionHandlerName string) ApiUpdateConnectionHandlerRequest {
 	return ApiUpdateConnectionHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		connectionHandlerName: connectionHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddConnectionHandler200Response
+//
+//	@return AddConnectionHandler200Response
 func (a *ConnectionHandlerApiService) UpdateConnectionHandlerExecute(r ApiUpdateConnectionHandlerRequest) (*AddConnectionHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddConnectionHandler200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddConnectionHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConnectionHandlerApiService.UpdateConnectionHandler")

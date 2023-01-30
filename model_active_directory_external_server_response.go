@@ -16,10 +16,10 @@ import (
 
 // ActiveDirectoryExternalServerResponse struct for ActiveDirectoryExternalServerResponse
 type ActiveDirectoryExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumactiveDirectoryExternalServerSchemaUrn `json:"schemas"`
 	// The DN to use to bind to the target LDAP server if simple authentication is required. The authentication identity can also be specified in User-Principal-Name (UPN) format.
 	BindDN *string `json:"bindDN,omitempty"`
@@ -32,9 +32,9 @@ type ActiveDirectoryExternalServerResponse struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider *string `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity EnumexternalServerConnectionSecurityProp `json:"connectionSecurity"`
-	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
+	PassphraseProvider      *string                                       `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity      EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity"`
+	AuthenticationMethod    EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -53,7 +53,7 @@ type ActiveDirectoryExternalServerResponse struct {
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
 	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -101,7 +101,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -133,7 +133,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -166,7 +166,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -190,7 +190,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetSchemas() []EnumactiveDirecto
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetSchemasOk() ([]EnumactiveDirectoryExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -213,7 +213,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetBindDN() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetBindDNOk() (*string, bool) {
 	if o == nil || isNil(o.BindDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindDN, true
 }
@@ -246,7 +246,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -270,7 +270,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -293,7 +293,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -325,7 +325,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -357,7 +357,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetPassphraseProvider() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -390,7 +390,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetConnectionSecurity() Enumexte
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectionSecurity, true
 }
@@ -414,7 +414,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetAuthenticationMethod() Enumex
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuthenticationMethod, true
 }
@@ -438,7 +438,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetVerifyCredentialsMethod() Enu
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VerifyCredentialsMethod, true
 }
@@ -461,7 +461,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetHealthCheckConnectTimeout() s
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetHealthCheckConnectTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.HealthCheckConnectTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
 }
@@ -494,7 +494,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetMaxConnectionAge() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -517,7 +517,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetMinExpiredConnectionDisconnec
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
 }
@@ -550,7 +550,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -574,7 +574,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetMaxResponseSize() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetMaxResponseSizeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxResponseSize, true
 }
@@ -597,7 +597,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -629,7 +629,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetTrustManagerProvider() string
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -661,7 +661,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetInitialConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetInitialConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.InitialConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.InitialConnections, true
 }
@@ -693,7 +693,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetMaxConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetMaxConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxConnections, true
 }
@@ -725,7 +725,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetDefunctConnectionResultCode()
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
 	if o == nil || isNil(o.DefunctConnectionResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
 }
@@ -757,7 +757,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetAbandonOnTimeout() bool {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetAbandonOnTimeoutOk() (*bool, bool) {
 	if o == nil || isNil(o.AbandonOnTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.AbandonOnTimeout, true
 }
@@ -789,7 +789,7 @@ func (o *ActiveDirectoryExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ActiveDirectoryExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -923,5 +923,3 @@ func (v *NullableActiveDirectoryExternalServerResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

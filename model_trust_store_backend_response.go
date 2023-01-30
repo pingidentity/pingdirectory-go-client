@@ -16,15 +16,15 @@ import (
 
 // TrustStoreBackendResponse struct for TrustStoreBackendResponse
 type TrustStoreBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumtrustStoreBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumtrustStoreBackendSchemaUrn                   `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// Specifies the base DN(s) for the data that the backend handles.
-	BaseDN []string `json:"baseDN"`
+	BaseDN          []string                       `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Specifies the path to the file that stores the trust information.
 	TrustStoreFile string `json:"trustStoreFile"`
@@ -87,7 +87,7 @@ func (o *TrustStoreBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -119,7 +119,7 @@ func (o *TrustStoreBackendResponse) GetUrnpingidentityschemasconfigurationmessag
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -152,7 +152,7 @@ func (o *TrustStoreBackendResponse) GetSchemas() []EnumtrustStoreBackendSchemaUr
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetSchemasOk() ([]EnumtrustStoreBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *TrustStoreBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -200,7 +200,7 @@ func (o *TrustStoreBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -224,7 +224,7 @@ func (o *TrustStoreBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -248,7 +248,7 @@ func (o *TrustStoreBackendResponse) GetWritabilityMode() EnumbackendWritabilityM
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -272,7 +272,7 @@ func (o *TrustStoreBackendResponse) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TrustStoreFile, true
 }
@@ -295,7 +295,7 @@ func (o *TrustStoreBackendResponse) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -327,7 +327,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -359,7 +359,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinFile, true
 }
@@ -391,7 +391,7 @@ func (o *TrustStoreBackendResponse) GetTrustStorePinPassphraseProvider() string 
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
 }
@@ -423,7 +423,7 @@ func (o *TrustStoreBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -456,7 +456,7 @@ func (o *TrustStoreBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -479,7 +479,7 @@ func (o *TrustStoreBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -511,7 +511,7 @@ func (o *TrustStoreBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -543,7 +543,7 @@ func (o *TrustStoreBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -575,7 +575,7 @@ func (o *TrustStoreBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *TrustStoreBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -688,5 +688,3 @@ func (v *NullableTrustStoreBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

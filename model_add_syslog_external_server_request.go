@@ -17,12 +17,12 @@ import (
 // AddSyslogExternalServerRequest struct for AddSyslogExternalServerRequest
 type AddSyslogExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumsyslogExternalServerSchemaUrn `json:"schemas"`
+	ServerName string                              `json:"serverName"`
+	Schemas    []EnumsyslogExternalServerSchemaUrn `json:"schemas"`
 	// The address of the syslog server.
 	ServerHostName string `json:"serverHostName"`
 	// The port on which the syslog server accepts connections.
-	ServerPort *int32 `json:"serverPort,omitempty"`
+	ServerPort         *int32                                   `json:"serverPort,omitempty"`
 	TransportMechanism EnumexternalServerTransportMechanismProp `json:"transportMechanism"`
 	// Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption).
 	ConnectTimeout string `json:"connectTimeout"`
@@ -72,7 +72,7 @@ func (o *AddSyslogExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -96,7 +96,7 @@ func (o *AddSyslogExternalServerRequest) GetSchemas() []EnumsyslogExternalServer
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetSchemasOk() ([]EnumsyslogExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -120,7 +120,7 @@ func (o *AddSyslogExternalServerRequest) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -143,7 +143,7 @@ func (o *AddSyslogExternalServerRequest) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetServerPortOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerPort, true
 }
@@ -176,7 +176,7 @@ func (o *AddSyslogExternalServerRequest) GetTransportMechanism() EnumexternalSer
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetTransportMechanismOk() (*EnumexternalServerTransportMechanismProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TransportMechanism, true
 }
@@ -200,7 +200,7 @@ func (o *AddSyslogExternalServerRequest) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -224,7 +224,7 @@ func (o *AddSyslogExternalServerRequest) GetMaxConnectionAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -248,7 +248,7 @@ func (o *AddSyslogExternalServerRequest) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TrustManagerProvider, true
 }
@@ -271,7 +271,7 @@ func (o *AddSyslogExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -357,5 +357,3 @@ func (v *NullableAddSyslogExternalServerRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // NeverDeleteLogRetentionPolicyResponse struct for NeverDeleteLogRetentionPolicyResponse
 type NeverDeleteLogRetentionPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Retention Policy
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumneverDeleteLogRetentionPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Retention Policy
 	Description *string `json:"description,omitempty"`
@@ -57,7 +57,7 @@ func (o *NeverDeleteLogRetentionPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *NeverDeleteLogRetentionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -89,7 +89,7 @@ func (o *NeverDeleteLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *NeverDeleteLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -122,7 +122,7 @@ func (o *NeverDeleteLogRetentionPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *NeverDeleteLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -146,7 +146,7 @@ func (o *NeverDeleteLogRetentionPolicyResponse) GetSchemas() []EnumneverDeleteLo
 // and a boolean to check if the value has been set.
 func (o *NeverDeleteLogRetentionPolicyResponse) GetSchemasOk() ([]EnumneverDeleteLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -169,7 +169,7 @@ func (o *NeverDeleteLogRetentionPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *NeverDeleteLogRetentionPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -243,5 +243,3 @@ func (v *NullableNeverDeleteLogRetentionPolicyResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // ExpiredPasswordDataSecurityAuditorResponse struct for ExpiredPasswordDataSecurityAuditorResponse
 type ExpiredPasswordDataSecurityAuditorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Data Security Auditor
-	Id string `json:"id"`
+	Id      string                                            `json:"id"`
 	Schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
@@ -30,7 +30,7 @@ type ExpiredPasswordDataSecurityAuditorResponse struct {
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasco
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetSchemas() []EnumexpiredP
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetSchemasOk() ([]EnumexpiredPasswordDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -204,7 +204,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIncludeAttribute() []str
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -236,7 +236,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetPasswordEvaluationAge() 
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetPasswordEvaluationAgeOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordEvaluationAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordEvaluationAge, true
 }
@@ -269,7 +269,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -292,7 +292,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditBackend() []string 
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -324,7 +324,7 @@ func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditSeverity() Enumdata
 // and a boolean to check if the value has been set.
 func (o *ExpiredPasswordDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -413,5 +413,3 @@ func (v *NullableExpiredPasswordDataSecurityAuditorResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

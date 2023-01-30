@@ -16,10 +16,10 @@ import (
 
 // Pkcs11CipherStreamProviderResponse struct for Pkcs11CipherStreamProviderResponse
 type Pkcs11CipherStreamProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Cipher Stream Provider
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []Enumpkcs11CipherStreamProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
@@ -78,7 +78,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -110,7 +110,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -143,7 +143,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -167,7 +167,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetSchemas() []Enumpkcs11CipherStre
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetSchemasOk() ([]Enumpkcs11CipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -190,7 +190,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetPkcs11ProviderClass() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetPkcs11ProviderClassOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11ProviderClass) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11ProviderClass, true
 }
@@ -222,7 +222,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetPkcs11ProviderConfigurationFile(
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetPkcs11ProviderConfigurationFileOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11ProviderConfigurationFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11ProviderConfigurationFile, true
 }
@@ -254,7 +254,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetKeyStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetKeyStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePin, true
 }
@@ -286,7 +286,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetKeyStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetKeyStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinFile, true
 }
@@ -318,7 +318,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetKeyStorePinEnvironmentVariable()
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetKeyStorePinEnvironmentVariableOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinEnvironmentVariable) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinEnvironmentVariable, true
 }
@@ -350,7 +350,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetPkcs11KeyStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetPkcs11KeyStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11KeyStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11KeyStoreType, true
 }
@@ -383,7 +383,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SslCertNickname, true
 }
@@ -407,7 +407,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetEncryptionMetadataFile() string 
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptionMetadataFile, true
 }
@@ -430,7 +430,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -463,7 +463,7 @@ func (o *Pkcs11CipherStreamProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Pkcs11CipherStreamProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -555,5 +555,3 @@ func (v *NullablePkcs11CipherStreamProviderResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

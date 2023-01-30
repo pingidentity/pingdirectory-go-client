@@ -16,9 +16,9 @@ import (
 
 // EncryptionSettingsBackendResponse struct for EncryptionSettingsBackendResponse
 type EncryptionSettingsBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumencryptionSettingsBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumencryptionSettingsBackendSchemaUrn           `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies the base DN(s) for the data that the backend handles.
@@ -74,7 +74,7 @@ func (o *EncryptionSettingsBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -106,7 +106,7 @@ func (o *EncryptionSettingsBackendResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -139,7 +139,7 @@ func (o *EncryptionSettingsBackendResponse) GetSchemas() []EnumencryptionSetting
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetSchemasOk() ([]EnumencryptionSettingsBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -163,7 +163,7 @@ func (o *EncryptionSettingsBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -187,7 +187,7 @@ func (o *EncryptionSettingsBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -211,7 +211,7 @@ func (o *EncryptionSettingsBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -234,7 +234,7 @@ func (o *EncryptionSettingsBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -267,7 +267,7 @@ func (o *EncryptionSettingsBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -290,7 +290,7 @@ func (o *EncryptionSettingsBackendResponse) GetSetDegradedAlertWhenDisabled() bo
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -322,7 +322,7 @@ func (o *EncryptionSettingsBackendResponse) GetReturnUnavailableWhenDisabled() b
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -354,7 +354,7 @@ func (o *EncryptionSettingsBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -386,7 +386,7 @@ func (o *EncryptionSettingsBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *EncryptionSettingsBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -481,5 +481,3 @@ func (v *NullableEncryptionSettingsBackendResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,19 +18,19 @@ import (
 // GetAttributeSyntax200Response - struct for GetAttributeSyntax200Response
 type GetAttributeSyntax200Response struct {
 	AttributeTypeDescriptionAttributeSyntaxResponse *AttributeTypeDescriptionAttributeSyntaxResponse
-	BitStringAttributeSyntaxResponse *BitStringAttributeSyntaxResponse
-	BooleanAttributeSyntaxResponse *BooleanAttributeSyntaxResponse
-	DirectoryStringAttributeSyntaxResponse *DirectoryStringAttributeSyntaxResponse
-	DistinguishedNameAttributeSyntaxResponse *DistinguishedNameAttributeSyntaxResponse
-	GeneralizedTimeAttributeSyntaxResponse *GeneralizedTimeAttributeSyntaxResponse
-	HexStringAttributeSyntaxResponse *HexStringAttributeSyntaxResponse
-	IntegerAttributeSyntaxResponse *IntegerAttributeSyntaxResponse
-	JsonObjectAttributeSyntaxResponse *JsonObjectAttributeSyntaxResponse
-	LdapUrlAttributeSyntaxResponse *LdapUrlAttributeSyntaxResponse
-	NameAndOptionalUidAttributeSyntaxResponse *NameAndOptionalUidAttributeSyntaxResponse
-	TelephoneNumberAttributeSyntaxResponse *TelephoneNumberAttributeSyntaxResponse
-	UserPasswordAttributeSyntaxResponse *UserPasswordAttributeSyntaxResponse
-	UuidAttributeSyntaxResponse *UuidAttributeSyntaxResponse
+	BitStringAttributeSyntaxResponse                *BitStringAttributeSyntaxResponse
+	BooleanAttributeSyntaxResponse                  *BooleanAttributeSyntaxResponse
+	DirectoryStringAttributeSyntaxResponse          *DirectoryStringAttributeSyntaxResponse
+	DistinguishedNameAttributeSyntaxResponse        *DistinguishedNameAttributeSyntaxResponse
+	GeneralizedTimeAttributeSyntaxResponse          *GeneralizedTimeAttributeSyntaxResponse
+	HexStringAttributeSyntaxResponse                *HexStringAttributeSyntaxResponse
+	IntegerAttributeSyntaxResponse                  *IntegerAttributeSyntaxResponse
+	JsonObjectAttributeSyntaxResponse               *JsonObjectAttributeSyntaxResponse
+	LdapUrlAttributeSyntaxResponse                  *LdapUrlAttributeSyntaxResponse
+	NameAndOptionalUidAttributeSyntaxResponse       *NameAndOptionalUidAttributeSyntaxResponse
+	TelephoneNumberAttributeSyntaxResponse          *TelephoneNumberAttributeSyntaxResponse
+	UserPasswordAttributeSyntaxResponse             *UserPasswordAttributeSyntaxResponse
+	UuidAttributeSyntaxResponse                     *UuidAttributeSyntaxResponse
 }
 
 // AttributeTypeDescriptionAttributeSyntaxResponseAsGetAttributeSyntax200Response is a convenience function that returns AttributeTypeDescriptionAttributeSyntaxResponse wrapped in GetAttributeSyntax200Response
@@ -130,7 +130,6 @@ func UuidAttributeSyntaxResponseAsGetAttributeSyntax200Response(v *UuidAttribute
 		UuidAttributeSyntaxResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetAttributeSyntax200Response) UnmarshalJSON(data []byte) error {
@@ -405,7 +404,7 @@ func (src GetAttributeSyntax200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetAttributeSyntax200Response) GetActualInstance() (interface{}) {
+func (obj *GetAttributeSyntax200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -504,5 +503,3 @@ func (v *NullableGetAttributeSyntax200Response) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

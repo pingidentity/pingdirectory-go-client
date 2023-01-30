@@ -16,10 +16,10 @@ import (
 
 // SubjectAttributeToUserAttributeCertificateMapperResponse struct for SubjectAttributeToUserAttributeCertificateMapperResponse
 type SubjectAttributeToUserAttributeCertificateMapperResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Certificate Mapper
-	Id string `json:"id"`
+	Id      string                                                          `json:"id"`
 	Schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies a mapping between certificate attributes and user attributes.
 	SubjectAttributeMapping []string `json:"subjectAttributeMapping"`
@@ -65,7 +65,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetMeta() Met
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetUrnpingide
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetId() strin
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetSchemas() 
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetSchemasOk() ([]EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetSubjectAtt
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetSubjectAttributeMappingOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectAttributeMapping, true
 }
@@ -201,7 +201,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetUserBaseDN
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.UserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserBaseDN, true
 }
@@ -233,7 +233,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetDescriptio
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetEnabled() 
 // and a boolean to check if the value has been set.
 func (o *SubjectAttributeToUserAttributeCertificateMapperResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableSubjectAttributeToUserAttributeCertificateMapperResponse) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

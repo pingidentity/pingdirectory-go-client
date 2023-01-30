@@ -16,11 +16,11 @@ import (
 
 // PingOneHttpExternalServerResponse struct for PingOneHttpExternalServerResponse
 type PingOneHttpExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
-	Schemas []EnumpingOneHttpExternalServerSchemaUrn `json:"schemas"`
+	Id                         string                                            `json:"id"`
+	Schemas                    []EnumpingOneHttpExternalServerSchemaUrn          `json:"schemas"`
 	HostnameVerificationMethod *EnumexternalServerHostnameVerificationMethodProp `json:"hostnameVerificationMethod,omitempty"`
 	// The trust manager provider to use for HTTPS connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
@@ -64,7 +64,7 @@ func (o *PingOneHttpExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *PingOneHttpExternalServerResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *PingOneHttpExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -153,7 +153,7 @@ func (o *PingOneHttpExternalServerResponse) GetSchemas() []EnumpingOneHttpExtern
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetSchemasOk() ([]EnumpingOneHttpExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *PingOneHttpExternalServerResponse) GetHostnameVerificationMethod() Enum
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool) {
 	if o == nil || isNil(o.HostnameVerificationMethod) {
-    return nil, false
+		return nil, false
 	}
 	return o.HostnameVerificationMethod, true
 }
@@ -208,7 +208,7 @@ func (o *PingOneHttpExternalServerResponse) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -240,7 +240,7 @@ func (o *PingOneHttpExternalServerResponse) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectTimeout, true
 }
@@ -272,7 +272,7 @@ func (o *PingOneHttpExternalServerResponse) GetResponseTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetResponseTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.ResponseTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseTimeout, true
 }
@@ -304,7 +304,7 @@ func (o *PingOneHttpExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -390,5 +390,3 @@ func (v *NullablePingOneHttpExternalServerResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type EnumalarmManagerGeneratedAlertTypesProp string
 // List of Enumalarm-manager-generatedAlertTypesProp
 const (
 	ENUMALARMMANAGERGENERATEDALERTTYPESPROP_STANDARD EnumalarmManagerGeneratedAlertTypesProp = "standard"
-	ENUMALARMMANAGERGENERATEDALERTTYPESPROP_ALARM EnumalarmManagerGeneratedAlertTypesProp = "alarm"
+	ENUMALARMMANAGERGENERATEDALERTTYPESPROP_ALARM    EnumalarmManagerGeneratedAlertTypesProp = "alarm"
 )
 
 // All allowed values of EnumalarmManagerGeneratedAlertTypesProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumalarmManagerGeneratedAlertTypesProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

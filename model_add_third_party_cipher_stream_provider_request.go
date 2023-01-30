@@ -17,8 +17,8 @@ import (
 // AddThirdPartyCipherStreamProviderRequest struct for AddThirdPartyCipherStreamProviderRequest
 type AddThirdPartyCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumthirdPartyCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                        `json:"providerName"`
+	Schemas      []EnumthirdPartyCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Cipher Stream Provider.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Cipher Stream Provider. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyCipherStreamProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyCipherStreamProviderRequest) GetSchemas() []EnumthirdParty
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyCipherStreamProviderRequest) GetSchemasOk() ([]EnumthirdPartyCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyCipherStreamProviderRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyCipherStreamProviderRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyCipherStreamProviderRequest) GetExtensionArgument() []stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyCipherStreamProviderRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyCipherStreamProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyCipherStreamProviderRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

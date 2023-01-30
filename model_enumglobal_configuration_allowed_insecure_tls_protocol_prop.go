@@ -106,4 +106,3 @@ func (v *NullableEnumglobalConfigurationAllowedInsecureTLSProtocolProp) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

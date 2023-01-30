@@ -16,9 +16,9 @@ import (
 
 // GssapiSaslMechanismHandlerResponse struct for GssapiSaslMechanismHandlerResponse
 type GssapiSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumgssapiSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumgssapiSaslMechanismHandlerSchemaUrn          `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// Specifies the realm to be used for GSSAPI authentication.
@@ -30,15 +30,15 @@ type GssapiSaslMechanismHandlerResponse struct {
 	// Specifies whether or not to allow a null value for the server-fqdn.
 	AllowNullServerFqdn *bool `json:"allowNullServerFqdn,omitempty"`
 	// Specifies the DNS-resolvable fully-qualified domain name for the system.
-	ServerFqdn *string `json:"serverFqdn,omitempty"`
+	ServerFqdn                 *string                                                  `json:"serverFqdn,omitempty"`
 	AllowedQualityOfProtection []EnumsaslMechanismHandlerAllowedQualityOfProtectionProp `json:"allowedQualityOfProtection,omitempty"`
 	// Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to match the Kerberos principal included in the SASL bind request to the corresponding user in the directory.
 	IdentityMapper string `json:"identityMapper"`
 	// Specifies the name of the identity mapper that is to be used with this SASL mechanism handler to map the alternate authorization identity (if provided, and if different from the Kerberos principal used as the authentication identity) to the corresponding user in the directory. If no value is specified, then the mapper specified in the identity-mapper configuration property will be used.
 	AlternateAuthorizationIdentityMapper *string `json:"alternateAuthorizationIdentityMapper,omitempty"`
 	// Specifies the Kerberos service principal that the Directory Server will use to identify itself to the KDC.
-	KerberosServicePrincipal *string `json:"kerberosServicePrincipal,omitempty"`
-	GssapiRole *EnumsaslMechanismHandlerGssapiRoleProp `json:"gssapiRole,omitempty"`
+	KerberosServicePrincipal *string                                 `json:"kerberosServicePrincipal,omitempty"`
+	GssapiRole               *EnumsaslMechanismHandlerGssapiRoleProp `json:"gssapiRole,omitempty"`
 	// Specifies the path to a JAAS (Java Authentication and Authorization Service) configuration file that provides the information that the JVM should use for Kerberos processing.
 	JaasConfigFile *string `json:"jaasConfigFile,omitempty"`
 	// Indicates whether to enable debugging for the Java GSSAPI provider. Debug information will be written to standard output, which should be captured in the server.out log file.
@@ -83,7 +83,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetSchemas() []EnumgssapiSaslMechan
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumgssapiSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -172,7 +172,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -195,7 +195,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetRealm() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetRealmOk() (*string, bool) {
 	if o == nil || isNil(o.Realm) {
-    return nil, false
+		return nil, false
 	}
 	return o.Realm, true
 }
@@ -227,7 +227,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKdcAddress() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetKdcAddressOk() (*string, bool) {
 	if o == nil || isNil(o.KdcAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.KdcAddress, true
 }
@@ -259,7 +259,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKeytab() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetKeytabOk() (*string, bool) {
 	if o == nil || isNil(o.Keytab) {
-    return nil, false
+		return nil, false
 	}
 	return o.Keytab, true
 }
@@ -291,7 +291,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAllowNullServerFqdn() bool {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetAllowNullServerFqdnOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowNullServerFqdn) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowNullServerFqdn, true
 }
@@ -323,7 +323,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetServerFqdn() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool) {
 	if o == nil || isNil(o.ServerFqdn) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerFqdn, true
 }
@@ -355,7 +355,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAllowedQualityOfProtection() []E
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetAllowedQualityOfProtectionOk() ([]EnumsaslMechanismHandlerAllowedQualityOfProtectionProp, bool) {
 	if o == nil || isNil(o.AllowedQualityOfProtection) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedQualityOfProtection, true
 }
@@ -388,7 +388,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -411,7 +411,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMa
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetAlternateAuthorizationIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.AlternateAuthorizationIdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlternateAuthorizationIdentityMapper, true
 }
@@ -443,7 +443,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetKerberosServicePrincipal() strin
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetKerberosServicePrincipalOk() (*string, bool) {
 	if o == nil || isNil(o.KerberosServicePrincipal) {
-    return nil, false
+		return nil, false
 	}
 	return o.KerberosServicePrincipal, true
 }
@@ -475,7 +475,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetGssapiRole() EnumsaslMechanismHa
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetGssapiRoleOk() (*EnumsaslMechanismHandlerGssapiRoleProp, bool) {
 	if o == nil || isNil(o.GssapiRole) {
-    return nil, false
+		return nil, false
 	}
 	return o.GssapiRole, true
 }
@@ -507,7 +507,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetJaasConfigFile() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetJaasConfigFileOk() (*string, bool) {
 	if o == nil || isNil(o.JaasConfigFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.JaasConfigFile, true
 }
@@ -539,7 +539,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetEnableDebug() bool {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetEnableDebugOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableDebug) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableDebug, true
 }
@@ -571,7 +571,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -604,7 +604,7 @@ func (o *GssapiSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GssapiSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -708,5 +708,3 @@ func (v *NullableGssapiSaslMechanismHandlerResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

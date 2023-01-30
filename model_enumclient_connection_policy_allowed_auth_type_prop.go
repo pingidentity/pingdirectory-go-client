@@ -21,7 +21,7 @@ type EnumclientConnectionPolicyAllowedAuthTypeProp string
 // List of Enumclient-connection-policy-allowedAuthTypeProp
 const (
 	ENUMCLIENTCONNECTIONPOLICYALLOWEDAUTHTYPEPROP_SIMPLE EnumclientConnectionPolicyAllowedAuthTypeProp = "simple"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDAUTHTYPEPROP_SASL EnumclientConnectionPolicyAllowedAuthTypeProp = "sasl"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDAUTHTYPEPROP_SASL   EnumclientConnectionPolicyAllowedAuthTypeProp = "sasl"
 )
 
 // All allowed values of EnumclientConnectionPolicyAllowedAuthTypeProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumclientConnectionPolicyAllowedAuthTypeProp) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

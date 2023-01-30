@@ -20,8 +20,8 @@ type EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp string
 
 // List of Enumaccess-token-validator-allowedKeyEncryptionAlgorithmProp
 const (
-	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_RSA_OAEP EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "RSA_OAEP"
-	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_ECDH_ES EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "ECDH_ES"
+	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_RSA_OAEP        EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "RSA_OAEP"
+	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_ECDH_ES         EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "ECDH_ES"
 	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_ECDH_ES_A128_KW EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "ECDH_ES_A128KW"
 	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_ECDH_ES_A192_KW EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "ECDH_ES_A192KW"
 	ENUMACCESSTOKENVALIDATORALLOWEDKEYENCRYPTIONALGORITHMPROP_ECDH_ES_A256_KW EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp = "ECDH_ES_A256KW"
@@ -114,4 +114,3 @@ func (v *NullableEnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

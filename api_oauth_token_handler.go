@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // OauthTokenHandlerApiService OauthTokenHandlerApi service
 type OauthTokenHandlerApiService service
 
 type ApiAddOauthTokenHandlerRequest struct {
-	ctx context.Context
-	ApiService *OauthTokenHandlerApiService
+	ctx                         context.Context
+	ApiService                  *OauthTokenHandlerApiService
 	addOauthTokenHandlerRequest *AddOauthTokenHandlerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddOauthTokenHandlerRequest) Execute() (*AddOauthTokenHandler200Respo
 /*
 AddOauthTokenHandler Add a new OAuth Token Handler to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddOauthTokenHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) AddOauthTokenHandler(ctx context.Context) ApiAddOauthTokenHandlerRequest {
 	return ApiAddOauthTokenHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddOauthTokenHandler200Response
+//
+//	@return AddOauthTokenHandler200Response
 func (a *OauthTokenHandlerApiService) AddOauthTokenHandlerExecute(r ApiAddOauthTokenHandlerRequest) (*AddOauthTokenHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddOauthTokenHandler200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddOauthTokenHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenHandlerApiService.AddOauthTokenHandler")
@@ -133,8 +133,8 @@ func (a *OauthTokenHandlerApiService) AddOauthTokenHandlerExecute(r ApiAddOauthT
 }
 
 type ApiDeleteOauthTokenHandlerRequest struct {
-	ctx context.Context
-	ApiService *OauthTokenHandlerApiService
+	ctx                   context.Context
+	ApiService            *OauthTokenHandlerApiService
 	oauthTokenHandlerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteOauthTokenHandlerRequest) Execute() (*http.Response, error) {
 /*
 DeleteOauthTokenHandler Delete a OAuth Token Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param oauthTokenHandlerName Name of the OAuth Token Handler to be deleted
- @return ApiDeleteOauthTokenHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param oauthTokenHandlerName Name of the OAuth Token Handler to be deleted
+	@return ApiDeleteOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) DeleteOauthTokenHandler(ctx context.Context, oauthTokenHandlerName string) ApiDeleteOauthTokenHandlerRequest {
 	return ApiDeleteOauthTokenHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		oauthTokenHandlerName: oauthTokenHandlerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *OauthTokenHandlerApiService) DeleteOauthTokenHandler(ctx context.Contex
 // Execute executes the request
 func (a *OauthTokenHandlerApiService) DeleteOauthTokenHandlerExecute(r ApiDeleteOauthTokenHandlerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenHandlerApiService.DeleteOauthTokenHandler")
@@ -223,8 +223,8 @@ func (a *OauthTokenHandlerApiService) DeleteOauthTokenHandlerExecute(r ApiDelete
 }
 
 type ApiGetOauthTokenHandlerRequest struct {
-	ctx context.Context
-	ApiService *OauthTokenHandlerApiService
+	ctx                   context.Context
+	ApiService            *OauthTokenHandlerApiService
 	oauthTokenHandlerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetOauthTokenHandlerRequest) Execute() (*AddOauthTokenHandler200Respo
 /*
 GetOauthTokenHandler Returns a single OAuth Token Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param oauthTokenHandlerName Name of the OAuth Token Handler to be read
- @return ApiGetOauthTokenHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param oauthTokenHandlerName Name of the OAuth Token Handler to be read
+	@return ApiGetOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) GetOauthTokenHandler(ctx context.Context, oauthTokenHandlerName string) ApiGetOauthTokenHandlerRequest {
 	return ApiGetOauthTokenHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		oauthTokenHandlerName: oauthTokenHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddOauthTokenHandler200Response
+//
+//	@return AddOauthTokenHandler200Response
 func (a *OauthTokenHandlerApiService) GetOauthTokenHandlerExecute(r ApiGetOauthTokenHandlerRequest) (*AddOauthTokenHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddOauthTokenHandler200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddOauthTokenHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenHandlerApiService.GetOauthTokenHandler")
@@ -324,10 +325,10 @@ func (a *OauthTokenHandlerApiService) GetOauthTokenHandlerExecute(r ApiGetOauthT
 }
 
 type ApiUpdateOauthTokenHandlerRequest struct {
-	ctx context.Context
-	ApiService *OauthTokenHandlerApiService
+	ctx                   context.Context
+	ApiService            *OauthTokenHandlerApiService
 	oauthTokenHandlerName string
-	updateRequest *UpdateRequest
+	updateRequest         *UpdateRequest
 }
 
 // Update an existing OAuth Token Handler
@@ -343,26 +344,27 @@ func (r ApiUpdateOauthTokenHandlerRequest) Execute() (*AddOauthTokenHandler200Re
 /*
 UpdateOauthTokenHandler Update an existing OAuth Token Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param oauthTokenHandlerName Name of the OAuth Token Handler to be updated
- @return ApiUpdateOauthTokenHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param oauthTokenHandlerName Name of the OAuth Token Handler to be updated
+	@return ApiUpdateOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) UpdateOauthTokenHandler(ctx context.Context, oauthTokenHandlerName string) ApiUpdateOauthTokenHandlerRequest {
 	return ApiUpdateOauthTokenHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		oauthTokenHandlerName: oauthTokenHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddOauthTokenHandler200Response
+//
+//	@return AddOauthTokenHandler200Response
 func (a *OauthTokenHandlerApiService) UpdateOauthTokenHandlerExecute(r ApiUpdateOauthTokenHandlerRequest) (*AddOauthTokenHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddOauthTokenHandler200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddOauthTokenHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OauthTokenHandlerApiService.UpdateOauthTokenHandler")

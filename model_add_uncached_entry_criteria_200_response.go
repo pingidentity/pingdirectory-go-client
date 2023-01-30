@@ -17,11 +17,11 @@ import (
 
 // AddUncachedEntryCriteria200Response - struct for AddUncachedEntryCriteria200Response
 type AddUncachedEntryCriteria200Response struct {
-	DefaultUncachedEntryCriteriaResponse *DefaultUncachedEntryCriteriaResponse
-	FilterBasedUncachedEntryCriteriaResponse *FilterBasedUncachedEntryCriteriaResponse
+	DefaultUncachedEntryCriteriaResponse        *DefaultUncachedEntryCriteriaResponse
+	FilterBasedUncachedEntryCriteriaResponse    *FilterBasedUncachedEntryCriteriaResponse
 	GroovyScriptedUncachedEntryCriteriaResponse *GroovyScriptedUncachedEntryCriteriaResponse
 	LastAccessTimeUncachedEntryCriteriaResponse *LastAccessTimeUncachedEntryCriteriaResponse
-	ThirdPartyUncachedEntryCriteriaResponse *ThirdPartyUncachedEntryCriteriaResponse
+	ThirdPartyUncachedEntryCriteriaResponse     *ThirdPartyUncachedEntryCriteriaResponse
 }
 
 // DefaultUncachedEntryCriteriaResponseAsAddUncachedEntryCriteria200Response is a convenience function that returns DefaultUncachedEntryCriteriaResponse wrapped in AddUncachedEntryCriteria200Response
@@ -58,7 +58,6 @@ func ThirdPartyUncachedEntryCriteriaResponseAsAddUncachedEntryCriteria200Respons
 		ThirdPartyUncachedEntryCriteriaResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddUncachedEntryCriteria200Response) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src AddUncachedEntryCriteria200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddUncachedEntryCriteria200Response) GetActualInstance() (interface{}) {
+func (obj *AddUncachedEntryCriteria200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableAddUncachedEntryCriteria200Response) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

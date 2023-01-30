@@ -20,8 +20,8 @@ type EnumexternalServerVerifyCredentialsMethodProp string
 
 // List of Enumexternal-server-verifyCredentialsMethodProp
 const (
-	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_SEPARATE_CONNECTIONS EnumexternalServerVerifyCredentialsMethodProp = "separate-connections"
-	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_RETAIN_IDENTITY_CONTROL EnumexternalServerVerifyCredentialsMethodProp = "retain-identity-control"
+	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_SEPARATE_CONNECTIONS         EnumexternalServerVerifyCredentialsMethodProp = "separate-connections"
+	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_RETAIN_IDENTITY_CONTROL      EnumexternalServerVerifyCredentialsMethodProp = "retain-identity-control"
 	ENUMEXTERNALSERVERVERIFYCREDENTIALSMETHODPROP_BIND_ON_EXISTING_CONNECTIONS EnumexternalServerVerifyCredentialsMethodProp = "bind-on-existing-connections"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumexternalServerVerifyCredentialsMethodProp) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

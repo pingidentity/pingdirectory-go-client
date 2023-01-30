@@ -16,9 +16,9 @@ import (
 
 // DirectoryStringAttributeSyntaxResponse struct for DirectoryStringAttributeSyntaxResponse
 type DirectoryStringAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdirectoryStringAttributeSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumdirectoryStringAttributeSyntaxSchemaUrn      `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether zero-length (that is, an empty string) values are allowed.
@@ -62,7 +62,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetSchemas() []EnumdirectoryStr
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetSchemasOk() ([]EnumdirectoryStringAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetAllowZeroLengthValues() bool
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetAllowZeroLengthValuesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowZeroLengthValues) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowZeroLengthValues, true
 }
@@ -207,7 +207,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -230,7 +230,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetRequireBinaryTransfer() bool
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -310,5 +310,3 @@ func (v *NullableDirectoryStringAttributeSyntaxResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

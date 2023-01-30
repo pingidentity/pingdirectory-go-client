@@ -17,10 +17,10 @@ import (
 // AddNumericGaugeDataSourceRequest struct for AddNumericGaugeDataSourceRequest
 type AddNumericGaugeDataSourceRequest struct {
 	// Name of the new Gauge Data Source
-	SourceName string `json:"sourceName"`
-	Schemas []EnumnumericGaugeDataSourceSchemaUrn `json:"schemas"`
+	SourceName      string                                  `json:"sourceName"`
+	Schemas         []EnumnumericGaugeDataSourceSchemaUrn   `json:"schemas"`
 	DataOrientation *EnumgaugeDataSourceDataOrientationProp `json:"dataOrientation,omitempty"`
-	StatisticType EnumgaugeDataSourceStatisticTypeProp `json:"statisticType"`
+	StatisticType   EnumgaugeDataSourceStatisticTypeProp    `json:"statisticType"`
 	// An optional floating point value that can be used to scale the resulting value.
 	DivideValueBy *float32 `json:"divideValueBy,omitempty"`
 	// An optional property that can scale the resulting value by another attribute in the monitored entry.
@@ -81,7 +81,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetSourceName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetSourceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SourceName, true
 }
@@ -105,7 +105,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetSchemas() []EnumnumericGaugeDataSo
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetSchemasOk() ([]EnumnumericGaugeDataSourceSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -128,7 +128,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDataOrientation() EnumgaugeDataSou
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDataOrientationOk() (*EnumgaugeDataSourceDataOrientationProp, bool) {
 	if o == nil || isNil(o.DataOrientation) {
-    return nil, false
+		return nil, false
 	}
 	return o.DataOrientation, true
 }
@@ -161,7 +161,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetStatisticType() EnumgaugeDataSourc
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetStatisticTypeOk() (*EnumgaugeDataSourceStatisticTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.StatisticType, true
 }
@@ -184,7 +184,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueBy() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByOk() (*float32, bool) {
 	if o == nil || isNil(o.DivideValueBy) {
-    return nil, false
+		return nil, false
 	}
 	return o.DivideValueBy, true
 }
@@ -216,7 +216,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.DivideValueByAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.DivideValueByAttribute, true
 }
@@ -248,7 +248,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByCounterAttribute() st
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDivideValueByCounterAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.DivideValueByCounterAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.DivideValueByCounterAttribute, true
 }
@@ -280,7 +280,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -312,7 +312,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetAdditionalText() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetAdditionalTextOk() (*string, bool) {
 	if o == nil || isNil(o.AdditionalText) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdditionalText, true
 }
@@ -345,7 +345,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetMonitorObjectclass() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetMonitorObjectclassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MonitorObjectclass, true
 }
@@ -369,7 +369,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetMonitorAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetMonitorAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MonitorAttribute, true
 }
@@ -392,7 +392,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetIncludeFilter() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetIncludeFilterOk() (*string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -424,7 +424,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetResourceAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetResourceAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceAttribute, true
 }
@@ -456,7 +456,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceType, true
 }
@@ -488,7 +488,7 @@ func (o *AddNumericGaugeDataSourceRequest) GetMinimumUpdateInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeDataSourceRequest) GetMinimumUpdateIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinimumUpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumUpdateInterval, true
 }
@@ -592,5 +592,3 @@ func (v *NullableAddNumericGaugeDataSourceRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

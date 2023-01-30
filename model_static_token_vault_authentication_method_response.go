@@ -16,10 +16,10 @@ import (
 
 // StaticTokenVaultAuthenticationMethodResponse struct for StaticTokenVaultAuthenticationMethodResponse
 type StaticTokenVaultAuthenticationMethodResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Vault Authentication Method
-	Id string `json:"id"`
+	Id      string                                              `json:"id"`
 	Schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The static token used to authenticate to the Vault server.
 	VaultAccessToken string `json:"vaultAccessToken"`
@@ -60,7 +60,7 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *StaticTokenVaultAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) GetUrnpingidentityschemas
 // and a boolean to check if the value has been set.
 func (o *StaticTokenVaultAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *StaticTokenVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) GetSchemas() []Enumstatic
 // and a boolean to check if the value has been set.
 func (o *StaticTokenVaultAuthenticationMethodResponse) GetSchemasOk() ([]EnumstaticTokenVaultAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) GetVaultAccessToken() str
 // and a boolean to check if the value has been set.
 func (o *StaticTokenVaultAuthenticationMethodResponse) GetVaultAccessTokenOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultAccessToken, true
 }
@@ -196,7 +196,7 @@ func (o *StaticTokenVaultAuthenticationMethodResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *StaticTokenVaultAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableStaticTokenVaultAuthenticationMethodResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

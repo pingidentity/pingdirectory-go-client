@@ -17,17 +17,17 @@ import (
 
 // AddRecurringTaskRequest - struct for AddRecurringTaskRequest
 type AddRecurringTaskRequest struct {
-	AddBackupRecurringTaskRequest *AddBackupRecurringTaskRequest
-	AddCollectSupportDataRecurringTaskRequest *AddCollectSupportDataRecurringTaskRequest
-	AddDelayRecurringTaskRequest *AddDelayRecurringTaskRequest
-	AddEnterLockdownModeRecurringTaskRequest *AddEnterLockdownModeRecurringTaskRequest
-	AddExecRecurringTaskRequest *AddExecRecurringTaskRequest
-	AddFileRetentionRecurringTaskRequest *AddFileRetentionRecurringTaskRequest
+	AddBackupRecurringTaskRequest                *AddBackupRecurringTaskRequest
+	AddCollectSupportDataRecurringTaskRequest    *AddCollectSupportDataRecurringTaskRequest
+	AddDelayRecurringTaskRequest                 *AddDelayRecurringTaskRequest
+	AddEnterLockdownModeRecurringTaskRequest     *AddEnterLockdownModeRecurringTaskRequest
+	AddExecRecurringTaskRequest                  *AddExecRecurringTaskRequest
+	AddFileRetentionRecurringTaskRequest         *AddFileRetentionRecurringTaskRequest
 	AddGenerateServerProfileRecurringTaskRequest *AddGenerateServerProfileRecurringTaskRequest
-	AddLdifExportRecurringTaskRequest *AddLdifExportRecurringTaskRequest
-	AddLeaveLockdownModeRecurringTaskRequest *AddLeaveLockdownModeRecurringTaskRequest
-	AddStaticallyDefinedRecurringTaskRequest *AddStaticallyDefinedRecurringTaskRequest
-	AddThirdPartyRecurringTaskRequest *AddThirdPartyRecurringTaskRequest
+	AddLdifExportRecurringTaskRequest            *AddLdifExportRecurringTaskRequest
+	AddLeaveLockdownModeRecurringTaskRequest     *AddLeaveLockdownModeRecurringTaskRequest
+	AddStaticallyDefinedRecurringTaskRequest     *AddStaticallyDefinedRecurringTaskRequest
+	AddThirdPartyRecurringTaskRequest            *AddThirdPartyRecurringTaskRequest
 }
 
 // AddBackupRecurringTaskRequestAsAddRecurringTaskRequest is a convenience function that returns AddBackupRecurringTaskRequest wrapped in AddRecurringTaskRequest
@@ -106,7 +106,6 @@ func AddThirdPartyRecurringTaskRequestAsAddRecurringTaskRequest(v *AddThirdParty
 		AddThirdPartyRecurringTaskRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddRecurringTaskRequest) UnmarshalJSON(data []byte) error {
@@ -327,7 +326,7 @@ func (src AddRecurringTaskRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddRecurringTaskRequest) GetActualInstance() (interface{}) {
+func (obj *AddRecurringTaskRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -414,5 +413,3 @@ func (v *NullableAddRecurringTaskRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddSimilarityBasedPasswordValidatorRequest struct for AddSimilarityBasedPasswordValidatorRequest
 type AddSimilarityBasedPasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumsimilarityBasedPasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                          `json:"validatorName"`
+	Schemas       []EnumsimilarityBasedPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum difference of new and old password.
 	MinPasswordDifference int32 `json:"minPasswordDifference"`
 	// A description for this Password Validator
@@ -66,7 +66,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -90,7 +90,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetSchemas() []Enumsimilari
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetSchemasOk() ([]EnumsimilarityBasedPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifference() 
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetMinPasswordDifferenceOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MinPasswordDifference, true
 }
@@ -137,7 +137,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -170,7 +170,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -193,7 +193,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorRequirementDesc
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -225,7 +225,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorFailureMessage(
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -305,5 +305,3 @@ func (v *NullableAddSimilarityBasedPasswordValidatorRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

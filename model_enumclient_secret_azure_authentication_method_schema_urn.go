@@ -106,4 +106,3 @@ func (v *NullableEnumclientSecretAzureAuthenticationMethodSchemaUrn) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

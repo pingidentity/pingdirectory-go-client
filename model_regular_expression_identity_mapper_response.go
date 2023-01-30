@@ -16,10 +16,10 @@ import (
 
 // RegularExpressionIdentityMapperResponse struct for RegularExpressionIdentityMapperResponse
 type RegularExpressionIdentityMapperResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Identity Mapper
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumregularExpressionIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression.
 	MatchAttribute []string `json:"matchAttribute"`
@@ -72,7 +72,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -104,7 +104,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -137,7 +137,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -161,7 +161,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetSchemas() []EnumregularExpr
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetSchemasOk() ([]EnumregularExpressionIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -185,7 +185,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchAttributeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchAttribute, true
 }
@@ -208,7 +208,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.MatchBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchBaseDN, true
 }
@@ -240,7 +240,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchFilter() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchFilterOk() (*string, bool) {
 	if o == nil || isNil(o.MatchFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchFilter, true
 }
@@ -273,7 +273,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetMatchPattern() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetMatchPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MatchPattern, true
 }
@@ -296,7 +296,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetReplacePattern() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetReplacePatternOk() (*string, bool) {
 	if o == nil || isNil(o.ReplacePattern) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplacePattern, true
 }
@@ -328,7 +328,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -361,7 +361,7 @@ func (o *RegularExpressionIdentityMapperResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionIdentityMapperResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -444,5 +444,3 @@ func (v *NullableRegularExpressionIdentityMapperResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

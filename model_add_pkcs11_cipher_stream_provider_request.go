@@ -17,8 +17,8 @@ import (
 // AddPkcs11CipherStreamProviderRequest struct for AddPkcs11CipherStreamProviderRequest
 type AddPkcs11CipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []Enumpkcs11CipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                    `json:"providerName"`
+	Schemas      []Enumpkcs11CipherStreamProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
 	// The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
@@ -77,7 +77,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -101,7 +101,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetSchemas() []Enumpkcs11CipherSt
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetSchemasOk() ([]Enumpkcs11CipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -124,7 +124,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderClassOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11ProviderClass) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11ProviderClass, true
 }
@@ -156,7 +156,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderConfigurationFil
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderConfigurationFileOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11ProviderConfigurationFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11ProviderConfigurationFile, true
 }
@@ -188,7 +188,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePin, true
 }
@@ -220,7 +220,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinFile, true
 }
@@ -252,7 +252,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinEnvironmentVariable
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinEnvironmentVariableOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinEnvironmentVariable) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinEnvironmentVariable, true
 }
@@ -284,7 +284,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11KeyStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11KeyStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11KeyStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11KeyStoreType, true
 }
@@ -317,7 +317,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SslCertNickname, true
 }
@@ -341,7 +341,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFile() strin
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptionMetadataFile, true
 }
@@ -364,7 +364,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -397,7 +397,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -483,5 +483,3 @@ func (v *NullableAddPkcs11CipherStreamProviderRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

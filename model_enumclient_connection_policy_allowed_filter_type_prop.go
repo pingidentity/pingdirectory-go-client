@@ -20,18 +20,18 @@ type EnumclientConnectionPolicyAllowedFilterTypeProp string
 
 // List of Enumclient-connection-policy-allowedFilterTypeProp
 const (
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_AND EnumclientConnectionPolicyAllowedFilterTypeProp = "and"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_OR EnumclientConnectionPolicyAllowedFilterTypeProp = "or"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_NOT EnumclientConnectionPolicyAllowedFilterTypeProp = "not"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_EQUALITY EnumclientConnectionPolicyAllowedFilterTypeProp = "equality"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_INITIAL EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-initial"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_ANY EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-any"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_FINAL EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-final"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_GREATER_OR_EQUAL EnumclientConnectionPolicyAllowedFilterTypeProp = "greater-or-equal"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_LESS_OR_EQUAL EnumclientConnectionPolicyAllowedFilterTypeProp = "less-or-equal"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_PRESENT EnumclientConnectionPolicyAllowedFilterTypeProp = "present"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_AND               EnumclientConnectionPolicyAllowedFilterTypeProp = "and"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_OR                EnumclientConnectionPolicyAllowedFilterTypeProp = "or"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_NOT               EnumclientConnectionPolicyAllowedFilterTypeProp = "not"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_EQUALITY          EnumclientConnectionPolicyAllowedFilterTypeProp = "equality"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_INITIAL       EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-initial"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_ANY           EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-any"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_SUB_FINAL         EnumclientConnectionPolicyAllowedFilterTypeProp = "sub-final"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_GREATER_OR_EQUAL  EnumclientConnectionPolicyAllowedFilterTypeProp = "greater-or-equal"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_LESS_OR_EQUAL     EnumclientConnectionPolicyAllowedFilterTypeProp = "less-or-equal"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_PRESENT           EnumclientConnectionPolicyAllowedFilterTypeProp = "present"
 	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_APPROXIMATE_MATCH EnumclientConnectionPolicyAllowedFilterTypeProp = "approximate-match"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_EXTENSIBLE_MATCH EnumclientConnectionPolicyAllowedFilterTypeProp = "extensible-match"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDFILTERTYPEPROP_EXTENSIBLE_MATCH  EnumclientConnectionPolicyAllowedFilterTypeProp = "extensible-match"
 )
 
 // All allowed values of EnumclientConnectionPolicyAllowedFilterTypeProp enum
@@ -128,4 +128,3 @@ func (v *NullableEnumclientConnectionPolicyAllowedFilterTypeProp) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

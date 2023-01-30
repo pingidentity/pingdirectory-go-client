@@ -16,9 +16,9 @@ import (
 
 // DigestMd5SaslMechanismHandlerResponse struct for DigestMd5SaslMechanismHandlerResponse
 type DigestMd5SaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdigestMd5SaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumdigestMd5SaslMechanismHandlerSchemaUrn       `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// Specifies the realm that is to be used by the server for DIGEST-MD5 authentication.
@@ -67,7 +67,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetSchemas() []EnumdigestMd5Sasl
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetSchemasOk() ([]EnumdigestMd5SaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -156,7 +156,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -179,7 +179,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetRealm() string {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetRealmOk() (*string, bool) {
 	if o == nil || isNil(o.Realm) {
-    return nil, false
+		return nil, false
 	}
 	return o.Realm, true
 }
@@ -212,7 +212,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -235,7 +235,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetServerFqdn() string {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool) {
 	if o == nil || isNil(o.ServerFqdn) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerFqdn, true
 }
@@ -267,7 +267,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -300,7 +300,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -377,5 +377,3 @@ func (v *NullableDigestMd5SaslMechanismHandlerResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

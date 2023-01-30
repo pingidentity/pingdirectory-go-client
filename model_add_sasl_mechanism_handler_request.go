@@ -17,10 +17,10 @@ import (
 
 // AddSaslMechanismHandlerRequest - struct for AddSaslMechanismHandlerRequest
 type AddSaslMechanismHandlerRequest struct {
-	AddOauthBearerSaslMechanismHandlerRequest *AddOauthBearerSaslMechanismHandlerRequest
-	AddThirdPartySaslMechanismHandlerRequest *AddThirdPartySaslMechanismHandlerRequest
+	AddOauthBearerSaslMechanismHandlerRequest           *AddOauthBearerSaslMechanismHandlerRequest
+	AddThirdPartySaslMechanismHandlerRequest            *AddThirdPartySaslMechanismHandlerRequest
 	AddUnboundidDeliveredOtpSaslMechanismHandlerRequest *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest
-	AddUnboundidMsChapV2SaslMechanismHandlerRequest *AddUnboundidMsChapV2SaslMechanismHandlerRequest
+	AddUnboundidMsChapV2SaslMechanismHandlerRequest     *AddUnboundidMsChapV2SaslMechanismHandlerRequest
 }
 
 // AddOauthBearerSaslMechanismHandlerRequestAsAddSaslMechanismHandlerRequest is a convenience function that returns AddOauthBearerSaslMechanismHandlerRequest wrapped in AddSaslMechanismHandlerRequest
@@ -50,7 +50,6 @@ func AddUnboundidMsChapV2SaslMechanismHandlerRequestAsAddSaslMechanismHandlerReq
 		AddUnboundidMsChapV2SaslMechanismHandlerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSaslMechanismHandlerRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddSaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddSaslMechanismHandlerRequest) GetActualInstance() (interface{}) {
+func (obj *AddSaslMechanismHandlerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddSaslMechanismHandlerRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

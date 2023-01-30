@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // TopologyAdminUserApiService TopologyAdminUserApi service
 type TopologyAdminUserApiService service
 
 type ApiAddTopologyAdminUserRequest struct {
-	ctx context.Context
-	ApiService *TopologyAdminUserApiService
+	ctx                         context.Context
+	ApiService                  *TopologyAdminUserApiService
 	addTopologyAdminUserRequest *AddTopologyAdminUserRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddTopologyAdminUserRequest) Execute() (*TopologyAdminUserResponse, *
 /*
 AddTopologyAdminUser Add a new Topology Admin User to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddTopologyAdminUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) AddTopologyAdminUser(ctx context.Context) ApiAddTopologyAdminUserRequest {
 	return ApiAddTopologyAdminUserRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TopologyAdminUserResponse
+//
+//	@return TopologyAdminUserResponse
 func (a *TopologyAdminUserApiService) AddTopologyAdminUserExecute(r ApiAddTopologyAdminUserRequest) (*TopologyAdminUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TopologyAdminUserResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TopologyAdminUserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAdminUserApiService.AddTopologyAdminUser")
@@ -133,8 +133,8 @@ func (a *TopologyAdminUserApiService) AddTopologyAdminUserExecute(r ApiAddTopolo
 }
 
 type ApiDeleteTopologyAdminUserRequest struct {
-	ctx context.Context
-	ApiService *TopologyAdminUserApiService
+	ctx                   context.Context
+	ApiService            *TopologyAdminUserApiService
 	topologyAdminUserName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteTopologyAdminUserRequest) Execute() (*http.Response, error) {
 /*
 DeleteTopologyAdminUser Delete a Topology Admin User
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param topologyAdminUserName Name of the Topology Admin User to be deleted
- @return ApiDeleteTopologyAdminUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param topologyAdminUserName Name of the Topology Admin User to be deleted
+	@return ApiDeleteTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) DeleteTopologyAdminUser(ctx context.Context, topologyAdminUserName string) ApiDeleteTopologyAdminUserRequest {
 	return ApiDeleteTopologyAdminUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		topologyAdminUserName: topologyAdminUserName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *TopologyAdminUserApiService) DeleteTopologyAdminUser(ctx context.Contex
 // Execute executes the request
 func (a *TopologyAdminUserApiService) DeleteTopologyAdminUserExecute(r ApiDeleteTopologyAdminUserRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAdminUserApiService.DeleteTopologyAdminUser")
@@ -223,8 +223,8 @@ func (a *TopologyAdminUserApiService) DeleteTopologyAdminUserExecute(r ApiDelete
 }
 
 type ApiGetTopologyAdminUserRequest struct {
-	ctx context.Context
-	ApiService *TopologyAdminUserApiService
+	ctx                   context.Context
+	ApiService            *TopologyAdminUserApiService
 	topologyAdminUserName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetTopologyAdminUserRequest) Execute() (*TopologyAdminUserResponse, *
 /*
 GetTopologyAdminUser Returns a single Topology Admin User
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param topologyAdminUserName Name of the Topology Admin User to be read
- @return ApiGetTopologyAdminUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param topologyAdminUserName Name of the Topology Admin User to be read
+	@return ApiGetTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) GetTopologyAdminUser(ctx context.Context, topologyAdminUserName string) ApiGetTopologyAdminUserRequest {
 	return ApiGetTopologyAdminUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		topologyAdminUserName: topologyAdminUserName,
 	}
 }
 
 // Execute executes the request
-//  @return TopologyAdminUserResponse
+//
+//	@return TopologyAdminUserResponse
 func (a *TopologyAdminUserApiService) GetTopologyAdminUserExecute(r ApiGetTopologyAdminUserRequest) (*TopologyAdminUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TopologyAdminUserResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TopologyAdminUserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAdminUserApiService.GetTopologyAdminUser")
@@ -324,10 +325,10 @@ func (a *TopologyAdminUserApiService) GetTopologyAdminUserExecute(r ApiGetTopolo
 }
 
 type ApiUpdateTopologyAdminUserRequest struct {
-	ctx context.Context
-	ApiService *TopologyAdminUserApiService
+	ctx                   context.Context
+	ApiService            *TopologyAdminUserApiService
 	topologyAdminUserName string
-	updateRequest *UpdateRequest
+	updateRequest         *UpdateRequest
 }
 
 // Update an existing Topology Admin User
@@ -343,26 +344,27 @@ func (r ApiUpdateTopologyAdminUserRequest) Execute() (*TopologyAdminUserResponse
 /*
 UpdateTopologyAdminUser Update an existing Topology Admin User by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param topologyAdminUserName Name of the Topology Admin User to be updated
- @return ApiUpdateTopologyAdminUserRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param topologyAdminUserName Name of the Topology Admin User to be updated
+	@return ApiUpdateTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) UpdateTopologyAdminUser(ctx context.Context, topologyAdminUserName string) ApiUpdateTopologyAdminUserRequest {
 	return ApiUpdateTopologyAdminUserRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		topologyAdminUserName: topologyAdminUserName,
 	}
 }
 
 // Execute executes the request
-//  @return TopologyAdminUserResponse
+//
+//	@return TopologyAdminUserResponse
 func (a *TopologyAdminUserApiService) UpdateTopologyAdminUserExecute(r ApiUpdateTopologyAdminUserRequest) (*TopologyAdminUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TopologyAdminUserResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TopologyAdminUserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TopologyAdminUserApiService.UpdateTopologyAdminUser")

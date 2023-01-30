@@ -16,10 +16,10 @@ import (
 
 // SimpleUncachedAttributeCriteriaResponse struct for SimpleUncachedAttributeCriteriaResponse
 type SimpleUncachedAttributeCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Attribute Criteria
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
 	AttributeType []string `json:"attributeType"`
@@ -67,7 +67,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetSchemas() []EnumsimpleUncac
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetSchemasOk() ([]EnumsimpleUncachedAttributeCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetAttributeType() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetAttributeTypeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AttributeType, true
 }
@@ -203,7 +203,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMinValueCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MinValueCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinValueCount, true
 }
@@ -235,7 +235,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetMinTotalValueSize() string 
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetMinTotalValueSizeOk() (*string, bool) {
 	if o == nil || isNil(o.MinTotalValueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinTotalValueSize, true
 }
@@ -267,7 +267,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -300,7 +300,7 @@ func (o *SimpleUncachedAttributeCriteriaResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SimpleUncachedAttributeCriteriaResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -377,5 +377,3 @@ func (v *NullableSimpleUncachedAttributeCriteriaResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

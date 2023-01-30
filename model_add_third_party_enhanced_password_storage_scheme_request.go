@@ -17,8 +17,8 @@ import (
 // AddThirdPartyEnhancedPasswordStorageSchemeRequest struct for AddThirdPartyEnhancedPasswordStorageSchemeRequest
 type AddThirdPartyEnhancedPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                                 `json:"schemeName"`
+	Schemas    []EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Enhanced Password Storage Scheme.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Enhanced Password Storage Scheme. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemeName() stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemas() []Enumt
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetExtensionClass() 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetExtensionArgument
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyEnhancedPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyEnhancedPasswordStorageSchemeRequest) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

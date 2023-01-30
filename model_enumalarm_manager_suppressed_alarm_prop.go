@@ -21,7 +21,7 @@ type EnumalarmManagerSuppressedAlarmProp string
 // List of Enumalarm-manager-suppressedAlarmProp
 const (
 	ENUMALARMMANAGERSUPPRESSEDALARMPROP_NO_ENABLED_ALERT_HANDLERS EnumalarmManagerSuppressedAlarmProp = "no-enabled-alert-handlers"
-	ENUMALARMMANAGERSUPPRESSEDALARMPROP_PDP_UNAVAILABLE EnumalarmManagerSuppressedAlarmProp = "pdp-unavailable"
+	ENUMALARMMANAGERSUPPRESSEDALARMPROP_PDP_UNAVAILABLE           EnumalarmManagerSuppressedAlarmProp = "pdp-unavailable"
 )
 
 // All allowed values of EnumalarmManagerSuppressedAlarmProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumalarmManagerSuppressedAlarmProp) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

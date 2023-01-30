@@ -16,10 +16,10 @@ import (
 
 // PasswordPolicyStateJsonVirtualAttributeResponse struct for PasswordPolicyStateJsonVirtualAttributeResponse
 type PasswordPolicyStateJsonVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Virtual Attribute
-	Id string `json:"id"`
+	Id      string                                                 `json:"id"`
 	Schemas []EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn `json:"schemas"`
 	// A description for this Virtual Attribute
 	Description *string `json:"description,omitempty"`
@@ -72,7 +72,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -104,7 +104,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetUrnpingidentitysche
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -137,7 +137,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -161,7 +161,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetSchemas() []Enumpas
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetSchemasOk() ([]EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -217,7 +217,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -240,7 +240,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -272,7 +272,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetGroupDN() []string 
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -304,7 +304,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -336,7 +336,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetClientConnectionPol
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -368,7 +368,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetRequireExplicitRequ
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -400,7 +400,7 @@ func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMultipleVirtualAttr
 // and a boolean to check if the value has been set.
 func (o *PasswordPolicyStateJsonVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -495,5 +495,3 @@ func (v *NullablePasswordPolicyStateJsonVirtualAttributeResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

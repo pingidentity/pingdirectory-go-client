@@ -18,8 +18,8 @@ import (
 // AddFailureLockoutAction200Response - struct for AddFailureLockoutAction200Response
 type AddFailureLockoutAction200Response struct {
 	DelayBindResponseFailureLockoutActionResponse *DelayBindResponseFailureLockoutActionResponse
-	LockAccountFailureLockoutActionResponse *LockAccountFailureLockoutActionResponse
-	NoOperationFailureLockoutActionResponse *NoOperationFailureLockoutActionResponse
+	LockAccountFailureLockoutActionResponse       *LockAccountFailureLockoutActionResponse
+	NoOperationFailureLockoutActionResponse       *NoOperationFailureLockoutActionResponse
 }
 
 // DelayBindResponseFailureLockoutActionResponseAsAddFailureLockoutAction200Response is a convenience function that returns DelayBindResponseFailureLockoutActionResponse wrapped in AddFailureLockoutAction200Response
@@ -42,7 +42,6 @@ func NoOperationFailureLockoutActionResponseAsAddFailureLockoutAction200Response
 		NoOperationFailureLockoutActionResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddFailureLockoutAction200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddFailureLockoutAction200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddFailureLockoutAction200Response) GetActualInstance() (interface{}) {
+func (obj *AddFailureLockoutAction200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddFailureLockoutAction200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

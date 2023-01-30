@@ -16,10 +16,10 @@ import (
 
 // AttributeValuePasswordValidatorResponse struct for AttributeValuePasswordValidatorResponse
 type AttributeValuePasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumattributeValuePasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the name(s) of the attribute(s) whose values should be checked to determine whether they match the provided password. If no values are provided, then the server checks if the proposed password matches the value of any user attribute in the target user's entry.
 	MatchAttribute []string `json:"matchAttribute,omitempty"`
@@ -75,7 +75,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -140,7 +140,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -164,7 +164,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetSchemas() []EnumattributeVa
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetSchemasOk() ([]EnumattributeValuePasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -187,7 +187,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMatchAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetMatchAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.MatchAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchAttribute, true
 }
@@ -219,7 +219,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestPasswordSubstringOfAttr
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetTestPasswordSubstringOfAttributeValueOk() (*bool, bool) {
 	if o == nil || isNil(o.TestPasswordSubstringOfAttributeValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.TestPasswordSubstringOfAttributeValue, true
 }
@@ -251,7 +251,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestAttributeValueSubstring
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetTestAttributeValueSubstringOfPasswordOk() (*bool, bool) {
 	if o == nil || isNil(o.TestAttributeValueSubstringOfPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.TestAttributeValueSubstringOfPassword, true
 }
@@ -283,7 +283,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLength
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetMinimumAttributeValueLengthForSubstringMatchesOk() (*int32, bool) {
 	if o == nil || isNil(o.MinimumAttributeValueLengthForSubstringMatches) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumAttributeValueLengthForSubstringMatches, true
 }
@@ -316,7 +316,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetTestReversedPassword() bool
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetTestReversedPasswordOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TestReversedPassword, true
 }
@@ -339,7 +339,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -372,7 +372,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -395,7 +395,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetValidatorRequirementDescrip
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -427,7 +427,7 @@ func (o *AttributeValuePasswordValidatorResponse) GetValidatorFailureMessage() s
 // and a boolean to check if the value has been set.
 func (o *AttributeValuePasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -525,5 +525,3 @@ func (v *NullableAttributeValuePasswordValidatorResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

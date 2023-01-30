@@ -17,19 +17,19 @@ import (
 // AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct for AddWeaklyEncodedPasswordDataSecurityAuditorRequest
 type AddWeaklyEncodedPasswordDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
-	AuditorName string `json:"auditorName"`
-	Schemas []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
+	AuditorName string                                                  `json:"auditorName"`
+	Schemas     []EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// The password storage schemes that are considered weak. Users with any of the specified password storage schemes will be included in the report.
-	WeakPasswordStorageScheme []string `json:"weakPasswordStorageScheme"`
-	WeakCryptEncoding []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
+	WeakPasswordStorageScheme []string                                       `json:"weakPasswordStorageScheme"`
+	WeakCryptEncoding         []EnumdataSecurityAuditorWeakCryptEncodingProp `json:"weakCryptEncoding,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -69,7 +69,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditorName() st
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuditorName, true
 }
@@ -93,7 +93,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetSchemas() []Enum
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetSchemasOk() ([]EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -117,7 +117,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetReportFile() str
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -141,7 +141,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetWeakPasswordStor
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetWeakPasswordStorageSchemeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.WeakPasswordStorageScheme, true
 }
@@ -164,7 +164,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetWeakCryptEncodin
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetWeakCryptEncodingOk() ([]EnumdataSecurityAuditorWeakCryptEncodingProp, bool) {
 	if o == nil || isNil(o.WeakCryptEncoding) {
-    return nil, false
+		return nil, false
 	}
 	return o.WeakCryptEncoding, true
 }
@@ -197,7 +197,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -220,7 +220,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetIncludeAttribute
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -252,7 +252,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditBackend() [
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -284,7 +284,7 @@ func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditSeverity() 
 // and a boolean to check if the value has been set.
 func (o *AddWeaklyEncodedPasswordDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -370,5 +370,3 @@ func (v *NullableAddWeaklyEncodedPasswordDataSecurityAuditorRequest) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // FileServerHttpServletExtensionResponse struct for FileServerHttpServletExtensionResponse
 type FileServerHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the HTTP Servlet Extension
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumfileServerHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
@@ -34,7 +34,7 @@ type FileServerHttpServletExtensionResponse struct {
 	// Specifies the default MIME type to use for the Content-Type header when a mapping cannot be found.
 	DefaultMIMEType *string `json:"defaultMIMEType,omitempty"`
 	// Indicates whether the servlet extension should only accept requests from authenticated clients.
-	RequireAuthentication *bool `json:"requireAuthentication,omitempty"`
+	RequireAuthentication     *bool                                                   `json:"requireAuthentication,omitempty"`
 	AllowedAuthenticationType []EnumhttpServletExtensionAllowedAuthenticationTypeProp `json:"allowedAuthenticationType,omitempty"`
 	// The access token validators that may be used to verify the authenticity of an OAuth 2.0 bearer token.
 	AccessTokenValidator []string `json:"accessTokenValidator,omitempty"`
@@ -90,7 +90,7 @@ func (o *FileServerHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -122,7 +122,7 @@ func (o *FileServerHttpServletExtensionResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -155,7 +155,7 @@ func (o *FileServerHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -179,7 +179,7 @@ func (o *FileServerHttpServletExtensionResponse) GetSchemas() []EnumfileServerHt
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetSchemasOk() ([]EnumfileServerHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -203,7 +203,7 @@ func (o *FileServerHttpServletExtensionResponse) GetBaseContextPath() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetBaseContextPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BaseContextPath, true
 }
@@ -227,7 +227,7 @@ func (o *FileServerHttpServletExtensionResponse) GetDocumentRootDirectory() stri
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetDocumentRootDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DocumentRootDirectory, true
 }
@@ -250,7 +250,7 @@ func (o *FileServerHttpServletExtensionResponse) GetEnableDirectoryIndexing() bo
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetEnableDirectoryIndexingOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableDirectoryIndexing) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableDirectoryIndexing, true
 }
@@ -282,7 +282,7 @@ func (o *FileServerHttpServletExtensionResponse) GetIndexFile() []string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetIndexFileOk() ([]string, bool) {
 	if o == nil || isNil(o.IndexFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.IndexFile, true
 }
@@ -314,7 +314,7 @@ func (o *FileServerHttpServletExtensionResponse) GetMimeTypesFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetMimeTypesFileOk() (*string, bool) {
 	if o == nil || isNil(o.MimeTypesFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.MimeTypesFile, true
 }
@@ -346,7 +346,7 @@ func (o *FileServerHttpServletExtensionResponse) GetDefaultMIMEType() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetDefaultMIMETypeOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultMIMEType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultMIMEType, true
 }
@@ -378,7 +378,7 @@ func (o *FileServerHttpServletExtensionResponse) GetRequireAuthentication() bool
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetRequireAuthenticationOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireAuthentication) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireAuthentication, true
 }
@@ -410,7 +410,7 @@ func (o *FileServerHttpServletExtensionResponse) GetAllowedAuthenticationType() 
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetAllowedAuthenticationTypeOk() ([]EnumhttpServletExtensionAllowedAuthenticationTypeProp, bool) {
 	if o == nil || isNil(o.AllowedAuthenticationType) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedAuthenticationType, true
 }
@@ -442,7 +442,7 @@ func (o *FileServerHttpServletExtensionResponse) GetAccessTokenValidator() []str
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.AccessTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenValidator, true
 }
@@ -474,7 +474,7 @@ func (o *FileServerHttpServletExtensionResponse) GetIdTokenValidator() []string 
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetIdTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.IdTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdTokenValidator, true
 }
@@ -506,7 +506,7 @@ func (o *FileServerHttpServletExtensionResponse) GetRequireFileServletAccessPriv
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetRequireFileServletAccessPrivilegeOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireFileServletAccessPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireFileServletAccessPrivilege, true
 }
@@ -538,7 +538,7 @@ func (o *FileServerHttpServletExtensionResponse) GetRequireGroup() []string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetRequireGroupOk() ([]string, bool) {
 	if o == nil || isNil(o.RequireGroup) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireGroup, true
 }
@@ -570,7 +570,7 @@ func (o *FileServerHttpServletExtensionResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -602,7 +602,7 @@ func (o *FileServerHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -634,7 +634,7 @@ func (o *FileServerHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -666,7 +666,7 @@ func (o *FileServerHttpServletExtensionResponse) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -698,7 +698,7 @@ func (o *FileServerHttpServletExtensionResponse) GetCorrelationIDResponseHeader(
 // and a boolean to check if the value has been set.
 func (o *FileServerHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -820,5 +820,3 @@ func (v *NullableFileServerHttpServletExtensionResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

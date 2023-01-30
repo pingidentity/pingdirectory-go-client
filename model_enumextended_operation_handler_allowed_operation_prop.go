@@ -20,9 +20,9 @@ type EnumextendedOperationHandlerAllowedOperationProp string
 
 // List of Enumextended-operation-handler-allowedOperationProp
 const (
-	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_REPLACE_LISTENER_CERTIFICATE EnumextendedOperationHandlerAllowedOperationProp = "replace-listener-certificate"
-	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_REPLACE_INTER_SERVER_CERTIFICATE EnumextendedOperationHandlerAllowedOperationProp = "replace-inter-server-certificate"
-	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_PURGE_RETIRED_LISTENER_CERTIFICATES EnumextendedOperationHandlerAllowedOperationProp = "purge-retired-listener-certificates"
+	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_REPLACE_LISTENER_CERTIFICATE            EnumextendedOperationHandlerAllowedOperationProp = "replace-listener-certificate"
+	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_REPLACE_INTER_SERVER_CERTIFICATE        EnumextendedOperationHandlerAllowedOperationProp = "replace-inter-server-certificate"
+	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_PURGE_RETIRED_LISTENER_CERTIFICATES     EnumextendedOperationHandlerAllowedOperationProp = "purge-retired-listener-certificates"
 	ENUMEXTENDEDOPERATIONHANDLERALLOWEDOPERATIONPROP_PURGE_RETIRED_INTER_SERVER_CERTIFICATES EnumextendedOperationHandlerAllowedOperationProp = "purge-retired-inter-server-certificates"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumextendedOperationHandlerAllowedOperationProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

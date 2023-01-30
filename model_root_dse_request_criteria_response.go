@@ -16,11 +16,11 @@ import (
 
 // RootDseRequestCriteriaResponse struct for RootDseRequestCriteriaResponse
 type RootDseRequestCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Request Criteria
-	Id string `json:"id"`
-	Schemas []EnumrootDseRequestCriteriaSchemaUrn `json:"schemas"`
+	Id            string                                 `json:"id"`
+	Schemas       []EnumrootDseRequestCriteriaSchemaUrn  `json:"schemas"`
 	OperationType []EnumrequestCriteriaOperationTypeProp `json:"operationType,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`
@@ -58,7 +58,7 @@ func (o *RootDseRequestCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -90,7 +90,7 @@ func (o *RootDseRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -123,7 +123,7 @@ func (o *RootDseRequestCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -147,7 +147,7 @@ func (o *RootDseRequestCriteriaResponse) GetSchemas() []EnumrootDseRequestCriter
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetSchemasOk() ([]EnumrootDseRequestCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -170,7 +170,7 @@ func (o *RootDseRequestCriteriaResponse) GetOperationType() []EnumrequestCriteri
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
 	if o == nil || isNil(o.OperationType) {
-    return nil, false
+		return nil, false
 	}
 	return o.OperationType, true
 }
@@ -202,7 +202,7 @@ func (o *RootDseRequestCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *RootDseRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -279,5 +279,3 @@ func (v *NullableRootDseRequestCriteriaResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

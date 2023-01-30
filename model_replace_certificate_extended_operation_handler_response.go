@@ -16,14 +16,14 @@ import (
 
 // ReplaceCertificateExtendedOperationHandlerResponse struct for ReplaceCertificateExtendedOperationHandlerResponse
 type ReplaceCertificateExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Extended Operation Handler
-	Id string `json:"id"`
+	Id      string                                                    `json:"id"`
 	Schemas []EnumreplaceCertificateExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether clients should be allowed to directly provide a new listener or inter-server certificate chain in the extended request.
-	AllowRemotelyProvidedCertificates *bool `json:"allowRemotelyProvidedCertificates,omitempty"`
-	AllowedOperation []EnumextendedOperationHandlerAllowedOperationProp `json:"allowedOperation,omitempty"`
+	AllowRemotelyProvidedCertificates *bool                                              `json:"allowRemotelyProvidedCertificates,omitempty"`
+	AllowedOperation                  []EnumextendedOperationHandlerAllowedOperationProp `json:"allowedOperation,omitempty"`
 	// A set of criteria that client connections must satisfy before they will be allowed to request the associated extended operations.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
 	// A set of criteria that the extended requests must satisfy before they will be processed by the server.
@@ -67,7 +67,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetMeta() MetaMeta 
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetUrnpingidentitys
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetSchemas() []Enum
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumreplaceCertificateExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetAllowRemotelyPro
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetAllowRemotelyProvidedCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowRemotelyProvidedCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowRemotelyProvidedCertificates, true
 }
@@ -211,7 +211,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetAllowedOperation
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetAllowedOperationOk() ([]EnumextendedOperationHandlerAllowedOperationProp, bool) {
 	if o == nil || isNil(o.AllowedOperation) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedOperation, true
 }
@@ -243,7 +243,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetConnectionCriter
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -275,7 +275,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetRequestCriteria(
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -307,7 +307,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetDescription() st
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -340,7 +340,7 @@ func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ReplaceCertificateExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -420,5 +420,3 @@ func (v *NullableReplaceCertificateExtendedOperationHandlerResponse) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

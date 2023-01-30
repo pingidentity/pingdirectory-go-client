@@ -21,7 +21,7 @@ type EnumlogPublisherOutputLocationProp string
 // List of Enumlog-publisher-outputLocationProp
 const (
 	ENUMLOGPUBLISHEROUTPUTLOCATIONPROP_OUTPUT EnumlogPublisherOutputLocationProp = "standard-output"
-	ENUMLOGPUBLISHEROUTPUTLOCATIONPROP_ERROR EnumlogPublisherOutputLocationProp = "standard-error"
+	ENUMLOGPUBLISHEROUTPUTLOCATIONPROP_ERROR  EnumlogPublisherOutputLocationProp = "standard-error"
 )
 
 // All allowed values of EnumlogPublisherOutputLocationProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumlogPublisherOutputLocationProp) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

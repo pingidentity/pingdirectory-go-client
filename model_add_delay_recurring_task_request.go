@@ -17,8 +17,8 @@ import (
 // AddDelayRecurringTaskRequest struct for AddDelayRecurringTaskRequest
 type AddDelayRecurringTaskRequest struct {
 	// Name of the new Recurring Task
-	TaskName string `json:"taskName"`
-	Schemas []EnumdelayRecurringTaskSchemaUrn `json:"schemas"`
+	TaskName string                            `json:"taskName"`
+	Schemas  []EnumdelayRecurringTaskSchemaUrn `json:"schemas"`
 	// The length of time to sleep before the task completes.
 	SleepDuration *string `json:"sleepDuration,omitempty"`
 	// Indicates that task should wait for up to the specified length of time for the work queue to report that all worker threads are idle and there are no pending operations. Note that this primarily monitors operations that use worker threads, which does not include internal operations (for example, those invoked by extensions), and may not include requests from non-LDAP clients (for example, HTTP-based clients).
@@ -30,8 +30,8 @@ type AddDelayRecurringTaskRequest struct {
 	// The length of time that the server will wait for a response to each internal search performed using the criteria from the ldap-url-for-search-expected-to-return-entries property.
 	SearchTimeLimit *string `json:"searchTimeLimit,omitempty"`
 	// The maximum length of time that the server will continue to perform internal searches using the criteria from the ldap-url-for-search-expected-to-return-entries property.
-	DurationToWaitForSearchToReturnEntries *string `json:"durationToWaitForSearchToReturnEntries,omitempty"`
-	TaskReturnStateIfTimeoutIsEncountered *EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp `json:"taskReturnStateIfTimeoutIsEncountered,omitempty"`
+	DurationToWaitForSearchToReturnEntries *string                                                     `json:"durationToWaitForSearchToReturnEntries,omitempty"`
+	TaskReturnStateIfTimeoutIsEncountered  *EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp `json:"taskReturnStateIfTimeoutIsEncountered,omitempty"`
 	// A description for this Recurring Task
 	Description *string `json:"description,omitempty"`
 	// Indicates whether an instance of this Recurring Task should be canceled if the task immediately before it in the recurring task chain fails to complete successfully (including if it is canceled by an administrator before it starts or while it is running).
@@ -83,7 +83,7 @@ func (o *AddDelayRecurringTaskRequest) GetTaskName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskName, true
 }
@@ -107,7 +107,7 @@ func (o *AddDelayRecurringTaskRequest) GetSchemas() []EnumdelayRecurringTaskSche
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetSchemasOk() ([]EnumdelayRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -130,7 +130,7 @@ func (o *AddDelayRecurringTaskRequest) GetSleepDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetSleepDurationOk() (*string, bool) {
 	if o == nil || isNil(o.SleepDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.SleepDuration, true
 }
@@ -162,7 +162,7 @@ func (o *AddDelayRecurringTaskRequest) GetDurationToWaitForWorkQueueIdle() strin
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetDurationToWaitForWorkQueueIdleOk() (*string, bool) {
 	if o == nil || isNil(o.DurationToWaitForWorkQueueIdle) {
-    return nil, false
+		return nil, false
 	}
 	return o.DurationToWaitForWorkQueueIdle, true
 }
@@ -194,7 +194,7 @@ func (o *AddDelayRecurringTaskRequest) GetLdapURLForSearchExpectedToReturnEntrie
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetLdapURLForSearchExpectedToReturnEntriesOk() ([]string, bool) {
 	if o == nil || isNil(o.LdapURLForSearchExpectedToReturnEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapURLForSearchExpectedToReturnEntries, true
 }
@@ -226,7 +226,7 @@ func (o *AddDelayRecurringTaskRequest) GetSearchInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetSearchIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.SearchInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchInterval, true
 }
@@ -258,7 +258,7 @@ func (o *AddDelayRecurringTaskRequest) GetSearchTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetSearchTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.SearchTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchTimeLimit, true
 }
@@ -290,7 +290,7 @@ func (o *AddDelayRecurringTaskRequest) GetDurationToWaitForSearchToReturnEntries
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetDurationToWaitForSearchToReturnEntriesOk() (*string, bool) {
 	if o == nil || isNil(o.DurationToWaitForSearchToReturnEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.DurationToWaitForSearchToReturnEntries, true
 }
@@ -322,7 +322,7 @@ func (o *AddDelayRecurringTaskRequest) GetTaskReturnStateIfTimeoutIsEncountered(
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetTaskReturnStateIfTimeoutIsEncounteredOk() (*EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp, bool) {
 	if o == nil || isNil(o.TaskReturnStateIfTimeoutIsEncountered) {
-    return nil, false
+		return nil, false
 	}
 	return o.TaskReturnStateIfTimeoutIsEncountered, true
 }
@@ -354,7 +354,7 @@ func (o *AddDelayRecurringTaskRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -386,7 +386,7 @@ func (o *AddDelayRecurringTaskRequest) GetCancelOnTaskDependencyFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -418,7 +418,7 @@ func (o *AddDelayRecurringTaskRequest) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -450,7 +450,7 @@ func (o *AddDelayRecurringTaskRequest) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -482,7 +482,7 @@ func (o *AddDelayRecurringTaskRequest) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -514,7 +514,7 @@ func (o *AddDelayRecurringTaskRequest) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -546,7 +546,7 @@ func (o *AddDelayRecurringTaskRequest) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -578,7 +578,7 @@ func (o *AddDelayRecurringTaskRequest) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDelayRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -688,5 +688,3 @@ func (v *NullableAddDelayRecurringTaskRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

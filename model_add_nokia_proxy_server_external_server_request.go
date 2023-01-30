@@ -17,8 +17,8 @@ import (
 // AddNokiaProxyServerExternalServerRequest struct for AddNokiaProxyServerExternalServerRequest
 type AddNokiaProxyServerExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumnokiaProxyServerExternalServerSchemaUrn `json:"schemas"`
+	ServerName              string                                        `json:"serverName"`
+	Schemas                 []EnumnokiaProxyServerExternalServerSchemaUrn `json:"schemas"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
 	// Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients.
 	UseAdministrativeOperationControl *bool `json:"useAdministrativeOperationControl,omitempty"`
@@ -33,8 +33,8 @@ type AddNokiaProxyServerExternalServerRequest struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider *string `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity EnumexternalServerConnectionSecurityProp `json:"connectionSecurity"`
+	PassphraseProvider   *string                                    `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity   EnumexternalServerConnectionSecurityProp   `json:"connectionSecurity"`
 	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -53,7 +53,7 @@ type AddNokiaProxyServerExternalServerRequest struct {
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
 	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -102,7 +102,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -126,7 +126,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetSchemas() []EnumnokiaProxy
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetSchemasOk() ([]EnumnokiaProxyServerExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -150,7 +150,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetVerifyCredentialsMethod() 
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VerifyCredentialsMethod, true
 }
@@ -173,7 +173,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetUseAdministrativeOperation
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetUseAdministrativeOperationControlOk() (*bool, bool) {
 	if o == nil || isNil(o.UseAdministrativeOperationControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseAdministrativeOperationControl, true
 }
@@ -206,7 +206,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -230,7 +230,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -253,7 +253,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -285,7 +285,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetBindDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetBindDNOk() (*string, bool) {
 	if o == nil || isNil(o.BindDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindDN, true
 }
@@ -317,7 +317,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -349,7 +349,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetPassphraseProvider() strin
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -382,7 +382,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurity() Enume
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectionSecurity, true
 }
@@ -406,7 +406,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethod() Enu
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuthenticationMethod, true
 }
@@ -429,7 +429,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetHealthCheckConnectTimeout(
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetHealthCheckConnectTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.HealthCheckConnectTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
 }
@@ -462,7 +462,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionAge() string 
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -485,7 +485,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMinExpiredConnectionDiscon
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
 }
@@ -518,7 +518,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -542,7 +542,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxResponseSize() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxResponseSize, true
 }
@@ -565,7 +565,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetKeyManagerProvider() strin
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -597,7 +597,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetTrustManagerProvider() str
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -629,7 +629,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetInitialConnections() int32
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.InitialConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.InitialConnections, true
 }
@@ -661,7 +661,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxConnections, true
 }
@@ -693,7 +693,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetDefunctConnectionResultCod
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
 	if o == nil || isNil(o.DefunctConnectionResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
 }
@@ -725,7 +725,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetAbandonOnTimeout() bool {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetAbandonOnTimeoutOk() (*bool, bool) {
 	if o == nil || isNil(o.AbandonOnTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.AbandonOnTimeout, true
 }
@@ -757,7 +757,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -888,5 +888,3 @@ func (v *NullableAddNokiaProxyServerExternalServerRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

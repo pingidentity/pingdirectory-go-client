@@ -17,8 +17,8 @@ import (
 // AddSizeLimitLogRetentionPolicyRequest struct for AddSizeLimitLogRetentionPolicyRequest
 type AddSizeLimitLogRetentionPolicyRequest struct {
 	// Name of the new Log Retention Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumsizeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                     `json:"policyName"`
+	Schemas    []EnumsizeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the maximum total disk space used by the log files.
 	DiskSpaceUsed string `json:"diskSpaceUsed"`
 	// A description for this Log Retention Policy
@@ -59,7 +59,7 @@ func (o *AddSizeLimitLogRetentionPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddSizeLimitLogRetentionPolicyRequest) GetSchemas() []EnumsizeLimitLogR
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRetentionPolicyRequest) GetSchemasOk() ([]EnumsizeLimitLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddSizeLimitLogRetentionPolicyRequest) GetDiskSpaceUsed() string {
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRetentionPolicyRequest) GetDiskSpaceUsedOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DiskSpaceUsed, true
 }
@@ -130,7 +130,7 @@ func (o *AddSizeLimitLogRetentionPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRetentionPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddSizeLimitLogRetentionPolicyRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

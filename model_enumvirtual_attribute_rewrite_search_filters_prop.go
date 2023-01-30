@@ -20,9 +20,9 @@ type EnumvirtualAttributeRewriteSearchFiltersProp string
 
 // List of Enumvirtual-attribute-rewriteSearchFiltersProp
 const (
-	ENUMVIRTUALATTRIBUTEREWRITESEARCHFILTERSPROP_ALWAYS EnumvirtualAttributeRewriteSearchFiltersProp = "always"
+	ENUMVIRTUALATTRIBUTEREWRITESEARCHFILTERSPROP_ALWAYS             EnumvirtualAttributeRewriteSearchFiltersProp = "always"
 	ENUMVIRTUALATTRIBUTEREWRITESEARCHFILTERSPROP_WITHIN_GROUP_SCOPE EnumvirtualAttributeRewriteSearchFiltersProp = "within-group-scope"
-	ENUMVIRTUALATTRIBUTEREWRITESEARCHFILTERSPROP_NEVER EnumvirtualAttributeRewriteSearchFiltersProp = "never"
+	ENUMVIRTUALATTRIBUTEREWRITESEARCHFILTERSPROP_NEVER              EnumvirtualAttributeRewriteSearchFiltersProp = "never"
 )
 
 // All allowed values of EnumvirtualAttributeRewriteSearchFiltersProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumvirtualAttributeRewriteSearchFiltersProp) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

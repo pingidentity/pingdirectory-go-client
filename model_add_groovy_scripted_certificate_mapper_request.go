@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedCertificateMapperRequest struct for AddGroovyScriptedCertificateMapperRequest
 type AddGroovyScriptedCertificateMapperRequest struct {
 	// Name of the new Certificate Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumgroovyScriptedCertificateMapperSchemaUrn `json:"schemas"`
+	MapperName string                                         `json:"mapperName"`
+	Schemas    []EnumgroovyScriptedCertificateMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Certificate Mapper.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Certificate Mapper. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddGroovyScriptedCertificateMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -88,7 +88,7 @@ func (o *AddGroovyScriptedCertificateMapperRequest) GetSchemas() []EnumgroovyScr
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedCertificateMapperRequest) GetSchemasOk() ([]EnumgroovyScriptedCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddGroovyScriptedCertificateMapperRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedCertificateMapperRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddGroovyScriptedCertificateMapperRequest) GetScriptArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedCertificateMapperRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddGroovyScriptedCertificateMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedCertificateMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddGroovyScriptedCertificateMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedCertificateMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddGroovyScriptedCertificateMapperRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

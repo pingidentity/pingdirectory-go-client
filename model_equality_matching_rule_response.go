@@ -16,9 +16,9 @@ import (
 
 // EqualityMatchingRuleResponse struct for EqualityMatchingRuleResponse
 type EqualityMatchingRuleResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumequalityMatchingRuleSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumequalityMatchingRuleSchemaUrn                `json:"schemas"`
 	// Name of the Matching Rule
 	Id string `json:"id"`
 	// Indicates whether the Matching Rule is enabled for use.
@@ -58,7 +58,7 @@ func (o *EqualityMatchingRuleResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *EqualityMatchingRuleResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -90,7 +90,7 @@ func (o *EqualityMatchingRuleResponse) GetUrnpingidentityschemasconfigurationmes
 // and a boolean to check if the value has been set.
 func (o *EqualityMatchingRuleResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -123,7 +123,7 @@ func (o *EqualityMatchingRuleResponse) GetSchemas() []EnumequalityMatchingRuleSc
 // and a boolean to check if the value has been set.
 func (o *EqualityMatchingRuleResponse) GetSchemasOk() ([]EnumequalityMatchingRuleSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -147,7 +147,7 @@ func (o *EqualityMatchingRuleResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *EqualityMatchingRuleResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -171,7 +171,7 @@ func (o *EqualityMatchingRuleResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *EqualityMatchingRuleResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -236,5 +236,3 @@ func (v *NullableEqualityMatchingRuleResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

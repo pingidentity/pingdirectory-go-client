@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedAlertHandlerRequest struct for AddGroovyScriptedAlertHandlerRequest
 type AddGroovyScriptedAlertHandlerRequest struct {
 	// Name of the new Alert Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumgroovyScriptedAlertHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                    `json:"handlerName"`
+	Schemas     []EnumgroovyScriptedAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Alert Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Alert Handler. Each configuration property should be given in the form 'name=value'.
@@ -28,10 +28,10 @@ type AddGroovyScriptedAlertHandlerRequest struct {
 	// Indicates whether the Alert Handler is enabled.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the server should attempt to invoke this Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
-	Asynchronous *bool `json:"asynchronous,omitempty"`
+	Asynchronous         *bool                                      `json:"asynchronous,omitempty"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewAddGroovyScriptedAlertHandlerRequest instantiates a new AddGroovyScriptedAlertHandlerRequest object
@@ -69,7 +69,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -93,7 +93,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetSchemas() []EnumgroovyScripted
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetSchemasOk() ([]EnumgroovyScriptedAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -117,7 +117,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -140,7 +140,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -172,7 +172,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -228,7 +228,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -260,7 +260,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertSeverity() []Enuma
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -292,7 +292,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertType() []Enumalert
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -324,7 +324,7 @@ func (o *AddGroovyScriptedAlertHandlerRequest) GetDisabledAlertType() []Enumaler
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -413,5 +413,3 @@ func (v *NullableAddGroovyScriptedAlertHandlerRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type EnumpasswordValidatorMatchBehaviorProp string
 // List of Enumpassword-validator-matchBehaviorProp
 const (
 	ENUMPASSWORDVALIDATORMATCHBEHAVIORPROP_REQUIRE_MATCH EnumpasswordValidatorMatchBehaviorProp = "require-match"
-	ENUMPASSWORDVALIDATORMATCHBEHAVIORPROP_REJECT_MATCH EnumpasswordValidatorMatchBehaviorProp = "reject-match"
+	ENUMPASSWORDVALIDATORMATCHBEHAVIORPROP_REJECT_MATCH  EnumpasswordValidatorMatchBehaviorProp = "reject-match"
 )
 
 // All allowed values of EnumpasswordValidatorMatchBehaviorProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumpasswordValidatorMatchBehaviorProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

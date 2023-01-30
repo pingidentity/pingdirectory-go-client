@@ -110,4 +110,3 @@ func (v *NullableEnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

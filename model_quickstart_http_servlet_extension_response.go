@@ -16,10 +16,10 @@ import (
 
 // QuickstartHttpServletExtensionResponse struct for QuickstartHttpServletExtensionResponse
 type QuickstartHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the HTTP Servlet Extension
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumquickstartHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the PingFederate server to be configured.
 	Server *string `json:"server,omitempty"`
@@ -65,7 +65,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetSchemas() []EnumquickstartHt
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetSchemasOk() ([]EnumquickstartHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -177,7 +177,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetServer() string {
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetServerOk() (*string, bool) {
 	if o == nil || isNil(o.Server) {
-    return nil, false
+		return nil, false
 	}
 	return o.Server, true
 }
@@ -209,7 +209,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -241,7 +241,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -273,7 +273,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -305,7 +305,7 @@ func (o *QuickstartHttpServletExtensionResponse) GetCorrelationIDResponseHeader(
 // and a boolean to check if the value has been set.
 func (o *QuickstartHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -391,5 +391,3 @@ func (v *NullableQuickstartHttpServletExtensionResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

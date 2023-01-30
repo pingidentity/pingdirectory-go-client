@@ -17,8 +17,8 @@ import (
 // AddThirdPartyRecurringTaskRequest struct for AddThirdPartyRecurringTaskRequest
 type AddThirdPartyRecurringTaskRequest struct {
 	// Name of the new Recurring Task
-	TaskName string `json:"taskName"`
-	Schemas []EnumthirdPartyRecurringTaskSchemaUrn `json:"schemas"`
+	TaskName string                                 `json:"taskName"`
+	Schemas  []EnumthirdPartyRecurringTaskSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Recurring Task.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Recurring Task. Each configuration property should be given in the form 'name=value'.
@@ -75,7 +75,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetTaskName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskName, true
 }
@@ -99,7 +99,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetSchemas() []EnumthirdPartyRecurri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetSchemasOk() ([]EnumthirdPartyRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -123,7 +123,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -146,7 +146,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -178,7 +178,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -210,7 +210,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetCancelOnTaskDependencyFailure() b
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -242,7 +242,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -274,7 +274,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -306,7 +306,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -338,7 +338,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -370,7 +370,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -402,7 +402,7 @@ func (o *AddThirdPartyRecurringTaskRequest) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -497,5 +497,3 @@ func (v *NullableAddThirdPartyRecurringTaskRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

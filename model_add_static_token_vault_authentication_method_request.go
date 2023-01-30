@@ -17,8 +17,8 @@ import (
 // AddStaticTokenVaultAuthenticationMethodRequest struct for AddStaticTokenVaultAuthenticationMethodRequest
 type AddStaticTokenVaultAuthenticationMethodRequest struct {
 	// Name of the new Vault Authentication Method
-	MethodName string `json:"methodName"`
-	Schemas []EnumstaticTokenVaultAuthenticationMethodSchemaUrn `json:"schemas"`
+	MethodName string                                              `json:"methodName"`
+	Schemas    []EnumstaticTokenVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The static token used to authenticate to the Vault server.
 	VaultAccessToken string `json:"vaultAccessToken"`
 	// A description for this Vault Authentication Method
@@ -59,7 +59,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetMethodName() string 
 // and a boolean to check if the value has been set.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MethodName, true
 }
@@ -83,7 +83,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetSchemas() []Enumstat
 // and a boolean to check if the value has been set.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetSchemasOk() ([]EnumstaticTokenVaultAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetVaultAccessToken() s
 // and a boolean to check if the value has been set.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetVaultAccessTokenOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultAccessToken, true
 }
@@ -130,7 +130,7 @@ func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetDescription() string
 // and a boolean to check if the value has been set.
 func (o *AddStaticTokenVaultAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddStaticTokenVaultAuthenticationMethodRequest) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

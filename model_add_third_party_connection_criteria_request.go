@@ -17,8 +17,8 @@ import (
 // AddThirdPartyConnectionCriteriaRequest struct for AddThirdPartyConnectionCriteriaRequest
 type AddThirdPartyConnectionCriteriaRequest struct {
 	// Name of the new Connection Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumthirdPartyConnectionCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                      `json:"criteriaName"`
+	Schemas      []EnumthirdPartyConnectionCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Connection Criteria.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Connection Criteria. Each configuration property should be given in the form 'name=value'.
@@ -61,7 +61,7 @@ func (o *AddThirdPartyConnectionCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyConnectionCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -85,7 +85,7 @@ func (o *AddThirdPartyConnectionCriteriaRequest) GetSchemas() []EnumthirdPartyCo
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyConnectionCriteriaRequest) GetSchemasOk() ([]EnumthirdPartyConnectionCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -109,7 +109,7 @@ func (o *AddThirdPartyConnectionCriteriaRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyConnectionCriteriaRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -132,7 +132,7 @@ func (o *AddThirdPartyConnectionCriteriaRequest) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyConnectionCriteriaRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -164,7 +164,7 @@ func (o *AddThirdPartyConnectionCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyConnectionCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddThirdPartyConnectionCriteriaRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

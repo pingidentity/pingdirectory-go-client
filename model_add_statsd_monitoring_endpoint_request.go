@@ -17,12 +17,12 @@ import (
 // AddStatsdMonitoringEndpointRequest struct for AddStatsdMonitoringEndpointRequest
 type AddStatsdMonitoringEndpointRequest struct {
 	// Name of the new Monitoring Endpoint
-	EndpointName string `json:"endpointName"`
-	Schemas []EnumstatsdMonitoringEndpointSchemaUrn `json:"schemas,omitempty"`
+	EndpointName string                                  `json:"endpointName"`
+	Schemas      []EnumstatsdMonitoringEndpointSchemaUrn `json:"schemas,omitempty"`
 	// The name of the host where this StatsD Monitoring Endpoint should send metric data.
 	Hostname string `json:"hostname"`
 	// Specifies the port number of the endpoint where metric data should be sent.
-	ServerPort int32 `json:"serverPort"`
+	ServerPort     int32                                    `json:"serverPort"`
 	ConnectionType EnummonitoringEndpointConnectionTypeProp `json:"connectionType"`
 	// The trust manager provider to use if SSL over TCP is to be used for connection-level security.
 	TrustManagerProvider *string `json:"trustManagerProvider,omitempty"`
@@ -68,7 +68,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetEndpointName() string {
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetEndpointNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EndpointName, true
 }
@@ -91,7 +91,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetSchemas() []EnumstatsdMonitoring
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetSchemasOk() ([]EnumstatsdMonitoringEndpointSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -124,7 +124,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetHostname() string {
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetHostnameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Hostname, true
 }
@@ -148,7 +148,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -172,7 +172,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetConnectionType() EnummonitoringE
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetConnectionTypeOk() (*EnummonitoringEndpointConnectionTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectionType, true
 }
@@ -195,7 +195,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -227,7 +227,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetAdditionalTags() []string {
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetAdditionalTagsOk() ([]string, bool) {
 	if o == nil || isNil(o.AdditionalTags) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdditionalTags, true
 }
@@ -260,7 +260,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -334,5 +334,3 @@ func (v *NullableAddStatsdMonitoringEndpointRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

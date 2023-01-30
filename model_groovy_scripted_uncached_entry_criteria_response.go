@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedUncachedEntryCriteriaResponse struct for GroovyScriptedUncachedEntryCriteriaResponse
 type GroovyScriptedUncachedEntryCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Entry Criteria
-	Id string `json:"id"`
+	Id      string                                             `json:"id"`
 	Schemas []EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Entry Criteria.
 	ScriptClass string `json:"scriptClass"`
@@ -65,7 +65,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetSchemas() []EnumgroovyS
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetSchemasOk() ([]EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -201,7 +201,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetScriptArgument() []stri
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -233,7 +233,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedEntryCriteriaResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableGroovyScriptedUncachedEntryCriteriaResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

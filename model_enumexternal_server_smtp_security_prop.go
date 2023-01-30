@@ -20,9 +20,9 @@ type EnumexternalServerSmtpSecurityProp string
 
 // List of Enumexternal-server-smtpSecurityProp
 const (
-	ENUMEXTERNALSERVERSMTPSECURITYPROP_NONE EnumexternalServerSmtpSecurityProp = "none"
+	ENUMEXTERNALSERVERSMTPSECURITYPROP_NONE     EnumexternalServerSmtpSecurityProp = "none"
 	ENUMEXTERNALSERVERSMTPSECURITYPROP_STARTTLS EnumexternalServerSmtpSecurityProp = "starttls"
-	ENUMEXTERNALSERVERSMTPSECURITYPROP_SSL EnumexternalServerSmtpSecurityProp = "ssl"
+	ENUMEXTERNALSERVERSMTPSECURITYPROP_SSL      EnumexternalServerSmtpSecurityProp = "ssl"
 )
 
 // All allowed values of EnumexternalServerSmtpSecurityProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumexternalServerSmtpSecurityProp) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,10 +16,10 @@ import (
 
 // SubjectDnToUserAttributeCertificateMapperResponse struct for SubjectDnToUserAttributeCertificateMapperResponse
 type SubjectDnToUserAttributeCertificateMapperResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Certificate Mapper
-	Id string `json:"id"`
+	Id      string                                                   `json:"id"`
 	Schemas []EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should exactly match the certificate subject DN.
 	SubjectAttribute string `json:"subjectAttribute"`
@@ -65,7 +65,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetUrnpingidentitysc
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetSchemas() []Enums
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetSchemasOk() ([]EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetSubjectAttribute(
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetSubjectAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SubjectAttribute, true
 }
@@ -201,7 +201,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetUserBaseDN() []st
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.UserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserBaseDN, true
 }
@@ -233,7 +233,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SubjectDnToUserAttributeCertificateMapperResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableSubjectDnToUserAttributeCertificateMapperResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

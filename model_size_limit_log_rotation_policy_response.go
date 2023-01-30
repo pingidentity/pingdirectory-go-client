@@ -16,10 +16,10 @@ import (
 
 // SizeLimitLogRotationPolicyResponse struct for SizeLimitLogRotationPolicyResponse
 type SizeLimitLogRotationPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Rotation Policy
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumsizeLimitLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the maximum size that a log file can reach before it is rotated.
 	FileSizeLimit string `json:"fileSizeLimit"`
@@ -60,7 +60,7 @@ func (o *SizeLimitLogRotationPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRotationPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *SizeLimitLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *SizeLimitLogRotationPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRotationPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *SizeLimitLogRotationPolicyResponse) GetSchemas() []EnumsizeLimitLogRota
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRotationPolicyResponse) GetSchemasOk() ([]EnumsizeLimitLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *SizeLimitLogRotationPolicyResponse) GetFileSizeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRotationPolicyResponse) GetFileSizeLimitOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FileSizeLimit, true
 }
@@ -196,7 +196,7 @@ func (o *SizeLimitLogRotationPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRotationPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableSizeLimitLogRotationPolicyResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

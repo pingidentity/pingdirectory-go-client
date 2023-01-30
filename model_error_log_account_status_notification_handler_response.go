@@ -16,11 +16,11 @@ import (
 
 // ErrorLogAccountStatusNotificationHandlerResponse struct for ErrorLogAccountStatusNotificationHandlerResponse
 type ErrorLogAccountStatusNotificationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Account Status Notification Handler
-	Id string `json:"id"`
-	Schemas []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	Id                            string                                                                  `json:"id"`
+	Schemas                       []EnumerrorLogAccountStatusNotificationHandlerSchemaUrn                 `json:"schemas"`
 	AccountStatusNotificationType []EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp `json:"accountStatusNotificationType"`
 	// A description for this Account Status Notification Handler
 	Description *string `json:"description,omitempty"`
@@ -68,7 +68,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetUrnpingidentitysch
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetSchemas() []Enumer
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetSchemasOk() ([]EnumerrorLogAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAccountStatusNotif
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAccountStatusNotificationTypeOk() ([]EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountStatusNotificationType, true
 }
@@ -204,7 +204,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetDescription() stri
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -237,7 +237,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -260,7 +260,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAsynchronous() boo
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -292,7 +292,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAccountCreationNot
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -324,7 +324,7 @@ func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAccountUpdateNotif
 // and a boolean to check if the value has been set.
 func (o *ErrorLogAccountStatusNotificationHandlerResponse) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -413,5 +413,3 @@ func (v *NullableErrorLogAccountStatusNotificationHandlerResponse) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

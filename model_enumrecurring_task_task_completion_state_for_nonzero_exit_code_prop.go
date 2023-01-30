@@ -20,8 +20,8 @@ type EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp string
 
 // List of Enumrecurring-task-taskCompletionStateForNonzeroExitCodeProp
 const (
-	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_STOPPED_BY_ERROR EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "stopped-by-error"
-	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_COMPLETED_WITH_ERRORS EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-with-errors"
+	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_STOPPED_BY_ERROR       EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "stopped-by-error"
+	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_COMPLETED_WITH_ERRORS  EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-with-errors"
 	ENUMRECURRINGTASKTASKCOMPLETIONSTATEFORNONZEROEXITCODEPROP_COMPLETED_SUCCESSFULLY EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp = "completed-successfully"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

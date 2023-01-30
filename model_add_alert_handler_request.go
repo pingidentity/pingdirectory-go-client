@@ -17,15 +17,15 @@ import (
 
 // AddAlertHandlerRequest - struct for AddAlertHandlerRequest
 type AddAlertHandlerRequest struct {
-	AddErrorLogAlertHandlerRequest *AddErrorLogAlertHandlerRequest
-	AddExecAlertHandlerRequest *AddExecAlertHandlerRequest
+	AddErrorLogAlertHandlerRequest       *AddErrorLogAlertHandlerRequest
+	AddExecAlertHandlerRequest           *AddExecAlertHandlerRequest
 	AddGroovyScriptedAlertHandlerRequest *AddGroovyScriptedAlertHandlerRequest
-	AddJmxAlertHandlerRequest *AddJmxAlertHandlerRequest
-	AddSmtpAlertHandlerRequest *AddSmtpAlertHandlerRequest
-	AddSnmpAlertHandlerRequest *AddSnmpAlertHandlerRequest
-	AddSnmpSubAgentAlertHandlerRequest *AddSnmpSubAgentAlertHandlerRequest
-	AddThirdPartyAlertHandlerRequest *AddThirdPartyAlertHandlerRequest
-	AddTwilioAlertHandlerRequest *AddTwilioAlertHandlerRequest
+	AddJmxAlertHandlerRequest            *AddJmxAlertHandlerRequest
+	AddSmtpAlertHandlerRequest           *AddSmtpAlertHandlerRequest
+	AddSnmpAlertHandlerRequest           *AddSnmpAlertHandlerRequest
+	AddSnmpSubAgentAlertHandlerRequest   *AddSnmpSubAgentAlertHandlerRequest
+	AddThirdPartyAlertHandlerRequest     *AddThirdPartyAlertHandlerRequest
+	AddTwilioAlertHandlerRequest         *AddTwilioAlertHandlerRequest
 }
 
 // AddErrorLogAlertHandlerRequestAsAddAlertHandlerRequest is a convenience function that returns AddErrorLogAlertHandlerRequest wrapped in AddAlertHandlerRequest
@@ -90,7 +90,6 @@ func AddTwilioAlertHandlerRequestAsAddAlertHandlerRequest(v *AddTwilioAlertHandl
 		AddTwilioAlertHandlerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddAlertHandlerRequest) UnmarshalJSON(data []byte) error {
@@ -275,7 +274,7 @@ func (src AddAlertHandlerRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddAlertHandlerRequest) GetActualInstance() (interface{}) {
+func (obj *AddAlertHandlerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -354,5 +353,3 @@ func (v *NullableAddAlertHandlerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddFileBasedCipherStreamProviderRequest struct for AddFileBasedCipherStreamProviderRequest
 type AddFileBasedCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumfileBasedCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                       `json:"providerName"`
+	Schemas      []EnumfileBasedCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to the file containing the password to use when generating ciphers.
 	PasswordFile string `json:"passwordFile"`
 	// Indicates whether the server should wait for the password file to become available if it does not exist.
@@ -64,7 +64,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -88,7 +88,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetSchemas() []EnumfileBasedCi
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetSchemasOk() ([]EnumfileBasedCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetPasswordFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetPasswordFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordFile, true
 }
@@ -135,7 +135,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetWaitForPasswordFile() bool 
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetWaitForPasswordFileOk() (*bool, bool) {
 	if o == nil || isNil(o.WaitForPasswordFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.WaitForPasswordFile, true
 }
@@ -167,7 +167,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddFileBasedCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddFileBasedCipherStreamProviderRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

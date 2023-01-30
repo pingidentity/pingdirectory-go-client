@@ -16,10 +16,10 @@ import (
 
 // FixedTimeLogRotationPolicyResponse struct for FixedTimeLogRotationPolicyResponse
 type FixedTimeLogRotationPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Rotation Policy
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumfixedTimeLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the time of day at which log rotation should occur.
 	TimeOfDay []string `json:"timeOfDay"`
@@ -60,7 +60,7 @@ func (o *FixedTimeLogRotationPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FixedTimeLogRotationPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *FixedTimeLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *FixedTimeLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *FixedTimeLogRotationPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FixedTimeLogRotationPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *FixedTimeLogRotationPolicyResponse) GetSchemas() []EnumfixedTimeLogRota
 // and a boolean to check if the value has been set.
 func (o *FixedTimeLogRotationPolicyResponse) GetSchemasOk() ([]EnumfixedTimeLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *FixedTimeLogRotationPolicyResponse) GetTimeOfDay() []string {
 // and a boolean to check if the value has been set.
 func (o *FixedTimeLogRotationPolicyResponse) GetTimeOfDayOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeOfDay, true
 }
@@ -196,7 +196,7 @@ func (o *FixedTimeLogRotationPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FixedTimeLogRotationPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableFixedTimeLogRotationPolicyResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

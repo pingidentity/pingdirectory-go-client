@@ -16,9 +16,9 @@ import (
 
 // AlertBackendResponse struct for AlertBackendResponse
 type AlertBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumalertBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumalertBackendSchemaUrn                        `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
@@ -30,9 +30,9 @@ type AlertBackendResponse struct {
 	// Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
 	AlertRetentionTime string `json:"alertRetentionTime"`
 	// Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
-	MaxAlerts *int32 `json:"maxAlerts,omitempty"`
+	MaxAlerts         *int32                             `json:"maxAlerts,omitempty"`
 	DisabledAlertType []EnumbackendDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
-	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
+	WritabilityMode   EnumbackendWritabilityModeProp     `json:"writabilityMode"`
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
@@ -85,7 +85,7 @@ func (o *AlertBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -117,7 +117,7 @@ func (o *AlertBackendResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -150,7 +150,7 @@ func (o *AlertBackendResponse) GetSchemas() []EnumalertBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetSchemasOk() ([]EnumalertBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -174,7 +174,7 @@ func (o *AlertBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -198,7 +198,7 @@ func (o *AlertBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -222,7 +222,7 @@ func (o *AlertBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -246,7 +246,7 @@ func (o *AlertBackendResponse) GetLdifFile() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetLdifFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LdifFile, true
 }
@@ -270,7 +270,7 @@ func (o *AlertBackendResponse) GetAlertRetentionTime() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetAlertRetentionTimeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AlertRetentionTime, true
 }
@@ -293,7 +293,7 @@ func (o *AlertBackendResponse) GetMaxAlerts() int32 {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetMaxAlertsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxAlerts) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxAlerts, true
 }
@@ -325,7 +325,7 @@ func (o *AlertBackendResponse) GetDisabledAlertType() []EnumbackendDisabledAlert
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetDisabledAlertTypeOk() ([]EnumbackendDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -358,7 +358,7 @@ func (o *AlertBackendResponse) GetWritabilityMode() EnumbackendWritabilityModePr
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -381,7 +381,7 @@ func (o *AlertBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -414,7 +414,7 @@ func (o *AlertBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -437,7 +437,7 @@ func (o *AlertBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -469,7 +469,7 @@ func (o *AlertBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -501,7 +501,7 @@ func (o *AlertBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -533,7 +533,7 @@ func (o *AlertBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *AlertBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -643,5 +643,3 @@ func (v *NullableAlertBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

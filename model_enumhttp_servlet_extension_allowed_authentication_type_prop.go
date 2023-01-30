@@ -20,9 +20,9 @@ type EnumhttpServletExtensionAllowedAuthenticationTypeProp string
 
 // List of Enumhttp-servlet-extension-allowedAuthenticationTypeProp
 const (
-	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_BASIC EnumhttpServletExtensionAllowedAuthenticationTypeProp = "basic"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_BASIC        EnumhttpServletExtensionAllowedAuthenticationTypeProp = "basic"
 	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_ACCESS_TOKEN EnumhttpServletExtensionAllowedAuthenticationTypeProp = "access-token"
-	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_ID_TOKEN EnumhttpServletExtensionAllowedAuthenticationTypeProp = "id-token"
+	ENUMHTTPSERVLETEXTENSIONALLOWEDAUTHENTICATIONTYPEPROP_ID_TOKEN     EnumhttpServletExtensionAllowedAuthenticationTypeProp = "id-token"
 )
 
 // All allowed values of EnumhttpServletExtensionAllowedAuthenticationTypeProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumhttpServletExtensionAllowedAuthenticationTypeProp) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

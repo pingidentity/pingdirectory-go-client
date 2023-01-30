@@ -16,10 +16,10 @@ import (
 
 // SizeLimitLogRetentionPolicyResponse struct for SizeLimitLogRetentionPolicyResponse
 type SizeLimitLogRetentionPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Retention Policy
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumsizeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the maximum total disk space used by the log files.
 	DiskSpaceUsed string `json:"diskSpaceUsed"`
@@ -60,7 +60,7 @@ func (o *SizeLimitLogRetentionPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRetentionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *SizeLimitLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *SizeLimitLogRetentionPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *SizeLimitLogRetentionPolicyResponse) GetSchemas() []EnumsizeLimitLogRet
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRetentionPolicyResponse) GetSchemasOk() ([]EnumsizeLimitLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *SizeLimitLogRetentionPolicyResponse) GetDiskSpaceUsed() string {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRetentionPolicyResponse) GetDiskSpaceUsedOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DiskSpaceUsed, true
 }
@@ -196,7 +196,7 @@ func (o *SizeLimitLogRetentionPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SizeLimitLogRetentionPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableSizeLimitLogRetentionPolicyResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

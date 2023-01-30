@@ -16,12 +16,12 @@ import (
 
 // AlarmManagerResponse struct for AlarmManagerResponse
 type AlarmManagerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumalarmManagerSchemaUrn `json:"schemas,omitempty"`
-	DefaultGaugeAlertLevel EnumalarmManagerDefaultGaugeAlertLevelProp `json:"defaultGaugeAlertLevel"`
-	GeneratedAlertTypes []EnumalarmManagerGeneratedAlertTypesProp `json:"generatedAlertTypes"`
-	SuppressedAlarm []EnumalarmManagerSuppressedAlarmProp `json:"suppressedAlarm,omitempty"`
+	Schemas                                       []EnumalarmManagerSchemaUrn                        `json:"schemas,omitempty"`
+	DefaultGaugeAlertLevel                        EnumalarmManagerDefaultGaugeAlertLevelProp         `json:"defaultGaugeAlertLevel"`
+	GeneratedAlertTypes                           []EnumalarmManagerGeneratedAlertTypesProp          `json:"generatedAlertTypes"`
+	SuppressedAlarm                               []EnumalarmManagerSuppressedAlarmProp              `json:"suppressedAlarm,omitempty"`
 }
 
 // NewAlarmManagerResponse instantiates a new AlarmManagerResponse object
@@ -56,7 +56,7 @@ func (o *AlarmManagerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -88,7 +88,7 @@ func (o *AlarmManagerResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -120,7 +120,7 @@ func (o *AlarmManagerResponse) GetSchemas() []EnumalarmManagerSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetSchemasOk() ([]EnumalarmManagerSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -153,7 +153,7 @@ func (o *AlarmManagerResponse) GetDefaultGaugeAlertLevel() EnumalarmManagerDefau
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetDefaultGaugeAlertLevelOk() (*EnumalarmManagerDefaultGaugeAlertLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DefaultGaugeAlertLevel, true
 }
@@ -177,7 +177,7 @@ func (o *AlarmManagerResponse) GetGeneratedAlertTypes() []EnumalarmManagerGenera
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetGeneratedAlertTypesOk() ([]EnumalarmManagerGeneratedAlertTypesProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.GeneratedAlertTypes, true
 }
@@ -200,7 +200,7 @@ func (o *AlarmManagerResponse) GetSuppressedAlarm() []EnumalarmManagerSuppressed
 // and a boolean to check if the value has been set.
 func (o *AlarmManagerResponse) GetSuppressedAlarmOk() ([]EnumalarmManagerSuppressedAlarmProp, bool) {
 	if o == nil || isNil(o.SuppressedAlarm) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressedAlarm, true
 }
@@ -277,5 +277,3 @@ func (v *NullableAlarmManagerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

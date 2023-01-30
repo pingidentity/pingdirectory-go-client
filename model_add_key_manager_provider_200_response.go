@@ -17,8 +17,8 @@ import (
 
 // AddKeyManagerProvider200Response - struct for AddKeyManagerProvider200Response
 type AddKeyManagerProvider200Response struct {
-	FileBasedKeyManagerProviderResponse *FileBasedKeyManagerProviderResponse
-	Pkcs11KeyManagerProviderResponse *Pkcs11KeyManagerProviderResponse
+	FileBasedKeyManagerProviderResponse  *FileBasedKeyManagerProviderResponse
+	Pkcs11KeyManagerProviderResponse     *Pkcs11KeyManagerProviderResponse
 	ThirdPartyKeyManagerProviderResponse *ThirdPartyKeyManagerProviderResponse
 }
 
@@ -42,7 +42,6 @@ func ThirdPartyKeyManagerProviderResponseAsAddKeyManagerProvider200Response(v *T
 		ThirdPartyKeyManagerProviderResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddKeyManagerProvider200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddKeyManagerProvider200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddKeyManagerProvider200Response) GetActualInstance() (interface{}) {
+func (obj *AddKeyManagerProvider200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddKeyManagerProvider200Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

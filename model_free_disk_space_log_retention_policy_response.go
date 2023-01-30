@@ -16,10 +16,10 @@ import (
 
 // FreeDiskSpaceLogRetentionPolicyResponse struct for FreeDiskSpaceLogRetentionPolicyResponse
 type FreeDiskSpaceLogRetentionPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Retention Policy
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumfreeDiskSpaceLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored.
 	FreeDiskSpace string `json:"freeDiskSpace"`
@@ -60,7 +60,7 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetSchemas() []EnumfreeDiskSpa
 // and a boolean to check if the value has been set.
 func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetSchemasOk() ([]EnumfreeDiskSpaceLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetFreeDiskSpace() string {
 // and a boolean to check if the value has been set.
 func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetFreeDiskSpaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FreeDiskSpace, true
 }
@@ -196,7 +196,7 @@ func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FreeDiskSpaceLogRetentionPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableFreeDiskSpaceLogRetentionPolicyResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

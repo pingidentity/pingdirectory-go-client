@@ -16,10 +16,10 @@ import (
 
 // ApiKeyConjurAuthenticationMethodResponse struct for ApiKeyConjurAuthenticationMethodResponse
 type ApiKeyConjurAuthenticationMethodResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Conjur Authentication Method
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas,omitempty"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
@@ -63,7 +63,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetSchemas() []EnumapiKeyConj
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetSchemasOk() ([]EnumapiKeyConjurAuthenticationMethodSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetUsername() string {
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Username, true
 }
@@ -207,7 +207,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -239,7 +239,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetApiKey() string {
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetApiKeyOk() (*string, bool) {
 	if o == nil || isNil(o.ApiKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.ApiKey, true
 }
@@ -271,7 +271,7 @@ func (o *ApiKeyConjurAuthenticationMethodResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ApiKeyConjurAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -354,5 +354,3 @@ func (v *NullableApiKeyConjurAuthenticationMethodResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

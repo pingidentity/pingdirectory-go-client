@@ -17,8 +17,8 @@ import (
 // AddThirdPartyKeyManagerProviderRequest struct for AddThirdPartyKeyManagerProviderRequest
 type AddThirdPartyKeyManagerProviderRequest struct {
 	// Name of the new Key Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumthirdPartyKeyManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                      `json:"providerName"`
+	Schemas      []EnumthirdPartyKeyManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Key Manager Provider.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Key Manager Provider. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyKeyManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyKeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyKeyManagerProviderRequest) GetSchemas() []EnumthirdPartyKe
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyKeyManagerProviderRequest) GetSchemasOk() ([]EnumthirdPartyKeyManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyKeyManagerProviderRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyKeyManagerProviderRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyKeyManagerProviderRequest) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyKeyManagerProviderRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyKeyManagerProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyKeyManagerProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyKeyManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyKeyManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyKeyManagerProviderRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

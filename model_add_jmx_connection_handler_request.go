@@ -17,8 +17,8 @@ import (
 // AddJmxConnectionHandlerRequest struct for AddJmxConnectionHandlerRequest
 type AddJmxConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                              `json:"handlerName"`
+	Schemas     []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the port number on which the JMX Connection Handler will listen for connections from clients.
 	ListenPort int32 `json:"listenPort"`
 	// Indicates whether the JMX Connection Handler should use SSL.
@@ -72,7 +72,7 @@ func (o *AddJmxConnectionHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -96,7 +96,7 @@ func (o *AddJmxConnectionHandlerRequest) GetSchemas() []EnumjmxConnectionHandler
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetSchemasOk() ([]EnumjmxConnectionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -120,7 +120,7 @@ func (o *AddJmxConnectionHandlerRequest) GetListenPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetListenPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ListenPort, true
 }
@@ -143,7 +143,7 @@ func (o *AddJmxConnectionHandlerRequest) GetUseSSL() bool {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetUseSSLOk() (*bool, bool) {
 	if o == nil || isNil(o.UseSSL) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseSSL, true
 }
@@ -175,7 +175,7 @@ func (o *AddJmxConnectionHandlerRequest) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil || isNil(o.SslCertNickname) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertNickname, true
 }
@@ -207,7 +207,7 @@ func (o *AddJmxConnectionHandlerRequest) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -239,7 +239,7 @@ func (o *AddJmxConnectionHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -272,7 +272,7 @@ func (o *AddJmxConnectionHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -295,7 +295,7 @@ func (o *AddJmxConnectionHandlerRequest) GetAllowedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedClient, true
 }
@@ -327,7 +327,7 @@ func (o *AddJmxConnectionHandlerRequest) GetDeniedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *AddJmxConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedClient, true
 }
@@ -416,5 +416,3 @@ func (v *NullableAddJmxConnectionHandlerRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

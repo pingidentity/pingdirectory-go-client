@@ -16,10 +16,10 @@ import (
 
 // ScimSchemaResponse struct for ScimSchemaResponse
 type ScimSchemaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the SCIM Schema
-	Id string `json:"id"`
+	Id      string                    `json:"id"`
 	Schemas []EnumscimSchemaSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Schema
 	Description *string `json:"description,omitempty"`
@@ -61,7 +61,7 @@ func (o *ScimSchemaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -93,7 +93,7 @@ func (o *ScimSchemaResponse) GetUrnpingidentityschemasconfigurationmessages20() 
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -126,7 +126,7 @@ func (o *ScimSchemaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *ScimSchemaResponse) GetSchemas() []EnumscimSchemaSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetSchemasOk() ([]EnumscimSchemaSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *ScimSchemaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -214,7 +214,7 @@ func (o *ScimSchemaResponse) GetSchemaURN() string {
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetSchemaURNOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemaURN, true
 }
@@ -237,7 +237,7 @@ func (o *ScimSchemaResponse) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *ScimSchemaResponse) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -317,5 +317,3 @@ func (v *NullableScimSchemaResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

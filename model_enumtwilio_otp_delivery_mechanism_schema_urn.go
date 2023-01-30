@@ -106,4 +106,3 @@ func (v *NullableEnumtwilioOtpDeliveryMechanismSchemaUrn) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

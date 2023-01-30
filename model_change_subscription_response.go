@@ -16,10 +16,10 @@ import (
 
 // ChangeSubscriptionResponse struct for ChangeSubscriptionResponse
 type ChangeSubscriptionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Change Subscription
-	Id string `json:"id"`
+	Id      string                            `json:"id"`
 	Schemas []EnumchangeSubscriptionSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Change Subscription
 	Description *string `json:"description,omitempty"`
@@ -64,7 +64,7 @@ func (o *ChangeSubscriptionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *ChangeSubscriptionResponse) GetUrnpingidentityschemasconfigurationmessa
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *ChangeSubscriptionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *ChangeSubscriptionResponse) GetSchemas() []EnumchangeSubscriptionSchema
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetSchemasOk() ([]EnumchangeSubscriptionSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *ChangeSubscriptionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -216,7 +216,7 @@ func (o *ChangeSubscriptionResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -248,7 +248,7 @@ func (o *ChangeSubscriptionResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -280,7 +280,7 @@ func (o *ChangeSubscriptionResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -312,7 +312,7 @@ func (o *ChangeSubscriptionResponse) GetExpirationTime() string {
 // and a boolean to check if the value has been set.
 func (o *ChangeSubscriptionResponse) GetExpirationTimeOk() (*string, bool) {
 	if o == nil || isNil(o.ExpirationTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpirationTime, true
 }
@@ -398,5 +398,3 @@ func (v *NullableChangeSubscriptionResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

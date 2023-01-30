@@ -21,8 +21,8 @@ type EnumhttpServletExtensionDebugTypeProp string
 // List of Enumhttp-servlet-extension-debugTypeProp
 const (
 	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_CODING_ERROR EnumhttpServletExtensionDebugTypeProp = "coding-error"
-	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_EXCEPTION EnumhttpServletExtensionDebugTypeProp = "exception"
-	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_OTHER EnumhttpServletExtensionDebugTypeProp = "other"
+	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_EXCEPTION    EnumhttpServletExtensionDebugTypeProp = "exception"
+	ENUMHTTPSERVLETEXTENSIONDEBUGTYPEPROP_OTHER        EnumhttpServletExtensionDebugTypeProp = "other"
 )
 
 // All allowed values of EnumhttpServletExtensionDebugTypeProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumhttpServletExtensionDebugTypeProp) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,8 +17,8 @@ import (
 // AddNoOperationFailureLockoutActionRequest struct for AddNoOperationFailureLockoutActionRequest
 type AddNoOperationFailureLockoutActionRequest struct {
 	// Name of the new Failure Lockout Action
-	ActionName string `json:"actionName"`
-	Schemas []EnumnoOperationFailureLockoutActionSchemaUrn `json:"schemas"`
+	ActionName string                                         `json:"actionName"`
+	Schemas    []EnumnoOperationFailureLockoutActionSchemaUrn `json:"schemas"`
 	// Indicates whether to generate an account status notification for cases in which this failure lockout action is invoked for a bind attempt with too many outstanding authentication failures.
 	GenerateAccountStatusNotification *bool `json:"generateAccountStatusNotification,omitempty"`
 	// A description for this Failure Lockout Action
@@ -58,7 +58,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetActionName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ActionName, true
 }
@@ -82,7 +82,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetSchemas() []EnumnoOperati
 // and a boolean to check if the value has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) GetSchemasOk() ([]EnumnoOperationFailureLockoutActionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -105,7 +105,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetGenerateAccountStatusNoti
 // and a boolean to check if the value has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerateAccountStatusNotification) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
 }
@@ -137,7 +137,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -208,5 +208,3 @@ func (v *NullableAddNoOperationFailureLockoutActionRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddPkcs11KeyManagerProviderRequest struct for AddPkcs11KeyManagerProviderRequest
 type AddPkcs11KeyManagerProviderRequest struct {
 	// Name of the new Key Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []Enumpkcs11KeyManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                  `json:"providerName"`
+	Schemas      []Enumpkcs11KeyManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java security provider class that implements support for interacting with PKCS #11 tokens.
 	Pkcs11ProviderClass *string `json:"pkcs11ProviderClass,omitempty"`
 	// The path to the file to use to configure the security provider that implements support for interacting with PKCS #11 tokens.
@@ -71,7 +71,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -95,7 +95,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetSchemas() []Enumpkcs11KeyManager
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetSchemasOk() ([]Enumpkcs11KeyManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetPkcs11ProviderClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetPkcs11ProviderClassOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11ProviderClass) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11ProviderClass, true
 }
@@ -150,7 +150,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetPkcs11ProviderConfigurationFile(
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetPkcs11ProviderConfigurationFileOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11ProviderConfigurationFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11ProviderConfigurationFile, true
 }
@@ -182,7 +182,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetPkcs11KeyStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetPkcs11KeyStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.Pkcs11KeyStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.Pkcs11KeyStoreType, true
 }
@@ -214,7 +214,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetKeyStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetKeyStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePin, true
 }
@@ -246,7 +246,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetKeyStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetKeyStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinFile, true
 }
@@ -278,7 +278,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetKeyStorePinPassphraseProvider() 
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetKeyStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinPassphraseProvider, true
 }
@@ -310,7 +310,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -343,7 +343,7 @@ func (o *AddPkcs11KeyManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11KeyManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -423,5 +423,3 @@ func (v *NullableAddPkcs11KeyManagerProviderRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

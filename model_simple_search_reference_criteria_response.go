@@ -16,10 +16,10 @@ import (
 
 // SimpleSearchReferenceCriteriaResponse struct for SimpleSearchReferenceCriteriaResponse
 type SimpleSearchReferenceCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Search Reference Criteria
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumsimpleSearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for references included in this Simple Search Reference Criteria.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
@@ -67,7 +67,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetSchemas() []EnumsimpleSearchR
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetSchemasOk() ([]EnumsimpleSearchReferenceCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -211,7 +211,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetAllIncludedReferenceControl()
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetAllIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedReferenceControl, true
 }
@@ -243,7 +243,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetAnyIncludedReferenceControl()
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetAnyIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedReferenceControl, true
 }
@@ -275,7 +275,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetNotAllIncludedReferenceContro
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetNotAllIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedReferenceControl, true
 }
@@ -307,7 +307,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetNoneIncludedReferenceControl(
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetNoneIncludedReferenceControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedReferenceControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedReferenceControl, true
 }
@@ -339,7 +339,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -428,5 +428,3 @@ func (v *NullableSimpleSearchReferenceCriteriaResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

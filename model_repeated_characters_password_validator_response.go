@@ -16,10 +16,10 @@ import (
 
 // RepeatedCharactersPasswordValidatorResponse struct for RepeatedCharactersPasswordValidatorResponse
 type RepeatedCharactersPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                             `json:"id"`
 	Schemas []EnumrepeatedCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the maximum number of times that any character can appear consecutively in a password value.
 	MaxConsecutiveLength int32 `json:"maxConsecutiveLength"`
@@ -72,7 +72,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -104,7 +104,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -137,7 +137,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -161,7 +161,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetSchemas() []Enumrepeate
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetSchemasOk() ([]EnumrepeatedCharactersPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -185,7 +185,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetMaxConsecutiveLength() 
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetMaxConsecutiveLengthOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConsecutiveLength, true
 }
@@ -209,7 +209,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetCaseSensitiveValidation
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetCaseSensitiveValidationOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CaseSensitiveValidation, true
 }
@@ -232,7 +232,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetCharacterSet() []string
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetCharacterSetOk() ([]string, bool) {
 	if o == nil || isNil(o.CharacterSet) {
-    return nil, false
+		return nil, false
 	}
 	return o.CharacterSet, true
 }
@@ -264,7 +264,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -297,7 +297,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -320,7 +320,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorRequirementDes
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -352,7 +352,7 @@ func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorFailureMessage
 // and a boolean to check if the value has been set.
 func (o *RepeatedCharactersPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -444,5 +444,3 @@ func (v *NullableRepeatedCharactersPasswordValidatorResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

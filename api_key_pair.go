@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // KeyPairApiService KeyPairApi service
 type KeyPairApiService service
 
 type ApiAddKeyPairRequest struct {
-	ctx context.Context
-	ApiService *KeyPairApiService
+	ctx               context.Context
+	ApiService        *KeyPairApiService
 	addKeyPairRequest *AddKeyPairRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddKeyPairRequest) Execute() (*KeyPairResponse, *http.Response, error
 /*
 AddKeyPair Add a new Key Pair to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddKeyPairRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddKeyPairRequest
 */
 func (a *KeyPairApiService) AddKeyPair(ctx context.Context) ApiAddKeyPairRequest {
 	return ApiAddKeyPairRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return KeyPairResponse
+//
+//	@return KeyPairResponse
 func (a *KeyPairApiService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyPairResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyPairResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.AddKeyPair")
@@ -133,8 +133,8 @@ func (a *KeyPairApiService) AddKeyPairExecute(r ApiAddKeyPairRequest) (*KeyPairR
 }
 
 type ApiDeleteKeyPairRequest struct {
-	ctx context.Context
-	ApiService *KeyPairApiService
+	ctx         context.Context
+	ApiService  *KeyPairApiService
 	keyPairName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteKeyPairRequest) Execute() (*http.Response, error) {
 /*
 DeleteKeyPair Delete a Key Pair
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyPairName Name of the Key Pair to be deleted
- @return ApiDeleteKeyPairRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param keyPairName Name of the Key Pair to be deleted
+	@return ApiDeleteKeyPairRequest
 */
 func (a *KeyPairApiService) DeleteKeyPair(ctx context.Context, keyPairName string) ApiDeleteKeyPairRequest {
 	return ApiDeleteKeyPairRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		keyPairName: keyPairName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *KeyPairApiService) DeleteKeyPair(ctx context.Context, keyPairName strin
 // Execute executes the request
 func (a *KeyPairApiService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.DeleteKeyPair")
@@ -223,8 +223,8 @@ func (a *KeyPairApiService) DeleteKeyPairExecute(r ApiDeleteKeyPairRequest) (*ht
 }
 
 type ApiGetKeyPairRequest struct {
-	ctx context.Context
-	ApiService *KeyPairApiService
+	ctx         context.Context
+	ApiService  *KeyPairApiService
 	keyPairName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetKeyPairRequest) Execute() (*KeyPairResponse, *http.Response, error
 /*
 GetKeyPair Returns a single Key Pair
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyPairName Name of the Key Pair to be read
- @return ApiGetKeyPairRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param keyPairName Name of the Key Pair to be read
+	@return ApiGetKeyPairRequest
 */
 func (a *KeyPairApiService) GetKeyPair(ctx context.Context, keyPairName string) ApiGetKeyPairRequest {
 	return ApiGetKeyPairRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		keyPairName: keyPairName,
 	}
 }
 
 // Execute executes the request
-//  @return KeyPairResponse
+//
+//	@return KeyPairResponse
 func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyPairResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyPairResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.GetKeyPair")
@@ -324,9 +325,9 @@ func (a *KeyPairApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPairR
 }
 
 type ApiUpdateKeyPairRequest struct {
-	ctx context.Context
-	ApiService *KeyPairApiService
-	keyPairName string
+	ctx           context.Context
+	ApiService    *KeyPairApiService
+	keyPairName   string
 	updateRequest *UpdateRequest
 }
 
@@ -343,26 +344,27 @@ func (r ApiUpdateKeyPairRequest) Execute() (*KeyPairResponse, *http.Response, er
 /*
 UpdateKeyPair Update an existing Key Pair by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyPairName Name of the Key Pair to be updated
- @return ApiUpdateKeyPairRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param keyPairName Name of the Key Pair to be updated
+	@return ApiUpdateKeyPairRequest
 */
 func (a *KeyPairApiService) UpdateKeyPair(ctx context.Context, keyPairName string) ApiUpdateKeyPairRequest {
 	return ApiUpdateKeyPairRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		keyPairName: keyPairName,
 	}
 }
 
 // Execute executes the request
-//  @return KeyPairResponse
+//
+//	@return KeyPairResponse
 func (a *KeyPairApiService) UpdateKeyPairExecute(r ApiUpdateKeyPairRequest) (*KeyPairResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *KeyPairResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *KeyPairResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyPairApiService.UpdateKeyPair")

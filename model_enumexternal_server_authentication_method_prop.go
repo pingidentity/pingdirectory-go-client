@@ -20,9 +20,9 @@ type EnumexternalServerAuthenticationMethodProp string
 
 // List of Enumexternal-server-authenticationMethodProp
 const (
-	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_NONE EnumexternalServerAuthenticationMethodProp = "none"
-	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_SIMPLE EnumexternalServerAuthenticationMethodProp = "simple"
-	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_EXTERNAL EnumexternalServerAuthenticationMethodProp = "external"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_NONE         EnumexternalServerAuthenticationMethodProp = "none"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_SIMPLE       EnumexternalServerAuthenticationMethodProp = "simple"
+	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_EXTERNAL     EnumexternalServerAuthenticationMethodProp = "external"
 	ENUMEXTERNALSERVERAUTHENTICATIONMETHODPROP_INTER_SERVER EnumexternalServerAuthenticationMethodProp = "inter-server"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumexternalServerAuthenticationMethodProp) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

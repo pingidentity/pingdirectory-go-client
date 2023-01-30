@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ServerInstanceApiService ServerInstanceApi service
 type ServerInstanceApiService service
 
 type ApiGetServerInstanceRequest struct {
-	ctx context.Context
-	ApiService *ServerInstanceApiService
+	ctx                context.Context
+	ApiService         *ServerInstanceApiService
 	serverInstanceName string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetServerInstanceRequest) Execute() (*GetServerInstance200Response, *
 /*
 GetServerInstance Returns a single Server Instance
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverInstanceName Name of the Server Instance to be read
- @return ApiGetServerInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverInstanceName Name of the Server Instance to be read
+	@return ApiGetServerInstanceRequest
 */
 func (a *ServerInstanceApiService) GetServerInstance(ctx context.Context, serverInstanceName string) ApiGetServerInstanceRequest {
 	return ApiGetServerInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		serverInstanceName: serverInstanceName,
 	}
 }
 
 // Execute executes the request
-//  @return GetServerInstance200Response
+//
+//	@return GetServerInstance200Response
 func (a *ServerInstanceApiService) GetServerInstanceExecute(r ApiGetServerInstanceRequest) (*GetServerInstance200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetServerInstance200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetServerInstance200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceApiService.GetServerInstance")
@@ -125,10 +125,10 @@ func (a *ServerInstanceApiService) GetServerInstanceExecute(r ApiGetServerInstan
 }
 
 type ApiUpdateServerInstanceRequest struct {
-	ctx context.Context
-	ApiService *ServerInstanceApiService
+	ctx                context.Context
+	ApiService         *ServerInstanceApiService
 	serverInstanceName string
-	updateRequest *UpdateRequest
+	updateRequest      *UpdateRequest
 }
 
 // Update an existing Server Instance
@@ -144,26 +144,27 @@ func (r ApiUpdateServerInstanceRequest) Execute() (*GetServerInstance200Response
 /*
 UpdateServerInstance Update an existing Server Instance by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverInstanceName Name of the Server Instance to be updated
- @return ApiUpdateServerInstanceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverInstanceName Name of the Server Instance to be updated
+	@return ApiUpdateServerInstanceRequest
 */
 func (a *ServerInstanceApiService) UpdateServerInstance(ctx context.Context, serverInstanceName string) ApiUpdateServerInstanceRequest {
 	return ApiUpdateServerInstanceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		serverInstanceName: serverInstanceName,
 	}
 }
 
 // Execute executes the request
-//  @return GetServerInstance200Response
+//
+//	@return GetServerInstance200Response
 func (a *ServerInstanceApiService) UpdateServerInstanceExecute(r ApiUpdateServerInstanceRequest) (*GetServerInstance200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetServerInstance200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetServerInstance200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerInstanceApiService.UpdateServerInstance")

@@ -17,16 +17,16 @@ import (
 
 // GetAlertHandler200Response - struct for GetAlertHandler200Response
 type GetAlertHandler200Response struct {
-	ErrorLogAlertHandlerResponse *ErrorLogAlertHandlerResponse
-	ExecAlertHandlerResponse *ExecAlertHandlerResponse
+	ErrorLogAlertHandlerResponse       *ErrorLogAlertHandlerResponse
+	ExecAlertHandlerResponse           *ExecAlertHandlerResponse
 	GroovyScriptedAlertHandlerResponse *GroovyScriptedAlertHandlerResponse
-	JmxAlertHandlerResponse *JmxAlertHandlerResponse
-	OutputAlertHandlerResponse *OutputAlertHandlerResponse
-	SmtpAlertHandlerResponse *SmtpAlertHandlerResponse
-	SnmpAlertHandlerResponse *SnmpAlertHandlerResponse
-	SnmpSubAgentAlertHandlerResponse *SnmpSubAgentAlertHandlerResponse
-	ThirdPartyAlertHandlerResponse *ThirdPartyAlertHandlerResponse
-	TwilioAlertHandlerResponse *TwilioAlertHandlerResponse
+	JmxAlertHandlerResponse            *JmxAlertHandlerResponse
+	OutputAlertHandlerResponse         *OutputAlertHandlerResponse
+	SmtpAlertHandlerResponse           *SmtpAlertHandlerResponse
+	SnmpAlertHandlerResponse           *SnmpAlertHandlerResponse
+	SnmpSubAgentAlertHandlerResponse   *SnmpSubAgentAlertHandlerResponse
+	ThirdPartyAlertHandlerResponse     *ThirdPartyAlertHandlerResponse
+	TwilioAlertHandlerResponse         *TwilioAlertHandlerResponse
 }
 
 // ErrorLogAlertHandlerResponseAsGetAlertHandler200Response is a convenience function that returns ErrorLogAlertHandlerResponse wrapped in GetAlertHandler200Response
@@ -98,7 +98,6 @@ func TwilioAlertHandlerResponseAsGetAlertHandler200Response(v *TwilioAlertHandle
 		TwilioAlertHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetAlertHandler200Response) UnmarshalJSON(data []byte) error {
@@ -301,7 +300,7 @@ func (src GetAlertHandler200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetAlertHandler200Response) GetActualInstance() (interface{}) {
+func (obj *GetAlertHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -384,5 +383,3 @@ func (v *NullableGetAlertHandler200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

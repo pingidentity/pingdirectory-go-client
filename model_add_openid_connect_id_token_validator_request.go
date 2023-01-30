@@ -17,8 +17,8 @@ import (
 // AddOpenidConnectIdTokenValidatorRequest struct for AddOpenidConnectIdTokenValidatorRequest
 type AddOpenidConnectIdTokenValidatorRequest struct {
 	// Name of the new ID Token Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumopenidConnectIdTokenValidatorSchemaUrn `json:"schemas"`
+	ValidatorName           string                                            `json:"validatorName"`
+	Schemas                 []EnumopenidConnectIdTokenValidatorSchemaUrn      `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
@@ -82,7 +82,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -106,7 +106,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSchemas() []EnumopenidConne
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSchemasOk() ([]EnumopenidConnectIdTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -130,7 +130,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetAllowedSigningAlgorithm() [
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetAllowedSigningAlgorithmOk() ([]EnumidTokenValidatorAllowedSigningAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedSigningAlgorithm, true
 }
@@ -153,7 +153,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSigningCertificate() []stri
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSigningCertificateOk() ([]string, bool) {
 	if o == nil || isNil(o.SigningCertificate) {
-    return nil, false
+		return nil, false
 	}
 	return o.SigningCertificate, true
 }
@@ -185,7 +185,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetOpenIDConnectProvider() str
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (*string, bool) {
 	if o == nil || isNil(o.OpenIDConnectProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.OpenIDConnectProvider, true
 }
@@ -217,7 +217,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksEndpointPath() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksEndpointPathOk() (*string, bool) {
 	if o == nil || isNil(o.JwksEndpointPath) {
-    return nil, false
+		return nil, false
 	}
 	return o.JwksEndpointPath, true
 }
@@ -249,7 +249,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -282,7 +282,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -306,7 +306,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -329,7 +329,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSubjectClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -362,7 +362,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetIssuerURL() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetIssuerURLOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IssuerURL, true
 }
@@ -385,7 +385,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetClockSkewGracePeriod() stri
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetClockSkewGracePeriodOk() (*string, bool) {
 	if o == nil || isNil(o.ClockSkewGracePeriod) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
 }
@@ -417,7 +417,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksCacheDuration() string 
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.JwksCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.JwksCacheDuration, true
 }
@@ -450,7 +450,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndex() int3
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -542,5 +542,3 @@ func (v *NullableAddOpenidConnectIdTokenValidatorRequest) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

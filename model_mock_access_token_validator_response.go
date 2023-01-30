@@ -16,10 +16,10 @@ import (
 
 // MockAccessTokenValidatorResponse struct for MockAccessTokenValidatorResponse
 type MockAccessTokenValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Access Token Validator
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnummockAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The name of the token claim that contains the OAuth2 client ID.
 	ClientIDClaimName *string `json:"clientIDClaimName,omitempty"`
@@ -71,7 +71,7 @@ func (o *MockAccessTokenValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *MockAccessTokenValidatorResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *MockAccessTokenValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -160,7 +160,7 @@ func (o *MockAccessTokenValidatorResponse) GetSchemas() []EnummockAccessTokenVal
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetSchemasOk() ([]EnummockAccessTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *MockAccessTokenValidatorResponse) GetClientIDClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetClientIDClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.ClientIDClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientIDClaimName, true
 }
@@ -215,7 +215,7 @@ func (o *MockAccessTokenValidatorResponse) GetScopeClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetScopeClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.ScopeClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScopeClaimName, true
 }
@@ -248,7 +248,7 @@ func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -271,7 +271,7 @@ func (o *MockAccessTokenValidatorResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -303,7 +303,7 @@ func (o *MockAccessTokenValidatorResponse) GetSubjectClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -335,7 +335,7 @@ func (o *MockAccessTokenValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -368,7 +368,7 @@ func (o *MockAccessTokenValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MockAccessTokenValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -451,5 +451,3 @@ func (v *NullableMockAccessTokenValidatorResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

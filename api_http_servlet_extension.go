@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // HttpServletExtensionApiService HttpServletExtensionApi service
 type HttpServletExtensionApiService service
 
 type ApiAddHttpServletExtensionRequest struct {
-	ctx context.Context
-	ApiService *HttpServletExtensionApiService
+	ctx                            context.Context
+	ApiService                     *HttpServletExtensionApiService
 	addHttpServletExtensionRequest *AddHttpServletExtensionRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddHttpServletExtensionRequest) Execute() (*AddHttpServletExtension20
 /*
 AddHttpServletExtension Add a new HTTP Servlet Extension to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddHttpServletExtensionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) AddHttpServletExtension(ctx context.Context) ApiAddHttpServletExtensionRequest {
 	return ApiAddHttpServletExtensionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddHttpServletExtension200Response
+//
+//	@return AddHttpServletExtension200Response
 func (a *HttpServletExtensionApiService) AddHttpServletExtensionExecute(r ApiAddHttpServletExtensionRequest) (*AddHttpServletExtension200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddHttpServletExtension200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddHttpServletExtension200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletExtensionApiService.AddHttpServletExtension")
@@ -133,8 +133,8 @@ func (a *HttpServletExtensionApiService) AddHttpServletExtensionExecute(r ApiAdd
 }
 
 type ApiDeleteHttpServletExtensionRequest struct {
-	ctx context.Context
-	ApiService *HttpServletExtensionApiService
+	ctx                      context.Context
+	ApiService               *HttpServletExtensionApiService
 	httpServletExtensionName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteHttpServletExtensionRequest) Execute() (*http.Response, error) 
 /*
 DeleteHttpServletExtension Delete a HTTP Servlet Extension
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param httpServletExtensionName Name of the HTTP Servlet Extension to be deleted
- @return ApiDeleteHttpServletExtensionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param httpServletExtensionName Name of the HTTP Servlet Extension to be deleted
+	@return ApiDeleteHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) DeleteHttpServletExtension(ctx context.Context, httpServletExtensionName string) ApiDeleteHttpServletExtensionRequest {
 	return ApiDeleteHttpServletExtensionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		httpServletExtensionName: httpServletExtensionName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *HttpServletExtensionApiService) DeleteHttpServletExtension(ctx context.
 // Execute executes the request
 func (a *HttpServletExtensionApiService) DeleteHttpServletExtensionExecute(r ApiDeleteHttpServletExtensionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletExtensionApiService.DeleteHttpServletExtension")
@@ -223,8 +223,8 @@ func (a *HttpServletExtensionApiService) DeleteHttpServletExtensionExecute(r Api
 }
 
 type ApiGetHttpServletExtensionRequest struct {
-	ctx context.Context
-	ApiService *HttpServletExtensionApiService
+	ctx                      context.Context
+	ApiService               *HttpServletExtensionApiService
 	httpServletExtensionName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetHttpServletExtensionRequest) Execute() (*GetHttpServletExtension20
 /*
 GetHttpServletExtension Returns a single HTTP Servlet Extension
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param httpServletExtensionName Name of the HTTP Servlet Extension to be read
- @return ApiGetHttpServletExtensionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param httpServletExtensionName Name of the HTTP Servlet Extension to be read
+	@return ApiGetHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) GetHttpServletExtension(ctx context.Context, httpServletExtensionName string) ApiGetHttpServletExtensionRequest {
 	return ApiGetHttpServletExtensionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		httpServletExtensionName: httpServletExtensionName,
 	}
 }
 
 // Execute executes the request
-//  @return GetHttpServletExtension200Response
+//
+//	@return GetHttpServletExtension200Response
 func (a *HttpServletExtensionApiService) GetHttpServletExtensionExecute(r ApiGetHttpServletExtensionRequest) (*GetHttpServletExtension200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHttpServletExtension200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHttpServletExtension200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletExtensionApiService.GetHttpServletExtension")
@@ -324,10 +325,10 @@ func (a *HttpServletExtensionApiService) GetHttpServletExtensionExecute(r ApiGet
 }
 
 type ApiUpdateHttpServletExtensionRequest struct {
-	ctx context.Context
-	ApiService *HttpServletExtensionApiService
+	ctx                      context.Context
+	ApiService               *HttpServletExtensionApiService
 	httpServletExtensionName string
-	updateRequest *UpdateRequest
+	updateRequest            *UpdateRequest
 }
 
 // Update an existing HTTP Servlet Extension
@@ -343,26 +344,27 @@ func (r ApiUpdateHttpServletExtensionRequest) Execute() (*GetHttpServletExtensio
 /*
 UpdateHttpServletExtension Update an existing HTTP Servlet Extension by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param httpServletExtensionName Name of the HTTP Servlet Extension to be updated
- @return ApiUpdateHttpServletExtensionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param httpServletExtensionName Name of the HTTP Servlet Extension to be updated
+	@return ApiUpdateHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) UpdateHttpServletExtension(ctx context.Context, httpServletExtensionName string) ApiUpdateHttpServletExtensionRequest {
 	return ApiUpdateHttpServletExtensionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		httpServletExtensionName: httpServletExtensionName,
 	}
 }
 
 // Execute executes the request
-//  @return GetHttpServletExtension200Response
+//
+//	@return GetHttpServletExtension200Response
 func (a *HttpServletExtensionApiService) UpdateHttpServletExtensionExecute(r ApiUpdateHttpServletExtensionRequest) (*GetHttpServletExtension200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHttpServletExtension200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHttpServletExtension200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpServletExtensionApiService.UpdateHttpServletExtension")

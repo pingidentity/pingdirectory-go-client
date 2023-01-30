@@ -17,8 +17,8 @@ import (
 // AddThirdPartyUncachedAttributeCriteriaRequest struct for AddThirdPartyUncachedAttributeCriteriaRequest
 type AddThirdPartyUncachedAttributeCriteriaRequest struct {
 	// Name of the new Uncached Attribute Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumthirdPartyUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                             `json:"criteriaName"`
+	Schemas      []EnumthirdPartyUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Uncached Attribute Criteria.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Uncached Attribute Criteria. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetCriteriaName() string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetSchemas() []Enumthird
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetSchemasOk() ([]EnumthirdPartyUncachedAttributeCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetExtensionClass() stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetExtensionArgument() [
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyUncachedAttributeCriteriaRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyUncachedAttributeCriteriaRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

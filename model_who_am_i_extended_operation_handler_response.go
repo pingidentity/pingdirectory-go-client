@@ -16,9 +16,9 @@ import (
 
 // WhoAmIExtendedOperationHandlerResponse struct for WhoAmIExtendedOperationHandlerResponse
 type WhoAmIExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumwhoAmIExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumwhoAmIExtendedOperationHandlerSchemaUrn      `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *WhoAmIExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *WhoAmIExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *WhoAmIExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *WhoAmIExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *WhoAmIExtendedOperationHandlerResponse) GetSchemas() []EnumwhoAmIExtend
 // and a boolean to check if the value has been set.
 func (o *WhoAmIExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumwhoAmIExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *WhoAmIExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *WhoAmIExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *WhoAmIExtendedOperationHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *WhoAmIExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *WhoAmIExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *WhoAmIExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableWhoAmIExtendedOperationHandlerResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 // AddResultCodeMapRequest struct for AddResultCodeMapRequest
 type AddResultCodeMapRequest struct {
 	// Name of the new Result Code Map
-	MapName string `json:"mapName"`
+	MapName string                       `json:"mapName"`
 	Schemas []EnumresultCodeMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Result Code Map
 	Description *string `json:"description,omitempty"`
@@ -63,7 +63,7 @@ func (o *AddResultCodeMapRequest) GetMapName() string {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetMapNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapName, true
 }
@@ -86,7 +86,7 @@ func (o *AddResultCodeMapRequest) GetSchemas() []EnumresultCodeMapSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetSchemasOk() ([]EnumresultCodeMapSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddResultCodeMapRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -150,7 +150,7 @@ func (o *AddResultCodeMapRequest) GetBindAccountLockedResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetBindAccountLockedResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.BindAccountLockedResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindAccountLockedResultCode, true
 }
@@ -182,7 +182,7 @@ func (o *AddResultCodeMapRequest) GetBindMissingUserResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetBindMissingUserResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.BindMissingUserResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindMissingUserResultCode, true
 }
@@ -214,7 +214,7 @@ func (o *AddResultCodeMapRequest) GetBindMissingPasswordResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetBindMissingPasswordResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.BindMissingPasswordResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindMissingPasswordResultCode, true
 }
@@ -246,7 +246,7 @@ func (o *AddResultCodeMapRequest) GetServerErrorResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddResultCodeMapRequest) GetServerErrorResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerErrorResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerErrorResultCode, true
 }
@@ -326,5 +326,3 @@ func (v *NullableAddResultCodeMapRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

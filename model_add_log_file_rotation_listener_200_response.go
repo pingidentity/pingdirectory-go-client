@@ -17,8 +17,8 @@ import (
 
 // AddLogFileRotationListener200Response - struct for AddLogFileRotationListener200Response
 type AddLogFileRotationListener200Response struct {
-	CopyLogFileRotationListenerResponse *CopyLogFileRotationListenerResponse
-	SummarizeLogFileRotationListenerResponse *SummarizeLogFileRotationListenerResponse
+	CopyLogFileRotationListenerResponse       *CopyLogFileRotationListenerResponse
+	SummarizeLogFileRotationListenerResponse  *SummarizeLogFileRotationListenerResponse
 	ThirdPartyLogFileRotationListenerResponse *ThirdPartyLogFileRotationListenerResponse
 }
 
@@ -42,7 +42,6 @@ func ThirdPartyLogFileRotationListenerResponseAsAddLogFileRotationListener200Res
 		ThirdPartyLogFileRotationListenerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogFileRotationListener200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddLogFileRotationListener200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogFileRotationListener200Response) GetActualInstance() (interface{}) {
+func (obj *AddLogFileRotationListener200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddLogFileRotationListener200Response) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 
 // AddAzureAuthenticationMethodRequest - struct for AddAzureAuthenticationMethodRequest
 type AddAzureAuthenticationMethodRequest struct {
-	AddClientSecretAzureAuthenticationMethodRequest *AddClientSecretAzureAuthenticationMethodRequest
-	AddDefaultAzureAuthenticationMethodRequest *AddDefaultAzureAuthenticationMethodRequest
+	AddClientSecretAzureAuthenticationMethodRequest     *AddClientSecretAzureAuthenticationMethodRequest
+	AddDefaultAzureAuthenticationMethodRequest          *AddDefaultAzureAuthenticationMethodRequest
 	AddUsernamePasswordAzureAuthenticationMethodRequest *AddUsernamePasswordAzureAuthenticationMethodRequest
 }
 
@@ -42,7 +42,6 @@ func AddUsernamePasswordAzureAuthenticationMethodRequestAsAddAzureAuthentication
 		AddUsernamePasswordAzureAuthenticationMethodRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddAzureAuthenticationMethodRequest) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddAzureAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddAzureAuthenticationMethodRequest) GetActualInstance() (interface{}) {
+func (obj *AddAzureAuthenticationMethodRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddAzureAuthenticationMethodRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

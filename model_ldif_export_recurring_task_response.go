@@ -16,10 +16,10 @@ import (
 
 // LdifExportRecurringTaskResponse struct for LdifExportRecurringTaskResponse
 type LdifExportRecurringTaskResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task
-	Id string `json:"id"`
+	Id      string                                 `json:"id"`
 	Schemas []EnumldifExportRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which LDIF export files will be placed. The directory must already exist.
 	LdifDirectory string `json:"ldifDirectory"`
@@ -92,7 +92,7 @@ func (o *LdifExportRecurringTaskResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -124,7 +124,7 @@ func (o *LdifExportRecurringTaskResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -157,7 +157,7 @@ func (o *LdifExportRecurringTaskResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -181,7 +181,7 @@ func (o *LdifExportRecurringTaskResponse) GetSchemas() []EnumldifExportRecurring
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetSchemasOk() ([]EnumldifExportRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -205,7 +205,7 @@ func (o *LdifExportRecurringTaskResponse) GetLdifDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetLdifDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LdifDirectory, true
 }
@@ -228,7 +228,7 @@ func (o *LdifExportRecurringTaskResponse) GetBackendID() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetBackendIDOk() ([]string, bool) {
 	if o == nil || isNil(o.BackendID) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackendID, true
 }
@@ -260,7 +260,7 @@ func (o *LdifExportRecurringTaskResponse) GetExcludeBackendID() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetExcludeBackendIDOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeBackendID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeBackendID, true
 }
@@ -292,7 +292,7 @@ func (o *LdifExportRecurringTaskResponse) GetCompress() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetCompressOk() (*bool, bool) {
 	if o == nil || isNil(o.Compress) {
-    return nil, false
+		return nil, false
 	}
 	return o.Compress, true
 }
@@ -324,7 +324,7 @@ func (o *LdifExportRecurringTaskResponse) GetEncrypt() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEncryptOk() (*bool, bool) {
 	if o == nil || isNil(o.Encrypt) {
-    return nil, false
+		return nil, false
 	}
 	return o.Encrypt, true
 }
@@ -356,7 +356,7 @@ func (o *LdifExportRecurringTaskResponse) GetEncryptionSettingsDefinitionID() st
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
 }
@@ -388,7 +388,7 @@ func (o *LdifExportRecurringTaskResponse) GetSign() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetSignOk() (*bool, bool) {
 	if o == nil || isNil(o.Sign) {
-    return nil, false
+		return nil, false
 	}
 	return o.Sign, true
 }
@@ -420,7 +420,7 @@ func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCount() int
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportCountOk() (*int32, bool) {
 	if o == nil || isNil(o.RetainPreviousLDIFExportCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousLDIFExportCount, true
 }
@@ -452,7 +452,7 @@ func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportAge() strin
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetRetainPreviousLDIFExportAgeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainPreviousLDIFExportAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousLDIFExportAge, true
 }
@@ -484,7 +484,7 @@ func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecond() int32 {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetMaxMegabytesPerSecondOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxMegabytesPerSecond) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxMegabytesPerSecond, true
 }
@@ -516,7 +516,7 @@ func (o *LdifExportRecurringTaskResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -548,7 +548,7 @@ func (o *LdifExportRecurringTaskResponse) GetCancelOnTaskDependencyFailure() boo
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -580,7 +580,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -612,7 +612,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -644,7 +644,7 @@ func (o *LdifExportRecurringTaskResponse) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -676,7 +676,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -708,7 +708,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -740,7 +740,7 @@ func (o *LdifExportRecurringTaskResponse) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifExportRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -865,5 +865,3 @@ func (v *NullableLdifExportRecurringTaskResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

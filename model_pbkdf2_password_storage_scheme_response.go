@@ -16,11 +16,11 @@ import (
 
 // Pbkdf2PasswordStorageSchemeResponse struct for Pbkdf2PasswordStorageSchemeResponse
 type Pbkdf2PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
-	Schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Id              string                                        `json:"id"`
+	Schemas         []Enumpbkdf2PasswordStorageSchemeSchemaUrn    `json:"schemas"`
 	DigestAlgorithm *EnumpasswordStorageSchemeDigestAlgorithmProp `json:"digestAlgorithm,omitempty"`
 	// Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000.
 	IterationCount int32 `json:"iterationCount"`
@@ -72,7 +72,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -104,7 +104,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -137,7 +137,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -161,7 +161,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetSchemas() []Enumpbkdf2PasswordS
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetSchemasOk() ([]Enumpbkdf2PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetDigestAlgorithm() EnumpasswordS
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetDigestAlgorithmOk() (*EnumpasswordStorageSchemeDigestAlgorithmProp, bool) {
 	if o == nil || isNil(o.DigestAlgorithm) {
-    return nil, false
+		return nil, false
 	}
 	return o.DigestAlgorithm, true
 }
@@ -217,7 +217,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetIterationCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetIterationCountOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IterationCount, true
 }
@@ -241,7 +241,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SaltLengthBytes, true
 }
@@ -265,7 +265,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DerivedKeyLengthBytes, true
 }
@@ -288,7 +288,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -320,7 +320,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -353,7 +353,7 @@ func (o *Pbkdf2PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Pbkdf2PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -436,5 +436,3 @@ func (v *NullablePbkdf2PasswordStorageSchemeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

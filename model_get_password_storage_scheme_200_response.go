@@ -17,31 +17,31 @@ import (
 
 // GetPasswordStorageScheme200Response - struct for GetPasswordStorageScheme200Response
 type GetPasswordStorageScheme200Response struct {
-	Aes256PasswordStorageSchemeResponse *Aes256PasswordStorageSchemeResponse
-	AesPasswordStorageSchemeResponse *AesPasswordStorageSchemeResponse
+	Aes256PasswordStorageSchemeResponse               *Aes256PasswordStorageSchemeResponse
+	AesPasswordStorageSchemeResponse                  *AesPasswordStorageSchemeResponse
 	AmazonSecretsManagerPasswordStorageSchemeResponse *AmazonSecretsManagerPasswordStorageSchemeResponse
-	Argon2PasswordStorageSchemeResponse *Argon2PasswordStorageSchemeResponse
-	AzureKeyVaultPasswordStorageSchemeResponse *AzureKeyVaultPasswordStorageSchemeResponse
-	Base64PasswordStorageSchemeResponse *Base64PasswordStorageSchemeResponse
-	BcryptPasswordStorageSchemeResponse *BcryptPasswordStorageSchemeResponse
-	BlowfishPasswordStorageSchemeResponse *BlowfishPasswordStorageSchemeResponse
-	ClearPasswordStorageSchemeResponse *ClearPasswordStorageSchemeResponse
-	ConjurPasswordStorageSchemeResponse *ConjurPasswordStorageSchemeResponse
-	CryptPasswordStorageSchemeResponse *CryptPasswordStorageSchemeResponse
-	Md5PasswordStorageSchemeResponse *Md5PasswordStorageSchemeResponse
-	Pbkdf2PasswordStorageSchemeResponse *Pbkdf2PasswordStorageSchemeResponse
-	Rc4PasswordStorageSchemeResponse *Rc4PasswordStorageSchemeResponse
-	SaltedMd5PasswordStorageSchemeResponse *SaltedMd5PasswordStorageSchemeResponse
-	SaltedSha1PasswordStorageSchemeResponse *SaltedSha1PasswordStorageSchemeResponse
-	SaltedSha256PasswordStorageSchemeResponse *SaltedSha256PasswordStorageSchemeResponse
-	SaltedSha384PasswordStorageSchemeResponse *SaltedSha384PasswordStorageSchemeResponse
-	SaltedSha512PasswordStorageSchemeResponse *SaltedSha512PasswordStorageSchemeResponse
-	ScryptPasswordStorageSchemeResponse *ScryptPasswordStorageSchemeResponse
-	Sha1PasswordStorageSchemeResponse *Sha1PasswordStorageSchemeResponse
-	ThirdPartyEnhancedPasswordStorageSchemeResponse *ThirdPartyEnhancedPasswordStorageSchemeResponse
-	ThirdPartyPasswordStorageSchemeResponse *ThirdPartyPasswordStorageSchemeResponse
-	TripleDesPasswordStorageSchemeResponse *TripleDesPasswordStorageSchemeResponse
-	VaultPasswordStorageSchemeResponse *VaultPasswordStorageSchemeResponse
+	Argon2PasswordStorageSchemeResponse               *Argon2PasswordStorageSchemeResponse
+	AzureKeyVaultPasswordStorageSchemeResponse        *AzureKeyVaultPasswordStorageSchemeResponse
+	Base64PasswordStorageSchemeResponse               *Base64PasswordStorageSchemeResponse
+	BcryptPasswordStorageSchemeResponse               *BcryptPasswordStorageSchemeResponse
+	BlowfishPasswordStorageSchemeResponse             *BlowfishPasswordStorageSchemeResponse
+	ClearPasswordStorageSchemeResponse                *ClearPasswordStorageSchemeResponse
+	ConjurPasswordStorageSchemeResponse               *ConjurPasswordStorageSchemeResponse
+	CryptPasswordStorageSchemeResponse                *CryptPasswordStorageSchemeResponse
+	Md5PasswordStorageSchemeResponse                  *Md5PasswordStorageSchemeResponse
+	Pbkdf2PasswordStorageSchemeResponse               *Pbkdf2PasswordStorageSchemeResponse
+	Rc4PasswordStorageSchemeResponse                  *Rc4PasswordStorageSchemeResponse
+	SaltedMd5PasswordStorageSchemeResponse            *SaltedMd5PasswordStorageSchemeResponse
+	SaltedSha1PasswordStorageSchemeResponse           *SaltedSha1PasswordStorageSchemeResponse
+	SaltedSha256PasswordStorageSchemeResponse         *SaltedSha256PasswordStorageSchemeResponse
+	SaltedSha384PasswordStorageSchemeResponse         *SaltedSha384PasswordStorageSchemeResponse
+	SaltedSha512PasswordStorageSchemeResponse         *SaltedSha512PasswordStorageSchemeResponse
+	ScryptPasswordStorageSchemeResponse               *ScryptPasswordStorageSchemeResponse
+	Sha1PasswordStorageSchemeResponse                 *Sha1PasswordStorageSchemeResponse
+	ThirdPartyEnhancedPasswordStorageSchemeResponse   *ThirdPartyEnhancedPasswordStorageSchemeResponse
+	ThirdPartyPasswordStorageSchemeResponse           *ThirdPartyPasswordStorageSchemeResponse
+	TripleDesPasswordStorageSchemeResponse            *TripleDesPasswordStorageSchemeResponse
+	VaultPasswordStorageSchemeResponse                *VaultPasswordStorageSchemeResponse
 }
 
 // Aes256PasswordStorageSchemeResponseAsGetPasswordStorageScheme200Response is a convenience function that returns Aes256PasswordStorageSchemeResponse wrapped in GetPasswordStorageScheme200Response
@@ -218,7 +218,6 @@ func VaultPasswordStorageSchemeResponseAsGetPasswordStorageScheme200Response(v *
 		VaultPasswordStorageSchemeResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetPasswordStorageScheme200Response) UnmarshalJSON(data []byte) error {
@@ -691,7 +690,7 @@ func (src GetPasswordStorageScheme200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetPasswordStorageScheme200Response) GetActualInstance() (interface{}) {
+func (obj *GetPasswordStorageScheme200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -834,5 +833,3 @@ func (v *NullableGetPasswordStorageScheme200Response) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

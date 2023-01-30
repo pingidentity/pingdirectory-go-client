@@ -20,8 +20,8 @@ type EnumpasswordPolicyBindPasswordValidationFailureActionProp string
 
 // List of Enumpassword-policy-bindPasswordValidationFailureActionProp
 const (
-	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_REJECT_BIND EnumpasswordPolicyBindPasswordValidationFailureActionProp = "reject-bind"
-	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_FORCE_PASSWORD_CHANGE EnumpasswordPolicyBindPasswordValidationFailureActionProp = "force-password-change"
+	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_REJECT_BIND                          EnumpasswordPolicyBindPasswordValidationFailureActionProp = "reject-bind"
+	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_FORCE_PASSWORD_CHANGE                EnumpasswordPolicyBindPasswordValidationFailureActionProp = "force-password-change"
 	ENUMPASSWORDPOLICYBINDPASSWORDVALIDATIONFAILUREACTIONPROP_GENERATE_ACCOUNT_STATUS_NOTIFICATION EnumpasswordPolicyBindPasswordValidationFailureActionProp = "generate-account-status-notification"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumpasswordPolicyBindPasswordValidationFailureActionProp) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,8 +20,8 @@ type EnumconnectionCriteriaAuthenticationSecurityLevelProp string
 
 // List of Enumconnection-criteria-authenticationSecurityLevelProp
 const (
-	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_ANY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "any"
-	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_SECURE_ONLY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "secure-only"
+	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_ANY           EnumconnectionCriteriaAuthenticationSecurityLevelProp = "any"
+	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_SECURE_ONLY   EnumconnectionCriteriaAuthenticationSecurityLevelProp = "secure-only"
 	ENUMCONNECTIONCRITERIAAUTHENTICATIONSECURITYLEVELPROP_INSECURE_ONLY EnumconnectionCriteriaAuthenticationSecurityLevelProp = "insecure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumconnectionCriteriaAuthenticationSecurityLevelProp) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

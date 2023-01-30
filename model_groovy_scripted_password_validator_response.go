@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedPasswordValidatorResponse struct for GroovyScriptedPasswordValidatorResponse
 type GroovyScriptedPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumgroovyScriptedPasswordValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Validator.
 	ScriptClass string `json:"scriptClass"`
@@ -69,7 +69,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -158,7 +158,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetSchemas() []EnumgroovyScrip
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetSchemasOk() ([]EnumgroovyScriptedPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -205,7 +205,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetScriptArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -237,7 +237,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -270,7 +270,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -293,7 +293,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetValidatorRequirementDescrip
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -325,7 +325,7 @@ func (o *GroovyScriptedPasswordValidatorResponse) GetValidatorFailureMessage() s
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -414,5 +414,3 @@ func (v *NullableGroovyScriptedPasswordValidatorResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

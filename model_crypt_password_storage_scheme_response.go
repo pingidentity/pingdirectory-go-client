@@ -16,11 +16,11 @@ import (
 
 // CryptPasswordStorageSchemeResponse struct for CryptPasswordStorageSchemeResponse
 type CryptPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
-	Schemas []EnumcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Id                        string                                                  `json:"id"`
+	Schemas                   []EnumcryptPasswordStorageSchemeSchemaUrn               `json:"schemas"`
 	PasswordEncodingMechanism *EnumpasswordStorageSchemePasswordEncodingMechanismProp `json:"passwordEncodingMechanism,omitempty"`
 	// Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings.
 	NumDigestRounds *int32 `json:"numDigestRounds,omitempty"`
@@ -65,7 +65,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetSchemas() []EnumcryptPasswordSto
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumcryptPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -177,7 +177,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetPasswordEncodingMechanism() Enum
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetPasswordEncodingMechanismOk() (*EnumpasswordStorageSchemePasswordEncodingMechanismProp, bool) {
 	if o == nil || isNil(o.PasswordEncodingMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordEncodingMechanism, true
 }
@@ -209,7 +209,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRounds() int32 {
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetNumDigestRoundsOk() (*int32, bool) {
 	if o == nil || isNil(o.NumDigestRounds) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumDigestRounds, true
 }
@@ -241,7 +241,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -273,7 +273,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -306,7 +306,7 @@ func (o *CryptPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *CryptPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -383,5 +383,3 @@ func (v *NullableCryptPasswordStorageSchemeResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

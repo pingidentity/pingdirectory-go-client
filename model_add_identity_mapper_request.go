@@ -17,11 +17,11 @@ import (
 
 // AddIdentityMapperRequest - struct for AddIdentityMapperRequest
 type AddIdentityMapperRequest struct {
-	AddAggregateIdentityMapperRequest *AddAggregateIdentityMapperRequest
-	AddExactMatchIdentityMapperRequest *AddExactMatchIdentityMapperRequest
-	AddGroovyScriptedIdentityMapperRequest *AddGroovyScriptedIdentityMapperRequest
+	AddAggregateIdentityMapperRequest         *AddAggregateIdentityMapperRequest
+	AddExactMatchIdentityMapperRequest        *AddExactMatchIdentityMapperRequest
+	AddGroovyScriptedIdentityMapperRequest    *AddGroovyScriptedIdentityMapperRequest
 	AddRegularExpressionIdentityMapperRequest *AddRegularExpressionIdentityMapperRequest
-	AddThirdPartyIdentityMapperRequest *AddThirdPartyIdentityMapperRequest
+	AddThirdPartyIdentityMapperRequest        *AddThirdPartyIdentityMapperRequest
 }
 
 // AddAggregateIdentityMapperRequestAsAddIdentityMapperRequest is a convenience function that returns AddAggregateIdentityMapperRequest wrapped in AddIdentityMapperRequest
@@ -58,7 +58,6 @@ func AddThirdPartyIdentityMapperRequestAsAddIdentityMapperRequest(v *AddThirdPar
 		AddThirdPartyIdentityMapperRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentityMapperRequest) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src AddIdentityMapperRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddIdentityMapperRequest) GetActualInstance() (interface{}) {
+func (obj *AddIdentityMapperRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableAddIdentityMapperRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

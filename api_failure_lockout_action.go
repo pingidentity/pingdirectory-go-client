@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // FailureLockoutActionApiService FailureLockoutActionApi service
 type FailureLockoutActionApiService service
 
 type ApiAddFailureLockoutActionRequest struct {
-	ctx context.Context
-	ApiService *FailureLockoutActionApiService
+	ctx                            context.Context
+	ApiService                     *FailureLockoutActionApiService
 	addFailureLockoutActionRequest *AddFailureLockoutActionRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddFailureLockoutActionRequest) Execute() (*AddFailureLockoutAction20
 /*
 AddFailureLockoutAction Add a new Failure Lockout Action to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddFailureLockoutActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) AddFailureLockoutAction(ctx context.Context) ApiAddFailureLockoutActionRequest {
 	return ApiAddFailureLockoutActionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddFailureLockoutAction200Response
+//
+//	@return AddFailureLockoutAction200Response
 func (a *FailureLockoutActionApiService) AddFailureLockoutActionExecute(r ApiAddFailureLockoutActionRequest) (*AddFailureLockoutAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddFailureLockoutAction200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddFailureLockoutAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FailureLockoutActionApiService.AddFailureLockoutAction")
@@ -133,8 +133,8 @@ func (a *FailureLockoutActionApiService) AddFailureLockoutActionExecute(r ApiAdd
 }
 
 type ApiDeleteFailureLockoutActionRequest struct {
-	ctx context.Context
-	ApiService *FailureLockoutActionApiService
+	ctx                      context.Context
+	ApiService               *FailureLockoutActionApiService
 	failureLockoutActionName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteFailureLockoutActionRequest) Execute() (*http.Response, error) 
 /*
 DeleteFailureLockoutAction Delete a Failure Lockout Action
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param failureLockoutActionName Name of the Failure Lockout Action to be deleted
- @return ApiDeleteFailureLockoutActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param failureLockoutActionName Name of the Failure Lockout Action to be deleted
+	@return ApiDeleteFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) DeleteFailureLockoutAction(ctx context.Context, failureLockoutActionName string) ApiDeleteFailureLockoutActionRequest {
 	return ApiDeleteFailureLockoutActionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		failureLockoutActionName: failureLockoutActionName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *FailureLockoutActionApiService) DeleteFailureLockoutAction(ctx context.
 // Execute executes the request
 func (a *FailureLockoutActionApiService) DeleteFailureLockoutActionExecute(r ApiDeleteFailureLockoutActionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FailureLockoutActionApiService.DeleteFailureLockoutAction")
@@ -223,8 +223,8 @@ func (a *FailureLockoutActionApiService) DeleteFailureLockoutActionExecute(r Api
 }
 
 type ApiGetFailureLockoutActionRequest struct {
-	ctx context.Context
-	ApiService *FailureLockoutActionApiService
+	ctx                      context.Context
+	ApiService               *FailureLockoutActionApiService
 	failureLockoutActionName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetFailureLockoutActionRequest) Execute() (*AddFailureLockoutAction20
 /*
 GetFailureLockoutAction Returns a single Failure Lockout Action
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param failureLockoutActionName Name of the Failure Lockout Action to be read
- @return ApiGetFailureLockoutActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param failureLockoutActionName Name of the Failure Lockout Action to be read
+	@return ApiGetFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) GetFailureLockoutAction(ctx context.Context, failureLockoutActionName string) ApiGetFailureLockoutActionRequest {
 	return ApiGetFailureLockoutActionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		failureLockoutActionName: failureLockoutActionName,
 	}
 }
 
 // Execute executes the request
-//  @return AddFailureLockoutAction200Response
+//
+//	@return AddFailureLockoutAction200Response
 func (a *FailureLockoutActionApiService) GetFailureLockoutActionExecute(r ApiGetFailureLockoutActionRequest) (*AddFailureLockoutAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddFailureLockoutAction200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddFailureLockoutAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FailureLockoutActionApiService.GetFailureLockoutAction")
@@ -324,10 +325,10 @@ func (a *FailureLockoutActionApiService) GetFailureLockoutActionExecute(r ApiGet
 }
 
 type ApiUpdateFailureLockoutActionRequest struct {
-	ctx context.Context
-	ApiService *FailureLockoutActionApiService
+	ctx                      context.Context
+	ApiService               *FailureLockoutActionApiService
 	failureLockoutActionName string
-	updateRequest *UpdateRequest
+	updateRequest            *UpdateRequest
 }
 
 // Update an existing Failure Lockout Action
@@ -343,26 +344,27 @@ func (r ApiUpdateFailureLockoutActionRequest) Execute() (*AddFailureLockoutActio
 /*
 UpdateFailureLockoutAction Update an existing Failure Lockout Action by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param failureLockoutActionName Name of the Failure Lockout Action to be updated
- @return ApiUpdateFailureLockoutActionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param failureLockoutActionName Name of the Failure Lockout Action to be updated
+	@return ApiUpdateFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) UpdateFailureLockoutAction(ctx context.Context, failureLockoutActionName string) ApiUpdateFailureLockoutActionRequest {
 	return ApiUpdateFailureLockoutActionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		failureLockoutActionName: failureLockoutActionName,
 	}
 }
 
 // Execute executes the request
-//  @return AddFailureLockoutAction200Response
+//
+//	@return AddFailureLockoutAction200Response
 func (a *FailureLockoutActionApiService) UpdateFailureLockoutActionExecute(r ApiUpdateFailureLockoutActionRequest) (*AddFailureLockoutAction200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddFailureLockoutAction200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddFailureLockoutAction200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FailureLockoutActionApiService.UpdateFailureLockoutAction")

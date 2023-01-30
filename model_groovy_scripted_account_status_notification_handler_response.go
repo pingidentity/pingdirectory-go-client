@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedAccountStatusNotificationHandlerResponse struct for GroovyScriptedAccountStatusNotificationHandlerResponse
 type GroovyScriptedAccountStatusNotificationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Account Status Notification Handler
-	Id string `json:"id"`
+	Id      string                                                        `json:"id"`
 	Schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler.
 	ScriptClass string `json:"scriptClass"`
@@ -71,7 +71,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetMeta() MetaM
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetUrnpingident
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetId() string 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -160,7 +160,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetSchemas() []
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetSchemasOk() ([]EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetScriptClass(
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -207,7 +207,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetScriptArgume
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -239,7 +239,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetDescription(
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -272,7 +272,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetEnabled() bo
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -295,7 +295,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAsynchronous
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -327,7 +327,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountCreat
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -359,7 +359,7 @@ func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountUpdat
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccountStatusNotificationHandlerResponse) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -451,5 +451,3 @@ func (v *NullableGroovyScriptedAccountStatusNotificationHandlerResponse) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

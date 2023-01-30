@@ -17,8 +17,8 @@ import (
 // AddThirdPartyChangeSubscriptionHandlerRequest struct for AddThirdPartyChangeSubscriptionHandlerRequest
 type AddThirdPartyChangeSubscriptionHandlerRequest struct {
 	// Name of the new Change Subscription Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                             `json:"handlerName"`
+	Schemas     []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
@@ -66,7 +66,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetHandlerName() string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -90,7 +90,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetSchemas() []Enumthird
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetSchemasOk() ([]EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionClass() stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -137,7 +137,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionArgument() [
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -169,7 +169,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -202,7 +202,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -225,7 +225,7 @@ func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetChangeSubscription() 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangeSubscription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangeSubscription, true
 }
@@ -305,5 +305,3 @@ func (v *NullableAddThirdPartyChangeSubscriptionHandlerRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

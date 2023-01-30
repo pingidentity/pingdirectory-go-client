@@ -20,7 +20,7 @@ type EnumlogPublisherTimestampPrecisionProp string
 
 // List of Enumlog-publisher-timestampPrecisionProp
 const (
-	ENUMLOGPUBLISHERTIMESTAMPPRECISIONPROP_SECONDS EnumlogPublisherTimestampPrecisionProp = "seconds"
+	ENUMLOGPUBLISHERTIMESTAMPPRECISIONPROP_SECONDS      EnumlogPublisherTimestampPrecisionProp = "seconds"
 	ENUMLOGPUBLISHERTIMESTAMPPRECISIONPROP_MILLISECONDS EnumlogPublisherTimestampPrecisionProp = "milliseconds"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumlogPublisherTimestampPrecisionProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

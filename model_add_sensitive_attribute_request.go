@@ -17,19 +17,19 @@ import (
 // AddSensitiveAttributeRequest struct for AddSensitiveAttributeRequest
 type AddSensitiveAttributeRequest struct {
 	// Name of the new Sensitive Attribute
-	AttributeName string `json:"attributeName"`
-	Schemas []EnumsensitiveAttributeSchemaUrn `json:"schemas,omitempty"`
+	AttributeName string                            `json:"attributeName"`
+	Schemas       []EnumsensitiveAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Sensitive Attribute
 	Description *string `json:"description,omitempty"`
 	// The name(s) or OID(s) of the attribute types for attributes whose values may be considered sensitive.
 	AttributeType []string `json:"attributeType"`
 	// Indicates whether to automatically include any server-generated operational attributes that may contain sensitive data.
-	IncludeDefaultSensitiveOperationalAttributes *bool `json:"includeDefaultSensitiveOperationalAttributes,omitempty"`
-	AllowInReturnedEntries *EnumsensitiveAttributeAllowInReturnedEntriesProp `json:"allowInReturnedEntries,omitempty"`
-	AllowInFilter *EnumsensitiveAttributeAllowInFilterProp `json:"allowInFilter,omitempty"`
-	AllowInAdd *EnumsensitiveAttributeAllowInAddProp `json:"allowInAdd,omitempty"`
-	AllowInCompare *EnumsensitiveAttributeAllowInCompareProp `json:"allowInCompare,omitempty"`
-	AllowInModify *EnumsensitiveAttributeAllowInModifyProp `json:"allowInModify,omitempty"`
+	IncludeDefaultSensitiveOperationalAttributes *bool                                             `json:"includeDefaultSensitiveOperationalAttributes,omitempty"`
+	AllowInReturnedEntries                       *EnumsensitiveAttributeAllowInReturnedEntriesProp `json:"allowInReturnedEntries,omitempty"`
+	AllowInFilter                                *EnumsensitiveAttributeAllowInFilterProp          `json:"allowInFilter,omitempty"`
+	AllowInAdd                                   *EnumsensitiveAttributeAllowInAddProp             `json:"allowInAdd,omitempty"`
+	AllowInCompare                               *EnumsensitiveAttributeAllowInCompareProp         `json:"allowInCompare,omitempty"`
+	AllowInModify                                *EnumsensitiveAttributeAllowInModifyProp          `json:"allowInModify,omitempty"`
 }
 
 // NewAddSensitiveAttributeRequest instantiates a new AddSensitiveAttributeRequest object
@@ -65,7 +65,7 @@ func (o *AddSensitiveAttributeRequest) GetAttributeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAttributeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeName, true
 }
@@ -88,7 +88,7 @@ func (o *AddSensitiveAttributeRequest) GetSchemas() []EnumsensitiveAttributeSche
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetSchemasOk() ([]EnumsensitiveAttributeSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -120,7 +120,7 @@ func (o *AddSensitiveAttributeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -153,7 +153,7 @@ func (o *AddSensitiveAttributeRequest) GetAttributeType() []string {
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAttributeTypeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AttributeType, true
 }
@@ -176,7 +176,7 @@ func (o *AddSensitiveAttributeRequest) GetIncludeDefaultSensitiveOperationalAttr
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetIncludeDefaultSensitiveOperationalAttributesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeDefaultSensitiveOperationalAttributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeDefaultSensitiveOperationalAttributes, true
 }
@@ -208,7 +208,7 @@ func (o *AddSensitiveAttributeRequest) GetAllowInReturnedEntries() Enumsensitive
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAllowInReturnedEntriesOk() (*EnumsensitiveAttributeAllowInReturnedEntriesProp, bool) {
 	if o == nil || isNil(o.AllowInReturnedEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowInReturnedEntries, true
 }
@@ -240,7 +240,7 @@ func (o *AddSensitiveAttributeRequest) GetAllowInFilter() EnumsensitiveAttribute
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAllowInFilterOk() (*EnumsensitiveAttributeAllowInFilterProp, bool) {
 	if o == nil || isNil(o.AllowInFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowInFilter, true
 }
@@ -272,7 +272,7 @@ func (o *AddSensitiveAttributeRequest) GetAllowInAdd() EnumsensitiveAttributeAll
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAllowInAddOk() (*EnumsensitiveAttributeAllowInAddProp, bool) {
 	if o == nil || isNil(o.AllowInAdd) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowInAdd, true
 }
@@ -304,7 +304,7 @@ func (o *AddSensitiveAttributeRequest) GetAllowInCompare() EnumsensitiveAttribut
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAllowInCompareOk() (*EnumsensitiveAttributeAllowInCompareProp, bool) {
 	if o == nil || isNil(o.AllowInCompare) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowInCompare, true
 }
@@ -336,7 +336,7 @@ func (o *AddSensitiveAttributeRequest) GetAllowInModify() EnumsensitiveAttribute
 // and a boolean to check if the value has been set.
 func (o *AddSensitiveAttributeRequest) GetAllowInModifyOk() (*EnumsensitiveAttributeAllowInModifyProp, bool) {
 	if o == nil || isNil(o.AllowInModify) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowInModify, true
 }
@@ -425,5 +425,3 @@ func (v *NullableAddSensitiveAttributeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

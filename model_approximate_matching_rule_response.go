@@ -16,9 +16,9 @@ import (
 
 // ApproximateMatchingRuleResponse struct for ApproximateMatchingRuleResponse
 type ApproximateMatchingRuleResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumapproximateMatchingRuleSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumapproximateMatchingRuleSchemaUrn             `json:"schemas"`
 	// Name of the Matching Rule
 	Id string `json:"id"`
 	// Indicates whether the Matching Rule is enabled for use.
@@ -58,7 +58,7 @@ func (o *ApproximateMatchingRuleResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ApproximateMatchingRuleResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -90,7 +90,7 @@ func (o *ApproximateMatchingRuleResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *ApproximateMatchingRuleResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -123,7 +123,7 @@ func (o *ApproximateMatchingRuleResponse) GetSchemas() []EnumapproximateMatching
 // and a boolean to check if the value has been set.
 func (o *ApproximateMatchingRuleResponse) GetSchemasOk() ([]EnumapproximateMatchingRuleSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -147,7 +147,7 @@ func (o *ApproximateMatchingRuleResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ApproximateMatchingRuleResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -171,7 +171,7 @@ func (o *ApproximateMatchingRuleResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ApproximateMatchingRuleResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -236,5 +236,3 @@ func (v *NullableApproximateMatchingRuleResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddBlindTrustManagerProviderRequest struct for AddBlindTrustManagerProviderRequest
 type AddBlindTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumblindTrustManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                   `json:"providerName"`
+	Schemas      []EnumblindTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Indicate whether the Trust Manager Provider is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether certificates issued by an authority included in the JVM's set of default issuers should be automatically trusted, even if they would not otherwise be trusted by this provider.
@@ -59,7 +59,7 @@ func (o *AddBlindTrustManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddBlindTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -83,7 +83,7 @@ func (o *AddBlindTrustManagerProviderRequest) GetSchemas() []EnumblindTrustManag
 // and a boolean to check if the value has been set.
 func (o *AddBlindTrustManagerProviderRequest) GetSchemasOk() ([]EnumblindTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddBlindTrustManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddBlindTrustManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -130,7 +130,7 @@ func (o *AddBlindTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() bool
 // and a boolean to check if the value has been set.
 func (o *AddBlindTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddBlindTrustManagerProviderRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

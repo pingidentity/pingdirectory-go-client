@@ -17,10 +17,10 @@ import (
 // AddFingerprintCertificateMapperRequest struct for AddFingerprintCertificateMapperRequest
 type AddFingerprintCertificateMapperRequest struct {
 	// Name of the new Certificate Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumfingerprintCertificateMapperSchemaUrn `json:"schemas"`
+	MapperName string                                      `json:"mapperName"`
+	Schemas    []EnumfingerprintCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute in which to look for the fingerprint.
-	FingerprintAttribute string `json:"fingerprintAttribute"`
+	FingerprintAttribute string                                        `json:"fingerprintAttribute"`
 	FingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp `json:"fingerprintAlgorithm"`
 	// Specifies the set of base DNs below which to search for users.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
@@ -66,7 +66,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -90,7 +90,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetSchemas() []EnumfingerprintC
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetSchemasOk() ([]EnumfingerprintCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttribute() strin
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FingerprintAttribute, true
 }
@@ -138,7 +138,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAlgorithm() Enumc
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetFingerprintAlgorithmOk() (*EnumcertificateMapperFingerprintAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FingerprintAlgorithm, true
 }
@@ -161,7 +161,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetUserBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.UserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserBaseDN, true
 }
@@ -193,7 +193,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -226,7 +226,7 @@ func (o *AddFingerprintCertificateMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFingerprintCertificateMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -297,5 +297,3 @@ func (v *NullableAddFingerprintCertificateMapperRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

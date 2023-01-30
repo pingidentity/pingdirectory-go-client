@@ -16,9 +16,9 @@ import (
 
 // LicenseResponse struct for LicenseResponse
 type LicenseResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumlicenseSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumlicenseSchemaUrn                             `json:"schemas,omitempty"`
 	// License key enabling use of Directory Server, Directory Proxy Server, Data Sync Server, and Data Metrics Server products.
 	DirectoryPlatformLicenseKey *string `json:"directoryPlatformLicenseKey,omitempty"`
 }
@@ -53,7 +53,7 @@ func (o *LicenseResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -85,7 +85,7 @@ func (o *LicenseResponse) GetUrnpingidentityschemasconfigurationmessages20() Met
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -117,7 +117,7 @@ func (o *LicenseResponse) GetSchemas() []EnumlicenseSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetSchemasOk() ([]EnumlicenseSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *LicenseResponse) GetDirectoryPlatformLicenseKey() string {
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetDirectoryPlatformLicenseKeyOk() (*string, bool) {
 	if o == nil || isNil(o.DirectoryPlatformLicenseKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.DirectoryPlatformLicenseKey, true
 }
@@ -220,5 +220,3 @@ func (v *NullableLicenseResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

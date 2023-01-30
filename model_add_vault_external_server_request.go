@@ -17,8 +17,8 @@ import (
 // AddVaultExternalServerRequest struct for AddVaultExternalServerRequest
 type AddVaultExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumvaultExternalServerSchemaUrn `json:"schemas"`
+	ServerName string                             `json:"serverName"`
+	Schemas    []EnumvaultExternalServerSchemaUrn `json:"schemas"`
 	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
 	VaultServerBaseURI []string `json:"vaultServerBaseURI"`
 	// The mechanism used to authenticate to the Vault server.
@@ -68,7 +68,7 @@ func (o *AddVaultExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -92,7 +92,7 @@ func (o *AddVaultExternalServerRequest) GetSchemas() []EnumvaultExternalServerSc
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetSchemasOk() ([]EnumvaultExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddVaultExternalServerRequest) GetVaultServerBaseURI() []string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetVaultServerBaseURIOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultServerBaseURI, true
 }
@@ -140,7 +140,7 @@ func (o *AddVaultExternalServerRequest) GetVaultAuthenticationMethod() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetVaultAuthenticationMethodOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultAuthenticationMethod, true
 }
@@ -163,7 +163,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreFile, true
 }
@@ -195,7 +195,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -227,7 +227,7 @@ func (o *AddVaultExternalServerRequest) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -259,7 +259,7 @@ func (o *AddVaultExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -342,5 +342,3 @@ func (v *NullableAddVaultExternalServerRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

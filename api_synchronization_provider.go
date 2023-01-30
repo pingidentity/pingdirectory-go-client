@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // SynchronizationProviderApiService SynchronizationProviderApi service
 type SynchronizationProviderApiService service
 
 type ApiGetSynchronizationProviderRequest struct {
-	ctx context.Context
-	ApiService *SynchronizationProviderApiService
+	ctx                         context.Context
+	ApiService                  *SynchronizationProviderApiService
 	synchronizationProviderName string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetSynchronizationProviderRequest) Execute() (*ReplicationSynchroniza
 /*
 GetSynchronizationProvider Returns a single Synchronization Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param synchronizationProviderName Name of the Synchronization Provider to be read
- @return ApiGetSynchronizationProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param synchronizationProviderName Name of the Synchronization Provider to be read
+	@return ApiGetSynchronizationProviderRequest
 */
 func (a *SynchronizationProviderApiService) GetSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiGetSynchronizationProviderRequest {
 	return ApiGetSynchronizationProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		synchronizationProviderName: synchronizationProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return ReplicationSynchronizationProviderResponse
+//
+//	@return ReplicationSynchronizationProviderResponse
 func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r ApiGetSynchronizationProviderRequest) (*ReplicationSynchronizationProviderResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ReplicationSynchronizationProviderResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ReplicationSynchronizationProviderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.GetSynchronizationProvider")
@@ -125,10 +125,10 @@ func (a *SynchronizationProviderApiService) GetSynchronizationProviderExecute(r 
 }
 
 type ApiUpdateSynchronizationProviderRequest struct {
-	ctx context.Context
-	ApiService *SynchronizationProviderApiService
+	ctx                         context.Context
+	ApiService                  *SynchronizationProviderApiService
 	synchronizationProviderName string
-	updateRequest *UpdateRequest
+	updateRequest               *UpdateRequest
 }
 
 // Update an existing Synchronization Provider
@@ -144,26 +144,27 @@ func (r ApiUpdateSynchronizationProviderRequest) Execute() (*ReplicationSynchron
 /*
 UpdateSynchronizationProvider Update an existing Synchronization Provider by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param synchronizationProviderName Name of the Synchronization Provider to be updated
- @return ApiUpdateSynchronizationProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param synchronizationProviderName Name of the Synchronization Provider to be updated
+	@return ApiUpdateSynchronizationProviderRequest
 */
 func (a *SynchronizationProviderApiService) UpdateSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiUpdateSynchronizationProviderRequest {
 	return ApiUpdateSynchronizationProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		synchronizationProviderName: synchronizationProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return ReplicationSynchronizationProviderResponse
+//
+//	@return ReplicationSynchronizationProviderResponse
 func (a *SynchronizationProviderApiService) UpdateSynchronizationProviderExecute(r ApiUpdateSynchronizationProviderRequest) (*ReplicationSynchronizationProviderResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ReplicationSynchronizationProviderResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ReplicationSynchronizationProviderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SynchronizationProviderApiService.UpdateSynchronizationProvider")

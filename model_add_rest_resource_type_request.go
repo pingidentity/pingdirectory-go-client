@@ -18,7 +18,7 @@ import (
 // AddRestResourceTypeRequest - struct for AddRestResourceTypeRequest
 type AddRestResourceTypeRequest struct {
 	AddGroupRestResourceTypeRequest *AddGroupRestResourceTypeRequest
-	AddUserRestResourceTypeRequest *AddUserRestResourceTypeRequest
+	AddUserRestResourceTypeRequest  *AddUserRestResourceTypeRequest
 }
 
 // AddGroupRestResourceTypeRequestAsAddRestResourceTypeRequest is a convenience function that returns AddGroupRestResourceTypeRequest wrapped in AddRestResourceTypeRequest
@@ -34,7 +34,6 @@ func AddUserRestResourceTypeRequestAsAddRestResourceTypeRequest(v *AddUserRestRe
 		AddUserRestResourceTypeRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddRestResourceTypeRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddRestResourceTypeRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddRestResourceTypeRequest) GetActualInstance() (interface{}) {
+func (obj *AddRestResourceTypeRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddRestResourceTypeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

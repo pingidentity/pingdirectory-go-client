@@ -17,8 +17,8 @@ import (
 // AddSoftDeletePolicyRequest struct for AddSoftDeletePolicyRequest
 type AddSoftDeletePolicyRequest struct {
 	// Name of the new Soft Delete Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumsoftDeletePolicySchemaUrn `json:"schemas,omitempty"`
+	PolicyName string                          `json:"policyName"`
+	Schemas    []EnumsoftDeletePolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Soft Delete Policy
 	Description *string `json:"description,omitempty"`
 	// Connection criteria used to automatically identify a delete operation for processing as a soft delete request.
@@ -63,7 +63,7 @@ func (o *AddSoftDeletePolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -86,7 +86,7 @@ func (o *AddSoftDeletePolicyRequest) GetSchemas() []EnumsoftDeletePolicySchemaUr
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetSchemasOk() ([]EnumsoftDeletePolicySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddSoftDeletePolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -150,7 +150,7 @@ func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteConnectionCriteria() strin
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AutoSoftDeleteConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoSoftDeleteConnectionCriteria, true
 }
@@ -182,7 +182,7 @@ func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AutoSoftDeleteRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoSoftDeleteRequestCriteria, true
 }
@@ -214,7 +214,7 @@ func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetentionTime() string {
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetentionTimeOk() (*string, bool) {
 	if o == nil || isNil(o.SoftDeleteRetentionTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.SoftDeleteRetentionTime, true
 }
@@ -246,7 +246,7 @@ func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntries() int32 
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntriesOk() (*int32, bool) {
 	if o == nil || isNil(o.SoftDeleteRetainNumberOfEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.SoftDeleteRetainNumberOfEntries, true
 }
@@ -326,5 +326,3 @@ func (v *NullableAddSoftDeletePolicyRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyUncachedAttributeCriteriaResponse struct for ThirdPartyUncachedAttributeCriteriaResponse
 type ThirdPartyUncachedAttributeCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Attribute Criteria
-	Id string `json:"id"`
+	Id      string                                             `json:"id"`
 	Schemas []EnumthirdPartyUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Uncached Attribute Criteria.
 	ExtensionClass string `json:"extensionClass"`
@@ -65,7 +65,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetSchemas() []EnumthirdPa
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetSchemasOk() ([]EnumthirdPartyUncachedAttributeCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetExtensionClass() string
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -201,7 +201,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetExtensionArgument() []s
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -233,7 +233,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyUncachedAttributeCriteriaResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableThirdPartyUncachedAttributeCriteriaResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

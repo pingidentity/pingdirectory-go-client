@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // RestResourceTypeApiService RestResourceTypeApi service
 type RestResourceTypeApiService service
 
 type ApiAddRestResourceTypeRequest struct {
-	ctx context.Context
-	ApiService *RestResourceTypeApiService
+	ctx                        context.Context
+	ApiService                 *RestResourceTypeApiService
 	addRestResourceTypeRequest *AddRestResourceTypeRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddRestResourceTypeRequest) Execute() (*AddRestResourceType200Respons
 /*
 AddRestResourceType Add a new REST Resource Type to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddRestResourceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) AddRestResourceType(ctx context.Context) ApiAddRestResourceTypeRequest {
 	return ApiAddRestResourceTypeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddRestResourceType200Response
+//
+//	@return AddRestResourceType200Response
 func (a *RestResourceTypeApiService) AddRestResourceTypeExecute(r ApiAddRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRestResourceType200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRestResourceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.AddRestResourceType")
@@ -133,8 +133,8 @@ func (a *RestResourceTypeApiService) AddRestResourceTypeExecute(r ApiAddRestReso
 }
 
 type ApiDeleteRestResourceTypeRequest struct {
-	ctx context.Context
-	ApiService *RestResourceTypeApiService
+	ctx                  context.Context
+	ApiService           *RestResourceTypeApiService
 	restResourceTypeName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteRestResourceTypeRequest) Execute() (*http.Response, error) {
 /*
 DeleteRestResourceType Delete a REST Resource Type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param restResourceTypeName Name of the REST Resource Type to be deleted
- @return ApiDeleteRestResourceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param restResourceTypeName Name of the REST Resource Type to be deleted
+	@return ApiDeleteRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) DeleteRestResourceType(ctx context.Context, restResourceTypeName string) ApiDeleteRestResourceTypeRequest {
 	return ApiDeleteRestResourceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		restResourceTypeName: restResourceTypeName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *RestResourceTypeApiService) DeleteRestResourceType(ctx context.Context,
 // Execute executes the request
 func (a *RestResourceTypeApiService) DeleteRestResourceTypeExecute(r ApiDeleteRestResourceTypeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.DeleteRestResourceType")
@@ -223,8 +223,8 @@ func (a *RestResourceTypeApiService) DeleteRestResourceTypeExecute(r ApiDeleteRe
 }
 
 type ApiGetRestResourceTypeRequest struct {
-	ctx context.Context
-	ApiService *RestResourceTypeApiService
+	ctx                  context.Context
+	ApiService           *RestResourceTypeApiService
 	restResourceTypeName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetRestResourceTypeRequest) Execute() (*AddRestResourceType200Respons
 /*
 GetRestResourceType Returns a single REST Resource Type
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param restResourceTypeName Name of the REST Resource Type to be read
- @return ApiGetRestResourceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param restResourceTypeName Name of the REST Resource Type to be read
+	@return ApiGetRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) GetRestResourceType(ctx context.Context, restResourceTypeName string) ApiGetRestResourceTypeRequest {
 	return ApiGetRestResourceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		restResourceTypeName: restResourceTypeName,
 	}
 }
 
 // Execute executes the request
-//  @return AddRestResourceType200Response
+//
+//	@return AddRestResourceType200Response
 func (a *RestResourceTypeApiService) GetRestResourceTypeExecute(r ApiGetRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRestResourceType200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRestResourceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.GetRestResourceType")
@@ -324,10 +325,10 @@ func (a *RestResourceTypeApiService) GetRestResourceTypeExecute(r ApiGetRestReso
 }
 
 type ApiUpdateRestResourceTypeRequest struct {
-	ctx context.Context
-	ApiService *RestResourceTypeApiService
+	ctx                  context.Context
+	ApiService           *RestResourceTypeApiService
 	restResourceTypeName string
-	updateRequest *UpdateRequest
+	updateRequest        *UpdateRequest
 }
 
 // Update an existing REST Resource Type
@@ -343,26 +344,27 @@ func (r ApiUpdateRestResourceTypeRequest) Execute() (*AddRestResourceType200Resp
 /*
 UpdateRestResourceType Update an existing REST Resource Type by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param restResourceTypeName Name of the REST Resource Type to be updated
- @return ApiUpdateRestResourceTypeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param restResourceTypeName Name of the REST Resource Type to be updated
+	@return ApiUpdateRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) UpdateRestResourceType(ctx context.Context, restResourceTypeName string) ApiUpdateRestResourceTypeRequest {
 	return ApiUpdateRestResourceTypeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		restResourceTypeName: restResourceTypeName,
 	}
 }
 
 // Execute executes the request
-//  @return AddRestResourceType200Response
+//
+//	@return AddRestResourceType200Response
 func (a *RestResourceTypeApiService) UpdateRestResourceTypeExecute(r ApiUpdateRestResourceTypeRequest) (*AddRestResourceType200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRestResourceType200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRestResourceType200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestResourceTypeApiService.UpdateRestResourceType")

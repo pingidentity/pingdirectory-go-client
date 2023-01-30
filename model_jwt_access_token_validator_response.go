@@ -16,19 +16,19 @@ import (
 
 // JwtAccessTokenValidatorResponse struct for JwtAccessTokenValidatorResponse
 type JwtAccessTokenValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Access Token Validator
-	Id string `json:"id"`
-	Schemas []EnumjwtAccessTokenValidatorSchemaUrn `json:"schemas"`
+	Id                      string                                                `json:"id"`
+	Schemas                 []EnumjwtAccessTokenValidatorSchemaUrn                `json:"schemas"`
 	AllowedSigningAlgorithm []EnumaccessTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming JWT access token. If this property is specified, the JWT Access Token Validator will not use a JWKS endpoint to retrieve public keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
 	// The relative path to JWKS endpoint from which to retrieve one or more public signing keys that may be used to validate the signature of an incoming JWT access token. This path is relative to the base_url property defined for the validator's external authorization server. If jwks-endpoint-path is specified, the JWT Access Token Validator will not consult locally stored certificates for validating token signatures.
 	JwksEndpointPath *string `json:"jwksEndpointPath,omitempty"`
 	// The public-private key pair that is used to encrypt the JWT payload. If specified, the JWT Access Token Validator will use the private key to decrypt the JWT payload, and the public key must be exported to the Authorization Server that is issuing access tokens.
-	EncryptionKeyPair *string `json:"encryptionKeyPair,omitempty"`
-	AllowedKeyEncryptionAlgorithm []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp `json:"allowedKeyEncryptionAlgorithm"`
+	EncryptionKeyPair                 *string                                                         `json:"encryptionKeyPair,omitempty"`
+	AllowedKeyEncryptionAlgorithm     []EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp     `json:"allowedKeyEncryptionAlgorithm"`
 	AllowedContentEncryptionAlgorithm []EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp `json:"allowedContentEncryptionAlgorithm"`
 	// Specifies the amount of clock skew that is tolerated by the JWT Access Token Validator when evaluating whether a token is within its valid time interval. The duration specified by this parameter will be subtracted from the token's not-before (nbf) time and added to the token's expiration (exp) time, if present, to allow for any time difference between the local server's clock and the token issuer's clock.
 	ClockSkewGracePeriod *string `json:"clockSkewGracePeriod,omitempty"`
@@ -87,7 +87,7 @@ func (o *JwtAccessTokenValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -119,7 +119,7 @@ func (o *JwtAccessTokenValidatorResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -152,7 +152,7 @@ func (o *JwtAccessTokenValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -176,7 +176,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSchemas() []EnumjwtAccessTokenValid
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetSchemasOk() ([]EnumjwtAccessTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -200,7 +200,7 @@ func (o *JwtAccessTokenValidatorResponse) GetAllowedSigningAlgorithm() []Enumacc
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetAllowedSigningAlgorithmOk() ([]EnumaccessTokenValidatorAllowedSigningAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedSigningAlgorithm, true
 }
@@ -223,7 +223,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSigningCertificate() []string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetSigningCertificateOk() ([]string, bool) {
 	if o == nil || isNil(o.SigningCertificate) {
-    return nil, false
+		return nil, false
 	}
 	return o.SigningCertificate, true
 }
@@ -255,7 +255,7 @@ func (o *JwtAccessTokenValidatorResponse) GetJwksEndpointPath() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetJwksEndpointPathOk() (*string, bool) {
 	if o == nil || isNil(o.JwksEndpointPath) {
-    return nil, false
+		return nil, false
 	}
 	return o.JwksEndpointPath, true
 }
@@ -287,7 +287,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEncryptionKeyPair() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetEncryptionKeyPairOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionKeyPair) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionKeyPair, true
 }
@@ -320,7 +320,7 @@ func (o *JwtAccessTokenValidatorResponse) GetAllowedKeyEncryptionAlgorithm() []E
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetAllowedKeyEncryptionAlgorithmOk() ([]EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedKeyEncryptionAlgorithm, true
 }
@@ -344,7 +344,7 @@ func (o *JwtAccessTokenValidatorResponse) GetAllowedContentEncryptionAlgorithm()
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetAllowedContentEncryptionAlgorithmOk() ([]EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedContentEncryptionAlgorithm, true
 }
@@ -367,7 +367,7 @@ func (o *JwtAccessTokenValidatorResponse) GetClockSkewGracePeriod() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetClockSkewGracePeriodOk() (*string, bool) {
 	if o == nil || isNil(o.ClockSkewGracePeriod) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
 }
@@ -399,7 +399,7 @@ func (o *JwtAccessTokenValidatorResponse) GetClientIDClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetClientIDClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.ClientIDClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientIDClaimName, true
 }
@@ -431,7 +431,7 @@ func (o *JwtAccessTokenValidatorResponse) GetScopeClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetScopeClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.ScopeClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScopeClaimName, true
 }
@@ -464,7 +464,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -487,7 +487,7 @@ func (o *JwtAccessTokenValidatorResponse) GetAuthorizationServer() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetAuthorizationServerOk() (*string, bool) {
 	if o == nil || isNil(o.AuthorizationServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuthorizationServer, true
 }
@@ -519,7 +519,7 @@ func (o *JwtAccessTokenValidatorResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -551,7 +551,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSubjectClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -583,7 +583,7 @@ func (o *JwtAccessTokenValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -616,7 +616,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -723,5 +723,3 @@ func (v *NullableJwtAccessTokenValidatorResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

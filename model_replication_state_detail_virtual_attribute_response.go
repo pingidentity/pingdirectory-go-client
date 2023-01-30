@@ -16,9 +16,9 @@ import (
 
 // ReplicationStateDetailVirtualAttributeResponse struct for ReplicationStateDetailVirtualAttributeResponse
 type ReplicationStateDetailVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumreplicationStateDetailVirtualAttributeSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                             `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20    `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumreplicationStateDetailVirtualAttributeSchemaUrn `json:"schemas"`
 	// Name of the Virtual Attribute
 	Id string `json:"id"`
 	// Indicates whether the Virtual Attribute is enabled for use.
@@ -60,7 +60,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetUrnpingidentityschem
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetSchemas() []Enumrepl
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetSchemasOk() ([]EnumreplicationStateDetailVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -173,7 +173,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -196,7 +196,7 @@ func (o *ReplicationStateDetailVirtualAttributeResponse) GetRequireExplicitReque
 // and a boolean to check if the value has been set.
 func (o *ReplicationStateDetailVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -273,5 +273,3 @@ func (v *NullableReplicationStateDetailVirtualAttributeResponse) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

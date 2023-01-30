@@ -17,19 +17,19 @@ import (
 // AddGroovyScriptedErrorLogPublisherRequest struct for AddGroovyScriptedErrorLogPublisherRequest
 type AddGroovyScriptedErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName string `json:"publisherName"`
-	Schemas []EnumgroovyScriptedErrorLogPublisherSchemaUrn `json:"schemas"`
+	PublisherName string                                         `json:"publisherName"`
+	Schemas       []EnumgroovyScriptedErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Error Log Publisher.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Error Log Publisher. Each configuration property should be given in the form 'name=value'.
-	ScriptArgument []string `json:"scriptArgument,omitempty"`
+	ScriptArgument  []string                              `json:"scriptArgument,omitempty"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetPublisherName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PublisherName, true
 }
@@ -92,7 +92,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetSchemas() []EnumgroovyScr
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetSchemasOk() ([]EnumgroovyScriptedErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -139,7 +139,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetScriptArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -171,7 +171,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetDefaultSeverity() []Enuml
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -203,7 +203,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetOverrideSeverity() []stri
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -235,7 +235,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,7 +268,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -291,7 +291,7 @@ func (o *AddGroovyScriptedErrorLogPublisherRequest) GetLoggingErrorBehavior() En
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -377,5 +377,3 @@ func (v *NullableAddGroovyScriptedErrorLogPublisherRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
