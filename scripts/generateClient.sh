@@ -18,4 +18,4 @@ openapi-generator generate \
 rm -r test/
 
 # Generate Stringer implementations
-scripts/generateStringerImplementation.py
+scripts/generateEnumConversionFunctions.py
