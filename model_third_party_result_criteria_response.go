@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyResultCriteriaResponse struct for ThirdPartyResultCriteriaResponse
 type ThirdPartyResultCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Result Criteria
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnumthirdPartyResultCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Result Criteria.
 	ExtensionClass string `json:"extensionClass"`
@@ -62,7 +62,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetSchemas() []EnumthirdPartyResultCr
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetSchemasOk() ([]EnumthirdPartyResultCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -175,7 +175,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -198,7 +198,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -230,7 +230,7 @@ func (o *ThirdPartyResultCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyResultCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -310,5 +310,3 @@ func (v *NullableThirdPartyResultCriteriaResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

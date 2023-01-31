@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // UncachedAttributeCriteriaApiService UncachedAttributeCriteriaApi service
 type UncachedAttributeCriteriaApiService service
 
 type ApiAddUncachedAttributeCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedAttributeCriteriaApiService
+	ctx                                 context.Context
+	ApiService                          *UncachedAttributeCriteriaApiService
 	addUncachedAttributeCriteriaRequest *AddUncachedAttributeCriteriaRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddUncachedAttributeCriteriaRequest) Execute() (*AddUncachedAttribute
 /*
 AddUncachedAttributeCriteria Add a new Uncached Attribute Criteria to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddUncachedAttributeCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) AddUncachedAttributeCriteria(ctx context.Context) ApiAddUncachedAttributeCriteriaRequest {
 	return ApiAddUncachedAttributeCriteriaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddUncachedAttributeCriteria200Response
+//
+//	@return AddUncachedAttributeCriteria200Response
 func (a *UncachedAttributeCriteriaApiService) AddUncachedAttributeCriteriaExecute(r ApiAddUncachedAttributeCriteriaRequest) (*AddUncachedAttributeCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUncachedAttributeCriteria200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUncachedAttributeCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedAttributeCriteriaApiService.AddUncachedAttributeCriteria")
@@ -133,8 +133,8 @@ func (a *UncachedAttributeCriteriaApiService) AddUncachedAttributeCriteriaExecut
 }
 
 type ApiDeleteUncachedAttributeCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedAttributeCriteriaApiService
+	ctx                           context.Context
+	ApiService                    *UncachedAttributeCriteriaApiService
 	uncachedAttributeCriteriaName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteUncachedAttributeCriteriaRequest) Execute() (*http.Response, er
 /*
 DeleteUncachedAttributeCriteria Delete a Uncached Attribute Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be deleted
- @return ApiDeleteUncachedAttributeCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be deleted
+	@return ApiDeleteUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteria(ctx context.Context, uncachedAttributeCriteriaName string) ApiDeleteUncachedAttributeCriteriaRequest {
 	return ApiDeleteUncachedAttributeCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		uncachedAttributeCriteriaName: uncachedAttributeCriteriaName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteria(ct
 // Execute executes the request
 func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteriaExecute(r ApiDeleteUncachedAttributeCriteriaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedAttributeCriteriaApiService.DeleteUncachedAttributeCriteria")
@@ -223,8 +223,8 @@ func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteriaExe
 }
 
 type ApiGetUncachedAttributeCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedAttributeCriteriaApiService
+	ctx                           context.Context
+	ApiService                    *UncachedAttributeCriteriaApiService
 	uncachedAttributeCriteriaName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetUncachedAttributeCriteriaRequest) Execute() (*AddUncachedAttribute
 /*
 GetUncachedAttributeCriteria Returns a single Uncached Attribute Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be read
- @return ApiGetUncachedAttributeCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be read
+	@return ApiGetUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) GetUncachedAttributeCriteria(ctx context.Context, uncachedAttributeCriteriaName string) ApiGetUncachedAttributeCriteriaRequest {
 	return ApiGetUncachedAttributeCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		uncachedAttributeCriteriaName: uncachedAttributeCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddUncachedAttributeCriteria200Response
+//
+//	@return AddUncachedAttributeCriteria200Response
 func (a *UncachedAttributeCriteriaApiService) GetUncachedAttributeCriteriaExecute(r ApiGetUncachedAttributeCriteriaRequest) (*AddUncachedAttributeCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUncachedAttributeCriteria200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUncachedAttributeCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedAttributeCriteriaApiService.GetUncachedAttributeCriteria")
@@ -324,10 +325,10 @@ func (a *UncachedAttributeCriteriaApiService) GetUncachedAttributeCriteriaExecut
 }
 
 type ApiUpdateUncachedAttributeCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedAttributeCriteriaApiService
+	ctx                           context.Context
+	ApiService                    *UncachedAttributeCriteriaApiService
 	uncachedAttributeCriteriaName string
-	updateRequest *UpdateRequest
+	updateRequest                 *UpdateRequest
 }
 
 // Update an existing Uncached Attribute Criteria
@@ -343,26 +344,27 @@ func (r ApiUpdateUncachedAttributeCriteriaRequest) Execute() (*AddUncachedAttrib
 /*
 UpdateUncachedAttributeCriteria Update an existing Uncached Attribute Criteria by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be updated
- @return ApiUpdateUncachedAttributeCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be updated
+	@return ApiUpdateUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) UpdateUncachedAttributeCriteria(ctx context.Context, uncachedAttributeCriteriaName string) ApiUpdateUncachedAttributeCriteriaRequest {
 	return ApiUpdateUncachedAttributeCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		uncachedAttributeCriteriaName: uncachedAttributeCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddUncachedAttributeCriteria200Response
+//
+//	@return AddUncachedAttributeCriteria200Response
 func (a *UncachedAttributeCriteriaApiService) UpdateUncachedAttributeCriteriaExecute(r ApiUpdateUncachedAttributeCriteriaRequest) (*AddUncachedAttributeCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUncachedAttributeCriteria200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUncachedAttributeCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedAttributeCriteriaApiService.UpdateUncachedAttributeCriteria")

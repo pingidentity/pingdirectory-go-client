@@ -17,8 +17,8 @@ import (
 // AddThirdPartyAccessTokenValidatorRequest struct for AddThirdPartyAccessTokenValidatorRequest
 type AddThirdPartyAccessTokenValidatorRequest struct {
 	// Name of the new Access Token Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                        `json:"validatorName"`
+	Schemas       []EnumthirdPartyAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Access Token Validator. Each configuration property should be given in the form 'name=value'.
@@ -71,7 +71,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -95,7 +95,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetSchemas() []EnumthirdParty
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetSchemasOk() ([]EnumthirdPartyAccessTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -142,7 +142,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionArgument() []stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -174,7 +174,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -206,7 +206,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetSubjectClaimName() string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -238,7 +238,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -271,7 +271,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -295,7 +295,7 @@ func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndex() int
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -372,5 +372,3 @@ func (v *NullableAddThirdPartyAccessTokenValidatorRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

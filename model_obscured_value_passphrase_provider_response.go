@@ -16,10 +16,10 @@ import (
 
 // ObscuredValuePassphraseProviderResponse struct for ObscuredValuePassphraseProviderResponse
 type ObscuredValuePassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumobscuredValuePassphraseProviderSchemaUrn `json:"schemas"`
 	// The value to be stored in an obscured form.
 	ObscuredValue string `json:"obscuredValue"`
@@ -63,7 +63,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetSchemas() []EnumobscuredVal
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetSchemasOk() ([]EnumobscuredValuePassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetObscuredValue() string {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetObscuredValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ObscuredValue, true
 }
@@ -199,7 +199,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *ObscuredValuePassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValuePassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullableObscuredValuePassphraseProviderResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

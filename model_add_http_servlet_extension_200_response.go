@@ -18,11 +18,11 @@ import (
 // AddHttpServletExtension200Response - struct for AddHttpServletExtension200Response
 type AddHttpServletExtension200Response struct {
 	AvailabilityStateHttpServletExtensionResponse *AvailabilityStateHttpServletExtensionResponse
-	FileServerHttpServletExtensionResponse *FileServerHttpServletExtensionResponse
-	GroovyScriptedHttpServletExtensionResponse *GroovyScriptedHttpServletExtensionResponse
-	LdapMappedScimHttpServletExtensionResponse *LdapMappedScimHttpServletExtensionResponse
-	QuickstartHttpServletExtensionResponse *QuickstartHttpServletExtensionResponse
-	ThirdPartyHttpServletExtensionResponse *ThirdPartyHttpServletExtensionResponse
+	FileServerHttpServletExtensionResponse        *FileServerHttpServletExtensionResponse
+	GroovyScriptedHttpServletExtensionResponse    *GroovyScriptedHttpServletExtensionResponse
+	LdapMappedScimHttpServletExtensionResponse    *LdapMappedScimHttpServletExtensionResponse
+	QuickstartHttpServletExtensionResponse        *QuickstartHttpServletExtensionResponse
+	ThirdPartyHttpServletExtensionResponse        *ThirdPartyHttpServletExtensionResponse
 }
 
 // AvailabilityStateHttpServletExtensionResponseAsAddHttpServletExtension200Response is a convenience function that returns AvailabilityStateHttpServletExtensionResponse wrapped in AddHttpServletExtension200Response
@@ -66,7 +66,6 @@ func ThirdPartyHttpServletExtensionResponseAsAddHttpServletExtension200Response(
 		ThirdPartyHttpServletExtensionResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddHttpServletExtension200Response) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src AddHttpServletExtension200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddHttpServletExtension200Response) GetActualInstance() (interface{}) {
+func (obj *AddHttpServletExtension200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableAddHttpServletExtension200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // AccessControlHandlerApiService AccessControlHandlerApi service
 type AccessControlHandlerApiService service
 
 type ApiGetAccessControlHandlerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AccessControlHandlerApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetAccessControlHandlerRequest) Execute() (*DseeCompatAccessControlHa
 /*
 GetAccessControlHandler Returns a single Access Control Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAccessControlHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAccessControlHandlerRequest
 */
 func (a *AccessControlHandlerApiService) GetAccessControlHandler(ctx context.Context) ApiGetAccessControlHandlerRequest {
 	return ApiGetAccessControlHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DseeCompatAccessControlHandlerResponse
+//
+//	@return DseeCompatAccessControlHandlerResponse
 func (a *AccessControlHandlerApiService) GetAccessControlHandlerExecute(r ApiGetAccessControlHandlerRequest) (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DseeCompatAccessControlHandlerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DseeCompatAccessControlHandlerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlHandlerApiService.GetAccessControlHandler")
@@ -120,8 +120,8 @@ func (a *AccessControlHandlerApiService) GetAccessControlHandlerExecute(r ApiGet
 }
 
 type ApiUpdateAccessControlHandlerRequest struct {
-	ctx context.Context
-	ApiService *AccessControlHandlerApiService
+	ctx           context.Context
+	ApiService    *AccessControlHandlerApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateAccessControlHandlerRequest) Execute() (*DseeCompatAccessContro
 /*
 UpdateAccessControlHandler Update an existing Access Control Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateAccessControlHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateAccessControlHandlerRequest
 */
 func (a *AccessControlHandlerApiService) UpdateAccessControlHandler(ctx context.Context) ApiUpdateAccessControlHandlerRequest {
 	return ApiUpdateAccessControlHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DseeCompatAccessControlHandlerResponse
+//
+//	@return DseeCompatAccessControlHandlerResponse
 func (a *AccessControlHandlerApiService) UpdateAccessControlHandlerExecute(r ApiUpdateAccessControlHandlerRequest) (*DseeCompatAccessControlHandlerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DseeCompatAccessControlHandlerResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DseeCompatAccessControlHandlerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccessControlHandlerApiService.UpdateAccessControlHandler")

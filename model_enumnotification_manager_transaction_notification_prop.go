@@ -20,9 +20,9 @@ type EnumnotificationManagerTransactionNotificationProp string
 
 // List of Enumnotification-manager-transactionNotificationProp
 const (
-	ENUMNOTIFICATIONMANAGERTRANSACTIONNOTIFICATIONPROP_INDIVIDUAL EnumnotificationManagerTransactionNotificationProp = "individual"
+	ENUMNOTIFICATIONMANAGERTRANSACTIONNOTIFICATIONPROP_INDIVIDUAL         EnumnotificationManagerTransactionNotificationProp = "individual"
 	ENUMNOTIFICATIONMANAGERTRANSACTIONNOTIFICATIONPROP_MATCHED_OPERATIONS EnumnotificationManagerTransactionNotificationProp = "matched-operations"
-	ENUMNOTIFICATIONMANAGERTRANSACTIONNOTIFICATIONPROP_ALL_OPERATIONS EnumnotificationManagerTransactionNotificationProp = "all-operations"
+	ENUMNOTIFICATIONMANAGERTRANSACTIONNOTIFICATIONPROP_ALL_OPERATIONS     EnumnotificationManagerTransactionNotificationProp = "all-operations"
 )
 
 // All allowed values of EnumnotificationManagerTransactionNotificationProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumnotificationManagerTransactionNotificationProp) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

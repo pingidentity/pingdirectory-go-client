@@ -20,8 +20,8 @@ type EnumsensitiveAttributeAllowInFilterProp string
 
 // List of Enumsensitive-attribute-allowInFilterProp
 const (
-	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_ALLOW EnumsensitiveAttributeAllowInFilterProp = "allow"
-	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_REJECT EnumsensitiveAttributeAllowInFilterProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_ALLOW       EnumsensitiveAttributeAllowInFilterProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_REJECT      EnumsensitiveAttributeAllowInFilterProp = "reject"
 	ENUMSENSITIVEATTRIBUTEALLOWINFILTERPROP_SECURE_ONLY EnumsensitiveAttributeAllowInFilterProp = "secure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumsensitiveAttributeAllowInFilterProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

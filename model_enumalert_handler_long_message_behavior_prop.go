@@ -20,7 +20,7 @@ type EnumalertHandlerLongMessageBehaviorProp string
 
 // List of Enumalert-handler-longMessageBehaviorProp
 const (
-	ENUMALERTHANDLERLONGMESSAGEBEHAVIORPROP_TRUNCATE EnumalertHandlerLongMessageBehaviorProp = "truncate"
+	ENUMALERTHANDLERLONGMESSAGEBEHAVIORPROP_TRUNCATE                  EnumalertHandlerLongMessageBehaviorProp = "truncate"
 	ENUMALERTHANDLERLONGMESSAGEBEHAVIORPROP_SEND_AS_MULTIPLE_MESSAGES EnumalertHandlerLongMessageBehaviorProp = "send-as-multiple-messages"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumalertHandlerLongMessageBehaviorProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

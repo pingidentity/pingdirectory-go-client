@@ -17,9 +17,9 @@ import (
 
 // AddVaultAuthenticationMethod200Response - struct for AddVaultAuthenticationMethod200Response
 type AddVaultAuthenticationMethod200Response struct {
-	AppRoleVaultAuthenticationMethodResponse *AppRoleVaultAuthenticationMethodResponse
+	AppRoleVaultAuthenticationMethodResponse     *AppRoleVaultAuthenticationMethodResponse
 	StaticTokenVaultAuthenticationMethodResponse *StaticTokenVaultAuthenticationMethodResponse
-	UserPassVaultAuthenticationMethodResponse *UserPassVaultAuthenticationMethodResponse
+	UserPassVaultAuthenticationMethodResponse    *UserPassVaultAuthenticationMethodResponse
 }
 
 // AppRoleVaultAuthenticationMethodResponseAsAddVaultAuthenticationMethod200Response is a convenience function that returns AppRoleVaultAuthenticationMethodResponse wrapped in AddVaultAuthenticationMethod200Response
@@ -42,7 +42,6 @@ func UserPassVaultAuthenticationMethodResponseAsAddVaultAuthenticationMethod200R
 		UserPassVaultAuthenticationMethodResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVaultAuthenticationMethod200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddVaultAuthenticationMethod200Response) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *AddVaultAuthenticationMethod200Response) GetActualInstance() (interface{}) {
+func (obj *AddVaultAuthenticationMethod200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddVaultAuthenticationMethod200Response) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

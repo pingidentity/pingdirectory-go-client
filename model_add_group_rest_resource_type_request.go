@@ -17,8 +17,8 @@ import (
 // AddGroupRestResourceTypeRequest struct for AddGroupRestResourceTypeRequest
 type AddGroupRestResourceTypeRequest struct {
 	// Name of the new REST Resource Type
-	TypeName string `json:"typeName"`
-	Schemas []EnumgroupRestResourceTypeSchemaUrn `json:"schemas"`
+	TypeName string                               `json:"typeName"`
+	Schemas  []EnumgroupRestResourceTypeSchemaUrn `json:"schemas"`
 	// Specifies the name of the group member column that will be displayed in the Delegated Admin UI
 	MembersColumnName *string `json:"membersColumnName,omitempty"`
 	// Specifies the name of the group nonmember column that will be displayed in the Delegated Admin UI
@@ -98,7 +98,7 @@ func (o *AddGroupRestResourceTypeRequest) GetTypeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TypeName, true
 }
@@ -122,7 +122,7 @@ func (o *AddGroupRestResourceTypeRequest) GetSchemas() []EnumgroupRestResourceTy
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetSchemasOk() ([]EnumgroupRestResourceTypeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -145,7 +145,7 @@ func (o *AddGroupRestResourceTypeRequest) GetMembersColumnName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetMembersColumnNameOk() (*string, bool) {
 	if o == nil || isNil(o.MembersColumnName) {
-    return nil, false
+		return nil, false
 	}
 	return o.MembersColumnName, true
 }
@@ -177,7 +177,7 @@ func (o *AddGroupRestResourceTypeRequest) GetNonmembersColumnName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetNonmembersColumnNameOk() (*string, bool) {
 	if o == nil || isNil(o.NonmembersColumnName) {
-    return nil, false
+		return nil, false
 	}
 	return o.NonmembersColumnName, true
 }
@@ -209,7 +209,7 @@ func (o *AddGroupRestResourceTypeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -242,7 +242,7 @@ func (o *AddGroupRestResourceTypeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -266,7 +266,7 @@ func (o *AddGroupRestResourceTypeRequest) GetResourceEndpoint() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetResourceEndpointOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ResourceEndpoint, true
 }
@@ -290,7 +290,7 @@ func (o *AddGroupRestResourceTypeRequest) GetStructuralLDAPObjectclass() string 
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetStructuralLDAPObjectclassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.StructuralLDAPObjectclass, true
 }
@@ -313,7 +313,7 @@ func (o *AddGroupRestResourceTypeRequest) GetAuxiliaryLDAPObjectclass() []string
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetAuxiliaryLDAPObjectclassOk() ([]string, bool) {
 	if o == nil || isNil(o.AuxiliaryLDAPObjectclass) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuxiliaryLDAPObjectclass, true
 }
@@ -346,7 +346,7 @@ func (o *AddGroupRestResourceTypeRequest) GetSearchBaseDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetSearchBaseDNOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SearchBaseDN, true
 }
@@ -369,7 +369,7 @@ func (o *AddGroupRestResourceTypeRequest) GetIncludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetIncludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -401,7 +401,7 @@ func (o *AddGroupRestResourceTypeRequest) GetParentDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetParentDNOk() (*string, bool) {
 	if o == nil || isNil(o.ParentDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentDN, true
 }
@@ -433,7 +433,7 @@ func (o *AddGroupRestResourceTypeRequest) GetParentResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetParentResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ParentResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentResourceType, true
 }
@@ -465,7 +465,7 @@ func (o *AddGroupRestResourceTypeRequest) GetRelativeDNFromParentResource() stri
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetRelativeDNFromParentResourceOk() (*string, bool) {
 	if o == nil || isNil(o.RelativeDNFromParentResource) {
-    return nil, false
+		return nil, false
 	}
 	return o.RelativeDNFromParentResource, true
 }
@@ -497,7 +497,7 @@ func (o *AddGroupRestResourceTypeRequest) GetCreateRDNAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetCreateRDNAttributeTypeOk() (*string, bool) {
 	if o == nil || isNil(o.CreateRDNAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.CreateRDNAttributeType, true
 }
@@ -529,7 +529,7 @@ func (o *AddGroupRestResourceTypeRequest) GetPostCreateConstructedAttribute() []
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetPostCreateConstructedAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.PostCreateConstructedAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.PostCreateConstructedAttribute, true
 }
@@ -561,7 +561,7 @@ func (o *AddGroupRestResourceTypeRequest) GetUpdateConstructedAttribute() []stri
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetUpdateConstructedAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.UpdateConstructedAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.UpdateConstructedAttribute, true
 }
@@ -593,7 +593,7 @@ func (o *AddGroupRestResourceTypeRequest) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -625,7 +625,7 @@ func (o *AddGroupRestResourceTypeRequest) GetSearchFilterPattern() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetSearchFilterPatternOk() (*string, bool) {
 	if o == nil || isNil(o.SearchFilterPattern) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchFilterPattern, true
 }
@@ -657,7 +657,7 @@ func (o *AddGroupRestResourceTypeRequest) GetPrimaryDisplayAttributeType() strin
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetPrimaryDisplayAttributeTypeOk() (*string, bool) {
 	if o == nil || isNil(o.PrimaryDisplayAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimaryDisplayAttributeType, true
 }
@@ -689,7 +689,7 @@ func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.DelegatedAdminSearchSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.DelegatedAdminSearchSizeLimit, true
 }
@@ -721,7 +721,7 @@ func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int
 // and a boolean to check if the value has been set.
 func (o *AddGroupRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.DelegatedAdminReportSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.DelegatedAdminReportSizeLimit, true
 }
@@ -846,5 +846,3 @@ func (v *NullableAddGroupRestResourceTypeRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

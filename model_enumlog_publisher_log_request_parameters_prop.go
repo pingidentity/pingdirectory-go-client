@@ -20,8 +20,8 @@ type EnumlogPublisherLogRequestParametersProp string
 
 // List of Enumlog-publisher-logRequestParametersProp
 const (
-	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_NONE EnumlogPublisherLogRequestParametersProp = "none"
-	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_PARAMETER_NAMES EnumlogPublisherLogRequestParametersProp = "parameter-names"
+	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_NONE                       EnumlogPublisherLogRequestParametersProp = "none"
+	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_PARAMETER_NAMES            EnumlogPublisherLogRequestParametersProp = "parameter-names"
 	ENUMLOGPUBLISHERLOGREQUESTPARAMETERSPROP_PARAMETER_NAMES_AND_VALUES EnumlogPublisherLogRequestParametersProp = "parameter-names-and-values"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumlogPublisherLogRequestParametersProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

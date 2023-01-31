@@ -20,7 +20,7 @@ type EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp string
 
 // List of Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp
 const (
-	ENUMRECURRINGTASKCHAINSERVEROFFLINEATSTARTTIMEBEHAVIORPROP_RUN_IMMEDIATELY_UPON_SERVER_STARTUP EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp = "run-immediately-upon-server-startup"
+	ENUMRECURRINGTASKCHAINSERVEROFFLINEATSTARTTIMEBEHAVIORPROP_RUN_IMMEDIATELY_UPON_SERVER_STARTUP                     EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp = "run-immediately-upon-server-startup"
 	ENUMRECURRINGTASKCHAINSERVEROFFLINEATSTARTTIMEBEHAVIORPROP_CANCEL_ITERATION_AND_WAIT_FOR_NEXT_SCHEDULED_START_TIME EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp = "cancel-iteration-and-wait-for-next-scheduled-start-time"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

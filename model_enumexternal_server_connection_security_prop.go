@@ -20,8 +20,8 @@ type EnumexternalServerConnectionSecurityProp string
 
 // List of Enumexternal-server-connectionSecurityProp
 const (
-	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_NONE EnumexternalServerConnectionSecurityProp = "none"
-	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_SSL EnumexternalServerConnectionSecurityProp = "ssl"
+	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_NONE     EnumexternalServerConnectionSecurityProp = "none"
+	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_SSL      EnumexternalServerConnectionSecurityProp = "ssl"
 	ENUMEXTERNALSERVERCONNECTIONSECURITYPROP_STARTTLS EnumexternalServerConnectionSecurityProp = "starttls"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumexternalServerConnectionSecurityProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,10 +16,10 @@ import (
 
 // DictionaryPasswordValidatorResponse struct for DictionaryPasswordValidatorResponse
 type DictionaryPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumdictionaryPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing a list of words that cannot be used as passwords.
 	DictionaryFile string `json:"dictionaryFile"`
@@ -83,7 +83,7 @@ func (o *DictionaryPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *DictionaryPasswordValidatorResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *DictionaryPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *DictionaryPasswordValidatorResponse) GetSchemas() []EnumdictionaryPassw
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetSchemasOk() ([]EnumdictionaryPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -196,7 +196,7 @@ func (o *DictionaryPasswordValidatorResponse) GetDictionaryFile() string {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetDictionaryFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DictionaryFile, true
 }
@@ -220,7 +220,7 @@ func (o *DictionaryPasswordValidatorResponse) GetCaseSensitiveValidation() bool 
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetCaseSensitiveValidationOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CaseSensitiveValidation, true
 }
@@ -244,7 +244,7 @@ func (o *DictionaryPasswordValidatorResponse) GetTestReversedPassword() bool {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetTestReversedPasswordOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TestReversedPassword, true
 }
@@ -267,7 +267,7 @@ func (o *DictionaryPasswordValidatorResponse) GetIgnoreLeadingNonAlphabeticChara
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetIgnoreLeadingNonAlphabeticCharactersOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreLeadingNonAlphabeticCharacters) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreLeadingNonAlphabeticCharacters, true
 }
@@ -299,7 +299,7 @@ func (o *DictionaryPasswordValidatorResponse) GetIgnoreTrailingNonAlphabeticChar
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetIgnoreTrailingNonAlphabeticCharactersOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreTrailingNonAlphabeticCharacters) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreTrailingNonAlphabeticCharacters, true
 }
@@ -331,7 +331,7 @@ func (o *DictionaryPasswordValidatorResponse) GetStripDiacriticalMarks() bool {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetStripDiacriticalMarksOk() (*bool, bool) {
 	if o == nil || isNil(o.StripDiacriticalMarks) {
-    return nil, false
+		return nil, false
 	}
 	return o.StripDiacriticalMarks, true
 }
@@ -363,7 +363,7 @@ func (o *DictionaryPasswordValidatorResponse) GetAlternativePasswordCharacterMap
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetAlternativePasswordCharacterMappingOk() ([]string, bool) {
 	if o == nil || isNil(o.AlternativePasswordCharacterMapping) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlternativePasswordCharacterMapping, true
 }
@@ -395,7 +395,7 @@ func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPassword
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetMaximumAllowedPercentOfPasswordOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumAllowedPercentOfPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumAllowedPercentOfPassword, true
 }
@@ -427,7 +427,7 @@ func (o *DictionaryPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -460,7 +460,7 @@ func (o *DictionaryPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -483,7 +483,7 @@ func (o *DictionaryPasswordValidatorResponse) GetValidatorRequirementDescription
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -515,7 +515,7 @@ func (o *DictionaryPasswordValidatorResponse) GetValidatorFailureMessage() strin
 // and a boolean to check if the value has been set.
 func (o *DictionaryPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -622,5 +622,3 @@ func (v *NullableDictionaryPasswordValidatorResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

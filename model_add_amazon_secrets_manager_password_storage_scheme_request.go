@@ -17,8 +17,8 @@ import (
 // AddAmazonSecretsManagerPasswordStorageSchemeRequest struct for AddAmazonSecretsManagerPasswordStorageSchemeRequest
 type AddAmazonSecretsManagerPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                                   `json:"schemeName"`
+	Schemas    []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager service.
 	AwsExternalServer string `json:"awsExternalServer"`
 	// The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user.
@@ -64,7 +64,7 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemeName() st
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -88,7 +88,7 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemas() []Enu
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetAwsExternalServ
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetAwsExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AwsExternalServer, true
 }
@@ -135,7 +135,7 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetDefaultField() 
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetDefaultFieldOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultField) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultField, true
 }
@@ -167,7 +167,7 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetDescription() s
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetEnabled() bool 
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddAmazonSecretsManagerPasswordStorageSchemeRequest) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

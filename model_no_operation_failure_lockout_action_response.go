@@ -16,10 +16,10 @@ import (
 
 // NoOperationFailureLockoutActionResponse struct for NoOperationFailureLockoutActionResponse
 type NoOperationFailureLockoutActionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Failure Lockout Action
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumnoOperationFailureLockoutActionSchemaUrn `json:"schemas"`
 	// Indicates whether to generate an account status notification for cases in which this failure lockout action is invoked for a bind attempt with too many outstanding authentication failures.
 	GenerateAccountStatusNotification *bool `json:"generateAccountStatusNotification,omitempty"`
@@ -59,7 +59,7 @@ func (o *NoOperationFailureLockoutActionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *NoOperationFailureLockoutActionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -91,7 +91,7 @@ func (o *NoOperationFailureLockoutActionResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *NoOperationFailureLockoutActionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -124,7 +124,7 @@ func (o *NoOperationFailureLockoutActionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *NoOperationFailureLockoutActionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -148,7 +148,7 @@ func (o *NoOperationFailureLockoutActionResponse) GetSchemas() []EnumnoOperation
 // and a boolean to check if the value has been set.
 func (o *NoOperationFailureLockoutActionResponse) GetSchemasOk() ([]EnumnoOperationFailureLockoutActionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -171,7 +171,7 @@ func (o *NoOperationFailureLockoutActionResponse) GetGenerateAccountStatusNotifi
 // and a boolean to check if the value has been set.
 func (o *NoOperationFailureLockoutActionResponse) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerateAccountStatusNotification) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
 }
@@ -203,7 +203,7 @@ func (o *NoOperationFailureLockoutActionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *NoOperationFailureLockoutActionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -280,5 +280,3 @@ func (v *NullableNoOperationFailureLockoutActionResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddPingOneIdTokenValidatorRequest struct for AddPingOneIdTokenValidatorRequest
 type AddPingOneIdTokenValidatorRequest struct {
 	// Name of the new ID Token Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumpingOneIdTokenValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                 `json:"validatorName"`
+	Schemas       []EnumpingOneIdTokenValidatorSchemaUrn `json:"schemas"`
 	// Specifies a PingOne base issuer URL.
 	IssuerURL string `json:"issuerURL"`
 	// Specifies HTTPS connection settings for the PingOne OpenID Connect provider.
@@ -79,7 +79,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -103,7 +103,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetSchemas() []EnumpingOneIdTokenVal
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetSchemasOk() ([]EnumpingOneIdTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -127,7 +127,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetIssuerURL() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetIssuerURLOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IssuerURL, true
 }
@@ -151,7 +151,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.OpenIDConnectProvider, true
 }
@@ -174,7 +174,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectMetadataCacheDuratio
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectMetadataCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.OpenIDConnectMetadataCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.OpenIDConnectMetadataCacheDuration, true
 }
@@ -206,7 +206,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -239,7 +239,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -263,7 +263,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -286,7 +286,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetSubjectClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -318,7 +318,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetClockSkewGracePeriod() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetClockSkewGracePeriodOk() (*string, bool) {
 	if o == nil || isNil(o.ClockSkewGracePeriod) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
 }
@@ -350,7 +350,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetJwksCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetJwksCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.JwksCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.JwksCacheDuration, true
 }
@@ -383,7 +383,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetEvaluationOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -469,5 +469,3 @@ func (v *NullableAddPingOneIdTokenValidatorRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

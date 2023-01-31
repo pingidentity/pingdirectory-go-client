@@ -22,7 +22,7 @@ type EnummonitoringEndpointConnectionTypeProp string
 const (
 	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_UNENCRYPTED_UDP EnummonitoringEndpointConnectionTypeProp = "unencrypted-udp"
 	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_UNENCRYPTED_TCP EnummonitoringEndpointConnectionTypeProp = "unencrypted-tcp"
-	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_SSL_OVER_TCP EnummonitoringEndpointConnectionTypeProp = "ssl-over-tcp"
+	ENUMMONITORINGENDPOINTCONNECTIONTYPEPROP_SSL_OVER_TCP    EnummonitoringEndpointConnectionTypeProp = "ssl-over-tcp"
 )
 
 // All allowed values of EnummonitoringEndpointConnectionTypeProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnummonitoringEndpointConnectionTypeProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

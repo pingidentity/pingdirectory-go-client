@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // VaultAuthenticationMethodApiService VaultAuthenticationMethodApi service
 type VaultAuthenticationMethodApiService service
 
 type ApiAddVaultAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *VaultAuthenticationMethodApiService
+	ctx                                 context.Context
+	ApiService                          *VaultAuthenticationMethodApiService
 	addVaultAuthenticationMethodRequest *AddVaultAuthenticationMethodRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddVaultAuthenticationMethodRequest) Execute() (*AddVaultAuthenticati
 /*
 AddVaultAuthenticationMethod Add a new Vault Authentication Method to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVaultAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) AddVaultAuthenticationMethod(ctx context.Context) ApiAddVaultAuthenticationMethodRequest {
 	return ApiAddVaultAuthenticationMethodRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddVaultAuthenticationMethod200Response
+//
+//	@return AddVaultAuthenticationMethod200Response
 func (a *VaultAuthenticationMethodApiService) AddVaultAuthenticationMethodExecute(r ApiAddVaultAuthenticationMethodRequest) (*AddVaultAuthenticationMethod200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVaultAuthenticationMethod200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVaultAuthenticationMethod200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VaultAuthenticationMethodApiService.AddVaultAuthenticationMethod")
@@ -133,8 +133,8 @@ func (a *VaultAuthenticationMethodApiService) AddVaultAuthenticationMethodExecut
 }
 
 type ApiDeleteVaultAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *VaultAuthenticationMethodApiService
+	ctx                           context.Context
+	ApiService                    *VaultAuthenticationMethodApiService
 	vaultAuthenticationMethodName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteVaultAuthenticationMethodRequest) Execute() (*http.Response, er
 /*
 DeleteVaultAuthenticationMethod Delete a Vault Authentication Method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param vaultAuthenticationMethodName Name of the Vault Authentication Method to be deleted
- @return ApiDeleteVaultAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param vaultAuthenticationMethodName Name of the Vault Authentication Method to be deleted
+	@return ApiDeleteVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) DeleteVaultAuthenticationMethod(ctx context.Context, vaultAuthenticationMethodName string) ApiDeleteVaultAuthenticationMethodRequest {
 	return ApiDeleteVaultAuthenticationMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		vaultAuthenticationMethodName: vaultAuthenticationMethodName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *VaultAuthenticationMethodApiService) DeleteVaultAuthenticationMethod(ct
 // Execute executes the request
 func (a *VaultAuthenticationMethodApiService) DeleteVaultAuthenticationMethodExecute(r ApiDeleteVaultAuthenticationMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VaultAuthenticationMethodApiService.DeleteVaultAuthenticationMethod")
@@ -223,8 +223,8 @@ func (a *VaultAuthenticationMethodApiService) DeleteVaultAuthenticationMethodExe
 }
 
 type ApiGetVaultAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *VaultAuthenticationMethodApiService
+	ctx                           context.Context
+	ApiService                    *VaultAuthenticationMethodApiService
 	vaultAuthenticationMethodName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetVaultAuthenticationMethodRequest) Execute() (*AddVaultAuthenticati
 /*
 GetVaultAuthenticationMethod Returns a single Vault Authentication Method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param vaultAuthenticationMethodName Name of the Vault Authentication Method to be read
- @return ApiGetVaultAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param vaultAuthenticationMethodName Name of the Vault Authentication Method to be read
+	@return ApiGetVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) GetVaultAuthenticationMethod(ctx context.Context, vaultAuthenticationMethodName string) ApiGetVaultAuthenticationMethodRequest {
 	return ApiGetVaultAuthenticationMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		vaultAuthenticationMethodName: vaultAuthenticationMethodName,
 	}
 }
 
 // Execute executes the request
-//  @return AddVaultAuthenticationMethod200Response
+//
+//	@return AddVaultAuthenticationMethod200Response
 func (a *VaultAuthenticationMethodApiService) GetVaultAuthenticationMethodExecute(r ApiGetVaultAuthenticationMethodRequest) (*AddVaultAuthenticationMethod200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVaultAuthenticationMethod200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVaultAuthenticationMethod200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VaultAuthenticationMethodApiService.GetVaultAuthenticationMethod")
@@ -324,10 +325,10 @@ func (a *VaultAuthenticationMethodApiService) GetVaultAuthenticationMethodExecut
 }
 
 type ApiUpdateVaultAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *VaultAuthenticationMethodApiService
+	ctx                           context.Context
+	ApiService                    *VaultAuthenticationMethodApiService
 	vaultAuthenticationMethodName string
-	updateRequest *UpdateRequest
+	updateRequest                 *UpdateRequest
 }
 
 // Update an existing Vault Authentication Method
@@ -343,26 +344,27 @@ func (r ApiUpdateVaultAuthenticationMethodRequest) Execute() (*AddVaultAuthentic
 /*
 UpdateVaultAuthenticationMethod Update an existing Vault Authentication Method by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param vaultAuthenticationMethodName Name of the Vault Authentication Method to be updated
- @return ApiUpdateVaultAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param vaultAuthenticationMethodName Name of the Vault Authentication Method to be updated
+	@return ApiUpdateVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) UpdateVaultAuthenticationMethod(ctx context.Context, vaultAuthenticationMethodName string) ApiUpdateVaultAuthenticationMethodRequest {
 	return ApiUpdateVaultAuthenticationMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		vaultAuthenticationMethodName: vaultAuthenticationMethodName,
 	}
 }
 
 // Execute executes the request
-//  @return AddVaultAuthenticationMethod200Response
+//
+//	@return AddVaultAuthenticationMethod200Response
 func (a *VaultAuthenticationMethodApiService) UpdateVaultAuthenticationMethodExecute(r ApiUpdateVaultAuthenticationMethodRequest) (*AddVaultAuthenticationMethod200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVaultAuthenticationMethod200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVaultAuthenticationMethod200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VaultAuthenticationMethodApiService.UpdateVaultAuthenticationMethod")

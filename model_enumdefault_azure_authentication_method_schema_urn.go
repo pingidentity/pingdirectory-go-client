@@ -106,4 +106,3 @@ func (v *NullableEnumdefaultAzureAuthenticationMethodSchemaUrn) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

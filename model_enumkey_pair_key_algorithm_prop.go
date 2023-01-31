@@ -23,9 +23,9 @@ const (
 	ENUMKEYPAIRKEYALGORITHMPROP_RSA_2048 EnumkeyPairKeyAlgorithmProp = "RSA_2048"
 	ENUMKEYPAIRKEYALGORITHMPROP_RSA_3072 EnumkeyPairKeyAlgorithmProp = "RSA_3072"
 	ENUMKEYPAIRKEYALGORITHMPROP_RSA_4096 EnumkeyPairKeyAlgorithmProp = "RSA_4096"
-	ENUMKEYPAIRKEYALGORITHMPROP_EC_256 EnumkeyPairKeyAlgorithmProp = "EC_256"
-	ENUMKEYPAIRKEYALGORITHMPROP_EC_384 EnumkeyPairKeyAlgorithmProp = "EC_384"
-	ENUMKEYPAIRKEYALGORITHMPROP_EC_521 EnumkeyPairKeyAlgorithmProp = "EC_521"
+	ENUMKEYPAIRKEYALGORITHMPROP_EC_256   EnumkeyPairKeyAlgorithmProp = "EC_256"
+	ENUMKEYPAIRKEYALGORITHMPROP_EC_384   EnumkeyPairKeyAlgorithmProp = "EC_384"
+	ENUMKEYPAIRKEYALGORITHMPROP_EC_521   EnumkeyPairKeyAlgorithmProp = "EC_521"
 )
 
 // All allowed values of EnumkeyPairKeyAlgorithmProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumkeyPairKeyAlgorithmProp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

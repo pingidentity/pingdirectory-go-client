@@ -17,8 +17,8 @@ import (
 // AddDefaultAzureAuthenticationMethodRequest struct for AddDefaultAzureAuthenticationMethodRequest
 type AddDefaultAzureAuthenticationMethodRequest struct {
 	// Name of the new Azure Authentication Method
-	MethodName string `json:"methodName"`
-	Schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn `json:"schemas"`
+	MethodName string                                          `json:"methodName"`
+	Schemas    []EnumdefaultAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_TENANT_ID environment variable.
 	TenantID *string `json:"tenantID,omitempty"`
 	// The client ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_CLIENT_ID
@@ -60,7 +60,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MethodName, true
 }
@@ -84,7 +84,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetSchemas() []EnumdefaultA
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetSchemasOk() ([]EnumdefaultAzureAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetTenantID() string {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetTenantIDOk() (*string, bool) {
 	if o == nil || isNil(o.TenantID) {
-    return nil, false
+		return nil, false
 	}
 	return o.TenantID, true
 }
@@ -139,7 +139,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetClientID() string {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetClientIDOk() (*string, bool) {
 	if o == nil || isNil(o.ClientID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientID, true
 }
@@ -171,7 +171,7 @@ func (o *AddDefaultAzureAuthenticationMethodRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDefaultAzureAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -245,5 +245,3 @@ func (v *NullableAddDefaultAzureAuthenticationMethodRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

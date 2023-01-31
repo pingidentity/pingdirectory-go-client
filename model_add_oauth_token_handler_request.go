@@ -18,7 +18,7 @@ import (
 // AddOauthTokenHandlerRequest - struct for AddOauthTokenHandlerRequest
 type AddOauthTokenHandlerRequest struct {
 	AddGroovyScriptedOauthTokenHandlerRequest *AddGroovyScriptedOauthTokenHandlerRequest
-	AddThirdPartyOauthTokenHandlerRequest *AddThirdPartyOauthTokenHandlerRequest
+	AddThirdPartyOauthTokenHandlerRequest     *AddThirdPartyOauthTokenHandlerRequest
 }
 
 // AddGroovyScriptedOauthTokenHandlerRequestAsAddOauthTokenHandlerRequest is a convenience function that returns AddGroovyScriptedOauthTokenHandlerRequest wrapped in AddOauthTokenHandlerRequest
@@ -34,7 +34,6 @@ func AddThirdPartyOauthTokenHandlerRequestAsAddOauthTokenHandlerRequest(v *AddTh
 		AddThirdPartyOauthTokenHandlerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddOauthTokenHandlerRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddOauthTokenHandlerRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddOauthTokenHandlerRequest) GetActualInstance() (interface{}) {
+func (obj *AddOauthTokenHandlerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddOauthTokenHandlerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

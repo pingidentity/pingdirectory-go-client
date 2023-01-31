@@ -17,18 +17,18 @@ import (
 
 // AddExternalServerRequest - struct for AddExternalServerRequest
 type AddExternalServerRequest struct {
-	AddActiveDirectoryExternalServerRequest *AddActiveDirectoryExternalServerRequest
-	AddAmazonAwsExternalServerRequest *AddAmazonAwsExternalServerRequest
-	AddConjurExternalServerRequest *AddConjurExternalServerRequest
-	AddJdbcExternalServerRequest *AddJdbcExternalServerRequest
-	AddNokiaDsExternalServerRequest *AddNokiaDsExternalServerRequest
-	AddNokiaProxyServerExternalServerRequest *AddNokiaProxyServerExternalServerRequest
-	AddOpendjExternalServerRequest *AddOpendjExternalServerRequest
+	AddActiveDirectoryExternalServerRequest        *AddActiveDirectoryExternalServerRequest
+	AddAmazonAwsExternalServerRequest              *AddAmazonAwsExternalServerRequest
+	AddConjurExternalServerRequest                 *AddConjurExternalServerRequest
+	AddJdbcExternalServerRequest                   *AddJdbcExternalServerRequest
+	AddNokiaDsExternalServerRequest                *AddNokiaDsExternalServerRequest
+	AddNokiaProxyServerExternalServerRequest       *AddNokiaProxyServerExternalServerRequest
+	AddOpendjExternalServerRequest                 *AddOpendjExternalServerRequest
 	AddOracleUnifiedDirectoryExternalServerRequest *AddOracleUnifiedDirectoryExternalServerRequest
-	AddPingOneHttpExternalServerRequest *AddPingOneHttpExternalServerRequest
-	AddSmtpExternalServerRequest *AddSmtpExternalServerRequest
-	AddSyslogExternalServerRequest *AddSyslogExternalServerRequest
-	AddVaultExternalServerRequest *AddVaultExternalServerRequest
+	AddPingOneHttpExternalServerRequest            *AddPingOneHttpExternalServerRequest
+	AddSmtpExternalServerRequest                   *AddSmtpExternalServerRequest
+	AddSyslogExternalServerRequest                 *AddSyslogExternalServerRequest
+	AddVaultExternalServerRequest                  *AddVaultExternalServerRequest
 }
 
 // AddActiveDirectoryExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddActiveDirectoryExternalServerRequest wrapped in AddExternalServerRequest
@@ -114,7 +114,6 @@ func AddVaultExternalServerRequestAsAddExternalServerRequest(v *AddVaultExternal
 		AddVaultExternalServerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src AddExternalServerRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddExternalServerRequest) GetActualInstance() (interface{}) {
+func (obj *AddExternalServerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableAddExternalServerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

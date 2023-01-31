@@ -20,9 +20,9 @@ type EnumsaslMechanismHandlerCertificateValidationPolicyProp string
 
 // List of Enumsasl-mechanism-handler-certificateValidationPolicyProp
 const (
-	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_ALWAYS EnumsaslMechanismHandlerCertificateValidationPolicyProp = "always"
+	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_ALWAYS    EnumsaslMechanismHandlerCertificateValidationPolicyProp = "always"
 	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_IFPRESENT EnumsaslMechanismHandlerCertificateValidationPolicyProp = "ifpresent"
-	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_NEVER EnumsaslMechanismHandlerCertificateValidationPolicyProp = "never"
+	ENUMSASLMECHANISMHANDLERCERTIFICATEVALIDATIONPOLICYPROP_NEVER     EnumsaslMechanismHandlerCertificateValidationPolicyProp = "never"
 )
 
 // All allowed values of EnumsaslMechanismHandlerCertificateValidationPolicyProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumsaslMechanismHandlerCertificateValidationPolicyProp) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

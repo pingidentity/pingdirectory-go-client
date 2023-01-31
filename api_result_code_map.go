@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ResultCodeMapApiService ResultCodeMapApi service
 type ResultCodeMapApiService service
 
 type ApiAddResultCodeMapRequest struct {
-	ctx context.Context
-	ApiService *ResultCodeMapApiService
+	ctx                     context.Context
+	ApiService              *ResultCodeMapApiService
 	addResultCodeMapRequest *AddResultCodeMapRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddResultCodeMapRequest) Execute() (*ResultCodeMapResponse, *http.Res
 /*
 AddResultCodeMap Add a new Result Code Map to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddResultCodeMapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) AddResultCodeMap(ctx context.Context) ApiAddResultCodeMapRequest {
 	return ApiAddResultCodeMapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ResultCodeMapResponse
+//
+//	@return ResultCodeMapResponse
 func (a *ResultCodeMapApiService) AddResultCodeMapExecute(r ApiAddResultCodeMapRequest) (*ResultCodeMapResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResultCodeMapResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResultCodeMapResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResultCodeMapApiService.AddResultCodeMap")
@@ -133,8 +133,8 @@ func (a *ResultCodeMapApiService) AddResultCodeMapExecute(r ApiAddResultCodeMapR
 }
 
 type ApiDeleteResultCodeMapRequest struct {
-	ctx context.Context
-	ApiService *ResultCodeMapApiService
+	ctx               context.Context
+	ApiService        *ResultCodeMapApiService
 	resultCodeMapName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteResultCodeMapRequest) Execute() (*http.Response, error) {
 /*
 DeleteResultCodeMap Delete a Result Code Map
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param resultCodeMapName Name of the Result Code Map to be deleted
- @return ApiDeleteResultCodeMapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param resultCodeMapName Name of the Result Code Map to be deleted
+	@return ApiDeleteResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) DeleteResultCodeMap(ctx context.Context, resultCodeMapName string) ApiDeleteResultCodeMapRequest {
 	return ApiDeleteResultCodeMapRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		resultCodeMapName: resultCodeMapName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ResultCodeMapApiService) DeleteResultCodeMap(ctx context.Context, resul
 // Execute executes the request
 func (a *ResultCodeMapApiService) DeleteResultCodeMapExecute(r ApiDeleteResultCodeMapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResultCodeMapApiService.DeleteResultCodeMap")
@@ -223,8 +223,8 @@ func (a *ResultCodeMapApiService) DeleteResultCodeMapExecute(r ApiDeleteResultCo
 }
 
 type ApiGetResultCodeMapRequest struct {
-	ctx context.Context
-	ApiService *ResultCodeMapApiService
+	ctx               context.Context
+	ApiService        *ResultCodeMapApiService
 	resultCodeMapName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetResultCodeMapRequest) Execute() (*ResultCodeMapResponse, *http.Res
 /*
 GetResultCodeMap Returns a single Result Code Map
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param resultCodeMapName Name of the Result Code Map to be read
- @return ApiGetResultCodeMapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param resultCodeMapName Name of the Result Code Map to be read
+	@return ApiGetResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) GetResultCodeMap(ctx context.Context, resultCodeMapName string) ApiGetResultCodeMapRequest {
 	return ApiGetResultCodeMapRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		resultCodeMapName: resultCodeMapName,
 	}
 }
 
 // Execute executes the request
-//  @return ResultCodeMapResponse
+//
+//	@return ResultCodeMapResponse
 func (a *ResultCodeMapApiService) GetResultCodeMapExecute(r ApiGetResultCodeMapRequest) (*ResultCodeMapResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResultCodeMapResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResultCodeMapResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResultCodeMapApiService.GetResultCodeMap")
@@ -324,10 +325,10 @@ func (a *ResultCodeMapApiService) GetResultCodeMapExecute(r ApiGetResultCodeMapR
 }
 
 type ApiUpdateResultCodeMapRequest struct {
-	ctx context.Context
-	ApiService *ResultCodeMapApiService
+	ctx               context.Context
+	ApiService        *ResultCodeMapApiService
 	resultCodeMapName string
-	updateRequest *UpdateRequest
+	updateRequest     *UpdateRequest
 }
 
 // Update an existing Result Code Map
@@ -343,26 +344,27 @@ func (r ApiUpdateResultCodeMapRequest) Execute() (*ResultCodeMapResponse, *http.
 /*
 UpdateResultCodeMap Update an existing Result Code Map by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param resultCodeMapName Name of the Result Code Map to be updated
- @return ApiUpdateResultCodeMapRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param resultCodeMapName Name of the Result Code Map to be updated
+	@return ApiUpdateResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) UpdateResultCodeMap(ctx context.Context, resultCodeMapName string) ApiUpdateResultCodeMapRequest {
 	return ApiUpdateResultCodeMapRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		resultCodeMapName: resultCodeMapName,
 	}
 }
 
 // Execute executes the request
-//  @return ResultCodeMapResponse
+//
+//	@return ResultCodeMapResponse
 func (a *ResultCodeMapApiService) UpdateResultCodeMapExecute(r ApiUpdateResultCodeMapRequest) (*ResultCodeMapResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResultCodeMapResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResultCodeMapResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResultCodeMapApiService.UpdateResultCodeMap")

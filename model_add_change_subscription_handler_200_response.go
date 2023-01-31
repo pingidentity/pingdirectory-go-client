@@ -18,8 +18,8 @@ import (
 // AddChangeSubscriptionHandler200Response - struct for AddChangeSubscriptionHandler200Response
 type AddChangeSubscriptionHandler200Response struct {
 	GroovyScriptedChangeSubscriptionHandlerResponse *GroovyScriptedChangeSubscriptionHandlerResponse
-	LoggingChangeSubscriptionHandlerResponse *LoggingChangeSubscriptionHandlerResponse
-	ThirdPartyChangeSubscriptionHandlerResponse *ThirdPartyChangeSubscriptionHandlerResponse
+	LoggingChangeSubscriptionHandlerResponse        *LoggingChangeSubscriptionHandlerResponse
+	ThirdPartyChangeSubscriptionHandlerResponse     *ThirdPartyChangeSubscriptionHandlerResponse
 }
 
 // GroovyScriptedChangeSubscriptionHandlerResponseAsAddChangeSubscriptionHandler200Response is a convenience function that returns GroovyScriptedChangeSubscriptionHandlerResponse wrapped in AddChangeSubscriptionHandler200Response
@@ -42,7 +42,6 @@ func ThirdPartyChangeSubscriptionHandlerResponseAsAddChangeSubscriptionHandler20
 		ThirdPartyChangeSubscriptionHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddChangeSubscriptionHandler200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddChangeSubscriptionHandler200Response) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *AddChangeSubscriptionHandler200Response) GetActualInstance() (interface{}) {
+func (obj *AddChangeSubscriptionHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddChangeSubscriptionHandler200Response) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

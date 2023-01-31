@@ -17,14 +17,14 @@ import (
 
 // AddExtendedOperationHandlerRequest - struct for AddExtendedOperationHandlerRequest
 type AddExtendedOperationHandlerRequest struct {
-	AddCollectSupportDataExtendedOperationHandlerRequest *AddCollectSupportDataExtendedOperationHandlerRequest
-	AddDeliverOtpExtendedOperationHandlerRequest *AddDeliverOtpExtendedOperationHandlerRequest
+	AddCollectSupportDataExtendedOperationHandlerRequest        *AddCollectSupportDataExtendedOperationHandlerRequest
+	AddDeliverOtpExtendedOperationHandlerRequest                *AddDeliverOtpExtendedOperationHandlerRequest
 	AddDeliverPasswordResetTokenExtendedOperationHandlerRequest *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest
 	AddExportReversiblePasswordsExtendedOperationHandlerRequest *AddExportReversiblePasswordsExtendedOperationHandlerRequest
-	AddReplaceCertificateExtendedOperationHandlerRequest *AddReplaceCertificateExtendedOperationHandlerRequest
-	AddSingleUseTokensExtendedOperationHandlerRequest *AddSingleUseTokensExtendedOperationHandlerRequest
-	AddThirdPartyExtendedOperationHandlerRequest *AddThirdPartyExtendedOperationHandlerRequest
-	AddValidateTotpPasswordExtendedOperationHandlerRequest *AddValidateTotpPasswordExtendedOperationHandlerRequest
+	AddReplaceCertificateExtendedOperationHandlerRequest        *AddReplaceCertificateExtendedOperationHandlerRequest
+	AddSingleUseTokensExtendedOperationHandlerRequest           *AddSingleUseTokensExtendedOperationHandlerRequest
+	AddThirdPartyExtendedOperationHandlerRequest                *AddThirdPartyExtendedOperationHandlerRequest
+	AddValidateTotpPasswordExtendedOperationHandlerRequest      *AddValidateTotpPasswordExtendedOperationHandlerRequest
 }
 
 // AddCollectSupportDataExtendedOperationHandlerRequestAsAddExtendedOperationHandlerRequest is a convenience function that returns AddCollectSupportDataExtendedOperationHandlerRequest wrapped in AddExtendedOperationHandlerRequest
@@ -82,7 +82,6 @@ func AddValidateTotpPasswordExtendedOperationHandlerRequestAsAddExtendedOperatio
 		AddValidateTotpPasswordExtendedOperationHandlerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddExtendedOperationHandlerRequest) UnmarshalJSON(data []byte) error {
@@ -249,7 +248,7 @@ func (src AddExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddExtendedOperationHandlerRequest) GetActualInstance() (interface{}) {
+func (obj *AddExtendedOperationHandlerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -324,5 +323,3 @@ func (v *NullableAddExtendedOperationHandlerRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

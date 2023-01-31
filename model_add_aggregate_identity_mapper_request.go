@@ -17,8 +17,8 @@ import (
 // AddAggregateIdentityMapperRequest struct for AddAggregateIdentityMapperRequest
 type AddAggregateIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
+	MapperName string                                 `json:"mapperName"`
+	Schemas    []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
 	// The set of identity mappers that must all match the target entry. Each identity mapper must uniquely match the same target entry. If any of the identity mappers match multiple entries, if any of them match zero entries, or if any of them match different entries, then the mapping will fail.
 	AllIncludedIdentityMapper []string `json:"allIncludedIdentityMapper,omitempty"`
 	// The set of identity mappers that will be used to identify the target entry. At least one identity mapper must uniquely match an entry. If multiple identity mappers match entries, then they must all uniquely match the same entry. If none of the identity mappers match any entries, if any of them match multiple entries, or if any of them match different entries, then the mapping will fail.
@@ -63,7 +63,7 @@ func (o *AddAggregateIdentityMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -87,7 +87,7 @@ func (o *AddAggregateIdentityMapperRequest) GetSchemas() []EnumaggregateIdentity
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetSchemasOk() ([]EnumaggregateIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddAggregateIdentityMapperRequest) GetAllIncludedIdentityMapper() []str
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetAllIncludedIdentityMapperOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedIdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedIdentityMapper, true
 }
@@ -142,7 +142,7 @@ func (o *AddAggregateIdentityMapperRequest) GetAnyIncludedIdentityMapper() []str
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetAnyIncludedIdentityMapperOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedIdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedIdentityMapper, true
 }
@@ -174,7 +174,7 @@ func (o *AddAggregateIdentityMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -207,7 +207,7 @@ func (o *AddAggregateIdentityMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -275,5 +275,3 @@ func (v *NullableAddAggregateIdentityMapperRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

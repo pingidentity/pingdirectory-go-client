@@ -20,8 +20,8 @@ type EnumrequestCriteriaOperationOriginProp string
 
 // List of Enumrequest-criteria-operationOriginProp
 const (
-	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_EXTERNAL_REQUEST EnumrequestCriteriaOperationOriginProp = "external-request"
-	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_INTERNAL_OPERATION EnumrequestCriteriaOperationOriginProp = "internal-operation"
+	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_EXTERNAL_REQUEST     EnumrequestCriteriaOperationOriginProp = "external-request"
+	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_INTERNAL_OPERATION   EnumrequestCriteriaOperationOriginProp = "internal-operation"
 	ENUMREQUESTCRITERIAOPERATIONORIGINPROP_REPLICATED_OPERATION EnumrequestCriteriaOperationOriginProp = "replicated-operation"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumrequestCriteriaOperationOriginProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

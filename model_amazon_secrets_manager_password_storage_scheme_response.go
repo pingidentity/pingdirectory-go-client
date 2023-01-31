@@ -16,10 +16,10 @@ import (
 
 // AmazonSecretsManagerPasswordStorageSchemeResponse struct for AmazonSecretsManagerPasswordStorageSchemeResponse
 type AmazonSecretsManagerPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                                   `json:"id"`
 	Schemas []EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager service.
 	AwsExternalServer string `json:"awsExternalServer"`
@@ -65,7 +65,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetUrnpingidentitysc
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetSchemas() []Enuma
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetAwsExternalServer
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetAwsExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AwsExternalServer, true
 }
@@ -201,7 +201,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDefaultField() st
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDefaultFieldOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultField) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultField, true
 }
@@ -233,7 +233,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableAmazonSecretsManagerPasswordStorageSchemeResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

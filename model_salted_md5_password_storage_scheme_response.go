@@ -16,9 +16,9 @@ import (
 
 // SaltedMd5PasswordStorageSchemeResponse struct for SaltedMd5PasswordStorageSchemeResponse
 type SaltedMd5PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumsaltedMd5PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumsaltedMd5PasswordStorageSchemeSchemaUrn      `json:"schemas"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// Indicates whether the Salted MD5 Password Storage Scheme is enabled for use.
@@ -62,7 +62,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetSchemas() []EnumsaltedMd5Pas
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetSchemasOk() ([]EnumsaltedMd5PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -175,7 +175,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -198,7 +198,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool) {
 	if o == nil || isNil(o.SaltLengthBytes) {
-    return nil, false
+		return nil, false
 	}
 	return o.SaltLengthBytes, true
 }
@@ -230,7 +230,7 @@ func (o *SaltedMd5PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SaltedMd5PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -310,5 +310,3 @@ func (v *NullableSaltedMd5PasswordStorageSchemeResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // AppRoleVaultAuthenticationMethodResponse struct for AppRoleVaultAuthenticationMethodResponse
 type AppRoleVaultAuthenticationMethodResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Vault Authentication Method
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The role ID for the AppRole to authenticate.
 	VaultRoleID string `json:"vaultRoleID"`
@@ -65,7 +65,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetSchemas() []EnumappRoleVau
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetSchemasOk() ([]EnumappRoleVaultAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetVaultRoleID() string {
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetVaultRoleIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultRoleID, true
 }
@@ -202,7 +202,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetVaultSecretID() string {
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetVaultSecretIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretID, true
 }
@@ -225,7 +225,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetLoginMechanismName() strin
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetLoginMechanismNameOk() (*string, bool) {
 	if o == nil || isNil(o.LoginMechanismName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoginMechanismName, true
 }
@@ -257,7 +257,7 @@ func (o *AppRoleVaultAuthenticationMethodResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AppRoleVaultAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -340,5 +340,3 @@ func (v *NullableAppRoleVaultAuthenticationMethodResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

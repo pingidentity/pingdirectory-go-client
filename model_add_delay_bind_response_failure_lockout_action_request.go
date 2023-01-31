@@ -17,8 +17,8 @@ import (
 // AddDelayBindResponseFailureLockoutActionRequest struct for AddDelayBindResponseFailureLockoutActionRequest
 type AddDelayBindResponseFailureLockoutActionRequest struct {
 	// Name of the new Failure Lockout Action
-	ActionName string `json:"actionName"`
-	Schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn `json:"schemas"`
+	ActionName string                                               `json:"actionName"`
+	Schemas    []EnumdelayBindResponseFailureLockoutActionSchemaUrn `json:"schemas"`
 	// The length of time to delay the bind response for accounts with too many failed authentication attempts.
 	Delay string `json:"delay"`
 	// Indicates whether to delay the response for authentication attempts even if that delay may block the thread being used to process the attempt.
@@ -63,7 +63,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetActionName() string
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ActionName, true
 }
@@ -87,7 +87,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetSchemas() []Enumdel
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetSchemasOk() ([]EnumdelayBindResponseFailureLockoutActionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDelay() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDelayOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Delay, true
 }
@@ -134,7 +134,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetAllowBlockingDelay(
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetAllowBlockingDelayOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowBlockingDelay) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowBlockingDelay, true
 }
@@ -166,7 +166,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetGenerateAccountStat
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerateAccountStatusNotification) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
 }
@@ -198,7 +198,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -275,5 +275,3 @@ func (v *NullableAddDelayBindResponseFailureLockoutActionRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

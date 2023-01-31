@@ -20,8 +20,8 @@ type EnumresultCriteriaAssuranceBehaviorAlteredByControlProp string
 
 // List of Enumresult-criteria-assuranceBehaviorAlteredByControlProp
 const (
-	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_ANY EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "any"
-	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_TRUE EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "true"
+	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_ANY   EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "any"
+	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_TRUE  EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "true"
 	ENUMRESULTCRITERIAASSURANCEBEHAVIORALTEREDBYCONTROLPROP_FALSE EnumresultCriteriaAssuranceBehaviorAlteredByControlProp = "false"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaAssuranceBehaviorAlteredByControlProp) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

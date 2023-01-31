@@ -20,8 +20,8 @@ type EnumresultCriteriaSearchIndexedCriteriaProp string
 
 // List of Enumresult-criteria-searchIndexedCriteriaProp
 const (
-	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_ANY EnumresultCriteriaSearchIndexedCriteriaProp = "any"
-	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_INDEXED EnumresultCriteriaSearchIndexedCriteriaProp = "indexed"
+	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_ANY       EnumresultCriteriaSearchIndexedCriteriaProp = "any"
+	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_INDEXED   EnumresultCriteriaSearchIndexedCriteriaProp = "indexed"
 	ENUMRESULTCRITERIASEARCHINDEXEDCRITERIAPROP_UNINDEXED EnumresultCriteriaSearchIndexedCriteriaProp = "unindexed"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaSearchIndexedCriteriaProp) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

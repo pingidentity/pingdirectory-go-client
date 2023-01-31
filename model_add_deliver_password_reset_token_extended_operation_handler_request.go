@@ -17,8 +17,8 @@ import (
 // AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct for AddDeliverPasswordResetTokenExtendedOperationHandlerRequest
 type AddDeliverPasswordResetTokenExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                           `json:"handlerName"`
+	Schemas     []EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the password reset token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
 	// The set of delivery mechanisms that may be used to deliver password reset tokens to users for requests that do not specify one or more preferred delivery mechanisms.
@@ -68,7 +68,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandler
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -92,7 +92,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetSchemas
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswor
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswordGeneratorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordGenerator, true
 }
@@ -140,7 +140,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDefault
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDefaultTokenDeliveryMechanismOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultTokenDeliveryMechanism, true
 }
@@ -164,7 +164,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswor
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetPasswordResetTokenValidityDurationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordResetTokenValidityDuration, true
 }
@@ -187,7 +187,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDescrip
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -220,7 +220,7 @@ func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetEnabled
 // and a boolean to check if the value has been set.
 func (o *AddDeliverPasswordResetTokenExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -291,5 +291,3 @@ func (v *NullableAddDeliverPasswordResetTokenExtendedOperationHandlerRequest) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

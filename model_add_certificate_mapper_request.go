@@ -17,12 +17,12 @@ import (
 
 // AddCertificateMapperRequest - struct for AddCertificateMapperRequest
 type AddCertificateMapperRequest struct {
-	AddFingerprintCertificateMapperRequest *AddFingerprintCertificateMapperRequest
-	AddGroovyScriptedCertificateMapperRequest *AddGroovyScriptedCertificateMapperRequest
+	AddFingerprintCertificateMapperRequest                     *AddFingerprintCertificateMapperRequest
+	AddGroovyScriptedCertificateMapperRequest                  *AddGroovyScriptedCertificateMapperRequest
 	AddSubjectAttributeToUserAttributeCertificateMapperRequest *AddSubjectAttributeToUserAttributeCertificateMapperRequest
-	AddSubjectDnToUserAttributeCertificateMapperRequest *AddSubjectDnToUserAttributeCertificateMapperRequest
-	AddSubjectEqualsDnCertificateMapperRequest *AddSubjectEqualsDnCertificateMapperRequest
-	AddThirdPartyCertificateMapperRequest *AddThirdPartyCertificateMapperRequest
+	AddSubjectDnToUserAttributeCertificateMapperRequest        *AddSubjectDnToUserAttributeCertificateMapperRequest
+	AddSubjectEqualsDnCertificateMapperRequest                 *AddSubjectEqualsDnCertificateMapperRequest
+	AddThirdPartyCertificateMapperRequest                      *AddThirdPartyCertificateMapperRequest
 }
 
 // AddFingerprintCertificateMapperRequestAsAddCertificateMapperRequest is a convenience function that returns AddFingerprintCertificateMapperRequest wrapped in AddCertificateMapperRequest
@@ -66,7 +66,6 @@ func AddThirdPartyCertificateMapperRequestAsAddCertificateMapperRequest(v *AddTh
 		AddThirdPartyCertificateMapperRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCertificateMapperRequest) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src AddCertificateMapperRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddCertificateMapperRequest) GetActualInstance() (interface{}) {
+func (obj *AddCertificateMapperRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableAddCertificateMapperRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

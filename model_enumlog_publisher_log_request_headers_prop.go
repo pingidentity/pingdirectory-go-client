@@ -20,8 +20,8 @@ type EnumlogPublisherLogRequestHeadersProp string
 
 // List of Enumlog-publisher-logRequestHeadersProp
 const (
-	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_NONE EnumlogPublisherLogRequestHeadersProp = "none"
-	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_HEADER_NAMES EnumlogPublisherLogRequestHeadersProp = "header-names"
+	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_NONE                    EnumlogPublisherLogRequestHeadersProp = "none"
+	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_HEADER_NAMES            EnumlogPublisherLogRequestHeadersProp = "header-names"
 	ENUMLOGPUBLISHERLOGREQUESTHEADERSPROP_HEADER_NAMES_AND_VALUES EnumlogPublisherLogRequestHeadersProp = "header-names-and-values"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumlogPublisherLogRequestHeadersProp) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

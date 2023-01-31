@@ -16,15 +16,15 @@ import (
 
 // ConfigFileHandlerBackendResponse struct for ConfigFileHandlerBackendResponse
 type ConfigFileHandlerBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumconfigFileHandlerBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumconfigFileHandlerBackendSchemaUrn            `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// Specifies the base DN(s) for the data that the backend handles.
-	BaseDN []string `json:"baseDN"`
+	BaseDN          []string                       `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
 	InsignificantConfigArchiveAttribute []string `json:"insignificantConfigArchiveAttribute,omitempty"`
@@ -84,7 +84,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -116,7 +116,7 @@ func (o *ConfigFileHandlerBackendResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -149,7 +149,7 @@ func (o *ConfigFileHandlerBackendResponse) GetSchemas() []EnumconfigFileHandlerB
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetSchemasOk() ([]EnumconfigFileHandlerBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *ConfigFileHandlerBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -197,7 +197,7 @@ func (o *ConfigFileHandlerBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -221,7 +221,7 @@ func (o *ConfigFileHandlerBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -245,7 +245,7 @@ func (o *ConfigFileHandlerBackendResponse) GetWritabilityMode() EnumbackendWrita
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -268,7 +268,7 @@ func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveAttribut
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.InsignificantConfigArchiveAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.InsignificantConfigArchiveAttribute, true
 }
@@ -300,7 +300,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreePeerPollingInterval
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreePeerPollingIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MirroredSubtreePeerPollingInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MirroredSubtreePeerPollingInterval, true
 }
@@ -332,7 +332,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeEntryUpdateTimeout(
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeEntryUpdateTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.MirroredSubtreeEntryUpdateTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.MirroredSubtreeEntryUpdateTimeout, true
 }
@@ -364,7 +364,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeSearchTimeout() str
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeSearchTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.MirroredSubtreeSearchTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.MirroredSubtreeSearchTimeout, true
 }
@@ -396,7 +396,7 @@ func (o *ConfigFileHandlerBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -429,7 +429,7 @@ func (o *ConfigFileHandlerBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -452,7 +452,7 @@ func (o *ConfigFileHandlerBackendResponse) GetSetDegradedAlertWhenDisabled() boo
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -484,7 +484,7 @@ func (o *ConfigFileHandlerBackendResponse) GetReturnUnavailableWhenDisabled() bo
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -516,7 +516,7 @@ func (o *ConfigFileHandlerBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -548,7 +548,7 @@ func (o *ConfigFileHandlerBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -658,5 +658,3 @@ func (v *NullableConfigFileHandlerBackendResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

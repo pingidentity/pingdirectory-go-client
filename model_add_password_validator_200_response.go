@@ -17,18 +17,18 @@ import (
 
 // AddPasswordValidator200Response - struct for AddPasswordValidator200Response
 type AddPasswordValidator200Response struct {
-	AttributeValuePasswordValidatorResponse *AttributeValuePasswordValidatorResponse
-	CharacterSetPasswordValidatorResponse *CharacterSetPasswordValidatorResponse
-	DictionaryPasswordValidatorResponse *DictionaryPasswordValidatorResponse
-	GroovyScriptedPasswordValidatorResponse *GroovyScriptedPasswordValidatorResponse
-	HaystackPasswordValidatorResponse *HaystackPasswordValidatorResponse
-	LengthBasedPasswordValidatorResponse *LengthBasedPasswordValidatorResponse
-	PwnedPasswordsPasswordValidatorResponse *PwnedPasswordsPasswordValidatorResponse
-	RegularExpressionPasswordValidatorResponse *RegularExpressionPasswordValidatorResponse
+	AttributeValuePasswordValidatorResponse     *AttributeValuePasswordValidatorResponse
+	CharacterSetPasswordValidatorResponse       *CharacterSetPasswordValidatorResponse
+	DictionaryPasswordValidatorResponse         *DictionaryPasswordValidatorResponse
+	GroovyScriptedPasswordValidatorResponse     *GroovyScriptedPasswordValidatorResponse
+	HaystackPasswordValidatorResponse           *HaystackPasswordValidatorResponse
+	LengthBasedPasswordValidatorResponse        *LengthBasedPasswordValidatorResponse
+	PwnedPasswordsPasswordValidatorResponse     *PwnedPasswordsPasswordValidatorResponse
+	RegularExpressionPasswordValidatorResponse  *RegularExpressionPasswordValidatorResponse
 	RepeatedCharactersPasswordValidatorResponse *RepeatedCharactersPasswordValidatorResponse
-	SimilarityBasedPasswordValidatorResponse *SimilarityBasedPasswordValidatorResponse
-	ThirdPartyPasswordValidatorResponse *ThirdPartyPasswordValidatorResponse
-	UniqueCharactersPasswordValidatorResponse *UniqueCharactersPasswordValidatorResponse
+	SimilarityBasedPasswordValidatorResponse    *SimilarityBasedPasswordValidatorResponse
+	ThirdPartyPasswordValidatorResponse         *ThirdPartyPasswordValidatorResponse
+	UniqueCharactersPasswordValidatorResponse   *UniqueCharactersPasswordValidatorResponse
 }
 
 // AttributeValuePasswordValidatorResponseAsAddPasswordValidator200Response is a convenience function that returns AttributeValuePasswordValidatorResponse wrapped in AddPasswordValidator200Response
@@ -114,7 +114,6 @@ func UniqueCharactersPasswordValidatorResponseAsAddPasswordValidator200Response(
 		UniqueCharactersPasswordValidatorResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPasswordValidator200Response) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src AddPasswordValidator200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPasswordValidator200Response) GetActualInstance() (interface{}) {
+func (obj *AddPasswordValidator200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableAddPasswordValidator200Response) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

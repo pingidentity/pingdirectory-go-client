@@ -16,13 +16,13 @@ import (
 
 // FingerprintCertificateMapperResponse struct for FingerprintCertificateMapperResponse
 type FingerprintCertificateMapperResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Certificate Mapper
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumfingerprintCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute in which to look for the fingerprint.
-	FingerprintAttribute string `json:"fingerprintAttribute"`
+	FingerprintAttribute string                                        `json:"fingerprintAttribute"`
 	FingerprintAlgorithm EnumcertificateMapperFingerprintAlgorithmProp `json:"fingerprintAlgorithm"`
 	// Specifies the set of base DNs below which to search for users.
 	UserBaseDN []string `json:"userBaseDN,omitempty"`
@@ -67,7 +67,7 @@ func (o *FingerprintCertificateMapperResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *FingerprintCertificateMapperResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *FingerprintCertificateMapperResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *FingerprintCertificateMapperResponse) GetSchemas() []EnumfingerprintCer
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetSchemasOk() ([]EnumfingerprintCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *FingerprintCertificateMapperResponse) GetFingerprintAttribute() string 
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetFingerprintAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FingerprintAttribute, true
 }
@@ -204,7 +204,7 @@ func (o *FingerprintCertificateMapperResponse) GetFingerprintAlgorithm() Enumcer
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetFingerprintAlgorithmOk() (*EnumcertificateMapperFingerprintAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FingerprintAlgorithm, true
 }
@@ -227,7 +227,7 @@ func (o *FingerprintCertificateMapperResponse) GetUserBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.UserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserBaseDN, true
 }
@@ -259,7 +259,7 @@ func (o *FingerprintCertificateMapperResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -292,7 +292,7 @@ func (o *FingerprintCertificateMapperResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FingerprintCertificateMapperResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -369,5 +369,3 @@ func (v *NullableFingerprintCertificateMapperResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

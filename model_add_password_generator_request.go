@@ -18,9 +18,9 @@ import (
 // AddPasswordGeneratorRequest - struct for AddPasswordGeneratorRequest
 type AddPasswordGeneratorRequest struct {
 	AddGroovyScriptedPasswordGeneratorRequest *AddGroovyScriptedPasswordGeneratorRequest
-	AddPassphrasePasswordGeneratorRequest *AddPassphrasePasswordGeneratorRequest
-	AddRandomPasswordGeneratorRequest *AddRandomPasswordGeneratorRequest
-	AddThirdPartyPasswordGeneratorRequest *AddThirdPartyPasswordGeneratorRequest
+	AddPassphrasePasswordGeneratorRequest     *AddPassphrasePasswordGeneratorRequest
+	AddRandomPasswordGeneratorRequest         *AddRandomPasswordGeneratorRequest
+	AddThirdPartyPasswordGeneratorRequest     *AddThirdPartyPasswordGeneratorRequest
 }
 
 // AddGroovyScriptedPasswordGeneratorRequestAsAddPasswordGeneratorRequest is a convenience function that returns AddGroovyScriptedPasswordGeneratorRequest wrapped in AddPasswordGeneratorRequest
@@ -50,7 +50,6 @@ func AddThirdPartyPasswordGeneratorRequestAsAddPasswordGeneratorRequest(v *AddTh
 		AddThirdPartyPasswordGeneratorRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPasswordGeneratorRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddPasswordGeneratorRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPasswordGeneratorRequest) GetActualInstance() (interface{}) {
+func (obj *AddPasswordGeneratorRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddPasswordGeneratorRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

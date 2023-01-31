@@ -106,4 +106,3 @@ func (v *NullableEnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSc
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

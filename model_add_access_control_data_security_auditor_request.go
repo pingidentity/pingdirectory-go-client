@@ -17,8 +17,8 @@ import (
 // AddAccessControlDataSecurityAuditorRequest struct for AddAccessControlDataSecurityAuditorRequest
 type AddAccessControlDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
-	AuditorName string `json:"auditorName"`
-	Schemas []EnumaccessControlDataSecurityAuditorSchemaUrn `json:"schemas"`
+	AuditorName string                                          `json:"auditorName"`
+	Schemas     []EnumaccessControlDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
@@ -26,7 +26,7 @@ type AddAccessControlDataSecurityAuditorRequest struct {
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -65,7 +65,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetAuditorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuditorName, true
 }
@@ -89,7 +89,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetSchemas() []EnumaccessCo
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetSchemasOk() ([]EnumaccessControlDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -136,7 +136,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetIncludeAttribute() []str
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -169,7 +169,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -192,7 +192,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetAuditBackend() []string 
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -224,7 +224,7 @@ func (o *AddAccessControlDataSecurityAuditorRequest) GetAuditSeverity() Enumdata
 // and a boolean to check if the value has been set.
 func (o *AddAccessControlDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -304,5 +304,3 @@ func (v *NullableAddAccessControlDataSecurityAuditorRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

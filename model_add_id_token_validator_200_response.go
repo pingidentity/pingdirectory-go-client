@@ -18,7 +18,7 @@ import (
 // AddIdTokenValidator200Response - struct for AddIdTokenValidator200Response
 type AddIdTokenValidator200Response struct {
 	OpenidConnectIdTokenValidatorResponse *OpenidConnectIdTokenValidatorResponse
-	PingOneIdTokenValidatorResponse *PingOneIdTokenValidatorResponse
+	PingOneIdTokenValidatorResponse       *PingOneIdTokenValidatorResponse
 }
 
 // OpenidConnectIdTokenValidatorResponseAsAddIdTokenValidator200Response is a convenience function that returns OpenidConnectIdTokenValidatorResponse wrapped in AddIdTokenValidator200Response
@@ -34,7 +34,6 @@ func PingOneIdTokenValidatorResponseAsAddIdTokenValidator200Response(v *PingOneI
 		PingOneIdTokenValidatorResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdTokenValidator200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddIdTokenValidator200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddIdTokenValidator200Response) GetActualInstance() (interface{}) {
+func (obj *AddIdTokenValidator200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddIdTokenValidator200Response) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

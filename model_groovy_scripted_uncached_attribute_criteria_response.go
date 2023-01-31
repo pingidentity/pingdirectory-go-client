@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedUncachedAttributeCriteriaResponse struct for GroovyScriptedUncachedAttributeCriteriaResponse
 type GroovyScriptedUncachedAttributeCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Attribute Criteria
-	Id string `json:"id"`
+	Id      string                                                 `json:"id"`
 	Schemas []EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Uncached Attribute Criteria.
 	ScriptClass string `json:"scriptClass"`
@@ -65,7 +65,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetUrnpingidentitysche
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetSchemas() []Enumgro
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetSchemasOk() ([]EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetScriptClass() strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -201,7 +201,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetScriptArgument() []
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -233,7 +233,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedUncachedAttributeCriteriaResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableGroovyScriptedUncachedAttributeCriteriaResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

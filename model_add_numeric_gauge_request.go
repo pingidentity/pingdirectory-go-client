@@ -17,8 +17,8 @@ import (
 // AddNumericGaugeRequest struct for AddNumericGaugeRequest
 type AddNumericGaugeRequest struct {
 	// Name of the new Gauge
-	GaugeName string `json:"gaugeName"`
-	Schemas []EnumnumericGaugeSchemaUrn `json:"schemas"`
+	GaugeName string                      `json:"gaugeName"`
+	Schemas   []EnumnumericGaugeSchemaUrn `json:"schemas"`
 	// Specifies the source of data to use in determining this gauge's current severity.
 	GaugeDataSource string `json:"gaugeDataSource"`
 	// A value that is used to determine whether the current monitored value indicates this gauge's severity should be 'critical'.
@@ -40,9 +40,9 @@ type AddNumericGaugeRequest struct {
 	// A description for this Gauge
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Gauge is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled          bool                           `json:"enabled"`
 	OverrideSeverity *EnumgaugeOverrideSeverityProp `json:"overrideSeverity,omitempty"`
-	AlertLevel *EnumgaugeAlertLevelProp `json:"alertLevel,omitempty"`
+	AlertLevel       *EnumgaugeAlertLevelProp       `json:"alertLevel,omitempty"`
 	// The frequency with which this Gauge is updated.
 	UpdateInterval *string `json:"updateInterval,omitempty"`
 	// Indicates the number of times the monitor data source value will be collected during the update interval.
@@ -50,9 +50,9 @@ type AddNumericGaugeRequest struct {
 	// Specifies set of resources to be monitored.
 	IncludeResource []string `json:"includeResource,omitempty"`
 	// Specifies resources to exclude from being monitored.
-	ExcludeResource []string `json:"excludeResource,omitempty"`
+	ExcludeResource                []string                                     `json:"excludeResource,omitempty"`
 	ServerUnavailableSeverityLevel *EnumgaugeServerUnavailableSeverityLevelProp `json:"serverUnavailableSeverityLevel,omitempty"`
-	ServerDegradedSeverityLevel *EnumgaugeServerDegradedSeverityLevelProp `json:"serverDegradedSeverityLevel,omitempty"`
+	ServerDegradedSeverityLevel    *EnumgaugeServerDegradedSeverityLevelProp    `json:"serverDegradedSeverityLevel,omitempty"`
 }
 
 // NewAddNumericGaugeRequest instantiates a new AddNumericGaugeRequest object
@@ -90,7 +90,7 @@ func (o *AddNumericGaugeRequest) GetGaugeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetGaugeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GaugeName, true
 }
@@ -114,7 +114,7 @@ func (o *AddNumericGaugeRequest) GetSchemas() []EnumnumericGaugeSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetSchemasOk() ([]EnumnumericGaugeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -138,7 +138,7 @@ func (o *AddNumericGaugeRequest) GetGaugeDataSource() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetGaugeDataSourceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GaugeDataSource, true
 }
@@ -161,7 +161,7 @@ func (o *AddNumericGaugeRequest) GetCriticalValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetCriticalValueOk() (*float32, bool) {
 	if o == nil || isNil(o.CriticalValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.CriticalValue, true
 }
@@ -193,7 +193,7 @@ func (o *AddNumericGaugeRequest) GetCriticalExitValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetCriticalExitValueOk() (*float32, bool) {
 	if o == nil || isNil(o.CriticalExitValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.CriticalExitValue, true
 }
@@ -225,7 +225,7 @@ func (o *AddNumericGaugeRequest) GetMajorValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMajorValueOk() (*float32, bool) {
 	if o == nil || isNil(o.MajorValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.MajorValue, true
 }
@@ -257,7 +257,7 @@ func (o *AddNumericGaugeRequest) GetMajorExitValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMajorExitValueOk() (*float32, bool) {
 	if o == nil || isNil(o.MajorExitValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.MajorExitValue, true
 }
@@ -289,7 +289,7 @@ func (o *AddNumericGaugeRequest) GetMinorValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMinorValueOk() (*float32, bool) {
 	if o == nil || isNil(o.MinorValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinorValue, true
 }
@@ -321,7 +321,7 @@ func (o *AddNumericGaugeRequest) GetMinorExitValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetMinorExitValueOk() (*float32, bool) {
 	if o == nil || isNil(o.MinorExitValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinorExitValue, true
 }
@@ -353,7 +353,7 @@ func (o *AddNumericGaugeRequest) GetWarningValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetWarningValueOk() (*float32, bool) {
 	if o == nil || isNil(o.WarningValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.WarningValue, true
 }
@@ -385,7 +385,7 @@ func (o *AddNumericGaugeRequest) GetWarningExitValue() float32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetWarningExitValueOk() (*float32, bool) {
 	if o == nil || isNil(o.WarningExitValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.WarningExitValue, true
 }
@@ -417,7 +417,7 @@ func (o *AddNumericGaugeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -450,7 +450,7 @@ func (o *AddNumericGaugeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -473,7 +473,7 @@ func (o *AddNumericGaugeRequest) GetOverrideSeverity() EnumgaugeOverrideSeverity
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetOverrideSeverityOk() (*EnumgaugeOverrideSeverityProp, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -505,7 +505,7 @@ func (o *AddNumericGaugeRequest) GetAlertLevel() EnumgaugeAlertLevelProp {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetAlertLevelOk() (*EnumgaugeAlertLevelProp, bool) {
 	if o == nil || isNil(o.AlertLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertLevel, true
 }
@@ -537,7 +537,7 @@ func (o *AddNumericGaugeRequest) GetUpdateInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetUpdateIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.UpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.UpdateInterval, true
 }
@@ -569,7 +569,7 @@ func (o *AddNumericGaugeRequest) GetSamplesPerUpdateInterval() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetSamplesPerUpdateIntervalOk() (*int32, bool) {
 	if o == nil || isNil(o.SamplesPerUpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.SamplesPerUpdateInterval, true
 }
@@ -601,7 +601,7 @@ func (o *AddNumericGaugeRequest) GetIncludeResource() []string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetIncludeResourceOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeResource) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResource, true
 }
@@ -633,7 +633,7 @@ func (o *AddNumericGaugeRequest) GetExcludeResource() []string {
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetExcludeResourceOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeResource) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeResource, true
 }
@@ -665,7 +665,7 @@ func (o *AddNumericGaugeRequest) GetServerUnavailableSeverityLevel() EnumgaugeSe
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetServerUnavailableSeverityLevelOk() (*EnumgaugeServerUnavailableSeverityLevelProp, bool) {
 	if o == nil || isNil(o.ServerUnavailableSeverityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerUnavailableSeverityLevel, true
 }
@@ -697,7 +697,7 @@ func (o *AddNumericGaugeRequest) GetServerDegradedSeverityLevel() EnumgaugeServe
 // and a boolean to check if the value has been set.
 func (o *AddNumericGaugeRequest) GetServerDegradedSeverityLevelOk() (*EnumgaugeServerDegradedSeverityLevelProp, bool) {
 	if o == nil || isNil(o.ServerDegradedSeverityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerDegradedSeverityLevel, true
 }
@@ -819,5 +819,3 @@ func (v *NullableAddNumericGaugeRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

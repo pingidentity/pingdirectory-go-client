@@ -22,7 +22,7 @@ type EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp string
 const (
 	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_ACCEPT EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "accept"
 	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_REJECT EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "reject"
-	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_WARN EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "warn"
+	ENUMGLOBALCONFIGURATIONINVALIDATTRIBUTESYNTAXBEHAVIORPROP_WARN   EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp = "warn"
 )
 
 // All allowed values of EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,8 +17,8 @@ import (
 // AddPasswordPolicyRequest struct for AddPasswordPolicyRequest
 type AddPasswordPolicyRequest struct {
 	// Name of the new Password Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumpasswordPolicySchemaUrn `json:"schemas,omitempty"`
+	PolicyName string                        `json:"policyName"`
+	Schemas    []EnumpasswordPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Password Policy
 	Description *string `json:"description,omitempty"`
 	// Indicates whether users with the associated password policy are required to authenticate in a secure manner.
@@ -26,8 +26,8 @@ type AddPasswordPolicyRequest struct {
 	// Indicates whether users with the associated password policy are required to change their password in a secure manner that does not expose the credentials.
 	RequireSecurePasswordChanges *bool `json:"requireSecurePasswordChanges,omitempty"`
 	// Specifies the names of the account status notification handlers that are used with the associated password storage scheme.
-	AccountStatusNotificationHandler []string `json:"accountStatusNotificationHandler,omitempty"`
-	StateUpdateFailurePolicy *EnumpasswordPolicyStateUpdateFailurePolicyProp `json:"stateUpdateFailurePolicy,omitempty"`
+	AccountStatusNotificationHandler []string                                        `json:"accountStatusNotificationHandler,omitempty"`
+	StateUpdateFailurePolicy         *EnumpasswordPolicyStateUpdateFailurePolicyProp `json:"stateUpdateFailurePolicy,omitempty"`
 	// Indicates whether to enable debugging for the password policy state.
 	EnableDebug *bool `json:"enableDebug,omitempty"`
 	// Specifies the attribute type used to hold user passwords.
@@ -45,8 +45,8 @@ type AddPasswordPolicyRequest struct {
 	// Specifies the names of the password validators that should be invoked for bind operations.
 	BindPasswordValidator []string `json:"bindPasswordValidator,omitempty"`
 	// Indicates how frequently password validation should be performed during bind operations for each user to whom this password policy is assigned.
-	MinimumBindPasswordValidationFrequency *string `json:"minimumBindPasswordValidationFrequency,omitempty"`
-	BindPasswordValidationFailureAction *EnumpasswordPolicyBindPasswordValidationFailureActionProp `json:"bindPasswordValidationFailureAction,omitempty"`
+	MinimumBindPasswordValidationFrequency *string                                                    `json:"minimumBindPasswordValidationFrequency,omitempty"`
+	BindPasswordValidationFailureAction    *EnumpasswordPolicyBindPasswordValidationFailureActionProp `json:"bindPasswordValidationFailureAction,omitempty"`
 	// Specifies the name of the password generator that is used with the associated password policy.
 	PasswordGenerator *string `json:"passwordGenerator,omitempty"`
 	// Specifies the maximum number of former passwords to maintain in the password history.
@@ -60,7 +60,7 @@ type AddPasswordPolicyRequest struct {
 	// Specifies the maximum length of time before a user's password actually expires that the server begins to include warning notifications in bind responses for that user.
 	PasswordExpirationWarningInterval *string `json:"passwordExpirationWarningInterval,omitempty"`
 	// Indicates whether the Directory Server allows a user's password to expire even if that user has never seen an expiration warning notification.
-	ExpirePasswordsWithoutWarning *bool `json:"expirePasswordsWithoutWarning,omitempty"`
+	ExpirePasswordsWithoutWarning    *bool                                                   `json:"expirePasswordsWithoutWarning,omitempty"`
 	ReturnPasswordExpirationControls *EnumpasswordPolicyReturnPasswordExpirationControlsProp `json:"returnPasswordExpirationControls,omitempty"`
 	// Indicates whether a user whose password is expired is still allowed to change that password using the password modify extended operation.
 	AllowExpiredPasswordChanges *bool `json:"allowExpiredPasswordChanges,omitempty"`
@@ -83,10 +83,10 @@ type AddPasswordPolicyRequest struct {
 	// Indicates whether users can change their own passwords.
 	AllowUserPasswordChanges *bool `json:"allowUserPasswordChanges,omitempty"`
 	// Indicates whether user password changes must use the password modify extended operation and must include the user's current password before the change is allowed.
-	PasswordChangeRequiresCurrentPassword *bool `json:"passwordChangeRequiresCurrentPassword,omitempty"`
-	PasswordRetirementBehavior []EnumpasswordPolicyPasswordRetirementBehaviorProp `json:"passwordRetirementBehavior,omitempty"`
+	PasswordChangeRequiresCurrentPassword *bool                                              `json:"passwordChangeRequiresCurrentPassword,omitempty"`
+	PasswordRetirementBehavior            []EnumpasswordPolicyPasswordRetirementBehaviorProp `json:"passwordRetirementBehavior,omitempty"`
 	// Specifies the maximum length of time that a retired password should be considered valid and may be used to authenticate to the server.
-	MaxRetiredPasswordAge *string `json:"maxRetiredPasswordAge,omitempty"`
+	MaxRetiredPasswordAge                 *string                                                       `json:"maxRetiredPasswordAge,omitempty"`
 	AllowedPasswordResetTokenUseCondition []EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp `json:"allowedPasswordResetTokenUseCondition,omitempty"`
 	// Indicates whether users are forced to change their passwords upon first authenticating to the Directory Server after their account has been created.
 	ForceChangeOnAdd *bool `json:"forceChangeOnAdd,omitempty"`
@@ -103,8 +103,8 @@ type AddPasswordPolicyRequest struct {
 	// The maximum number of failed authentication attempts to include in the recent login history for each account.
 	MaximumRecentLoginHistoryFailedAuthenticationCount *int32 `json:"maximumRecentLoginHistoryFailedAuthenticationCount,omitempty"`
 	// The maximum age of failed authentication attempts to include in the recent login history for each account.
-	MaximumRecentLoginHistoryFailedAuthenticationDuration *string `json:"maximumRecentLoginHistoryFailedAuthenticationDuration,omitempty"`
-	RecentLoginHistorySimilarAttemptBehavior *EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp `json:"recentLoginHistorySimilarAttemptBehavior,omitempty"`
+	MaximumRecentLoginHistoryFailedAuthenticationDuration *string                                                         `json:"maximumRecentLoginHistoryFailedAuthenticationDuration,omitempty"`
+	RecentLoginHistorySimilarAttemptBehavior              *EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp `json:"recentLoginHistorySimilarAttemptBehavior,omitempty"`
 	// Specifies the name or OID of the attribute type that is used to hold the IP address of the client from which the user last authenticated.
 	LastLoginIPAddressAttribute *string `json:"lastLoginIPAddressAttribute,omitempty"`
 	// Specifies the name or OID of the attribute type that is used to hold the last login time for users with the associated password policy.
@@ -149,7 +149,7 @@ func (o *AddPasswordPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -172,7 +172,7 @@ func (o *AddPasswordPolicyRequest) GetSchemas() []EnumpasswordPolicySchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetSchemasOk() ([]EnumpasswordPolicySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -204,7 +204,7 @@ func (o *AddPasswordPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -236,7 +236,7 @@ func (o *AddPasswordPolicyRequest) GetRequireSecureAuthentication() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetRequireSecureAuthenticationOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireSecureAuthentication) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireSecureAuthentication, true
 }
@@ -268,7 +268,7 @@ func (o *AddPasswordPolicyRequest) GetRequireSecurePasswordChanges() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetRequireSecurePasswordChangesOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireSecurePasswordChanges) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireSecurePasswordChanges, true
 }
@@ -300,7 +300,7 @@ func (o *AddPasswordPolicyRequest) GetAccountStatusNotificationHandler() []strin
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetAccountStatusNotificationHandlerOk() ([]string, bool) {
 	if o == nil || isNil(o.AccountStatusNotificationHandler) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountStatusNotificationHandler, true
 }
@@ -332,7 +332,7 @@ func (o *AddPasswordPolicyRequest) GetStateUpdateFailurePolicy() EnumpasswordPol
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetStateUpdateFailurePolicyOk() (*EnumpasswordPolicyStateUpdateFailurePolicyProp, bool) {
 	if o == nil || isNil(o.StateUpdateFailurePolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.StateUpdateFailurePolicy, true
 }
@@ -364,7 +364,7 @@ func (o *AddPasswordPolicyRequest) GetEnableDebug() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetEnableDebugOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableDebug) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableDebug, true
 }
@@ -397,7 +397,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordAttribute, true
 }
@@ -421,7 +421,7 @@ func (o *AddPasswordPolicyRequest) GetDefaultPasswordStorageScheme() []string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetDefaultPasswordStorageSchemeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultPasswordStorageScheme, true
 }
@@ -444,7 +444,7 @@ func (o *AddPasswordPolicyRequest) GetDeprecatedPasswordStorageScheme() []string
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetDeprecatedPasswordStorageSchemeOk() ([]string, bool) {
 	if o == nil || isNil(o.DeprecatedPasswordStorageScheme) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeprecatedPasswordStorageScheme, true
 }
@@ -476,7 +476,7 @@ func (o *AddPasswordPolicyRequest) GetAllowMultiplePasswordValues() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetAllowMultiplePasswordValuesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowMultiplePasswordValues) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowMultiplePasswordValues, true
 }
@@ -508,7 +508,7 @@ func (o *AddPasswordPolicyRequest) GetAllowPreEncodedPasswords() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetAllowPreEncodedPasswordsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowPreEncodedPasswords) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowPreEncodedPasswords, true
 }
@@ -540,7 +540,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordValidator() []string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.PasswordValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordValidator, true
 }
@@ -572,7 +572,7 @@ func (o *AddPasswordPolicyRequest) GetBindPasswordValidator() []string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetBindPasswordValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.BindPasswordValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindPasswordValidator, true
 }
@@ -604,7 +604,7 @@ func (o *AddPasswordPolicyRequest) GetMinimumBindPasswordValidationFrequency() s
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMinimumBindPasswordValidationFrequencyOk() (*string, bool) {
 	if o == nil || isNil(o.MinimumBindPasswordValidationFrequency) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumBindPasswordValidationFrequency, true
 }
@@ -636,7 +636,7 @@ func (o *AddPasswordPolicyRequest) GetBindPasswordValidationFailureAction() Enum
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetBindPasswordValidationFailureActionOk() (*EnumpasswordPolicyBindPasswordValidationFailureActionProp, bool) {
 	if o == nil || isNil(o.BindPasswordValidationFailureAction) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindPasswordValidationFailureAction, true
 }
@@ -668,7 +668,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordGenerator() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordGeneratorOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordGenerator) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordGenerator, true
 }
@@ -700,7 +700,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordHistoryCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordHistoryCountOk() (*int32, bool) {
 	if o == nil || isNil(o.PasswordHistoryCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordHistoryCount, true
 }
@@ -732,7 +732,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordHistoryDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordHistoryDurationOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordHistoryDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordHistoryDuration, true
 }
@@ -764,7 +764,7 @@ func (o *AddPasswordPolicyRequest) GetMinPasswordAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMinPasswordAgeOk() (*string, bool) {
 	if o == nil || isNil(o.MinPasswordAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinPasswordAge, true
 }
@@ -796,7 +796,7 @@ func (o *AddPasswordPolicyRequest) GetMaxPasswordAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaxPasswordAgeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxPasswordAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordAge, true
 }
@@ -828,7 +828,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordExpirationWarningInterval() string
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordExpirationWarningIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordExpirationWarningInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordExpirationWarningInterval, true
 }
@@ -860,7 +860,7 @@ func (o *AddPasswordPolicyRequest) GetExpirePasswordsWithoutWarning() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetExpirePasswordsWithoutWarningOk() (*bool, bool) {
 	if o == nil || isNil(o.ExpirePasswordsWithoutWarning) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpirePasswordsWithoutWarning, true
 }
@@ -892,7 +892,7 @@ func (o *AddPasswordPolicyRequest) GetReturnPasswordExpirationControls() Enumpas
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetReturnPasswordExpirationControlsOk() (*EnumpasswordPolicyReturnPasswordExpirationControlsProp, bool) {
 	if o == nil || isNil(o.ReturnPasswordExpirationControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnPasswordExpirationControls, true
 }
@@ -924,7 +924,7 @@ func (o *AddPasswordPolicyRequest) GetAllowExpiredPasswordChanges() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetAllowExpiredPasswordChangesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowExpiredPasswordChanges) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowExpiredPasswordChanges, true
 }
@@ -956,7 +956,7 @@ func (o *AddPasswordPolicyRequest) GetGraceLoginCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetGraceLoginCountOk() (*int32, bool) {
 	if o == nil || isNil(o.GraceLoginCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.GraceLoginCount, true
 }
@@ -988,7 +988,7 @@ func (o *AddPasswordPolicyRequest) GetRequireChangeByTime() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetRequireChangeByTimeOk() (*string, bool) {
 	if o == nil || isNil(o.RequireChangeByTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireChangeByTime, true
 }
@@ -1020,7 +1020,7 @@ func (o *AddPasswordPolicyRequest) GetLockoutFailureCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetLockoutFailureCountOk() (*int32, bool) {
 	if o == nil || isNil(o.LockoutFailureCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.LockoutFailureCount, true
 }
@@ -1052,7 +1052,7 @@ func (o *AddPasswordPolicyRequest) GetLockoutDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetLockoutDurationOk() (*string, bool) {
 	if o == nil || isNil(o.LockoutDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.LockoutDuration, true
 }
@@ -1084,7 +1084,7 @@ func (o *AddPasswordPolicyRequest) GetLockoutFailureExpirationInterval() string 
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetLockoutFailureExpirationIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.LockoutFailureExpirationInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.LockoutFailureExpirationInterval, true
 }
@@ -1116,7 +1116,7 @@ func (o *AddPasswordPolicyRequest) GetIgnoreDuplicatePasswordFailures() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetIgnoreDuplicatePasswordFailuresOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreDuplicatePasswordFailures) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreDuplicatePasswordFailures, true
 }
@@ -1148,7 +1148,7 @@ func (o *AddPasswordPolicyRequest) GetFailureLockoutAction() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetFailureLockoutActionOk() (*string, bool) {
 	if o == nil || isNil(o.FailureLockoutAction) {
-    return nil, false
+		return nil, false
 	}
 	return o.FailureLockoutAction, true
 }
@@ -1180,7 +1180,7 @@ func (o *AddPasswordPolicyRequest) GetIdleLockoutInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetIdleLockoutIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.IdleLockoutInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdleLockoutInterval, true
 }
@@ -1212,7 +1212,7 @@ func (o *AddPasswordPolicyRequest) GetAllowUserPasswordChanges() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetAllowUserPasswordChangesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowUserPasswordChanges) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowUserPasswordChanges, true
 }
@@ -1244,7 +1244,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordChangeRequiresCurrentPassword() bo
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordChangeRequiresCurrentPasswordOk() (*bool, bool) {
 	if o == nil || isNil(o.PasswordChangeRequiresCurrentPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordChangeRequiresCurrentPassword, true
 }
@@ -1276,7 +1276,7 @@ func (o *AddPasswordPolicyRequest) GetPasswordRetirementBehavior() []Enumpasswor
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPasswordRetirementBehaviorOk() ([]EnumpasswordPolicyPasswordRetirementBehaviorProp, bool) {
 	if o == nil || isNil(o.PasswordRetirementBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordRetirementBehavior, true
 }
@@ -1308,7 +1308,7 @@ func (o *AddPasswordPolicyRequest) GetMaxRetiredPasswordAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaxRetiredPasswordAgeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxRetiredPasswordAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxRetiredPasswordAge, true
 }
@@ -1340,7 +1340,7 @@ func (o *AddPasswordPolicyRequest) GetAllowedPasswordResetTokenUseCondition() []
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetAllowedPasswordResetTokenUseConditionOk() ([]EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp, bool) {
 	if o == nil || isNil(o.AllowedPasswordResetTokenUseCondition) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedPasswordResetTokenUseCondition, true
 }
@@ -1372,7 +1372,7 @@ func (o *AddPasswordPolicyRequest) GetForceChangeOnAdd() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetForceChangeOnAddOk() (*bool, bool) {
 	if o == nil || isNil(o.ForceChangeOnAdd) {
-    return nil, false
+		return nil, false
 	}
 	return o.ForceChangeOnAdd, true
 }
@@ -1404,7 +1404,7 @@ func (o *AddPasswordPolicyRequest) GetForceChangeOnReset() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetForceChangeOnResetOk() (*bool, bool) {
 	if o == nil || isNil(o.ForceChangeOnReset) {
-    return nil, false
+		return nil, false
 	}
 	return o.ForceChangeOnReset, true
 }
@@ -1436,7 +1436,7 @@ func (o *AddPasswordPolicyRequest) GetMaxPasswordResetAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaxPasswordResetAgeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxPasswordResetAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordResetAge, true
 }
@@ -1468,7 +1468,7 @@ func (o *AddPasswordPolicyRequest) GetSkipValidationForAdministrators() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetSkipValidationForAdministratorsOk() (*bool, bool) {
 	if o == nil || isNil(o.SkipValidationForAdministrators) {
-    return nil, false
+		return nil, false
 	}
 	return o.SkipValidationForAdministrators, true
 }
@@ -1500,7 +1500,7 @@ func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistorySuccessfulAuthent
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistorySuccessfulAuthenticationCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumRecentLoginHistorySuccessfulAuthenticationCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumRecentLoginHistorySuccessfulAuthenticationCount, true
 }
@@ -1532,7 +1532,7 @@ func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistorySuccessfulAuthent
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistorySuccessfulAuthenticationDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumRecentLoginHistorySuccessfulAuthenticationDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumRecentLoginHistorySuccessfulAuthenticationDuration, true
 }
@@ -1564,7 +1564,7 @@ func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistoryFailedAuthenticat
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistoryFailedAuthenticationCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumRecentLoginHistoryFailedAuthenticationCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumRecentLoginHistoryFailedAuthenticationCount, true
 }
@@ -1596,7 +1596,7 @@ func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistoryFailedAuthenticat
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetMaximumRecentLoginHistoryFailedAuthenticationDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumRecentLoginHistoryFailedAuthenticationDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumRecentLoginHistoryFailedAuthenticationDuration, true
 }
@@ -1628,7 +1628,7 @@ func (o *AddPasswordPolicyRequest) GetRecentLoginHistorySimilarAttemptBehavior()
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetRecentLoginHistorySimilarAttemptBehaviorOk() (*EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp, bool) {
 	if o == nil || isNil(o.RecentLoginHistorySimilarAttemptBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.RecentLoginHistorySimilarAttemptBehavior, true
 }
@@ -1660,7 +1660,7 @@ func (o *AddPasswordPolicyRequest) GetLastLoginIPAddressAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetLastLoginIPAddressAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.LastLoginIPAddressAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.LastLoginIPAddressAttribute, true
 }
@@ -1692,7 +1692,7 @@ func (o *AddPasswordPolicyRequest) GetLastLoginTimeAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetLastLoginTimeAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.LastLoginTimeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.LastLoginTimeAttribute, true
 }
@@ -1724,7 +1724,7 @@ func (o *AddPasswordPolicyRequest) GetLastLoginTimeFormat() string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetLastLoginTimeFormatOk() (*string, bool) {
 	if o == nil || isNil(o.LastLoginTimeFormat) {
-    return nil, false
+		return nil, false
 	}
 	return o.LastLoginTimeFormat, true
 }
@@ -1756,7 +1756,7 @@ func (o *AddPasswordPolicyRequest) GetPreviousLastLoginTimeFormat() []string {
 // and a boolean to check if the value has been set.
 func (o *AddPasswordPolicyRequest) GetPreviousLastLoginTimeFormatOk() ([]string, bool) {
 	if o == nil || isNil(o.PreviousLastLoginTimeFormat) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreviousLastLoginTimeFormat, true
 }
@@ -1971,5 +1971,3 @@ func (v *NullableAddPasswordPolicyRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

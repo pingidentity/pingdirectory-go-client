@@ -16,17 +16,17 @@ import (
 
 // ConsoleJsonErrorLogPublisherResponse struct for ConsoleJsonErrorLogPublisherResponse
 type ConsoleJsonErrorLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumconsoleJsonErrorLogPublisherSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumconsoleJsonErrorLogPublisherSchemaUrn        `json:"schemas"`
 	// Name of the Log Publisher
 	Id string `json:"id"`
 	// Indicates whether the Console JSON Error Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled         bool                                  `json:"enabled"`
 	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
-	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
-	OutputLocation *EnumlogPublisherOutputLocationProp `json:"outputLocation,omitempty"`
+	WriteMultiLineMessages *bool                               `json:"writeMultiLineMessages,omitempty"`
+	OutputLocation         *EnumlogPublisherOutputLocationProp `json:"outputLocation,omitempty"`
 	// Indicates whether log messages should include the product name for the Directory Server.
 	IncludeProductName *bool `json:"includeProductName,omitempty"`
 	// Indicates whether log messages should include the instance name for the Directory Server.
@@ -40,7 +40,7 @@ type ConsoleJsonErrorLogPublisherResponse struct {
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
-	Description *string `json:"description,omitempty"`
+	Description          *string                                   `json:"description,omitempty"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -77,7 +77,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -109,7 +109,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -142,7 +142,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetSchemas() []EnumconsoleJsonErr
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetSchemasOk() ([]EnumconsoleJsonErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -166,7 +166,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -190,7 +190,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -213,7 +213,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetDefaultSeverity() []EnumlogPub
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -245,7 +245,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetWriteMultiLineMessages() bool 
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetWriteMultiLineMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.WriteMultiLineMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.WriteMultiLineMessages, true
 }
@@ -277,7 +277,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetOutputLocation() EnumlogPublis
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetOutputLocationOk() (*EnumlogPublisherOutputLocationProp, bool) {
 	if o == nil || isNil(o.OutputLocation) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutputLocation, true
 }
@@ -309,7 +309,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -341,7 +341,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -373,7 +373,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -405,7 +405,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -437,7 +437,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetGenerifyMessageStringsWhenPoss
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
 }
@@ -469,7 +469,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetOverrideSeverity() []string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -501,7 +501,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -533,7 +533,7 @@ func (o *ConsoleJsonErrorLogPublisherResponse) GetLoggingErrorBehavior() Enumlog
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonErrorLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -640,5 +640,3 @@ func (v *NullableConsoleJsonErrorLogPublisherResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

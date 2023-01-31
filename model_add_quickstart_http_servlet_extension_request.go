@@ -17,8 +17,8 @@ import (
 // AddQuickstartHttpServletExtensionRequest struct for AddQuickstartHttpServletExtensionRequest
 type AddQuickstartHttpServletExtensionRequest struct {
 	// Name of the new HTTP Servlet Extension
-	ExtensionName string `json:"extensionName"`
-	Schemas []EnumquickstartHttpServletExtensionSchemaUrn `json:"schemas"`
+	ExtensionName string                                        `json:"extensionName"`
+	Schemas       []EnumquickstartHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the PingFederate server to be configured.
 	Server *string `json:"server,omitempty"`
 	// A description for this HTTP Servlet Extension
@@ -64,7 +64,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionName() string {
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionName, true
 }
@@ -88,7 +88,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetSchemas() []Enumquickstart
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetSchemasOk() ([]EnumquickstartHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetServer() string {
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetServerOk() (*string, bool) {
 	if o == nil || isNil(o.Server) {
-    return nil, false
+		return nil, false
 	}
 	return o.Server, true
 }
@@ -143,7 +143,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -175,7 +175,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetCrossOriginPolicy() string
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -207,7 +207,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetResponseHeader() []string 
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -239,7 +239,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetCorrelationIDResponseHeade
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -319,5 +319,3 @@ func (v *NullableAddQuickstartHttpServletExtensionRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

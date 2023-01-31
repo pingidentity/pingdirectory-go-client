@@ -20,12 +20,12 @@ type EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp string
 
 // List of Enumpassword-policy-allowedPasswordResetTokenUseConditionProp
 const (
-	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_USABLE EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-usable"
-	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_PASSWORD_EXPIRED EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "password-expired"
-	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_FAILURES EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-failures"
-	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_IDLE_TIME_LIMIT EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-idle-time-limit"
+	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_USABLE                            EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-usable"
+	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_PASSWORD_EXPIRED                          EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "password-expired"
+	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_FAILURES            EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-failures"
+	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_IDLE_TIME_LIMIT     EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-idle-time-limit"
 	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_ADMIN_RESET_TIMEOUT EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-admin-reset-timeout"
-	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_VALIDATION_FAILURE EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-validation-failure"
+	ENUMPASSWORDPOLICYALLOWEDPASSWORDRESETTOKENUSECONDITIONPROP_ACCOUNT_LOCKED_DUE_TO_VALIDATION_FAILURE  EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp = "account-locked-due-to-validation-failure"
 )
 
 // All allowed values of EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

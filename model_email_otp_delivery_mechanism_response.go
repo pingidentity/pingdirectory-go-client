@@ -16,10 +16,10 @@ import (
 
 // EmailOtpDeliveryMechanismResponse struct for EmailOtpDeliveryMechanismResponse
 type EmailOtpDeliveryMechanismResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the OTP Delivery Mechanism
-	Id string `json:"id"`
+	Id      string                                   `json:"id"`
 	Schemas []EnumemailOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The name or OID of the attribute that holds the email address to which the message should be sent.
 	EmailAddressAttributeType string `json:"emailAddressAttributeType"`
@@ -77,7 +77,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -109,7 +109,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -142,7 +142,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -166,7 +166,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetSchemas() []EnumemailOtpDeliveryM
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetSchemasOk() ([]EnumemailOtpDeliveryMechanismSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -190,7 +190,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressAttributeType() strin
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EmailAddressAttributeType, true
 }
@@ -213,7 +213,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONField() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONFieldOk() (*string, bool) {
 	if o == nil || isNil(o.EmailAddressJSONField) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailAddressJSONField, true
 }
@@ -245,7 +245,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONObjectFilter() st
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONObjectFilterOk() (*string, bool) {
 	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailAddressJSONObjectFilter, true
 }
@@ -278,7 +278,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetSenderAddress() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetSenderAddressOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SenderAddress, true
 }
@@ -302,7 +302,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageSubject() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageSubjectOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MessageSubject, true
 }
@@ -325,7 +325,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextBeforeOTP() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextBeforeOTPOk() (*string, bool) {
 	if o == nil || isNil(o.MessageTextBeforeOTP) {
-    return nil, false
+		return nil, false
 	}
 	return o.MessageTextBeforeOTP, true
 }
@@ -357,7 +357,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextAfterOTP() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextAfterOTPOk() (*string, bool) {
 	if o == nil || isNil(o.MessageTextAfterOTP) {
-    return nil, false
+		return nil, false
 	}
 	return o.MessageTextAfterOTP, true
 }
@@ -389,7 +389,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -422,7 +422,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -511,5 +511,3 @@ func (v *NullableEmailOtpDeliveryMechanismResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

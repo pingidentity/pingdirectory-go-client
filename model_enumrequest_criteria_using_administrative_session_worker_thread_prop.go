@@ -20,9 +20,9 @@ type EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp string
 
 // List of Enumrequest-criteria-usingAdministrativeSessionWorkerThreadProp
 const (
-	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_TRUE EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "true"
+	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_TRUE  EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "true"
 	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_FALSE EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "false"
-	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_ANY EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "any"
+	ENUMREQUESTCRITERIAUSINGADMINISTRATIVESESSIONWORKERTHREADPROP_ANY   EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp = "any"
 )
 
 // All allowed values of EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

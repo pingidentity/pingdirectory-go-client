@@ -16,9 +16,9 @@ import (
 
 // ChangelogBackendResponse struct for ChangelogBackendResponse
 type ChangelogBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumchangelogBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumchangelogBackendSchemaUrn                    `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies the base DN(s) for the data that the backend handles.
@@ -68,12 +68,12 @@ type ChangelogBackendResponse struct {
 	// Specifies whether values of creatorsName, createTimestamp, modifiersName and modifyTimestamp attributes will be written to changelog entries.
 	WriteLastmodAttributes *bool `json:"writeLastmodAttributes,omitempty"`
 	// Specifies whether the changelog should provide enough information to be able to revert the changes if desired.
-	UseReversibleForm *bool `json:"useReversibleForm,omitempty"`
+	UseReversibleForm        *bool                                     `json:"useReversibleForm,omitempty"`
 	IncludeVirtualAttributes []EnumbackendIncludeVirtualAttributesProp `json:"includeVirtualAttributes,omitempty"`
 	// Indicates whether the contents of changelog entries should be subject to access control and sensitive attribute evaluation such that the contents of attributes like changes, deletedEntryAttrs, ds-changelog-entry-key-attr-values, ds-changelog-before-values, and ds-changelog-after-values may be altered based on attributes the user can see in the target entry.
-	ApplyAccessControlsToChangelogEntryContents *bool `json:"applyAccessControlsToChangelogEntryContents,omitempty"`
-	ReportExcludedChangelogAttributes *EnumbackendReportExcludedChangelogAttributesProp `json:"reportExcludedChangelogAttributes,omitempty"`
-	SoftDeleteEntryIncludedOperation []EnumbackendSoftDeleteEntryIncludedOperationProp `json:"softDeleteEntryIncludedOperation,omitempty"`
+	ApplyAccessControlsToChangelogEntryContents *bool                                             `json:"applyAccessControlsToChangelogEntryContents,omitempty"`
+	ReportExcludedChangelogAttributes           *EnumbackendReportExcludedChangelogAttributesProp `json:"reportExcludedChangelogAttributes,omitempty"`
+	SoftDeleteEntryIncludedOperation            []EnumbackendSoftDeleteEntryIncludedOperationProp `json:"softDeleteEntryIncludedOperation,omitempty"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// A description for this Backend
@@ -124,7 +124,7 @@ func (o *ChangelogBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -156,7 +156,7 @@ func (o *ChangelogBackendResponse) GetUrnpingidentityschemasconfigurationmessage
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -189,7 +189,7 @@ func (o *ChangelogBackendResponse) GetSchemas() []EnumchangelogBackendSchemaUrn 
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetSchemasOk() ([]EnumchangelogBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -213,7 +213,7 @@ func (o *ChangelogBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -237,7 +237,7 @@ func (o *ChangelogBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -260,7 +260,7 @@ func (o *ChangelogBackendResponse) GetDbDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDbDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.DbDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbDirectory, true
 }
@@ -292,7 +292,7 @@ func (o *ChangelogBackendResponse) GetDbDirectoryPermissions() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDbDirectoryPermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.DbDirectoryPermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbDirectoryPermissions, true
 }
@@ -324,7 +324,7 @@ func (o *ChangelogBackendResponse) GetDbCachePercent() int32 {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDbCachePercentOk() (*int32, bool) {
 	if o == nil || isNil(o.DbCachePercent) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbCachePercent, true
 }
@@ -356,7 +356,7 @@ func (o *ChangelogBackendResponse) GetJeProperty() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetJePropertyOk() ([]string, bool) {
 	if o == nil || isNil(o.JeProperty) {
-    return nil, false
+		return nil, false
 	}
 	return o.JeProperty, true
 }
@@ -388,7 +388,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteBatchSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogWriteBatchSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.ChangelogWriteBatchSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogWriteBatchSize, true
 }
@@ -420,7 +420,7 @@ func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogPurgeBatchSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.ChangelogPurgeBatchSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogPurgeBatchSize, true
 }
@@ -452,7 +452,7 @@ func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacity() int32 {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogWriteQueueCapacityOk() (*int32, bool) {
 	if o == nil || isNil(o.ChangelogWriteQueueCapacity) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogWriteQueueCapacity, true
 }
@@ -484,7 +484,7 @@ func (o *ChangelogBackendResponse) GetIndexIncludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIndexIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IndexIncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IndexIncludeAttribute, true
 }
@@ -516,7 +516,7 @@ func (o *ChangelogBackendResponse) GetIndexExcludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIndexExcludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IndexExcludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IndexExcludeAttribute, true
 }
@@ -549,7 +549,7 @@ func (o *ChangelogBackendResponse) GetChangelogMaximumAge() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogMaximumAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ChangelogMaximumAge, true
 }
@@ -572,7 +572,7 @@ func (o *ChangelogBackendResponse) GetTargetDatabaseSize() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetTargetDatabaseSizeOk() (*string, bool) {
 	if o == nil || isNil(o.TargetDatabaseSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.TargetDatabaseSize, true
 }
@@ -604,7 +604,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryIncludeBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryIncludeBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogEntryIncludeBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogEntryIncludeBaseDN, true
 }
@@ -636,7 +636,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryExcludeBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryExcludeBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogEntryExcludeBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogEntryExcludeBaseDN, true
 }
@@ -668,7 +668,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryIncludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryIncludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogEntryIncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogEntryIncludeFilter, true
 }
@@ -700,7 +700,7 @@ func (o *ChangelogBackendResponse) GetChangelogEntryExcludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogEntryExcludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogEntryExcludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogEntryExcludeFilter, true
 }
@@ -732,7 +732,7 @@ func (o *ChangelogBackendResponse) GetChangelogIncludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogIncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogIncludeAttribute, true
 }
@@ -764,7 +764,7 @@ func (o *ChangelogBackendResponse) GetChangelogExcludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogExcludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogExcludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogExcludeAttribute, true
 }
@@ -796,7 +796,7 @@ func (o *ChangelogBackendResponse) GetChangelogDeletedEntryIncludeAttribute() []
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogDeletedEntryIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogDeletedEntryIncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogDeletedEntryIncludeAttribute, true
 }
@@ -828,7 +828,7 @@ func (o *ChangelogBackendResponse) GetChangelogDeletedEntryExcludeAttribute() []
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogDeletedEntryExcludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogDeletedEntryExcludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogDeletedEntryExcludeAttribute, true
 }
@@ -860,7 +860,7 @@ func (o *ChangelogBackendResponse) GetChangelogIncludeKeyAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogIncludeKeyAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangelogIncludeKeyAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogIncludeKeyAttribute, true
 }
@@ -892,7 +892,7 @@ func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValues() int32 {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetChangelogMaxBeforeAfterValuesOk() (*int32, bool) {
 	if o == nil || isNil(o.ChangelogMaxBeforeAfterValues) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangelogMaxBeforeAfterValues, true
 }
@@ -924,7 +924,7 @@ func (o *ChangelogBackendResponse) GetWriteLastmodAttributes() bool {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetWriteLastmodAttributesOk() (*bool, bool) {
 	if o == nil || isNil(o.WriteLastmodAttributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.WriteLastmodAttributes, true
 }
@@ -956,7 +956,7 @@ func (o *ChangelogBackendResponse) GetUseReversibleForm() bool {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetUseReversibleFormOk() (*bool, bool) {
 	if o == nil || isNil(o.UseReversibleForm) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseReversibleForm, true
 }
@@ -988,7 +988,7 @@ func (o *ChangelogBackendResponse) GetIncludeVirtualAttributes() []EnumbackendIn
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetIncludeVirtualAttributesOk() ([]EnumbackendIncludeVirtualAttributesProp, bool) {
 	if o == nil || isNil(o.IncludeVirtualAttributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeVirtualAttributes, true
 }
@@ -1020,7 +1020,7 @@ func (o *ChangelogBackendResponse) GetApplyAccessControlsToChangelogEntryContent
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetApplyAccessControlsToChangelogEntryContentsOk() (*bool, bool) {
 	if o == nil || isNil(o.ApplyAccessControlsToChangelogEntryContents) {
-    return nil, false
+		return nil, false
 	}
 	return o.ApplyAccessControlsToChangelogEntryContents, true
 }
@@ -1052,7 +1052,7 @@ func (o *ChangelogBackendResponse) GetReportExcludedChangelogAttributes() Enumba
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetReportExcludedChangelogAttributesOk() (*EnumbackendReportExcludedChangelogAttributesProp, bool) {
 	if o == nil || isNil(o.ReportExcludedChangelogAttributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReportExcludedChangelogAttributes, true
 }
@@ -1084,7 +1084,7 @@ func (o *ChangelogBackendResponse) GetSoftDeleteEntryIncludedOperation() []Enumb
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetSoftDeleteEntryIncludedOperationOk() ([]EnumbackendSoftDeleteEntryIncludedOperationProp, bool) {
 	if o == nil || isNil(o.SoftDeleteEntryIncludedOperation) {
-    return nil, false
+		return nil, false
 	}
 	return o.SoftDeleteEntryIncludedOperation, true
 }
@@ -1117,7 +1117,7 @@ func (o *ChangelogBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -1140,7 +1140,7 @@ func (o *ChangelogBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1173,7 +1173,7 @@ func (o *ChangelogBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1196,7 +1196,7 @@ func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -1228,7 +1228,7 @@ func (o *ChangelogBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -1260,7 +1260,7 @@ func (o *ChangelogBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *ChangelogBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -1433,5 +1433,3 @@ func (v *NullableChangelogBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

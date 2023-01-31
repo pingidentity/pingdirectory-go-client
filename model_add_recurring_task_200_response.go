@@ -17,17 +17,17 @@ import (
 
 // AddRecurringTask200Response - struct for AddRecurringTask200Response
 type AddRecurringTask200Response struct {
-	BackupRecurringTaskResponse *BackupRecurringTaskResponse
-	CollectSupportDataRecurringTaskResponse *CollectSupportDataRecurringTaskResponse
-	DelayRecurringTaskResponse *DelayRecurringTaskResponse
-	EnterLockdownModeRecurringTaskResponse *EnterLockdownModeRecurringTaskResponse
-	ExecRecurringTaskResponse *ExecRecurringTaskResponse
-	FileRetentionRecurringTaskResponse *FileRetentionRecurringTaskResponse
+	BackupRecurringTaskResponse                *BackupRecurringTaskResponse
+	CollectSupportDataRecurringTaskResponse    *CollectSupportDataRecurringTaskResponse
+	DelayRecurringTaskResponse                 *DelayRecurringTaskResponse
+	EnterLockdownModeRecurringTaskResponse     *EnterLockdownModeRecurringTaskResponse
+	ExecRecurringTaskResponse                  *ExecRecurringTaskResponse
+	FileRetentionRecurringTaskResponse         *FileRetentionRecurringTaskResponse
 	GenerateServerProfileRecurringTaskResponse *GenerateServerProfileRecurringTaskResponse
-	LdifExportRecurringTaskResponse *LdifExportRecurringTaskResponse
-	LeaveLockdownModeRecurringTaskResponse *LeaveLockdownModeRecurringTaskResponse
-	StaticallyDefinedRecurringTaskResponse *StaticallyDefinedRecurringTaskResponse
-	ThirdPartyRecurringTaskResponse *ThirdPartyRecurringTaskResponse
+	LdifExportRecurringTaskResponse            *LdifExportRecurringTaskResponse
+	LeaveLockdownModeRecurringTaskResponse     *LeaveLockdownModeRecurringTaskResponse
+	StaticallyDefinedRecurringTaskResponse     *StaticallyDefinedRecurringTaskResponse
+	ThirdPartyRecurringTaskResponse            *ThirdPartyRecurringTaskResponse
 }
 
 // BackupRecurringTaskResponseAsAddRecurringTask200Response is a convenience function that returns BackupRecurringTaskResponse wrapped in AddRecurringTask200Response
@@ -106,7 +106,6 @@ func ThirdPartyRecurringTaskResponseAsAddRecurringTask200Response(v *ThirdPartyR
 		ThirdPartyRecurringTaskResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddRecurringTask200Response) UnmarshalJSON(data []byte) error {
@@ -327,7 +326,7 @@ func (src AddRecurringTask200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddRecurringTask200Response) GetActualInstance() (interface{}) {
+func (obj *AddRecurringTask200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -414,5 +413,3 @@ func (v *NullableAddRecurringTask200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

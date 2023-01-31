@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // GlobalConfigurationApiService GlobalConfigurationApi service
 type GlobalConfigurationApiService service
 
 type ApiGetGlobalConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *GlobalConfigurationApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetGlobalConfigurationRequest) Execute() (*GlobalConfigurationRespons
 /*
 GetGlobalConfiguration Returns a single Global Configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGlobalConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetGlobalConfigurationRequest
 */
 func (a *GlobalConfigurationApiService) GetGlobalConfiguration(ctx context.Context) ApiGetGlobalConfigurationRequest {
 	return ApiGetGlobalConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GlobalConfigurationResponse
+//
+//	@return GlobalConfigurationResponse
 func (a *GlobalConfigurationApiService) GetGlobalConfigurationExecute(r ApiGetGlobalConfigurationRequest) (*GlobalConfigurationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GlobalConfigurationResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GlobalConfigurationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GlobalConfigurationApiService.GetGlobalConfiguration")
@@ -120,8 +120,8 @@ func (a *GlobalConfigurationApiService) GetGlobalConfigurationExecute(r ApiGetGl
 }
 
 type ApiUpdateGlobalConfigurationRequest struct {
-	ctx context.Context
-	ApiService *GlobalConfigurationApiService
+	ctx           context.Context
+	ApiService    *GlobalConfigurationApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateGlobalConfigurationRequest) Execute() (*GlobalConfigurationResp
 /*
 UpdateGlobalConfiguration Update an existing Global Configuration by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateGlobalConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateGlobalConfigurationRequest
 */
 func (a *GlobalConfigurationApiService) UpdateGlobalConfiguration(ctx context.Context) ApiUpdateGlobalConfigurationRequest {
 	return ApiUpdateGlobalConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return GlobalConfigurationResponse
+//
+//	@return GlobalConfigurationResponse
 func (a *GlobalConfigurationApiService) UpdateGlobalConfigurationExecute(r ApiUpdateGlobalConfigurationRequest) (*GlobalConfigurationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GlobalConfigurationResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GlobalConfigurationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GlobalConfigurationApiService.UpdateGlobalConfiguration")

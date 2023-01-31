@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedChangeSubscriptionHandlerRequest struct for AddGroovyScriptedChangeSubscriptionHandlerRequest
 type AddGroovyScriptedChangeSubscriptionHandlerRequest struct {
 	// Name of the new Change Subscription Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                 `json:"handlerName"`
+	Schemas     []EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Change Subscription Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Change Subscription Handler. Each configuration property should be given in the form 'name=value'.
@@ -66,7 +66,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerName() str
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -90,7 +90,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetSchemas() []Enumg
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetSchemasOk() ([]EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptClass() str
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -137,7 +137,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptArgument() 
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -169,7 +169,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -202,7 +202,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -225,7 +225,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetChangeSubscriptio
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangeSubscription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangeSubscription, true
 }
@@ -305,5 +305,3 @@ func (v *NullableAddGroovyScriptedChangeSubscriptionHandlerRequest) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

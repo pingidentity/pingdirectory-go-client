@@ -106,4 +106,3 @@ func (v *NullableEnumfileRetentionRecurringTaskSchemaUrn) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,15 +16,15 @@ import (
 
 // FileRetentionRecurringTaskResponse struct for FileRetentionRecurringTaskResponse
 type FileRetentionRecurringTaskResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumfileRetentionRecurringTaskSchemaUrn `json:"schemas"`
 	// The path to the directory containing the files to examine. The directory must exist.
 	TargetDirectory string `json:"targetDirectory"`
 	// A pattern that specifies the names of the files to examine. The pattern may contain zero or more asterisks as wildcards, where each wildcard matches zero or more characters. It may also contain at most one occurrence of the special string \"${timestamp}\", which will match a timestamp with the format specified using the timestamp-format property. All other characters in the pattern will be treated literally.
-	FilenamePattern string `json:"filenamePattern"`
+	FilenamePattern string                               `json:"filenamePattern"`
 	TimestampFormat EnumrecurringTaskTimestampFormatProp `json:"timestampFormat"`
 	// The minimum number of files matching the pattern that will be retained.
 	RetainFileCount *int32 `json:"retainFileCount,omitempty"`
@@ -85,7 +85,7 @@ func (o *FileRetentionRecurringTaskResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -117,7 +117,7 @@ func (o *FileRetentionRecurringTaskResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -150,7 +150,7 @@ func (o *FileRetentionRecurringTaskResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *FileRetentionRecurringTaskResponse) GetSchemas() []EnumfileRetentionRec
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetSchemasOk() ([]EnumfileRetentionRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -198,7 +198,7 @@ func (o *FileRetentionRecurringTaskResponse) GetTargetDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetTargetDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TargetDirectory, true
 }
@@ -222,7 +222,7 @@ func (o *FileRetentionRecurringTaskResponse) GetFilenamePattern() string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetFilenamePatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FilenamePattern, true
 }
@@ -246,7 +246,7 @@ func (o *FileRetentionRecurringTaskResponse) GetTimestampFormat() EnumrecurringT
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetTimestampFormatOk() (*EnumrecurringTaskTimestampFormatProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TimestampFormat, true
 }
@@ -269,7 +269,7 @@ func (o *FileRetentionRecurringTaskResponse) GetRetainFileCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetRetainFileCountOk() (*int32, bool) {
 	if o == nil || isNil(o.RetainFileCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainFileCount, true
 }
@@ -301,7 +301,7 @@ func (o *FileRetentionRecurringTaskResponse) GetRetainFileAge() string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetRetainFileAgeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainFileAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainFileAge, true
 }
@@ -333,7 +333,7 @@ func (o *FileRetentionRecurringTaskResponse) GetRetainAggregateFileSize() string
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetRetainAggregateFileSizeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainAggregateFileSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainAggregateFileSize, true
 }
@@ -365,7 +365,7 @@ func (o *FileRetentionRecurringTaskResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -397,7 +397,7 @@ func (o *FileRetentionRecurringTaskResponse) GetCancelOnTaskDependencyFailure() 
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -429,7 +429,7 @@ func (o *FileRetentionRecurringTaskResponse) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -461,7 +461,7 @@ func (o *FileRetentionRecurringTaskResponse) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -493,7 +493,7 @@ func (o *FileRetentionRecurringTaskResponse) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -525,7 +525,7 @@ func (o *FileRetentionRecurringTaskResponse) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -557,7 +557,7 @@ func (o *FileRetentionRecurringTaskResponse) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -589,7 +589,7 @@ func (o *FileRetentionRecurringTaskResponse) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *FileRetentionRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -702,5 +702,3 @@ func (v *NullableFileRetentionRecurringTaskResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,7 +16,7 @@ import (
 
 // MetaUrnPingidentitySchemasConfigurationMessages20 struct for MetaUrnPingidentitySchemasConfigurationMessages20
 type MetaUrnPingidentitySchemasConfigurationMessages20 struct {
-	Notifications []string `json:"notifications,omitempty"`
+	Notifications   []string                                                                `json:"notifications,omitempty"`
 	RequiredActions []MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner `json:"requiredActions,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetNotifications() [
 // and a boolean to check if the value has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetNotificationsOk() ([]string, bool) {
 	if o == nil || isNil(o.Notifications) {
-    return nil, false
+		return nil, false
 	}
 	return o.Notifications, true
 }
@@ -82,7 +82,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetRequiredActions()
 // and a boolean to check if the value has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20) GetRequiredActionsOk() ([]MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner, bool) {
 	if o == nil || isNil(o.RequiredActions) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequiredActions, true
 }
@@ -147,5 +147,3 @@ func (v *NullableMetaUrnPingidentitySchemasConfigurationMessages20) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

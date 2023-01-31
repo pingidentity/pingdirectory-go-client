@@ -17,8 +17,8 @@ import (
 // AddLoggingChangeSubscriptionHandlerRequest struct for AddLoggingChangeSubscriptionHandlerRequest
 type AddLoggingChangeSubscriptionHandlerRequest struct {
 	// Name of the new Change Subscription Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                          `json:"handlerName"`
+	Schemas     []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the log file in which the change notification messages will be written.
 	LogFile string `json:"logFile"`
 	// A description for this Change Subscription Handler
@@ -64,7 +64,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -88,7 +88,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetSchemas() []EnumloggingC
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetSchemasOk() ([]EnumloggingChangeSubscriptionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetLogFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFile, true
 }
@@ -135,7 +135,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -168,7 +168,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -191,7 +191,7 @@ func (o *AddLoggingChangeSubscriptionHandlerRequest) GetChangeSubscription() []s
 // and a boolean to check if the value has been set.
 func (o *AddLoggingChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangeSubscription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangeSubscription, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddLoggingChangeSubscriptionHandlerRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

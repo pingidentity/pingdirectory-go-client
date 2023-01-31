@@ -16,15 +16,15 @@ import (
 
 // BackupBackendResponse struct for BackupBackendResponse
 type BackupBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumbackupBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumbackupBackendSchemaUrn                       `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// Specifies the base DN(s) for the data that the backend handles.
-	BaseDN []string `json:"baseDN"`
+	BaseDN          []string                       `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Specifies the path to a backup directory containing one or more backups for a particular backend.
 	BackupDirectory []string `json:"backupDirectory"`
@@ -77,7 +77,7 @@ func (o *BackupBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -109,7 +109,7 @@ func (o *BackupBackendResponse) GetUrnpingidentityschemasconfigurationmessages20
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -142,7 +142,7 @@ func (o *BackupBackendResponse) GetSchemas() []EnumbackupBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetSchemasOk() ([]EnumbackupBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -166,7 +166,7 @@ func (o *BackupBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -190,7 +190,7 @@ func (o *BackupBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -214,7 +214,7 @@ func (o *BackupBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -238,7 +238,7 @@ func (o *BackupBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeP
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -262,7 +262,7 @@ func (o *BackupBackendResponse) GetBackupDirectory() []string {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetBackupDirectoryOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupDirectory, true
 }
@@ -285,7 +285,7 @@ func (o *BackupBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -318,7 +318,7 @@ func (o *BackupBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -341,7 +341,7 @@ func (o *BackupBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -373,7 +373,7 @@ func (o *BackupBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -405,7 +405,7 @@ func (o *BackupBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *BackupBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -503,5 +503,3 @@ func (v *NullableBackupBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

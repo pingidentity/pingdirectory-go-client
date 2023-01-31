@@ -18,7 +18,7 @@ import (
 // AddGaugeDataSource200Response - struct for AddGaugeDataSource200Response
 type AddGaugeDataSource200Response struct {
 	IndicatorGaugeDataSourceResponse *IndicatorGaugeDataSourceResponse
-	NumericGaugeDataSourceResponse *NumericGaugeDataSourceResponse
+	NumericGaugeDataSourceResponse   *NumericGaugeDataSourceResponse
 }
 
 // IndicatorGaugeDataSourceResponseAsAddGaugeDataSource200Response is a convenience function that returns IndicatorGaugeDataSourceResponse wrapped in AddGaugeDataSource200Response
@@ -34,7 +34,6 @@ func NumericGaugeDataSourceResponseAsAddGaugeDataSource200Response(v *NumericGau
 		NumericGaugeDataSourceResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddGaugeDataSource200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddGaugeDataSource200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddGaugeDataSource200Response) GetActualInstance() (interface{}) {
+func (obj *AddGaugeDataSource200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddGaugeDataSource200Response) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

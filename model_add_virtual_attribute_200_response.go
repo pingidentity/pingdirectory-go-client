@@ -17,19 +17,19 @@ import (
 
 // AddVirtualAttribute200Response - struct for AddVirtualAttribute200Response
 type AddVirtualAttribute200Response struct {
-	ConstructedVirtualAttributeResponse *ConstructedVirtualAttributeResponse
-	DnJoinVirtualAttributeResponse *DnJoinVirtualAttributeResponse
-	EntryDnVirtualAttributeResponse *EntryDnVirtualAttributeResponse
-	EqualityJoinVirtualAttributeResponse *EqualityJoinVirtualAttributeResponse
-	GroovyScriptedVirtualAttributeResponse *GroovyScriptedVirtualAttributeResponse
-	IdentifyReferencesVirtualAttributeResponse *IdentifyReferencesVirtualAttributeResponse
-	IsMemberOfVirtualAttributeResponse *IsMemberOfVirtualAttributeResponse
-	MemberVirtualAttributeResponse *MemberVirtualAttributeResponse
-	MirrorVirtualAttributeResponse *MirrorVirtualAttributeResponse
+	ConstructedVirtualAttributeResponse             *ConstructedVirtualAttributeResponse
+	DnJoinVirtualAttributeResponse                  *DnJoinVirtualAttributeResponse
+	EntryDnVirtualAttributeResponse                 *EntryDnVirtualAttributeResponse
+	EqualityJoinVirtualAttributeResponse            *EqualityJoinVirtualAttributeResponse
+	GroovyScriptedVirtualAttributeResponse          *GroovyScriptedVirtualAttributeResponse
+	IdentifyReferencesVirtualAttributeResponse      *IdentifyReferencesVirtualAttributeResponse
+	IsMemberOfVirtualAttributeResponse              *IsMemberOfVirtualAttributeResponse
+	MemberVirtualAttributeResponse                  *MemberVirtualAttributeResponse
+	MirrorVirtualAttributeResponse                  *MirrorVirtualAttributeResponse
 	PasswordPolicyStateJsonVirtualAttributeResponse *PasswordPolicyStateJsonVirtualAttributeResponse
-	ReverseDnJoinVirtualAttributeResponse *ReverseDnJoinVirtualAttributeResponse
-	ThirdPartyVirtualAttributeResponse *ThirdPartyVirtualAttributeResponse
-	UserDefinedVirtualAttributeResponse *UserDefinedVirtualAttributeResponse
+	ReverseDnJoinVirtualAttributeResponse           *ReverseDnJoinVirtualAttributeResponse
+	ThirdPartyVirtualAttributeResponse              *ThirdPartyVirtualAttributeResponse
+	UserDefinedVirtualAttributeResponse             *UserDefinedVirtualAttributeResponse
 }
 
 // ConstructedVirtualAttributeResponseAsAddVirtualAttribute200Response is a convenience function that returns ConstructedVirtualAttributeResponse wrapped in AddVirtualAttribute200Response
@@ -122,7 +122,6 @@ func UserDefinedVirtualAttributeResponseAsAddVirtualAttribute200Response(v *User
 		UserDefinedVirtualAttributeResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddVirtualAttribute200Response) UnmarshalJSON(data []byte) error {
@@ -379,7 +378,7 @@ func (src AddVirtualAttribute200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddVirtualAttribute200Response) GetActualInstance() (interface{}) {
+func (obj *AddVirtualAttribute200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -474,5 +473,3 @@ func (v *NullableAddVirtualAttribute200Response) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

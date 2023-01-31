@@ -106,4 +106,3 @@ func (v *NullableEnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

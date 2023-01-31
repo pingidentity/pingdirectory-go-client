@@ -20,7 +20,7 @@ type EnumdataSecurityAuditorWeakCryptEncodingProp string
 
 // List of Enumdata-security-auditor-weakCryptEncodingProp
 const (
-	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_CRYPT EnumdataSecurityAuditorWeakCryptEncodingProp = "crypt"
+	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_CRYPT     EnumdataSecurityAuditorWeakCryptEncodingProp = "crypt"
 	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_SHA_2_256 EnumdataSecurityAuditorWeakCryptEncodingProp = "sha-2-256"
 	ENUMDATASECURITYAUDITORWEAKCRYPTENCODINGPROP_SHA_2_512 EnumdataSecurityAuditorWeakCryptEncodingProp = "sha-2-512"
 )
@@ -110,4 +110,3 @@ func (v *NullableEnumdataSecurityAuditorWeakCryptEncodingProp) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

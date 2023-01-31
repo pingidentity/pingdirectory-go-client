@@ -106,4 +106,3 @@ func (v *NullableEnumdebugAccessLogPublisherSchemaUrn) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

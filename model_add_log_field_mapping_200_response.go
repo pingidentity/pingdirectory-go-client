@@ -18,7 +18,7 @@ import (
 // AddLogFieldMapping200Response - struct for AddLogFieldMapping200Response
 type AddLogFieldMapping200Response struct {
 	AccessLogFieldMappingResponse *AccessLogFieldMappingResponse
-	ErrorLogFieldMappingResponse *ErrorLogFieldMappingResponse
+	ErrorLogFieldMappingResponse  *ErrorLogFieldMappingResponse
 }
 
 // AccessLogFieldMappingResponseAsAddLogFieldMapping200Response is a convenience function that returns AccessLogFieldMappingResponse wrapped in AddLogFieldMapping200Response
@@ -34,7 +34,6 @@ func ErrorLogFieldMappingResponseAsAddLogFieldMapping200Response(v *ErrorLogFiel
 		ErrorLogFieldMappingResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogFieldMapping200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddLogFieldMapping200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogFieldMapping200Response) GetActualInstance() (interface{}) {
+func (obj *AddLogFieldMapping200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddLogFieldMapping200Response) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

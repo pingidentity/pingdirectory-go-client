@@ -17,8 +17,8 @@ import (
 
 // AddKeyManagerProviderRequest - struct for AddKeyManagerProviderRequest
 type AddKeyManagerProviderRequest struct {
-	AddFileBasedKeyManagerProviderRequest *AddFileBasedKeyManagerProviderRequest
-	AddPkcs11KeyManagerProviderRequest *AddPkcs11KeyManagerProviderRequest
+	AddFileBasedKeyManagerProviderRequest  *AddFileBasedKeyManagerProviderRequest
+	AddPkcs11KeyManagerProviderRequest     *AddPkcs11KeyManagerProviderRequest
 	AddThirdPartyKeyManagerProviderRequest *AddThirdPartyKeyManagerProviderRequest
 }
 
@@ -42,7 +42,6 @@ func AddThirdPartyKeyManagerProviderRequestAsAddKeyManagerProviderRequest(v *Add
 		AddThirdPartyKeyManagerProviderRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddKeyManagerProviderRequest) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddKeyManagerProviderRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddKeyManagerProviderRequest) GetActualInstance() (interface{}) {
+func (obj *AddKeyManagerProviderRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddKeyManagerProviderRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

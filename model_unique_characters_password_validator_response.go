@@ -16,10 +16,10 @@ import (
 
 // UniqueCharactersPasswordValidatorResponse struct for UniqueCharactersPasswordValidatorResponse
 type UniqueCharactersPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                           `json:"id"`
 	Schemas []EnumuniqueCharactersPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the minimum number of unique characters that a password will be allowed to contain.
 	MinUniqueCharacters int32 `json:"minUniqueCharacters"`
@@ -70,7 +70,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -102,7 +102,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetUrnpingidentityschemascon
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -135,7 +135,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -159,7 +159,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetSchemas() []EnumuniqueCha
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetSchemasOk() ([]EnumuniqueCharactersPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharacters() int
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetMinUniqueCharactersOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MinUniqueCharacters, true
 }
@@ -207,7 +207,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetCaseSensitiveValidation()
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetCaseSensitiveValidationOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CaseSensitiveValidation, true
 }
@@ -230,7 +230,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -263,7 +263,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -286,7 +286,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetValidatorRequirementDescr
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -318,7 +318,7 @@ func (o *UniqueCharactersPasswordValidatorResponse) GetValidatorFailureMessage()
 // and a boolean to check if the value has been set.
 func (o *UniqueCharactersPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -407,5 +407,3 @@ func (v *NullableUniqueCharactersPasswordValidatorResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

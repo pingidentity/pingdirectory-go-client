@@ -20,11 +20,11 @@ type EnumlogPublisherScimMessageTypeProp string
 
 // List of Enumlog-publisher-scimMessageTypeProp
 const (
-	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_REQUEST EnumlogPublisherScimMessageTypeProp = "request"
-	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_RESULT EnumlogPublisherScimMessageTypeProp = "result"
+	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_REQUEST          EnumlogPublisherScimMessageTypeProp = "request"
+	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_RESULT           EnumlogPublisherScimMessageTypeProp = "result"
 	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_INTERNAL_REQUEST EnumlogPublisherScimMessageTypeProp = "internal-request"
-	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_INTERNAL_RESULT EnumlogPublisherScimMessageTypeProp = "internal-result"
-	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_ERROR EnumlogPublisherScimMessageTypeProp = "error"
+	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_INTERNAL_RESULT  EnumlogPublisherScimMessageTypeProp = "internal-result"
+	ENUMLOGPUBLISHERSCIMMESSAGETYPEPROP_ERROR            EnumlogPublisherScimMessageTypeProp = "error"
 )
 
 // All allowed values of EnumlogPublisherScimMessageTypeProp enum
@@ -114,4 +114,3 @@ func (v *NullableEnumlogPublisherScimMessageTypeProp) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

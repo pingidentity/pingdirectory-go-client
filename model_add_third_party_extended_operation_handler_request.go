@@ -17,8 +17,8 @@ import (
 // AddThirdPartyExtendedOperationHandlerRequest struct for AddThirdPartyExtendedOperationHandlerRequest
 type AddThirdPartyExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumthirdPartyExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                            `json:"handlerName"`
+	Schemas     []EnumthirdPartyExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Extended Operation Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Extended Operation Handler. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) GetSchemas() []EnumthirdP
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumthirdPartyExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) GetExtensionClass() strin
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyExtendedOperationHandlerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) GetExtensionArgument() []
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyExtendedOperationHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyExtendedOperationHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyExtendedOperationHandlerRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

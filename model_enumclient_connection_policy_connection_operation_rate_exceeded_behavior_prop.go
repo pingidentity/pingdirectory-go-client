@@ -20,13 +20,13 @@ type EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp strin
 
 // List of Enumclient-connection-policy-connectionOperationRateExceededBehaviorProp
 const (
-	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_DISCONNECT EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "disconnect"
+	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_DISCONNECT                  EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "disconnect"
 	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_ADMIN_LIMIT_EXCEEDED EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-admin-limit-exceeded"
 	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_CONSTRAINT_VIOLATION EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-constraint-violation"
-	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_BUSY EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-busy"
-	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_UNAVAILABLE EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-unavailable"
+	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_BUSY                 EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-busy"
+	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_UNAVAILABLE          EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-unavailable"
 	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_UNWILLING_TO_PERFORM EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-unwilling-to-perform"
-	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_OTHER EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-other"
+	ENUMCLIENTCONNECTIONPOLICYCONNECTIONOPERATIONRATEEXCEEDEDBEHAVIORPROP_REJECT_OTHER                EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp = "reject-other"
 )
 
 // All allowed values of EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp enum
@@ -118,4 +118,3 @@ func (v *NullableEnumclientConnectionPolicyConnectionOperationRateExceededBehavi
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,13 +17,13 @@ import (
 // AddSyslogJsonErrorLogPublisherRequest struct for AddSyslogJsonErrorLogPublisherRequest
 type AddSyslogJsonErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName string `json:"publisherName"`
-	Schemas []EnumsyslogJsonErrorLogPublisherSchemaUrn `json:"schemas"`
-	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	PublisherName   string                                     `json:"publisherName"`
+	Schemas         []EnumsyslogJsonErrorLogPublisherSchemaUrn `json:"schemas"`
+	DefaultSeverity []EnumlogPublisherDefaultSeverityProp      `json:"defaultSeverity,omitempty"`
 	// The syslog server to which messages should be sent.
-	SyslogExternalServer []string `json:"syslogExternalServer"`
-	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
-	SyslogSeverity *EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity,omitempty"`
+	SyslogExternalServer []string                            `json:"syslogExternalServer"`
+	SyslogFacility       EnumlogPublisherSyslogFacilityProp  `json:"syslogFacility"`
+	SyslogSeverity       *EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity,omitempty"`
 	// The local host name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher.
 	SyslogMessageHostName *string `json:"syslogMessageHostName,omitempty"`
 	// The application name that will be included in syslog messages that are logged by this Syslog JSON Error Log Publisher.
@@ -45,7 +45,7 @@ type AddSyslogJsonErrorLogPublisherRequest struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -85,7 +85,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetPublisherName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PublisherName, true
 }
@@ -109,7 +109,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSchemas() []EnumsyslogJsonErr
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSchemasOk() ([]EnumsyslogJsonErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -132,7 +132,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPu
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -165,7 +165,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogExternalServer() []stri
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogExternalServerOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogExternalServer, true
 }
@@ -189,7 +189,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogFacility() EnumlogPubli
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogFacilityOk() (*EnumlogPublisherSyslogFacilityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SyslogFacility, true
 }
@@ -212,7 +212,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogSeverity() EnumlogPubli
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogSeverityOk() (*EnumlogPublisherSyslogSeverityProp, bool) {
 	if o == nil || isNil(o.SyslogSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogSeverity, true
 }
@@ -244,7 +244,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageHostName() strin
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageHostNameOk() (*string, bool) {
 	if o == nil || isNil(o.SyslogMessageHostName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogMessageHostName, true
 }
@@ -276,7 +276,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageApplicationName(
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetSyslogMessageApplicationNameOk() (*string, bool) {
 	if o == nil || isNil(o.SyslogMessageApplicationName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogMessageApplicationName, true
 }
@@ -308,7 +308,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -340,7 +340,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -372,7 +372,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -404,7 +404,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -436,7 +436,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -468,7 +468,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPos
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
 }
@@ -500,7 +500,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetOverrideSeverity() []string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -532,7 +532,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -565,7 +565,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -588,7 +588,7 @@ func (o *AddSyslogJsonErrorLogPublisherRequest) GetLoggingErrorBehavior() Enumlo
 // and a boolean to check if the value has been set.
 func (o *AddSyslogJsonErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -701,5 +701,3 @@ func (v *NullableAddSyslogJsonErrorLogPublisherRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddThirdPartyAccountStatusNotificationHandlerRequest struct for AddThirdPartyAccountStatusNotificationHandlerRequest
 type AddThirdPartyAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                    `json:"handlerName"`
+	Schemas     []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Account Status Notification Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Account Status Notification Handler. Each configuration property should be given in the form 'name=value'.
@@ -70,7 +70,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetHandlerName() 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -94,7 +94,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetSchemas() []En
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetSchemasOk() ([]EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionClass
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -141,7 +141,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionArgum
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -173,7 +173,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetDescription() 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -206,7 +206,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetEnabled() bool
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -229,7 +229,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAsynchronous()
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -261,7 +261,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountCreatio
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -293,7 +293,7 @@ func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountUpdateN
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -379,5 +379,3 @@ func (v *NullableAddThirdPartyAccountStatusNotificationHandlerRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

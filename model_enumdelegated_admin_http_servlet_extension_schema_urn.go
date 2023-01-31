@@ -106,4 +106,3 @@ func (v *NullableEnumdelegatedAdminHttpServletExtensionSchemaUrn) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

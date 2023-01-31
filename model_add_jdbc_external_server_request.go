@@ -17,8 +17,8 @@ import (
 // AddJdbcExternalServerRequest struct for AddJdbcExternalServerRequest
 type AddJdbcExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumjdbcExternalServerSchemaUrn `json:"schemas"`
+	ServerName     string                               `json:"serverName"`
+	Schemas        []EnumjdbcExternalServerSchemaUrn    `json:"schemas"`
 	JdbcDriverType EnumexternalServerJdbcDriverTypeProp `json:"jdbcDriverType"`
 	// Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type 'other' for the jdbc-driver-type.
 	JdbcDriverURL *string `json:"jdbcDriverURL,omitempty"`
@@ -39,7 +39,7 @@ type AddJdbcExternalServerRequest struct {
 	// Specifies the amount of time to wait for a response from the database when executing the validation query, if one is set. If the timeout is exceeded, the Directory Server will drop the connection and obtain a new one. A value of zero indicates no timeout.
 	ValidationQueryTimeout *string `json:"validationQueryTimeout,omitempty"`
 	// Specifies the connection properties for the JDBC datasource.
-	JdbcConnectionProperties []string `json:"jdbcConnectionProperties,omitempty"`
+	JdbcConnectionProperties  []string                                         `json:"jdbcConnectionProperties,omitempty"`
 	TransactionIsolationLevel *EnumexternalServerTransactionIsolationLevelProp `json:"transactionIsolationLevel,omitempty"`
 	// A description for this External Server
 	Description *string `json:"description,omitempty"`
@@ -79,7 +79,7 @@ func (o *AddJdbcExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -103,7 +103,7 @@ func (o *AddJdbcExternalServerRequest) GetSchemas() []EnumjdbcExternalServerSche
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetSchemasOk() ([]EnumjdbcExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -127,7 +127,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcDriverType() EnumexternalServerJdb
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetJdbcDriverTypeOk() (*EnumexternalServerJdbcDriverTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.JdbcDriverType, true
 }
@@ -150,7 +150,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcDriverURL() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetJdbcDriverURLOk() (*string, bool) {
 	if o == nil || isNil(o.JdbcDriverURL) {
-    return nil, false
+		return nil, false
 	}
 	return o.JdbcDriverURL, true
 }
@@ -182,7 +182,7 @@ func (o *AddJdbcExternalServerRequest) GetDatabaseName() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetDatabaseNameOk() (*string, bool) {
 	if o == nil || isNil(o.DatabaseName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DatabaseName, true
 }
@@ -214,7 +214,7 @@ func (o *AddJdbcExternalServerRequest) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetServerHostNameOk() (*string, bool) {
 	if o == nil || isNil(o.ServerHostName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerHostName, true
 }
@@ -246,7 +246,7 @@ func (o *AddJdbcExternalServerRequest) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetServerPortOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerPort, true
 }
@@ -278,7 +278,7 @@ func (o *AddJdbcExternalServerRequest) GetUserName() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetUserNameOk() (*string, bool) {
 	if o == nil || isNil(o.UserName) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserName, true
 }
@@ -310,7 +310,7 @@ func (o *AddJdbcExternalServerRequest) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -342,7 +342,7 @@ func (o *AddJdbcExternalServerRequest) GetPassphraseProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -374,7 +374,7 @@ func (o *AddJdbcExternalServerRequest) GetValidationQuery() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetValidationQueryOk() (*string, bool) {
 	if o == nil || isNil(o.ValidationQuery) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidationQuery, true
 }
@@ -406,7 +406,7 @@ func (o *AddJdbcExternalServerRequest) GetValidationQueryTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetValidationQueryTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.ValidationQueryTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidationQueryTimeout, true
 }
@@ -438,7 +438,7 @@ func (o *AddJdbcExternalServerRequest) GetJdbcConnectionProperties() []string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetJdbcConnectionPropertiesOk() ([]string, bool) {
 	if o == nil || isNil(o.JdbcConnectionProperties) {
-    return nil, false
+		return nil, false
 	}
 	return o.JdbcConnectionProperties, true
 }
@@ -470,7 +470,7 @@ func (o *AddJdbcExternalServerRequest) GetTransactionIsolationLevel() Enumextern
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetTransactionIsolationLevelOk() (*EnumexternalServerTransactionIsolationLevelProp, bool) {
 	if o == nil || isNil(o.TransactionIsolationLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.TransactionIsolationLevel, true
 }
@@ -502,7 +502,7 @@ func (o *AddJdbcExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddJdbcExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -606,5 +606,3 @@ func (v *NullableAddJdbcExternalServerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

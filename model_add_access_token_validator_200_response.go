@@ -17,10 +17,10 @@ import (
 
 // AddAccessTokenValidator200Response - struct for AddAccessTokenValidator200Response
 type AddAccessTokenValidator200Response struct {
-	JwtAccessTokenValidatorResponse *JwtAccessTokenValidatorResponse
-	MockAccessTokenValidatorResponse *MockAccessTokenValidatorResponse
+	JwtAccessTokenValidatorResponse          *JwtAccessTokenValidatorResponse
+	MockAccessTokenValidatorResponse         *MockAccessTokenValidatorResponse
 	PingFederateAccessTokenValidatorResponse *PingFederateAccessTokenValidatorResponse
-	ThirdPartyAccessTokenValidatorResponse *ThirdPartyAccessTokenValidatorResponse
+	ThirdPartyAccessTokenValidatorResponse   *ThirdPartyAccessTokenValidatorResponse
 }
 
 // JwtAccessTokenValidatorResponseAsAddAccessTokenValidator200Response is a convenience function that returns JwtAccessTokenValidatorResponse wrapped in AddAccessTokenValidator200Response
@@ -50,7 +50,6 @@ func ThirdPartyAccessTokenValidatorResponseAsAddAccessTokenValidator200Response(
 		ThirdPartyAccessTokenValidatorResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddAccessTokenValidator200Response) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddAccessTokenValidator200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddAccessTokenValidator200Response) GetActualInstance() (interface{}) {
+func (obj *AddAccessTokenValidator200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddAccessTokenValidator200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

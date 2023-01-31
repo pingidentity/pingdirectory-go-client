@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // PasswordGeneratorApiService PasswordGeneratorApi service
 type PasswordGeneratorApiService service
 
 type ApiAddPasswordGeneratorRequest struct {
-	ctx context.Context
-	ApiService *PasswordGeneratorApiService
+	ctx                         context.Context
+	ApiService                  *PasswordGeneratorApiService
 	addPasswordGeneratorRequest *AddPasswordGeneratorRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddPasswordGeneratorRequest) Execute() (*AddPasswordGenerator200Respo
 /*
 AddPasswordGenerator Add a new Password Generator to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPasswordGeneratorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) AddPasswordGenerator(ctx context.Context) ApiAddPasswordGeneratorRequest {
 	return ApiAddPasswordGeneratorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPasswordGenerator200Response
+//
+//	@return AddPasswordGenerator200Response
 func (a *PasswordGeneratorApiService) AddPasswordGeneratorExecute(r ApiAddPasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPasswordGenerator200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPasswordGenerator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.AddPasswordGenerator")
@@ -133,8 +133,8 @@ func (a *PasswordGeneratorApiService) AddPasswordGeneratorExecute(r ApiAddPasswo
 }
 
 type ApiDeletePasswordGeneratorRequest struct {
-	ctx context.Context
-	ApiService *PasswordGeneratorApiService
+	ctx                   context.Context
+	ApiService            *PasswordGeneratorApiService
 	passwordGeneratorName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeletePasswordGeneratorRequest) Execute() (*http.Response, error) {
 /*
 DeletePasswordGenerator Delete a Password Generator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passwordGeneratorName Name of the Password Generator to be deleted
- @return ApiDeletePasswordGeneratorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passwordGeneratorName Name of the Password Generator to be deleted
+	@return ApiDeletePasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) DeletePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiDeletePasswordGeneratorRequest {
 	return ApiDeletePasswordGeneratorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		passwordGeneratorName: passwordGeneratorName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *PasswordGeneratorApiService) DeletePasswordGenerator(ctx context.Contex
 // Execute executes the request
 func (a *PasswordGeneratorApiService) DeletePasswordGeneratorExecute(r ApiDeletePasswordGeneratorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.DeletePasswordGenerator")
@@ -223,8 +223,8 @@ func (a *PasswordGeneratorApiService) DeletePasswordGeneratorExecute(r ApiDelete
 }
 
 type ApiGetPasswordGeneratorRequest struct {
-	ctx context.Context
-	ApiService *PasswordGeneratorApiService
+	ctx                   context.Context
+	ApiService            *PasswordGeneratorApiService
 	passwordGeneratorName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetPasswordGeneratorRequest) Execute() (*AddPasswordGenerator200Respo
 /*
 GetPasswordGenerator Returns a single Password Generator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passwordGeneratorName Name of the Password Generator to be read
- @return ApiGetPasswordGeneratorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passwordGeneratorName Name of the Password Generator to be read
+	@return ApiGetPasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) GetPasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiGetPasswordGeneratorRequest {
 	return ApiGetPasswordGeneratorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		passwordGeneratorName: passwordGeneratorName,
 	}
 }
 
 // Execute executes the request
-//  @return AddPasswordGenerator200Response
+//
+//	@return AddPasswordGenerator200Response
 func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPasswordGenerator200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPasswordGenerator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.GetPasswordGenerator")
@@ -324,10 +325,10 @@ func (a *PasswordGeneratorApiService) GetPasswordGeneratorExecute(r ApiGetPasswo
 }
 
 type ApiUpdatePasswordGeneratorRequest struct {
-	ctx context.Context
-	ApiService *PasswordGeneratorApiService
+	ctx                   context.Context
+	ApiService            *PasswordGeneratorApiService
 	passwordGeneratorName string
-	updateRequest *UpdateRequest
+	updateRequest         *UpdateRequest
 }
 
 // Update an existing Password Generator
@@ -343,26 +344,27 @@ func (r ApiUpdatePasswordGeneratorRequest) Execute() (*AddPasswordGenerator200Re
 /*
 UpdatePasswordGenerator Update an existing Password Generator by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passwordGeneratorName Name of the Password Generator to be updated
- @return ApiUpdatePasswordGeneratorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passwordGeneratorName Name of the Password Generator to be updated
+	@return ApiUpdatePasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) UpdatePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiUpdatePasswordGeneratorRequest {
 	return ApiUpdatePasswordGeneratorRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		passwordGeneratorName: passwordGeneratorName,
 	}
 }
 
 // Execute executes the request
-//  @return AddPasswordGenerator200Response
+//
+//	@return AddPasswordGenerator200Response
 func (a *PasswordGeneratorApiService) UpdatePasswordGeneratorExecute(r ApiUpdatePasswordGeneratorRequest) (*AddPasswordGenerator200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPasswordGenerator200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPasswordGenerator200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PasswordGeneratorApiService.UpdatePasswordGenerator")

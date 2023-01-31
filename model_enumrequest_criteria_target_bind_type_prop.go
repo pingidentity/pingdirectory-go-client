@@ -21,7 +21,7 @@ type EnumrequestCriteriaTargetBindTypeProp string
 // List of Enumrequest-criteria-targetBindTypeProp
 const (
 	ENUMREQUESTCRITERIATARGETBINDTYPEPROP_SIMPLE EnumrequestCriteriaTargetBindTypeProp = "simple"
-	ENUMREQUESTCRITERIATARGETBINDTYPEPROP_SASL EnumrequestCriteriaTargetBindTypeProp = "sasl"
+	ENUMREQUESTCRITERIATARGETBINDTYPEPROP_SASL   EnumrequestCriteriaTargetBindTypeProp = "sasl"
 )
 
 // All allowed values of EnumrequestCriteriaTargetBindTypeProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumrequestCriteriaTargetBindTypeProp) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

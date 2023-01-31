@@ -16,20 +16,20 @@ import (
 
 // PrivilegeDataSecurityAuditorResponse struct for PrivilegeDataSecurityAuditorResponse
 type PrivilegeDataSecurityAuditorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Data Security Auditor
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumprivilegeDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
-	ReportFile string `json:"reportFile"`
+	ReportFile       string                                        `json:"reportFile"`
 	IncludePrivilege []EnumdataSecurityAuditorIncludePrivilegeProp `json:"includePrivilege,omitempty"`
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
 	IncludeAttribute []string `json:"includeAttribute,omitempty"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetSchemas() []EnumprivilegeDataS
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetSchemasOk() ([]EnumprivilegeDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -203,7 +203,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetIncludePrivilege() []EnumdataS
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetIncludePrivilegeOk() ([]EnumdataSecurityAuditorIncludePrivilegeProp, bool) {
 	if o == nil || isNil(o.IncludePrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludePrivilege, true
 }
@@ -236,7 +236,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -259,7 +259,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetIncludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -291,7 +291,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetAuditBackend() []string {
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -323,7 +323,7 @@ func (o *PrivilegeDataSecurityAuditorResponse) GetAuditSeverity() EnumdataSecuri
 // and a boolean to check if the value has been set.
 func (o *PrivilegeDataSecurityAuditorResponse) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -412,5 +412,3 @@ func (v *NullablePrivilegeDataSecurityAuditorResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

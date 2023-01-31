@@ -17,8 +17,8 @@ import (
 // MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner struct for MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner
 type MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner struct {
 	Property *string `json:"property,omitempty"`
-	Type string `json:"type"`
-	Synopsis string `json:"synopsis"`
+	Type     string  `json:"type"`
+	Synopsis string  `json:"synopsis"`
 }
 
 // NewMetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner instantiates a new MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner object
@@ -53,7 +53,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) 
 // and a boolean to check if the value has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) GetPropertyOk() (*string, bool) {
 	if o == nil || isNil(o.Property) {
-    return nil, false
+		return nil, false
 	}
 	return o.Property, true
 }
@@ -86,7 +86,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) 
 // and a boolean to check if the value has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) GetTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Type, true
 }
@@ -110,7 +110,7 @@ func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) 
 // and a boolean to check if the value has been set.
 func (o *MetaUrnPingidentitySchemasConfigurationMessages20RequiredActionsInner) GetSynopsisOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Synopsis, true
 }
@@ -169,5 +169,3 @@ func (v *NullableMetaUrnPingidentitySchemasConfigurationMessages20RequiredAction
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

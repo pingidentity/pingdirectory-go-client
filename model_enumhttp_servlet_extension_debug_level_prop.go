@@ -20,13 +20,13 @@ type EnumhttpServletExtensionDebugLevelProp string
 
 // List of Enumhttp-servlet-extension-debugLevelProp
 const (
-	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_SEVERE EnumhttpServletExtensionDebugLevelProp = "severe"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_SEVERE  EnumhttpServletExtensionDebugLevelProp = "severe"
 	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_WARNING EnumhttpServletExtensionDebugLevelProp = "warning"
-	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_INFO EnumhttpServletExtensionDebugLevelProp = "info"
-	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_CONFIG EnumhttpServletExtensionDebugLevelProp = "config"
-	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINE EnumhttpServletExtensionDebugLevelProp = "fine"
-	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINER EnumhttpServletExtensionDebugLevelProp = "finer"
-	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINEST EnumhttpServletExtensionDebugLevelProp = "finest"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_INFO    EnumhttpServletExtensionDebugLevelProp = "info"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_CONFIG  EnumhttpServletExtensionDebugLevelProp = "config"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINE    EnumhttpServletExtensionDebugLevelProp = "fine"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINER   EnumhttpServletExtensionDebugLevelProp = "finer"
+	ENUMHTTPSERVLETEXTENSIONDEBUGLEVELPROP_FINEST  EnumhttpServletExtensionDebugLevelProp = "finest"
 )
 
 // All allowed values of EnumhttpServletExtensionDebugLevelProp enum
@@ -118,4 +118,3 @@ func (v *NullableEnumhttpServletExtensionDebugLevelProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,10 +16,10 @@ import (
 
 // HttpServletCrossOriginPolicyResponse struct for HttpServletCrossOriginPolicyResponse
 type HttpServletCrossOriginPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the HTTP Servlet Cross Origin Policy
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumhttpServletCrossOriginPolicySchemaUrn `json:"schemas,omitempty"`
 	// A description for this HTTP Servlet Cross Origin Policy
 	Description *string `json:"description,omitempty"`
@@ -68,7 +68,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetSchemas() []EnumhttpServletCro
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetSchemasOk() ([]EnumhttpServletCrossOriginPolicySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -188,7 +188,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -220,7 +220,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowedMethods() []string 
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowedMethodsOk() ([]string, bool) {
 	if o == nil || isNil(o.CorsAllowedMethods) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorsAllowedMethods, true
 }
@@ -252,7 +252,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowedOrigins() []string 
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowedOriginsOk() ([]string, bool) {
 	if o == nil || isNil(o.CorsAllowedOrigins) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorsAllowedOrigins, true
 }
@@ -284,7 +284,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetCorsExposedHeaders() []string 
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetCorsExposedHeadersOk() ([]string, bool) {
 	if o == nil || isNil(o.CorsExposedHeaders) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorsExposedHeaders, true
 }
@@ -316,7 +316,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowedHeaders() []string 
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowedHeadersOk() ([]string, bool) {
 	if o == nil || isNil(o.CorsAllowedHeaders) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorsAllowedHeaders, true
 }
@@ -348,7 +348,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetCorsPreflightMaxAge() string {
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetCorsPreflightMaxAgeOk() (*string, bool) {
 	if o == nil || isNil(o.CorsPreflightMaxAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorsPreflightMaxAge, true
 }
@@ -380,7 +380,7 @@ func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowCredentials() bool {
 // and a boolean to check if the value has been set.
 func (o *HttpServletCrossOriginPolicyResponse) GetCorsAllowCredentialsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorsAllowCredentials) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorsAllowCredentials, true
 }
@@ -472,5 +472,3 @@ func (v *NullableHttpServletCrossOriginPolicyResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

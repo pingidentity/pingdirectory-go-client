@@ -16,10 +16,10 @@ import (
 
 // ConjurCipherStreamProviderResponse struct for ConjurCipherStreamProviderResponse
 type ConjurCipherStreamProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Cipher Stream Provider
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumconjurCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur server.
 	ConjurExternalServer string `json:"conjurExternalServer"`
@@ -69,7 +69,7 @@ func (o *ConjurCipherStreamProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *ConjurCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *ConjurCipherStreamProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -158,7 +158,7 @@ func (o *ConjurCipherStreamProviderResponse) GetSchemas() []EnumconjurCipherStre
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetSchemasOk() ([]EnumconjurCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *ConjurCipherStreamProviderResponse) GetConjurExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetConjurExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurExternalServer, true
 }
@@ -206,7 +206,7 @@ func (o *ConjurCipherStreamProviderResponse) GetConjurSecretRelativePath() strin
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetConjurSecretRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurSecretRelativePath, true
 }
@@ -230,7 +230,7 @@ func (o *ConjurCipherStreamProviderResponse) GetEncryptionMetadataFile() string 
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptionMetadataFile, true
 }
@@ -253,7 +253,7 @@ func (o *ConjurCipherStreamProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -286,7 +286,7 @@ func (o *ConjurCipherStreamProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConjurCipherStreamProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -363,5 +363,3 @@ func (v *NullableConjurCipherStreamProviderResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddScimSchemaRequest struct for AddScimSchemaRequest
 type AddScimSchemaRequest struct {
 	// Name of the new SCIM Schema
-	SchemaName string `json:"schemaName"`
-	Schemas []EnumscimSchemaSchemaUrn `json:"schemas,omitempty"`
+	SchemaName string                    `json:"schemaName"`
+	Schemas    []EnumscimSchemaSchemaUrn `json:"schemas,omitempty"`
 	// A description for this SCIM Schema
 	Description *string `json:"description,omitempty"`
 	// The URN which identifies this SCIM Schema.
@@ -60,7 +60,7 @@ func (o *AddScimSchemaRequest) GetSchemaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetSchemaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemaName, true
 }
@@ -83,7 +83,7 @@ func (o *AddScimSchemaRequest) GetSchemas() []EnumscimSchemaSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetSchemasOk() ([]EnumscimSchemaSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddScimSchemaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -148,7 +148,7 @@ func (o *AddScimSchemaRequest) GetSchemaURN() string {
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetSchemaURNOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemaURN, true
 }
@@ -171,7 +171,7 @@ func (o *AddScimSchemaRequest) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *AddScimSchemaRequest) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -245,5 +245,3 @@ func (v *NullableAddScimSchemaRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

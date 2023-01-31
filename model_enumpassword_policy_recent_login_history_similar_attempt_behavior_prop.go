@@ -21,8 +21,8 @@ type EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp string
 // List of Enumpassword-policy-recentLoginHistorySimilarAttemptBehaviorProp
 const (
 	ENUMPASSWORDPOLICYRECENTLOGINHISTORYSIMILARATTEMPTBEHAVIORPROP_COLLAPSE_SIMILAR_ATTEMPTS_ON_THE_SAME_DATE EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp = "collapse-similar-attempts-on-the-same-date"
-	ENUMPASSWORDPOLICYRECENTLOGINHISTORYSIMILARATTEMPTBEHAVIORPROP_MAINTAIN_EVERY_ATTEMPT EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp = "maintain-every-attempt"
-	ENUMPASSWORDPOLICYRECENTLOGINHISTORYSIMILARATTEMPTBEHAVIORPROP_UPDATE_AT_MOST_ONCE_PER_DAY EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp = "update-at-most-once-per-day"
+	ENUMPASSWORDPOLICYRECENTLOGINHISTORYSIMILARATTEMPTBEHAVIORPROP_MAINTAIN_EVERY_ATTEMPT                     EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp = "maintain-every-attempt"
+	ENUMPASSWORDPOLICYRECENTLOGINHISTORYSIMILARATTEMPTBEHAVIORPROP_UPDATE_AT_MOST_ONCE_PER_DAY                EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp = "update-at-most-once-per-day"
 )
 
 // All allowed values of EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

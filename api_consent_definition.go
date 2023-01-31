@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ConsentDefinitionApiService ConsentDefinitionApi service
 type ConsentDefinitionApiService service
 
 type ApiAddConsentDefinitionRequest struct {
-	ctx context.Context
-	ApiService *ConsentDefinitionApiService
+	ctx                         context.Context
+	ApiService                  *ConsentDefinitionApiService
 	addConsentDefinitionRequest *AddConsentDefinitionRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddConsentDefinitionRequest) Execute() (*ConsentDefinitionResponse, *
 /*
 AddConsentDefinition Add a new Consent Definition to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddConsentDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) AddConsentDefinition(ctx context.Context) ApiAddConsentDefinitionRequest {
 	return ApiAddConsentDefinitionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConsentDefinitionResponse
+//
+//	@return ConsentDefinitionResponse
 func (a *ConsentDefinitionApiService) AddConsentDefinitionExecute(r ApiAddConsentDefinitionRequest) (*ConsentDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsentDefinitionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsentDefinitionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionApiService.AddConsentDefinition")
@@ -133,8 +133,8 @@ func (a *ConsentDefinitionApiService) AddConsentDefinitionExecute(r ApiAddConsen
 }
 
 type ApiDeleteConsentDefinitionRequest struct {
-	ctx context.Context
-	ApiService *ConsentDefinitionApiService
+	ctx                   context.Context
+	ApiService            *ConsentDefinitionApiService
 	consentDefinitionName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteConsentDefinitionRequest) Execute() (*http.Response, error) {
 /*
 DeleteConsentDefinition Delete a Consent Definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consentDefinitionName Name of the Consent Definition to be deleted
- @return ApiDeleteConsentDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param consentDefinitionName Name of the Consent Definition to be deleted
+	@return ApiDeleteConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) DeleteConsentDefinition(ctx context.Context, consentDefinitionName string) ApiDeleteConsentDefinitionRequest {
 	return ApiDeleteConsentDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		consentDefinitionName: consentDefinitionName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ConsentDefinitionApiService) DeleteConsentDefinition(ctx context.Contex
 // Execute executes the request
 func (a *ConsentDefinitionApiService) DeleteConsentDefinitionExecute(r ApiDeleteConsentDefinitionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionApiService.DeleteConsentDefinition")
@@ -223,8 +223,8 @@ func (a *ConsentDefinitionApiService) DeleteConsentDefinitionExecute(r ApiDelete
 }
 
 type ApiGetConsentDefinitionRequest struct {
-	ctx context.Context
-	ApiService *ConsentDefinitionApiService
+	ctx                   context.Context
+	ApiService            *ConsentDefinitionApiService
 	consentDefinitionName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetConsentDefinitionRequest) Execute() (*ConsentDefinitionResponse, *
 /*
 GetConsentDefinition Returns a single Consent Definition
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consentDefinitionName Name of the Consent Definition to be read
- @return ApiGetConsentDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param consentDefinitionName Name of the Consent Definition to be read
+	@return ApiGetConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) GetConsentDefinition(ctx context.Context, consentDefinitionName string) ApiGetConsentDefinitionRequest {
 	return ApiGetConsentDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		consentDefinitionName: consentDefinitionName,
 	}
 }
 
 // Execute executes the request
-//  @return ConsentDefinitionResponse
+//
+//	@return ConsentDefinitionResponse
 func (a *ConsentDefinitionApiService) GetConsentDefinitionExecute(r ApiGetConsentDefinitionRequest) (*ConsentDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsentDefinitionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsentDefinitionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionApiService.GetConsentDefinition")
@@ -324,10 +325,10 @@ func (a *ConsentDefinitionApiService) GetConsentDefinitionExecute(r ApiGetConsen
 }
 
 type ApiUpdateConsentDefinitionRequest struct {
-	ctx context.Context
-	ApiService *ConsentDefinitionApiService
+	ctx                   context.Context
+	ApiService            *ConsentDefinitionApiService
 	consentDefinitionName string
-	updateRequest *UpdateRequest
+	updateRequest         *UpdateRequest
 }
 
 // Update an existing Consent Definition
@@ -343,26 +344,27 @@ func (r ApiUpdateConsentDefinitionRequest) Execute() (*ConsentDefinitionResponse
 /*
 UpdateConsentDefinition Update an existing Consent Definition by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param consentDefinitionName Name of the Consent Definition to be updated
- @return ApiUpdateConsentDefinitionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param consentDefinitionName Name of the Consent Definition to be updated
+	@return ApiUpdateConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) UpdateConsentDefinition(ctx context.Context, consentDefinitionName string) ApiUpdateConsentDefinitionRequest {
 	return ApiUpdateConsentDefinitionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		consentDefinitionName: consentDefinitionName,
 	}
 }
 
 // Execute executes the request
-//  @return ConsentDefinitionResponse
+//
+//	@return ConsentDefinitionResponse
 func (a *ConsentDefinitionApiService) UpdateConsentDefinitionExecute(r ApiUpdateConsentDefinitionRequest) (*ConsentDefinitionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsentDefinitionResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsentDefinitionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConsentDefinitionApiService.UpdateConsentDefinition")

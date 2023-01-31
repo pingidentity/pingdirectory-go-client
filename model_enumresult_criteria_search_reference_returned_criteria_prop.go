@@ -20,10 +20,10 @@ type EnumresultCriteriaSearchReferenceReturnedCriteriaProp string
 
 // List of Enumresult-criteria-searchReferenceReturnedCriteriaProp
 const (
-	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_ANY EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "any"
-	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_EQUAL_TO EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "equal-to"
-	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_NOT_EQUAL_TO EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "not-equal-to"
-	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_LESS_THAN_OR_EQUAL_TO EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "less-than-or-equal-to"
+	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_ANY                      EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "any"
+	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_EQUAL_TO                 EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "equal-to"
+	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_NOT_EQUAL_TO             EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "not-equal-to"
+	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_LESS_THAN_OR_EQUAL_TO    EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "less-than-or-equal-to"
 	ENUMRESULTCRITERIASEARCHREFERENCERETURNEDCRITERIAPROP_GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaSearchReferenceReturnedCriteriaProp = "greater-than-or-equal-to"
 )
 
@@ -114,4 +114,3 @@ func (v *NullableEnumresultCriteriaSearchReferenceReturnedCriteriaProp) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

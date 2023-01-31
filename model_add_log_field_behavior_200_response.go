@@ -18,7 +18,7 @@ import (
 // AddLogFieldBehavior200Response - struct for AddLogFieldBehavior200Response
 type AddLogFieldBehavior200Response struct {
 	JsonFormattedAccessLogFieldBehaviorResponse *JsonFormattedAccessLogFieldBehaviorResponse
-	TextAccessLogFieldBehaviorResponse *TextAccessLogFieldBehaviorResponse
+	TextAccessLogFieldBehaviorResponse          *TextAccessLogFieldBehaviorResponse
 }
 
 // JsonFormattedAccessLogFieldBehaviorResponseAsAddLogFieldBehavior200Response is a convenience function that returns JsonFormattedAccessLogFieldBehaviorResponse wrapped in AddLogFieldBehavior200Response
@@ -34,7 +34,6 @@ func TextAccessLogFieldBehaviorResponseAsAddLogFieldBehavior200Response(v *TextA
 		TextAccessLogFieldBehaviorResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogFieldBehavior200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddLogFieldBehavior200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogFieldBehavior200Response) GetActualInstance() (interface{}) {
+func (obj *AddLogFieldBehavior200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddLogFieldBehavior200Response) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

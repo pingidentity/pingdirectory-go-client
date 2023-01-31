@@ -16,9 +16,9 @@ import (
 
 // UnboundidExternalAuthSaslMechanismHandlerResponse struct for UnboundidExternalAuthSaslMechanismHandlerResponse
 type UnboundidExternalAuthSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                                `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20       `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// The identity mapper that should be used to identify the user targeted by the authentication ID contained in the bind request. This will only be used for \"u:\"-style authentication ID values.
@@ -63,7 +63,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetUrnpingidentitysc
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetSchemas() []Enumu
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -152,7 +152,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -176,7 +176,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetIdentityMapper() 
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -199,7 +199,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *UnboundidExternalAuthSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullableUnboundidExternalAuthSaslMechanismHandlerResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

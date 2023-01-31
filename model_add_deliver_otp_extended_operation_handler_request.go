@@ -17,8 +17,8 @@ import (
 // AddDeliverOtpExtendedOperationHandlerRequest struct for AddDeliverOtpExtendedOperationHandlerRequest
 type AddDeliverOtpExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumdeliverOtpExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                            `json:"handlerName"`
+	Schemas     []EnumdeliverOtpExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted by the authentication identity contained in the extended request. This will only be used for \"u:\"-style authentication identities.
 	IdentityMapper string `json:"identityMapper"`
 	// The password generator that will be used to create the one-time password values to be delivered to the end user.
@@ -68,7 +68,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -92,7 +92,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetSchemas() []Enumdelive
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumdeliverOtpExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetIdentityMapper() strin
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -140,7 +140,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetPasswordGenerator() st
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetPasswordGeneratorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordGenerator, true
 }
@@ -164,7 +164,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDefaultOTPDeliveryMech
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDefaultOTPDeliveryMechanismOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultOTPDeliveryMechanism, true
 }
@@ -187,7 +187,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -220,7 +220,7 @@ func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDeliverOtpExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -291,5 +291,3 @@ func (v *NullableAddDeliverOtpExtendedOperationHandlerRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

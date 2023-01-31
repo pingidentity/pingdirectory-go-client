@@ -106,4 +106,3 @@ func (v *NullableEnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,18 +17,18 @@ import (
 
 // AddPasswordStorageSchemeRequest - struct for AddPasswordStorageSchemeRequest
 type AddPasswordStorageSchemeRequest struct {
-	AddAes256PasswordStorageSchemeRequest *AddAes256PasswordStorageSchemeRequest
+	AddAes256PasswordStorageSchemeRequest               *AddAes256PasswordStorageSchemeRequest
 	AddAmazonSecretsManagerPasswordStorageSchemeRequest *AddAmazonSecretsManagerPasswordStorageSchemeRequest
-	AddArgon2PasswordStorageSchemeRequest *AddArgon2PasswordStorageSchemeRequest
-	AddAzureKeyVaultPasswordStorageSchemeRequest *AddAzureKeyVaultPasswordStorageSchemeRequest
-	AddBcryptPasswordStorageSchemeRequest *AddBcryptPasswordStorageSchemeRequest
-	AddConjurPasswordStorageSchemeRequest *AddConjurPasswordStorageSchemeRequest
-	AddCryptPasswordStorageSchemeRequest *AddCryptPasswordStorageSchemeRequest
-	AddPbkdf2PasswordStorageSchemeRequest *AddPbkdf2PasswordStorageSchemeRequest
-	AddScryptPasswordStorageSchemeRequest *AddScryptPasswordStorageSchemeRequest
-	AddThirdPartyEnhancedPasswordStorageSchemeRequest *AddThirdPartyEnhancedPasswordStorageSchemeRequest
-	AddThirdPartyPasswordStorageSchemeRequest *AddThirdPartyPasswordStorageSchemeRequest
-	AddVaultPasswordStorageSchemeRequest *AddVaultPasswordStorageSchemeRequest
+	AddArgon2PasswordStorageSchemeRequest               *AddArgon2PasswordStorageSchemeRequest
+	AddAzureKeyVaultPasswordStorageSchemeRequest        *AddAzureKeyVaultPasswordStorageSchemeRequest
+	AddBcryptPasswordStorageSchemeRequest               *AddBcryptPasswordStorageSchemeRequest
+	AddConjurPasswordStorageSchemeRequest               *AddConjurPasswordStorageSchemeRequest
+	AddCryptPasswordStorageSchemeRequest                *AddCryptPasswordStorageSchemeRequest
+	AddPbkdf2PasswordStorageSchemeRequest               *AddPbkdf2PasswordStorageSchemeRequest
+	AddScryptPasswordStorageSchemeRequest               *AddScryptPasswordStorageSchemeRequest
+	AddThirdPartyEnhancedPasswordStorageSchemeRequest   *AddThirdPartyEnhancedPasswordStorageSchemeRequest
+	AddThirdPartyPasswordStorageSchemeRequest           *AddThirdPartyPasswordStorageSchemeRequest
+	AddVaultPasswordStorageSchemeRequest                *AddVaultPasswordStorageSchemeRequest
 }
 
 // AddAes256PasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest is a convenience function that returns AddAes256PasswordStorageSchemeRequest wrapped in AddPasswordStorageSchemeRequest
@@ -114,7 +114,6 @@ func AddVaultPasswordStorageSchemeRequestAsAddPasswordStorageSchemeRequest(v *Ad
 		AddVaultPasswordStorageSchemeRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPasswordStorageSchemeRequest) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src AddPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPasswordStorageSchemeRequest) GetActualInstance() (interface{}) {
+func (obj *AddPasswordStorageSchemeRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableAddPasswordStorageSchemeRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

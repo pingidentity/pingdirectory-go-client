@@ -16,10 +16,10 @@ import (
 
 // StaticallyDefinedRecurringTaskResponse struct for StaticallyDefinedRecurringTaskResponse
 type StaticallyDefinedRecurringTaskResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumstaticallyDefinedRecurringTaskSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class that provides the logic for the task to be invoked.
 	TaskJavaClass string `json:"taskJavaClass"`
@@ -79,7 +79,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -111,7 +111,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -144,7 +144,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -168,7 +168,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetSchemas() []EnumstaticallyDe
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetSchemasOk() ([]EnumstaticallyDefinedRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -192,7 +192,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetTaskJavaClass() string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetTaskJavaClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskJavaClass, true
 }
@@ -216,7 +216,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetTaskObjectClass() []string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetTaskObjectClassOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TaskObjectClass, true
 }
@@ -239,7 +239,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetTaskAttributeValue() []strin
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetTaskAttributeValueOk() ([]string, bool) {
 	if o == nil || isNil(o.TaskAttributeValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.TaskAttributeValue, true
 }
@@ -271,7 +271,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -303,7 +303,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetCancelOnTaskDependencyFailur
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -335,7 +335,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -367,7 +367,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -399,7 +399,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -431,7 +431,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -463,7 +463,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -495,7 +495,7 @@ func (o *StaticallyDefinedRecurringTaskResponse) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *StaticallyDefinedRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -599,5 +599,3 @@ func (v *NullableStaticallyDefinedRecurringTaskResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

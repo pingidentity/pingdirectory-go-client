@@ -20,10 +20,10 @@ type EnumresultCriteriaRemoteAssuranceLevelProp string
 
 // List of Enumresult-criteria-remoteAssuranceLevelProp
 const (
-	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_NONE EnumresultCriteriaRemoteAssuranceLevelProp = "none"
-	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_RECEIVED_ANY_REMOTE_LOCATION EnumresultCriteriaRemoteAssuranceLevelProp = "received-any-remote-location"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_NONE                          EnumresultCriteriaRemoteAssuranceLevelProp = "none"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_RECEIVED_ANY_REMOTE_LOCATION  EnumresultCriteriaRemoteAssuranceLevelProp = "received-any-remote-location"
 	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_RECEIVED_ALL_REMOTE_LOCATIONS EnumresultCriteriaRemoteAssuranceLevelProp = "received-all-remote-locations"
-	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_PROCESSED_ALL_REMOTE_SERVERS EnumresultCriteriaRemoteAssuranceLevelProp = "processed-all-remote-servers"
+	ENUMRESULTCRITERIAREMOTEASSURANCELEVELPROP_PROCESSED_ALL_REMOTE_SERVERS  EnumresultCriteriaRemoteAssuranceLevelProp = "processed-all-remote-servers"
 )
 
 // All allowed values of EnumresultCriteriaRemoteAssuranceLevelProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumresultCriteriaRemoteAssuranceLevelProp) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

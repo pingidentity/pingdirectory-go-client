@@ -17,8 +17,8 @@ import (
 // AddMultiPartEmailAccountStatusNotificationHandlerRequest struct for AddMultiPartEmailAccountStatusNotificationHandlerRequest
 type AddMultiPartEmailAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                        `json:"handlerName"`
+	Schemas     []EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The path to a file containing the template to use to generate the email message to send in the event that an account becomes temporarily locked as a result of too many authentication failures.
 	AccountTemporarilyFailureLockedMessageTemplate *string `json:"accountTemporarilyFailureLockedMessageTemplate,omitempty"`
 	// The path to a file containing the template to use to generate the email message to send in the event that an account becomes permanently locked as a result of too many authentication failures.
@@ -99,7 +99,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetHandlerNam
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -123,7 +123,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetSchemas() 
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetSchemasOk() ([]EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -146,7 +146,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountTem
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountTemporarilyFailureLockedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountTemporarilyFailureLockedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountTemporarilyFailureLockedMessageTemplate, true
 }
@@ -178,7 +178,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountPer
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountPermanentlyFailureLockedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountPermanentlyFailureLockedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountPermanentlyFailureLockedMessageTemplate, true
 }
@@ -210,7 +210,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountIdl
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountIdleLockedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountIdleLockedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountIdleLockedMessageTemplate, true
 }
@@ -242,7 +242,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountRes
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountResetLockedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountResetLockedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountResetLockedMessageTemplate, true
 }
@@ -274,7 +274,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountUnl
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountUnlockedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUnlockedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUnlockedMessageTemplate, true
 }
@@ -306,7 +306,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountDis
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountDisabledMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountDisabledMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountDisabledMessageTemplate, true
 }
@@ -338,7 +338,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountEna
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountEnabledMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountEnabledMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountEnabledMessageTemplate, true
 }
@@ -370,7 +370,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountNot
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountNotYetActiveMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountNotYetActiveMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountNotYetActiveMessageTemplate, true
 }
@@ -402,7 +402,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountExp
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountExpiredMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountExpiredMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountExpiredMessageTemplate, true
 }
@@ -434,7 +434,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordEx
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordExpiredMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordExpiredMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordExpiredMessageTemplate, true
 }
@@ -466,7 +466,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordEx
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordExpiringMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordExpiringMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordExpiringMessageTemplate, true
 }
@@ -498,7 +498,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordRe
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordResetMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordResetMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordResetMessageTemplate, true
 }
@@ -530,7 +530,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordCh
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetPasswordChangedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordChangedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordChangedMessageTemplate, true
 }
@@ -562,7 +562,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountCre
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountCreatedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreatedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreatedMessageTemplate, true
 }
@@ -594,7 +594,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountUpd
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountUpdatedMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdatedMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdatedMessageTemplate, true
 }
@@ -626,7 +626,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetBindPasswo
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetBindPasswordFailedValidationMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.BindPasswordFailedValidationMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindPasswordFailedValidationMessageTemplate, true
 }
@@ -658,7 +658,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetMustChange
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetMustChangePasswordMessageTemplateOk() (*string, bool) {
 	if o == nil || isNil(o.MustChangePasswordMessageTemplate) {
-    return nil, false
+		return nil, false
 	}
 	return o.MustChangePasswordMessageTemplate, true
 }
@@ -690,7 +690,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetDescriptio
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -723,7 +723,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetEnabled() 
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -746,7 +746,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAsynchrono
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -778,7 +778,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountCre
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -810,7 +810,7 @@ func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountUpd
 // and a boolean to check if the value has been set.
 func (o *AddMultiPartEmailAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -941,5 +941,3 @@ func (v *NullableAddMultiPartEmailAccountStatusNotificationHandlerRequest) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

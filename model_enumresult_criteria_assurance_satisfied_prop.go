@@ -20,17 +20,17 @@ type EnumresultCriteriaAssuranceSatisfiedProp string
 
 // List of Enumresult-criteria-assuranceSatisfiedProp
 const (
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_ANY EnumresultCriteriaAssuranceSatisfiedProp = "any"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_BOTH_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "both-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_EITHER_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "either-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_LOCAL_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "at-least-local-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_REMOTE_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "at-least-remote-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_ONLY_LOCAL_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "only-local-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_ONLY_REMOTE_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "only-remote-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_EITHER_NOT_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "either-not-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_LOCAL_NOT_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "at-least-local-not-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_ANY                           EnumresultCriteriaAssuranceSatisfiedProp = "any"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_BOTH_SATISFIED                EnumresultCriteriaAssuranceSatisfiedProp = "both-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_EITHER_SATISFIED              EnumresultCriteriaAssuranceSatisfiedProp = "either-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_LOCAL_SATISFIED      EnumresultCriteriaAssuranceSatisfiedProp = "at-least-local-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_REMOTE_SATISFIED     EnumresultCriteriaAssuranceSatisfiedProp = "at-least-remote-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_ONLY_LOCAL_SATISFIED          EnumresultCriteriaAssuranceSatisfiedProp = "only-local-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_ONLY_REMOTE_SATISFIED         EnumresultCriteriaAssuranceSatisfiedProp = "only-remote-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_EITHER_NOT_SATISFIED          EnumresultCriteriaAssuranceSatisfiedProp = "either-not-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_LOCAL_NOT_SATISFIED  EnumresultCriteriaAssuranceSatisfiedProp = "at-least-local-not-satisfied"
 	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_AT_LEAST_REMOTE_NOT_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "at-least-remote-not-satisfied"
-	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_NEITHER_SATISFIED EnumresultCriteriaAssuranceSatisfiedProp = "neither-satisfied"
+	ENUMRESULTCRITERIAASSURANCESATISFIEDPROP_NEITHER_SATISFIED             EnumresultCriteriaAssuranceSatisfiedProp = "neither-satisfied"
 )
 
 // All allowed values of EnumresultCriteriaAssuranceSatisfiedProp enum
@@ -126,4 +126,3 @@ func (v *NullableEnumresultCriteriaAssuranceSatisfiedProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

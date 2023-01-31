@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // DelegatedAdminAttributeCategoryApiService DelegatedAdminAttributeCategoryApi service
 type DelegatedAdminAttributeCategoryApiService service
 
 type ApiAddDelegatedAdminAttributeCategoryRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminAttributeCategoryApiService
+	ctx                                       context.Context
+	ApiService                                *DelegatedAdminAttributeCategoryApiService
 	addDelegatedAdminAttributeCategoryRequest *AddDelegatedAdminAttributeCategoryRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddDelegatedAdminAttributeCategoryRequest) Execute() (*DelegatedAdmin
 /*
 AddDelegatedAdminAttributeCategory Add a new Delegated Admin Attribute Category to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddDelegatedAdminAttributeCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCategory(ctx context.Context) ApiAddDelegatedAdminAttributeCategoryRequest {
 	return ApiAddDelegatedAdminAttributeCategoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DelegatedAdminAttributeCategoryResponse
+//
+//	@return DelegatedAdminAttributeCategoryResponse
 func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCategoryExecute(r ApiAddDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DelegatedAdminAttributeCategoryResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminAttributeCategoryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.AddDelegatedAdminAttributeCategory")
@@ -133,8 +133,8 @@ func (a *DelegatedAdminAttributeCategoryApiService) AddDelegatedAdminAttributeCa
 }
 
 type ApiDeleteDelegatedAdminAttributeCategoryRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminAttributeCategoryApiService
+	ctx                                 context.Context
+	ApiService                          *DelegatedAdminAttributeCategoryApiService
 	delegatedAdminAttributeCategoryName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteDelegatedAdminAttributeCategoryRequest) Execute() (*http.Respon
 /*
 DeleteDelegatedAdminAttributeCategory Delete a Delegated Admin Attribute Category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be deleted
- @return ApiDeleteDelegatedAdminAttributeCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be deleted
+	@return ApiDeleteDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiDeleteDelegatedAdminAttributeCategoryRequest {
 	return ApiDeleteDelegatedAdminAttributeCategoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                          a,
+		ctx:                                 ctx,
 		delegatedAdminAttributeCategoryName: delegatedAdminAttributeCategoryName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttribut
 // Execute executes the request
 func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttributeCategoryExecute(r ApiDeleteDelegatedAdminAttributeCategoryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.DeleteDelegatedAdminAttributeCategory")
@@ -223,8 +223,8 @@ func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttribut
 }
 
 type ApiGetDelegatedAdminAttributeCategoryRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminAttributeCategoryApiService
+	ctx                                 context.Context
+	ApiService                          *DelegatedAdminAttributeCategoryApiService
 	delegatedAdminAttributeCategoryName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetDelegatedAdminAttributeCategoryRequest) Execute() (*DelegatedAdmin
 /*
 GetDelegatedAdminAttributeCategory Returns a single Delegated Admin Attribute Category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be read
- @return ApiGetDelegatedAdminAttributeCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be read
+	@return ApiGetDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiGetDelegatedAdminAttributeCategoryRequest {
 	return ApiGetDelegatedAdminAttributeCategoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                          a,
+		ctx:                                 ctx,
 		delegatedAdminAttributeCategoryName: delegatedAdminAttributeCategoryName,
 	}
 }
 
 // Execute executes the request
-//  @return DelegatedAdminAttributeCategoryResponse
+//
+//	@return DelegatedAdminAttributeCategoryResponse
 func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCategoryExecute(r ApiGetDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DelegatedAdminAttributeCategoryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminAttributeCategoryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.GetDelegatedAdminAttributeCategory")
@@ -324,10 +325,10 @@ func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCa
 }
 
 type ApiUpdateDelegatedAdminAttributeCategoryRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminAttributeCategoryApiService
+	ctx                                 context.Context
+	ApiService                          *DelegatedAdminAttributeCategoryApiService
 	delegatedAdminAttributeCategoryName string
-	updateRequest *UpdateRequest
+	updateRequest                       *UpdateRequest
 }
 
 // Update an existing Delegated Admin Attribute Category
@@ -343,26 +344,27 @@ func (r ApiUpdateDelegatedAdminAttributeCategoryRequest) Execute() (*DelegatedAd
 /*
 UpdateDelegatedAdminAttributeCategory Update an existing Delegated Admin Attribute Category by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be updated
- @return ApiUpdateDelegatedAdminAttributeCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be updated
+	@return ApiUpdateDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiUpdateDelegatedAdminAttributeCategoryRequest {
 	return ApiUpdateDelegatedAdminAttributeCategoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                          a,
+		ctx:                                 ctx,
 		delegatedAdminAttributeCategoryName: delegatedAdminAttributeCategoryName,
 	}
 }
 
 // Execute executes the request
-//  @return DelegatedAdminAttributeCategoryResponse
+//
+//	@return DelegatedAdminAttributeCategoryResponse
 func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttributeCategoryExecute(r ApiUpdateDelegatedAdminAttributeCategoryRequest) (*DelegatedAdminAttributeCategoryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DelegatedAdminAttributeCategoryResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminAttributeCategoryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminAttributeCategoryApiService.UpdateDelegatedAdminAttributeCategory")

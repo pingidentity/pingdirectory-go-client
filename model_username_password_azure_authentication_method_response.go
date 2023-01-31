@@ -16,10 +16,10 @@ import (
 
 // UsernamePasswordAzureAuthenticationMethodResponse struct for UsernamePasswordAzureAuthenticationMethodResponse
 type UsernamePasswordAzureAuthenticationMethodResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Azure Authentication Method
-	Id string `json:"id"`
+	Id      string                                                   `json:"id"`
 	Schemas []EnumusernamePasswordAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate.
 	TenantID string `json:"tenantID"`
@@ -69,7 +69,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetUrnpingidentitysc
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -158,7 +158,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetSchemas() []Enumu
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetSchemasOk() ([]EnumusernamePasswordAzureAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetTenantID() string
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetTenantIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TenantID, true
 }
@@ -206,7 +206,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetClientID() string
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetClientIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ClientID, true
 }
@@ -230,7 +230,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetUsername() string
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Username, true
 }
@@ -254,7 +254,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetPassword() string
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetPasswordOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Password, true
 }
@@ -277,7 +277,7 @@ func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *UsernamePasswordAzureAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -363,5 +363,3 @@ func (v *NullableUsernamePasswordAzureAuthenticationMethodResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

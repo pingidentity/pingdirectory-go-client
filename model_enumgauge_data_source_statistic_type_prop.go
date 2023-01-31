@@ -21,9 +21,9 @@ type EnumgaugeDataSourceStatisticTypeProp string
 // List of Enumgauge-data-source-statisticTypeProp
 const (
 	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_COUNT_PER_SECOND EnumgaugeDataSourceStatisticTypeProp = "count-per-second"
-	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_AVERAGE EnumgaugeDataSourceStatisticTypeProp = "average"
-	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_MINIMUM EnumgaugeDataSourceStatisticTypeProp = "minimum"
-	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_MAXIMUM EnumgaugeDataSourceStatisticTypeProp = "maximum"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_AVERAGE          EnumgaugeDataSourceStatisticTypeProp = "average"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_MINIMUM          EnumgaugeDataSourceStatisticTypeProp = "minimum"
+	ENUMGAUGEDATASOURCESTATISTICTYPEPROP_MAXIMUM          EnumgaugeDataSourceStatisticTypeProp = "maximum"
 )
 
 // All allowed values of EnumgaugeDataSourceStatisticTypeProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumgaugeDataSourceStatisticTypeProp) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

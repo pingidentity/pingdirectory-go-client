@@ -20,8 +20,8 @@ type EnumresultCriteriaQueueTimeCriteriaProp string
 
 // List of Enumresult-criteria-queueTimeCriteriaProp
 const (
-	ENUMRESULTCRITERIAQUEUETIMECRITERIAPROP_ANY EnumresultCriteriaQueueTimeCriteriaProp = "any"
-	ENUMRESULTCRITERIAQUEUETIMECRITERIAPROP_LESS_THAN_OR_EQUAL_TO EnumresultCriteriaQueueTimeCriteriaProp = "less-than-or-equal-to"
+	ENUMRESULTCRITERIAQUEUETIMECRITERIAPROP_ANY                      EnumresultCriteriaQueueTimeCriteriaProp = "any"
+	ENUMRESULTCRITERIAQUEUETIMECRITERIAPROP_LESS_THAN_OR_EQUAL_TO    EnumresultCriteriaQueueTimeCriteriaProp = "less-than-or-equal-to"
 	ENUMRESULTCRITERIAQUEUETIMECRITERIAPROP_GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaQueueTimeCriteriaProp = "greater-than-or-equal-to"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaQueueTimeCriteriaProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

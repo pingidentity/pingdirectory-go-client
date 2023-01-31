@@ -17,8 +17,8 @@ import (
 // AddThirdPartyOauthTokenHandlerRequest struct for AddThirdPartyOauthTokenHandlerRequest
 type AddThirdPartyOauthTokenHandlerRequest struct {
 	// Name of the new OAuth Token Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                     `json:"handlerName"`
+	Schemas     []EnumthirdPartyOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party OAuth Token Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party OAuth Token Handler. Each configuration property should be given in the form 'name=value'.
@@ -61,7 +61,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -85,7 +85,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetSchemas() []EnumthirdPartyOau
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetSchemasOk() ([]EnumthirdPartyOauthTokenHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -109,7 +109,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -132,7 +132,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionArgument() []string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -164,7 +164,7 @@ func (o *AddThirdPartyOauthTokenHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOauthTokenHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddThirdPartyOauthTokenHandlerRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

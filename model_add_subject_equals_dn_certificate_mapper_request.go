@@ -17,8 +17,8 @@ import (
 // AddSubjectEqualsDnCertificateMapperRequest struct for AddSubjectEqualsDnCertificateMapperRequest
 type AddSubjectEqualsDnCertificateMapperRequest struct {
 	// Name of the new Certificate Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumsubjectEqualsDnCertificateMapperSchemaUrn `json:"schemas"`
+	MapperName string                                          `json:"mapperName"`
+	Schemas    []EnumsubjectEqualsDnCertificateMapperSchemaUrn `json:"schemas"`
 	// A description for this Certificate Mapper
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Certificate Mapper is enabled.
@@ -59,7 +59,7 @@ func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSubjectEqualsDnCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -83,7 +83,7 @@ func (o *AddSubjectEqualsDnCertificateMapperRequest) GetSchemas() []EnumsubjectE
 // and a boolean to check if the value has been set.
 func (o *AddSubjectEqualsDnCertificateMapperRequest) GetSchemasOk() ([]EnumsubjectEqualsDnCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -106,7 +106,7 @@ func (o *AddSubjectEqualsDnCertificateMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSubjectEqualsDnCertificateMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -139,7 +139,7 @@ func (o *AddSubjectEqualsDnCertificateMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSubjectEqualsDnCertificateMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddSubjectEqualsDnCertificateMapperRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

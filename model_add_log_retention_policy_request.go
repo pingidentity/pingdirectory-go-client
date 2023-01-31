@@ -17,11 +17,11 @@ import (
 
 // AddLogRetentionPolicyRequest - struct for AddLogRetentionPolicyRequest
 type AddLogRetentionPolicyRequest struct {
-	AddFileCountLogRetentionPolicyRequest *AddFileCountLogRetentionPolicyRequest
+	AddFileCountLogRetentionPolicyRequest     *AddFileCountLogRetentionPolicyRequest
 	AddFreeDiskSpaceLogRetentionPolicyRequest *AddFreeDiskSpaceLogRetentionPolicyRequest
-	AddNeverDeleteLogRetentionPolicyRequest *AddNeverDeleteLogRetentionPolicyRequest
-	AddSizeLimitLogRetentionPolicyRequest *AddSizeLimitLogRetentionPolicyRequest
-	AddTimeLimitLogRetentionPolicyRequest *AddTimeLimitLogRetentionPolicyRequest
+	AddNeverDeleteLogRetentionPolicyRequest   *AddNeverDeleteLogRetentionPolicyRequest
+	AddSizeLimitLogRetentionPolicyRequest     *AddSizeLimitLogRetentionPolicyRequest
+	AddTimeLimitLogRetentionPolicyRequest     *AddTimeLimitLogRetentionPolicyRequest
 }
 
 // AddFileCountLogRetentionPolicyRequestAsAddLogRetentionPolicyRequest is a convenience function that returns AddFileCountLogRetentionPolicyRequest wrapped in AddLogRetentionPolicyRequest
@@ -58,7 +58,6 @@ func AddTimeLimitLogRetentionPolicyRequestAsAddLogRetentionPolicyRequest(v *AddT
 		AddTimeLimitLogRetentionPolicyRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogRetentionPolicyRequest) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src AddLogRetentionPolicyRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogRetentionPolicyRequest) GetActualInstance() (interface{}) {
+func (obj *AddLogRetentionPolicyRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableAddLogRetentionPolicyRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddCollectSupportDataExtendedOperationHandlerRequest struct for AddCollectSupportDataExtendedOperationHandlerRequest
 type AddCollectSupportDataExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumcollectSupportDataExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                    `json:"handlerName"`
+	Schemas     []EnumcollectSupportDataExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
@@ -59,7 +59,7 @@ func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetHandlerName() 
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -83,7 +83,7 @@ func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetSchemas() []En
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumcollectSupportDataExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -106,7 +106,7 @@ func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetDescription() 
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -139,7 +139,7 @@ func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetEnabled() bool
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddCollectSupportDataExtendedOperationHandlerRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

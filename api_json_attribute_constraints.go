@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // JsonAttributeConstraintsApiService JsonAttributeConstraintsApi service
 type JsonAttributeConstraintsApiService service
 
 type ApiAddJsonAttributeConstraintsRequest struct {
-	ctx context.Context
-	ApiService *JsonAttributeConstraintsApiService
+	ctx                                context.Context
+	ApiService                         *JsonAttributeConstraintsApiService
 	addJsonAttributeConstraintsRequest *AddJsonAttributeConstraintsRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddJsonAttributeConstraintsRequest) Execute() (*JsonAttributeConstrai
 /*
 AddJsonAttributeConstraints Add a new JSON Attribute Constraints to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddJsonAttributeConstraintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) AddJsonAttributeConstraints(ctx context.Context) ApiAddJsonAttributeConstraintsRequest {
 	return ApiAddJsonAttributeConstraintsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return JsonAttributeConstraintsResponse
+//
+//	@return JsonAttributeConstraintsResponse
 func (a *JsonAttributeConstraintsApiService) AddJsonAttributeConstraintsExecute(r ApiAddJsonAttributeConstraintsRequest) (*JsonAttributeConstraintsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JsonAttributeConstraintsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JsonAttributeConstraintsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonAttributeConstraintsApiService.AddJsonAttributeConstraints")
@@ -133,8 +133,8 @@ func (a *JsonAttributeConstraintsApiService) AddJsonAttributeConstraintsExecute(
 }
 
 type ApiDeleteJsonAttributeConstraintsRequest struct {
-	ctx context.Context
-	ApiService *JsonAttributeConstraintsApiService
+	ctx                          context.Context
+	ApiService                   *JsonAttributeConstraintsApiService
 	jsonAttributeConstraintsName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteJsonAttributeConstraintsRequest) Execute() (*http.Response, err
 /*
 DeleteJsonAttributeConstraints Delete a JSON Attribute Constraints
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be deleted
- @return ApiDeleteJsonAttributeConstraintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be deleted
+	@return ApiDeleteJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiDeleteJsonAttributeConstraintsRequest {
 	return ApiDeleteJsonAttributeConstraintsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                   a,
+		ctx:                          ctx,
 		jsonAttributeConstraintsName: jsonAttributeConstraintsName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraints(ctx 
 // Execute executes the request
 func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraintsExecute(r ApiDeleteJsonAttributeConstraintsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonAttributeConstraintsApiService.DeleteJsonAttributeConstraints")
@@ -223,8 +223,8 @@ func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraintsExecu
 }
 
 type ApiGetJsonAttributeConstraintsRequest struct {
-	ctx context.Context
-	ApiService *JsonAttributeConstraintsApiService
+	ctx                          context.Context
+	ApiService                   *JsonAttributeConstraintsApiService
 	jsonAttributeConstraintsName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetJsonAttributeConstraintsRequest) Execute() (*JsonAttributeConstrai
 /*
 GetJsonAttributeConstraints Returns a single JSON Attribute Constraints
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be read
- @return ApiGetJsonAttributeConstraintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be read
+	@return ApiGetJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) GetJsonAttributeConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiGetJsonAttributeConstraintsRequest {
 	return ApiGetJsonAttributeConstraintsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                   a,
+		ctx:                          ctx,
 		jsonAttributeConstraintsName: jsonAttributeConstraintsName,
 	}
 }
 
 // Execute executes the request
-//  @return JsonAttributeConstraintsResponse
+//
+//	@return JsonAttributeConstraintsResponse
 func (a *JsonAttributeConstraintsApiService) GetJsonAttributeConstraintsExecute(r ApiGetJsonAttributeConstraintsRequest) (*JsonAttributeConstraintsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JsonAttributeConstraintsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JsonAttributeConstraintsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonAttributeConstraintsApiService.GetJsonAttributeConstraints")
@@ -324,10 +325,10 @@ func (a *JsonAttributeConstraintsApiService) GetJsonAttributeConstraintsExecute(
 }
 
 type ApiUpdateJsonAttributeConstraintsRequest struct {
-	ctx context.Context
-	ApiService *JsonAttributeConstraintsApiService
+	ctx                          context.Context
+	ApiService                   *JsonAttributeConstraintsApiService
 	jsonAttributeConstraintsName string
-	updateRequest *UpdateRequest
+	updateRequest                *UpdateRequest
 }
 
 // Update an existing JSON Attribute Constraints
@@ -343,26 +344,27 @@ func (r ApiUpdateJsonAttributeConstraintsRequest) Execute() (*JsonAttributeConst
 /*
 UpdateJsonAttributeConstraints Update an existing JSON Attribute Constraints by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be updated
- @return ApiUpdateJsonAttributeConstraintsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be updated
+	@return ApiUpdateJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) UpdateJsonAttributeConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiUpdateJsonAttributeConstraintsRequest {
 	return ApiUpdateJsonAttributeConstraintsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                   a,
+		ctx:                          ctx,
 		jsonAttributeConstraintsName: jsonAttributeConstraintsName,
 	}
 }
 
 // Execute executes the request
-//  @return JsonAttributeConstraintsResponse
+//
+//	@return JsonAttributeConstraintsResponse
 func (a *JsonAttributeConstraintsApiService) UpdateJsonAttributeConstraintsExecute(r ApiUpdateJsonAttributeConstraintsRequest) (*JsonAttributeConstraintsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *JsonAttributeConstraintsResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *JsonAttributeConstraintsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "JsonAttributeConstraintsApiService.UpdateJsonAttributeConstraints")

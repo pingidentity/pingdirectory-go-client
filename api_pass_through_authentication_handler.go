@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // PassThroughAuthenticationHandlerApiService PassThroughAuthenticationHandlerApi service
 type PassThroughAuthenticationHandlerApiService service
 
 type ApiAddPassThroughAuthenticationHandlerRequest struct {
-	ctx context.Context
-	ApiService *PassThroughAuthenticationHandlerApiService
+	ctx                                        context.Context
+	ApiService                                 *PassThroughAuthenticationHandlerApiService
 	addPassThroughAuthenticationHandlerRequest *AddPassThroughAuthenticationHandlerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddPassThroughAuthenticationHandlerRequest) Execute() (*AddPassThroug
 /*
 AddPassThroughAuthenticationHandler Add a new Pass Through Authentication Handler to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPassThroughAuthenticationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) AddPassThroughAuthenticationHandler(ctx context.Context) ApiAddPassThroughAuthenticationHandlerRequest {
 	return ApiAddPassThroughAuthenticationHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPassThroughAuthenticationHandler200Response
+//
+//	@return AddPassThroughAuthenticationHandler200Response
 func (a *PassThroughAuthenticationHandlerApiService) AddPassThroughAuthenticationHandlerExecute(r ApiAddPassThroughAuthenticationHandlerRequest) (*AddPassThroughAuthenticationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPassThroughAuthenticationHandler200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPassThroughAuthenticationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassThroughAuthenticationHandlerApiService.AddPassThroughAuthenticationHandler")
@@ -133,8 +133,8 @@ func (a *PassThroughAuthenticationHandlerApiService) AddPassThroughAuthenticatio
 }
 
 type ApiDeletePassThroughAuthenticationHandlerRequest struct {
-	ctx context.Context
-	ApiService *PassThroughAuthenticationHandlerApiService
+	ctx                                  context.Context
+	ApiService                           *PassThroughAuthenticationHandlerApiService
 	passThroughAuthenticationHandlerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeletePassThroughAuthenticationHandlerRequest) Execute() (*http.Respo
 /*
 DeletePassThroughAuthenticationHandler Delete a Pass Through Authentication Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be deleted
- @return ApiDeletePassThroughAuthenticationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be deleted
+	@return ApiDeletePassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) DeletePassThroughAuthenticationHandler(ctx context.Context, passThroughAuthenticationHandlerName string) ApiDeletePassThroughAuthenticationHandlerRequest {
 	return ApiDeletePassThroughAuthenticationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                           a,
+		ctx:                                  ctx,
 		passThroughAuthenticationHandlerName: passThroughAuthenticationHandlerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *PassThroughAuthenticationHandlerApiService) DeletePassThroughAuthentica
 // Execute executes the request
 func (a *PassThroughAuthenticationHandlerApiService) DeletePassThroughAuthenticationHandlerExecute(r ApiDeletePassThroughAuthenticationHandlerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassThroughAuthenticationHandlerApiService.DeletePassThroughAuthenticationHandler")
@@ -223,8 +223,8 @@ func (a *PassThroughAuthenticationHandlerApiService) DeletePassThroughAuthentica
 }
 
 type ApiGetPassThroughAuthenticationHandlerRequest struct {
-	ctx context.Context
-	ApiService *PassThroughAuthenticationHandlerApiService
+	ctx                                  context.Context
+	ApiService                           *PassThroughAuthenticationHandlerApiService
 	passThroughAuthenticationHandlerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetPassThroughAuthenticationHandlerRequest) Execute() (*AddPassThroug
 /*
 GetPassThroughAuthenticationHandler Returns a single Pass Through Authentication Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be read
- @return ApiGetPassThroughAuthenticationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be read
+	@return ApiGetPassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) GetPassThroughAuthenticationHandler(ctx context.Context, passThroughAuthenticationHandlerName string) ApiGetPassThroughAuthenticationHandlerRequest {
 	return ApiGetPassThroughAuthenticationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                           a,
+		ctx:                                  ctx,
 		passThroughAuthenticationHandlerName: passThroughAuthenticationHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddPassThroughAuthenticationHandler200Response
+//
+//	@return AddPassThroughAuthenticationHandler200Response
 func (a *PassThroughAuthenticationHandlerApiService) GetPassThroughAuthenticationHandlerExecute(r ApiGetPassThroughAuthenticationHandlerRequest) (*AddPassThroughAuthenticationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPassThroughAuthenticationHandler200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPassThroughAuthenticationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassThroughAuthenticationHandlerApiService.GetPassThroughAuthenticationHandler")
@@ -324,10 +325,10 @@ func (a *PassThroughAuthenticationHandlerApiService) GetPassThroughAuthenticatio
 }
 
 type ApiUpdatePassThroughAuthenticationHandlerRequest struct {
-	ctx context.Context
-	ApiService *PassThroughAuthenticationHandlerApiService
+	ctx                                  context.Context
+	ApiService                           *PassThroughAuthenticationHandlerApiService
 	passThroughAuthenticationHandlerName string
-	updateRequest *UpdateRequest
+	updateRequest                        *UpdateRequest
 }
 
 // Update an existing Pass Through Authentication Handler
@@ -343,26 +344,27 @@ func (r ApiUpdatePassThroughAuthenticationHandlerRequest) Execute() (*AddPassThr
 /*
 UpdatePassThroughAuthenticationHandler Update an existing Pass Through Authentication Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be updated
- @return ApiUpdatePassThroughAuthenticationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be updated
+	@return ApiUpdatePassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) UpdatePassThroughAuthenticationHandler(ctx context.Context, passThroughAuthenticationHandlerName string) ApiUpdatePassThroughAuthenticationHandlerRequest {
 	return ApiUpdatePassThroughAuthenticationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                           a,
+		ctx:                                  ctx,
 		passThroughAuthenticationHandlerName: passThroughAuthenticationHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddPassThroughAuthenticationHandler200Response
+//
+//	@return AddPassThroughAuthenticationHandler200Response
 func (a *PassThroughAuthenticationHandlerApiService) UpdatePassThroughAuthenticationHandlerExecute(r ApiUpdatePassThroughAuthenticationHandlerRequest) (*AddPassThroughAuthenticationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPassThroughAuthenticationHandler200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPassThroughAuthenticationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassThroughAuthenticationHandlerApiService.UpdatePassThroughAuthenticationHandler")

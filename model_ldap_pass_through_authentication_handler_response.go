@@ -16,13 +16,13 @@ import (
 
 // LdapPassThroughAuthenticationHandlerResponse struct for LdapPassThroughAuthenticationHandlerResponse
 type LdapPassThroughAuthenticationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Pass Through Authentication Handler
-	Id string `json:"id"`
+	Id      string                                              `json:"id"`
 	Schemas []EnumldapPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
-	Server []string `json:"server"`
+	Server           []string                                                 `json:"server"`
 	ServerAccessMode EnumpassThroughAuthenticationHandlerServerAccessModeProp `json:"serverAccessMode"`
 	// Specifies one or more DN mappings that may be used to transform bind DNs before attempting to bind to the external servers.
 	DnMap []string `json:"dnMap,omitempty"`
@@ -84,7 +84,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -116,7 +116,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetUrnpingidentityschemas
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -149,7 +149,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -173,7 +173,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetSchemas() []EnumldapPa
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetSchemasOk() ([]EnumldapPassThroughAuthenticationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -197,7 +197,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetServer() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetServerOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Server, true
 }
@@ -221,7 +221,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetServerAccessMode() Enu
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetServerAccessModeOk() (*EnumpassThroughAuthenticationHandlerServerAccessModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerAccessMode, true
 }
@@ -244,7 +244,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetDnMap() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetDnMapOk() ([]string, bool) {
 	if o == nil || isNil(o.DnMap) {
-    return nil, false
+		return nil, false
 	}
 	return o.DnMap, true
 }
@@ -276,7 +276,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetBindDNPattern() string
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetBindDNPatternOk() (*string, bool) {
 	if o == nil || isNil(o.BindDNPattern) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindDNPattern, true
 }
@@ -308,7 +308,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetSearchBaseDN() string 
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetSearchBaseDNOk() (*string, bool) {
 	if o == nil || isNil(o.SearchBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchBaseDN, true
 }
@@ -340,7 +340,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetSearchFilterPattern() 
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetSearchFilterPatternOk() (*string, bool) {
 	if o == nil || isNil(o.SearchFilterPattern) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchFilterPattern, true
 }
@@ -373,7 +373,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetInitialConnections() i
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetInitialConnectionsOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.InitialConnections, true
 }
@@ -397,7 +397,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetMaxConnections() int32
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetMaxConnectionsOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnections, true
 }
@@ -420,7 +420,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetUseLocation() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetUseLocationOk() (*bool, bool) {
 	if o == nil || isNil(o.UseLocation) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseLocation, true
 }
@@ -452,7 +452,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetMaximumAllowedLocalRes
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetMaximumAllowedLocalResponseTimeOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumAllowedLocalResponseTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumAllowedLocalResponseTime, true
 }
@@ -484,7 +484,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetMaximumAllowedNonlocal
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetMaximumAllowedNonlocalResponseTimeOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumAllowedNonlocalResponseTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumAllowedNonlocalResponseTime, true
 }
@@ -516,7 +516,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetUsePasswordPolicyContr
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetUsePasswordPolicyControlOk() (*bool, bool) {
 	if o == nil || isNil(o.UsePasswordPolicyControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.UsePasswordPolicyControl, true
 }
@@ -548,7 +548,7 @@ func (o *LdapPassThroughAuthenticationHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LdapPassThroughAuthenticationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -658,5 +658,3 @@ func (v *NullableLdapPassThroughAuthenticationHandlerResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

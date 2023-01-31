@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ScimSchemaApiService ScimSchemaApi service
 type ScimSchemaApiService service
 
 type ApiAddScimSchemaRequest struct {
-	ctx context.Context
-	ApiService *ScimSchemaApiService
+	ctx                  context.Context
+	ApiService           *ScimSchemaApiService
 	addScimSchemaRequest *AddScimSchemaRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddScimSchemaRequest) Execute() (*ScimSchemaResponse, *http.Response,
 /*
 AddScimSchema Add a new SCIM Schema to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddScimSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddScimSchemaRequest
 */
 func (a *ScimSchemaApiService) AddScimSchema(ctx context.Context) ApiAddScimSchemaRequest {
 	return ApiAddScimSchemaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ScimSchemaResponse
+//
+//	@return ScimSchemaResponse
 func (a *ScimSchemaApiService) AddScimSchemaExecute(r ApiAddScimSchemaRequest) (*ScimSchemaResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ScimSchemaResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ScimSchemaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSchemaApiService.AddScimSchema")
@@ -133,8 +133,8 @@ func (a *ScimSchemaApiService) AddScimSchemaExecute(r ApiAddScimSchemaRequest) (
 }
 
 type ApiDeleteScimSchemaRequest struct {
-	ctx context.Context
-	ApiService *ScimSchemaApiService
+	ctx            context.Context
+	ApiService     *ScimSchemaApiService
 	scimSchemaName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteScimSchemaRequest) Execute() (*http.Response, error) {
 /*
 DeleteScimSchema Delete a SCIM Schema
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scimSchemaName Name of the SCIM Schema to be deleted
- @return ApiDeleteScimSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scimSchemaName Name of the SCIM Schema to be deleted
+	@return ApiDeleteScimSchemaRequest
 */
 func (a *ScimSchemaApiService) DeleteScimSchema(ctx context.Context, scimSchemaName string) ApiDeleteScimSchemaRequest {
 	return ApiDeleteScimSchemaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		scimSchemaName: scimSchemaName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ScimSchemaApiService) DeleteScimSchema(ctx context.Context, scimSchemaN
 // Execute executes the request
 func (a *ScimSchemaApiService) DeleteScimSchemaExecute(r ApiDeleteScimSchemaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSchemaApiService.DeleteScimSchema")
@@ -223,8 +223,8 @@ func (a *ScimSchemaApiService) DeleteScimSchemaExecute(r ApiDeleteScimSchemaRequ
 }
 
 type ApiGetScimSchemaRequest struct {
-	ctx context.Context
-	ApiService *ScimSchemaApiService
+	ctx            context.Context
+	ApiService     *ScimSchemaApiService
 	scimSchemaName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetScimSchemaRequest) Execute() (*ScimSchemaResponse, *http.Response,
 /*
 GetScimSchema Returns a single SCIM Schema
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scimSchemaName Name of the SCIM Schema to be read
- @return ApiGetScimSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scimSchemaName Name of the SCIM Schema to be read
+	@return ApiGetScimSchemaRequest
 */
 func (a *ScimSchemaApiService) GetScimSchema(ctx context.Context, scimSchemaName string) ApiGetScimSchemaRequest {
 	return ApiGetScimSchemaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		scimSchemaName: scimSchemaName,
 	}
 }
 
 // Execute executes the request
-//  @return ScimSchemaResponse
+//
+//	@return ScimSchemaResponse
 func (a *ScimSchemaApiService) GetScimSchemaExecute(r ApiGetScimSchemaRequest) (*ScimSchemaResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ScimSchemaResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ScimSchemaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSchemaApiService.GetScimSchema")
@@ -324,10 +325,10 @@ func (a *ScimSchemaApiService) GetScimSchemaExecute(r ApiGetScimSchemaRequest) (
 }
 
 type ApiUpdateScimSchemaRequest struct {
-	ctx context.Context
-	ApiService *ScimSchemaApiService
+	ctx            context.Context
+	ApiService     *ScimSchemaApiService
 	scimSchemaName string
-	updateRequest *UpdateRequest
+	updateRequest  *UpdateRequest
 }
 
 // Update an existing SCIM Schema
@@ -343,26 +344,27 @@ func (r ApiUpdateScimSchemaRequest) Execute() (*ScimSchemaResponse, *http.Respon
 /*
 UpdateScimSchema Update an existing SCIM Schema by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param scimSchemaName Name of the SCIM Schema to be updated
- @return ApiUpdateScimSchemaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param scimSchemaName Name of the SCIM Schema to be updated
+	@return ApiUpdateScimSchemaRequest
 */
 func (a *ScimSchemaApiService) UpdateScimSchema(ctx context.Context, scimSchemaName string) ApiUpdateScimSchemaRequest {
 	return ApiUpdateScimSchemaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		scimSchemaName: scimSchemaName,
 	}
 }
 
 // Execute executes the request
-//  @return ScimSchemaResponse
+//
+//	@return ScimSchemaResponse
 func (a *ScimSchemaApiService) UpdateScimSchemaExecute(r ApiUpdateScimSchemaRequest) (*ScimSchemaResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ScimSchemaResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ScimSchemaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScimSchemaApiService.UpdateScimSchema")

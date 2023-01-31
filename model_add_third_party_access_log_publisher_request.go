@@ -17,8 +17,8 @@ import (
 // AddThirdPartyAccessLogPublisherRequest struct for AddThirdPartyAccessLogPublisherRequest
 type AddThirdPartyAccessLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName string `json:"publisherName"`
-	Schemas []EnumthirdPartyAccessLogPublisherSchemaUrn `json:"schemas"`
+	PublisherName string                                      `json:"publisherName"`
+	Schemas       []EnumthirdPartyAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Access Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Access Log Publisher. Each configuration property should be given in the form 'name=value'.
@@ -60,7 +60,7 @@ type AddThirdPartyAccessLogPublisherRequest struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -99,7 +99,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetPublisherName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PublisherName, true
 }
@@ -123,7 +123,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetSchemas() []EnumthirdPartyAc
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetSchemasOk() ([]EnumthirdPartyAccessLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -147,7 +147,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -170,7 +170,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -202,7 +202,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogConnects() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogConnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogConnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogConnects, true
 }
@@ -234,7 +234,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogDisconnects() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogDisconnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogDisconnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDisconnects, true
 }
@@ -266,7 +266,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogSecurityNegotiation() boo
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -298,7 +298,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogClientCertificates() bool
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogClientCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogClientCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogClientCertificates, true
 }
@@ -330,7 +330,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogRequests, true
 }
@@ -362,7 +362,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogResults() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogResults, true
 }
@@ -394,7 +394,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogSearchEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogSearchEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchEntries, true
 }
@@ -426,7 +426,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogSearchReferences() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogSearchReferencesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchReferences) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchReferences, true
 }
@@ -458,7 +458,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLogIntermediateResponses() b
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -490,7 +490,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetSuppressInternalOperations()
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -522,7 +522,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetSuppressReplicationOperation
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -554,7 +554,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetCorrelateRequestsAndResults(
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorrelateRequestsAndResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
 }
@@ -586,7 +586,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetConnectionCriteria() string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -618,7 +618,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -650,7 +650,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -682,7 +682,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetSearchEntryCriteria() string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetSearchEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryCriteria, true
 }
@@ -714,7 +714,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetSearchReferenceCriteria() st
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetSearchReferenceCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
 }
@@ -746,7 +746,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -779,7 +779,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -802,7 +802,7 @@ func (o *AddThirdPartyAccessLogPublisherRequest) GetLoggingErrorBehavior() Enuml
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyAccessLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -933,5 +933,3 @@ func (v *NullableAddThirdPartyAccessLogPublisherRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

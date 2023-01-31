@@ -16,9 +16,9 @@ import (
 
 // MetricsBackendResponse struct for MetricsBackendResponse
 type MetricsBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnummetricsBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnummetricsBackendSchemaUrn                      `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
@@ -34,7 +34,7 @@ type MetricsBackendResponse struct {
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the backend is enabled in the server.
-	Enabled bool `json:"enabled"`
+	Enabled         bool                           `json:"enabled"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
 	ReturnUnavailableWhenDisabled *bool `json:"returnUnavailableWhenDisabled,omitempty"`
@@ -80,7 +80,7 @@ func (o *MetricsBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -112,7 +112,7 @@ func (o *MetricsBackendResponse) GetUrnpingidentityschemasconfigurationmessages2
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -145,7 +145,7 @@ func (o *MetricsBackendResponse) GetSchemas() []EnummetricsBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetSchemasOk() ([]EnummetricsBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -169,7 +169,7 @@ func (o *MetricsBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -193,7 +193,7 @@ func (o *MetricsBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -217,7 +217,7 @@ func (o *MetricsBackendResponse) GetStorageDir() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetStorageDirOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.StorageDir, true
 }
@@ -241,7 +241,7 @@ func (o *MetricsBackendResponse) GetMetricsDir() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetMetricsDirOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MetricsDir, true
 }
@@ -264,7 +264,7 @@ func (o *MetricsBackendResponse) GetSampleFlushInterval() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetSampleFlushIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.SampleFlushInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.SampleFlushInterval, true
 }
@@ -297,7 +297,7 @@ func (o *MetricsBackendResponse) GetRetentionPolicy() []string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetRetentionPolicyOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RetentionPolicy, true
 }
@@ -320,7 +320,7 @@ func (o *MetricsBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -353,7 +353,7 @@ func (o *MetricsBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -377,7 +377,7 @@ func (o *MetricsBackendResponse) GetWritabilityMode() EnumbackendWritabilityMode
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -400,7 +400,7 @@ func (o *MetricsBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -432,7 +432,7 @@ func (o *MetricsBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *MetricsBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -533,5 +533,3 @@ func (v *NullableMetricsBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

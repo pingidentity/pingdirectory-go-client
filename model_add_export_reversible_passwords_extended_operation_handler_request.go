@@ -17,8 +17,8 @@ import (
 // AddExportReversiblePasswordsExtendedOperationHandlerRequest struct for AddExportReversiblePasswordsExtendedOperationHandlerRequest
 type AddExportReversiblePasswordsExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                           `json:"handlerName"`
+	Schemas     []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Extended Operation Handler is enabled (that is, whether the types of extended operations are allowed in the server).
@@ -59,7 +59,7 @@ func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandler
 // and a boolean to check if the value has been set.
 func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -83,7 +83,7 @@ func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetSchemas
 // and a boolean to check if the value has been set.
 func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -106,7 +106,7 @@ func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetDescrip
 // and a boolean to check if the value has been set.
 func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -139,7 +139,7 @@ func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetEnabled
 // and a boolean to check if the value has been set.
 func (o *AddExportReversiblePasswordsExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddExportReversiblePasswordsExtendedOperationHandlerRequest) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

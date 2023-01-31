@@ -20,15 +20,15 @@ type EnumclientConnectionPolicyAllowedOperationProp string
 
 // List of Enumclient-connection-policy-allowedOperationProp
 const (
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_ABANDON EnumclientConnectionPolicyAllowedOperationProp = "abandon"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_ADD EnumclientConnectionPolicyAllowedOperationProp = "add"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_BIND EnumclientConnectionPolicyAllowedOperationProp = "bind"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_COMPARE EnumclientConnectionPolicyAllowedOperationProp = "compare"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_DELETE EnumclientConnectionPolicyAllowedOperationProp = "delete"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_EXTENDED EnumclientConnectionPolicyAllowedOperationProp = "extended"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_MODIFY EnumclientConnectionPolicyAllowedOperationProp = "modify"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_ABANDON   EnumclientConnectionPolicyAllowedOperationProp = "abandon"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_ADD       EnumclientConnectionPolicyAllowedOperationProp = "add"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_BIND      EnumclientConnectionPolicyAllowedOperationProp = "bind"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_COMPARE   EnumclientConnectionPolicyAllowedOperationProp = "compare"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_DELETE    EnumclientConnectionPolicyAllowedOperationProp = "delete"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_EXTENDED  EnumclientConnectionPolicyAllowedOperationProp = "extended"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_MODIFY    EnumclientConnectionPolicyAllowedOperationProp = "modify"
 	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_MODIFY_DN EnumclientConnectionPolicyAllowedOperationProp = "modify-dn"
-	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_SEARCH EnumclientConnectionPolicyAllowedOperationProp = "search"
+	ENUMCLIENTCONNECTIONPOLICYALLOWEDOPERATIONPROP_SEARCH    EnumclientConnectionPolicyAllowedOperationProp = "search"
 )
 
 // All allowed values of EnumclientConnectionPolicyAllowedOperationProp enum
@@ -122,4 +122,3 @@ func (v *NullableEnumclientConnectionPolicyAllowedOperationProp) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

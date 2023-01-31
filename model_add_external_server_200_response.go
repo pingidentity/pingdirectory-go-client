@@ -17,18 +17,18 @@ import (
 
 // AddExternalServer200Response - struct for AddExternalServer200Response
 type AddExternalServer200Response struct {
-	ActiveDirectoryExternalServerResponse *ActiveDirectoryExternalServerResponse
-	AmazonAwsExternalServerResponse *AmazonAwsExternalServerResponse
-	ConjurExternalServerResponse *ConjurExternalServerResponse
-	JdbcExternalServerResponse *JdbcExternalServerResponse
-	NokiaDsExternalServerResponse *NokiaDsExternalServerResponse
-	NokiaProxyServerExternalServerResponse *NokiaProxyServerExternalServerResponse
-	OpendjExternalServerResponse *OpendjExternalServerResponse
+	ActiveDirectoryExternalServerResponse        *ActiveDirectoryExternalServerResponse
+	AmazonAwsExternalServerResponse              *AmazonAwsExternalServerResponse
+	ConjurExternalServerResponse                 *ConjurExternalServerResponse
+	JdbcExternalServerResponse                   *JdbcExternalServerResponse
+	NokiaDsExternalServerResponse                *NokiaDsExternalServerResponse
+	NokiaProxyServerExternalServerResponse       *NokiaProxyServerExternalServerResponse
+	OpendjExternalServerResponse                 *OpendjExternalServerResponse
 	OracleUnifiedDirectoryExternalServerResponse *OracleUnifiedDirectoryExternalServerResponse
-	PingOneHttpExternalServerResponse *PingOneHttpExternalServerResponse
-	SmtpExternalServerResponse *SmtpExternalServerResponse
-	SyslogExternalServerResponse *SyslogExternalServerResponse
-	VaultExternalServerResponse *VaultExternalServerResponse
+	PingOneHttpExternalServerResponse            *PingOneHttpExternalServerResponse
+	SmtpExternalServerResponse                   *SmtpExternalServerResponse
+	SyslogExternalServerResponse                 *SyslogExternalServerResponse
+	VaultExternalServerResponse                  *VaultExternalServerResponse
 }
 
 // ActiveDirectoryExternalServerResponseAsAddExternalServer200Response is a convenience function that returns ActiveDirectoryExternalServerResponse wrapped in AddExternalServer200Response
@@ -114,7 +114,6 @@ func VaultExternalServerResponseAsAddExternalServer200Response(v *VaultExternalS
 		VaultExternalServerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddExternalServer200Response) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src AddExternalServer200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddExternalServer200Response) GetActualInstance() (interface{}) {
+func (obj *AddExternalServer200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableAddExternalServer200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

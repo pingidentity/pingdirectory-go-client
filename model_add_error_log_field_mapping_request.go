@@ -17,8 +17,8 @@ import (
 // AddErrorLogFieldMappingRequest struct for AddErrorLogFieldMappingRequest
 type AddErrorLogFieldMappingRequest struct {
 	// Name of the new Log Field Mapping
-	MappingName string `json:"mappingName"`
-	Schemas []EnumerrorLogFieldMappingSchemaUrn `json:"schemas"`
+	MappingName string                              `json:"mappingName"`
+	Schemas     []EnumerrorLogFieldMappingSchemaUrn `json:"schemas"`
 	// The time that the log message was generated.
 	LogFieldTimestamp *string `json:"logFieldTimestamp,omitempty"`
 	// The name for this Directory Server product, which may be used to identify which product was used to log the message if multiple products log to the same database table.
@@ -72,7 +72,7 @@ func (o *AddErrorLogFieldMappingRequest) GetMappingName() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetMappingNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MappingName, true
 }
@@ -96,7 +96,7 @@ func (o *AddErrorLogFieldMappingRequest) GetSchemas() []EnumerrorLogFieldMapping
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetSchemasOk() ([]EnumerrorLogFieldMappingSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldTimestamp() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldTimestampOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldTimestamp) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldTimestamp, true
 }
@@ -151,7 +151,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldProductName() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldProductNameOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldProductName, true
 }
@@ -183,7 +183,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldInstanceName() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldInstanceNameOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldInstanceName, true
 }
@@ -215,7 +215,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldStartupid() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldStartupidOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldStartupid) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldStartupid, true
 }
@@ -247,7 +247,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldCategory() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldCategoryOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldCategory) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldCategory, true
 }
@@ -279,7 +279,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldSeverity() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldSeverityOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldSeverity, true
 }
@@ -311,7 +311,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldMessageID() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldMessageIDOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldMessageID) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldMessageID, true
 }
@@ -343,7 +343,7 @@ func (o *AddErrorLogFieldMappingRequest) GetLogFieldMessage() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetLogFieldMessageOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldMessage, true
 }
@@ -375,7 +375,7 @@ func (o *AddErrorLogFieldMappingRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddErrorLogFieldMappingRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -467,5 +467,3 @@ func (v *NullableAddErrorLogFieldMappingRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

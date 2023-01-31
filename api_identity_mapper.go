@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // IdentityMapperApiService IdentityMapperApi service
 type IdentityMapperApiService service
 
 type ApiAddIdentityMapperRequest struct {
-	ctx context.Context
-	ApiService *IdentityMapperApiService
+	ctx                      context.Context
+	ApiService               *IdentityMapperApiService
 	addIdentityMapperRequest *AddIdentityMapperRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddIdentityMapperRequest) Execute() (*AddIdentityMapper200Response, *
 /*
 AddIdentityMapper Add a new Identity Mapper to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddIdentityMapperRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) AddIdentityMapper(ctx context.Context) ApiAddIdentityMapperRequest {
 	return ApiAddIdentityMapperRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdentityMapper200Response
+//
+//	@return AddIdentityMapper200Response
 func (a *IdentityMapperApiService) AddIdentityMapperExecute(r ApiAddIdentityMapperRequest) (*AddIdentityMapper200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdentityMapper200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdentityMapper200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityMapperApiService.AddIdentityMapper")
@@ -133,8 +133,8 @@ func (a *IdentityMapperApiService) AddIdentityMapperExecute(r ApiAddIdentityMapp
 }
 
 type ApiDeleteIdentityMapperRequest struct {
-	ctx context.Context
-	ApiService *IdentityMapperApiService
+	ctx                context.Context
+	ApiService         *IdentityMapperApiService
 	identityMapperName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteIdentityMapperRequest) Execute() (*http.Response, error) {
 /*
 DeleteIdentityMapper Delete a Identity Mapper
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identityMapperName Name of the Identity Mapper to be deleted
- @return ApiDeleteIdentityMapperRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identityMapperName Name of the Identity Mapper to be deleted
+	@return ApiDeleteIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) DeleteIdentityMapper(ctx context.Context, identityMapperName string) ApiDeleteIdentityMapperRequest {
 	return ApiDeleteIdentityMapperRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		identityMapperName: identityMapperName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *IdentityMapperApiService) DeleteIdentityMapper(ctx context.Context, ide
 // Execute executes the request
 func (a *IdentityMapperApiService) DeleteIdentityMapperExecute(r ApiDeleteIdentityMapperRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityMapperApiService.DeleteIdentityMapper")
@@ -223,8 +223,8 @@ func (a *IdentityMapperApiService) DeleteIdentityMapperExecute(r ApiDeleteIdenti
 }
 
 type ApiGetIdentityMapperRequest struct {
-	ctx context.Context
-	ApiService *IdentityMapperApiService
+	ctx                context.Context
+	ApiService         *IdentityMapperApiService
 	identityMapperName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetIdentityMapperRequest) Execute() (*AddIdentityMapper200Response, *
 /*
 GetIdentityMapper Returns a single Identity Mapper
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identityMapperName Name of the Identity Mapper to be read
- @return ApiGetIdentityMapperRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identityMapperName Name of the Identity Mapper to be read
+	@return ApiGetIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) GetIdentityMapper(ctx context.Context, identityMapperName string) ApiGetIdentityMapperRequest {
 	return ApiGetIdentityMapperRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		identityMapperName: identityMapperName,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdentityMapper200Response
+//
+//	@return AddIdentityMapper200Response
 func (a *IdentityMapperApiService) GetIdentityMapperExecute(r ApiGetIdentityMapperRequest) (*AddIdentityMapper200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdentityMapper200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdentityMapper200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityMapperApiService.GetIdentityMapper")
@@ -324,10 +325,10 @@ func (a *IdentityMapperApiService) GetIdentityMapperExecute(r ApiGetIdentityMapp
 }
 
 type ApiUpdateIdentityMapperRequest struct {
-	ctx context.Context
-	ApiService *IdentityMapperApiService
+	ctx                context.Context
+	ApiService         *IdentityMapperApiService
 	identityMapperName string
-	updateRequest *UpdateRequest
+	updateRequest      *UpdateRequest
 }
 
 // Update an existing Identity Mapper
@@ -343,26 +344,27 @@ func (r ApiUpdateIdentityMapperRequest) Execute() (*AddIdentityMapper200Response
 /*
 UpdateIdentityMapper Update an existing Identity Mapper by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param identityMapperName Name of the Identity Mapper to be updated
- @return ApiUpdateIdentityMapperRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param identityMapperName Name of the Identity Mapper to be updated
+	@return ApiUpdateIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) UpdateIdentityMapper(ctx context.Context, identityMapperName string) ApiUpdateIdentityMapperRequest {
 	return ApiUpdateIdentityMapperRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		identityMapperName: identityMapperName,
 	}
 }
 
 // Execute executes the request
-//  @return AddIdentityMapper200Response
+//
+//	@return AddIdentityMapper200Response
 func (a *IdentityMapperApiService) UpdateIdentityMapperExecute(r ApiUpdateIdentityMapperRequest) (*AddIdentityMapper200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddIdentityMapper200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddIdentityMapper200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityMapperApiService.UpdateIdentityMapper")

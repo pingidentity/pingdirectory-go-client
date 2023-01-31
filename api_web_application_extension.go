@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // WebApplicationExtensionApiService WebApplicationExtensionApi service
 type WebApplicationExtensionApiService service
 
 type ApiGetWebApplicationExtensionRequest struct {
-	ctx context.Context
-	ApiService *WebApplicationExtensionApiService
+	ctx                         context.Context
+	ApiService                  *WebApplicationExtensionApiService
 	webApplicationExtensionName string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetWebApplicationExtensionRequest) Execute() (*ConsoleWebApplicationE
 /*
 GetWebApplicationExtension Returns a single Web Application Extension
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webApplicationExtensionName Name of the Web Application Extension to be read
- @return ApiGetWebApplicationExtensionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webApplicationExtensionName Name of the Web Application Extension to be read
+	@return ApiGetWebApplicationExtensionRequest
 */
 func (a *WebApplicationExtensionApiService) GetWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiGetWebApplicationExtensionRequest {
 	return ApiGetWebApplicationExtensionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		webApplicationExtensionName: webApplicationExtensionName,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleWebApplicationExtensionResponse
+//
+//	@return ConsoleWebApplicationExtensionResponse
 func (a *WebApplicationExtensionApiService) GetWebApplicationExtensionExecute(r ApiGetWebApplicationExtensionRequest) (*ConsoleWebApplicationExtensionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleWebApplicationExtensionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleWebApplicationExtensionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.GetWebApplicationExtension")
@@ -125,10 +125,10 @@ func (a *WebApplicationExtensionApiService) GetWebApplicationExtensionExecute(r 
 }
 
 type ApiUpdateWebApplicationExtensionRequest struct {
-	ctx context.Context
-	ApiService *WebApplicationExtensionApiService
+	ctx                         context.Context
+	ApiService                  *WebApplicationExtensionApiService
 	webApplicationExtensionName string
-	updateRequest *UpdateRequest
+	updateRequest               *UpdateRequest
 }
 
 // Update an existing Web Application Extension
@@ -144,26 +144,27 @@ func (r ApiUpdateWebApplicationExtensionRequest) Execute() (*ConsoleWebApplicati
 /*
 UpdateWebApplicationExtension Update an existing Web Application Extension by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webApplicationExtensionName Name of the Web Application Extension to be updated
- @return ApiUpdateWebApplicationExtensionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webApplicationExtensionName Name of the Web Application Extension to be updated
+	@return ApiUpdateWebApplicationExtensionRequest
 */
 func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiUpdateWebApplicationExtensionRequest {
 	return ApiUpdateWebApplicationExtensionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		webApplicationExtensionName: webApplicationExtensionName,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleWebApplicationExtensionResponse
+//
+//	@return ConsoleWebApplicationExtensionResponse
 func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtensionExecute(r ApiUpdateWebApplicationExtensionRequest) (*ConsoleWebApplicationExtensionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleWebApplicationExtensionResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleWebApplicationExtensionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebApplicationExtensionApiService.UpdateWebApplicationExtension")

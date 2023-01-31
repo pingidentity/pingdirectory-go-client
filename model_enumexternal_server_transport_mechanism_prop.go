@@ -20,8 +20,8 @@ type EnumexternalServerTransportMechanismProp string
 
 // List of Enumexternal-server-transportMechanismProp
 const (
-	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_UNENCRYPTED_UDP EnumexternalServerTransportMechanismProp = "unencrypted-udp"
-	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_UNENCRYPTED_TCP EnumexternalServerTransportMechanismProp = "unencrypted-tcp"
+	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_UNENCRYPTED_UDP   EnumexternalServerTransportMechanismProp = "unencrypted-udp"
+	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_UNENCRYPTED_TCP   EnumexternalServerTransportMechanismProp = "unencrypted-tcp"
 	ENUMEXTERNALSERVERTRANSPORTMECHANISMPROP_TLS_ENCRYPTED_TCP EnumexternalServerTransportMechanismProp = "tls-encrypted-tcp"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumexternalServerTransportMechanismProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

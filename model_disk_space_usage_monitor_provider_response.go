@@ -16,9 +16,9 @@ import (
 
 // DiskSpaceUsageMonitorProviderResponse struct for DiskSpaceUsageMonitorProviderResponse
 type DiskSpaceUsageMonitorProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdiskSpaceUsageMonitorProviderSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumdiskSpaceUsageMonitorProviderSchemaUrn       `json:"schemas"`
 	// Name of the Monitor Provider
 	Id string `json:"id"`
 	// Specifies the low space warning threshold value as an absolute amount of space. If the amount of usable disk space drops below this amount, then the Directory Server will begin generating warning alert notifications.
@@ -75,7 +75,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -140,7 +140,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetSchemas() []EnumdiskSpaceUsag
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetSchemasOk() ([]EnumdiskSpaceUsageMonitorProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -164,7 +164,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -187,7 +187,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningSizeThreshold(
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningSizeThresholdOk() (*string, bool) {
 	if o == nil || isNil(o.LowSpaceWarningSizeThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.LowSpaceWarningSizeThreshold, true
 }
@@ -219,7 +219,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresho
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresholdOk() (*int32, bool) {
 	if o == nil || isNil(o.LowSpaceWarningPercentThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.LowSpaceWarningPercentThreshold, true
 }
@@ -251,7 +251,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorSizeThreshold() 
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorSizeThresholdOk() (*string, bool) {
 	if o == nil || isNil(o.LowSpaceErrorSizeThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.LowSpaceErrorSizeThreshold, true
 }
@@ -283,7 +283,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThresholdOk() (*int32, bool) {
 	if o == nil || isNil(o.LowSpaceErrorPercentThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.LowSpaceErrorPercentThreshold, true
 }
@@ -315,7 +315,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorSizeThreshold(
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorSizeThresholdOk() (*string, bool) {
 	if o == nil || isNil(o.OutOfSpaceErrorSizeThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutOfSpaceErrorSizeThreshold, true
 }
@@ -347,7 +347,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresho
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresholdOk() (*int32, bool) {
 	if o == nil || isNil(o.OutOfSpaceErrorPercentThreshold) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutOfSpaceErrorPercentThreshold, true
 }
@@ -380,7 +380,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetAlertFrequency() string {
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetAlertFrequencyOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AlertFrequency, true
 }
@@ -403,7 +403,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -436,7 +436,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -525,5 +525,3 @@ func (v *NullableDiskSpaceUsageMonitorProviderResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

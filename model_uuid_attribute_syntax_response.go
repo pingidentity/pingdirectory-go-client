@@ -16,9 +16,9 @@ import (
 
 // UuidAttributeSyntaxResponse struct for UuidAttributeSyntaxResponse
 type UuidAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumuuidAttributeSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumuuidAttributeSyntaxSchemaUrn                 `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
@@ -66,7 +66,7 @@ func (o *UuidAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *UuidAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmess
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *UuidAttributeSyntaxResponse) GetSchemas() []EnumuuidAttributeSyntaxSche
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetSchemasOk() ([]EnumuuidAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -155,7 +155,7 @@ func (o *UuidAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -178,7 +178,7 @@ func (o *UuidAttributeSyntaxResponse) GetEnableCompaction() bool {
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetEnableCompactionOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableCompaction) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableCompaction, true
 }
@@ -210,7 +210,7 @@ func (o *UuidAttributeSyntaxResponse) GetIncludeAttributeInCompaction() []string
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetIncludeAttributeInCompactionOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttributeInCompaction) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttributeInCompaction, true
 }
@@ -242,7 +242,7 @@ func (o *UuidAttributeSyntaxResponse) GetExcludeAttributeFromCompaction() []stri
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetExcludeAttributeFromCompactionOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeAttributeFromCompaction) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeAttributeFromCompaction, true
 }
@@ -275,7 +275,7 @@ func (o *UuidAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -298,7 +298,7 @@ func (o *UuidAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -384,5 +384,3 @@ func (v *NullableUuidAttributeSyntaxResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

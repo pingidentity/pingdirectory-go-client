@@ -17,8 +17,8 @@ import (
 // AddHaystackPasswordValidatorRequest struct for AddHaystackPasswordValidatorRequest
 type AddHaystackPasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumhaystackPasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                   `json:"validatorName"`
+	Schemas       []EnumhaystackPasswordValidatorSchemaUrn `json:"schemas"`
 	// The number of password guesses per second that a potential attacker may be expected to make.
 	AssumedPasswordGuessesPerSecond string `json:"assumedPasswordGuessesPerSecond"`
 	// The minimum length of time (using the configured number of password guesses per second) required to exhaust the entire search space for a proposed password in order for that password to be considered acceptable.
@@ -69,7 +69,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -93,7 +93,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetSchemas() []EnumhaystackPasswor
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetSchemasOk() ([]EnumhaystackPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -117,7 +117,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecond
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetAssumedPasswordGuessesPerSecondOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AssumedPasswordGuessesPerSecond, true
 }
@@ -141,7 +141,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustS
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetMinimumAcceptableTimeToExhaustSearchSpaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MinimumAcceptableTimeToExhaustSearchSpace, true
 }
@@ -164,7 +164,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -197,7 +197,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -220,7 +220,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorRequirementDescription
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -252,7 +252,7 @@ func (o *AddHaystackPasswordValidatorRequest) GetValidatorFailureMessage() strin
 // and a boolean to check if the value has been set.
 func (o *AddHaystackPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -335,5 +335,3 @@ func (v *NullableAddHaystackPasswordValidatorRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

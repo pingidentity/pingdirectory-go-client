@@ -16,10 +16,10 @@ import (
 
 // LocationResponse struct for LocationResponse
 type LocationResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Location
-	Id string `json:"id"`
+	Id      string                  `json:"id"`
 	Schemas []EnumlocationSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Location
 	Description *string `json:"description,omitempty"`
@@ -56,7 +56,7 @@ func (o *LocationResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LocationResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -88,7 +88,7 @@ func (o *LocationResponse) GetUrnpingidentityschemasconfigurationmessages20() Me
 // and a boolean to check if the value has been set.
 func (o *LocationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -121,7 +121,7 @@ func (o *LocationResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LocationResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -144,7 +144,7 @@ func (o *LocationResponse) GetSchemas() []EnumlocationSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *LocationResponse) GetSchemasOk() ([]EnumlocationSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *LocationResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LocationResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -250,5 +250,3 @@ func (v *NullableLocationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

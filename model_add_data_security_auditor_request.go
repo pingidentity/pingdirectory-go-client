@@ -17,12 +17,12 @@ import (
 
 // AddDataSecurityAuditorRequest - struct for AddDataSecurityAuditorRequest
 type AddDataSecurityAuditorRequest struct {
-	AddAccessControlDataSecurityAuditorRequest *AddAccessControlDataSecurityAuditorRequest
-	AddDisabledAccountDataSecurityAuditorRequest *AddDisabledAccountDataSecurityAuditorRequest
-	AddExpiredPasswordDataSecurityAuditorRequest *AddExpiredPasswordDataSecurityAuditorRequest
-	AddLockedAccountDataSecurityAuditorRequest *AddLockedAccountDataSecurityAuditorRequest
-	AddMultiplePasswordDataSecurityAuditorRequest *AddMultiplePasswordDataSecurityAuditorRequest
-	AddPrivilegeDataSecurityAuditorRequest *AddPrivilegeDataSecurityAuditorRequest
+	AddAccessControlDataSecurityAuditorRequest         *AddAccessControlDataSecurityAuditorRequest
+	AddDisabledAccountDataSecurityAuditorRequest       *AddDisabledAccountDataSecurityAuditorRequest
+	AddExpiredPasswordDataSecurityAuditorRequest       *AddExpiredPasswordDataSecurityAuditorRequest
+	AddLockedAccountDataSecurityAuditorRequest         *AddLockedAccountDataSecurityAuditorRequest
+	AddMultiplePasswordDataSecurityAuditorRequest      *AddMultiplePasswordDataSecurityAuditorRequest
+	AddPrivilegeDataSecurityAuditorRequest             *AddPrivilegeDataSecurityAuditorRequest
 	AddWeaklyEncodedPasswordDataSecurityAuditorRequest *AddWeaklyEncodedPasswordDataSecurityAuditorRequest
 }
 
@@ -74,7 +74,6 @@ func AddWeaklyEncodedPasswordDataSecurityAuditorRequestAsAddDataSecurityAuditorR
 		AddWeaklyEncodedPasswordDataSecurityAuditorRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddDataSecurityAuditorRequest) UnmarshalJSON(data []byte) error {
@@ -223,7 +222,7 @@ func (src AddDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddDataSecurityAuditorRequest) GetActualInstance() (interface{}) {
+func (obj *AddDataSecurityAuditorRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -294,5 +293,3 @@ func (v *NullableAddDataSecurityAuditorRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

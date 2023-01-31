@@ -16,10 +16,10 @@ import (
 
 // LastAccessTimeUncachedEntryCriteriaResponse struct for LastAccessTimeUncachedEntryCriteriaResponse
 type LastAccessTimeUncachedEntryCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Entry Criteria
-	Id string `json:"id"`
+	Id      string                                             `json:"id"`
 	Schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database.
 	AccessTimeThreshold string `json:"accessTimeThreshold"`
@@ -63,7 +63,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetSchemas() []EnumlastAcc
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetSchemasOk() ([]EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetAccessTimeThreshold() s
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetAccessTimeThresholdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AccessTimeThreshold, true
 }
@@ -199,7 +199,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LastAccessTimeUncachedEntryCriteriaResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullableLastAccessTimeUncachedEntryCriteriaResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

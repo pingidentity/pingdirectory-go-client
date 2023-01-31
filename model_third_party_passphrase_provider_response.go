@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyPassphraseProviderResponse struct for ThirdPartyPassphraseProviderResponse
 type ThirdPartyPassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumthirdPartyPassphraseProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Passphrase Provider.
 	ExtensionClass string `json:"extensionClass"`
@@ -65,7 +65,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetSchemas() []EnumthirdPartyPass
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetSchemasOk() ([]EnumthirdPartyPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -201,7 +201,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -233,7 +233,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *ThirdPartyPassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableThirdPartyPassphraseProviderResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

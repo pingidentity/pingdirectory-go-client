@@ -16,10 +16,10 @@ import (
 
 // UnboundidDeliveredOtpSaslMechanismHandlerResponse struct for UnboundidDeliveredOtpSaslMechanismHandlerResponse
 type UnboundidDeliveredOtpSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the SASL Mechanism Handler
-	Id string `json:"id"`
+	Id      string                                                   `json:"id"`
 	Schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
@@ -66,7 +66,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetUrnpingidentitysc
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -155,7 +155,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetSchemas() []Enumu
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetIdentityMapper() 
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -203,7 +203,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetOtpValidityDurati
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetOtpValidityDurationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.OtpValidityDuration, true
 }
@@ -226,7 +226,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -259,7 +259,7 @@ func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *UnboundidDeliveredOtpSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -333,5 +333,3 @@ func (v *NullableUnboundidDeliveredOtpSaslMechanismHandlerResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

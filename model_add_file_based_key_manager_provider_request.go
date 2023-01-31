@@ -17,8 +17,8 @@ import (
 // AddFileBasedKeyManagerProviderRequest struct for AddFileBasedKeyManagerProviderRequest
 type AddFileBasedKeyManagerProviderRequest struct {
 	// Name of the new Key Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumfileBasedKeyManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                     `json:"providerName"`
+	Schemas      []EnumfileBasedKeyManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file that contains the private key information. This may be an absolute path, or a path that is relative to the Directory Server instance root.
 	KeyStoreFile string `json:"keyStoreFile"`
 	// Specifies the format for the data in the key store file.
@@ -76,7 +76,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -100,7 +100,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetSchemas() []EnumfileBasedKeyM
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetSchemasOk() ([]EnumfileBasedKeyManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -124,7 +124,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStoreFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyStoreFile, true
 }
@@ -147,7 +147,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStoreType, true
 }
@@ -179,7 +179,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePin, true
 }
@@ -211,7 +211,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinFile, true
 }
@@ -243,7 +243,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStorePinPassphraseProvider
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetKeyStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyStorePinPassphraseProvider, true
 }
@@ -275,7 +275,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetPrivateKeyPin() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetPrivateKeyPinOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKeyPin) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKeyPin, true
 }
@@ -307,7 +307,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetPrivateKeyPinFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetPrivateKeyPinFileOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKeyPinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKeyPinFile, true
 }
@@ -339,7 +339,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetPrivateKeyPinPassphraseProvid
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetPrivateKeyPinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKeyPinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKeyPinPassphraseProvider, true
 }
@@ -371,7 +371,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -404,7 +404,7 @@ func (o *AddFileBasedKeyManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedKeyManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -490,5 +490,3 @@ func (v *NullableAddFileBasedKeyManagerProviderRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

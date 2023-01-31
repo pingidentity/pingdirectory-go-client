@@ -17,7 +17,7 @@ import (
 // AddDnMapRequest struct for AddDnMapRequest
 type AddDnMapRequest struct {
 	// Name of the new DN Map
-	MapName string `json:"mapName"`
+	MapName string               `json:"mapName"`
 	Schemas []EnumdnMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this DN Map
 	Description *string `json:"description,omitempty"`
@@ -61,7 +61,7 @@ func (o *AddDnMapRequest) GetMapName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetMapNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapName, true
 }
@@ -84,7 +84,7 @@ func (o *AddDnMapRequest) GetSchemas() []EnumdnMapSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetSchemasOk() ([]EnumdnMapSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddDnMapRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -149,7 +149,7 @@ func (o *AddDnMapRequest) GetFromDNPattern() string {
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetFromDNPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FromDNPattern, true
 }
@@ -173,7 +173,7 @@ func (o *AddDnMapRequest) GetToDNPattern() string {
 // and a boolean to check if the value has been set.
 func (o *AddDnMapRequest) GetToDNPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ToDNPattern, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddDnMapRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

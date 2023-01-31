@@ -16,10 +16,10 @@ import (
 
 // FileCountLogRetentionPolicyResponse struct for FileCountLogRetentionPolicyResponse
 type FileCountLogRetentionPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Retention Policy
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumfileCountLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the number of archived log files to retain before the oldest ones are cleaned.
 	NumberOfFiles int32 `json:"numberOfFiles"`
@@ -60,7 +60,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileCountLogRetentionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *FileCountLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileCountLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetSchemas() []EnumfileCountLogRet
 // and a boolean to check if the value has been set.
 func (o *FileCountLogRetentionPolicyResponse) GetSchemasOk() ([]EnumfileCountLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFiles() int32 {
 // and a boolean to check if the value has been set.
 func (o *FileCountLogRetentionPolicyResponse) GetNumberOfFilesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.NumberOfFiles, true
 }
@@ -196,7 +196,7 @@ func (o *FileCountLogRetentionPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileCountLogRetentionPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableFileCountLogRetentionPolicyResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

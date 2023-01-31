@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyOauthTokenHandlerResponse struct for ThirdPartyOauthTokenHandlerResponse
 type ThirdPartyOauthTokenHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the OAuth Token Handler
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumthirdPartyOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party OAuth Token Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -62,7 +62,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetSchemas() []EnumthirdPartyOauth
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetSchemasOk() ([]EnumthirdPartyOauthTokenHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -175,7 +175,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -198,7 +198,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -230,7 +230,7 @@ func (o *ThirdPartyOauthTokenHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyOauthTokenHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -310,5 +310,3 @@ func (v *NullableThirdPartyOauthTokenHandlerResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

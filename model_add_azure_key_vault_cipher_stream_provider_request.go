@@ -17,8 +17,8 @@ import (
 // AddAzureKeyVaultCipherStreamProviderRequest struct for AddAzureKeyVaultCipherStreamProviderRequest
 type AddAzureKeyVaultCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumazureKeyVaultCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                           `json:"providerName"`
+	Schemas      []EnumazureKeyVaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
@@ -71,7 +71,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -95,7 +95,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetSchemas() []EnumazureKe
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetSchemasOk() ([]EnumazureKeyVaultCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetKeyVaultURI() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetKeyVaultURIOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyVaultURI, true
 }
@@ -143,7 +143,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetAzureAuthenticationMeth
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetAzureAuthenticationMethodOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AzureAuthenticationMethod, true
 }
@@ -167,7 +167,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetSecretName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetSecretNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SecretName, true
 }
@@ -191,7 +191,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFile(
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptionMetadataFile, true
 }
@@ -214,7 +214,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -247,7 +247,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -321,5 +321,3 @@ func (v *NullableAddAzureKeyVaultCipherStreamProviderRequest) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

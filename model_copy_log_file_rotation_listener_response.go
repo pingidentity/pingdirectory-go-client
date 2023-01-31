@@ -16,10 +16,10 @@ import (
 
 // CopyLogFileRotationListenerResponse struct for CopyLogFileRotationListenerResponse
 type CopyLogFileRotationListenerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log File Rotation Listener
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumcopyLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory to which log files should be copied. It must be different from the directory to which the log file is originally written, and administrators should ensure that the filesystem has sufficient space to hold files as they are copied.
 	CopyToDirectory string `json:"copyToDirectory"`
@@ -65,7 +65,7 @@ func (o *CopyLogFileRotationListenerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *CopyLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *CopyLogFileRotationListenerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *CopyLogFileRotationListenerResponse) GetSchemas() []EnumcopyLogFileRota
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetSchemasOk() ([]EnumcopyLogFileRotationListenerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *CopyLogFileRotationListenerResponse) GetCopyToDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetCopyToDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CopyToDirectory, true
 }
@@ -201,7 +201,7 @@ func (o *CopyLogFileRotationListenerResponse) GetCompressOnCopy() bool {
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetCompressOnCopyOk() (*bool, bool) {
 	if o == nil || isNil(o.CompressOnCopy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompressOnCopy, true
 }
@@ -233,7 +233,7 @@ func (o *CopyLogFileRotationListenerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *CopyLogFileRotationListenerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableCopyLogFileRotationListenerResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

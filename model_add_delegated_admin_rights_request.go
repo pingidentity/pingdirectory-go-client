@@ -17,8 +17,8 @@ import (
 // AddDelegatedAdminRightsRequest struct for AddDelegatedAdminRightsRequest
 type AddDelegatedAdminRightsRequest struct {
 	// Name of the new Delegated Admin Rights
-	RightsName string `json:"rightsName"`
-	Schemas []EnumdelegatedAdminRightsSchemaUrn `json:"schemas,omitempty"`
+	RightsName string                              `json:"rightsName"`
+	Schemas    []EnumdelegatedAdminRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Rights
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Delegated Admin Rights is enabled.
@@ -62,7 +62,7 @@ func (o *AddDelegatedAdminRightsRequest) GetRightsName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetRightsNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RightsName, true
 }
@@ -85,7 +85,7 @@ func (o *AddDelegatedAdminRightsRequest) GetSchemas() []EnumdelegatedAdminRights
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetSchemasOk() ([]EnumdelegatedAdminRightsSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -117,7 +117,7 @@ func (o *AddDelegatedAdminRightsRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -150,7 +150,7 @@ func (o *AddDelegatedAdminRightsRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -173,7 +173,7 @@ func (o *AddDelegatedAdminRightsRequest) GetAdminUserDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetAdminUserDNOk() (*string, bool) {
 	if o == nil || isNil(o.AdminUserDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdminUserDN, true
 }
@@ -205,7 +205,7 @@ func (o *AddDelegatedAdminRightsRequest) GetAdminGroupDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetAdminGroupDNOk() (*string, bool) {
 	if o == nil || isNil(o.AdminGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdminGroupDN, true
 }
@@ -282,5 +282,3 @@ func (v *NullableAddDelegatedAdminRightsRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

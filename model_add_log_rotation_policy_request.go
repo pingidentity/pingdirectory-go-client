@@ -17,10 +17,10 @@ import (
 
 // AddLogRotationPolicyRequest - struct for AddLogRotationPolicyRequest
 type AddLogRotationPolicyRequest struct {
-	AddFixedTimeLogRotationPolicyRequest *AddFixedTimeLogRotationPolicyRequest
+	AddFixedTimeLogRotationPolicyRequest   *AddFixedTimeLogRotationPolicyRequest
 	AddNeverRotateLogRotationPolicyRequest *AddNeverRotateLogRotationPolicyRequest
-	AddSizeLimitLogRotationPolicyRequest *AddSizeLimitLogRotationPolicyRequest
-	AddTimeLimitLogRotationPolicyRequest *AddTimeLimitLogRotationPolicyRequest
+	AddSizeLimitLogRotationPolicyRequest   *AddSizeLimitLogRotationPolicyRequest
+	AddTimeLimitLogRotationPolicyRequest   *AddTimeLimitLogRotationPolicyRequest
 }
 
 // AddFixedTimeLogRotationPolicyRequestAsAddLogRotationPolicyRequest is a convenience function that returns AddFixedTimeLogRotationPolicyRequest wrapped in AddLogRotationPolicyRequest
@@ -50,7 +50,6 @@ func AddTimeLimitLogRotationPolicyRequestAsAddLogRotationPolicyRequest(v *AddTim
 		AddTimeLimitLogRotationPolicyRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogRotationPolicyRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddLogRotationPolicyRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogRotationPolicyRequest) GetActualInstance() (interface{}) {
+func (obj *AddLogRotationPolicyRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddLogRotationPolicyRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

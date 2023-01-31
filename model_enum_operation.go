@@ -20,8 +20,8 @@ type EnumOperation string
 
 // List of EnumOperation
 const (
-	ENUMOPERATION_ADD EnumOperation = "add"
-	ENUMOPERATION_REMOVE EnumOperation = "remove"
+	ENUMOPERATION_ADD     EnumOperation = "add"
+	ENUMOPERATION_REMOVE  EnumOperation = "remove"
 	ENUMOPERATION_REPLACE EnumOperation = "replace"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

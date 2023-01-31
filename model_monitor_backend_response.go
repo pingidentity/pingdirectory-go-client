@@ -16,9 +16,9 @@ import (
 
 // MonitorBackendResponse struct for MonitorBackendResponse
 type MonitorBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnummonitorBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnummonitorBackendSchemaUrn                      `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
@@ -72,7 +72,7 @@ func (o *MonitorBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -104,7 +104,7 @@ func (o *MonitorBackendResponse) GetUrnpingidentityschemasconfigurationmessages2
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -137,7 +137,7 @@ func (o *MonitorBackendResponse) GetSchemas() []EnummonitorBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetSchemasOk() ([]EnummonitorBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -161,7 +161,7 @@ func (o *MonitorBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -185,7 +185,7 @@ func (o *MonitorBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -209,7 +209,7 @@ func (o *MonitorBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -232,7 +232,7 @@ func (o *MonitorBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -265,7 +265,7 @@ func (o *MonitorBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -288,7 +288,7 @@ func (o *MonitorBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -320,7 +320,7 @@ func (o *MonitorBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -352,7 +352,7 @@ func (o *MonitorBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *MonitorBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -444,5 +444,3 @@ func (v *NullableMonitorBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

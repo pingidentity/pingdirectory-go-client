@@ -20,8 +20,8 @@ type EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp string
 
 // List of Enumrecurring-task-taskReturnStateIfTimeoutIsEncounteredProp
 const (
-	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_STOPPED_BY_ERROR EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "stopped-by-error"
-	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_COMPLETED_WITH_ERRORS EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-with-errors"
+	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_STOPPED_BY_ERROR       EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "stopped-by-error"
+	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_COMPLETED_WITH_ERRORS  EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-with-errors"
 	ENUMRECURRINGTASKTASKRETURNSTATEIFTIMEOUTISENCOUNTEREDPROP_COMPLETED_SUCCESSFULLY EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp = "completed-successfully"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

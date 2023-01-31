@@ -16,9 +16,9 @@ import (
 
 // HttpConfigurationResponse struct for HttpConfigurationResponse
 type HttpConfigurationResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumhttpConfigurationSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumhttpConfigurationSchemaUrn                   `json:"schemas,omitempty"`
 	// Indicates whether exceptions thrown by servlet or web application extensions will be included in the resulting error page response. Stack traces can be helpful in diagnosing application errors, but in production they may reveal information that might be useful to a malicious attacker.
 	IncludeStackTracesInErrorPages *bool `json:"includeStackTracesInErrorPages,omitempty"`
 }
@@ -53,7 +53,7 @@ func (o *HttpConfigurationResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *HttpConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -85,7 +85,7 @@ func (o *HttpConfigurationResponse) GetUrnpingidentityschemasconfigurationmessag
 // and a boolean to check if the value has been set.
 func (o *HttpConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -117,7 +117,7 @@ func (o *HttpConfigurationResponse) GetSchemas() []EnumhttpConfigurationSchemaUr
 // and a boolean to check if the value has been set.
 func (o *HttpConfigurationResponse) GetSchemasOk() ([]EnumhttpConfigurationSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *HttpConfigurationResponse) GetIncludeStackTracesInErrorPages() bool {
 // and a boolean to check if the value has been set.
 func (o *HttpConfigurationResponse) GetIncludeStackTracesInErrorPagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStackTracesInErrorPages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStackTracesInErrorPages, true
 }
@@ -220,5 +220,3 @@ func (v *NullableHttpConfigurationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

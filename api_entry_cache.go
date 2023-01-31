@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // EntryCacheApiService EntryCacheApi service
 type EntryCacheApiService service
 
 type ApiAddEntryCacheRequest struct {
-	ctx context.Context
-	ApiService *EntryCacheApiService
+	ctx                      context.Context
+	ApiService               *EntryCacheApiService
 	addFifoEntryCacheRequest *AddFifoEntryCacheRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddEntryCacheRequest) Execute() (*FifoEntryCacheResponse, *http.Respo
 /*
 AddEntryCache Add a new Entry Cache to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddEntryCacheRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddEntryCacheRequest
 */
 func (a *EntryCacheApiService) AddEntryCache(ctx context.Context) ApiAddEntryCacheRequest {
 	return ApiAddEntryCacheRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return FifoEntryCacheResponse
+//
+//	@return FifoEntryCacheResponse
 func (a *EntryCacheApiService) AddEntryCacheExecute(r ApiAddEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FifoEntryCacheResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FifoEntryCacheResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.AddEntryCache")
@@ -133,8 +133,8 @@ func (a *EntryCacheApiService) AddEntryCacheExecute(r ApiAddEntryCacheRequest) (
 }
 
 type ApiDeleteEntryCacheRequest struct {
-	ctx context.Context
-	ApiService *EntryCacheApiService
+	ctx            context.Context
+	ApiService     *EntryCacheApiService
 	entryCacheName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteEntryCacheRequest) Execute() (*http.Response, error) {
 /*
 DeleteEntryCache Delete a Entry Cache
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param entryCacheName Name of the Entry Cache to be deleted
- @return ApiDeleteEntryCacheRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param entryCacheName Name of the Entry Cache to be deleted
+	@return ApiDeleteEntryCacheRequest
 */
 func (a *EntryCacheApiService) DeleteEntryCache(ctx context.Context, entryCacheName string) ApiDeleteEntryCacheRequest {
 	return ApiDeleteEntryCacheRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		entryCacheName: entryCacheName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *EntryCacheApiService) DeleteEntryCache(ctx context.Context, entryCacheN
 // Execute executes the request
 func (a *EntryCacheApiService) DeleteEntryCacheExecute(r ApiDeleteEntryCacheRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.DeleteEntryCache")
@@ -223,8 +223,8 @@ func (a *EntryCacheApiService) DeleteEntryCacheExecute(r ApiDeleteEntryCacheRequ
 }
 
 type ApiGetEntryCacheRequest struct {
-	ctx context.Context
-	ApiService *EntryCacheApiService
+	ctx            context.Context
+	ApiService     *EntryCacheApiService
 	entryCacheName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetEntryCacheRequest) Execute() (*FifoEntryCacheResponse, *http.Respo
 /*
 GetEntryCache Returns a single Entry Cache
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param entryCacheName Name of the Entry Cache to be read
- @return ApiGetEntryCacheRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param entryCacheName Name of the Entry Cache to be read
+	@return ApiGetEntryCacheRequest
 */
 func (a *EntryCacheApiService) GetEntryCache(ctx context.Context, entryCacheName string) ApiGetEntryCacheRequest {
 	return ApiGetEntryCacheRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		entryCacheName: entryCacheName,
 	}
 }
 
 // Execute executes the request
-//  @return FifoEntryCacheResponse
+//
+//	@return FifoEntryCacheResponse
 func (a *EntryCacheApiService) GetEntryCacheExecute(r ApiGetEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FifoEntryCacheResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FifoEntryCacheResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.GetEntryCache")
@@ -324,10 +325,10 @@ func (a *EntryCacheApiService) GetEntryCacheExecute(r ApiGetEntryCacheRequest) (
 }
 
 type ApiUpdateEntryCacheRequest struct {
-	ctx context.Context
-	ApiService *EntryCacheApiService
+	ctx            context.Context
+	ApiService     *EntryCacheApiService
 	entryCacheName string
-	updateRequest *UpdateRequest
+	updateRequest  *UpdateRequest
 }
 
 // Update an existing Entry Cache
@@ -343,26 +344,27 @@ func (r ApiUpdateEntryCacheRequest) Execute() (*FifoEntryCacheResponse, *http.Re
 /*
 UpdateEntryCache Update an existing Entry Cache by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param entryCacheName Name of the Entry Cache to be updated
- @return ApiUpdateEntryCacheRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param entryCacheName Name of the Entry Cache to be updated
+	@return ApiUpdateEntryCacheRequest
 */
 func (a *EntryCacheApiService) UpdateEntryCache(ctx context.Context, entryCacheName string) ApiUpdateEntryCacheRequest {
 	return ApiUpdateEntryCacheRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		entryCacheName: entryCacheName,
 	}
 }
 
 // Execute executes the request
-//  @return FifoEntryCacheResponse
+//
+//	@return FifoEntryCacheResponse
 func (a *EntryCacheApiService) UpdateEntryCacheExecute(r ApiUpdateEntryCacheRequest) (*FifoEntryCacheResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FifoEntryCacheResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FifoEntryCacheResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EntryCacheApiService.UpdateEntryCache")

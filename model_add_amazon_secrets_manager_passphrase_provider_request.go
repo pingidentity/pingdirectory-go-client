@@ -17,8 +17,8 @@ import (
 // AddAmazonSecretsManagerPassphraseProviderRequest struct for AddAmazonSecretsManagerPassphraseProviderRequest
 type AddAmazonSecretsManagerPassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumamazonSecretsManagerPassphraseProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                                `json:"providerName"`
+	Schemas      []EnumamazonSecretsManagerPassphraseProviderSchemaUrn `json:"schemas"`
 	// The external server with information to use when interacting with the AWS Secrets Manager.
 	AwsExternalServer string `json:"awsExternalServer"`
 	// The Amazon Resource Name (ARN) or the user-friendly name of the secret to be retrieved.
@@ -74,7 +74,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderName() str
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -98,7 +98,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSchemas() []Enumam
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSchemasOk() ([]EnumamazonSecretsManagerPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -122,7 +122,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetAwsExternalServer(
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetAwsExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AwsExternalServer, true
 }
@@ -146,7 +146,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretID() string 
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SecretID, true
 }
@@ -170,7 +170,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretFieldName() 
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretFieldNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SecretFieldName, true
 }
@@ -193,7 +193,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretVersionID() 
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretVersionIDOk() (*string, bool) {
 	if o == nil || isNil(o.SecretVersionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.SecretVersionID, true
 }
@@ -225,7 +225,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretVersionStage
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetSecretVersionStageOk() (*string, bool) {
 	if o == nil || isNil(o.SecretVersionStage) {
-    return nil, false
+		return nil, false
 	}
 	return o.SecretVersionStage, true
 }
@@ -257,7 +257,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetMaxCacheDuration()
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -289,7 +289,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetDescription() stri
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -322,7 +322,7 @@ func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonSecretsManagerPassphraseProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -402,5 +402,3 @@ func (v *NullableAddAmazonSecretsManagerPassphraseProviderRequest) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ExtendedOperationHandlerApiService ExtendedOperationHandlerApi service
 type ExtendedOperationHandlerApiService service
 
 type ApiAddExtendedOperationHandlerRequest struct {
-	ctx context.Context
-	ApiService *ExtendedOperationHandlerApiService
+	ctx                                context.Context
+	ApiService                         *ExtendedOperationHandlerApiService
 	addExtendedOperationHandlerRequest *AddExtendedOperationHandlerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddExtendedOperationHandlerRequest) Execute() (*AddExtendedOperationH
 /*
 AddExtendedOperationHandler Add a new Extended Operation Handler to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddExtendedOperationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) AddExtendedOperationHandler(ctx context.Context) ApiAddExtendedOperationHandlerRequest {
 	return ApiAddExtendedOperationHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddExtendedOperationHandler200Response
+//
+//	@return AddExtendedOperationHandler200Response
 func (a *ExtendedOperationHandlerApiService) AddExtendedOperationHandlerExecute(r ApiAddExtendedOperationHandlerRequest) (*AddExtendedOperationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddExtendedOperationHandler200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddExtendedOperationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedOperationHandlerApiService.AddExtendedOperationHandler")
@@ -133,8 +133,8 @@ func (a *ExtendedOperationHandlerApiService) AddExtendedOperationHandlerExecute(
 }
 
 type ApiDeleteExtendedOperationHandlerRequest struct {
-	ctx context.Context
-	ApiService *ExtendedOperationHandlerApiService
+	ctx                          context.Context
+	ApiService                   *ExtendedOperationHandlerApiService
 	extendedOperationHandlerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteExtendedOperationHandlerRequest) Execute() (*http.Response, err
 /*
 DeleteExtendedOperationHandler Delete a Extended Operation Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param extendedOperationHandlerName Name of the Extended Operation Handler to be deleted
- @return ApiDeleteExtendedOperationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param extendedOperationHandlerName Name of the Extended Operation Handler to be deleted
+	@return ApiDeleteExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) DeleteExtendedOperationHandler(ctx context.Context, extendedOperationHandlerName string) ApiDeleteExtendedOperationHandlerRequest {
 	return ApiDeleteExtendedOperationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                   a,
+		ctx:                          ctx,
 		extendedOperationHandlerName: extendedOperationHandlerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ExtendedOperationHandlerApiService) DeleteExtendedOperationHandler(ctx 
 // Execute executes the request
 func (a *ExtendedOperationHandlerApiService) DeleteExtendedOperationHandlerExecute(r ApiDeleteExtendedOperationHandlerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedOperationHandlerApiService.DeleteExtendedOperationHandler")
@@ -223,8 +223,8 @@ func (a *ExtendedOperationHandlerApiService) DeleteExtendedOperationHandlerExecu
 }
 
 type ApiGetExtendedOperationHandlerRequest struct {
-	ctx context.Context
-	ApiService *ExtendedOperationHandlerApiService
+	ctx                          context.Context
+	ApiService                   *ExtendedOperationHandlerApiService
 	extendedOperationHandlerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetExtendedOperationHandlerRequest) Execute() (*GetExtendedOperationH
 /*
 GetExtendedOperationHandler Returns a single Extended Operation Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param extendedOperationHandlerName Name of the Extended Operation Handler to be read
- @return ApiGetExtendedOperationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param extendedOperationHandlerName Name of the Extended Operation Handler to be read
+	@return ApiGetExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) GetExtendedOperationHandler(ctx context.Context, extendedOperationHandlerName string) ApiGetExtendedOperationHandlerRequest {
 	return ApiGetExtendedOperationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                   a,
+		ctx:                          ctx,
 		extendedOperationHandlerName: extendedOperationHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return GetExtendedOperationHandler200Response
+//
+//	@return GetExtendedOperationHandler200Response
 func (a *ExtendedOperationHandlerApiService) GetExtendedOperationHandlerExecute(r ApiGetExtendedOperationHandlerRequest) (*GetExtendedOperationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetExtendedOperationHandler200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetExtendedOperationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedOperationHandlerApiService.GetExtendedOperationHandler")
@@ -324,10 +325,10 @@ func (a *ExtendedOperationHandlerApiService) GetExtendedOperationHandlerExecute(
 }
 
 type ApiUpdateExtendedOperationHandlerRequest struct {
-	ctx context.Context
-	ApiService *ExtendedOperationHandlerApiService
+	ctx                          context.Context
+	ApiService                   *ExtendedOperationHandlerApiService
 	extendedOperationHandlerName string
-	updateRequest *UpdateRequest
+	updateRequest                *UpdateRequest
 }
 
 // Update an existing Extended Operation Handler
@@ -343,26 +344,27 @@ func (r ApiUpdateExtendedOperationHandlerRequest) Execute() (*GetExtendedOperati
 /*
 UpdateExtendedOperationHandler Update an existing Extended Operation Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param extendedOperationHandlerName Name of the Extended Operation Handler to be updated
- @return ApiUpdateExtendedOperationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param extendedOperationHandlerName Name of the Extended Operation Handler to be updated
+	@return ApiUpdateExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) UpdateExtendedOperationHandler(ctx context.Context, extendedOperationHandlerName string) ApiUpdateExtendedOperationHandlerRequest {
 	return ApiUpdateExtendedOperationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                   a,
+		ctx:                          ctx,
 		extendedOperationHandlerName: extendedOperationHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return GetExtendedOperationHandler200Response
+//
+//	@return GetExtendedOperationHandler200Response
 func (a *ExtendedOperationHandlerApiService) UpdateExtendedOperationHandlerExecute(r ApiUpdateExtendedOperationHandlerRequest) (*GetExtendedOperationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetExtendedOperationHandler200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetExtendedOperationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtendedOperationHandlerApiService.UpdateExtendedOperationHandler")

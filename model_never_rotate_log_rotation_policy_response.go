@@ -16,10 +16,10 @@ import (
 
 // NeverRotateLogRotationPolicyResponse struct for NeverRotateLogRotationPolicyResponse
 type NeverRotateLogRotationPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Rotation Policy
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumneverRotateLogRotationPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Rotation Policy
 	Description *string `json:"description,omitempty"`
@@ -57,7 +57,7 @@ func (o *NeverRotateLogRotationPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *NeverRotateLogRotationPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -89,7 +89,7 @@ func (o *NeverRotateLogRotationPolicyResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *NeverRotateLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -122,7 +122,7 @@ func (o *NeverRotateLogRotationPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *NeverRotateLogRotationPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -146,7 +146,7 @@ func (o *NeverRotateLogRotationPolicyResponse) GetSchemas() []EnumneverRotateLog
 // and a boolean to check if the value has been set.
 func (o *NeverRotateLogRotationPolicyResponse) GetSchemasOk() ([]EnumneverRotateLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -169,7 +169,7 @@ func (o *NeverRotateLogRotationPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *NeverRotateLogRotationPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -243,5 +243,3 @@ func (v *NullableNeverRotateLogRotationPolicyResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

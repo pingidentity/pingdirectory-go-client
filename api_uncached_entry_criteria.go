@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // UncachedEntryCriteriaApiService UncachedEntryCriteriaApi service
 type UncachedEntryCriteriaApiService service
 
 type ApiAddUncachedEntryCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedEntryCriteriaApiService
+	ctx                             context.Context
+	ApiService                      *UncachedEntryCriteriaApiService
 	addUncachedEntryCriteriaRequest *AddUncachedEntryCriteriaRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddUncachedEntryCriteriaRequest) Execute() (*AddUncachedEntryCriteria
 /*
 AddUncachedEntryCriteria Add a new Uncached Entry Criteria to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddUncachedEntryCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) AddUncachedEntryCriteria(ctx context.Context) ApiAddUncachedEntryCriteriaRequest {
 	return ApiAddUncachedEntryCriteriaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddUncachedEntryCriteria200Response
+//
+//	@return AddUncachedEntryCriteria200Response
 func (a *UncachedEntryCriteriaApiService) AddUncachedEntryCriteriaExecute(r ApiAddUncachedEntryCriteriaRequest) (*AddUncachedEntryCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUncachedEntryCriteria200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUncachedEntryCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedEntryCriteriaApiService.AddUncachedEntryCriteria")
@@ -133,8 +133,8 @@ func (a *UncachedEntryCriteriaApiService) AddUncachedEntryCriteriaExecute(r ApiA
 }
 
 type ApiDeleteUncachedEntryCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedEntryCriteriaApiService
+	ctx                       context.Context
+	ApiService                *UncachedEntryCriteriaApiService
 	uncachedEntryCriteriaName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteUncachedEntryCriteriaRequest) Execute() (*http.Response, error)
 /*
 DeleteUncachedEntryCriteria Delete a Uncached Entry Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be deleted
- @return ApiDeleteUncachedEntryCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be deleted
+	@return ApiDeleteUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) DeleteUncachedEntryCriteria(ctx context.Context, uncachedEntryCriteriaName string) ApiDeleteUncachedEntryCriteriaRequest {
 	return ApiDeleteUncachedEntryCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                a,
+		ctx:                       ctx,
 		uncachedEntryCriteriaName: uncachedEntryCriteriaName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *UncachedEntryCriteriaApiService) DeleteUncachedEntryCriteria(ctx contex
 // Execute executes the request
 func (a *UncachedEntryCriteriaApiService) DeleteUncachedEntryCriteriaExecute(r ApiDeleteUncachedEntryCriteriaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedEntryCriteriaApiService.DeleteUncachedEntryCriteria")
@@ -223,8 +223,8 @@ func (a *UncachedEntryCriteriaApiService) DeleteUncachedEntryCriteriaExecute(r A
 }
 
 type ApiGetUncachedEntryCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedEntryCriteriaApiService
+	ctx                       context.Context
+	ApiService                *UncachedEntryCriteriaApiService
 	uncachedEntryCriteriaName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetUncachedEntryCriteriaRequest) Execute() (*AddUncachedEntryCriteria
 /*
 GetUncachedEntryCriteria Returns a single Uncached Entry Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be read
- @return ApiGetUncachedEntryCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be read
+	@return ApiGetUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) GetUncachedEntryCriteria(ctx context.Context, uncachedEntryCriteriaName string) ApiGetUncachedEntryCriteriaRequest {
 	return ApiGetUncachedEntryCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                a,
+		ctx:                       ctx,
 		uncachedEntryCriteriaName: uncachedEntryCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddUncachedEntryCriteria200Response
+//
+//	@return AddUncachedEntryCriteria200Response
 func (a *UncachedEntryCriteriaApiService) GetUncachedEntryCriteriaExecute(r ApiGetUncachedEntryCriteriaRequest) (*AddUncachedEntryCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUncachedEntryCriteria200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUncachedEntryCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedEntryCriteriaApiService.GetUncachedEntryCriteria")
@@ -324,10 +325,10 @@ func (a *UncachedEntryCriteriaApiService) GetUncachedEntryCriteriaExecute(r ApiG
 }
 
 type ApiUpdateUncachedEntryCriteriaRequest struct {
-	ctx context.Context
-	ApiService *UncachedEntryCriteriaApiService
+	ctx                       context.Context
+	ApiService                *UncachedEntryCriteriaApiService
 	uncachedEntryCriteriaName string
-	updateRequest *UpdateRequest
+	updateRequest             *UpdateRequest
 }
 
 // Update an existing Uncached Entry Criteria
@@ -343,26 +344,27 @@ func (r ApiUpdateUncachedEntryCriteriaRequest) Execute() (*AddUncachedEntryCrite
 /*
 UpdateUncachedEntryCriteria Update an existing Uncached Entry Criteria by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be updated
- @return ApiUpdateUncachedEntryCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be updated
+	@return ApiUpdateUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) UpdateUncachedEntryCriteria(ctx context.Context, uncachedEntryCriteriaName string) ApiUpdateUncachedEntryCriteriaRequest {
 	return ApiUpdateUncachedEntryCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                a,
+		ctx:                       ctx,
 		uncachedEntryCriteriaName: uncachedEntryCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddUncachedEntryCriteria200Response
+//
+//	@return AddUncachedEntryCriteria200Response
 func (a *UncachedEntryCriteriaApiService) UpdateUncachedEntryCriteriaExecute(r ApiUpdateUncachedEntryCriteriaRequest) (*AddUncachedEntryCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddUncachedEntryCriteria200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddUncachedEntryCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UncachedEntryCriteriaApiService.UpdateUncachedEntryCriteria")

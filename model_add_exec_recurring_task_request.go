@@ -17,8 +17,8 @@ import (
 // AddExecRecurringTaskRequest struct for AddExecRecurringTaskRequest
 type AddExecRecurringTaskRequest struct {
 	// Name of the new Recurring Task
-	TaskName string `json:"taskName"`
-	Schemas []EnumexecRecurringTaskSchemaUrn `json:"schemas"`
+	TaskName string                           `json:"taskName"`
+	Schemas  []EnumexecRecurringTaskSchemaUrn `json:"schemas"`
 	// The absolute path to the command to execute. It must be an absolute path, the corresponding file must exist, and it must be listed in the config/exec-command-whitelist.txt file.
 	CommandPath string `json:"commandPath"`
 	// A string containing the arguments to provide to the command. If the command should be run without arguments, this property should be left undefined. If there should be multiple arguments, then they should be separated with spaces.
@@ -30,7 +30,7 @@ type AddExecRecurringTaskRequest struct {
 	// The minimum age of previous command output files that should be preserved after a new instance of the command is invoked.
 	RetainPreviousOutputFileAge *string `json:"retainPreviousOutputFileAge,omitempty"`
 	// Indicates whether the command's output (both standard output and standard error) should be recorded in the server's error log.
-	LogCommandOutput *bool `json:"logCommandOutput,omitempty"`
+	LogCommandOutput                      *bool                                                       `json:"logCommandOutput,omitempty"`
 	TaskCompletionStateForNonzeroExitCode *EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp `json:"taskCompletionStateForNonzeroExitCode,omitempty"`
 	// The absolute path to a working directory where the command should be executed. It must be an absolute path and the corresponding directory must exist.
 	WorkingDirectory *string `json:"workingDirectory,omitempty"`
@@ -86,7 +86,7 @@ func (o *AddExecRecurringTaskRequest) GetTaskName() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskName, true
 }
@@ -110,7 +110,7 @@ func (o *AddExecRecurringTaskRequest) GetSchemas() []EnumexecRecurringTaskSchema
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetSchemasOk() ([]EnumexecRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -134,7 +134,7 @@ func (o *AddExecRecurringTaskRequest) GetCommandPath() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetCommandPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CommandPath, true
 }
@@ -157,7 +157,7 @@ func (o *AddExecRecurringTaskRequest) GetCommandArguments() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetCommandArgumentsOk() (*string, bool) {
 	if o == nil || isNil(o.CommandArguments) {
-    return nil, false
+		return nil, false
 	}
 	return o.CommandArguments, true
 }
@@ -189,7 +189,7 @@ func (o *AddExecRecurringTaskRequest) GetCommandOutputFileBaseName() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetCommandOutputFileBaseNameOk() (*string, bool) {
 	if o == nil || isNil(o.CommandOutputFileBaseName) {
-    return nil, false
+		return nil, false
 	}
 	return o.CommandOutputFileBaseName, true
 }
@@ -221,7 +221,7 @@ func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileCountOk() (*int32, bool) {
 	if o == nil || isNil(o.RetainPreviousOutputFileCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousOutputFileCount, true
 }
@@ -253,7 +253,7 @@ func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetRetainPreviousOutputFileAgeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainPreviousOutputFileAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousOutputFileAge, true
 }
@@ -285,7 +285,7 @@ func (o *AddExecRecurringTaskRequest) GetLogCommandOutput() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetLogCommandOutputOk() (*bool, bool) {
 	if o == nil || isNil(o.LogCommandOutput) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogCommandOutput, true
 }
@@ -317,7 +317,7 @@ func (o *AddExecRecurringTaskRequest) GetTaskCompletionStateForNonzeroExitCode()
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetTaskCompletionStateForNonzeroExitCodeOk() (*EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp, bool) {
 	if o == nil || isNil(o.TaskCompletionStateForNonzeroExitCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.TaskCompletionStateForNonzeroExitCode, true
 }
@@ -349,7 +349,7 @@ func (o *AddExecRecurringTaskRequest) GetWorkingDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetWorkingDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.WorkingDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.WorkingDirectory, true
 }
@@ -381,7 +381,7 @@ func (o *AddExecRecurringTaskRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -413,7 +413,7 @@ func (o *AddExecRecurringTaskRequest) GetCancelOnTaskDependencyFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -445,7 +445,7 @@ func (o *AddExecRecurringTaskRequest) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -477,7 +477,7 @@ func (o *AddExecRecurringTaskRequest) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -509,7 +509,7 @@ func (o *AddExecRecurringTaskRequest) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -541,7 +541,7 @@ func (o *AddExecRecurringTaskRequest) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -573,7 +573,7 @@ func (o *AddExecRecurringTaskRequest) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -605,7 +605,7 @@ func (o *AddExecRecurringTaskRequest) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExecRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -718,5 +718,3 @@ func (v *NullableAddExecRecurringTaskRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

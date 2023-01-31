@@ -16,19 +16,19 @@ import (
 
 // ReplicationAssurancePolicyResponse struct for ReplicationAssurancePolicyResponse
 type ReplicationAssurancePolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Replication Assurance Policy
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumreplicationAssurancePolicySchemaUrn `json:"schemas,omitempty"`
 	// Description of the Replication Assurance Policy.
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Replication Assurance Policy is enabled for use in the server. If a Replication Assurance Policy is disabled, then no new operations will be associated with it.
 	Enabled bool `json:"enabled"`
 	// When multiple Replication Assurance Policies are defined, this property determines the evaluation order for finding a Replication Assurance Policy match against an operation. Policies are evaluated based on this index from least to greatest. Values of this property must be unique but not necessarily contiguous.
-	EvaluationOrderIndex int32 `json:"evaluationOrderIndex"`
-	LocalLevel EnumreplicationAssurancePolicyLocalLevelProp `json:"localLevel"`
-	RemoteLevel EnumreplicationAssurancePolicyRemoteLevelProp `json:"remoteLevel"`
+	EvaluationOrderIndex int32                                         `json:"evaluationOrderIndex"`
+	LocalLevel           EnumreplicationAssurancePolicyLocalLevelProp  `json:"localLevel"`
+	RemoteLevel          EnumreplicationAssurancePolicyRemoteLevelProp `json:"remoteLevel"`
 	// Specifies the maximum length of time to wait for the replication assurance requirements to be met before timing out and replying to the client.
 	Timeout string `json:"timeout"`
 	// Specifies a connection criteria used to indicate which operations from clients matching this criteria use this policy. If both a connection criteria and a request criteria are specified for a policy, then both must match an operation for the policy to be assigned.
@@ -73,7 +73,7 @@ func (o *ReplicationAssurancePolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *ReplicationAssurancePolicyResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *ReplicationAssurancePolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -161,7 +161,7 @@ func (o *ReplicationAssurancePolicyResponse) GetSchemas() []EnumreplicationAssur
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetSchemasOk() ([]EnumreplicationAssurancePolicySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -193,7 +193,7 @@ func (o *ReplicationAssurancePolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -226,7 +226,7 @@ func (o *ReplicationAssurancePolicyResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -250,7 +250,7 @@ func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -274,7 +274,7 @@ func (o *ReplicationAssurancePolicyResponse) GetLocalLevel() EnumreplicationAssu
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetLocalLevelOk() (*EnumreplicationAssurancePolicyLocalLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LocalLevel, true
 }
@@ -298,7 +298,7 @@ func (o *ReplicationAssurancePolicyResponse) GetRemoteLevel() EnumreplicationAss
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetRemoteLevelOk() (*EnumreplicationAssurancePolicyRemoteLevelProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RemoteLevel, true
 }
@@ -322,7 +322,7 @@ func (o *ReplicationAssurancePolicyResponse) GetTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Timeout, true
 }
@@ -345,7 +345,7 @@ func (o *ReplicationAssurancePolicyResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -377,7 +377,7 @@ func (o *ReplicationAssurancePolicyResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationAssurancePolicyResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -472,5 +472,3 @@ func (v *NullableReplicationAssurancePolicyResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

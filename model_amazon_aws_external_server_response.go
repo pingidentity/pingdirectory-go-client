@@ -16,10 +16,10 @@ import (
 
 // AmazonAwsExternalServerResponse struct for AmazonAwsExternalServerResponse
 type AmazonAwsExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
+	Id      string                                 `json:"id"`
 	Schemas []EnumamazonAwsExternalServerSchemaUrn `json:"schemas"`
 	// The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. If this is not provided, then no aws-secret-access-key may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
 	AwsAccessKeyID *string `json:"awsAccessKeyID,omitempty"`
@@ -64,7 +64,7 @@ func (o *AmazonAwsExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *AmazonAwsExternalServerResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *AmazonAwsExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -153,7 +153,7 @@ func (o *AmazonAwsExternalServerResponse) GetSchemas() []EnumamazonAwsExternalSe
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetSchemasOk() ([]EnumamazonAwsExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsAccessKeyID() string {
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetAwsAccessKeyIDOk() (*string, bool) {
 	if o == nil || isNil(o.AwsAccessKeyID) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsAccessKeyID, true
 }
@@ -208,7 +208,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsSecretAccessKey() string {
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetAwsSecretAccessKeyOk() (*string, bool) {
 	if o == nil || isNil(o.AwsSecretAccessKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsSecretAccessKey, true
 }
@@ -241,7 +241,7 @@ func (o *AmazonAwsExternalServerResponse) GetAwsRegionName() string {
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetAwsRegionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AwsRegionName, true
 }
@@ -264,7 +264,7 @@ func (o *AmazonAwsExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AmazonAwsExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -347,5 +347,3 @@ func (v *NullableAmazonAwsExternalServerResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

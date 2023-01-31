@@ -16,10 +16,10 @@ import (
 
 // LdapConnectionHandlerResponse struct for LdapConnectionHandlerResponse
 type LdapConnectionHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Connection Handler
-	Id string `json:"id"`
+	Id      string                               `json:"id"`
 	Schemas []EnumldapConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the address or set of addresses on which this LDAP Connection Handler should listen for connections from LDAP clients.
 	ListenAddress []string `json:"listenAddress,omitempty"`
@@ -50,7 +50,7 @@ type LdapConnectionHandlerResponse struct {
 	// Specifies the number of threads that are used to accept new client connections, and to perform any initial preparation on those connections that may be needed before the connection can be used to read requests and send responses.
 	NumAcceptHandlers *int32 `json:"numAcceptHandlers,omitempty"`
 	// Specifies the number of request handlers that are used to read requests from clients.
-	NumRequestHandlers *int32 `json:"numRequestHandlers,omitempty"`
+	NumRequestHandlers  *int32                                        `json:"numRequestHandlers,omitempty"`
 	SslClientAuthPolicy *EnumconnectionHandlerSslClientAuthPolicyProp `json:"sslClientAuthPolicy,omitempty"`
 	// Specifies the maximum number of pending connection attempts that are allowed to queue up in the accept backlog before the server starts rejecting new connection attempts.
 	AcceptBacklog *int32 `json:"acceptBacklog,omitempty"`
@@ -110,7 +110,7 @@ func (o *LdapConnectionHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -142,7 +142,7 @@ func (o *LdapConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationme
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -175,7 +175,7 @@ func (o *LdapConnectionHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -199,7 +199,7 @@ func (o *LdapConnectionHandlerResponse) GetSchemas() []EnumldapConnectionHandler
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSchemasOk() ([]EnumldapConnectionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -222,7 +222,7 @@ func (o *LdapConnectionHandlerResponse) GetListenAddress() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetListenAddressOk() ([]string, bool) {
 	if o == nil || isNil(o.ListenAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.ListenAddress, true
 }
@@ -255,7 +255,7 @@ func (o *LdapConnectionHandlerResponse) GetListenPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetListenPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ListenPort, true
 }
@@ -278,7 +278,7 @@ func (o *LdapConnectionHandlerResponse) GetUseSSL() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
 	if o == nil || isNil(o.UseSSL) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseSSL, true
 }
@@ -310,7 +310,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowStartTLS() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAllowStartTLSOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowStartTLS) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowStartTLS, true
 }
@@ -342,7 +342,7 @@ func (o *LdapConnectionHandlerResponse) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil || isNil(o.SslCertNickname) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertNickname, true
 }
@@ -374,7 +374,7 @@ func (o *LdapConnectionHandlerResponse) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -406,7 +406,7 @@ func (o *LdapConnectionHandlerResponse) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -438,7 +438,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowLDAPV2() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAllowLDAPV2Ok() (*bool, bool) {
 	if o == nil || isNil(o.AllowLDAPV2) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowLDAPV2, true
 }
@@ -470,7 +470,7 @@ func (o *LdapConnectionHandlerResponse) GetUseTCPKeepAlive() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetUseTCPKeepAliveOk() (*bool, bool) {
 	if o == nil || isNil(o.UseTCPKeepAlive) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseTCPKeepAlive, true
 }
@@ -502,7 +502,7 @@ func (o *LdapConnectionHandlerResponse) GetSendRejectionNotice() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSendRejectionNoticeOk() (*bool, bool) {
 	if o == nil || isNil(o.SendRejectionNotice) {
-    return nil, false
+		return nil, false
 	}
 	return o.SendRejectionNotice, true
 }
@@ -534,7 +534,7 @@ func (o *LdapConnectionHandlerResponse) GetFailedBindResponseDelay() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetFailedBindResponseDelayOk() (*string, bool) {
 	if o == nil || isNil(o.FailedBindResponseDelay) {
-    return nil, false
+		return nil, false
 	}
 	return o.FailedBindResponseDelay, true
 }
@@ -566,7 +566,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxRequestSize() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMaxRequestSizeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxRequestSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxRequestSize, true
 }
@@ -598,7 +598,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlers() int32 {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMaxCancelHandlersOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxCancelHandlers) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCancelHandlers, true
 }
@@ -630,7 +630,7 @@ func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlers() int32 {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetNumAcceptHandlersOk() (*int32, bool) {
 	if o == nil || isNil(o.NumAcceptHandlers) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumAcceptHandlers, true
 }
@@ -662,7 +662,7 @@ func (o *LdapConnectionHandlerResponse) GetNumRequestHandlers() int32 {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetNumRequestHandlersOk() (*int32, bool) {
 	if o == nil || isNil(o.NumRequestHandlers) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumRequestHandlers, true
 }
@@ -694,7 +694,7 @@ func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicy() EnumconnectionH
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslClientAuthPolicyOk() (*EnumconnectionHandlerSslClientAuthPolicyProp, bool) {
 	if o == nil || isNil(o.SslClientAuthPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslClientAuthPolicy, true
 }
@@ -726,7 +726,7 @@ func (o *LdapConnectionHandlerResponse) GetAcceptBacklog() int32 {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAcceptBacklogOk() (*int32, bool) {
 	if o == nil || isNil(o.AcceptBacklog) {
-    return nil, false
+		return nil, false
 	}
 	return o.AcceptBacklog, true
 }
@@ -758,7 +758,7 @@ func (o *LdapConnectionHandlerResponse) GetSslProtocol() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslProtocolOk() ([]string, bool) {
 	if o == nil || isNil(o.SslProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslProtocol, true
 }
@@ -790,7 +790,7 @@ func (o *LdapConnectionHandlerResponse) GetSslCipherSuite() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetSslCipherSuiteOk() ([]string, bool) {
 	if o == nil || isNil(o.SslCipherSuite) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCipherSuite, true
 }
@@ -822,7 +822,7 @@ func (o *LdapConnectionHandlerResponse) GetMaxBlockedWriteTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetMaxBlockedWriteTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.MaxBlockedWriteTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxBlockedWriteTimeLimit, true
 }
@@ -854,7 +854,7 @@ func (o *LdapConnectionHandlerResponse) GetAutoAuthenticateUsingClientCertificat
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAutoAuthenticateUsingClientCertificateOk() (*bool, bool) {
 	if o == nil || isNil(o.AutoAuthenticateUsingClientCertificate) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoAuthenticateUsingClientCertificate, true
 }
@@ -886,7 +886,7 @@ func (o *LdapConnectionHandlerResponse) GetCloseConnectionsWhenUnavailable() boo
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetCloseConnectionsWhenUnavailableOk() (*bool, bool) {
 	if o == nil || isNil(o.CloseConnectionsWhenUnavailable) {
-    return nil, false
+		return nil, false
 	}
 	return o.CloseConnectionsWhenUnavailable, true
 }
@@ -918,7 +918,7 @@ func (o *LdapConnectionHandlerResponse) GetCloseConnectionsOnExplicitGC() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetCloseConnectionsOnExplicitGCOk() (*bool, bool) {
 	if o == nil || isNil(o.CloseConnectionsOnExplicitGC) {
-    return nil, false
+		return nil, false
 	}
 	return o.CloseConnectionsOnExplicitGC, true
 }
@@ -950,7 +950,7 @@ func (o *LdapConnectionHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -983,7 +983,7 @@ func (o *LdapConnectionHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1006,7 +1006,7 @@ func (o *LdapConnectionHandlerResponse) GetAllowedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedClient, true
 }
@@ -1038,7 +1038,7 @@ func (o *LdapConnectionHandlerResponse) GetDeniedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *LdapConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedClient, true
 }
@@ -1190,5 +1190,3 @@ func (v *NullableLdapConnectionHandlerResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

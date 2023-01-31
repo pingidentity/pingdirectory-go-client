@@ -17,8 +17,8 @@ import (
 
 // AddTrustManagerProviderRequest - struct for AddTrustManagerProviderRequest
 type AddTrustManagerProviderRequest struct {
-	AddBlindTrustManagerProviderRequest *AddBlindTrustManagerProviderRequest
-	AddFileBasedTrustManagerProviderRequest *AddFileBasedTrustManagerProviderRequest
+	AddBlindTrustManagerProviderRequest      *AddBlindTrustManagerProviderRequest
+	AddFileBasedTrustManagerProviderRequest  *AddFileBasedTrustManagerProviderRequest
 	AddJvmDefaultTrustManagerProviderRequest *AddJvmDefaultTrustManagerProviderRequest
 	AddThirdPartyTrustManagerProviderRequest *AddThirdPartyTrustManagerProviderRequest
 }
@@ -50,7 +50,6 @@ func AddThirdPartyTrustManagerProviderRequestAsAddTrustManagerProviderRequest(v 
 		AddThirdPartyTrustManagerProviderRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddTrustManagerProviderRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddTrustManagerProviderRequest) GetActualInstance() (interface{}) {
+func (obj *AddTrustManagerProviderRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddTrustManagerProviderRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

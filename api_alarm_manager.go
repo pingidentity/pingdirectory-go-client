@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // AlarmManagerApiService AlarmManagerApi service
 type AlarmManagerApiService service
 
 type ApiGetAlarmManagerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AlarmManagerApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetAlarmManagerRequest) Execute() (*AlarmManagerResponse, *http.Respo
 /*
 GetAlarmManager Returns a single Alarm Manager
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAlarmManagerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetAlarmManagerRequest
 */
 func (a *AlarmManagerApiService) GetAlarmManager(ctx context.Context) ApiGetAlarmManagerRequest {
 	return ApiGetAlarmManagerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AlarmManagerResponse
+//
+//	@return AlarmManagerResponse
 func (a *AlarmManagerApiService) GetAlarmManagerExecute(r ApiGetAlarmManagerRequest) (*AlarmManagerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AlarmManagerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AlarmManagerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlarmManagerApiService.GetAlarmManager")
@@ -120,8 +120,8 @@ func (a *AlarmManagerApiService) GetAlarmManagerExecute(r ApiGetAlarmManagerRequ
 }
 
 type ApiUpdateAlarmManagerRequest struct {
-	ctx context.Context
-	ApiService *AlarmManagerApiService
+	ctx           context.Context
+	ApiService    *AlarmManagerApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateAlarmManagerRequest) Execute() (*AlarmManagerResponse, *http.Re
 /*
 UpdateAlarmManager Update an existing Alarm Manager by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateAlarmManagerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateAlarmManagerRequest
 */
 func (a *AlarmManagerApiService) UpdateAlarmManager(ctx context.Context) ApiUpdateAlarmManagerRequest {
 	return ApiUpdateAlarmManagerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AlarmManagerResponse
+//
+//	@return AlarmManagerResponse
 func (a *AlarmManagerApiService) UpdateAlarmManagerExecute(r ApiUpdateAlarmManagerRequest) (*AlarmManagerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AlarmManagerResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AlarmManagerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlarmManagerApiService.UpdateAlarmManager")

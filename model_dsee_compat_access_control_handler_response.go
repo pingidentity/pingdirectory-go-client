@@ -16,11 +16,11 @@ import (
 
 // DseeCompatAccessControlHandlerResponse struct for DseeCompatAccessControlHandlerResponse
 type DseeCompatAccessControlHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdseeCompatAccessControlHandlerSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumdseeCompatAccessControlHandlerSchemaUrn      `json:"schemas,omitempty"`
 	// Defines global access control rules.
-	GlobalACI []string `json:"globalACI,omitempty"`
+	GlobalACI          []string                                         `json:"globalACI,omitempty"`
 	AllowedBindControl []EnumaccessControlHandlerAllowedBindControlProp `json:"allowedBindControl,omitempty"`
 	// Specifies the OIDs of any additional controls (not covered by the allowed-bind-control property) that should be permitted in bind requests.
 	AllowedBindControlOID []string `json:"allowedBindControlOID,omitempty"`
@@ -59,7 +59,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -91,7 +91,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -123,7 +123,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetSchemas() []EnumdseeCompatAc
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetSchemasOk() ([]EnumdseeCompatAccessControlHandlerSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -155,7 +155,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetGlobalACI() []string {
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetGlobalACIOk() ([]string, bool) {
 	if o == nil || isNil(o.GlobalACI) {
-    return nil, false
+		return nil, false
 	}
 	return o.GlobalACI, true
 }
@@ -187,7 +187,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControl() []Enuma
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOk() ([]EnumaccessControlHandlerAllowedBindControlProp, bool) {
 	if o == nil || isNil(o.AllowedBindControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedBindControl, true
 }
@@ -219,7 +219,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOID() []st
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetAllowedBindControlOIDOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedBindControlOID) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedBindControlOID, true
 }
@@ -252,7 +252,7 @@ func (o *DseeCompatAccessControlHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DseeCompatAccessControlHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -323,5 +323,3 @@ func (v *NullableDseeCompatAccessControlHandlerResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

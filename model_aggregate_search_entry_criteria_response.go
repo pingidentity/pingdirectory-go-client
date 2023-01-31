@@ -16,10 +16,10 @@ import (
 
 // AggregateSearchEntryCriteriaResponse struct for AggregateSearchEntryCriteriaResponse
 type AggregateSearchEntryCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Search Entry Criteria
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumaggregateSearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a search entry criteria object that must match the associated search result entry in order to match the aggregate search entry criteria. If one or more all-included search entry criteria objects are provided, then a search result entry must match all of them in order to match the aggregate search entry criteria.
 	AllIncludedSearchEntryCriteria []string `json:"allIncludedSearchEntryCriteria,omitempty"`
@@ -65,7 +65,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetSchemas() []EnumaggregateSearc
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetSchemasOk() ([]EnumaggregateSearchEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -177,7 +177,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetAllIncludedSearchEntryCriteria
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetAllIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedSearchEntryCriteria, true
 }
@@ -209,7 +209,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetAnyIncludedSearchEntryCriteria
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetAnyIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedSearchEntryCriteria, true
 }
@@ -241,7 +241,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetNotAllIncludedSearchEntryCrite
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetNotAllIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedSearchEntryCriteria, true
 }
@@ -273,7 +273,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetNoneIncludedSearchEntryCriteri
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetNoneIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedSearchEntryCriteria, true
 }
@@ -305,7 +305,7 @@ func (o *AggregateSearchEntryCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AggregateSearchEntryCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -391,5 +391,3 @@ func (v *NullableAggregateSearchEntryCriteriaResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

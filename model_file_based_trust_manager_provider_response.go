@@ -16,10 +16,10 @@ import (
 
 // FileBasedTrustManagerProviderResponse struct for FileBasedTrustManagerProviderResponse
 type FileBasedTrustManagerProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Trust Manager Provider
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumfileBasedTrustManagerProviderSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing the trust information. It can be an absolute path or a path that is relative to the Directory Server instance root.
 	TrustStoreFile string `json:"trustStoreFile"`
@@ -71,7 +71,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -160,7 +160,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetSchemas() []EnumfileBasedTrus
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetSchemasOk() ([]EnumfileBasedTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TrustStoreFile, true
 }
@@ -207,7 +207,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -239,7 +239,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -271,7 +271,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinFile, true
 }
@@ -303,7 +303,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinPassphraseProvid
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
 }
@@ -336,7 +336,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -359,7 +359,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bo
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
 }
@@ -451,5 +451,3 @@ func (v *NullableFileBasedTrustManagerProviderResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

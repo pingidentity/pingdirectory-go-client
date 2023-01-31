@@ -16,9 +16,9 @@ import (
 
 // UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse struct for UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse
 type UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                                           `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20                  `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// The certificate mapper that will be used to identify the target user based on the certificate that was presented to the server.
@@ -63,7 +63,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetMeta()
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetUrnpin
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetSchema
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -152,7 +152,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetId() s
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -176,7 +176,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetCertif
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetCertificateMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CertificateMapper, true
 }
@@ -199,7 +199,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetDescri
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetEnable
 // and a boolean to check if the value has been set.
 func (o *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullableUnboundidCertificatePlusPasswordSaslMechanismHandlerResponse) U
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

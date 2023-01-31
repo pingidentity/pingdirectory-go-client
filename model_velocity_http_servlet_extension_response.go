@@ -16,9 +16,9 @@ import (
 
 // VelocityHttpServletExtensionResponse struct for VelocityHttpServletExtensionResponse
 type VelocityHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumvelocityHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumvelocityHttpServletExtensionSchemaUrn        `json:"schemas"`
 	// Name of the HTTP Servlet Extension
 	Id string `json:"id"`
 	// The context path to use to access all template-based and static content. The value must start with a forward slash and must represent a valid HTTP context path.
@@ -95,7 +95,7 @@ func (o *VelocityHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -127,7 +127,7 @@ func (o *VelocityHttpServletExtensionResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -160,7 +160,7 @@ func (o *VelocityHttpServletExtensionResponse) GetSchemas() []EnumvelocityHttpSe
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetSchemasOk() ([]EnumvelocityHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *VelocityHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -208,7 +208,7 @@ func (o *VelocityHttpServletExtensionResponse) GetBaseContextPath() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetBaseContextPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BaseContextPath, true
 }
@@ -231,7 +231,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticContextPath() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticContextPathOk() (*string, bool) {
 	if o == nil || isNil(o.StaticContextPath) {
-    return nil, false
+		return nil, false
 	}
 	return o.StaticContextPath, true
 }
@@ -263,7 +263,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticContentDirectory() strin
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticContentDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.StaticContentDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.StaticContentDirectory, true
 }
@@ -295,7 +295,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticCustomDirectory() string
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticCustomDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.StaticCustomDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.StaticCustomDirectory, true
 }
@@ -328,7 +328,7 @@ func (o *VelocityHttpServletExtensionResponse) GetTemplateDirectory() []string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetTemplateDirectoryOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TemplateDirectory, true
 }
@@ -351,7 +351,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeRequestAttributes() bool
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetExposeRequestAttributesOk() (*bool, bool) {
 	if o == nil || isNil(o.ExposeRequestAttributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExposeRequestAttributes, true
 }
@@ -383,7 +383,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeSessionAttributes() bool
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetExposeSessionAttributesOk() (*bool, bool) {
 	if o == nil || isNil(o.ExposeSessionAttributes) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExposeSessionAttributes, true
 }
@@ -415,7 +415,7 @@ func (o *VelocityHttpServletExtensionResponse) GetExposeServerContext() bool {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetExposeServerContextOk() (*bool, bool) {
 	if o == nil || isNil(o.ExposeServerContext) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExposeServerContext, true
 }
@@ -447,7 +447,7 @@ func (o *VelocityHttpServletExtensionResponse) GetAllowContextOverride() bool {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetAllowContextOverrideOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowContextOverride) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowContextOverride, true
 }
@@ -479,7 +479,7 @@ func (o *VelocityHttpServletExtensionResponse) GetMimeTypesFile() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetMimeTypesFileOk() (*string, bool) {
 	if o == nil || isNil(o.MimeTypesFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.MimeTypesFile, true
 }
@@ -511,7 +511,7 @@ func (o *VelocityHttpServletExtensionResponse) GetDefaultMIMEType() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetDefaultMIMETypeOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultMIMEType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultMIMEType, true
 }
@@ -543,7 +543,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCharacterEncoding() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetCharacterEncodingOk() (*string, bool) {
 	if o == nil || isNil(o.CharacterEncoding) {
-    return nil, false
+		return nil, false
 	}
 	return o.CharacterEncoding, true
 }
@@ -575,7 +575,7 @@ func (o *VelocityHttpServletExtensionResponse) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -607,7 +607,7 @@ func (o *VelocityHttpServletExtensionResponse) GetStaticResponseHeader() []strin
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetStaticResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.StaticResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.StaticResponseHeader, true
 }
@@ -639,7 +639,7 @@ func (o *VelocityHttpServletExtensionResponse) GetRequireAuthentication() bool {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetRequireAuthenticationOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireAuthentication) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireAuthentication, true
 }
@@ -671,7 +671,7 @@ func (o *VelocityHttpServletExtensionResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -703,7 +703,7 @@ func (o *VelocityHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -735,7 +735,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -767,7 +767,7 @@ func (o *VelocityHttpServletExtensionResponse) GetCorrelationIDResponseHeader() 
 // and a boolean to check if the value has been set.
 func (o *VelocityHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -895,5 +895,3 @@ func (v *NullableVelocityHttpServletExtensionResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

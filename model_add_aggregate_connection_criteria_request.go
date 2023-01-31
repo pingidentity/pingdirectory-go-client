@@ -17,8 +17,8 @@ import (
 // AddAggregateConnectionCriteriaRequest struct for AddAggregateConnectionCriteriaRequest
 type AddAggregateConnectionCriteriaRequest struct {
 	// Name of the new Connection Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                     `json:"criteriaName"`
+	Schemas      []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a connection criteria object that must match the associated client connection in order to match the aggregate connection criteria. If one or more all-included connection criteria objects are provided, then a client connection must match all of them in order to match the aggregate connection criteria.
 	AllIncludedConnectionCriteria []string `json:"allIncludedConnectionCriteria,omitempty"`
 	// Specifies a connection criteria object that may match the associated client connection in order to match the aggregate connection criteria. If one or more any-included connection criteria objects are provided, then a client connection must match at least one of them in order to match the aggregate connection criteria.
@@ -64,7 +64,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -88,7 +88,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetSchemas() []EnumaggregateConn
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetSchemasOk() ([]EnumaggregateConnectionCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetAllIncludedConnectionCriteria
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetAllIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedConnectionCriteria, true
 }
@@ -143,7 +143,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetAnyIncludedConnectionCriteria
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetAnyIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedConnectionCriteria, true
 }
@@ -175,7 +175,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetNotAllIncludedConnectionCrite
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetNotAllIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedConnectionCriteria, true
 }
@@ -207,7 +207,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetNoneIncludedConnectionCriteri
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetNoneIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedConnectionCriteria, true
 }
@@ -239,7 +239,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -319,5 +319,3 @@ func (v *NullableAddAggregateConnectionCriteriaRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,9 +17,9 @@ import (
 
 // AddOtpDeliveryMechanism200Response - struct for AddOtpDeliveryMechanism200Response
 type AddOtpDeliveryMechanism200Response struct {
-	EmailOtpDeliveryMechanismResponse *EmailOtpDeliveryMechanismResponse
+	EmailOtpDeliveryMechanismResponse      *EmailOtpDeliveryMechanismResponse
 	ThirdPartyOtpDeliveryMechanismResponse *ThirdPartyOtpDeliveryMechanismResponse
-	TwilioOtpDeliveryMechanismResponse *TwilioOtpDeliveryMechanismResponse
+	TwilioOtpDeliveryMechanismResponse     *TwilioOtpDeliveryMechanismResponse
 }
 
 // EmailOtpDeliveryMechanismResponseAsAddOtpDeliveryMechanism200Response is a convenience function that returns EmailOtpDeliveryMechanismResponse wrapped in AddOtpDeliveryMechanism200Response
@@ -42,7 +42,6 @@ func TwilioOtpDeliveryMechanismResponseAsAddOtpDeliveryMechanism200Response(v *T
 		TwilioOtpDeliveryMechanismResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddOtpDeliveryMechanism200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddOtpDeliveryMechanism200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddOtpDeliveryMechanism200Response) GetActualInstance() (interface{}) {
+func (obj *AddOtpDeliveryMechanism200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddOtpDeliveryMechanism200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

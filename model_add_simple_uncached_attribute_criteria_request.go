@@ -17,8 +17,8 @@ import (
 // AddSimpleUncachedAttributeCriteriaRequest struct for AddSimpleUncachedAttributeCriteriaRequest
 type AddSimpleUncachedAttributeCriteriaRequest struct {
 	// Name of the new Uncached Attribute Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                         `json:"criteriaName"`
+	Schemas      []EnumsimpleUncachedAttributeCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the attribute types for attributes that may be written to the uncached-id2entry database.
 	AttributeType []string `json:"attributeType"`
 	// Specifies the minimum number of values that an attribute must have before it will be written into the uncached-id2entry database.
@@ -66,7 +66,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -90,7 +90,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetSchemas() []EnumsimpleUnc
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetSchemasOk() ([]EnumsimpleUncachedAttributeCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetAttributeType() []string 
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetAttributeTypeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AttributeType, true
 }
@@ -137,7 +137,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MinValueCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinValueCount, true
 }
@@ -169,7 +169,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinTotalValueSize() strin
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinTotalValueSizeOk() (*string, bool) {
 	if o == nil || isNil(o.MinTotalValueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinTotalValueSize, true
 }
@@ -201,7 +201,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -234,7 +234,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -305,5 +305,3 @@ func (v *NullableAddSimpleUncachedAttributeCriteriaRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

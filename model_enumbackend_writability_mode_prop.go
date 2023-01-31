@@ -20,8 +20,8 @@ type EnumbackendWritabilityModeProp string
 
 // List of Enumbackend-writabilityModeProp
 const (
-	ENUMBACKENDWRITABILITYMODEPROP_ENABLED EnumbackendWritabilityModeProp = "enabled"
-	ENUMBACKENDWRITABILITYMODEPROP_DISABLED EnumbackendWritabilityModeProp = "disabled"
+	ENUMBACKENDWRITABILITYMODEPROP_ENABLED       EnumbackendWritabilityModeProp = "enabled"
+	ENUMBACKENDWRITABILITYMODEPROP_DISABLED      EnumbackendWritabilityModeProp = "disabled"
 	ENUMBACKENDWRITABILITYMODEPROP_INTERNAL_ONLY EnumbackendWritabilityModeProp = "internal-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumbackendWritabilityModeProp) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

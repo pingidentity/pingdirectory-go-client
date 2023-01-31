@@ -17,42 +17,42 @@ import (
 
 // AddLogPublisherRequest - struct for AddLogPublisherRequest
 type AddLogPublisherRequest struct {
-	AddAdminAlertAccessLogPublisherRequest *AddAdminAlertAccessLogPublisherRequest
-	AddCommonLogFileHttpOperationLogPublisherRequest *AddCommonLogFileHttpOperationLogPublisherRequest
-	AddConsoleJsonAuditLogPublisherRequest *AddConsoleJsonAuditLogPublisherRequest
-	AddConsoleJsonHttpOperationLogPublisherRequest *AddConsoleJsonHttpOperationLogPublisherRequest
-	AddDebugAccessLogPublisherRequest *AddDebugAccessLogPublisherRequest
-	AddDetailedHttpOperationLogPublisherRequest *AddDetailedHttpOperationLogPublisherRequest
-	AddFileBasedAccessLogPublisherRequest *AddFileBasedAccessLogPublisherRequest
-	AddFileBasedAuditLogPublisherRequest *AddFileBasedAuditLogPublisherRequest
-	AddFileBasedDebugLogPublisherRequest *AddFileBasedDebugLogPublisherRequest
-	AddFileBasedErrorLogPublisherRequest *AddFileBasedErrorLogPublisherRequest
-	AddFileBasedJsonAuditLogPublisherRequest *AddFileBasedJsonAuditLogPublisherRequest
-	AddFileBasedJsonHttpOperationLogPublisherRequest *AddFileBasedJsonHttpOperationLogPublisherRequest
-	AddFileBasedTraceLogPublisherRequest *AddFileBasedTraceLogPublisherRequest
-	AddGroovyScriptedAccessLogPublisherRequest *AddGroovyScriptedAccessLogPublisherRequest
-	AddGroovyScriptedErrorLogPublisherRequest *AddGroovyScriptedErrorLogPublisherRequest
+	AddAdminAlertAccessLogPublisherRequest              *AddAdminAlertAccessLogPublisherRequest
+	AddCommonLogFileHttpOperationLogPublisherRequest    *AddCommonLogFileHttpOperationLogPublisherRequest
+	AddConsoleJsonAuditLogPublisherRequest              *AddConsoleJsonAuditLogPublisherRequest
+	AddConsoleJsonHttpOperationLogPublisherRequest      *AddConsoleJsonHttpOperationLogPublisherRequest
+	AddDebugAccessLogPublisherRequest                   *AddDebugAccessLogPublisherRequest
+	AddDetailedHttpOperationLogPublisherRequest         *AddDetailedHttpOperationLogPublisherRequest
+	AddFileBasedAccessLogPublisherRequest               *AddFileBasedAccessLogPublisherRequest
+	AddFileBasedAuditLogPublisherRequest                *AddFileBasedAuditLogPublisherRequest
+	AddFileBasedDebugLogPublisherRequest                *AddFileBasedDebugLogPublisherRequest
+	AddFileBasedErrorLogPublisherRequest                *AddFileBasedErrorLogPublisherRequest
+	AddFileBasedJsonAuditLogPublisherRequest            *AddFileBasedJsonAuditLogPublisherRequest
+	AddFileBasedJsonHttpOperationLogPublisherRequest    *AddFileBasedJsonHttpOperationLogPublisherRequest
+	AddFileBasedTraceLogPublisherRequest                *AddFileBasedTraceLogPublisherRequest
+	AddGroovyScriptedAccessLogPublisherRequest          *AddGroovyScriptedAccessLogPublisherRequest
+	AddGroovyScriptedErrorLogPublisherRequest           *AddGroovyScriptedErrorLogPublisherRequest
 	AddGroovyScriptedFileBasedAccessLogPublisherRequest *AddGroovyScriptedFileBasedAccessLogPublisherRequest
-	AddGroovyScriptedFileBasedErrorLogPublisherRequest *AddGroovyScriptedFileBasedErrorLogPublisherRequest
-	AddGroovyScriptedHttpOperationLogPublisherRequest *AddGroovyScriptedHttpOperationLogPublisherRequest
-	AddJdbcBasedAccessLogPublisherRequest *AddJdbcBasedAccessLogPublisherRequest
-	AddJdbcBasedErrorLogPublisherRequest *AddJdbcBasedErrorLogPublisherRequest
-	AddJsonAccessLogPublisherRequest *AddJsonAccessLogPublisherRequest
-	AddJsonErrorLogPublisherRequest *AddJsonErrorLogPublisherRequest
-	AddOperationTimingAccessLogPublisherRequest *AddOperationTimingAccessLogPublisherRequest
-	AddSyslogBasedAccessLogPublisherRequest *AddSyslogBasedAccessLogPublisherRequest
-	AddSyslogBasedErrorLogPublisherRequest *AddSyslogBasedErrorLogPublisherRequest
-	AddSyslogJsonAccessLogPublisherRequest *AddSyslogJsonAccessLogPublisherRequest
-	AddSyslogJsonAuditLogPublisherRequest *AddSyslogJsonAuditLogPublisherRequest
-	AddSyslogJsonErrorLogPublisherRequest *AddSyslogJsonErrorLogPublisherRequest
-	AddSyslogJsonHttpOperationLogPublisherRequest *AddSyslogJsonHttpOperationLogPublisherRequest
-	AddSyslogTextAccessLogPublisherRequest *AddSyslogTextAccessLogPublisherRequest
-	AddSyslogTextErrorLogPublisherRequest *AddSyslogTextErrorLogPublisherRequest
-	AddThirdPartyAccessLogPublisherRequest *AddThirdPartyAccessLogPublisherRequest
-	AddThirdPartyErrorLogPublisherRequest *AddThirdPartyErrorLogPublisherRequest
-	AddThirdPartyFileBasedAccessLogPublisherRequest *AddThirdPartyFileBasedAccessLogPublisherRequest
-	AddThirdPartyFileBasedErrorLogPublisherRequest *AddThirdPartyFileBasedErrorLogPublisherRequest
-	AddThirdPartyHttpOperationLogPublisherRequest *AddThirdPartyHttpOperationLogPublisherRequest
+	AddGroovyScriptedFileBasedErrorLogPublisherRequest  *AddGroovyScriptedFileBasedErrorLogPublisherRequest
+	AddGroovyScriptedHttpOperationLogPublisherRequest   *AddGroovyScriptedHttpOperationLogPublisherRequest
+	AddJdbcBasedAccessLogPublisherRequest               *AddJdbcBasedAccessLogPublisherRequest
+	AddJdbcBasedErrorLogPublisherRequest                *AddJdbcBasedErrorLogPublisherRequest
+	AddJsonAccessLogPublisherRequest                    *AddJsonAccessLogPublisherRequest
+	AddJsonErrorLogPublisherRequest                     *AddJsonErrorLogPublisherRequest
+	AddOperationTimingAccessLogPublisherRequest         *AddOperationTimingAccessLogPublisherRequest
+	AddSyslogBasedAccessLogPublisherRequest             *AddSyslogBasedAccessLogPublisherRequest
+	AddSyslogBasedErrorLogPublisherRequest              *AddSyslogBasedErrorLogPublisherRequest
+	AddSyslogJsonAccessLogPublisherRequest              *AddSyslogJsonAccessLogPublisherRequest
+	AddSyslogJsonAuditLogPublisherRequest               *AddSyslogJsonAuditLogPublisherRequest
+	AddSyslogJsonErrorLogPublisherRequest               *AddSyslogJsonErrorLogPublisherRequest
+	AddSyslogJsonHttpOperationLogPublisherRequest       *AddSyslogJsonHttpOperationLogPublisherRequest
+	AddSyslogTextAccessLogPublisherRequest              *AddSyslogTextAccessLogPublisherRequest
+	AddSyslogTextErrorLogPublisherRequest               *AddSyslogTextErrorLogPublisherRequest
+	AddThirdPartyAccessLogPublisherRequest              *AddThirdPartyAccessLogPublisherRequest
+	AddThirdPartyErrorLogPublisherRequest               *AddThirdPartyErrorLogPublisherRequest
+	AddThirdPartyFileBasedAccessLogPublisherRequest     *AddThirdPartyFileBasedAccessLogPublisherRequest
+	AddThirdPartyFileBasedErrorLogPublisherRequest      *AddThirdPartyFileBasedErrorLogPublisherRequest
+	AddThirdPartyHttpOperationLogPublisherRequest       *AddThirdPartyHttpOperationLogPublisherRequest
 }
 
 // AddAdminAlertAccessLogPublisherRequestAsAddLogPublisherRequest is a convenience function that returns AddAdminAlertAccessLogPublisherRequest wrapped in AddLogPublisherRequest
@@ -306,7 +306,6 @@ func AddThirdPartyHttpOperationLogPublisherRequestAsAddLogPublisherRequest(v *Ad
 		AddThirdPartyHttpOperationLogPublisherRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogPublisherRequest) UnmarshalJSON(data []byte) error {
@@ -977,7 +976,7 @@ func (src AddLogPublisherRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogPublisherRequest) GetActualInstance() (interface{}) {
+func (obj *AddLogPublisherRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -1164,5 +1163,3 @@ func (v *NullableAddLogPublisherRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

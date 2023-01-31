@@ -16,10 +16,10 @@ import (
 
 // TrustedCertificateResponse struct for TrustedCertificateResponse
 type TrustedCertificateResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Trusted Certificate
-	Id string `json:"id"`
+	Id      string                            `json:"id"`
 	Schemas []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
 	// The PEM-encoded X.509v3 certificate.
 	Certificate string `json:"certificate"`
@@ -57,7 +57,7 @@ func (o *TrustedCertificateResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -89,7 +89,7 @@ func (o *TrustedCertificateResponse) GetUrnpingidentityschemasconfigurationmessa
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -122,7 +122,7 @@ func (o *TrustedCertificateResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -145,7 +145,7 @@ func (o *TrustedCertificateResponse) GetSchemas() []EnumtrustedCertificateSchema
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetSchemasOk() ([]EnumtrustedCertificateSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *TrustedCertificateResponse) GetCertificate() string {
 // and a boolean to check if the value has been set.
 func (o *TrustedCertificateResponse) GetCertificateOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Certificate, true
 }
@@ -243,5 +243,3 @@ func (v *NullableTrustedCertificateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

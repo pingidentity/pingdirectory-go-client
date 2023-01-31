@@ -17,8 +17,8 @@ import (
 // AddLastAccessTimeUncachedEntryCriteriaRequest struct for AddLastAccessTimeUncachedEntryCriteriaRequest
 type AddLastAccessTimeUncachedEntryCriteriaRequest struct {
 	// Name of the new Uncached Entry Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                             `json:"criteriaName"`
+	Schemas      []EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies the maximum length of time that has passed since an entry was last accessed that it should still be included in the id2entry database. Entries that have not been accessed in more than this length of time may be written into the uncached-id2entry database.
 	AccessTimeThreshold string `json:"accessTimeThreshold"`
 	// A description for this Uncached Entry Criteria
@@ -62,7 +62,7 @@ func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetCriteriaName() string
 // and a boolean to check if the value has been set.
 func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -86,7 +86,7 @@ func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetSchemas() []EnumlastA
 // and a boolean to check if the value has been set.
 func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetSchemasOk() ([]EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetAccessTimeThreshold()
 // and a boolean to check if the value has been set.
 func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetAccessTimeThresholdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AccessTimeThreshold, true
 }
@@ -133,7 +133,7 @@ func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -166,7 +166,7 @@ func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddLastAccessTimeUncachedEntryCriteriaRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -231,5 +231,3 @@ func (v *NullableAddLastAccessTimeUncachedEntryCriteriaRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

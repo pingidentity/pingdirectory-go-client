@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyNotificationManagerResponse struct for ThirdPartyNotificationManagerResponse
 type ThirdPartyNotificationManagerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Notification Manager
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumthirdPartyNotificationManagerSchemaUrn `json:"schemas,omitempty"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Notification Manager.
 	ExtensionClass string `json:"extensionClass"`
@@ -30,7 +30,7 @@ type ThirdPartyNotificationManagerResponse struct {
 	// Indicates whether this Notification Manager is enabled within the server.
 	Enabled bool `json:"enabled"`
 	// Specifies the DN of the entry below which subscription data is stored for this Notification Manager. This needs to be in the backend that has the data to be notified on, and must not be the same entry as the backend base DN. The subscription base DN entry does not need to exist as it will be created by the server.
-	SubscriptionBaseDN string `json:"subscriptionBaseDN"`
+	SubscriptionBaseDN      string                                             `json:"subscriptionBaseDN"`
 	TransactionNotification EnumnotificationManagerTransactionNotificationProp `json:"transactionNotification"`
 	// Enables monitor entries for this Notification Manager.
 	MonitorEntriesEnabled *bool `json:"monitorEntriesEnabled,omitempty"`
@@ -71,7 +71,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -159,7 +159,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetSchemas() []EnumthirdPartyNot
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetSchemasOk() ([]EnumthirdPartyNotificationManagerSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -192,7 +192,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -215,7 +215,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetExtensionArgument() []string 
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -247,7 +247,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -280,7 +280,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -304,7 +304,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetSubscriptionBaseDN() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetSubscriptionBaseDNOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SubscriptionBaseDN, true
 }
@@ -328,7 +328,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetTransactionNotification() Enu
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetTransactionNotificationOk() (*EnumnotificationManagerTransactionNotificationProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TransactionNotification, true
 }
@@ -351,7 +351,7 @@ func (o *ThirdPartyNotificationManagerResponse) GetMonitorEntriesEnabled() bool 
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyNotificationManagerResponse) GetMonitorEntriesEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.MonitorEntriesEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.MonitorEntriesEnabled, true
 }
@@ -443,5 +443,3 @@ func (v *NullableThirdPartyNotificationManagerResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,18 +20,18 @@ type EnumlogPublisherDebugMessageTypeProp string
 
 // List of Enumlog-publisher-debugMessageTypeProp
 const (
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_HTTP_FULL_REQUEST_AND_RESPONSE EnumlogPublisherDebugMessageTypeProp = "http-full-request-and-response"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_LDAP_EXTERNAL_SERVER_REQUEST EnumlogPublisherDebugMessageTypeProp = "ldap-external-server-request"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_SERVER_SDK_EXTENSION EnumlogPublisherDebugMessageTypeProp = "server-sdk-extension"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_STORE_ADAPTER_MAPPING EnumlogPublisherDebugMessageTypeProp = "store-adapter-mapping"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_STORE_ADAPTER_PROCESSING EnumlogPublisherDebugMessageTypeProp = "store-adapter-processing"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_HTTP_FULL_REQUEST_AND_RESPONSE              EnumlogPublisherDebugMessageTypeProp = "http-full-request-and-response"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_LDAP_EXTERNAL_SERVER_REQUEST                EnumlogPublisherDebugMessageTypeProp = "ldap-external-server-request"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_SERVER_SDK_EXTENSION                        EnumlogPublisherDebugMessageTypeProp = "server-sdk-extension"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_STORE_ADAPTER_MAPPING                       EnumlogPublisherDebugMessageTypeProp = "store-adapter-mapping"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_STORE_ADAPTER_PROCESSING                    EnumlogPublisherDebugMessageTypeProp = "store-adapter-processing"
 	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ACCESS_TOKEN_VALIDATOR_REQUEST_AND_RESPONSE EnumlogPublisherDebugMessageTypeProp = "access-token-validator-request-and-response"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ACCESS_TOKEN_VALIDATOR_PROCESSING EnumlogPublisherDebugMessageTypeProp = "access-token-validator-processing"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ID_TOKEN_VALIDATOR_REQUEST_AND_RESPONSE EnumlogPublisherDebugMessageTypeProp = "id-token-validator-request-and-response"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ID_TOKEN_VALIDATOR_PROCESSING EnumlogPublisherDebugMessageTypeProp = "id-token-validator-processing"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_CONSENT_SERVICE_REQUEST_AND_RESPONSE EnumlogPublisherDebugMessageTypeProp = "consent-service-request-and-response"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_GATEWAY_REQUEST_AND_RESPONSE EnumlogPublisherDebugMessageTypeProp = "gateway-request-and-response"
-	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_POLICY_REQUEST_AND_RESPONSE EnumlogPublisherDebugMessageTypeProp = "policy-request-and-response"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ACCESS_TOKEN_VALIDATOR_PROCESSING           EnumlogPublisherDebugMessageTypeProp = "access-token-validator-processing"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ID_TOKEN_VALIDATOR_REQUEST_AND_RESPONSE     EnumlogPublisherDebugMessageTypeProp = "id-token-validator-request-and-response"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_ID_TOKEN_VALIDATOR_PROCESSING               EnumlogPublisherDebugMessageTypeProp = "id-token-validator-processing"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_CONSENT_SERVICE_REQUEST_AND_RESPONSE        EnumlogPublisherDebugMessageTypeProp = "consent-service-request-and-response"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_GATEWAY_REQUEST_AND_RESPONSE                EnumlogPublisherDebugMessageTypeProp = "gateway-request-and-response"
+	ENUMLOGPUBLISHERDEBUGMESSAGETYPEPROP_POLICY_REQUEST_AND_RESPONSE                 EnumlogPublisherDebugMessageTypeProp = "policy-request-and-response"
 )
 
 // All allowed values of EnumlogPublisherDebugMessageTypeProp enum
@@ -128,4 +128,3 @@ func (v *NullableEnumlogPublisherDebugMessageTypeProp) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

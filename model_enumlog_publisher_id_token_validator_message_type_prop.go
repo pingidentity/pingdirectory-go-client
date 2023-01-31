@@ -20,11 +20,11 @@ type EnumlogPublisherIdTokenValidatorMessageTypeProp string
 
 // List of Enumlog-publisher-idTokenValidatorMessageTypeProp
 const (
-	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_REQUEST EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-request"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_REQUEST  EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-request"
 	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_EXTERNAL_SERVER_RESPONSE EnumlogPublisherIdTokenValidatorMessageTypeProp = "external-server-response"
-	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_VALIDATION EnumlogPublisherIdTokenValidatorMessageTypeProp = "validation"
-	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_WARNING EnumlogPublisherIdTokenValidatorMessageTypeProp = "warning"
-	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_ERROR EnumlogPublisherIdTokenValidatorMessageTypeProp = "error"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_VALIDATION               EnumlogPublisherIdTokenValidatorMessageTypeProp = "validation"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_WARNING                  EnumlogPublisherIdTokenValidatorMessageTypeProp = "warning"
+	ENUMLOGPUBLISHERIDTOKENVALIDATORMESSAGETYPEPROP_ERROR                    EnumlogPublisherIdTokenValidatorMessageTypeProp = "error"
 )
 
 // All allowed values of EnumlogPublisherIdTokenValidatorMessageTypeProp enum
@@ -114,4 +114,3 @@ func (v *NullableEnumlogPublisherIdTokenValidatorMessageTypeProp) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

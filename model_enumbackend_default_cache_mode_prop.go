@@ -20,14 +20,14 @@ type EnumbackendDefaultCacheModeProp string
 
 // List of Enumbackend-defaultCacheModeProp
 const (
-	ENUMBACKENDDEFAULTCACHEMODEPROP_CACHE_KEYS_AND_VALUES EnumbackendDefaultCacheModeProp = "cache-keys-and-values"
-	ENUMBACKENDDEFAULTCACHEMODEPROP_CACHE_KEYS_ONLY EnumbackendDefaultCacheModeProp = "cache-keys-only"
-	ENUMBACKENDDEFAULTCACHEMODEPROP_NO_CACHING EnumbackendDefaultCacheModeProp = "no-caching"
-	ENUMBACKENDDEFAULTCACHEMODEPROP_KEEP_HOT EnumbackendDefaultCacheModeProp = "keep-hot"
-	ENUMBACKENDDEFAULTCACHEMODEPROP_DEFAULT EnumbackendDefaultCacheModeProp = "default"
-	ENUMBACKENDDEFAULTCACHEMODEPROP_MAKE_COLD EnumbackendDefaultCacheModeProp = "make-cold"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_CACHE_KEYS_AND_VALUES  EnumbackendDefaultCacheModeProp = "cache-keys-and-values"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_CACHE_KEYS_ONLY        EnumbackendDefaultCacheModeProp = "cache-keys-only"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_NO_CACHING             EnumbackendDefaultCacheModeProp = "no-caching"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_KEEP_HOT               EnumbackendDefaultCacheModeProp = "keep-hot"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_DEFAULT                EnumbackendDefaultCacheModeProp = "default"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_MAKE_COLD              EnumbackendDefaultCacheModeProp = "make-cold"
 	ENUMBACKENDDEFAULTCACHEMODEPROP_EVICT_LEAF_IMMEDIATELY EnumbackendDefaultCacheModeProp = "evict-leaf-immediately"
-	ENUMBACKENDDEFAULTCACHEMODEPROP_EVICT_BIN_IMMEDIATELY EnumbackendDefaultCacheModeProp = "evict-bin-immediately"
+	ENUMBACKENDDEFAULTCACHEMODEPROP_EVICT_BIN_IMMEDIATELY  EnumbackendDefaultCacheModeProp = "evict-bin-immediately"
 )
 
 // All allowed values of EnumbackendDefaultCacheModeProp enum
@@ -120,4 +120,3 @@ func (v *NullableEnumbackendDefaultCacheModeProp) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

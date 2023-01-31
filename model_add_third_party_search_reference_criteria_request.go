@@ -17,8 +17,8 @@ import (
 // AddThirdPartySearchReferenceCriteriaRequest struct for AddThirdPartySearchReferenceCriteriaRequest
 type AddThirdPartySearchReferenceCriteriaRequest struct {
 	// Name of the new Search Reference Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumthirdPartySearchReferenceCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                           `json:"criteriaName"`
+	Schemas      []EnumthirdPartySearchReferenceCriteriaSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Search Reference Criteria.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Search Reference Criteria. Each configuration property should be given in the form 'name=value'.
@@ -61,7 +61,7 @@ func (o *AddThirdPartySearchReferenceCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySearchReferenceCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -85,7 +85,7 @@ func (o *AddThirdPartySearchReferenceCriteriaRequest) GetSchemas() []EnumthirdPa
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySearchReferenceCriteriaRequest) GetSchemasOk() ([]EnumthirdPartySearchReferenceCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -109,7 +109,7 @@ func (o *AddThirdPartySearchReferenceCriteriaRequest) GetExtensionClass() string
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySearchReferenceCriteriaRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -132,7 +132,7 @@ func (o *AddThirdPartySearchReferenceCriteriaRequest) GetExtensionArgument() []s
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySearchReferenceCriteriaRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -164,7 +164,7 @@ func (o *AddThirdPartySearchReferenceCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySearchReferenceCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddThirdPartySearchReferenceCriteriaRequest) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

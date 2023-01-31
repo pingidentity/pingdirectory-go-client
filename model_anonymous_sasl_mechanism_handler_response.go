@@ -16,9 +16,9 @@ import (
 
 // AnonymousSaslMechanismHandlerResponse struct for AnonymousSaslMechanismHandlerResponse
 type AnonymousSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumanonymousSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumanonymousSaslMechanismHandlerSchemaUrn       `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// A description for this SASL Mechanism Handler
@@ -60,7 +60,7 @@ func (o *AnonymousSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AnonymousSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *AnonymousSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *AnonymousSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *AnonymousSaslMechanismHandlerResponse) GetSchemas() []EnumanonymousSasl
 // and a boolean to check if the value has been set.
 func (o *AnonymousSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumanonymousSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *AnonymousSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AnonymousSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *AnonymousSaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AnonymousSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *AnonymousSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AnonymousSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableAnonymousSaslMechanismHandlerResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddAes256PasswordStorageSchemeRequest struct for AddAes256PasswordStorageSchemeRequest
 type AddAes256PasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                     `json:"schemeName"`
+	Schemas    []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The identifier for the encryption settings definition that should be used to derive the encryption key to use when encrypting new passwords. If this is not provided, the server's preferred encryption settings definition will be used.
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
 	// A description for this Password Storage Scheme
@@ -61,7 +61,7 @@ func (o *AddAes256PasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAes256PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -85,7 +85,7 @@ func (o *AddAes256PasswordStorageSchemeRequest) GetSchemas() []Enumaes256Passwor
 // and a boolean to check if the value has been set.
 func (o *AddAes256PasswordStorageSchemeRequest) GetSchemasOk() ([]Enumaes256PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -108,7 +108,7 @@ func (o *AddAes256PasswordStorageSchemeRequest) GetEncryptionSettingsDefinitionI
 // and a boolean to check if the value has been set.
 func (o *AddAes256PasswordStorageSchemeRequest) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
 }
@@ -140,7 +140,7 @@ func (o *AddAes256PasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAes256PasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -173,7 +173,7 @@ func (o *AddAes256PasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAes256PasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddAes256PasswordStorageSchemeRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

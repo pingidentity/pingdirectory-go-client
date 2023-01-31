@@ -16,11 +16,11 @@ import (
 
 // ProxyServerInstanceResponse struct for ProxyServerInstanceResponse
 type ProxyServerInstanceResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumproxyServerInstanceSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumproxyServerInstanceSchemaUrn                 `json:"schemas"`
 	// Name of the Server Instance
-	Id string `json:"id"`
+	Id                 string                                    `json:"id"`
 	ServerInstanceType *EnumserverInstanceServerInstanceTypeProp `json:"serverInstanceType,omitempty"`
 	// The name of this Server Instance. The instance name needs to be unique if this server will be part of a topology of servers that are connected to each other. Once set, it may not be changed.
 	ServerInstanceName string `json:"serverInstanceName"`
@@ -53,7 +53,7 @@ type ProxyServerInstanceResponse struct {
 	// The TCP port on which this server is listening for JMX connections.
 	JmxPort *int32 `json:"jmxPort,omitempty"`
 	// The TCP port on which this server is listening for JMX secure connections.
-	JmxsPort *int32 `json:"jmxsPort,omitempty"`
+	JmxsPort          *int32                                   `json:"jmxsPort,omitempty"`
 	PreferredSecurity *EnumserverInstancePreferredSecurityProp `json:"preferredSecurity,omitempty"`
 	// Indicates whether StartTLS is enabled on this server.
 	StartTLSEnabled *bool `json:"startTLSEnabled,omitempty"`
@@ -98,7 +98,7 @@ func (o *ProxyServerInstanceResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -130,7 +130,7 @@ func (o *ProxyServerInstanceResponse) GetUrnpingidentityschemasconfigurationmess
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -163,7 +163,7 @@ func (o *ProxyServerInstanceResponse) GetSchemas() []EnumproxyServerInstanceSche
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetSchemasOk() ([]EnumproxyServerInstanceSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -187,7 +187,7 @@ func (o *ProxyServerInstanceResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -210,7 +210,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceType() EnumserverInstance
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInstanceServerInstanceTypeProp, bool) {
 	if o == nil || isNil(o.ServerInstanceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerInstanceType, true
 }
@@ -243,7 +243,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceName() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerInstanceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerInstanceName, true
 }
@@ -267,7 +267,7 @@ func (o *ProxyServerInstanceResponse) GetClusterName() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetClusterNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ClusterName, true
 }
@@ -290,7 +290,7 @@ func (o *ProxyServerInstanceResponse) GetServerInstanceLocation() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerInstanceLocationOk() (*string, bool) {
 	if o == nil || isNil(o.ServerInstanceLocation) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerInstanceLocation, true
 }
@@ -322,7 +322,7 @@ func (o *ProxyServerInstanceResponse) GetHostname() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetHostnameOk() (*string, bool) {
 	if o == nil || isNil(o.Hostname) {
-    return nil, false
+		return nil, false
 	}
 	return o.Hostname, true
 }
@@ -354,7 +354,7 @@ func (o *ProxyServerInstanceResponse) GetServerRoot() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerRootOk() (*string, bool) {
 	if o == nil || isNil(o.ServerRoot) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerRoot, true
 }
@@ -387,7 +387,7 @@ func (o *ProxyServerInstanceResponse) GetServerVersion() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetServerVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerVersion, true
 }
@@ -410,7 +410,7 @@ func (o *ProxyServerInstanceResponse) GetInterServerCertificate() string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetInterServerCertificateOk() (*string, bool) {
 	if o == nil || isNil(o.InterServerCertificate) {
-    return nil, false
+		return nil, false
 	}
 	return o.InterServerCertificate, true
 }
@@ -442,7 +442,7 @@ func (o *ProxyServerInstanceResponse) GetLdapPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
 	if o == nil || isNil(o.LdapPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapPort, true
 }
@@ -474,7 +474,7 @@ func (o *ProxyServerInstanceResponse) GetLdapsPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
 	if o == nil || isNil(o.LdapsPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapsPort, true
 }
@@ -506,7 +506,7 @@ func (o *ProxyServerInstanceResponse) GetHttpPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
 	if o == nil || isNil(o.HttpPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpPort, true
 }
@@ -538,7 +538,7 @@ func (o *ProxyServerInstanceResponse) GetHttpsPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
 	if o == nil || isNil(o.HttpsPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpsPort, true
 }
@@ -570,7 +570,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
 	if o == nil || isNil(o.ReplicationPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationPort, true
 }
@@ -602,7 +602,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationServerID() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
 	if o == nil || isNil(o.ReplicationServerID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationServerID, true
 }
@@ -634,7 +634,7 @@ func (o *ProxyServerInstanceResponse) GetReplicationDomainServerID() []int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, bool) {
 	if o == nil || isNil(o.ReplicationDomainServerID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationDomainServerID, true
 }
@@ -666,7 +666,7 @@ func (o *ProxyServerInstanceResponse) GetJmxPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
 	if o == nil || isNil(o.JmxPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.JmxPort, true
 }
@@ -698,7 +698,7 @@ func (o *ProxyServerInstanceResponse) GetJmxsPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
 	if o == nil || isNil(o.JmxsPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.JmxsPort, true
 }
@@ -730,7 +730,7 @@ func (o *ProxyServerInstanceResponse) GetPreferredSecurity() EnumserverInstanceP
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInstancePreferredSecurityProp, bool) {
 	if o == nil || isNil(o.PreferredSecurity) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreferredSecurity, true
 }
@@ -762,7 +762,7 @@ func (o *ProxyServerInstanceResponse) GetStartTLSEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.StartTLSEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.StartTLSEnabled, true
 }
@@ -794,7 +794,7 @@ func (o *ProxyServerInstanceResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -826,7 +826,7 @@ func (o *ProxyServerInstanceResponse) GetMemberOfServerGroup() []string {
 // and a boolean to check if the value has been set.
 func (o *ProxyServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool) {
 	if o == nil || isNil(o.MemberOfServerGroup) {
-    return nil, false
+		return nil, false
 	}
 	return o.MemberOfServerGroup, true
 }
@@ -960,5 +960,3 @@ func (v *NullableProxyServerInstanceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

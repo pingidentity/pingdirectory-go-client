@@ -16,10 +16,10 @@ import (
 
 // ConsentDefinitionResponse struct for ConsentDefinitionResponse
 type ConsentDefinitionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Consent Definition
-	Id string `json:"id"`
+	Id      string                           `json:"id"`
 	Schemas []EnumconsentDefinitionSchemaUrn `json:"schemas,omitempty"`
 	// A version-independent unique identifier for this Consent Definition.
 	UniqueID string `json:"uniqueID"`
@@ -63,7 +63,7 @@ func (o *ConsentDefinitionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *ConsentDefinitionResponse) GetUrnpingidentityschemasconfigurationmessag
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *ConsentDefinitionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *ConsentDefinitionResponse) GetSchemas() []EnumconsentDefinitionSchemaUr
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetSchemasOk() ([]EnumconsentDefinitionSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *ConsentDefinitionResponse) GetUniqueID() string {
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetUniqueIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.UniqueID, true
 }
@@ -207,7 +207,7 @@ func (o *ConsentDefinitionResponse) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -239,7 +239,7 @@ func (o *ConsentDefinitionResponse) GetParameter() []string {
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetParameterOk() ([]string, bool) {
 	if o == nil || isNil(o.Parameter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Parameter, true
 }
@@ -271,7 +271,7 @@ func (o *ConsentDefinitionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConsentDefinitionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -354,5 +354,3 @@ func (v *NullableConsentDefinitionResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

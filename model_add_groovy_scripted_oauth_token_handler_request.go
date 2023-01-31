@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedOauthTokenHandlerRequest struct for AddGroovyScriptedOauthTokenHandlerRequest
 type AddGroovyScriptedOauthTokenHandlerRequest struct {
 	// Name of the new OAuth Token Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                         `json:"handlerName"`
+	Schemas     []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted OAuth Token Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted OAuth Token Handler. Each configuration property should be given in the form 'name=value'.
@@ -61,7 +61,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -85,7 +85,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetSchemas() []EnumgroovyScr
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetSchemasOk() ([]EnumgroovyScriptedOauthTokenHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -109,7 +109,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -132,7 +132,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -164,7 +164,7 @@ func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedOauthTokenHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddGroovyScriptedOauthTokenHandlerRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // JmxConnectionHandlerResponse struct for JmxConnectionHandlerResponse
 type JmxConnectionHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Connection Handler
-	Id string `json:"id"`
+	Id      string                              `json:"id"`
 	Schemas []EnumjmxConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the port number on which the JMX Connection Handler will listen for connections from clients.
 	ListenPort int32 `json:"listenPort"`
@@ -73,7 +73,7 @@ func (o *JmxConnectionHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *JmxConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmes
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *JmxConnectionHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -162,7 +162,7 @@ func (o *JmxConnectionHandlerResponse) GetSchemas() []EnumjmxConnectionHandlerSc
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetSchemasOk() ([]EnumjmxConnectionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -186,7 +186,7 @@ func (o *JmxConnectionHandlerResponse) GetListenPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetListenPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ListenPort, true
 }
@@ -209,7 +209,7 @@ func (o *JmxConnectionHandlerResponse) GetUseSSL() bool {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetUseSSLOk() (*bool, bool) {
 	if o == nil || isNil(o.UseSSL) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseSSL, true
 }
@@ -241,7 +241,7 @@ func (o *JmxConnectionHandlerResponse) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil || isNil(o.SslCertNickname) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertNickname, true
 }
@@ -273,7 +273,7 @@ func (o *JmxConnectionHandlerResponse) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -305,7 +305,7 @@ func (o *JmxConnectionHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -338,7 +338,7 @@ func (o *JmxConnectionHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -361,7 +361,7 @@ func (o *JmxConnectionHandlerResponse) GetAllowedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedClient, true
 }
@@ -393,7 +393,7 @@ func (o *JmxConnectionHandlerResponse) GetDeniedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *JmxConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedClient, true
 }
@@ -488,5 +488,3 @@ func (v *NullableJmxConnectionHandlerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

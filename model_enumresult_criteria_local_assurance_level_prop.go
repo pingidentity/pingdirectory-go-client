@@ -20,8 +20,8 @@ type EnumresultCriteriaLocalAssuranceLevelProp string
 
 // List of Enumresult-criteria-localAssuranceLevelProp
 const (
-	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_NONE EnumresultCriteriaLocalAssuranceLevelProp = "none"
-	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_RECEIVED_ANY_SERVER EnumresultCriteriaLocalAssuranceLevelProp = "received-any-server"
+	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_NONE                  EnumresultCriteriaLocalAssuranceLevelProp = "none"
+	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_RECEIVED_ANY_SERVER   EnumresultCriteriaLocalAssuranceLevelProp = "received-any-server"
 	ENUMRESULTCRITERIALOCALASSURANCELEVELPROP_PROCESSED_ALL_SERVERS EnumresultCriteriaLocalAssuranceLevelProp = "processed-all-servers"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaLocalAssuranceLevelProp) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

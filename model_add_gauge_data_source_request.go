@@ -18,7 +18,7 @@ import (
 // AddGaugeDataSourceRequest - struct for AddGaugeDataSourceRequest
 type AddGaugeDataSourceRequest struct {
 	AddIndicatorGaugeDataSourceRequest *AddIndicatorGaugeDataSourceRequest
-	AddNumericGaugeDataSourceRequest *AddNumericGaugeDataSourceRequest
+	AddNumericGaugeDataSourceRequest   *AddNumericGaugeDataSourceRequest
 }
 
 // AddIndicatorGaugeDataSourceRequestAsAddGaugeDataSourceRequest is a convenience function that returns AddIndicatorGaugeDataSourceRequest wrapped in AddGaugeDataSourceRequest
@@ -34,7 +34,6 @@ func AddNumericGaugeDataSourceRequestAsAddGaugeDataSourceRequest(v *AddNumericGa
 		AddNumericGaugeDataSourceRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddGaugeDataSourceRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddGaugeDataSourceRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddGaugeDataSourceRequest) GetActualInstance() (interface{}) {
+func (obj *AddGaugeDataSourceRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddGaugeDataSourceRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type EnumresultCriteriaMissingAnyPrivilegeProp string
 
 // List of Enumresult-criteria-missingAnyPrivilegeProp
 const (
-	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_REQUIRED EnumresultCriteriaMissingAnyPrivilegeProp = "required"
+	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_REQUIRED   EnumresultCriteriaMissingAnyPrivilegeProp = "required"
 	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_PROHIBITED EnumresultCriteriaMissingAnyPrivilegeProp = "prohibited"
-	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_OPTIONAL EnumresultCriteriaMissingAnyPrivilegeProp = "optional"
+	ENUMRESULTCRITERIAMISSINGANYPRIVILEGEPROP_OPTIONAL   EnumresultCriteriaMissingAnyPrivilegeProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaMissingAnyPrivilegeProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaMissingAnyPrivilegeProp) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,10 +16,10 @@ import (
 
 // ExportReversiblePasswordsExtendedOperationHandlerResponse struct for ExportReversiblePasswordsExtendedOperationHandlerResponse
 type ExportReversiblePasswordsExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Extended Operation Handler
-	Id string `json:"id"`
+	Id      string                                                           `json:"id"`
 	Schemas []EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// A description for this Extended Operation Handler
 	Description *string `json:"description,omitempty"`
@@ -60,7 +60,7 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetMeta() Me
 // and a boolean to check if the value has been set.
 func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetUrnpingid
 // and a boolean to check if the value has been set.
 func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetId() stri
 // and a boolean to check if the value has been set.
 func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetSchemas()
 // and a boolean to check if the value has been set.
 func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -172,7 +172,7 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetDescripti
 // and a boolean to check if the value has been set.
 func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetEnabled()
 // and a boolean to check if the value has been set.
 func (o *ExportReversiblePasswordsExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableExportReversiblePasswordsExtendedOperationHandlerResponse) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

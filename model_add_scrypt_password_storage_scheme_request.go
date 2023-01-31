@@ -17,8 +17,8 @@ import (
 // AddScryptPasswordStorageSchemeRequest struct for AddScryptPasswordStorageSchemeRequest
 type AddScryptPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                     `json:"schemeName"`
+	Schemas    []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive.
 	ScryptCpuMemoryCostFactorExponent *int32 `json:"scryptCpuMemoryCostFactorExponent,omitempty"`
 	// Specifies the block size for the digest that will be used in the course of encoding passwords. Increasing the block size while keeping the CPU/memory cost factor constant will increase the amount of memory required to encode a password, but it also increases the ratio of sequential memory access to random memory access (and sequential memory access is generally faster than random memory access).
@@ -67,7 +67,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -91,7 +91,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetSchemas() []EnumscryptPasswor
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumscryptPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExpo
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponentOk() (*int32, bool) {
 	if o == nil || isNil(o.ScryptCpuMemoryCostFactorExponent) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScryptCpuMemoryCostFactorExponent, true
 }
@@ -146,7 +146,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.ScryptBlockSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScryptBlockSize, true
 }
@@ -178,7 +178,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParamete
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameterOk() (*int32, bool) {
 	if o == nil || isNil(o.ScryptParallelizationParameter) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScryptParallelizationParameter, true
 }
@@ -210,7 +210,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -242,7 +242,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -275,7 +275,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -349,5 +349,3 @@ func (v *NullableAddScryptPasswordStorageSchemeRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

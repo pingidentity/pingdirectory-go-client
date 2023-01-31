@@ -17,8 +17,8 @@ import (
 // AddTimeLimitLogRotationPolicyRequest struct for AddTimeLimitLogRotationPolicyRequest
 type AddTimeLimitLogRotationPolicyRequest struct {
 	// Name of the new Log Rotation Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumtimeLimitLogRotationPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                    `json:"policyName"`
+	Schemas    []EnumtimeLimitLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the time interval between rotations.
 	RotationInterval string `json:"rotationInterval"`
 	// A description for this Log Rotation Policy
@@ -59,7 +59,7 @@ func (o *AddTimeLimitLogRotationPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddTimeLimitLogRotationPolicyRequest) GetSchemas() []EnumtimeLimitLogRo
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRotationPolicyRequest) GetSchemasOk() ([]EnumtimeLimitLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddTimeLimitLogRotationPolicyRequest) GetRotationInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRotationPolicyRequest) GetRotationIntervalOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RotationInterval, true
 }
@@ -130,7 +130,7 @@ func (o *AddTimeLimitLogRotationPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRotationPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddTimeLimitLogRotationPolicyRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

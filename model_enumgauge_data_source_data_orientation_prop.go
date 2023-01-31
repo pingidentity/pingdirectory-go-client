@@ -20,7 +20,7 @@ type EnumgaugeDataSourceDataOrientationProp string
 
 // List of Enumgauge-data-source-dataOrientationProp
 const (
-	ENUMGAUGEDATASOURCEDATAORIENTATIONPROP_LOWER_IS_BETTER EnumgaugeDataSourceDataOrientationProp = "lower-is-better"
+	ENUMGAUGEDATASOURCEDATAORIENTATIONPROP_LOWER_IS_BETTER  EnumgaugeDataSourceDataOrientationProp = "lower-is-better"
 	ENUMGAUGEDATASOURCEDATAORIENTATIONPROP_HIGHER_IS_BETTER EnumgaugeDataSourceDataOrientationProp = "higher-is-better"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumgaugeDataSourceDataOrientationProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

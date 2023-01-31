@@ -16,9 +16,9 @@ import (
 
 // DirectoryRestApiHttpServletExtensionResponse struct for DirectoryRestApiHttpServletExtensionResponse
 type DirectoryRestApiHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdirectoryRestApiHttpServletExtensionSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                           `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20  `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumdirectoryRestApiHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Name of the HTTP Servlet Extension
 	Id string `json:"id"`
 	// Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
@@ -38,8 +38,8 @@ type DirectoryRestApiHttpServletExtensionResponse struct {
 	// A set of operational attributes that will be returned with entries by default.
 	DefaultOperationalAttribute []string `json:"defaultOperationalAttribute,omitempty"`
 	// A set of attributes which the client is not allowed to provide for the expand query parameters. This should be used for attributes that could either have a large number of values or that reference entries that are very large like groups.
-	RejectExpansionAttribute []string `json:"rejectExpansionAttribute,omitempty"`
-	AllowedControl []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
+	RejectExpansionAttribute []string                                     `json:"rejectExpansionAttribute,omitempty"`
+	AllowedControl           []EnumhttpServletExtensionAllowedControlProp `json:"allowedControl,omitempty"`
 	// A description for this HTTP Servlet Extension
 	Description *string `json:"description,omitempty"`
 	// The cross-origin request policy to use for the HTTP Servlet Extension.
@@ -82,7 +82,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -114,7 +114,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetUrnpingidentityschemas
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -147,7 +147,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetSchemas() []Enumdirect
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetSchemasOk() ([]EnumdirectoryRestApiHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -171,7 +171,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -194,7 +194,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetBasicAuthEnabled() boo
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetBasicAuthEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.BasicAuthEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.BasicAuthEnabled, true
 }
@@ -226,7 +226,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetIdentityMapper() strin
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -258,7 +258,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetAccessTokenValidator()
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.AccessTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenValidator, true
 }
@@ -290,7 +290,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetAccessTokenScope() str
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetAccessTokenScopeOk() (*string, bool) {
 	if o == nil || isNil(o.AccessTokenScope) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenScope, true
 }
@@ -322,7 +322,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetAudience() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetAudienceOk() (*string, bool) {
 	if o == nil || isNil(o.Audience) {
-    return nil, false
+		return nil, false
 	}
 	return o.Audience, true
 }
@@ -354,7 +354,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetMaxPageSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPageSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPageSize, true
 }
@@ -386,7 +386,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetSchemasEndpointObjectc
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetSchemasEndpointObjectclassOk() ([]string, bool) {
 	if o == nil || isNil(o.SchemasEndpointObjectclass) {
-    return nil, false
+		return nil, false
 	}
 	return o.SchemasEndpointObjectclass, true
 }
@@ -418,7 +418,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetDefaultOperationalAttr
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetDefaultOperationalAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.DefaultOperationalAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultOperationalAttribute, true
 }
@@ -450,7 +450,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetRejectExpansionAttribu
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetRejectExpansionAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.RejectExpansionAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.RejectExpansionAttribute, true
 }
@@ -482,7 +482,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetAllowedControl() []Enu
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetAllowedControlOk() ([]EnumhttpServletExtensionAllowedControlProp, bool) {
 	if o == nil || isNil(o.AllowedControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedControl, true
 }
@@ -514,7 +514,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -546,7 +546,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetCrossOriginPolicy() st
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -578,7 +578,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetResponseHeader() []str
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -610,7 +610,7 @@ func (o *DirectoryRestApiHttpServletExtensionResponse) GetCorrelationIDResponseH
 // and a boolean to check if the value has been set.
 func (o *DirectoryRestApiHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -723,5 +723,3 @@ func (v *NullableDirectoryRestApiHttpServletExtensionResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

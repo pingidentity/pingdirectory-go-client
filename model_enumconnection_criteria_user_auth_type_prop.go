@@ -20,9 +20,9 @@ type EnumconnectionCriteriaUserAuthTypeProp string
 
 // List of Enumconnection-criteria-userAuthTypeProp
 const (
-	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_NONE EnumconnectionCriteriaUserAuthTypeProp = "none"
-	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_SIMPLE EnumconnectionCriteriaUserAuthTypeProp = "simple"
-	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_SASL EnumconnectionCriteriaUserAuthTypeProp = "sasl"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_NONE     EnumconnectionCriteriaUserAuthTypeProp = "none"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_SIMPLE   EnumconnectionCriteriaUserAuthTypeProp = "simple"
+	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_SASL     EnumconnectionCriteriaUserAuthTypeProp = "sasl"
 	ENUMCONNECTIONCRITERIAUSERAUTHTYPEPROP_INTERNAL EnumconnectionCriteriaUserAuthTypeProp = "internal"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumconnectionCriteriaUserAuthTypeProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

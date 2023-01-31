@@ -20,30 +20,30 @@ type EnumlogPublisherSyslogFacilityProp string
 
 // List of Enumlog-publisher-syslogFacilityProp
 const (
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_USER_LEVEL_MESSAGES EnumlogPublisherSyslogFacilityProp = "user-level-messages"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SYSTEM_DAEMONS EnumlogPublisherSyslogFacilityProp = "system-daemons"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SECURITY_AND_AUTHORIZATION EnumlogPublisherSyslogFacilityProp = "security-and-authorization"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_USER_LEVEL_MESSAGES                    EnumlogPublisherSyslogFacilityProp = "user-level-messages"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SYSTEM_DAEMONS                         EnumlogPublisherSyslogFacilityProp = "system-daemons"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SECURITY_AND_AUTHORIZATION             EnumlogPublisherSyslogFacilityProp = "security-and-authorization"
 	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SECURITY_AND_AUTHORIZATION_ALTERNATIVE EnumlogPublisherSyslogFacilityProp = "security-and-authorization-alternative"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOG_AUDIT EnumlogPublisherSyslogFacilityProp = "log-audit"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOG_ALERT EnumlogPublisherSyslogFacilityProp = "log-alert"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_0 EnumlogPublisherSyslogFacilityProp = "local-use-0"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_1 EnumlogPublisherSyslogFacilityProp = "local-use-1"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_2 EnumlogPublisherSyslogFacilityProp = "local-use-2"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_3 EnumlogPublisherSyslogFacilityProp = "local-use-3"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_4 EnumlogPublisherSyslogFacilityProp = "local-use-4"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_5 EnumlogPublisherSyslogFacilityProp = "local-use-5"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_6 EnumlogPublisherSyslogFacilityProp = "local-use-6"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_7 EnumlogPublisherSyslogFacilityProp = "local-use-7"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_KERNEL_MESSAGES EnumlogPublisherSyslogFacilityProp = "kernel-messages"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_MAIL_SYSTEM EnumlogPublisherSyslogFacilityProp = "mail-system"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SYSLOGD_INTERNAL_MESSAGES EnumlogPublisherSyslogFacilityProp = "syslogd-internal-messages"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LINE_PRINTER EnumlogPublisherSyslogFacilityProp = "line-printer"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_NETWORK_NEWS EnumlogPublisherSyslogFacilityProp = "network-news"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_UUCP EnumlogPublisherSyslogFacilityProp = "uucp"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_CLOCK_DAEMON EnumlogPublisherSyslogFacilityProp = "clock-daemon"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_FTP_DAEMON EnumlogPublisherSyslogFacilityProp = "ftp-daemon"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_NTP_DAEMON EnumlogPublisherSyslogFacilityProp = "ntp-daemon"
-	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_CLOCK_DAEMON_ALTERNATIVE EnumlogPublisherSyslogFacilityProp = "clock-daemon-alternative"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOG_AUDIT                              EnumlogPublisherSyslogFacilityProp = "log-audit"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOG_ALERT                              EnumlogPublisherSyslogFacilityProp = "log-alert"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_0                            EnumlogPublisherSyslogFacilityProp = "local-use-0"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_1                            EnumlogPublisherSyslogFacilityProp = "local-use-1"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_2                            EnumlogPublisherSyslogFacilityProp = "local-use-2"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_3                            EnumlogPublisherSyslogFacilityProp = "local-use-3"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_4                            EnumlogPublisherSyslogFacilityProp = "local-use-4"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_5                            EnumlogPublisherSyslogFacilityProp = "local-use-5"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_6                            EnumlogPublisherSyslogFacilityProp = "local-use-6"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LOCAL_USE_7                            EnumlogPublisherSyslogFacilityProp = "local-use-7"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_KERNEL_MESSAGES                        EnumlogPublisherSyslogFacilityProp = "kernel-messages"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_MAIL_SYSTEM                            EnumlogPublisherSyslogFacilityProp = "mail-system"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_SYSLOGD_INTERNAL_MESSAGES              EnumlogPublisherSyslogFacilityProp = "syslogd-internal-messages"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_LINE_PRINTER                           EnumlogPublisherSyslogFacilityProp = "line-printer"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_NETWORK_NEWS                           EnumlogPublisherSyslogFacilityProp = "network-news"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_UUCP                                   EnumlogPublisherSyslogFacilityProp = "uucp"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_CLOCK_DAEMON                           EnumlogPublisherSyslogFacilityProp = "clock-daemon"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_FTP_DAEMON                             EnumlogPublisherSyslogFacilityProp = "ftp-daemon"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_NTP_DAEMON                             EnumlogPublisherSyslogFacilityProp = "ntp-daemon"
+	ENUMLOGPUBLISHERSYSLOGFACILITYPROP_CLOCK_DAEMON_ALTERNATIVE               EnumlogPublisherSyslogFacilityProp = "clock-daemon-alternative"
 )
 
 // All allowed values of EnumlogPublisherSyslogFacilityProp enum
@@ -152,4 +152,3 @@ func (v *NullableEnumlogPublisherSyslogFacilityProp) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

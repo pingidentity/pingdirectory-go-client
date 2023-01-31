@@ -21,7 +21,7 @@ type EnumexternalServerHostnameVerificationMethodProp string
 // List of Enumexternal-server-hostnameVerificationMethodProp
 const (
 	ENUMEXTERNALSERVERHOSTNAMEVERIFICATIONMETHODPROP_ALLOW_ALL EnumexternalServerHostnameVerificationMethodProp = "allow-all"
-	ENUMEXTERNALSERVERHOSTNAMEVERIFICATIONMETHODPROP_STRICT EnumexternalServerHostnameVerificationMethodProp = "strict"
+	ENUMEXTERNALSERVERHOSTNAMEVERIFICATIONMETHODPROP_STRICT    EnumexternalServerHostnameVerificationMethodProp = "strict"
 )
 
 // All allowed values of EnumexternalServerHostnameVerificationMethodProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumexternalServerHostnameVerificationMethodProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

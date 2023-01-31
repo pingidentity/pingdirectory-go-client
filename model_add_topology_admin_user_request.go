@@ -17,8 +17,8 @@ import (
 // AddTopologyAdminUserRequest struct for AddTopologyAdminUserRequest
 type AddTopologyAdminUserRequest struct {
 	// Name of the new Topology Admin User
-	UserName string `json:"userName"`
-	Schemas []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
+	UserName string                           `json:"userName"`
+	Schemas  []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
 }
 
 // NewAddTopologyAdminUserRequest instantiates a new AddTopologyAdminUserRequest object
@@ -53,7 +53,7 @@ func (o *AddTopologyAdminUserRequest) GetUserName() string {
 // and a boolean to check if the value has been set.
 func (o *AddTopologyAdminUserRequest) GetUserNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.UserName, true
 }
@@ -76,7 +76,7 @@ func (o *AddTopologyAdminUserRequest) GetSchemas() []EnumtopologyAdminUserSchema
 // and a boolean to check if the value has been set.
 func (o *AddTopologyAdminUserRequest) GetSchemasOk() ([]EnumtopologyAdminUserSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -141,5 +141,3 @@ func (v *NullableAddTopologyAdminUserRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

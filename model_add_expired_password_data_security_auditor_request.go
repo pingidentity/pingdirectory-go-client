@@ -17,8 +17,8 @@ import (
 // AddExpiredPasswordDataSecurityAuditorRequest struct for AddExpiredPasswordDataSecurityAuditorRequest
 type AddExpiredPasswordDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
-	AuditorName string `json:"auditorName"`
-	Schemas []EnumexpiredPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
+	AuditorName string                                            `json:"auditorName"`
+	Schemas     []EnumexpiredPasswordDataSecurityAuditorSchemaUrn `json:"schemas"`
 	// Specifies the name of the detailed report file.
 	ReportFile string `json:"reportFile"`
 	// Specifies the attributes from the audited entries that should be included detailed reports. By default, no attributes are included.
@@ -28,7 +28,7 @@ type AddExpiredPasswordDataSecurityAuditorRequest struct {
 	// Indicates whether the Data Security Auditor is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Specifies which backends the data security auditor may be applied to. By default, the data security auditors will audit entries in all backend types that support data auditing (Local DB, LDIF, and Config File Handler).
-	AuditBackend []string `json:"auditBackend,omitempty"`
+	AuditBackend  []string                                  `json:"auditBackend,omitempty"`
 	AuditSeverity *EnumdataSecurityAuditorAuditSeverityProp `json:"auditSeverity,omitempty"`
 }
 
@@ -67,7 +67,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetAuditorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetAuditorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuditorName, true
 }
@@ -91,7 +91,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetSchemas() []Enumexpire
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetSchemasOk() ([]EnumexpiredPasswordDataSecurityAuditorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetReportFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReportFile, true
 }
@@ -138,7 +138,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetIncludeAttribute() []s
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttribute, true
 }
@@ -170,7 +170,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetPasswordEvaluationAge(
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetPasswordEvaluationAgeOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordEvaluationAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordEvaluationAge, true
 }
@@ -203,7 +203,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -226,7 +226,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetAuditBackend() []strin
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
 	if o == nil || isNil(o.AuditBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditBackend, true
 }
@@ -258,7 +258,7 @@ func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetAuditSeverity() Enumda
 // and a boolean to check if the value has been set.
 func (o *AddExpiredPasswordDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
 	if o == nil || isNil(o.AuditSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuditSeverity, true
 }
@@ -341,5 +341,3 @@ func (v *NullableAddExpiredPasswordDataSecurityAuditorRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

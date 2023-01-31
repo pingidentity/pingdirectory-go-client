@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // BackendApiService BackendApi service
 type BackendApiService service
 
 type ApiAddBackendRequest struct {
-	ctx context.Context
-	ApiService *BackendApiService
+	ctx                      context.Context
+	ApiService               *BackendApiService
 	addLocalDbBackendRequest *AddLocalDbBackendRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddBackendRequest) Execute() (*AddBackend200Response, *http.Response,
 /*
 AddBackend Add a new Backend to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddBackendRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddBackendRequest
 */
 func (a *BackendApiService) AddBackend(ctx context.Context) ApiAddBackendRequest {
 	return ApiAddBackendRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddBackend200Response
+//
+//	@return AddBackend200Response
 func (a *BackendApiService) AddBackendExecute(r ApiAddBackendRequest) (*AddBackend200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddBackend200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddBackend200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.AddBackend")
@@ -133,8 +133,8 @@ func (a *BackendApiService) AddBackendExecute(r ApiAddBackendRequest) (*AddBacke
 }
 
 type ApiDeleteBackendRequest struct {
-	ctx context.Context
-	ApiService *BackendApiService
+	ctx         context.Context
+	ApiService  *BackendApiService
 	backendName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteBackendRequest) Execute() (*http.Response, error) {
 /*
 DeleteBackend Delete a Backend
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param backendName Name of the Backend to be deleted
- @return ApiDeleteBackendRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param backendName Name of the Backend to be deleted
+	@return ApiDeleteBackendRequest
 */
 func (a *BackendApiService) DeleteBackend(ctx context.Context, backendName string) ApiDeleteBackendRequest {
 	return ApiDeleteBackendRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		backendName: backendName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *BackendApiService) DeleteBackend(ctx context.Context, backendName strin
 // Execute executes the request
 func (a *BackendApiService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.DeleteBackend")
@@ -223,8 +223,8 @@ func (a *BackendApiService) DeleteBackendExecute(r ApiDeleteBackendRequest) (*ht
 }
 
 type ApiGetBackendRequest struct {
-	ctx context.Context
-	ApiService *BackendApiService
+	ctx         context.Context
+	ApiService  *BackendApiService
 	backendName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetBackendRequest) Execute() (*GetBackend200Response, *http.Response,
 /*
 GetBackend Returns a single Backend
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param backendName Name of the Backend to be read
- @return ApiGetBackendRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param backendName Name of the Backend to be read
+	@return ApiGetBackendRequest
 */
 func (a *BackendApiService) GetBackend(ctx context.Context, backendName string) ApiGetBackendRequest {
 	return ApiGetBackendRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		backendName: backendName,
 	}
 }
 
 // Execute executes the request
-//  @return GetBackend200Response
+//
+//	@return GetBackend200Response
 func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBackend200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBackend200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBackend200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.GetBackend")
@@ -324,9 +325,9 @@ func (a *BackendApiService) GetBackendExecute(r ApiGetBackendRequest) (*GetBacke
 }
 
 type ApiUpdateBackendRequest struct {
-	ctx context.Context
-	ApiService *BackendApiService
-	backendName string
+	ctx           context.Context
+	ApiService    *BackendApiService
+	backendName   string
 	updateRequest *UpdateRequest
 }
 
@@ -343,26 +344,27 @@ func (r ApiUpdateBackendRequest) Execute() (*GetBackend200Response, *http.Respon
 /*
 UpdateBackend Update an existing Backend by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param backendName Name of the Backend to be updated
- @return ApiUpdateBackendRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param backendName Name of the Backend to be updated
+	@return ApiUpdateBackendRequest
 */
 func (a *BackendApiService) UpdateBackend(ctx context.Context, backendName string) ApiUpdateBackendRequest {
 	return ApiUpdateBackendRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		backendName: backendName,
 	}
 }
 
 // Execute executes the request
-//  @return GetBackend200Response
+//
+//	@return GetBackend200Response
 func (a *BackendApiService) UpdateBackendExecute(r ApiUpdateBackendRequest) (*GetBackend200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBackend200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBackend200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackendApiService.UpdateBackend")

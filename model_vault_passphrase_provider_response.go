@@ -16,10 +16,10 @@ import (
 
 // VaultPassphraseProviderResponse struct for VaultPassphraseProviderResponse
 type VaultPassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                 `json:"id"`
 	Schemas []EnumvaultPassphraseProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
@@ -71,7 +71,7 @@ func (o *VaultPassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *VaultPassphraseProviderResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *VaultPassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -160,7 +160,7 @@ func (o *VaultPassphraseProviderResponse) GetSchemas() []EnumvaultPassphraseProv
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetSchemasOk() ([]EnumvaultPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *VaultPassphraseProviderResponse) GetVaultExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetVaultExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultExternalServer, true
 }
@@ -208,7 +208,7 @@ func (o *VaultPassphraseProviderResponse) GetVaultSecretPath() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetVaultSecretPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretPath, true
 }
@@ -232,7 +232,7 @@ func (o *VaultPassphraseProviderResponse) GetVaultSecretFieldName() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetVaultSecretFieldNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretFieldName, true
 }
@@ -255,7 +255,7 @@ func (o *VaultPassphraseProviderResponse) GetMaxCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -287,7 +287,7 @@ func (o *VaultPassphraseProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -320,7 +320,7 @@ func (o *VaultPassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *VaultPassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -400,5 +400,3 @@ func (v *NullableVaultPassphraseProviderResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

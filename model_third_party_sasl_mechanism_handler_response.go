@@ -16,10 +16,10 @@ import (
 
 // ThirdPartySaslMechanismHandlerResponse struct for ThirdPartySaslMechanismHandlerResponse
 type ThirdPartySaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the SASL Mechanism Handler
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party SASL Mechanism Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -67,7 +67,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetSchemas() []EnumthirdPartySa
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetSchemasOk() ([]EnumthirdPartySaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -203,7 +203,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -235,7 +235,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -267,7 +267,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -300,7 +300,7 @@ func (o *ThirdPartySaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartySaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -377,5 +377,3 @@ func (v *NullableThirdPartySaslMechanismHandlerResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

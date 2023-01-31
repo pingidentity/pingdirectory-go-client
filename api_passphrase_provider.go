@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // PassphraseProviderApiService PassphraseProviderApi service
 type PassphraseProviderApiService service
 
 type ApiAddPassphraseProviderRequest struct {
-	ctx context.Context
-	ApiService *PassphraseProviderApiService
+	ctx                          context.Context
+	ApiService                   *PassphraseProviderApiService
 	addPassphraseProviderRequest *AddPassphraseProviderRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddPassphraseProviderRequest) Execute() (*AddPassphraseProvider200Res
 /*
 AddPassphraseProvider Add a new Passphrase Provider to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddPassphraseProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddPassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) AddPassphraseProvider(ctx context.Context) ApiAddPassphraseProviderRequest {
 	return ApiAddPassphraseProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddPassphraseProvider200Response
+//
+//	@return AddPassphraseProvider200Response
 func (a *PassphraseProviderApiService) AddPassphraseProviderExecute(r ApiAddPassphraseProviderRequest) (*AddPassphraseProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPassphraseProvider200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPassphraseProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassphraseProviderApiService.AddPassphraseProvider")
@@ -133,8 +133,8 @@ func (a *PassphraseProviderApiService) AddPassphraseProviderExecute(r ApiAddPass
 }
 
 type ApiDeletePassphraseProviderRequest struct {
-	ctx context.Context
-	ApiService *PassphraseProviderApiService
+	ctx                    context.Context
+	ApiService             *PassphraseProviderApiService
 	passphraseProviderName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeletePassphraseProviderRequest) Execute() (*http.Response, error) {
 /*
 DeletePassphraseProvider Delete a Passphrase Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passphraseProviderName Name of the Passphrase Provider to be deleted
- @return ApiDeletePassphraseProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passphraseProviderName Name of the Passphrase Provider to be deleted
+	@return ApiDeletePassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) DeletePassphraseProvider(ctx context.Context, passphraseProviderName string) ApiDeletePassphraseProviderRequest {
 	return ApiDeletePassphraseProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		passphraseProviderName: passphraseProviderName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *PassphraseProviderApiService) DeletePassphraseProvider(ctx context.Cont
 // Execute executes the request
 func (a *PassphraseProviderApiService) DeletePassphraseProviderExecute(r ApiDeletePassphraseProviderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassphraseProviderApiService.DeletePassphraseProvider")
@@ -223,8 +223,8 @@ func (a *PassphraseProviderApiService) DeletePassphraseProviderExecute(r ApiDele
 }
 
 type ApiGetPassphraseProviderRequest struct {
-	ctx context.Context
-	ApiService *PassphraseProviderApiService
+	ctx                    context.Context
+	ApiService             *PassphraseProviderApiService
 	passphraseProviderName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetPassphraseProviderRequest) Execute() (*AddPassphraseProvider200Res
 /*
 GetPassphraseProvider Returns a single Passphrase Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passphraseProviderName Name of the Passphrase Provider to be read
- @return ApiGetPassphraseProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passphraseProviderName Name of the Passphrase Provider to be read
+	@return ApiGetPassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) GetPassphraseProvider(ctx context.Context, passphraseProviderName string) ApiGetPassphraseProviderRequest {
 	return ApiGetPassphraseProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		passphraseProviderName: passphraseProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return AddPassphraseProvider200Response
+//
+//	@return AddPassphraseProvider200Response
 func (a *PassphraseProviderApiService) GetPassphraseProviderExecute(r ApiGetPassphraseProviderRequest) (*AddPassphraseProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPassphraseProvider200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPassphraseProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassphraseProviderApiService.GetPassphraseProvider")
@@ -324,10 +325,10 @@ func (a *PassphraseProviderApiService) GetPassphraseProviderExecute(r ApiGetPass
 }
 
 type ApiUpdatePassphraseProviderRequest struct {
-	ctx context.Context
-	ApiService *PassphraseProviderApiService
+	ctx                    context.Context
+	ApiService             *PassphraseProviderApiService
 	passphraseProviderName string
-	updateRequest *UpdateRequest
+	updateRequest          *UpdateRequest
 }
 
 // Update an existing Passphrase Provider
@@ -343,26 +344,27 @@ func (r ApiUpdatePassphraseProviderRequest) Execute() (*AddPassphraseProvider200
 /*
 UpdatePassphraseProvider Update an existing Passphrase Provider by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param passphraseProviderName Name of the Passphrase Provider to be updated
- @return ApiUpdatePassphraseProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param passphraseProviderName Name of the Passphrase Provider to be updated
+	@return ApiUpdatePassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) UpdatePassphraseProvider(ctx context.Context, passphraseProviderName string) ApiUpdatePassphraseProviderRequest {
 	return ApiUpdatePassphraseProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		passphraseProviderName: passphraseProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return AddPassphraseProvider200Response
+//
+//	@return AddPassphraseProvider200Response
 func (a *PassphraseProviderApiService) UpdatePassphraseProviderExecute(r ApiUpdatePassphraseProviderRequest) (*AddPassphraseProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddPassphraseProvider200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddPassphraseProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PassphraseProviderApiService.UpdatePassphraseProvider")

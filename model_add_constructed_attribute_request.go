@@ -17,8 +17,8 @@ import (
 // AddConstructedAttributeRequest struct for AddConstructedAttributeRequest
 type AddConstructedAttributeRequest struct {
 	// Name of the new Constructed Attribute
-	AttributeName string `json:"attributeName"`
-	Schemas []EnumconstructedAttributeSchemaUrn `json:"schemas,omitempty"`
+	AttributeName string                              `json:"attributeName"`
+	Schemas       []EnumconstructedAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Constructed Attribute
 	Description *string `json:"description,omitempty"`
 	// Specifies the attribute type for the attribute whose values are to be constructed.
@@ -61,7 +61,7 @@ func (o *AddConstructedAttributeRequest) GetAttributeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetAttributeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeName, true
 }
@@ -84,7 +84,7 @@ func (o *AddConstructedAttributeRequest) GetSchemas() []EnumconstructedAttribute
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetSchemasOk() ([]EnumconstructedAttributeSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddConstructedAttributeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -149,7 +149,7 @@ func (o *AddConstructedAttributeRequest) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -173,7 +173,7 @@ func (o *AddConstructedAttributeRequest) GetValuePattern() []string {
 // and a boolean to check if the value has been set.
 func (o *AddConstructedAttributeRequest) GetValuePatternOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ValuePattern, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddConstructedAttributeRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

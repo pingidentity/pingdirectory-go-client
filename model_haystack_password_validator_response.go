@@ -16,10 +16,10 @@ import (
 
 // HaystackPasswordValidatorResponse struct for HaystackPasswordValidatorResponse
 type HaystackPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                   `json:"id"`
 	Schemas []EnumhaystackPasswordValidatorSchemaUrn `json:"schemas"`
 	// The number of password guesses per second that a potential attacker may be expected to make.
 	AssumedPasswordGuessesPerSecond string `json:"assumedPasswordGuessesPerSecond"`
@@ -70,7 +70,7 @@ func (o *HaystackPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -102,7 +102,7 @@ func (o *HaystackPasswordValidatorResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -135,7 +135,7 @@ func (o *HaystackPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -159,7 +159,7 @@ func (o *HaystackPasswordValidatorResponse) GetSchemas() []EnumhaystackPasswordV
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetSchemasOk() ([]EnumhaystackPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *HaystackPasswordValidatorResponse) GetAssumedPasswordGuessesPerSecond()
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetAssumedPasswordGuessesPerSecondOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AssumedPasswordGuessesPerSecond, true
 }
@@ -207,7 +207,7 @@ func (o *HaystackPasswordValidatorResponse) GetMinimumAcceptableTimeToExhaustSea
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetMinimumAcceptableTimeToExhaustSearchSpaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MinimumAcceptableTimeToExhaustSearchSpace, true
 }
@@ -230,7 +230,7 @@ func (o *HaystackPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -263,7 +263,7 @@ func (o *HaystackPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -286,7 +286,7 @@ func (o *HaystackPasswordValidatorResponse) GetValidatorRequirementDescription()
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -318,7 +318,7 @@ func (o *HaystackPasswordValidatorResponse) GetValidatorFailureMessage() string 
 // and a boolean to check if the value has been set.
 func (o *HaystackPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -407,5 +407,3 @@ func (v *NullableHaystackPasswordValidatorResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

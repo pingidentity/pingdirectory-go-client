@@ -20,8 +20,8 @@ type EnumpasswordStorageSchemePasswordEncodingMechanismProp string
 
 // List of Enumpassword-storage-scheme-passwordEncodingMechanismProp
 const (
-	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_CRYPT EnumpasswordStorageSchemePasswordEncodingMechanismProp = "crypt"
-	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_MD5 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "md5"
+	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_CRYPT     EnumpasswordStorageSchemePasswordEncodingMechanismProp = "crypt"
+	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_MD5       EnumpasswordStorageSchemePasswordEncodingMechanismProp = "md5"
 	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_SHA_2_256 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "sha-2-256"
 	ENUMPASSWORDSTORAGESCHEMEPASSWORDENCODINGMECHANISMPROP_SHA_2_512 EnumpasswordStorageSchemePasswordEncodingMechanismProp = "sha-2-512"
 )
@@ -112,4 +112,3 @@ func (v *NullableEnumpasswordStorageSchemePasswordEncodingMechanismProp) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

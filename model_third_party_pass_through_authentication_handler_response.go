@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyPassThroughAuthenticationHandlerResponse struct for ThirdPartyPassThroughAuthenticationHandlerResponse
 type ThirdPartyPassThroughAuthenticationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Pass Through Authentication Handler
-	Id string `json:"id"`
+	Id      string                                                    `json:"id"`
 	Schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -62,7 +62,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetMeta() MetaMeta 
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetUrnpingidentitys
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetSchemas() []Enum
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetSchemasOk() ([]EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -175,7 +175,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetExtensionClass()
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -198,7 +198,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetExtensionArgumen
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -230,7 +230,7 @@ func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetDescription() st
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyPassThroughAuthenticationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -310,5 +310,3 @@ func (v *NullableThirdPartyPassThroughAuthenticationHandlerResponse) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

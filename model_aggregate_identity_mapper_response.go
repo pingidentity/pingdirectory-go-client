@@ -16,10 +16,10 @@ import (
 
 // AggregateIdentityMapperResponse struct for AggregateIdentityMapperResponse
 type AggregateIdentityMapperResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Identity Mapper
-	Id string `json:"id"`
+	Id      string                                 `json:"id"`
 	Schemas []EnumaggregateIdentityMapperSchemaUrn `json:"schemas"`
 	// The set of identity mappers that must all match the target entry. Each identity mapper must uniquely match the same target entry. If any of the identity mappers match multiple entries, if any of them match zero entries, or if any of them match different entries, then the mapping will fail.
 	AllIncludedIdentityMapper []string `json:"allIncludedIdentityMapper,omitempty"`
@@ -64,7 +64,7 @@ func (o *AggregateIdentityMapperResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *AggregateIdentityMapperResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *AggregateIdentityMapperResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -153,7 +153,7 @@ func (o *AggregateIdentityMapperResponse) GetSchemas() []EnumaggregateIdentityMa
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetSchemasOk() ([]EnumaggregateIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *AggregateIdentityMapperResponse) GetAllIncludedIdentityMapper() []strin
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetAllIncludedIdentityMapperOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedIdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedIdentityMapper, true
 }
@@ -208,7 +208,7 @@ func (o *AggregateIdentityMapperResponse) GetAnyIncludedIdentityMapper() []strin
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetAnyIncludedIdentityMapperOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedIdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedIdentityMapper, true
 }
@@ -240,7 +240,7 @@ func (o *AggregateIdentityMapperResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,7 +273,7 @@ func (o *AggregateIdentityMapperResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AggregateIdentityMapperResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -347,5 +347,3 @@ func (v *NullableAggregateIdentityMapperResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

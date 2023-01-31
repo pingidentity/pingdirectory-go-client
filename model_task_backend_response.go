@@ -16,15 +16,15 @@ import (
 
 // TaskBackendResponse struct for TaskBackendResponse
 type TaskBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumtaskBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumtaskBackendSchemaUrn                         `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// Specifies the base DN(s) for the data that the backend handles.
-	BaseDN []string `json:"baseDN"`
+	BaseDN          []string                       `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Specifies the path to the backing file for storing information about the tasks configured in the server.
 	TaskBackingFile string `json:"taskBackingFile"`
@@ -87,7 +87,7 @@ func (o *TaskBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -119,7 +119,7 @@ func (o *TaskBackendResponse) GetUrnpingidentityschemasconfigurationmessages20()
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -152,7 +152,7 @@ func (o *TaskBackendResponse) GetSchemas() []EnumtaskBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetSchemasOk() ([]EnumtaskBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *TaskBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -200,7 +200,7 @@ func (o *TaskBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -224,7 +224,7 @@ func (o *TaskBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -248,7 +248,7 @@ func (o *TaskBackendResponse) GetWritabilityMode() EnumbackendWritabilityModePro
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -272,7 +272,7 @@ func (o *TaskBackendResponse) GetTaskBackingFile() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetTaskBackingFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskBackingFile, true
 }
@@ -295,7 +295,7 @@ func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int32 {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumInitialTaskLogMessagesToRetain) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumInitialTaskLogMessagesToRetain, true
 }
@@ -327,7 +327,7 @@ func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int32 {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumFinalTaskLogMessagesToRetain) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumFinalTaskLogMessagesToRetain, true
 }
@@ -359,7 +359,7 @@ func (o *TaskBackendResponse) GetTaskRetentionTime() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetTaskRetentionTimeOk() (*string, bool) {
 	if o == nil || isNil(o.TaskRetentionTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.TaskRetentionTime, true
 }
@@ -391,7 +391,7 @@ func (o *TaskBackendResponse) GetNotificationSenderAddress() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetNotificationSenderAddressOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationSenderAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationSenderAddress, true
 }
@@ -423,7 +423,7 @@ func (o *TaskBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -456,7 +456,7 @@ func (o *TaskBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -479,7 +479,7 @@ func (o *TaskBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -511,7 +511,7 @@ func (o *TaskBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -543,7 +543,7 @@ func (o *TaskBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -575,7 +575,7 @@ func (o *TaskBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -688,5 +688,3 @@ func (v *NullableTaskBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,7 +20,7 @@ type EnumpassThroughAuthenticationHandlerServerAccessModeProp string
 
 // List of Enumpass-through-authentication-handler-serverAccessModeProp
 const (
-	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_ROUND_ROBIN EnumpassThroughAuthenticationHandlerServerAccessModeProp = "round-robin"
+	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_ROUND_ROBIN             EnumpassThroughAuthenticationHandlerServerAccessModeProp = "round-robin"
 	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_FAILOVER_ON_UNAVAILABLE EnumpassThroughAuthenticationHandlerServerAccessModeProp = "failover-on-unavailable"
 	ENUMPASSTHROUGHAUTHENTICATIONHANDLERSERVERACCESSMODEPROP_FAILOVER_ON_ANY_FAILURE EnumpassThroughAuthenticationHandlerServerAccessModeProp = "failover-on-any-failure"
 )
@@ -110,4 +110,3 @@ func (v *NullableEnumpassThroughAuthenticationHandlerServerAccessModeProp) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

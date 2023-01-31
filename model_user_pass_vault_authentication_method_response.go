@@ -16,10 +16,10 @@ import (
 
 // UserPassVaultAuthenticationMethodResponse struct for UserPassVaultAuthenticationMethodResponse
 type UserPassVaultAuthenticationMethodResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Vault Authentication Method
-	Id string `json:"id"`
+	Id      string                                           `json:"id"`
 	Schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
@@ -65,7 +65,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetUrnpingidentityschemascon
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetSchemas() []EnumuserPassV
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetSchemasOk() ([]EnumuserPassVaultAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetUsername() string {
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Username, true
 }
@@ -202,7 +202,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetPasswordOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Password, true
 }
@@ -225,7 +225,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetLoginMechanismName() stri
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetLoginMechanismNameOk() (*string, bool) {
 	if o == nil || isNil(o.LoginMechanismName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoginMechanismName, true
 }
@@ -257,7 +257,7 @@ func (o *UserPassVaultAuthenticationMethodResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *UserPassVaultAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -340,5 +340,3 @@ func (v *NullableUserPassVaultAuthenticationMethodResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

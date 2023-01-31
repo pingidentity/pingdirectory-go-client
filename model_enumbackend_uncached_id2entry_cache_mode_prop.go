@@ -20,14 +20,14 @@ type EnumbackendUncachedId2entryCacheModeProp string
 
 // List of Enumbackend-uncachedId2entryCacheModeProp
 const (
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_CACHE_KEYS_AND_VALUES EnumbackendUncachedId2entryCacheModeProp = "cache-keys-and-values"
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_CACHE_KEYS_ONLY EnumbackendUncachedId2entryCacheModeProp = "cache-keys-only"
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_NO_CACHING EnumbackendUncachedId2entryCacheModeProp = "no-caching"
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_KEEP_HOT EnumbackendUncachedId2entryCacheModeProp = "keep-hot"
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_DEFAULT EnumbackendUncachedId2entryCacheModeProp = "default"
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_MAKE_COLD EnumbackendUncachedId2entryCacheModeProp = "make-cold"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_CACHE_KEYS_AND_VALUES  EnumbackendUncachedId2entryCacheModeProp = "cache-keys-and-values"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_CACHE_KEYS_ONLY        EnumbackendUncachedId2entryCacheModeProp = "cache-keys-only"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_NO_CACHING             EnumbackendUncachedId2entryCacheModeProp = "no-caching"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_KEEP_HOT               EnumbackendUncachedId2entryCacheModeProp = "keep-hot"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_DEFAULT                EnumbackendUncachedId2entryCacheModeProp = "default"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_MAKE_COLD              EnumbackendUncachedId2entryCacheModeProp = "make-cold"
 	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_EVICT_LEAF_IMMEDIATELY EnumbackendUncachedId2entryCacheModeProp = "evict-leaf-immediately"
-	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_EVICT_BIN_IMMEDIATELY EnumbackendUncachedId2entryCacheModeProp = "evict-bin-immediately"
+	ENUMBACKENDUNCACHEDID2ENTRYCACHEMODEPROP_EVICT_BIN_IMMEDIATELY  EnumbackendUncachedId2entryCacheModeProp = "evict-bin-immediately"
 )
 
 // All allowed values of EnumbackendUncachedId2entryCacheModeProp enum
@@ -120,4 +120,3 @@ func (v *NullableEnumbackendUncachedId2entryCacheModeProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

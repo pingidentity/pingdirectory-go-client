@@ -17,8 +17,8 @@ import (
 // AddLockAccountFailureLockoutActionRequest struct for AddLockAccountFailureLockoutActionRequest
 type AddLockAccountFailureLockoutActionRequest struct {
 	// Name of the new Failure Lockout Action
-	ActionName string `json:"actionName"`
-	Schemas []EnumlockAccountFailureLockoutActionSchemaUrn `json:"schemas"`
+	ActionName string                                         `json:"actionName"`
+	Schemas    []EnumlockAccountFailureLockoutActionSchemaUrn `json:"schemas"`
 	// A description for this Failure Lockout Action
 	Description *string `json:"description,omitempty"`
 }
@@ -56,7 +56,7 @@ func (o *AddLockAccountFailureLockoutActionRequest) GetActionName() string {
 // and a boolean to check if the value has been set.
 func (o *AddLockAccountFailureLockoutActionRequest) GetActionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ActionName, true
 }
@@ -80,7 +80,7 @@ func (o *AddLockAccountFailureLockoutActionRequest) GetSchemas() []EnumlockAccou
 // and a boolean to check if the value has been set.
 func (o *AddLockAccountFailureLockoutActionRequest) GetSchemasOk() ([]EnumlockAccountFailureLockoutActionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -103,7 +103,7 @@ func (o *AddLockAccountFailureLockoutActionRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddLockAccountFailureLockoutActionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -171,5 +171,3 @@ func (v *NullableAddLockAccountFailureLockoutActionRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

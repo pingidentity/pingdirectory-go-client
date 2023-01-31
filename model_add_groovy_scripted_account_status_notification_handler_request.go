@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedAccountStatusNotificationHandlerRequest struct for AddGroovyScriptedAccountStatusNotificationHandlerRequest
 type AddGroovyScriptedAccountStatusNotificationHandlerRequest struct {
 	// Name of the new Account Status Notification Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                        `json:"handlerName"`
+	Schemas     []EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Account Status Notification Handler.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Account Status Notification Handler. Each configuration property should be given in the form 'name=value'.
@@ -70,7 +70,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerNam
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -94,7 +94,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetSchemas() 
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetSchemasOk() ([]EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptClas
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -141,7 +141,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptArgu
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -173,7 +173,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetDescriptio
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -206,7 +206,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetEnabled() 
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -229,7 +229,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAsynchrono
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -261,7 +261,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountCre
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -293,7 +293,7 @@ func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountUpd
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedAccountStatusNotificationHandlerRequest) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -379,5 +379,3 @@ func (v *NullableAddGroovyScriptedAccountStatusNotificationHandlerRequest) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

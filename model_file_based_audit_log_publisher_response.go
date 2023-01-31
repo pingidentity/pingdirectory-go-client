@@ -16,10 +16,10 @@ import (
 
 // FileBasedAuditLogPublisherResponse struct for FileBasedAuditLogPublisherResponse
 type FileBasedAuditLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumfileBasedAuditLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether internal operations (for example, operations that are initiated by plugins) should be logged along with the operations that are requested by users.
 	SuppressInternalOperations *bool `json:"suppressInternalOperations,omitempty"`
@@ -32,7 +32,7 @@ type FileBasedAuditLogPublisherResponse struct {
 	// A listener that should be notified whenever a log file is rotated out of service.
 	RotationListener []string `json:"rotationListener,omitempty"`
 	// The retention policy to use for the File Based Audit Log Publisher .
-	RetentionPolicy []string `json:"retentionPolicy"`
+	RetentionPolicy      []string                                  `json:"retentionPolicy"`
 	CompressionMechanism *EnumlogPublisherCompressionMechanismProp `json:"compressionMechanism,omitempty"`
 	// Indicates whether the log should be cryptographically signed so that the log content cannot be altered in an undetectable manner.
 	SignLog *bool `json:"signLog,omitempty"`
@@ -57,7 +57,7 @@ type FileBasedAuditLogPublisherResponse struct {
 	// Indicates whether to log information about the replication change ID.
 	IncludeReplicationChangeID *bool `json:"includeReplicationChangeID,omitempty"`
 	// Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
-	UseReversibleForm *bool `json:"useReversibleForm,omitempty"`
+	UseReversibleForm            *bool                                             `json:"useReversibleForm,omitempty"`
 	SoftDeleteEntryAuditBehavior *EnumlogPublisherSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
 	// Indicates whether log messages for operation requests should include a list of the OIDs of any controls included in the request.
 	IncludeRequestControls *bool `json:"includeRequestControls,omitempty"`
@@ -78,7 +78,7 @@ type FileBasedAuditLogPublisherResponse struct {
 	// The maximum number of log records that can be stored in the asynchronous queue.
 	QueueSize *int32 `json:"queueSize,omitempty"`
 	// Specifies the interval at which to check whether the log files need to be rotated.
-	TimeInterval *string `json:"timeInterval,omitempty"`
+	TimeInterval       *string                                 `json:"timeInterval,omitempty"`
 	TimestampPrecision *EnumlogPublisherTimestampPrecisionProp `json:"timestampPrecision,omitempty"`
 	// Indicates whether to log information about the result of any security negotiation (e.g., SSL handshake) processing that has been performed.
 	LogSecurityNegotiation *bool `json:"logSecurityNegotiation,omitempty"`
@@ -95,7 +95,7 @@ type FileBasedAuditLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -137,7 +137,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -169,7 +169,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -202,7 +202,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -226,7 +226,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetSchemas() []EnumfileBasedAuditLo
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetSchemasOk() ([]EnumfileBasedAuditLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -249,7 +249,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetSuppressInternalOperations() boo
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -282,7 +282,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetLogFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetLogFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFile, true
 }
@@ -306,7 +306,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetLogFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetLogFilePermissionsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFilePermissions, true
 }
@@ -330,7 +330,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetRotationPolicy() []string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetRotationPolicyOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RotationPolicy, true
 }
@@ -353,7 +353,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetRotationListener() []string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetRotationListenerOk() ([]string, bool) {
 	if o == nil || isNil(o.RotationListener) {
-    return nil, false
+		return nil, false
 	}
 	return o.RotationListener, true
 }
@@ -386,7 +386,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetRetentionPolicy() []string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetRetentionPolicyOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RetentionPolicy, true
 }
@@ -409,7 +409,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetCompressionMechanism() EnumlogPu
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
 	if o == nil || isNil(o.CompressionMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompressionMechanism, true
 }
@@ -441,7 +441,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetSignLog() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetSignLogOk() (*bool, bool) {
 	if o == nil || isNil(o.SignLog) {
-    return nil, false
+		return nil, false
 	}
 	return o.SignLog, true
 }
@@ -473,7 +473,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetEncryptLog() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
 	if o == nil || isNil(o.EncryptLog) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptLog, true
 }
@@ -505,7 +505,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetEncryptionSettingsDefinitionID()
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
 }
@@ -537,7 +537,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetAppend() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetAppendOk() (*bool, bool) {
 	if o == nil || isNil(o.Append) {
-    return nil, false
+		return nil, false
 	}
 	return o.Append, true
 }
@@ -569,7 +569,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -601,7 +601,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -633,7 +633,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -665,7 +665,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -697,7 +697,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeRequesterIPAddress() bool
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeRequesterIPAddressOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterIPAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
 }
@@ -729,7 +729,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeRequesterDN() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeRequesterDNOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterDN, true
 }
@@ -761,7 +761,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeReplicationChangeID() boo
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeReplicationChangeIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeReplicationChangeID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
 }
@@ -793,7 +793,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetUseReversibleForm() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetUseReversibleFormOk() (*bool, bool) {
 	if o == nil || isNil(o.UseReversibleForm) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseReversibleForm, true
 }
@@ -825,7 +825,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehavior() E
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool) {
 	if o == nil || isNil(o.SoftDeleteEntryAuditBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.SoftDeleteEntryAuditBehavior, true
 }
@@ -857,7 +857,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeRequestControls() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeRequestControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestControls, true
 }
@@ -889,7 +889,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeOperationPurposeRequestCo
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeOperationPurposeRequestControlOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeOperationPurposeRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeOperationPurposeRequestControl, true
 }
@@ -921,7 +921,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetIncludeIntermediateClientRequest
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetIncludeIntermediateClientRequestControlOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeIntermediateClientRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeIntermediateClientRequestControl, true
 }
@@ -953,7 +953,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetObscureAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetObscureAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ObscureAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ObscureAttribute, true
 }
@@ -985,7 +985,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetExcludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetExcludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeAttribute, true
 }
@@ -1018,7 +1018,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Asynchronous, true
 }
@@ -1041,7 +1041,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetAutoFlush() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
 	if o == nil || isNil(o.AutoFlush) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoFlush, true
 }
@@ -1073,7 +1073,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetBufferSize() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
 	if o == nil || isNil(o.BufferSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.BufferSize, true
 }
@@ -1105,7 +1105,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -1137,7 +1137,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetTimeInterval() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.TimeInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeInterval, true
 }
@@ -1169,7 +1169,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetTimestampPrecision() EnumlogPubl
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetTimestampPrecisionOk() (*EnumlogPublisherTimestampPrecisionProp, bool) {
 	if o == nil || isNil(o.TimestampPrecision) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimestampPrecision, true
 }
@@ -1201,7 +1201,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetLogSecurityNegotiation() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -1233,7 +1233,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetLogIntermediateResponses() bool 
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -1265,7 +1265,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetSuppressReplicationOperations() 
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -1297,7 +1297,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -1329,7 +1329,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -1361,7 +1361,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -1393,7 +1393,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1426,7 +1426,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1449,7 +1449,7 @@ func (o *FileBasedAuditLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPu
 // and a boolean to check if the value has been set.
 func (o *FileBasedAuditLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1640,5 +1640,3 @@ func (v *NullableFileBasedAuditLogPublisherResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // TrustedCertificateApiService TrustedCertificateApi service
 type TrustedCertificateApiService service
 
 type ApiAddTrustedCertificateRequest struct {
-	ctx context.Context
-	ApiService *TrustedCertificateApiService
+	ctx                          context.Context
+	ApiService                   *TrustedCertificateApiService
 	addTrustedCertificateRequest *AddTrustedCertificateRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddTrustedCertificateRequest) Execute() (*TrustedCertificateResponse,
 /*
 AddTrustedCertificate Add a new Trusted Certificate to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddTrustedCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) AddTrustedCertificate(ctx context.Context) ApiAddTrustedCertificateRequest {
 	return ApiAddTrustedCertificateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TrustedCertificateResponse
+//
+//	@return TrustedCertificateResponse
 func (a *TrustedCertificateApiService) AddTrustedCertificateExecute(r ApiAddTrustedCertificateRequest) (*TrustedCertificateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TrustedCertificateResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TrustedCertificateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedCertificateApiService.AddTrustedCertificate")
@@ -133,8 +133,8 @@ func (a *TrustedCertificateApiService) AddTrustedCertificateExecute(r ApiAddTrus
 }
 
 type ApiDeleteTrustedCertificateRequest struct {
-	ctx context.Context
-	ApiService *TrustedCertificateApiService
+	ctx                    context.Context
+	ApiService             *TrustedCertificateApiService
 	trustedCertificateName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteTrustedCertificateRequest) Execute() (*http.Response, error) {
 /*
 DeleteTrustedCertificate Delete a Trusted Certificate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param trustedCertificateName Name of the Trusted Certificate to be deleted
- @return ApiDeleteTrustedCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param trustedCertificateName Name of the Trusted Certificate to be deleted
+	@return ApiDeleteTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) DeleteTrustedCertificate(ctx context.Context, trustedCertificateName string) ApiDeleteTrustedCertificateRequest {
 	return ApiDeleteTrustedCertificateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		trustedCertificateName: trustedCertificateName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *TrustedCertificateApiService) DeleteTrustedCertificate(ctx context.Cont
 // Execute executes the request
 func (a *TrustedCertificateApiService) DeleteTrustedCertificateExecute(r ApiDeleteTrustedCertificateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedCertificateApiService.DeleteTrustedCertificate")
@@ -223,8 +223,8 @@ func (a *TrustedCertificateApiService) DeleteTrustedCertificateExecute(r ApiDele
 }
 
 type ApiGetTrustedCertificateRequest struct {
-	ctx context.Context
-	ApiService *TrustedCertificateApiService
+	ctx                    context.Context
+	ApiService             *TrustedCertificateApiService
 	trustedCertificateName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetTrustedCertificateRequest) Execute() (*TrustedCertificateResponse,
 /*
 GetTrustedCertificate Returns a single Trusted Certificate
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param trustedCertificateName Name of the Trusted Certificate to be read
- @return ApiGetTrustedCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param trustedCertificateName Name of the Trusted Certificate to be read
+	@return ApiGetTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) GetTrustedCertificate(ctx context.Context, trustedCertificateName string) ApiGetTrustedCertificateRequest {
 	return ApiGetTrustedCertificateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		trustedCertificateName: trustedCertificateName,
 	}
 }
 
 // Execute executes the request
-//  @return TrustedCertificateResponse
+//
+//	@return TrustedCertificateResponse
 func (a *TrustedCertificateApiService) GetTrustedCertificateExecute(r ApiGetTrustedCertificateRequest) (*TrustedCertificateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TrustedCertificateResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TrustedCertificateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedCertificateApiService.GetTrustedCertificate")
@@ -324,10 +325,10 @@ func (a *TrustedCertificateApiService) GetTrustedCertificateExecute(r ApiGetTrus
 }
 
 type ApiUpdateTrustedCertificateRequest struct {
-	ctx context.Context
-	ApiService *TrustedCertificateApiService
+	ctx                    context.Context
+	ApiService             *TrustedCertificateApiService
 	trustedCertificateName string
-	updateRequest *UpdateRequest
+	updateRequest          *UpdateRequest
 }
 
 // Update an existing Trusted Certificate
@@ -343,26 +344,27 @@ func (r ApiUpdateTrustedCertificateRequest) Execute() (*TrustedCertificateRespon
 /*
 UpdateTrustedCertificate Update an existing Trusted Certificate by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param trustedCertificateName Name of the Trusted Certificate to be updated
- @return ApiUpdateTrustedCertificateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param trustedCertificateName Name of the Trusted Certificate to be updated
+	@return ApiUpdateTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) UpdateTrustedCertificate(ctx context.Context, trustedCertificateName string) ApiUpdateTrustedCertificateRequest {
 	return ApiUpdateTrustedCertificateRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		trustedCertificateName: trustedCertificateName,
 	}
 }
 
 // Execute executes the request
-//  @return TrustedCertificateResponse
+//
+//	@return TrustedCertificateResponse
 func (a *TrustedCertificateApiService) UpdateTrustedCertificateExecute(r ApiUpdateTrustedCertificateRequest) (*TrustedCertificateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TrustedCertificateResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TrustedCertificateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrustedCertificateApiService.UpdateTrustedCertificate")

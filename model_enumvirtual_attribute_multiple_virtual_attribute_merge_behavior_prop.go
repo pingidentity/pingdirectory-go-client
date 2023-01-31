@@ -20,9 +20,9 @@ type EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp string
 
 // List of Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp
 const (
-	ENUMVIRTUALATTRIBUTEMULTIPLEVIRTUALATTRIBUTEMERGEBEHAVIORPROP_FIRST_DEFINITION EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp = "use-first-definition"
+	ENUMVIRTUALATTRIBUTEMULTIPLEVIRTUALATTRIBUTEMERGEBEHAVIORPROP_FIRST_DEFINITION                                        EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp = "use-first-definition"
 	ENUMVIRTUALATTRIBUTEMULTIPLEVIRTUALATTRIBUTEMERGEBEHAVIORPROP_ONLY_DEFINITIONS_WITH_THE_LOWEST_EVALUATION_ORDER_INDEX EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp = "use-only-definitions-with-the-lowest-evaluation-order-index"
-	ENUMVIRTUALATTRIBUTEMULTIPLEVIRTUALATTRIBUTEMERGEBEHAVIORPROP_ALL_DEFINITIONS EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp = "use-all-definitions"
+	ENUMVIRTUALATTRIBUTEMULTIPLEVIRTUALATTRIBUTEMERGEBEHAVIORPROP_ALL_DEFINITIONS                                         EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp = "use-all-definitions"
 )
 
 // All allowed values of EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

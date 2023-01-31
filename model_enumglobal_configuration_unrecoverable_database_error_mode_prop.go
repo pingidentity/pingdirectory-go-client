@@ -20,8 +20,8 @@ type EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp string
 
 // List of Enumglobal-configuration-unrecoverableDatabaseErrorModeProp
 const (
-	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_ENTER_LOCKDOWN_MODE EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "enter-lockdown-mode"
-	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_RAISE_UNAVAILABLE_ALARM EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "raise-unavailable-alarm"
+	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_ENTER_LOCKDOWN_MODE      EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "enter-lockdown-mode"
+	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_RAISE_UNAVAILABLE_ALARM  EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "raise-unavailable-alarm"
 	ENUMGLOBALCONFIGURATIONUNRECOVERABLEDATABASEERRORMODEPROP_INITIATE_SERVER_SHUTDOWN EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp = "initiate-server-shutdown"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumglobalConfigurationUnrecoverableDatabaseErrorModeProp) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

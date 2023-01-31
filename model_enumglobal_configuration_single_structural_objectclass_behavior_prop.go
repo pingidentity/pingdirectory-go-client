@@ -22,7 +22,7 @@ type EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp string
 const (
 	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_ACCEPT EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "accept"
 	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_REJECT EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "reject"
-	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_WARN EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "warn"
+	ENUMGLOBALCONFIGURATIONSINGLESTRUCTURALOBJECTCLASSBEHAVIORPROP_WARN   EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp = "warn"
 )
 
 // All allowed values of EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumglobalConfigurationSingleStructuralObjectclassBehaviorProp)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

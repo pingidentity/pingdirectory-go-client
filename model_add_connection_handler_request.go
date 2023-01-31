@@ -18,7 +18,7 @@ import (
 // AddConnectionHandlerRequest - struct for AddConnectionHandlerRequest
 type AddConnectionHandlerRequest struct {
 	AddHttpConnectionHandlerRequest *AddHttpConnectionHandlerRequest
-	AddJmxConnectionHandlerRequest *AddJmxConnectionHandlerRequest
+	AddJmxConnectionHandlerRequest  *AddJmxConnectionHandlerRequest
 	AddLdapConnectionHandlerRequest *AddLdapConnectionHandlerRequest
 	AddLdifConnectionHandlerRequest *AddLdifConnectionHandlerRequest
 }
@@ -50,7 +50,6 @@ func AddLdifConnectionHandlerRequestAsAddConnectionHandlerRequest(v *AddLdifConn
 		AddLdifConnectionHandlerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddConnectionHandlerRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddConnectionHandlerRequest) GetActualInstance() (interface{}) {
+func (obj *AddConnectionHandlerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddConnectionHandlerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

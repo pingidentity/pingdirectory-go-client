@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedAccessLogPublisherResponse struct for GroovyScriptedAccessLogPublisherResponse
 type GroovyScriptedAccessLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumgroovyScriptedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Access Log Publisher.
 	ScriptClass string `json:"scriptClass"`
@@ -62,7 +62,7 @@ type GroovyScriptedAccessLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -100,7 +100,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -132,7 +132,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -165,7 +165,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -189,7 +189,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetSchemas() []EnumgroovyScri
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetSchemasOk() ([]EnumgroovyScriptedAccessLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -213,7 +213,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -236,7 +236,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetScriptArgument() []string 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -268,7 +268,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogConnects() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogConnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogConnects, true
 }
@@ -300,7 +300,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogDisconnects() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogDisconnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDisconnects, true
 }
@@ -332,7 +332,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogSecurityNegotiation() b
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -364,7 +364,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogClientCertificates() bo
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogClientCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogClientCertificates, true
 }
@@ -396,7 +396,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogRequests, true
 }
@@ -428,7 +428,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogResults() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogResults, true
 }
@@ -460,7 +460,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogSearchEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchEntries, true
 }
@@ -492,7 +492,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogSearchReferences() bool
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchReferences) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchReferences, true
 }
@@ -524,7 +524,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLogIntermediateResponses()
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -556,7 +556,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetSuppressInternalOperations
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -588,7 +588,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetSuppressReplicationOperati
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -620,7 +620,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetCorrelateRequestsAndResult
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorrelateRequestsAndResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
 }
@@ -652,7 +652,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetConnectionCriteria() strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -684,7 +684,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -716,7 +716,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -748,7 +748,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetSearchEntryCriteria() stri
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryCriteria, true
 }
@@ -780,7 +780,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetSearchReferenceCriteria() 
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
 }
@@ -812,7 +812,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -845,7 +845,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -868,7 +868,7 @@ func (o *GroovyScriptedAccessLogPublisherResponse) GetLoggingErrorBehavior() Enu
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1005,5 +1005,3 @@ func (v *NullableGroovyScriptedAccessLogPublisherResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // ObscuredValueResponse struct for ObscuredValueResponse
 type ObscuredValueResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Obscured Value
-	Id string `json:"id"`
+	Id      string                       `json:"id"`
 	Schemas []EnumobscuredValueSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Obscured Value
 	Description *string `json:"description,omitempty"`
@@ -59,7 +59,7 @@ func (o *ObscuredValueResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValueResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -91,7 +91,7 @@ func (o *ObscuredValueResponse) GetUrnpingidentityschemasconfigurationmessages20
 // and a boolean to check if the value has been set.
 func (o *ObscuredValueResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -124,7 +124,7 @@ func (o *ObscuredValueResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValueResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -147,7 +147,7 @@ func (o *ObscuredValueResponse) GetSchemas() []EnumobscuredValueSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValueResponse) GetSchemasOk() ([]EnumobscuredValueSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *ObscuredValueResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValueResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -212,7 +212,7 @@ func (o *ObscuredValueResponse) GetObscuredValue() string {
 // and a boolean to check if the value has been set.
 func (o *ObscuredValueResponse) GetObscuredValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ObscuredValue, true
 }
@@ -280,5 +280,3 @@ func (v *NullableObscuredValueResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

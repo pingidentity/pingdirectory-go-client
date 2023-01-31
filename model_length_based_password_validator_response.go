@@ -16,10 +16,10 @@ import (
 
 // LengthBasedPasswordValidatorResponse struct for LengthBasedPasswordValidatorResponse
 type LengthBasedPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumlengthBasedPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the maximum number of characters that can be included in a proposed password.
 	MaxPasswordLength *int32 `json:"maxPasswordLength,omitempty"`
@@ -68,7 +68,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetSchemas() []EnumlengthBasedPas
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetSchemasOk() ([]EnumlengthBasedPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -212,7 +212,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetMinPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MinPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinPasswordLength, true
 }
@@ -244,7 +244,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -277,7 +277,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -300,7 +300,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetValidatorRequirementDescriptio
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -332,7 +332,7 @@ func (o *LengthBasedPasswordValidatorResponse) GetValidatorFailureMessage() stri
 // and a boolean to check if the value has been set.
 func (o *LengthBasedPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -421,5 +421,3 @@ func (v *NullableLengthBasedPasswordValidatorResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

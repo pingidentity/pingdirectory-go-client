@@ -20,7 +20,7 @@ type EnumsaslMechanismHandlerGssapiRoleProp string
 
 // List of Enumsasl-mechanism-handler-gssapiRoleProp
 const (
-	ENUMSASLMECHANISMHANDLERGSSAPIROLEPROP_ACCEPTOR EnumsaslMechanismHandlerGssapiRoleProp = "acceptor"
+	ENUMSASLMECHANISMHANDLERGSSAPIROLEPROP_ACCEPTOR  EnumsaslMechanismHandlerGssapiRoleProp = "acceptor"
 	ENUMSASLMECHANISMHANDLERGSSAPIROLEPROP_INITIATOR EnumsaslMechanismHandlerGssapiRoleProp = "initiator"
 )
 
@@ -108,4 +108,3 @@ func (v *NullableEnumsaslMechanismHandlerGssapiRoleProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

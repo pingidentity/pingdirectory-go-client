@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // VirtualAttributeApiService VirtualAttributeApi service
 type VirtualAttributeApiService service
 
 type ApiAddVirtualAttributeRequest struct {
-	ctx context.Context
-	ApiService *VirtualAttributeApiService
+	ctx                        context.Context
+	ApiService                 *VirtualAttributeApiService
 	addVirtualAttributeRequest *AddVirtualAttributeRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddVirtualAttributeRequest) Execute() (*AddVirtualAttribute200Respons
 /*
 AddVirtualAttribute Add a new Virtual Attribute to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVirtualAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) AddVirtualAttribute(ctx context.Context) ApiAddVirtualAttributeRequest {
 	return ApiAddVirtualAttributeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddVirtualAttribute200Response
+//
+//	@return AddVirtualAttribute200Response
 func (a *VirtualAttributeApiService) AddVirtualAttributeExecute(r ApiAddVirtualAttributeRequest) (*AddVirtualAttribute200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddVirtualAttribute200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddVirtualAttribute200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualAttributeApiService.AddVirtualAttribute")
@@ -133,8 +133,8 @@ func (a *VirtualAttributeApiService) AddVirtualAttributeExecute(r ApiAddVirtualA
 }
 
 type ApiDeleteVirtualAttributeRequest struct {
-	ctx context.Context
-	ApiService *VirtualAttributeApiService
+	ctx                  context.Context
+	ApiService           *VirtualAttributeApiService
 	virtualAttributeName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteVirtualAttributeRequest) Execute() (*http.Response, error) {
 /*
 DeleteVirtualAttribute Delete a Virtual Attribute
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualAttributeName Name of the Virtual Attribute to be deleted
- @return ApiDeleteVirtualAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualAttributeName Name of the Virtual Attribute to be deleted
+	@return ApiDeleteVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) DeleteVirtualAttribute(ctx context.Context, virtualAttributeName string) ApiDeleteVirtualAttributeRequest {
 	return ApiDeleteVirtualAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		virtualAttributeName: virtualAttributeName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *VirtualAttributeApiService) DeleteVirtualAttribute(ctx context.Context,
 // Execute executes the request
 func (a *VirtualAttributeApiService) DeleteVirtualAttributeExecute(r ApiDeleteVirtualAttributeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualAttributeApiService.DeleteVirtualAttribute")
@@ -223,8 +223,8 @@ func (a *VirtualAttributeApiService) DeleteVirtualAttributeExecute(r ApiDeleteVi
 }
 
 type ApiGetVirtualAttributeRequest struct {
-	ctx context.Context
-	ApiService *VirtualAttributeApiService
+	ctx                  context.Context
+	ApiService           *VirtualAttributeApiService
 	virtualAttributeName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetVirtualAttributeRequest) Execute() (*GetVirtualAttribute200Respons
 /*
 GetVirtualAttribute Returns a single Virtual Attribute
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualAttributeName Name of the Virtual Attribute to be read
- @return ApiGetVirtualAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualAttributeName Name of the Virtual Attribute to be read
+	@return ApiGetVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) GetVirtualAttribute(ctx context.Context, virtualAttributeName string) ApiGetVirtualAttributeRequest {
 	return ApiGetVirtualAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		virtualAttributeName: virtualAttributeName,
 	}
 }
 
 // Execute executes the request
-//  @return GetVirtualAttribute200Response
+//
+//	@return GetVirtualAttribute200Response
 func (a *VirtualAttributeApiService) GetVirtualAttributeExecute(r ApiGetVirtualAttributeRequest) (*GetVirtualAttribute200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetVirtualAttribute200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetVirtualAttribute200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualAttributeApiService.GetVirtualAttribute")
@@ -324,10 +325,10 @@ func (a *VirtualAttributeApiService) GetVirtualAttributeExecute(r ApiGetVirtualA
 }
 
 type ApiUpdateVirtualAttributeRequest struct {
-	ctx context.Context
-	ApiService *VirtualAttributeApiService
+	ctx                  context.Context
+	ApiService           *VirtualAttributeApiService
 	virtualAttributeName string
-	updateRequest *UpdateRequest
+	updateRequest        *UpdateRequest
 }
 
 // Update an existing Virtual Attribute
@@ -343,26 +344,27 @@ func (r ApiUpdateVirtualAttributeRequest) Execute() (*GetVirtualAttribute200Resp
 /*
 UpdateVirtualAttribute Update an existing Virtual Attribute by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param virtualAttributeName Name of the Virtual Attribute to be updated
- @return ApiUpdateVirtualAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param virtualAttributeName Name of the Virtual Attribute to be updated
+	@return ApiUpdateVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) UpdateVirtualAttribute(ctx context.Context, virtualAttributeName string) ApiUpdateVirtualAttributeRequest {
 	return ApiUpdateVirtualAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		virtualAttributeName: virtualAttributeName,
 	}
 }
 
 // Execute executes the request
-//  @return GetVirtualAttribute200Response
+//
+//	@return GetVirtualAttribute200Response
 func (a *VirtualAttributeApiService) UpdateVirtualAttributeExecute(r ApiUpdateVirtualAttributeRequest) (*GetVirtualAttribute200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetVirtualAttribute200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetVirtualAttribute200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VirtualAttributeApiService.UpdateVirtualAttribute")

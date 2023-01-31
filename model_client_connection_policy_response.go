@@ -16,10 +16,10 @@ import (
 
 // ClientConnectionPolicyResponse struct for ClientConnectionPolicyResponse
 type ClientConnectionPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Client Connection Policy
-	Id string `json:"id"`
+	Id      string                                `json:"id"`
 	Schemas []EnumclientConnectionPolicySchemaUrn `json:"schemas,omitempty"`
 	// Specifies a name which uniquely identifies this Client Connection Policy in the server.
 	PolicyID string `json:"policyID"`
@@ -42,8 +42,8 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the set of backend base DNs for which subtree views should be included in this Client Connection Policy.
 	IncludedBackendBaseDN []string `json:"includedBackendBaseDN,omitempty"`
 	// Specifies the set of backend base DNs for which subtree views should be excluded from this Client Connection Policy.
-	ExcludedBackendBaseDN []string `json:"excludedBackendBaseDN,omitempty"`
-	AllowedOperation []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation"`
+	ExcludedBackendBaseDN []string                                         `json:"excludedBackendBaseDN,omitempty"`
+	AllowedOperation      []EnumclientConnectionPolicyAllowedOperationProp `json:"allowedOperation"`
 	// Specifies a request criteria object that will be required to match all requests submitted by clients associated with this Client Connection Policy. If a client submits a request that does not satisfy this request criteria object, then that request will be rejected.
 	RequiredOperationRequestCriteria *string `json:"requiredOperationRequestCriteria,omitempty"`
 	// Specifies a request criteria object that must not match any requests submitted by clients associated with this Client Connection Policy. If a client submits a request that satisfies this request criteria object, then that request will be rejected.
@@ -55,13 +55,13 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedExtendedOperation []string `json:"allowedExtendedOperation,omitempty"`
 	// Specifies the OIDs of the extended operations that clients associated with this Client Connection Policy will not be allowed to request.
-	DeniedExtendedOperation []string `json:"deniedExtendedOperation,omitempty"`
-	AllowedAuthType []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType"`
+	DeniedExtendedOperation []string                                        `json:"deniedExtendedOperation,omitempty"`
+	AllowedAuthType         []EnumclientConnectionPolicyAllowedAuthTypeProp `json:"allowedAuthType"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will be allowed to request.
 	AllowedSASLMechanism []string `json:"allowedSASLMechanism,omitempty"`
 	// Specifies the names of the SASL mechanisms that clients associated with this Client Connection Policy will not be allowed to request.
-	DeniedSASLMechanism []string `json:"deniedSASLMechanism,omitempty"`
-	AllowedFilterType []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
+	DeniedSASLMechanism []string                                          `json:"deniedSASLMechanism,omitempty"`
+	AllowedFilterType   []EnumclientConnectionPolicyAllowedFilterTypeProp `json:"allowedFilterType,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend. Note that even if this is false, some clients may be able to request unindexed searches if the allow-unindexed-searches-with-control property has a value of true and the necessary conditions are satisfied.
 	AllowUnindexedSearches *bool `json:"allowUnindexedSearches,omitempty"`
 	// Indicates whether clients will be allowed to request search operations that cannot be efficiently processed using the set of indexes defined in the corresponding backend, as long as the search request also includes the permit unindexed search request control and the requester has the unindexed-search-with-control privilege (or that privilege is disabled in the global configuration).
@@ -79,13 +79,13 @@ type ClientConnectionPolicyResponse struct {
 	// Specifies the maximum number of concurrent operations that can be in progress for any connection. This can help prevent a single client connection from monopolizing server processing resources by sending a large number of concurrent asynchronous requests. A value of zero indicates that no limit will be placed on the number of concurrent requests for a single client.
 	MaximumConcurrentOperationsPerConnection *int32 `json:"maximumConcurrentOperationsPerConnection,omitempty"`
 	// Specifies the maximum length of time that the server should wait for an outstanding operation to complete before rejecting a new request received when the maximum number of outstanding operations are already in progress on that connection. If an existing outstanding operation on the connection completes before this time, then the operation will be processed. Otherwise, the operation will be rejected with a \"busy\" result.
-	MaximumConcurrentOperationWaitTimeBeforeRejecting *string `json:"maximumConcurrentOperationWaitTimeBeforeRejecting,omitempty"`
+	MaximumConcurrentOperationWaitTimeBeforeRejecting        *string                                                                                 `json:"maximumConcurrentOperationWaitTimeBeforeRejecting,omitempty"`
 	MaximumConcurrentOperationsPerConnectionExceededBehavior *EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp `json:"maximumConcurrentOperationsPerConnectionExceededBehavior,omitempty"`
 	// Specifies the maximum rate at which a client associated with this Client Connection Policy may issue requests to the Directory Server. If any client attempts to request operations at a rate higher than this limit, then the server will exhibit the behavior described in the connection-operation-rate-exceeded-behavior property.
-	MaximumConnectionOperationRate []string `json:"maximumConnectionOperationRate,omitempty"`
+	MaximumConnectionOperationRate          []string                                                               `json:"maximumConnectionOperationRate,omitempty"`
 	ConnectionOperationRateExceededBehavior *EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp `json:"connectionOperationRateExceededBehavior,omitempty"`
 	// Specifies the maximum rate at which all clients associated with this Client Connection Policy, as a collective set, may issue requests to the Directory Server. If this limit is exceeded, then the server will exhibit the behavior described in the policy-operation-rate-exceeded-behavior property.
-	MaximumPolicyOperationRate []string `json:"maximumPolicyOperationRate,omitempty"`
+	MaximumPolicyOperationRate          []string                                                           `json:"maximumPolicyOperationRate,omitempty"`
 	PolicyOperationRateExceededBehavior *EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp `json:"policyOperationRateExceededBehavior,omitempty"`
 	// Specifies the maximum number of entries that may be returned for a search performed by a client associated with this Client Connection Policy.
 	MaximumSearchSizeLimit *int32 `json:"maximumSearchSizeLimit,omitempty"`
@@ -135,7 +135,7 @@ func (o *ClientConnectionPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -167,7 +167,7 @@ func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -200,7 +200,7 @@ func (o *ClientConnectionPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -223,7 +223,7 @@ func (o *ClientConnectionPolicyResponse) GetSchemas() []EnumclientConnectionPoli
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetSchemasOk() ([]EnumclientConnectionPolicySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -256,7 +256,7 @@ func (o *ClientConnectionPolicyResponse) GetPolicyID() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetPolicyIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyID, true
 }
@@ -279,7 +279,7 @@ func (o *ClientConnectionPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -312,7 +312,7 @@ func (o *ClientConnectionPolicyResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -336,7 +336,7 @@ func (o *ClientConnectionPolicyResponse) GetEvaluationOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -359,7 +359,7 @@ func (o *ClientConnectionPolicyResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -391,7 +391,7 @@ func (o *ClientConnectionPolicyResponse) GetTerminateConnection() bool {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetTerminateConnectionOk() (*bool, bool) {
 	if o == nil || isNil(o.TerminateConnection) {
-    return nil, false
+		return nil, false
 	}
 	return o.TerminateConnection, true
 }
@@ -423,7 +423,7 @@ func (o *ClientConnectionPolicyResponse) GetSensitiveAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetSensitiveAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.SensitiveAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.SensitiveAttribute, true
 }
@@ -455,7 +455,7 @@ func (o *ClientConnectionPolicyResponse) GetExcludeGlobalSensitiveAttribute() []
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetExcludeGlobalSensitiveAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeGlobalSensitiveAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeGlobalSensitiveAttribute, true
 }
@@ -487,7 +487,7 @@ func (o *ClientConnectionPolicyResponse) GetResultCodeMap() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetResultCodeMapOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCodeMap) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCodeMap, true
 }
@@ -519,7 +519,7 @@ func (o *ClientConnectionPolicyResponse) GetIncludedBackendBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetIncludedBackendBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedBackendBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedBackendBaseDN, true
 }
@@ -551,7 +551,7 @@ func (o *ClientConnectionPolicyResponse) GetExcludedBackendBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetExcludedBackendBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedBackendBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedBackendBaseDN, true
 }
@@ -584,7 +584,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedOperation() []EnumclientConne
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedOperationOk() ([]EnumclientConnectionPolicyAllowedOperationProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedOperation, true
 }
@@ -607,7 +607,7 @@ func (o *ClientConnectionPolicyResponse) GetRequiredOperationRequestCriteria() s
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetRequiredOperationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequiredOperationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequiredOperationRequestCriteria, true
 }
@@ -639,7 +639,7 @@ func (o *ClientConnectionPolicyResponse) GetProhibitedOperationRequestCriteria()
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetProhibitedOperationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ProhibitedOperationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ProhibitedOperationRequestCriteria, true
 }
@@ -671,7 +671,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedRequestControl() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedRequestControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedRequestControl, true
 }
@@ -703,7 +703,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedRequestControl() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDeniedRequestControlOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedRequestControl, true
 }
@@ -735,7 +735,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedExtendedOperation() []string 
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedExtendedOperationOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedExtendedOperation) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedExtendedOperation, true
 }
@@ -767,7 +767,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedExtendedOperation() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDeniedExtendedOperationOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedExtendedOperation) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedExtendedOperation, true
 }
@@ -800,7 +800,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedAuthType() []EnumclientConnec
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedAuthTypeOk() ([]EnumclientConnectionPolicyAllowedAuthTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedAuthType, true
 }
@@ -823,7 +823,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedSASLMechanism() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedSASLMechanismOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedSASLMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedSASLMechanism, true
 }
@@ -855,7 +855,7 @@ func (o *ClientConnectionPolicyResponse) GetDeniedSASLMechanism() []string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetDeniedSASLMechanismOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedSASLMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedSASLMechanism, true
 }
@@ -887,7 +887,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowedFilterType() []EnumclientConn
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowedFilterTypeOk() ([]EnumclientConnectionPolicyAllowedFilterTypeProp, bool) {
 	if o == nil || isNil(o.AllowedFilterType) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedFilterType, true
 }
@@ -919,7 +919,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearches() bool {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowUnindexedSearches) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowUnindexedSearches, true
 }
@@ -951,7 +951,7 @@ func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesWithControl() 
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetAllowUnindexedSearchesWithControlOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowUnindexedSearchesWithControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowUnindexedSearchesWithControl, true
 }
@@ -983,7 +983,7 @@ func (o *ClientConnectionPolicyResponse) GetMinimumSubstringLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMinimumSubstringLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MinimumSubstringLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumSubstringLength, true
 }
@@ -1015,7 +1015,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentConnections() int32
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumConcurrentConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentConnections, true
 }
@@ -1047,7 +1047,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConnectionDuration() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConnectionDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumConnectionDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConnectionDuration, true
 }
@@ -1079,7 +1079,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumIdleConnectionDuration() stri
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumIdleConnectionDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumIdleConnectionDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumIdleConnectionDuration, true
 }
@@ -1111,7 +1111,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumOperationCountPerConnection()
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumOperationCountPerConnectionOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumOperationCountPerConnection) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumOperationCountPerConnection, true
 }
@@ -1143,7 +1143,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnec
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnectionOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumConcurrentOperationsPerConnection) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentOperationsPerConnection, true
 }
@@ -1175,7 +1175,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationWaitTimeBe
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationWaitTimeBeforeRejectingOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumConcurrentOperationWaitTimeBeforeRejecting) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentOperationWaitTimeBeforeRejecting, true
 }
@@ -1207,7 +1207,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnec
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConcurrentOperationsPerConnectionExceededBehaviorOk() (*EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp, bool) {
 	if o == nil || isNil(o.MaximumConcurrentOperationsPerConnectionExceededBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentOperationsPerConnectionExceededBehavior, true
 }
@@ -1239,7 +1239,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumConnectionOperationRate() []s
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumConnectionOperationRateOk() ([]string, bool) {
 	if o == nil || isNil(o.MaximumConnectionOperationRate) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConnectionOperationRate, true
 }
@@ -1271,7 +1271,7 @@ func (o *ClientConnectionPolicyResponse) GetConnectionOperationRateExceededBehav
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetConnectionOperationRateExceededBehaviorOk() (*EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp, bool) {
 	if o == nil || isNil(o.ConnectionOperationRateExceededBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionOperationRateExceededBehavior, true
 }
@@ -1303,7 +1303,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumPolicyOperationRate() []strin
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumPolicyOperationRateOk() ([]string, bool) {
 	if o == nil || isNil(o.MaximumPolicyOperationRate) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumPolicyOperationRate, true
 }
@@ -1335,7 +1335,7 @@ func (o *ClientConnectionPolicyResponse) GetPolicyOperationRateExceededBehavior(
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetPolicyOperationRateExceededBehaviorOk() (*EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp, bool) {
 	if o == nil || isNil(o.PolicyOperationRateExceededBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.PolicyOperationRateExceededBehavior, true
 }
@@ -1367,7 +1367,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchSizeLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumSearchSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumSearchSizeLimit, true
 }
@@ -1399,7 +1399,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumSearchTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumSearchTimeLimit, true
 }
@@ -1431,7 +1431,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSearchLookthroughLimit() int3
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSearchLookthroughLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumSearchLookthroughLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumSearchLookthroughLimit, true
 }
@@ -1463,7 +1463,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumLDAPJoinSizeLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumLDAPJoinSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumLDAPJoinSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumLDAPJoinSizeLimit, true
 }
@@ -1495,7 +1495,7 @@ func (o *ClientConnectionPolicyResponse) GetMaximumSortSizeLimitWithoutVLVIndex(
 // and a boolean to check if the value has been set.
 func (o *ClientConnectionPolicyResponse) GetMaximumSortSizeLimitWithoutVLVIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumSortSizeLimitWithoutVLVIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumSortSizeLimitWithoutVLVIndex, true
 }
@@ -1689,5 +1689,3 @@ func (v *NullableClientConnectionPolicyResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

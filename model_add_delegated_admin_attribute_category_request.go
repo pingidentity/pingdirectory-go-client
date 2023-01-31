@@ -17,8 +17,8 @@ import (
 // AddDelegatedAdminAttributeCategoryRequest struct for AddDelegatedAdminAttributeCategoryRequest
 type AddDelegatedAdminAttributeCategoryRequest struct {
 	// A human readable display name for this Delegated Admin Attribute Category.
-	DisplayName string `json:"displayName"`
-	Schemas []EnumdelegatedAdminAttributeCategorySchemaUrn `json:"schemas,omitempty"`
+	DisplayName string                                         `json:"displayName"`
+	Schemas     []EnumdelegatedAdminAttributeCategorySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Attribute Category
 	Description *string `json:"description,omitempty"`
 	// Delegated Admin Attribute Categories are ordered for display based on this index from least to greatest.
@@ -58,7 +58,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DisplayName, true
 }
@@ -81,7 +81,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetSchemas() []Enumdelegated
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetSchemasOk() ([]EnumdelegatedAdminAttributeCategorySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -146,7 +146,7 @@ func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndex() int32
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminAttributeCategoryRequest) GetDisplayOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DisplayOrderIndex, true
 }
@@ -208,5 +208,3 @@ func (v *NullableAddDelegatedAdminAttributeCategoryRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddRegularExpressionIdentityMapperRequest struct for AddRegularExpressionIdentityMapperRequest
 type AddRegularExpressionIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumregularExpressionIdentityMapperSchemaUrn `json:"schemas"`
+	MapperName string                                         `json:"mapperName"`
+	Schemas    []EnumregularExpressionIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the name or OID of the attribute whose value should match the provided identifier string after it has been processed by the associated regular expression.
 	MatchAttribute []string `json:"matchAttribute"`
 	// Specifies the base DN(s) that should be used when performing searches to map the provided ID string to a user entry. If multiple values are given, searches are performed below all the specified base DNs.
@@ -71,7 +71,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -95,7 +95,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetSchemas() []EnumregularEx
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetSchemasOk() ([]EnumregularExpressionIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttribute() []string
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchAttributeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchAttribute, true
 }
@@ -142,7 +142,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.MatchBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchBaseDN, true
 }
@@ -174,7 +174,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchFilter() string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchFilterOk() (*string, bool) {
 	if o == nil || isNil(o.MatchFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchFilter, true
 }
@@ -207,7 +207,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetMatchPattern() string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetMatchPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MatchPattern, true
 }
@@ -230,7 +230,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetReplacePattern() string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetReplacePatternOk() (*string, bool) {
 	if o == nil || isNil(o.ReplacePattern) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplacePattern, true
 }
@@ -262,7 +262,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -295,7 +295,7 @@ func (o *AddRegularExpressionIdentityMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionIdentityMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -372,5 +372,3 @@ func (v *NullableAddRegularExpressionIdentityMapperRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

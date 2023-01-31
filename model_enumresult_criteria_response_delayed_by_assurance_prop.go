@@ -20,8 +20,8 @@ type EnumresultCriteriaResponseDelayedByAssuranceProp string
 
 // List of Enumresult-criteria-responseDelayedByAssuranceProp
 const (
-	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_ANY EnumresultCriteriaResponseDelayedByAssuranceProp = "any"
-	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_TRUE EnumresultCriteriaResponseDelayedByAssuranceProp = "true"
+	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_ANY   EnumresultCriteriaResponseDelayedByAssuranceProp = "any"
+	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_TRUE  EnumresultCriteriaResponseDelayedByAssuranceProp = "true"
 	ENUMRESULTCRITERIARESPONSEDELAYEDBYASSURANCEPROP_FALSE EnumresultCriteriaResponseDelayedByAssuranceProp = "false"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaResponseDelayedByAssuranceProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

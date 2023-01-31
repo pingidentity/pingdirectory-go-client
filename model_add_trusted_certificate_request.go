@@ -17,8 +17,8 @@ import (
 // AddTrustedCertificateRequest struct for AddTrustedCertificateRequest
 type AddTrustedCertificateRequest struct {
 	// Name of the new Trusted Certificate
-	CertificateName string `json:"certificateName"`
-	Schemas []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
+	CertificateName string                            `json:"certificateName"`
+	Schemas         []EnumtrustedCertificateSchemaUrn `json:"schemas,omitempty"`
 	// The PEM-encoded X.509v3 certificate.
 	Certificate string `json:"certificate"`
 }
@@ -56,7 +56,7 @@ func (o *AddTrustedCertificateRequest) GetCertificateName() string {
 // and a boolean to check if the value has been set.
 func (o *AddTrustedCertificateRequest) GetCertificateNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CertificateName, true
 }
@@ -79,7 +79,7 @@ func (o *AddTrustedCertificateRequest) GetSchemas() []EnumtrustedCertificateSche
 // and a boolean to check if the value has been set.
 func (o *AddTrustedCertificateRequest) GetSchemasOk() ([]EnumtrustedCertificateSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddTrustedCertificateRequest) GetCertificate() string {
 // and a boolean to check if the value has been set.
 func (o *AddTrustedCertificateRequest) GetCertificateOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Certificate, true
 }
@@ -171,5 +171,3 @@ func (v *NullableAddTrustedCertificateRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

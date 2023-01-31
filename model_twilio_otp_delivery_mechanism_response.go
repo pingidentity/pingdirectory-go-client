@@ -16,10 +16,10 @@ import (
 
 // TwilioOtpDeliveryMechanismResponse struct for TwilioOtpDeliveryMechanismResponse
 type TwilioOtpDeliveryMechanismResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the OTP Delivery Mechanism
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumtwilioOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The unique identifier assigned to the Twilio account that will be used.
 	TwilioAccountSID string `json:"twilioAccountSID"`
@@ -81,7 +81,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -113,7 +113,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -146,7 +146,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -170,7 +170,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetSchemas() []EnumtwilioOtpDeliver
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetSchemasOk() ([]EnumtwilioOtpDeliveryMechanismSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -194,7 +194,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAccountSID() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAccountSIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TwilioAccountSID, true
 }
@@ -217,7 +217,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthToken() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenOk() (*string, bool) {
 	if o == nil || isNil(o.TwilioAuthToken) {
-    return nil, false
+		return nil, false
 	}
 	return o.TwilioAuthToken, true
 }
@@ -249,7 +249,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenPassphraseProvide
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TwilioAuthTokenPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TwilioAuthTokenPassphraseProvider, true
 }
@@ -282,7 +282,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberAttributeType() strin
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PhoneNumberAttributeType, true
 }
@@ -305,7 +305,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONField() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONFieldOk() (*string, bool) {
 	if o == nil || isNil(o.PhoneNumberJSONField) {
-    return nil, false
+		return nil, false
 	}
 	return o.PhoneNumberJSONField, true
 }
@@ -337,7 +337,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONObjectFilter() st
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONObjectFilterOk() (*string, bool) {
 	if o == nil || isNil(o.PhoneNumberJSONObjectFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.PhoneNumberJSONObjectFilter, true
 }
@@ -370,7 +370,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetSenderPhoneNumber() []string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetSenderPhoneNumberOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SenderPhoneNumber, true
 }
@@ -393,7 +393,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextBeforeOTP() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextBeforeOTPOk() (*string, bool) {
 	if o == nil || isNil(o.MessageTextBeforeOTP) {
-    return nil, false
+		return nil, false
 	}
 	return o.MessageTextBeforeOTP, true
 }
@@ -425,7 +425,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextAfterOTP() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextAfterOTPOk() (*string, bool) {
 	if o == nil || isNil(o.MessageTextAfterOTP) {
-    return nil, false
+		return nil, false
 	}
 	return o.MessageTextAfterOTP, true
 }
@@ -457,7 +457,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -490,7 +490,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -585,5 +585,3 @@ func (v *NullableTwilioOtpDeliveryMechanismResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

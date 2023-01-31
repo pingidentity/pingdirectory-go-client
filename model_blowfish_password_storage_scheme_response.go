@@ -16,9 +16,9 @@ import (
 
 // BlowfishPasswordStorageSchemeResponse struct for BlowfishPasswordStorageSchemeResponse
 type BlowfishPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumblowfishPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumblowfishPasswordStorageSchemeSchemaUrn       `json:"schemas"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// A description for this Password Storage Scheme
@@ -60,7 +60,7 @@ func (o *BlowfishPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *BlowfishPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *BlowfishPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *BlowfishPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *BlowfishPasswordStorageSchemeResponse) GetSchemas() []EnumblowfishPassw
 // and a boolean to check if the value has been set.
 func (o *BlowfishPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumblowfishPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *BlowfishPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *BlowfishPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *BlowfishPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *BlowfishPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *BlowfishPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BlowfishPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableBlowfishPasswordStorageSchemeResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

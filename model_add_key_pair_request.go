@@ -17,8 +17,8 @@ import (
 // AddKeyPairRequest struct for AddKeyPairRequest
 type AddKeyPairRequest struct {
 	// Name of the new Key Pair
-	PairName string `json:"pairName"`
-	Schemas []EnumkeyPairSchemaUrn `json:"schemas,omitempty"`
+	PairName     string                      `json:"pairName"`
+	Schemas      []EnumkeyPairSchemaUrn      `json:"schemas,omitempty"`
 	KeyAlgorithm EnumkeyPairKeyAlgorithmProp `json:"keyAlgorithm"`
 	// The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
 	SelfSignedCertificateValidity *string `json:"selfSignedCertificateValidity,omitempty"`
@@ -63,7 +63,7 @@ func (o *AddKeyPairRequest) GetPairName() string {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetPairNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PairName, true
 }
@@ -86,7 +86,7 @@ func (o *AddKeyPairRequest) GetSchemas() []EnumkeyPairSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetSchemasOk() ([]EnumkeyPairSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddKeyPairRequest) GetKeyAlgorithm() EnumkeyPairKeyAlgorithmProp {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetKeyAlgorithmOk() (*EnumkeyPairKeyAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyAlgorithm, true
 }
@@ -142,7 +142,7 @@ func (o *AddKeyPairRequest) GetSelfSignedCertificateValidity() string {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetSelfSignedCertificateValidityOk() (*string, bool) {
 	if o == nil || isNil(o.SelfSignedCertificateValidity) {
-    return nil, false
+		return nil, false
 	}
 	return o.SelfSignedCertificateValidity, true
 }
@@ -174,7 +174,7 @@ func (o *AddKeyPairRequest) GetSubjectDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetSubjectDNOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectDN, true
 }
@@ -206,7 +206,7 @@ func (o *AddKeyPairRequest) GetCertificateChain() string {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetCertificateChainOk() (*string, bool) {
 	if o == nil || isNil(o.CertificateChain) {
-    return nil, false
+		return nil, false
 	}
 	return o.CertificateChain, true
 }
@@ -238,7 +238,7 @@ func (o *AddKeyPairRequest) GetPrivateKey() string {
 // and a boolean to check if the value has been set.
 func (o *AddKeyPairRequest) GetPrivateKeyOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKey, true
 }
@@ -318,5 +318,3 @@ func (v *NullableAddKeyPairRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

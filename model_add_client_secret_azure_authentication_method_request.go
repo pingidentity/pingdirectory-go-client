@@ -17,8 +17,8 @@ import (
 // AddClientSecretAzureAuthenticationMethodRequest struct for AddClientSecretAzureAuthenticationMethodRequest
 type AddClientSecretAzureAuthenticationMethodRequest struct {
 	// Name of the new Azure Authentication Method
-	MethodName string `json:"methodName"`
-	Schemas []EnumclientSecretAzureAuthenticationMethodSchemaUrn `json:"schemas"`
+	MethodName string                                               `json:"methodName"`
+	Schemas    []EnumclientSecretAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate.
 	TenantID string `json:"tenantID"`
 	// The client ID to use to authenticate.
@@ -65,7 +65,7 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) GetMethodName() string
 // and a boolean to check if the value has been set.
 func (o *AddClientSecretAzureAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MethodName, true
 }
@@ -89,7 +89,7 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) GetSchemas() []Enumcli
 // and a boolean to check if the value has been set.
 func (o *AddClientSecretAzureAuthenticationMethodRequest) GetSchemasOk() ([]EnumclientSecretAzureAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) GetTenantID() string {
 // and a boolean to check if the value has been set.
 func (o *AddClientSecretAzureAuthenticationMethodRequest) GetTenantIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TenantID, true
 }
@@ -137,7 +137,7 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) GetClientID() string {
 // and a boolean to check if the value has been set.
 func (o *AddClientSecretAzureAuthenticationMethodRequest) GetClientIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ClientID, true
 }
@@ -161,7 +161,7 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) GetClientSecret() stri
 // and a boolean to check if the value has been set.
 func (o *AddClientSecretAzureAuthenticationMethodRequest) GetClientSecretOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ClientSecret, true
 }
@@ -184,7 +184,7 @@ func (o *AddClientSecretAzureAuthenticationMethodRequest) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *AddClientSecretAzureAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -261,5 +261,3 @@ func (v *NullableAddClientSecretAzureAuthenticationMethodRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

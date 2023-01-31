@@ -16,9 +16,9 @@ import (
 
 // JsonObjectAttributeSyntaxResponse struct for JsonObjectAttributeSyntaxResponse
 type JsonObjectAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumjsonObjectAttributeSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumjsonObjectAttributeSyntaxSchemaUrn           `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether the Attribute Syntax is enabled.
@@ -60,7 +60,7 @@ func (o *JsonObjectAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *JsonObjectAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *JsonObjectAttributeSyntaxResponse) GetSchemas() []EnumjsonObjectAttribu
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetSchemasOk() ([]EnumjsonObjectAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *JsonObjectAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -173,7 +173,7 @@ func (o *JsonObjectAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -196,7 +196,7 @@ func (o *JsonObjectAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
 // and a boolean to check if the value has been set.
 func (o *JsonObjectAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -273,5 +273,3 @@ func (v *NullableJsonObjectAttributeSyntaxResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

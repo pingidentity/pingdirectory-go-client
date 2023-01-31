@@ -16,10 +16,10 @@ import (
 
 // AmazonKeyManagementServiceCipherStreamProviderResponse struct for AmazonKeyManagementServiceCipherStreamProviderResponse
 type AmazonKeyManagementServiceCipherStreamProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Cipher Stream Provider
-	Id string `json:"id"`
+	Id      string                                                        `json:"id"`
 	Schemas []EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to a file that will hold the encrypted passphrase used by this cipher stream provider.
 	EncryptedPassphraseFile string `json:"encryptedPassphraseFile"`
@@ -74,7 +74,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetMeta() MetaM
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -106,7 +106,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetUrnpingident
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -139,7 +139,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetId() string 
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -163,7 +163,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetSchemas() []
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetSchemasOk() ([]EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -187,7 +187,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetEncryptedPas
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetEncryptedPassphraseFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EncryptedPassphraseFile, true
 }
@@ -210,7 +210,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsExternalS
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsExternalServerOk() (*string, bool) {
 	if o == nil || isNil(o.AwsExternalServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsExternalServer, true
 }
@@ -242,7 +242,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsAccessKey
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsAccessKeyIDOk() (*string, bool) {
 	if o == nil || isNil(o.AwsAccessKeyID) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsAccessKeyID, true
 }
@@ -274,7 +274,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsSecretAcc
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsSecretAccessKeyOk() (*string, bool) {
 	if o == nil || isNil(o.AwsSecretAccessKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsSecretAccessKey, true
 }
@@ -306,7 +306,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsRegionNam
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetAwsRegionNameOk() (*string, bool) {
 	if o == nil || isNil(o.AwsRegionName) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsRegionName, true
 }
@@ -339,7 +339,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetKmsEncryptio
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetKmsEncryptionKeyArnOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KmsEncryptionKeyArn, true
 }
@@ -362,7 +362,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetDescription(
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -395,7 +395,7 @@ func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetEnabled() bo
 // and a boolean to check if the value has been set.
 func (o *AmazonKeyManagementServiceCipherStreamProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -481,5 +481,3 @@ func (v *NullableAmazonKeyManagementServiceCipherStreamProviderResponse) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

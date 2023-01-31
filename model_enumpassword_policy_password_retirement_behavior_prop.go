@@ -20,7 +20,7 @@ type EnumpasswordPolicyPasswordRetirementBehaviorProp string
 
 // List of Enumpassword-policy-passwordRetirementBehaviorProp
 const (
-	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_SELF_CHANGE EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-self-change"
+	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_SELF_CHANGE          EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-self-change"
 	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_ADMINISTRATIVE_RESET EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-administrative-reset"
 	ENUMPASSWORDPOLICYPASSWORDRETIREMENTBEHAVIORPROP_REQUEST_WITH_CONTROL EnumpasswordPolicyPasswordRetirementBehaviorProp = "retire-on-request-with-control"
 )
@@ -110,4 +110,3 @@ func (v *NullableEnumpasswordPolicyPasswordRetirementBehaviorProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

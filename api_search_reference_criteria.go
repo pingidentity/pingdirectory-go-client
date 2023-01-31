@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // SearchReferenceCriteriaApiService SearchReferenceCriteriaApi service
 type SearchReferenceCriteriaApiService service
 
 type ApiAddSearchReferenceCriteriaRequest struct {
-	ctx context.Context
-	ApiService *SearchReferenceCriteriaApiService
+	ctx                               context.Context
+	ApiService                        *SearchReferenceCriteriaApiService
 	addSearchReferenceCriteriaRequest *AddSearchReferenceCriteriaRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddSearchReferenceCriteriaRequest) Execute() (*AddSearchReferenceCrit
 /*
 AddSearchReferenceCriteria Add a new Search Reference Criteria to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddSearchReferenceCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) AddSearchReferenceCriteria(ctx context.Context) ApiAddSearchReferenceCriteriaRequest {
 	return ApiAddSearchReferenceCriteriaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddSearchReferenceCriteria200Response
+//
+//	@return AddSearchReferenceCriteria200Response
 func (a *SearchReferenceCriteriaApiService) AddSearchReferenceCriteriaExecute(r ApiAddSearchReferenceCriteriaRequest) (*AddSearchReferenceCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSearchReferenceCriteria200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSearchReferenceCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchReferenceCriteriaApiService.AddSearchReferenceCriteria")
@@ -133,8 +133,8 @@ func (a *SearchReferenceCriteriaApiService) AddSearchReferenceCriteriaExecute(r 
 }
 
 type ApiDeleteSearchReferenceCriteriaRequest struct {
-	ctx context.Context
-	ApiService *SearchReferenceCriteriaApiService
+	ctx                         context.Context
+	ApiService                  *SearchReferenceCriteriaApiService
 	searchReferenceCriteriaName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteSearchReferenceCriteriaRequest) Execute() (*http.Response, erro
 /*
 DeleteSearchReferenceCriteria Delete a Search Reference Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param searchReferenceCriteriaName Name of the Search Reference Criteria to be deleted
- @return ApiDeleteSearchReferenceCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param searchReferenceCriteriaName Name of the Search Reference Criteria to be deleted
+	@return ApiDeleteSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) DeleteSearchReferenceCriteria(ctx context.Context, searchReferenceCriteriaName string) ApiDeleteSearchReferenceCriteriaRequest {
 	return ApiDeleteSearchReferenceCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		searchReferenceCriteriaName: searchReferenceCriteriaName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *SearchReferenceCriteriaApiService) DeleteSearchReferenceCriteria(ctx co
 // Execute executes the request
 func (a *SearchReferenceCriteriaApiService) DeleteSearchReferenceCriteriaExecute(r ApiDeleteSearchReferenceCriteriaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchReferenceCriteriaApiService.DeleteSearchReferenceCriteria")
@@ -223,8 +223,8 @@ func (a *SearchReferenceCriteriaApiService) DeleteSearchReferenceCriteriaExecute
 }
 
 type ApiGetSearchReferenceCriteriaRequest struct {
-	ctx context.Context
-	ApiService *SearchReferenceCriteriaApiService
+	ctx                         context.Context
+	ApiService                  *SearchReferenceCriteriaApiService
 	searchReferenceCriteriaName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetSearchReferenceCriteriaRequest) Execute() (*AddSearchReferenceCrit
 /*
 GetSearchReferenceCriteria Returns a single Search Reference Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param searchReferenceCriteriaName Name of the Search Reference Criteria to be read
- @return ApiGetSearchReferenceCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param searchReferenceCriteriaName Name of the Search Reference Criteria to be read
+	@return ApiGetSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) GetSearchReferenceCriteria(ctx context.Context, searchReferenceCriteriaName string) ApiGetSearchReferenceCriteriaRequest {
 	return ApiGetSearchReferenceCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		searchReferenceCriteriaName: searchReferenceCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddSearchReferenceCriteria200Response
+//
+//	@return AddSearchReferenceCriteria200Response
 func (a *SearchReferenceCriteriaApiService) GetSearchReferenceCriteriaExecute(r ApiGetSearchReferenceCriteriaRequest) (*AddSearchReferenceCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSearchReferenceCriteria200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSearchReferenceCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchReferenceCriteriaApiService.GetSearchReferenceCriteria")
@@ -324,10 +325,10 @@ func (a *SearchReferenceCriteriaApiService) GetSearchReferenceCriteriaExecute(r 
 }
 
 type ApiUpdateSearchReferenceCriteriaRequest struct {
-	ctx context.Context
-	ApiService *SearchReferenceCriteriaApiService
+	ctx                         context.Context
+	ApiService                  *SearchReferenceCriteriaApiService
 	searchReferenceCriteriaName string
-	updateRequest *UpdateRequest
+	updateRequest               *UpdateRequest
 }
 
 // Update an existing Search Reference Criteria
@@ -343,26 +344,27 @@ func (r ApiUpdateSearchReferenceCriteriaRequest) Execute() (*AddSearchReferenceC
 /*
 UpdateSearchReferenceCriteria Update an existing Search Reference Criteria by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param searchReferenceCriteriaName Name of the Search Reference Criteria to be updated
- @return ApiUpdateSearchReferenceCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param searchReferenceCriteriaName Name of the Search Reference Criteria to be updated
+	@return ApiUpdateSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) UpdateSearchReferenceCriteria(ctx context.Context, searchReferenceCriteriaName string) ApiUpdateSearchReferenceCriteriaRequest {
 	return ApiUpdateSearchReferenceCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                  a,
+		ctx:                         ctx,
 		searchReferenceCriteriaName: searchReferenceCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddSearchReferenceCriteria200Response
+//
+//	@return AddSearchReferenceCriteria200Response
 func (a *SearchReferenceCriteriaApiService) UpdateSearchReferenceCriteriaExecute(r ApiUpdateSearchReferenceCriteriaRequest) (*AddSearchReferenceCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddSearchReferenceCriteria200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddSearchReferenceCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchReferenceCriteriaApiService.UpdateSearchReferenceCriteria")

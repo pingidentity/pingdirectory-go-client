@@ -18,7 +18,7 @@ import (
 // GetLogFieldSyntax200Response - struct for GetLogFieldSyntax200Response
 type GetLogFieldSyntax200Response struct {
 	AttributeBasedLogFieldSyntaxResponse *AttributeBasedLogFieldSyntaxResponse
-	JsonLogFieldSyntaxResponse *JsonLogFieldSyntaxResponse
+	JsonLogFieldSyntaxResponse           *JsonLogFieldSyntaxResponse
 }
 
 // AttributeBasedLogFieldSyntaxResponseAsGetLogFieldSyntax200Response is a convenience function that returns AttributeBasedLogFieldSyntaxResponse wrapped in GetLogFieldSyntax200Response
@@ -34,7 +34,6 @@ func JsonLogFieldSyntaxResponseAsGetLogFieldSyntax200Response(v *JsonLogFieldSyn
 		JsonLogFieldSyntaxResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetLogFieldSyntax200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src GetLogFieldSyntax200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetLogFieldSyntax200Response) GetActualInstance() (interface{}) {
+func (obj *GetLogFieldSyntax200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableGetLogFieldSyntax200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

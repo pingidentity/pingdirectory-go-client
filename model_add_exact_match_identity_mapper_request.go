@@ -17,8 +17,8 @@ import (
 // AddExactMatchIdentityMapperRequest struct for AddExactMatchIdentityMapperRequest
 type AddExactMatchIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
+	MapperName string                                  `json:"mapperName"`
+	Schemas    []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
 	MatchAttribute []string `json:"matchAttribute"`
 	// Specifies the set of base DNs below which to search for users.
@@ -66,7 +66,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -90,7 +90,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetSchemas() []EnumexactMatchIdenti
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetSchemasOk() ([]EnumexactMatchIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchAttributeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchAttribute, true
 }
@@ -137,7 +137,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.MatchBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchBaseDN, true
 }
@@ -169,7 +169,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchFilter() string {
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchFilterOk() (*string, bool) {
 	if o == nil || isNil(o.MatchFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchFilter, true
 }
@@ -201,7 +201,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -234,7 +234,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -305,5 +305,3 @@ func (v *NullableAddExactMatchIdentityMapperRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

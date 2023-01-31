@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // GroupImplementationApiService GroupImplementationApi service
 type GroupImplementationApiService service
 
 type ApiGetGroupImplementationRequest struct {
-	ctx context.Context
-	ApiService *GroupImplementationApiService
+	ctx                     context.Context
+	ApiService              *GroupImplementationApiService
 	groupImplementationName string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetGroupImplementationRequest) Execute() (*GetGroupImplementation200R
 /*
 GetGroupImplementation Returns a single Group Implementation
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupImplementationName Name of the Group Implementation to be read
- @return ApiGetGroupImplementationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupImplementationName Name of the Group Implementation to be read
+	@return ApiGetGroupImplementationRequest
 */
 func (a *GroupImplementationApiService) GetGroupImplementation(ctx context.Context, groupImplementationName string) ApiGetGroupImplementationRequest {
 	return ApiGetGroupImplementationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		groupImplementationName: groupImplementationName,
 	}
 }
 
 // Execute executes the request
-//  @return GetGroupImplementation200Response
+//
+//	@return GetGroupImplementation200Response
 func (a *GroupImplementationApiService) GetGroupImplementationExecute(r ApiGetGroupImplementationRequest) (*GetGroupImplementation200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetGroupImplementation200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetGroupImplementation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationApiService.GetGroupImplementation")
@@ -125,10 +125,10 @@ func (a *GroupImplementationApiService) GetGroupImplementationExecute(r ApiGetGr
 }
 
 type ApiUpdateGroupImplementationRequest struct {
-	ctx context.Context
-	ApiService *GroupImplementationApiService
+	ctx                     context.Context
+	ApiService              *GroupImplementationApiService
 	groupImplementationName string
-	updateRequest *UpdateRequest
+	updateRequest           *UpdateRequest
 }
 
 // Update an existing Group Implementation
@@ -144,26 +144,27 @@ func (r ApiUpdateGroupImplementationRequest) Execute() (*GetGroupImplementation2
 /*
 UpdateGroupImplementation Update an existing Group Implementation by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param groupImplementationName Name of the Group Implementation to be updated
- @return ApiUpdateGroupImplementationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param groupImplementationName Name of the Group Implementation to be updated
+	@return ApiUpdateGroupImplementationRequest
 */
 func (a *GroupImplementationApiService) UpdateGroupImplementation(ctx context.Context, groupImplementationName string) ApiUpdateGroupImplementationRequest {
 	return ApiUpdateGroupImplementationRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		groupImplementationName: groupImplementationName,
 	}
 }
 
 // Execute executes the request
-//  @return GetGroupImplementation200Response
+//
+//	@return GetGroupImplementation200Response
 func (a *GroupImplementationApiService) UpdateGroupImplementationExecute(r ApiUpdateGroupImplementationRequest) (*GetGroupImplementation200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetGroupImplementation200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetGroupImplementation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupImplementationApiService.UpdateGroupImplementation")

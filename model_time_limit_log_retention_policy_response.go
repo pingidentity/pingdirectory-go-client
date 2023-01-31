@@ -16,10 +16,10 @@ import (
 
 // TimeLimitLogRetentionPolicyResponse struct for TimeLimitLogRetentionPolicyResponse
 type TimeLimitLogRetentionPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Retention Policy
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumtimeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the desired minimum length of time that each log file should be retained.
 	RetainDuration string `json:"retainDuration"`
@@ -60,7 +60,7 @@ func (o *TimeLimitLogRetentionPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRetentionPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *TimeLimitLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRetentionPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *TimeLimitLogRetentionPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRetentionPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *TimeLimitLogRetentionPolicyResponse) GetSchemas() []EnumtimeLimitLogRet
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRetentionPolicyResponse) GetSchemasOk() ([]EnumtimeLimitLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *TimeLimitLogRetentionPolicyResponse) GetRetainDuration() string {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRetentionPolicyResponse) GetRetainDurationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RetainDuration, true
 }
@@ -196,7 +196,7 @@ func (o *TimeLimitLogRetentionPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRetentionPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableTimeLimitLogRetentionPolicyResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 // MetaMeta struct for MetaMeta
 type MetaMeta struct {
 	ResourceType *string `json:"resourceType,omitempty"`
-	Location *string `json:"location,omitempty"`
+	Location     *string `json:"location,omitempty"`
 }
 
 // NewMetaMeta instantiates a new MetaMeta object
@@ -50,7 +50,7 @@ func (o *MetaMeta) GetResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *MetaMeta) GetResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceType, true
 }
@@ -82,7 +82,7 @@ func (o *MetaMeta) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *MetaMeta) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -147,5 +147,3 @@ func (v *NullableMetaMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

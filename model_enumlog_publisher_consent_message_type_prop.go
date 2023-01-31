@@ -20,23 +20,23 @@ type EnumlogPublisherConsentMessageTypeProp string
 
 // List of Enumlog-publisher-consentMessageTypeProp
 const (
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_CREATED EnumlogPublisherConsentMessageTypeProp = "consent-created"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_UPDATED EnumlogPublisherConsentMessageTypeProp = "consent-updated"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_DELETED EnumlogPublisherConsentMessageTypeProp = "consent-deleted"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_RETRIEVED EnumlogPublisherConsentMessageTypeProp = "consent-retrieved"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_SEARCH EnumlogPublisherConsentMessageTypeProp = "consent-search"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_CREATED EnumlogPublisherConsentMessageTypeProp = "definition-created"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_UPDATED EnumlogPublisherConsentMessageTypeProp = "definition-updated"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_DELETED EnumlogPublisherConsentMessageTypeProp = "definition-deleted"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_RETRIEVED EnumlogPublisherConsentMessageTypeProp = "definition-retrieved"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_SEARCH EnumlogPublisherConsentMessageTypeProp = "definition-search"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_CREATED EnumlogPublisherConsentMessageTypeProp = "localization-created"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_UPDATED EnumlogPublisherConsentMessageTypeProp = "localization-updated"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_DELETED EnumlogPublisherConsentMessageTypeProp = "localization-deleted"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_CREATED        EnumlogPublisherConsentMessageTypeProp = "consent-created"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_UPDATED        EnumlogPublisherConsentMessageTypeProp = "consent-updated"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_DELETED        EnumlogPublisherConsentMessageTypeProp = "consent-deleted"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_RETRIEVED      EnumlogPublisherConsentMessageTypeProp = "consent-retrieved"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_CONSENT_SEARCH         EnumlogPublisherConsentMessageTypeProp = "consent-search"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_CREATED     EnumlogPublisherConsentMessageTypeProp = "definition-created"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_UPDATED     EnumlogPublisherConsentMessageTypeProp = "definition-updated"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_DELETED     EnumlogPublisherConsentMessageTypeProp = "definition-deleted"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_RETRIEVED   EnumlogPublisherConsentMessageTypeProp = "definition-retrieved"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_DEFINITION_SEARCH      EnumlogPublisherConsentMessageTypeProp = "definition-search"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_CREATED   EnumlogPublisherConsentMessageTypeProp = "localization-created"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_UPDATED   EnumlogPublisherConsentMessageTypeProp = "localization-updated"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_DELETED   EnumlogPublisherConsentMessageTypeProp = "localization-deleted"
 	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_RETRIEVED EnumlogPublisherConsentMessageTypeProp = "localization-retrieved"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_SEARCH EnumlogPublisherConsentMessageTypeProp = "localization-search"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_ERROR EnumlogPublisherConsentMessageTypeProp = "error"
-	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_AUDIT EnumlogPublisherConsentMessageTypeProp = "audit"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_LOCALIZATION_SEARCH    EnumlogPublisherConsentMessageTypeProp = "localization-search"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_ERROR                  EnumlogPublisherConsentMessageTypeProp = "error"
+	ENUMLOGPUBLISHERCONSENTMESSAGETYPEPROP_AUDIT                  EnumlogPublisherConsentMessageTypeProp = "audit"
 )
 
 // All allowed values of EnumlogPublisherConsentMessageTypeProp enum
@@ -138,4 +138,3 @@ func (v *NullableEnumlogPublisherConsentMessageTypeProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,9 +16,9 @@ import (
 
 // ConsoleWebApplicationExtensionResponse struct for ConsoleWebApplicationExtensionResponse
 type ConsoleWebApplicationExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumconsoleWebApplicationExtensionSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumconsoleWebApplicationExtensionSchemaUrn      `json:"schemas,omitempty"`
 	// Indicates that SSO login into the Administrative Console is enabled.
 	SsoEnabled *bool `json:"ssoEnabled,omitempty"`
 	// The client ID to use when authenticating to the OpenID Connect provider.
@@ -48,7 +48,7 @@ type ConsoleWebApplicationExtensionResponse struct {
 	// The passphrase provider that may be used to obtain the PIN for the trust store used with managed LDAP servers. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents.
 	TrustStorePinPassphraseProvider *string `json:"trustStorePinPassphraseProvider,omitempty"`
 	// The path to the log file for the web application.
-	LogFile *string `json:"logFile,omitempty"`
+	LogFile    *string                                    `json:"logFile,omitempty"`
 	Complexity *EnumwebApplicationExtensionComplexityProp `json:"complexity,omitempty"`
 	// A description for this Web Application Extension
 	Description *string `json:"description,omitempty"`
@@ -97,7 +97,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -129,7 +129,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -161,7 +161,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetSchemas() []EnumconsoleWebAp
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetSchemasOk() ([]EnumconsoleWebApplicationExtensionSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -193,7 +193,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetSsoEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetSsoEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SsoEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SsoEnabled, true
 }
@@ -225,7 +225,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientID() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientIDOk() (*string, bool) {
 	if o == nil || isNil(o.OidcClientID) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcClientID, true
 }
@@ -257,7 +257,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecret() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretOk() (*string, bool) {
 	if o == nil || isNil(o.OidcClientSecret) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcClientSecret, true
 }
@@ -289,7 +289,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretPassphrasePr
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcClientSecretPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.OidcClientSecretPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcClientSecretPassphraseProvider, true
 }
@@ -321,7 +321,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcIssuerURL() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcIssuerURLOk() (*string, bool) {
 	if o == nil || isNil(o.OidcIssuerURL) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcIssuerURL, true
 }
@@ -353,7 +353,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreFile() string 
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreFileOk() (*string, bool) {
 	if o == nil || isNil(o.OidcTrustStoreFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcTrustStoreFile, true
 }
@@ -385,7 +385,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreType() string 
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.OidcTrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcTrustStoreType, true
 }
@@ -417,7 +417,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStorePinPassphraseP
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.OidcTrustStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcTrustStorePinPassphraseProvider, true
 }
@@ -449,7 +449,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcStrictHostnameVerificati
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcStrictHostnameVerificationOk() (*bool, bool) {
 	if o == nil || isNil(o.OidcStrictHostnameVerification) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcStrictHostnameVerification, true
 }
@@ -481,7 +481,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustAll() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetOidcTrustAllOk() (*bool, bool) {
 	if o == nil || isNil(o.OidcTrustAll) {
-    return nil, false
+		return nil, false
 	}
 	return o.OidcTrustAll, true
 }
@@ -513,7 +513,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetLdapServer() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetLdapServerOk() (*string, bool) {
 	if o == nil || isNil(o.LdapServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapServer, true
 }
@@ -545,7 +545,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreFile, true
 }
@@ -577,7 +577,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -609,7 +609,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTrustStorePinPassphraseProvi
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
 }
@@ -641,7 +641,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetLogFile() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetLogFileOk() (*string, bool) {
 	if o == nil || isNil(o.LogFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFile, true
 }
@@ -673,7 +673,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetComplexity() EnumwebApplicat
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetComplexityOk() (*EnumwebApplicationExtensionComplexityProp, bool) {
 	if o == nil || isNil(o.Complexity) {
-    return nil, false
+		return nil, false
 	}
 	return o.Complexity, true
 }
@@ -705,7 +705,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -738,7 +738,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetBaseContextPath() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetBaseContextPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BaseContextPath, true
 }
@@ -761,7 +761,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetWarFile() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetWarFileOk() (*string, bool) {
 	if o == nil || isNil(o.WarFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.WarFile, true
 }
@@ -793,7 +793,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDocumentRootDirectory() stri
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetDocumentRootDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.DocumentRootDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.DocumentRootDirectory, true
 }
@@ -825,7 +825,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetDeploymentDescriptorFile() s
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetDeploymentDescriptorFileOk() (*string, bool) {
 	if o == nil || isNil(o.DeploymentDescriptorFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeploymentDescriptorFile, true
 }
@@ -857,7 +857,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetTemporaryDirectory() string 
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetTemporaryDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.TemporaryDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.TemporaryDirectory, true
 }
@@ -889,7 +889,7 @@ func (o *ConsoleWebApplicationExtensionResponse) GetInitParameter() []string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetInitParameterOk() ([]string, bool) {
 	if o == nil || isNil(o.InitParameter) {
-    return nil, false
+		return nil, false
 	}
 	return o.InitParameter, true
 }
@@ -1026,5 +1026,3 @@ func (v *NullableConsoleWebApplicationExtensionResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

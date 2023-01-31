@@ -16,9 +16,9 @@ import (
 
 // CryptoManagerResponse struct for CryptoManagerResponse
 type CryptoManagerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumcryptoManagerSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumcryptoManagerSchemaUrn                       `json:"schemas,omitempty"`
 	// Specifies the preferred message digest algorithm for the Directory Server.
 	DigestAlgorithm *string `json:"digestAlgorithm,omitempty"`
 	// Specifies the preferred MAC algorithm for the Directory Server.
@@ -77,7 +77,7 @@ func (o *CryptoManagerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -109,7 +109,7 @@ func (o *CryptoManagerResponse) GetUrnpingidentityschemasconfigurationmessages20
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -141,7 +141,7 @@ func (o *CryptoManagerResponse) GetSchemas() []EnumcryptoManagerSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSchemasOk() ([]EnumcryptoManagerSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *CryptoManagerResponse) GetDigestAlgorithm() string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetDigestAlgorithmOk() (*string, bool) {
 	if o == nil || isNil(o.DigestAlgorithm) {
-    return nil, false
+		return nil, false
 	}
 	return o.DigestAlgorithm, true
 }
@@ -205,7 +205,7 @@ func (o *CryptoManagerResponse) GetMacAlgorithm() string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetMacAlgorithmOk() (*string, bool) {
 	if o == nil || isNil(o.MacAlgorithm) {
-    return nil, false
+		return nil, false
 	}
 	return o.MacAlgorithm, true
 }
@@ -237,7 +237,7 @@ func (o *CryptoManagerResponse) GetMacKeyLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetMacKeyLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MacKeyLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MacKeyLength, true
 }
@@ -269,7 +269,7 @@ func (o *CryptoManagerResponse) GetCipherTransformation() string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetCipherTransformationOk() (*string, bool) {
 	if o == nil || isNil(o.CipherTransformation) {
-    return nil, false
+		return nil, false
 	}
 	return o.CipherTransformation, true
 }
@@ -301,7 +301,7 @@ func (o *CryptoManagerResponse) GetCipherKeyLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetCipherKeyLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.CipherKeyLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.CipherKeyLength, true
 }
@@ -333,7 +333,7 @@ func (o *CryptoManagerResponse) GetKeyWrappingTransformation() string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetKeyWrappingTransformationOk() (*string, bool) {
 	if o == nil || isNil(o.KeyWrappingTransformation) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyWrappingTransformation, true
 }
@@ -365,7 +365,7 @@ func (o *CryptoManagerResponse) GetSslProtocol() []string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSslProtocolOk() ([]string, bool) {
 	if o == nil || isNil(o.SslProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslProtocol, true
 }
@@ -397,7 +397,7 @@ func (o *CryptoManagerResponse) GetSslCipherSuite() []string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSslCipherSuiteOk() ([]string, bool) {
 	if o == nil || isNil(o.SslCipherSuite) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCipherSuite, true
 }
@@ -429,7 +429,7 @@ func (o *CryptoManagerResponse) GetOutboundSSLProtocol() []string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetOutboundSSLProtocolOk() ([]string, bool) {
 	if o == nil || isNil(o.OutboundSSLProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutboundSSLProtocol, true
 }
@@ -461,7 +461,7 @@ func (o *CryptoManagerResponse) GetOutboundSSLCipherSuite() []string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetOutboundSSLCipherSuiteOk() ([]string, bool) {
 	if o == nil || isNil(o.OutboundSSLCipherSuite) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutboundSSLCipherSuite, true
 }
@@ -493,7 +493,7 @@ func (o *CryptoManagerResponse) GetEnableSha1CipherSuites() bool {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetEnableSha1CipherSuitesOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableSha1CipherSuites) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableSha1CipherSuites, true
 }
@@ -525,7 +525,7 @@ func (o *CryptoManagerResponse) GetEnableRsaKeyExchangeCipherSuites() bool {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetEnableRsaKeyExchangeCipherSuitesOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableRsaKeyExchangeCipherSuites) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableRsaKeyExchangeCipherSuites, true
 }
@@ -557,7 +557,7 @@ func (o *CryptoManagerResponse) GetSslCertNickname() string {
 // and a boolean to check if the value has been set.
 func (o *CryptoManagerResponse) GetSslCertNicknameOk() (*string, bool) {
 	if o == nil || isNil(o.SslCertNickname) {
-    return nil, false
+		return nil, false
 	}
 	return o.SslCertNickname, true
 }
@@ -664,5 +664,3 @@ func (v *NullableCryptoManagerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

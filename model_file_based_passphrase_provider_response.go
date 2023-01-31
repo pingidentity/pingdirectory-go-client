@@ -16,10 +16,10 @@ import (
 
 // FileBasedPassphraseProviderResponse struct for FileBasedPassphraseProviderResponse
 type FileBasedPassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumfileBasedPassphraseProviderSchemaUrn `json:"schemas"`
 	// The path to the file containing the passphrase.
 	PasswordFile string `json:"passwordFile"`
@@ -65,7 +65,7 @@ func (o *FileBasedPassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *FileBasedPassphraseProviderResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *FileBasedPassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *FileBasedPassphraseProviderResponse) GetSchemas() []EnumfileBasedPassph
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetSchemasOk() ([]EnumfileBasedPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *FileBasedPassphraseProviderResponse) GetPasswordFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetPasswordFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordFile, true
 }
@@ -201,7 +201,7 @@ func (o *FileBasedPassphraseProviderResponse) GetMaxCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -233,7 +233,7 @@ func (o *FileBasedPassphraseProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *FileBasedPassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedPassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableFileBasedPassphraseProviderResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp st
 
 // List of Enumsasl-mechanism-handler-validateAccessTokenWhenIDTokenIsAlsoProvidedProp
 const (
-	ENUMSASLMECHANISMHANDLERVALIDATEACCESSTOKENWHENIDTOKENISALSOPROVIDEDPROP_ONLY_THE_ID_TOKEN EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp = "validate-only-the-id-token"
+	ENUMSASLMECHANISMHANDLERVALIDATEACCESSTOKENWHENIDTOKENISALSOPROVIDEDPROP_ONLY_THE_ID_TOKEN                     EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp = "validate-only-the-id-token"
 	ENUMSASLMECHANISMHANDLERVALIDATEACCESSTOKENWHENIDTOKENISALSOPROVIDEDPROP_BOTH_TOKENS_BUT_ONLY_MAP_THE_ID_TOKEN EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp = "validate-both-tokens-but-only-map-the-id-token"
-	ENUMSASLMECHANISMHANDLERVALIDATEACCESSTOKENWHENIDTOKENISALSOPROVIDEDPROP_AND_MAP_BOTH_TOKENS EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp = "validate-and-map-both-tokens"
+	ENUMSASLMECHANISMHANDLERVALIDATEACCESSTOKENWHENIDTOKENISALSOPROVIDEDPROP_AND_MAP_BOTH_TOKENS                   EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp = "validate-and-map-both-tokens"
 )
 
 // All allowed values of EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoPro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

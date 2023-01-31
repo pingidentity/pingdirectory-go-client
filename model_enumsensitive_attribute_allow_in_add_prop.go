@@ -20,8 +20,8 @@ type EnumsensitiveAttributeAllowInAddProp string
 
 // List of Enumsensitive-attribute-allowInAddProp
 const (
-	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_ALLOW EnumsensitiveAttributeAllowInAddProp = "allow"
-	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_REJECT EnumsensitiveAttributeAllowInAddProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_ALLOW       EnumsensitiveAttributeAllowInAddProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_REJECT      EnumsensitiveAttributeAllowInAddProp = "reject"
 	ENUMSENSITIVEATTRIBUTEALLOWINADDPROP_SECURE_ONLY EnumsensitiveAttributeAllowInAddProp = "secure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumsensitiveAttributeAllowInAddProp) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

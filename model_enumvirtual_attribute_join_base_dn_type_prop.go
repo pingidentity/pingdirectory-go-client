@@ -20,9 +20,9 @@ type EnumvirtualAttributeJoinBaseDNTypeProp string
 
 // List of Enumvirtual-attribute-joinBaseDNTypeProp
 const (
-	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_SEARCH_BASE_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-search-base-dn"
+	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_SEARCH_BASE_DN  EnumvirtualAttributeJoinBaseDNTypeProp = "use-search-base-dn"
 	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_SOURCE_ENTRY_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-source-entry-dn"
-	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_CUSTOM_BASE_DN EnumvirtualAttributeJoinBaseDNTypeProp = "use-custom-base-dn"
+	ENUMVIRTUALATTRIBUTEJOINBASEDNTYPEPROP_CUSTOM_BASE_DN  EnumvirtualAttributeJoinBaseDNTypeProp = "use-custom-base-dn"
 )
 
 // All allowed values of EnumvirtualAttributeJoinBaseDNTypeProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumvirtualAttributeJoinBaseDNTypeProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

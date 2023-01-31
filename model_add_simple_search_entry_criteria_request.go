@@ -17,8 +17,8 @@ import (
 // AddSimpleSearchEntryCriteriaRequest struct for AddSimpleSearchEntryCriteriaRequest
 type AddSimpleSearchEntryCriteriaRequest struct {
 	// Name of the new Search Entry Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumsimpleSearchEntryCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                   `json:"criteriaName"`
+	Schemas      []EnumsimpleSearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated request for entries included in this Simple Search Entry Criteria. of them.
 	RequestCriteria *string `json:"requestCriteria,omitempty"`
 	// Specifies the OID of a control that must be present in search result entries included in this Simple Search Entry Criteria. If any control OIDs are provided, then the entry must contain all of those controls.
@@ -86,7 +86,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -110,7 +110,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetSchemas() []EnumsimpleSearchEnt
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetSchemasOk() ([]EnumsimpleSearchEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -133,7 +133,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -165,7 +165,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryControl() []str
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedEntryControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedEntryControl, true
 }
@@ -197,7 +197,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryControl() []str
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedEntryControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedEntryControl, true
 }
@@ -229,7 +229,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryControl() []
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedEntryControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedEntryControl, true
 }
@@ -261,7 +261,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryControl() []st
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedEntryControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedEntryControl, true
 }
@@ -293,7 +293,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetIncludedEntryBaseDN() []string 
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetIncludedEntryBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedEntryBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedEntryBaseDN, true
 }
@@ -325,7 +325,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetExcludedEntryBaseDN() []string 
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetExcludedEntryBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedEntryBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedEntryBaseDN, true
 }
@@ -357,7 +357,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryFilter() []stri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedEntryFilter, true
 }
@@ -389,7 +389,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryFilter() []stri
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedEntryFilter, true
 }
@@ -421,7 +421,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryFilter() []s
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedEntryFilter, true
 }
@@ -453,7 +453,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryFilter() []str
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedEntryFilter, true
 }
@@ -485,7 +485,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryGroupDN() []str
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAllIncludedEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedEntryGroupDN, true
 }
@@ -517,7 +517,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryGroupDN() []str
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetAnyIncludedEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedEntryGroupDN, true
 }
@@ -549,7 +549,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryGroupDN() []
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNotAllIncludedEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedEntryGroupDN, true
 }
@@ -581,7 +581,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryGroupDN() []st
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetNoneIncludedEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedEntryGroupDN, true
 }
@@ -613,7 +613,7 @@ func (o *AddSimpleSearchEntryCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSimpleSearchEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -726,5 +726,3 @@ func (v *NullableAddSimpleSearchEntryCriteriaRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

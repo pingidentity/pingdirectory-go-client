@@ -17,8 +17,8 @@ import (
 // AddThirdPartySaslMechanismHandlerRequest struct for AddThirdPartySaslMechanismHandlerRequest
 type AddThirdPartySaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumthirdPartySaslMechanismHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                        `json:"handlerName"`
+	Schemas     []EnumthirdPartySaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party SASL Mechanism Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party SASL Mechanism Handler. Each configuration property should be given in the form 'name=value'.
@@ -66,7 +66,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -90,7 +90,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetSchemas() []EnumthirdParty
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetSchemasOk() ([]EnumthirdPartySaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -137,7 +137,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionArgument() []stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -169,7 +169,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -201,7 +201,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -234,7 +234,7 @@ func (o *AddThirdPartySaslMechanismHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartySaslMechanismHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -305,5 +305,3 @@ func (v *NullableAddThirdPartySaslMechanismHandlerRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddFreeDiskSpaceLogRetentionPolicyRequest struct for AddFreeDiskSpaceLogRetentionPolicyRequest
 type AddFreeDiskSpaceLogRetentionPolicyRequest struct {
 	// Name of the new Log Retention Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumfreeDiskSpaceLogRetentionPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                         `json:"policyName"`
+	Schemas    []EnumfreeDiskSpaceLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the minimum amount of free disk space that should be available on the file system on which the archived log files are stored.
 	FreeDiskSpace string `json:"freeDiskSpace"`
 	// A description for this Log Retention Policy
@@ -59,7 +59,7 @@ func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetSchemas() []EnumfreeDiskS
 // and a boolean to check if the value has been set.
 func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetSchemasOk() ([]EnumfreeDiskSpaceLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetFreeDiskSpace() string {
 // and a boolean to check if the value has been set.
 func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetFreeDiskSpaceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FreeDiskSpace, true
 }
@@ -130,7 +130,7 @@ func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFreeDiskSpaceLogRetentionPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddFreeDiskSpaceLogRetentionPolicyRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

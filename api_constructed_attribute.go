@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ConstructedAttributeApiService ConstructedAttributeApi service
 type ConstructedAttributeApiService service
 
 type ApiAddConstructedAttributeRequest struct {
-	ctx context.Context
-	ApiService *ConstructedAttributeApiService
+	ctx                            context.Context
+	ApiService                     *ConstructedAttributeApiService
 	addConstructedAttributeRequest *AddConstructedAttributeRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddConstructedAttributeRequest) Execute() (*ConstructedAttributeRespo
 /*
 AddConstructedAttribute Add a new Constructed Attribute to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddConstructedAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) AddConstructedAttribute(ctx context.Context) ApiAddConstructedAttributeRequest {
 	return ApiAddConstructedAttributeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConstructedAttributeResponse
+//
+//	@return ConstructedAttributeResponse
 func (a *ConstructedAttributeApiService) AddConstructedAttributeExecute(r ApiAddConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConstructedAttributeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConstructedAttributeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.AddConstructedAttribute")
@@ -133,8 +133,8 @@ func (a *ConstructedAttributeApiService) AddConstructedAttributeExecute(r ApiAdd
 }
 
 type ApiDeleteConstructedAttributeRequest struct {
-	ctx context.Context
-	ApiService *ConstructedAttributeApiService
+	ctx                      context.Context
+	ApiService               *ConstructedAttributeApiService
 	constructedAttributeName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteConstructedAttributeRequest) Execute() (*http.Response, error) 
 /*
 DeleteConstructedAttribute Delete a Constructed Attribute
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param constructedAttributeName Name of the Constructed Attribute to be deleted
- @return ApiDeleteConstructedAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param constructedAttributeName Name of the Constructed Attribute to be deleted
+	@return ApiDeleteConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) DeleteConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiDeleteConstructedAttributeRequest {
 	return ApiDeleteConstructedAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		constructedAttributeName: constructedAttributeName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ConstructedAttributeApiService) DeleteConstructedAttribute(ctx context.
 // Execute executes the request
 func (a *ConstructedAttributeApiService) DeleteConstructedAttributeExecute(r ApiDeleteConstructedAttributeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.DeleteConstructedAttribute")
@@ -223,8 +223,8 @@ func (a *ConstructedAttributeApiService) DeleteConstructedAttributeExecute(r Api
 }
 
 type ApiGetConstructedAttributeRequest struct {
-	ctx context.Context
-	ApiService *ConstructedAttributeApiService
+	ctx                      context.Context
+	ApiService               *ConstructedAttributeApiService
 	constructedAttributeName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetConstructedAttributeRequest) Execute() (*ConstructedAttributeRespo
 /*
 GetConstructedAttribute Returns a single Constructed Attribute
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param constructedAttributeName Name of the Constructed Attribute to be read
- @return ApiGetConstructedAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param constructedAttributeName Name of the Constructed Attribute to be read
+	@return ApiGetConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) GetConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiGetConstructedAttributeRequest {
 	return ApiGetConstructedAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		constructedAttributeName: constructedAttributeName,
 	}
 }
 
 // Execute executes the request
-//  @return ConstructedAttributeResponse
+//
+//	@return ConstructedAttributeResponse
 func (a *ConstructedAttributeApiService) GetConstructedAttributeExecute(r ApiGetConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConstructedAttributeResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConstructedAttributeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.GetConstructedAttribute")
@@ -324,10 +325,10 @@ func (a *ConstructedAttributeApiService) GetConstructedAttributeExecute(r ApiGet
 }
 
 type ApiUpdateConstructedAttributeRequest struct {
-	ctx context.Context
-	ApiService *ConstructedAttributeApiService
+	ctx                      context.Context
+	ApiService               *ConstructedAttributeApiService
 	constructedAttributeName string
-	updateRequest *UpdateRequest
+	updateRequest            *UpdateRequest
 }
 
 // Update an existing Constructed Attribute
@@ -343,26 +344,27 @@ func (r ApiUpdateConstructedAttributeRequest) Execute() (*ConstructedAttributeRe
 /*
 UpdateConstructedAttribute Update an existing Constructed Attribute by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param constructedAttributeName Name of the Constructed Attribute to be updated
- @return ApiUpdateConstructedAttributeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param constructedAttributeName Name of the Constructed Attribute to be updated
+	@return ApiUpdateConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) UpdateConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiUpdateConstructedAttributeRequest {
 	return ApiUpdateConstructedAttributeRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		constructedAttributeName: constructedAttributeName,
 	}
 }
 
 // Execute executes the request
-//  @return ConstructedAttributeResponse
+//
+//	@return ConstructedAttributeResponse
 func (a *ConstructedAttributeApiService) UpdateConstructedAttributeExecute(r ApiUpdateConstructedAttributeRequest) (*ConstructedAttributeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConstructedAttributeResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConstructedAttributeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConstructedAttributeApiService.UpdateConstructedAttribute")

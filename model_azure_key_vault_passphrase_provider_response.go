@@ -16,10 +16,10 @@ import (
 
 // AzureKeyVaultPassphraseProviderResponse struct for AzureKeyVaultPassphraseProviderResponse
 type AzureKeyVaultPassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumazureKeyVaultPassphraseProviderSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
@@ -71,7 +71,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -160,7 +160,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetSchemas() []EnumazureKeyVau
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetSchemasOk() ([]EnumazureKeyVaultPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetKeyVaultURI() string {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetKeyVaultURIOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyVaultURI, true
 }
@@ -208,7 +208,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetAzureAuthenticationMethod()
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetAzureAuthenticationMethodOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AzureAuthenticationMethod, true
 }
@@ -232,7 +232,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetSecretName() string {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetSecretNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SecretName, true
 }
@@ -255,7 +255,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetMaxCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -287,7 +287,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -320,7 +320,7 @@ func (o *AzureKeyVaultPassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AzureKeyVaultPassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -400,5 +400,3 @@ func (v *NullableAzureKeyVaultPassphraseProviderResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

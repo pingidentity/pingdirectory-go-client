@@ -16,9 +16,9 @@ import (
 
 // Operation struct for Operation
 type Operation struct {
-	Op EnumOperation `json:"op"`
-	Path string `json:"path"`
-	Value *string `json:"value,omitempty"`
+	Op    EnumOperation `json:"op"`
+	Path  string        `json:"path"`
+	Value *string       `json:"value,omitempty"`
 }
 
 // NewOperation instantiates a new Operation object
@@ -54,7 +54,7 @@ func (o *Operation) GetOp() EnumOperation {
 // and a boolean to check if the value has been set.
 func (o *Operation) GetOpOk() (*EnumOperation, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Op, true
 }
@@ -78,7 +78,7 @@ func (o *Operation) GetPath() string {
 // and a boolean to check if the value has been set.
 func (o *Operation) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Path, true
 }
@@ -101,7 +101,7 @@ func (o *Operation) GetValue() string {
 // and a boolean to check if the value has been set.
 func (o *Operation) GetValueOk() (*string, bool) {
 	if o == nil || isNil(o.Value) {
-    return nil, false
+		return nil, false
 	}
 	return o.Value, true
 }
@@ -169,5 +169,3 @@ func (v *NullableOperation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

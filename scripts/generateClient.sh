@@ -17,5 +17,9 @@ openapi-generator generate \
 
 rm -r test/
 
-# Generate Stringer implementations
-scripts/generateStringerImplementation.py
+# Run any go generators
+go generate ./...
+
+# Clean things up
+go mod tidy
+go fmt ./...

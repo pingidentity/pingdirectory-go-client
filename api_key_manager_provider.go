@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // KeyManagerProviderApiService KeyManagerProviderApi service
 type KeyManagerProviderApiService service
 
 type ApiAddKeyManagerProviderRequest struct {
-	ctx context.Context
-	ApiService *KeyManagerProviderApiService
+	ctx                          context.Context
+	ApiService                   *KeyManagerProviderApiService
 	addKeyManagerProviderRequest *AddKeyManagerProviderRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200Res
 /*
 AddKeyManagerProvider Add a new Key Manager Provider to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddKeyManagerProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) AddKeyManagerProvider(ctx context.Context) ApiAddKeyManagerProviderRequest {
 	return ApiAddKeyManagerProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddKeyManagerProvider200Response
+//
+//	@return AddKeyManagerProvider200Response
 func (a *KeyManagerProviderApiService) AddKeyManagerProviderExecute(r ApiAddKeyManagerProviderRequest) (*AddKeyManagerProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddKeyManagerProvider200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddKeyManagerProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyManagerProviderApiService.AddKeyManagerProvider")
@@ -133,8 +133,8 @@ func (a *KeyManagerProviderApiService) AddKeyManagerProviderExecute(r ApiAddKeyM
 }
 
 type ApiDeleteKeyManagerProviderRequest struct {
-	ctx context.Context
-	ApiService *KeyManagerProviderApiService
+	ctx                    context.Context
+	ApiService             *KeyManagerProviderApiService
 	keyManagerProviderName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteKeyManagerProviderRequest) Execute() (*http.Response, error) {
 /*
 DeleteKeyManagerProvider Delete a Key Manager Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyManagerProviderName Name of the Key Manager Provider to be deleted
- @return ApiDeleteKeyManagerProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param keyManagerProviderName Name of the Key Manager Provider to be deleted
+	@return ApiDeleteKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) DeleteKeyManagerProvider(ctx context.Context, keyManagerProviderName string) ApiDeleteKeyManagerProviderRequest {
 	return ApiDeleteKeyManagerProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		keyManagerProviderName: keyManagerProviderName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *KeyManagerProviderApiService) DeleteKeyManagerProvider(ctx context.Cont
 // Execute executes the request
 func (a *KeyManagerProviderApiService) DeleteKeyManagerProviderExecute(r ApiDeleteKeyManagerProviderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyManagerProviderApiService.DeleteKeyManagerProvider")
@@ -223,8 +223,8 @@ func (a *KeyManagerProviderApiService) DeleteKeyManagerProviderExecute(r ApiDele
 }
 
 type ApiGetKeyManagerProviderRequest struct {
-	ctx context.Context
-	ApiService *KeyManagerProviderApiService
+	ctx                    context.Context
+	ApiService             *KeyManagerProviderApiService
 	keyManagerProviderName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200Res
 /*
 GetKeyManagerProvider Returns a single Key Manager Provider
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyManagerProviderName Name of the Key Manager Provider to be read
- @return ApiGetKeyManagerProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param keyManagerProviderName Name of the Key Manager Provider to be read
+	@return ApiGetKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) GetKeyManagerProvider(ctx context.Context, keyManagerProviderName string) ApiGetKeyManagerProviderRequest {
 	return ApiGetKeyManagerProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		keyManagerProviderName: keyManagerProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return AddKeyManagerProvider200Response
+//
+//	@return AddKeyManagerProvider200Response
 func (a *KeyManagerProviderApiService) GetKeyManagerProviderExecute(r ApiGetKeyManagerProviderRequest) (*AddKeyManagerProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddKeyManagerProvider200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddKeyManagerProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyManagerProviderApiService.GetKeyManagerProvider")
@@ -324,10 +325,10 @@ func (a *KeyManagerProviderApiService) GetKeyManagerProviderExecute(r ApiGetKeyM
 }
 
 type ApiUpdateKeyManagerProviderRequest struct {
-	ctx context.Context
-	ApiService *KeyManagerProviderApiService
+	ctx                    context.Context
+	ApiService             *KeyManagerProviderApiService
 	keyManagerProviderName string
-	updateRequest *UpdateRequest
+	updateRequest          *UpdateRequest
 }
 
 // Update an existing Key Manager Provider
@@ -343,26 +344,27 @@ func (r ApiUpdateKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200
 /*
 UpdateKeyManagerProvider Update an existing Key Manager Provider by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyManagerProviderName Name of the Key Manager Provider to be updated
- @return ApiUpdateKeyManagerProviderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param keyManagerProviderName Name of the Key Manager Provider to be updated
+	@return ApiUpdateKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) UpdateKeyManagerProvider(ctx context.Context, keyManagerProviderName string) ApiUpdateKeyManagerProviderRequest {
 	return ApiUpdateKeyManagerProviderRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		keyManagerProviderName: keyManagerProviderName,
 	}
 }
 
 // Execute executes the request
-//  @return AddKeyManagerProvider200Response
+//
+//	@return AddKeyManagerProvider200Response
 func (a *KeyManagerProviderApiService) UpdateKeyManagerProviderExecute(r ApiUpdateKeyManagerProviderRequest) (*AddKeyManagerProvider200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddKeyManagerProvider200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddKeyManagerProvider200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyManagerProviderApiService.UpdateKeyManagerProvider")

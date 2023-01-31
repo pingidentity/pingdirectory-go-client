@@ -16,9 +16,9 @@ import (
 
 // ClearPasswordStorageSchemeResponse struct for ClearPasswordStorageSchemeResponse
 type ClearPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumclearPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumclearPasswordStorageSchemeSchemaUrn          `json:"schemas"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// Indicates whether the Clear Password Storage Scheme is enabled for use.
@@ -60,7 +60,7 @@ func (o *ClearPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ClearPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *ClearPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *ClearPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *ClearPasswordStorageSchemeResponse) GetSchemas() []EnumclearPasswordSto
 // and a boolean to check if the value has been set.
 func (o *ClearPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumclearPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *ClearPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ClearPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -173,7 +173,7 @@ func (o *ClearPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ClearPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -196,7 +196,7 @@ func (o *ClearPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ClearPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableClearPasswordStorageSchemeResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

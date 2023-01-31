@@ -17,8 +17,8 @@ import (
 // AddSingleUseTokensExtendedOperationHandlerRequest struct for AddSingleUseTokensExtendedOperationHandlerRequest
 type AddSingleUseTokensExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                 `json:"handlerName"`
+	Schemas     []EnumsingleUseTokensExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// The password generator that will be used to create the single-use token values to be delivered to the end user.
 	PasswordGenerator string `json:"passwordGenerator"`
 	// The set of delivery mechanisms that may be used to deliver single-use tokens to users in requests that do not specify one or more preferred delivery mechanisms.
@@ -67,7 +67,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetHandlerName() str
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -91,7 +91,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetSchemas() []Enums
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetSchemasOk() ([]EnumsingleUseTokensExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetPasswordGenerator
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetPasswordGeneratorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordGenerator, true
 }
@@ -139,7 +139,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultOTPDeliver
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultOTPDeliveryMechanismOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultOTPDeliveryMechanism, true
 }
@@ -162,7 +162,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultSingleUseT
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultSingleUseTokenValidityDurationOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultSingleUseTokenValidityDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSingleUseTokenValidityDuration, true
 }
@@ -194,7 +194,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -227,7 +227,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -298,5 +298,3 @@ func (v *NullableAddSingleUseTokensExtendedOperationHandlerRequest) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

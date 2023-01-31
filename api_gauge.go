@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // GaugeApiService GaugeApi service
 type GaugeApiService service
 
 type ApiAddGaugeRequest struct {
-	ctx context.Context
-	ApiService *GaugeApiService
+	ctx             context.Context
+	ApiService      *GaugeApiService
 	addGaugeRequest *AddGaugeRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddGaugeRequest) Execute() (*AddGauge200Response, *http.Response, err
 /*
 AddGauge Add a new Gauge to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddGaugeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddGaugeRequest
 */
 func (a *GaugeApiService) AddGauge(ctx context.Context) ApiAddGaugeRequest {
 	return ApiAddGaugeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddGauge200Response
+//
+//	@return AddGauge200Response
 func (a *GaugeApiService) AddGaugeExecute(r ApiAddGaugeRequest) (*AddGauge200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddGauge200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddGauge200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeApiService.AddGauge")
@@ -133,9 +133,9 @@ func (a *GaugeApiService) AddGaugeExecute(r ApiAddGaugeRequest) (*AddGauge200Res
 }
 
 type ApiDeleteGaugeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *GaugeApiService
-	gaugeName string
+	gaugeName  string
 }
 
 func (r ApiDeleteGaugeRequest) Execute() (*http.Response, error) {
@@ -145,24 +145,24 @@ func (r ApiDeleteGaugeRequest) Execute() (*http.Response, error) {
 /*
 DeleteGauge Delete a Gauge
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param gaugeName Name of the Gauge to be deleted
- @return ApiDeleteGaugeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param gaugeName Name of the Gauge to be deleted
+	@return ApiDeleteGaugeRequest
 */
 func (a *GaugeApiService) DeleteGauge(ctx context.Context, gaugeName string) ApiDeleteGaugeRequest {
 	return ApiDeleteGaugeRequest{
 		ApiService: a,
-		ctx: ctx,
-		gaugeName: gaugeName,
+		ctx:        ctx,
+		gaugeName:  gaugeName,
 	}
 }
 
 // Execute executes the request
 func (a *GaugeApiService) DeleteGaugeExecute(r ApiDeleteGaugeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeApiService.DeleteGauge")
@@ -223,9 +223,9 @@ func (a *GaugeApiService) DeleteGaugeExecute(r ApiDeleteGaugeRequest) (*http.Res
 }
 
 type ApiGetGaugeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *GaugeApiService
-	gaugeName string
+	gaugeName  string
 }
 
 func (r ApiGetGaugeRequest) Execute() (*AddGauge200Response, *http.Response, error) {
@@ -235,26 +235,27 @@ func (r ApiGetGaugeRequest) Execute() (*AddGauge200Response, *http.Response, err
 /*
 GetGauge Returns a single Gauge
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param gaugeName Name of the Gauge to be read
- @return ApiGetGaugeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param gaugeName Name of the Gauge to be read
+	@return ApiGetGaugeRequest
 */
 func (a *GaugeApiService) GetGauge(ctx context.Context, gaugeName string) ApiGetGaugeRequest {
 	return ApiGetGaugeRequest{
 		ApiService: a,
-		ctx: ctx,
-		gaugeName: gaugeName,
+		ctx:        ctx,
+		gaugeName:  gaugeName,
 	}
 }
 
 // Execute executes the request
-//  @return AddGauge200Response
+//
+//	@return AddGauge200Response
 func (a *GaugeApiService) GetGaugeExecute(r ApiGetGaugeRequest) (*AddGauge200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddGauge200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddGauge200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeApiService.GetGauge")
@@ -324,9 +325,9 @@ func (a *GaugeApiService) GetGaugeExecute(r ApiGetGaugeRequest) (*AddGauge200Res
 }
 
 type ApiUpdateGaugeRequest struct {
-	ctx context.Context
-	ApiService *GaugeApiService
-	gaugeName string
+	ctx           context.Context
+	ApiService    *GaugeApiService
+	gaugeName     string
 	updateRequest *UpdateRequest
 }
 
@@ -343,26 +344,27 @@ func (r ApiUpdateGaugeRequest) Execute() (*AddGauge200Response, *http.Response, 
 /*
 UpdateGauge Update an existing Gauge by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param gaugeName Name of the Gauge to be updated
- @return ApiUpdateGaugeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param gaugeName Name of the Gauge to be updated
+	@return ApiUpdateGaugeRequest
 */
 func (a *GaugeApiService) UpdateGauge(ctx context.Context, gaugeName string) ApiUpdateGaugeRequest {
 	return ApiUpdateGaugeRequest{
 		ApiService: a,
-		ctx: ctx,
-		gaugeName: gaugeName,
+		ctx:        ctx,
+		gaugeName:  gaugeName,
 	}
 }
 
 // Execute executes the request
-//  @return AddGauge200Response
+//
+//	@return AddGauge200Response
 func (a *GaugeApiService) UpdateGaugeExecute(r ApiUpdateGaugeRequest) (*AddGauge200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddGauge200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddGauge200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GaugeApiService.UpdateGauge")

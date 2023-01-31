@@ -106,4 +106,3 @@ func (v *NullableEnumthirdPartyAccessLogPublisherSchemaUrn) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
