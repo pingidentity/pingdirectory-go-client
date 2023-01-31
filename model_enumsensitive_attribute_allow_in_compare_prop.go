@@ -20,8 +20,8 @@ type EnumsensitiveAttributeAllowInCompareProp string
 
 // List of Enumsensitive-attribute-allowInCompareProp
 const (
-	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_ALLOW EnumsensitiveAttributeAllowInCompareProp = "allow"
-	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_REJECT EnumsensitiveAttributeAllowInCompareProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_ALLOW       EnumsensitiveAttributeAllowInCompareProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_REJECT      EnumsensitiveAttributeAllowInCompareProp = "reject"
 	ENUMSENSITIVEATTRIBUTEALLOWINCOMPAREPROP_SECURE_ONLY EnumsensitiveAttributeAllowInCompareProp = "secure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumsensitiveAttributeAllowInCompareProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

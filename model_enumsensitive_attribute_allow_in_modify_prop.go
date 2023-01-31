@@ -20,8 +20,8 @@ type EnumsensitiveAttributeAllowInModifyProp string
 
 // List of Enumsensitive-attribute-allowInModifyProp
 const (
-	ENUMSENSITIVEATTRIBUTEALLOWINMODIFYPROP_ALLOW EnumsensitiveAttributeAllowInModifyProp = "allow"
-	ENUMSENSITIVEATTRIBUTEALLOWINMODIFYPROP_REJECT EnumsensitiveAttributeAllowInModifyProp = "reject"
+	ENUMSENSITIVEATTRIBUTEALLOWINMODIFYPROP_ALLOW       EnumsensitiveAttributeAllowInModifyProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINMODIFYPROP_REJECT      EnumsensitiveAttributeAllowInModifyProp = "reject"
 	ENUMSENSITIVEATTRIBUTEALLOWINMODIFYPROP_SECURE_ONLY EnumsensitiveAttributeAllowInModifyProp = "secure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumsensitiveAttributeAllowInModifyProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

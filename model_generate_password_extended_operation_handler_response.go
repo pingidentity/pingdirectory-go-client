@@ -16,9 +16,9 @@ import (
 
 // GeneratePasswordExtendedOperationHandlerResponse struct for GeneratePasswordExtendedOperationHandlerResponse
 type GeneratePasswordExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                               `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20      `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumgeneratePasswordExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// The default password policy that should be used when generating and validating passwords if the request does not specify an alternate policy. If this is not provided, then this Generate Password Extended Operation Handler will use the default password policy defined in the global configuration.
@@ -69,7 +69,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetUrnpingidentitysch
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetSchemas() []Enumge
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumgeneratePasswordExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -158,7 +158,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -181,7 +181,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetDefaultPasswordPol
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetDefaultPasswordPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultPasswordPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultPasswordPolicy, true
 }
@@ -214,7 +214,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetDefaultPasswordGen
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetDefaultPasswordGeneratorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DefaultPasswordGenerator, true
 }
@@ -237,7 +237,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPe
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumPasswordsPerRequestOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumPasswordsPerRequest) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumPasswordsPerRequest, true
 }
@@ -269,7 +269,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationA
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetMaximumValidationAttemptsPerPasswordOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumValidationAttemptsPerPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumValidationAttemptsPerPassword, true
 }
@@ -301,7 +301,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetDescription() stri
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -334,7 +334,7 @@ func (o *GeneratePasswordExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GeneratePasswordExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -414,5 +414,3 @@ func (v *NullableGeneratePasswordExtendedOperationHandlerResponse) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

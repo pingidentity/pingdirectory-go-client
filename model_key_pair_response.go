@@ -16,11 +16,11 @@ import (
 
 // KeyPairResponse struct for KeyPairResponse
 type KeyPairResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Key Pair
-	Id string `json:"id"`
-	Schemas []EnumkeyPairSchemaUrn `json:"schemas,omitempty"`
+	Id           string                      `json:"id"`
+	Schemas      []EnumkeyPairSchemaUrn      `json:"schemas,omitempty"`
 	KeyAlgorithm EnumkeyPairKeyAlgorithmProp `json:"keyAlgorithm"`
 	// The validity period for a self-signed certificate. If not specified, the self-signed certificate will be valid for approximately 20 years. This is not used when importing an existing key-pair. The system will not automatically rotate expired certificates. It is up to the administrator to do that when that happens.
 	SelfSignedCertificateValidity *string `json:"selfSignedCertificateValidity,omitempty"`
@@ -64,7 +64,7 @@ func (o *KeyPairResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *KeyPairResponse) GetUrnpingidentityschemasconfigurationmessages20() Met
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *KeyPairResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *KeyPairResponse) GetSchemas() []EnumkeyPairSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetSchemasOk() ([]EnumkeyPairSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -185,7 +185,7 @@ func (o *KeyPairResponse) GetKeyAlgorithm() EnumkeyPairKeyAlgorithmProp {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetKeyAlgorithmOk() (*EnumkeyPairKeyAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyAlgorithm, true
 }
@@ -208,7 +208,7 @@ func (o *KeyPairResponse) GetSelfSignedCertificateValidity() string {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetSelfSignedCertificateValidityOk() (*string, bool) {
 	if o == nil || isNil(o.SelfSignedCertificateValidity) {
-    return nil, false
+		return nil, false
 	}
 	return o.SelfSignedCertificateValidity, true
 }
@@ -240,7 +240,7 @@ func (o *KeyPairResponse) GetSubjectDN() string {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetSubjectDNOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectDN, true
 }
@@ -272,7 +272,7 @@ func (o *KeyPairResponse) GetCertificateChain() string {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetCertificateChainOk() (*string, bool) {
 	if o == nil || isNil(o.CertificateChain) {
-    return nil, false
+		return nil, false
 	}
 	return o.CertificateChain, true
 }
@@ -304,7 +304,7 @@ func (o *KeyPairResponse) GetPrivateKey() string {
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetPrivateKeyOk() (*string, bool) {
 	if o == nil || isNil(o.PrivateKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrivateKey, true
 }
@@ -390,5 +390,3 @@ func (v *NullableKeyPairResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

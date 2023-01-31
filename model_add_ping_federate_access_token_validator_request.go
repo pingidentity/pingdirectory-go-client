@@ -17,8 +17,8 @@ import (
 // AddPingFederateAccessTokenValidatorRequest struct for AddPingFederateAccessTokenValidatorRequest
 type AddPingFederateAccessTokenValidatorRequest struct {
 	// Name of the new Access Token Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumpingFederateAccessTokenValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                          `json:"validatorName"`
+	Schemas       []EnumpingFederateAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The client identifier to use when authenticating to the PingFederate authorization server.
 	ClientID string `json:"clientID"`
 	// The client secret to use when authenticating to the PingFederate authorization server.
@@ -81,7 +81,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -105,7 +105,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetSchemas() []EnumpingFede
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetSchemasOk() ([]EnumpingFederateAccessTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -129,7 +129,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientID() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ClientID, true
 }
@@ -152,7 +152,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecret() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretOk() (*string, bool) {
 	if o == nil || isNil(o.ClientSecret) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientSecret, true
 }
@@ -184,7 +184,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretPassphrasePr
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetClientSecretPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.ClientSecretPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientSecretPassphraseProvider, true
 }
@@ -216,7 +216,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetIncludeAudParameter() bo
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetIncludeAudParameterOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeAudParameter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAudParameter, true
 }
@@ -248,7 +248,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetAccessTokenManagerID() s
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetAccessTokenManagerIDOk() (*string, bool) {
 	if o == nil || isNil(o.AccessTokenManagerID) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenManagerID, true
 }
@@ -280,7 +280,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEndpointCacheRefresh() s
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEndpointCacheRefreshOk() (*string, bool) {
 	if o == nil || isNil(o.EndpointCacheRefresh) {
-    return nil, false
+		return nil, false
 	}
 	return o.EndpointCacheRefresh, true
 }
@@ -313,7 +313,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndex() i
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -336,7 +336,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetAuthorizationServer() st
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetAuthorizationServerOk() (*string, bool) {
 	if o == nil || isNil(o.AuthorizationServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuthorizationServer, true
 }
@@ -368,7 +368,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetIdentityMapper() string 
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -400,7 +400,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetSubjectClaimName() strin
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -432,7 +432,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -465,7 +465,7 @@ func (o *AddPingFederateAccessTokenValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPingFederateAccessTokenValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -557,5 +557,3 @@ func (v *NullableAddPingFederateAccessTokenValidatorRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

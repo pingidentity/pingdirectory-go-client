@@ -17,8 +17,8 @@ import (
 // AddConjurExternalServerRequest struct for AddConjurExternalServerRequest
 type AddConjurExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumconjurExternalServerSchemaUrn `json:"schemas"`
+	ServerName string                              `json:"serverName"`
+	Schemas    []EnumconjurExternalServerSchemaUrn `json:"schemas"`
 	// The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://conjur.example.com:8443/\".
 	ConjurServerBaseURI []string `json:"conjurServerBaseURI"`
 	// The mechanism used to authenticate to the Conjur server.
@@ -71,7 +71,7 @@ func (o *AddConjurExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -95,7 +95,7 @@ func (o *AddConjurExternalServerRequest) GetSchemas() []EnumconjurExternalServer
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetSchemasOk() ([]EnumconjurExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddConjurExternalServerRequest) GetConjurServerBaseURI() []string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetConjurServerBaseURIOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConjurServerBaseURI, true
 }
@@ -143,7 +143,7 @@ func (o *AddConjurExternalServerRequest) GetConjurAuthenticationMethod() string 
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetConjurAuthenticationMethodOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurAuthenticationMethod, true
 }
@@ -167,7 +167,7 @@ func (o *AddConjurExternalServerRequest) GetConjurAccountName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetConjurAccountNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurAccountName, true
 }
@@ -190,7 +190,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreFile, true
 }
@@ -222,7 +222,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -254,7 +254,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -286,7 +286,7 @@ func (o *AddConjurExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -372,5 +372,3 @@ func (v *NullableAddConjurExternalServerRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddAzureKeyVaultPasswordStorageSchemeRequest struct for AddAzureKeyVaultPasswordStorageSchemeRequest
 type AddAzureKeyVaultPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                            `json:"schemeName"`
+	Schemas    []EnumazureKeyVaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The URI that identifies the Azure Key Vault from which the secret is to be retrieved.
 	KeyVaultURI string `json:"keyVaultURI"`
 	// The mechanism used to authenticate to the Azure service.
@@ -65,7 +65,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -89,7 +89,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemas() []EnumazureK
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumazureKeyVaultPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetKeyVaultURI() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetKeyVaultURIOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.KeyVaultURI, true
 }
@@ -137,7 +137,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetAzureAuthenticationMet
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetAzureAuthenticationMethodOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AzureAuthenticationMethod, true
 }
@@ -160,7 +160,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -193,7 +193,7 @@ func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -261,5 +261,3 @@ func (v *NullableAddAzureKeyVaultPasswordStorageSchemeRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

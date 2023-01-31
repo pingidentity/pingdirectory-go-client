@@ -17,8 +17,8 @@ import (
 // AddThirdPartyTrustManagerProviderRequest struct for AddThirdPartyTrustManagerProviderRequest
 type AddThirdPartyTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                        `json:"providerName"`
+	Schemas      []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Trust Manager Provider. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetSchemas() []EnumthirdParty
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetSchemasOk() ([]EnumthirdPartyTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionArgument() []stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -168,7 +168,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -191,7 +191,7 @@ func (o *AddThirdPartyTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers()
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyTrustManagerProviderRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

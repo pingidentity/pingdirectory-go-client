@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyTrustManagerProviderResponse struct for ThirdPartyTrustManagerProviderResponse
 type ThirdPartyTrustManagerProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Trust Manager Provider
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumthirdPartyTrustManagerProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Trust Manager Provider.
 	ExtensionClass string `json:"extensionClass"`
@@ -65,7 +65,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetSchemas() []EnumthirdPartyTr
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetSchemasOk() ([]EnumthirdPartyTrustManagerProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -201,7 +201,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -234,7 +234,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -257,7 +257,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() b
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
 }
@@ -340,5 +340,3 @@ func (v *NullableThirdPartyTrustManagerProviderResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddAppRoleVaultAuthenticationMethodRequest struct for AddAppRoleVaultAuthenticationMethodRequest
 type AddAppRoleVaultAuthenticationMethodRequest struct {
 	// Name of the new Vault Authentication Method
-	MethodName string `json:"methodName"`
-	Schemas []EnumappRoleVaultAuthenticationMethodSchemaUrn `json:"schemas"`
+	MethodName string                                          `json:"methodName"`
+	Schemas    []EnumappRoleVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The role ID for the AppRole to authenticate.
 	VaultRoleID string `json:"vaultRoleID"`
 	// The secret ID for the AppRole to authenticate.
@@ -64,7 +64,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetMethodName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MethodName, true
 }
@@ -88,7 +88,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetSchemas() []EnumappRoleV
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetSchemasOk() ([]EnumappRoleVaultAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetVaultRoleID() string {
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetVaultRoleIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultRoleID, true
 }
@@ -136,7 +136,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetVaultSecretID() string {
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetVaultSecretIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretID, true
 }
@@ -159,7 +159,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetLoginMechanismName() str
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetLoginMechanismNameOk() (*string, bool) {
 	if o == nil || isNil(o.LoginMechanismName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoginMechanismName, true
 }
@@ -191,7 +191,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddAppRoleVaultAuthenticationMethodRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

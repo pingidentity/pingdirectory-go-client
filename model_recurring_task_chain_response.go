@@ -16,26 +16,26 @@ import (
 
 // RecurringTaskChainResponse struct for RecurringTaskChainResponse
 type RecurringTaskChainResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task Chain
-	Id string `json:"id"`
+	Id      string                            `json:"id"`
 	Schemas []EnumrecurringTaskChainSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Recurring Task Chain
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Recurring Task Chain is enabled for use. Recurring Task Chains that are disabled will not have any new instances scheduled, but instances that are already scheduled will be preserved. Those instances may be manually canceled if desired.
 	Enabled bool `json:"enabled"`
 	// The set of recurring tasks that make up this chain. At least one value must be provided. If multiple values are given, then the task instances will be invoked in the order in which they are listed.
-	RecurringTask []string `json:"recurringTask"`
-	ScheduledMonth []EnumrecurringTaskChainScheduledMonthProp `json:"scheduledMonth"`
+	RecurringTask              []string                                             `json:"recurringTask"`
+	ScheduledMonth             []EnumrecurringTaskChainScheduledMonthProp           `json:"scheduledMonth"`
 	ScheduledDateSelectionType EnumrecurringTaskChainScheduledDateSelectionTypeProp `json:"scheduledDateSelectionType"`
-	ScheduledDayOfTheWeek []EnumrecurringTaskChainScheduledDayOfTheWeekProp `json:"scheduledDayOfTheWeek,omitempty"`
-	ScheduledDayOfTheMonth []EnumrecurringTaskChainScheduledDayOfTheMonthProp `json:"scheduledDayOfTheMonth,omitempty"`
+	ScheduledDayOfTheWeek      []EnumrecurringTaskChainScheduledDayOfTheWeekProp    `json:"scheduledDayOfTheWeek,omitempty"`
+	ScheduledDayOfTheMonth     []EnumrecurringTaskChainScheduledDayOfTheMonthProp   `json:"scheduledDayOfTheMonth,omitempty"`
 	// The time of day at which instances of the Recurring Task Chain should be eligible to start running. Values should be in the format HH:MM (where HH is a two-digit representation of the hour of the day, between 00 and 23, inclusive), and MM is a two-digit representation of the minute of the hour (between 00 and 59, inclusive). Alternately, the value can be in the form *:MM, which indicates that the task should be eligible to start at the specified minute of every hour. At least one value must be provided, but multiple values may be given to indicate multiple start times within the same day.
 	ScheduledTimeOfDay []string `json:"scheduledTimeOfDay"`
 	// The time zone that will be used to interpret the scheduled-time-of-day values. If no value is provided, then the JVM's default time zone will be used.
-	TimeZone *string `json:"timeZone,omitempty"`
-	InterruptedByShutdownBehavior *EnumrecurringTaskChainInterruptedByShutdownBehaviorProp `json:"interruptedByShutdownBehavior,omitempty"`
+	TimeZone                         *string                                                     `json:"timeZone,omitempty"`
+	InterruptedByShutdownBehavior    *EnumrecurringTaskChainInterruptedByShutdownBehaviorProp    `json:"interruptedByShutdownBehavior,omitempty"`
 	ServerOfflineAtStartTimeBehavior *EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp `json:"serverOfflineAtStartTimeBehavior,omitempty"`
 }
 
@@ -75,7 +75,7 @@ func (o *RecurringTaskChainResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessa
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -140,7 +140,7 @@ func (o *RecurringTaskChainResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -163,7 +163,7 @@ func (o *RecurringTaskChainResponse) GetSchemas() []EnumrecurringTaskChainSchema
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetSchemasOk() ([]EnumrecurringTaskChainSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -195,7 +195,7 @@ func (o *RecurringTaskChainResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -228,7 +228,7 @@ func (o *RecurringTaskChainResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -252,7 +252,7 @@ func (o *RecurringTaskChainResponse) GetRecurringTask() []string {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetRecurringTaskOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RecurringTask, true
 }
@@ -276,7 +276,7 @@ func (o *RecurringTaskChainResponse) GetScheduledMonth() []EnumrecurringTaskChai
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledMonthOk() ([]EnumrecurringTaskChainScheduledMonthProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ScheduledMonth, true
 }
@@ -300,7 +300,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDateSelectionType() Enumrecurri
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledDateSelectionTypeOk() (*EnumrecurringTaskChainScheduledDateSelectionTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScheduledDateSelectionType, true
 }
@@ -323,7 +323,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDayOfTheWeek() []EnumrecurringT
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledDayOfTheWeekOk() ([]EnumrecurringTaskChainScheduledDayOfTheWeekProp, bool) {
 	if o == nil || isNil(o.ScheduledDayOfTheWeek) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScheduledDayOfTheWeek, true
 }
@@ -355,7 +355,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDayOfTheMonth() []Enumrecurring
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledDayOfTheMonthOk() ([]EnumrecurringTaskChainScheduledDayOfTheMonthProp, bool) {
 	if o == nil || isNil(o.ScheduledDayOfTheMonth) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScheduledDayOfTheMonth, true
 }
@@ -388,7 +388,7 @@ func (o *RecurringTaskChainResponse) GetScheduledTimeOfDay() []string {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledTimeOfDayOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ScheduledTimeOfDay, true
 }
@@ -411,7 +411,7 @@ func (o *RecurringTaskChainResponse) GetTimeZone() string {
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetTimeZoneOk() (*string, bool) {
 	if o == nil || isNil(o.TimeZone) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeZone, true
 }
@@ -443,7 +443,7 @@ func (o *RecurringTaskChainResponse) GetInterruptedByShutdownBehavior() Enumrecu
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetInterruptedByShutdownBehaviorOk() (*EnumrecurringTaskChainInterruptedByShutdownBehaviorProp, bool) {
 	if o == nil || isNil(o.InterruptedByShutdownBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.InterruptedByShutdownBehavior, true
 }
@@ -475,7 +475,7 @@ func (o *RecurringTaskChainResponse) GetServerOfflineAtStartTimeBehavior() Enumr
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetServerOfflineAtStartTimeBehaviorOk() (*EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp, bool) {
 	if o == nil || isNil(o.ServerOfflineAtStartTimeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerOfflineAtStartTimeBehavior, true
 }
@@ -579,5 +579,3 @@ func (v *NullableRecurringTaskChainResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

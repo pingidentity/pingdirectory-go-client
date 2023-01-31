@@ -17,12 +17,12 @@ import (
 
 // AddCertificateMapper200Response - struct for AddCertificateMapper200Response
 type AddCertificateMapper200Response struct {
-	FingerprintCertificateMapperResponse *FingerprintCertificateMapperResponse
-	GroovyScriptedCertificateMapperResponse *GroovyScriptedCertificateMapperResponse
+	FingerprintCertificateMapperResponse                     *FingerprintCertificateMapperResponse
+	GroovyScriptedCertificateMapperResponse                  *GroovyScriptedCertificateMapperResponse
 	SubjectAttributeToUserAttributeCertificateMapperResponse *SubjectAttributeToUserAttributeCertificateMapperResponse
-	SubjectDnToUserAttributeCertificateMapperResponse *SubjectDnToUserAttributeCertificateMapperResponse
-	SubjectEqualsDnCertificateMapperResponse *SubjectEqualsDnCertificateMapperResponse
-	ThirdPartyCertificateMapperResponse *ThirdPartyCertificateMapperResponse
+	SubjectDnToUserAttributeCertificateMapperResponse        *SubjectDnToUserAttributeCertificateMapperResponse
+	SubjectEqualsDnCertificateMapperResponse                 *SubjectEqualsDnCertificateMapperResponse
+	ThirdPartyCertificateMapperResponse                      *ThirdPartyCertificateMapperResponse
 }
 
 // FingerprintCertificateMapperResponseAsAddCertificateMapper200Response is a convenience function that returns FingerprintCertificateMapperResponse wrapped in AddCertificateMapper200Response
@@ -66,7 +66,6 @@ func ThirdPartyCertificateMapperResponseAsAddCertificateMapper200Response(v *Thi
 		ThirdPartyCertificateMapperResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCertificateMapper200Response) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src AddCertificateMapper200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddCertificateMapper200Response) GetActualInstance() (interface{}) {
+func (obj *AddCertificateMapper200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableAddCertificateMapper200Response) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

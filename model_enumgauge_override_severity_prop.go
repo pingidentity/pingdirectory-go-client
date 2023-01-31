@@ -20,10 +20,10 @@ type EnumgaugeOverrideSeverityProp string
 
 // List of Enumgauge-overrideSeverityProp
 const (
-	ENUMGAUGEOVERRIDESEVERITYPROP_NORMAL EnumgaugeOverrideSeverityProp = "normal"
-	ENUMGAUGEOVERRIDESEVERITYPROP_WARNING EnumgaugeOverrideSeverityProp = "warning"
-	ENUMGAUGEOVERRIDESEVERITYPROP_MINOR EnumgaugeOverrideSeverityProp = "minor"
-	ENUMGAUGEOVERRIDESEVERITYPROP_MAJOR EnumgaugeOverrideSeverityProp = "major"
+	ENUMGAUGEOVERRIDESEVERITYPROP_NORMAL   EnumgaugeOverrideSeverityProp = "normal"
+	ENUMGAUGEOVERRIDESEVERITYPROP_WARNING  EnumgaugeOverrideSeverityProp = "warning"
+	ENUMGAUGEOVERRIDESEVERITYPROP_MINOR    EnumgaugeOverrideSeverityProp = "minor"
+	ENUMGAUGEOVERRIDESEVERITYPROP_MAJOR    EnumgaugeOverrideSeverityProp = "major"
 	ENUMGAUGEOVERRIDESEVERITYPROP_CRITICAL EnumgaugeOverrideSeverityProp = "critical"
 )
 
@@ -114,4 +114,3 @@ func (v *NullableEnumgaugeOverrideSeverityProp) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

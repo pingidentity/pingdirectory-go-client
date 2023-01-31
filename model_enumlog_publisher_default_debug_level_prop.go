@@ -21,11 +21,11 @@ type EnumlogPublisherDefaultDebugLevelProp string
 // List of Enumlog-publisher-defaultDebugLevelProp
 const (
 	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_DISABLED EnumlogPublisherDefaultDebugLevelProp = "disabled"
-	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_ERROR EnumlogPublisherDefaultDebugLevelProp = "error"
-	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_WARNING EnumlogPublisherDefaultDebugLevelProp = "warning"
-	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_INFO EnumlogPublisherDefaultDebugLevelProp = "info"
-	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_VERBOSE EnumlogPublisherDefaultDebugLevelProp = "verbose"
-	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_ALL EnumlogPublisherDefaultDebugLevelProp = "all"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_ERROR    EnumlogPublisherDefaultDebugLevelProp = "error"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_WARNING  EnumlogPublisherDefaultDebugLevelProp = "warning"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_INFO     EnumlogPublisherDefaultDebugLevelProp = "info"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_VERBOSE  EnumlogPublisherDefaultDebugLevelProp = "verbose"
+	ENUMLOGPUBLISHERDEFAULTDEBUGLEVELPROP_ALL      EnumlogPublisherDefaultDebugLevelProp = "all"
 )
 
 // All allowed values of EnumlogPublisherDefaultDebugLevelProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumlogPublisherDefaultDebugLevelProp) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

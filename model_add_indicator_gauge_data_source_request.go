@@ -17,8 +17,8 @@ import (
 // AddIndicatorGaugeDataSourceRequest struct for AddIndicatorGaugeDataSourceRequest
 type AddIndicatorGaugeDataSourceRequest struct {
 	// Name of the new Gauge Data Source
-	SourceName string `json:"sourceName"`
-	Schemas []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
+	SourceName string                                  `json:"sourceName"`
+	Schemas    []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
 	// A description for this Gauge Data Source
 	Description *string `json:"description,omitempty"`
 	// Additional information about the source of this data that is added to alerts sent as a result of gauges that use this Gauge Data Source.
@@ -72,7 +72,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetSourceName() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetSourceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SourceName, true
 }
@@ -96,7 +96,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetSchemas() []EnumindicatorGaugeDa
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetSchemasOk() ([]EnumindicatorGaugeDataSourceSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -119,7 +119,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -151,7 +151,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetAdditionalText() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetAdditionalTextOk() (*string, bool) {
 	if o == nil || isNil(o.AdditionalText) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdditionalText, true
 }
@@ -184,7 +184,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetMonitorObjectclass() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetMonitorObjectclassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MonitorObjectclass, true
 }
@@ -208,7 +208,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetMonitorAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetMonitorAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MonitorAttribute, true
 }
@@ -231,7 +231,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetIncludeFilter() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetIncludeFilterOk() (*string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -263,7 +263,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetResourceAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetResourceAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceAttribute, true
 }
@@ -295,7 +295,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceType, true
 }
@@ -327,7 +327,7 @@ func (o *AddIndicatorGaugeDataSourceRequest) GetMinimumUpdateInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddIndicatorGaugeDataSourceRequest) GetMinimumUpdateIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinimumUpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumUpdateInterval, true
 }
@@ -416,5 +416,3 @@ func (v *NullableAddIndicatorGaugeDataSourceRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

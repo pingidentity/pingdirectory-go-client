@@ -18,8 +18,8 @@ import (
 // AddFailureLockoutActionRequest - struct for AddFailureLockoutActionRequest
 type AddFailureLockoutActionRequest struct {
 	AddDelayBindResponseFailureLockoutActionRequest *AddDelayBindResponseFailureLockoutActionRequest
-	AddLockAccountFailureLockoutActionRequest *AddLockAccountFailureLockoutActionRequest
-	AddNoOperationFailureLockoutActionRequest *AddNoOperationFailureLockoutActionRequest
+	AddLockAccountFailureLockoutActionRequest       *AddLockAccountFailureLockoutActionRequest
+	AddNoOperationFailureLockoutActionRequest       *AddNoOperationFailureLockoutActionRequest
 }
 
 // AddDelayBindResponseFailureLockoutActionRequestAsAddFailureLockoutActionRequest is a convenience function that returns AddDelayBindResponseFailureLockoutActionRequest wrapped in AddFailureLockoutActionRequest
@@ -42,7 +42,6 @@ func AddNoOperationFailureLockoutActionRequestAsAddFailureLockoutActionRequest(v
 		AddNoOperationFailureLockoutActionRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddFailureLockoutActionRequest) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddFailureLockoutActionRequest) GetActualInstance() (interface{}) {
+func (obj *AddFailureLockoutActionRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddFailureLockoutActionRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

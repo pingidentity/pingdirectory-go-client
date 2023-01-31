@@ -16,10 +16,10 @@ import (
 
 // FileBasedCipherStreamProviderResponse struct for FileBasedCipherStreamProviderResponse
 type FileBasedCipherStreamProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Cipher Stream Provider
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumfileBasedCipherStreamProviderSchemaUrn `json:"schemas"`
 	// The path to the file containing the password to use when generating ciphers.
 	PasswordFile string `json:"passwordFile"`
@@ -65,7 +65,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetSchemas() []EnumfileBasedCiph
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetSchemasOk() ([]EnumfileBasedCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetPasswordFile() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetPasswordFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordFile, true
 }
@@ -201,7 +201,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetWaitForPasswordFile() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetWaitForPasswordFileOk() (*bool, bool) {
 	if o == nil || isNil(o.WaitForPasswordFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.WaitForPasswordFile, true
 }
@@ -233,7 +233,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *FileBasedCipherStreamProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FileBasedCipherStreamProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableFileBasedCipherStreamProviderResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

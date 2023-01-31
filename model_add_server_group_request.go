@@ -17,8 +17,8 @@ import (
 // AddServerGroupRequest struct for AddServerGroupRequest
 type AddServerGroupRequest struct {
 	// Name of the new Server Group
-	GroupName string `json:"groupName"`
-	Schemas []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
+	GroupName string                     `json:"groupName"`
+	Schemas   []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
 	// A server instance that is a member of this group.
 	Member []string `json:"member,omitempty"`
 }
@@ -55,7 +55,7 @@ func (o *AddServerGroupRequest) GetGroupName() string {
 // and a boolean to check if the value has been set.
 func (o *AddServerGroupRequest) GetGroupNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GroupName, true
 }
@@ -78,7 +78,7 @@ func (o *AddServerGroupRequest) GetSchemas() []EnumserverGroupSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddServerGroupRequest) GetSchemasOk() ([]EnumserverGroupSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddServerGroupRequest) GetMember() []string {
 // and a boolean to check if the value has been set.
 func (o *AddServerGroupRequest) GetMemberOk() ([]string, bool) {
 	if o == nil || isNil(o.Member) {
-    return nil, false
+		return nil, false
 	}
 	return o.Member, true
 }
@@ -178,5 +178,3 @@ func (v *NullableAddServerGroupRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

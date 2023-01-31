@@ -16,10 +16,10 @@ import (
 
 // VaultPasswordStorageSchemeResponse struct for VaultPasswordStorageSchemeResponse
 type VaultPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumvaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
@@ -65,7 +65,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetSchemas() []EnumvaultPasswordSto
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumvaultPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetVaultExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetVaultExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultExternalServer, true
 }
@@ -201,7 +201,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetDefaultField() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetDefaultFieldOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultField) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultField, true
 }
@@ -233,7 +233,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *VaultPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *VaultPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableVaultPasswordStorageSchemeResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

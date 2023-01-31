@@ -17,8 +17,8 @@ import (
 // AddTimeLimitLogRetentionPolicyRequest struct for AddTimeLimitLogRetentionPolicyRequest
 type AddTimeLimitLogRetentionPolicyRequest struct {
 	// Name of the new Log Retention Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumtimeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                     `json:"policyName"`
+	Schemas    []EnumtimeLimitLogRetentionPolicySchemaUrn `json:"schemas"`
 	// Specifies the desired minimum length of time that each log file should be retained.
 	RetainDuration string `json:"retainDuration"`
 	// A description for this Log Retention Policy
@@ -59,7 +59,7 @@ func (o *AddTimeLimitLogRetentionPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRetentionPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddTimeLimitLogRetentionPolicyRequest) GetSchemas() []EnumtimeLimitLogR
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRetentionPolicyRequest) GetSchemasOk() ([]EnumtimeLimitLogRetentionPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddTimeLimitLogRetentionPolicyRequest) GetRetainDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRetentionPolicyRequest) GetRetainDurationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RetainDuration, true
 }
@@ -130,7 +130,7 @@ func (o *AddTimeLimitLogRetentionPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddTimeLimitLogRetentionPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddTimeLimitLogRetentionPolicyRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

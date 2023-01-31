@@ -20,8 +20,8 @@ type EnumpasswordPolicyStateUpdateFailurePolicyProp string
 
 // List of Enumpassword-policy-stateUpdateFailurePolicyProp
 const (
-	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_IGNORE EnumpasswordPolicyStateUpdateFailurePolicyProp = "ignore"
-	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_REACTIVE EnumpasswordPolicyStateUpdateFailurePolicyProp = "reactive"
+	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_IGNORE    EnumpasswordPolicyStateUpdateFailurePolicyProp = "ignore"
+	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_REACTIVE  EnumpasswordPolicyStateUpdateFailurePolicyProp = "reactive"
 	ENUMPASSWORDPOLICYSTATEUPDATEFAILUREPOLICYPROP_PROACTIVE EnumpasswordPolicyStateUpdateFailurePolicyProp = "proactive"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumpasswordPolicyStateUpdateFailurePolicyProp) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

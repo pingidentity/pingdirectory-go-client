@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedAlertHandlerResponse struct for GroovyScriptedAlertHandlerResponse
 type GroovyScriptedAlertHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Alert Handler
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumgroovyScriptedAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Alert Handler.
 	ScriptClass string `json:"scriptClass"`
@@ -30,10 +30,10 @@ type GroovyScriptedAlertHandlerResponse struct {
 	// Indicates whether the Alert Handler is enabled.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the server should attempt to invoke this Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
-	Asynchronous *bool `json:"asynchronous,omitempty"`
+	Asynchronous         *bool                                      `json:"asynchronous,omitempty"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewGroovyScriptedAlertHandlerResponse instantiates a new GroovyScriptedAlertHandlerResponse object
@@ -70,7 +70,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -102,7 +102,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -135,7 +135,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -159,7 +159,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetSchemas() []EnumgroovyScriptedAl
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetSchemasOk() ([]EnumgroovyScriptedAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -206,7 +206,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetScriptArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -238,7 +238,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -271,7 +271,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -294,7 +294,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -326,7 +326,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetEnabledAlertSeverity() []Enumale
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -358,7 +358,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetEnabledAlertType() []EnumalertHa
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -390,7 +390,7 @@ func (o *GroovyScriptedAlertHandlerResponse) GetDisabledAlertType() []EnumalertH
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedAlertHandlerResponse) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -485,5 +485,3 @@ func (v *NullableGroovyScriptedAlertHandlerResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

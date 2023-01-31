@@ -16,9 +16,9 @@ import (
 
 // DelegatedAdminHttpServletExtensionResponse struct for DelegatedAdminHttpServletExtensionResponse
 type DelegatedAdminHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdelegatedAdminHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumdelegatedAdminHttpServletExtensionSchemaUrn  `json:"schemas"`
 	// Name of the HTTP Servlet Extension
 	Id string `json:"id"`
 	// Enables HTTP Basic authentication, using a username and password. The Identity Mapper specified by the identity-mapper property will be used to map the username to a DN.
@@ -73,7 +73,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetUrnpingidentityschemasco
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetSchemas() []Enumdelegate
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetSchemasOk() ([]EnumdelegatedAdminHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -162,7 +162,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -185,7 +185,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetBasicAuthEnabled() bool 
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetBasicAuthEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.BasicAuthEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.BasicAuthEnabled, true
 }
@@ -217,7 +217,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetIdentityMapper() string 
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -249,7 +249,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetAccessTokenValidator() [
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]string, bool) {
 	if o == nil || isNil(o.AccessTokenValidator) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenValidator, true
 }
@@ -281,7 +281,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetAccessTokenScope() strin
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetAccessTokenScopeOk() (*string, bool) {
 	if o == nil || isNil(o.AccessTokenScope) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccessTokenScope, true
 }
@@ -313,7 +313,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetAudience() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetAudienceOk() (*string, bool) {
 	if o == nil || isNil(o.Audience) {
-    return nil, false
+		return nil, false
 	}
 	return o.Audience, true
 }
@@ -345,7 +345,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -377,7 +377,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetCrossOriginPolicy() stri
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -409,7 +409,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetResponseHeader() []strin
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -441,7 +441,7 @@ func (o *DelegatedAdminHttpServletExtensionResponse) GetCorrelationIDResponseHea
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -539,5 +539,3 @@ func (v *NullableDelegatedAdminHttpServletExtensionResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

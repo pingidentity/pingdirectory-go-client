@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // LogFieldMappingApiService LogFieldMappingApi service
 type LogFieldMappingApiService service
 
 type ApiAddLogFieldMappingRequest struct {
-	ctx context.Context
-	ApiService *LogFieldMappingApiService
+	ctx                       context.Context
+	ApiService                *LogFieldMappingApiService
 	addLogFieldMappingRequest *AddLogFieldMappingRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddLogFieldMappingRequest) Execute() (*AddLogFieldMapping200Response,
 /*
 AddLogFieldMapping Add a new Log Field Mapping to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddLogFieldMappingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) AddLogFieldMapping(ctx context.Context) ApiAddLogFieldMappingRequest {
 	return ApiAddLogFieldMappingRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogFieldMapping200Response
+//
+//	@return AddLogFieldMapping200Response
 func (a *LogFieldMappingApiService) AddLogFieldMappingExecute(r ApiAddLogFieldMappingRequest) (*AddLogFieldMapping200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogFieldMapping200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogFieldMapping200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldMappingApiService.AddLogFieldMapping")
@@ -133,8 +133,8 @@ func (a *LogFieldMappingApiService) AddLogFieldMappingExecute(r ApiAddLogFieldMa
 }
 
 type ApiDeleteLogFieldMappingRequest struct {
-	ctx context.Context
-	ApiService *LogFieldMappingApiService
+	ctx                 context.Context
+	ApiService          *LogFieldMappingApiService
 	logFieldMappingName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteLogFieldMappingRequest) Execute() (*http.Response, error) {
 /*
 DeleteLogFieldMapping Delete a Log Field Mapping
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logFieldMappingName Name of the Log Field Mapping to be deleted
- @return ApiDeleteLogFieldMappingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logFieldMappingName Name of the Log Field Mapping to be deleted
+	@return ApiDeleteLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) DeleteLogFieldMapping(ctx context.Context, logFieldMappingName string) ApiDeleteLogFieldMappingRequest {
 	return ApiDeleteLogFieldMappingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		logFieldMappingName: logFieldMappingName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *LogFieldMappingApiService) DeleteLogFieldMapping(ctx context.Context, l
 // Execute executes the request
 func (a *LogFieldMappingApiService) DeleteLogFieldMappingExecute(r ApiDeleteLogFieldMappingRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldMappingApiService.DeleteLogFieldMapping")
@@ -223,8 +223,8 @@ func (a *LogFieldMappingApiService) DeleteLogFieldMappingExecute(r ApiDeleteLogF
 }
 
 type ApiGetLogFieldMappingRequest struct {
-	ctx context.Context
-	ApiService *LogFieldMappingApiService
+	ctx                 context.Context
+	ApiService          *LogFieldMappingApiService
 	logFieldMappingName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetLogFieldMappingRequest) Execute() (*AddLogFieldMapping200Response,
 /*
 GetLogFieldMapping Returns a single Log Field Mapping
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logFieldMappingName Name of the Log Field Mapping to be read
- @return ApiGetLogFieldMappingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logFieldMappingName Name of the Log Field Mapping to be read
+	@return ApiGetLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) GetLogFieldMapping(ctx context.Context, logFieldMappingName string) ApiGetLogFieldMappingRequest {
 	return ApiGetLogFieldMappingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		logFieldMappingName: logFieldMappingName,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogFieldMapping200Response
+//
+//	@return AddLogFieldMapping200Response
 func (a *LogFieldMappingApiService) GetLogFieldMappingExecute(r ApiGetLogFieldMappingRequest) (*AddLogFieldMapping200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogFieldMapping200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogFieldMapping200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldMappingApiService.GetLogFieldMapping")
@@ -324,10 +325,10 @@ func (a *LogFieldMappingApiService) GetLogFieldMappingExecute(r ApiGetLogFieldMa
 }
 
 type ApiUpdateLogFieldMappingRequest struct {
-	ctx context.Context
-	ApiService *LogFieldMappingApiService
+	ctx                 context.Context
+	ApiService          *LogFieldMappingApiService
 	logFieldMappingName string
-	updateRequest *UpdateRequest
+	updateRequest       *UpdateRequest
 }
 
 // Update an existing Log Field Mapping
@@ -343,26 +344,27 @@ func (r ApiUpdateLogFieldMappingRequest) Execute() (*AddLogFieldMapping200Respon
 /*
 UpdateLogFieldMapping Update an existing Log Field Mapping by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logFieldMappingName Name of the Log Field Mapping to be updated
- @return ApiUpdateLogFieldMappingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logFieldMappingName Name of the Log Field Mapping to be updated
+	@return ApiUpdateLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) UpdateLogFieldMapping(ctx context.Context, logFieldMappingName string) ApiUpdateLogFieldMappingRequest {
 	return ApiUpdateLogFieldMappingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		logFieldMappingName: logFieldMappingName,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogFieldMapping200Response
+//
+//	@return AddLogFieldMapping200Response
 func (a *LogFieldMappingApiService) UpdateLogFieldMappingExecute(r ApiUpdateLogFieldMappingRequest) (*AddLogFieldMapping200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogFieldMapping200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogFieldMapping200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogFieldMappingApiService.UpdateLogFieldMapping")

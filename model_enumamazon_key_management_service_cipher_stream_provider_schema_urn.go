@@ -106,4 +106,3 @@ func (v *NullableEnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

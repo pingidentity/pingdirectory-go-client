@@ -17,9 +17,9 @@ import (
 
 // AddRequestCriteriaRequest - struct for AddRequestCriteriaRequest
 type AddRequestCriteriaRequest struct {
-	AddAggregateRequestCriteriaRequest *AddAggregateRequestCriteriaRequest
-	AddRootDseRequestCriteriaRequest *AddRootDseRequestCriteriaRequest
-	AddSimpleRequestCriteriaRequest *AddSimpleRequestCriteriaRequest
+	AddAggregateRequestCriteriaRequest  *AddAggregateRequestCriteriaRequest
+	AddRootDseRequestCriteriaRequest    *AddRootDseRequestCriteriaRequest
+	AddSimpleRequestCriteriaRequest     *AddSimpleRequestCriteriaRequest
 	AddThirdPartyRequestCriteriaRequest *AddThirdPartyRequestCriteriaRequest
 }
 
@@ -50,7 +50,6 @@ func AddThirdPartyRequestCriteriaRequestAsAddRequestCriteriaRequest(v *AddThirdP
 		AddThirdPartyRequestCriteriaRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddRequestCriteriaRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddRequestCriteriaRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddRequestCriteriaRequest) GetActualInstance() (interface{}) {
+func (obj *AddRequestCriteriaRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddRequestCriteriaRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

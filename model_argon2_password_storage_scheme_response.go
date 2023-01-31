@@ -16,10 +16,10 @@ import (
 
 // Argon2PasswordStorageSchemeResponse struct for Argon2PasswordStorageSchemeResponse
 type Argon2PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []Enumargon2PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The number of rounds of cryptographic processing required in the course of encoding each password.
 	IterationCount int32 `json:"iterationCount"`
@@ -75,7 +75,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -140,7 +140,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -164,7 +164,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetSchemas() []Enumargon2PasswordS
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetSchemasOk() ([]Enumargon2PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -188,7 +188,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetIterationCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetIterationCountOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IterationCount, true
 }
@@ -212,7 +212,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetParallelismFactor() int32 {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetParallelismFactorOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ParallelismFactor, true
 }
@@ -236,7 +236,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetMemoryUsageKb() int32 {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetMemoryUsageKbOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MemoryUsageKb, true
 }
@@ -260,7 +260,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SaltLengthBytes, true
 }
@@ -284,7 +284,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetDerivedKeyLengthBytesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DerivedKeyLengthBytes, true
 }
@@ -307,7 +307,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -340,7 +340,7 @@ func (o *Argon2PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Argon2PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -423,5 +423,3 @@ func (v *NullableArgon2PasswordStorageSchemeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

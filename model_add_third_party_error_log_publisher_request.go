@@ -17,19 +17,19 @@ import (
 // AddThirdPartyErrorLogPublisherRequest struct for AddThirdPartyErrorLogPublisherRequest
 type AddThirdPartyErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName string `json:"publisherName"`
-	Schemas []EnumthirdPartyErrorLogPublisherSchemaUrn `json:"schemas"`
+	PublisherName string                                     `json:"publisherName"`
+	Schemas       []EnumthirdPartyErrorLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Error Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Error Log Publisher. Each configuration property should be given in the form 'name=value'.
-	ExtensionArgument []string `json:"extensionArgument,omitempty"`
-	DefaultSeverity []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
+	ExtensionArgument []string                              `json:"extensionArgument,omitempty"`
+	DefaultSeverity   []EnumlogPublisherDefaultSeverityProp `json:"defaultSeverity,omitempty"`
 	// Specifies the override severity levels for the logger based on the category of the messages.
 	OverrideSeverity []string `json:"overrideSeverity,omitempty"`
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -68,7 +68,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetPublisherName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PublisherName, true
 }
@@ -92,7 +92,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetSchemas() []EnumthirdPartyErr
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetSchemasOk() ([]EnumthirdPartyErrorLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -139,7 +139,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetExtensionArgument() []string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -171,7 +171,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPu
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
 	if o == nil || isNil(o.DefaultSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultSeverity, true
 }
@@ -203,7 +203,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetOverrideSeverity() []string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -235,7 +235,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,7 +268,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -291,7 +291,7 @@ func (o *AddThirdPartyErrorLogPublisherRequest) GetLoggingErrorBehavior() Enumlo
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -377,5 +377,3 @@ func (v *NullableAddThirdPartyErrorLogPublisherRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

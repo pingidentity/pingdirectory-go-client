@@ -17,8 +17,8 @@ import (
 // AddLdifConnectionHandlerRequest struct for AddLdifConnectionHandlerRequest
 type AddLdifConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                               `json:"handlerName"`
+	Schemas     []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
 	// Specifies a set of address masks that determines the addresses of the clients that are not allowed to establish connections to this connection handler.
@@ -69,7 +69,7 @@ func (o *AddLdifConnectionHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -93,7 +93,7 @@ func (o *AddLdifConnectionHandlerRequest) GetSchemas() []EnumldifConnectionHandl
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetSchemasOk() ([]EnumldifConnectionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddLdifConnectionHandlerRequest) GetAllowedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedClient, true
 }
@@ -148,7 +148,7 @@ func (o *AddLdifConnectionHandlerRequest) GetDeniedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedClient, true
 }
@@ -181,7 +181,7 @@ func (o *AddLdifConnectionHandlerRequest) GetLdifDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetLdifDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LdifDirectory, true
 }
@@ -205,7 +205,7 @@ func (o *AddLdifConnectionHandlerRequest) GetPollInterval() string {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetPollIntervalOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PollInterval, true
 }
@@ -228,7 +228,7 @@ func (o *AddLdifConnectionHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -261,7 +261,7 @@ func (o *AddLdifConnectionHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -335,5 +335,3 @@ func (v *NullableAddLdifConnectionHandlerRequest) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

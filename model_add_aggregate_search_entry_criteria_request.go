@@ -17,8 +17,8 @@ import (
 // AddAggregateSearchEntryCriteriaRequest struct for AddAggregateSearchEntryCriteriaRequest
 type AddAggregateSearchEntryCriteriaRequest struct {
 	// Name of the new Search Entry Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumaggregateSearchEntryCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                      `json:"criteriaName"`
+	Schemas      []EnumaggregateSearchEntryCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a search entry criteria object that must match the associated search result entry in order to match the aggregate search entry criteria. If one or more all-included search entry criteria objects are provided, then a search result entry must match all of them in order to match the aggregate search entry criteria.
 	AllIncludedSearchEntryCriteria []string `json:"allIncludedSearchEntryCriteria,omitempty"`
 	// Specifies a search entry criteria object that may match the associated search result entry in order to match the aggregate search entry criteria. If one or more any-included search entry criteria objects are provided, then a search result entry must match at least one of them in order to match the aggregate search entry criteria.
@@ -64,7 +64,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -88,7 +88,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetSchemas() []EnumaggregateSea
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetSchemasOk() ([]EnumaggregateSearchEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetAllIncludedSearchEntryCriter
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetAllIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedSearchEntryCriteria, true
 }
@@ -143,7 +143,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetAnyIncludedSearchEntryCriter
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetAnyIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedSearchEntryCriteria, true
 }
@@ -175,7 +175,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetNotAllIncludedSearchEntryCri
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetNotAllIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedSearchEntryCriteria, true
 }
@@ -207,7 +207,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetNoneIncludedSearchEntryCrite
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetNoneIncludedSearchEntryCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedSearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedSearchEntryCriteria, true
 }
@@ -239,7 +239,7 @@ func (o *AddAggregateSearchEntryCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateSearchEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -319,5 +319,3 @@ func (v *NullableAddAggregateSearchEntryCriteriaRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // PwnedPasswordsPasswordValidatorResponse struct for PwnedPasswordsPasswordValidatorResponse
 type PwnedPasswordsPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumpwnedPasswordsPasswordValidatorSchemaUrn `json:"schemas"`
 	// The base URL for requests used to interact with the Pwned Passwords service. The first five characters of the hexadecimal representation of the unsalted SHA-1 digest of a proposed password will be appended to this base URL to construct the HTTP GET request used to obtain information about potential matches.
 	PwnedPasswordsBaseURL string `json:"pwnedPasswordsBaseURL"`
@@ -83,7 +83,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetSchemas() []EnumpwnedPasswo
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetSchemasOk() ([]EnumpwnedPasswordsPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -196,7 +196,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetPwnedPasswordsBaseURL() str
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetPwnedPasswordsBaseURLOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PwnedPasswordsBaseURL, true
 }
@@ -220,7 +220,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetInvokeForAdd() bool {
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetInvokeForAddOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.InvokeForAdd, true
 }
@@ -244,7 +244,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetInvokeForSelfChange() bool 
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetInvokeForSelfChangeOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.InvokeForSelfChange, true
 }
@@ -268,7 +268,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetInvokeForAdminReset() bool 
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetInvokeForAdminResetOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.InvokeForAdminReset, true
 }
@@ -292,7 +292,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetAcceptPasswordOnServiceErro
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetAcceptPasswordOnServiceErrorOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AcceptPasswordOnServiceError, true
 }
@@ -315,7 +315,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetKeyManagerProvider() string
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -347,7 +347,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetTrustManagerProvider() stri
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -379,7 +379,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -412,7 +412,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -435,7 +435,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetValidatorRequirementDescrip
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -467,7 +467,7 @@ func (o *PwnedPasswordsPasswordValidatorResponse) GetValidatorFailureMessage() s
 // and a boolean to check if the value has been set.
 func (o *PwnedPasswordsPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -571,5 +571,3 @@ func (v *NullablePwnedPasswordsPasswordValidatorResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

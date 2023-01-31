@@ -17,27 +17,27 @@ import (
 
 // GetExtendedOperationHandler200Response - struct for GetExtendedOperationHandler200Response
 type GetExtendedOperationHandler200Response struct {
-	BatchedTransactionsExtendedOperationHandlerResponse *BatchedTransactionsExtendedOperationHandlerResponse
-	CancelExtendedOperationHandlerResponse *CancelExtendedOperationHandlerResponse
-	CollectSupportDataExtendedOperationHandlerResponse *CollectSupportDataExtendedOperationHandlerResponse
-	DeliverOtpExtendedOperationHandlerResponse *DeliverOtpExtendedOperationHandlerResponse
-	DeliverPasswordResetTokenExtendedOperationHandlerResponse *DeliverPasswordResetTokenExtendedOperationHandlerResponse
-	ExportReversiblePasswordsExtendedOperationHandlerResponse *ExportReversiblePasswordsExtendedOperationHandlerResponse
-	GeneratePasswordExtendedOperationHandlerResponse *GeneratePasswordExtendedOperationHandlerResponse
-	GetChangelogBatchExtendedOperationHandlerResponse *GetChangelogBatchExtendedOperationHandlerResponse
-	GetConnectionIdExtendedOperationHandlerResponse *GetConnectionIdExtendedOperationHandlerResponse
-	GetPasswordQualityRequirementsExtendedOperationHandlerResponse *GetPasswordQualityRequirementsExtendedOperationHandlerResponse
+	BatchedTransactionsExtendedOperationHandlerResponse               *BatchedTransactionsExtendedOperationHandlerResponse
+	CancelExtendedOperationHandlerResponse                            *CancelExtendedOperationHandlerResponse
+	CollectSupportDataExtendedOperationHandlerResponse                *CollectSupportDataExtendedOperationHandlerResponse
+	DeliverOtpExtendedOperationHandlerResponse                        *DeliverOtpExtendedOperationHandlerResponse
+	DeliverPasswordResetTokenExtendedOperationHandlerResponse         *DeliverPasswordResetTokenExtendedOperationHandlerResponse
+	ExportReversiblePasswordsExtendedOperationHandlerResponse         *ExportReversiblePasswordsExtendedOperationHandlerResponse
+	GeneratePasswordExtendedOperationHandlerResponse                  *GeneratePasswordExtendedOperationHandlerResponse
+	GetChangelogBatchExtendedOperationHandlerResponse                 *GetChangelogBatchExtendedOperationHandlerResponse
+	GetConnectionIdExtendedOperationHandlerResponse                   *GetConnectionIdExtendedOperationHandlerResponse
+	GetPasswordQualityRequirementsExtendedOperationHandlerResponse    *GetPasswordQualityRequirementsExtendedOperationHandlerResponse
 	GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse *GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse
-	MultiUpdateExtendedOperationHandlerResponse *MultiUpdateExtendedOperationHandlerResponse
-	NotificationSubscriptionExtendedOperationHandlerResponse *NotificationSubscriptionExtendedOperationHandlerResponse
-	PasswordModifyExtendedOperationHandlerResponse *PasswordModifyExtendedOperationHandlerResponse
-	PasswordPolicyStateExtendedOperationHandlerResponse *PasswordPolicyStateExtendedOperationHandlerResponse
-	ReplaceCertificateExtendedOperationHandlerResponse *ReplaceCertificateExtendedOperationHandlerResponse
-	SingleUseTokensExtendedOperationHandlerResponse *SingleUseTokensExtendedOperationHandlerResponse
-	StartTlsExtendedOperationHandlerResponse *StartTlsExtendedOperationHandlerResponse
-	ThirdPartyExtendedOperationHandlerResponse *ThirdPartyExtendedOperationHandlerResponse
-	ValidateTotpPasswordExtendedOperationHandlerResponse *ValidateTotpPasswordExtendedOperationHandlerResponse
-	WhoAmIExtendedOperationHandlerResponse *WhoAmIExtendedOperationHandlerResponse
+	MultiUpdateExtendedOperationHandlerResponse                       *MultiUpdateExtendedOperationHandlerResponse
+	NotificationSubscriptionExtendedOperationHandlerResponse          *NotificationSubscriptionExtendedOperationHandlerResponse
+	PasswordModifyExtendedOperationHandlerResponse                    *PasswordModifyExtendedOperationHandlerResponse
+	PasswordPolicyStateExtendedOperationHandlerResponse               *PasswordPolicyStateExtendedOperationHandlerResponse
+	ReplaceCertificateExtendedOperationHandlerResponse                *ReplaceCertificateExtendedOperationHandlerResponse
+	SingleUseTokensExtendedOperationHandlerResponse                   *SingleUseTokensExtendedOperationHandlerResponse
+	StartTlsExtendedOperationHandlerResponse                          *StartTlsExtendedOperationHandlerResponse
+	ThirdPartyExtendedOperationHandlerResponse                        *ThirdPartyExtendedOperationHandlerResponse
+	ValidateTotpPasswordExtendedOperationHandlerResponse              *ValidateTotpPasswordExtendedOperationHandlerResponse
+	WhoAmIExtendedOperationHandlerResponse                            *WhoAmIExtendedOperationHandlerResponse
 }
 
 // BatchedTransactionsExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Response is a convenience function that returns BatchedTransactionsExtendedOperationHandlerResponse wrapped in GetExtendedOperationHandler200Response
@@ -186,7 +186,6 @@ func WhoAmIExtendedOperationHandlerResponseAsGetExtendedOperationHandler200Respo
 		WhoAmIExtendedOperationHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetExtendedOperationHandler200Response) UnmarshalJSON(data []byte) error {
@@ -587,7 +586,7 @@ func (src GetExtendedOperationHandler200Response) MarshalJSON() ([]byte, error) 
 }
 
 // Get the actual instance
-func (obj *GetExtendedOperationHandler200Response) GetActualInstance() (interface{}) {
+func (obj *GetExtendedOperationHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -714,5 +713,3 @@ func (v *NullableGetExtendedOperationHandler200Response) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

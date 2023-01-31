@@ -17,42 +17,42 @@ import (
 
 // AddLogPublisher200Response - struct for AddLogPublisher200Response
 type AddLogPublisher200Response struct {
-	AdminAlertAccessLogPublisherResponse *AdminAlertAccessLogPublisherResponse
-	CommonLogFileHttpOperationLogPublisherResponse *CommonLogFileHttpOperationLogPublisherResponse
-	ConsoleJsonAuditLogPublisherResponse *ConsoleJsonAuditLogPublisherResponse
-	ConsoleJsonHttpOperationLogPublisherResponse *ConsoleJsonHttpOperationLogPublisherResponse
-	DebugAccessLogPublisherResponse *DebugAccessLogPublisherResponse
-	DetailedHttpOperationLogPublisherResponse *DetailedHttpOperationLogPublisherResponse
-	FileBasedAccessLogPublisherResponse *FileBasedAccessLogPublisherResponse
-	FileBasedAuditLogPublisherResponse *FileBasedAuditLogPublisherResponse
-	FileBasedDebugLogPublisherResponse *FileBasedDebugLogPublisherResponse
-	FileBasedErrorLogPublisherResponse *FileBasedErrorLogPublisherResponse
-	FileBasedJsonAuditLogPublisherResponse *FileBasedJsonAuditLogPublisherResponse
-	FileBasedJsonHttpOperationLogPublisherResponse *FileBasedJsonHttpOperationLogPublisherResponse
-	FileBasedTraceLogPublisherResponse *FileBasedTraceLogPublisherResponse
-	GroovyScriptedAccessLogPublisherResponse *GroovyScriptedAccessLogPublisherResponse
-	GroovyScriptedErrorLogPublisherResponse *GroovyScriptedErrorLogPublisherResponse
+	AdminAlertAccessLogPublisherResponse              *AdminAlertAccessLogPublisherResponse
+	CommonLogFileHttpOperationLogPublisherResponse    *CommonLogFileHttpOperationLogPublisherResponse
+	ConsoleJsonAuditLogPublisherResponse              *ConsoleJsonAuditLogPublisherResponse
+	ConsoleJsonHttpOperationLogPublisherResponse      *ConsoleJsonHttpOperationLogPublisherResponse
+	DebugAccessLogPublisherResponse                   *DebugAccessLogPublisherResponse
+	DetailedHttpOperationLogPublisherResponse         *DetailedHttpOperationLogPublisherResponse
+	FileBasedAccessLogPublisherResponse               *FileBasedAccessLogPublisherResponse
+	FileBasedAuditLogPublisherResponse                *FileBasedAuditLogPublisherResponse
+	FileBasedDebugLogPublisherResponse                *FileBasedDebugLogPublisherResponse
+	FileBasedErrorLogPublisherResponse                *FileBasedErrorLogPublisherResponse
+	FileBasedJsonAuditLogPublisherResponse            *FileBasedJsonAuditLogPublisherResponse
+	FileBasedJsonHttpOperationLogPublisherResponse    *FileBasedJsonHttpOperationLogPublisherResponse
+	FileBasedTraceLogPublisherResponse                *FileBasedTraceLogPublisherResponse
+	GroovyScriptedAccessLogPublisherResponse          *GroovyScriptedAccessLogPublisherResponse
+	GroovyScriptedErrorLogPublisherResponse           *GroovyScriptedErrorLogPublisherResponse
 	GroovyScriptedFileBasedAccessLogPublisherResponse *GroovyScriptedFileBasedAccessLogPublisherResponse
-	GroovyScriptedFileBasedErrorLogPublisherResponse *GroovyScriptedFileBasedErrorLogPublisherResponse
-	GroovyScriptedHttpOperationLogPublisherResponse *GroovyScriptedHttpOperationLogPublisherResponse
-	JdbcBasedAccessLogPublisherResponse *JdbcBasedAccessLogPublisherResponse
-	JdbcBasedErrorLogPublisherResponse *JdbcBasedErrorLogPublisherResponse
-	JsonAccessLogPublisherResponse *JsonAccessLogPublisherResponse
-	JsonErrorLogPublisherResponse *JsonErrorLogPublisherResponse
-	OperationTimingAccessLogPublisherResponse *OperationTimingAccessLogPublisherResponse
-	SyslogBasedAccessLogPublisherResponse *SyslogBasedAccessLogPublisherResponse
-	SyslogBasedErrorLogPublisherResponse *SyslogBasedErrorLogPublisherResponse
-	SyslogJsonAccessLogPublisherResponse *SyslogJsonAccessLogPublisherResponse
-	SyslogJsonAuditLogPublisherResponse *SyslogJsonAuditLogPublisherResponse
-	SyslogJsonErrorLogPublisherResponse *SyslogJsonErrorLogPublisherResponse
-	SyslogJsonHttpOperationLogPublisherResponse *SyslogJsonHttpOperationLogPublisherResponse
-	SyslogTextAccessLogPublisherResponse *SyslogTextAccessLogPublisherResponse
-	SyslogTextErrorLogPublisherResponse *SyslogTextErrorLogPublisherResponse
-	ThirdPartyAccessLogPublisherResponse *ThirdPartyAccessLogPublisherResponse
-	ThirdPartyErrorLogPublisherResponse *ThirdPartyErrorLogPublisherResponse
-	ThirdPartyFileBasedAccessLogPublisherResponse *ThirdPartyFileBasedAccessLogPublisherResponse
-	ThirdPartyFileBasedErrorLogPublisherResponse *ThirdPartyFileBasedErrorLogPublisherResponse
-	ThirdPartyHttpOperationLogPublisherResponse *ThirdPartyHttpOperationLogPublisherResponse
+	GroovyScriptedFileBasedErrorLogPublisherResponse  *GroovyScriptedFileBasedErrorLogPublisherResponse
+	GroovyScriptedHttpOperationLogPublisherResponse   *GroovyScriptedHttpOperationLogPublisherResponse
+	JdbcBasedAccessLogPublisherResponse               *JdbcBasedAccessLogPublisherResponse
+	JdbcBasedErrorLogPublisherResponse                *JdbcBasedErrorLogPublisherResponse
+	JsonAccessLogPublisherResponse                    *JsonAccessLogPublisherResponse
+	JsonErrorLogPublisherResponse                     *JsonErrorLogPublisherResponse
+	OperationTimingAccessLogPublisherResponse         *OperationTimingAccessLogPublisherResponse
+	SyslogBasedAccessLogPublisherResponse             *SyslogBasedAccessLogPublisherResponse
+	SyslogBasedErrorLogPublisherResponse              *SyslogBasedErrorLogPublisherResponse
+	SyslogJsonAccessLogPublisherResponse              *SyslogJsonAccessLogPublisherResponse
+	SyslogJsonAuditLogPublisherResponse               *SyslogJsonAuditLogPublisherResponse
+	SyslogJsonErrorLogPublisherResponse               *SyslogJsonErrorLogPublisherResponse
+	SyslogJsonHttpOperationLogPublisherResponse       *SyslogJsonHttpOperationLogPublisherResponse
+	SyslogTextAccessLogPublisherResponse              *SyslogTextAccessLogPublisherResponse
+	SyslogTextErrorLogPublisherResponse               *SyslogTextErrorLogPublisherResponse
+	ThirdPartyAccessLogPublisherResponse              *ThirdPartyAccessLogPublisherResponse
+	ThirdPartyErrorLogPublisherResponse               *ThirdPartyErrorLogPublisherResponse
+	ThirdPartyFileBasedAccessLogPublisherResponse     *ThirdPartyFileBasedAccessLogPublisherResponse
+	ThirdPartyFileBasedErrorLogPublisherResponse      *ThirdPartyFileBasedErrorLogPublisherResponse
+	ThirdPartyHttpOperationLogPublisherResponse       *ThirdPartyHttpOperationLogPublisherResponse
 }
 
 // AdminAlertAccessLogPublisherResponseAsAddLogPublisher200Response is a convenience function that returns AdminAlertAccessLogPublisherResponse wrapped in AddLogPublisher200Response
@@ -306,7 +306,6 @@ func ThirdPartyHttpOperationLogPublisherResponseAsAddLogPublisher200Response(v *
 		ThirdPartyHttpOperationLogPublisherResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogPublisher200Response) UnmarshalJSON(data []byte) error {
@@ -977,7 +976,7 @@ func (src AddLogPublisher200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogPublisher200Response) GetActualInstance() (interface{}) {
+func (obj *AddLogPublisher200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -1164,5 +1163,3 @@ func (v *NullableAddLogPublisher200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

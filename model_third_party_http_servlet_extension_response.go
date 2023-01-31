@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyHttpServletExtensionResponse struct for ThirdPartyHttpServletExtensionResponse
 type ThirdPartyHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the HTTP Servlet Extension
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumthirdPartyHttpServletExtensionSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party HTTP Servlet Extension.
 	ExtensionClass string `json:"extensionClass"`
@@ -68,7 +68,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetSchemas() []EnumthirdPartyHt
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetSchemasOk() ([]EnumthirdPartyHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -204,7 +204,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -236,7 +236,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,7 +268,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -300,7 +300,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -332,7 +332,7 @@ func (o *ThirdPartyHttpServletExtensionResponse) GetCorrelationIDResponseHeader(
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -421,5 +421,3 @@ func (v *NullableThirdPartyHttpServletExtensionResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

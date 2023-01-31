@@ -16,10 +16,10 @@ import (
 
 // ScryptPasswordStorageSchemeResponse struct for ScryptPasswordStorageSchemeResponse
 type ScryptPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumscryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the exponent that should be used for the CPU/memory cost factor. The cost factor must be a power of two, so the value of this property represents the power to which two is raised. The CPU/memory cost factor specifies the number of iterations required for encoding the password, and also affects the amount of memory required during processing. A higher cost factor requires more processing and more memory to generate a password, which makes attacks against the password more expensive.
 	ScryptCpuMemoryCostFactorExponent *int32 `json:"scryptCpuMemoryCostFactorExponent,omitempty"`
@@ -68,7 +68,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetSchemas() []EnumscryptPasswordS
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumscryptPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetScryptCpuMemoryCostFactorExpone
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetScryptCpuMemoryCostFactorExponentOk() (*int32, bool) {
 	if o == nil || isNil(o.ScryptCpuMemoryCostFactorExponent) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScryptCpuMemoryCostFactorExponent, true
 }
@@ -212,7 +212,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetScryptBlockSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetScryptBlockSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.ScryptBlockSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScryptBlockSize, true
 }
@@ -244,7 +244,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetScryptParallelizationParameter(
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetScryptParallelizationParameterOk() (*int32, bool) {
 	if o == nil || isNil(o.ScryptParallelizationParameter) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScryptParallelizationParameter, true
 }
@@ -276,7 +276,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -308,7 +308,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -341,7 +341,7 @@ func (o *ScryptPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ScryptPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -421,5 +421,3 @@ func (v *NullableScryptPasswordStorageSchemeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddOpendjExternalServerRequest struct for AddOpendjExternalServerRequest
 type AddOpendjExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumopendjExternalServerSchemaUrn `json:"schemas"`
+	ServerName string                              `json:"serverName"`
+	Schemas    []EnumopendjExternalServerSchemaUrn `json:"schemas"`
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
 	// The port number on which the server listens for requests.
@@ -30,9 +30,9 @@ type AddOpendjExternalServerRequest struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider *string `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity EnumexternalServerConnectionSecurityProp `json:"connectionSecurity"`
-	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
+	PassphraseProvider      *string                                       `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity      EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity"`
+	AuthenticationMethod    EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -51,7 +51,7 @@ type AddOpendjExternalServerRequest struct {
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
 	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -100,7 +100,7 @@ func (o *AddOpendjExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -124,7 +124,7 @@ func (o *AddOpendjExternalServerRequest) GetSchemas() []EnumopendjExternalServer
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetSchemasOk() ([]EnumopendjExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -148,7 +148,7 @@ func (o *AddOpendjExternalServerRequest) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -172,7 +172,7 @@ func (o *AddOpendjExternalServerRequest) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -195,7 +195,7 @@ func (o *AddOpendjExternalServerRequest) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -227,7 +227,7 @@ func (o *AddOpendjExternalServerRequest) GetBindDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetBindDNOk() (*string, bool) {
 	if o == nil || isNil(o.BindDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindDN, true
 }
@@ -259,7 +259,7 @@ func (o *AddOpendjExternalServerRequest) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -291,7 +291,7 @@ func (o *AddOpendjExternalServerRequest) GetPassphraseProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -324,7 +324,7 @@ func (o *AddOpendjExternalServerRequest) GetConnectionSecurity() EnumexternalSer
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectionSecurity, true
 }
@@ -348,7 +348,7 @@ func (o *AddOpendjExternalServerRequest) GetAuthenticationMethod() EnumexternalS
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuthenticationMethod, true
 }
@@ -372,7 +372,7 @@ func (o *AddOpendjExternalServerRequest) GetVerifyCredentialsMethod() Enumextern
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VerifyCredentialsMethod, true
 }
@@ -395,7 +395,7 @@ func (o *AddOpendjExternalServerRequest) GetHealthCheckConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetHealthCheckConnectTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.HealthCheckConnectTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
 }
@@ -428,7 +428,7 @@ func (o *AddOpendjExternalServerRequest) GetMaxConnectionAge() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -451,7 +451,7 @@ func (o *AddOpendjExternalServerRequest) GetMinExpiredConnectionDisconnectInterv
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
 }
@@ -484,7 +484,7 @@ func (o *AddOpendjExternalServerRequest) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -508,7 +508,7 @@ func (o *AddOpendjExternalServerRequest) GetMaxResponseSize() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxResponseSize, true
 }
@@ -531,7 +531,7 @@ func (o *AddOpendjExternalServerRequest) GetKeyManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -563,7 +563,7 @@ func (o *AddOpendjExternalServerRequest) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -595,7 +595,7 @@ func (o *AddOpendjExternalServerRequest) GetInitialConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.InitialConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.InitialConnections, true
 }
@@ -627,7 +627,7 @@ func (o *AddOpendjExternalServerRequest) GetMaxConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxConnections, true
 }
@@ -659,7 +659,7 @@ func (o *AddOpendjExternalServerRequest) GetDefunctConnectionResultCode() []Enum
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
 	if o == nil || isNil(o.DefunctConnectionResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
 }
@@ -691,7 +691,7 @@ func (o *AddOpendjExternalServerRequest) GetAbandonOnTimeout() bool {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetAbandonOnTimeoutOk() (*bool, bool) {
 	if o == nil || isNil(o.AbandonOnTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.AbandonOnTimeout, true
 }
@@ -723,7 +723,7 @@ func (o *AddOpendjExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddOpendjExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -851,5 +851,3 @@ func (v *NullableAddOpendjExternalServerRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

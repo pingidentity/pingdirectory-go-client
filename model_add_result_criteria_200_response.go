@@ -17,10 +17,10 @@ import (
 
 // AddResultCriteria200Response - struct for AddResultCriteria200Response
 type AddResultCriteria200Response struct {
-	AggregateResultCriteriaResponse *AggregateResultCriteriaResponse
+	AggregateResultCriteriaResponse            *AggregateResultCriteriaResponse
 	ReplicationAssuranceResultCriteriaResponse *ReplicationAssuranceResultCriteriaResponse
-	SimpleResultCriteriaResponse *SimpleResultCriteriaResponse
-	ThirdPartyResultCriteriaResponse *ThirdPartyResultCriteriaResponse
+	SimpleResultCriteriaResponse               *SimpleResultCriteriaResponse
+	ThirdPartyResultCriteriaResponse           *ThirdPartyResultCriteriaResponse
 }
 
 // AggregateResultCriteriaResponseAsAddResultCriteria200Response is a convenience function that returns AggregateResultCriteriaResponse wrapped in AddResultCriteria200Response
@@ -50,7 +50,6 @@ func ThirdPartyResultCriteriaResponseAsAddResultCriteria200Response(v *ThirdPart
 		ThirdPartyResultCriteriaResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddResultCriteria200Response) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddResultCriteria200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddResultCriteria200Response) GetActualInstance() (interface{}) {
+func (obj *AddResultCriteria200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddResultCriteria200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

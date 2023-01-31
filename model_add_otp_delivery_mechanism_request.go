@@ -17,9 +17,9 @@ import (
 
 // AddOtpDeliveryMechanismRequest - struct for AddOtpDeliveryMechanismRequest
 type AddOtpDeliveryMechanismRequest struct {
-	AddEmailOtpDeliveryMechanismRequest *AddEmailOtpDeliveryMechanismRequest
+	AddEmailOtpDeliveryMechanismRequest      *AddEmailOtpDeliveryMechanismRequest
 	AddThirdPartyOtpDeliveryMechanismRequest *AddThirdPartyOtpDeliveryMechanismRequest
-	AddTwilioOtpDeliveryMechanismRequest *AddTwilioOtpDeliveryMechanismRequest
+	AddTwilioOtpDeliveryMechanismRequest     *AddTwilioOtpDeliveryMechanismRequest
 }
 
 // AddEmailOtpDeliveryMechanismRequestAsAddOtpDeliveryMechanismRequest is a convenience function that returns AddEmailOtpDeliveryMechanismRequest wrapped in AddOtpDeliveryMechanismRequest
@@ -42,7 +42,6 @@ func AddTwilioOtpDeliveryMechanismRequestAsAddOtpDeliveryMechanismRequest(v *Add
 		AddTwilioOtpDeliveryMechanismRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddOtpDeliveryMechanismRequest) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddOtpDeliveryMechanismRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddOtpDeliveryMechanismRequest) GetActualInstance() (interface{}) {
+func (obj *AddOtpDeliveryMechanismRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddOtpDeliveryMechanismRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

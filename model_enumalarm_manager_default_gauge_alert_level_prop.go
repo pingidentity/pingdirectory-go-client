@@ -20,12 +20,12 @@ type EnumalarmManagerDefaultGaugeAlertLevelProp string
 
 // List of Enumalarm-manager-defaultGaugeAlertLevelProp
 const (
-	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_ALWAYS EnumalarmManagerDefaultGaugeAlertLevelProp = "always"
+	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_ALWAYS            EnumalarmManagerDefaultGaugeAlertLevelProp = "always"
 	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_WARNING_AND_ABOVE EnumalarmManagerDefaultGaugeAlertLevelProp = "warning-and-above"
-	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_MINOR_AND_ABOVE EnumalarmManagerDefaultGaugeAlertLevelProp = "minor-and-above"
-	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_MAJOR_AND_ABOVE EnumalarmManagerDefaultGaugeAlertLevelProp = "major-and-above"
-	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_CRITICAL_ONLY EnumalarmManagerDefaultGaugeAlertLevelProp = "critical-only"
-	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_NEVER EnumalarmManagerDefaultGaugeAlertLevelProp = "never"
+	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_MINOR_AND_ABOVE   EnumalarmManagerDefaultGaugeAlertLevelProp = "minor-and-above"
+	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_MAJOR_AND_ABOVE   EnumalarmManagerDefaultGaugeAlertLevelProp = "major-and-above"
+	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_CRITICAL_ONLY     EnumalarmManagerDefaultGaugeAlertLevelProp = "critical-only"
+	ENUMALARMMANAGERDEFAULTGAUGEALERTLEVELPROP_NEVER             EnumalarmManagerDefaultGaugeAlertLevelProp = "never"
 )
 
 // All allowed values of EnumalarmManagerDefaultGaugeAlertLevelProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumalarmManagerDefaultGaugeAlertLevelProp) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

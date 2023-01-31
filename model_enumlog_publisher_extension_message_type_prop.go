@@ -20,10 +20,10 @@ type EnumlogPublisherExtensionMessageTypeProp string
 
 // List of Enumlog-publisher-extensionMessageTypeProp
 const (
-	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_ERROR EnumlogPublisherExtensionMessageTypeProp = "error"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_ERROR   EnumlogPublisherExtensionMessageTypeProp = "error"
 	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_WARNING EnumlogPublisherExtensionMessageTypeProp = "warning"
-	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_NOTICE EnumlogPublisherExtensionMessageTypeProp = "notice"
-	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_INFO EnumlogPublisherExtensionMessageTypeProp = "info"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_NOTICE  EnumlogPublisherExtensionMessageTypeProp = "notice"
+	ENUMLOGPUBLISHEREXTENSIONMESSAGETYPEPROP_INFO    EnumlogPublisherExtensionMessageTypeProp = "info"
 )
 
 // All allowed values of EnumlogPublisherExtensionMessageTypeProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumlogPublisherExtensionMessageTypeProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

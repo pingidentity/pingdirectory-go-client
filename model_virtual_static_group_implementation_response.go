@@ -16,9 +16,9 @@ import (
 
 // VirtualStaticGroupImplementationResponse struct for VirtualStaticGroupImplementationResponse
 type VirtualStaticGroupImplementationResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumvirtualStaticGroupImplementationSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumvirtualStaticGroupImplementationSchemaUrn    `json:"schemas"`
 	// Name of the Group Implementation
 	Id string `json:"id"`
 	// A description for this Group Implementation
@@ -60,7 +60,7 @@ func (o *VirtualStaticGroupImplementationResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *VirtualStaticGroupImplementationResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *VirtualStaticGroupImplementationResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *VirtualStaticGroupImplementationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *VirtualStaticGroupImplementationResponse) GetSchemas() []EnumvirtualSta
 // and a boolean to check if the value has been set.
 func (o *VirtualStaticGroupImplementationResponse) GetSchemasOk() ([]EnumvirtualStaticGroupImplementationSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *VirtualStaticGroupImplementationResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *VirtualStaticGroupImplementationResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *VirtualStaticGroupImplementationResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *VirtualStaticGroupImplementationResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *VirtualStaticGroupImplementationResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *VirtualStaticGroupImplementationResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableVirtualStaticGroupImplementationResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

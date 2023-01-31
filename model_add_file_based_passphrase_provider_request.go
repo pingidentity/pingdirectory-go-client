@@ -17,8 +17,8 @@ import (
 // AddFileBasedPassphraseProviderRequest struct for AddFileBasedPassphraseProviderRequest
 type AddFileBasedPassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumfileBasedPassphraseProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                     `json:"providerName"`
+	Schemas      []EnumfileBasedPassphraseProviderSchemaUrn `json:"schemas"`
 	// The path to the file containing the passphrase.
 	PasswordFile string `json:"passwordFile"`
 	// The maximum length of time that the passphrase provider may cache the passphrase that has been read from the target file. A value of zero seconds indicates that the provider should always attempt to read the passphrase from the file.
@@ -64,7 +64,7 @@ func (o *AddFileBasedPassphraseProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -88,7 +88,7 @@ func (o *AddFileBasedPassphraseProviderRequest) GetSchemas() []EnumfileBasedPass
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedPassphraseProviderRequest) GetSchemasOk() ([]EnumfileBasedPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddFileBasedPassphraseProviderRequest) GetPasswordFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedPassphraseProviderRequest) GetPasswordFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordFile, true
 }
@@ -135,7 +135,7 @@ func (o *AddFileBasedPassphraseProviderRequest) GetMaxCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedPassphraseProviderRequest) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -167,7 +167,7 @@ func (o *AddFileBasedPassphraseProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedPassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddFileBasedPassphraseProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedPassphraseProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddFileBasedPassphraseProviderRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

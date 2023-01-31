@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedHttpServletExtensionResponse struct for GroovyScriptedHttpServletExtensionResponse
 type GroovyScriptedHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the HTTP Servlet Extension
-	Id string `json:"id"`
+	Id      string                                            `json:"id"`
 	Schemas []EnumgroovyScriptedHttpServletExtensionSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Servlet Extension.
 	ScriptClass string `json:"scriptClass"`
@@ -68,7 +68,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetUrnpingidentityschemasco
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetSchemas() []EnumgroovySc
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetSchemasOk() ([]EnumgroovyScriptedHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -204,7 +204,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetScriptArgument() []strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -236,7 +236,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,7 +268,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetCrossOriginPolicy() stri
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -300,7 +300,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetResponseHeader() []strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -332,7 +332,7 @@ func (o *GroovyScriptedHttpServletExtensionResponse) GetCorrelationIDResponseHea
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -421,5 +421,3 @@ func (v *NullableGroovyScriptedHttpServletExtensionResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

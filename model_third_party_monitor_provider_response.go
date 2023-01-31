@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyMonitorProviderResponse struct for ThirdPartyMonitorProviderResponse
 type ThirdPartyMonitorProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Monitor Provider
-	Id string `json:"id"`
+	Id      string                                   `json:"id"`
 	Schemas []EnumthirdPartyMonitorProviderSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Monitor Provider.
 	ExtensionClass string `json:"extensionClass"`
@@ -65,7 +65,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetSchemas() []EnumthirdPartyMonitor
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetSchemasOk() ([]EnumthirdPartyMonitorProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -201,7 +201,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -233,7 +233,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -266,7 +266,7 @@ func (o *ThirdPartyMonitorProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyMonitorProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -340,5 +340,3 @@ func (v *NullableThirdPartyMonitorProviderResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

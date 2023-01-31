@@ -17,8 +17,8 @@ import (
 // AddConsentDefinitionRequest struct for AddConsentDefinitionRequest
 type AddConsentDefinitionRequest struct {
 	// Name of the new Consent Definition
-	DefinitionName string `json:"definitionName"`
-	Schemas []EnumconsentDefinitionSchemaUrn `json:"schemas,omitempty"`
+	DefinitionName string                           `json:"definitionName"`
+	Schemas        []EnumconsentDefinitionSchemaUrn `json:"schemas,omitempty"`
 	// A version-independent unique identifier for this Consent Definition.
 	UniqueID string `json:"uniqueID"`
 	// A human-readable display name for this Consent Definition.
@@ -62,7 +62,7 @@ func (o *AddConsentDefinitionRequest) GetDefinitionName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetDefinitionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DefinitionName, true
 }
@@ -85,7 +85,7 @@ func (o *AddConsentDefinitionRequest) GetSchemas() []EnumconsentDefinitionSchema
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetSchemasOk() ([]EnumconsentDefinitionSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddConsentDefinitionRequest) GetUniqueID() string {
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetUniqueIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.UniqueID, true
 }
@@ -141,7 +141,7 @@ func (o *AddConsentDefinitionRequest) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -173,7 +173,7 @@ func (o *AddConsentDefinitionRequest) GetParameter() []string {
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetParameterOk() ([]string, bool) {
 	if o == nil || isNil(o.Parameter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Parameter, true
 }
@@ -205,7 +205,7 @@ func (o *AddConsentDefinitionRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -282,5 +282,3 @@ func (v *NullableAddConsentDefinitionRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

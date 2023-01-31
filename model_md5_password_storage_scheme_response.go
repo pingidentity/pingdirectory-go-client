@@ -16,9 +16,9 @@ import (
 
 // Md5PasswordStorageSchemeResponse struct for Md5PasswordStorageSchemeResponse
 type Md5PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []Enummd5PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas                                       []Enummd5PasswordStorageSchemeSchemaUrn            `json:"schemas"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// Indicates whether the MD5 Password Storage Scheme is enabled for use.
@@ -60,7 +60,7 @@ func (o *Md5PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Md5PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *Md5PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *Md5PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *Md5PasswordStorageSchemeResponse) GetSchemas() []Enummd5PasswordStorage
 // and a boolean to check if the value has been set.
 func (o *Md5PasswordStorageSchemeResponse) GetSchemasOk() ([]Enummd5PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *Md5PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Md5PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -173,7 +173,7 @@ func (o *Md5PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Md5PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -196,7 +196,7 @@ func (o *Md5PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Md5PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableMd5PasswordStorageSchemeResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

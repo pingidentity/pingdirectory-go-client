@@ -17,8 +17,8 @@ import (
 // AddUserRestResourceTypeRequest struct for AddUserRestResourceTypeRequest
 type AddUserRestResourceTypeRequest struct {
 	// Name of the new REST Resource Type
-	TypeName string `json:"typeName"`
-	Schemas []EnumuserRestResourceTypeSchemaUrn `json:"schemas"`
+	TypeName string                              `json:"typeName"`
+	Schemas  []EnumuserRestResourceTypeSchemaUrn `json:"schemas"`
 	// Specifies which attribute category the password belongs to.
 	PasswordAttributeCategory *string `json:"passwordAttributeCategory,omitempty"`
 	// This property determines the display order for the password within its attribute category. Attributes are ordered within their category based on this index from least to greatest.
@@ -102,7 +102,7 @@ func (o *AddUserRestResourceTypeRequest) GetTypeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetTypeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TypeName, true
 }
@@ -126,7 +126,7 @@ func (o *AddUserRestResourceTypeRequest) GetSchemas() []EnumuserRestResourceType
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetSchemasOk() ([]EnumuserRestResourceTypeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordAttributeCategory() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPasswordAttributeCategoryOk() (*string, bool) {
 	if o == nil || isNil(o.PasswordAttributeCategory) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordAttributeCategory, true
 }
@@ -181,7 +181,7 @@ func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPasswordDisplayOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.PasswordDisplayOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordDisplayOrderIndex, true
 }
@@ -213,7 +213,7 @@ func (o *AddUserRestResourceTypeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -246,7 +246,7 @@ func (o *AddUserRestResourceTypeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -270,7 +270,7 @@ func (o *AddUserRestResourceTypeRequest) GetResourceEndpoint() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetResourceEndpointOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ResourceEndpoint, true
 }
@@ -294,7 +294,7 @@ func (o *AddUserRestResourceTypeRequest) GetStructuralLDAPObjectclass() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetStructuralLDAPObjectclassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.StructuralLDAPObjectclass, true
 }
@@ -317,7 +317,7 @@ func (o *AddUserRestResourceTypeRequest) GetAuxiliaryLDAPObjectclass() []string 
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetAuxiliaryLDAPObjectclassOk() ([]string, bool) {
 	if o == nil || isNil(o.AuxiliaryLDAPObjectclass) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuxiliaryLDAPObjectclass, true
 }
@@ -350,7 +350,7 @@ func (o *AddUserRestResourceTypeRequest) GetSearchBaseDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetSearchBaseDNOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SearchBaseDN, true
 }
@@ -373,7 +373,7 @@ func (o *AddUserRestResourceTypeRequest) GetIncludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetIncludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -405,7 +405,7 @@ func (o *AddUserRestResourceTypeRequest) GetParentDN() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetParentDNOk() (*string, bool) {
 	if o == nil || isNil(o.ParentDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentDN, true
 }
@@ -437,7 +437,7 @@ func (o *AddUserRestResourceTypeRequest) GetParentResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetParentResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ParentResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ParentResourceType, true
 }
@@ -469,7 +469,7 @@ func (o *AddUserRestResourceTypeRequest) GetRelativeDNFromParentResource() strin
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetRelativeDNFromParentResourceOk() (*string, bool) {
 	if o == nil || isNil(o.RelativeDNFromParentResource) {
-    return nil, false
+		return nil, false
 	}
 	return o.RelativeDNFromParentResource, true
 }
@@ -501,7 +501,7 @@ func (o *AddUserRestResourceTypeRequest) GetCreateRDNAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetCreateRDNAttributeTypeOk() (*string, bool) {
 	if o == nil || isNil(o.CreateRDNAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.CreateRDNAttributeType, true
 }
@@ -533,7 +533,7 @@ func (o *AddUserRestResourceTypeRequest) GetPostCreateConstructedAttribute() []s
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPostCreateConstructedAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.PostCreateConstructedAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.PostCreateConstructedAttribute, true
 }
@@ -565,7 +565,7 @@ func (o *AddUserRestResourceTypeRequest) GetUpdateConstructedAttribute() []strin
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetUpdateConstructedAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.UpdateConstructedAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.UpdateConstructedAttribute, true
 }
@@ -597,7 +597,7 @@ func (o *AddUserRestResourceTypeRequest) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDisplayNameOk() (*string, bool) {
 	if o == nil || isNil(o.DisplayName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisplayName, true
 }
@@ -629,7 +629,7 @@ func (o *AddUserRestResourceTypeRequest) GetSearchFilterPattern() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetSearchFilterPatternOk() (*string, bool) {
 	if o == nil || isNil(o.SearchFilterPattern) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchFilterPattern, true
 }
@@ -661,7 +661,7 @@ func (o *AddUserRestResourceTypeRequest) GetPrimaryDisplayAttributeType() string
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetPrimaryDisplayAttributeTypeOk() (*string, bool) {
 	if o == nil || isNil(o.PrimaryDisplayAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimaryDisplayAttributeType, true
 }
@@ -693,7 +693,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimit() int3
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminSearchSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.DelegatedAdminSearchSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.DelegatedAdminSearchSizeLimit, true
 }
@@ -725,7 +725,7 @@ func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimit() int3
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetDelegatedAdminReportSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.DelegatedAdminReportSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.DelegatedAdminReportSizeLimit, true
 }
@@ -757,7 +757,7 @@ func (o *AddUserRestResourceTypeRequest) GetMembersColumnName() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetMembersColumnNameOk() (*string, bool) {
 	if o == nil || isNil(o.MembersColumnName) {
-    return nil, false
+		return nil, false
 	}
 	return o.MembersColumnName, true
 }
@@ -789,7 +789,7 @@ func (o *AddUserRestResourceTypeRequest) GetNonmembersColumnName() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserRestResourceTypeRequest) GetNonmembersColumnNameOk() (*string, bool) {
 	if o == nil || isNil(o.NonmembersColumnName) {
-    return nil, false
+		return nil, false
 	}
 	return o.NonmembersColumnName, true
 }
@@ -920,5 +920,3 @@ func (v *NullableAddUserRestResourceTypeRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

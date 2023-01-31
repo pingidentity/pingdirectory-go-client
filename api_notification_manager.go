@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // NotificationManagerApiService NotificationManagerApi service
 type NotificationManagerApiService service
 
 type ApiAddNotificationManagerRequest struct {
-	ctx context.Context
-	ApiService *NotificationManagerApiService
+	ctx                                     context.Context
+	ApiService                              *NotificationManagerApiService
 	addThirdPartyNotificationManagerRequest *AddThirdPartyNotificationManagerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddNotificationManagerRequest) Execute() (*ThirdPartyNotificationMana
 /*
 AddNotificationManager Add a new Notification Manager to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddNotificationManagerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) AddNotificationManager(ctx context.Context) ApiAddNotificationManagerRequest {
 	return ApiAddNotificationManagerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ThirdPartyNotificationManagerResponse
+//
+//	@return ThirdPartyNotificationManagerResponse
 func (a *NotificationManagerApiService) AddNotificationManagerExecute(r ApiAddNotificationManagerRequest) (*ThirdPartyNotificationManagerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ThirdPartyNotificationManagerResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ThirdPartyNotificationManagerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationManagerApiService.AddNotificationManager")
@@ -133,8 +133,8 @@ func (a *NotificationManagerApiService) AddNotificationManagerExecute(r ApiAddNo
 }
 
 type ApiDeleteNotificationManagerRequest struct {
-	ctx context.Context
-	ApiService *NotificationManagerApiService
+	ctx                     context.Context
+	ApiService              *NotificationManagerApiService
 	notificationManagerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteNotificationManagerRequest) Execute() (*http.Response, error) {
 /*
 DeleteNotificationManager Delete a Notification Manager
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param notificationManagerName Name of the Notification Manager to be deleted
- @return ApiDeleteNotificationManagerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param notificationManagerName Name of the Notification Manager to be deleted
+	@return ApiDeleteNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) DeleteNotificationManager(ctx context.Context, notificationManagerName string) ApiDeleteNotificationManagerRequest {
 	return ApiDeleteNotificationManagerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		notificationManagerName: notificationManagerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *NotificationManagerApiService) DeleteNotificationManager(ctx context.Co
 // Execute executes the request
 func (a *NotificationManagerApiService) DeleteNotificationManagerExecute(r ApiDeleteNotificationManagerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationManagerApiService.DeleteNotificationManager")
@@ -223,8 +223,8 @@ func (a *NotificationManagerApiService) DeleteNotificationManagerExecute(r ApiDe
 }
 
 type ApiGetNotificationManagerRequest struct {
-	ctx context.Context
-	ApiService *NotificationManagerApiService
+	ctx                     context.Context
+	ApiService              *NotificationManagerApiService
 	notificationManagerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetNotificationManagerRequest) Execute() (*ThirdPartyNotificationMana
 /*
 GetNotificationManager Returns a single Notification Manager
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param notificationManagerName Name of the Notification Manager to be read
- @return ApiGetNotificationManagerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param notificationManagerName Name of the Notification Manager to be read
+	@return ApiGetNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) GetNotificationManager(ctx context.Context, notificationManagerName string) ApiGetNotificationManagerRequest {
 	return ApiGetNotificationManagerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		notificationManagerName: notificationManagerName,
 	}
 }
 
 // Execute executes the request
-//  @return ThirdPartyNotificationManagerResponse
+//
+//	@return ThirdPartyNotificationManagerResponse
 func (a *NotificationManagerApiService) GetNotificationManagerExecute(r ApiGetNotificationManagerRequest) (*ThirdPartyNotificationManagerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ThirdPartyNotificationManagerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ThirdPartyNotificationManagerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationManagerApiService.GetNotificationManager")
@@ -324,10 +325,10 @@ func (a *NotificationManagerApiService) GetNotificationManagerExecute(r ApiGetNo
 }
 
 type ApiUpdateNotificationManagerRequest struct {
-	ctx context.Context
-	ApiService *NotificationManagerApiService
+	ctx                     context.Context
+	ApiService              *NotificationManagerApiService
 	notificationManagerName string
-	updateRequest *UpdateRequest
+	updateRequest           *UpdateRequest
 }
 
 // Update an existing Notification Manager
@@ -343,26 +344,27 @@ func (r ApiUpdateNotificationManagerRequest) Execute() (*ThirdPartyNotificationM
 /*
 UpdateNotificationManager Update an existing Notification Manager by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param notificationManagerName Name of the Notification Manager to be updated
- @return ApiUpdateNotificationManagerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param notificationManagerName Name of the Notification Manager to be updated
+	@return ApiUpdateNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) UpdateNotificationManager(ctx context.Context, notificationManagerName string) ApiUpdateNotificationManagerRequest {
 	return ApiUpdateNotificationManagerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		notificationManagerName: notificationManagerName,
 	}
 }
 
 // Execute executes the request
-//  @return ThirdPartyNotificationManagerResponse
+//
+//	@return ThirdPartyNotificationManagerResponse
 func (a *NotificationManagerApiService) UpdateNotificationManagerExecute(r ApiUpdateNotificationManagerRequest) (*ThirdPartyNotificationManagerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ThirdPartyNotificationManagerResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ThirdPartyNotificationManagerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotificationManagerApiService.UpdateNotificationManager")

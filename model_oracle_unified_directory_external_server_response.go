@@ -16,10 +16,10 @@ import (
 
 // OracleUnifiedDirectoryExternalServerResponse struct for OracleUnifiedDirectoryExternalServerResponse
 type OracleUnifiedDirectoryExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
+	Id      string                                              `json:"id"`
 	Schemas []EnumoracleUnifiedDirectoryExternalServerSchemaUrn `json:"schemas"`
 	// The host name or IP address of the target LDAP server.
 	ServerHostName string `json:"serverHostName"`
@@ -32,9 +32,9 @@ type OracleUnifiedDirectoryExternalServerResponse struct {
 	// The login password for the specified user.
 	Password *string `json:"password,omitempty"`
 	// The passphrase provider to use to obtain the login password for the specified user.
-	PassphraseProvider *string `json:"passphraseProvider,omitempty"`
-	ConnectionSecurity EnumexternalServerConnectionSecurityProp `json:"connectionSecurity"`
-	AuthenticationMethod EnumexternalServerAuthenticationMethodProp `json:"authenticationMethod"`
+	PassphraseProvider      *string                                       `json:"passphraseProvider,omitempty"`
+	ConnectionSecurity      EnumexternalServerConnectionSecurityProp      `json:"connectionSecurity"`
+	AuthenticationMethod    EnumexternalServerAuthenticationMethodProp    `json:"authenticationMethod"`
 	VerifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp `json:"verifyCredentialsMethod"`
 	// Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable.
 	HealthCheckConnectTimeout *string `json:"healthCheckConnectTimeout,omitempty"`
@@ -53,7 +53,7 @@ type OracleUnifiedDirectoryExternalServerResponse struct {
 	// The number of connections to initially establish to the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
 	InitialConnections *int32 `json:"initialConnections,omitempty"`
 	// The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections              *int32                                              `json:"maxConnections,omitempty"`
 	DefunctConnectionResultCode []EnumexternalServerDefunctConnectionResultCodeProp `json:"defunctConnectionResultCode,omitempty"`
 	// Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server.
 	AbandonOnTimeout *bool `json:"abandonOnTimeout,omitempty"`
@@ -101,7 +101,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -133,7 +133,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetUrnpingidentityschemas
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -166,7 +166,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -190,7 +190,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetSchemas() []Enumoracle
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetSchemasOk() ([]EnumoracleUnifiedDirectoryExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -214,7 +214,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerHostName() strin
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -238,7 +238,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -261,7 +261,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -293,7 +293,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetBindDN() string {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetBindDNOk() (*string, bool) {
 	if o == nil || isNil(o.BindDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindDN, true
 }
@@ -325,7 +325,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -357,7 +357,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetPassphraseProvider() s
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.PassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.PassphraseProvider, true
 }
@@ -390,7 +390,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetConnectionSecurity() E
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectionSecurity, true
 }
@@ -414,7 +414,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetAuthenticationMethod()
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AuthenticationMethod, true
 }
@@ -438,7 +438,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetVerifyCredentialsMetho
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VerifyCredentialsMethod, true
 }
@@ -461,7 +461,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetHealthCheckConnectTime
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetHealthCheckConnectTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.HealthCheckConnectTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
 }
@@ -494,7 +494,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnectionAge() str
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -517,7 +517,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetMinExpiredConnectionDi
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
 }
@@ -550,7 +550,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetConnectTimeout() strin
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -574,7 +574,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxResponseSize() stri
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxResponseSizeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxResponseSize, true
 }
@@ -597,7 +597,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetKeyManagerProvider() s
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetKeyManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.KeyManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.KeyManagerProvider, true
 }
@@ -629,7 +629,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetTrustManagerProvider()
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TrustManagerProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustManagerProvider, true
 }
@@ -661,7 +661,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnections() i
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetInitialConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.InitialConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.InitialConnections, true
 }
@@ -693,7 +693,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnections() int32
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetMaxConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxConnections, true
 }
@@ -725,7 +725,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetDefunctConnectionResul
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
 	if o == nil || isNil(o.DefunctConnectionResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
 }
@@ -757,7 +757,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetAbandonOnTimeout() boo
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetAbandonOnTimeoutOk() (*bool, bool) {
 	if o == nil || isNil(o.AbandonOnTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.AbandonOnTimeout, true
 }
@@ -789,7 +789,7 @@ func (o *OracleUnifiedDirectoryExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *OracleUnifiedDirectoryExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -923,5 +923,3 @@ func (v *NullableOracleUnifiedDirectoryExternalServerResponse) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

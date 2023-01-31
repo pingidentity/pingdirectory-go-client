@@ -17,8 +17,8 @@ import (
 // AddObscuredValuePassphraseProviderRequest struct for AddObscuredValuePassphraseProviderRequest
 type AddObscuredValuePassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumobscuredValuePassphraseProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                         `json:"providerName"`
+	Schemas      []EnumobscuredValuePassphraseProviderSchemaUrn `json:"schemas"`
 	// The value to be stored in an obscured form.
 	ObscuredValue string `json:"obscuredValue"`
 	// A description for this Passphrase Provider
@@ -62,7 +62,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -86,7 +86,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetSchemas() []EnumobscuredV
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) GetSchemasOk() ([]EnumobscuredValuePassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetObscuredValue() string {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) GetObscuredValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ObscuredValue, true
 }
@@ -133,7 +133,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -166,7 +166,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -231,5 +231,3 @@ func (v *NullableAddObscuredValuePassphraseProviderRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

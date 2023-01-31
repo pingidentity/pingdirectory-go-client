@@ -16,9 +16,9 @@ import (
 
 // GlobalConfigurationResponse struct for GlobalConfigurationResponse
 type GlobalConfigurationResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumglobalConfigurationSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumglobalConfigurationSchemaUrn                 `json:"schemas,omitempty"`
 	// Specifies a name that may be used to uniquely identify this Directory Server instance among other instances in the environment.
 	InstanceName string `json:"instanceName"`
 	// Specifies the location for this Directory Server. Operations performed which involve communication with other servers may prefer servers in the same location to help ensure low-latency responses.
@@ -54,8 +54,8 @@ type GlobalConfigurationResponse struct {
 	// A set of criteria that may be used to match LDAP requests that may be permitted over an unauthenticated connection even if reject-unauthenticated-requests is true. Note that some types of requests will always be permitted, including bind, StartTLS, and start administrative session requests.
 	AllowedUnauthenticatedRequestCriteria *string `json:"allowedUnauthenticatedRequestCriteria,omitempty"`
 	// Indicates whether the Directory Server should reject any simple bind request that contains a DN but no password.
-	BindWithDNRequiresPassword *bool `json:"bindWithDNRequiresPassword,omitempty"`
-	DisabledPrivilege []EnumglobalConfigurationDisabledPrivilegeProp `json:"disabledPrivilege,omitempty"`
+	BindWithDNRequiresPassword *bool                                          `json:"bindWithDNRequiresPassword,omitempty"`
+	DisabledPrivilege          []EnumglobalConfigurationDisabledPrivilegeProp `json:"disabledPrivilege,omitempty"`
 	// Specifies the name of the password policy that is in effect for users whose entries do not specify an alternate password policy (either via a real or virtual attribute).
 	DefaultPasswordPolicy string `json:"defaultPasswordPolicy"`
 	// Specifies the maximum number of password policies that are defined in the user data (that is, outside of the configuration) that the server should cache in memory for faster access. A value of zero indicates that the server should not cache any user data password policies.
@@ -63,7 +63,7 @@ type GlobalConfigurationResponse struct {
 	// Specifies the name of the identity mapper to map authorization ID values (using the \"u:\" form) provided in the proxied authorization control to the corresponding user entry.
 	ProxiedAuthorizationIdentityMapper string `json:"proxiedAuthorizationIdentityMapper"`
 	// Indicates whether the digest should always be verified whenever an entry containing a digest is decoded. If this is \"true\", then if a digest exists, it will always be verified. Otherwise, the digest will be written when encoding entries but ignored when decoding entries but may still be available for other verification processing.
-	VerifyEntryDigests *bool `json:"verifyEntryDigests,omitempty"`
+	VerifyEntryDigests         *bool                                                   `json:"verifyEntryDigests,omitempty"`
 	AllowedInsecureTLSProtocol []EnumglobalConfigurationAllowedInsecureTLSProtocolProp `json:"allowedInsecureTLSProtocol,omitempty"`
 	// Indicates that processes attaching to this server's local JVM are allowed to access internal data through JMX without the authentication requirements that remote JMX connections are subject to. Please review and understand the data that this option will expose (such as cn=monitor) to client applications to ensure there are no security concerns.
 	AllowInsecureLocalJMXConnections *bool `json:"allowInsecureLocalJMXConnections,omitempty"`
@@ -94,16 +94,16 @@ type GlobalConfigurationResponse struct {
 	// Indicates whether the server should use a separate background thread for each persistent search.
 	BackgroundThreadForEachPersistentSearch *bool `json:"backgroundThreadForEachPersistentSearch,omitempty"`
 	// Indicates whether the Directory Server should allow underscores in attribute names and allow attribute names to begin with numeric digits (both of which are violations of the LDAP standards).
-	AllowAttributeNameExceptions *bool `json:"allowAttributeNameExceptions,omitempty"`
+	AllowAttributeNameExceptions   *bool                                                      `json:"allowAttributeNameExceptions,omitempty"`
 	InvalidAttributeSyntaxBehavior *EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp `json:"invalidAttributeSyntaxBehavior,omitempty"`
 	// Specifies a set of attribute types for which the server will permit values that do not conform to the associated attribute syntax.
-	PermitSyntaxViolationsForAttribute []string `json:"permitSyntaxViolationsForAttribute,omitempty"`
-	SingleStructuralObjectclassBehavior *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp `json:"singleStructuralObjectclassBehavior,omitempty"`
+	PermitSyntaxViolationsForAttribute                             []string                                                                                    `json:"permitSyntaxViolationsForAttribute,omitempty"`
+	SingleStructuralObjectclassBehavior                            *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp                             `json:"singleStructuralObjectclassBehavior,omitempty"`
 	AttributesModifiableWithIgnoreNoUserModificationRequestControl []EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp `json:"attributesModifiableWithIgnoreNoUserModificationRequestControl,omitempty"`
 	// The maximum allowed size that the server.out log file will be allowed to have. If a write would cause the file to exceed this size, then the current file will be rotated out of place and a new empty file will be created and the message written to it.
 	MaximumServerOutLogFileSize *string `json:"maximumServerOutLogFileSize,omitempty"`
 	// The maximum number of server.out log files (including the current active log file) that should be retained. When rotating the log file, if the total number of files exceeds this count, then the oldest file(s) will be removed so that the total number of log files is within this limit.
-	MaximumServerOutLogFileCount *int32 `json:"maximumServerOutLogFileCount,omitempty"`
+	MaximumServerOutLogFileCount     *int32                                                       `json:"maximumServerOutLogFileCount,omitempty"`
 	StartupErrorLoggerOutputLocation *EnumglobalConfigurationStartupErrorLoggerOutputLocationProp `json:"startupErrorLoggerOutputLocation,omitempty"`
 	// Indicates whether the Directory Server should be shut down if a severe error is raised (e.g., an out of memory error) which may prevent the JVM from continuing to run properly.
 	ExitOnJVMError *bool `json:"exitOnJVMError,omitempty"`
@@ -122,8 +122,8 @@ type GlobalConfigurationResponse struct {
 	// Specifies the maximum number of duplicate alert messages that should be sent via the administrative alert framework in the time window specified by the duplicate-alert-time-limit property.
 	DuplicateAlertLimit int32 `json:"duplicateAlertLimit"`
 	// Specifies the length of time that must expire before duplicate messages are sent via the administrative alert framework.
-	DuplicateAlertTimeLimit string `json:"duplicateAlertTimeLimit"`
-	WritabilityMode *EnumglobalConfigurationWritabilityModeProp `json:"writabilityMode,omitempty"`
+	DuplicateAlertTimeLimit        string                                                     `json:"duplicateAlertTimeLimit"`
+	WritabilityMode                *EnumglobalConfigurationWritabilityModeProp                `json:"writabilityMode,omitempty"`
 	UnrecoverableDatabaseErrorMode *EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp `json:"unrecoverableDatabaseErrorMode,omitempty"`
 	// This setting provides data integrity options when the Directory Server is installed with a database on a network storage device. A storage device may be accessed directly by a physical server, or indirectly through a virtual machine running on a hypervisor. Enabling this setting will apply changes to all Local DB Backends, the LDAP Changelog Backend, and the replication changelog database.
 	DatabaseOnVirtualizedOrNetworkStorage *bool `json:"databaseOnVirtualizedOrNetworkStorage,omitempty"`
@@ -176,8 +176,8 @@ type GlobalConfigurationResponse struct {
 	// Specifies whether the Directory Server should cache the last valid IP addresses associated with the names of systems with which it interacts with when the domain name service returns an unknown host exception. Java may return an unknown host exception when there is unexpected interruption in domain name service so this setting protects the Directory Server from temporary DNS server outages if previous results have been cached.
 	NetworkAddressOutageCacheEnabled *bool `json:"networkAddressOutageCacheEnabled,omitempty"`
 	// Specifies criteria for identifying specific applications that access the server to enable tracking throughput and latency of LDAP operations issued by an application.
-	TrackedApplication []string `json:"trackedApplication,omitempty"`
-	JmxValueBehavior *EnumglobalConfigurationJmxValueBehaviorProp `json:"jmxValueBehavior,omitempty"`
+	TrackedApplication []string                                     `json:"trackedApplication,omitempty"`
+	JmxValueBehavior   *EnumglobalConfigurationJmxValueBehaviorProp `json:"jmxValueBehavior,omitempty"`
 	// When set to true, the server will use its original, non-standard JMX MBean names for the monitoring MBeans. These include RDN keys of \"Rdn1\" and \"Rdn2\" instead of the recommended \"type\" and \"name\" keys. This should option should only be enabled for installations that have monitoring infrastructure that depends on the old keys.
 	JmxUseLegacyMbeanNames *bool `json:"jmxUseLegacyMbeanNames,omitempty"`
 }
@@ -225,7 +225,7 @@ func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -257,7 +257,7 @@ func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmess
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -289,7 +289,7 @@ func (o *GlobalConfigurationResponse) GetSchemas() []EnumglobalConfigurationSche
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSchemasOk() ([]EnumglobalConfigurationSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -322,7 +322,7 @@ func (o *GlobalConfigurationResponse) GetInstanceName() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetInstanceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.InstanceName, true
 }
@@ -345,7 +345,7 @@ func (o *GlobalConfigurationResponse) GetLocation() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLocationOk() (*string, bool) {
 	if o == nil || isNil(o.Location) {
-    return nil, false
+		return nil, false
 	}
 	return o.Location, true
 }
@@ -377,7 +377,7 @@ func (o *GlobalConfigurationResponse) GetConfigurationServerGroup() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetConfigurationServerGroupOk() (*string, bool) {
 	if o == nil || isNil(o.ConfigurationServerGroup) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigurationServerGroup, true
 }
@@ -409,7 +409,7 @@ func (o *GlobalConfigurationResponse) GetForceAsMasterForMirroredData() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetForceAsMasterForMirroredDataOk() (*bool, bool) {
 	if o == nil || isNil(o.ForceAsMasterForMirroredData) {
-    return nil, false
+		return nil, false
 	}
 	return o.ForceAsMasterForMirroredData, true
 }
@@ -441,7 +441,7 @@ func (o *GlobalConfigurationResponse) GetEncryptData() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptDataOk() (*bool, bool) {
 	if o == nil || isNil(o.EncryptData) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptData, true
 }
@@ -473,7 +473,7 @@ func (o *GlobalConfigurationResponse) GetEncryptionSettingsCipherStreamProvider(
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptionSettingsCipherStreamProviderOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsCipherStreamProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsCipherStreamProvider, true
 }
@@ -505,7 +505,7 @@ func (o *GlobalConfigurationResponse) GetEncryptBackupsByDefault() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptBackupsByDefaultOk() (*bool, bool) {
 	if o == nil || isNil(o.EncryptBackupsByDefault) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptBackupsByDefault, true
 }
@@ -537,7 +537,7 @@ func (o *GlobalConfigurationResponse) GetBackupEncryptionSettingsDefinitionID() 
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetBackupEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.BackupEncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupEncryptionSettingsDefinitionID, true
 }
@@ -569,7 +569,7 @@ func (o *GlobalConfigurationResponse) GetEncryptLDIFExportsByDefault() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptLDIFExportsByDefaultOk() (*bool, bool) {
 	if o == nil || isNil(o.EncryptLDIFExportsByDefault) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptLDIFExportsByDefault, true
 }
@@ -601,7 +601,7 @@ func (o *GlobalConfigurationResponse) GetLdifExportEncryptionSettingsDefinitionI
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLdifExportEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.LdifExportEncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdifExportEncryptionSettingsDefinitionID, true
 }
@@ -633,7 +633,7 @@ func (o *GlobalConfigurationResponse) GetAutomaticallyCompressEncryptedLDIFExpor
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAutomaticallyCompressEncryptedLDIFExportsOk() (*bool, bool) {
 	if o == nil || isNil(o.AutomaticallyCompressEncryptedLDIFExports) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutomaticallyCompressEncryptedLDIFExports, true
 }
@@ -665,7 +665,7 @@ func (o *GlobalConfigurationResponse) GetRedactSensitiveValuesInConfigLogs() boo
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetRedactSensitiveValuesInConfigLogsOk() (*bool, bool) {
 	if o == nil || isNil(o.RedactSensitiveValuesInConfigLogs) {
-    return nil, false
+		return nil, false
 	}
 	return o.RedactSensitiveValuesInConfigLogs, true
 }
@@ -697,7 +697,7 @@ func (o *GlobalConfigurationResponse) GetSensitiveAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSensitiveAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.SensitiveAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.SensitiveAttribute, true
 }
@@ -729,7 +729,7 @@ func (o *GlobalConfigurationResponse) GetRejectInsecureRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetRejectInsecureRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.RejectInsecureRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.RejectInsecureRequests, true
 }
@@ -761,7 +761,7 @@ func (o *GlobalConfigurationResponse) GetAllowedInsecureRequestCriteria() string
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedInsecureRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AllowedInsecureRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedInsecureRequestCriteria, true
 }
@@ -793,7 +793,7 @@ func (o *GlobalConfigurationResponse) GetRejectUnauthenticatedRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetRejectUnauthenticatedRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.RejectUnauthenticatedRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.RejectUnauthenticatedRequests, true
 }
@@ -825,7 +825,7 @@ func (o *GlobalConfigurationResponse) GetAllowedUnauthenticatedRequestCriteria()
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedUnauthenticatedRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AllowedUnauthenticatedRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedUnauthenticatedRequestCriteria, true
 }
@@ -857,7 +857,7 @@ func (o *GlobalConfigurationResponse) GetBindWithDNRequiresPassword() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetBindWithDNRequiresPasswordOk() (*bool, bool) {
 	if o == nil || isNil(o.BindWithDNRequiresPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindWithDNRequiresPassword, true
 }
@@ -889,7 +889,7 @@ func (o *GlobalConfigurationResponse) GetDisabledPrivilege() []EnumglobalConfigu
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDisabledPrivilegeOk() ([]EnumglobalConfigurationDisabledPrivilegeProp, bool) {
 	if o == nil || isNil(o.DisabledPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledPrivilege, true
 }
@@ -922,7 +922,7 @@ func (o *GlobalConfigurationResponse) GetDefaultPasswordPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDefaultPasswordPolicyOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DefaultPasswordPolicy, true
 }
@@ -945,7 +945,7 @@ func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache(
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumUserDataPasswordPoliciesToCache) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumUserDataPasswordPoliciesToCache, true
 }
@@ -978,7 +978,7 @@ func (o *GlobalConfigurationResponse) GetProxiedAuthorizationIdentityMapper() st
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetProxiedAuthorizationIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProxiedAuthorizationIdentityMapper, true
 }
@@ -1001,7 +1001,7 @@ func (o *GlobalConfigurationResponse) GetVerifyEntryDigests() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetVerifyEntryDigestsOk() (*bool, bool) {
 	if o == nil || isNil(o.VerifyEntryDigests) {
-    return nil, false
+		return nil, false
 	}
 	return o.VerifyEntryDigests, true
 }
@@ -1033,7 +1033,7 @@ func (o *GlobalConfigurationResponse) GetAllowedInsecureTLSProtocol() []Enumglob
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedInsecureTLSProtocolOk() ([]EnumglobalConfigurationAllowedInsecureTLSProtocolProp, bool) {
 	if o == nil || isNil(o.AllowedInsecureTLSProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedInsecureTLSProtocol, true
 }
@@ -1065,7 +1065,7 @@ func (o *GlobalConfigurationResponse) GetAllowInsecureLocalJMXConnections() bool
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowInsecureLocalJMXConnectionsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowInsecureLocalJMXConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowInsecureLocalJMXConnections, true
 }
@@ -1097,7 +1097,7 @@ func (o *GlobalConfigurationResponse) GetDefaultInternalOperationClientConnectio
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDefaultInternalOperationClientConnectionPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultInternalOperationClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultInternalOperationClientConnectionPolicy, true
 }
@@ -1129,7 +1129,7 @@ func (o *GlobalConfigurationResponse) GetSizeLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.SizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.SizeLimit, true
 }
@@ -1161,7 +1161,7 @@ func (o *GlobalConfigurationResponse) GetTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.TimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeLimit, true
 }
@@ -1193,7 +1193,7 @@ func (o *GlobalConfigurationResponse) GetIdleTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetIdleTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.IdleTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdleTimeLimit, true
 }
@@ -1225,7 +1225,7 @@ func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.LookthroughLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.LookthroughLimit, true
 }
@@ -1257,7 +1257,7 @@ func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.LdapJoinSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapJoinSizeLimit, true
 }
@@ -1289,7 +1289,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumConcurrentConnections) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentConnections, true
 }
@@ -1321,7 +1321,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddres
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddressOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumConcurrentConnectionsPerIPAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentConnectionsPerIPAddress, true
 }
@@ -1353,7 +1353,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN()
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumConcurrentConnectionsPerBindDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentConnectionsPerBindDN, true
 }
@@ -1385,7 +1385,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() in
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumConcurrentUnindexedSearches) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumConcurrentUnindexedSearches, true
 }
@@ -1417,7 +1417,7 @@ func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int32 
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumAttributesPerAddRequest) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumAttributesPerAddRequest, true
 }
@@ -1449,7 +1449,7 @@ func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() 
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumModificationsPerModifyRequest) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumModificationsPerModifyRequest, true
 }
@@ -1481,7 +1481,7 @@ func (o *GlobalConfigurationResponse) GetBackgroundThreadForEachPersistentSearch
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetBackgroundThreadForEachPersistentSearchOk() (*bool, bool) {
 	if o == nil || isNil(o.BackgroundThreadForEachPersistentSearch) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackgroundThreadForEachPersistentSearch, true
 }
@@ -1513,7 +1513,7 @@ func (o *GlobalConfigurationResponse) GetAllowAttributeNameExceptions() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowAttributeNameExceptionsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowAttributeNameExceptions) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowAttributeNameExceptions, true
 }
@@ -1545,7 +1545,7 @@ func (o *GlobalConfigurationResponse) GetInvalidAttributeSyntaxBehavior() Enumgl
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetInvalidAttributeSyntaxBehaviorOk() (*EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp, bool) {
 	if o == nil || isNil(o.InvalidAttributeSyntaxBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.InvalidAttributeSyntaxBehavior, true
 }
@@ -1577,7 +1577,7 @@ func (o *GlobalConfigurationResponse) GetPermitSyntaxViolationsForAttribute() []
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetPermitSyntaxViolationsForAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.PermitSyntaxViolationsForAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.PermitSyntaxViolationsForAttribute, true
 }
@@ -1609,7 +1609,7 @@ func (o *GlobalConfigurationResponse) GetSingleStructuralObjectclassBehavior() E
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSingleStructuralObjectclassBehaviorOk() (*EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp, bool) {
 	if o == nil || isNil(o.SingleStructuralObjectclassBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.SingleStructuralObjectclassBehavior, true
 }
@@ -1641,7 +1641,7 @@ func (o *GlobalConfigurationResponse) GetAttributesModifiableWithIgnoreNoUserMod
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAttributesModifiableWithIgnoreNoUserModificationRequestControlOk() ([]EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp, bool) {
 	if o == nil || isNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AttributesModifiableWithIgnoreNoUserModificationRequestControl, true
 }
@@ -1673,7 +1673,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileSize() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileSizeOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumServerOutLogFileSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumServerOutLogFileSize, true
 }
@@ -1705,7 +1705,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumServerOutLogFileCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumServerOutLogFileCount, true
 }
@@ -1737,7 +1737,7 @@ func (o *GlobalConfigurationResponse) GetStartupErrorLoggerOutputLocation() Enum
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetStartupErrorLoggerOutputLocationOk() (*EnumglobalConfigurationStartupErrorLoggerOutputLocationProp, bool) {
 	if o == nil || isNil(o.StartupErrorLoggerOutputLocation) {
-    return nil, false
+		return nil, false
 	}
 	return o.StartupErrorLoggerOutputLocation, true
 }
@@ -1769,7 +1769,7 @@ func (o *GlobalConfigurationResponse) GetExitOnJVMError() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetExitOnJVMErrorOk() (*bool, bool) {
 	if o == nil || isNil(o.ExitOnJVMError) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExitOnJVMError, true
 }
@@ -1801,7 +1801,7 @@ func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerErrorResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerErrorResultCode, true
 }
@@ -1833,7 +1833,7 @@ func (o *GlobalConfigurationResponse) GetResultCodeMap() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetResultCodeMapOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCodeMap) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCodeMap, true
 }
@@ -1865,7 +1865,7 @@ func (o *GlobalConfigurationResponse) GetReturnBindErrorMessages() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReturnBindErrorMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnBindErrorMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnBindErrorMessages, true
 }
@@ -1897,7 +1897,7 @@ func (o *GlobalConfigurationResponse) GetNotifyAbandonedOperations() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetNotifyAbandonedOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.NotifyAbandonedOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotifyAbandonedOperations, true
 }
@@ -1930,7 +1930,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDuplicateErrorLogLimitOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DuplicateErrorLogLimit, true
 }
@@ -1954,7 +1954,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateErrorLogTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDuplicateErrorLogTimeLimitOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DuplicateErrorLogTimeLimit, true
 }
@@ -1978,7 +1978,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateAlertLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDuplicateAlertLimitOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DuplicateAlertLimit, true
 }
@@ -2002,7 +2002,7 @@ func (o *GlobalConfigurationResponse) GetDuplicateAlertTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDuplicateAlertTimeLimitOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DuplicateAlertTimeLimit, true
 }
@@ -2025,7 +2025,7 @@ func (o *GlobalConfigurationResponse) GetWritabilityMode() EnumglobalConfigurati
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetWritabilityModeOk() (*EnumglobalConfigurationWritabilityModeProp, bool) {
 	if o == nil || isNil(o.WritabilityMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.WritabilityMode, true
 }
@@ -2057,7 +2057,7 @@ func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorMode() Enumgl
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorModeOk() (*EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp, bool) {
 	if o == nil || isNil(o.UnrecoverableDatabaseErrorMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.UnrecoverableDatabaseErrorMode, true
 }
@@ -2089,7 +2089,7 @@ func (o *GlobalConfigurationResponse) GetDatabaseOnVirtualizedOrNetworkStorage()
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDatabaseOnVirtualizedOrNetworkStorageOk() (*bool, bool) {
 	if o == nil || isNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
-    return nil, false
+		return nil, false
 	}
 	return o.DatabaseOnVirtualizedOrNetworkStorage, true
 }
@@ -2121,7 +2121,7 @@ func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDConnectionCriteria
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoNameWithEntryUUIDConnectionCriteria, true
 }
@@ -2153,7 +2153,7 @@ func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDRequestCriteria() 
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AutoNameWithEntryUUIDRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoNameWithEntryUUIDRequestCriteria, true
 }
@@ -2185,7 +2185,7 @@ func (o *GlobalConfigurationResponse) GetSoftDeletePolicy() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSoftDeletePolicyOk() (*string, bool) {
 	if o == nil || isNil(o.SoftDeletePolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.SoftDeletePolicy, true
 }
@@ -2217,7 +2217,7 @@ func (o *GlobalConfigurationResponse) GetSubtreeAccessibilityAlertTimeLimit() st
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSubtreeAccessibilityAlertTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.SubtreeAccessibilityAlertTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubtreeAccessibilityAlertTimeLimit, true
 }
@@ -2249,7 +2249,7 @@ func (o *GlobalConfigurationResponse) GetWarnForBackendsWithMultipleBaseDns() bo
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetWarnForBackendsWithMultipleBaseDnsOk() (*bool, bool) {
 	if o == nil || isNil(o.WarnForBackendsWithMultipleBaseDns) {
-    return nil, false
+		return nil, false
 	}
 	return o.WarnForBackendsWithMultipleBaseDns, true
 }
@@ -2281,7 +2281,7 @@ func (o *GlobalConfigurationResponse) GetForcedGCPrimeDuration() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetForcedGCPrimeDurationOk() (*string, bool) {
 	if o == nil || isNil(o.ForcedGCPrimeDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.ForcedGCPrimeDuration, true
 }
@@ -2313,7 +2313,7 @@ func (o *GlobalConfigurationResponse) GetReplicationSetName() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationSetNameOk() (*string, bool) {
 	if o == nil || isNil(o.ReplicationSetName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationSetName, true
 }
@@ -2346,7 +2346,7 @@ func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCount() int
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetStartupMinReplicationBacklogCountOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.StartupMinReplicationBacklogCount, true
 }
@@ -2370,7 +2370,7 @@ func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThreshold()
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationBacklogCountAlertThresholdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReplicationBacklogCountAlertThreshold, true
 }
@@ -2394,7 +2394,7 @@ func (o *GlobalConfigurationResponse) GetReplicationBacklogDurationAlertThreshol
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationBacklogDurationAlertThresholdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReplicationBacklogDurationAlertThreshold, true
 }
@@ -2418,7 +2418,7 @@ func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceTimeoutSuspen
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceTimeoutSuspendDurationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReplicationAssuranceSourceTimeoutSuspendDuration, true
 }
@@ -2442,7 +2442,7 @@ func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastSt
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationAssuranceSourceBacklogFastStartThresholdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ReplicationAssuranceSourceBacklogFastStartThreshold, true
 }
@@ -2465,7 +2465,7 @@ func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.ReplicationHistoryLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationHistoryLimit, true
 }
@@ -2498,7 +2498,7 @@ func (o *GlobalConfigurationResponse) GetAllowInheritedReplicationOfSubordinateB
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowInheritedReplicationOfSubordinateBackendsOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AllowInheritedReplicationOfSubordinateBackends, true
 }
@@ -2521,7 +2521,7 @@ func (o *GlobalConfigurationResponse) GetReplicationPurgeObsoleteReplicas() bool
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationPurgeObsoleteReplicasOk() (*bool, bool) {
 	if o == nil || isNil(o.ReplicationPurgeObsoleteReplicas) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationPurgeObsoleteReplicas, true
 }
@@ -2553,7 +2553,7 @@ func (o *GlobalConfigurationResponse) GetSmtpServer() []string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSmtpServerOk() ([]string, bool) {
 	if o == nil || isNil(o.SmtpServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.SmtpServer, true
 }
@@ -2585,7 +2585,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxSMTPConnectionCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxSMTPConnectionCount, true
 }
@@ -2617,7 +2617,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionAge() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionAgeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxSMTPConnectionAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxSMTPConnectionAge, true
 }
@@ -2649,7 +2649,7 @@ func (o *GlobalConfigurationResponse) GetSmtpConnectionHealthCheckInterval() str
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSmtpConnectionHealthCheckIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.SmtpConnectionHealthCheckInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.SmtpConnectionHealthCheckInterval, true
 }
@@ -2681,7 +2681,7 @@ func (o *GlobalConfigurationResponse) GetAllowedTask() []string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedTaskOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedTask) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedTask, true
 }
@@ -2713,7 +2713,7 @@ func (o *GlobalConfigurationResponse) GetEnableSubOperationTimer() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEnableSubOperationTimerOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableSubOperationTimer) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableSubOperationTimer, true
 }
@@ -2745,7 +2745,7 @@ func (o *GlobalConfigurationResponse) GetMaximumShutdownTime() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumShutdownTimeOk() (*string, bool) {
 	if o == nil || isNil(o.MaximumShutdownTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumShutdownTime, true
 }
@@ -2777,7 +2777,7 @@ func (o *GlobalConfigurationResponse) GetNetworkAddressCacheTTL() string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetNetworkAddressCacheTTLOk() (*string, bool) {
 	if o == nil || isNil(o.NetworkAddressCacheTTL) {
-    return nil, false
+		return nil, false
 	}
 	return o.NetworkAddressCacheTTL, true
 }
@@ -2809,7 +2809,7 @@ func (o *GlobalConfigurationResponse) GetNetworkAddressOutageCacheEnabled() bool
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetNetworkAddressOutageCacheEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.NetworkAddressOutageCacheEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.NetworkAddressOutageCacheEnabled, true
 }
@@ -2841,7 +2841,7 @@ func (o *GlobalConfigurationResponse) GetTrackedApplication() []string {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetTrackedApplicationOk() ([]string, bool) {
 	if o == nil || isNil(o.TrackedApplication) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrackedApplication, true
 }
@@ -2873,7 +2873,7 @@ func (o *GlobalConfigurationResponse) GetJmxValueBehavior() EnumglobalConfigurat
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetJmxValueBehaviorOk() (*EnumglobalConfigurationJmxValueBehaviorProp, bool) {
 	if o == nil || isNil(o.JmxValueBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.JmxValueBehavior, true
 }
@@ -2905,7 +2905,7 @@ func (o *GlobalConfigurationResponse) GetJmxUseLegacyMbeanNames() bool {
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetJmxUseLegacyMbeanNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.JmxUseLegacyMbeanNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.JmxUseLegacyMbeanNames, true
 }
@@ -3228,5 +3228,3 @@ func (v *NullableGlobalConfigurationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // DelegatedAdminRightsResponse struct for DelegatedAdminRightsResponse
 type DelegatedAdminRightsResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Delegated Admin Rights
-	Id string `json:"id"`
+	Id      string                              `json:"id"`
 	Schemas []EnumdelegatedAdminRightsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Rights
 	Description *string `json:"description,omitempty"`
@@ -63,7 +63,7 @@ func (o *DelegatedAdminRightsResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *DelegatedAdminRightsResponse) GetUrnpingidentityschemasconfigurationmes
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *DelegatedAdminRightsResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *DelegatedAdminRightsResponse) GetSchemas() []EnumdelegatedAdminRightsSc
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetSchemasOk() ([]EnumdelegatedAdminRightsSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *DelegatedAdminRightsResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -216,7 +216,7 @@ func (o *DelegatedAdminRightsResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -239,7 +239,7 @@ func (o *DelegatedAdminRightsResponse) GetAdminUserDN() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetAdminUserDNOk() (*string, bool) {
 	if o == nil || isNil(o.AdminUserDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdminUserDN, true
 }
@@ -271,7 +271,7 @@ func (o *DelegatedAdminRightsResponse) GetAdminGroupDN() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminRightsResponse) GetAdminGroupDNOk() (*string, bool) {
 	if o == nil || isNil(o.AdminGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdminGroupDN, true
 }
@@ -354,5 +354,3 @@ func (v *NullableDelegatedAdminRightsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

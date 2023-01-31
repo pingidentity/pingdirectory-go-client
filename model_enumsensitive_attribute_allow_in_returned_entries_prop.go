@@ -20,8 +20,8 @@ type EnumsensitiveAttributeAllowInReturnedEntriesProp string
 
 // List of Enumsensitive-attribute-allowInReturnedEntriesProp
 const (
-	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_ALLOW EnumsensitiveAttributeAllowInReturnedEntriesProp = "allow"
-	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_SUPPRESS EnumsensitiveAttributeAllowInReturnedEntriesProp = "suppress"
+	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_ALLOW       EnumsensitiveAttributeAllowInReturnedEntriesProp = "allow"
+	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_SUPPRESS    EnumsensitiveAttributeAllowInReturnedEntriesProp = "suppress"
 	ENUMSENSITIVEATTRIBUTEALLOWINRETURNEDENTRIESPROP_SECURE_ONLY EnumsensitiveAttributeAllowInReturnedEntriesProp = "secure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumsensitiveAttributeAllowInReturnedEntriesProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

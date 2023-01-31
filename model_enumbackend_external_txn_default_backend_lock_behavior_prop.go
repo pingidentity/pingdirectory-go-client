@@ -20,9 +20,9 @@ type EnumbackendExternalTxnDefaultBackendLockBehaviorProp string
 
 // List of Enumbackend-externalTxnDefaultBackendLockBehaviorProp
 const (
-	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_DO_NOT_ACQUIRE EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "do-not-acquire"
-	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_AFTER_RETRIES EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-after-retries"
-	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_BEFORE_RETRIES EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-retries"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_DO_NOT_ACQUIRE                 EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "do-not-acquire"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_AFTER_RETRIES          EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-after-retries"
+	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_BEFORE_RETRIES         EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-retries"
 	ENUMBACKENDEXTERNALTXNDEFAULTBACKENDLOCKBEHAVIORPROP_ACQUIRE_BEFORE_INITIAL_ATTEMPT EnumbackendExternalTxnDefaultBackendLockBehaviorProp = "acquire-before-initial-attempt"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumbackendExternalTxnDefaultBackendLockBehaviorProp) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

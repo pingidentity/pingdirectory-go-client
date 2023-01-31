@@ -16,9 +16,9 @@ import (
 
 // PasswordModifyExtendedOperationHandlerResponse struct for PasswordModifyExtendedOperationHandlerResponse
 type PasswordModifyExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumpasswordModifyExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                             `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20    `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumpasswordModifyExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// Specifies the name of the identity mapper that should be used in conjunction with the password modify extended operation.
@@ -63,7 +63,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetUrnpingidentityschem
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetSchemas() []Enumpass
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumpasswordModifyExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -152,7 +152,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -176,7 +176,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetIdentityMapper() str
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -199,7 +199,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetDescription() string
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *PasswordModifyExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *PasswordModifyExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullablePasswordModifyExtendedOperationHandlerResponse) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

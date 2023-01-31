@@ -16,10 +16,10 @@ import (
 
 // RandomPasswordGeneratorResponse struct for RandomPasswordGeneratorResponse
 type RandomPasswordGeneratorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Generator
-	Id string `json:"id"`
+	Id      string                                 `json:"id"`
 	Schemas []EnumrandomPasswordGeneratorSchemaUrn `json:"schemas"`
 	// Specifies one or more named character sets.
 	PasswordCharacterSet []string `json:"passwordCharacterSet"`
@@ -66,7 +66,7 @@ func (o *RandomPasswordGeneratorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *RandomPasswordGeneratorResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *RandomPasswordGeneratorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -155,7 +155,7 @@ func (o *RandomPasswordGeneratorResponse) GetSchemas() []EnumrandomPasswordGener
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetSchemasOk() ([]EnumrandomPasswordGeneratorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *RandomPasswordGeneratorResponse) GetPasswordCharacterSet() []string {
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetPasswordCharacterSetOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordCharacterSet, true
 }
@@ -203,7 +203,7 @@ func (o *RandomPasswordGeneratorResponse) GetPasswordFormat() string {
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetPasswordFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PasswordFormat, true
 }
@@ -226,7 +226,7 @@ func (o *RandomPasswordGeneratorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -259,7 +259,7 @@ func (o *RandomPasswordGeneratorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *RandomPasswordGeneratorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -333,5 +333,3 @@ func (v *NullableRandomPasswordGeneratorResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

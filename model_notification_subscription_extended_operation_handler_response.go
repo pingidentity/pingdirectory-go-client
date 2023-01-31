@@ -16,9 +16,9 @@ import (
 
 // NotificationSubscriptionExtendedOperationHandlerResponse struct for NotificationSubscriptionExtendedOperationHandlerResponse
 type NotificationSubscriptionExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                                       `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20              `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetMeta() Met
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetUrnpingide
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetSchemas() 
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetId() strin
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetDescriptio
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetEnabled() 
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscriptionExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableNotificationSubscriptionExtendedOperationHandlerResponse) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

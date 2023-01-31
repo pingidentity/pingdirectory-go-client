@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ServerGroupApiService ServerGroupApi service
 type ServerGroupApiService service
 
 type ApiAddServerGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx                   context.Context
+	ApiService            *ServerGroupApiService
 	addServerGroupRequest *AddServerGroupRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddServerGroupRequest) Execute() (*ServerGroupResponse, *http.Respons
 /*
 AddServerGroup Add a new Server Group to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddServerGroupRequest
 */
 func (a *ServerGroupApiService) AddServerGroup(ctx context.Context) ApiAddServerGroupRequest {
 	return ApiAddServerGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ServerGroupResponse
+//
+//	@return ServerGroupResponse
 func (a *ServerGroupApiService) AddServerGroupExecute(r ApiAddServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServerGroupResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServerGroupResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.AddServerGroup")
@@ -133,8 +133,8 @@ func (a *ServerGroupApiService) AddServerGroupExecute(r ApiAddServerGroupRequest
 }
 
 type ApiDeleteServerGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx             context.Context
+	ApiService      *ServerGroupApiService
 	serverGroupName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteServerGroupRequest) Execute() (*http.Response, error) {
 /*
 DeleteServerGroup Delete a Server Group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverGroupName Name of the Server Group to be deleted
- @return ApiDeleteServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverGroupName Name of the Server Group to be deleted
+	@return ApiDeleteServerGroupRequest
 */
 func (a *ServerGroupApiService) DeleteServerGroup(ctx context.Context, serverGroupName string) ApiDeleteServerGroupRequest {
 	return ApiDeleteServerGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		serverGroupName: serverGroupName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ServerGroupApiService) DeleteServerGroup(ctx context.Context, serverGro
 // Execute executes the request
 func (a *ServerGroupApiService) DeleteServerGroupExecute(r ApiDeleteServerGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.DeleteServerGroup")
@@ -223,8 +223,8 @@ func (a *ServerGroupApiService) DeleteServerGroupExecute(r ApiDeleteServerGroupR
 }
 
 type ApiGetServerGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx             context.Context
+	ApiService      *ServerGroupApiService
 	serverGroupName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetServerGroupRequest) Execute() (*ServerGroupResponse, *http.Respons
 /*
 GetServerGroup Returns a single Server Group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverGroupName Name of the Server Group to be read
- @return ApiGetServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverGroupName Name of the Server Group to be read
+	@return ApiGetServerGroupRequest
 */
 func (a *ServerGroupApiService) GetServerGroup(ctx context.Context, serverGroupName string) ApiGetServerGroupRequest {
 	return ApiGetServerGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		serverGroupName: serverGroupName,
 	}
 }
 
 // Execute executes the request
-//  @return ServerGroupResponse
+//
+//	@return ServerGroupResponse
 func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServerGroupResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServerGroupResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.GetServerGroup")
@@ -324,10 +325,10 @@ func (a *ServerGroupApiService) GetServerGroupExecute(r ApiGetServerGroupRequest
 }
 
 type ApiUpdateServerGroupRequest struct {
-	ctx context.Context
-	ApiService *ServerGroupApiService
+	ctx             context.Context
+	ApiService      *ServerGroupApiService
 	serverGroupName string
-	updateRequest *UpdateRequest
+	updateRequest   *UpdateRequest
 }
 
 // Update an existing Server Group
@@ -343,26 +344,27 @@ func (r ApiUpdateServerGroupRequest) Execute() (*ServerGroupResponse, *http.Resp
 /*
 UpdateServerGroup Update an existing Server Group by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serverGroupName Name of the Server Group to be updated
- @return ApiUpdateServerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param serverGroupName Name of the Server Group to be updated
+	@return ApiUpdateServerGroupRequest
 */
 func (a *ServerGroupApiService) UpdateServerGroup(ctx context.Context, serverGroupName string) ApiUpdateServerGroupRequest {
 	return ApiUpdateServerGroupRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		serverGroupName: serverGroupName,
 	}
 }
 
 // Execute executes the request
-//  @return ServerGroupResponse
+//
+//	@return ServerGroupResponse
 func (a *ServerGroupApiService) UpdateServerGroupExecute(r ApiUpdateServerGroupRequest) (*ServerGroupResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ServerGroupResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ServerGroupResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerGroupApiService.UpdateServerGroup")

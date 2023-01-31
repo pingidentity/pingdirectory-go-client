@@ -19,15 +19,15 @@ import (
 type GetMonitorProvider200Response struct {
 	ActiveOperationsMonitorProviderResponse *ActiveOperationsMonitorProviderResponse
 	ClientConnectionMonitorProviderResponse *ClientConnectionMonitorProviderResponse
-	DiskSpaceUsageMonitorProviderResponse *DiskSpaceUsageMonitorProviderResponse
-	GeneralMonitorProviderResponse *GeneralMonitorProviderResponse
-	HostSystemMonitorProviderResponse *HostSystemMonitorProviderResponse
-	MemoryUsageMonitorProviderResponse *MemoryUsageMonitorProviderResponse
-	SslContextMonitorProviderResponse *SslContextMonitorProviderResponse
-	StackTraceMonitorProviderResponse *StackTraceMonitorProviderResponse
-	SystemInfoMonitorProviderResponse *SystemInfoMonitorProviderResponse
-	ThirdPartyMonitorProviderResponse *ThirdPartyMonitorProviderResponse
-	VersionMonitorProviderResponse *VersionMonitorProviderResponse
+	DiskSpaceUsageMonitorProviderResponse   *DiskSpaceUsageMonitorProviderResponse
+	GeneralMonitorProviderResponse          *GeneralMonitorProviderResponse
+	HostSystemMonitorProviderResponse       *HostSystemMonitorProviderResponse
+	MemoryUsageMonitorProviderResponse      *MemoryUsageMonitorProviderResponse
+	SslContextMonitorProviderResponse       *SslContextMonitorProviderResponse
+	StackTraceMonitorProviderResponse       *StackTraceMonitorProviderResponse
+	SystemInfoMonitorProviderResponse       *SystemInfoMonitorProviderResponse
+	ThirdPartyMonitorProviderResponse       *ThirdPartyMonitorProviderResponse
+	VersionMonitorProviderResponse          *VersionMonitorProviderResponse
 }
 
 // ActiveOperationsMonitorProviderResponseAsGetMonitorProvider200Response is a convenience function that returns ActiveOperationsMonitorProviderResponse wrapped in GetMonitorProvider200Response
@@ -106,7 +106,6 @@ func VersionMonitorProviderResponseAsGetMonitorProvider200Response(v *VersionMon
 		VersionMonitorProviderResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetMonitorProvider200Response) UnmarshalJSON(data []byte) error {
@@ -327,7 +326,7 @@ func (src GetMonitorProvider200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetMonitorProvider200Response) GetActualInstance() (interface{}) {
+func (obj *GetMonitorProvider200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -414,5 +413,3 @@ func (v *NullableGetMonitorProvider200Response) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

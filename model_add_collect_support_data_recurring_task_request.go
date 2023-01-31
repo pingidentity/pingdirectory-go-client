@@ -17,8 +17,8 @@ import (
 // AddCollectSupportDataRecurringTaskRequest struct for AddCollectSupportDataRecurringTaskRequest
 type AddCollectSupportDataRecurringTaskRequest struct {
 	// Name of the new Recurring Task
-	TaskName string `json:"taskName"`
-	Schemas []EnumcollectSupportDataRecurringTaskSchemaUrn `json:"schemas"`
+	TaskName string                                         `json:"taskName"`
+	Schemas  []EnumcollectSupportDataRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which the support data archive files will be placed. The path must be a directory, and that directory must already exist. Relative paths will be interpreted as relative to the server root.
 	OutputDirectory string `json:"outputDirectory"`
 	// The path to a file that contains the passphrase to encrypt the contents of the support data archive.
@@ -32,8 +32,8 @@ type AddCollectSupportDataRecurringTaskRequest struct {
 	// Indicates whether the support data archive should include the source code (if available) for any third-party extensions that may be installed in the server.
 	IncludeExtensionSource *bool `json:"includeExtensionSource,omitempty"`
 	// Indicates whether to capture support data information sequentially rather than in parallel. Capturing data in sequential mode may reduce the amount of memory that the tool requires to operate, at the cost of taking longer to run.
-	UseSequentialMode *bool `json:"useSequentialMode,omitempty"`
-	SecurityLevel *EnumrecurringTaskSecurityLevelProp `json:"securityLevel,omitempty"`
+	UseSequentialMode *bool                               `json:"useSequentialMode,omitempty"`
+	SecurityLevel     *EnumrecurringTaskSecurityLevelProp `json:"securityLevel,omitempty"`
 	// The number of times to invoke the jstack utility to obtain a stack trace of all threads running in the JVM. A value of zero indicates that the jstack utility should not be invoked.
 	JstackCount *int32 `json:"jstackCount,omitempty"`
 	// The number of intervals of data to collect from tools that use sample-based reporting, like vmstat, iostat, and mpstat. A value of zero indicates that these kinds of tools should not be used to collect any information.
@@ -104,7 +104,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskName() string {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskName, true
 }
@@ -128,7 +128,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetSchemas() []EnumcollectSu
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetSchemasOk() ([]EnumcollectSupportDataRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -152,7 +152,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetOutputDirectory() string 
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetOutputDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.OutputDirectory, true
 }
@@ -175,7 +175,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetEncryptionPassphraseFile(
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetEncryptionPassphraseFileOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionPassphraseFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionPassphraseFile, true
 }
@@ -207,7 +207,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeExpensiveData() bo
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeExpensiveDataOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeExpensiveData) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeExpensiveData, true
 }
@@ -239,7 +239,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeReplicationStateDu
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeReplicationStateDumpOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeReplicationStateDump) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeReplicationStateDump, true
 }
@@ -271,7 +271,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeBinaryFiles() bool
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeBinaryFilesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeBinaryFiles) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeBinaryFiles, true
 }
@@ -303,7 +303,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeExtensionSource() 
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetIncludeExtensionSourceOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeExtensionSource) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeExtensionSource, true
 }
@@ -335,7 +335,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetUseSequentialMode() bool 
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetUseSequentialModeOk() (*bool, bool) {
 	if o == nil || isNil(o.UseSequentialMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseSequentialMode, true
 }
@@ -367,7 +367,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetSecurityLevel() Enumrecur
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetSecurityLevelOk() (*EnumrecurringTaskSecurityLevelProp, bool) {
 	if o == nil || isNil(o.SecurityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.SecurityLevel, true
 }
@@ -399,7 +399,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetJstackCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetJstackCountOk() (*int32, bool) {
 	if o == nil || isNil(o.JstackCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.JstackCount, true
 }
@@ -431,7 +431,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetReportCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetReportCountOk() (*int32, bool) {
 	if o == nil || isNil(o.ReportCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReportCount, true
 }
@@ -463,7 +463,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetReportIntervalSeconds() i
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetReportIntervalSecondsOk() (*int32, bool) {
 	if o == nil || isNil(o.ReportIntervalSeconds) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReportIntervalSeconds, true
 }
@@ -495,7 +495,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetLogDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetLogDurationOk() (*string, bool) {
 	if o == nil || isNil(o.LogDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDuration, true
 }
@@ -527,7 +527,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetLogFileHeadCollectionSize
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetLogFileHeadCollectionSizeOk() (*string, bool) {
 	if o == nil || isNil(o.LogFileHeadCollectionSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFileHeadCollectionSize, true
 }
@@ -559,7 +559,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetLogFileTailCollectionSize
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetLogFileTailCollectionSizeOk() (*string, bool) {
 	if o == nil || isNil(o.LogFileTailCollectionSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFileTailCollectionSize, true
 }
@@ -591,7 +591,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetComment() string {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetCommentOk() (*string, bool) {
 	if o == nil || isNil(o.Comment) {
-    return nil, false
+		return nil, false
 	}
 	return o.Comment, true
 }
@@ -623,7 +623,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportData
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportDataArchiveCountOk() (*int32, bool) {
 	if o == nil || isNil(o.RetainPreviousSupportDataArchiveCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousSupportDataArchiveCount, true
 }
@@ -655,7 +655,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportData
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetRetainPreviousSupportDataArchiveAgeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainPreviousSupportDataArchiveAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousSupportDataArchiveAge, true
 }
@@ -687,7 +687,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -719,7 +719,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetCancelOnTaskDependencyFai
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -751,7 +751,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -783,7 +783,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetEmailOnSuccess() []string
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -815,7 +815,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetEmailOnFailure() []string
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -847,7 +847,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -879,7 +879,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -911,7 +911,7 @@ func (o *AddCollectSupportDataRecurringTaskRequest) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *AddCollectSupportDataRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -1051,5 +1051,3 @@ func (v *NullableAddCollectSupportDataRecurringTaskRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // ConjurAuthenticationMethodApiService ConjurAuthenticationMethodApi service
 type ConjurAuthenticationMethodApiService service
 
 type ApiAddConjurAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *ConjurAuthenticationMethodApiService
+	ctx                                        context.Context
+	ApiService                                 *ConjurAuthenticationMethodApiService
 	addApiKeyConjurAuthenticationMethodRequest *AddApiKeyConjurAuthenticationMethodRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddConjurAuthenticationMethodRequest) Execute() (*ApiKeyConjurAuthent
 /*
 AddConjurAuthenticationMethod Add a new Conjur Authentication Method to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddConjurAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethod(ctx context.Context) ApiAddConjurAuthenticationMethodRequest {
 	return ApiAddConjurAuthenticationMethodRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ApiKeyConjurAuthenticationMethodResponse
+//
+//	@return ApiKeyConjurAuthenticationMethodResponse
 func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethodExecute(r ApiAddConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiKeyConjurAuthenticationMethodResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiKeyConjurAuthenticationMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.AddConjurAuthenticationMethod")
@@ -133,8 +133,8 @@ func (a *ConjurAuthenticationMethodApiService) AddConjurAuthenticationMethodExec
 }
 
 type ApiDeleteConjurAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *ConjurAuthenticationMethodApiService
+	ctx                            context.Context
+	ApiService                     *ConjurAuthenticationMethodApiService
 	conjurAuthenticationMethodName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteConjurAuthenticationMethodRequest) Execute() (*http.Response, e
 /*
 DeleteConjurAuthenticationMethod Delete a Conjur Authentication Method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be deleted
- @return ApiDeleteConjurAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be deleted
+	@return ApiDeleteConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiDeleteConjurAuthenticationMethodRequest {
 	return ApiDeleteConjurAuthenticationMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                     a,
+		ctx:                            ctx,
 		conjurAuthenticationMethodName: conjurAuthenticationMethodName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethod(
 // Execute executes the request
 func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethodExecute(r ApiDeleteConjurAuthenticationMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.DeleteConjurAuthenticationMethod")
@@ -223,8 +223,8 @@ func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethodE
 }
 
 type ApiGetConjurAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *ConjurAuthenticationMethodApiService
+	ctx                            context.Context
+	ApiService                     *ConjurAuthenticationMethodApiService
 	conjurAuthenticationMethodName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetConjurAuthenticationMethodRequest) Execute() (*ApiKeyConjurAuthent
 /*
 GetConjurAuthenticationMethod Returns a single Conjur Authentication Method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be read
- @return ApiGetConjurAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be read
+	@return ApiGetConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiGetConjurAuthenticationMethodRequest {
 	return ApiGetConjurAuthenticationMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                     a,
+		ctx:                            ctx,
 		conjurAuthenticationMethodName: conjurAuthenticationMethodName,
 	}
 }
 
 // Execute executes the request
-//  @return ApiKeyConjurAuthenticationMethodResponse
+//
+//	@return ApiKeyConjurAuthenticationMethodResponse
 func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethodExecute(r ApiGetConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiKeyConjurAuthenticationMethodResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiKeyConjurAuthenticationMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.GetConjurAuthenticationMethod")
@@ -324,10 +325,10 @@ func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethodExec
 }
 
 type ApiUpdateConjurAuthenticationMethodRequest struct {
-	ctx context.Context
-	ApiService *ConjurAuthenticationMethodApiService
+	ctx                            context.Context
+	ApiService                     *ConjurAuthenticationMethodApiService
 	conjurAuthenticationMethodName string
-	updateRequest *UpdateRequest
+	updateRequest                  *UpdateRequest
 }
 
 // Update an existing Conjur Authentication Method
@@ -343,26 +344,27 @@ func (r ApiUpdateConjurAuthenticationMethodRequest) Execute() (*ApiKeyConjurAuth
 /*
 UpdateConjurAuthenticationMethod Update an existing Conjur Authentication Method by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be updated
- @return ApiUpdateConjurAuthenticationMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be updated
+	@return ApiUpdateConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiUpdateConjurAuthenticationMethodRequest {
 	return ApiUpdateConjurAuthenticationMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                     a,
+		ctx:                            ctx,
 		conjurAuthenticationMethodName: conjurAuthenticationMethodName,
 	}
 }
 
 // Execute executes the request
-//  @return ApiKeyConjurAuthenticationMethodResponse
+//
+//	@return ApiKeyConjurAuthenticationMethodResponse
 func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethodExecute(r ApiUpdateConjurAuthenticationMethodRequest) (*ApiKeyConjurAuthenticationMethodResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ApiKeyConjurAuthenticationMethodResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ApiKeyConjurAuthenticationMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConjurAuthenticationMethodApiService.UpdateConjurAuthenticationMethod")

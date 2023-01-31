@@ -16,9 +16,9 @@ import (
 
 // ShortUniqueIdVirtualAttributeResponse struct for ShortUniqueIdVirtualAttributeResponse
 type ShortUniqueIdVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumshortUniqueIdVirtualAttributeSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumshortUniqueIdVirtualAttributeSchemaUrn       `json:"schemas"`
 	// Name of the Virtual Attribute
 	Id string `json:"id"`
 	// Specifies the name or OID of the attribute which contains the sequence number from which unique identifiers are generated. The attribute should have Integer syntax or a String syntax permitting integer values. If this property is modified then the filter property should be updated accordingly so that only entries containing the sequence number attribute are eligible to have a value generated for this virtual attribute.
@@ -38,8 +38,8 @@ type ShortUniqueIdVirtualAttributeResponse struct {
 	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
 	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
 }
@@ -79,7 +79,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -111,7 +111,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -144,7 +144,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetSchemas() []EnumshortUniqueId
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetSchemasOk() ([]EnumshortUniqueIdVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -168,7 +168,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -192,7 +192,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetSequenceNumberAttribute() str
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetSequenceNumberAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SequenceNumberAttribute, true
 }
@@ -215,7 +215,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -248,7 +248,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -272,7 +272,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -295,7 +295,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -327,7 +327,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetGroupDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -359,7 +359,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -391,7 +391,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetClientConnectionPolicy() []st
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -423,7 +423,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvalu
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -455,7 +455,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeMerge
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
 }
@@ -487,7 +487,7 @@ func (o *ShortUniqueIdVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // and a boolean to check if the value has been set.
 func (o *ShortUniqueIdVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowIndexConflicts, true
 }
@@ -591,5 +591,3 @@ func (v *NullableShortUniqueIdVirtualAttributeResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

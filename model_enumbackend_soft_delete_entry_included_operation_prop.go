@@ -108,4 +108,3 @@ func (v *NullableEnumbackendSoftDeleteEntryIncludedOperationProp) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

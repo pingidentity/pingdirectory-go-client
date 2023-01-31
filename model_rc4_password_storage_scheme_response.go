@@ -16,9 +16,9 @@ import (
 
 // Rc4PasswordStorageSchemeResponse struct for Rc4PasswordStorageSchemeResponse
 type Rc4PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []Enumrc4PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas                                       []Enumrc4PasswordStorageSchemeSchemaUrn            `json:"schemas"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// Indicates whether the RC4 Password Storage Scheme is enabled for use.
@@ -60,7 +60,7 @@ func (o *Rc4PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Rc4PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *Rc4PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *Rc4PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *Rc4PasswordStorageSchemeResponse) GetSchemas() []Enumrc4PasswordStorage
 // and a boolean to check if the value has been set.
 func (o *Rc4PasswordStorageSchemeResponse) GetSchemasOk() ([]Enumrc4PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *Rc4PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Rc4PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -173,7 +173,7 @@ func (o *Rc4PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Rc4PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -196,7 +196,7 @@ func (o *Rc4PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Rc4PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableRc4PasswordStorageSchemeResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,17 +16,17 @@ import (
 
 // DnJoinVirtualAttributeResponse struct for DnJoinVirtualAttributeResponse
 type DnJoinVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Virtual Attribute
-	Id string `json:"id"`
+	Id      string                                `json:"id"`
 	Schemas []EnumdnJoinVirtualAttributeSchemaUrn `json:"schemas"`
 	// The attribute whose values are the DNs of the entries to be joined with the search result entry.
-	JoinDNAttribute string `json:"joinDNAttribute"`
-	JoinBaseDNType EnumvirtualAttributeJoinBaseDNTypeProp `json:"joinBaseDNType"`
+	JoinDNAttribute string                                 `json:"joinDNAttribute"`
+	JoinBaseDNType  EnumvirtualAttributeJoinBaseDNTypeProp `json:"joinBaseDNType"`
 	// The fixed, administrator-specified base DN for the internal searches used to identify joined entries.
-	JoinCustomBaseDN *string `json:"joinCustomBaseDN,omitempty"`
-	JoinScope *EnumvirtualAttributeJoinScopeProp `json:"joinScope,omitempty"`
+	JoinCustomBaseDN *string                            `json:"joinCustomBaseDN,omitempty"`
+	JoinScope        *EnumvirtualAttributeJoinScopeProp `json:"joinScope,omitempty"`
 	// The maximum number of entries that may be joined with the source entry, which also corresponds to the maximum number of values that the virtual attribute provider will generate for an entry.
 	JoinSizeLimit *int32 `json:"joinSizeLimit,omitempty"`
 	// An optional filter that specifies additional criteria for identifying joined entries. If a join-filter value is specified, then only entries matching that filter (in addition to satisfying the other join criteria) will be joined with the search result entry.
@@ -46,13 +46,13 @@ type DnJoinVirtualAttributeResponse struct {
 	// Specifies the search filters to be applied against entries to determine if the virtual attribute is to be generated for those entries.
 	Filter []string `json:"filter,omitempty"`
 	// Specifies a set of client connection policies for which this Virtual Attribute should be generated. If this is undefined, then this Virtual Attribute will always be generated. If it is associated with one or more client connection policies, then this Virtual Attribute will be generated only for operations requested by clients assigned to one of those client connection policies.
-	ClientConnectionPolicy []string `json:"clientConnectionPolicy,omitempty"`
-	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
+	ClientConnectionPolicy []string                                  `json:"clientConnectionPolicy,omitempty"`
+	ConflictBehavior       *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
 }
@@ -93,7 +93,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -125,7 +125,7 @@ func (o *DnJoinVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -158,7 +158,7 @@ func (o *DnJoinVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -182,7 +182,7 @@ func (o *DnJoinVirtualAttributeResponse) GetSchemas() []EnumdnJoinVirtualAttribu
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetSchemasOk() ([]EnumdnJoinVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -206,7 +206,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinDNAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinDNAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.JoinDNAttribute, true
 }
@@ -230,7 +230,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinBaseDNType() EnumvirtualAttribut
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinBaseDNTypeOk() (*EnumvirtualAttributeJoinBaseDNTypeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.JoinBaseDNType, true
 }
@@ -253,7 +253,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinCustomBaseDN() string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinCustomBaseDNOk() (*string, bool) {
 	if o == nil || isNil(o.JoinCustomBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.JoinCustomBaseDN, true
 }
@@ -285,7 +285,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinScope() EnumvirtualAttributeJoin
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinScopeOk() (*EnumvirtualAttributeJoinScopeProp, bool) {
 	if o == nil || isNil(o.JoinScope) {
-    return nil, false
+		return nil, false
 	}
 	return o.JoinScope, true
 }
@@ -317,7 +317,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinSizeLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.JoinSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.JoinSizeLimit, true
 }
@@ -349,7 +349,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinFilter() string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinFilterOk() (*string, bool) {
 	if o == nil || isNil(o.JoinFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.JoinFilter, true
 }
@@ -381,7 +381,7 @@ func (o *DnJoinVirtualAttributeResponse) GetJoinAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetJoinAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.JoinAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.JoinAttribute, true
 }
@@ -413,7 +413,7 @@ func (o *DnJoinVirtualAttributeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -446,7 +446,7 @@ func (o *DnJoinVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -470,7 +470,7 @@ func (o *DnJoinVirtualAttributeResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -493,7 +493,7 @@ func (o *DnJoinVirtualAttributeResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -525,7 +525,7 @@ func (o *DnJoinVirtualAttributeResponse) GetGroupDN() []string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -557,7 +557,7 @@ func (o *DnJoinVirtualAttributeResponse) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -589,7 +589,7 @@ func (o *DnJoinVirtualAttributeResponse) GetClientConnectionPolicy() []string {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -621,7 +621,7 @@ func (o *DnJoinVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttrib
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
 	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConflictBehavior, true
 }
@@ -653,7 +653,7 @@ func (o *DnJoinVirtualAttributeResponse) GetRequireExplicitRequestByName() bool 
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -685,7 +685,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOr
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -717,7 +717,7 @@ func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavio
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
 }
@@ -749,7 +749,7 @@ func (o *DnJoinVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // and a boolean to check if the value has been set.
 func (o *DnJoinVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowIndexConflicts, true
 }
@@ -877,5 +877,3 @@ func (v *NullableDnJoinVirtualAttributeResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

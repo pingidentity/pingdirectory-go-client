@@ -20,10 +20,10 @@ type EnumreplicationAssurancePolicyRemoteLevelProp string
 
 // List of Enumreplication-assurance-policy-remoteLevelProp
 const (
-	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_NONE EnumreplicationAssurancePolicyRemoteLevelProp = "none"
-	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_RECEIVED_ANY_REMOTE_LOCATION EnumreplicationAssurancePolicyRemoteLevelProp = "received-any-remote-location"
+	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_NONE                          EnumreplicationAssurancePolicyRemoteLevelProp = "none"
+	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_RECEIVED_ANY_REMOTE_LOCATION  EnumreplicationAssurancePolicyRemoteLevelProp = "received-any-remote-location"
 	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_RECEIVED_ALL_REMOTE_LOCATIONS EnumreplicationAssurancePolicyRemoteLevelProp = "received-all-remote-locations"
-	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_PROCESSED_ALL_REMOTE_SERVERS EnumreplicationAssurancePolicyRemoteLevelProp = "processed-all-remote-servers"
+	ENUMREPLICATIONASSURANCEPOLICYREMOTELEVELPROP_PROCESSED_ALL_REMOTE_SERVERS  EnumreplicationAssurancePolicyRemoteLevelProp = "processed-all-remote-servers"
 )
 
 // All allowed values of EnumreplicationAssurancePolicyRemoteLevelProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumreplicationAssurancePolicyRemoteLevelProp) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

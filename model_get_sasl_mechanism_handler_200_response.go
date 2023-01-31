@@ -17,20 +17,20 @@ import (
 
 // GetSaslMechanismHandler200Response - struct for GetSaslMechanismHandler200Response
 type GetSaslMechanismHandler200Response struct {
-	AnonymousSaslMechanismHandlerResponse *AnonymousSaslMechanismHandlerResponse
-	CramMd5SaslMechanismHandlerResponse *CramMd5SaslMechanismHandlerResponse
-	DigestMd5SaslMechanismHandlerResponse *DigestMd5SaslMechanismHandlerResponse
-	ExternalSaslMechanismHandlerResponse *ExternalSaslMechanismHandlerResponse
-	GssapiSaslMechanismHandlerResponse *GssapiSaslMechanismHandlerResponse
-	OauthBearerSaslMechanismHandlerResponse *OauthBearerSaslMechanismHandlerResponse
-	PlainSaslMechanismHandlerResponse *PlainSaslMechanismHandlerResponse
-	ThirdPartySaslMechanismHandlerResponse *ThirdPartySaslMechanismHandlerResponse
+	AnonymousSaslMechanismHandlerResponse                        *AnonymousSaslMechanismHandlerResponse
+	CramMd5SaslMechanismHandlerResponse                          *CramMd5SaslMechanismHandlerResponse
+	DigestMd5SaslMechanismHandlerResponse                        *DigestMd5SaslMechanismHandlerResponse
+	ExternalSaslMechanismHandlerResponse                         *ExternalSaslMechanismHandlerResponse
+	GssapiSaslMechanismHandlerResponse                           *GssapiSaslMechanismHandlerResponse
+	OauthBearerSaslMechanismHandlerResponse                      *OauthBearerSaslMechanismHandlerResponse
+	PlainSaslMechanismHandlerResponse                            *PlainSaslMechanismHandlerResponse
+	ThirdPartySaslMechanismHandlerResponse                       *ThirdPartySaslMechanismHandlerResponse
 	UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse *UnboundidCertificatePlusPasswordSaslMechanismHandlerResponse
-	UnboundidDeliveredOtpSaslMechanismHandlerResponse *UnboundidDeliveredOtpSaslMechanismHandlerResponse
-	UnboundidExternalAuthSaslMechanismHandlerResponse *UnboundidExternalAuthSaslMechanismHandlerResponse
-	UnboundidMsChapV2SaslMechanismHandlerResponse *UnboundidMsChapV2SaslMechanismHandlerResponse
-	UnboundidTotpSaslMechanismHandlerResponse *UnboundidTotpSaslMechanismHandlerResponse
-	UnboundidYubikeyOtpSaslMechanismHandlerResponse *UnboundidYubikeyOtpSaslMechanismHandlerResponse
+	UnboundidDeliveredOtpSaslMechanismHandlerResponse            *UnboundidDeliveredOtpSaslMechanismHandlerResponse
+	UnboundidExternalAuthSaslMechanismHandlerResponse            *UnboundidExternalAuthSaslMechanismHandlerResponse
+	UnboundidMsChapV2SaslMechanismHandlerResponse                *UnboundidMsChapV2SaslMechanismHandlerResponse
+	UnboundidTotpSaslMechanismHandlerResponse                    *UnboundidTotpSaslMechanismHandlerResponse
+	UnboundidYubikeyOtpSaslMechanismHandlerResponse              *UnboundidYubikeyOtpSaslMechanismHandlerResponse
 }
 
 // AnonymousSaslMechanismHandlerResponseAsGetSaslMechanismHandler200Response is a convenience function that returns AnonymousSaslMechanismHandlerResponse wrapped in GetSaslMechanismHandler200Response
@@ -130,7 +130,6 @@ func UnboundidYubikeyOtpSaslMechanismHandlerResponseAsGetSaslMechanismHandler200
 		UnboundidYubikeyOtpSaslMechanismHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetSaslMechanismHandler200Response) UnmarshalJSON(data []byte) error {
@@ -405,7 +404,7 @@ func (src GetSaslMechanismHandler200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetSaslMechanismHandler200Response) GetActualInstance() (interface{}) {
+func (obj *GetSaslMechanismHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -504,5 +503,3 @@ func (v *NullableGetSaslMechanismHandler200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

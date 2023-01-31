@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // DelegatedAdminRightsApiService DelegatedAdminRightsApi service
 type DelegatedAdminRightsApiService service
 
 type ApiAddDelegatedAdminRightsRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminRightsApiService
+	ctx                            context.Context
+	ApiService                     *DelegatedAdminRightsApiService
 	addDelegatedAdminRightsRequest *AddDelegatedAdminRightsRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddDelegatedAdminRightsRequest) Execute() (*DelegatedAdminRightsRespo
 /*
 AddDelegatedAdminRights Add a new Delegated Admin Rights to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddDelegatedAdminRightsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) AddDelegatedAdminRights(ctx context.Context) ApiAddDelegatedAdminRightsRequest {
 	return ApiAddDelegatedAdminRightsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DelegatedAdminRightsResponse
+//
+//	@return DelegatedAdminRightsResponse
 func (a *DelegatedAdminRightsApiService) AddDelegatedAdminRightsExecute(r ApiAddDelegatedAdminRightsRequest) (*DelegatedAdminRightsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DelegatedAdminRightsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminRightsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminRightsApiService.AddDelegatedAdminRights")
@@ -133,8 +133,8 @@ func (a *DelegatedAdminRightsApiService) AddDelegatedAdminRightsExecute(r ApiAdd
 }
 
 type ApiDeleteDelegatedAdminRightsRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminRightsApiService
+	ctx                      context.Context
+	ApiService               *DelegatedAdminRightsApiService
 	delegatedAdminRightsName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteDelegatedAdminRightsRequest) Execute() (*http.Response, error) 
 /*
 DeleteDelegatedAdminRights Delete a Delegated Admin Rights
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param delegatedAdminRightsName Name of the Delegated Admin Rights to be deleted
- @return ApiDeleteDelegatedAdminRightsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param delegatedAdminRightsName Name of the Delegated Admin Rights to be deleted
+	@return ApiDeleteDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRights(ctx context.Context, delegatedAdminRightsName string) ApiDeleteDelegatedAdminRightsRequest {
 	return ApiDeleteDelegatedAdminRightsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		delegatedAdminRightsName: delegatedAdminRightsName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRights(ctx context.
 // Execute executes the request
 func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRightsExecute(r ApiDeleteDelegatedAdminRightsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminRightsApiService.DeleteDelegatedAdminRights")
@@ -223,8 +223,8 @@ func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRightsExecute(r Api
 }
 
 type ApiGetDelegatedAdminRightsRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminRightsApiService
+	ctx                      context.Context
+	ApiService               *DelegatedAdminRightsApiService
 	delegatedAdminRightsName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetDelegatedAdminRightsRequest) Execute() (*DelegatedAdminRightsRespo
 /*
 GetDelegatedAdminRights Returns a single Delegated Admin Rights
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param delegatedAdminRightsName Name of the Delegated Admin Rights to be read
- @return ApiGetDelegatedAdminRightsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param delegatedAdminRightsName Name of the Delegated Admin Rights to be read
+	@return ApiGetDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) GetDelegatedAdminRights(ctx context.Context, delegatedAdminRightsName string) ApiGetDelegatedAdminRightsRequest {
 	return ApiGetDelegatedAdminRightsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		delegatedAdminRightsName: delegatedAdminRightsName,
 	}
 }
 
 // Execute executes the request
-//  @return DelegatedAdminRightsResponse
+//
+//	@return DelegatedAdminRightsResponse
 func (a *DelegatedAdminRightsApiService) GetDelegatedAdminRightsExecute(r ApiGetDelegatedAdminRightsRequest) (*DelegatedAdminRightsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DelegatedAdminRightsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminRightsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminRightsApiService.GetDelegatedAdminRights")
@@ -324,10 +325,10 @@ func (a *DelegatedAdminRightsApiService) GetDelegatedAdminRightsExecute(r ApiGet
 }
 
 type ApiUpdateDelegatedAdminRightsRequest struct {
-	ctx context.Context
-	ApiService *DelegatedAdminRightsApiService
+	ctx                      context.Context
+	ApiService               *DelegatedAdminRightsApiService
 	delegatedAdminRightsName string
-	updateRequest *UpdateRequest
+	updateRequest            *UpdateRequest
 }
 
 // Update an existing Delegated Admin Rights
@@ -343,26 +344,27 @@ func (r ApiUpdateDelegatedAdminRightsRequest) Execute() (*DelegatedAdminRightsRe
 /*
 UpdateDelegatedAdminRights Update an existing Delegated Admin Rights by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param delegatedAdminRightsName Name of the Delegated Admin Rights to be updated
- @return ApiUpdateDelegatedAdminRightsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param delegatedAdminRightsName Name of the Delegated Admin Rights to be updated
+	@return ApiUpdateDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) UpdateDelegatedAdminRights(ctx context.Context, delegatedAdminRightsName string) ApiUpdateDelegatedAdminRightsRequest {
 	return ApiUpdateDelegatedAdminRightsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:               a,
+		ctx:                      ctx,
 		delegatedAdminRightsName: delegatedAdminRightsName,
 	}
 }
 
 // Execute executes the request
-//  @return DelegatedAdminRightsResponse
+//
+//	@return DelegatedAdminRightsResponse
 func (a *DelegatedAdminRightsApiService) UpdateDelegatedAdminRightsExecute(r ApiUpdateDelegatedAdminRightsRequest) (*DelegatedAdminRightsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DelegatedAdminRightsResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DelegatedAdminRightsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DelegatedAdminRightsApiService.UpdateDelegatedAdminRights")

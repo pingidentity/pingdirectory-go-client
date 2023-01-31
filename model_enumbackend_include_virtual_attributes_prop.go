@@ -20,10 +20,10 @@ type EnumbackendIncludeVirtualAttributesProp string
 
 // List of Enumbackend-includeVirtualAttributesProp
 const (
-	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_ADD_ATTRIBUTES EnumbackendIncludeVirtualAttributesProp = "add-attributes"
+	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_ADD_ATTRIBUTES           EnumbackendIncludeVirtualAttributesProp = "add-attributes"
 	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_DELETED_ENTRY_ATTRIBUTES EnumbackendIncludeVirtualAttributesProp = "deleted-entry-attributes"
-	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_BEFORE_AND_AFTER_VALUES EnumbackendIncludeVirtualAttributesProp = "before-and-after-values"
-	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_KEY_ATTRIBUTE_VALUES EnumbackendIncludeVirtualAttributesProp = "key-attribute-values"
+	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_BEFORE_AND_AFTER_VALUES  EnumbackendIncludeVirtualAttributesProp = "before-and-after-values"
+	ENUMBACKENDINCLUDEVIRTUALATTRIBUTESPROP_KEY_ATTRIBUTE_VALUES     EnumbackendIncludeVirtualAttributesProp = "key-attribute-values"
 )
 
 // All allowed values of EnumbackendIncludeVirtualAttributesProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumbackendIncludeVirtualAttributesProp) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedOauthTokenHandlerResponse struct for GroovyScriptedOauthTokenHandlerResponse
 type GroovyScriptedOauthTokenHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the OAuth Token Handler
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumgroovyScriptedOauthTokenHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted OAuth Token Handler.
 	ScriptClass string `json:"scriptClass"`
@@ -62,7 +62,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetSchemas() []EnumgroovyScrip
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetSchemasOk() ([]EnumgroovyScriptedOauthTokenHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -175,7 +175,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -198,7 +198,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetScriptArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -230,7 +230,7 @@ func (o *GroovyScriptedOauthTokenHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedOauthTokenHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -310,5 +310,3 @@ func (v *NullableGroovyScriptedOauthTokenHandlerResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

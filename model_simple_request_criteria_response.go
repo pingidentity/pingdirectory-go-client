@@ -16,12 +16,12 @@ import (
 
 // SimpleRequestCriteriaResponse struct for SimpleRequestCriteriaResponse
 type SimpleRequestCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Request Criteria
-	Id string `json:"id"`
-	Schemas []EnumsimpleRequestCriteriaSchemaUrn `json:"schemas"`
-	OperationType []EnumrequestCriteriaOperationTypeProp `json:"operationType,omitempty"`
+	Id              string                                   `json:"id"`
+	Schemas         []EnumsimpleRequestCriteriaSchemaUrn     `json:"schemas"`
+	OperationType   []EnumrequestCriteriaOperationTypeProp   `json:"operationType,omitempty"`
 	OperationOrigin []EnumrequestCriteriaOperationOriginProp `json:"operationOrigin,omitempty"`
 	// Specifies a connection criteria object that must match the associated client connection for operations included in this Simple Request Criteria.
 	ConnectionCriteria *string `json:"connectionCriteria,omitempty"`
@@ -52,8 +52,8 @@ type SimpleRequestCriteriaResponse struct {
 	// Specifies the DN of a group in which the user associated with the target entry should not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of at least one of those groups (that is, the target entry may be a member of zero or more of those groups, but not all of them).
 	NotAllIncludedTargetEntryGroupDN []string `json:"notAllIncludedTargetEntryGroupDN,omitempty"`
 	// Specifies the DN of a group in which the user associated with the target entry must not be a member for requests included in this Simple Request Criteria. This will only be taken into account for add, simple bind, compare, delete, modify, modify DN, and search operations. It will be ignored for abandon, SASL bind, extended, and unbind operations. If any group DNs are provided, then the target entry must not be a member of any of those groups.
-	NoneIncludedTargetEntryGroupDN []string `json:"noneIncludedTargetEntryGroupDN,omitempty"`
-	TargetBindType []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
+	NoneIncludedTargetEntryGroupDN []string                                `json:"noneIncludedTargetEntryGroupDN,omitempty"`
+	TargetBindType                 []EnumrequestCriteriaTargetBindTypeProp `json:"targetBindType,omitempty"`
 	// Specifies the name of a SASL mechanism for bind requests included in this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
 	IncludedTargetSASLMechanism []string `json:"includedTargetSASLMechanism,omitempty"`
 	// Specifies the name of a SASL mechanism for bind requests excluded from this Simple Request Criteria. This will only be taken into account for SASL bind operations and will be ignored for other types of operations and for bind operations that do not use SASL authentication.
@@ -65,8 +65,8 @@ type SimpleRequestCriteriaResponse struct {
 	// Specifies the request OID for extended requests included in this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
 	IncludedExtendedOperationOID []string `json:"includedExtendedOperationOID,omitempty"`
 	// Specifies the request OID for extended requests excluded from this Simple Request Criteria. This will only be taken into account for extended requests and will be ignored for all other types of requests.
-	ExcludedExtendedOperationOID []string `json:"excludedExtendedOperationOID,omitempty"`
-	IncludedSearchScope []EnumrequestCriteriaIncludedSearchScopeProp `json:"includedSearchScope,omitempty"`
+	ExcludedExtendedOperationOID           []string                                                       `json:"excludedExtendedOperationOID,omitempty"`
+	IncludedSearchScope                    []EnumrequestCriteriaIncludedSearchScopeProp                   `json:"includedSearchScope,omitempty"`
 	UsingAdministrativeSessionWorkerThread *EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp `json:"usingAdministrativeSessionWorkerThread,omitempty"`
 	// Specifies an application name for requests included in this Simple Request Criteria.
 	IncludedApplicationName []string `json:"includedApplicationName,omitempty"`
@@ -108,7 +108,7 @@ func (o *SimpleRequestCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -140,7 +140,7 @@ func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationme
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -173,7 +173,7 @@ func (o *SimpleRequestCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -197,7 +197,7 @@ func (o *SimpleRequestCriteriaResponse) GetSchemas() []EnumsimpleRequestCriteria
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetSchemasOk() ([]EnumsimpleRequestCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -220,7 +220,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationType() []EnumrequestCriteria
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
 	if o == nil || isNil(o.OperationType) {
-    return nil, false
+		return nil, false
 	}
 	return o.OperationType, true
 }
@@ -252,7 +252,7 @@ func (o *SimpleRequestCriteriaResponse) GetOperationOrigin() []EnumrequestCriter
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetOperationOriginOk() ([]EnumrequestCriteriaOperationOriginProp, bool) {
 	if o == nil || isNil(o.OperationOrigin) {
-    return nil, false
+		return nil, false
 	}
 	return o.OperationOrigin, true
 }
@@ -284,7 +284,7 @@ func (o *SimpleRequestCriteriaResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -316,7 +316,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedRequestControl() []string 
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedRequestControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedRequestControl, true
 }
@@ -348,7 +348,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedRequestControl() []string 
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedRequestControlOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedRequestControl, true
 }
@@ -380,7 +380,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedRequestControl() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedRequestControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedRequestControl, true
 }
@@ -412,7 +412,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedRequestControl() []string
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedRequestControlOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedRequestControl, true
 }
@@ -444,7 +444,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetEntryDN() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetEntryDNOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedTargetEntryDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedTargetEntryDN, true
 }
@@ -476,7 +476,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetEntryDN() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetEntryDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedTargetEntryDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedTargetEntryDN, true
 }
@@ -508,7 +508,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryFilter() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedTargetEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedTargetEntryFilter, true
 }
@@ -540,7 +540,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryFilter() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedTargetEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedTargetEntryFilter, true
 }
@@ -572,7 +572,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryFilter() []s
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedTargetEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedTargetEntryFilter, true
 }
@@ -604,7 +604,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryFilter() []str
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedTargetEntryFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedTargetEntryFilter, true
 }
@@ -636,7 +636,7 @@ func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryGroupDN() []str
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAllIncludedTargetEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedTargetEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedTargetEntryGroupDN, true
 }
@@ -668,7 +668,7 @@ func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryGroupDN() []str
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetAnyIncludedTargetEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedTargetEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedTargetEntryGroupDN, true
 }
@@ -700,7 +700,7 @@ func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryGroupDN() []
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNotAllIncludedTargetEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedTargetEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedTargetEntryGroupDN, true
 }
@@ -732,7 +732,7 @@ func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryGroupDN() []st
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetNoneIncludedTargetEntryGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedTargetEntryGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedTargetEntryGroupDN, true
 }
@@ -764,7 +764,7 @@ func (o *SimpleRequestCriteriaResponse) GetTargetBindType() []EnumrequestCriteri
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetTargetBindTypeOk() ([]EnumrequestCriteriaTargetBindTypeProp, bool) {
 	if o == nil || isNil(o.TargetBindType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TargetBindType, true
 }
@@ -796,7 +796,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetSASLMechanism() []strin
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetSASLMechanismOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedTargetSASLMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedTargetSASLMechanism, true
 }
@@ -828,7 +828,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetSASLMechanism() []strin
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetSASLMechanismOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedTargetSASLMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedTargetSASLMechanism, true
 }
@@ -860,7 +860,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedTargetAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedTargetAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedTargetAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedTargetAttribute, true
 }
@@ -892,7 +892,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedTargetAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedTargetAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedTargetAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedTargetAttribute, true
 }
@@ -924,7 +924,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedExtendedOperationOID() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedExtendedOperationOIDOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedExtendedOperationOID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedExtendedOperationOID, true
 }
@@ -956,7 +956,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedExtendedOperationOID() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedExtendedOperationOIDOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedExtendedOperationOID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedExtendedOperationOID, true
 }
@@ -988,7 +988,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedSearchScope() []EnumrequestCr
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedSearchScopeOk() ([]EnumrequestCriteriaIncludedSearchScopeProp, bool) {
 	if o == nil || isNil(o.IncludedSearchScope) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedSearchScope, true
 }
@@ -1020,7 +1020,7 @@ func (o *SimpleRequestCriteriaResponse) GetUsingAdministrativeSessionWorkerThrea
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetUsingAdministrativeSessionWorkerThreadOk() (*EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp, bool) {
 	if o == nil || isNil(o.UsingAdministrativeSessionWorkerThread) {
-    return nil, false
+		return nil, false
 	}
 	return o.UsingAdministrativeSessionWorkerThread, true
 }
@@ -1052,7 +1052,7 @@ func (o *SimpleRequestCriteriaResponse) GetIncludedApplicationName() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetIncludedApplicationNameOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedApplicationName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedApplicationName, true
 }
@@ -1084,7 +1084,7 @@ func (o *SimpleRequestCriteriaResponse) GetExcludedApplicationName() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetExcludedApplicationNameOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedApplicationName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedApplicationName, true
 }
@@ -1116,7 +1116,7 @@ func (o *SimpleRequestCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleRequestCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1274,5 +1274,3 @@ func (v *NullableSimpleRequestCriteriaResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

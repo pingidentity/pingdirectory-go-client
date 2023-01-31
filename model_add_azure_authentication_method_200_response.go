@@ -17,8 +17,8 @@ import (
 
 // AddAzureAuthenticationMethod200Response - struct for AddAzureAuthenticationMethod200Response
 type AddAzureAuthenticationMethod200Response struct {
-	ClientSecretAzureAuthenticationMethodResponse *ClientSecretAzureAuthenticationMethodResponse
-	DefaultAzureAuthenticationMethodResponse *DefaultAzureAuthenticationMethodResponse
+	ClientSecretAzureAuthenticationMethodResponse     *ClientSecretAzureAuthenticationMethodResponse
+	DefaultAzureAuthenticationMethodResponse          *DefaultAzureAuthenticationMethodResponse
 	UsernamePasswordAzureAuthenticationMethodResponse *UsernamePasswordAzureAuthenticationMethodResponse
 }
 
@@ -42,7 +42,6 @@ func UsernamePasswordAzureAuthenticationMethodResponseAsAddAzureAuthenticationMe
 		UsernamePasswordAzureAuthenticationMethodResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddAzureAuthenticationMethod200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddAzureAuthenticationMethod200Response) MarshalJSON() ([]byte, error)
 }
 
 // Get the actual instance
-func (obj *AddAzureAuthenticationMethod200Response) GetActualInstance() (interface{}) {
+func (obj *AddAzureAuthenticationMethod200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddAzureAuthenticationMethod200Response) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

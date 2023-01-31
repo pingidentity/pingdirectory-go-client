@@ -17,8 +17,8 @@ import (
 // AddUnboundidMsChapV2SaslMechanismHandlerRequest struct for AddUnboundidMsChapV2SaslMechanismHandlerRequest
 type AddUnboundidMsChapV2SaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                               `json:"handlerName"`
+	Schemas     []EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the entry associated with the username provided in the bind request.
 	IdentityMapper string `json:"identityMapper"`
 	// A description for this SASL Mechanism Handler
@@ -62,7 +62,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerName() strin
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -86,7 +86,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetSchemas() []Enumunb
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetSchemasOk() ([]EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetIdentityMapper() st
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -133,7 +133,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -166,7 +166,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -231,5 +231,3 @@ func (v *NullableAddUnboundidMsChapV2SaslMechanismHandlerRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,11 +17,11 @@ import (
 
 // AddLogRetentionPolicy200Response - struct for AddLogRetentionPolicy200Response
 type AddLogRetentionPolicy200Response struct {
-	FileCountLogRetentionPolicyResponse *FileCountLogRetentionPolicyResponse
+	FileCountLogRetentionPolicyResponse     *FileCountLogRetentionPolicyResponse
 	FreeDiskSpaceLogRetentionPolicyResponse *FreeDiskSpaceLogRetentionPolicyResponse
-	NeverDeleteLogRetentionPolicyResponse *NeverDeleteLogRetentionPolicyResponse
-	SizeLimitLogRetentionPolicyResponse *SizeLimitLogRetentionPolicyResponse
-	TimeLimitLogRetentionPolicyResponse *TimeLimitLogRetentionPolicyResponse
+	NeverDeleteLogRetentionPolicyResponse   *NeverDeleteLogRetentionPolicyResponse
+	SizeLimitLogRetentionPolicyResponse     *SizeLimitLogRetentionPolicyResponse
+	TimeLimitLogRetentionPolicyResponse     *TimeLimitLogRetentionPolicyResponse
 }
 
 // FileCountLogRetentionPolicyResponseAsAddLogRetentionPolicy200Response is a convenience function that returns FileCountLogRetentionPolicyResponse wrapped in AddLogRetentionPolicy200Response
@@ -58,7 +58,6 @@ func TimeLimitLogRetentionPolicyResponseAsAddLogRetentionPolicy200Response(v *Ti
 		TimeLimitLogRetentionPolicyResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogRetentionPolicy200Response) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src AddLogRetentionPolicy200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogRetentionPolicy200Response) GetActualInstance() (interface{}) {
+func (obj *AddLogRetentionPolicy200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableAddLogRetentionPolicy200Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

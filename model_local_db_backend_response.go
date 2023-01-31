@@ -16,17 +16,17 @@ import (
 
 // LocalDbBackendResponse struct for LocalDbBackendResponse
 type LocalDbBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Backend
-	Id string `json:"id"`
-	Schemas []EnumlocalDbBackendSchemaUrn `json:"schemas"`
+	Id                        string                                    `json:"id"`
+	Schemas                   []EnumlocalDbBackendSchemaUrn             `json:"schemas"`
 	UncachedId2entryCacheMode *EnumbackendUncachedId2entryCacheModeProp `json:"uncachedId2entryCacheMode,omitempty"`
 	// The criteria that will be used to identify attributes that should be written into the uncached-id2entry database rather than the id2entry database. This will only be used for entries in which the associated uncached-entry-criteria does not indicate that the entire entry should be uncached.
 	UncachedAttributeCriteria *string `json:"uncachedAttributeCriteria,omitempty"`
 	// The criteria that will be used to identify entries that should be written into the uncached-id2entry database rather than the id2entry database.
-	UncachedEntryCriteria *string `json:"uncachedEntryCriteria,omitempty"`
-	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
+	UncachedEntryCriteria *string                        `json:"uncachedEntryCriteria,omitempty"`
+	WritabilityMode       EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Determines whether the Directory Server enters a DEGRADED state when this Local DB Backend has an index whose contents cannot be trusted.
 	SetDegradedAlertForUntrustedIndex *bool `json:"setDegradedAlertForUntrustedIndex,omitempty"`
 	// Determines whether the Directory Server returns UNAVAILABLE for any LDAP search operation in this Local DB Backend that would use an index whose contents cannot be trusted.
@@ -64,21 +64,21 @@ type LocalDbBackendResponse struct {
 	// Specifies the database and environment properties for the Berkeley DB Java Edition database serving the data for this backend.
 	JeProperty []string `json:"jeProperty,omitempty"`
 	// Specifies the percentage of JVM memory to allocate to the database cache.
-	DbCachePercent *int32 `json:"dbCachePercent,omitempty"`
-	DefaultCacheMode *EnumbackendDefaultCacheModeProp `json:"defaultCacheMode,omitempty"`
-	Id2entryCacheMode *EnumbackendId2entryCacheModeProp `json:"id2entryCacheMode,omitempty"`
-	Dn2idCacheMode *EnumbackendDn2idCacheModeProp `json:"dn2idCacheMode,omitempty"`
+	DbCachePercent       *int32                               `json:"dbCachePercent,omitempty"`
+	DefaultCacheMode     *EnumbackendDefaultCacheModeProp     `json:"defaultCacheMode,omitempty"`
+	Id2entryCacheMode    *EnumbackendId2entryCacheModeProp    `json:"id2entryCacheMode,omitempty"`
+	Dn2idCacheMode       *EnumbackendDn2idCacheModeProp       `json:"dn2idCacheMode,omitempty"`
 	Id2childrenCacheMode *EnumbackendId2childrenCacheModeProp `json:"id2childrenCacheMode,omitempty"`
-	Id2subtreeCacheMode *EnumbackendId2subtreeCacheModeProp `json:"id2subtreeCacheMode,omitempty"`
-	Dn2uriCacheMode *EnumbackendDn2uriCacheModeProp `json:"dn2uriCacheMode,omitempty"`
-	PrimeMethod []EnumbackendPrimeMethodProp `json:"primeMethod,omitempty"`
+	Id2subtreeCacheMode  *EnumbackendId2subtreeCacheModeProp  `json:"id2subtreeCacheMode,omitempty"`
+	Dn2uriCacheMode      *EnumbackendDn2uriCacheModeProp      `json:"dn2uriCacheMode,omitempty"`
+	PrimeMethod          []EnumbackendPrimeMethodProp         `json:"primeMethod,omitempty"`
 	// Specifies the number of threads to use when priming. At present, this applies only to the preload and cursor-across-indexes prime methods.
 	PrimeThreadCount *int32 `json:"primeThreadCount,omitempty"`
 	// Specifies the maximum length of time that the backend prime should be allowed to run. A duration of zero seconds indicates that there should not be a time limit.
 	PrimeTimeLimit *string `json:"primeTimeLimit,omitempty"`
 	// Indicates whether to prime all indexes associated with this backend, or to only prime the specified set of indexes (as configured with the system-index-to-prime property for the system indexes, and the prime-index property in the attribute index definition for attribute indexes).
-	PrimeAllIndexes *bool `json:"primeAllIndexes,omitempty"`
-	SystemIndexToPrime []EnumbackendSystemIndexToPrimeProp `json:"systemIndexToPrime,omitempty"`
+	PrimeAllIndexes                     *bool                                                `json:"primeAllIndexes,omitempty"`
+	SystemIndexToPrime                  []EnumbackendSystemIndexToPrimeProp                  `json:"systemIndexToPrime,omitempty"`
 	SystemIndexToPrimeInternalNodesOnly []EnumbackendSystemIndexToPrimeInternalNodesOnlyProp `json:"systemIndexToPrimeInternalNodesOnly,omitempty"`
 	// Indicates whether to attempt to perform the prime using a background thread if possible. If background priming is enabled, then the Directory Server may be allowed to accept client connections and process requests while the prime is in progress.
 	BackgroundPrime *bool `json:"backgroundPrime,omitempty"`
@@ -101,9 +101,9 @@ type LocalDbBackendResponse struct {
 	// Indicates whether the database should synchronously flush data as it is written to disk.
 	DbTxnWriteNoSync *bool `json:"dbTxnWriteNoSync,omitempty"`
 	// Specifies the number of times that the server should retry an attempted operation in the backend if a deadlock results from two concurrent requests that interfere with each other in a conflicting manner.
-	DeadlockRetryLimit *int32 `json:"deadlockRetryLimit,omitempty"`
+	DeadlockRetryLimit                    *int32                                                `json:"deadlockRetryLimit,omitempty"`
 	ExternalTxnDefaultBackendLockBehavior *EnumbackendExternalTxnDefaultBackendLockBehaviorProp `json:"externalTxnDefaultBackendLockBehavior,omitempty"`
-	SingleWriterLockBehavior *EnumbackendSingleWriterLockBehaviorProp `json:"singleWriterLockBehavior,omitempty"`
+	SingleWriterLockBehavior              *EnumbackendSingleWriterLockBehaviorProp              `json:"singleWriterLockBehavior,omitempty"`
 	// Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control.
 	SubtreeDeleteSizeLimit *int32 `json:"subtreeDeleteSizeLimit,omitempty"`
 	// Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput.
@@ -164,7 +164,7 @@ func (o *LocalDbBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -196,7 +196,7 @@ func (o *LocalDbBackendResponse) GetUrnpingidentityschemasconfigurationmessages2
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -229,7 +229,7 @@ func (o *LocalDbBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -253,7 +253,7 @@ func (o *LocalDbBackendResponse) GetSchemas() []EnumlocalDbBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSchemasOk() ([]EnumlocalDbBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -276,7 +276,7 @@ func (o *LocalDbBackendResponse) GetUncachedId2entryCacheMode() EnumbackendUncac
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetUncachedId2entryCacheModeOk() (*EnumbackendUncachedId2entryCacheModeProp, bool) {
 	if o == nil || isNil(o.UncachedId2entryCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.UncachedId2entryCacheMode, true
 }
@@ -308,7 +308,7 @@ func (o *LocalDbBackendResponse) GetUncachedAttributeCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetUncachedAttributeCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.UncachedAttributeCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.UncachedAttributeCriteria, true
 }
@@ -340,7 +340,7 @@ func (o *LocalDbBackendResponse) GetUncachedEntryCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetUncachedEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.UncachedEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.UncachedEntryCriteria, true
 }
@@ -373,7 +373,7 @@ func (o *LocalDbBackendResponse) GetWritabilityMode() EnumbackendWritabilityMode
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -396,7 +396,7 @@ func (o *LocalDbBackendResponse) GetSetDegradedAlertForUntrustedIndex() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSetDegradedAlertForUntrustedIndexOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertForUntrustedIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertForUntrustedIndex, true
 }
@@ -428,7 +428,7 @@ func (o *LocalDbBackendResponse) GetReturnUnavailableForUntrustedIndex() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetReturnUnavailableForUntrustedIndexOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableForUntrustedIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableForUntrustedIndex, true
 }
@@ -460,7 +460,7 @@ func (o *LocalDbBackendResponse) GetProcessFiltersWithUndefinedAttributeTypes() 
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetProcessFiltersWithUndefinedAttributeTypesOk() (*bool, bool) {
 	if o == nil || isNil(o.ProcessFiltersWithUndefinedAttributeTypes) {
-    return nil, false
+		return nil, false
 	}
 	return o.ProcessFiltersWithUndefinedAttributeTypes, true
 }
@@ -492,7 +492,7 @@ func (o *LocalDbBackendResponse) GetIsPrivateBackend() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetIsPrivateBackendOk() (*bool, bool) {
 	if o == nil || isNil(o.IsPrivateBackend) {
-    return nil, false
+		return nil, false
 	}
 	return o.IsPrivateBackend, true
 }
@@ -525,7 +525,7 @@ func (o *LocalDbBackendResponse) GetDbDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DbDirectory, true
 }
@@ -548,7 +548,7 @@ func (o *LocalDbBackendResponse) GetDbDirectoryPermissions() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbDirectoryPermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.DbDirectoryPermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbDirectoryPermissions, true
 }
@@ -580,7 +580,7 @@ func (o *LocalDbBackendResponse) GetCompactCommonParentDN() []string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetCompactCommonParentDNOk() ([]string, bool) {
 	if o == nil || isNil(o.CompactCommonParentDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompactCommonParentDN, true
 }
@@ -612,7 +612,7 @@ func (o *LocalDbBackendResponse) GetCompressEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetCompressEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.CompressEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompressEntries, true
 }
@@ -644,7 +644,7 @@ func (o *LocalDbBackendResponse) GetHashEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetHashEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.HashEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.HashEntries, true
 }
@@ -676,7 +676,7 @@ func (o *LocalDbBackendResponse) GetDbNumCleanerThreads() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbNumCleanerThreadsOk() (*int32, bool) {
 	if o == nil || isNil(o.DbNumCleanerThreads) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbNumCleanerThreads, true
 }
@@ -708,7 +708,7 @@ func (o *LocalDbBackendResponse) GetDbCleanerMinUtilization() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbCleanerMinUtilizationOk() (*int32, bool) {
 	if o == nil || isNil(o.DbCleanerMinUtilization) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbCleanerMinUtilization, true
 }
@@ -740,7 +740,7 @@ func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentage() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbEvictorCriticalPercentageOk() (*int32, bool) {
 	if o == nil || isNil(o.DbEvictorCriticalPercentage) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbEvictorCriticalPercentage, true
 }
@@ -772,7 +772,7 @@ func (o *LocalDbBackendResponse) GetDbCheckpointerWakeupInterval() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbCheckpointerWakeupIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.DbCheckpointerWakeupInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbCheckpointerWakeupInterval, true
 }
@@ -804,7 +804,7 @@ func (o *LocalDbBackendResponse) GetDbBackgroundSyncInterval() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbBackgroundSyncIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.DbBackgroundSyncInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbBackgroundSyncInterval, true
 }
@@ -836,7 +836,7 @@ func (o *LocalDbBackendResponse) GetDbUseThreadLocalHandles() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbUseThreadLocalHandlesOk() (*bool, bool) {
 	if o == nil || isNil(o.DbUseThreadLocalHandles) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbUseThreadLocalHandles, true
 }
@@ -868,7 +868,7 @@ func (o *LocalDbBackendResponse) GetDbLogFileMax() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbLogFileMaxOk() (*string, bool) {
 	if o == nil || isNil(o.DbLogFileMax) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbLogFileMax, true
 }
@@ -900,7 +900,7 @@ func (o *LocalDbBackendResponse) GetDbLoggingLevel() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbLoggingLevelOk() (*string, bool) {
 	if o == nil || isNil(o.DbLoggingLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbLoggingLevel, true
 }
@@ -932,7 +932,7 @@ func (o *LocalDbBackendResponse) GetJeProperty() []string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetJePropertyOk() ([]string, bool) {
 	if o == nil || isNil(o.JeProperty) {
-    return nil, false
+		return nil, false
 	}
 	return o.JeProperty, true
 }
@@ -964,7 +964,7 @@ func (o *LocalDbBackendResponse) GetDbCachePercent() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbCachePercentOk() (*int32, bool) {
 	if o == nil || isNil(o.DbCachePercent) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbCachePercent, true
 }
@@ -996,7 +996,7 @@ func (o *LocalDbBackendResponse) GetDefaultCacheMode() EnumbackendDefaultCacheMo
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDefaultCacheModeOk() (*EnumbackendDefaultCacheModeProp, bool) {
 	if o == nil || isNil(o.DefaultCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultCacheMode, true
 }
@@ -1028,7 +1028,7 @@ func (o *LocalDbBackendResponse) GetId2entryCacheMode() EnumbackendId2entryCache
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetId2entryCacheModeOk() (*EnumbackendId2entryCacheModeProp, bool) {
 	if o == nil || isNil(o.Id2entryCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id2entryCacheMode, true
 }
@@ -1060,7 +1060,7 @@ func (o *LocalDbBackendResponse) GetDn2idCacheMode() EnumbackendDn2idCacheModePr
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDn2idCacheModeOk() (*EnumbackendDn2idCacheModeProp, bool) {
 	if o == nil || isNil(o.Dn2idCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.Dn2idCacheMode, true
 }
@@ -1092,7 +1092,7 @@ func (o *LocalDbBackendResponse) GetId2childrenCacheMode() EnumbackendId2childre
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetId2childrenCacheModeOk() (*EnumbackendId2childrenCacheModeProp, bool) {
 	if o == nil || isNil(o.Id2childrenCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id2childrenCacheMode, true
 }
@@ -1124,7 +1124,7 @@ func (o *LocalDbBackendResponse) GetId2subtreeCacheMode() EnumbackendId2subtreeC
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetId2subtreeCacheModeOk() (*EnumbackendId2subtreeCacheModeProp, bool) {
 	if o == nil || isNil(o.Id2subtreeCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id2subtreeCacheMode, true
 }
@@ -1156,7 +1156,7 @@ func (o *LocalDbBackendResponse) GetDn2uriCacheMode() EnumbackendDn2uriCacheMode
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDn2uriCacheModeOk() (*EnumbackendDn2uriCacheModeProp, bool) {
 	if o == nil || isNil(o.Dn2uriCacheMode) {
-    return nil, false
+		return nil, false
 	}
 	return o.Dn2uriCacheMode, true
 }
@@ -1188,7 +1188,7 @@ func (o *LocalDbBackendResponse) GetPrimeMethod() []EnumbackendPrimeMethodProp {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetPrimeMethodOk() ([]EnumbackendPrimeMethodProp, bool) {
 	if o == nil || isNil(o.PrimeMethod) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimeMethod, true
 }
@@ -1220,7 +1220,7 @@ func (o *LocalDbBackendResponse) GetPrimeThreadCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetPrimeThreadCountOk() (*int32, bool) {
 	if o == nil || isNil(o.PrimeThreadCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimeThreadCount, true
 }
@@ -1252,7 +1252,7 @@ func (o *LocalDbBackendResponse) GetPrimeTimeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetPrimeTimeLimitOk() (*string, bool) {
 	if o == nil || isNil(o.PrimeTimeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimeTimeLimit, true
 }
@@ -1284,7 +1284,7 @@ func (o *LocalDbBackendResponse) GetPrimeAllIndexes() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetPrimeAllIndexesOk() (*bool, bool) {
 	if o == nil || isNil(o.PrimeAllIndexes) {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimeAllIndexes, true
 }
@@ -1316,7 +1316,7 @@ func (o *LocalDbBackendResponse) GetSystemIndexToPrime() []EnumbackendSystemInde
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSystemIndexToPrimeOk() ([]EnumbackendSystemIndexToPrimeProp, bool) {
 	if o == nil || isNil(o.SystemIndexToPrime) {
-    return nil, false
+		return nil, false
 	}
 	return o.SystemIndexToPrime, true
 }
@@ -1348,7 +1348,7 @@ func (o *LocalDbBackendResponse) GetSystemIndexToPrimeInternalNodesOnly() []Enum
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSystemIndexToPrimeInternalNodesOnlyOk() ([]EnumbackendSystemIndexToPrimeInternalNodesOnlyProp, bool) {
 	if o == nil || isNil(o.SystemIndexToPrimeInternalNodesOnly) {
-    return nil, false
+		return nil, false
 	}
 	return o.SystemIndexToPrimeInternalNodesOnly, true
 }
@@ -1380,7 +1380,7 @@ func (o *LocalDbBackendResponse) GetBackgroundPrime() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetBackgroundPrimeOk() (*bool, bool) {
 	if o == nil || isNil(o.BackgroundPrime) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackgroundPrime, true
 }
@@ -1412,7 +1412,7 @@ func (o *LocalDbBackendResponse) GetIndexEntryLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetIndexEntryLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.IndexEntryLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.IndexEntryLimit, true
 }
@@ -1444,7 +1444,7 @@ func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetCompositeIndexEntryLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.CompositeIndexEntryLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.CompositeIndexEntryLimit, true
 }
@@ -1476,7 +1476,7 @@ func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetId2childrenIndexEntryLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.Id2childrenIndexEntryLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id2childrenIndexEntryLimit, true
 }
@@ -1508,7 +1508,7 @@ func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetId2subtreeIndexEntryLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.Id2subtreeIndexEntryLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.Id2subtreeIndexEntryLimit, true
 }
@@ -1541,7 +1541,7 @@ func (o *LocalDbBackendResponse) GetImportTempDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetImportTempDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ImportTempDirectory, true
 }
@@ -1564,7 +1564,7 @@ func (o *LocalDbBackendResponse) GetImportThreadCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetImportThreadCountOk() (*int32, bool) {
 	if o == nil || isNil(o.ImportThreadCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.ImportThreadCount, true
 }
@@ -1596,7 +1596,7 @@ func (o *LocalDbBackendResponse) GetExportThreadCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetExportThreadCountOk() (*int32, bool) {
 	if o == nil || isNil(o.ExportThreadCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExportThreadCount, true
 }
@@ -1628,7 +1628,7 @@ func (o *LocalDbBackendResponse) GetDbImportCachePercent() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbImportCachePercentOk() (*int32, bool) {
 	if o == nil || isNil(o.DbImportCachePercent) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbImportCachePercent, true
 }
@@ -1660,7 +1660,7 @@ func (o *LocalDbBackendResponse) GetDbTxnWriteNoSync() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDbTxnWriteNoSyncOk() (*bool, bool) {
 	if o == nil || isNil(o.DbTxnWriteNoSync) {
-    return nil, false
+		return nil, false
 	}
 	return o.DbTxnWriteNoSync, true
 }
@@ -1692,7 +1692,7 @@ func (o *LocalDbBackendResponse) GetDeadlockRetryLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDeadlockRetryLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.DeadlockRetryLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeadlockRetryLimit, true
 }
@@ -1724,7 +1724,7 @@ func (o *LocalDbBackendResponse) GetExternalTxnDefaultBackendLockBehavior() Enum
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetExternalTxnDefaultBackendLockBehaviorOk() (*EnumbackendExternalTxnDefaultBackendLockBehaviorProp, bool) {
 	if o == nil || isNil(o.ExternalTxnDefaultBackendLockBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExternalTxnDefaultBackendLockBehavior, true
 }
@@ -1756,7 +1756,7 @@ func (o *LocalDbBackendResponse) GetSingleWriterLockBehavior() EnumbackendSingle
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSingleWriterLockBehaviorOk() (*EnumbackendSingleWriterLockBehaviorProp, bool) {
 	if o == nil || isNil(o.SingleWriterLockBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.SingleWriterLockBehavior, true
 }
@@ -1788,7 +1788,7 @@ func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimit() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSubtreeDeleteSizeLimitOk() (*int32, bool) {
 	if o == nil || isNil(o.SubtreeDeleteSizeLimit) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubtreeDeleteSizeLimit, true
 }
@@ -1820,7 +1820,7 @@ func (o *LocalDbBackendResponse) GetNumRecentChanges() int32 {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetNumRecentChangesOk() (*int32, bool) {
 	if o == nil || isNil(o.NumRecentChanges) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumRecentChanges, true
 }
@@ -1852,7 +1852,7 @@ func (o *LocalDbBackendResponse) GetOfflineProcessDatabaseOpenTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetOfflineProcessDatabaseOpenTimeoutOk() (*string, bool) {
 	if o == nil || isNil(o.OfflineProcessDatabaseOpenTimeout) {
-    return nil, false
+		return nil, false
 	}
 	return o.OfflineProcessDatabaseOpenTimeout, true
 }
@@ -1885,7 +1885,7 @@ func (o *LocalDbBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -1908,7 +1908,7 @@ func (o *LocalDbBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1941,7 +1941,7 @@ func (o *LocalDbBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1965,7 +1965,7 @@ func (o *LocalDbBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -1988,7 +1988,7 @@ func (o *LocalDbBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -2020,7 +2020,7 @@ func (o *LocalDbBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -2052,7 +2052,7 @@ func (o *LocalDbBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *LocalDbBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -2297,5 +2297,3 @@ func (v *NullableLocalDbBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

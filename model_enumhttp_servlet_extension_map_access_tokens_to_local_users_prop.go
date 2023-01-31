@@ -110,4 +110,3 @@ func (v *NullableEnumhttpServletExtensionMapAccessTokensToLocalUsersProp) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

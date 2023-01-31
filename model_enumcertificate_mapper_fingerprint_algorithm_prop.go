@@ -20,8 +20,8 @@ type EnumcertificateMapperFingerprintAlgorithmProp string
 
 // List of Enumcertificate-mapper-fingerprintAlgorithmProp
 const (
-	ENUMCERTIFICATEMAPPERFINGERPRINTALGORITHMPROP_MD5 EnumcertificateMapperFingerprintAlgorithmProp = "md5"
-	ENUMCERTIFICATEMAPPERFINGERPRINTALGORITHMPROP_SHA1 EnumcertificateMapperFingerprintAlgorithmProp = "sha1"
+	ENUMCERTIFICATEMAPPERFINGERPRINTALGORITHMPROP_MD5    EnumcertificateMapperFingerprintAlgorithmProp = "md5"
+	ENUMCERTIFICATEMAPPERFINGERPRINTALGORITHMPROP_SHA1   EnumcertificateMapperFingerprintAlgorithmProp = "sha1"
 	ENUMCERTIFICATEMAPPERFINGERPRINTALGORITHMPROP_SHA256 EnumcertificateMapperFingerprintAlgorithmProp = "sha256"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumcertificateMapperFingerprintAlgorithmProp) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

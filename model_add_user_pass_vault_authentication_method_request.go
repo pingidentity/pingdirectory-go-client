@@ -17,8 +17,8 @@ import (
 // AddUserPassVaultAuthenticationMethodRequest struct for AddUserPassVaultAuthenticationMethodRequest
 type AddUserPassVaultAuthenticationMethodRequest struct {
 	// Name of the new Vault Authentication Method
-	MethodName string `json:"methodName"`
-	Schemas []EnumuserPassVaultAuthenticationMethodSchemaUrn `json:"schemas"`
+	MethodName string                                           `json:"methodName"`
+	Schemas    []EnumuserPassVaultAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
 	// The password for the user to authenticate.
@@ -64,7 +64,7 @@ func (o *AddUserPassVaultAuthenticationMethodRequest) GetMethodName() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserPassVaultAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MethodName, true
 }
@@ -88,7 +88,7 @@ func (o *AddUserPassVaultAuthenticationMethodRequest) GetSchemas() []EnumuserPas
 // and a boolean to check if the value has been set.
 func (o *AddUserPassVaultAuthenticationMethodRequest) GetSchemasOk() ([]EnumuserPassVaultAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddUserPassVaultAuthenticationMethodRequest) GetUsername() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserPassVaultAuthenticationMethodRequest) GetUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Username, true
 }
@@ -136,7 +136,7 @@ func (o *AddUserPassVaultAuthenticationMethodRequest) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserPassVaultAuthenticationMethodRequest) GetPasswordOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Password, true
 }
@@ -159,7 +159,7 @@ func (o *AddUserPassVaultAuthenticationMethodRequest) GetLoginMechanismName() st
 // and a boolean to check if the value has been set.
 func (o *AddUserPassVaultAuthenticationMethodRequest) GetLoginMechanismNameOk() (*string, bool) {
 	if o == nil || isNil(o.LoginMechanismName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoginMechanismName, true
 }
@@ -191,7 +191,7 @@ func (o *AddUserPassVaultAuthenticationMethodRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddUserPassVaultAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddUserPassVaultAuthenticationMethodRequest) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

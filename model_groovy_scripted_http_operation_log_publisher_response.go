@@ -16,10 +16,10 @@ import (
 
 // GroovyScriptedHttpOperationLogPublisherResponse struct for GroovyScriptedHttpOperationLogPublisherResponse
 type GroovyScriptedHttpOperationLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                                 `json:"id"`
 	Schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Operation Log Publisher.
 	ScriptClass string `json:"scriptClass"`
@@ -28,7 +28,7 @@ type GroovyScriptedHttpOperationLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -66,7 +66,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetUrnpingidentitysche
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -155,7 +155,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetSchemas() []Enumgro
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetSchemasOk() ([]EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -179,7 +179,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptClass() strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -202,7 +202,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptArgument() []
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -234,7 +234,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -267,7 +267,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -290,7 +290,7 @@ func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetLoggingErrorBehavio
 // and a boolean to check if the value has been set.
 func (o *GroovyScriptedHttpOperationLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -376,5 +376,3 @@ func (v *NullableGroovyScriptedHttpOperationLogPublisherResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

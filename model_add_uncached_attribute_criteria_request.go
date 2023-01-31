@@ -17,10 +17,10 @@ import (
 
 // AddUncachedAttributeCriteriaRequest - struct for AddUncachedAttributeCriteriaRequest
 type AddUncachedAttributeCriteriaRequest struct {
-	AddDefaultUncachedAttributeCriteriaRequest *AddDefaultUncachedAttributeCriteriaRequest
+	AddDefaultUncachedAttributeCriteriaRequest        *AddDefaultUncachedAttributeCriteriaRequest
 	AddGroovyScriptedUncachedAttributeCriteriaRequest *AddGroovyScriptedUncachedAttributeCriteriaRequest
-	AddSimpleUncachedAttributeCriteriaRequest *AddSimpleUncachedAttributeCriteriaRequest
-	AddThirdPartyUncachedAttributeCriteriaRequest *AddThirdPartyUncachedAttributeCriteriaRequest
+	AddSimpleUncachedAttributeCriteriaRequest         *AddSimpleUncachedAttributeCriteriaRequest
+	AddThirdPartyUncachedAttributeCriteriaRequest     *AddThirdPartyUncachedAttributeCriteriaRequest
 }
 
 // AddDefaultUncachedAttributeCriteriaRequestAsAddUncachedAttributeCriteriaRequest is a convenience function that returns AddDefaultUncachedAttributeCriteriaRequest wrapped in AddUncachedAttributeCriteriaRequest
@@ -50,7 +50,6 @@ func AddThirdPartyUncachedAttributeCriteriaRequestAsAddUncachedAttributeCriteria
 		AddThirdPartyUncachedAttributeCriteriaRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddUncachedAttributeCriteriaRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddUncachedAttributeCriteriaRequest) GetActualInstance() (interface{}) {
+func (obj *AddUncachedAttributeCriteriaRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddUncachedAttributeCriteriaRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

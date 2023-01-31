@@ -16,9 +16,9 @@ import (
 
 // LdapUrlAttributeSyntaxResponse struct for LdapUrlAttributeSyntaxResponse
 type LdapUrlAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumldapUrlAttributeSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumldapUrlAttributeSyntaxSchemaUrn              `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether values for attributes with this syntax will be required to be in the valid LDAP URL format. If this is set to false, then arbitrary strings will be allowed.
@@ -62,7 +62,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetSchemas() []EnumldapUrlAttributeSynt
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetSchemasOk() ([]EnumldapUrlAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetStrictFormat() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetStrictFormatOk() (*bool, bool) {
 	if o == nil || isNil(o.StrictFormat) {
-    return nil, false
+		return nil, false
 	}
 	return o.StrictFormat, true
 }
@@ -207,7 +207,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -230,7 +230,7 @@ func (o *LdapUrlAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
 // and a boolean to check if the value has been set.
 func (o *LdapUrlAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -310,5 +310,3 @@ func (v *NullableLdapUrlAttributeSyntaxResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

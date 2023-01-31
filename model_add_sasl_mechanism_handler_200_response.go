@@ -17,10 +17,10 @@ import (
 
 // AddSaslMechanismHandler200Response - struct for AddSaslMechanismHandler200Response
 type AddSaslMechanismHandler200Response struct {
-	OauthBearerSaslMechanismHandlerResponse *OauthBearerSaslMechanismHandlerResponse
-	ThirdPartySaslMechanismHandlerResponse *ThirdPartySaslMechanismHandlerResponse
+	OauthBearerSaslMechanismHandlerResponse           *OauthBearerSaslMechanismHandlerResponse
+	ThirdPartySaslMechanismHandlerResponse            *ThirdPartySaslMechanismHandlerResponse
 	UnboundidDeliveredOtpSaslMechanismHandlerResponse *UnboundidDeliveredOtpSaslMechanismHandlerResponse
-	UnboundidMsChapV2SaslMechanismHandlerResponse *UnboundidMsChapV2SaslMechanismHandlerResponse
+	UnboundidMsChapV2SaslMechanismHandlerResponse     *UnboundidMsChapV2SaslMechanismHandlerResponse
 }
 
 // OauthBearerSaslMechanismHandlerResponseAsAddSaslMechanismHandler200Response is a convenience function that returns OauthBearerSaslMechanismHandlerResponse wrapped in AddSaslMechanismHandler200Response
@@ -50,7 +50,6 @@ func UnboundidMsChapV2SaslMechanismHandlerResponseAsAddSaslMechanismHandler200Re
 		UnboundidMsChapV2SaslMechanismHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSaslMechanismHandler200Response) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddSaslMechanismHandler200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddSaslMechanismHandler200Response) GetActualInstance() (interface{}) {
+func (obj *AddSaslMechanismHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddSaslMechanismHandler200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

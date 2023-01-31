@@ -16,10 +16,10 @@ import (
 
 // ExecAlertHandlerResponse struct for ExecAlertHandlerResponse
 type ExecAlertHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Alert Handler
-	Id string `json:"id"`
+	Id      string                          `json:"id"`
 	Schemas []EnumexecAlertHandlerSchemaUrn `json:"schemas"`
 	// Specifies the path of the command to execute, without any arguments. It must be an absolute path for reasons of security and reliability.
 	Command string `json:"command"`
@@ -28,10 +28,10 @@ type ExecAlertHandlerResponse struct {
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                       `json:"enabled"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewExecAlertHandlerResponse instantiates a new ExecAlertHandlerResponse object
@@ -68,7 +68,7 @@ func (o *ExecAlertHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -100,7 +100,7 @@ func (o *ExecAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessage
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -133,7 +133,7 @@ func (o *ExecAlertHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -157,7 +157,7 @@ func (o *ExecAlertHandlerResponse) GetSchemas() []EnumexecAlertHandlerSchemaUrn 
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetSchemasOk() ([]EnumexecAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -181,7 +181,7 @@ func (o *ExecAlertHandlerResponse) GetCommand() string {
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetCommandOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Command, true
 }
@@ -204,7 +204,7 @@ func (o *ExecAlertHandlerResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -236,7 +236,7 @@ func (o *ExecAlertHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -269,7 +269,7 @@ func (o *ExecAlertHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -292,7 +292,7 @@ func (o *ExecAlertHandlerResponse) GetEnabledAlertSeverity() []EnumalertHandlerE
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -324,7 +324,7 @@ func (o *ExecAlertHandlerResponse) GetEnabledAlertType() []EnumalertHandlerEnabl
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -356,7 +356,7 @@ func (o *ExecAlertHandlerResponse) GetDisabledAlertType() []EnumalertHandlerDisa
 // and a boolean to check if the value has been set.
 func (o *ExecAlertHandlerResponse) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -448,5 +448,3 @@ func (v *NullableExecAlertHandlerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

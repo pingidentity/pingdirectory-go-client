@@ -16,15 +16,15 @@ import (
 
 // SyslogJsonAuditLogPublisherResponse struct for SyslogJsonAuditLogPublisherResponse
 type SyslogJsonAuditLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumsyslogJsonAuditLogPublisherSchemaUrn `json:"schemas"`
 	// The syslog server to which messages should be sent.
-	SyslogExternalServer []string `json:"syslogExternalServer"`
-	SyslogFacility EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
-	SyslogSeverity EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`
+	SyslogExternalServer []string                           `json:"syslogExternalServer"`
+	SyslogFacility       EnumlogPublisherSyslogFacilityProp `json:"syslogFacility"`
+	SyslogSeverity       EnumlogPublisherSyslogSeverityProp `json:"syslogSeverity"`
 	// The local host name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher.
 	SyslogMessageHostName *string `json:"syslogMessageHostName,omitempty"`
 	// The application name that will be included in syslog messages that are logged by this Syslog JSON Audit Log Publisher.
@@ -34,7 +34,7 @@ type SyslogJsonAuditLogPublisherResponse struct {
 	// Indicates whether the JSON objects should use a multi-line representation (with each object field and array value on its own line) that may be easier for administrators to read, but each message will be larger (because of additional spaces and end-of-line markers), and it may be more difficult to consume and parse through some text-oriented tools.
 	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
 	// Indicates whether the audit log should be written in reversible form so that it is possible to revert the changes if desired.
-	UseReversibleForm *bool `json:"useReversibleForm,omitempty"`
+	UseReversibleForm            *bool                                             `json:"useReversibleForm,omitempty"`
 	SoftDeleteEntryAuditBehavior *EnumlogPublisherSoftDeleteEntryAuditBehaviorProp `json:"softDeleteEntryAuditBehavior,omitempty"`
 	// Indicates whether to include information about any operation purpose request control that may have been included in the request.
 	IncludeOperationPurposeRequestControl *bool `json:"includeOperationPurposeRequestControl,omitempty"`
@@ -77,7 +77,7 @@ type SyslogJsonAuditLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -117,7 +117,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -149,7 +149,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -182,7 +182,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -206,7 +206,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSchemas() []EnumsyslogJsonAudit
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSchemasOk() ([]EnumsyslogJsonAuditLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -230,7 +230,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogExternalServer() []string
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogExternalServerOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogExternalServer, true
 }
@@ -254,7 +254,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogFacility() EnumlogPublish
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogFacilityOk() (*EnumlogPublisherSyslogFacilityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SyslogFacility, true
 }
@@ -278,7 +278,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogSeverity() EnumlogPublish
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogSeverityOk() (*EnumlogPublisherSyslogSeverityProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SyslogSeverity, true
 }
@@ -301,7 +301,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogMessageHostName() string 
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogMessageHostNameOk() (*string, bool) {
 	if o == nil || isNil(o.SyslogMessageHostName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogMessageHostName, true
 }
@@ -333,7 +333,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogMessageApplicationName() 
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSyslogMessageApplicationNameOk() (*string, bool) {
 	if o == nil || isNil(o.SyslogMessageApplicationName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SyslogMessageApplicationName, true
 }
@@ -365,7 +365,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -397,7 +397,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetWriteMultiLineMessages() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetWriteMultiLineMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.WriteMultiLineMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.WriteMultiLineMessages, true
 }
@@ -429,7 +429,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetUseReversibleForm() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetUseReversibleFormOk() (*bool, bool) {
 	if o == nil || isNil(o.UseReversibleForm) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseReversibleForm, true
 }
@@ -461,7 +461,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehavior() 
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool) {
 	if o == nil || isNil(o.SoftDeleteEntryAuditBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.SoftDeleteEntryAuditBehavior, true
 }
@@ -493,7 +493,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeOperationPurposeRequestC
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeOperationPurposeRequestControlOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeOperationPurposeRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeOperationPurposeRequestControl, true
 }
@@ -525,7 +525,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeIntermediateClientReques
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeIntermediateClientRequestControlOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeIntermediateClientRequestControl) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeIntermediateClientRequestControl, true
 }
@@ -557,7 +557,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetObscureAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetObscureAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ObscureAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ObscureAttribute, true
 }
@@ -589,7 +589,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetExcludeAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetExcludeAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeAttribute, true
 }
@@ -621,7 +621,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSuppressInternalOperations() bo
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -653,7 +653,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -685,7 +685,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -717,7 +717,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -749,7 +749,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -781,7 +781,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeRequesterDN() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeRequesterDNOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterDN, true
 }
@@ -813,7 +813,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeRequesterIPAddress() boo
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeRequesterIPAddressOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterIPAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
 }
@@ -845,7 +845,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeRequestControls() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeRequestControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestControls, true
 }
@@ -877,7 +877,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeResponseControls() bool 
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeResponseControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResponseControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResponseControls, true
 }
@@ -909,7 +909,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeReplicationChangeID() bo
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetIncludeReplicationChangeIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeReplicationChangeID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
 }
@@ -941,7 +941,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetLogSecurityNegotiation() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -973,7 +973,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetSuppressReplicationOperations()
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -1005,7 +1005,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -1037,7 +1037,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -1069,7 +1069,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -1101,7 +1101,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1134,7 +1134,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1157,7 +1157,7 @@ func (o *SyslogJsonAuditLogPublisherResponse) GetLoggingErrorBehavior() EnumlogP
 // and a boolean to check if the value has been set.
 func (o *SyslogJsonAuditLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1321,5 +1321,3 @@ func (v *NullableSyslogJsonAuditLogPublisherResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

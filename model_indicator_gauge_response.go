@@ -16,10 +16,10 @@ import (
 
 // IndicatorGaugeResponse struct for IndicatorGaugeResponse
 type IndicatorGaugeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Gauge
-	Id string `json:"id"`
+	Id      string                        `json:"id"`
 	Schemas []EnumindicatorGaugeSchemaUrn `json:"schemas"`
 	// Specifies the source of data to use in determining this Indicator Gauge's severity and status.
 	GaugeDataSource string `json:"gaugeDataSource"`
@@ -34,9 +34,9 @@ type IndicatorGaugeResponse struct {
 	// A description for this Gauge
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this Gauge is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled          bool                           `json:"enabled"`
 	OverrideSeverity *EnumgaugeOverrideSeverityProp `json:"overrideSeverity,omitempty"`
-	AlertLevel *EnumgaugeAlertLevelProp `json:"alertLevel,omitempty"`
+	AlertLevel       *EnumgaugeAlertLevelProp       `json:"alertLevel,omitempty"`
 	// The frequency with which this Gauge is updated.
 	UpdateInterval *string `json:"updateInterval,omitempty"`
 	// Indicates the number of times the monitor data source value will be collected during the update interval.
@@ -44,9 +44,9 @@ type IndicatorGaugeResponse struct {
 	// Specifies set of resources to be monitored.
 	IncludeResource []string `json:"includeResource,omitempty"`
 	// Specifies resources to exclude from being monitored.
-	ExcludeResource []string `json:"excludeResource,omitempty"`
+	ExcludeResource                []string                                     `json:"excludeResource,omitempty"`
 	ServerUnavailableSeverityLevel *EnumgaugeServerUnavailableSeverityLevelProp `json:"serverUnavailableSeverityLevel,omitempty"`
-	ServerDegradedSeverityLevel *EnumgaugeServerDegradedSeverityLevelProp `json:"serverDegradedSeverityLevel,omitempty"`
+	ServerDegradedSeverityLevel    *EnumgaugeServerDegradedSeverityLevelProp    `json:"serverDegradedSeverityLevel,omitempty"`
 }
 
 // NewIndicatorGaugeResponse instantiates a new IndicatorGaugeResponse object
@@ -83,7 +83,7 @@ func (o *IndicatorGaugeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *IndicatorGaugeResponse) GetUrnpingidentityschemasconfigurationmessages2
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *IndicatorGaugeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *IndicatorGaugeResponse) GetSchemas() []EnumindicatorGaugeSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetSchemasOk() ([]EnumindicatorGaugeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -196,7 +196,7 @@ func (o *IndicatorGaugeResponse) GetGaugeDataSource() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetGaugeDataSourceOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GaugeDataSource, true
 }
@@ -219,7 +219,7 @@ func (o *IndicatorGaugeResponse) GetCriticalValue() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetCriticalValueOk() (*string, bool) {
 	if o == nil || isNil(o.CriticalValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.CriticalValue, true
 }
@@ -251,7 +251,7 @@ func (o *IndicatorGaugeResponse) GetMajorValue() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetMajorValueOk() (*string, bool) {
 	if o == nil || isNil(o.MajorValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.MajorValue, true
 }
@@ -283,7 +283,7 @@ func (o *IndicatorGaugeResponse) GetMinorValue() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetMinorValueOk() (*string, bool) {
 	if o == nil || isNil(o.MinorValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinorValue, true
 }
@@ -315,7 +315,7 @@ func (o *IndicatorGaugeResponse) GetWarningValue() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetWarningValueOk() (*string, bool) {
 	if o == nil || isNil(o.WarningValue) {
-    return nil, false
+		return nil, false
 	}
 	return o.WarningValue, true
 }
@@ -347,7 +347,7 @@ func (o *IndicatorGaugeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -380,7 +380,7 @@ func (o *IndicatorGaugeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -403,7 +403,7 @@ func (o *IndicatorGaugeResponse) GetOverrideSeverity() EnumgaugeOverrideSeverity
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetOverrideSeverityOk() (*EnumgaugeOverrideSeverityProp, bool) {
 	if o == nil || isNil(o.OverrideSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideSeverity, true
 }
@@ -435,7 +435,7 @@ func (o *IndicatorGaugeResponse) GetAlertLevel() EnumgaugeAlertLevelProp {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetAlertLevelOk() (*EnumgaugeAlertLevelProp, bool) {
 	if o == nil || isNil(o.AlertLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertLevel, true
 }
@@ -467,7 +467,7 @@ func (o *IndicatorGaugeResponse) GetUpdateInterval() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetUpdateIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.UpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.UpdateInterval, true
 }
@@ -499,7 +499,7 @@ func (o *IndicatorGaugeResponse) GetSamplesPerUpdateInterval() int32 {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetSamplesPerUpdateIntervalOk() (*int32, bool) {
 	if o == nil || isNil(o.SamplesPerUpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.SamplesPerUpdateInterval, true
 }
@@ -531,7 +531,7 @@ func (o *IndicatorGaugeResponse) GetIncludeResource() []string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetIncludeResourceOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeResource) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResource, true
 }
@@ -563,7 +563,7 @@ func (o *IndicatorGaugeResponse) GetExcludeResource() []string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetExcludeResourceOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeResource) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeResource, true
 }
@@ -595,7 +595,7 @@ func (o *IndicatorGaugeResponse) GetServerUnavailableSeverityLevel() EnumgaugeSe
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetServerUnavailableSeverityLevelOk() (*EnumgaugeServerUnavailableSeverityLevelProp, bool) {
 	if o == nil || isNil(o.ServerUnavailableSeverityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerUnavailableSeverityLevel, true
 }
@@ -627,7 +627,7 @@ func (o *IndicatorGaugeResponse) GetServerDegradedSeverityLevel() EnumgaugeServe
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetServerDegradedSeverityLevelOk() (*EnumgaugeServerDegradedSeverityLevelProp, bool) {
 	if o == nil || isNil(o.ServerDegradedSeverityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerDegradedSeverityLevel, true
 }
@@ -743,5 +743,3 @@ func (v *NullableIndicatorGaugeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

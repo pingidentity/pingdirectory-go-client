@@ -17,10 +17,10 @@ import (
 // AddRegularExpressionPasswordValidatorRequest struct for AddRegularExpressionPasswordValidatorRequest
 type AddRegularExpressionPasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumregularExpressionPasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                            `json:"validatorName"`
+	Schemas       []EnumregularExpressionPasswordValidatorSchemaUrn `json:"schemas"`
 	// The regular expression to use for this password validator.
-	MatchPattern string `json:"matchPattern"`
+	MatchPattern  string                                 `json:"matchPattern"`
 	MatchBehavior EnumpasswordValidatorMatchBehaviorProp `json:"matchBehavior"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
@@ -68,7 +68,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetValidatorName() string
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -92,7 +92,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetSchemas() []Enumregula
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetSchemasOk() ([]EnumregularExpressionPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetMatchPattern() string 
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetMatchPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MatchPattern, true
 }
@@ -140,7 +140,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetMatchBehavior() Enumpa
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetMatchBehaviorOk() (*EnumpasswordValidatorMatchBehaviorProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MatchBehavior, true
 }
@@ -163,7 +163,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -196,7 +196,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -219,7 +219,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetValidatorRequirementDe
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -251,7 +251,7 @@ func (o *AddRegularExpressionPasswordValidatorRequest) GetValidatorFailureMessag
 // and a boolean to check if the value has been set.
 func (o *AddRegularExpressionPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -334,5 +334,3 @@ func (v *NullableAddRegularExpressionPasswordValidatorRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

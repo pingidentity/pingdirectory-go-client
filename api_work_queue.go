@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // WorkQueueApiService WorkQueueApi service
 type WorkQueueApiService service
 
 type ApiGetWorkQueueRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WorkQueueApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetWorkQueueRequest) Execute() (*HighThroughputWorkQueueResponse, *ht
 /*
 GetWorkQueue Returns a single Work Queue
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetWorkQueueRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetWorkQueueRequest
 */
 func (a *WorkQueueApiService) GetWorkQueue(ctx context.Context) ApiGetWorkQueueRequest {
 	return ApiGetWorkQueueRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return HighThroughputWorkQueueResponse
+//
+//	@return HighThroughputWorkQueueResponse
 func (a *WorkQueueApiService) GetWorkQueueExecute(r ApiGetWorkQueueRequest) (*HighThroughputWorkQueueResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HighThroughputWorkQueueResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HighThroughputWorkQueueResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkQueueApiService.GetWorkQueue")
@@ -120,8 +120,8 @@ func (a *WorkQueueApiService) GetWorkQueueExecute(r ApiGetWorkQueueRequest) (*Hi
 }
 
 type ApiUpdateWorkQueueRequest struct {
-	ctx context.Context
-	ApiService *WorkQueueApiService
+	ctx           context.Context
+	ApiService    *WorkQueueApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateWorkQueueRequest) Execute() (*HighThroughputWorkQueueResponse, 
 /*
 UpdateWorkQueue Update an existing Work Queue by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateWorkQueueRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateWorkQueueRequest
 */
 func (a *WorkQueueApiService) UpdateWorkQueue(ctx context.Context) ApiUpdateWorkQueueRequest {
 	return ApiUpdateWorkQueueRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return HighThroughputWorkQueueResponse
+//
+//	@return HighThroughputWorkQueueResponse
 func (a *WorkQueueApiService) UpdateWorkQueueExecute(r ApiUpdateWorkQueueRequest) (*HighThroughputWorkQueueResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HighThroughputWorkQueueResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HighThroughputWorkQueueResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkQueueApiService.UpdateWorkQueue")

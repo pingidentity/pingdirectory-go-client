@@ -16,9 +16,9 @@ import (
 
 // AlarmBackendResponse struct for AlarmBackendResponse
 type AlarmBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumalarmBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumalarmBackendSchemaUrn                        `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
@@ -30,7 +30,7 @@ type AlarmBackendResponse struct {
 	// Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged.
 	AlarmRetentionTime string `json:"alarmRetentionTime"`
 	// Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged.
-	MaxAlarms *int32 `json:"maxAlarms,omitempty"`
+	MaxAlarms       *int32                         `json:"maxAlarms,omitempty"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// A description for this Backend
 	Description *string `json:"description,omitempty"`
@@ -84,7 +84,7 @@ func (o *AlarmBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -116,7 +116,7 @@ func (o *AlarmBackendResponse) GetUrnpingidentityschemasconfigurationmessages20(
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -149,7 +149,7 @@ func (o *AlarmBackendResponse) GetSchemas() []EnumalarmBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetSchemasOk() ([]EnumalarmBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *AlarmBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -197,7 +197,7 @@ func (o *AlarmBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -221,7 +221,7 @@ func (o *AlarmBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -245,7 +245,7 @@ func (o *AlarmBackendResponse) GetLdifFile() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetLdifFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LdifFile, true
 }
@@ -269,7 +269,7 @@ func (o *AlarmBackendResponse) GetAlarmRetentionTime() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetAlarmRetentionTimeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AlarmRetentionTime, true
 }
@@ -292,7 +292,7 @@ func (o *AlarmBackendResponse) GetMaxAlarms() int32 {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetMaxAlarmsOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxAlarms) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxAlarms, true
 }
@@ -325,7 +325,7 @@ func (o *AlarmBackendResponse) GetWritabilityMode() EnumbackendWritabilityModePr
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -348,7 +348,7 @@ func (o *AlarmBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -381,7 +381,7 @@ func (o *AlarmBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -404,7 +404,7 @@ func (o *AlarmBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -436,7 +436,7 @@ func (o *AlarmBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -468,7 +468,7 @@ func (o *AlarmBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -500,7 +500,7 @@ func (o *AlarmBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *AlarmBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -607,5 +607,3 @@ func (v *NullableAlarmBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

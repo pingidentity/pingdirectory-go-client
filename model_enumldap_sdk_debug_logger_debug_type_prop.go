@@ -20,14 +20,14 @@ type EnumldapSdkDebugLoggerDebugTypeProp string
 
 // List of Enumldap-sdk-debug-logger-debugTypeProp
 const (
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_ASN1 EnumldapSdkDebugLoggerDebugTypeProp = "asn1"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_ASN1         EnumldapSdkDebugLoggerDebugTypeProp = "asn1"
 	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CODING_ERROR EnumldapSdkDebugLoggerDebugTypeProp = "coding-error"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CONNECT EnumldapSdkDebugLoggerDebugTypeProp = "connect"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_EXCEPTION EnumldapSdkDebugLoggerDebugTypeProp = "exception"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDAP EnumldapSdkDebugLoggerDebugTypeProp = "ldap"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDIF EnumldapSdkDebugLoggerDebugTypeProp = "ldif"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_MONITOR EnumldapSdkDebugLoggerDebugTypeProp = "monitor"
-	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_OTHER EnumldapSdkDebugLoggerDebugTypeProp = "other"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_CONNECT      EnumldapSdkDebugLoggerDebugTypeProp = "connect"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_EXCEPTION    EnumldapSdkDebugLoggerDebugTypeProp = "exception"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDAP         EnumldapSdkDebugLoggerDebugTypeProp = "ldap"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_LDIF         EnumldapSdkDebugLoggerDebugTypeProp = "ldif"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_MONITOR      EnumldapSdkDebugLoggerDebugTypeProp = "monitor"
+	ENUMLDAPSDKDEBUGLOGGERDEBUGTYPEPROP_OTHER        EnumldapSdkDebugLoggerDebugTypeProp = "other"
 )
 
 // All allowed values of EnumldapSdkDebugLoggerDebugTypeProp enum
@@ -120,4 +120,3 @@ func (v *NullableEnumldapSdkDebugLoggerDebugTypeProp) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

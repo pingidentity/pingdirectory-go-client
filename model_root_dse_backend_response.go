@@ -16,9 +16,9 @@ import (
 
 // RootDseBackendResponse struct for RootDseBackendResponse
 type RootDseBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumrootDseBackendSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumrootDseBackendSchemaUrn                      `json:"schemas,omitempty"`
 	// Specifies the set of base DNs used for singleLevel, wholeSubtree, and subordinateSubtree searches based at the root DSE.
 	SubordinateBaseDN []string `json:"subordinateBaseDN,omitempty"`
 	// Specifies an additional OID that should appear in the list of supportedControl values in the server's root DSE.
@@ -60,7 +60,7 @@ func (o *RootDseBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *RootDseBackendResponse) GetUrnpingidentityschemasconfigurationmessages2
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -124,7 +124,7 @@ func (o *RootDseBackendResponse) GetSchemas() []EnumrootDseBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetSchemasOk() ([]EnumrootDseBackendSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -156,7 +156,7 @@ func (o *RootDseBackendResponse) GetSubordinateBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetSubordinateBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.SubordinateBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubordinateBaseDN, true
 }
@@ -188,7 +188,7 @@ func (o *RootDseBackendResponse) GetAdditionalSupportedControlOID() []string {
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetAdditionalSupportedControlOIDOk() ([]string, bool) {
 	if o == nil || isNil(o.AdditionalSupportedControlOID) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdditionalSupportedControlOID, true
 }
@@ -221,7 +221,7 @@ func (o *RootDseBackendResponse) GetShowAllAttributes() bool {
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetShowAllAttributesOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ShowAllAttributes, true
 }
@@ -244,7 +244,7 @@ func (o *RootDseBackendResponse) GetUseLegacyVendorVersion() bool {
 // and a boolean to check if the value has been set.
 func (o *RootDseBackendResponse) GetUseLegacyVendorVersionOk() (*bool, bool) {
 	if o == nil || isNil(o.UseLegacyVendorVersion) {
-    return nil, false
+		return nil, false
 	}
 	return o.UseLegacyVendorVersion, true
 }
@@ -324,5 +324,3 @@ func (v *NullableRootDseBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -106,4 +106,3 @@ func (v *NullableEnumdefaultUncachedAttributeCriteriaSchemaUrn) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

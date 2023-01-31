@@ -20,11 +20,11 @@ type EnumlogFieldSyntaxDefaultBehaviorProp string
 
 // List of Enumlog-field-syntax-defaultBehaviorProp
 const (
-	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_PRESERVE EnumlogFieldSyntaxDefaultBehaviorProp = "preserve"
-	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_OMIT EnumlogFieldSyntaxDefaultBehaviorProp = "omit"
-	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_REDACT_ENTIRE_VALUE EnumlogFieldSyntaxDefaultBehaviorProp = "redact-entire-value"
-	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_REDACT_VALUE_COMPONENTS EnumlogFieldSyntaxDefaultBehaviorProp = "redact-value-components"
-	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_TOKENIZE_ENTIRE_VALUE EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-entire-value"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_PRESERVE                  EnumlogFieldSyntaxDefaultBehaviorProp = "preserve"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_OMIT                      EnumlogFieldSyntaxDefaultBehaviorProp = "omit"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_REDACT_ENTIRE_VALUE       EnumlogFieldSyntaxDefaultBehaviorProp = "redact-entire-value"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_REDACT_VALUE_COMPONENTS   EnumlogFieldSyntaxDefaultBehaviorProp = "redact-value-components"
+	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_TOKENIZE_ENTIRE_VALUE     EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-entire-value"
 	ENUMLOGFIELDSYNTAXDEFAULTBEHAVIORPROP_TOKENIZE_VALUE_COMPONENTS EnumlogFieldSyntaxDefaultBehaviorProp = "tokenize-value-components"
 )
 
@@ -116,4 +116,3 @@ func (v *NullableEnumlogFieldSyntaxDefaultBehaviorProp) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

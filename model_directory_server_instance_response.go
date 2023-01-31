@@ -16,11 +16,11 @@ import (
 
 // DirectoryServerInstanceResponse struct for DirectoryServerInstanceResponse
 type DirectoryServerInstanceResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumdirectoryServerInstanceSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumdirectoryServerInstanceSchemaUrn             `json:"schemas"`
 	// Name of the Server Instance
-	Id string `json:"id"`
+	Id                 string                                    `json:"id"`
 	ServerInstanceType *EnumserverInstanceServerInstanceTypeProp `json:"serverInstanceType,omitempty"`
 	// The name of the replication set assigned to this Directory Server. Restricted domains are only replicated within instances using the same replication set name.
 	ReplicationSetName *string `json:"replicationSetName,omitempty"`
@@ -57,7 +57,7 @@ type DirectoryServerInstanceResponse struct {
 	// The TCP port on which this server is listening for JMX connections.
 	JmxPort *int32 `json:"jmxPort,omitempty"`
 	// The TCP port on which this server is listening for JMX secure connections.
-	JmxsPort *int32 `json:"jmxsPort,omitempty"`
+	JmxsPort          *int32                                   `json:"jmxsPort,omitempty"`
 	PreferredSecurity *EnumserverInstancePreferredSecurityProp `json:"preferredSecurity,omitempty"`
 	// Indicates whether StartTLS is enabled on this server.
 	StartTLSEnabled *bool `json:"startTLSEnabled,omitempty"`
@@ -102,7 +102,7 @@ func (o *DirectoryServerInstanceResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -134,7 +134,7 @@ func (o *DirectoryServerInstanceResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -167,7 +167,7 @@ func (o *DirectoryServerInstanceResponse) GetSchemas() []EnumdirectoryServerInst
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetSchemasOk() ([]EnumdirectoryServerInstanceSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -191,7 +191,7 @@ func (o *DirectoryServerInstanceResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -214,7 +214,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceType() EnumserverInst
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInstanceServerInstanceTypeProp, bool) {
 	if o == nil || isNil(o.ServerInstanceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerInstanceType, true
 }
@@ -246,7 +246,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationSetName() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationSetNameOk() (*string, bool) {
 	if o == nil || isNil(o.ReplicationSetName) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationSetName, true
 }
@@ -278,7 +278,7 @@ func (o *DirectoryServerInstanceResponse) GetLoadBalancingAlgorithmName() []stri
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetLoadBalancingAlgorithmNameOk() ([]string, bool) {
 	if o == nil || isNil(o.LoadBalancingAlgorithmName) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoadBalancingAlgorithmName, true
 }
@@ -311,7 +311,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceName() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerInstanceName, true
 }
@@ -335,7 +335,7 @@ func (o *DirectoryServerInstanceResponse) GetClusterName() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetClusterNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ClusterName, true
 }
@@ -358,7 +358,7 @@ func (o *DirectoryServerInstanceResponse) GetServerInstanceLocation() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerInstanceLocationOk() (*string, bool) {
 	if o == nil || isNil(o.ServerInstanceLocation) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerInstanceLocation, true
 }
@@ -390,7 +390,7 @@ func (o *DirectoryServerInstanceResponse) GetHostname() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetHostnameOk() (*string, bool) {
 	if o == nil || isNil(o.Hostname) {
-    return nil, false
+		return nil, false
 	}
 	return o.Hostname, true
 }
@@ -422,7 +422,7 @@ func (o *DirectoryServerInstanceResponse) GetServerRoot() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerRootOk() (*string, bool) {
 	if o == nil || isNil(o.ServerRoot) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerRoot, true
 }
@@ -455,7 +455,7 @@ func (o *DirectoryServerInstanceResponse) GetServerVersion() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetServerVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerVersion, true
 }
@@ -478,7 +478,7 @@ func (o *DirectoryServerInstanceResponse) GetInterServerCertificate() string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetInterServerCertificateOk() (*string, bool) {
 	if o == nil || isNil(o.InterServerCertificate) {
-    return nil, false
+		return nil, false
 	}
 	return o.InterServerCertificate, true
 }
@@ -510,7 +510,7 @@ func (o *DirectoryServerInstanceResponse) GetLdapPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
 	if o == nil || isNil(o.LdapPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapPort, true
 }
@@ -542,7 +542,7 @@ func (o *DirectoryServerInstanceResponse) GetLdapsPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
 	if o == nil || isNil(o.LdapsPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.LdapsPort, true
 }
@@ -574,7 +574,7 @@ func (o *DirectoryServerInstanceResponse) GetHttpPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
 	if o == nil || isNil(o.HttpPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpPort, true
 }
@@ -606,7 +606,7 @@ func (o *DirectoryServerInstanceResponse) GetHttpsPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
 	if o == nil || isNil(o.HttpsPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.HttpsPort, true
 }
@@ -638,7 +638,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
 	if o == nil || isNil(o.ReplicationPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationPort, true
 }
@@ -670,7 +670,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationServerID() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
 	if o == nil || isNil(o.ReplicationServerID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationServerID, true
 }
@@ -702,7 +702,7 @@ func (o *DirectoryServerInstanceResponse) GetReplicationDomainServerID() []int32
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, bool) {
 	if o == nil || isNil(o.ReplicationDomainServerID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReplicationDomainServerID, true
 }
@@ -734,7 +734,7 @@ func (o *DirectoryServerInstanceResponse) GetJmxPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
 	if o == nil || isNil(o.JmxPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.JmxPort, true
 }
@@ -766,7 +766,7 @@ func (o *DirectoryServerInstanceResponse) GetJmxsPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
 	if o == nil || isNil(o.JmxsPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.JmxsPort, true
 }
@@ -798,7 +798,7 @@ func (o *DirectoryServerInstanceResponse) GetPreferredSecurity() EnumserverInsta
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInstancePreferredSecurityProp, bool) {
 	if o == nil || isNil(o.PreferredSecurity) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreferredSecurity, true
 }
@@ -830,7 +830,7 @@ func (o *DirectoryServerInstanceResponse) GetStartTLSEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.StartTLSEnabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.StartTLSEnabled, true
 }
@@ -862,7 +862,7 @@ func (o *DirectoryServerInstanceResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -894,7 +894,7 @@ func (o *DirectoryServerInstanceResponse) GetMemberOfServerGroup() []string {
 // and a boolean to check if the value has been set.
 func (o *DirectoryServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool) {
 	if o == nil || isNil(o.MemberOfServerGroup) {
-    return nil, false
+		return nil, false
 	}
 	return o.MemberOfServerGroup, true
 }
@@ -1034,5 +1034,3 @@ func (v *NullableDirectoryServerInstanceResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

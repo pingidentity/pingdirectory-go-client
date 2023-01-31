@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // RequestCriteriaApiService RequestCriteriaApi service
 type RequestCriteriaApiService service
 
 type ApiAddRequestCriteriaRequest struct {
-	ctx context.Context
-	ApiService *RequestCriteriaApiService
+	ctx                       context.Context
+	ApiService                *RequestCriteriaApiService
 	addRequestCriteriaRequest *AddRequestCriteriaRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddRequestCriteriaRequest) Execute() (*AddRequestCriteria200Response,
 /*
 AddRequestCriteria Add a new Request Criteria to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddRequestCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) AddRequestCriteria(ctx context.Context) ApiAddRequestCriteriaRequest {
 	return ApiAddRequestCriteriaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddRequestCriteria200Response
+//
+//	@return AddRequestCriteria200Response
 func (a *RequestCriteriaApiService) AddRequestCriteriaExecute(r ApiAddRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRequestCriteria200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRequestCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.AddRequestCriteria")
@@ -133,8 +133,8 @@ func (a *RequestCriteriaApiService) AddRequestCriteriaExecute(r ApiAddRequestCri
 }
 
 type ApiDeleteRequestCriteriaRequest struct {
-	ctx context.Context
-	ApiService *RequestCriteriaApiService
+	ctx                 context.Context
+	ApiService          *RequestCriteriaApiService
 	requestCriteriaName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteRequestCriteriaRequest) Execute() (*http.Response, error) {
 /*
 DeleteRequestCriteria Delete a Request Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param requestCriteriaName Name of the Request Criteria to be deleted
- @return ApiDeleteRequestCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param requestCriteriaName Name of the Request Criteria to be deleted
+	@return ApiDeleteRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) DeleteRequestCriteria(ctx context.Context, requestCriteriaName string) ApiDeleteRequestCriteriaRequest {
 	return ApiDeleteRequestCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		requestCriteriaName: requestCriteriaName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *RequestCriteriaApiService) DeleteRequestCriteria(ctx context.Context, r
 // Execute executes the request
 func (a *RequestCriteriaApiService) DeleteRequestCriteriaExecute(r ApiDeleteRequestCriteriaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.DeleteRequestCriteria")
@@ -223,8 +223,8 @@ func (a *RequestCriteriaApiService) DeleteRequestCriteriaExecute(r ApiDeleteRequ
 }
 
 type ApiGetRequestCriteriaRequest struct {
-	ctx context.Context
-	ApiService *RequestCriteriaApiService
+	ctx                 context.Context
+	ApiService          *RequestCriteriaApiService
 	requestCriteriaName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetRequestCriteriaRequest) Execute() (*AddRequestCriteria200Response,
 /*
 GetRequestCriteria Returns a single Request Criteria
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param requestCriteriaName Name of the Request Criteria to be read
- @return ApiGetRequestCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param requestCriteriaName Name of the Request Criteria to be read
+	@return ApiGetRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) GetRequestCriteria(ctx context.Context, requestCriteriaName string) ApiGetRequestCriteriaRequest {
 	return ApiGetRequestCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		requestCriteriaName: requestCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddRequestCriteria200Response
+//
+//	@return AddRequestCriteria200Response
 func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRequestCriteria200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRequestCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.GetRequestCriteria")
@@ -324,10 +325,10 @@ func (a *RequestCriteriaApiService) GetRequestCriteriaExecute(r ApiGetRequestCri
 }
 
 type ApiUpdateRequestCriteriaRequest struct {
-	ctx context.Context
-	ApiService *RequestCriteriaApiService
+	ctx                 context.Context
+	ApiService          *RequestCriteriaApiService
 	requestCriteriaName string
-	updateRequest *UpdateRequest
+	updateRequest       *UpdateRequest
 }
 
 // Update an existing Request Criteria
@@ -343,26 +344,27 @@ func (r ApiUpdateRequestCriteriaRequest) Execute() (*AddRequestCriteria200Respon
 /*
 UpdateRequestCriteria Update an existing Request Criteria by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param requestCriteriaName Name of the Request Criteria to be updated
- @return ApiUpdateRequestCriteriaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param requestCriteriaName Name of the Request Criteria to be updated
+	@return ApiUpdateRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) UpdateRequestCriteria(ctx context.Context, requestCriteriaName string) ApiUpdateRequestCriteriaRequest {
 	return ApiUpdateRequestCriteriaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		requestCriteriaName: requestCriteriaName,
 	}
 }
 
 // Execute executes the request
-//  @return AddRequestCriteria200Response
+//
+//	@return AddRequestCriteria200Response
 func (a *RequestCriteriaApiService) UpdateRequestCriteriaExecute(r ApiUpdateRequestCriteriaRequest) (*AddRequestCriteria200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRequestCriteria200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRequestCriteria200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestCriteriaApiService.UpdateRequestCriteria")

@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedPasswordValidatorRequest struct for AddGroovyScriptedPasswordValidatorRequest
 type AddGroovyScriptedPasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumgroovyScriptedPasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                         `json:"validatorName"`
+	Schemas       []EnumgroovyScriptedPasswordValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Validator.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Password Validator. Each configuration property should be given in the form 'name=value'.
@@ -68,7 +68,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -92,7 +92,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetSchemas() []EnumgroovyScr
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetSchemasOk() ([]EnumgroovyScriptedPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -139,7 +139,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetScriptArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -171,7 +171,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -204,7 +204,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -227,7 +227,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetValidatorRequirementDescr
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -259,7 +259,7 @@ func (o *AddGroovyScriptedPasswordValidatorRequest) GetValidatorFailureMessage()
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -342,5 +342,3 @@ func (v *NullableAddGroovyScriptedPasswordValidatorRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,9 +16,9 @@ import (
 
 // HighThroughputWorkQueueResponse struct for HighThroughputWorkQueueResponse
 type HighThroughputWorkQueueResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumhighThroughputWorkQueueSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumhighThroughputWorkQueueSchemaUrn             `json:"schemas,omitempty"`
 	// Specifies the total number of worker threads that should be used within the server in order to process requested operations. The worker threads will be split evenly across all of the configured queues.
 	NumWorkerThreads *int32 `json:"numWorkerThreads,omitempty"`
 	// Specifies the number of worker threads that should be used within the server to process write (add, delete, modify, and modify DN) operations. If this is specified, then separate sets of worker threads will be used for processing read and write operations, and the value of the num-worker-threads property will reflect the number of threads to use to process read operations.
@@ -75,7 +75,7 @@ func (o *HighThroughputWorkQueueResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -107,7 +107,7 @@ func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfiguration
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -139,7 +139,7 @@ func (o *HighThroughputWorkQueueResponse) GetSchemas() []EnumhighThroughputWorkQ
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetSchemasOk() ([]EnumhighThroughputWorkQueueSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -171,7 +171,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreads() int32 {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumWorkerThreadsOk() (*int32, bool) {
 	if o == nil || isNil(o.NumWorkerThreads) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumWorkerThreads, true
 }
@@ -203,7 +203,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreads() int32 {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumWriteWorkerThreadsOk() (*int32, bool) {
 	if o == nil || isNil(o.NumWriteWorkerThreads) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumWriteWorkerThreads, true
 }
@@ -235,7 +235,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThrea
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumAdministrativeSessionWorkerThreadsOk() (*int32, bool) {
 	if o == nil || isNil(o.NumAdministrativeSessionWorkerThreads) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumAdministrativeSessionWorkerThreads, true
 }
@@ -267,7 +267,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumQueues() int32 {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumQueuesOk() (*int32, bool) {
 	if o == nil || isNil(o.NumQueues) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumQueues, true
 }
@@ -299,7 +299,7 @@ func (o *HighThroughputWorkQueueResponse) GetNumWriteQueues() int32 {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetNumWriteQueuesOk() (*int32, bool) {
 	if o == nil || isNil(o.NumWriteQueues) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumWriteQueues, true
 }
@@ -331,7 +331,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacity() int32 {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMaxWorkQueueCapacityOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxWorkQueueCapacity) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxWorkQueueCapacity, true
 }
@@ -363,7 +363,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxOfferTime() string {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMaxOfferTimeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxOfferTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxOfferTime, true
 }
@@ -395,7 +395,7 @@ func (o *HighThroughputWorkQueueResponse) GetMonitorQueueTime() bool {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMonitorQueueTimeOk() (*bool, bool) {
 	if o == nil || isNil(o.MonitorQueueTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MonitorQueueTime, true
 }
@@ -427,7 +427,7 @@ func (o *HighThroughputWorkQueueResponse) GetMaxQueueTime() string {
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetMaxQueueTimeOk() (*string, bool) {
 	if o == nil || isNil(o.MaxQueueTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxQueueTime, true
 }
@@ -459,7 +459,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationCheckInterval() s
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationCheckIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.ExpensiveOperationCheckInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpensiveOperationCheckInterval, true
 }
@@ -491,7 +491,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrent
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumConcurrentCountOk() (*int32, bool) {
 	if o == nil || isNil(o.ExpensiveOperationMinimumConcurrentCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpensiveOperationMinimumConcurrentCount, true
 }
@@ -523,7 +523,7 @@ func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumDumpInterv
 // and a boolean to check if the value has been set.
 func (o *HighThroughputWorkQueueResponse) GetExpensiveOperationMinimumDumpIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.ExpensiveOperationMinimumDumpInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpensiveOperationMinimumDumpInterval, true
 }
@@ -627,5 +627,3 @@ func (v *NullableHighThroughputWorkQueueResponse) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

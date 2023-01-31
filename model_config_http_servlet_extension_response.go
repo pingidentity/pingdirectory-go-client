@@ -16,9 +16,9 @@ import (
 
 // ConfigHttpServletExtensionResponse struct for ConfigHttpServletExtensionResponse
 type ConfigHttpServletExtensionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumconfigHttpServletExtensionSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumconfigHttpServletExtensionSchemaUrn          `json:"schemas"`
 	// Name of the HTTP Servlet Extension
 	Id string `json:"id"`
 	// Specifies the name of the identity mapper that is to be used for associating user entries with basic authentication user names.
@@ -65,7 +65,7 @@ func (o *ConfigHttpServletExtensionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *ConfigHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *ConfigHttpServletExtensionResponse) GetSchemas() []EnumconfigHttpServle
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetSchemasOk() ([]EnumconfigHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -154,7 +154,7 @@ func (o *ConfigHttpServletExtensionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -177,7 +177,7 @@ func (o *ConfigHttpServletExtensionResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -209,7 +209,7 @@ func (o *ConfigHttpServletExtensionResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -241,7 +241,7 @@ func (o *ConfigHttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -273,7 +273,7 @@ func (o *ConfigHttpServletExtensionResponse) GetResponseHeader() []string {
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -305,7 +305,7 @@ func (o *ConfigHttpServletExtensionResponse) GetCorrelationIDResponseHeader() st
 // and a boolean to check if the value has been set.
 func (o *ConfigHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -391,5 +391,3 @@ func (v *NullableConfigHttpServletExtensionResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

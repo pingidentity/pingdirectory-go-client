@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedHttpOperationLogPublisherRequest struct for AddGroovyScriptedHttpOperationLogPublisherRequest
 type AddGroovyScriptedHttpOperationLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName string `json:"publisherName"`
-	Schemas []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn `json:"schemas"`
+	PublisherName string                                                 `json:"publisherName"`
+	Schemas       []EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted HTTP Operation Log Publisher.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted HTTP Operation Log Publisher. Each configuration property should be given in the form 'name=value'.
@@ -26,7 +26,7 @@ type AddGroovyScriptedHttpOperationLogPublisherRequest struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -65,7 +65,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherName() s
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PublisherName, true
 }
@@ -89,7 +89,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetSchemas() []Enumg
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetSchemasOk() ([]EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptClass() str
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -136,7 +136,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptArgument() 
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -168,7 +168,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,7 +201,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -224,7 +224,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetLoggingErrorBehav
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -304,5 +304,3 @@ func (v *NullableAddGroovyScriptedHttpOperationLogPublisherRequest) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddApiKeyConjurAuthenticationMethodRequest struct for AddApiKeyConjurAuthenticationMethodRequest
 type AddApiKeyConjurAuthenticationMethodRequest struct {
 	// Name of the new Conjur Authentication Method
-	MethodName string `json:"methodName"`
-	Schemas []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas,omitempty"`
+	MethodName string                                          `json:"methodName"`
+	Schemas    []EnumapiKeyConjurAuthenticationMethodSchemaUrn `json:"schemas,omitempty"`
 	// The username for the user to authenticate.
 	Username string `json:"username"`
 	// The password for the user to authenticate. This will be used to obtain an API key for the target user.
@@ -62,7 +62,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetMethodName() string {
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetMethodNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MethodName, true
 }
@@ -85,7 +85,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemas() []EnumapiKeyCo
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetSchemasOk() ([]EnumapiKeyConjurAuthenticationMethodSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetUsername() string {
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetUsernameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Username, true
 }
@@ -141,7 +141,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetPassword() string {
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetPasswordOk() (*string, bool) {
 	if o == nil || isNil(o.Password) {
-    return nil, false
+		return nil, false
 	}
 	return o.Password, true
 }
@@ -173,7 +173,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetApiKey() string {
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetApiKeyOk() (*string, bool) {
 	if o == nil || isNil(o.ApiKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.ApiKey, true
 }
@@ -205,7 +205,7 @@ func (o *AddApiKeyConjurAuthenticationMethodRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddApiKeyConjurAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -282,5 +282,3 @@ func (v *NullableAddApiKeyConjurAuthenticationMethodRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

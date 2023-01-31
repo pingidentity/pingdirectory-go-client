@@ -16,10 +16,10 @@ import (
 
 // TimeLimitLogRotationPolicyResponse struct for TimeLimitLogRotationPolicyResponse
 type TimeLimitLogRotationPolicyResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Rotation Policy
-	Id string `json:"id"`
+	Id      string                                    `json:"id"`
 	Schemas []EnumtimeLimitLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the time interval between rotations.
 	RotationInterval string `json:"rotationInterval"`
@@ -60,7 +60,7 @@ func (o *TimeLimitLogRotationPolicyResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRotationPolicyResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *TimeLimitLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurat
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRotationPolicyResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *TimeLimitLogRotationPolicyResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRotationPolicyResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *TimeLimitLogRotationPolicyResponse) GetSchemas() []EnumtimeLimitLogRota
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRotationPolicyResponse) GetSchemasOk() ([]EnumtimeLimitLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *TimeLimitLogRotationPolicyResponse) GetRotationInterval() string {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRotationPolicyResponse) GetRotationIntervalOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.RotationInterval, true
 }
@@ -196,7 +196,7 @@ func (o *TimeLimitLogRotationPolicyResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *TimeLimitLogRotationPolicyResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -273,5 +273,3 @@ func (v *NullableTimeLimitLogRotationPolicyResponse) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

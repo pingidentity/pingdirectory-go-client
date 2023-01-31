@@ -16,10 +16,10 @@ import (
 
 // DelayBindResponseFailureLockoutActionResponse struct for DelayBindResponseFailureLockoutActionResponse
 type DelayBindResponseFailureLockoutActionResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Failure Lockout Action
-	Id string `json:"id"`
+	Id      string                                               `json:"id"`
 	Schemas []EnumdelayBindResponseFailureLockoutActionSchemaUrn `json:"schemas"`
 	// The length of time to delay the bind response for accounts with too many failed authentication attempts.
 	Delay string `json:"delay"`
@@ -64,7 +64,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetUrnpingidentityschema
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -153,7 +153,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetSchemas() []Enumdelay
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetSchemasOk() ([]EnumdelayBindResponseFailureLockoutActionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -177,7 +177,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetDelay() string {
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetDelayOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Delay, true
 }
@@ -200,7 +200,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetAllowBlockingDelay() 
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetAllowBlockingDelayOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowBlockingDelay) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowBlockingDelay, true
 }
@@ -232,7 +232,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetGenerateAccountStatus
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerateAccountStatusNotification) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
 }
@@ -264,7 +264,7 @@ func (o *DelayBindResponseFailureLockoutActionResponse) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *DelayBindResponseFailureLockoutActionResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -347,5 +347,3 @@ func (v *NullableDelayBindResponseFailureLockoutActionResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

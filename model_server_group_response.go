@@ -16,10 +16,10 @@ import (
 
 // ServerGroupResponse struct for ServerGroupResponse
 type ServerGroupResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Server Group
-	Id string `json:"id"`
+	Id      string                     `json:"id"`
 	Schemas []EnumserverGroupSchemaUrn `json:"schemas,omitempty"`
 	// A server instance that is a member of this group.
 	Member []string `json:"member,omitempty"`
@@ -56,7 +56,7 @@ func (o *ServerGroupResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ServerGroupResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -88,7 +88,7 @@ func (o *ServerGroupResponse) GetUrnpingidentityschemasconfigurationmessages20()
 // and a boolean to check if the value has been set.
 func (o *ServerGroupResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -121,7 +121,7 @@ func (o *ServerGroupResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ServerGroupResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -144,7 +144,7 @@ func (o *ServerGroupResponse) GetSchemas() []EnumserverGroupSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *ServerGroupResponse) GetSchemasOk() ([]EnumserverGroupSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *ServerGroupResponse) GetMember() []string {
 // and a boolean to check if the value has been set.
 func (o *ServerGroupResponse) GetMemberOk() ([]string, bool) {
 	if o == nil || isNil(o.Member) {
-    return nil, false
+		return nil, false
 	}
 	return o.Member, true
 }
@@ -250,5 +250,3 @@ func (v *NullableServerGroupResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

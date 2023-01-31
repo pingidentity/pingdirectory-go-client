@@ -16,9 +16,9 @@ import (
 
 // MultiUpdateExtendedOperationHandlerResponse struct for MultiUpdateExtendedOperationHandlerResponse
 type MultiUpdateExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnummultiUpdateExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnummultiUpdateExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *MultiUpdateExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MultiUpdateExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *MultiUpdateExtendedOperationHandlerResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *MultiUpdateExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *MultiUpdateExtendedOperationHandlerResponse) GetSchemas() []EnummultiUp
 // and a boolean to check if the value has been set.
 func (o *MultiUpdateExtendedOperationHandlerResponse) GetSchemasOk() ([]EnummultiUpdateExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *MultiUpdateExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MultiUpdateExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *MultiUpdateExtendedOperationHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *MultiUpdateExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *MultiUpdateExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MultiUpdateExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableMultiUpdateExtendedOperationHandlerResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,8 +20,8 @@ type EnumreplicationAssurancePolicyLocalLevelProp string
 
 // List of Enumreplication-assurance-policy-localLevelProp
 const (
-	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_NONE EnumreplicationAssurancePolicyLocalLevelProp = "none"
-	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_RECEIVED_ANY_SERVER EnumreplicationAssurancePolicyLocalLevelProp = "received-any-server"
+	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_NONE                  EnumreplicationAssurancePolicyLocalLevelProp = "none"
+	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_RECEIVED_ANY_SERVER   EnumreplicationAssurancePolicyLocalLevelProp = "received-any-server"
 	ENUMREPLICATIONASSURANCEPOLICYLOCALLEVELPROP_PROCESSED_ALL_SERVERS EnumreplicationAssurancePolicyLocalLevelProp = "processed-all-servers"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumreplicationAssurancePolicyLocalLevelProp) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

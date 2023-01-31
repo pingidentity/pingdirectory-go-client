@@ -16,9 +16,9 @@ import (
 
 // AttributeTypeDescriptionAttributeSyntaxResponse struct for AttributeTypeDescriptionAttributeSyntaxResponse
 type AttributeTypeDescriptionAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                              `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20     `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether the suggested minimum upper bound appended to an attribute's syntax OID in its schema definition Attribute Type Description should be stripped.
@@ -62,7 +62,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetUrnpingidentitysche
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetSchemas() []Enumatt
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetSchemasOk() ([]EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetStripSyntaxMinUpper
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetStripSyntaxMinUpperBoundOk() (*bool, bool) {
 	if o == nil || isNil(o.StripSyntaxMinUpperBound) {
-    return nil, false
+		return nil, false
 	}
 	return o.StripSyntaxMinUpperBound, true
 }
@@ -207,7 +207,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -230,7 +230,7 @@ func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetRequireBinaryTransf
 // and a boolean to check if the value has been set.
 func (o *AttributeTypeDescriptionAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -310,5 +310,3 @@ func (v *NullableAttributeTypeDescriptionAttributeSyntaxResponse) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // DefaultAzureAuthenticationMethodResponse struct for DefaultAzureAuthenticationMethodResponse
 type DefaultAzureAuthenticationMethodResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Azure Authentication Method
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumdefaultAzureAuthenticationMethodSchemaUrn `json:"schemas"`
 	// The tenant ID to use to authenticate. If this is not provided, then it will be obtained from the AZURE_TENANT_ID environment variable.
 	TenantID *string `json:"tenantID,omitempty"`
@@ -61,7 +61,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -93,7 +93,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -126,7 +126,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -150,7 +150,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetSchemas() []EnumdefaultAzu
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetSchemasOk() ([]EnumdefaultAzureAuthenticationMethodSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -173,7 +173,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetTenantID() string {
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetTenantIDOk() (*string, bool) {
 	if o == nil || isNil(o.TenantID) {
-    return nil, false
+		return nil, false
 	}
 	return o.TenantID, true
 }
@@ -205,7 +205,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetClientID() string {
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetClientIDOk() (*string, bool) {
 	if o == nil || isNil(o.ClientID) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientID, true
 }
@@ -237,7 +237,7 @@ func (o *DefaultAzureAuthenticationMethodResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DefaultAzureAuthenticationMethodResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -317,5 +317,3 @@ func (v *NullableDefaultAzureAuthenticationMethodResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

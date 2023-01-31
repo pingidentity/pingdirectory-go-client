@@ -18,7 +18,7 @@ import (
 // AddRestResourceType200Response - struct for AddRestResourceType200Response
 type AddRestResourceType200Response struct {
 	GroupRestResourceTypeResponse *GroupRestResourceTypeResponse
-	UserRestResourceTypeResponse *UserRestResourceTypeResponse
+	UserRestResourceTypeResponse  *UserRestResourceTypeResponse
 }
 
 // GroupRestResourceTypeResponseAsAddRestResourceType200Response is a convenience function that returns GroupRestResourceTypeResponse wrapped in AddRestResourceType200Response
@@ -34,7 +34,6 @@ func UserRestResourceTypeResponseAsAddRestResourceType200Response(v *UserRestRes
 		UserRestResourceTypeResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddRestResourceType200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddRestResourceType200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddRestResourceType200Response) GetActualInstance() (interface{}) {
+func (obj *AddRestResourceType200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddRestResourceType200Response) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

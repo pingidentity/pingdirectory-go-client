@@ -16,11 +16,11 @@ import (
 
 // OpenidConnectIdTokenValidatorResponse struct for OpenidConnectIdTokenValidatorResponse
 type OpenidConnectIdTokenValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the ID Token Validator
-	Id string `json:"id"`
-	Schemas []EnumopenidConnectIdTokenValidatorSchemaUrn `json:"schemas"`
+	Id                      string                                            `json:"id"`
+	Schemas                 []EnumopenidConnectIdTokenValidatorSchemaUrn      `json:"schemas"`
 	AllowedSigningAlgorithm []EnumidTokenValidatorAllowedSigningAlgorithmProp `json:"allowedSigningAlgorithm"`
 	// Specifies the locally stored certificates that may be used to validate the signature of an incoming ID token. This property may be specified if a JWKS endpoint should not be used to retrieve public signing keys.
 	SigningCertificate []string `json:"signingCertificate,omitempty"`
@@ -83,7 +83,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetSchemas() []EnumopenidConnect
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetSchemasOk() ([]EnumopenidConnectIdTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -196,7 +196,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetAllowedSigningAlgorithm() []E
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetAllowedSigningAlgorithmOk() ([]EnumidTokenValidatorAllowedSigningAlgorithmProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedSigningAlgorithm, true
 }
@@ -219,7 +219,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetSigningCertificate() []string
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetSigningCertificateOk() ([]string, bool) {
 	if o == nil || isNil(o.SigningCertificate) {
-    return nil, false
+		return nil, false
 	}
 	return o.SigningCertificate, true
 }
@@ -251,7 +251,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetOpenIDConnectProvider() strin
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetOpenIDConnectProviderOk() (*string, bool) {
 	if o == nil || isNil(o.OpenIDConnectProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.OpenIDConnectProvider, true
 }
@@ -283,7 +283,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetJwksEndpointPath() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetJwksEndpointPathOk() (*string, bool) {
 	if o == nil || isNil(o.JwksEndpointPath) {
-    return nil, false
+		return nil, false
 	}
 	return o.JwksEndpointPath, true
 }
@@ -315,7 +315,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -348,7 +348,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -372,7 +372,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -395,7 +395,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetSubjectClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -428,7 +428,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetIssuerURL() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetIssuerURLOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IssuerURL, true
 }
@@ -451,7 +451,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetClockSkewGracePeriod() string
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetClockSkewGracePeriodOk() (*string, bool) {
 	if o == nil || isNil(o.ClockSkewGracePeriod) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
 }
@@ -483,7 +483,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetJwksCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetJwksCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.JwksCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.JwksCacheDuration, true
 }
@@ -516,7 +516,7 @@ func (o *OpenidConnectIdTokenValidatorResponse) GetEvaluationOrderIndex() int32 
 // and a boolean to check if the value has been set.
 func (o *OpenidConnectIdTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -614,5 +614,3 @@ func (v *NullableOpenidConnectIdTokenValidatorResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

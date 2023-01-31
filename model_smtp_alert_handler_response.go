@@ -16,10 +16,10 @@ import (
 
 // SmtpAlertHandlerResponse struct for SmtpAlertHandlerResponse
 type SmtpAlertHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Alert Handler
-	Id string `json:"id"`
+	Id      string                          `json:"id"`
 	Schemas []EnumsmtpAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this SMTP Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
@@ -36,10 +36,10 @@ type SmtpAlertHandlerResponse struct {
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                       `json:"enabled"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewSmtpAlertHandlerResponse instantiates a new SmtpAlertHandlerResponse object
@@ -79,7 +79,7 @@ func (o *SmtpAlertHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -111,7 +111,7 @@ func (o *SmtpAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessage
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -144,7 +144,7 @@ func (o *SmtpAlertHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -168,7 +168,7 @@ func (o *SmtpAlertHandlerResponse) GetSchemas() []EnumsmtpAlertHandlerSchemaUrn 
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetSchemasOk() ([]EnumsmtpAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -191,7 +191,7 @@ func (o *SmtpAlertHandlerResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -224,7 +224,7 @@ func (o *SmtpAlertHandlerResponse) GetSenderAddress() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetSenderAddressOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SenderAddress, true
 }
@@ -248,7 +248,7 @@ func (o *SmtpAlertHandlerResponse) GetRecipientAddress() []string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetRecipientAddressOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RecipientAddress, true
 }
@@ -272,7 +272,7 @@ func (o *SmtpAlertHandlerResponse) GetMessageSubject() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetMessageSubjectOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MessageSubject, true
 }
@@ -296,7 +296,7 @@ func (o *SmtpAlertHandlerResponse) GetMessageBody() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetMessageBodyOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MessageBody, true
 }
@@ -319,7 +319,7 @@ func (o *SmtpAlertHandlerResponse) GetIncludeMonitorDataFilter() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetIncludeMonitorDataFilterOk() (*string, bool) {
 	if o == nil || isNil(o.IncludeMonitorDataFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeMonitorDataFilter, true
 }
@@ -351,7 +351,7 @@ func (o *SmtpAlertHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -384,7 +384,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -407,7 +407,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabledAlertSeverity() []EnumalertHandlerE
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -439,7 +439,7 @@ func (o *SmtpAlertHandlerResponse) GetEnabledAlertType() []EnumalertHandlerEnabl
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -471,7 +471,7 @@ func (o *SmtpAlertHandlerResponse) GetDisabledAlertType() []EnumalertHandlerDisa
 // and a boolean to check if the value has been set.
 func (o *SmtpAlertHandlerResponse) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -575,5 +575,3 @@ func (v *NullableSmtpAlertHandlerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

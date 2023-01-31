@@ -16,10 +16,10 @@ import (
 
 // SimpleConnectionCriteriaResponse struct for SimpleConnectionCriteriaResponse
 type SimpleConnectionCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Connection Criteria
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnumsimpleConnectionCriteriaSchemaUrn `json:"schemas"`
 	// Specifies an address mask that may be used to specify a set of clients that should be included in this Simple Connection Criteria.
 	IncludedClientAddress []string `json:"includedClientAddress,omitempty"`
@@ -32,9 +32,9 @@ type SimpleConnectionCriteriaResponse struct {
 	// Specifies the name of a communication protocol that should be used by clients included in this Simple Connection Criteria.
 	IncludedProtocol []string `json:"includedProtocol,omitempty"`
 	// Specifies the name of a communication protocol that should be used by clients excluded from this Simple Connection Criteria.
-	ExcludedProtocol []string `json:"excludedProtocol,omitempty"`
-	CommunicationSecurityLevel *EnumconnectionCriteriaCommunicationSecurityLevelProp `json:"communicationSecurityLevel,omitempty"`
-	UserAuthType []EnumconnectionCriteriaUserAuthTypeProp `json:"userAuthType,omitempty"`
+	ExcludedProtocol            []string                                               `json:"excludedProtocol,omitempty"`
+	CommunicationSecurityLevel  *EnumconnectionCriteriaCommunicationSecurityLevelProp  `json:"communicationSecurityLevel,omitempty"`
+	UserAuthType                []EnumconnectionCriteriaUserAuthTypeProp               `json:"userAuthType,omitempty"`
 	AuthenticationSecurityLevel *EnumconnectionCriteriaAuthenticationSecurityLevelProp `json:"authenticationSecurityLevel,omitempty"`
 	// Specifies the name of a SASL mechanism that should be used by clients included in this Simple Connection Criteria. This will only be taken into account for client connections that have authenticated to the server using a SASL mechanism and will be ignored for unauthenticated client connections and for client connections that authenticated using some other method (e.g., those performing simple or internal authentication).
 	IncludedUserSASLMechanism []string `json:"includedUserSASLMechanism,omitempty"`
@@ -59,11 +59,11 @@ type SimpleConnectionCriteriaResponse struct {
 	// Specifies a search filter that should not match the entry of the authenticated user for clients included in this Simple Connection Criteria. If any filters are provided, then at least one of those filters must not match the authenticated user entry (that is, the user entry may match zero or more of those filters, but not all of them). This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
 	NotAllIncludedUserFilter []string `json:"notAllIncludedUserFilter,omitempty"`
 	// Specifies a search filter that must not match the entry of the authenticated user for clients included in this Simple Connection Criteria. If any filters are provided, then none of those filters may match the authenticated user entry. This will only be taken into account for client connections that have authenticated to the server and will be ignored for unauthenticated client connections.
-	NoneIncludedUserFilter []string `json:"noneIncludedUserFilter,omitempty"`
-	AllIncludedUserPrivilege []EnumconnectionCriteriaAllIncludedUserPrivilegeProp `json:"allIncludedUserPrivilege,omitempty"`
-	AnyIncludedUserPrivilege []EnumconnectionCriteriaAnyIncludedUserPrivilegeProp `json:"anyIncludedUserPrivilege,omitempty"`
+	NoneIncludedUserFilter      []string                                                `json:"noneIncludedUserFilter,omitempty"`
+	AllIncludedUserPrivilege    []EnumconnectionCriteriaAllIncludedUserPrivilegeProp    `json:"allIncludedUserPrivilege,omitempty"`
+	AnyIncludedUserPrivilege    []EnumconnectionCriteriaAnyIncludedUserPrivilegeProp    `json:"anyIncludedUserPrivilege,omitempty"`
 	NotAllIncludedUserPrivilege []EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp `json:"notAllIncludedUserPrivilege,omitempty"`
-	NoneIncludedUserPrivilege []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp `json:"noneIncludedUserPrivilege,omitempty"`
+	NoneIncludedUserPrivilege   []EnumconnectionCriteriaNoneIncludedUserPrivilegeProp   `json:"noneIncludedUserPrivilege,omitempty"`
 	// A description for this Connection Criteria
 	Description *string `json:"description,omitempty"`
 }
@@ -100,7 +100,7 @@ func (o *SimpleConnectionCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -132,7 +132,7 @@ func (o *SimpleConnectionCriteriaResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -165,7 +165,7 @@ func (o *SimpleConnectionCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -189,7 +189,7 @@ func (o *SimpleConnectionCriteriaResponse) GetSchemas() []EnumsimpleConnectionCr
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetSchemasOk() ([]EnumsimpleConnectionCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -212,7 +212,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedClientAddress() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedClientAddressOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedClientAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedClientAddress, true
 }
@@ -244,7 +244,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedClientAddress() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedClientAddressOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedClientAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedClientAddress, true
 }
@@ -276,7 +276,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedConnectionHandler() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedConnectionHandlerOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedConnectionHandler) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedConnectionHandler, true
 }
@@ -308,7 +308,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedConnectionHandler() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedConnectionHandlerOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedConnectionHandler) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedConnectionHandler, true
 }
@@ -340,7 +340,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedProtocol() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedProtocolOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedProtocol, true
 }
@@ -372,7 +372,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedProtocol() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedProtocolOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedProtocol) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedProtocol, true
 }
@@ -404,7 +404,7 @@ func (o *SimpleConnectionCriteriaResponse) GetCommunicationSecurityLevel() Enumc
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetCommunicationSecurityLevelOk() (*EnumconnectionCriteriaCommunicationSecurityLevelProp, bool) {
 	if o == nil || isNil(o.CommunicationSecurityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.CommunicationSecurityLevel, true
 }
@@ -436,7 +436,7 @@ func (o *SimpleConnectionCriteriaResponse) GetUserAuthType() []EnumconnectionCri
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetUserAuthTypeOk() ([]EnumconnectionCriteriaUserAuthTypeProp, bool) {
 	if o == nil || isNil(o.UserAuthType) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserAuthType, true
 }
@@ -468,7 +468,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAuthenticationSecurityLevel() Enum
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAuthenticationSecurityLevelOk() (*EnumconnectionCriteriaAuthenticationSecurityLevelProp, bool) {
 	if o == nil || isNil(o.AuthenticationSecurityLevel) {
-    return nil, false
+		return nil, false
 	}
 	return o.AuthenticationSecurityLevel, true
 }
@@ -500,7 +500,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedUserSASLMechanism() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedUserSASLMechanismOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedUserSASLMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedUserSASLMechanism, true
 }
@@ -532,7 +532,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedUserSASLMechanism() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedUserSASLMechanismOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedUserSASLMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedUserSASLMechanism, true
 }
@@ -564,7 +564,7 @@ func (o *SimpleConnectionCriteriaResponse) GetIncludedUserBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetIncludedUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludedUserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludedUserBaseDN, true
 }
@@ -596,7 +596,7 @@ func (o *SimpleConnectionCriteriaResponse) GetExcludedUserBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetExcludedUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludedUserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludedUserBaseDN, true
 }
@@ -628,7 +628,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserGroupDN() []string 
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedUserGroupDN, true
 }
@@ -660,7 +660,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserGroupDN() []string 
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedUserGroupDN, true
 }
@@ -692,7 +692,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserGroupDN() []stri
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedUserGroupDN, true
 }
@@ -724,7 +724,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserGroupDN() []string
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedUserGroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedUserGroupDN, true
 }
@@ -756,7 +756,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedUserFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedUserFilter, true
 }
@@ -788,7 +788,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedUserFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedUserFilter, true
 }
@@ -820,7 +820,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserFilter() []strin
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedUserFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedUserFilter, true
 }
@@ -852,7 +852,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserFilter() []string 
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedUserFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedUserFilter, true
 }
@@ -884,7 +884,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserPrivilege() []Enumc
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAllIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaAllIncludedUserPrivilegeProp, bool) {
 	if o == nil || isNil(o.AllIncludedUserPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedUserPrivilege, true
 }
@@ -916,7 +916,7 @@ func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserPrivilege() []Enumc
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetAnyIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaAnyIncludedUserPrivilegeProp, bool) {
 	if o == nil || isNil(o.AnyIncludedUserPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedUserPrivilege, true
 }
@@ -948,7 +948,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserPrivilege() []En
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNotAllIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp, bool) {
 	if o == nil || isNil(o.NotAllIncludedUserPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedUserPrivilege, true
 }
@@ -980,7 +980,7 @@ func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserPrivilege() []Enum
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetNoneIncludedUserPrivilegeOk() ([]EnumconnectionCriteriaNoneIncludedUserPrivilegeProp, bool) {
 	if o == nil || isNil(o.NoneIncludedUserPrivilege) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedUserPrivilege, true
 }
@@ -1012,7 +1012,7 @@ func (o *SimpleConnectionCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SimpleConnectionCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1161,5 +1161,3 @@ func (v *NullableSimpleConnectionCriteriaResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

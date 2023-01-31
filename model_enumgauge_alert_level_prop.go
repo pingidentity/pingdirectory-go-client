@@ -20,12 +20,12 @@ type EnumgaugeAlertLevelProp string
 
 // List of Enumgauge-alertLevelProp
 const (
-	ENUMGAUGEALERTLEVELPROP_ALWAYS EnumgaugeAlertLevelProp = "always"
+	ENUMGAUGEALERTLEVELPROP_ALWAYS            EnumgaugeAlertLevelProp = "always"
 	ENUMGAUGEALERTLEVELPROP_WARNING_AND_ABOVE EnumgaugeAlertLevelProp = "warning-and-above"
-	ENUMGAUGEALERTLEVELPROP_MINOR_AND_ABOVE EnumgaugeAlertLevelProp = "minor-and-above"
-	ENUMGAUGEALERTLEVELPROP_MAJOR_AND_ABOVE EnumgaugeAlertLevelProp = "major-and-above"
-	ENUMGAUGEALERTLEVELPROP_CRITICAL_ONLY EnumgaugeAlertLevelProp = "critical-only"
-	ENUMGAUGEALERTLEVELPROP_NEVER EnumgaugeAlertLevelProp = "never"
+	ENUMGAUGEALERTLEVELPROP_MINOR_AND_ABOVE   EnumgaugeAlertLevelProp = "minor-and-above"
+	ENUMGAUGEALERTLEVELPROP_MAJOR_AND_ABOVE   EnumgaugeAlertLevelProp = "major-and-above"
+	ENUMGAUGEALERTLEVELPROP_CRITICAL_ONLY     EnumgaugeAlertLevelProp = "critical-only"
+	ENUMGAUGEALERTLEVELPROP_NEVER             EnumgaugeAlertLevelProp = "never"
 )
 
 // All allowed values of EnumgaugeAlertLevelProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumgaugeAlertLevelProp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,8 +17,8 @@ import (
 // AddDictionaryPasswordValidatorRequest struct for AddDictionaryPasswordValidatorRequest
 type AddDictionaryPasswordValidatorRequest struct {
 	// Name of the new Password Validator
-	ValidatorName string `json:"validatorName"`
-	Schemas []EnumdictionaryPasswordValidatorSchemaUrn `json:"schemas"`
+	ValidatorName string                                     `json:"validatorName"`
+	Schemas       []EnumdictionaryPasswordValidatorSchemaUrn `json:"schemas"`
 	// Specifies the path to the file containing a list of words that cannot be used as passwords.
 	DictionaryFile string `json:"dictionaryFile"`
 	// Indicates whether this password validator is to treat password characters in a case-sensitive manner.
@@ -82,7 +82,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValidatorName, true
 }
@@ -106,7 +106,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetSchemas() []EnumdictionaryPas
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetSchemasOk() ([]EnumdictionaryPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -130,7 +130,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetDictionaryFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DictionaryFile, true
 }
@@ -154,7 +154,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidation() boo
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetCaseSensitiveValidationOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CaseSensitiveValidation, true
 }
@@ -178,7 +178,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPassword() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetTestReversedPasswordOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TestReversedPassword, true
 }
@@ -201,7 +201,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreLeadingNonAlphabeticCha
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreLeadingNonAlphabeticCharactersOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreLeadingNonAlphabeticCharacters) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreLeadingNonAlphabeticCharacters, true
 }
@@ -233,7 +233,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreTrailingNonAlphabeticCh
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetIgnoreTrailingNonAlphabeticCharactersOk() (*bool, bool) {
 	if o == nil || isNil(o.IgnoreTrailingNonAlphabeticCharacters) {
-    return nil, false
+		return nil, false
 	}
 	return o.IgnoreTrailingNonAlphabeticCharacters, true
 }
@@ -265,7 +265,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetStripDiacriticalMarks() bool 
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetStripDiacriticalMarksOk() (*bool, bool) {
 	if o == nil || isNil(o.StripDiacriticalMarks) {
-    return nil, false
+		return nil, false
 	}
 	return o.StripDiacriticalMarks, true
 }
@@ -297,7 +297,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetAlternativePasswordCharacterM
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetAlternativePasswordCharacterMappingOk() ([]string, bool) {
 	if o == nil || isNil(o.AlternativePasswordCharacterMapping) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlternativePasswordCharacterMapping, true
 }
@@ -329,7 +329,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetMaximumAllowedPercentOfPasswo
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetMaximumAllowedPercentOfPasswordOk() (*int32, bool) {
 	if o == nil || isNil(o.MaximumAllowedPercentOfPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaximumAllowedPercentOfPassword, true
 }
@@ -361,7 +361,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -394,7 +394,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -417,7 +417,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorRequirementDescripti
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -449,7 +449,7 @@ func (o *AddDictionaryPasswordValidatorRequest) GetValidatorFailureMessage() str
 // and a boolean to check if the value has been set.
 func (o *AddDictionaryPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -550,5 +550,3 @@ func (v *NullableAddDictionaryPasswordValidatorRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

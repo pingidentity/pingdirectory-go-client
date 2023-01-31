@@ -16,9 +16,9 @@ import (
 
 // StartTlsExtendedOperationHandlerResponse struct for StartTlsExtendedOperationHandlerResponse
 type StartTlsExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumstartTlsExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumstartTlsExtendedOperationHandlerSchemaUrn    `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *StartTlsExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *StartTlsExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *StartTlsExtendedOperationHandlerResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *StartTlsExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *StartTlsExtendedOperationHandlerResponse) GetSchemas() []EnumstartTlsEx
 // and a boolean to check if the value has been set.
 func (o *StartTlsExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumstartTlsExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *StartTlsExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *StartTlsExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *StartTlsExtendedOperationHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *StartTlsExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *StartTlsExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *StartTlsExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableStartTlsExtendedOperationHandlerResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // LoggingChangeSubscriptionHandlerResponse struct for LoggingChangeSubscriptionHandlerResponse
 type LoggingChangeSubscriptionHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Change Subscription Handler
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumloggingChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// Specifies the log file in which the change notification messages will be written.
 	LogFile string `json:"logFile"`
@@ -65,7 +65,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetSchemas() []EnumloggingCha
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetSchemasOk() ([]EnumloggingChangeSubscriptionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -178,7 +178,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetLogFile() string {
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetLogFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LogFile, true
 }
@@ -201,7 +201,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -234,7 +234,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -257,7 +257,7 @@ func (o *LoggingChangeSubscriptionHandlerResponse) GetChangeSubscription() []str
 // and a boolean to check if the value has been set.
 func (o *LoggingChangeSubscriptionHandlerResponse) GetChangeSubscriptionOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangeSubscription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangeSubscription, true
 }
@@ -340,5 +340,3 @@ func (v *NullableLoggingChangeSubscriptionHandlerResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // AggregateConnectionCriteriaResponse struct for AggregateConnectionCriteriaResponse
 type AggregateConnectionCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Connection Criteria
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumaggregateConnectionCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a connection criteria object that must match the associated client connection in order to match the aggregate connection criteria. If one or more all-included connection criteria objects are provided, then a client connection must match all of them in order to match the aggregate connection criteria.
 	AllIncludedConnectionCriteria []string `json:"allIncludedConnectionCriteria,omitempty"`
@@ -65,7 +65,7 @@ func (o *AggregateConnectionCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -97,7 +97,7 @@ func (o *AggregateConnectionCriteriaResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -130,7 +130,7 @@ func (o *AggregateConnectionCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -154,7 +154,7 @@ func (o *AggregateConnectionCriteriaResponse) GetSchemas() []EnumaggregateConnec
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetSchemasOk() ([]EnumaggregateConnectionCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -177,7 +177,7 @@ func (o *AggregateConnectionCriteriaResponse) GetAllIncludedConnectionCriteria()
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetAllIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedConnectionCriteria, true
 }
@@ -209,7 +209,7 @@ func (o *AggregateConnectionCriteriaResponse) GetAnyIncludedConnectionCriteria()
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetAnyIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedConnectionCriteria, true
 }
@@ -241,7 +241,7 @@ func (o *AggregateConnectionCriteriaResponse) GetNotAllIncludedConnectionCriteri
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetNotAllIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedConnectionCriteria, true
 }
@@ -273,7 +273,7 @@ func (o *AggregateConnectionCriteriaResponse) GetNoneIncludedConnectionCriteria(
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetNoneIncludedConnectionCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedConnectionCriteria, true
 }
@@ -305,7 +305,7 @@ func (o *AggregateConnectionCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AggregateConnectionCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -391,5 +391,3 @@ func (v *NullableAggregateConnectionCriteriaResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

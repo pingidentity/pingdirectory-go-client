@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyChangeSubscriptionHandlerResponse struct for ThirdPartyChangeSubscriptionHandlerResponse
 type ThirdPartyChangeSubscriptionHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Change Subscription Handler
-	Id string `json:"id"`
+	Id      string                                             `json:"id"`
 	Schemas []EnumthirdPartyChangeSubscriptionHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Change Subscription Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -67,7 +67,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetSchemas() []EnumthirdPa
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetSchemasOk() ([]EnumthirdPartyChangeSubscriptionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetExtensionClass() string
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -203,7 +203,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetExtensionArgument() []s
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -235,7 +235,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,7 +268,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -291,7 +291,7 @@ func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetChangeSubscription() []
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyChangeSubscriptionHandlerResponse) GetChangeSubscriptionOk() ([]string, bool) {
 	if o == nil || isNil(o.ChangeSubscription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ChangeSubscription, true
 }
@@ -377,5 +377,3 @@ func (v *NullableThirdPartyChangeSubscriptionHandlerResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

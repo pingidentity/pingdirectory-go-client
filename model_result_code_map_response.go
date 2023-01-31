@@ -16,10 +16,10 @@ import (
 
 // ResultCodeMapResponse struct for ResultCodeMapResponse
 type ResultCodeMapResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Result Code Map
-	Id string `json:"id"`
+	Id      string                       `json:"id"`
 	Schemas []EnumresultCodeMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Result Code Map
 	Description *string `json:"description,omitempty"`
@@ -64,7 +64,7 @@ func (o *ResultCodeMapResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -96,7 +96,7 @@ func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -129,7 +129,7 @@ func (o *ResultCodeMapResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *ResultCodeMapResponse) GetSchemas() []EnumresultCodeMapSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetSchemasOk() ([]EnumresultCodeMapSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *ResultCodeMapResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -216,7 +216,7 @@ func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.BindAccountLockedResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindAccountLockedResultCode, true
 }
@@ -248,7 +248,7 @@ func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.BindMissingUserResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindMissingUserResultCode, true
 }
@@ -280,7 +280,7 @@ func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.BindMissingPasswordResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.BindMissingPasswordResultCode, true
 }
@@ -312,7 +312,7 @@ func (o *ResultCodeMapResponse) GetServerErrorResultCode() int32 {
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerErrorResultCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerErrorResultCode, true
 }
@@ -398,5 +398,3 @@ func (v *NullableResultCodeMapResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

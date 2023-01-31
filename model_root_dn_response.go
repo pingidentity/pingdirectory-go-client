@@ -16,10 +16,10 @@ import (
 
 // RootDnResponse struct for RootDnResponse
 type RootDnResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumrootDnSchemaUrn `json:"schemas,omitempty"`
-	DefaultRootPrivilegeName []EnumrootDnDefaultRootPrivilegeNameProp `json:"defaultRootPrivilegeName,omitempty"`
+	Schemas                                       []EnumrootDnSchemaUrn                              `json:"schemas,omitempty"`
+	DefaultRootPrivilegeName                      []EnumrootDnDefaultRootPrivilegeNameProp           `json:"defaultRootPrivilegeName,omitempty"`
 }
 
 // NewRootDnResponse instantiates a new RootDnResponse object
@@ -52,7 +52,7 @@ func (o *RootDnResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RootDnResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -84,7 +84,7 @@ func (o *RootDnResponse) GetUrnpingidentityschemasconfigurationmessages20() Meta
 // and a boolean to check if the value has been set.
 func (o *RootDnResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -116,7 +116,7 @@ func (o *RootDnResponse) GetSchemas() []EnumrootDnSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *RootDnResponse) GetSchemasOk() ([]EnumrootDnSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -148,7 +148,7 @@ func (o *RootDnResponse) GetDefaultRootPrivilegeName() []EnumrootDnDefaultRootPr
 // and a boolean to check if the value has been set.
 func (o *RootDnResponse) GetDefaultRootPrivilegeNameOk() ([]EnumrootDnDefaultRootPrivilegeNameProp, bool) {
 	if o == nil || isNil(o.DefaultRootPrivilegeName) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultRootPrivilegeName, true
 }
@@ -219,5 +219,3 @@ func (v *NullableRootDnResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

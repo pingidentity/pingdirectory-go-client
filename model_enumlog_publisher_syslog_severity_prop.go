@@ -20,14 +20,14 @@ type EnumlogPublisherSyslogSeverityProp string
 
 // List of Enumlog-publisher-syslogSeverityProp
 const (
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_EMERGENCY EnumlogPublisherSyslogSeverityProp = "emergency"
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_ALERT EnumlogPublisherSyslogSeverityProp = "alert"
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_CRITICAL EnumlogPublisherSyslogSeverityProp = "critical"
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_ERROR EnumlogPublisherSyslogSeverityProp = "error"
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_WARNING EnumlogPublisherSyslogSeverityProp = "warning"
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_NOTICE EnumlogPublisherSyslogSeverityProp = "notice"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_EMERGENCY     EnumlogPublisherSyslogSeverityProp = "emergency"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_ALERT         EnumlogPublisherSyslogSeverityProp = "alert"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_CRITICAL      EnumlogPublisherSyslogSeverityProp = "critical"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_ERROR         EnumlogPublisherSyslogSeverityProp = "error"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_WARNING       EnumlogPublisherSyslogSeverityProp = "warning"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_NOTICE        EnumlogPublisherSyslogSeverityProp = "notice"
 	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_INFORMATIONAL EnumlogPublisherSyslogSeverityProp = "informational"
-	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_DEBUG EnumlogPublisherSyslogSeverityProp = "debug"
+	ENUMLOGPUBLISHERSYSLOGSEVERITYPROP_DEBUG         EnumlogPublisherSyslogSeverityProp = "debug"
 )
 
 // All allowed values of EnumlogPublisherSyslogSeverityProp enum
@@ -120,4 +120,3 @@ func (v *NullableEnumlogPublisherSyslogSeverityProp) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

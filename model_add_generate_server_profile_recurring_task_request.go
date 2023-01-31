@@ -17,8 +17,8 @@ import (
 // AddGenerateServerProfileRecurringTaskRequest struct for AddGenerateServerProfileRecurringTaskRequest
 type AddGenerateServerProfileRecurringTaskRequest struct {
 	// Name of the new Recurring Task
-	TaskName string `json:"taskName"`
-	Schemas []EnumgenerateServerProfileRecurringTaskSchemaUrn `json:"schemas"`
+	TaskName string                                            `json:"taskName"`
+	Schemas  []EnumgenerateServerProfileRecurringTaskSchemaUrn `json:"schemas"`
 	// The directory in which the generated server profiles will be placed. The files will be named with the pattern \"server-profile-{timestamp}.zip\", where \"{timestamp}\" represents the time that the profile was generated.
 	ProfileDirectory string `json:"profileDirectory"`
 	// An optional set of additional paths to files within the instance root that should be included in the generated server profile. All paths must be within the instance root, and relative paths will be relative to the instance root.
@@ -79,7 +79,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetTaskNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TaskName, true
 }
@@ -103,7 +103,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetSchemas() []Enumgenera
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetSchemasOk() ([]EnumgenerateServerProfileRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -127,7 +127,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetProfileDirectory() str
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetProfileDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProfileDirectory, true
 }
@@ -150,7 +150,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetIncludePath() []string
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetIncludePathOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludePath) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludePath, true
 }
@@ -182,7 +182,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileC
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileCountOk() (*int32, bool) {
 	if o == nil || isNil(o.RetainPreviousProfileCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousProfileCount, true
 }
@@ -214,7 +214,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileA
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetRetainPreviousProfileAgeOk() (*string, bool) {
 	if o == nil || isNil(o.RetainPreviousProfileAge) {
-    return nil, false
+		return nil, false
 	}
 	return o.RetainPreviousProfileAge, true
 }
@@ -246,7 +246,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -278,7 +278,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetCancelOnTaskDependency
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -310,7 +310,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetEmailOnStart() []strin
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -342,7 +342,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetEmailOnSuccess() []str
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -374,7 +374,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetEmailOnFailure() []str
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -406,7 +406,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -438,7 +438,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetAlertOnSuccess() bool 
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -470,7 +470,7 @@ func (o *AddGenerateServerProfileRecurringTaskRequest) GetAlertOnFailure() bool 
 // and a boolean to check if the value has been set.
 func (o *AddGenerateServerProfileRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -571,5 +571,3 @@ func (v *NullableAddGenerateServerProfileRecurringTaskRequest) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

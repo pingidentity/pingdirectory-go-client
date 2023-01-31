@@ -17,8 +17,8 @@ import (
 
 // GetGroupImplementation200Response - struct for GetGroupImplementation200Response
 type GetGroupImplementation200Response struct {
-	DynamicGroupImplementationResponse *DynamicGroupImplementationResponse
-	StaticGroupImplementationResponse *StaticGroupImplementationResponse
+	DynamicGroupImplementationResponse       *DynamicGroupImplementationResponse
+	StaticGroupImplementationResponse        *StaticGroupImplementationResponse
 	VirtualStaticGroupImplementationResponse *VirtualStaticGroupImplementationResponse
 }
 
@@ -42,7 +42,6 @@ func VirtualStaticGroupImplementationResponseAsGetGroupImplementation200Response
 		VirtualStaticGroupImplementationResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetGroupImplementation200Response) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src GetGroupImplementation200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetGroupImplementation200Response) GetActualInstance() (interface{}) {
+func (obj *GetGroupImplementation200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableGetGroupImplementation200Response) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

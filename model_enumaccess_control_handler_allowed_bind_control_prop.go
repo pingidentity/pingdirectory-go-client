@@ -20,20 +20,20 @@ type EnumaccessControlHandlerAllowedBindControlProp string
 
 // List of Enumaccess-control-handler-allowedBindControlProp
 const (
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ADMINISTRATIVE_OPERATION EnumaccessControlHandlerAllowedBindControlProp = "administrative-operation"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_AUTHORIZATION_IDENTITY EnumaccessControlHandlerAllowedBindControlProp = "authorization-identity"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_AUTHORIZATION_ENTRY EnumaccessControlHandlerAllowedBindControlProp = "get-authorization-entry"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_BACKEND_SET_ID EnumaccessControlHandlerAllowedBindControlProp = "get-backend-set-id"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_PASSWORD_POLICY_STATE_ISSUES EnumaccessControlHandlerAllowedBindControlProp = "get-password-policy-state-issues"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_RECENT_LOGIN_HISTORY EnumaccessControlHandlerAllowedBindControlProp = "get-recent-login-history"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_SERVER_ID EnumaccessControlHandlerAllowedBindControlProp = "get-server-id"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_USER_RESOURCE_LIMITS EnumaccessControlHandlerAllowedBindControlProp = "get-user-resource-limits"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_INTERMEDIATE_CLIENT EnumaccessControlHandlerAllowedBindControlProp = "intermediate-client"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_OPERATION_PURPOSE EnumaccessControlHandlerAllowedBindControlProp = "operation-purpose"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_PASSWORD_POLICY EnumaccessControlHandlerAllowedBindControlProp = "password-policy"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_RETAIN_IDENTITY EnumaccessControlHandlerAllowedBindControlProp = "retain-identity"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ROUTE_TO_BACKEND_SET EnumaccessControlHandlerAllowedBindControlProp = "route-to-backend-set"
-	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ROUTE_TO_SERVER EnumaccessControlHandlerAllowedBindControlProp = "route-to-server"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ADMINISTRATIVE_OPERATION              EnumaccessControlHandlerAllowedBindControlProp = "administrative-operation"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_AUTHORIZATION_IDENTITY                EnumaccessControlHandlerAllowedBindControlProp = "authorization-identity"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_AUTHORIZATION_ENTRY               EnumaccessControlHandlerAllowedBindControlProp = "get-authorization-entry"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_BACKEND_SET_ID                    EnumaccessControlHandlerAllowedBindControlProp = "get-backend-set-id"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_PASSWORD_POLICY_STATE_ISSUES      EnumaccessControlHandlerAllowedBindControlProp = "get-password-policy-state-issues"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_RECENT_LOGIN_HISTORY              EnumaccessControlHandlerAllowedBindControlProp = "get-recent-login-history"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_SERVER_ID                         EnumaccessControlHandlerAllowedBindControlProp = "get-server-id"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_GET_USER_RESOURCE_LIMITS              EnumaccessControlHandlerAllowedBindControlProp = "get-user-resource-limits"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_INTERMEDIATE_CLIENT                   EnumaccessControlHandlerAllowedBindControlProp = "intermediate-client"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_OPERATION_PURPOSE                     EnumaccessControlHandlerAllowedBindControlProp = "operation-purpose"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_PASSWORD_POLICY                       EnumaccessControlHandlerAllowedBindControlProp = "password-policy"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_RETAIN_IDENTITY                       EnumaccessControlHandlerAllowedBindControlProp = "retain-identity"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ROUTE_TO_BACKEND_SET                  EnumaccessControlHandlerAllowedBindControlProp = "route-to-backend-set"
+	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_ROUTE_TO_SERVER                       EnumaccessControlHandlerAllowedBindControlProp = "route-to-server"
 	ENUMACCESSCONTROLHANDLERALLOWEDBINDCONTROLPROP_SUPPRESS_OPERATIONAL_ATTRIBUTE_UPDATE EnumaccessControlHandlerAllowedBindControlProp = "suppress-operational-attribute-update"
 )
 
@@ -134,4 +134,3 @@ func (v *NullableEnumaccessControlHandlerAllowedBindControlProp) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

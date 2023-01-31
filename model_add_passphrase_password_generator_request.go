@@ -17,8 +17,8 @@ import (
 // AddPassphrasePasswordGeneratorRequest struct for AddPassphrasePasswordGeneratorRequest
 type AddPassphrasePasswordGeneratorRequest struct {
 	// Name of the new Password Generator
-	GeneratorName string `json:"generatorName"`
-	Schemas []EnumpassphrasePasswordGeneratorSchemaUrn `json:"schemas"`
+	GeneratorName string                                     `json:"generatorName"`
+	Schemas       []EnumpassphrasePasswordGeneratorSchemaUrn `json:"schemas"`
 	// The path to the dictionary file that will be used to obtain the words for use in generated passwords.
 	DictionaryFile string `json:"dictionaryFile"`
 	// The minimum number of characters that generated passwords will be required to have.
@@ -68,7 +68,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GeneratorName, true
 }
@@ -92,7 +92,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetSchemas() []EnumpassphrasePas
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetSchemasOk() ([]EnumpassphrasePasswordGeneratorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -116,7 +116,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetDictionaryFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetDictionaryFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DictionaryFile, true
 }
@@ -139,7 +139,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordCharacters() i
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordCharactersOk() (*int32, bool) {
 	if o == nil || isNil(o.MinimumPasswordCharacters) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumPasswordCharacters, true
 }
@@ -171,7 +171,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordWords() int32 
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetMinimumPasswordWordsOk() (*int32, bool) {
 	if o == nil || isNil(o.MinimumPasswordWords) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumPasswordWords, true
 }
@@ -203,7 +203,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetCapitalizeWords() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetCapitalizeWordsOk() (*bool, bool) {
 	if o == nil || isNil(o.CapitalizeWords) {
-    return nil, false
+		return nil, false
 	}
 	return o.CapitalizeWords, true
 }
@@ -235,7 +235,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -268,7 +268,7 @@ func (o *AddPassphrasePasswordGeneratorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPassphrasePasswordGeneratorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -342,5 +342,3 @@ func (v *NullableAddPassphrasePasswordGeneratorRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

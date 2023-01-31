@@ -16,7 +16,7 @@ import (
 
 // Meta struct for Meta
 type Meta struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 }
 
@@ -50,7 +50,7 @@ func (o *Meta) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Meta) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -82,7 +82,7 @@ func (o *Meta) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingide
 // and a boolean to check if the value has been set.
 func (o *Meta) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -147,5 +147,3 @@ func (v *NullableMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

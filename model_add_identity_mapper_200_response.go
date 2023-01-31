@@ -17,11 +17,11 @@ import (
 
 // AddIdentityMapper200Response - struct for AddIdentityMapper200Response
 type AddIdentityMapper200Response struct {
-	AggregateIdentityMapperResponse *AggregateIdentityMapperResponse
-	ExactMatchIdentityMapperResponse *ExactMatchIdentityMapperResponse
-	GroovyScriptedIdentityMapperResponse *GroovyScriptedIdentityMapperResponse
+	AggregateIdentityMapperResponse         *AggregateIdentityMapperResponse
+	ExactMatchIdentityMapperResponse        *ExactMatchIdentityMapperResponse
+	GroovyScriptedIdentityMapperResponse    *GroovyScriptedIdentityMapperResponse
 	RegularExpressionIdentityMapperResponse *RegularExpressionIdentityMapperResponse
-	ThirdPartyIdentityMapperResponse *ThirdPartyIdentityMapperResponse
+	ThirdPartyIdentityMapperResponse        *ThirdPartyIdentityMapperResponse
 }
 
 // AggregateIdentityMapperResponseAsAddIdentityMapper200Response is a convenience function that returns AggregateIdentityMapperResponse wrapped in AddIdentityMapper200Response
@@ -58,7 +58,6 @@ func ThirdPartyIdentityMapperResponseAsAddIdentityMapper200Response(v *ThirdPart
 		ThirdPartyIdentityMapperResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddIdentityMapper200Response) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src AddIdentityMapper200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddIdentityMapper200Response) GetActualInstance() (interface{}) {
+func (obj *AddIdentityMapper200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableAddIdentityMapper200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

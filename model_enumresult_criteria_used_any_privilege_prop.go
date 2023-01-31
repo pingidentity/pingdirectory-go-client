@@ -20,9 +20,9 @@ type EnumresultCriteriaUsedAnyPrivilegeProp string
 
 // List of Enumresult-criteria-usedAnyPrivilegeProp
 const (
-	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_REQUIRED EnumresultCriteriaUsedAnyPrivilegeProp = "required"
+	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_REQUIRED   EnumresultCriteriaUsedAnyPrivilegeProp = "required"
 	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_PROHIBITED EnumresultCriteriaUsedAnyPrivilegeProp = "prohibited"
-	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_OPTIONAL EnumresultCriteriaUsedAnyPrivilegeProp = "optional"
+	ENUMRESULTCRITERIAUSEDANYPRIVILEGEPROP_OPTIONAL   EnumresultCriteriaUsedAnyPrivilegeProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaUsedAnyPrivilegeProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaUsedAnyPrivilegeProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

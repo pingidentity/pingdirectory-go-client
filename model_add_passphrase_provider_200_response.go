@@ -18,13 +18,13 @@ import (
 // AddPassphraseProvider200Response - struct for AddPassphraseProvider200Response
 type AddPassphraseProvider200Response struct {
 	AmazonSecretsManagerPassphraseProviderResponse *AmazonSecretsManagerPassphraseProviderResponse
-	AzureKeyVaultPassphraseProviderResponse *AzureKeyVaultPassphraseProviderResponse
-	ConjurPassphraseProviderResponse *ConjurPassphraseProviderResponse
-	EnvironmentVariablePassphraseProviderResponse *EnvironmentVariablePassphraseProviderResponse
-	FileBasedPassphraseProviderResponse *FileBasedPassphraseProviderResponse
-	ObscuredValuePassphraseProviderResponse *ObscuredValuePassphraseProviderResponse
-	ThirdPartyPassphraseProviderResponse *ThirdPartyPassphraseProviderResponse
-	VaultPassphraseProviderResponse *VaultPassphraseProviderResponse
+	AzureKeyVaultPassphraseProviderResponse        *AzureKeyVaultPassphraseProviderResponse
+	ConjurPassphraseProviderResponse               *ConjurPassphraseProviderResponse
+	EnvironmentVariablePassphraseProviderResponse  *EnvironmentVariablePassphraseProviderResponse
+	FileBasedPassphraseProviderResponse            *FileBasedPassphraseProviderResponse
+	ObscuredValuePassphraseProviderResponse        *ObscuredValuePassphraseProviderResponse
+	ThirdPartyPassphraseProviderResponse           *ThirdPartyPassphraseProviderResponse
+	VaultPassphraseProviderResponse                *VaultPassphraseProviderResponse
 }
 
 // AmazonSecretsManagerPassphraseProviderResponseAsAddPassphraseProvider200Response is a convenience function that returns AmazonSecretsManagerPassphraseProviderResponse wrapped in AddPassphraseProvider200Response
@@ -82,7 +82,6 @@ func VaultPassphraseProviderResponseAsAddPassphraseProvider200Response(v *VaultP
 		VaultPassphraseProviderResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPassphraseProvider200Response) UnmarshalJSON(data []byte) error {
@@ -249,7 +248,7 @@ func (src AddPassphraseProvider200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddPassphraseProvider200Response) GetActualInstance() (interface{}) {
+func (obj *AddPassphraseProvider200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -324,5 +323,3 @@ func (v *NullableAddPassphraseProvider200Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

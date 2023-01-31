@@ -16,10 +16,10 @@ import (
 
 // DnMapResponse struct for DnMapResponse
 type DnMapResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the DN Map
-	Id string `json:"id"`
+	Id      string               `json:"id"`
 	Schemas []EnumdnMapSchemaUrn `json:"schemas,omitempty"`
 	// A description for this DN Map
 	Description *string `json:"description,omitempty"`
@@ -62,7 +62,7 @@ func (o *DnMapResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *DnMapResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaU
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *DnMapResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -150,7 +150,7 @@ func (o *DnMapResponse) GetSchemas() []EnumdnMapSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetSchemasOk() ([]EnumdnMapSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *DnMapResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -215,7 +215,7 @@ func (o *DnMapResponse) GetFromDNPattern() string {
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetFromDNPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FromDNPattern, true
 }
@@ -239,7 +239,7 @@ func (o *DnMapResponse) GetToDNPattern() string {
 // and a boolean to check if the value has been set.
 func (o *DnMapResponse) GetToDNPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ToDNPattern, true
 }
@@ -310,5 +310,3 @@ func (v *NullableDnMapResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // ConstructedAttributeResponse struct for ConstructedAttributeResponse
 type ConstructedAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Constructed Attribute
-	Id string `json:"id"`
+	Id      string                              `json:"id"`
 	Schemas []EnumconstructedAttributeSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Constructed Attribute
 	Description *string `json:"description,omitempty"`
@@ -62,7 +62,7 @@ func (o *ConstructedAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *ConstructedAttributeResponse) GetUrnpingidentityschemasconfigurationmes
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *ConstructedAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -150,7 +150,7 @@ func (o *ConstructedAttributeResponse) GetSchemas() []EnumconstructedAttributeSc
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetSchemasOk() ([]EnumconstructedAttributeSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *ConstructedAttributeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -215,7 +215,7 @@ func (o *ConstructedAttributeResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -239,7 +239,7 @@ func (o *ConstructedAttributeResponse) GetValuePattern() []string {
 // and a boolean to check if the value has been set.
 func (o *ConstructedAttributeResponse) GetValuePatternOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ValuePattern, true
 }
@@ -310,5 +310,3 @@ func (v *NullableConstructedAttributeResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

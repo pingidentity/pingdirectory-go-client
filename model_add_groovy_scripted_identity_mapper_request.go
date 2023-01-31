@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedIdentityMapperRequest struct for AddGroovyScriptedIdentityMapperRequest
 type AddGroovyScriptedIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumgroovyScriptedIdentityMapperSchemaUrn `json:"schemas"`
+	MapperName string                                      `json:"mapperName"`
+	Schemas    []EnumgroovyScriptedIdentityMapperSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Identity Mapper.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Identity Mapper. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -88,7 +88,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetSchemas() []EnumgroovyScript
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetSchemasOk() ([]EnumgroovyScriptedIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddGroovyScriptedIdentityMapperRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedIdentityMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddGroovyScriptedIdentityMapperRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

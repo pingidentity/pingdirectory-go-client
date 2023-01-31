@@ -17,8 +17,8 @@ import (
 // AddAggregateRequestCriteriaRequest struct for AddAggregateRequestCriteriaRequest
 type AddAggregateRequestCriteriaRequest struct {
 	// Name of the new Request Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumaggregateRequestCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName string                                  `json:"criteriaName"`
+	Schemas      []EnumaggregateRequestCriteriaSchemaUrn `json:"schemas"`
 	// Specifies a request criteria object that must match the associated operation request in order to match the aggregate request criteria. If one or more all-included request criteria objects are provided, then an operation request must match all of them in order to match the aggregate request criteria.
 	AllIncludedRequestCriteria []string `json:"allIncludedRequestCriteria,omitempty"`
 	// Specifies a request criteria object that may match the associated operation request in order to the this aggregate request criteria. If one or more any-included request criteria objects are provided, then an operation request must match at least one of them in order to match the aggregate request criteria.
@@ -64,7 +64,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -88,7 +88,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetSchemas() []EnumaggregateRequest
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetSchemasOk() ([]EnumaggregateRequestCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetAllIncludedRequestCriteria() []s
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetAllIncludedRequestCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AllIncludedRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllIncludedRequestCriteria, true
 }
@@ -143,7 +143,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetAnyIncludedRequestCriteria() []s
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetAnyIncludedRequestCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.AnyIncludedRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AnyIncludedRequestCriteria, true
 }
@@ -175,7 +175,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetNotAllIncludedRequestCriteria() 
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetNotAllIncludedRequestCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NotAllIncludedRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotAllIncludedRequestCriteria, true
 }
@@ -207,7 +207,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetNoneIncludedRequestCriteria() []
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetNoneIncludedRequestCriteriaOk() ([]string, bool) {
 	if o == nil || isNil(o.NoneIncludedRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.NoneIncludedRequestCriteria, true
 }
@@ -239,7 +239,7 @@ func (o *AddAggregateRequestCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAggregateRequestCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -319,5 +319,3 @@ func (v *NullableAddAggregateRequestCriteriaRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

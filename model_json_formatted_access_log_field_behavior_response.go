@@ -16,31 +16,31 @@ import (
 
 // JsonFormattedAccessLogFieldBehaviorResponse struct for JsonFormattedAccessLogFieldBehaviorResponse
 type JsonFormattedAccessLogFieldBehaviorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Field Behavior
-	Id string `json:"id"`
-	Schemas []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn `json:"schemas"`
-	PreserveField []EnumlogFieldBehaviorPreserveFieldProp `json:"preserveField,omitempty"`
+	Id            string                                             `json:"id"`
+	Schemas       []EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn `json:"schemas"`
+	PreserveField []EnumlogFieldBehaviorPreserveFieldProp            `json:"preserveField,omitempty"`
 	// The names of any custom fields whose values should be preserved. This should generally only be used for fields that are not available through the preserve-field property (for example, custom log fields defined in Server SDK extensions).
-	PreserveFieldName []string `json:"preserveFieldName,omitempty"`
-	OmitField []EnumlogFieldBehaviorOmitFieldProp `json:"omitField,omitempty"`
+	PreserveFieldName []string                            `json:"preserveFieldName,omitempty"`
+	OmitField         []EnumlogFieldBehaviorOmitFieldProp `json:"omitField,omitempty"`
 	// The names of any custom fields that should be omitted from log messages. This should generally only be used for fields that are not available through the omit-field property (for example, custom log fields defined in Server SDK extensions).
-	OmitFieldName []string `json:"omitFieldName,omitempty"`
+	OmitFieldName          []string                                         `json:"omitFieldName,omitempty"`
 	RedactEntireValueField []EnumlogFieldBehaviorRedactEntireValueFieldProp `json:"redactEntireValueField,omitempty"`
 	// The names of any custom fields whose values should be completely redacted. This should generally only be used for fields that are not available through the redact-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
-	RedactEntireValueFieldName []string `json:"redactEntireValueFieldName,omitempty"`
+	RedactEntireValueFieldName []string                                             `json:"redactEntireValueFieldName,omitempty"`
 	RedactValueComponentsField []EnumlogFieldBehaviorRedactValueComponentsFieldProp `json:"redactValueComponentsField,omitempty"`
 	// The names of any custom fields for which to redact components within the value. This should generally only be used for fields that are not available through the redact-value-components-field property (for example, custom log fields defined in Server SDK extensions).
-	RedactValueComponentsFieldName []string `json:"redactValueComponentsFieldName,omitempty"`
-	TokenizeEntireValueField []EnumlogFieldBehaviorTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
+	RedactValueComponentsFieldName []string                                           `json:"redactValueComponentsFieldName,omitempty"`
+	TokenizeEntireValueField       []EnumlogFieldBehaviorTokenizeEntireValueFieldProp `json:"tokenizeEntireValueField,omitempty"`
 	// The names of any custom fields whose values should be completely tokenized. This should generally only be used for fields that are not available through the tokenize-entire-value-field property (for example, custom log fields defined in Server SDK extensions).
-	TokenizeEntireValueFieldName []string `json:"tokenizeEntireValueFieldName,omitempty"`
+	TokenizeEntireValueFieldName []string                                               `json:"tokenizeEntireValueFieldName,omitempty"`
 	TokenizeValueComponentsField []EnumlogFieldBehaviorTokenizeValueComponentsFieldProp `json:"tokenizeValueComponentsField,omitempty"`
 	// The names of any custom fields for which to tokenize components within the value. This should generally only be used for fields that are not available through the tokenize-value-components-field property (for example, custom log fields defined in Server SDK extensions).
 	TokenizeValueComponentsFieldName []string `json:"tokenizeValueComponentsFieldName,omitempty"`
 	// A description for this Log Field Behavior
-	Description *string `json:"description,omitempty"`
+	Description     *string                                  `json:"description,omitempty"`
 	DefaultBehavior *EnumlogFieldBehaviorDefaultBehaviorProp `json:"defaultBehavior,omitempty"`
 }
 
@@ -76,7 +76,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -108,7 +108,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetUrnpingidentityschemasc
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -141,7 +141,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -165,7 +165,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetSchemas() []EnumjsonFor
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetSchemasOk() ([]EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -188,7 +188,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveField() []Enuml
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveFieldOk() ([]EnumlogFieldBehaviorPreserveFieldProp, bool) {
 	if o == nil || isNil(o.PreserveField) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreserveField, true
 }
@@ -220,7 +220,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveFieldName() []s
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetPreserveFieldNameOk() ([]string, bool) {
 	if o == nil || isNil(o.PreserveFieldName) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreserveFieldName, true
 }
@@ -252,7 +252,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitField() []EnumlogFi
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitFieldOk() ([]EnumlogFieldBehaviorOmitFieldProp, bool) {
 	if o == nil || isNil(o.OmitField) {
-    return nil, false
+		return nil, false
 	}
 	return o.OmitField, true
 }
@@ -284,7 +284,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitFieldName() []strin
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetOmitFieldNameOk() ([]string, bool) {
 	if o == nil || isNil(o.OmitFieldName) {
-    return nil, false
+		return nil, false
 	}
 	return o.OmitFieldName, true
 }
@@ -316,7 +316,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueField(
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueFieldOk() ([]EnumlogFieldBehaviorRedactEntireValueFieldProp, bool) {
 	if o == nil || isNil(o.RedactEntireValueField) {
-    return nil, false
+		return nil, false
 	}
 	return o.RedactEntireValueField, true
 }
@@ -348,7 +348,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueFieldN
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactEntireValueFieldNameOk() ([]string, bool) {
 	if o == nil || isNil(o.RedactEntireValueFieldName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RedactEntireValueFieldName, true
 }
@@ -380,7 +380,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsFi
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsFieldOk() ([]EnumlogFieldBehaviorRedactValueComponentsFieldProp, bool) {
 	if o == nil || isNil(o.RedactValueComponentsField) {
-    return nil, false
+		return nil, false
 	}
 	return o.RedactValueComponentsField, true
 }
@@ -412,7 +412,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsFi
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetRedactValueComponentsFieldNameOk() ([]string, bool) {
 	if o == nil || isNil(o.RedactValueComponentsFieldName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RedactValueComponentsFieldName, true
 }
@@ -444,7 +444,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueFiel
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueFieldOk() ([]EnumlogFieldBehaviorTokenizeEntireValueFieldProp, bool) {
 	if o == nil || isNil(o.TokenizeEntireValueField) {
-    return nil, false
+		return nil, false
 	}
 	return o.TokenizeEntireValueField, true
 }
@@ -476,7 +476,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueFiel
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeEntireValueFieldNameOk() ([]string, bool) {
 	if o == nil || isNil(o.TokenizeEntireValueFieldName) {
-    return nil, false
+		return nil, false
 	}
 	return o.TokenizeEntireValueFieldName, true
 }
@@ -508,7 +508,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponents
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponentsFieldOk() ([]EnumlogFieldBehaviorTokenizeValueComponentsFieldProp, bool) {
 	if o == nil || isNil(o.TokenizeValueComponentsField) {
-    return nil, false
+		return nil, false
 	}
 	return o.TokenizeValueComponentsField, true
 }
@@ -540,7 +540,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponents
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetTokenizeValueComponentsFieldNameOk() ([]string, bool) {
 	if o == nil || isNil(o.TokenizeValueComponentsFieldName) {
-    return nil, false
+		return nil, false
 	}
 	return o.TokenizeValueComponentsFieldName, true
 }
@@ -572,7 +572,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -604,7 +604,7 @@ func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetDefaultBehavior() Enuml
 // and a boolean to check if the value has been set.
 func (o *JsonFormattedAccessLogFieldBehaviorResponse) GetDefaultBehaviorOk() (*EnumlogFieldBehaviorDefaultBehaviorProp, bool) {
 	if o == nil || isNil(o.DefaultBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultBehavior, true
 }
@@ -717,5 +717,3 @@ func (v *NullableJsonFormattedAccessLogFieldBehaviorResponse) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

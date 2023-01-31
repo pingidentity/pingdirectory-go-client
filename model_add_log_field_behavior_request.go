@@ -18,7 +18,7 @@ import (
 // AddLogFieldBehaviorRequest - struct for AddLogFieldBehaviorRequest
 type AddLogFieldBehaviorRequest struct {
 	AddJsonFormattedAccessLogFieldBehaviorRequest *AddJsonFormattedAccessLogFieldBehaviorRequest
-	AddTextAccessLogFieldBehaviorRequest *AddTextAccessLogFieldBehaviorRequest
+	AddTextAccessLogFieldBehaviorRequest          *AddTextAccessLogFieldBehaviorRequest
 }
 
 // AddJsonFormattedAccessLogFieldBehaviorRequestAsAddLogFieldBehaviorRequest is a convenience function that returns AddJsonFormattedAccessLogFieldBehaviorRequest wrapped in AddLogFieldBehaviorRequest
@@ -34,7 +34,6 @@ func AddTextAccessLogFieldBehaviorRequestAsAddLogFieldBehaviorRequest(v *AddText
 		AddTextAccessLogFieldBehaviorRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogFieldBehaviorRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddLogFieldBehaviorRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogFieldBehaviorRequest) GetActualInstance() (interface{}) {
+func (obj *AddLogFieldBehaviorRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddLogFieldBehaviorRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

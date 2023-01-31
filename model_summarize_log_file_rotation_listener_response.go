@@ -16,10 +16,10 @@ import (
 
 // SummarizeLogFileRotationListenerResponse struct for SummarizeLogFileRotationListenerResponse
 type SummarizeLogFileRotationListenerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log File Rotation Listener
-	Id string `json:"id"`
+	Id      string                                          `json:"id"`
 	Schemas []EnumsummarizeLogFileRotationListenerSchemaUrn `json:"schemas"`
 	// The path to the directory in which the summarize-access-log output should be written. If no value is provided, the output file will be written into the same directory as the rotated log file.
 	OutputDirectory *string `json:"outputDirectory,omitempty"`
@@ -62,7 +62,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetUrnpingidentityschemasconf
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetSchemas() []EnumsummarizeL
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetSchemasOk() ([]EnumsummarizeLogFileRotationListenerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -174,7 +174,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetOutputDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetOutputDirectoryOk() (*string, bool) {
 	if o == nil || isNil(o.OutputDirectory) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutputDirectory, true
 }
@@ -206,7 +206,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -239,7 +239,7 @@ func (o *SummarizeLogFileRotationListenerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SummarizeLogFileRotationListenerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -310,5 +310,3 @@ func (v *NullableSummarizeLogFileRotationListenerResponse) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

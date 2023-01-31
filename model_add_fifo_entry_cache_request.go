@@ -17,8 +17,8 @@ import (
 // AddFifoEntryCacheRequest struct for AddFifoEntryCacheRequest
 type AddFifoEntryCacheRequest struct {
 	// Name of the new Entry Cache
-	CacheName string `json:"cacheName"`
-	Schemas []EnumfifoEntryCacheSchemaUrn `json:"schemas,omitempty"`
+	CacheName string                        `json:"cacheName"`
+	Schemas   []EnumfifoEntryCacheSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged.
 	MaxMemoryPercent *int32 `json:"maxMemoryPercent,omitempty"`
 	// Specifies the maximum number of entries that will be allowed in the cache. Once the cache reaches this size, then adding new entries will cause existing entries to be purged, starting with the oldest.
@@ -77,7 +77,7 @@ func (o *AddFifoEntryCacheRequest) GetCacheName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetCacheNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CacheName, true
 }
@@ -100,7 +100,7 @@ func (o *AddFifoEntryCacheRequest) GetSchemas() []EnumfifoEntryCacheSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetSchemasOk() ([]EnumfifoEntryCacheSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -132,7 +132,7 @@ func (o *AddFifoEntryCacheRequest) GetMaxMemoryPercent() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetMaxMemoryPercentOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxMemoryPercent) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxMemoryPercent, true
 }
@@ -164,7 +164,7 @@ func (o *AddFifoEntryCacheRequest) GetMaxEntries() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetMaxEntriesOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxEntries, true
 }
@@ -196,7 +196,7 @@ func (o *AddFifoEntryCacheRequest) GetOnlyCacheFrequentlyAccessed() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetOnlyCacheFrequentlyAccessedOk() (*bool, bool) {
 	if o == nil || isNil(o.OnlyCacheFrequentlyAccessed) {
-    return nil, false
+		return nil, false
 	}
 	return o.OnlyCacheFrequentlyAccessed, true
 }
@@ -228,7 +228,7 @@ func (o *AddFifoEntryCacheRequest) GetIncludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetIncludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -260,7 +260,7 @@ func (o *AddFifoEntryCacheRequest) GetExcludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetExcludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeFilter, true
 }
@@ -292,7 +292,7 @@ func (o *AddFifoEntryCacheRequest) GetMinCacheEntryValueCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetMinCacheEntryValueCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MinCacheEntryValueCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinCacheEntryValueCount, true
 }
@@ -324,7 +324,7 @@ func (o *AddFifoEntryCacheRequest) GetMinCacheEntryAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetMinCacheEntryAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.MinCacheEntryAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinCacheEntryAttribute, true
 }
@@ -356,7 +356,7 @@ func (o *AddFifoEntryCacheRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -389,7 +389,7 @@ func (o *AddFifoEntryCacheRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -413,7 +413,7 @@ func (o *AddFifoEntryCacheRequest) GetCacheLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetCacheLevelOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CacheLevel, true
 }
@@ -436,7 +436,7 @@ func (o *AddFifoEntryCacheRequest) GetCacheUnindexedSearchResults() bool {
 // and a boolean to check if the value has been set.
 func (o *AddFifoEntryCacheRequest) GetCacheUnindexedSearchResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CacheUnindexedSearchResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CacheUnindexedSearchResults, true
 }
@@ -534,5 +534,3 @@ func (v *NullableAddFifoEntryCacheRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

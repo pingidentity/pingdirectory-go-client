@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // HttpConfigurationApiService HttpConfigurationApi service
 type HttpConfigurationApiService service
 
 type ApiGetHttpConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HttpConfigurationApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetHttpConfigurationRequest) Execute() (*HttpConfigurationResponse, *
 /*
 GetHttpConfiguration Returns a single HTTP Configuration
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetHttpConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetHttpConfigurationRequest
 */
 func (a *HttpConfigurationApiService) GetHttpConfiguration(ctx context.Context) ApiGetHttpConfigurationRequest {
 	return ApiGetHttpConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return HttpConfigurationResponse
+//
+//	@return HttpConfigurationResponse
 func (a *HttpConfigurationApiService) GetHttpConfigurationExecute(r ApiGetHttpConfigurationRequest) (*HttpConfigurationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HttpConfigurationResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HttpConfigurationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpConfigurationApiService.GetHttpConfiguration")
@@ -120,8 +120,8 @@ func (a *HttpConfigurationApiService) GetHttpConfigurationExecute(r ApiGetHttpCo
 }
 
 type ApiUpdateHttpConfigurationRequest struct {
-	ctx context.Context
-	ApiService *HttpConfigurationApiService
+	ctx           context.Context
+	ApiService    *HttpConfigurationApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateHttpConfigurationRequest) Execute() (*HttpConfigurationResponse
 /*
 UpdateHttpConfiguration Update an existing HTTP Configuration by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateHttpConfigurationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateHttpConfigurationRequest
 */
 func (a *HttpConfigurationApiService) UpdateHttpConfiguration(ctx context.Context) ApiUpdateHttpConfigurationRequest {
 	return ApiUpdateHttpConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return HttpConfigurationResponse
+//
+//	@return HttpConfigurationResponse
 func (a *HttpConfigurationApiService) UpdateHttpConfigurationExecute(r ApiUpdateHttpConfigurationRequest) (*HttpConfigurationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *HttpConfigurationResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *HttpConfigurationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HttpConfigurationApiService.UpdateHttpConfiguration")

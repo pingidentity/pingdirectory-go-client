@@ -106,4 +106,3 @@ func (v *NullableEnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

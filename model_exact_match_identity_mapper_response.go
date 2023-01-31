@@ -16,10 +16,10 @@ import (
 
 // ExactMatchIdentityMapperResponse struct for ExactMatchIdentityMapperResponse
 type ExactMatchIdentityMapperResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Identity Mapper
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnumexactMatchIdentityMapperSchemaUrn `json:"schemas"`
 	// Specifies the attribute whose value should exactly match the ID string provided to this identity mapper.
 	MatchAttribute []string `json:"matchAttribute"`
@@ -67,7 +67,7 @@ func (o *ExactMatchIdentityMapperResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -99,7 +99,7 @@ func (o *ExactMatchIdentityMapperResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -132,7 +132,7 @@ func (o *ExactMatchIdentityMapperResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -156,7 +156,7 @@ func (o *ExactMatchIdentityMapperResponse) GetSchemas() []EnumexactMatchIdentity
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetSchemasOk() ([]EnumexactMatchIdentityMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -180,7 +180,7 @@ func (o *ExactMatchIdentityMapperResponse) GetMatchAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetMatchAttributeOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchAttribute, true
 }
@@ -203,7 +203,7 @@ func (o *ExactMatchIdentityMapperResponse) GetMatchBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetMatchBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.MatchBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchBaseDN, true
 }
@@ -235,7 +235,7 @@ func (o *ExactMatchIdentityMapperResponse) GetMatchFilter() string {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetMatchFilterOk() (*string, bool) {
 	if o == nil || isNil(o.MatchFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.MatchFilter, true
 }
@@ -267,7 +267,7 @@ func (o *ExactMatchIdentityMapperResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -300,7 +300,7 @@ func (o *ExactMatchIdentityMapperResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ExactMatchIdentityMapperResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -377,5 +377,3 @@ func (v *NullableExactMatchIdentityMapperResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

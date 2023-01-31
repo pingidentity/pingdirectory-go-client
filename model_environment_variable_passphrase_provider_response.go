@@ -16,10 +16,10 @@ import (
 
 // EnvironmentVariablePassphraseProviderResponse struct for EnvironmentVariablePassphraseProviderResponse
 type EnvironmentVariablePassphraseProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Passphrase Provider
-	Id string `json:"id"`
+	Id      string                                               `json:"id"`
 	Schemas []EnumenvironmentVariablePassphraseProviderSchemaUrn `json:"schemas"`
 	// The name of the environment variable that is expected to hold the passphrase.
 	EnvironmentVariable string `json:"environmentVariable"`
@@ -63,7 +63,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetUrnpingidentityschema
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetSchemas() []Enumenvir
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetSchemasOk() ([]EnumenvironmentVariablePassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetEnvironmentVariable()
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetEnvironmentVariableOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EnvironmentVariable, true
 }
@@ -199,7 +199,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *EnvironmentVariablePassphraseProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *EnvironmentVariablePassphraseProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullableEnvironmentVariablePassphraseProviderResponse) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

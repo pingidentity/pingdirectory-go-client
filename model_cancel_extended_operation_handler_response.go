@@ -16,9 +16,9 @@ import (
 
 // CancelExtendedOperationHandlerResponse struct for CancelExtendedOperationHandlerResponse
 type CancelExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumcancelExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumcancelExtendedOperationHandlerSchemaUrn      `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *CancelExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *CancelExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *CancelExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *CancelExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *CancelExtendedOperationHandlerResponse) GetSchemas() []EnumcancelExtend
 // and a boolean to check if the value has been set.
 func (o *CancelExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumcancelExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *CancelExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *CancelExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *CancelExtendedOperationHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *CancelExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *CancelExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *CancelExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableCancelExtendedOperationHandlerResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

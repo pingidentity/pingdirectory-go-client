@@ -16,9 +16,9 @@ import (
 
 // UnboundidTotpSaslMechanismHandlerResponse struct for UnboundidTotpSaslMechanismHandlerResponse
 type UnboundidTotpSaslMechanismHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumunboundidTotpSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumunboundidTotpSaslMechanismHandlerSchemaUrn   `json:"schemas"`
 	// Name of the SASL Mechanism Handler
 	Id string `json:"id"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
@@ -73,7 +73,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetUrnpingidentityschemascon
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSchemas() []Enumunboundid
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSchemasOk() ([]EnumunboundidTotpSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -162,7 +162,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -186,7 +186,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -209,7 +209,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSharedSecretAttributeType
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetSharedSecretAttributeTypeOk() (*string, bool) {
 	if o == nil || isNil(o.SharedSecretAttributeType) {
-    return nil, false
+		return nil, false
 	}
 	return o.SharedSecretAttributeType, true
 }
@@ -241,7 +241,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetTimeIntervalDuration() st
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetTimeIntervalDurationOk() (*string, bool) {
 	if o == nil || isNil(o.TimeIntervalDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeIntervalDuration, true
 }
@@ -273,7 +273,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheck(
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetAdjacentIntervalsToCheckOk() (*int32, bool) {
 	if o == nil || isNil(o.AdjacentIntervalsToCheck) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdjacentIntervalsToCheck, true
 }
@@ -305,7 +305,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetRequireStaticPassword() b
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetRequireStaticPasswordOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireStaticPassword) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireStaticPassword, true
 }
@@ -337,7 +337,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetPreventTOTPReuse() bool {
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetPreventTOTPReuseOk() (*bool, bool) {
 	if o == nil || isNil(o.PreventTOTPReuse) {
-    return nil, false
+		return nil, false
 	}
 	return o.PreventTOTPReuse, true
 }
@@ -369,7 +369,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -402,7 +402,7 @@ func (o *UnboundidTotpSaslMechanismHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *UnboundidTotpSaslMechanismHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -488,5 +488,3 @@ func (v *NullableUnboundidTotpSaslMechanismHandlerResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

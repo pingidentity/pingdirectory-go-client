@@ -17,8 +17,8 @@ import (
 // AddThirdPartyPassThroughAuthenticationHandlerRequest struct for AddThirdPartyPassThroughAuthenticationHandlerRequest
 type AddThirdPartyPassThroughAuthenticationHandlerRequest struct {
 	// Name of the new Pass Through Authentication Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                    `json:"handlerName"`
+	Schemas     []EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Pass Through Authentication Handler.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Pass Through Authentication Handler. Each configuration property should be given in the form 'name=value'.
@@ -61,7 +61,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerName() 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -85,7 +85,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetSchemas() []En
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetSchemasOk() ([]EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -109,7 +109,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionClass
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -132,7 +132,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionArgum
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -164,7 +164,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetDescription() 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddThirdPartyPassThroughAuthenticationHandlerRequest) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type EnumdataSecurityAuditorAuditSeverityProp string
 
 // List of Enumdata-security-auditor-auditSeverityProp
 const (
-	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_ERROR EnumdataSecurityAuditorAuditSeverityProp = "error"
+	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_ERROR   EnumdataSecurityAuditorAuditSeverityProp = "error"
 	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_WARNING EnumdataSecurityAuditorAuditSeverityProp = "warning"
-	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_NOTICE EnumdataSecurityAuditorAuditSeverityProp = "notice"
+	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_NOTICE  EnumdataSecurityAuditorAuditSeverityProp = "notice"
 	ENUMDATASECURITYAUDITORAUDITSEVERITYPROP_VERBOSE EnumdataSecurityAuditorAuditSeverityProp = "verbose"
 )
 
@@ -112,4 +112,3 @@ func (v *NullableEnumdataSecurityAuditorAuditSeverityProp) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

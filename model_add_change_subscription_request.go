@@ -17,8 +17,8 @@ import (
 // AddChangeSubscriptionRequest struct for AddChangeSubscriptionRequest
 type AddChangeSubscriptionRequest struct {
 	// Name of the new Change Subscription
-	SubscriptionName string `json:"subscriptionName"`
-	Schemas []EnumchangeSubscriptionSchemaUrn `json:"schemas,omitempty"`
+	SubscriptionName string                            `json:"subscriptionName"`
+	Schemas          []EnumchangeSubscriptionSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Change Subscription
 	Description *string `json:"description,omitempty"`
 	// Specifies a set of connection criteria that must match the client connection associated with an operation in order for that operation to be processed by a change subscription handler.
@@ -63,7 +63,7 @@ func (o *AddChangeSubscriptionRequest) GetSubscriptionName() string {
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetSubscriptionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SubscriptionName, true
 }
@@ -86,7 +86,7 @@ func (o *AddChangeSubscriptionRequest) GetSchemas() []EnumchangeSubscriptionSche
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetSchemasOk() ([]EnumchangeSubscriptionSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddChangeSubscriptionRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -150,7 +150,7 @@ func (o *AddChangeSubscriptionRequest) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -182,7 +182,7 @@ func (o *AddChangeSubscriptionRequest) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -214,7 +214,7 @@ func (o *AddChangeSubscriptionRequest) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -246,7 +246,7 @@ func (o *AddChangeSubscriptionRequest) GetExpirationTime() string {
 // and a boolean to check if the value has been set.
 func (o *AddChangeSubscriptionRequest) GetExpirationTimeOk() (*string, bool) {
 	if o == nil || isNil(o.ExpirationTime) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExpirationTime, true
 }
@@ -326,5 +326,3 @@ func (v *NullableAddChangeSubscriptionRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

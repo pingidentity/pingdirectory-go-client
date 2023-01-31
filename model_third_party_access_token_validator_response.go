@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyAccessTokenValidatorResponse struct for ThirdPartyAccessTokenValidatorResponse
 type ThirdPartyAccessTokenValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Access Token Validator
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumthirdPartyAccessTokenValidatorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Access Token Validator.
 	ExtensionClass string `json:"extensionClass"`
@@ -72,7 +72,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -104,7 +104,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -137,7 +137,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -161,7 +161,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetSchemas() []EnumthirdPartyAc
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetSchemasOk() ([]EnumthirdPartyAccessTokenValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -185,7 +185,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -208,7 +208,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetExtensionArgument() []string
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -240,7 +240,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetIdentityMapper() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) {
 	if o == nil || isNil(o.IdentityMapper) {
-    return nil, false
+		return nil, false
 	}
 	return o.IdentityMapper, true
 }
@@ -272,7 +272,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetSubjectClaimName() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool) {
 	if o == nil || isNil(o.SubjectClaimName) {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectClaimName, true
 }
@@ -304,7 +304,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -337,7 +337,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -361,7 +361,7 @@ func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndex() int32
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccessTokenValidatorResponse) GetEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.EvaluationOrderIndex, true
 }
@@ -444,5 +444,3 @@ func (v *NullableThirdPartyAccessTokenValidatorResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

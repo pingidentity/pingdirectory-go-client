@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // MatchingRuleApiService MatchingRuleApi service
 type MatchingRuleApiService service
 
 type ApiGetMatchingRuleRequest struct {
-	ctx context.Context
-	ApiService *MatchingRuleApiService
+	ctx              context.Context
+	ApiService       *MatchingRuleApiService
 	matchingRuleName string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetMatchingRuleRequest) Execute() (*GetMatchingRule200Response, *http
 /*
 GetMatchingRule Returns a single Matching Rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param matchingRuleName Name of the Matching Rule to be read
- @return ApiGetMatchingRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param matchingRuleName Name of the Matching Rule to be read
+	@return ApiGetMatchingRuleRequest
 */
 func (a *MatchingRuleApiService) GetMatchingRule(ctx context.Context, matchingRuleName string) ApiGetMatchingRuleRequest {
 	return ApiGetMatchingRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		matchingRuleName: matchingRuleName,
 	}
 }
 
 // Execute executes the request
-//  @return GetMatchingRule200Response
+//
+//	@return GetMatchingRule200Response
 func (a *MatchingRuleApiService) GetMatchingRuleExecute(r ApiGetMatchingRuleRequest) (*GetMatchingRule200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetMatchingRule200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetMatchingRule200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleApiService.GetMatchingRule")
@@ -125,10 +125,10 @@ func (a *MatchingRuleApiService) GetMatchingRuleExecute(r ApiGetMatchingRuleRequ
 }
 
 type ApiUpdateMatchingRuleRequest struct {
-	ctx context.Context
-	ApiService *MatchingRuleApiService
+	ctx              context.Context
+	ApiService       *MatchingRuleApiService
 	matchingRuleName string
-	updateRequest *UpdateRequest
+	updateRequest    *UpdateRequest
 }
 
 // Update an existing Matching Rule
@@ -144,26 +144,27 @@ func (r ApiUpdateMatchingRuleRequest) Execute() (*GetMatchingRule200Response, *h
 /*
 UpdateMatchingRule Update an existing Matching Rule by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param matchingRuleName Name of the Matching Rule to be updated
- @return ApiUpdateMatchingRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param matchingRuleName Name of the Matching Rule to be updated
+	@return ApiUpdateMatchingRuleRequest
 */
 func (a *MatchingRuleApiService) UpdateMatchingRule(ctx context.Context, matchingRuleName string) ApiUpdateMatchingRuleRequest {
 	return ApiUpdateMatchingRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		matchingRuleName: matchingRuleName,
 	}
 }
 
 // Execute executes the request
-//  @return GetMatchingRule200Response
+//
+//	@return GetMatchingRule200Response
 func (a *MatchingRuleApiService) UpdateMatchingRuleExecute(r ApiUpdateMatchingRuleRequest) (*GetMatchingRule200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetMatchingRule200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetMatchingRule200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MatchingRuleApiService.UpdateMatchingRule")

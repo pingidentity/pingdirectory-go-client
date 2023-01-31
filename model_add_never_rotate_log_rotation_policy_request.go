@@ -17,8 +17,8 @@ import (
 // AddNeverRotateLogRotationPolicyRequest struct for AddNeverRotateLogRotationPolicyRequest
 type AddNeverRotateLogRotationPolicyRequest struct {
 	// Name of the new Log Rotation Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumneverRotateLogRotationPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                      `json:"policyName"`
+	Schemas    []EnumneverRotateLogRotationPolicySchemaUrn `json:"schemas"`
 	// A description for this Log Rotation Policy
 	Description *string `json:"description,omitempty"`
 }
@@ -56,7 +56,7 @@ func (o *AddNeverRotateLogRotationPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddNeverRotateLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -80,7 +80,7 @@ func (o *AddNeverRotateLogRotationPolicyRequest) GetSchemas() []EnumneverRotateL
 // and a boolean to check if the value has been set.
 func (o *AddNeverRotateLogRotationPolicyRequest) GetSchemasOk() ([]EnumneverRotateLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -103,7 +103,7 @@ func (o *AddNeverRotateLogRotationPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddNeverRotateLogRotationPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -171,5 +171,3 @@ func (v *NullableAddNeverRotateLogRotationPolicyRequest) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

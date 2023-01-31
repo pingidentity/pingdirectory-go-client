@@ -17,8 +17,8 @@ import (
 // AddAvailabilityStateHttpServletExtensionRequest struct for AddAvailabilityStateHttpServletExtensionRequest
 type AddAvailabilityStateHttpServletExtensionRequest struct {
 	// Name of the new HTTP Servlet Extension
-	ExtensionName string `json:"extensionName"`
-	Schemas []EnumavailabilityStateHttpServletExtensionSchemaUrn `json:"schemas"`
+	ExtensionName string                                               `json:"extensionName"`
+	Schemas       []EnumavailabilityStateHttpServletExtensionSchemaUrn `json:"schemas"`
 	// Specifies the base context path that HTTP clients should use to access this servlet. The value must start with a forward slash and must represent a valid HTTP context path.
 	BaseContextPath string `json:"baseContextPath"`
 	// Specifies the HTTP status code that the servlet should return if the server considers itself to be available.
@@ -80,7 +80,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetExtensionName() str
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetExtensionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionName, true
 }
@@ -104,7 +104,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetSchemas() []Enumava
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetSchemasOk() ([]EnumavailabilityStateHttpServletExtensionSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -128,7 +128,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetBaseContextPath() s
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetBaseContextPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BaseContextPath, true
 }
@@ -152,7 +152,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCode
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAvailableStatusCodeOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AvailableStatusCode, true
 }
@@ -176,7 +176,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCode(
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDegradedStatusCodeOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DegradedStatusCode, true
 }
@@ -200,7 +200,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCo
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetUnavailableStatusCodeOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.UnavailableStatusCode, true
 }
@@ -223,7 +223,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCode(
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetOverrideStatusCodeOk() (*int32, bool) {
 	if o == nil || isNil(o.OverrideStatusCode) {
-    return nil, false
+		return nil, false
 	}
 	return o.OverrideStatusCode, true
 }
@@ -255,7 +255,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetIncludeResponseBody
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetIncludeResponseBodyOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResponseBody) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResponseBody, true
 }
@@ -287,7 +287,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAdditionalResponseC
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetAdditionalResponseContentsOk() (*string, bool) {
 	if o == nil || isNil(o.AdditionalResponseContents) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdditionalResponseContents, true
 }
@@ -319,7 +319,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDescription() strin
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -351,7 +351,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCrossOriginPolicy()
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*string, bool) {
 	if o == nil || isNil(o.CrossOriginPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.CrossOriginPolicy, true
 }
@@ -383,7 +383,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetResponseHeader() []
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetResponseHeaderOk() ([]string, bool) {
 	if o == nil || isNil(o.ResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResponseHeader, true
 }
@@ -415,7 +415,7 @@ func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCorrelationIDRespon
 // and a boolean to check if the value has been set.
 func (o *AddAvailabilityStateHttpServletExtensionRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
 	if o == nil || isNil(o.CorrelationIDResponseHeader) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
 }
@@ -513,5 +513,3 @@ func (v *NullableAddAvailabilityStateHttpServletExtensionRequest) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,14 +18,14 @@ import (
 // AddCipherStreamProviderRequest - struct for AddCipherStreamProviderRequest
 type AddCipherStreamProviderRequest struct {
 	AddAmazonKeyManagementServiceCipherStreamProviderRequest *AddAmazonKeyManagementServiceCipherStreamProviderRequest
-	AddAmazonSecretsManagerCipherStreamProviderRequest *AddAmazonSecretsManagerCipherStreamProviderRequest
-	AddAzureKeyVaultCipherStreamProviderRequest *AddAzureKeyVaultCipherStreamProviderRequest
-	AddConjurCipherStreamProviderRequest *AddConjurCipherStreamProviderRequest
-	AddFileBasedCipherStreamProviderRequest *AddFileBasedCipherStreamProviderRequest
-	AddPkcs11CipherStreamProviderRequest *AddPkcs11CipherStreamProviderRequest
-	AddThirdPartyCipherStreamProviderRequest *AddThirdPartyCipherStreamProviderRequest
-	AddVaultCipherStreamProviderRequest *AddVaultCipherStreamProviderRequest
-	AddWaitForPassphraseCipherStreamProviderRequest *AddWaitForPassphraseCipherStreamProviderRequest
+	AddAmazonSecretsManagerCipherStreamProviderRequest       *AddAmazonSecretsManagerCipherStreamProviderRequest
+	AddAzureKeyVaultCipherStreamProviderRequest              *AddAzureKeyVaultCipherStreamProviderRequest
+	AddConjurCipherStreamProviderRequest                     *AddConjurCipherStreamProviderRequest
+	AddFileBasedCipherStreamProviderRequest                  *AddFileBasedCipherStreamProviderRequest
+	AddPkcs11CipherStreamProviderRequest                     *AddPkcs11CipherStreamProviderRequest
+	AddThirdPartyCipherStreamProviderRequest                 *AddThirdPartyCipherStreamProviderRequest
+	AddVaultCipherStreamProviderRequest                      *AddVaultCipherStreamProviderRequest
+	AddWaitForPassphraseCipherStreamProviderRequest          *AddWaitForPassphraseCipherStreamProviderRequest
 }
 
 // AddAmazonKeyManagementServiceCipherStreamProviderRequestAsAddCipherStreamProviderRequest is a convenience function that returns AddAmazonKeyManagementServiceCipherStreamProviderRequest wrapped in AddCipherStreamProviderRequest
@@ -90,7 +90,6 @@ func AddWaitForPassphraseCipherStreamProviderRequestAsAddCipherStreamProviderReq
 		AddWaitForPassphraseCipherStreamProviderRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddCipherStreamProviderRequest) UnmarshalJSON(data []byte) error {
@@ -275,7 +274,7 @@ func (src AddCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddCipherStreamProviderRequest) GetActualInstance() (interface{}) {
+func (obj *AddCipherStreamProviderRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -354,5 +353,3 @@ func (v *NullableAddCipherStreamProviderRequest) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

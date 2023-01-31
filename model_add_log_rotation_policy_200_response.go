@@ -17,10 +17,10 @@ import (
 
 // AddLogRotationPolicy200Response - struct for AddLogRotationPolicy200Response
 type AddLogRotationPolicy200Response struct {
-	FixedTimeLogRotationPolicyResponse *FixedTimeLogRotationPolicyResponse
+	FixedTimeLogRotationPolicyResponse   *FixedTimeLogRotationPolicyResponse
 	NeverRotateLogRotationPolicyResponse *NeverRotateLogRotationPolicyResponse
-	SizeLimitLogRotationPolicyResponse *SizeLimitLogRotationPolicyResponse
-	TimeLimitLogRotationPolicyResponse *TimeLimitLogRotationPolicyResponse
+	SizeLimitLogRotationPolicyResponse   *SizeLimitLogRotationPolicyResponse
+	TimeLimitLogRotationPolicyResponse   *TimeLimitLogRotationPolicyResponse
 }
 
 // FixedTimeLogRotationPolicyResponseAsAddLogRotationPolicy200Response is a convenience function that returns FixedTimeLogRotationPolicyResponse wrapped in AddLogRotationPolicy200Response
@@ -50,7 +50,6 @@ func TimeLimitLogRotationPolicyResponseAsAddLogRotationPolicy200Response(v *Time
 		TimeLimitLogRotationPolicyResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogRotationPolicy200Response) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddLogRotationPolicy200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogRotationPolicy200Response) GetActualInstance() (interface{}) {
+func (obj *AddLogRotationPolicy200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddLogRotationPolicy200Response) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

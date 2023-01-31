@@ -17,8 +17,8 @@ import (
 // AddAmazonAwsExternalServerRequest struct for AddAmazonAwsExternalServerRequest
 type AddAmazonAwsExternalServerRequest struct {
 	// Name of the new External Server
-	ServerName string `json:"serverName"`
-	Schemas []EnumamazonAwsExternalServerSchemaUrn `json:"schemas"`
+	ServerName string                                 `json:"serverName"`
+	Schemas    []EnumamazonAwsExternalServerSchemaUrn `json:"schemas"`
 	// The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. If this is not provided, then no aws-secret-access-key may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
 	AwsAccessKeyID *string `json:"awsAccessKeyID,omitempty"`
 	// The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. If this is not provided, then no aws-access-key-id may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations.
@@ -63,7 +63,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetServerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetServerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerName, true
 }
@@ -87,7 +87,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetSchemas() []EnumamazonAwsExternal
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetSchemasOk() ([]EnumamazonAwsExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsAccessKeyID() string {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsAccessKeyIDOk() (*string, bool) {
 	if o == nil || isNil(o.AwsAccessKeyID) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsAccessKeyID, true
 }
@@ -142,7 +142,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsSecretAccessKey() string {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsSecretAccessKeyOk() (*string, bool) {
 	if o == nil || isNil(o.AwsSecretAccessKey) {
-    return nil, false
+		return nil, false
 	}
 	return o.AwsSecretAccessKey, true
 }
@@ -175,7 +175,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetAwsRegionName() string {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetAwsRegionNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AwsRegionName, true
 }
@@ -198,7 +198,7 @@ func (o *AddAmazonAwsExternalServerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddAmazonAwsExternalServerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -275,5 +275,3 @@ func (v *NullableAddAmazonAwsExternalServerRequest) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

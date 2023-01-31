@@ -17,10 +17,10 @@ import (
 
 // AddResultCriteriaRequest - struct for AddResultCriteriaRequest
 type AddResultCriteriaRequest struct {
-	AddAggregateResultCriteriaRequest *AddAggregateResultCriteriaRequest
+	AddAggregateResultCriteriaRequest            *AddAggregateResultCriteriaRequest
 	AddReplicationAssuranceResultCriteriaRequest *AddReplicationAssuranceResultCriteriaRequest
-	AddSimpleResultCriteriaRequest *AddSimpleResultCriteriaRequest
-	AddThirdPartyResultCriteriaRequest *AddThirdPartyResultCriteriaRequest
+	AddSimpleResultCriteriaRequest               *AddSimpleResultCriteriaRequest
+	AddThirdPartyResultCriteriaRequest           *AddThirdPartyResultCriteriaRequest
 }
 
 // AddAggregateResultCriteriaRequestAsAddResultCriteriaRequest is a convenience function that returns AddAggregateResultCriteriaRequest wrapped in AddResultCriteriaRequest
@@ -50,7 +50,6 @@ func AddThirdPartyResultCriteriaRequestAsAddResultCriteriaRequest(v *AddThirdPar
 		AddThirdPartyResultCriteriaRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddResultCriteriaRequest) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddResultCriteriaRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddResultCriteriaRequest) GetActualInstance() (interface{}) {
+func (obj *AddResultCriteriaRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddResultCriteriaRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

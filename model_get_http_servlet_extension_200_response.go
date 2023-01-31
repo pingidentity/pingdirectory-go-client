@@ -18,17 +18,17 @@ import (
 // GetHttpServletExtension200Response - struct for GetHttpServletExtension200Response
 type GetHttpServletExtension200Response struct {
 	AvailabilityStateHttpServletExtensionResponse *AvailabilityStateHttpServletExtensionResponse
-	ConfigHttpServletExtensionResponse *ConfigHttpServletExtensionResponse
-	ConsentHttpServletExtensionResponse *ConsentHttpServletExtensionResponse
-	DelegatedAdminHttpServletExtensionResponse *DelegatedAdminHttpServletExtensionResponse
-	DirectoryRestApiHttpServletExtensionResponse *DirectoryRestApiHttpServletExtensionResponse
-	FileServerHttpServletExtensionResponse *FileServerHttpServletExtensionResponse
-	GroovyScriptedHttpServletExtensionResponse *GroovyScriptedHttpServletExtensionResponse
-	LdapMappedScimHttpServletExtensionResponse *LdapMappedScimHttpServletExtensionResponse
-	QuickstartHttpServletExtensionResponse *QuickstartHttpServletExtensionResponse
-	Scim2HttpServletExtensionResponse *Scim2HttpServletExtensionResponse
-	ThirdPartyHttpServletExtensionResponse *ThirdPartyHttpServletExtensionResponse
-	VelocityHttpServletExtensionResponse *VelocityHttpServletExtensionResponse
+	ConfigHttpServletExtensionResponse            *ConfigHttpServletExtensionResponse
+	ConsentHttpServletExtensionResponse           *ConsentHttpServletExtensionResponse
+	DelegatedAdminHttpServletExtensionResponse    *DelegatedAdminHttpServletExtensionResponse
+	DirectoryRestApiHttpServletExtensionResponse  *DirectoryRestApiHttpServletExtensionResponse
+	FileServerHttpServletExtensionResponse        *FileServerHttpServletExtensionResponse
+	GroovyScriptedHttpServletExtensionResponse    *GroovyScriptedHttpServletExtensionResponse
+	LdapMappedScimHttpServletExtensionResponse    *LdapMappedScimHttpServletExtensionResponse
+	QuickstartHttpServletExtensionResponse        *QuickstartHttpServletExtensionResponse
+	Scim2HttpServletExtensionResponse             *Scim2HttpServletExtensionResponse
+	ThirdPartyHttpServletExtensionResponse        *ThirdPartyHttpServletExtensionResponse
+	VelocityHttpServletExtensionResponse          *VelocityHttpServletExtensionResponse
 }
 
 // AvailabilityStateHttpServletExtensionResponseAsGetHttpServletExtension200Response is a convenience function that returns AvailabilityStateHttpServletExtensionResponse wrapped in GetHttpServletExtension200Response
@@ -114,7 +114,6 @@ func VelocityHttpServletExtensionResponseAsGetHttpServletExtension200Response(v 
 		VelocityHttpServletExtensionResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetHttpServletExtension200Response) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src GetHttpServletExtension200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetHttpServletExtension200Response) GetActualInstance() (interface{}) {
+func (obj *GetHttpServletExtension200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableGetHttpServletExtension200Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

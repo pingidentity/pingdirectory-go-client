@@ -17,8 +17,8 @@ import (
 // AddVaultCipherStreamProviderRequest struct for AddVaultCipherStreamProviderRequest
 type AddVaultCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                   `json:"providerName"`
+	Schemas      []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault server.
 	VaultExternalServer *string `json:"vaultExternalServer,omitempty"`
 	// The base URL needed to access the Vault server. The base URL should consist of the protocol (\"http\" or \"https\"), the server address (resolvable name or IP address), and the port number. For example, \"https://vault.example.com:8200/\".
@@ -80,7 +80,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -104,7 +104,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetSchemas() []EnumvaultCipherStre
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetSchemasOk() ([]EnumvaultCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -127,7 +127,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultExternalServerOk() (*string, bool) {
 	if o == nil || isNil(o.VaultExternalServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultExternalServer, true
 }
@@ -159,7 +159,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultServerBaseURI() []string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultServerBaseURIOk() ([]string, bool) {
 	if o == nil || isNil(o.VaultServerBaseURI) {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultServerBaseURI, true
 }
@@ -191,7 +191,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultAuthenticationMethod() str
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultAuthenticationMethodOk() (*string, bool) {
 	if o == nil || isNil(o.VaultAuthenticationMethod) {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultAuthenticationMethod, true
 }
@@ -224,7 +224,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultSecretPath() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultSecretPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretPath, true
 }
@@ -248,7 +248,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultSecretFieldName() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultSecretFieldNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretFieldName, true
 }
@@ -272,7 +272,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFile() s
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultEncryptionMetadataFile, true
 }
@@ -295,7 +295,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreFile, true
 }
@@ -327,7 +327,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -359,7 +359,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -391,7 +391,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -424,7 +424,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -513,5 +513,3 @@ func (v *NullableAddVaultCipherStreamProviderRequest) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

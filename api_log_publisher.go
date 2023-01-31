@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // LogPublisherApiService LogPublisherApi service
 type LogPublisherApiService service
 
 type ApiAddLogPublisherRequest struct {
-	ctx context.Context
-	ApiService *LogPublisherApiService
+	ctx                    context.Context
+	ApiService             *LogPublisherApiService
 	addLogPublisherRequest *AddLogPublisherRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddLogPublisherRequest) Execute() (*AddLogPublisher200Response, *http
 /*
 AddLogPublisher Add a new Log Publisher to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddLogPublisherRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddLogPublisherRequest
 */
 func (a *LogPublisherApiService) AddLogPublisher(ctx context.Context) ApiAddLogPublisherRequest {
 	return ApiAddLogPublisherRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddLogPublisher200Response
+//
+//	@return AddLogPublisher200Response
 func (a *LogPublisherApiService) AddLogPublisherExecute(r ApiAddLogPublisherRequest) (*AddLogPublisher200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddLogPublisher200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddLogPublisher200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogPublisherApiService.AddLogPublisher")
@@ -133,8 +133,8 @@ func (a *LogPublisherApiService) AddLogPublisherExecute(r ApiAddLogPublisherRequ
 }
 
 type ApiDeleteLogPublisherRequest struct {
-	ctx context.Context
-	ApiService *LogPublisherApiService
+	ctx              context.Context
+	ApiService       *LogPublisherApiService
 	logPublisherName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteLogPublisherRequest) Execute() (*http.Response, error) {
 /*
 DeleteLogPublisher Delete a Log Publisher
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logPublisherName Name of the Log Publisher to be deleted
- @return ApiDeleteLogPublisherRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logPublisherName Name of the Log Publisher to be deleted
+	@return ApiDeleteLogPublisherRequest
 */
 func (a *LogPublisherApiService) DeleteLogPublisher(ctx context.Context, logPublisherName string) ApiDeleteLogPublisherRequest {
 	return ApiDeleteLogPublisherRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		logPublisherName: logPublisherName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *LogPublisherApiService) DeleteLogPublisher(ctx context.Context, logPubl
 // Execute executes the request
 func (a *LogPublisherApiService) DeleteLogPublisherExecute(r ApiDeleteLogPublisherRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogPublisherApiService.DeleteLogPublisher")
@@ -223,8 +223,8 @@ func (a *LogPublisherApiService) DeleteLogPublisherExecute(r ApiDeleteLogPublish
 }
 
 type ApiGetLogPublisherRequest struct {
-	ctx context.Context
-	ApiService *LogPublisherApiService
+	ctx              context.Context
+	ApiService       *LogPublisherApiService
 	logPublisherName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetLogPublisherRequest) Execute() (*GetLogPublisher200Response, *http
 /*
 GetLogPublisher Returns a single Log Publisher
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logPublisherName Name of the Log Publisher to be read
- @return ApiGetLogPublisherRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logPublisherName Name of the Log Publisher to be read
+	@return ApiGetLogPublisherRequest
 */
 func (a *LogPublisherApiService) GetLogPublisher(ctx context.Context, logPublisherName string) ApiGetLogPublisherRequest {
 	return ApiGetLogPublisherRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		logPublisherName: logPublisherName,
 	}
 }
 
 // Execute executes the request
-//  @return GetLogPublisher200Response
+//
+//	@return GetLogPublisher200Response
 func (a *LogPublisherApiService) GetLogPublisherExecute(r ApiGetLogPublisherRequest) (*GetLogPublisher200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLogPublisher200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLogPublisher200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogPublisherApiService.GetLogPublisher")
@@ -324,10 +325,10 @@ func (a *LogPublisherApiService) GetLogPublisherExecute(r ApiGetLogPublisherRequ
 }
 
 type ApiUpdateLogPublisherRequest struct {
-	ctx context.Context
-	ApiService *LogPublisherApiService
+	ctx              context.Context
+	ApiService       *LogPublisherApiService
 	logPublisherName string
-	updateRequest *UpdateRequest
+	updateRequest    *UpdateRequest
 }
 
 // Update an existing Log Publisher
@@ -343,26 +344,27 @@ func (r ApiUpdateLogPublisherRequest) Execute() (*GetLogPublisher200Response, *h
 /*
 UpdateLogPublisher Update an existing Log Publisher by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param logPublisherName Name of the Log Publisher to be updated
- @return ApiUpdateLogPublisherRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param logPublisherName Name of the Log Publisher to be updated
+	@return ApiUpdateLogPublisherRequest
 */
 func (a *LogPublisherApiService) UpdateLogPublisher(ctx context.Context, logPublisherName string) ApiUpdateLogPublisherRequest {
 	return ApiUpdateLogPublisherRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		logPublisherName: logPublisherName,
 	}
 }
 
 // Execute executes the request
-//  @return GetLogPublisher200Response
+//
+//	@return GetLogPublisher200Response
 func (a *LogPublisherApiService) UpdateLogPublisherExecute(r ApiUpdateLogPublisherRequest) (*GetLogPublisher200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLogPublisher200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLogPublisher200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LogPublisherApiService.UpdateLogPublisher")

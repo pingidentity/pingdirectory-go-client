@@ -106,4 +106,3 @@ func (v *NullableEnumdirectoryRestApiHttpServletExtensionSchemaUrn) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

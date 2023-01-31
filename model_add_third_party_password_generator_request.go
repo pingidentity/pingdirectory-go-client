@@ -17,8 +17,8 @@ import (
 // AddThirdPartyPasswordGeneratorRequest struct for AddThirdPartyPasswordGeneratorRequest
 type AddThirdPartyPasswordGeneratorRequest struct {
 	// Name of the new Password Generator
-	GeneratorName string `json:"generatorName"`
-	Schemas []EnumthirdPartyPasswordGeneratorSchemaUrn `json:"schemas"`
+	GeneratorName string                                     `json:"generatorName"`
+	Schemas       []EnumthirdPartyPasswordGeneratorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Password Generator.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party Password Generator. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GeneratorName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyPasswordGeneratorRequest) GetSchemas() []EnumthirdPartyPas
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordGeneratorRequest) GetSchemasOk() ([]EnumthirdPartyPasswordGeneratorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyPasswordGeneratorRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordGeneratorRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyPasswordGeneratorRequest) GetExtensionArgument() []string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordGeneratorRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyPasswordGeneratorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordGeneratorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyPasswordGeneratorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordGeneratorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyPasswordGeneratorRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

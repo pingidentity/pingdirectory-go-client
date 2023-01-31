@@ -16,9 +16,9 @@ import (
 
 // TelephoneNumberAttributeSyntaxResponse struct for TelephoneNumberAttributeSyntaxResponse
 type TelephoneNumberAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumtelephoneNumberAttributeSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumtelephoneNumberAttributeSyntaxSchemaUrn      `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether to require telephone number values to strictly comply with the standard definition for this syntax.
@@ -62,7 +62,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetSchemas() []EnumtelephoneNum
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetSchemasOk() ([]EnumtelephoneNumberAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetStrictFormat() bool {
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetStrictFormatOk() (*bool, bool) {
 	if o == nil || isNil(o.StrictFormat) {
-    return nil, false
+		return nil, false
 	}
 	return o.StrictFormat, true
 }
@@ -207,7 +207,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -230,7 +230,7 @@ func (o *TelephoneNumberAttributeSyntaxResponse) GetRequireBinaryTransfer() bool
 // and a boolean to check if the value has been set.
 func (o *TelephoneNumberAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -310,5 +310,3 @@ func (v *NullableTelephoneNumberAttributeSyntaxResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

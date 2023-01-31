@@ -17,8 +17,8 @@ import (
 // AddSubjectAttributeToUserAttributeCertificateMapperRequest struct for AddSubjectAttributeToUserAttributeCertificateMapperRequest
 type AddSubjectAttributeToUserAttributeCertificateMapperRequest struct {
 	// Name of the new Certificate Mapper
-	MapperName string `json:"mapperName"`
-	Schemas []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
+	MapperName string                                                          `json:"mapperName"`
+	Schemas    []EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn `json:"schemas"`
 	// Specifies a mapping between certificate attributes and user attributes.
 	SubjectAttributeMapping []string `json:"subjectAttributeMapping"`
 	// Specifies the base DNs that should be used when performing searches to map the client certificate to a user entry.
@@ -64,7 +64,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetMapperNa
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetMapperNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MapperName, true
 }
@@ -88,7 +88,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetSchemas(
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetSchemasOk() ([]EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetSubjectA
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetSubjectAttributeMappingOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SubjectAttributeMapping, true
 }
@@ -135,7 +135,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetUserBase
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetUserBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.UserBaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.UserBaseDN, true
 }
@@ -167,7 +167,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetDescript
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetEnabled(
 // and a boolean to check if the value has been set.
 func (o *AddSubjectAttributeToUserAttributeCertificateMapperRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddSubjectAttributeToUserAttributeCertificateMapperRequest) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

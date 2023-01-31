@@ -16,16 +16,16 @@ import (
 
 // ConsoleJsonAccessLogPublisherResponse struct for ConsoleJsonAccessLogPublisherResponse
 type ConsoleJsonAccessLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumconsoleJsonAccessLogPublisherSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumconsoleJsonAccessLogPublisherSchemaUrn       `json:"schemas"`
 	// Name of the Log Publisher
 	Id string `json:"id"`
 	// Indicates whether the Console JSON Access Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the JSON objects should be formatted to span multiple lines with a single element on each line. The multi-line format is potentially more user friendly (if administrators may need to look at the log files), but each message will be larger because of the additional spaces and end-of-line markers.
-	WriteMultiLineMessages *bool `json:"writeMultiLineMessages,omitempty"`
-	OutputLocation *EnumlogPublisherOutputLocationProp `json:"outputLocation,omitempty"`
+	WriteMultiLineMessages *bool                               `json:"writeMultiLineMessages,omitempty"`
+	OutputLocation         *EnumlogPublisherOutputLocationProp `json:"outputLocation,omitempty"`
 	// Indicates whether log messages should include the product name for the Directory Server.
 	IncludeProductName *bool `json:"includeProductName,omitempty"`
 	// Indicates whether log messages should include the instance name for the Directory Server.
@@ -103,7 +103,7 @@ type ConsoleJsonAccessLogPublisherResponse struct {
 	// Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher.
 	SearchReferenceCriteria *string `json:"searchReferenceCriteria,omitempty"`
 	// A description for this Log Publisher
-	Description *string `json:"description,omitempty"`
+	Description          *string                                   `json:"description,omitempty"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -140,7 +140,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -172,7 +172,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -205,7 +205,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetSchemas() []EnumconsoleJsonAc
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetSchemasOk() ([]EnumconsoleJsonAccessLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -229,7 +229,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -253,7 +253,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -276,7 +276,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetWriteMultiLineMessages() bool
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetWriteMultiLineMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.WriteMultiLineMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.WriteMultiLineMessages, true
 }
@@ -308,7 +308,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetOutputLocation() EnumlogPubli
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetOutputLocationOk() (*EnumlogPublisherOutputLocationProp, bool) {
 	if o == nil || isNil(o.OutputLocation) {
-    return nil, false
+		return nil, false
 	}
 	return o.OutputLocation, true
 }
@@ -340,7 +340,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -372,7 +372,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -404,7 +404,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -436,7 +436,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -468,7 +468,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequesterDN() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequesterDNOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterDN, true
 }
@@ -500,7 +500,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequesterIPAddress() b
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequesterIPAddressOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterIPAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
 }
@@ -532,7 +532,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInResult
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInResultMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInResultMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInResultMessages, true
 }
@@ -564,7 +564,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInSearch
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchEntryMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInSearchEntryMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInSearchEntryMessages, true
 }
@@ -596,7 +596,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInSearch
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchReferenceMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInSearchReferenceMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInSearchReferenceMessages, true
 }
@@ -628,7 +628,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInInterm
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestDetailsInIntermediateResponseMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInIntermediateResponseMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInIntermediateResponseMessages, true
 }
@@ -660,7 +660,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeResultCodeNames() bool
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeResultCodeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResultCodeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResultCodeNames, true
 }
@@ -692,7 +692,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeExtendedSearchRequestD
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeExtendedSearchRequestDetailsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeExtendedSearchRequestDetails) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeExtendedSearchRequestDetails, true
 }
@@ -724,7 +724,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeAddAttributeNames() bo
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeAddAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeAddAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAddAttributeNames, true
 }
@@ -756,7 +756,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeModifyAttributeNames()
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeModifyAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeModifyAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeModifyAttributeNames, true
 }
@@ -788,7 +788,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeSearchEntryAttributeNa
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeSearchEntryAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeSearchEntryAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeSearchEntryAttributeNames, true
 }
@@ -820,7 +820,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestControls() bool
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeRequestControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestControls, true
 }
@@ -852,7 +852,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeResponseControls() boo
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeResponseControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResponseControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResponseControls, true
 }
@@ -884,7 +884,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeReplicationChangeID() 
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetIncludeReplicationChangeIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeReplicationChangeID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
 }
@@ -916,7 +916,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPos
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
 }
@@ -948,7 +948,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetMaxStringLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxStringLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxStringLength, true
 }
@@ -980,7 +980,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogFieldBehavior() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogFieldBehaviorOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldBehavior, true
 }
@@ -1012,7 +1012,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogConnects() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogConnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogConnects, true
 }
@@ -1044,7 +1044,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogDisconnects() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogDisconnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDisconnects, true
 }
@@ -1076,7 +1076,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogSecurityNegotiation() bool
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -1108,7 +1108,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogClientCertificates() bool 
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogClientCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogClientCertificates, true
 }
@@ -1140,7 +1140,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogRequests, true
 }
@@ -1172,7 +1172,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogResults() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogResults, true
 }
@@ -1204,7 +1204,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogSearchEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchEntries, true
 }
@@ -1236,7 +1236,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogSearchReferences() bool {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchReferences) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchReferences, true
 }
@@ -1268,7 +1268,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLogIntermediateResponses() bo
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -1300,7 +1300,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetSuppressInternalOperations() 
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -1332,7 +1332,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetSuppressReplicationOperations
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -1364,7 +1364,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetCorrelateRequestsAndResults()
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorrelateRequestsAndResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
 }
@@ -1396,7 +1396,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -1428,7 +1428,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -1460,7 +1460,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -1492,7 +1492,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetSearchEntryCriteria() string 
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryCriteria, true
 }
@@ -1524,7 +1524,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetSearchReferenceCriteria() str
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
 }
@@ -1556,7 +1556,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1588,7 +1588,7 @@ func (o *ConsoleJsonAccessLogPublisherResponse) GetLoggingErrorBehavior() Enumlo
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1788,5 +1788,3 @@ func (v *NullableConsoleJsonAccessLogPublisherResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

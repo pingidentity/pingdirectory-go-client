@@ -17,7 +17,7 @@ import (
 
 // AddPassThroughAuthenticationHandlerRequest - struct for AddPassThroughAuthenticationHandlerRequest
 type AddPassThroughAuthenticationHandlerRequest struct {
-	AddLdapPassThroughAuthenticationHandlerRequest *AddLdapPassThroughAuthenticationHandlerRequest
+	AddLdapPassThroughAuthenticationHandlerRequest       *AddLdapPassThroughAuthenticationHandlerRequest
 	AddThirdPartyPassThroughAuthenticationHandlerRequest *AddThirdPartyPassThroughAuthenticationHandlerRequest
 }
 
@@ -34,7 +34,6 @@ func AddThirdPartyPassThroughAuthenticationHandlerRequestAsAddPassThroughAuthent
 		AddThirdPartyPassThroughAuthenticationHandlerRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddPassThroughAuthenticationHandlerRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, err
 }
 
 // Get the actual instance
-func (obj *AddPassThroughAuthenticationHandlerRequest) GetActualInstance() (interface{}) {
+func (obj *AddPassThroughAuthenticationHandlerRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddPassThroughAuthenticationHandlerRequest) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

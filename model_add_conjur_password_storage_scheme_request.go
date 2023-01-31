@@ -17,8 +17,8 @@ import (
 // AddConjurPasswordStorageSchemeRequest struct for AddConjurPasswordStorageSchemeRequest
 type AddConjurPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumconjurPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                     `json:"schemeName"`
+	Schemas    []EnumconjurPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing user passwords.
 	ConjurExternalServer string `json:"conjurExternalServer"`
 	// A description for this Password Storage Scheme
@@ -62,7 +62,7 @@ func (o *AddConjurPasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -86,7 +86,7 @@ func (o *AddConjurPasswordStorageSchemeRequest) GetSchemas() []EnumconjurPasswor
 // and a boolean to check if the value has been set.
 func (o *AddConjurPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumconjurPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -110,7 +110,7 @@ func (o *AddConjurPasswordStorageSchemeRequest) GetConjurExternalServer() string
 // and a boolean to check if the value has been set.
 func (o *AddConjurPasswordStorageSchemeRequest) GetConjurExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurExternalServer, true
 }
@@ -133,7 +133,7 @@ func (o *AddConjurPasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -166,7 +166,7 @@ func (o *AddConjurPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -231,5 +231,3 @@ func (v *NullableAddConjurPasswordStorageSchemeRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

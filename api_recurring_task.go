@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // RecurringTaskApiService RecurringTaskApi service
 type RecurringTaskApiService service
 
 type ApiAddRecurringTaskRequest struct {
-	ctx context.Context
-	ApiService *RecurringTaskApiService
+	ctx                     context.Context
+	ApiService              *RecurringTaskApiService
 	addRecurringTaskRequest *AddRecurringTaskRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddRecurringTaskRequest) Execute() (*AddRecurringTask200Response, *ht
 /*
 AddRecurringTask Add a new Recurring Task to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddRecurringTaskRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) AddRecurringTask(ctx context.Context) ApiAddRecurringTaskRequest {
 	return ApiAddRecurringTaskRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddRecurringTask200Response
+//
+//	@return AddRecurringTask200Response
 func (a *RecurringTaskApiService) AddRecurringTaskExecute(r ApiAddRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRecurringTask200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRecurringTask200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.AddRecurringTask")
@@ -133,8 +133,8 @@ func (a *RecurringTaskApiService) AddRecurringTaskExecute(r ApiAddRecurringTaskR
 }
 
 type ApiDeleteRecurringTaskRequest struct {
-	ctx context.Context
-	ApiService *RecurringTaskApiService
+	ctx               context.Context
+	ApiService        *RecurringTaskApiService
 	recurringTaskName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteRecurringTaskRequest) Execute() (*http.Response, error) {
 /*
 DeleteRecurringTask Delete a Recurring Task
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param recurringTaskName Name of the Recurring Task to be deleted
- @return ApiDeleteRecurringTaskRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringTaskName Name of the Recurring Task to be deleted
+	@return ApiDeleteRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) DeleteRecurringTask(ctx context.Context, recurringTaskName string) ApiDeleteRecurringTaskRequest {
 	return ApiDeleteRecurringTaskRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		recurringTaskName: recurringTaskName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *RecurringTaskApiService) DeleteRecurringTask(ctx context.Context, recur
 // Execute executes the request
 func (a *RecurringTaskApiService) DeleteRecurringTaskExecute(r ApiDeleteRecurringTaskRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.DeleteRecurringTask")
@@ -223,8 +223,8 @@ func (a *RecurringTaskApiService) DeleteRecurringTaskExecute(r ApiDeleteRecurrin
 }
 
 type ApiGetRecurringTaskRequest struct {
-	ctx context.Context
-	ApiService *RecurringTaskApiService
+	ctx               context.Context
+	ApiService        *RecurringTaskApiService
 	recurringTaskName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetRecurringTaskRequest) Execute() (*AddRecurringTask200Response, *ht
 /*
 GetRecurringTask Returns a single Recurring Task
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param recurringTaskName Name of the Recurring Task to be read
- @return ApiGetRecurringTaskRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringTaskName Name of the Recurring Task to be read
+	@return ApiGetRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) GetRecurringTask(ctx context.Context, recurringTaskName string) ApiGetRecurringTaskRequest {
 	return ApiGetRecurringTaskRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		recurringTaskName: recurringTaskName,
 	}
 }
 
 // Execute executes the request
-//  @return AddRecurringTask200Response
+//
+//	@return AddRecurringTask200Response
 func (a *RecurringTaskApiService) GetRecurringTaskExecute(r ApiGetRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRecurringTask200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRecurringTask200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.GetRecurringTask")
@@ -324,10 +325,10 @@ func (a *RecurringTaskApiService) GetRecurringTaskExecute(r ApiGetRecurringTaskR
 }
 
 type ApiUpdateRecurringTaskRequest struct {
-	ctx context.Context
-	ApiService *RecurringTaskApiService
+	ctx               context.Context
+	ApiService        *RecurringTaskApiService
 	recurringTaskName string
-	updateRequest *UpdateRequest
+	updateRequest     *UpdateRequest
 }
 
 // Update an existing Recurring Task
@@ -343,26 +344,27 @@ func (r ApiUpdateRecurringTaskRequest) Execute() (*AddRecurringTask200Response, 
 /*
 UpdateRecurringTask Update an existing Recurring Task by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param recurringTaskName Name of the Recurring Task to be updated
- @return ApiUpdateRecurringTaskRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringTaskName Name of the Recurring Task to be updated
+	@return ApiUpdateRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) UpdateRecurringTask(ctx context.Context, recurringTaskName string) ApiUpdateRecurringTaskRequest {
 	return ApiUpdateRecurringTaskRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		recurringTaskName: recurringTaskName,
 	}
 }
 
 // Execute executes the request
-//  @return AddRecurringTask200Response
+//
+//	@return AddRecurringTask200Response
 func (a *RecurringTaskApiService) UpdateRecurringTaskExecute(r ApiUpdateRecurringTaskRequest) (*AddRecurringTask200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddRecurringTask200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddRecurringTask200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RecurringTaskApiService.UpdateRecurringTask")

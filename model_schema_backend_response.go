@@ -16,15 +16,15 @@ import (
 
 // SchemaBackendResponse struct for SchemaBackendResponse
 type SchemaBackendResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumschemaBackendSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumschemaBackendSchemaUrn                       `json:"schemas"`
 	// Name of the Backend
 	Id string `json:"id"`
 	// Specifies a name to identify the associated backend.
 	BackendID string `json:"backendID"`
 	// Specifies the base DN(s) for the data that the backend handles.
-	BaseDN []string `json:"baseDN"`
+	BaseDN          []string                       `json:"baseDN"`
 	WritabilityMode EnumbackendWritabilityModeProp `json:"writabilityMode"`
 	// Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property.
 	SchemaEntryDN []string `json:"schemaEntryDN,omitempty"`
@@ -83,7 +83,7 @@ func (o *SchemaBackendResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -115,7 +115,7 @@ func (o *SchemaBackendResponse) GetUrnpingidentityschemasconfigurationmessages20
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -148,7 +148,7 @@ func (o *SchemaBackendResponse) GetSchemas() []EnumschemaBackendSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetSchemasOk() ([]EnumschemaBackendSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -172,7 +172,7 @@ func (o *SchemaBackendResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -196,7 +196,7 @@ func (o *SchemaBackendResponse) GetBackendID() string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetBackendIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.BackendID, true
 }
@@ -220,7 +220,7 @@ func (o *SchemaBackendResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -244,7 +244,7 @@ func (o *SchemaBackendResponse) GetWritabilityMode() EnumbackendWritabilityModeP
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetWritabilityModeOk() (*EnumbackendWritabilityModeProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.WritabilityMode, true
 }
@@ -267,7 +267,7 @@ func (o *SchemaBackendResponse) GetSchemaEntryDN() []string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetSchemaEntryDNOk() ([]string, bool) {
 	if o == nil || isNil(o.SchemaEntryDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.SchemaEntryDN, true
 }
@@ -300,7 +300,7 @@ func (o *SchemaBackendResponse) GetShowAllAttributes() bool {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetShowAllAttributesOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ShowAllAttributes, true
 }
@@ -323,7 +323,7 @@ func (o *SchemaBackendResponse) GetReadOnlySchemaFile() []string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetReadOnlySchemaFileOk() ([]string, bool) {
 	if o == nil || isNil(o.ReadOnlySchemaFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReadOnlySchemaFile, true
 }
@@ -355,7 +355,7 @@ func (o *SchemaBackendResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -388,7 +388,7 @@ func (o *SchemaBackendResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -411,7 +411,7 @@ func (o *SchemaBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
 }
@@ -443,7 +443,7 @@ func (o *SchemaBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
 	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
 }
@@ -475,7 +475,7 @@ func (o *SchemaBackendResponse) GetBackupFilePermissions() string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 	if o == nil || isNil(o.BackupFilePermissions) {
-    return nil, false
+		return nil, false
 	}
 	return o.BackupFilePermissions, true
 }
@@ -507,7 +507,7 @@ func (o *SchemaBackendResponse) GetNotificationManager() string {
 // and a boolean to check if the value has been set.
 func (o *SchemaBackendResponse) GetNotificationManagerOk() (*string, bool) {
 	if o == nil || isNil(o.NotificationManager) {
-    return nil, false
+		return nil, false
 	}
 	return o.NotificationManager, true
 }
@@ -614,5 +614,3 @@ func (v *NullableSchemaBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

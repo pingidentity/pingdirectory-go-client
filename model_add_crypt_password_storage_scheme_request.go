@@ -17,8 +17,8 @@ import (
 // AddCryptPasswordStorageSchemeRequest struct for AddCryptPasswordStorageSchemeRequest
 type AddCryptPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName                string                                                  `json:"schemeName"`
+	Schemas                   []EnumcryptPasswordStorageSchemeSchemaUrn               `json:"schemas"`
 	PasswordEncodingMechanism *EnumpasswordStorageSchemePasswordEncodingMechanismProp `json:"passwordEncodingMechanism,omitempty"`
 	// Specifies the number of digest rounds to use for the SHA-2 encodings. This will not be used for the legacy or MD5-based encodings.
 	NumDigestRounds *int32 `json:"numDigestRounds,omitempty"`
@@ -64,7 +64,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -88,7 +88,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetSchemas() []EnumcryptPasswordS
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumcryptPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -111,7 +111,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetPasswordEncodingMechanism() En
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetPasswordEncodingMechanismOk() (*EnumpasswordStorageSchemePasswordEncodingMechanismProp, bool) {
 	if o == nil || isNil(o.PasswordEncodingMechanism) {
-    return nil, false
+		return nil, false
 	}
 	return o.PasswordEncodingMechanism, true
 }
@@ -143,7 +143,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRounds() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetNumDigestRoundsOk() (*int32, bool) {
 	if o == nil || isNil(o.NumDigestRounds) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumDigestRounds, true
 }
@@ -175,7 +175,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -207,7 +207,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -240,7 +240,7 @@ func (o *AddCryptPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddCryptPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -311,5 +311,3 @@ func (v *NullableAddCryptPasswordStorageSchemeRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

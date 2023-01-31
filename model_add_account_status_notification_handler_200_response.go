@@ -17,12 +17,12 @@ import (
 
 // AddAccountStatusNotificationHandler200Response - struct for AddAccountStatusNotificationHandler200Response
 type AddAccountStatusNotificationHandler200Response struct {
-	AdminAlertAccountStatusNotificationHandlerResponse *AdminAlertAccountStatusNotificationHandlerResponse
-	ErrorLogAccountStatusNotificationHandlerResponse *ErrorLogAccountStatusNotificationHandlerResponse
+	AdminAlertAccountStatusNotificationHandlerResponse     *AdminAlertAccountStatusNotificationHandlerResponse
+	ErrorLogAccountStatusNotificationHandlerResponse       *ErrorLogAccountStatusNotificationHandlerResponse
 	GroovyScriptedAccountStatusNotificationHandlerResponse *GroovyScriptedAccountStatusNotificationHandlerResponse
 	MultiPartEmailAccountStatusNotificationHandlerResponse *MultiPartEmailAccountStatusNotificationHandlerResponse
-	SmtpAccountStatusNotificationHandlerResponse *SmtpAccountStatusNotificationHandlerResponse
-	ThirdPartyAccountStatusNotificationHandlerResponse *ThirdPartyAccountStatusNotificationHandlerResponse
+	SmtpAccountStatusNotificationHandlerResponse           *SmtpAccountStatusNotificationHandlerResponse
+	ThirdPartyAccountStatusNotificationHandlerResponse     *ThirdPartyAccountStatusNotificationHandlerResponse
 }
 
 // AdminAlertAccountStatusNotificationHandlerResponseAsAddAccountStatusNotificationHandler200Response is a convenience function that returns AdminAlertAccountStatusNotificationHandlerResponse wrapped in AddAccountStatusNotificationHandler200Response
@@ -66,7 +66,6 @@ func ThirdPartyAccountStatusNotificationHandlerResponseAsAddAccountStatusNotific
 		ThirdPartyAccountStatusNotificationHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddAccountStatusNotificationHandler200Response) UnmarshalJSON(data []byte) error {
@@ -197,7 +196,7 @@ func (src AddAccountStatusNotificationHandler200Response) MarshalJSON() ([]byte,
 }
 
 // Get the actual instance
-func (obj *AddAccountStatusNotificationHandler200Response) GetActualInstance() (interface{}) {
+func (obj *AddAccountStatusNotificationHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -264,5 +263,3 @@ func (v *NullableAddAccountStatusNotificationHandler200Response) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 // AddFixedTimeLogRotationPolicyRequest struct for AddFixedTimeLogRotationPolicyRequest
 type AddFixedTimeLogRotationPolicyRequest struct {
 	// Name of the new Log Rotation Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumfixedTimeLogRotationPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                    `json:"policyName"`
+	Schemas    []EnumfixedTimeLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the time of day at which log rotation should occur.
 	TimeOfDay []string `json:"timeOfDay"`
 	// A description for this Log Rotation Policy
@@ -59,7 +59,7 @@ func (o *AddFixedTimeLogRotationPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddFixedTimeLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddFixedTimeLogRotationPolicyRequest) GetSchemas() []EnumfixedTimeLogRo
 // and a boolean to check if the value has been set.
 func (o *AddFixedTimeLogRotationPolicyRequest) GetSchemasOk() ([]EnumfixedTimeLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddFixedTimeLogRotationPolicyRequest) GetTimeOfDay() []string {
 // and a boolean to check if the value has been set.
 func (o *AddFixedTimeLogRotationPolicyRequest) GetTimeOfDayOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeOfDay, true
 }
@@ -130,7 +130,7 @@ func (o *AddFixedTimeLogRotationPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddFixedTimeLogRotationPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddFixedTimeLogRotationPolicyRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

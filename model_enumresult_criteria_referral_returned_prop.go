@@ -20,9 +20,9 @@ type EnumresultCriteriaReferralReturnedProp string
 
 // List of Enumresult-criteria-referralReturnedProp
 const (
-	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_REQUIRED EnumresultCriteriaReferralReturnedProp = "required"
+	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_REQUIRED   EnumresultCriteriaReferralReturnedProp = "required"
 	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_PROHIBITED EnumresultCriteriaReferralReturnedProp = "prohibited"
-	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_OPTIONAL EnumresultCriteriaReferralReturnedProp = "optional"
+	ENUMRESULTCRITERIAREFERRALRETURNEDPROP_OPTIONAL   EnumresultCriteriaReferralReturnedProp = "optional"
 )
 
 // All allowed values of EnumresultCriteriaReferralReturnedProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaReferralReturnedProp) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

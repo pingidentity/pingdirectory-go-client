@@ -17,8 +17,8 @@ import (
 // AddThirdPartyHttpOperationLogPublisherRequest struct for AddThirdPartyHttpOperationLogPublisherRequest
 type AddThirdPartyHttpOperationLogPublisherRequest struct {
 	// Name of the new Log Publisher
-	PublisherName string `json:"publisherName"`
-	Schemas []EnumthirdPartyHttpOperationLogPublisherSchemaUrn `json:"schemas"`
+	PublisherName string                                             `json:"publisherName"`
+	Schemas       []EnumthirdPartyHttpOperationLogPublisherSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party HTTP Operation Log Publisher.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party HTTP Operation Log Publisher. Each configuration property should be given in the form 'name=value'.
@@ -26,7 +26,7 @@ type AddThirdPartyHttpOperationLogPublisherRequest struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -65,7 +65,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetPublisherName() strin
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetPublisherNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PublisherName, true
 }
@@ -89,7 +89,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetSchemas() []Enumthird
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetSchemasOk() ([]EnumthirdPartyHttpOperationLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionClass() stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -136,7 +136,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionArgument() [
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -168,7 +168,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetDescription() string 
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,7 +201,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -224,7 +224,7 @@ func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetLoggingErrorBehavior(
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyHttpOperationLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -304,5 +304,3 @@ func (v *NullableAddThirdPartyHttpOperationLogPublisherRequest) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

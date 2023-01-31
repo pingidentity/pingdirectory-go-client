@@ -18,7 +18,7 @@ import (
 // AddOauthTokenHandler200Response - struct for AddOauthTokenHandler200Response
 type AddOauthTokenHandler200Response struct {
 	GroovyScriptedOauthTokenHandlerResponse *GroovyScriptedOauthTokenHandlerResponse
-	ThirdPartyOauthTokenHandlerResponse *ThirdPartyOauthTokenHandlerResponse
+	ThirdPartyOauthTokenHandlerResponse     *ThirdPartyOauthTokenHandlerResponse
 }
 
 // GroovyScriptedOauthTokenHandlerResponseAsAddOauthTokenHandler200Response is a convenience function that returns GroovyScriptedOauthTokenHandlerResponse wrapped in AddOauthTokenHandler200Response
@@ -34,7 +34,6 @@ func ThirdPartyOauthTokenHandlerResponseAsAddOauthTokenHandler200Response(v *Thi
 		ThirdPartyOauthTokenHandlerResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddOauthTokenHandler200Response) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddOauthTokenHandler200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddOauthTokenHandler200Response) GetActualInstance() (interface{}) {
+func (obj *AddOauthTokenHandler200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddOauthTokenHandler200Response) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

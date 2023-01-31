@@ -17,8 +17,8 @@ import (
 // AddRootDseRequestCriteriaRequest struct for AddRootDseRequestCriteriaRequest
 type AddRootDseRequestCriteriaRequest struct {
 	// Name of the new Request Criteria
-	CriteriaName string `json:"criteriaName"`
-	Schemas []EnumrootDseRequestCriteriaSchemaUrn `json:"schemas"`
+	CriteriaName  string                                 `json:"criteriaName"`
+	Schemas       []EnumrootDseRequestCriteriaSchemaUrn  `json:"schemas"`
 	OperationType []EnumrequestCriteriaOperationTypeProp `json:"operationType,omitempty"`
 	// A description for this Request Criteria
 	Description *string `json:"description,omitempty"`
@@ -57,7 +57,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetCriteriaName() string {
 // and a boolean to check if the value has been set.
 func (o *AddRootDseRequestCriteriaRequest) GetCriteriaNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CriteriaName, true
 }
@@ -81,7 +81,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetSchemas() []EnumrootDseRequestCrit
 // and a boolean to check if the value has been set.
 func (o *AddRootDseRequestCriteriaRequest) GetSchemasOk() ([]EnumrootDseRequestCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -104,7 +104,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetOperationType() []EnumrequestCrite
 // and a boolean to check if the value has been set.
 func (o *AddRootDseRequestCriteriaRequest) GetOperationTypeOk() ([]EnumrequestCriteriaOperationTypeProp, bool) {
 	if o == nil || isNil(o.OperationType) {
-    return nil, false
+		return nil, false
 	}
 	return o.OperationType, true
 }
@@ -136,7 +136,7 @@ func (o *AddRootDseRequestCriteriaRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddRootDseRequestCriteriaRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -207,5 +207,3 @@ func (v *NullableAddRootDseRequestCriteriaRequest) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

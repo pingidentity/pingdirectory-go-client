@@ -18,7 +18,7 @@ import (
 // AddLogFieldMappingRequest - struct for AddLogFieldMappingRequest
 type AddLogFieldMappingRequest struct {
 	AddAccessLogFieldMappingRequest *AddAccessLogFieldMappingRequest
-	AddErrorLogFieldMappingRequest *AddErrorLogFieldMappingRequest
+	AddErrorLogFieldMappingRequest  *AddErrorLogFieldMappingRequest
 }
 
 // AddAccessLogFieldMappingRequestAsAddLogFieldMappingRequest is a convenience function that returns AddAccessLogFieldMappingRequest wrapped in AddLogFieldMappingRequest
@@ -34,7 +34,6 @@ func AddErrorLogFieldMappingRequestAsAddLogFieldMappingRequest(v *AddErrorLogFie
 		AddErrorLogFieldMappingRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddLogFieldMappingRequest) UnmarshalJSON(data []byte) error {
@@ -93,7 +92,7 @@ func (src AddLogFieldMappingRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddLogFieldMappingRequest) GetActualInstance() (interface{}) {
+func (obj *AddLogFieldMappingRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -144,5 +143,3 @@ func (v *NullableAddLogFieldMappingRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

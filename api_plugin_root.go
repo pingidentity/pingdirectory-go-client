@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // PluginRootApiService PluginRootApi service
 type PluginRootApiService service
 
 type ApiGetPluginRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PluginRootApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetPluginRootRequest) Execute() (*PluginRootResponse, *http.Response,
 /*
 GetPluginRoot Returns a single Plugin Root
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPluginRootRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetPluginRootRequest
 */
 func (a *PluginRootApiService) GetPluginRoot(ctx context.Context) ApiGetPluginRootRequest {
 	return ApiGetPluginRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PluginRootResponse
+//
+//	@return PluginRootResponse
 func (a *PluginRootApiService) GetPluginRootExecute(r ApiGetPluginRootRequest) (*PluginRootResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PluginRootResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PluginRootResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginRootApiService.GetPluginRoot")
@@ -120,8 +120,8 @@ func (a *PluginRootApiService) GetPluginRootExecute(r ApiGetPluginRootRequest) (
 }
 
 type ApiUpdatePluginRootRequest struct {
-	ctx context.Context
-	ApiService *PluginRootApiService
+	ctx           context.Context
+	ApiService    *PluginRootApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdatePluginRootRequest) Execute() (*PluginRootResponse, *http.Respon
 /*
 UpdatePluginRoot Update an existing Plugin Root by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdatePluginRootRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdatePluginRootRequest
 */
 func (a *PluginRootApiService) UpdatePluginRoot(ctx context.Context) ApiUpdatePluginRootRequest {
 	return ApiUpdatePluginRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PluginRootResponse
+//
+//	@return PluginRootResponse
 func (a *PluginRootApiService) UpdatePluginRootExecute(r ApiUpdatePluginRootRequest) (*PluginRootResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PluginRootResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PluginRootResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginRootApiService.UpdatePluginRoot")

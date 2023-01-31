@@ -16,10 +16,10 @@ import (
 
 // ConjurPasswordStorageSchemeResponse struct for ConjurPasswordStorageSchemeResponse
 type ConjurPasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []EnumconjurPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing user passwords.
 	ConjurExternalServer string `json:"conjurExternalServer"`
@@ -63,7 +63,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -152,7 +152,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetSchemas() []EnumconjurPasswordS
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetSchemasOk() ([]EnumconjurPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -176,7 +176,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetConjurExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetConjurExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurExternalServer, true
 }
@@ -199,7 +199,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -232,7 +232,7 @@ func (o *ConjurPasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ConjurPasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -303,5 +303,3 @@ func (v *NullableConjurPasswordStorageSchemeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

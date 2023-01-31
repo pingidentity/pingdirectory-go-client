@@ -17,8 +17,8 @@ import (
 
 // AddSearchEntryCriteriaRequest - struct for AddSearchEntryCriteriaRequest
 type AddSearchEntryCriteriaRequest struct {
-	AddAggregateSearchEntryCriteriaRequest *AddAggregateSearchEntryCriteriaRequest
-	AddSimpleSearchEntryCriteriaRequest *AddSimpleSearchEntryCriteriaRequest
+	AddAggregateSearchEntryCriteriaRequest  *AddAggregateSearchEntryCriteriaRequest
+	AddSimpleSearchEntryCriteriaRequest     *AddSimpleSearchEntryCriteriaRequest
 	AddThirdPartySearchEntryCriteriaRequest *AddThirdPartySearchEntryCriteriaRequest
 }
 
@@ -42,7 +42,6 @@ func AddThirdPartySearchEntryCriteriaRequestAsAddSearchEntryCriteriaRequest(v *A
 		AddThirdPartySearchEntryCriteriaRequest: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddSearchEntryCriteriaRequest) UnmarshalJSON(data []byte) error {
@@ -119,7 +118,7 @@ func (src AddSearchEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddSearchEntryCriteriaRequest) GetActualInstance() (interface{}) {
+func (obj *AddSearchEntryCriteriaRequest) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -174,5 +173,3 @@ func (v *NullableAddSearchEntryCriteriaRequest) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -106,4 +106,3 @@ func (v *NullableEnumblindTrustManagerProviderSchemaUrn) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

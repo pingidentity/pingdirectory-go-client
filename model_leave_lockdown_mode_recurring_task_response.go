@@ -16,10 +16,10 @@ import (
 
 // LeaveLockdownModeRecurringTaskResponse struct for LeaveLockdownModeRecurringTaskResponse
 type LeaveLockdownModeRecurringTaskResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Recurring Task
-	Id string `json:"id"`
+	Id      string                                        `json:"id"`
 	Schemas []EnumleaveLockdownModeRecurringTaskSchemaUrn `json:"schemas"`
 	// The reason that the server is being taken out of in lockdown mode.
 	Reason *string `json:"reason,omitempty"`
@@ -73,7 +73,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetUrnpingidentityschemasconfig
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -162,7 +162,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetSchemas() []EnumleaveLockdow
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetSchemasOk() ([]EnumleaveLockdownModeRecurringTaskSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -185,7 +185,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetReason() string {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetReasonOk() (*string, bool) {
 	if o == nil || isNil(o.Reason) {
-    return nil, false
+		return nil, false
 	}
 	return o.Reason, true
 }
@@ -217,7 +217,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -249,7 +249,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetCancelOnTaskDependencyFailur
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
 }
@@ -281,7 +281,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetEmailOnStart() []string {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetEmailOnStartOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnStart, true
 }
@@ -313,7 +313,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetEmailOnSuccess() []string {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetEmailOnSuccessOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnSuccess, true
 }
@@ -345,7 +345,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetEmailOnFailure() []string {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetEmailOnFailureOk() ([]string, bool) {
 	if o == nil || isNil(o.EmailOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.EmailOnFailure, true
 }
@@ -377,7 +377,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetAlertOnStart() bool {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetAlertOnStartOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnStart) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnStart, true
 }
@@ -409,7 +409,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetAlertOnSuccess() bool {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetAlertOnSuccessOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnSuccess) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnSuccess, true
 }
@@ -441,7 +441,7 @@ func (o *LeaveLockdownModeRecurringTaskResponse) GetAlertOnFailure() bool {
 // and a boolean to check if the value has been set.
 func (o *LeaveLockdownModeRecurringTaskResponse) GetAlertOnFailureOk() (*bool, bool) {
 	if o == nil || isNil(o.AlertOnFailure) {
-    return nil, false
+		return nil, false
 	}
 	return o.AlertOnFailure, true
 }
@@ -539,5 +539,3 @@ func (v *NullableLeaveLockdownModeRecurringTaskResponse) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

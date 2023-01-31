@@ -20,12 +20,12 @@ type EnumbackendSystemIndexToPrimeInternalNodesOnlyProp string
 
 // List of Enumbackend-systemIndexToPrimeInternalNodesOnlyProp
 const (
-	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_DN2ID EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "dn2id"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_ID2ENTRY EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "id2entry"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_DN2ID             EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "dn2id"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_ID2ENTRY          EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "id2entry"
 	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_UNCACHED_ID2ENTRY EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "uncached-id2entry"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_ID2CHILDREN EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "id2children"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_ID2SUBTREE EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "id2subtree"
-	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_DN2URI EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "dn2uri"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_ID2CHILDREN       EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "id2children"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_ID2SUBTREE        EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "id2subtree"
+	ENUMBACKENDSYSTEMINDEXTOPRIMEINTERNALNODESONLYPROP_DN2URI            EnumbackendSystemIndexToPrimeInternalNodesOnlyProp = "dn2uri"
 )
 
 // All allowed values of EnumbackendSystemIndexToPrimeInternalNodesOnlyProp enum
@@ -116,4 +116,3 @@ func (v *NullableEnumbackendSystemIndexToPrimeInternalNodesOnlyProp) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

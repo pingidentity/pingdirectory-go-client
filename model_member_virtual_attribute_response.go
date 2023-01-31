@@ -16,11 +16,11 @@ import (
 
 // MemberVirtualAttributeResponse struct for MemberVirtualAttributeResponse
 type MemberVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Virtual Attribute
-	Id string `json:"id"`
-	Schemas []EnummemberVirtualAttributeSchemaUrn `json:"schemas"`
+	Id               string                                    `json:"id"`
+	Schemas          []EnummemberVirtualAttributeSchemaUrn     `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Indicates whether to handle requests that request all values for the virtual attribute.
 	AllowRetrievingMembership bool `json:"allowRetrievingMembership"`
@@ -43,8 +43,8 @@ type MemberVirtualAttributeResponse struct {
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 }
 
 // NewMemberVirtualAttributeResponse instantiates a new MemberVirtualAttributeResponse object
@@ -82,7 +82,7 @@ func (o *MemberVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -114,7 +114,7 @@ func (o *MemberVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -147,7 +147,7 @@ func (o *MemberVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -171,7 +171,7 @@ func (o *MemberVirtualAttributeResponse) GetSchemas() []EnummemberVirtualAttribu
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetSchemasOk() ([]EnummemberVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -194,7 +194,7 @@ func (o *MemberVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttrib
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
 	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConflictBehavior, true
 }
@@ -227,7 +227,7 @@ func (o *MemberVirtualAttributeResponse) GetAllowRetrievingMembership() bool {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetAllowRetrievingMembershipOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AllowRetrievingMembership, true
 }
@@ -250,7 +250,7 @@ func (o *MemberVirtualAttributeResponse) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -282,7 +282,7 @@ func (o *MemberVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowIndexConflicts, true
 }
@@ -314,7 +314,7 @@ func (o *MemberVirtualAttributeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -347,7 +347,7 @@ func (o *MemberVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -371,7 +371,7 @@ func (o *MemberVirtualAttributeResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -394,7 +394,7 @@ func (o *MemberVirtualAttributeResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -426,7 +426,7 @@ func (o *MemberVirtualAttributeResponse) GetGroupDN() []string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -458,7 +458,7 @@ func (o *MemberVirtualAttributeResponse) GetClientConnectionPolicy() []string {
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -490,7 +490,7 @@ func (o *MemberVirtualAttributeResponse) GetRequireExplicitRequestByName() bool 
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -522,7 +522,7 @@ func (o *MemberVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOr
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -554,7 +554,7 @@ func (o *MemberVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavio
 // and a boolean to check if the value has been set.
 func (o *MemberVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
 }
@@ -664,5 +664,3 @@ func (v *NullableMemberVirtualAttributeResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

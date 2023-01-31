@@ -16,10 +16,10 @@ import (
 
 // AdminAlertAccessLogPublisherResponse struct for AdminAlertAccessLogPublisherResponse
 type AdminAlertAccessLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumadminAlertAccessLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether to log information about connections established to the server.
 	LogConnects *bool `json:"logConnects,omitempty"`
@@ -108,7 +108,7 @@ type AdminAlertAccessLogPublisherResponse struct {
 	// A description for this Log Publisher
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Log Publisher is enabled for use.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                      `json:"enabled"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -146,7 +146,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -178,7 +178,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -211,7 +211,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -235,7 +235,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetSchemas() []EnumadminAlertAcce
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetSchemasOk() ([]EnumadminAlertAccessLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -258,7 +258,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogConnects() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogConnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogConnects, true
 }
@@ -290,7 +290,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogDisconnects() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogDisconnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDisconnects, true
 }
@@ -322,7 +322,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogClientCertificates() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogClientCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogClientCertificates, true
 }
@@ -354,7 +354,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogRequests, true
 }
@@ -386,7 +386,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogResults() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogResults, true
 }
@@ -418,7 +418,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogSearchEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchEntries, true
 }
@@ -450,7 +450,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogSearchReferences() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchReferences) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchReferences, true
 }
@@ -482,7 +482,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetSearchEntryCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryCriteria, true
 }
@@ -514,7 +514,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetSearchReferenceCriteria() stri
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
 }
@@ -546,7 +546,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetCorrelateRequestsAndResults() 
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorrelateRequestsAndResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
 }
@@ -578,7 +578,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetAutoFlush() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
 	if o == nil || isNil(o.AutoFlush) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoFlush, true
 }
@@ -611,7 +611,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Asynchronous, true
 }
@@ -634,7 +634,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -666,7 +666,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInResultM
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInResultMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInResultMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInResultMessages, true
 }
@@ -698,7 +698,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogAssuranceCompleted() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogAssuranceCompletedOk() (*bool, bool) {
 	if o == nil || isNil(o.LogAssuranceCompleted) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogAssuranceCompleted, true
 }
@@ -730,7 +730,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -762,7 +762,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -794,7 +794,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -826,7 +826,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -858,7 +858,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequesterDN() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequesterDNOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterDN, true
 }
@@ -890,7 +890,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequesterIPAddress() bo
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequesterIPAddressOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterIPAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
 }
@@ -922,7 +922,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchE
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchEntryMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInSearchEntryMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInSearchEntryMessages, true
 }
@@ -954,7 +954,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchR
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchReferenceMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInSearchReferenceMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInSearchReferenceMessages, true
 }
@@ -986,7 +986,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInInterme
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestDetailsInIntermediateResponseMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInIntermediateResponseMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInIntermediateResponseMessages, true
 }
@@ -1018,7 +1018,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeResultCodeNames() bool 
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeResultCodeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResultCodeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResultCodeNames, true
 }
@@ -1050,7 +1050,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeExtendedSearchRequestDe
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeExtendedSearchRequestDetailsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeExtendedSearchRequestDetails) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeExtendedSearchRequestDetails, true
 }
@@ -1082,7 +1082,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeAddAttributeNames() boo
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeAddAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeAddAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAddAttributeNames, true
 }
@@ -1114,7 +1114,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeModifyAttributeNames() 
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeModifyAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeModifyAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeModifyAttributeNames, true
 }
@@ -1146,7 +1146,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeSearchEntryAttributeNam
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeSearchEntryAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeSearchEntryAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeSearchEntryAttributeNames, true
 }
@@ -1178,7 +1178,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestControls() bool 
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeRequestControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestControls, true
 }
@@ -1210,7 +1210,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeResponseControls() bool
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeResponseControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResponseControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResponseControls, true
 }
@@ -1242,7 +1242,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetIncludeReplicationChangeID() b
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetIncludeReplicationChangeIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeReplicationChangeID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
 }
@@ -1274,7 +1274,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPoss
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
 }
@@ -1306,7 +1306,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetMaxStringLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxStringLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxStringLength, true
 }
@@ -1338,7 +1338,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogFieldBehavior() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogFieldBehaviorOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldBehavior, true
 }
@@ -1370,7 +1370,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogSecurityNegotiation() bool 
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -1402,7 +1402,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLogIntermediateResponses() boo
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -1434,7 +1434,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetSuppressInternalOperations() b
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -1466,7 +1466,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetSuppressReplicationOperations(
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -1498,7 +1498,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -1530,7 +1530,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -1562,7 +1562,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -1594,7 +1594,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1627,7 +1627,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -1650,7 +1650,7 @@ func (o *AdminAlertAccessLogPublisherResponse) GetLoggingErrorBehavior() Enumlog
 // and a boolean to check if the value has been set.
 func (o *AdminAlertAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1856,5 +1856,3 @@ func (v *NullableAdminAlertAccessLogPublisherResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

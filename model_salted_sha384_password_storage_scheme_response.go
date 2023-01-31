@@ -16,9 +16,9 @@ import (
 
 // SaltedSha384PasswordStorageSchemeResponse struct for SaltedSha384PasswordStorageSchemeResponse
 type SaltedSha384PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumsaltedSha384PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumsaltedSha384PasswordStorageSchemeSchemaUrn   `json:"schemas"`
 	// Name of the Password Storage Scheme
 	Id string `json:"id"`
 	// Specifies the number of bytes to use for the generated salt.
@@ -62,7 +62,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetUrnpingidentityschemascon
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetSchemas() []EnumsaltedSha
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetSchemasOk() ([]EnumsaltedSha384PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -151,7 +151,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -174,7 +174,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetSaltLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetSaltLengthBytesOk() (*int32, bool) {
 	if o == nil || isNil(o.SaltLengthBytes) {
-    return nil, false
+		return nil, false
 	}
 	return o.SaltLengthBytes, true
 }
@@ -206,7 +206,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -239,7 +239,7 @@ func (o *SaltedSha384PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SaltedSha384PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -310,5 +310,3 @@ func (v *NullableSaltedSha384PasswordStorageSchemeResponse) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

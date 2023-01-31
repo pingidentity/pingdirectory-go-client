@@ -17,8 +17,8 @@ import (
 // AddThirdPartyOtpDeliveryMechanismRequest struct for AddThirdPartyOtpDeliveryMechanismRequest
 type AddThirdPartyOtpDeliveryMechanismRequest struct {
 	// Name of the new OTP Delivery Mechanism
-	MechanismName string `json:"mechanismName"`
-	Schemas []EnumthirdPartyOtpDeliveryMechanismSchemaUrn `json:"schemas"`
+	MechanismName string                                        `json:"mechanismName"`
+	Schemas       []EnumthirdPartyOtpDeliveryMechanismSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party OTP Delivery Mechanism.
 	ExtensionClass string `json:"extensionClass"`
 	// The set of arguments used to customize the behavior for the Third Party OTP Delivery Mechanism. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetMechanismName() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetMechanismNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MechanismName, true
 }
@@ -88,7 +88,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetSchemas() []EnumthirdParty
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetSchemasOk() ([]EnumthirdPartyOtpDeliveryMechanismSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionArgument() []stri
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyOtpDeliveryMechanismRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddThirdPartyOtpDeliveryMechanismRequest) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

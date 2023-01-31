@@ -17,8 +17,8 @@ import (
 // AddSizeLimitLogRotationPolicyRequest struct for AddSizeLimitLogRotationPolicyRequest
 type AddSizeLimitLogRotationPolicyRequest struct {
 	// Name of the new Log Rotation Policy
-	PolicyName string `json:"policyName"`
-	Schemas []EnumsizeLimitLogRotationPolicySchemaUrn `json:"schemas"`
+	PolicyName string                                    `json:"policyName"`
+	Schemas    []EnumsizeLimitLogRotationPolicySchemaUrn `json:"schemas"`
 	// Specifies the maximum size that a log file can reach before it is rotated.
 	FileSizeLimit string `json:"fileSizeLimit"`
 	// A description for this Log Rotation Policy
@@ -59,7 +59,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) GetPolicyName() string {
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRotationPolicyRequest) GetPolicyNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PolicyName, true
 }
@@ -83,7 +83,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) GetSchemas() []EnumsizeLimitLogRo
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRotationPolicyRequest) GetSchemasOk() ([]EnumsizeLimitLogRotationPolicySchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -107,7 +107,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) GetFileSizeLimit() string {
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRotationPolicyRequest) GetFileSizeLimitOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.FileSizeLimit, true
 }
@@ -130,7 +130,7 @@ func (o *AddSizeLimitLogRotationPolicyRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddSizeLimitLogRotationPolicyRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -201,5 +201,3 @@ func (v *NullableAddSizeLimitLogRotationPolicyRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

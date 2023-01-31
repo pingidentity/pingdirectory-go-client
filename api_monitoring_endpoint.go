@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // MonitoringEndpointApiService MonitoringEndpointApi service
 type MonitoringEndpointApiService service
 
 type ApiAddMonitoringEndpointRequest struct {
-	ctx context.Context
-	ApiService *MonitoringEndpointApiService
+	ctx                                context.Context
+	ApiService                         *MonitoringEndpointApiService
 	addStatsdMonitoringEndpointRequest *AddStatsdMonitoringEndpointRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddMonitoringEndpointRequest) Execute() (*StatsdMonitoringEndpointRes
 /*
 AddMonitoringEndpoint Add a new Monitoring Endpoint to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddMonitoringEndpointRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) AddMonitoringEndpoint(ctx context.Context) ApiAddMonitoringEndpointRequest {
 	return ApiAddMonitoringEndpointRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return StatsdMonitoringEndpointResponse
+//
+//	@return StatsdMonitoringEndpointResponse
 func (a *MonitoringEndpointApiService) AddMonitoringEndpointExecute(r ApiAddMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StatsdMonitoringEndpointResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StatsdMonitoringEndpointResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.AddMonitoringEndpoint")
@@ -133,8 +133,8 @@ func (a *MonitoringEndpointApiService) AddMonitoringEndpointExecute(r ApiAddMoni
 }
 
 type ApiDeleteMonitoringEndpointRequest struct {
-	ctx context.Context
-	ApiService *MonitoringEndpointApiService
+	ctx                    context.Context
+	ApiService             *MonitoringEndpointApiService
 	monitoringEndpointName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteMonitoringEndpointRequest) Execute() (*http.Response, error) {
 /*
 DeleteMonitoringEndpoint Delete a Monitoring Endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param monitoringEndpointName Name of the Monitoring Endpoint to be deleted
- @return ApiDeleteMonitoringEndpointRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param monitoringEndpointName Name of the Monitoring Endpoint to be deleted
+	@return ApiDeleteMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) DeleteMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiDeleteMonitoringEndpointRequest {
 	return ApiDeleteMonitoringEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		monitoringEndpointName: monitoringEndpointName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *MonitoringEndpointApiService) DeleteMonitoringEndpoint(ctx context.Cont
 // Execute executes the request
 func (a *MonitoringEndpointApiService) DeleteMonitoringEndpointExecute(r ApiDeleteMonitoringEndpointRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.DeleteMonitoringEndpoint")
@@ -223,8 +223,8 @@ func (a *MonitoringEndpointApiService) DeleteMonitoringEndpointExecute(r ApiDele
 }
 
 type ApiGetMonitoringEndpointRequest struct {
-	ctx context.Context
-	ApiService *MonitoringEndpointApiService
+	ctx                    context.Context
+	ApiService             *MonitoringEndpointApiService
 	monitoringEndpointName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetMonitoringEndpointRequest) Execute() (*StatsdMonitoringEndpointRes
 /*
 GetMonitoringEndpoint Returns a single Monitoring Endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param monitoringEndpointName Name of the Monitoring Endpoint to be read
- @return ApiGetMonitoringEndpointRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param monitoringEndpointName Name of the Monitoring Endpoint to be read
+	@return ApiGetMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) GetMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiGetMonitoringEndpointRequest {
 	return ApiGetMonitoringEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		monitoringEndpointName: monitoringEndpointName,
 	}
 }
 
 // Execute executes the request
-//  @return StatsdMonitoringEndpointResponse
+//
+//	@return StatsdMonitoringEndpointResponse
 func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StatsdMonitoringEndpointResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StatsdMonitoringEndpointResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.GetMonitoringEndpoint")
@@ -324,10 +325,10 @@ func (a *MonitoringEndpointApiService) GetMonitoringEndpointExecute(r ApiGetMoni
 }
 
 type ApiUpdateMonitoringEndpointRequest struct {
-	ctx context.Context
-	ApiService *MonitoringEndpointApiService
+	ctx                    context.Context
+	ApiService             *MonitoringEndpointApiService
 	monitoringEndpointName string
-	updateRequest *UpdateRequest
+	updateRequest          *UpdateRequest
 }
 
 // Update an existing Monitoring Endpoint
@@ -343,26 +344,27 @@ func (r ApiUpdateMonitoringEndpointRequest) Execute() (*StatsdMonitoringEndpoint
 /*
 UpdateMonitoringEndpoint Update an existing Monitoring Endpoint by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param monitoringEndpointName Name of the Monitoring Endpoint to be updated
- @return ApiUpdateMonitoringEndpointRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param monitoringEndpointName Name of the Monitoring Endpoint to be updated
+	@return ApiUpdateMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) UpdateMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiUpdateMonitoringEndpointRequest {
 	return ApiUpdateMonitoringEndpointRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		monitoringEndpointName: monitoringEndpointName,
 	}
 }
 
 // Execute executes the request
-//  @return StatsdMonitoringEndpointResponse
+//
+//	@return StatsdMonitoringEndpointResponse
 func (a *MonitoringEndpointApiService) UpdateMonitoringEndpointExecute(r ApiUpdateMonitoringEndpointRequest) (*StatsdMonitoringEndpointResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *StatsdMonitoringEndpointResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *StatsdMonitoringEndpointResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEndpointApiService.UpdateMonitoringEndpoint")

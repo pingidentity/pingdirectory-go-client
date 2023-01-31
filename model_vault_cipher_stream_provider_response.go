@@ -16,10 +16,10 @@ import (
 
 // VaultCipherStreamProviderResponse struct for VaultCipherStreamProviderResponse
 type VaultCipherStreamProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Cipher Stream Provider
-	Id string `json:"id"`
+	Id      string                                   `json:"id"`
 	Schemas []EnumvaultCipherStreamProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault server.
 	VaultExternalServer *string `json:"vaultExternalServer,omitempty"`
@@ -81,7 +81,7 @@ func (o *VaultCipherStreamProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -113,7 +113,7 @@ func (o *VaultCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurati
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -146,7 +146,7 @@ func (o *VaultCipherStreamProviderResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -170,7 +170,7 @@ func (o *VaultCipherStreamProviderResponse) GetSchemas() []EnumvaultCipherStream
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetSchemasOk() ([]EnumvaultCipherStreamProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -193,7 +193,7 @@ func (o *VaultCipherStreamProviderResponse) GetVaultExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetVaultExternalServerOk() (*string, bool) {
 	if o == nil || isNil(o.VaultExternalServer) {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultExternalServer, true
 }
@@ -225,7 +225,7 @@ func (o *VaultCipherStreamProviderResponse) GetVaultServerBaseURI() []string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetVaultServerBaseURIOk() ([]string, bool) {
 	if o == nil || isNil(o.VaultServerBaseURI) {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultServerBaseURI, true
 }
@@ -257,7 +257,7 @@ func (o *VaultCipherStreamProviderResponse) GetVaultAuthenticationMethod() strin
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetVaultAuthenticationMethodOk() (*string, bool) {
 	if o == nil || isNil(o.VaultAuthenticationMethod) {
-    return nil, false
+		return nil, false
 	}
 	return o.VaultAuthenticationMethod, true
 }
@@ -290,7 +290,7 @@ func (o *VaultCipherStreamProviderResponse) GetVaultSecretPath() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetVaultSecretPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretPath, true
 }
@@ -314,7 +314,7 @@ func (o *VaultCipherStreamProviderResponse) GetVaultSecretFieldName() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetVaultSecretFieldNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultSecretFieldName, true
 }
@@ -338,7 +338,7 @@ func (o *VaultCipherStreamProviderResponse) GetVaultEncryptionMetadataFile() str
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetVaultEncryptionMetadataFileOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultEncryptionMetadataFile, true
 }
@@ -361,7 +361,7 @@ func (o *VaultCipherStreamProviderResponse) GetTrustStoreFile() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetTrustStoreFileOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreFile) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreFile, true
 }
@@ -393,7 +393,7 @@ func (o *VaultCipherStreamProviderResponse) GetTrustStorePin() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetTrustStorePinOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStorePin) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStorePin, true
 }
@@ -425,7 +425,7 @@ func (o *VaultCipherStreamProviderResponse) GetTrustStoreType() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetTrustStoreTypeOk() (*string, bool) {
 	if o == nil || isNil(o.TrustStoreType) {
-    return nil, false
+		return nil, false
 	}
 	return o.TrustStoreType, true
 }
@@ -457,7 +457,7 @@ func (o *VaultCipherStreamProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -490,7 +490,7 @@ func (o *VaultCipherStreamProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *VaultCipherStreamProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -585,5 +585,3 @@ func (v *NullableVaultCipherStreamProviderResponse) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

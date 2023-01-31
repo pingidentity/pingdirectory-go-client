@@ -16,10 +16,10 @@ import (
 
 // FifoEntryCacheResponse struct for FifoEntryCacheResponse
 type FifoEntryCacheResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Entry Cache
-	Id string `json:"id"`
+	Id      string                        `json:"id"`
 	Schemas []EnumfifoEntryCacheSchemaUrn `json:"schemas,omitempty"`
 	// Specifies the maximum amount of memory, as a percentage of the total maximum JVM heap size, that this cache should occupy when full. If the amount of memory the cache is using is greater than this amount, then an attempt to put a new entry in the cache will be ignored and will cause the oldest entry to be purged.
 	MaxMemoryPercent *int32 `json:"maxMemoryPercent,omitempty"`
@@ -78,7 +78,7 @@ func (o *FifoEntryCacheResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -110,7 +110,7 @@ func (o *FifoEntryCacheResponse) GetUrnpingidentityschemasconfigurationmessages2
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -143,7 +143,7 @@ func (o *FifoEntryCacheResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -166,7 +166,7 @@ func (o *FifoEntryCacheResponse) GetSchemas() []EnumfifoEntryCacheSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetSchemasOk() ([]EnumfifoEntryCacheSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -198,7 +198,7 @@ func (o *FifoEntryCacheResponse) GetMaxMemoryPercent() int32 {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMaxMemoryPercentOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxMemoryPercent) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxMemoryPercent, true
 }
@@ -230,7 +230,7 @@ func (o *FifoEntryCacheResponse) GetMaxEntries() int32 {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMaxEntriesOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxEntries, true
 }
@@ -262,7 +262,7 @@ func (o *FifoEntryCacheResponse) GetOnlyCacheFrequentlyAccessed() bool {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetOnlyCacheFrequentlyAccessedOk() (*bool, bool) {
 	if o == nil || isNil(o.OnlyCacheFrequentlyAccessed) {
-    return nil, false
+		return nil, false
 	}
 	return o.OnlyCacheFrequentlyAccessed, true
 }
@@ -294,7 +294,7 @@ func (o *FifoEntryCacheResponse) GetIncludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetIncludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -326,7 +326,7 @@ func (o *FifoEntryCacheResponse) GetExcludeFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetExcludeFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeFilter, true
 }
@@ -358,7 +358,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCountOk() (*int32, bool) {
 	if o == nil || isNil(o.MinCacheEntryValueCount) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinCacheEntryValueCount, true
 }
@@ -390,7 +390,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryAttribute() []string {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMinCacheEntryAttributeOk() ([]string, bool) {
 	if o == nil || isNil(o.MinCacheEntryAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinCacheEntryAttribute, true
 }
@@ -422,7 +422,7 @@ func (o *FifoEntryCacheResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -455,7 +455,7 @@ func (o *FifoEntryCacheResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -479,7 +479,7 @@ func (o *FifoEntryCacheResponse) GetCacheLevel() int32 {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetCacheLevelOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.CacheLevel, true
 }
@@ -502,7 +502,7 @@ func (o *FifoEntryCacheResponse) GetCacheUnindexedSearchResults() bool {
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetCacheUnindexedSearchResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CacheUnindexedSearchResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CacheUnindexedSearchResults, true
 }
@@ -606,5 +606,3 @@ func (v *NullableFifoEntryCacheResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

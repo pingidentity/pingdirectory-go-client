@@ -17,8 +17,8 @@ import (
 // AddTwilioAlertHandlerRequest struct for AddTwilioAlertHandlerRequest
 type AddTwilioAlertHandlerRequest struct {
 	// Name of the new Alert Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumtwilioAlertHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                            `json:"handlerName"`
+	Schemas     []EnumtwilioAlertHandlerSchemaUrn `json:"schemas"`
 	// Indicates whether the server should attempt to invoke this Twilio Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
 	Asynchronous *bool `json:"asynchronous,omitempty"`
 	// The unique identifier assigned to the Twilio account that will be used.
@@ -30,15 +30,15 @@ type AddTwilioAlertHandlerRequest struct {
 	// The outgoing phone number to use for the messages. Values must be phone numbers you have obtained for use with your Twilio account.
 	SenderPhoneNumber []string `json:"senderPhoneNumber"`
 	// The phone number to which alert notifications should be delivered.
-	RecipientPhoneNumber []string `json:"recipientPhoneNumber"`
-	LongMessageBehavior EnumalertHandlerLongMessageBehaviorProp `json:"longMessageBehavior"`
+	RecipientPhoneNumber []string                                `json:"recipientPhoneNumber"`
+	LongMessageBehavior  EnumalertHandlerLongMessageBehaviorProp `json:"longMessageBehavior"`
 	// A description for this Alert Handler
 	Description *string `json:"description,omitempty"`
 	// Indicates whether the Alert Handler is enabled.
-	Enabled bool `json:"enabled"`
+	Enabled              bool                                       `json:"enabled"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewAddTwilioAlertHandlerRequest instantiates a new AddTwilioAlertHandlerRequest object
@@ -79,7 +79,7 @@ func (o *AddTwilioAlertHandlerRequest) GetHandlerName() string {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -103,7 +103,7 @@ func (o *AddTwilioAlertHandlerRequest) GetSchemas() []EnumtwilioAlertHandlerSche
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetSchemasOk() ([]EnumtwilioAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -126,7 +126,7 @@ func (o *AddTwilioAlertHandlerRequest) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -159,7 +159,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAccountSID() string {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAccountSIDOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TwilioAccountSID, true
 }
@@ -182,7 +182,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthToken() string {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenOk() (*string, bool) {
 	if o == nil || isNil(o.TwilioAuthToken) {
-    return nil, false
+		return nil, false
 	}
 	return o.TwilioAuthToken, true
 }
@@ -214,7 +214,7 @@ func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenPassphraseProvider() st
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetTwilioAuthTokenPassphraseProviderOk() (*string, bool) {
 	if o == nil || isNil(o.TwilioAuthTokenPassphraseProvider) {
-    return nil, false
+		return nil, false
 	}
 	return o.TwilioAuthTokenPassphraseProvider, true
 }
@@ -247,7 +247,7 @@ func (o *AddTwilioAlertHandlerRequest) GetSenderPhoneNumber() []string {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetSenderPhoneNumberOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SenderPhoneNumber, true
 }
@@ -271,7 +271,7 @@ func (o *AddTwilioAlertHandlerRequest) GetRecipientPhoneNumber() []string {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetRecipientPhoneNumberOk() ([]string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RecipientPhoneNumber, true
 }
@@ -295,7 +295,7 @@ func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehavior() EnumalertHandler
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetLongMessageBehaviorOk() (*EnumalertHandlerLongMessageBehaviorProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LongMessageBehavior, true
 }
@@ -318,7 +318,7 @@ func (o *AddTwilioAlertHandlerRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -351,7 +351,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -374,7 +374,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertSeverity() []EnumalertHand
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -406,7 +406,7 @@ func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertType() []EnumalertHandlerE
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -438,7 +438,7 @@ func (o *AddTwilioAlertHandlerRequest) GetDisabledAlertType() []EnumalertHandler
 // and a boolean to check if the value has been set.
 func (o *AddTwilioAlertHandlerRequest) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -539,5 +539,3 @@ func (v *NullableAddTwilioAlertHandlerRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

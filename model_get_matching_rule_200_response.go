@@ -18,9 +18,9 @@ import (
 // GetMatchingRule200Response - struct for GetMatchingRule200Response
 type GetMatchingRule200Response struct {
 	ApproximateMatchingRuleResponse *ApproximateMatchingRuleResponse
-	EqualityMatchingRuleResponse *EqualityMatchingRuleResponse
-	OrderingMatchingRuleResponse *OrderingMatchingRuleResponse
-	SubstringMatchingRuleResponse *SubstringMatchingRuleResponse
+	EqualityMatchingRuleResponse    *EqualityMatchingRuleResponse
+	OrderingMatchingRuleResponse    *OrderingMatchingRuleResponse
+	SubstringMatchingRuleResponse   *SubstringMatchingRuleResponse
 }
 
 // ApproximateMatchingRuleResponseAsGetMatchingRule200Response is a convenience function that returns ApproximateMatchingRuleResponse wrapped in GetMatchingRule200Response
@@ -50,7 +50,6 @@ func SubstringMatchingRuleResponseAsGetMatchingRule200Response(v *SubstringMatch
 		SubstringMatchingRuleResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetMatchingRule200Response) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src GetMatchingRule200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetMatchingRule200Response) GetActualInstance() (interface{}) {
+func (obj *GetMatchingRule200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableGetMatchingRule200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

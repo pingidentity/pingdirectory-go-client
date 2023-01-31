@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyAlertHandlerResponse struct for ThirdPartyAlertHandlerResponse
 type ThirdPartyAlertHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Alert Handler
-	Id string `json:"id"`
+	Id      string                                `json:"id"`
 	Schemas []EnumthirdPartyAlertHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Alert Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -30,10 +30,10 @@ type ThirdPartyAlertHandlerResponse struct {
 	// Indicates whether the Alert Handler is enabled.
 	Enabled bool `json:"enabled"`
 	// Indicates whether the server should attempt to invoke this Alert Handler in a background thread so that any potentially-expensive processing (e.g., performing network communication to deliver the alert notification) will not delay whatever processing the server was performing when the alert was generated.
-	Asynchronous *bool `json:"asynchronous,omitempty"`
+	Asynchronous         *bool                                      `json:"asynchronous,omitempty"`
 	EnabledAlertSeverity []EnumalertHandlerEnabledAlertSeverityProp `json:"enabledAlertSeverity,omitempty"`
-	EnabledAlertType []EnumalertHandlerEnabledAlertTypeProp `json:"enabledAlertType,omitempty"`
-	DisabledAlertType []EnumalertHandlerDisabledAlertTypeProp `json:"disabledAlertType,omitempty"`
+	EnabledAlertType     []EnumalertHandlerEnabledAlertTypeProp     `json:"enabledAlertType,omitempty"`
+	DisabledAlertType    []EnumalertHandlerDisabledAlertTypeProp    `json:"disabledAlertType,omitempty"`
 }
 
 // NewThirdPartyAlertHandlerResponse instantiates a new ThirdPartyAlertHandlerResponse object
@@ -70,7 +70,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -102,7 +102,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -135,7 +135,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -159,7 +159,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetSchemas() []EnumthirdPartyAlertHandl
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetSchemasOk() ([]EnumthirdPartyAlertHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetExtensionClass() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -206,7 +206,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetExtensionArgument() []string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -238,7 +238,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -271,7 +271,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -294,7 +294,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -326,7 +326,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetEnabledAlertSeverity() []EnumalertHa
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetEnabledAlertSeverityOk() ([]EnumalertHandlerEnabledAlertSeverityProp, bool) {
 	if o == nil || isNil(o.EnabledAlertSeverity) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertSeverity, true
 }
@@ -358,7 +358,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetEnabledAlertType() []EnumalertHandle
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetEnabledAlertTypeOk() ([]EnumalertHandlerEnabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.EnabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnabledAlertType, true
 }
@@ -390,7 +390,7 @@ func (o *ThirdPartyAlertHandlerResponse) GetDisabledAlertType() []EnumalertHandl
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAlertHandlerResponse) GetDisabledAlertTypeOk() ([]EnumalertHandlerDisabledAlertTypeProp, bool) {
 	if o == nil || isNil(o.DisabledAlertType) {
-    return nil, false
+		return nil, false
 	}
 	return o.DisabledAlertType, true
 }
@@ -485,5 +485,3 @@ func (v *NullableThirdPartyAlertHandlerResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

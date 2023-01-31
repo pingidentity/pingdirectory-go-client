@@ -17,8 +17,8 @@ import (
 // AddConjurPassphraseProviderRequest struct for AddConjurPassphraseProviderRequest
 type AddConjurPassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
-	ProviderName string `json:"providerName"`
-	Schemas []EnumconjurPassphraseProviderSchemaUrn `json:"schemas"`
+	ProviderName string                                  `json:"providerName"`
+	Schemas      []EnumconjurPassphraseProviderSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Conjur instance containing the passphrase.
 	ConjurExternalServer string `json:"conjurExternalServer"`
 	// The portion of the path that follows the account name in the URI needed to obtain the desired secret. Any special characters in the path must be URL-encoded.
@@ -67,7 +67,7 @@ func (o *AddConjurPassphraseProviderRequest) GetProviderName() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetProviderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ProviderName, true
 }
@@ -91,7 +91,7 @@ func (o *AddConjurPassphraseProviderRequest) GetSchemas() []EnumconjurPassphrase
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetSchemasOk() ([]EnumconjurPassphraseProviderSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -115,7 +115,7 @@ func (o *AddConjurPassphraseProviderRequest) GetConjurExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetConjurExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurExternalServer, true
 }
@@ -139,7 +139,7 @@ func (o *AddConjurPassphraseProviderRequest) GetConjurSecretRelativePath() strin
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetConjurSecretRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConjurSecretRelativePath, true
 }
@@ -162,7 +162,7 @@ func (o *AddConjurPassphraseProviderRequest) GetMaxCacheDuration() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetMaxCacheDurationOk() (*string, bool) {
 	if o == nil || isNil(o.MaxCacheDuration) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxCacheDuration, true
 }
@@ -194,7 +194,7 @@ func (o *AddConjurPassphraseProviderRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -227,7 +227,7 @@ func (o *AddConjurPassphraseProviderRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddConjurPassphraseProviderRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -298,5 +298,3 @@ func (v *NullableAddConjurPassphraseProviderRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

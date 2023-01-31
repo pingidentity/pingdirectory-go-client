@@ -20,8 +20,8 @@ type EnumresultCriteriaAssuranceTimeoutCriteriaProp string
 
 // List of Enumresult-criteria-assuranceTimeoutCriteriaProp
 const (
-	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_ANY EnumresultCriteriaAssuranceTimeoutCriteriaProp = "any"
-	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_LESS_THAN_OR_EQUAL_TO EnumresultCriteriaAssuranceTimeoutCriteriaProp = "less-than-or-equal-to"
+	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_ANY                      EnumresultCriteriaAssuranceTimeoutCriteriaProp = "any"
+	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_LESS_THAN_OR_EQUAL_TO    EnumresultCriteriaAssuranceTimeoutCriteriaProp = "less-than-or-equal-to"
 	ENUMRESULTCRITERIAASSURANCETIMEOUTCRITERIAPROP_GREATER_THAN_OR_EQUAL_TO EnumresultCriteriaAssuranceTimeoutCriteriaProp = "greater-than-or-equal-to"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumresultCriteriaAssuranceTimeoutCriteriaProp) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

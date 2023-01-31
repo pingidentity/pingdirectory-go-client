@@ -16,10 +16,10 @@ import (
 
 // JsonAttributeConstraintsResponse struct for JsonAttributeConstraintsResponse
 type JsonAttributeConstraintsResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the JSON Attribute Constraints
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnumjsonAttributeConstraintsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this JSON Attribute Constraints
 	Description *string `json:"description,omitempty"`
@@ -63,7 +63,7 @@ func (o *JsonAttributeConstraintsResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -95,7 +95,7 @@ func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -128,7 +128,7 @@ func (o *JsonAttributeConstraintsResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *JsonAttributeConstraintsResponse) GetSchemas() []EnumjsonAttributeConst
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetSchemasOk() ([]EnumjsonAttributeConstraintsSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -183,7 +183,7 @@ func (o *JsonAttributeConstraintsResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -215,7 +215,7 @@ func (o *JsonAttributeConstraintsResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.Enabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.Enabled, true
 }
@@ -248,7 +248,7 @@ func (o *JsonAttributeConstraintsResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -271,7 +271,7 @@ func (o *JsonAttributeConstraintsResponse) GetAllowUnnamedFields() bool {
 // and a boolean to check if the value has been set.
 func (o *JsonAttributeConstraintsResponse) GetAllowUnnamedFieldsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowUnnamedFields) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowUnnamedFields, true
 }
@@ -354,5 +354,3 @@ func (v *NullableJsonAttributeConstraintsResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

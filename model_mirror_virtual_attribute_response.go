@@ -16,11 +16,11 @@ import (
 
 // MirrorVirtualAttributeResponse struct for MirrorVirtualAttributeResponse
 type MirrorVirtualAttributeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Virtual Attribute
-	Id string `json:"id"`
-	Schemas []EnummirrorVirtualAttributeSchemaUrn `json:"schemas"`
+	Id               string                                    `json:"id"`
+	Schemas          []EnummirrorVirtualAttributeSchemaUrn     `json:"schemas"`
 	ConflictBehavior *EnumvirtualAttributeConflictBehaviorProp `json:"conflictBehavior,omitempty"`
 	// Specifies the source attribute containing the values to use for this virtual attribute.
 	SourceAttribute string `json:"sourceAttribute"`
@@ -47,8 +47,8 @@ type MirrorVirtualAttributeResponse struct {
 	// Indicates whether attributes of this type must be explicitly included by name in the list of requested attributes. Note that this will only apply to virtual attributes which are associated with an attribute type that is operational. It will be ignored for virtual attributes associated with a non-operational attribute type.
 	RequireExplicitRequestByName *bool `json:"requireExplicitRequestByName,omitempty"`
 	// Specifies the order in which virtual attribute definitions for the same attribute type will be evaluated when generating values for an entry.
-	MultipleVirtualAttributeEvaluationOrderIndex *int32 `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
-	MultipleVirtualAttributeMergeBehavior *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
+	MultipleVirtualAttributeEvaluationOrderIndex *int32                                                         `json:"multipleVirtualAttributeEvaluationOrderIndex,omitempty"`
+	MultipleVirtualAttributeMergeBehavior        *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp `json:"multipleVirtualAttributeMergeBehavior,omitempty"`
 	// Indicates whether the server should allow creating or altering this virtual attribute definition even if it conflicts with one or more indexes defined in the server.
 	AllowIndexConflicts *bool `json:"allowIndexConflicts,omitempty"`
 }
@@ -88,7 +88,7 @@ func (o *MirrorVirtualAttributeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -120,7 +120,7 @@ func (o *MirrorVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationm
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -153,7 +153,7 @@ func (o *MirrorVirtualAttributeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -177,7 +177,7 @@ func (o *MirrorVirtualAttributeResponse) GetSchemas() []EnummirrorVirtualAttribu
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetSchemasOk() ([]EnummirrorVirtualAttributeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -200,7 +200,7 @@ func (o *MirrorVirtualAttributeResponse) GetConflictBehavior() EnumvirtualAttrib
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetConflictBehaviorOk() (*EnumvirtualAttributeConflictBehaviorProp, bool) {
 	if o == nil || isNil(o.ConflictBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConflictBehavior, true
 }
@@ -233,7 +233,7 @@ func (o *MirrorVirtualAttributeResponse) GetSourceAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetSourceAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SourceAttribute, true
 }
@@ -256,7 +256,7 @@ func (o *MirrorVirtualAttributeResponse) GetSourceEntryDNAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetSourceEntryDNAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.SourceEntryDNAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceEntryDNAttribute, true
 }
@@ -288,7 +288,7 @@ func (o *MirrorVirtualAttributeResponse) GetSourceEntryDNMap() string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetSourceEntryDNMapOk() (*string, bool) {
 	if o == nil || isNil(o.SourceEntryDNMap) {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceEntryDNMap, true
 }
@@ -320,7 +320,7 @@ func (o *MirrorVirtualAttributeResponse) GetBypassAccessControlForSearches() boo
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetBypassAccessControlForSearchesOk() (*bool, bool) {
 	if o == nil || isNil(o.BypassAccessControlForSearches) {
-    return nil, false
+		return nil, false
 	}
 	return o.BypassAccessControlForSearches, true
 }
@@ -352,7 +352,7 @@ func (o *MirrorVirtualAttributeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -385,7 +385,7 @@ func (o *MirrorVirtualAttributeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -409,7 +409,7 @@ func (o *MirrorVirtualAttributeResponse) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -432,7 +432,7 @@ func (o *MirrorVirtualAttributeResponse) GetBaseDN() []string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetBaseDNOk() ([]string, bool) {
 	if o == nil || isNil(o.BaseDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.BaseDN, true
 }
@@ -464,7 +464,7 @@ func (o *MirrorVirtualAttributeResponse) GetGroupDN() []string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetGroupDNOk() ([]string, bool) {
 	if o == nil || isNil(o.GroupDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.GroupDN, true
 }
@@ -496,7 +496,7 @@ func (o *MirrorVirtualAttributeResponse) GetFilter() []string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetFilterOk() ([]string, bool) {
 	if o == nil || isNil(o.Filter) {
-    return nil, false
+		return nil, false
 	}
 	return o.Filter, true
 }
@@ -528,7 +528,7 @@ func (o *MirrorVirtualAttributeResponse) GetClientConnectionPolicy() []string {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetClientConnectionPolicyOk() ([]string, bool) {
 	if o == nil || isNil(o.ClientConnectionPolicy) {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientConnectionPolicy, true
 }
@@ -560,7 +560,7 @@ func (o *MirrorVirtualAttributeResponse) GetRequireExplicitRequestByName() bool 
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetRequireExplicitRequestByNameOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireExplicitRequestByName) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireExplicitRequestByName, true
 }
@@ -592,7 +592,7 @@ func (o *MirrorVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOr
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetMultipleVirtualAttributeEvaluationOrderIndexOk() (*int32, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeEvaluationOrderIndex) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeEvaluationOrderIndex, true
 }
@@ -624,7 +624,7 @@ func (o *MirrorVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehavio
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetMultipleVirtualAttributeMergeBehaviorOk() (*EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp, bool) {
 	if o == nil || isNil(o.MultipleVirtualAttributeMergeBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.MultipleVirtualAttributeMergeBehavior, true
 }
@@ -656,7 +656,7 @@ func (o *MirrorVirtualAttributeResponse) GetAllowIndexConflicts() bool {
 // and a boolean to check if the value has been set.
 func (o *MirrorVirtualAttributeResponse) GetAllowIndexConflictsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowIndexConflicts) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowIndexConflicts, true
 }
@@ -775,5 +775,3 @@ func (v *NullableMirrorVirtualAttributeResponse) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

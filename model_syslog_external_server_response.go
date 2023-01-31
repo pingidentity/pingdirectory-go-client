@@ -16,15 +16,15 @@ import (
 
 // SyslogExternalServerResponse struct for SyslogExternalServerResponse
 type SyslogExternalServerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the External Server
-	Id string `json:"id"`
+	Id      string                              `json:"id"`
 	Schemas []EnumsyslogExternalServerSchemaUrn `json:"schemas"`
 	// The address of the syslog server.
 	ServerHostName string `json:"serverHostName"`
 	// The port on which the syslog server accepts connections.
-	ServerPort *int32 `json:"serverPort,omitempty"`
+	ServerPort         *int32                                   `json:"serverPort,omitempty"`
 	TransportMechanism EnumexternalServerTransportMechanismProp `json:"transportMechanism"`
 	// Specifies the maximum length of time to wait for a connection to be established before giving up and considering the server unavailable. This will only be used when communicating with the syslog server over TCP (with or without TLS encryption).
 	ConnectTimeout string `json:"connectTimeout"`
@@ -73,7 +73,7 @@ func (o *SyslogExternalServerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *SyslogExternalServerResponse) GetUrnpingidentityschemasconfigurationmes
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *SyslogExternalServerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -162,7 +162,7 @@ func (o *SyslogExternalServerResponse) GetSchemas() []EnumsyslogExternalServerSc
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetSchemasOk() ([]EnumsyslogExternalServerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -186,7 +186,7 @@ func (o *SyslogExternalServerResponse) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -209,7 +209,7 @@ func (o *SyslogExternalServerResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil || isNil(o.ServerPort) {
-    return nil, false
+		return nil, false
 	}
 	return o.ServerPort, true
 }
@@ -242,7 +242,7 @@ func (o *SyslogExternalServerResponse) GetTransportMechanism() EnumexternalServe
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetTransportMechanismOk() (*EnumexternalServerTransportMechanismProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TransportMechanism, true
 }
@@ -266,7 +266,7 @@ func (o *SyslogExternalServerResponse) GetConnectTimeout() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetConnectTimeoutOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ConnectTimeout, true
 }
@@ -290,7 +290,7 @@ func (o *SyslogExternalServerResponse) GetMaxConnectionAge() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetMaxConnectionAgeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MaxConnectionAge, true
 }
@@ -314,7 +314,7 @@ func (o *SyslogExternalServerResponse) GetTrustManagerProvider() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.TrustManagerProvider, true
 }
@@ -337,7 +337,7 @@ func (o *SyslogExternalServerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogExternalServerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -429,5 +429,3 @@ func (v *NullableSyslogExternalServerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

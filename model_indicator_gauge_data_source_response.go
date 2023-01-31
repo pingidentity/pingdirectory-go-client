@@ -16,10 +16,10 @@ import (
 
 // IndicatorGaugeDataSourceResponse struct for IndicatorGaugeDataSourceResponse
 type IndicatorGaugeDataSourceResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Gauge Data Source
-	Id string `json:"id"`
+	Id      string                                  `json:"id"`
 	Schemas []EnumindicatorGaugeDataSourceSchemaUrn `json:"schemas"`
 	// A description for this Gauge Data Source
 	Description *string `json:"description,omitempty"`
@@ -73,7 +73,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -105,7 +105,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -138,7 +138,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -162,7 +162,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetSchemas() []EnumindicatorGaugeData
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetSchemasOk() ([]EnumindicatorGaugeDataSourceSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -185,7 +185,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -217,7 +217,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetAdditionalText() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetAdditionalTextOk() (*string, bool) {
 	if o == nil || isNil(o.AdditionalText) {
-    return nil, false
+		return nil, false
 	}
 	return o.AdditionalText, true
 }
@@ -250,7 +250,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMonitorObjectclass() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetMonitorObjectclassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MonitorObjectclass, true
 }
@@ -274,7 +274,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMonitorAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetMonitorAttributeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MonitorAttribute, true
 }
@@ -297,7 +297,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetIncludeFilter() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetIncludeFilterOk() (*string, bool) {
 	if o == nil || isNil(o.IncludeFilter) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeFilter, true
 }
@@ -329,7 +329,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetResourceAttribute() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetResourceAttributeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceAttribute) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceAttribute, true
 }
@@ -361,7 +361,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetResourceType() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetResourceTypeOk() (*string, bool) {
 	if o == nil || isNil(o.ResourceType) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResourceType, true
 }
@@ -393,7 +393,7 @@ func (o *IndicatorGaugeDataSourceResponse) GetMinimumUpdateInterval() string {
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeDataSourceResponse) GetMinimumUpdateIntervalOk() (*string, bool) {
 	if o == nil || isNil(o.MinimumUpdateInterval) {
-    return nil, false
+		return nil, false
 	}
 	return o.MinimumUpdateInterval, true
 }
@@ -488,5 +488,3 @@ func (v *NullableIndicatorGaugeDataSourceResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

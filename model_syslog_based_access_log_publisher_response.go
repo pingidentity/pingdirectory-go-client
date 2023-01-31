@@ -16,10 +16,10 @@ import (
 
 // SyslogBasedAccessLogPublisherResponse struct for SyslogBasedAccessLogPublisherResponse
 type SyslogBasedAccessLogPublisherResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Log Publisher
-	Id string `json:"id"`
+	Id      string                                       `json:"id"`
 	Schemas []EnumsyslogBasedAccessLogPublisherSchemaUrn `json:"schemas"`
 	// Indicates whether the Syslog Based Access Log Publisher is enabled for use.
 	Enabled bool `json:"enabled"`
@@ -114,7 +114,7 @@ type SyslogBasedAccessLogPublisherResponse struct {
 	// Specifies a set of search reference criteria that must match the associated search result reference in order for that it to be logged by this Access Log Publisher.
 	SearchReferenceCriteria *string `json:"searchReferenceCriteria,omitempty"`
 	// A description for this Log Publisher
-	Description *string `json:"description,omitempty"`
+	Description          *string                                   `json:"description,omitempty"`
 	LoggingErrorBehavior *EnumlogPublisherLoggingErrorBehaviorProp `json:"loggingErrorBehavior,omitempty"`
 }
 
@@ -155,7 +155,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -187,7 +187,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigu
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -220,7 +220,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -244,7 +244,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSchemas() []EnumsyslogBasedAc
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetSchemasOk() ([]EnumsyslogBasedAccessLogPublisherSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -268,7 +268,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -292,7 +292,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetServerHostName() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetServerHostNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerHostName, true
 }
@@ -316,7 +316,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetServerPort() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetServerPortOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ServerPort, true
 }
@@ -340,7 +340,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacility() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetSyslogFacilityOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SyslogFacility, true
 }
@@ -363,7 +363,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxStringLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxStringLength, true
 }
@@ -395,7 +395,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogConnects() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogConnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogConnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogConnects, true
 }
@@ -427,7 +427,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogDisconnects() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogDisconnectsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogDisconnects) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogDisconnects, true
 }
@@ -459,7 +459,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogRequests() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogRequestsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogRequests) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogRequests, true
 }
@@ -491,7 +491,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogAssuranceCompleted() bool 
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogAssuranceCompletedOk() (*bool, bool) {
 	if o == nil || isNil(o.LogAssuranceCompleted) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogAssuranceCompleted, true
 }
@@ -523,7 +523,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeProductName() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeProductName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeProductName, true
 }
@@ -555,7 +555,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeInstanceName() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeInstanceName) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeInstanceName, true
 }
@@ -587,7 +587,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeStartupID() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeStartupID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeStartupID, true
 }
@@ -619,7 +619,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeThreadID() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeThreadID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeThreadID, true
 }
@@ -651,7 +651,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequesterDN() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequesterDNOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterDN) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterDN, true
 }
@@ -683,7 +683,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequesterIPAddress() b
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequesterIPAddressOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequesterIPAddress) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
 }
@@ -715,7 +715,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInResult
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInResultMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInResultMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInResultMessages, true
 }
@@ -747,7 +747,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInSearch
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchEntryMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInSearchEntryMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInSearchEntryMessages, true
 }
@@ -779,7 +779,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInSearch
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInSearchReferenceMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInSearchReferenceMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInSearchReferenceMessages, true
 }
@@ -811,7 +811,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInInterm
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestDetailsInIntermediateResponseMessagesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestDetailsInIntermediateResponseMessages) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestDetailsInIntermediateResponseMessages, true
 }
@@ -843,7 +843,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeResultCodeNames() bool
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeResultCodeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResultCodeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResultCodeNames, true
 }
@@ -875,7 +875,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeExtendedSearchRequestD
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeExtendedSearchRequestDetailsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeExtendedSearchRequestDetails) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeExtendedSearchRequestDetails, true
 }
@@ -907,7 +907,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeAddAttributeNames() bo
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeAddAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeAddAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAddAttributeNames, true
 }
@@ -939,7 +939,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeModifyAttributeNames()
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeModifyAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeModifyAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeModifyAttributeNames, true
 }
@@ -971,7 +971,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeSearchEntryAttributeNa
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeSearchEntryAttributeNamesOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeSearchEntryAttributeNames) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeSearchEntryAttributeNames, true
 }
@@ -1003,7 +1003,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestControls() bool
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeRequestControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeRequestControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeRequestControls, true
 }
@@ -1035,7 +1035,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeResponseControls() boo
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeResponseControlsOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeResponseControls) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeResponseControls, true
 }
@@ -1067,7 +1067,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeReplicationChangeID() 
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetIncludeReplicationChangeIDOk() (*bool, bool) {
 	if o == nil || isNil(o.IncludeReplicationChangeID) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
 }
@@ -1099,7 +1099,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPos
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
 	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
-    return nil, false
+		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
 }
@@ -1132,7 +1132,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetAsynchronous() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Asynchronous, true
 }
@@ -1155,7 +1155,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetAutoFlush() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetAutoFlushOk() (*bool, bool) {
 	if o == nil || isNil(o.AutoFlush) {
-    return nil, false
+		return nil, false
 	}
 	return o.AutoFlush, true
 }
@@ -1187,7 +1187,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSize() int32 {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 	if o == nil || isNil(o.QueueSize) {
-    return nil, false
+		return nil, false
 	}
 	return o.QueueSize, true
 }
@@ -1219,7 +1219,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogFieldBehavior() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogFieldBehaviorOk() (*string, bool) {
 	if o == nil || isNil(o.LogFieldBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogFieldBehavior, true
 }
@@ -1251,7 +1251,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogSecurityNegotiation() bool
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSecurityNegotiation) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
 }
@@ -1283,7 +1283,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogClientCertificates() bool 
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogClientCertificatesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogClientCertificates) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogClientCertificates, true
 }
@@ -1315,7 +1315,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogResults() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.LogResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogResults, true
 }
@@ -1347,7 +1347,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogSearchEntries() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogSearchEntriesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchEntries) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchEntries, true
 }
@@ -1379,7 +1379,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogSearchReferences() bool {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogSearchReferencesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogSearchReferences) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogSearchReferences, true
 }
@@ -1411,7 +1411,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLogIntermediateResponses() bo
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLogIntermediateResponsesOk() (*bool, bool) {
 	if o == nil || isNil(o.LogIntermediateResponses) {
-    return nil, false
+		return nil, false
 	}
 	return o.LogIntermediateResponses, true
 }
@@ -1443,7 +1443,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSuppressInternalOperations() 
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressInternalOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressInternalOperations, true
 }
@@ -1475,7 +1475,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSuppressReplicationOperations
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
 	if o == nil || isNil(o.SuppressReplicationOperations) {
-    return nil, false
+		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
 }
@@ -1507,7 +1507,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetCorrelateRequestsAndResults()
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
 	if o == nil || isNil(o.CorrelateRequestsAndResults) {
-    return nil, false
+		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
 }
@@ -1539,7 +1539,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetConnectionCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ConnectionCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ConnectionCriteria, true
 }
@@ -1571,7 +1571,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetRequestCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.RequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequestCriteria, true
 }
@@ -1603,7 +1603,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetResultCriteria() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.ResultCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.ResultCriteria, true
 }
@@ -1635,7 +1635,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSearchEntryCriteria() string 
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetSearchEntryCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchEntryCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchEntryCriteria, true
 }
@@ -1667,7 +1667,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetSearchReferenceCriteria() str
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetSearchReferenceCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.SearchReferenceCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
 }
@@ -1699,7 +1699,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -1731,7 +1731,7 @@ func (o *SyslogBasedAccessLogPublisherResponse) GetLoggingErrorBehavior() Enumlo
 // and a boolean to check if the value has been set.
 func (o *SyslogBasedAccessLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
 	if o == nil || isNil(o.LoggingErrorBehavior) {
-    return nil, false
+		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
 }
@@ -1946,5 +1946,3 @@ func (v *NullableSyslogBasedAccessLogPublisherResponse) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

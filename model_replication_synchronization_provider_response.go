@@ -16,9 +16,9 @@ import (
 
 // ReplicationSynchronizationProviderResponse struct for ReplicationSynchronizationProviderResponse
 type ReplicationSynchronizationProviderResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumreplicationSynchronizationProviderSchemaUrn `json:"schemas,omitempty"`
+	Schemas                                       []EnumreplicationSynchronizationProviderSchemaUrn  `json:"schemas,omitempty"`
 	// Specifies the number of update replay threads.
 	NumUpdateReplayThreads *int32 `json:"numUpdateReplayThreads,omitempty"`
 	// A description for this Synchronization Provider
@@ -58,7 +58,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -90,7 +90,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetUrnpingidentityschemasco
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -122,7 +122,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetSchemas() []Enumreplicat
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetSchemasOk() ([]EnumreplicationSynchronizationProviderSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -154,7 +154,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreads()
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetNumUpdateReplayThreadsOk() (*int32, bool) {
 	if o == nil || isNil(o.NumUpdateReplayThreads) {
-    return nil, false
+		return nil, false
 	}
 	return o.NumUpdateReplayThreads, true
 }
@@ -186,7 +186,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -219,7 +219,7 @@ func (o *ReplicationSynchronizationProviderResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ReplicationSynchronizationProviderResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -287,5 +287,3 @@ func (v *NullableReplicationSynchronizationProviderResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

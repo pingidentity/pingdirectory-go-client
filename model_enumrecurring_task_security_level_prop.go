@@ -20,9 +20,9 @@ type EnumrecurringTaskSecurityLevelProp string
 
 // List of Enumrecurring-task-securityLevelProp
 const (
-	ENUMRECURRINGTASKSECURITYLEVELPROP_NONE EnumrecurringTaskSecurityLevelProp = "none"
+	ENUMRECURRINGTASKSECURITYLEVELPROP_NONE            EnumrecurringTaskSecurityLevelProp = "none"
 	ENUMRECURRINGTASKSECURITYLEVELPROP_OBSCURE_SECRETS EnumrecurringTaskSecurityLevelProp = "obscure-secrets"
-	ENUMRECURRINGTASKSECURITYLEVELPROP_MAXIMUM EnumrecurringTaskSecurityLevelProp = "maximum"
+	ENUMRECURRINGTASKSECURITYLEVELPROP_MAXIMUM         EnumrecurringTaskSecurityLevelProp = "maximum"
 )
 
 // All allowed values of EnumrecurringTaskSecurityLevelProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumrecurringTaskSecurityLevelProp) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

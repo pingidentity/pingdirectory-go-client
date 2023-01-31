@@ -20,8 +20,8 @@ type EnumconnectionCriteriaCommunicationSecurityLevelProp string
 
 // List of Enumconnection-criteria-communicationSecurityLevelProp
 const (
-	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_ANY EnumconnectionCriteriaCommunicationSecurityLevelProp = "any"
-	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_SECURE_ONLY EnumconnectionCriteriaCommunicationSecurityLevelProp = "secure-only"
+	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_ANY           EnumconnectionCriteriaCommunicationSecurityLevelProp = "any"
+	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_SECURE_ONLY   EnumconnectionCriteriaCommunicationSecurityLevelProp = "secure-only"
 	ENUMCONNECTIONCRITERIACOMMUNICATIONSECURITYLEVELPROP_INSECURE_ONLY EnumconnectionCriteriaCommunicationSecurityLevelProp = "insecure-only"
 )
 
@@ -110,4 +110,3 @@ func (v *NullableEnumconnectionCriteriaCommunicationSecurityLevelProp) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

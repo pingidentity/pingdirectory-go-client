@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // AttributeSyntaxApiService AttributeSyntaxApi service
 type AttributeSyntaxApiService service
 
 type ApiGetAttributeSyntaxRequest struct {
-	ctx context.Context
-	ApiService *AttributeSyntaxApiService
+	ctx                 context.Context
+	ApiService          *AttributeSyntaxApiService
 	attributeSyntaxName string
 }
 
@@ -36,26 +35,27 @@ func (r ApiGetAttributeSyntaxRequest) Execute() (*GetAttributeSyntax200Response,
 /*
 GetAttributeSyntax Returns a single Attribute Syntax
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param attributeSyntaxName Name of the Attribute Syntax to be read
- @return ApiGetAttributeSyntaxRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param attributeSyntaxName Name of the Attribute Syntax to be read
+	@return ApiGetAttributeSyntaxRequest
 */
 func (a *AttributeSyntaxApiService) GetAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiGetAttributeSyntaxRequest {
 	return ApiGetAttributeSyntaxRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		attributeSyntaxName: attributeSyntaxName,
 	}
 }
 
 // Execute executes the request
-//  @return GetAttributeSyntax200Response
+//
+//	@return GetAttributeSyntax200Response
 func (a *AttributeSyntaxApiService) GetAttributeSyntaxExecute(r ApiGetAttributeSyntaxRequest) (*GetAttributeSyntax200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAttributeSyntax200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAttributeSyntax200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxApiService.GetAttributeSyntax")
@@ -125,10 +125,10 @@ func (a *AttributeSyntaxApiService) GetAttributeSyntaxExecute(r ApiGetAttributeS
 }
 
 type ApiUpdateAttributeSyntaxRequest struct {
-	ctx context.Context
-	ApiService *AttributeSyntaxApiService
+	ctx                 context.Context
+	ApiService          *AttributeSyntaxApiService
 	attributeSyntaxName string
-	updateRequest *UpdateRequest
+	updateRequest       *UpdateRequest
 }
 
 // Update an existing Attribute Syntax
@@ -144,26 +144,27 @@ func (r ApiUpdateAttributeSyntaxRequest) Execute() (*GetAttributeSyntax200Respon
 /*
 UpdateAttributeSyntax Update an existing Attribute Syntax by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param attributeSyntaxName Name of the Attribute Syntax to be updated
- @return ApiUpdateAttributeSyntaxRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param attributeSyntaxName Name of the Attribute Syntax to be updated
+	@return ApiUpdateAttributeSyntaxRequest
 */
 func (a *AttributeSyntaxApiService) UpdateAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiUpdateAttributeSyntaxRequest {
 	return ApiUpdateAttributeSyntaxRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		attributeSyntaxName: attributeSyntaxName,
 	}
 }
 
 // Execute executes the request
-//  @return GetAttributeSyntax200Response
+//
+//	@return GetAttributeSyntax200Response
 func (a *AttributeSyntaxApiService) UpdateAttributeSyntaxExecute(r ApiUpdateAttributeSyntaxRequest) (*GetAttributeSyntax200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetAttributeSyntax200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetAttributeSyntax200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttributeSyntaxApiService.UpdateAttributeSyntax")

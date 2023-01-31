@@ -17,11 +17,11 @@ import (
 
 // GetServerInstance200Response - struct for GetServerInstance200Response
 type GetServerInstance200Response struct {
-	AuthorizeServerInstanceResponse *AuthorizeServerInstanceResponse
-	DirectoryServerInstanceResponse *DirectoryServerInstanceResponse
+	AuthorizeServerInstanceResponse     *AuthorizeServerInstanceResponse
+	DirectoryServerInstanceResponse     *DirectoryServerInstanceResponse
 	MetricsEngineServerInstanceResponse *MetricsEngineServerInstanceResponse
-	ProxyServerInstanceResponse *ProxyServerInstanceResponse
-	SyncServerInstanceResponse *SyncServerInstanceResponse
+	ProxyServerInstanceResponse         *ProxyServerInstanceResponse
+	SyncServerInstanceResponse          *SyncServerInstanceResponse
 }
 
 // AuthorizeServerInstanceResponseAsGetServerInstance200Response is a convenience function that returns AuthorizeServerInstanceResponse wrapped in GetServerInstance200Response
@@ -58,7 +58,6 @@ func SyncServerInstanceResponseAsGetServerInstance200Response(v *SyncServerInsta
 		SyncServerInstanceResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetServerInstance200Response) UnmarshalJSON(data []byte) error {
@@ -171,7 +170,7 @@ func (src GetServerInstance200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetServerInstance200Response) GetActualInstance() (interface{}) {
+func (obj *GetServerInstance200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -234,5 +233,3 @@ func (v *NullableGetServerInstance200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

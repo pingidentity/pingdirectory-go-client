@@ -20,14 +20,14 @@ type EnumbackendId2entryCacheModeProp string
 
 // List of Enumbackend-id2entryCacheModeProp
 const (
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_CACHE_KEYS_AND_VALUES EnumbackendId2entryCacheModeProp = "cache-keys-and-values"
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_CACHE_KEYS_ONLY EnumbackendId2entryCacheModeProp = "cache-keys-only"
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_NO_CACHING EnumbackendId2entryCacheModeProp = "no-caching"
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_KEEP_HOT EnumbackendId2entryCacheModeProp = "keep-hot"
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_DEFAULT EnumbackendId2entryCacheModeProp = "default"
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_MAKE_COLD EnumbackendId2entryCacheModeProp = "make-cold"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_CACHE_KEYS_AND_VALUES  EnumbackendId2entryCacheModeProp = "cache-keys-and-values"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_CACHE_KEYS_ONLY        EnumbackendId2entryCacheModeProp = "cache-keys-only"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_NO_CACHING             EnumbackendId2entryCacheModeProp = "no-caching"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_KEEP_HOT               EnumbackendId2entryCacheModeProp = "keep-hot"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_DEFAULT                EnumbackendId2entryCacheModeProp = "default"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_MAKE_COLD              EnumbackendId2entryCacheModeProp = "make-cold"
 	ENUMBACKENDID2ENTRYCACHEMODEPROP_EVICT_LEAF_IMMEDIATELY EnumbackendId2entryCacheModeProp = "evict-leaf-immediately"
-	ENUMBACKENDID2ENTRYCACHEMODEPROP_EVICT_BIN_IMMEDIATELY EnumbackendId2entryCacheModeProp = "evict-bin-immediately"
+	ENUMBACKENDID2ENTRYCACHEMODEPROP_EVICT_BIN_IMMEDIATELY  EnumbackendId2entryCacheModeProp = "evict-bin-immediately"
 )
 
 // All allowed values of EnumbackendId2entryCacheModeProp enum
@@ -120,4 +120,3 @@ func (v *NullableEnumbackendId2entryCacheModeProp) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -17,9 +17,9 @@ import (
 
 // AddRequestCriteria200Response - struct for AddRequestCriteria200Response
 type AddRequestCriteria200Response struct {
-	AggregateRequestCriteriaResponse *AggregateRequestCriteriaResponse
-	RootDseRequestCriteriaResponse *RootDseRequestCriteriaResponse
-	SimpleRequestCriteriaResponse *SimpleRequestCriteriaResponse
+	AggregateRequestCriteriaResponse  *AggregateRequestCriteriaResponse
+	RootDseRequestCriteriaResponse    *RootDseRequestCriteriaResponse
+	SimpleRequestCriteriaResponse     *SimpleRequestCriteriaResponse
 	ThirdPartyRequestCriteriaResponse *ThirdPartyRequestCriteriaResponse
 }
 
@@ -50,7 +50,6 @@ func ThirdPartyRequestCriteriaResponseAsAddRequestCriteria200Response(v *ThirdPa
 		ThirdPartyRequestCriteriaResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AddRequestCriteria200Response) UnmarshalJSON(data []byte) error {
@@ -145,7 +144,7 @@ func (src AddRequestCriteria200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AddRequestCriteria200Response) GetActualInstance() (interface{}) {
+func (obj *AddRequestCriteria200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -204,5 +203,3 @@ func (v *NullableAddRequestCriteria200Response) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // ThirdPartyAccountStatusNotificationHandlerResponse struct for ThirdPartyAccountStatusNotificationHandlerResponse
 type ThirdPartyAccountStatusNotificationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Account Status Notification Handler
-	Id string `json:"id"`
+	Id      string                                                    `json:"id"`
 	Schemas []EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Java class providing the logic for the Third Party Account Status Notification Handler.
 	ExtensionClass string `json:"extensionClass"`
@@ -71,7 +71,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetMeta() MetaMeta 
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -103,7 +103,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetUrnpingidentitys
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -136,7 +136,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -160,7 +160,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetSchemas() []Enum
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetSchemasOk() ([]EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -184,7 +184,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetExtensionClass()
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetExtensionClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ExtensionClass, true
 }
@@ -207,7 +207,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetExtensionArgumen
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetExtensionArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ExtensionArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtensionArgument, true
 }
@@ -239,7 +239,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetDescription() st
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -272,7 +272,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -295,7 +295,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetAsynchronous() b
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetAsynchronousOk() (*bool, bool) {
 	if o == nil || isNil(o.Asynchronous) {
-    return nil, false
+		return nil, false
 	}
 	return o.Asynchronous, true
 }
@@ -327,7 +327,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetAccountCreationN
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetAccountCreationNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountCreationNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountCreationNotificationRequestCriteria, true
 }
@@ -359,7 +359,7 @@ func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetAccountUpdateNot
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyAccountStatusNotificationHandlerResponse) GetAccountUpdateNotificationRequestCriteriaOk() (*string, bool) {
 	if o == nil || isNil(o.AccountUpdateNotificationRequestCriteria) {
-    return nil, false
+		return nil, false
 	}
 	return o.AccountUpdateNotificationRequestCriteria, true
 }
@@ -451,5 +451,3 @@ func (v *NullableThirdPartyAccountStatusNotificationHandlerResponse) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

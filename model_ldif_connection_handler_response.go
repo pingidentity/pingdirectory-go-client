@@ -16,10 +16,10 @@ import (
 
 // LdifConnectionHandlerResponse struct for LdifConnectionHandlerResponse
 type LdifConnectionHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Connection Handler
-	Id string `json:"id"`
+	Id      string                               `json:"id"`
 	Schemas []EnumldifConnectionHandlerSchemaUrn `json:"schemas"`
 	// Specifies a set of address masks that determines the addresses of the clients that are allowed to establish connections to this connection handler.
 	AllowedClient []string `json:"allowedClient,omitempty"`
@@ -70,7 +70,7 @@ func (o *LdifConnectionHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -102,7 +102,7 @@ func (o *LdifConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationme
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -135,7 +135,7 @@ func (o *LdifConnectionHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -159,7 +159,7 @@ func (o *LdifConnectionHandlerResponse) GetSchemas() []EnumldifConnectionHandler
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetSchemasOk() ([]EnumldifConnectionHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *LdifConnectionHandlerResponse) GetAllowedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetAllowedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.AllowedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowedClient, true
 }
@@ -214,7 +214,7 @@ func (o *LdifConnectionHandlerResponse) GetDeniedClient() []string {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetDeniedClientOk() ([]string, bool) {
 	if o == nil || isNil(o.DeniedClient) {
-    return nil, false
+		return nil, false
 	}
 	return o.DeniedClient, true
 }
@@ -247,7 +247,7 @@ func (o *LdifConnectionHandlerResponse) GetLdifDirectory() string {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetLdifDirectoryOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.LdifDirectory, true
 }
@@ -271,7 +271,7 @@ func (o *LdifConnectionHandlerResponse) GetPollInterval() string {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetPollIntervalOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.PollInterval, true
 }
@@ -294,7 +294,7 @@ func (o *LdifConnectionHandlerResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -327,7 +327,7 @@ func (o *LdifConnectionHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *LdifConnectionHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -407,5 +407,3 @@ func (v *NullableLdifConnectionHandlerResponse) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

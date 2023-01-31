@@ -17,8 +17,8 @@ import (
 // AddBcryptPasswordStorageSchemeRequest struct for AddBcryptPasswordStorageSchemeRequest
 type AddBcryptPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                     `json:"schemeName"`
+	Schemas    []EnumbcryptPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// Specifies the cost factor to use when encoding passwords with Bcrypt. A higher cost factor requires more processing to generate a password, which makes attacks against the password more expensive.
 	BcryptCostFactor *int32 `json:"bcryptCostFactor,omitempty"`
 	// A description for this Password Storage Scheme
@@ -61,7 +61,7 @@ func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -85,7 +85,7 @@ func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemas() []EnumbcryptPasswor
 // and a boolean to check if the value has been set.
 func (o *AddBcryptPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumbcryptPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -108,7 +108,7 @@ func (o *AddBcryptPasswordStorageSchemeRequest) GetBcryptCostFactor() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddBcryptPasswordStorageSchemeRequest) GetBcryptCostFactorOk() (*int32, bool) {
 	if o == nil || isNil(o.BcryptCostFactor) {
-    return nil, false
+		return nil, false
 	}
 	return o.BcryptCostFactor, true
 }
@@ -140,7 +140,7 @@ func (o *AddBcryptPasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddBcryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -173,7 +173,7 @@ func (o *AddBcryptPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddBcryptPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -238,5 +238,3 @@ func (v *NullableAddBcryptPasswordStorageSchemeRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,10 +16,10 @@ import (
 
 // Aes256PasswordStorageSchemeResponse struct for Aes256PasswordStorageSchemeResponse
 type Aes256PasswordStorageSchemeResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Storage Scheme
-	Id string `json:"id"`
+	Id      string                                     `json:"id"`
 	Schemas []Enumaes256PasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// The identifier for the encryption settings definition that should be used to derive the encryption key to use when encrypting new passwords. If this is not provided, the server's preferred encryption settings definition will be used.
 	EncryptionSettingsDefinitionID *string `json:"encryptionSettingsDefinitionID,omitempty"`
@@ -62,7 +62,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigura
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -151,7 +151,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetSchemas() []Enumaes256PasswordS
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetSchemasOk() ([]Enumaes256PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -174,7 +174,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetEncryptionSettingsDefinitionID(
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
 	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
-    return nil, false
+		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
 }
@@ -206,7 +206,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -239,7 +239,7 @@ func (o *Aes256PasswordStorageSchemeResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *Aes256PasswordStorageSchemeResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -310,5 +310,3 @@ func (v *NullableAes256PasswordStorageSchemeResponse) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

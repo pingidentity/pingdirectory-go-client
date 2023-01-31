@@ -16,10 +16,10 @@ import (
 
 // DelegatedAdminAttributeCategoryResponse struct for DelegatedAdminAttributeCategoryResponse
 type DelegatedAdminAttributeCategoryResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Delegated Admin Attribute Category
-	Id string `json:"id"`
+	Id      string                                         `json:"id"`
 	Schemas []EnumdelegatedAdminAttributeCategorySchemaUrn `json:"schemas,omitempty"`
 	// A description for this Delegated Admin Attribute Category
 	Description *string `json:"description,omitempty"`
@@ -62,7 +62,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -94,7 +94,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetUrnpingidentityschemasconfi
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -127,7 +127,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -150,7 +150,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetSchemas() []EnumdelegatedAd
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetSchemasOk() ([]EnumdelegatedAdminAttributeCategorySchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -215,7 +215,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayName() string {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DisplayName, true
 }
@@ -239,7 +239,7 @@ func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayOrderIndex() int32 {
 // and a boolean to check if the value has been set.
 func (o *DelegatedAdminAttributeCategoryResponse) GetDisplayOrderIndexOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DisplayOrderIndex, true
 }
@@ -310,5 +310,3 @@ func (v *NullableDelegatedAdminAttributeCategoryResponse) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -19,13 +19,12 @@ import (
 	"strings"
 )
 
-
 // AccountStatusNotificationHandlerApiService AccountStatusNotificationHandlerApi service
 type AccountStatusNotificationHandlerApiService service
 
 type ApiAddAccountStatusNotificationHandlerRequest struct {
-	ctx context.Context
-	ApiService *AccountStatusNotificationHandlerApiService
+	ctx                                        context.Context
+	ApiService                                 *AccountStatusNotificationHandlerApiService
 	addAccountStatusNotificationHandlerRequest *AddAccountStatusNotificationHandlerRequest
 }
 
@@ -42,24 +41,25 @@ func (r ApiAddAccountStatusNotificationHandlerRequest) Execute() (*AddAccountSta
 /*
 AddAccountStatusNotificationHandler Add a new Account Status Notification Handler to the config
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddAccountStatusNotificationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiAddAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificationHandler(ctx context.Context) ApiAddAccountStatusNotificationHandlerRequest {
 	return ApiAddAccountStatusNotificationHandlerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return AddAccountStatusNotificationHandler200Response
+//
+//	@return AddAccountStatusNotificationHandler200Response
 func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificationHandlerExecute(r ApiAddAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddAccountStatusNotificationHandler200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddAccountStatusNotificationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.AddAccountStatusNotificationHandler")
@@ -133,8 +133,8 @@ func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificatio
 }
 
 type ApiDeleteAccountStatusNotificationHandlerRequest struct {
-	ctx context.Context
-	ApiService *AccountStatusNotificationHandlerApiService
+	ctx                                  context.Context
+	ApiService                           *AccountStatusNotificationHandlerApiService
 	accountStatusNotificationHandlerName string
 }
 
@@ -145,14 +145,14 @@ func (r ApiDeleteAccountStatusNotificationHandlerRequest) Execute() (*http.Respo
 /*
 DeleteAccountStatusNotificationHandler Delete a Account Status Notification Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be deleted
- @return ApiDeleteAccountStatusNotificationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be deleted
+	@return ApiDeleteAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiDeleteAccountStatusNotificationHandlerRequest {
 	return ApiDeleteAccountStatusNotificationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                           a,
+		ctx:                                  ctx,
 		accountStatusNotificationHandlerName: accountStatusNotificationHandlerName,
 	}
 }
@@ -160,9 +160,9 @@ func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotifica
 // Execute executes the request
 func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotificationHandlerExecute(r ApiDeleteAccountStatusNotificationHandlerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.DeleteAccountStatusNotificationHandler")
@@ -223,8 +223,8 @@ func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotifica
 }
 
 type ApiGetAccountStatusNotificationHandlerRequest struct {
-	ctx context.Context
-	ApiService *AccountStatusNotificationHandlerApiService
+	ctx                                  context.Context
+	ApiService                           *AccountStatusNotificationHandlerApiService
 	accountStatusNotificationHandlerName string
 }
 
@@ -235,26 +235,27 @@ func (r ApiGetAccountStatusNotificationHandlerRequest) Execute() (*AddAccountSta
 /*
 GetAccountStatusNotificationHandler Returns a single Account Status Notification Handler
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be read
- @return ApiGetAccountStatusNotificationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be read
+	@return ApiGetAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiGetAccountStatusNotificationHandlerRequest {
 	return ApiGetAccountStatusNotificationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                           a,
+		ctx:                                  ctx,
 		accountStatusNotificationHandlerName: accountStatusNotificationHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddAccountStatusNotificationHandler200Response
+//
+//	@return AddAccountStatusNotificationHandler200Response
 func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificationHandlerExecute(r ApiGetAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddAccountStatusNotificationHandler200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddAccountStatusNotificationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.GetAccountStatusNotificationHandler")
@@ -324,10 +325,10 @@ func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificatio
 }
 
 type ApiUpdateAccountStatusNotificationHandlerRequest struct {
-	ctx context.Context
-	ApiService *AccountStatusNotificationHandlerApiService
+	ctx                                  context.Context
+	ApiService                           *AccountStatusNotificationHandlerApiService
 	accountStatusNotificationHandlerName string
-	updateRequest *UpdateRequest
+	updateRequest                        *UpdateRequest
 }
 
 // Update an existing Account Status Notification Handler
@@ -343,26 +344,27 @@ func (r ApiUpdateAccountStatusNotificationHandlerRequest) Execute() (*AddAccount
 /*
 UpdateAccountStatusNotificationHandler Update an existing Account Status Notification Handler by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be updated
- @return ApiUpdateAccountStatusNotificationHandlerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be updated
+	@return ApiUpdateAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiUpdateAccountStatusNotificationHandlerRequest {
 	return ApiUpdateAccountStatusNotificationHandlerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                           a,
+		ctx:                                  ctx,
 		accountStatusNotificationHandlerName: accountStatusNotificationHandlerName,
 	}
 }
 
 // Execute executes the request
-//  @return AddAccountStatusNotificationHandler200Response
+//
+//	@return AddAccountStatusNotificationHandler200Response
 func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotificationHandlerExecute(r ApiUpdateAccountStatusNotificationHandlerRequest) (*AddAccountStatusNotificationHandler200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AddAccountStatusNotificationHandler200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AddAccountStatusNotificationHandler200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountStatusNotificationHandlerApiService.UpdateAccountStatusNotificationHandler")

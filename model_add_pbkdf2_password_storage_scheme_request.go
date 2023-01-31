@@ -17,8 +17,8 @@ import (
 // AddPbkdf2PasswordStorageSchemeRequest struct for AddPbkdf2PasswordStorageSchemeRequest
 type AddPbkdf2PasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []Enumpbkdf2PasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName      string                                        `json:"schemeName"`
+	Schemas         []Enumpbkdf2PasswordStorageSchemeSchemaUrn    `json:"schemas"`
 	DigestAlgorithm *EnumpasswordStorageSchemeDigestAlgorithmProp `json:"digestAlgorithm,omitempty"`
 	// Specifies the number of iterations to use when encoding passwords. The value must be greater than or equal to 1000.
 	IterationCount int32 `json:"iterationCount"`
@@ -71,7 +71,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -95,7 +95,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemas() []Enumpbkdf2Passwor
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSchemasOk() ([]Enumpbkdf2PasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -118,7 +118,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDigestAlgorithm() Enumpasswor
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDigestAlgorithmOk() (*EnumpasswordStorageSchemeDigestAlgorithmProp, bool) {
 	if o == nil || isNil(o.DigestAlgorithm) {
-    return nil, false
+		return nil, false
 	}
 	return o.DigestAlgorithm, true
 }
@@ -151,7 +151,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IterationCount, true
 }
@@ -175,7 +175,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SaltLengthBytes, true
 }
@@ -199,7 +199,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.DerivedKeyLengthBytes, true
 }
@@ -222,7 +222,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
 	if o == nil || isNil(o.MaxPasswordLength) {
-    return nil, false
+		return nil, false
 	}
 	return o.MaxPasswordLength, true
 }
@@ -254,7 +254,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -287,7 +287,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -364,5 +364,3 @@ func (v *NullableAddPbkdf2PasswordStorageSchemeRequest) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

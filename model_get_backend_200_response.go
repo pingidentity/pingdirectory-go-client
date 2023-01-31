@@ -17,18 +17,18 @@ import (
 
 // GetBackend200Response - struct for GetBackend200Response
 type GetBackend200Response struct {
-	AlarmBackendResponse *AlarmBackendResponse
-	AlertBackendResponse *AlertBackendResponse
-	BackupBackendResponse *BackupBackendResponse
-	ChangelogBackendResponse *ChangelogBackendResponse
-	ConfigFileHandlerBackendResponse *ConfigFileHandlerBackendResponse
+	AlarmBackendResponse              *AlarmBackendResponse
+	AlertBackendResponse              *AlertBackendResponse
+	BackupBackendResponse             *BackupBackendResponse
+	ChangelogBackendResponse          *ChangelogBackendResponse
+	ConfigFileHandlerBackendResponse  *ConfigFileHandlerBackendResponse
 	EncryptionSettingsBackendResponse *EncryptionSettingsBackendResponse
-	LocalDbBackendResponse *LocalDbBackendResponse
-	MetricsBackendResponse *MetricsBackendResponse
-	MonitorBackendResponse *MonitorBackendResponse
-	SchemaBackendResponse *SchemaBackendResponse
-	TaskBackendResponse *TaskBackendResponse
-	TrustStoreBackendResponse *TrustStoreBackendResponse
+	LocalDbBackendResponse            *LocalDbBackendResponse
+	MetricsBackendResponse            *MetricsBackendResponse
+	MonitorBackendResponse            *MonitorBackendResponse
+	SchemaBackendResponse             *SchemaBackendResponse
+	TaskBackendResponse               *TaskBackendResponse
+	TrustStoreBackendResponse         *TrustStoreBackendResponse
 }
 
 // AlarmBackendResponseAsGetBackend200Response is a convenience function that returns AlarmBackendResponse wrapped in GetBackend200Response
@@ -114,7 +114,6 @@ func TrustStoreBackendResponseAsGetBackend200Response(v *TrustStoreBackendRespon
 		TrustStoreBackendResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetBackend200Response) UnmarshalJSON(data []byte) error {
@@ -353,7 +352,7 @@ func (src GetBackend200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetBackend200Response) GetActualInstance() (interface{}) {
+func (obj *GetBackend200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -444,5 +443,3 @@ func (v *NullableGetBackend200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

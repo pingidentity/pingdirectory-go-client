@@ -17,8 +17,8 @@ import (
 // AddObscuredValueRequest struct for AddObscuredValueRequest
 type AddObscuredValueRequest struct {
 	// Name of the new Obscured Value
-	ValueName string `json:"valueName"`
-	Schemas []EnumobscuredValueSchemaUrn `json:"schemas,omitempty"`
+	ValueName string                       `json:"valueName"`
+	Schemas   []EnumobscuredValueSchemaUrn `json:"schemas,omitempty"`
 	// A description for this Obscured Value
 	Description *string `json:"description,omitempty"`
 	// The value to be stored in an obscured form.
@@ -58,7 +58,7 @@ func (o *AddObscuredValueRequest) GetValueName() string {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValueRequest) GetValueNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ValueName, true
 }
@@ -81,7 +81,7 @@ func (o *AddObscuredValueRequest) GetSchemas() []EnumobscuredValueSchemaUrn {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValueRequest) GetSchemasOk() ([]EnumobscuredValueSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddObscuredValueRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValueRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -146,7 +146,7 @@ func (o *AddObscuredValueRequest) GetObscuredValue() string {
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValueRequest) GetObscuredValueOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ObscuredValue, true
 }
@@ -208,5 +208,3 @@ func (v *NullableAddObscuredValueRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ type EnumexternalServerTransactionIsolationLevelProp string
 
 // List of Enumexternal-server-transactionIsolationLevelProp
 const (
-	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_READ_COMMITTED EnumexternalServerTransactionIsolationLevelProp = "read-committed"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_READ_COMMITTED   EnumexternalServerTransactionIsolationLevelProp = "read-committed"
 	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_READ_UNCOMMITTED EnumexternalServerTransactionIsolationLevelProp = "read-uncommitted"
-	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_REPEATABLE_READ EnumexternalServerTransactionIsolationLevelProp = "repeatable-read"
-	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_SERIALIZABLE EnumexternalServerTransactionIsolationLevelProp = "serializable"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_REPEATABLE_READ  EnumexternalServerTransactionIsolationLevelProp = "repeatable-read"
+	ENUMEXTERNALSERVERTRANSACTIONISOLATIONLEVELPROP_SERIALIZABLE     EnumexternalServerTransactionIsolationLevelProp = "serializable"
 )
 
 // All allowed values of EnumexternalServerTransactionIsolationLevelProp enum
@@ -112,4 +112,3 @@ func (v *NullableEnumexternalServerTransactionIsolationLevelProp) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

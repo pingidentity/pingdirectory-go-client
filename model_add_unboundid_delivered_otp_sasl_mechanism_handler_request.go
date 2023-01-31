@@ -17,8 +17,8 @@ import (
 // AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct for AddUnboundidDeliveredOtpSaslMechanismHandlerRequest
 type AddUnboundidDeliveredOtpSaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
-	HandlerName string `json:"handlerName"`
-	Schemas []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
+	HandlerName string                                                   `json:"handlerName"`
+	Schemas     []EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn `json:"schemas"`
 	// The identity mapper that should be used to identify the user(s) targeted in the authentication and/or authorization identities contained in the bind request. This will only be used for \"u:\"-style identities.
 	IdentityMapper string `json:"identityMapper"`
 	// The maximum length of time that a one-time password value should be considered valid.
@@ -65,7 +65,7 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerName() s
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetHandlerNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.HandlerName, true
 }
@@ -89,7 +89,7 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetSchemas() []Enu
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetSchemasOk() ([]EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -113,7 +113,7 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetIdentityMapper(
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetIdentityMapperOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.IdentityMapper, true
 }
@@ -137,7 +137,7 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetOtpValidityDura
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetOtpValidityDurationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.OtpValidityDuration, true
 }
@@ -160,7 +160,7 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetDescription() s
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -193,7 +193,7 @@ func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetEnabled() bool 
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidDeliveredOtpSaslMechanismHandlerRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -261,5 +261,3 @@ func (v *NullableAddUnboundidDeliveredOtpSaslMechanismHandlerRequest) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

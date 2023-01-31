@@ -21,7 +21,7 @@ type EnumglobalConfigurationJmxValueBehaviorProp string
 // List of Enumglobal-configuration-jmxValueBehaviorProp
 const (
 	ENUMGLOBALCONFIGURATIONJMXVALUEBEHAVIORPROP_INFERRED EnumglobalConfigurationJmxValueBehaviorProp = "inferred"
-	ENUMGLOBALCONFIGURATIONJMXVALUEBEHAVIORPROP_STRING EnumglobalConfigurationJmxValueBehaviorProp = "string"
+	ENUMGLOBALCONFIGURATIONJMXVALUEBEHAVIORPROP_STRING   EnumglobalConfigurationJmxValueBehaviorProp = "string"
 )
 
 // All allowed values of EnumglobalConfigurationJmxValueBehaviorProp enum
@@ -108,4 +108,3 @@ func (v *NullableEnumglobalConfigurationJmxValueBehaviorProp) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

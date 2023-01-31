@@ -106,4 +106,3 @@ func (v *NullableEnumgroovyScriptedUncachedEntryCriteriaSchemaUrn) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

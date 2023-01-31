@@ -17,8 +17,8 @@ import (
 // AddGroovyScriptedPasswordGeneratorRequest struct for AddGroovyScriptedPasswordGeneratorRequest
 type AddGroovyScriptedPasswordGeneratorRequest struct {
 	// Name of the new Password Generator
-	GeneratorName string `json:"generatorName"`
-	Schemas []EnumgroovyScriptedPasswordGeneratorSchemaUrn `json:"schemas"`
+	GeneratorName string                                         `json:"generatorName"`
+	Schemas       []EnumgroovyScriptedPasswordGeneratorSchemaUrn `json:"schemas"`
 	// The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Password Generator.
 	ScriptClass string `json:"scriptClass"`
 	// The set of arguments used to customize the behavior for the Scripted Password Generator. Each configuration property should be given in the form 'name=value'.
@@ -64,7 +64,7 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) GetGeneratorName() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordGeneratorRequest) GetGeneratorNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.GeneratorName, true
 }
@@ -88,7 +88,7 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) GetSchemas() []EnumgroovyScr
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordGeneratorRequest) GetSchemasOk() ([]EnumgroovyScriptedPasswordGeneratorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) GetScriptClass() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordGeneratorRequest) GetScriptClassOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.ScriptClass, true
 }
@@ -135,7 +135,7 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) GetScriptArgument() []string
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordGeneratorRequest) GetScriptArgumentOk() ([]string, bool) {
 	if o == nil || isNil(o.ScriptArgument) {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptArgument, true
 }
@@ -167,7 +167,7 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordGeneratorRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddGroovyScriptedPasswordGeneratorRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedPasswordGeneratorRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddGroovyScriptedPasswordGeneratorRequest) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

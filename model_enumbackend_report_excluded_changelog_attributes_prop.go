@@ -20,9 +20,9 @@ type EnumbackendReportExcludedChangelogAttributesProp string
 
 // List of Enumbackend-reportExcludedChangelogAttributesProp
 const (
-	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_NONE EnumbackendReportExcludedChangelogAttributesProp = "none"
+	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_NONE             EnumbackendReportExcludedChangelogAttributesProp = "none"
 	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_ATTRIBUTE_COUNTS EnumbackendReportExcludedChangelogAttributesProp = "attribute-counts"
-	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_ATTRIBUTE_NAMES EnumbackendReportExcludedChangelogAttributesProp = "attribute-names"
+	ENUMBACKENDREPORTEXCLUDEDCHANGELOGATTRIBUTESPROP_ATTRIBUTE_NAMES  EnumbackendReportExcludedChangelogAttributesProp = "attribute-names"
 )
 
 // All allowed values of EnumbackendReportExcludedChangelogAttributesProp enum
@@ -110,4 +110,3 @@ func (v *NullableEnumbackendReportExcludedChangelogAttributesProp) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

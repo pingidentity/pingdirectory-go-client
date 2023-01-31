@@ -16,9 +16,9 @@ import (
 
 // BitStringAttributeSyntaxResponse struct for BitStringAttributeSyntaxResponse
 type BitStringAttributeSyntaxResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumbitStringAttributeSyntaxSchemaUrn `json:"schemas"`
+	Schemas                                       []EnumbitStringAttributeSyntaxSchemaUrn            `json:"schemas"`
 	// Name of the Attribute Syntax
 	Id string `json:"id"`
 	// Indicates whether values of attributes with this syntax should be compacted when stored in a local DB database.
@@ -66,7 +66,7 @@ func (o *BitStringAttributeSyntaxResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -98,7 +98,7 @@ func (o *BitStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfiguratio
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -131,7 +131,7 @@ func (o *BitStringAttributeSyntaxResponse) GetSchemas() []EnumbitStringAttribute
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetSchemasOk() ([]EnumbitStringAttributeSyntaxSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -155,7 +155,7 @@ func (o *BitStringAttributeSyntaxResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -178,7 +178,7 @@ func (o *BitStringAttributeSyntaxResponse) GetEnableCompaction() bool {
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetEnableCompactionOk() (*bool, bool) {
 	if o == nil || isNil(o.EnableCompaction) {
-    return nil, false
+		return nil, false
 	}
 	return o.EnableCompaction, true
 }
@@ -210,7 +210,7 @@ func (o *BitStringAttributeSyntaxResponse) GetIncludeAttributeInCompaction() []s
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetIncludeAttributeInCompactionOk() ([]string, bool) {
 	if o == nil || isNil(o.IncludeAttributeInCompaction) {
-    return nil, false
+		return nil, false
 	}
 	return o.IncludeAttributeInCompaction, true
 }
@@ -242,7 +242,7 @@ func (o *BitStringAttributeSyntaxResponse) GetExcludeAttributeFromCompaction() [
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetExcludeAttributeFromCompactionOk() ([]string, bool) {
 	if o == nil || isNil(o.ExcludeAttributeFromCompaction) {
-    return nil, false
+		return nil, false
 	}
 	return o.ExcludeAttributeFromCompaction, true
 }
@@ -275,7 +275,7 @@ func (o *BitStringAttributeSyntaxResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -298,7 +298,7 @@ func (o *BitStringAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
 // and a boolean to check if the value has been set.
 func (o *BitStringAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
 	if o == nil || isNil(o.RequireBinaryTransfer) {
-    return nil, false
+		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
 }
@@ -384,5 +384,3 @@ func (v *NullableBitStringAttributeSyntaxResponse) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -16,13 +16,13 @@ import (
 
 // RegularExpressionPasswordValidatorResponse struct for RegularExpressionPasswordValidatorResponse
 type RegularExpressionPasswordValidatorResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Password Validator
-	Id string `json:"id"`
+	Id      string                                            `json:"id"`
 	Schemas []EnumregularExpressionPasswordValidatorSchemaUrn `json:"schemas"`
 	// The regular expression to use for this password validator.
-	MatchPattern string `json:"matchPattern"`
+	MatchPattern  string                                 `json:"matchPattern"`
 	MatchBehavior EnumpasswordValidatorMatchBehaviorProp `json:"matchBehavior"`
 	// A description for this Password Validator
 	Description *string `json:"description,omitempty"`
@@ -69,7 +69,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -101,7 +101,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetUrnpingidentityschemasco
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -134,7 +134,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -158,7 +158,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetSchemas() []EnumregularE
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetSchemasOk() ([]EnumregularExpressionPasswordValidatorSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -182,7 +182,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetMatchPattern() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetMatchPatternOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MatchPattern, true
 }
@@ -206,7 +206,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetMatchBehavior() Enumpass
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetMatchBehaviorOk() (*EnumpasswordValidatorMatchBehaviorProp, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.MatchBehavior, true
 }
@@ -229,7 +229,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -262,7 +262,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -285,7 +285,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetValidatorRequirementDesc
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetValidatorRequirementDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorRequirementDescription) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
 }
@@ -317,7 +317,7 @@ func (o *RegularExpressionPasswordValidatorResponse) GetValidatorFailureMessage(
 // and a boolean to check if the value has been set.
 func (o *RegularExpressionPasswordValidatorResponse) GetValidatorFailureMessageOk() (*string, bool) {
 	if o == nil || isNil(o.ValidatorFailureMessage) {
-    return nil, false
+		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
 }
@@ -406,5 +406,3 @@ func (v *NullableRegularExpressionPasswordValidatorResponse) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

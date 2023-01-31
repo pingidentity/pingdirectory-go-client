@@ -16,9 +16,9 @@ import (
 
 // GetChangelogBatchExtendedOperationHandlerResponse struct for GetChangelogBatchExtendedOperationHandlerResponse
 type GetChangelogBatchExtendedOperationHandlerResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
-	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas []EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn `json:"schemas"`
+	Meta                                          *MetaMeta                                                `json:"meta,omitempty"`
+	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20       `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
+	Schemas                                       []EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn `json:"schemas"`
 	// Name of the Extended Operation Handler
 	Id string `json:"id"`
 	// A description for this Extended Operation Handler
@@ -60,7 +60,7 @@ func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetUrnpingidentitysc
 // and a boolean to check if the value has been set.
 func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetSchemas() []Enumg
 // and a boolean to check if the value has been set.
 func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetSchemasOk() ([]EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -149,7 +149,7 @@ func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -172,7 +172,7 @@ func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetDescription() str
 // and a boolean to check if the value has been set.
 func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *GetChangelogBatchExtendedOperationHandlerResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableGetChangelogBatchExtendedOperationHandlerResponse) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

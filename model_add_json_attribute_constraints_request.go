@@ -17,8 +17,8 @@ import (
 // AddJsonAttributeConstraintsRequest struct for AddJsonAttributeConstraintsRequest
 type AddJsonAttributeConstraintsRequest struct {
 	// The name or OID of the LDAP attribute type whose values will be subject to the associated field constraints. This attribute type must be defined in the server schema, and it must have a \"JSON object\" syntax.
-	AttributeType string `json:"attributeType"`
-	Schemas []EnumjsonAttributeConstraintsSchemaUrn `json:"schemas,omitempty"`
+	AttributeType string                                  `json:"attributeType"`
+	Schemas       []EnumjsonAttributeConstraintsSchemaUrn `json:"schemas,omitempty"`
 	// A description for this JSON Attribute Constraints
 	Description *string `json:"description,omitempty"`
 	// Indicates whether this JSON Attribute Constraints is enabled.
@@ -59,7 +59,7 @@ func (o *AddJsonAttributeConstraintsRequest) GetAttributeType() string {
 // and a boolean to check if the value has been set.
 func (o *AddJsonAttributeConstraintsRequest) GetAttributeTypeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.AttributeType, true
 }
@@ -82,7 +82,7 @@ func (o *AddJsonAttributeConstraintsRequest) GetSchemas() []EnumjsonAttributeCon
 // and a boolean to check if the value has been set.
 func (o *AddJsonAttributeConstraintsRequest) GetSchemasOk() ([]EnumjsonAttributeConstraintsSchemaUrn, bool) {
 	if o == nil || isNil(o.Schemas) {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -114,7 +114,7 @@ func (o *AddJsonAttributeConstraintsRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddJsonAttributeConstraintsRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -146,7 +146,7 @@ func (o *AddJsonAttributeConstraintsRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddJsonAttributeConstraintsRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil || isNil(o.Enabled) {
-    return nil, false
+		return nil, false
 	}
 	return o.Enabled, true
 }
@@ -178,7 +178,7 @@ func (o *AddJsonAttributeConstraintsRequest) GetAllowUnnamedFields() bool {
 // and a boolean to check if the value has been set.
 func (o *AddJsonAttributeConstraintsRequest) GetAllowUnnamedFieldsOk() (*bool, bool) {
 	if o == nil || isNil(o.AllowUnnamedFields) {
-    return nil, false
+		return nil, false
 	}
 	return o.AllowUnnamedFields, true
 }
@@ -252,5 +252,3 @@ func (v *NullableAddJsonAttributeConstraintsRequest) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

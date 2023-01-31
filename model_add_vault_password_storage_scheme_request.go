@@ -17,8 +17,8 @@ import (
 // AddVaultPasswordStorageSchemeRequest struct for AddVaultPasswordStorageSchemeRequest
 type AddVaultPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
-	SchemeName string `json:"schemeName"`
-	Schemas []EnumvaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
+	SchemeName string                                    `json:"schemeName"`
+	Schemas    []EnumvaultPasswordStorageSchemeSchemaUrn `json:"schemas"`
 	// An external server definition with information needed to connect and authenticate to the Vault instance containing the passphrase.
 	VaultExternalServer string `json:"vaultExternalServer"`
 	// The default name of the field in JSON objects contained in the AWS Secrets Manager service that contains the password for the target user.
@@ -64,7 +64,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeName() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetSchemeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.SchemeName, true
 }
@@ -88,7 +88,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetSchemas() []EnumvaultPasswordS
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetSchemasOk() ([]EnumvaultPasswordStorageSchemeSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -112,7 +112,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetVaultExternalServer() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetVaultExternalServerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.VaultExternalServer, true
 }
@@ -135,7 +135,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetDefaultField() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetDefaultFieldOk() (*string, bool) {
 	if o == nil || isNil(o.DefaultField) {
-    return nil, false
+		return nil, false
 	}
 	return o.DefaultField, true
 }
@@ -167,7 +167,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -200,7 +200,7 @@ func (o *AddVaultPasswordStorageSchemeRequest) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *AddVaultPasswordStorageSchemeRequest) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -268,5 +268,3 @@ func (v *NullableAddVaultPasswordStorageSchemeRequest) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

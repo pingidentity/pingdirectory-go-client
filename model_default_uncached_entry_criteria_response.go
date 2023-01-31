@@ -16,10 +16,10 @@ import (
 
 // DefaultUncachedEntryCriteriaResponse struct for DefaultUncachedEntryCriteriaResponse
 type DefaultUncachedEntryCriteriaResponse struct {
-	Meta *MetaMeta `json:"meta,omitempty"`
+	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
 	// Name of the Uncached Entry Criteria
-	Id string `json:"id"`
+	Id      string                                      `json:"id"`
 	Schemas []EnumdefaultUncachedEntryCriteriaSchemaUrn `json:"schemas"`
 	// A description for this Uncached Entry Criteria
 	Description *string `json:"description,omitempty"`
@@ -60,7 +60,7 @@ func (o *DefaultUncachedEntryCriteriaResponse) GetMeta() MetaMeta {
 // and a boolean to check if the value has been set.
 func (o *DefaultUncachedEntryCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 	if o == nil || isNil(o.Meta) {
-    return nil, false
+		return nil, false
 	}
 	return o.Meta, true
 }
@@ -92,7 +92,7 @@ func (o *DefaultUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigur
 // and a boolean to check if the value has been set.
 func (o *DefaultUncachedEntryCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
 	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-    return nil, false
+		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
 }
@@ -125,7 +125,7 @@ func (o *DefaultUncachedEntryCriteriaResponse) GetId() string {
 // and a boolean to check if the value has been set.
 func (o *DefaultUncachedEntryCriteriaResponse) GetIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Id, true
 }
@@ -149,7 +149,7 @@ func (o *DefaultUncachedEntryCriteriaResponse) GetSchemas() []EnumdefaultUncache
 // and a boolean to check if the value has been set.
 func (o *DefaultUncachedEntryCriteriaResponse) GetSchemasOk() ([]EnumdefaultUncachedEntryCriteriaSchemaUrn, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Schemas, true
 }
@@ -172,7 +172,7 @@ func (o *DefaultUncachedEntryCriteriaResponse) GetDescription() string {
 // and a boolean to check if the value has been set.
 func (o *DefaultUncachedEntryCriteriaResponse) GetDescriptionOk() (*string, bool) {
 	if o == nil || isNil(o.Description) {
-    return nil, false
+		return nil, false
 	}
 	return o.Description, true
 }
@@ -205,7 +205,7 @@ func (o *DefaultUncachedEntryCriteriaResponse) GetEnabled() bool {
 // and a boolean to check if the value has been set.
 func (o *DefaultUncachedEntryCriteriaResponse) GetEnabledOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return &o.Enabled, true
 }
@@ -273,5 +273,3 @@ func (v *NullableDefaultUncachedEntryCriteriaResponse) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

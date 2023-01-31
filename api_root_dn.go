@@ -18,12 +18,11 @@ import (
 	"net/url"
 )
 
-
 // RootDnApiService RootDnApi service
 type RootDnApiService service
 
 type ApiGetRootDnRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *RootDnApiService
 }
 
@@ -34,24 +33,25 @@ func (r ApiGetRootDnRequest) Execute() (*RootDnResponse, *http.Response, error) 
 /*
 GetRootDn Returns a single Root DN
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRootDnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetRootDnRequest
 */
 func (a *RootDnApiService) GetRootDn(ctx context.Context) ApiGetRootDnRequest {
 	return ApiGetRootDnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RootDnResponse
+//
+//	@return RootDnResponse
 func (a *RootDnApiService) GetRootDnExecute(r ApiGetRootDnRequest) (*RootDnResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RootDnResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RootDnResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDnApiService.GetRootDn")
@@ -120,8 +120,8 @@ func (a *RootDnApiService) GetRootDnExecute(r ApiGetRootDnRequest) (*RootDnRespo
 }
 
 type ApiUpdateRootDnRequest struct {
-	ctx context.Context
-	ApiService *RootDnApiService
+	ctx           context.Context
+	ApiService    *RootDnApiService
 	updateRequest *UpdateRequest
 }
 
@@ -138,24 +138,25 @@ func (r ApiUpdateRootDnRequest) Execute() (*RootDnResponse, *http.Response, erro
 /*
 UpdateRootDn Update an existing Root DN by name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateRootDnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUpdateRootDnRequest
 */
 func (a *RootDnApiService) UpdateRootDn(ctx context.Context) ApiUpdateRootDnRequest {
 	return ApiUpdateRootDnRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RootDnResponse
+//
+//	@return RootDnResponse
 func (a *RootDnApiService) UpdateRootDnExecute(r ApiUpdateRootDnRequest) (*RootDnResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RootDnResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RootDnResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RootDnApiService.UpdateRootDn")
