@@ -21,15 +21,87 @@ type TopologyAdminUserResponse struct {
 	// Name of the Topology Admin User
 	Id      string                           `json:"id"`
 	Schemas []EnumtopologyAdminUserSchemaUrn `json:"schemas,omitempty"`
+	// Specifies one or more alternate DNs that can be used to bind to the server as this User.
+	AlternateBindDN []string `json:"alternateBindDN,omitempty"`
+	// A description for this User.
+	Description *string `json:"description,omitempty"`
+	// Specifies the user's password. This is stored in the userPassword LDAP attribute. To set a pre-hashed value, the account making the change must have the bypass-pw-policy privilege.
+	Password *string `json:"password,omitempty"`
+	// Specifies the user's first name. This is stored in the givenName LDAP attribute.
+	FirstName []string `json:"firstName,omitempty"`
+	// Specifies the user's last name. This is stored in the sn LDAP attribute.
+	LastName []string `json:"lastName,omitempty"`
+	// Specifies the user's user ID. This is stored in the uid LDAP attribute.
+	UserID *string `json:"userID,omitempty"`
+	// Specifies the user's email address. This is stored in the mail LDAP attribute.
+	EmailAddress []string `json:"emailAddress,omitempty"`
+	// Specifies the user's work telephone number. This is stored in the telephoneNumber LDAP attribute.
+	WorkTelephoneNumber []string `json:"workTelephoneNumber,omitempty"`
+	// Specifies the user's home telephone number. This is stored in the homePhone LDAP attribute.
+	HomeTelephoneNumber []string `json:"homeTelephoneNumber,omitempty"`
+	// Specifies the user's mobile telephone number. This is stored in the mobile LDAP attribute.
+	MobileTelephoneNumber []string `json:"mobileTelephoneNumber,omitempty"`
+	// Specifies the user's pager telephone number. This is stored in the pager LDAP attribute.
+	PagerTelephoneNumber []string `json:"pagerTelephoneNumber,omitempty"`
+	// Indicates whether this User should be automatically granted the set of privileges defined in the default-root-privilege-name property of the Root DN configuration object.
+	InheritDefaultRootPrivileges bool                                 `json:"inheritDefaultRootPrivileges"`
+	Privilege                    []EnumtopologyAdminUserPrivilegeProp `json:"privilege,omitempty"`
+	// Specifies the maximum number of entries that the server may return to the user in response to any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-size-limit LDAP attribute.
+	SearchResultEntryLimit int32 `json:"searchResultEntryLimit"`
+	// Specifies the maximum length of time (in seconds) that the server may spend processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-time-limit LDAP attribute.
+	TimeLimitSeconds int32 `json:"timeLimitSeconds"`
+	// Specifies the maximum number of candidate entries that the server may examine in the course of processing any single search request. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-lookthrough-limit LDAP attribute.
+	LookThroughEntryLimit int32 `json:"lookThroughEntryLimit"`
+	// Specifies the maximum length of time (in seconds) that a connection authenticated as this user may remain established without issuing any requests. A value of 0 indicates no limit should be enforced. This is stored in the ds-rlim-idle-time-limit LDAP attribute.
+	IdleTimeLimitSeconds int32 `json:"idleTimeLimitSeconds"`
+	// Specifies the password policy for the user. This is stored in the ds-pwp-password-policy-dn LDAP attribute.
+	PasswordPolicy string `json:"passwordPolicy"`
+	// Specifies whether the root user account should be disabled. A disabled account is not permitted to authenticate, nor can it be used as an authorization identity. This is stored in the ds-pwp-account-disabled LDAP attribute.
+	Disabled *bool `json:"disabled,omitempty"`
+	// Specifies the time, in generalized time format (e.g., '20160101070000Z'), that the root user account should become active. If an activation time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, until the activation time has arrived. This is stored in the ds-pwp-account-activation-time LDAP attribute.
+	AccountActivationTime *string `json:"accountActivationTime,omitempty"`
+	// Specifies the time, in generalized time format (e.g., '20240101070000Z'), that the root user account should expire. If an expiration time is specified, the user will not be permitted to authenticate, nor can the account be used as an authorization identity, after this time has passed. This is stored in the ds-pwp-account-expiration-time LDAP attribute.
+	AccountExpirationTime *string `json:"accountExpirationTime,omitempty"`
+	// Indicates whether this User must authenticate in a secure manner. When set to \"true\", the User will only be allowed to authenticate over a secure connection or using a mechanism that does not expose user credentials (e.g., the CRAM-MD5, DIGEST-MD5, and GSSAPI SASL mechanisms).
+	RequireSecureAuthentication bool `json:"requireSecureAuthentication"`
+	// Indicates whether this User must be required to communicate with the server over a secure connection. When set to \"true\", the User will only be allowed to communicate with the server over a secure connection (i.e., using TLS or the StartTLS extended operation).
+	RequireSecureConnections bool `json:"requireSecureConnections"`
+	// Indicates that User should only be allowed to authenticate in certain ways. Allowed values include \"simple\" (to indicate that the user should be allowed to bind using simple authentication) or \"sasl {mech}\" (to indicate that the user should be allowed to bind using the specified SASL mechanism, like \"sasl PLAIN\"). The list of available SASL mechanisms can be retrieved by running \"dsconfig --advanced list-sasl-mechanism-handlers\".
+	AllowedAuthenticationType []string `json:"allowedAuthenticationType,omitempty"`
+	// An IPv4 or IPv6 address mask that controls the set of IP addresses from which this User can authenticate to the server. For instance a value of 127.0.0.1 (or ::1 in IPv6) would restricted access only to localhost connections, whereas 10.6.1.* would restrict access to servers on the 10.6.1.* subnet.
+	AllowedAuthenticationIPAddress []string `json:"allowedAuthenticationIPAddress,omitempty"`
+	// Overrides the default settings for the mechanisms (e.g., email or SMS) that are used to deliver one time passwords to Users.
+	PreferredOTPDeliveryMechanism []string                              `json:"preferredOTPDeliveryMechanism,omitempty"`
+	IsProxyable                   *EnumtopologyAdminUserIsProxyableProp `json:"isProxyable,omitempty"`
+	// Specifies the DNs of accounts that can proxy as this User using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity. This property is only applicable if is-proxyable is set to \"allowed\" or \"required\".
+	IsProxyableByDN []string `json:"isProxyableByDN,omitempty"`
+	// Specifies the DNs of groups whose members can proxy as this User using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity. This property is only applicable if is-proxyable is set to \"allowed\" or \"required\".
+	IsProxyableByGroup []string `json:"isProxyableByGroup,omitempty"`
+	// Specifies LDAP URLs of accounts that can proxy as this User using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity. This property is only applicable if is-proxyable is set to \"allowed\" or \"required\".
+	IsProxyableByURL []string `json:"isProxyableByURL,omitempty"`
+	// This restricts the set of accounts that this User can proxy as to entries with the specified DNs.
+	MayProxyAsDN []string `json:"mayProxyAsDN,omitempty"`
+	// This restricts the set of accounts that this User can proxy as to entries that are in the group with the specified DN.
+	MayProxyAsGroup []string `json:"mayProxyAsGroup,omitempty"`
+	// This restricts the set of accounts that this User can proxy as to entries that are matched by the specified LDAP URL.
+	MayProxyAsURL []string `json:"mayProxyAsURL,omitempty"`
 }
 
 // NewTopologyAdminUserResponse instantiates a new TopologyAdminUserResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTopologyAdminUserResponse(id string) *TopologyAdminUserResponse {
+func NewTopologyAdminUserResponse(id string, inheritDefaultRootPrivileges bool, searchResultEntryLimit int32, timeLimitSeconds int32, lookThroughEntryLimit int32, idleTimeLimitSeconds int32, passwordPolicy string, requireSecureAuthentication bool, requireSecureConnections bool) *TopologyAdminUserResponse {
 	this := TopologyAdminUserResponse{}
 	this.Id = id
+	this.InheritDefaultRootPrivileges = inheritDefaultRootPrivileges
+	this.SearchResultEntryLimit = searchResultEntryLimit
+	this.TimeLimitSeconds = timeLimitSeconds
+	this.LookThroughEntryLimit = lookThroughEntryLimit
+	this.IdleTimeLimitSeconds = idleTimeLimitSeconds
+	this.PasswordPolicy = passwordPolicy
+	this.RequireSecureAuthentication = requireSecureAuthentication
+	this.RequireSecureConnections = requireSecureConnections
 	return &this
 }
 
@@ -161,6 +233,998 @@ func (o *TopologyAdminUserResponse) SetSchemas(v []EnumtopologyAdminUserSchemaUr
 	o.Schemas = v
 }
 
+// GetAlternateBindDN returns the AlternateBindDN field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetAlternateBindDN() []string {
+	if o == nil || isNil(o.AlternateBindDN) {
+		var ret []string
+		return ret
+	}
+	return o.AlternateBindDN
+}
+
+// GetAlternateBindDNOk returns a tuple with the AlternateBindDN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetAlternateBindDNOk() ([]string, bool) {
+	if o == nil || isNil(o.AlternateBindDN) {
+		return nil, false
+	}
+	return o.AlternateBindDN, true
+}
+
+// HasAlternateBindDN returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasAlternateBindDN() bool {
+	if o != nil && !isNil(o.AlternateBindDN) {
+		return true
+	}
+
+	return false
+}
+
+// SetAlternateBindDN gets a reference to the given []string and assigns it to the AlternateBindDN field.
+func (o *TopologyAdminUserResponse) SetAlternateBindDN(v []string) {
+	o.AlternateBindDN = v
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetDescription() string {
+	if o == nil || isNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetDescriptionOk() (*string, bool) {
+	if o == nil || isNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasDescription() bool {
+	if o != nil && !isNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *TopologyAdminUserResponse) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetPassword returns the Password field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetPassword() string {
+	if o == nil || isNil(o.Password) {
+		var ret string
+		return ret
+	}
+	return *o.Password
+}
+
+// GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetPasswordOk() (*string, bool) {
+	if o == nil || isNil(o.Password) {
+		return nil, false
+	}
+	return o.Password, true
+}
+
+// HasPassword returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasPassword() bool {
+	if o != nil && !isNil(o.Password) {
+		return true
+	}
+
+	return false
+}
+
+// SetPassword gets a reference to the given string and assigns it to the Password field.
+func (o *TopologyAdminUserResponse) SetPassword(v string) {
+	o.Password = &v
+}
+
+// GetFirstName returns the FirstName field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetFirstName() []string {
+	if o == nil || isNil(o.FirstName) {
+		var ret []string
+		return ret
+	}
+	return o.FirstName
+}
+
+// GetFirstNameOk returns a tuple with the FirstName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetFirstNameOk() ([]string, bool) {
+	if o == nil || isNil(o.FirstName) {
+		return nil, false
+	}
+	return o.FirstName, true
+}
+
+// HasFirstName returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasFirstName() bool {
+	if o != nil && !isNil(o.FirstName) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstName gets a reference to the given []string and assigns it to the FirstName field.
+func (o *TopologyAdminUserResponse) SetFirstName(v []string) {
+	o.FirstName = v
+}
+
+// GetLastName returns the LastName field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetLastName() []string {
+	if o == nil || isNil(o.LastName) {
+		var ret []string
+		return ret
+	}
+	return o.LastName
+}
+
+// GetLastNameOk returns a tuple with the LastName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetLastNameOk() ([]string, bool) {
+	if o == nil || isNil(o.LastName) {
+		return nil, false
+	}
+	return o.LastName, true
+}
+
+// HasLastName returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasLastName() bool {
+	if o != nil && !isNil(o.LastName) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastName gets a reference to the given []string and assigns it to the LastName field.
+func (o *TopologyAdminUserResponse) SetLastName(v []string) {
+	o.LastName = v
+}
+
+// GetUserID returns the UserID field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetUserID() string {
+	if o == nil || isNil(o.UserID) {
+		var ret string
+		return ret
+	}
+	return *o.UserID
+}
+
+// GetUserIDOk returns a tuple with the UserID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetUserIDOk() (*string, bool) {
+	if o == nil || isNil(o.UserID) {
+		return nil, false
+	}
+	return o.UserID, true
+}
+
+// HasUserID returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasUserID() bool {
+	if o != nil && !isNil(o.UserID) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserID gets a reference to the given string and assigns it to the UserID field.
+func (o *TopologyAdminUserResponse) SetUserID(v string) {
+	o.UserID = &v
+}
+
+// GetEmailAddress returns the EmailAddress field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetEmailAddress() []string {
+	if o == nil || isNil(o.EmailAddress) {
+		var ret []string
+		return ret
+	}
+	return o.EmailAddress
+}
+
+// GetEmailAddressOk returns a tuple with the EmailAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetEmailAddressOk() ([]string, bool) {
+	if o == nil || isNil(o.EmailAddress) {
+		return nil, false
+	}
+	return o.EmailAddress, true
+}
+
+// HasEmailAddress returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasEmailAddress() bool {
+	if o != nil && !isNil(o.EmailAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetEmailAddress gets a reference to the given []string and assigns it to the EmailAddress field.
+func (o *TopologyAdminUserResponse) SetEmailAddress(v []string) {
+	o.EmailAddress = v
+}
+
+// GetWorkTelephoneNumber returns the WorkTelephoneNumber field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetWorkTelephoneNumber() []string {
+	if o == nil || isNil(o.WorkTelephoneNumber) {
+		var ret []string
+		return ret
+	}
+	return o.WorkTelephoneNumber
+}
+
+// GetWorkTelephoneNumberOk returns a tuple with the WorkTelephoneNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetWorkTelephoneNumberOk() ([]string, bool) {
+	if o == nil || isNil(o.WorkTelephoneNumber) {
+		return nil, false
+	}
+	return o.WorkTelephoneNumber, true
+}
+
+// HasWorkTelephoneNumber returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasWorkTelephoneNumber() bool {
+	if o != nil && !isNil(o.WorkTelephoneNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkTelephoneNumber gets a reference to the given []string and assigns it to the WorkTelephoneNumber field.
+func (o *TopologyAdminUserResponse) SetWorkTelephoneNumber(v []string) {
+	o.WorkTelephoneNumber = v
+}
+
+// GetHomeTelephoneNumber returns the HomeTelephoneNumber field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetHomeTelephoneNumber() []string {
+	if o == nil || isNil(o.HomeTelephoneNumber) {
+		var ret []string
+		return ret
+	}
+	return o.HomeTelephoneNumber
+}
+
+// GetHomeTelephoneNumberOk returns a tuple with the HomeTelephoneNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetHomeTelephoneNumberOk() ([]string, bool) {
+	if o == nil || isNil(o.HomeTelephoneNumber) {
+		return nil, false
+	}
+	return o.HomeTelephoneNumber, true
+}
+
+// HasHomeTelephoneNumber returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasHomeTelephoneNumber() bool {
+	if o != nil && !isNil(o.HomeTelephoneNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetHomeTelephoneNumber gets a reference to the given []string and assigns it to the HomeTelephoneNumber field.
+func (o *TopologyAdminUserResponse) SetHomeTelephoneNumber(v []string) {
+	o.HomeTelephoneNumber = v
+}
+
+// GetMobileTelephoneNumber returns the MobileTelephoneNumber field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetMobileTelephoneNumber() []string {
+	if o == nil || isNil(o.MobileTelephoneNumber) {
+		var ret []string
+		return ret
+	}
+	return o.MobileTelephoneNumber
+}
+
+// GetMobileTelephoneNumberOk returns a tuple with the MobileTelephoneNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetMobileTelephoneNumberOk() ([]string, bool) {
+	if o == nil || isNil(o.MobileTelephoneNumber) {
+		return nil, false
+	}
+	return o.MobileTelephoneNumber, true
+}
+
+// HasMobileTelephoneNumber returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasMobileTelephoneNumber() bool {
+	if o != nil && !isNil(o.MobileTelephoneNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetMobileTelephoneNumber gets a reference to the given []string and assigns it to the MobileTelephoneNumber field.
+func (o *TopologyAdminUserResponse) SetMobileTelephoneNumber(v []string) {
+	o.MobileTelephoneNumber = v
+}
+
+// GetPagerTelephoneNumber returns the PagerTelephoneNumber field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetPagerTelephoneNumber() []string {
+	if o == nil || isNil(o.PagerTelephoneNumber) {
+		var ret []string
+		return ret
+	}
+	return o.PagerTelephoneNumber
+}
+
+// GetPagerTelephoneNumberOk returns a tuple with the PagerTelephoneNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetPagerTelephoneNumberOk() ([]string, bool) {
+	if o == nil || isNil(o.PagerTelephoneNumber) {
+		return nil, false
+	}
+	return o.PagerTelephoneNumber, true
+}
+
+// HasPagerTelephoneNumber returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasPagerTelephoneNumber() bool {
+	if o != nil && !isNil(o.PagerTelephoneNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetPagerTelephoneNumber gets a reference to the given []string and assigns it to the PagerTelephoneNumber field.
+func (o *TopologyAdminUserResponse) SetPagerTelephoneNumber(v []string) {
+	o.PagerTelephoneNumber = v
+}
+
+// GetInheritDefaultRootPrivileges returns the InheritDefaultRootPrivileges field value
+func (o *TopologyAdminUserResponse) GetInheritDefaultRootPrivileges() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.InheritDefaultRootPrivileges
+}
+
+// GetInheritDefaultRootPrivilegesOk returns a tuple with the InheritDefaultRootPrivileges field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetInheritDefaultRootPrivilegesOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.InheritDefaultRootPrivileges, true
+}
+
+// SetInheritDefaultRootPrivileges sets field value
+func (o *TopologyAdminUserResponse) SetInheritDefaultRootPrivileges(v bool) {
+	o.InheritDefaultRootPrivileges = v
+}
+
+// GetPrivilege returns the Privilege field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetPrivilege() []EnumtopologyAdminUserPrivilegeProp {
+	if o == nil || isNil(o.Privilege) {
+		var ret []EnumtopologyAdminUserPrivilegeProp
+		return ret
+	}
+	return o.Privilege
+}
+
+// GetPrivilegeOk returns a tuple with the Privilege field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetPrivilegeOk() ([]EnumtopologyAdminUserPrivilegeProp, bool) {
+	if o == nil || isNil(o.Privilege) {
+		return nil, false
+	}
+	return o.Privilege, true
+}
+
+// HasPrivilege returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasPrivilege() bool {
+	if o != nil && !isNil(o.Privilege) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrivilege gets a reference to the given []EnumtopologyAdminUserPrivilegeProp and assigns it to the Privilege field.
+func (o *TopologyAdminUserResponse) SetPrivilege(v []EnumtopologyAdminUserPrivilegeProp) {
+	o.Privilege = v
+}
+
+// GetSearchResultEntryLimit returns the SearchResultEntryLimit field value
+func (o *TopologyAdminUserResponse) GetSearchResultEntryLimit() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.SearchResultEntryLimit
+}
+
+// GetSearchResultEntryLimitOk returns a tuple with the SearchResultEntryLimit field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetSearchResultEntryLimitOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.SearchResultEntryLimit, true
+}
+
+// SetSearchResultEntryLimit sets field value
+func (o *TopologyAdminUserResponse) SetSearchResultEntryLimit(v int32) {
+	o.SearchResultEntryLimit = v
+}
+
+// GetTimeLimitSeconds returns the TimeLimitSeconds field value
+func (o *TopologyAdminUserResponse) GetTimeLimitSeconds() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.TimeLimitSeconds
+}
+
+// GetTimeLimitSecondsOk returns a tuple with the TimeLimitSeconds field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetTimeLimitSecondsOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.TimeLimitSeconds, true
+}
+
+// SetTimeLimitSeconds sets field value
+func (o *TopologyAdminUserResponse) SetTimeLimitSeconds(v int32) {
+	o.TimeLimitSeconds = v
+}
+
+// GetLookThroughEntryLimit returns the LookThroughEntryLimit field value
+func (o *TopologyAdminUserResponse) GetLookThroughEntryLimit() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.LookThroughEntryLimit
+}
+
+// GetLookThroughEntryLimitOk returns a tuple with the LookThroughEntryLimit field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetLookThroughEntryLimitOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.LookThroughEntryLimit, true
+}
+
+// SetLookThroughEntryLimit sets field value
+func (o *TopologyAdminUserResponse) SetLookThroughEntryLimit(v int32) {
+	o.LookThroughEntryLimit = v
+}
+
+// GetIdleTimeLimitSeconds returns the IdleTimeLimitSeconds field value
+func (o *TopologyAdminUserResponse) GetIdleTimeLimitSeconds() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.IdleTimeLimitSeconds
+}
+
+// GetIdleTimeLimitSecondsOk returns a tuple with the IdleTimeLimitSeconds field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetIdleTimeLimitSecondsOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.IdleTimeLimitSeconds, true
+}
+
+// SetIdleTimeLimitSeconds sets field value
+func (o *TopologyAdminUserResponse) SetIdleTimeLimitSeconds(v int32) {
+	o.IdleTimeLimitSeconds = v
+}
+
+// GetPasswordPolicy returns the PasswordPolicy field value
+func (o *TopologyAdminUserResponse) GetPasswordPolicy() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PasswordPolicy
+}
+
+// GetPasswordPolicyOk returns a tuple with the PasswordPolicy field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetPasswordPolicyOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PasswordPolicy, true
+}
+
+// SetPasswordPolicy sets field value
+func (o *TopologyAdminUserResponse) SetPasswordPolicy(v string) {
+	o.PasswordPolicy = v
+}
+
+// GetDisabled returns the Disabled field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetDisabled() bool {
+	if o == nil || isNil(o.Disabled) {
+		var ret bool
+		return ret
+	}
+	return *o.Disabled
+}
+
+// GetDisabledOk returns a tuple with the Disabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetDisabledOk() (*bool, bool) {
+	if o == nil || isNil(o.Disabled) {
+		return nil, false
+	}
+	return o.Disabled, true
+}
+
+// HasDisabled returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasDisabled() bool {
+	if o != nil && !isNil(o.Disabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabled gets a reference to the given bool and assigns it to the Disabled field.
+func (o *TopologyAdminUserResponse) SetDisabled(v bool) {
+	o.Disabled = &v
+}
+
+// GetAccountActivationTime returns the AccountActivationTime field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetAccountActivationTime() string {
+	if o == nil || isNil(o.AccountActivationTime) {
+		var ret string
+		return ret
+	}
+	return *o.AccountActivationTime
+}
+
+// GetAccountActivationTimeOk returns a tuple with the AccountActivationTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetAccountActivationTimeOk() (*string, bool) {
+	if o == nil || isNil(o.AccountActivationTime) {
+		return nil, false
+	}
+	return o.AccountActivationTime, true
+}
+
+// HasAccountActivationTime returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasAccountActivationTime() bool {
+	if o != nil && !isNil(o.AccountActivationTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountActivationTime gets a reference to the given string and assigns it to the AccountActivationTime field.
+func (o *TopologyAdminUserResponse) SetAccountActivationTime(v string) {
+	o.AccountActivationTime = &v
+}
+
+// GetAccountExpirationTime returns the AccountExpirationTime field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetAccountExpirationTime() string {
+	if o == nil || isNil(o.AccountExpirationTime) {
+		var ret string
+		return ret
+	}
+	return *o.AccountExpirationTime
+}
+
+// GetAccountExpirationTimeOk returns a tuple with the AccountExpirationTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetAccountExpirationTimeOk() (*string, bool) {
+	if o == nil || isNil(o.AccountExpirationTime) {
+		return nil, false
+	}
+	return o.AccountExpirationTime, true
+}
+
+// HasAccountExpirationTime returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasAccountExpirationTime() bool {
+	if o != nil && !isNil(o.AccountExpirationTime) {
+		return true
+	}
+
+	return false
+}
+
+// SetAccountExpirationTime gets a reference to the given string and assigns it to the AccountExpirationTime field.
+func (o *TopologyAdminUserResponse) SetAccountExpirationTime(v string) {
+	o.AccountExpirationTime = &v
+}
+
+// GetRequireSecureAuthentication returns the RequireSecureAuthentication field value
+func (o *TopologyAdminUserResponse) GetRequireSecureAuthentication() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.RequireSecureAuthentication
+}
+
+// GetRequireSecureAuthenticationOk returns a tuple with the RequireSecureAuthentication field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetRequireSecureAuthenticationOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RequireSecureAuthentication, true
+}
+
+// SetRequireSecureAuthentication sets field value
+func (o *TopologyAdminUserResponse) SetRequireSecureAuthentication(v bool) {
+	o.RequireSecureAuthentication = v
+}
+
+// GetRequireSecureConnections returns the RequireSecureConnections field value
+func (o *TopologyAdminUserResponse) GetRequireSecureConnections() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.RequireSecureConnections
+}
+
+// GetRequireSecureConnectionsOk returns a tuple with the RequireSecureConnections field value
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetRequireSecureConnectionsOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RequireSecureConnections, true
+}
+
+// SetRequireSecureConnections sets field value
+func (o *TopologyAdminUserResponse) SetRequireSecureConnections(v bool) {
+	o.RequireSecureConnections = v
+}
+
+// GetAllowedAuthenticationType returns the AllowedAuthenticationType field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetAllowedAuthenticationType() []string {
+	if o == nil || isNil(o.AllowedAuthenticationType) {
+		var ret []string
+		return ret
+	}
+	return o.AllowedAuthenticationType
+}
+
+// GetAllowedAuthenticationTypeOk returns a tuple with the AllowedAuthenticationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetAllowedAuthenticationTypeOk() ([]string, bool) {
+	if o == nil || isNil(o.AllowedAuthenticationType) {
+		return nil, false
+	}
+	return o.AllowedAuthenticationType, true
+}
+
+// HasAllowedAuthenticationType returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasAllowedAuthenticationType() bool {
+	if o != nil && !isNil(o.AllowedAuthenticationType) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedAuthenticationType gets a reference to the given []string and assigns it to the AllowedAuthenticationType field.
+func (o *TopologyAdminUserResponse) SetAllowedAuthenticationType(v []string) {
+	o.AllowedAuthenticationType = v
+}
+
+// GetAllowedAuthenticationIPAddress returns the AllowedAuthenticationIPAddress field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetAllowedAuthenticationIPAddress() []string {
+	if o == nil || isNil(o.AllowedAuthenticationIPAddress) {
+		var ret []string
+		return ret
+	}
+	return o.AllowedAuthenticationIPAddress
+}
+
+// GetAllowedAuthenticationIPAddressOk returns a tuple with the AllowedAuthenticationIPAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetAllowedAuthenticationIPAddressOk() ([]string, bool) {
+	if o == nil || isNil(o.AllowedAuthenticationIPAddress) {
+		return nil, false
+	}
+	return o.AllowedAuthenticationIPAddress, true
+}
+
+// HasAllowedAuthenticationIPAddress returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasAllowedAuthenticationIPAddress() bool {
+	if o != nil && !isNil(o.AllowedAuthenticationIPAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowedAuthenticationIPAddress gets a reference to the given []string and assigns it to the AllowedAuthenticationIPAddress field.
+func (o *TopologyAdminUserResponse) SetAllowedAuthenticationIPAddress(v []string) {
+	o.AllowedAuthenticationIPAddress = v
+}
+
+// GetPreferredOTPDeliveryMechanism returns the PreferredOTPDeliveryMechanism field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetPreferredOTPDeliveryMechanism() []string {
+	if o == nil || isNil(o.PreferredOTPDeliveryMechanism) {
+		var ret []string
+		return ret
+	}
+	return o.PreferredOTPDeliveryMechanism
+}
+
+// GetPreferredOTPDeliveryMechanismOk returns a tuple with the PreferredOTPDeliveryMechanism field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetPreferredOTPDeliveryMechanismOk() ([]string, bool) {
+	if o == nil || isNil(o.PreferredOTPDeliveryMechanism) {
+		return nil, false
+	}
+	return o.PreferredOTPDeliveryMechanism, true
+}
+
+// HasPreferredOTPDeliveryMechanism returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasPreferredOTPDeliveryMechanism() bool {
+	if o != nil && !isNil(o.PreferredOTPDeliveryMechanism) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreferredOTPDeliveryMechanism gets a reference to the given []string and assigns it to the PreferredOTPDeliveryMechanism field.
+func (o *TopologyAdminUserResponse) SetPreferredOTPDeliveryMechanism(v []string) {
+	o.PreferredOTPDeliveryMechanism = v
+}
+
+// GetIsProxyable returns the IsProxyable field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetIsProxyable() EnumtopologyAdminUserIsProxyableProp {
+	if o == nil || isNil(o.IsProxyable) {
+		var ret EnumtopologyAdminUserIsProxyableProp
+		return ret
+	}
+	return *o.IsProxyable
+}
+
+// GetIsProxyableOk returns a tuple with the IsProxyable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetIsProxyableOk() (*EnumtopologyAdminUserIsProxyableProp, bool) {
+	if o == nil || isNil(o.IsProxyable) {
+		return nil, false
+	}
+	return o.IsProxyable, true
+}
+
+// HasIsProxyable returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasIsProxyable() bool {
+	if o != nil && !isNil(o.IsProxyable) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsProxyable gets a reference to the given EnumtopologyAdminUserIsProxyableProp and assigns it to the IsProxyable field.
+func (o *TopologyAdminUserResponse) SetIsProxyable(v EnumtopologyAdminUserIsProxyableProp) {
+	o.IsProxyable = &v
+}
+
+// GetIsProxyableByDN returns the IsProxyableByDN field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetIsProxyableByDN() []string {
+	if o == nil || isNil(o.IsProxyableByDN) {
+		var ret []string
+		return ret
+	}
+	return o.IsProxyableByDN
+}
+
+// GetIsProxyableByDNOk returns a tuple with the IsProxyableByDN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetIsProxyableByDNOk() ([]string, bool) {
+	if o == nil || isNil(o.IsProxyableByDN) {
+		return nil, false
+	}
+	return o.IsProxyableByDN, true
+}
+
+// HasIsProxyableByDN returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasIsProxyableByDN() bool {
+	if o != nil && !isNil(o.IsProxyableByDN) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsProxyableByDN gets a reference to the given []string and assigns it to the IsProxyableByDN field.
+func (o *TopologyAdminUserResponse) SetIsProxyableByDN(v []string) {
+	o.IsProxyableByDN = v
+}
+
+// GetIsProxyableByGroup returns the IsProxyableByGroup field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetIsProxyableByGroup() []string {
+	if o == nil || isNil(o.IsProxyableByGroup) {
+		var ret []string
+		return ret
+	}
+	return o.IsProxyableByGroup
+}
+
+// GetIsProxyableByGroupOk returns a tuple with the IsProxyableByGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetIsProxyableByGroupOk() ([]string, bool) {
+	if o == nil || isNil(o.IsProxyableByGroup) {
+		return nil, false
+	}
+	return o.IsProxyableByGroup, true
+}
+
+// HasIsProxyableByGroup returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasIsProxyableByGroup() bool {
+	if o != nil && !isNil(o.IsProxyableByGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsProxyableByGroup gets a reference to the given []string and assigns it to the IsProxyableByGroup field.
+func (o *TopologyAdminUserResponse) SetIsProxyableByGroup(v []string) {
+	o.IsProxyableByGroup = v
+}
+
+// GetIsProxyableByURL returns the IsProxyableByURL field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetIsProxyableByURL() []string {
+	if o == nil || isNil(o.IsProxyableByURL) {
+		var ret []string
+		return ret
+	}
+	return o.IsProxyableByURL
+}
+
+// GetIsProxyableByURLOk returns a tuple with the IsProxyableByURL field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetIsProxyableByURLOk() ([]string, bool) {
+	if o == nil || isNil(o.IsProxyableByURL) {
+		return nil, false
+	}
+	return o.IsProxyableByURL, true
+}
+
+// HasIsProxyableByURL returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasIsProxyableByURL() bool {
+	if o != nil && !isNil(o.IsProxyableByURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetIsProxyableByURL gets a reference to the given []string and assigns it to the IsProxyableByURL field.
+func (o *TopologyAdminUserResponse) SetIsProxyableByURL(v []string) {
+	o.IsProxyableByURL = v
+}
+
+// GetMayProxyAsDN returns the MayProxyAsDN field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetMayProxyAsDN() []string {
+	if o == nil || isNil(o.MayProxyAsDN) {
+		var ret []string
+		return ret
+	}
+	return o.MayProxyAsDN
+}
+
+// GetMayProxyAsDNOk returns a tuple with the MayProxyAsDN field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetMayProxyAsDNOk() ([]string, bool) {
+	if o == nil || isNil(o.MayProxyAsDN) {
+		return nil, false
+	}
+	return o.MayProxyAsDN, true
+}
+
+// HasMayProxyAsDN returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasMayProxyAsDN() bool {
+	if o != nil && !isNil(o.MayProxyAsDN) {
+		return true
+	}
+
+	return false
+}
+
+// SetMayProxyAsDN gets a reference to the given []string and assigns it to the MayProxyAsDN field.
+func (o *TopologyAdminUserResponse) SetMayProxyAsDN(v []string) {
+	o.MayProxyAsDN = v
+}
+
+// GetMayProxyAsGroup returns the MayProxyAsGroup field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetMayProxyAsGroup() []string {
+	if o == nil || isNil(o.MayProxyAsGroup) {
+		var ret []string
+		return ret
+	}
+	return o.MayProxyAsGroup
+}
+
+// GetMayProxyAsGroupOk returns a tuple with the MayProxyAsGroup field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetMayProxyAsGroupOk() ([]string, bool) {
+	if o == nil || isNil(o.MayProxyAsGroup) {
+		return nil, false
+	}
+	return o.MayProxyAsGroup, true
+}
+
+// HasMayProxyAsGroup returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasMayProxyAsGroup() bool {
+	if o != nil && !isNil(o.MayProxyAsGroup) {
+		return true
+	}
+
+	return false
+}
+
+// SetMayProxyAsGroup gets a reference to the given []string and assigns it to the MayProxyAsGroup field.
+func (o *TopologyAdminUserResponse) SetMayProxyAsGroup(v []string) {
+	o.MayProxyAsGroup = v
+}
+
+// GetMayProxyAsURL returns the MayProxyAsURL field value if set, zero value otherwise.
+func (o *TopologyAdminUserResponse) GetMayProxyAsURL() []string {
+	if o == nil || isNil(o.MayProxyAsURL) {
+		var ret []string
+		return ret
+	}
+	return o.MayProxyAsURL
+}
+
+// GetMayProxyAsURLOk returns a tuple with the MayProxyAsURL field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TopologyAdminUserResponse) GetMayProxyAsURLOk() ([]string, bool) {
+	if o == nil || isNil(o.MayProxyAsURL) {
+		return nil, false
+	}
+	return o.MayProxyAsURL, true
+}
+
+// HasMayProxyAsURL returns a boolean if a field has been set.
+func (o *TopologyAdminUserResponse) HasMayProxyAsURL() bool {
+	if o != nil && !isNil(o.MayProxyAsURL) {
+		return true
+	}
+
+	return false
+}
+
+// SetMayProxyAsURL gets a reference to the given []string and assigns it to the MayProxyAsURL field.
+func (o *TopologyAdminUserResponse) SetMayProxyAsURL(v []string) {
+	o.MayProxyAsURL = v
+}
+
 func (o TopologyAdminUserResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Meta) {
@@ -174,6 +1238,105 @@ func (o TopologyAdminUserResponse) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Schemas) {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if !isNil(o.AlternateBindDN) {
+		toSerialize["alternateBindDN"] = o.AlternateBindDN
+	}
+	if !isNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !isNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !isNil(o.FirstName) {
+		toSerialize["firstName"] = o.FirstName
+	}
+	if !isNil(o.LastName) {
+		toSerialize["lastName"] = o.LastName
+	}
+	if !isNil(o.UserID) {
+		toSerialize["userID"] = o.UserID
+	}
+	if !isNil(o.EmailAddress) {
+		toSerialize["emailAddress"] = o.EmailAddress
+	}
+	if !isNil(o.WorkTelephoneNumber) {
+		toSerialize["workTelephoneNumber"] = o.WorkTelephoneNumber
+	}
+	if !isNil(o.HomeTelephoneNumber) {
+		toSerialize["homeTelephoneNumber"] = o.HomeTelephoneNumber
+	}
+	if !isNil(o.MobileTelephoneNumber) {
+		toSerialize["mobileTelephoneNumber"] = o.MobileTelephoneNumber
+	}
+	if !isNil(o.PagerTelephoneNumber) {
+		toSerialize["pagerTelephoneNumber"] = o.PagerTelephoneNumber
+	}
+	if true {
+		toSerialize["inheritDefaultRootPrivileges"] = o.InheritDefaultRootPrivileges
+	}
+	if !isNil(o.Privilege) {
+		toSerialize["privilege"] = o.Privilege
+	}
+	if true {
+		toSerialize["searchResultEntryLimit"] = o.SearchResultEntryLimit
+	}
+	if true {
+		toSerialize["timeLimitSeconds"] = o.TimeLimitSeconds
+	}
+	if true {
+		toSerialize["lookThroughEntryLimit"] = o.LookThroughEntryLimit
+	}
+	if true {
+		toSerialize["idleTimeLimitSeconds"] = o.IdleTimeLimitSeconds
+	}
+	if true {
+		toSerialize["passwordPolicy"] = o.PasswordPolicy
+	}
+	if !isNil(o.Disabled) {
+		toSerialize["disabled"] = o.Disabled
+	}
+	if !isNil(o.AccountActivationTime) {
+		toSerialize["accountActivationTime"] = o.AccountActivationTime
+	}
+	if !isNil(o.AccountExpirationTime) {
+		toSerialize["accountExpirationTime"] = o.AccountExpirationTime
+	}
+	if true {
+		toSerialize["requireSecureAuthentication"] = o.RequireSecureAuthentication
+	}
+	if true {
+		toSerialize["requireSecureConnections"] = o.RequireSecureConnections
+	}
+	if !isNil(o.AllowedAuthenticationType) {
+		toSerialize["allowedAuthenticationType"] = o.AllowedAuthenticationType
+	}
+	if !isNil(o.AllowedAuthenticationIPAddress) {
+		toSerialize["allowedAuthenticationIPAddress"] = o.AllowedAuthenticationIPAddress
+	}
+	if !isNil(o.PreferredOTPDeliveryMechanism) {
+		toSerialize["preferredOTPDeliveryMechanism"] = o.PreferredOTPDeliveryMechanism
+	}
+	if !isNil(o.IsProxyable) {
+		toSerialize["isProxyable"] = o.IsProxyable
+	}
+	if !isNil(o.IsProxyableByDN) {
+		toSerialize["isProxyableByDN"] = o.IsProxyableByDN
+	}
+	if !isNil(o.IsProxyableByGroup) {
+		toSerialize["isProxyableByGroup"] = o.IsProxyableByGroup
+	}
+	if !isNil(o.IsProxyableByURL) {
+		toSerialize["isProxyableByURL"] = o.IsProxyableByURL
+	}
+	if !isNil(o.MayProxyAsDN) {
+		toSerialize["mayProxyAsDN"] = o.MayProxyAsDN
+	}
+	if !isNil(o.MayProxyAsGroup) {
+		toSerialize["mayProxyAsGroup"] = o.MayProxyAsGroup
+	}
+	if !isNil(o.MayProxyAsURL) {
+		toSerialize["mayProxyAsURL"] = o.MayProxyAsURL
 	}
 	return json.Marshal(toSerialize)
 }
