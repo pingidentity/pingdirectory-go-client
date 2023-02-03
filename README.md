@@ -1621,6 +1621,8 @@ Class | Method | HTTP request | Description
  - [EnumthirdPartyVirtualAttributeSchemaUrn](docs/EnumthirdPartyVirtualAttributeSchemaUrn.md)
  - [EnumtimeLimitLogRetentionPolicySchemaUrn](docs/EnumtimeLimitLogRetentionPolicySchemaUrn.md)
  - [EnumtimeLimitLogRotationPolicySchemaUrn](docs/EnumtimeLimitLogRotationPolicySchemaUrn.md)
+ - [EnumtopologyAdminUserIsProxyableProp](docs/EnumtopologyAdminUserIsProxyableProp.md)
+ - [EnumtopologyAdminUserPrivilegeProp](docs/EnumtopologyAdminUserPrivilegeProp.md)
  - [EnumtopologyAdminUserSchemaUrn](docs/EnumtopologyAdminUserSchemaUrn.md)
  - [EnumtripleDesPasswordStorageSchemeSchemaUrn](docs/EnumtripleDesPasswordStorageSchemeSchemaUrn.md)
  - [EnumtrustStoreBackendSchemaUrn](docs/EnumtrustStoreBackendSchemaUrn.md)
