@@ -22,7 +22,6 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: 'go.mod'
-          cache: true
       - name: Get dependencies
         run: |
           go mod tidy
@@ -40,7 +39,6 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: 'go.mod'
-          cache: true
       - run: |
           if [ "$(go fmt ./... | wc -l)" -gt 0 ]; then
             echo "::error::'go fmt' found required formatting changes. Run 'make fmt' on your branch."
@@ -55,5 +53,4 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version-file: 'go.mod'
-          cache: true
       - run: go vet ./...
