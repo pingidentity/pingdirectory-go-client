@@ -12,6 +12,7 @@ for enumFile in enumModelFiles:
         for line in file:
             if line.startswith("type ") and line.rstrip().endswith(" string"):
                 enumNames.append(line[5:-8])
+enumNames.sort()
 
 # Create enum_conversion.go
 with open("enum_conversion.go", 'w') as conversionFile:
