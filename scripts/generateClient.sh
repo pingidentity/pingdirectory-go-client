@@ -18,9 +18,8 @@ openapi-generator generate \
 rm -r test/
 
 # Run any code generators
-./scripts/generateEnumConversionFunctions.py
-./scripts/setTopologyAdminUserPrivilegeEnumNames.py
+go mod tidy
+go generate ./...
 
 # Clean things up
-go mod tidy
 go fmt ./...

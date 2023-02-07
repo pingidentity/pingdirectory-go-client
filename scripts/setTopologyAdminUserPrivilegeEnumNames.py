@@ -18,7 +18,7 @@
 import fileinput
 
 for line in fileinput.input("model_enumtopology_admin_user_privilege_prop.go", inplace=True):
-    if "EnumtopologyAdminUserPrivilegeProp = \"-" in line:
+    if "EnumtopologyAdminUserPrivilegeProp = \"-" in line and "_REVOKE_" not in line:
         print(line.replace("ENUMTOPOLOGYADMINUSERPRIVILEGEPROP_", "ENUMTOPOLOGYADMINUSERPRIVILEGEPROP_REVOKE_"), end='')
     else:
         print(line, end='')
