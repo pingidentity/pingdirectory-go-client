@@ -18,9 +18,8 @@ openapi-generator generate \
 rm -r test/
 
 # Run any code generators
+go mod tidy
 go generate ./...
-./scripts/setTopologyAdminUserPrivilegeEnumNames.py
 
 # Clean things up
-go mod tidy
 go fmt ./...
