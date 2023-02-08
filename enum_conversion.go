@@ -14,6 +14,14 @@ func StringSliceEnumOperation(values []EnumOperation) []string {
 	return stringSlice
 }
 
+func StringPointerEnumOperation(value *EnumOperation) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaccessControlDataSecurityAuditorSchemaUrn) String() string {
 	return string(e)
 }
@@ -24,6 +32,14 @@ func StringSliceEnumaccessControlDataSecurityAuditorSchemaUrn(values []Enumacces
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaccessControlDataSecurityAuditorSchemaUrn(value *EnumaccessControlDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumaccessControlHandlerAllowedBindControlProp) String() string {
@@ -38,6 +54,14 @@ func StringSliceEnumaccessControlHandlerAllowedBindControlProp(values []Enumacce
 	return stringSlice
 }
 
+func StringPointerEnumaccessControlHandlerAllowedBindControlProp(value *EnumaccessControlHandlerAllowedBindControlProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaccessLogFieldMappingSchemaUrn) String() string {
 	return string(e)
 }
@@ -48,6 +72,14 @@ func StringSliceEnumaccessLogFieldMappingSchemaUrn(values []EnumaccessLogFieldMa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaccessLogFieldMappingSchemaUrn(value *EnumaccessLogFieldMappingSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp) String() string {
@@ -62,6 +94,14 @@ func StringSliceEnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp(va
 	return stringSlice
 }
 
+func StringPointerEnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp(value *EnumaccessTokenValidatorAllowedContentEncryptionAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp) String() string {
 	return string(e)
 }
@@ -72,6 +112,14 @@ func StringSliceEnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp(values
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp(value *EnumaccessTokenValidatorAllowedKeyEncryptionAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumaccessTokenValidatorAllowedSigningAlgorithmProp) String() string {
@@ -86,6 +134,14 @@ func StringSliceEnumaccessTokenValidatorAllowedSigningAlgorithmProp(values []Enu
 	return stringSlice
 }
 
+func StringPointerEnumaccessTokenValidatorAllowedSigningAlgorithmProp(value *EnumaccessTokenValidatorAllowedSigningAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp) String() string {
 	return string(e)
 }
@@ -96,6 +152,14 @@ func StringSliceEnumaccountStatusNotificationHandlerAccountStatusNotificationTyp
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp(value *EnumaccountStatusNotificationHandlerAccountStatusNotificationTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumactiveDirectoryExternalServerSchemaUrn) String() string {
@@ -110,6 +174,14 @@ func StringSliceEnumactiveDirectoryExternalServerSchemaUrn(values []EnumactiveDi
 	return stringSlice
 }
 
+func StringPointerEnumactiveDirectoryExternalServerSchemaUrn(value *EnumactiveDirectoryExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumactiveOperationsMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -120,6 +192,14 @@ func StringSliceEnumactiveOperationsMonitorProviderSchemaUrn(values []Enumactive
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumactiveOperationsMonitorProviderSchemaUrn(value *EnumactiveOperationsMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumadminAlertAccessLogPublisherSchemaUrn) String() string {
@@ -134,6 +214,14 @@ func StringSliceEnumadminAlertAccessLogPublisherSchemaUrn(values []EnumadminAler
 	return stringSlice
 }
 
+func StringPointerEnumadminAlertAccessLogPublisherSchemaUrn(value *EnumadminAlertAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumadminAlertAccountStatusNotificationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -144,6 +232,14 @@ func StringSliceEnumadminAlertAccountStatusNotificationHandlerSchemaUrn(values [
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumadminAlertAccountStatusNotificationHandlerSchemaUrn(value *EnumadminAlertAccountStatusNotificationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e Enumaes256PasswordStorageSchemeSchemaUrn) String() string {
@@ -158,6 +254,14 @@ func StringSliceEnumaes256PasswordStorageSchemeSchemaUrn(values []Enumaes256Pass
 	return stringSlice
 }
 
+func StringPointerEnumaes256PasswordStorageSchemeSchemaUrn(value *Enumaes256PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaesPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -168,6 +272,14 @@ func StringSliceEnumaesPasswordStorageSchemeSchemaUrn(values []EnumaesPasswordSt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaesPasswordStorageSchemeSchemaUrn(value *EnumaesPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumaggregateConnectionCriteriaSchemaUrn) String() string {
@@ -182,6 +294,14 @@ func StringSliceEnumaggregateConnectionCriteriaSchemaUrn(values []EnumaggregateC
 	return stringSlice
 }
 
+func StringPointerEnumaggregateConnectionCriteriaSchemaUrn(value *EnumaggregateConnectionCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaggregateIdentityMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -192,6 +312,14 @@ func StringSliceEnumaggregateIdentityMapperSchemaUrn(values []EnumaggregateIdent
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaggregateIdentityMapperSchemaUrn(value *EnumaggregateIdentityMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumaggregateRequestCriteriaSchemaUrn) String() string {
@@ -206,6 +334,14 @@ func StringSliceEnumaggregateRequestCriteriaSchemaUrn(values []EnumaggregateRequ
 	return stringSlice
 }
 
+func StringPointerEnumaggregateRequestCriteriaSchemaUrn(value *EnumaggregateRequestCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaggregateResultCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -216,6 +352,14 @@ func StringSliceEnumaggregateResultCriteriaSchemaUrn(values []EnumaggregateResul
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaggregateResultCriteriaSchemaUrn(value *EnumaggregateResultCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumaggregateSearchEntryCriteriaSchemaUrn) String() string {
@@ -230,6 +374,14 @@ func StringSliceEnumaggregateSearchEntryCriteriaSchemaUrn(values []Enumaggregate
 	return stringSlice
 }
 
+func StringPointerEnumaggregateSearchEntryCriteriaSchemaUrn(value *EnumaggregateSearchEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumaggregateSearchReferenceCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -240,6 +392,14 @@ func StringSliceEnumaggregateSearchReferenceCriteriaSchemaUrn(values []Enumaggre
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumaggregateSearchReferenceCriteriaSchemaUrn(value *EnumaggregateSearchReferenceCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumalarmBackendSchemaUrn) String() string {
@@ -254,6 +414,14 @@ func StringSliceEnumalarmBackendSchemaUrn(values []EnumalarmBackendSchemaUrn) []
 	return stringSlice
 }
 
+func StringPointerEnumalarmBackendSchemaUrn(value *EnumalarmBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumalarmManagerDefaultGaugeAlertLevelProp) String() string {
 	return string(e)
 }
@@ -264,6 +432,14 @@ func StringSliceEnumalarmManagerDefaultGaugeAlertLevelProp(values []EnumalarmMan
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumalarmManagerDefaultGaugeAlertLevelProp(value *EnumalarmManagerDefaultGaugeAlertLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumalarmManagerGeneratedAlertTypesProp) String() string {
@@ -278,6 +454,14 @@ func StringSliceEnumalarmManagerGeneratedAlertTypesProp(values []EnumalarmManage
 	return stringSlice
 }
 
+func StringPointerEnumalarmManagerGeneratedAlertTypesProp(value *EnumalarmManagerGeneratedAlertTypesProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumalarmManagerSchemaUrn) String() string {
 	return string(e)
 }
@@ -288,6 +472,14 @@ func StringSliceEnumalarmManagerSchemaUrn(values []EnumalarmManagerSchemaUrn) []
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumalarmManagerSchemaUrn(value *EnumalarmManagerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumalarmManagerSuppressedAlarmProp) String() string {
@@ -302,6 +494,14 @@ func StringSliceEnumalarmManagerSuppressedAlarmProp(values []EnumalarmManagerSup
 	return stringSlice
 }
 
+func StringPointerEnumalarmManagerSuppressedAlarmProp(value *EnumalarmManagerSuppressedAlarmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumalertBackendSchemaUrn) String() string {
 	return string(e)
 }
@@ -312,6 +512,14 @@ func StringSliceEnumalertBackendSchemaUrn(values []EnumalertBackendSchemaUrn) []
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumalertBackendSchemaUrn(value *EnumalertBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumalertHandlerDisabledAlertTypeProp) String() string {
@@ -326,6 +534,14 @@ func StringSliceEnumalertHandlerDisabledAlertTypeProp(values []EnumalertHandlerD
 	return stringSlice
 }
 
+func StringPointerEnumalertHandlerDisabledAlertTypeProp(value *EnumalertHandlerDisabledAlertTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumalertHandlerEnabledAlertSeverityProp) String() string {
 	return string(e)
 }
@@ -336,6 +552,14 @@ func StringSliceEnumalertHandlerEnabledAlertSeverityProp(values []EnumalertHandl
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumalertHandlerEnabledAlertSeverityProp(value *EnumalertHandlerEnabledAlertSeverityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumalertHandlerEnabledAlertTypeProp) String() string {
@@ -350,6 +574,14 @@ func StringSliceEnumalertHandlerEnabledAlertTypeProp(values []EnumalertHandlerEn
 	return stringSlice
 }
 
+func StringPointerEnumalertHandlerEnabledAlertTypeProp(value *EnumalertHandlerEnabledAlertTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumalertHandlerLongMessageBehaviorProp) String() string {
 	return string(e)
 }
@@ -360,6 +592,14 @@ func StringSliceEnumalertHandlerLongMessageBehaviorProp(values []EnumalertHandle
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumalertHandlerLongMessageBehaviorProp(value *EnumalertHandlerLongMessageBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumalertHandlerOutputFormatProp) String() string {
@@ -374,6 +614,14 @@ func StringSliceEnumalertHandlerOutputFormatProp(values []EnumalertHandlerOutput
 	return stringSlice
 }
 
+func StringPointerEnumalertHandlerOutputFormatProp(value *EnumalertHandlerOutputFormatProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumalertHandlerOutputLocationProp) String() string {
 	return string(e)
 }
@@ -384,6 +632,14 @@ func StringSliceEnumalertHandlerOutputLocationProp(values []EnumalertHandlerOutp
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumalertHandlerOutputLocationProp(value *EnumalertHandlerOutputLocationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumamazonAwsExternalServerSchemaUrn) String() string {
@@ -398,6 +654,14 @@ func StringSliceEnumamazonAwsExternalServerSchemaUrn(values []EnumamazonAwsExter
 	return stringSlice
 }
 
+func StringPointerEnumamazonAwsExternalServerSchemaUrn(value *EnumamazonAwsExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -408,6 +672,14 @@ func StringSliceEnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn(valu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn(value *EnumamazonKeyManagementServiceCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumamazonSecretsManagerCipherStreamProviderSchemaUrn) String() string {
@@ -422,6 +694,14 @@ func StringSliceEnumamazonSecretsManagerCipherStreamProviderSchemaUrn(values []E
 	return stringSlice
 }
 
+func StringPointerEnumamazonSecretsManagerCipherStreamProviderSchemaUrn(value *EnumamazonSecretsManagerCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumamazonSecretsManagerPassphraseProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -432,6 +712,14 @@ func StringSliceEnumamazonSecretsManagerPassphraseProviderSchemaUrn(values []Enu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumamazonSecretsManagerPassphraseProviderSchemaUrn(value *EnumamazonSecretsManagerPassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn) String() string {
@@ -446,6 +734,14 @@ func StringSliceEnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn(values []
 	return stringSlice
 }
 
+func StringPointerEnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn(value *EnumamazonSecretsManagerPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumanonymousSaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -456,6 +752,14 @@ func StringSliceEnumanonymousSaslMechanismHandlerSchemaUrn(values []Enumanonymou
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumanonymousSaslMechanismHandlerSchemaUrn(value *EnumanonymousSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumapiKeyConjurAuthenticationMethodSchemaUrn) String() string {
@@ -470,6 +774,14 @@ func StringSliceEnumapiKeyConjurAuthenticationMethodSchemaUrn(values []EnumapiKe
 	return stringSlice
 }
 
+func StringPointerEnumapiKeyConjurAuthenticationMethodSchemaUrn(value *EnumapiKeyConjurAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumappRoleVaultAuthenticationMethodSchemaUrn) String() string {
 	return string(e)
 }
@@ -480,6 +792,14 @@ func StringSliceEnumappRoleVaultAuthenticationMethodSchemaUrn(values []EnumappRo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumappRoleVaultAuthenticationMethodSchemaUrn(value *EnumappRoleVaultAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumapproximateMatchingRuleSchemaUrn) String() string {
@@ -494,6 +814,14 @@ func StringSliceEnumapproximateMatchingRuleSchemaUrn(values []EnumapproximateMat
 	return stringSlice
 }
 
+func StringPointerEnumapproximateMatchingRuleSchemaUrn(value *EnumapproximateMatchingRuleSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e Enumargon2PasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -504,6 +832,14 @@ func StringSliceEnumargon2PasswordStorageSchemeSchemaUrn(values []Enumargon2Pass
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumargon2PasswordStorageSchemeSchemaUrn(value *Enumargon2PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumattributeBasedLogFieldSyntaxSchemaUrn) String() string {
@@ -518,6 +854,14 @@ func StringSliceEnumattributeBasedLogFieldSyntaxSchemaUrn(values []Enumattribute
 	return stringSlice
 }
 
+func StringPointerEnumattributeBasedLogFieldSyntaxSchemaUrn(value *EnumattributeBasedLogFieldSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -528,6 +872,14 @@ func StringSliceEnumattributeTypeDescriptionAttributeSyntaxSchemaUrn(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumattributeTypeDescriptionAttributeSyntaxSchemaUrn(value *EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumattributeValuePasswordValidatorSchemaUrn) String() string {
@@ -542,6 +894,14 @@ func StringSliceEnumattributeValuePasswordValidatorSchemaUrn(values []Enumattrib
 	return stringSlice
 }
 
+func StringPointerEnumattributeValuePasswordValidatorSchemaUrn(value *EnumattributeValuePasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumauthorizeServerInstanceSchemaUrn) String() string {
 	return string(e)
 }
@@ -552,6 +912,14 @@ func StringSliceEnumauthorizeServerInstanceSchemaUrn(values []EnumauthorizeServe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumauthorizeServerInstanceSchemaUrn(value *EnumauthorizeServerInstanceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumavailabilityStateHttpServletExtensionSchemaUrn) String() string {
@@ -566,6 +934,14 @@ func StringSliceEnumavailabilityStateHttpServletExtensionSchemaUrn(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumavailabilityStateHttpServletExtensionSchemaUrn(value *EnumavailabilityStateHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumazureKeyVaultCipherStreamProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -576,6 +952,14 @@ func StringSliceEnumazureKeyVaultCipherStreamProviderSchemaUrn(values []Enumazur
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumazureKeyVaultCipherStreamProviderSchemaUrn(value *EnumazureKeyVaultCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumazureKeyVaultPassphraseProviderSchemaUrn) String() string {
@@ -590,6 +974,14 @@ func StringSliceEnumazureKeyVaultPassphraseProviderSchemaUrn(values []EnumazureK
 	return stringSlice
 }
 
+func StringPointerEnumazureKeyVaultPassphraseProviderSchemaUrn(value *EnumazureKeyVaultPassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumazureKeyVaultPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -600,6 +992,14 @@ func StringSliceEnumazureKeyVaultPasswordStorageSchemeSchemaUrn(values []Enumazu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumazureKeyVaultPasswordStorageSchemeSchemaUrn(value *EnumazureKeyVaultPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendDefaultCacheModeProp) String() string {
@@ -614,6 +1014,14 @@ func StringSliceEnumbackendDefaultCacheModeProp(values []EnumbackendDefaultCache
 	return stringSlice
 }
 
+func StringPointerEnumbackendDefaultCacheModeProp(value *EnumbackendDefaultCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendDisabledAlertTypeProp) String() string {
 	return string(e)
 }
@@ -624,6 +1032,14 @@ func StringSliceEnumbackendDisabledAlertTypeProp(values []EnumbackendDisabledAle
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendDisabledAlertTypeProp(value *EnumbackendDisabledAlertTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendDn2idCacheModeProp) String() string {
@@ -638,6 +1054,14 @@ func StringSliceEnumbackendDn2idCacheModeProp(values []EnumbackendDn2idCacheMode
 	return stringSlice
 }
 
+func StringPointerEnumbackendDn2idCacheModeProp(value *EnumbackendDn2idCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendDn2uriCacheModeProp) String() string {
 	return string(e)
 }
@@ -648,6 +1072,14 @@ func StringSliceEnumbackendDn2uriCacheModeProp(values []EnumbackendDn2uriCacheMo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendDn2uriCacheModeProp(value *EnumbackendDn2uriCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendExternalTxnDefaultBackendLockBehaviorProp) String() string {
@@ -662,6 +1094,14 @@ func StringSliceEnumbackendExternalTxnDefaultBackendLockBehaviorProp(values []En
 	return stringSlice
 }
 
+func StringPointerEnumbackendExternalTxnDefaultBackendLockBehaviorProp(value *EnumbackendExternalTxnDefaultBackendLockBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendId2childrenCacheModeProp) String() string {
 	return string(e)
 }
@@ -672,6 +1112,14 @@ func StringSliceEnumbackendId2childrenCacheModeProp(values []EnumbackendId2child
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendId2childrenCacheModeProp(value *EnumbackendId2childrenCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendId2entryCacheModeProp) String() string {
@@ -686,6 +1134,14 @@ func StringSliceEnumbackendId2entryCacheModeProp(values []EnumbackendId2entryCac
 	return stringSlice
 }
 
+func StringPointerEnumbackendId2entryCacheModeProp(value *EnumbackendId2entryCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendId2subtreeCacheModeProp) String() string {
 	return string(e)
 }
@@ -696,6 +1152,14 @@ func StringSliceEnumbackendId2subtreeCacheModeProp(values []EnumbackendId2subtre
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendId2subtreeCacheModeProp(value *EnumbackendId2subtreeCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendIncludeVirtualAttributesProp) String() string {
@@ -710,6 +1174,14 @@ func StringSliceEnumbackendIncludeVirtualAttributesProp(values []EnumbackendIncl
 	return stringSlice
 }
 
+func StringPointerEnumbackendIncludeVirtualAttributesProp(value *EnumbackendIncludeVirtualAttributesProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendPrimeMethodProp) String() string {
 	return string(e)
 }
@@ -720,6 +1192,14 @@ func StringSliceEnumbackendPrimeMethodProp(values []EnumbackendPrimeMethodProp) 
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendPrimeMethodProp(value *EnumbackendPrimeMethodProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendReportExcludedChangelogAttributesProp) String() string {
@@ -734,6 +1214,14 @@ func StringSliceEnumbackendReportExcludedChangelogAttributesProp(values []Enumba
 	return stringSlice
 }
 
+func StringPointerEnumbackendReportExcludedChangelogAttributesProp(value *EnumbackendReportExcludedChangelogAttributesProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendSingleWriterLockBehaviorProp) String() string {
 	return string(e)
 }
@@ -744,6 +1232,14 @@ func StringSliceEnumbackendSingleWriterLockBehaviorProp(values []EnumbackendSing
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendSingleWriterLockBehaviorProp(value *EnumbackendSingleWriterLockBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendSoftDeleteEntryIncludedOperationProp) String() string {
@@ -758,6 +1254,14 @@ func StringSliceEnumbackendSoftDeleteEntryIncludedOperationProp(values []Enumbac
 	return stringSlice
 }
 
+func StringPointerEnumbackendSoftDeleteEntryIncludedOperationProp(value *EnumbackendSoftDeleteEntryIncludedOperationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendSystemIndexToPrimeInternalNodesOnlyProp) String() string {
 	return string(e)
 }
@@ -768,6 +1272,14 @@ func StringSliceEnumbackendSystemIndexToPrimeInternalNodesOnlyProp(values []Enum
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendSystemIndexToPrimeInternalNodesOnlyProp(value *EnumbackendSystemIndexToPrimeInternalNodesOnlyProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendSystemIndexToPrimeProp) String() string {
@@ -782,6 +1294,14 @@ func StringSliceEnumbackendSystemIndexToPrimeProp(values []EnumbackendSystemInde
 	return stringSlice
 }
 
+func StringPointerEnumbackendSystemIndexToPrimeProp(value *EnumbackendSystemIndexToPrimeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackendUncachedId2entryCacheModeProp) String() string {
 	return string(e)
 }
@@ -792,6 +1312,14 @@ func StringSliceEnumbackendUncachedId2entryCacheModeProp(values []EnumbackendUnc
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackendUncachedId2entryCacheModeProp(value *EnumbackendUncachedId2entryCacheModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackendWritabilityModeProp) String() string {
@@ -806,6 +1334,14 @@ func StringSliceEnumbackendWritabilityModeProp(values []EnumbackendWritabilityMo
 	return stringSlice
 }
 
+func StringPointerEnumbackendWritabilityModeProp(value *EnumbackendWritabilityModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbackupBackendSchemaUrn) String() string {
 	return string(e)
 }
@@ -816,6 +1352,14 @@ func StringSliceEnumbackupBackendSchemaUrn(values []EnumbackupBackendSchemaUrn) 
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbackupBackendSchemaUrn(value *EnumbackupBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbackupRecurringTaskSchemaUrn) String() string {
@@ -830,6 +1374,14 @@ func StringSliceEnumbackupRecurringTaskSchemaUrn(values []EnumbackupRecurringTas
 	return stringSlice
 }
 
+func StringPointerEnumbackupRecurringTaskSchemaUrn(value *EnumbackupRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e Enumbase64PasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -840,6 +1392,14 @@ func StringSliceEnumbase64PasswordStorageSchemeSchemaUrn(values []Enumbase64Pass
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbase64PasswordStorageSchemeSchemaUrn(value *Enumbase64PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn) String() string {
@@ -854,6 +1414,14 @@ func StringSliceEnumbatchedTransactionsExtendedOperationHandlerSchemaUrn(values 
 	return stringSlice
 }
 
+func StringPointerEnumbatchedTransactionsExtendedOperationHandlerSchemaUrn(value *EnumbatchedTransactionsExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbcryptPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -864,6 +1432,14 @@ func StringSliceEnumbcryptPasswordStorageSchemeSchemaUrn(values []EnumbcryptPass
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbcryptPasswordStorageSchemeSchemaUrn(value *EnumbcryptPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumbitStringAttributeSyntaxSchemaUrn) String() string {
@@ -878,6 +1454,14 @@ func StringSliceEnumbitStringAttributeSyntaxSchemaUrn(values []EnumbitStringAttr
 	return stringSlice
 }
 
+func StringPointerEnumbitStringAttributeSyntaxSchemaUrn(value *EnumbitStringAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumblindTrustManagerProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -888,6 +1472,14 @@ func StringSliceEnumblindTrustManagerProviderSchemaUrn(values []EnumblindTrustMa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumblindTrustManagerProviderSchemaUrn(value *EnumblindTrustManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumblowfishPasswordStorageSchemeSchemaUrn) String() string {
@@ -902,6 +1494,14 @@ func StringSliceEnumblowfishPasswordStorageSchemeSchemaUrn(values []Enumblowfish
 	return stringSlice
 }
 
+func StringPointerEnumblowfishPasswordStorageSchemeSchemaUrn(value *EnumblowfishPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumbooleanAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -912,6 +1512,14 @@ func StringSliceEnumbooleanAttributeSyntaxSchemaUrn(values []EnumbooleanAttribut
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumbooleanAttributeSyntaxSchemaUrn(value *EnumbooleanAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumcancelExtendedOperationHandlerSchemaUrn) String() string {
@@ -926,6 +1534,14 @@ func StringSliceEnumcancelExtendedOperationHandlerSchemaUrn(values []EnumcancelE
 	return stringSlice
 }
 
+func StringPointerEnumcancelExtendedOperationHandlerSchemaUrn(value *EnumcancelExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcertificateMapperFingerprintAlgorithmProp) String() string {
 	return string(e)
 }
@@ -936,6 +1552,14 @@ func StringSliceEnumcertificateMapperFingerprintAlgorithmProp(values []Enumcerti
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumcertificateMapperFingerprintAlgorithmProp(value *EnumcertificateMapperFingerprintAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumchangeSubscriptionSchemaUrn) String() string {
@@ -950,6 +1574,14 @@ func StringSliceEnumchangeSubscriptionSchemaUrn(values []EnumchangeSubscriptionS
 	return stringSlice
 }
 
+func StringPointerEnumchangeSubscriptionSchemaUrn(value *EnumchangeSubscriptionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumchangelogBackendSchemaUrn) String() string {
 	return string(e)
 }
@@ -960,6 +1592,14 @@ func StringSliceEnumchangelogBackendSchemaUrn(values []EnumchangelogBackendSchem
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumchangelogBackendSchemaUrn(value *EnumchangelogBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumcharacterSetPasswordValidatorSchemaUrn) String() string {
@@ -974,6 +1614,14 @@ func StringSliceEnumcharacterSetPasswordValidatorSchemaUrn(values []Enumcharacte
 	return stringSlice
 }
 
+func StringPointerEnumcharacterSetPasswordValidatorSchemaUrn(value *EnumcharacterSetPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumclearPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -984,6 +1632,14 @@ func StringSliceEnumclearPasswordStorageSchemeSchemaUrn(values []EnumclearPasswo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumclearPasswordStorageSchemeSchemaUrn(value *EnumclearPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumclientConnectionMonitorProviderSchemaUrn) String() string {
@@ -998,6 +1654,14 @@ func StringSliceEnumclientConnectionMonitorProviderSchemaUrn(values []Enumclient
 	return stringSlice
 }
 
+func StringPointerEnumclientConnectionMonitorProviderSchemaUrn(value *EnumclientConnectionMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumclientConnectionPolicyAllowedAuthTypeProp) String() string {
 	return string(e)
 }
@@ -1008,6 +1672,14 @@ func StringSliceEnumclientConnectionPolicyAllowedAuthTypeProp(values []Enumclien
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumclientConnectionPolicyAllowedAuthTypeProp(value *EnumclientConnectionPolicyAllowedAuthTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumclientConnectionPolicyAllowedFilterTypeProp) String() string {
@@ -1022,6 +1694,14 @@ func StringSliceEnumclientConnectionPolicyAllowedFilterTypeProp(values []Enumcli
 	return stringSlice
 }
 
+func StringPointerEnumclientConnectionPolicyAllowedFilterTypeProp(value *EnumclientConnectionPolicyAllowedFilterTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumclientConnectionPolicyAllowedOperationProp) String() string {
 	return string(e)
 }
@@ -1032,6 +1712,14 @@ func StringSliceEnumclientConnectionPolicyAllowedOperationProp(values []Enumclie
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumclientConnectionPolicyAllowedOperationProp(value *EnumclientConnectionPolicyAllowedOperationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp) String() string {
@@ -1046,6 +1734,14 @@ func StringSliceEnumclientConnectionPolicyConnectionOperationRateExceededBehavio
 	return stringSlice
 }
 
+func StringPointerEnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp(value *EnumclientConnectionPolicyConnectionOperationRateExceededBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp) String() string {
 	return string(e)
 }
@@ -1056,6 +1752,14 @@ func StringSliceEnumclientConnectionPolicyMaximumConcurrentOperationsPerConnecti
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp(value *EnumclientConnectionPolicyMaximumConcurrentOperationsPerConnectionExceededBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp) String() string {
@@ -1070,6 +1774,14 @@ func StringSliceEnumclientConnectionPolicyPolicyOperationRateExceededBehaviorPro
 	return stringSlice
 }
 
+func StringPointerEnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp(value *EnumclientConnectionPolicyPolicyOperationRateExceededBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumclientConnectionPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -1080,6 +1792,14 @@ func StringSliceEnumclientConnectionPolicySchemaUrn(values []EnumclientConnectio
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumclientConnectionPolicySchemaUrn(value *EnumclientConnectionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumclientSecretAzureAuthenticationMethodSchemaUrn) String() string {
@@ -1094,6 +1814,14 @@ func StringSliceEnumclientSecretAzureAuthenticationMethodSchemaUrn(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumclientSecretAzureAuthenticationMethodSchemaUrn(value *EnumclientSecretAzureAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcollectSupportDataExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1104,6 +1832,14 @@ func StringSliceEnumcollectSupportDataExtendedOperationHandlerSchemaUrn(values [
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumcollectSupportDataExtendedOperationHandlerSchemaUrn(value *EnumcollectSupportDataExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumcollectSupportDataRecurringTaskSchemaUrn) String() string {
@@ -1118,6 +1854,14 @@ func StringSliceEnumcollectSupportDataRecurringTaskSchemaUrn(values []Enumcollec
 	return stringSlice
 }
 
+func StringPointerEnumcollectSupportDataRecurringTaskSchemaUrn(value *EnumcollectSupportDataRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcommonLogFileHttpOperationLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -1128,6 +1872,14 @@ func StringSliceEnumcommonLogFileHttpOperationLogPublisherSchemaUrn(values []Enu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumcommonLogFileHttpOperationLogPublisherSchemaUrn(value *EnumcommonLogFileHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconfigFileHandlerBackendSchemaUrn) String() string {
@@ -1142,6 +1894,14 @@ func StringSliceEnumconfigFileHandlerBackendSchemaUrn(values []EnumconfigFileHan
 	return stringSlice
 }
 
+func StringPointerEnumconfigFileHandlerBackendSchemaUrn(value *EnumconfigFileHandlerBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconfigHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -1152,6 +1912,14 @@ func StringSliceEnumconfigHttpServletExtensionSchemaUrn(values []EnumconfigHttpS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconfigHttpServletExtensionSchemaUrn(value *EnumconfigHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconjurCipherStreamProviderSchemaUrn) String() string {
@@ -1166,6 +1934,14 @@ func StringSliceEnumconjurCipherStreamProviderSchemaUrn(values []EnumconjurCiphe
 	return stringSlice
 }
 
+func StringPointerEnumconjurCipherStreamProviderSchemaUrn(value *EnumconjurCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconjurExternalServerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1176,6 +1952,14 @@ func StringSliceEnumconjurExternalServerSchemaUrn(values []EnumconjurExternalSer
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconjurExternalServerSchemaUrn(value *EnumconjurExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconjurPassphraseProviderSchemaUrn) String() string {
@@ -1190,6 +1974,14 @@ func StringSliceEnumconjurPassphraseProviderSchemaUrn(values []EnumconjurPassphr
 	return stringSlice
 }
 
+func StringPointerEnumconjurPassphraseProviderSchemaUrn(value *EnumconjurPassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconjurPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -1200,6 +1992,14 @@ func StringSliceEnumconjurPasswordStorageSchemeSchemaUrn(values []EnumconjurPass
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconjurPasswordStorageSchemeSchemaUrn(value *EnumconjurPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconnectionCriteriaAllIncludedUserPrivilegeProp) String() string {
@@ -1214,6 +2014,14 @@ func StringSliceEnumconnectionCriteriaAllIncludedUserPrivilegeProp(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumconnectionCriteriaAllIncludedUserPrivilegeProp(value *EnumconnectionCriteriaAllIncludedUserPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconnectionCriteriaAnyIncludedUserPrivilegeProp) String() string {
 	return string(e)
 }
@@ -1224,6 +2032,14 @@ func StringSliceEnumconnectionCriteriaAnyIncludedUserPrivilegeProp(values []Enum
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconnectionCriteriaAnyIncludedUserPrivilegeProp(value *EnumconnectionCriteriaAnyIncludedUserPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconnectionCriteriaAuthenticationSecurityLevelProp) String() string {
@@ -1238,6 +2054,14 @@ func StringSliceEnumconnectionCriteriaAuthenticationSecurityLevelProp(values []E
 	return stringSlice
 }
 
+func StringPointerEnumconnectionCriteriaAuthenticationSecurityLevelProp(value *EnumconnectionCriteriaAuthenticationSecurityLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconnectionCriteriaCommunicationSecurityLevelProp) String() string {
 	return string(e)
 }
@@ -1248,6 +2072,14 @@ func StringSliceEnumconnectionCriteriaCommunicationSecurityLevelProp(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconnectionCriteriaCommunicationSecurityLevelProp(value *EnumconnectionCriteriaCommunicationSecurityLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconnectionCriteriaNoneIncludedUserPrivilegeProp) String() string {
@@ -1262,6 +2094,14 @@ func StringSliceEnumconnectionCriteriaNoneIncludedUserPrivilegeProp(values []Enu
 	return stringSlice
 }
 
+func StringPointerEnumconnectionCriteriaNoneIncludedUserPrivilegeProp(value *EnumconnectionCriteriaNoneIncludedUserPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp) String() string {
 	return string(e)
 }
@@ -1272,6 +2112,14 @@ func StringSliceEnumconnectionCriteriaNotAllIncludedUserPrivilegeProp(values []E
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconnectionCriteriaNotAllIncludedUserPrivilegeProp(value *EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconnectionCriteriaUserAuthTypeProp) String() string {
@@ -1286,6 +2134,14 @@ func StringSliceEnumconnectionCriteriaUserAuthTypeProp(values []EnumconnectionCr
 	return stringSlice
 }
 
+func StringPointerEnumconnectionCriteriaUserAuthTypeProp(value *EnumconnectionCriteriaUserAuthTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconnectionHandlerSslClientAuthPolicyProp) String() string {
 	return string(e)
 }
@@ -1296,6 +2152,14 @@ func StringSliceEnumconnectionHandlerSslClientAuthPolicyProp(values []Enumconnec
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconnectionHandlerSslClientAuthPolicyProp(value *EnumconnectionHandlerSslClientAuthPolicyProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconsentDefinitionSchemaUrn) String() string {
@@ -1310,6 +2174,14 @@ func StringSliceEnumconsentDefinitionSchemaUrn(values []EnumconsentDefinitionSch
 	return stringSlice
 }
 
+func StringPointerEnumconsentDefinitionSchemaUrn(value *EnumconsentDefinitionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconsentHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -1320,6 +2192,14 @@ func StringSliceEnumconsentHttpServletExtensionSchemaUrn(values []EnumconsentHtt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconsentHttpServletExtensionSchemaUrn(value *EnumconsentHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconsentServiceSchemaUrn) String() string {
@@ -1334,6 +2214,14 @@ func StringSliceEnumconsentServiceSchemaUrn(values []EnumconsentServiceSchemaUrn
 	return stringSlice
 }
 
+func StringPointerEnumconsentServiceSchemaUrn(value *EnumconsentServiceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconsoleJsonAccessLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -1344,6 +2232,14 @@ func StringSliceEnumconsoleJsonAccessLogPublisherSchemaUrn(values []EnumconsoleJ
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconsoleJsonAccessLogPublisherSchemaUrn(value *EnumconsoleJsonAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconsoleJsonAuditLogPublisherSchemaUrn) String() string {
@@ -1358,6 +2254,14 @@ func StringSliceEnumconsoleJsonAuditLogPublisherSchemaUrn(values []EnumconsoleJs
 	return stringSlice
 }
 
+func StringPointerEnumconsoleJsonAuditLogPublisherSchemaUrn(value *EnumconsoleJsonAuditLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconsoleJsonErrorLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -1368,6 +2272,14 @@ func StringSliceEnumconsoleJsonErrorLogPublisherSchemaUrn(values []EnumconsoleJs
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconsoleJsonErrorLogPublisherSchemaUrn(value *EnumconsoleJsonErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconsoleJsonHttpOperationLogPublisherSchemaUrn) String() string {
@@ -1382,6 +2294,14 @@ func StringSliceEnumconsoleJsonHttpOperationLogPublisherSchemaUrn(values []Enumc
 	return stringSlice
 }
 
+func StringPointerEnumconsoleJsonHttpOperationLogPublisherSchemaUrn(value *EnumconsoleJsonHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconsoleWebApplicationExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -1392,6 +2312,14 @@ func StringSliceEnumconsoleWebApplicationExtensionSchemaUrn(values []Enumconsole
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconsoleWebApplicationExtensionSchemaUrn(value *EnumconsoleWebApplicationExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumconstructedAttributeSchemaUrn) String() string {
@@ -1406,6 +2334,14 @@ func StringSliceEnumconstructedAttributeSchemaUrn(values []EnumconstructedAttrib
 	return stringSlice
 }
 
+func StringPointerEnumconstructedAttributeSchemaUrn(value *EnumconstructedAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumconstructedVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -1416,6 +2352,14 @@ func StringSliceEnumconstructedVirtualAttributeSchemaUrn(values []Enumconstructe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumconstructedVirtualAttributeSchemaUrn(value *EnumconstructedVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumcopyLogFileRotationListenerSchemaUrn) String() string {
@@ -1430,6 +2374,14 @@ func StringSliceEnumcopyLogFileRotationListenerSchemaUrn(values []EnumcopyLogFil
 	return stringSlice
 }
 
+func StringPointerEnumcopyLogFileRotationListenerSchemaUrn(value *EnumcopyLogFileRotationListenerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcramMd5SaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1440,6 +2392,14 @@ func StringSliceEnumcramMd5SaslMechanismHandlerSchemaUrn(values []EnumcramMd5Sas
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumcramMd5SaslMechanismHandlerSchemaUrn(value *EnumcramMd5SaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumcryptPasswordStorageSchemeSchemaUrn) String() string {
@@ -1454,6 +2414,14 @@ func StringSliceEnumcryptPasswordStorageSchemeSchemaUrn(values []EnumcryptPasswo
 	return stringSlice
 }
 
+func StringPointerEnumcryptPasswordStorageSchemeSchemaUrn(value *EnumcryptPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumcryptoManagerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1464,6 +2432,14 @@ func StringSliceEnumcryptoManagerSchemaUrn(values []EnumcryptoManagerSchemaUrn) 
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumcryptoManagerSchemaUrn(value *EnumcryptoManagerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumcurrentTimeVirtualAttributeSchemaUrn) String() string {
@@ -1478,6 +2454,14 @@ func StringSliceEnumcurrentTimeVirtualAttributeSchemaUrn(values []EnumcurrentTim
 	return stringSlice
 }
 
+func StringPointerEnumcurrentTimeVirtualAttributeSchemaUrn(value *EnumcurrentTimeVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdataSecurityAuditorAuditSeverityProp) String() string {
 	return string(e)
 }
@@ -1488,6 +2472,14 @@ func StringSliceEnumdataSecurityAuditorAuditSeverityProp(values []EnumdataSecuri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdataSecurityAuditorAuditSeverityProp(value *EnumdataSecurityAuditorAuditSeverityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdataSecurityAuditorIncludePrivilegeProp) String() string {
@@ -1502,6 +2494,14 @@ func StringSliceEnumdataSecurityAuditorIncludePrivilegeProp(values []EnumdataSec
 	return stringSlice
 }
 
+func StringPointerEnumdataSecurityAuditorIncludePrivilegeProp(value *EnumdataSecurityAuditorIncludePrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdataSecurityAuditorWeakCryptEncodingProp) String() string {
 	return string(e)
 }
@@ -1512,6 +2512,14 @@ func StringSliceEnumdataSecurityAuditorWeakCryptEncodingProp(values []EnumdataSe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdataSecurityAuditorWeakCryptEncodingProp(value *EnumdataSecurityAuditorWeakCryptEncodingProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdebugAccessLogPublisherSchemaUrn) String() string {
@@ -1526,6 +2534,14 @@ func StringSliceEnumdebugAccessLogPublisherSchemaUrn(values []EnumdebugAccessLog
 	return stringSlice
 }
 
+func StringPointerEnumdebugAccessLogPublisherSchemaUrn(value *EnumdebugAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdefaultAzureAuthenticationMethodSchemaUrn) String() string {
 	return string(e)
 }
@@ -1536,6 +2552,14 @@ func StringSliceEnumdefaultAzureAuthenticationMethodSchemaUrn(values []Enumdefau
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdefaultAzureAuthenticationMethodSchemaUrn(value *EnumdefaultAzureAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdefaultUncachedAttributeCriteriaSchemaUrn) String() string {
@@ -1550,6 +2574,14 @@ func StringSliceEnumdefaultUncachedAttributeCriteriaSchemaUrn(values []Enumdefau
 	return stringSlice
 }
 
+func StringPointerEnumdefaultUncachedAttributeCriteriaSchemaUrn(value *EnumdefaultUncachedAttributeCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdefaultUncachedEntryCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -1560,6 +2592,14 @@ func StringSliceEnumdefaultUncachedEntryCriteriaSchemaUrn(values []EnumdefaultUn
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdefaultUncachedEntryCriteriaSchemaUrn(value *EnumdefaultUncachedEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdelayBindResponseFailureLockoutActionSchemaUrn) String() string {
@@ -1574,6 +2614,14 @@ func StringSliceEnumdelayBindResponseFailureLockoutActionSchemaUrn(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumdelayBindResponseFailureLockoutActionSchemaUrn(value *EnumdelayBindResponseFailureLockoutActionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdelayRecurringTaskSchemaUrn) String() string {
 	return string(e)
 }
@@ -1584,6 +2632,14 @@ func StringSliceEnumdelayRecurringTaskSchemaUrn(values []EnumdelayRecurringTaskS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdelayRecurringTaskSchemaUrn(value *EnumdelayRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdelegatedAdminAttributeCategorySchemaUrn) String() string {
@@ -1598,6 +2654,14 @@ func StringSliceEnumdelegatedAdminAttributeCategorySchemaUrn(values []Enumdelega
 	return stringSlice
 }
 
+func StringPointerEnumdelegatedAdminAttributeCategorySchemaUrn(value *EnumdelegatedAdminAttributeCategorySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdelegatedAdminHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -1608,6 +2672,14 @@ func StringSliceEnumdelegatedAdminHttpServletExtensionSchemaUrn(values []Enumdel
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdelegatedAdminHttpServletExtensionSchemaUrn(value *EnumdelegatedAdminHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdelegatedAdminRightsSchemaUrn) String() string {
@@ -1622,6 +2694,14 @@ func StringSliceEnumdelegatedAdminRightsSchemaUrn(values []EnumdelegatedAdminRig
 	return stringSlice
 }
 
+func StringPointerEnumdelegatedAdminRightsSchemaUrn(value *EnumdelegatedAdminRightsSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdeliverOtpExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1632,6 +2712,14 @@ func StringSliceEnumdeliverOtpExtendedOperationHandlerSchemaUrn(values []Enumdel
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdeliverOtpExtendedOperationHandlerSchemaUrn(value *EnumdeliverOtpExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn) String() string {
@@ -1646,6 +2734,14 @@ func StringSliceEnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn(v
 	return stringSlice
 }
 
+func StringPointerEnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn(value *EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdetailedHttpOperationLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -1656,6 +2752,14 @@ func StringSliceEnumdetailedHttpOperationLogPublisherSchemaUrn(values []Enumdeta
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdetailedHttpOperationLogPublisherSchemaUrn(value *EnumdetailedHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdictionaryPasswordValidatorSchemaUrn) String() string {
@@ -1670,6 +2774,14 @@ func StringSliceEnumdictionaryPasswordValidatorSchemaUrn(values []Enumdictionary
 	return stringSlice
 }
 
+func StringPointerEnumdictionaryPasswordValidatorSchemaUrn(value *EnumdictionaryPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdigestMd5SaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1680,6 +2792,14 @@ func StringSliceEnumdigestMd5SaslMechanismHandlerSchemaUrn(values []EnumdigestMd
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdigestMd5SaslMechanismHandlerSchemaUrn(value *EnumdigestMd5SaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdirectoryRestApiHttpServletExtensionSchemaUrn) String() string {
@@ -1694,6 +2814,14 @@ func StringSliceEnumdirectoryRestApiHttpServletExtensionSchemaUrn(values []Enumd
 	return stringSlice
 }
 
+func StringPointerEnumdirectoryRestApiHttpServletExtensionSchemaUrn(value *EnumdirectoryRestApiHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdirectoryServerInstanceSchemaUrn) String() string {
 	return string(e)
 }
@@ -1704,6 +2832,14 @@ func StringSliceEnumdirectoryServerInstanceSchemaUrn(values []EnumdirectoryServe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdirectoryServerInstanceSchemaUrn(value *EnumdirectoryServerInstanceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdirectoryStringAttributeSyntaxSchemaUrn) String() string {
@@ -1718,6 +2854,14 @@ func StringSliceEnumdirectoryStringAttributeSyntaxSchemaUrn(values []Enumdirecto
 	return stringSlice
 }
 
+func StringPointerEnumdirectoryStringAttributeSyntaxSchemaUrn(value *EnumdirectoryStringAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdisabledAccountDataSecurityAuditorSchemaUrn) String() string {
 	return string(e)
 }
@@ -1728,6 +2872,14 @@ func StringSliceEnumdisabledAccountDataSecurityAuditorSchemaUrn(values []Enumdis
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdisabledAccountDataSecurityAuditorSchemaUrn(value *EnumdisabledAccountDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdiskSpaceUsageMonitorProviderSchemaUrn) String() string {
@@ -1742,6 +2894,14 @@ func StringSliceEnumdiskSpaceUsageMonitorProviderSchemaUrn(values []EnumdiskSpac
 	return stringSlice
 }
 
+func StringPointerEnumdiskSpaceUsageMonitorProviderSchemaUrn(value *EnumdiskSpaceUsageMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdistinguishedNameAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -1752,6 +2912,14 @@ func StringSliceEnumdistinguishedNameAttributeSyntaxSchemaUrn(values []Enumdisti
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdistinguishedNameAttributeSyntaxSchemaUrn(value *EnumdistinguishedNameAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdnJoinVirtualAttributeSchemaUrn) String() string {
@@ -1766,6 +2934,14 @@ func StringSliceEnumdnJoinVirtualAttributeSchemaUrn(values []EnumdnJoinVirtualAt
 	return stringSlice
 }
 
+func StringPointerEnumdnJoinVirtualAttributeSchemaUrn(value *EnumdnJoinVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdnMapSchemaUrn) String() string {
 	return string(e)
 }
@@ -1776,6 +2952,14 @@ func StringSliceEnumdnMapSchemaUrn(values []EnumdnMapSchemaUrn) []string {
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdnMapSchemaUrn(value *EnumdnMapSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumdseeCompatAccessControlHandlerSchemaUrn) String() string {
@@ -1790,6 +2974,14 @@ func StringSliceEnumdseeCompatAccessControlHandlerSchemaUrn(values []EnumdseeCom
 	return stringSlice
 }
 
+func StringPointerEnumdseeCompatAccessControlHandlerSchemaUrn(value *EnumdseeCompatAccessControlHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumdynamicGroupImplementationSchemaUrn) String() string {
 	return string(e)
 }
@@ -1800,6 +2992,14 @@ func StringSliceEnumdynamicGroupImplementationSchemaUrn(values []EnumdynamicGrou
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumdynamicGroupImplementationSchemaUrn(value *EnumdynamicGroupImplementationSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumemailOtpDeliveryMechanismSchemaUrn) String() string {
@@ -1814,6 +3014,14 @@ func StringSliceEnumemailOtpDeliveryMechanismSchemaUrn(values []EnumemailOtpDeli
 	return stringSlice
 }
 
+func StringPointerEnumemailOtpDeliveryMechanismSchemaUrn(value *EnumemailOtpDeliveryMechanismSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumencryptionSettingsBackendSchemaUrn) String() string {
 	return string(e)
 }
@@ -1824,6 +3032,14 @@ func StringSliceEnumencryptionSettingsBackendSchemaUrn(values []EnumencryptionSe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumencryptionSettingsBackendSchemaUrn(value *EnumencryptionSettingsBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumenterLockdownModeRecurringTaskSchemaUrn) String() string {
@@ -1838,6 +3054,14 @@ func StringSliceEnumenterLockdownModeRecurringTaskSchemaUrn(values []EnumenterLo
 	return stringSlice
 }
 
+func StringPointerEnumenterLockdownModeRecurringTaskSchemaUrn(value *EnumenterLockdownModeRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumentryChecksumVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -1848,6 +3072,14 @@ func StringSliceEnumentryChecksumVirtualAttributeSchemaUrn(values []EnumentryChe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumentryChecksumVirtualAttributeSchemaUrn(value *EnumentryChecksumVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumentryDnVirtualAttributeSchemaUrn) String() string {
@@ -1862,6 +3094,14 @@ func StringSliceEnumentryDnVirtualAttributeSchemaUrn(values []EnumentryDnVirtual
 	return stringSlice
 }
 
+func StringPointerEnumentryDnVirtualAttributeSchemaUrn(value *EnumentryDnVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumenvironmentVariablePassphraseProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -1872,6 +3112,14 @@ func StringSliceEnumenvironmentVariablePassphraseProviderSchemaUrn(values []Enum
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumenvironmentVariablePassphraseProviderSchemaUrn(value *EnumenvironmentVariablePassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumequalityJoinVirtualAttributeSchemaUrn) String() string {
@@ -1886,6 +3134,14 @@ func StringSliceEnumequalityJoinVirtualAttributeSchemaUrn(values []EnumequalityJ
 	return stringSlice
 }
 
+func StringPointerEnumequalityJoinVirtualAttributeSchemaUrn(value *EnumequalityJoinVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumequalityMatchingRuleSchemaUrn) String() string {
 	return string(e)
 }
@@ -1896,6 +3152,14 @@ func StringSliceEnumequalityMatchingRuleSchemaUrn(values []EnumequalityMatchingR
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumequalityMatchingRuleSchemaUrn(value *EnumequalityMatchingRuleSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumerrorLogAccountStatusNotificationHandlerSchemaUrn) String() string {
@@ -1910,6 +3174,14 @@ func StringSliceEnumerrorLogAccountStatusNotificationHandlerSchemaUrn(values []E
 	return stringSlice
 }
 
+func StringPointerEnumerrorLogAccountStatusNotificationHandlerSchemaUrn(value *EnumerrorLogAccountStatusNotificationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumerrorLogAlertHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1920,6 +3192,14 @@ func StringSliceEnumerrorLogAlertHandlerSchemaUrn(values []EnumerrorLogAlertHand
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumerrorLogAlertHandlerSchemaUrn(value *EnumerrorLogAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumerrorLogFieldMappingSchemaUrn) String() string {
@@ -1934,6 +3214,14 @@ func StringSliceEnumerrorLogFieldMappingSchemaUrn(values []EnumerrorLogFieldMapp
 	return stringSlice
 }
 
+func StringPointerEnumerrorLogFieldMappingSchemaUrn(value *EnumerrorLogFieldMappingSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexactMatchIdentityMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -1944,6 +3232,14 @@ func StringSliceEnumexactMatchIdentityMapperSchemaUrn(values []EnumexactMatchIde
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexactMatchIdentityMapperSchemaUrn(value *EnumexactMatchIdentityMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexecAlertHandlerSchemaUrn) String() string {
@@ -1958,6 +3254,14 @@ func StringSliceEnumexecAlertHandlerSchemaUrn(values []EnumexecAlertHandlerSchem
 	return stringSlice
 }
 
+func StringPointerEnumexecAlertHandlerSchemaUrn(value *EnumexecAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexecRecurringTaskSchemaUrn) String() string {
 	return string(e)
 }
@@ -1968,6 +3272,14 @@ func StringSliceEnumexecRecurringTaskSchemaUrn(values []EnumexecRecurringTaskSch
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexecRecurringTaskSchemaUrn(value *EnumexecRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexpiredPasswordDataSecurityAuditorSchemaUrn) String() string {
@@ -1982,6 +3294,14 @@ func StringSliceEnumexpiredPasswordDataSecurityAuditorSchemaUrn(values []Enumexp
 	return stringSlice
 }
 
+func StringPointerEnumexpiredPasswordDataSecurityAuditorSchemaUrn(value *EnumexpiredPasswordDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -1992,6 +3312,14 @@ func StringSliceEnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn(v
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn(value *EnumexportReversiblePasswordsExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumextendedOperationHandlerAllowedOperationProp) String() string {
@@ -2006,6 +3334,14 @@ func StringSliceEnumextendedOperationHandlerAllowedOperationProp(values []Enumex
 	return stringSlice
 }
 
+func StringPointerEnumextendedOperationHandlerAllowedOperationProp(value *EnumextendedOperationHandlerAllowedOperationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexternalSaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -2016,6 +3352,14 @@ func StringSliceEnumexternalSaslMechanismHandlerSchemaUrn(values []EnumexternalS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexternalSaslMechanismHandlerSchemaUrn(value *EnumexternalSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexternalServerAuthenticationMethodProp) String() string {
@@ -2030,6 +3374,14 @@ func StringSliceEnumexternalServerAuthenticationMethodProp(values []Enumexternal
 	return stringSlice
 }
 
+func StringPointerEnumexternalServerAuthenticationMethodProp(value *EnumexternalServerAuthenticationMethodProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexternalServerConnectionSecurityProp) String() string {
 	return string(e)
 }
@@ -2040,6 +3392,14 @@ func StringSliceEnumexternalServerConnectionSecurityProp(values []EnumexternalSe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexternalServerConnectionSecurityProp(value *EnumexternalServerConnectionSecurityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexternalServerDefunctConnectionResultCodeProp) String() string {
@@ -2054,6 +3414,14 @@ func StringSliceEnumexternalServerDefunctConnectionResultCodeProp(values []Enume
 	return stringSlice
 }
 
+func StringPointerEnumexternalServerDefunctConnectionResultCodeProp(value *EnumexternalServerDefunctConnectionResultCodeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexternalServerHostnameVerificationMethodProp) String() string {
 	return string(e)
 }
@@ -2064,6 +3432,14 @@ func StringSliceEnumexternalServerHostnameVerificationMethodProp(values []Enumex
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexternalServerHostnameVerificationMethodProp(value *EnumexternalServerHostnameVerificationMethodProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexternalServerJdbcDriverTypeProp) String() string {
@@ -2078,6 +3454,14 @@ func StringSliceEnumexternalServerJdbcDriverTypeProp(values []EnumexternalServer
 	return stringSlice
 }
 
+func StringPointerEnumexternalServerJdbcDriverTypeProp(value *EnumexternalServerJdbcDriverTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexternalServerSmtpSecurityProp) String() string {
 	return string(e)
 }
@@ -2088,6 +3472,14 @@ func StringSliceEnumexternalServerSmtpSecurityProp(values []EnumexternalServerSm
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexternalServerSmtpSecurityProp(value *EnumexternalServerSmtpSecurityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexternalServerTransactionIsolationLevelProp) String() string {
@@ -2102,6 +3494,14 @@ func StringSliceEnumexternalServerTransactionIsolationLevelProp(values []Enumext
 	return stringSlice
 }
 
+func StringPointerEnumexternalServerTransactionIsolationLevelProp(value *EnumexternalServerTransactionIsolationLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumexternalServerTransportMechanismProp) String() string {
 	return string(e)
 }
@@ -2112,6 +3512,14 @@ func StringSliceEnumexternalServerTransportMechanismProp(values []EnumexternalSe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumexternalServerTransportMechanismProp(value *EnumexternalServerTransportMechanismProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumexternalServerVerifyCredentialsMethodProp) String() string {
@@ -2126,6 +3534,14 @@ func StringSliceEnumexternalServerVerifyCredentialsMethodProp(values []Enumexter
 	return stringSlice
 }
 
+func StringPointerEnumexternalServerVerifyCredentialsMethodProp(value *EnumexternalServerVerifyCredentialsMethodProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfifoEntryCacheSchemaUrn) String() string {
 	return string(e)
 }
@@ -2136,6 +3552,14 @@ func StringSliceEnumfifoEntryCacheSchemaUrn(values []EnumfifoEntryCacheSchemaUrn
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfifoEntryCacheSchemaUrn(value *EnumfifoEntryCacheSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileBasedAccessLogPublisherSchemaUrn) String() string {
@@ -2150,6 +3574,14 @@ func StringSliceEnumfileBasedAccessLogPublisherSchemaUrn(values []EnumfileBasedA
 	return stringSlice
 }
 
+func StringPointerEnumfileBasedAccessLogPublisherSchemaUrn(value *EnumfileBasedAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileBasedAuditLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -2160,6 +3592,14 @@ func StringSliceEnumfileBasedAuditLogPublisherSchemaUrn(values []EnumfileBasedAu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileBasedAuditLogPublisherSchemaUrn(value *EnumfileBasedAuditLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileBasedCipherStreamProviderSchemaUrn) String() string {
@@ -2174,6 +3614,14 @@ func StringSliceEnumfileBasedCipherStreamProviderSchemaUrn(values []EnumfileBase
 	return stringSlice
 }
 
+func StringPointerEnumfileBasedCipherStreamProviderSchemaUrn(value *EnumfileBasedCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileBasedDebugLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -2184,6 +3632,14 @@ func StringSliceEnumfileBasedDebugLogPublisherSchemaUrn(values []EnumfileBasedDe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileBasedDebugLogPublisherSchemaUrn(value *EnumfileBasedDebugLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileBasedErrorLogPublisherSchemaUrn) String() string {
@@ -2198,6 +3654,14 @@ func StringSliceEnumfileBasedErrorLogPublisherSchemaUrn(values []EnumfileBasedEr
 	return stringSlice
 }
 
+func StringPointerEnumfileBasedErrorLogPublisherSchemaUrn(value *EnumfileBasedErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileBasedJsonAuditLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -2208,6 +3672,14 @@ func StringSliceEnumfileBasedJsonAuditLogPublisherSchemaUrn(values []EnumfileBas
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileBasedJsonAuditLogPublisherSchemaUrn(value *EnumfileBasedJsonAuditLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileBasedJsonHttpOperationLogPublisherSchemaUrn) String() string {
@@ -2222,6 +3694,14 @@ func StringSliceEnumfileBasedJsonHttpOperationLogPublisherSchemaUrn(values []Enu
 	return stringSlice
 }
 
+func StringPointerEnumfileBasedJsonHttpOperationLogPublisherSchemaUrn(value *EnumfileBasedJsonHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileBasedKeyManagerProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -2232,6 +3712,14 @@ func StringSliceEnumfileBasedKeyManagerProviderSchemaUrn(values []EnumfileBasedK
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileBasedKeyManagerProviderSchemaUrn(value *EnumfileBasedKeyManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileBasedPassphraseProviderSchemaUrn) String() string {
@@ -2246,6 +3734,14 @@ func StringSliceEnumfileBasedPassphraseProviderSchemaUrn(values []EnumfileBasedP
 	return stringSlice
 }
 
+func StringPointerEnumfileBasedPassphraseProviderSchemaUrn(value *EnumfileBasedPassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileBasedTraceLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -2256,6 +3752,14 @@ func StringSliceEnumfileBasedTraceLogPublisherSchemaUrn(values []EnumfileBasedTr
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileBasedTraceLogPublisherSchemaUrn(value *EnumfileBasedTraceLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileBasedTrustManagerProviderSchemaUrn) String() string {
@@ -2270,6 +3774,14 @@ func StringSliceEnumfileBasedTrustManagerProviderSchemaUrn(values []EnumfileBase
 	return stringSlice
 }
 
+func StringPointerEnumfileBasedTrustManagerProviderSchemaUrn(value *EnumfileBasedTrustManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileCountLogRetentionPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -2280,6 +3792,14 @@ func StringSliceEnumfileCountLogRetentionPolicySchemaUrn(values []EnumfileCountL
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileCountLogRetentionPolicySchemaUrn(value *EnumfileCountLogRetentionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfileRetentionRecurringTaskSchemaUrn) String() string {
@@ -2294,6 +3814,14 @@ func StringSliceEnumfileRetentionRecurringTaskSchemaUrn(values []EnumfileRetenti
 	return stringSlice
 }
 
+func StringPointerEnumfileRetentionRecurringTaskSchemaUrn(value *EnumfileRetentionRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfileServerHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -2304,6 +3832,14 @@ func StringSliceEnumfileServerHttpServletExtensionSchemaUrn(values []EnumfileSer
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfileServerHttpServletExtensionSchemaUrn(value *EnumfileServerHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfilterBasedUncachedEntryCriteriaSchemaUrn) String() string {
@@ -2318,6 +3854,14 @@ func StringSliceEnumfilterBasedUncachedEntryCriteriaSchemaUrn(values []Enumfilte
 	return stringSlice
 }
 
+func StringPointerEnumfilterBasedUncachedEntryCriteriaSchemaUrn(value *EnumfilterBasedUncachedEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfingerprintCertificateMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -2328,6 +3872,14 @@ func StringSliceEnumfingerprintCertificateMapperSchemaUrn(values []Enumfingerpri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfingerprintCertificateMapperSchemaUrn(value *EnumfingerprintCertificateMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumfixedTimeLogRotationPolicySchemaUrn) String() string {
@@ -2342,6 +3894,14 @@ func StringSliceEnumfixedTimeLogRotationPolicySchemaUrn(values []EnumfixedTimeLo
 	return stringSlice
 }
 
+func StringPointerEnumfixedTimeLogRotationPolicySchemaUrn(value *EnumfixedTimeLogRotationPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumfreeDiskSpaceLogRetentionPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -2352,6 +3912,14 @@ func StringSliceEnumfreeDiskSpaceLogRetentionPolicySchemaUrn(values []EnumfreeDi
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumfreeDiskSpaceLogRetentionPolicySchemaUrn(value *EnumfreeDiskSpaceLogRetentionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgaugeAlertLevelProp) String() string {
@@ -2366,6 +3934,14 @@ func StringSliceEnumgaugeAlertLevelProp(values []EnumgaugeAlertLevelProp) []stri
 	return stringSlice
 }
 
+func StringPointerEnumgaugeAlertLevelProp(value *EnumgaugeAlertLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgaugeDataSourceDataOrientationProp) String() string {
 	return string(e)
 }
@@ -2376,6 +3952,14 @@ func StringSliceEnumgaugeDataSourceDataOrientationProp(values []EnumgaugeDataSou
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgaugeDataSourceDataOrientationProp(value *EnumgaugeDataSourceDataOrientationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgaugeDataSourceStatisticTypeProp) String() string {
@@ -2390,6 +3974,14 @@ func StringSliceEnumgaugeDataSourceStatisticTypeProp(values []EnumgaugeDataSourc
 	return stringSlice
 }
 
+func StringPointerEnumgaugeDataSourceStatisticTypeProp(value *EnumgaugeDataSourceStatisticTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgaugeOverrideSeverityProp) String() string {
 	return string(e)
 }
@@ -2400,6 +3992,14 @@ func StringSliceEnumgaugeOverrideSeverityProp(values []EnumgaugeOverrideSeverity
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgaugeOverrideSeverityProp(value *EnumgaugeOverrideSeverityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgaugeServerDegradedSeverityLevelProp) String() string {
@@ -2414,6 +4014,14 @@ func StringSliceEnumgaugeServerDegradedSeverityLevelProp(values []EnumgaugeServe
 	return stringSlice
 }
 
+func StringPointerEnumgaugeServerDegradedSeverityLevelProp(value *EnumgaugeServerDegradedSeverityLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgaugeServerUnavailableSeverityLevelProp) String() string {
 	return string(e)
 }
@@ -2424,6 +4032,14 @@ func StringSliceEnumgaugeServerUnavailableSeverityLevelProp(values []EnumgaugeSe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgaugeServerUnavailableSeverityLevelProp(value *EnumgaugeServerUnavailableSeverityLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgeneralMonitorProviderSchemaUrn) String() string {
@@ -2438,6 +4054,14 @@ func StringSliceEnumgeneralMonitorProviderSchemaUrn(values []EnumgeneralMonitorP
 	return stringSlice
 }
 
+func StringPointerEnumgeneralMonitorProviderSchemaUrn(value *EnumgeneralMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgeneralizedTimeAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -2448,6 +4072,14 @@ func StringSliceEnumgeneralizedTimeAttributeSyntaxSchemaUrn(values []Enumgeneral
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgeneralizedTimeAttributeSyntaxSchemaUrn(value *EnumgeneralizedTimeAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgeneratePasswordExtendedOperationHandlerSchemaUrn) String() string {
@@ -2462,6 +4094,14 @@ func StringSliceEnumgeneratePasswordExtendedOperationHandlerSchemaUrn(values []E
 	return stringSlice
 }
 
+func StringPointerEnumgeneratePasswordExtendedOperationHandlerSchemaUrn(value *EnumgeneratePasswordExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgenerateServerProfileRecurringTaskSchemaUrn) String() string {
 	return string(e)
 }
@@ -2472,6 +4112,14 @@ func StringSliceEnumgenerateServerProfileRecurringTaskSchemaUrn(values []Enumgen
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgenerateServerProfileRecurringTaskSchemaUrn(value *EnumgenerateServerProfileRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn) String() string {
@@ -2486,6 +4134,14 @@ func StringSliceEnumgetChangelogBatchExtendedOperationHandlerSchemaUrn(values []
 	return stringSlice
 }
 
+func StringPointerEnumgetChangelogBatchExtendedOperationHandlerSchemaUrn(value *EnumgetChangelogBatchExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgetConnectionIdExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -2496,6 +4152,14 @@ func StringSliceEnumgetConnectionIdExtendedOperationHandlerSchemaUrn(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgetConnectionIdExtendedOperationHandlerSchemaUrn(value *EnumgetConnectionIdExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgetPasswordQualityRequirementsExtendedOperationHandlerSchemaUrn) String() string {
@@ -2510,6 +4174,14 @@ func StringSliceEnumgetPasswordQualityRequirementsExtendedOperationHandlerSchema
 	return stringSlice
 }
 
+func StringPointerEnumgetPasswordQualityRequirementsExtendedOperationHandlerSchemaUrn(value *EnumgetPasswordQualityRequirementsExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -2520,6 +4192,14 @@ func StringSliceEnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSch
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSchemaUrn(value *EnumgetSupportedOtpDeliveryMechanismsExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumglobalConfigurationAllowedInsecureTLSProtocolProp) String() string {
@@ -2534,6 +4214,14 @@ func StringSliceEnumglobalConfigurationAllowedInsecureTLSProtocolProp(values []E
 	return stringSlice
 }
 
+func StringPointerEnumglobalConfigurationAllowedInsecureTLSProtocolProp(value *EnumglobalConfigurationAllowedInsecureTLSProtocolProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp) String() string {
 	return string(e)
 }
@@ -2544,6 +4232,14 @@ func StringSliceEnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModif
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp(value *EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumglobalConfigurationDisabledPrivilegeProp) String() string {
@@ -2558,6 +4254,14 @@ func StringSliceEnumglobalConfigurationDisabledPrivilegeProp(values []Enumglobal
 	return stringSlice
 }
 
+func StringPointerEnumglobalConfigurationDisabledPrivilegeProp(value *EnumglobalConfigurationDisabledPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp) String() string {
 	return string(e)
 }
@@ -2568,6 +4272,14 @@ func StringSliceEnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp(values
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp(value *EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumglobalConfigurationJmxValueBehaviorProp) String() string {
@@ -2582,6 +4294,14 @@ func StringSliceEnumglobalConfigurationJmxValueBehaviorProp(values []EnumglobalC
 	return stringSlice
 }
 
+func StringPointerEnumglobalConfigurationJmxValueBehaviorProp(value *EnumglobalConfigurationJmxValueBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumglobalConfigurationSchemaUrn) String() string {
 	return string(e)
 }
@@ -2592,6 +4312,14 @@ func StringSliceEnumglobalConfigurationSchemaUrn(values []EnumglobalConfiguratio
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumglobalConfigurationSchemaUrn(value *EnumglobalConfigurationSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp) String() string {
@@ -2606,6 +4334,14 @@ func StringSliceEnumglobalConfigurationSingleStructuralObjectclassBehaviorProp(v
 	return stringSlice
 }
 
+func StringPointerEnumglobalConfigurationSingleStructuralObjectclassBehaviorProp(value *EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumglobalConfigurationStartupErrorLoggerOutputLocationProp) String() string {
 	return string(e)
 }
@@ -2616,6 +4352,14 @@ func StringSliceEnumglobalConfigurationStartupErrorLoggerOutputLocationProp(valu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumglobalConfigurationStartupErrorLoggerOutputLocationProp(value *EnumglobalConfigurationStartupErrorLoggerOutputLocationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp) String() string {
@@ -2630,6 +4374,14 @@ func StringSliceEnumglobalConfigurationUnrecoverableDatabaseErrorModeProp(values
 	return stringSlice
 }
 
+func StringPointerEnumglobalConfigurationUnrecoverableDatabaseErrorModeProp(value *EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumglobalConfigurationWritabilityModeProp) String() string {
 	return string(e)
 }
@@ -2640,6 +4392,14 @@ func StringSliceEnumglobalConfigurationWritabilityModeProp(values []EnumglobalCo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumglobalConfigurationWritabilityModeProp(value *EnumglobalConfigurationWritabilityModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedAccessLogPublisherSchemaUrn) String() string {
@@ -2654,6 +4414,14 @@ func StringSliceEnumgroovyScriptedAccessLogPublisherSchemaUrn(values []Enumgroov
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedAccessLogPublisherSchemaUrn(value *EnumgroovyScriptedAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -2664,6 +4432,14 @@ func StringSliceEnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn(valu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn(value *EnumgroovyScriptedAccountStatusNotificationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedAlertHandlerSchemaUrn) String() string {
@@ -2678,6 +4454,14 @@ func StringSliceEnumgroovyScriptedAlertHandlerSchemaUrn(values []EnumgroovyScrip
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedAlertHandlerSchemaUrn(value *EnumgroovyScriptedAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedCertificateMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -2688,6 +4472,14 @@ func StringSliceEnumgroovyScriptedCertificateMapperSchemaUrn(values []Enumgroovy
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedCertificateMapperSchemaUrn(value *EnumgroovyScriptedCertificateMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn) String() string {
@@ -2702,6 +4494,14 @@ func StringSliceEnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn(values []En
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn(value *EnumgroovyScriptedChangeSubscriptionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedErrorLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -2712,6 +4512,14 @@ func StringSliceEnumgroovyScriptedErrorLogPublisherSchemaUrn(values []Enumgroovy
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedErrorLogPublisherSchemaUrn(value *EnumgroovyScriptedErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn) String() string {
@@ -2726,6 +4534,14 @@ func StringSliceEnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn(values []
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn(value *EnumgroovyScriptedFileBasedAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -2736,6 +4552,14 @@ func StringSliceEnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn(values []E
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn(value *EnumgroovyScriptedFileBasedErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn) String() string {
@@ -2750,6 +4574,14 @@ func StringSliceEnumgroovyScriptedHttpOperationLogPublisherSchemaUrn(values []En
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedHttpOperationLogPublisherSchemaUrn(value *EnumgroovyScriptedHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -2760,6 +4592,14 @@ func StringSliceEnumgroovyScriptedHttpServletExtensionSchemaUrn(values []Enumgro
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedHttpServletExtensionSchemaUrn(value *EnumgroovyScriptedHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedIdentityMapperSchemaUrn) String() string {
@@ -2774,6 +4614,14 @@ func StringSliceEnumgroovyScriptedIdentityMapperSchemaUrn(values []EnumgroovyScr
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedIdentityMapperSchemaUrn(value *EnumgroovyScriptedIdentityMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedOauthTokenHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -2784,6 +4632,14 @@ func StringSliceEnumgroovyScriptedOauthTokenHandlerSchemaUrn(values []Enumgroovy
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedOauthTokenHandlerSchemaUrn(value *EnumgroovyScriptedOauthTokenHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedPasswordGeneratorSchemaUrn) String() string {
@@ -2798,6 +4654,14 @@ func StringSliceEnumgroovyScriptedPasswordGeneratorSchemaUrn(values []Enumgroovy
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedPasswordGeneratorSchemaUrn(value *EnumgroovyScriptedPasswordGeneratorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedPasswordValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -2808,6 +4672,14 @@ func StringSliceEnumgroovyScriptedPasswordValidatorSchemaUrn(values []Enumgroovy
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedPasswordValidatorSchemaUrn(value *EnumgroovyScriptedPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn) String() string {
@@ -2822,6 +4694,14 @@ func StringSliceEnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn(values []En
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn(value *EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -2832,6 +4712,14 @@ func StringSliceEnumgroovyScriptedUncachedEntryCriteriaSchemaUrn(values []Enumgr
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroovyScriptedUncachedEntryCriteriaSchemaUrn(value *EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgroovyScriptedVirtualAttributeSchemaUrn) String() string {
@@ -2846,6 +4734,14 @@ func StringSliceEnumgroovyScriptedVirtualAttributeSchemaUrn(values []EnumgroovyS
 	return stringSlice
 }
 
+func StringPointerEnumgroovyScriptedVirtualAttributeSchemaUrn(value *EnumgroovyScriptedVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumgroupRestResourceTypeSchemaUrn) String() string {
 	return string(e)
 }
@@ -2856,6 +4752,14 @@ func StringSliceEnumgroupRestResourceTypeSchemaUrn(values []EnumgroupRestResourc
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumgroupRestResourceTypeSchemaUrn(value *EnumgroupRestResourceTypeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumgssapiSaslMechanismHandlerSchemaUrn) String() string {
@@ -2870,6 +4774,14 @@ func StringSliceEnumgssapiSaslMechanismHandlerSchemaUrn(values []EnumgssapiSaslM
 	return stringSlice
 }
 
+func StringPointerEnumgssapiSaslMechanismHandlerSchemaUrn(value *EnumgssapiSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhasSubordinatesVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -2880,6 +4792,14 @@ func StringSliceEnumhasSubordinatesVirtualAttributeSchemaUrn(values []EnumhasSub
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhasSubordinatesVirtualAttributeSchemaUrn(value *EnumhasSubordinatesVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumhaystackPasswordValidatorSchemaUrn) String() string {
@@ -2894,6 +4814,14 @@ func StringSliceEnumhaystackPasswordValidatorSchemaUrn(values []EnumhaystackPass
 	return stringSlice
 }
 
+func StringPointerEnumhaystackPasswordValidatorSchemaUrn(value *EnumhaystackPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhexStringAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -2904,6 +4832,14 @@ func StringSliceEnumhexStringAttributeSyntaxSchemaUrn(values []EnumhexStringAttr
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhexStringAttributeSyntaxSchemaUrn(value *EnumhexStringAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumhighThroughputWorkQueueSchemaUrn) String() string {
@@ -2918,6 +4854,14 @@ func StringSliceEnumhighThroughputWorkQueueSchemaUrn(values []EnumhighThroughput
 	return stringSlice
 }
 
+func StringPointerEnumhighThroughputWorkQueueSchemaUrn(value *EnumhighThroughputWorkQueueSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhostSystemMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -2928,6 +4872,14 @@ func StringSliceEnumhostSystemMonitorProviderSchemaUrn(values []EnumhostSystemMo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhostSystemMonitorProviderSchemaUrn(value *EnumhostSystemMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumhttpConfigurationSchemaUrn) String() string {
@@ -2942,6 +4894,14 @@ func StringSliceEnumhttpConfigurationSchemaUrn(values []EnumhttpConfigurationSch
 	return stringSlice
 }
 
+func StringPointerEnumhttpConfigurationSchemaUrn(value *EnumhttpConfigurationSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhttpConnectionHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -2952,6 +4912,14 @@ func StringSliceEnumhttpConnectionHandlerSchemaUrn(values []EnumhttpConnectionHa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhttpConnectionHandlerSchemaUrn(value *EnumhttpConnectionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumhttpServletCrossOriginPolicySchemaUrn) String() string {
@@ -2966,6 +4934,14 @@ func StringSliceEnumhttpServletCrossOriginPolicySchemaUrn(values []EnumhttpServl
 	return stringSlice
 }
 
+func StringPointerEnumhttpServletCrossOriginPolicySchemaUrn(value *EnumhttpServletCrossOriginPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhttpServletExtensionAllowedAuthenticationTypeProp) String() string {
 	return string(e)
 }
@@ -2976,6 +4952,14 @@ func StringSliceEnumhttpServletExtensionAllowedAuthenticationTypeProp(values []E
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhttpServletExtensionAllowedAuthenticationTypeProp(value *EnumhttpServletExtensionAllowedAuthenticationTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumhttpServletExtensionAllowedControlProp) String() string {
@@ -2990,6 +4974,14 @@ func StringSliceEnumhttpServletExtensionAllowedControlProp(values []EnumhttpServ
 	return stringSlice
 }
 
+func StringPointerEnumhttpServletExtensionAllowedControlProp(value *EnumhttpServletExtensionAllowedControlProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhttpServletExtensionDebugLevelProp) String() string {
 	return string(e)
 }
@@ -3000,6 +4992,14 @@ func StringSliceEnumhttpServletExtensionDebugLevelProp(values []EnumhttpServletE
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhttpServletExtensionDebugLevelProp(value *EnumhttpServletExtensionDebugLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumhttpServletExtensionDebugTypeProp) String() string {
@@ -3014,6 +5014,14 @@ func StringSliceEnumhttpServletExtensionDebugTypeProp(values []EnumhttpServletEx
 	return stringSlice
 }
 
+func StringPointerEnumhttpServletExtensionDebugTypeProp(value *EnumhttpServletExtensionDebugTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumhttpServletExtensionMapAccessTokensToLocalUsersProp) String() string {
 	return string(e)
 }
@@ -3024,6 +5032,14 @@ func StringSliceEnumhttpServletExtensionMapAccessTokensToLocalUsersProp(values [
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumhttpServletExtensionMapAccessTokensToLocalUsersProp(value *EnumhttpServletExtensionMapAccessTokensToLocalUsersProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumidTokenValidatorAllowedSigningAlgorithmProp) String() string {
@@ -3038,6 +5054,14 @@ func StringSliceEnumidTokenValidatorAllowedSigningAlgorithmProp(values []EnumidT
 	return stringSlice
 }
 
+func StringPointerEnumidTokenValidatorAllowedSigningAlgorithmProp(value *EnumidTokenValidatorAllowedSigningAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumidentifyReferencesVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -3048,6 +5072,14 @@ func StringSliceEnumidentifyReferencesVirtualAttributeSchemaUrn(values []Enumide
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumidentifyReferencesVirtualAttributeSchemaUrn(value *EnumidentifyReferencesVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumindicatorGaugeDataSourceSchemaUrn) String() string {
@@ -3062,6 +5094,14 @@ func StringSliceEnumindicatorGaugeDataSourceSchemaUrn(values []EnumindicatorGaug
 	return stringSlice
 }
 
+func StringPointerEnumindicatorGaugeDataSourceSchemaUrn(value *EnumindicatorGaugeDataSourceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumindicatorGaugeSchemaUrn) String() string {
 	return string(e)
 }
@@ -3072,6 +5112,14 @@ func StringSliceEnumindicatorGaugeSchemaUrn(values []EnumindicatorGaugeSchemaUrn
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumindicatorGaugeSchemaUrn(value *EnumindicatorGaugeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnuminstanceNameVirtualAttributeSchemaUrn) String() string {
@@ -3086,6 +5134,14 @@ func StringSliceEnuminstanceNameVirtualAttributeSchemaUrn(values []EnuminstanceN
 	return stringSlice
 }
 
+func StringPointerEnuminstanceNameVirtualAttributeSchemaUrn(value *EnuminstanceNameVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumintegerAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -3096,6 +5152,14 @@ func StringSliceEnumintegerAttributeSyntaxSchemaUrn(values []EnumintegerAttribut
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumintegerAttributeSyntaxSchemaUrn(value *EnumintegerAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumisMemberOfVirtualAttributeSchemaUrn) String() string {
@@ -3110,6 +5174,14 @@ func StringSliceEnumisMemberOfVirtualAttributeSchemaUrn(values []EnumisMemberOfV
 	return stringSlice
 }
 
+func StringPointerEnumisMemberOfVirtualAttributeSchemaUrn(value *EnumisMemberOfVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjdbcBasedAccessLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -3120,6 +5192,14 @@ func StringSliceEnumjdbcBasedAccessLogPublisherSchemaUrn(values []EnumjdbcBasedA
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjdbcBasedAccessLogPublisherSchemaUrn(value *EnumjdbcBasedAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumjdbcBasedErrorLogPublisherSchemaUrn) String() string {
@@ -3134,6 +5214,14 @@ func StringSliceEnumjdbcBasedErrorLogPublisherSchemaUrn(values []EnumjdbcBasedEr
 	return stringSlice
 }
 
+func StringPointerEnumjdbcBasedErrorLogPublisherSchemaUrn(value *EnumjdbcBasedErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjdbcExternalServerSchemaUrn) String() string {
 	return string(e)
 }
@@ -3144,6 +5232,14 @@ func StringSliceEnumjdbcExternalServerSchemaUrn(values []EnumjdbcExternalServerS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjdbcExternalServerSchemaUrn(value *EnumjdbcExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumjmxAlertHandlerSchemaUrn) String() string {
@@ -3158,6 +5254,14 @@ func StringSliceEnumjmxAlertHandlerSchemaUrn(values []EnumjmxAlertHandlerSchemaU
 	return stringSlice
 }
 
+func StringPointerEnumjmxAlertHandlerSchemaUrn(value *EnumjmxAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjmxConnectionHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -3168,6 +5272,14 @@ func StringSliceEnumjmxConnectionHandlerSchemaUrn(values []EnumjmxConnectionHand
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjmxConnectionHandlerSchemaUrn(value *EnumjmxConnectionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumjsonAccessLogPublisherSchemaUrn) String() string {
@@ -3182,6 +5294,14 @@ func StringSliceEnumjsonAccessLogPublisherSchemaUrn(values []EnumjsonAccessLogPu
 	return stringSlice
 }
 
+func StringPointerEnumjsonAccessLogPublisherSchemaUrn(value *EnumjsonAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjsonAttributeConstraintsSchemaUrn) String() string {
 	return string(e)
 }
@@ -3192,6 +5312,14 @@ func StringSliceEnumjsonAttributeConstraintsSchemaUrn(values []EnumjsonAttribute
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjsonAttributeConstraintsSchemaUrn(value *EnumjsonAttributeConstraintsSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumjsonErrorLogPublisherSchemaUrn) String() string {
@@ -3206,6 +5334,14 @@ func StringSliceEnumjsonErrorLogPublisherSchemaUrn(values []EnumjsonErrorLogPubl
 	return stringSlice
 }
 
+func StringPointerEnumjsonErrorLogPublisherSchemaUrn(value *EnumjsonErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn) String() string {
 	return string(e)
 }
@@ -3216,6 +5352,14 @@ func StringSliceEnumjsonFormattedAccessLogFieldBehaviorSchemaUrn(values []Enumjs
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjsonFormattedAccessLogFieldBehaviorSchemaUrn(value *EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumjsonLogFieldSyntaxSchemaUrn) String() string {
@@ -3230,6 +5374,14 @@ func StringSliceEnumjsonLogFieldSyntaxSchemaUrn(values []EnumjsonLogFieldSyntaxS
 	return stringSlice
 }
 
+func StringPointerEnumjsonLogFieldSyntaxSchemaUrn(value *EnumjsonLogFieldSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjsonObjectAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -3240,6 +5392,14 @@ func StringSliceEnumjsonObjectAttributeSyntaxSchemaUrn(values []EnumjsonObjectAt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjsonObjectAttributeSyntaxSchemaUrn(value *EnumjsonObjectAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumjvmDefaultTrustManagerProviderSchemaUrn) String() string {
@@ -3254,6 +5414,14 @@ func StringSliceEnumjvmDefaultTrustManagerProviderSchemaUrn(values []EnumjvmDefa
 	return stringSlice
 }
 
+func StringPointerEnumjvmDefaultTrustManagerProviderSchemaUrn(value *EnumjvmDefaultTrustManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumjwtAccessTokenValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -3264,6 +5432,14 @@ func StringSliceEnumjwtAccessTokenValidatorSchemaUrn(values []EnumjwtAccessToken
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumjwtAccessTokenValidatorSchemaUrn(value *EnumjwtAccessTokenValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumkeyPairKeyAlgorithmProp) String() string {
@@ -3278,6 +5454,14 @@ func StringSliceEnumkeyPairKeyAlgorithmProp(values []EnumkeyPairKeyAlgorithmProp
 	return stringSlice
 }
 
+func StringPointerEnumkeyPairKeyAlgorithmProp(value *EnumkeyPairKeyAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumkeyPairSchemaUrn) String() string {
 	return string(e)
 }
@@ -3288,6 +5472,14 @@ func StringSliceEnumkeyPairSchemaUrn(values []EnumkeyPairSchemaUrn) []string {
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumkeyPairSchemaUrn(value *EnumkeyPairSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn) String() string {
@@ -3302,6 +5494,14 @@ func StringSliceEnumlastAccessTimeUncachedEntryCriteriaSchemaUrn(values []Enumla
 	return stringSlice
 }
 
+func StringPointerEnumlastAccessTimeUncachedEntryCriteriaSchemaUrn(value *EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapConnectionHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -3312,6 +5512,14 @@ func StringSliceEnumldapConnectionHandlerSchemaUrn(values []EnumldapConnectionHa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumldapConnectionHandlerSchemaUrn(value *EnumldapConnectionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumldapMappedScimHttpServletExtensionSchemaUrn) String() string {
@@ -3326,6 +5534,14 @@ func StringSliceEnumldapMappedScimHttpServletExtensionSchemaUrn(values []Enumlda
 	return stringSlice
 }
 
+func StringPointerEnumldapMappedScimHttpServletExtensionSchemaUrn(value *EnumldapMappedScimHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapPassThroughAuthenticationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -3336,6 +5552,14 @@ func StringSliceEnumldapPassThroughAuthenticationHandlerSchemaUrn(values []Enuml
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumldapPassThroughAuthenticationHandlerSchemaUrn(value *EnumldapPassThroughAuthenticationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumldapSdkDebugLoggerCompressionMechanismProp) String() string {
@@ -3350,6 +5574,14 @@ func StringSliceEnumldapSdkDebugLoggerCompressionMechanismProp(values []Enumldap
 	return stringSlice
 }
 
+func StringPointerEnumldapSdkDebugLoggerCompressionMechanismProp(value *EnumldapSdkDebugLoggerCompressionMechanismProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapSdkDebugLoggerDebugLevelProp) String() string {
 	return string(e)
 }
@@ -3360,6 +5592,14 @@ func StringSliceEnumldapSdkDebugLoggerDebugLevelProp(values []EnumldapSdkDebugLo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumldapSdkDebugLoggerDebugLevelProp(value *EnumldapSdkDebugLoggerDebugLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumldapSdkDebugLoggerDebugTypeProp) String() string {
@@ -3374,6 +5614,14 @@ func StringSliceEnumldapSdkDebugLoggerDebugTypeProp(values []EnumldapSdkDebugLog
 	return stringSlice
 }
 
+func StringPointerEnumldapSdkDebugLoggerDebugTypeProp(value *EnumldapSdkDebugLoggerDebugTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapSdkDebugLoggerLoggingErrorBehaviorProp) String() string {
 	return string(e)
 }
@@ -3384,6 +5632,14 @@ func StringSliceEnumldapSdkDebugLoggerLoggingErrorBehaviorProp(values []Enumldap
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumldapSdkDebugLoggerLoggingErrorBehaviorProp(value *EnumldapSdkDebugLoggerLoggingErrorBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumldapSdkDebugLoggerSchemaUrn) String() string {
@@ -3398,6 +5654,14 @@ func StringSliceEnumldapSdkDebugLoggerSchemaUrn(values []EnumldapSdkDebugLoggerS
 	return stringSlice
 }
 
+func StringPointerEnumldapSdkDebugLoggerSchemaUrn(value *EnumldapSdkDebugLoggerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldapSdkDebugLoggerTimestampPrecisionProp) String() string {
 	return string(e)
 }
@@ -3408,6 +5672,14 @@ func StringSliceEnumldapSdkDebugLoggerTimestampPrecisionProp(values []EnumldapSd
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumldapSdkDebugLoggerTimestampPrecisionProp(value *EnumldapSdkDebugLoggerTimestampPrecisionProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumldapUrlAttributeSyntaxSchemaUrn) String() string {
@@ -3422,6 +5694,14 @@ func StringSliceEnumldapUrlAttributeSyntaxSchemaUrn(values []EnumldapUrlAttribut
 	return stringSlice
 }
 
+func StringPointerEnumldapUrlAttributeSyntaxSchemaUrn(value *EnumldapUrlAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumldifConnectionHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -3432,6 +5712,14 @@ func StringSliceEnumldifConnectionHandlerSchemaUrn(values []EnumldifConnectionHa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumldifConnectionHandlerSchemaUrn(value *EnumldifConnectionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumldifExportRecurringTaskSchemaUrn) String() string {
@@ -3446,6 +5734,14 @@ func StringSliceEnumldifExportRecurringTaskSchemaUrn(values []EnumldifExportRecu
 	return stringSlice
 }
 
+func StringPointerEnumldifExportRecurringTaskSchemaUrn(value *EnumldifExportRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumleaveLockdownModeRecurringTaskSchemaUrn) String() string {
 	return string(e)
 }
@@ -3456,6 +5752,14 @@ func StringSliceEnumleaveLockdownModeRecurringTaskSchemaUrn(values []EnumleaveLo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumleaveLockdownModeRecurringTaskSchemaUrn(value *EnumleaveLockdownModeRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlengthBasedPasswordValidatorSchemaUrn) String() string {
@@ -3470,6 +5774,14 @@ func StringSliceEnumlengthBasedPasswordValidatorSchemaUrn(values []EnumlengthBas
 	return stringSlice
 }
 
+func StringPointerEnumlengthBasedPasswordValidatorSchemaUrn(value *EnumlengthBasedPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlicenseSchemaUrn) String() string {
 	return string(e)
 }
@@ -3480,6 +5792,14 @@ func StringSliceEnumlicenseSchemaUrn(values []EnumlicenseSchemaUrn) []string {
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlicenseSchemaUrn(value *EnumlicenseSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlocalDbBackendSchemaUrn) String() string {
@@ -3494,6 +5814,14 @@ func StringSliceEnumlocalDbBackendSchemaUrn(values []EnumlocalDbBackendSchemaUrn
 	return stringSlice
 }
 
+func StringPointerEnumlocalDbBackendSchemaUrn(value *EnumlocalDbBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlocationSchemaUrn) String() string {
 	return string(e)
 }
@@ -3504,6 +5832,14 @@ func StringSliceEnumlocationSchemaUrn(values []EnumlocationSchemaUrn) []string {
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlocationSchemaUrn(value *EnumlocationSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlockAccountFailureLockoutActionSchemaUrn) String() string {
@@ -3518,6 +5854,14 @@ func StringSliceEnumlockAccountFailureLockoutActionSchemaUrn(values []EnumlockAc
 	return stringSlice
 }
 
+func StringPointerEnumlockAccountFailureLockoutActionSchemaUrn(value *EnumlockAccountFailureLockoutActionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlockedAccountDataSecurityAuditorSchemaUrn) String() string {
 	return string(e)
 }
@@ -3528,6 +5872,14 @@ func StringSliceEnumlockedAccountDataSecurityAuditorSchemaUrn(values []Enumlocke
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlockedAccountDataSecurityAuditorSchemaUrn(value *EnumlockedAccountDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogFieldBehaviorDefaultBehaviorProp) String() string {
@@ -3542,6 +5894,14 @@ func StringSliceEnumlogFieldBehaviorDefaultBehaviorProp(values []EnumlogFieldBeh
 	return stringSlice
 }
 
+func StringPointerEnumlogFieldBehaviorDefaultBehaviorProp(value *EnumlogFieldBehaviorDefaultBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogFieldBehaviorOmitFieldProp) String() string {
 	return string(e)
 }
@@ -3552,6 +5912,14 @@ func StringSliceEnumlogFieldBehaviorOmitFieldProp(values []EnumlogFieldBehaviorO
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorOmitFieldProp(value *EnumlogFieldBehaviorOmitFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogFieldBehaviorPreserveFieldProp) String() string {
@@ -3566,6 +5934,14 @@ func StringSliceEnumlogFieldBehaviorPreserveFieldProp(values []EnumlogFieldBehav
 	return stringSlice
 }
 
+func StringPointerEnumlogFieldBehaviorPreserveFieldProp(value *EnumlogFieldBehaviorPreserveFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogFieldBehaviorRedactEntireValueFieldProp) String() string {
 	return string(e)
 }
@@ -3576,6 +5952,14 @@ func StringSliceEnumlogFieldBehaviorRedactEntireValueFieldProp(values []EnumlogF
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorRedactEntireValueFieldProp(value *EnumlogFieldBehaviorRedactEntireValueFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogFieldBehaviorRedactValueComponentsFieldProp) String() string {
@@ -3590,6 +5974,14 @@ func StringSliceEnumlogFieldBehaviorRedactValueComponentsFieldProp(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumlogFieldBehaviorRedactValueComponentsFieldProp(value *EnumlogFieldBehaviorRedactValueComponentsFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogFieldBehaviorTokenizeEntireValueFieldProp) String() string {
 	return string(e)
 }
@@ -3600,6 +5992,14 @@ func StringSliceEnumlogFieldBehaviorTokenizeEntireValueFieldProp(values []Enumlo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogFieldBehaviorTokenizeEntireValueFieldProp(value *EnumlogFieldBehaviorTokenizeEntireValueFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogFieldBehaviorTokenizeValueComponentsFieldProp) String() string {
@@ -3614,6 +6014,14 @@ func StringSliceEnumlogFieldBehaviorTokenizeValueComponentsFieldProp(values []En
 	return stringSlice
 }
 
+func StringPointerEnumlogFieldBehaviorTokenizeValueComponentsFieldProp(value *EnumlogFieldBehaviorTokenizeValueComponentsFieldProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogFieldSyntaxDefaultBehaviorProp) String() string {
 	return string(e)
 }
@@ -3624,6 +6032,14 @@ func StringSliceEnumlogFieldSyntaxDefaultBehaviorProp(values []EnumlogFieldSynta
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogFieldSyntaxDefaultBehaviorProp(value *EnumlogFieldSyntaxDefaultBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherAccessTokenValidatorMessageTypeProp) String() string {
@@ -3638,6 +6054,14 @@ func StringSliceEnumlogPublisherAccessTokenValidatorMessageTypeProp(values []Enu
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherAccessTokenValidatorMessageTypeProp(value *EnumlogPublisherAccessTokenValidatorMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherCompressionMechanismProp) String() string {
 	return string(e)
 }
@@ -3648,6 +6072,14 @@ func StringSliceEnumlogPublisherCompressionMechanismProp(values []EnumlogPublish
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherCompressionMechanismProp(value *EnumlogPublisherCompressionMechanismProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherConsentMessageTypeProp) String() string {
@@ -3662,6 +6094,14 @@ func StringSliceEnumlogPublisherConsentMessageTypeProp(values []EnumlogPublisher
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherConsentMessageTypeProp(value *EnumlogPublisherConsentMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherDebugMessageTypeProp) String() string {
 	return string(e)
 }
@@ -3672,6 +6112,14 @@ func StringSliceEnumlogPublisherDebugMessageTypeProp(values []EnumlogPublisherDe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherDebugMessageTypeProp(value *EnumlogPublisherDebugMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherDefaultDebugCategoryProp) String() string {
@@ -3686,6 +6134,14 @@ func StringSliceEnumlogPublisherDefaultDebugCategoryProp(values []EnumlogPublish
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherDefaultDebugCategoryProp(value *EnumlogPublisherDefaultDebugCategoryProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherDefaultDebugLevelProp) String() string {
 	return string(e)
 }
@@ -3696,6 +6152,14 @@ func StringSliceEnumlogPublisherDefaultDebugLevelProp(values []EnumlogPublisherD
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherDefaultDebugLevelProp(value *EnumlogPublisherDefaultDebugLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherDefaultSeverityProp) String() string {
@@ -3710,6 +6174,14 @@ func StringSliceEnumlogPublisherDefaultSeverityProp(values []EnumlogPublisherDef
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherDefaultSeverityProp(value *EnumlogPublisherDefaultSeverityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherDirectoryRESTAPIMessageTypeProp) String() string {
 	return string(e)
 }
@@ -3720,6 +6192,14 @@ func StringSliceEnumlogPublisherDirectoryRESTAPIMessageTypeProp(values []Enumlog
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherDirectoryRESTAPIMessageTypeProp(value *EnumlogPublisherDirectoryRESTAPIMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherExtensionMessageTypeProp) String() string {
@@ -3734,6 +6214,14 @@ func StringSliceEnumlogPublisherExtensionMessageTypeProp(values []EnumlogPublish
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherExtensionMessageTypeProp(value *EnumlogPublisherExtensionMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherHttpMessageTypeProp) String() string {
 	return string(e)
 }
@@ -3744,6 +6232,14 @@ func StringSliceEnumlogPublisherHttpMessageTypeProp(values []EnumlogPublisherHtt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherHttpMessageTypeProp(value *EnumlogPublisherHttpMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherIdTokenValidatorMessageTypeProp) String() string {
@@ -3758,6 +6254,14 @@ func StringSliceEnumlogPublisherIdTokenValidatorMessageTypeProp(values []Enumlog
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherIdTokenValidatorMessageTypeProp(value *EnumlogPublisherIdTokenValidatorMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherLogRequestHeadersProp) String() string {
 	return string(e)
 }
@@ -3768,6 +6272,14 @@ func StringSliceEnumlogPublisherLogRequestHeadersProp(values []EnumlogPublisherL
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherLogRequestHeadersProp(value *EnumlogPublisherLogRequestHeadersProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherLogRequestParametersProp) String() string {
@@ -3782,6 +6294,14 @@ func StringSliceEnumlogPublisherLogRequestParametersProp(values []EnumlogPublish
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherLogRequestParametersProp(value *EnumlogPublisherLogRequestParametersProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherLogResponseHeadersProp) String() string {
 	return string(e)
 }
@@ -3792,6 +6312,14 @@ func StringSliceEnumlogPublisherLogResponseHeadersProp(values []EnumlogPublisher
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherLogResponseHeadersProp(value *EnumlogPublisherLogResponseHeadersProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherLoggingErrorBehaviorProp) String() string {
@@ -3806,6 +6334,14 @@ func StringSliceEnumlogPublisherLoggingErrorBehaviorProp(values []EnumlogPublish
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherLoggingErrorBehaviorProp(value *EnumlogPublisherLoggingErrorBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherOutputLocationProp) String() string {
 	return string(e)
 }
@@ -3816,6 +6352,14 @@ func StringSliceEnumlogPublisherOutputLocationProp(values []EnumlogPublisherOutp
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherOutputLocationProp(value *EnumlogPublisherOutputLocationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherScimMessageTypeProp) String() string {
@@ -3830,6 +6374,14 @@ func StringSliceEnumlogPublisherScimMessageTypeProp(values []EnumlogPublisherSci
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherScimMessageTypeProp(value *EnumlogPublisherScimMessageTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) String() string {
 	return string(e)
 }
@@ -3840,6 +6392,14 @@ func StringSliceEnumlogPublisherSoftDeleteEntryAuditBehaviorProp(values []Enumlo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherSoftDeleteEntryAuditBehaviorProp(value *EnumlogPublisherSoftDeleteEntryAuditBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherSyslogFacilityProp) String() string {
@@ -3854,6 +6414,14 @@ func StringSliceEnumlogPublisherSyslogFacilityProp(values []EnumlogPublisherSysl
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherSyslogFacilityProp(value *EnumlogPublisherSyslogFacilityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumlogPublisherSyslogSeverityProp) String() string {
 	return string(e)
 }
@@ -3864,6 +6432,14 @@ func StringSliceEnumlogPublisherSyslogSeverityProp(values []EnumlogPublisherSysl
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumlogPublisherSyslogSeverityProp(value *EnumlogPublisherSyslogSeverityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumlogPublisherTimestampPrecisionProp) String() string {
@@ -3878,6 +6454,14 @@ func StringSliceEnumlogPublisherTimestampPrecisionProp(values []EnumlogPublisher
 	return stringSlice
 }
 
+func StringPointerEnumlogPublisherTimestampPrecisionProp(value *EnumlogPublisherTimestampPrecisionProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumloggingChangeSubscriptionHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -3888,6 +6472,14 @@ func StringSliceEnumloggingChangeSubscriptionHandlerSchemaUrn(values []Enumloggi
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumloggingChangeSubscriptionHandlerSchemaUrn(value *EnumloggingChangeSubscriptionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e Enummd5PasswordStorageSchemeSchemaUrn) String() string {
@@ -3902,6 +6494,14 @@ func StringSliceEnummd5PasswordStorageSchemeSchemaUrn(values []Enummd5PasswordSt
 	return stringSlice
 }
 
+func StringPointerEnummd5PasswordStorageSchemeSchemaUrn(value *Enummd5PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnummemberOfServerGroupVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -3912,6 +6512,14 @@ func StringSliceEnummemberOfServerGroupVirtualAttributeSchemaUrn(values []Enumme
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnummemberOfServerGroupVirtualAttributeSchemaUrn(value *EnummemberOfServerGroupVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnummemberVirtualAttributeSchemaUrn) String() string {
@@ -3926,6 +6534,14 @@ func StringSliceEnummemberVirtualAttributeSchemaUrn(values []EnummemberVirtualAt
 	return stringSlice
 }
 
+func StringPointerEnummemberVirtualAttributeSchemaUrn(value *EnummemberVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnummemoryUsageMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -3936,6 +6552,14 @@ func StringSliceEnummemoryUsageMonitorProviderSchemaUrn(values []EnummemoryUsage
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnummemoryUsageMonitorProviderSchemaUrn(value *EnummemoryUsageMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnummetricsBackendSchemaUrn) String() string {
@@ -3950,6 +6574,14 @@ func StringSliceEnummetricsBackendSchemaUrn(values []EnummetricsBackendSchemaUrn
 	return stringSlice
 }
 
+func StringPointerEnummetricsBackendSchemaUrn(value *EnummetricsBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnummetricsEngineServerInstanceSchemaUrn) String() string {
 	return string(e)
 }
@@ -3960,6 +6592,14 @@ func StringSliceEnummetricsEngineServerInstanceSchemaUrn(values []EnummetricsEng
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnummetricsEngineServerInstanceSchemaUrn(value *EnummetricsEngineServerInstanceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnummirrorVirtualAttributeSchemaUrn) String() string {
@@ -3974,6 +6614,14 @@ func StringSliceEnummirrorVirtualAttributeSchemaUrn(values []EnummirrorVirtualAt
 	return stringSlice
 }
 
+func StringPointerEnummirrorVirtualAttributeSchemaUrn(value *EnummirrorVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnummockAccessTokenValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -3984,6 +6632,14 @@ func StringSliceEnummockAccessTokenValidatorSchemaUrn(values []EnummockAccessTok
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnummockAccessTokenValidatorSchemaUrn(value *EnummockAccessTokenValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnummonitorBackendSchemaUrn) String() string {
@@ -3998,6 +6654,14 @@ func StringSliceEnummonitorBackendSchemaUrn(values []EnummonitorBackendSchemaUrn
 	return stringSlice
 }
 
+func StringPointerEnummonitorBackendSchemaUrn(value *EnummonitorBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnummonitoringEndpointConnectionTypeProp) String() string {
 	return string(e)
 }
@@ -4008,6 +6672,14 @@ func StringSliceEnummonitoringEndpointConnectionTypeProp(values []Enummonitoring
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnummonitoringEndpointConnectionTypeProp(value *EnummonitoringEndpointConnectionTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn) String() string {
@@ -4022,6 +6694,14 @@ func StringSliceEnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn(valu
 	return stringSlice
 }
 
+func StringPointerEnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn(value *EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnummultiUpdateExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -4032,6 +6712,14 @@ func StringSliceEnummultiUpdateExtendedOperationHandlerSchemaUrn(values []Enummu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnummultiUpdateExtendedOperationHandlerSchemaUrn(value *EnummultiUpdateExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnummultiplePasswordDataSecurityAuditorSchemaUrn) String() string {
@@ -4046,6 +6734,14 @@ func StringSliceEnummultiplePasswordDataSecurityAuditorSchemaUrn(values []Enummu
 	return stringSlice
 }
 
+func StringPointerEnummultiplePasswordDataSecurityAuditorSchemaUrn(value *EnummultiplePasswordDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumnameAndOptionalUidAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -4056,6 +6752,14 @@ func StringSliceEnumnameAndOptionalUidAttributeSyntaxSchemaUrn(values []Enumname
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumnameAndOptionalUidAttributeSyntaxSchemaUrn(value *EnumnameAndOptionalUidAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumneverDeleteLogRetentionPolicySchemaUrn) String() string {
@@ -4070,6 +6774,14 @@ func StringSliceEnumneverDeleteLogRetentionPolicySchemaUrn(values []EnumneverDel
 	return stringSlice
 }
 
+func StringPointerEnumneverDeleteLogRetentionPolicySchemaUrn(value *EnumneverDeleteLogRetentionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumneverRotateLogRotationPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -4080,6 +6792,14 @@ func StringSliceEnumneverRotateLogRotationPolicySchemaUrn(values []EnumneverRota
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumneverRotateLogRotationPolicySchemaUrn(value *EnumneverRotateLogRotationPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumnoOperationFailureLockoutActionSchemaUrn) String() string {
@@ -4094,6 +6814,14 @@ func StringSliceEnumnoOperationFailureLockoutActionSchemaUrn(values []EnumnoOper
 	return stringSlice
 }
 
+func StringPointerEnumnoOperationFailureLockoutActionSchemaUrn(value *EnumnoOperationFailureLockoutActionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumnokiaDsExternalServerSchemaUrn) String() string {
 	return string(e)
 }
@@ -4104,6 +6832,14 @@ func StringSliceEnumnokiaDsExternalServerSchemaUrn(values []EnumnokiaDsExternalS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumnokiaDsExternalServerSchemaUrn(value *EnumnokiaDsExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumnokiaProxyServerExternalServerSchemaUrn) String() string {
@@ -4118,6 +6854,14 @@ func StringSliceEnumnokiaProxyServerExternalServerSchemaUrn(values []EnumnokiaPr
 	return stringSlice
 }
 
+func StringPointerEnumnokiaProxyServerExternalServerSchemaUrn(value *EnumnokiaProxyServerExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumnotificationManagerTransactionNotificationProp) String() string {
 	return string(e)
 }
@@ -4128,6 +6872,14 @@ func StringSliceEnumnotificationManagerTransactionNotificationProp(values []Enum
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumnotificationManagerTransactionNotificationProp(value *EnumnotificationManagerTransactionNotificationProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn) String() string {
@@ -4142,6 +6894,14 @@ func StringSliceEnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn(va
 	return stringSlice
 }
 
+func StringPointerEnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn(value *EnumnotificationSubscriptionExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumnumSubordinatesVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -4152,6 +6912,14 @@ func StringSliceEnumnumSubordinatesVirtualAttributeSchemaUrn(values []EnumnumSub
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumnumSubordinatesVirtualAttributeSchemaUrn(value *EnumnumSubordinatesVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumnumericGaugeDataSourceSchemaUrn) String() string {
@@ -4166,6 +6934,14 @@ func StringSliceEnumnumericGaugeDataSourceSchemaUrn(values []EnumnumericGaugeDat
 	return stringSlice
 }
 
+func StringPointerEnumnumericGaugeDataSourceSchemaUrn(value *EnumnumericGaugeDataSourceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumnumericGaugeSchemaUrn) String() string {
 	return string(e)
 }
@@ -4176,6 +6952,14 @@ func StringSliceEnumnumericGaugeSchemaUrn(values []EnumnumericGaugeSchemaUrn) []
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumnumericGaugeSchemaUrn(value *EnumnumericGaugeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumoauthBearerSaslMechanismHandlerSchemaUrn) String() string {
@@ -4190,6 +6974,14 @@ func StringSliceEnumoauthBearerSaslMechanismHandlerSchemaUrn(values []EnumoauthB
 	return stringSlice
 }
 
+func StringPointerEnumoauthBearerSaslMechanismHandlerSchemaUrn(value *EnumoauthBearerSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumobscuredValuePassphraseProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -4200,6 +6992,14 @@ func StringSliceEnumobscuredValuePassphraseProviderSchemaUrn(values []Enumobscur
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumobscuredValuePassphraseProviderSchemaUrn(value *EnumobscuredValuePassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumobscuredValueSchemaUrn) String() string {
@@ -4214,6 +7014,14 @@ func StringSliceEnumobscuredValueSchemaUrn(values []EnumobscuredValueSchemaUrn) 
 	return stringSlice
 }
 
+func StringPointerEnumobscuredValueSchemaUrn(value *EnumobscuredValueSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumopendjExternalServerSchemaUrn) String() string {
 	return string(e)
 }
@@ -4224,6 +7032,14 @@ func StringSliceEnumopendjExternalServerSchemaUrn(values []EnumopendjExternalSer
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumopendjExternalServerSchemaUrn(value *EnumopendjExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumopenidConnectIdTokenValidatorSchemaUrn) String() string {
@@ -4238,6 +7054,14 @@ func StringSliceEnumopenidConnectIdTokenValidatorSchemaUrn(values []EnumopenidCo
 	return stringSlice
 }
 
+func StringPointerEnumopenidConnectIdTokenValidatorSchemaUrn(value *EnumopenidConnectIdTokenValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumoperationTimingAccessLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -4248,6 +7072,14 @@ func StringSliceEnumoperationTimingAccessLogPublisherSchemaUrn(values []Enumoper
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumoperationTimingAccessLogPublisherSchemaUrn(value *EnumoperationTimingAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumoracleUnifiedDirectoryExternalServerSchemaUrn) String() string {
@@ -4262,6 +7094,14 @@ func StringSliceEnumoracleUnifiedDirectoryExternalServerSchemaUrn(values []Enumo
 	return stringSlice
 }
 
+func StringPointerEnumoracleUnifiedDirectoryExternalServerSchemaUrn(value *EnumoracleUnifiedDirectoryExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumorderingMatchingRuleSchemaUrn) String() string {
 	return string(e)
 }
@@ -4272,6 +7112,14 @@ func StringSliceEnumorderingMatchingRuleSchemaUrn(values []EnumorderingMatchingR
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumorderingMatchingRuleSchemaUrn(value *EnumorderingMatchingRuleSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumoutputAlertHandlerSchemaUrn) String() string {
@@ -4286,6 +7134,14 @@ func StringSliceEnumoutputAlertHandlerSchemaUrn(values []EnumoutputAlertHandlerS
 	return stringSlice
 }
 
+func StringPointerEnumoutputAlertHandlerSchemaUrn(value *EnumoutputAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpassThroughAuthenticationHandlerServerAccessModeProp) String() string {
 	return string(e)
 }
@@ -4296,6 +7152,14 @@ func StringSliceEnumpassThroughAuthenticationHandlerServerAccessModeProp(values 
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpassThroughAuthenticationHandlerServerAccessModeProp(value *EnumpassThroughAuthenticationHandlerServerAccessModeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpassphrasePasswordGeneratorSchemaUrn) String() string {
@@ -4310,6 +7174,14 @@ func StringSliceEnumpassphrasePasswordGeneratorSchemaUrn(values []Enumpassphrase
 	return stringSlice
 }
 
+func StringPointerEnumpassphrasePasswordGeneratorSchemaUrn(value *EnumpassphrasePasswordGeneratorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordModifyExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -4320,6 +7192,14 @@ func StringSliceEnumpasswordModifyExtendedOperationHandlerSchemaUrn(values []Enu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordModifyExtendedOperationHandlerSchemaUrn(value *EnumpasswordModifyExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp) String() string {
@@ -4334,6 +7214,14 @@ func StringSliceEnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp(valu
 	return stringSlice
 }
 
+func StringPointerEnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp(value *EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordPolicyBindPasswordValidationFailureActionProp) String() string {
 	return string(e)
 }
@@ -4344,6 +7232,14 @@ func StringSliceEnumpasswordPolicyBindPasswordValidationFailureActionProp(values
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordPolicyBindPasswordValidationFailureActionProp(value *EnumpasswordPolicyBindPasswordValidationFailureActionProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpasswordPolicyPasswordRetirementBehaviorProp) String() string {
@@ -4358,6 +7254,14 @@ func StringSliceEnumpasswordPolicyPasswordRetirementBehaviorProp(values []Enumpa
 	return stringSlice
 }
 
+func StringPointerEnumpasswordPolicyPasswordRetirementBehaviorProp(value *EnumpasswordPolicyPasswordRetirementBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp) String() string {
 	return string(e)
 }
@@ -4368,6 +7272,14 @@ func StringSliceEnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp(v
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp(value *EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpasswordPolicyReturnPasswordExpirationControlsProp) String() string {
@@ -4382,6 +7294,14 @@ func StringSliceEnumpasswordPolicyReturnPasswordExpirationControlsProp(values []
 	return stringSlice
 }
 
+func StringPointerEnumpasswordPolicyReturnPasswordExpirationControlsProp(value *EnumpasswordPolicyReturnPasswordExpirationControlsProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -4392,6 +7312,14 @@ func StringSliceEnumpasswordPolicySchemaUrn(values []EnumpasswordPolicySchemaUrn
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordPolicySchemaUrn(value *EnumpasswordPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn) String() string {
@@ -4406,6 +7334,14 @@ func StringSliceEnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn(values 
 	return stringSlice
 }
 
+func StringPointerEnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn(value *EnumpasswordPolicyStateExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -4416,6 +7352,14 @@ func StringSliceEnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn(value *EnumpasswordPolicyStateJsonVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpasswordPolicyStateUpdateFailurePolicyProp) String() string {
@@ -4430,6 +7374,14 @@ func StringSliceEnumpasswordPolicyStateUpdateFailurePolicyProp(values []Enumpass
 	return stringSlice
 }
 
+func StringPointerEnumpasswordPolicyStateUpdateFailurePolicyProp(value *EnumpasswordPolicyStateUpdateFailurePolicyProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordStorageSchemeDigestAlgorithmProp) String() string {
 	return string(e)
 }
@@ -4440,6 +7392,14 @@ func StringSliceEnumpasswordStorageSchemeDigestAlgorithmProp(values []Enumpasswo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordStorageSchemeDigestAlgorithmProp(value *EnumpasswordStorageSchemeDigestAlgorithmProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpasswordStorageSchemePasswordEncodingMechanismProp) String() string {
@@ -4454,6 +7414,14 @@ func StringSliceEnumpasswordStorageSchemePasswordEncodingMechanismProp(values []
 	return stringSlice
 }
 
+func StringPointerEnumpasswordStorageSchemePasswordEncodingMechanismProp(value *EnumpasswordStorageSchemePasswordEncodingMechanismProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpasswordValidatorMatchBehaviorProp) String() string {
 	return string(e)
 }
@@ -4464,6 +7432,14 @@ func StringSliceEnumpasswordValidatorMatchBehaviorProp(values []EnumpasswordVali
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpasswordValidatorMatchBehaviorProp(value *EnumpasswordValidatorMatchBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e Enumpbkdf2PasswordStorageSchemeSchemaUrn) String() string {
@@ -4478,6 +7454,14 @@ func StringSliceEnumpbkdf2PasswordStorageSchemeSchemaUrn(values []Enumpbkdf2Pass
 	return stringSlice
 }
 
+func StringPointerEnumpbkdf2PasswordStorageSchemeSchemaUrn(value *Enumpbkdf2PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpingFederateAccessTokenValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -4488,6 +7472,14 @@ func StringSliceEnumpingFederateAccessTokenValidatorSchemaUrn(values []EnumpingF
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpingFederateAccessTokenValidatorSchemaUrn(value *EnumpingFederateAccessTokenValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpingOneHttpExternalServerSchemaUrn) String() string {
@@ -4502,6 +7494,14 @@ func StringSliceEnumpingOneHttpExternalServerSchemaUrn(values []EnumpingOneHttpE
 	return stringSlice
 }
 
+func StringPointerEnumpingOneHttpExternalServerSchemaUrn(value *EnumpingOneHttpExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpingOneIdTokenValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -4512,6 +7512,14 @@ func StringSliceEnumpingOneIdTokenValidatorSchemaUrn(values []EnumpingOneIdToken
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpingOneIdTokenValidatorSchemaUrn(value *EnumpingOneIdTokenValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e Enumpkcs11CipherStreamProviderSchemaUrn) String() string {
@@ -4526,6 +7534,14 @@ func StringSliceEnumpkcs11CipherStreamProviderSchemaUrn(values []Enumpkcs11Ciphe
 	return stringSlice
 }
 
+func StringPointerEnumpkcs11CipherStreamProviderSchemaUrn(value *Enumpkcs11CipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e Enumpkcs11KeyManagerProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -4536,6 +7552,14 @@ func StringSliceEnumpkcs11KeyManagerProviderSchemaUrn(values []Enumpkcs11KeyMana
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpkcs11KeyManagerProviderSchemaUrn(value *Enumpkcs11KeyManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumplainSaslMechanismHandlerSchemaUrn) String() string {
@@ -4550,6 +7574,14 @@ func StringSliceEnumplainSaslMechanismHandlerSchemaUrn(values []EnumplainSaslMec
 	return stringSlice
 }
 
+func StringPointerEnumplainSaslMechanismHandlerSchemaUrn(value *EnumplainSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumpluginRootSchemaUrn) String() string {
 	return string(e)
 }
@@ -4560,6 +7592,14 @@ func StringSliceEnumpluginRootSchemaUrn(values []EnumpluginRootSchemaUrn) []stri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumpluginRootSchemaUrn(value *EnumpluginRootSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumprivilegeDataSecurityAuditorSchemaUrn) String() string {
@@ -4574,6 +7614,14 @@ func StringSliceEnumprivilegeDataSecurityAuditorSchemaUrn(values []Enumprivilege
 	return stringSlice
 }
 
+func StringPointerEnumprivilegeDataSecurityAuditorSchemaUrn(value *EnumprivilegeDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumproxyServerInstanceSchemaUrn) String() string {
 	return string(e)
 }
@@ -4584,6 +7632,14 @@ func StringSliceEnumproxyServerInstanceSchemaUrn(values []EnumproxyServerInstanc
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumproxyServerInstanceSchemaUrn(value *EnumproxyServerInstanceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumpwnedPasswordsPasswordValidatorSchemaUrn) String() string {
@@ -4598,6 +7654,14 @@ func StringSliceEnumpwnedPasswordsPasswordValidatorSchemaUrn(values []EnumpwnedP
 	return stringSlice
 }
 
+func StringPointerEnumpwnedPasswordsPasswordValidatorSchemaUrn(value *EnumpwnedPasswordsPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumquickstartHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -4608,6 +7672,14 @@ func StringSliceEnumquickstartHttpServletExtensionSchemaUrn(values []Enumquickst
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumquickstartHttpServletExtensionSchemaUrn(value *EnumquickstartHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrandomPasswordGeneratorSchemaUrn) String() string {
@@ -4622,6 +7694,14 @@ func StringSliceEnumrandomPasswordGeneratorSchemaUrn(values []EnumrandomPassword
 	return stringSlice
 }
 
+func StringPointerEnumrandomPasswordGeneratorSchemaUrn(value *EnumrandomPasswordGeneratorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e Enumrc4PasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -4632,6 +7712,14 @@ func StringSliceEnumrc4PasswordStorageSchemeSchemaUrn(values []Enumrc4PasswordSt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrc4PasswordStorageSchemeSchemaUrn(value *Enumrc4PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrecurringTaskChainInterruptedByShutdownBehaviorProp) String() string {
@@ -4646,6 +7734,14 @@ func StringSliceEnumrecurringTaskChainInterruptedByShutdownBehaviorProp(values [
 	return stringSlice
 }
 
+func StringPointerEnumrecurringTaskChainInterruptedByShutdownBehaviorProp(value *EnumrecurringTaskChainInterruptedByShutdownBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrecurringTaskChainScheduledDateSelectionTypeProp) String() string {
 	return string(e)
 }
@@ -4656,6 +7752,14 @@ func StringSliceEnumrecurringTaskChainScheduledDateSelectionTypeProp(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrecurringTaskChainScheduledDateSelectionTypeProp(value *EnumrecurringTaskChainScheduledDateSelectionTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrecurringTaskChainScheduledDayOfTheMonthProp) String() string {
@@ -4670,6 +7774,14 @@ func StringSliceEnumrecurringTaskChainScheduledDayOfTheMonthProp(values []Enumre
 	return stringSlice
 }
 
+func StringPointerEnumrecurringTaskChainScheduledDayOfTheMonthProp(value *EnumrecurringTaskChainScheduledDayOfTheMonthProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrecurringTaskChainScheduledDayOfTheWeekProp) String() string {
 	return string(e)
 }
@@ -4680,6 +7792,14 @@ func StringSliceEnumrecurringTaskChainScheduledDayOfTheWeekProp(values []Enumrec
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrecurringTaskChainScheduledDayOfTheWeekProp(value *EnumrecurringTaskChainScheduledDayOfTheWeekProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrecurringTaskChainScheduledMonthProp) String() string {
@@ -4694,6 +7814,14 @@ func StringSliceEnumrecurringTaskChainScheduledMonthProp(values []EnumrecurringT
 	return stringSlice
 }
 
+func StringPointerEnumrecurringTaskChainScheduledMonthProp(value *EnumrecurringTaskChainScheduledMonthProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrecurringTaskChainSchemaUrn) String() string {
 	return string(e)
 }
@@ -4704,6 +7832,14 @@ func StringSliceEnumrecurringTaskChainSchemaUrn(values []EnumrecurringTaskChainS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrecurringTaskChainSchemaUrn(value *EnumrecurringTaskChainSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp) String() string {
@@ -4718,6 +7854,14 @@ func StringSliceEnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp(value
 	return stringSlice
 }
 
+func StringPointerEnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp(value *EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrecurringTaskSecurityLevelProp) String() string {
 	return string(e)
 }
@@ -4728,6 +7872,14 @@ func StringSliceEnumrecurringTaskSecurityLevelProp(values []EnumrecurringTaskSec
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrecurringTaskSecurityLevelProp(value *EnumrecurringTaskSecurityLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp) String() string {
@@ -4742,6 +7894,14 @@ func StringSliceEnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp(value
 	return stringSlice
 }
 
+func StringPointerEnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp(value *EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp) String() string {
 	return string(e)
 }
@@ -4752,6 +7912,14 @@ func StringSliceEnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp(value
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp(value *EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrecurringTaskTimestampFormatProp) String() string {
@@ -4766,6 +7934,14 @@ func StringSliceEnumrecurringTaskTimestampFormatProp(values []EnumrecurringTaskT
 	return stringSlice
 }
 
+func StringPointerEnumrecurringTaskTimestampFormatProp(value *EnumrecurringTaskTimestampFormatProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumregularExpressionIdentityMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -4776,6 +7952,14 @@ func StringSliceEnumregularExpressionIdentityMapperSchemaUrn(values []Enumregula
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumregularExpressionIdentityMapperSchemaUrn(value *EnumregularExpressionIdentityMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumregularExpressionPasswordValidatorSchemaUrn) String() string {
@@ -4790,6 +7974,14 @@ func StringSliceEnumregularExpressionPasswordValidatorSchemaUrn(values []Enumreg
 	return stringSlice
 }
 
+func StringPointerEnumregularExpressionPasswordValidatorSchemaUrn(value *EnumregularExpressionPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrepeatedCharactersPasswordValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -4800,6 +7992,14 @@ func StringSliceEnumrepeatedCharactersPasswordValidatorSchemaUrn(values []Enumre
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrepeatedCharactersPasswordValidatorSchemaUrn(value *EnumrepeatedCharactersPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumreplaceCertificateExtendedOperationHandlerSchemaUrn) String() string {
@@ -4814,6 +8014,14 @@ func StringSliceEnumreplaceCertificateExtendedOperationHandlerSchemaUrn(values [
 	return stringSlice
 }
 
+func StringPointerEnumreplaceCertificateExtendedOperationHandlerSchemaUrn(value *EnumreplaceCertificateExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumreplicationAssurancePolicyLocalLevelProp) String() string {
 	return string(e)
 }
@@ -4824,6 +8032,14 @@ func StringSliceEnumreplicationAssurancePolicyLocalLevelProp(values []Enumreplic
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumreplicationAssurancePolicyLocalLevelProp(value *EnumreplicationAssurancePolicyLocalLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumreplicationAssurancePolicyRemoteLevelProp) String() string {
@@ -4838,6 +8054,14 @@ func StringSliceEnumreplicationAssurancePolicyRemoteLevelProp(values []Enumrepli
 	return stringSlice
 }
 
+func StringPointerEnumreplicationAssurancePolicyRemoteLevelProp(value *EnumreplicationAssurancePolicyRemoteLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumreplicationAssurancePolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -4848,6 +8072,14 @@ func StringSliceEnumreplicationAssurancePolicySchemaUrn(values []Enumreplication
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumreplicationAssurancePolicySchemaUrn(value *EnumreplicationAssurancePolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumreplicationAssuranceResultCriteriaSchemaUrn) String() string {
@@ -4862,6 +8094,14 @@ func StringSliceEnumreplicationAssuranceResultCriteriaSchemaUrn(values []Enumrep
 	return stringSlice
 }
 
+func StringPointerEnumreplicationAssuranceResultCriteriaSchemaUrn(value *EnumreplicationAssuranceResultCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumreplicationStateDetailVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -4872,6 +8112,14 @@ func StringSliceEnumreplicationStateDetailVirtualAttributeSchemaUrn(values []Enu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumreplicationStateDetailVirtualAttributeSchemaUrn(value *EnumreplicationStateDetailVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumreplicationSynchronizationProviderSchemaUrn) String() string {
@@ -4886,6 +8134,14 @@ func StringSliceEnumreplicationSynchronizationProviderSchemaUrn(values []Enumrep
 	return stringSlice
 }
 
+func StringPointerEnumreplicationSynchronizationProviderSchemaUrn(value *EnumreplicationSynchronizationProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrequestCriteriaIncludedSearchScopeProp) String() string {
 	return string(e)
 }
@@ -4896,6 +8152,14 @@ func StringSliceEnumrequestCriteriaIncludedSearchScopeProp(values []EnumrequestC
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrequestCriteriaIncludedSearchScopeProp(value *EnumrequestCriteriaIncludedSearchScopeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrequestCriteriaOperationOriginProp) String() string {
@@ -4910,6 +8174,14 @@ func StringSliceEnumrequestCriteriaOperationOriginProp(values []EnumrequestCrite
 	return stringSlice
 }
 
+func StringPointerEnumrequestCriteriaOperationOriginProp(value *EnumrequestCriteriaOperationOriginProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrequestCriteriaOperationTypeProp) String() string {
 	return string(e)
 }
@@ -4920,6 +8192,14 @@ func StringSliceEnumrequestCriteriaOperationTypeProp(values []EnumrequestCriteri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrequestCriteriaOperationTypeProp(value *EnumrequestCriteriaOperationTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrequestCriteriaTargetBindTypeProp) String() string {
@@ -4934,6 +8214,14 @@ func StringSliceEnumrequestCriteriaTargetBindTypeProp(values []EnumrequestCriter
 	return stringSlice
 }
 
+func StringPointerEnumrequestCriteriaTargetBindTypeProp(value *EnumrequestCriteriaTargetBindTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp) String() string {
 	return string(e)
 }
@@ -4944,6 +8232,14 @@ func StringSliceEnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp(va
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp(value *EnumrequestCriteriaUsingAdministrativeSessionWorkerThreadProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCodeMapSchemaUrn) String() string {
@@ -4958,6 +8254,14 @@ func StringSliceEnumresultCodeMapSchemaUrn(values []EnumresultCodeMapSchemaUrn) 
 	return stringSlice
 }
 
+func StringPointerEnumresultCodeMapSchemaUrn(value *EnumresultCodeMapSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaAssuranceBehaviorAlteredByControlProp) String() string {
 	return string(e)
 }
@@ -4968,6 +8272,14 @@ func StringSliceEnumresultCriteriaAssuranceBehaviorAlteredByControlProp(values [
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaAssuranceBehaviorAlteredByControlProp(value *EnumresultCriteriaAssuranceBehaviorAlteredByControlProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaAssuranceSatisfiedProp) String() string {
@@ -4982,6 +8294,14 @@ func StringSliceEnumresultCriteriaAssuranceSatisfiedProp(values []EnumresultCrit
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaAssuranceSatisfiedProp(value *EnumresultCriteriaAssuranceSatisfiedProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaAssuranceTimeoutCriteriaProp) String() string {
 	return string(e)
 }
@@ -4992,6 +8312,14 @@ func StringSliceEnumresultCriteriaAssuranceTimeoutCriteriaProp(values []Enumresu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaAssuranceTimeoutCriteriaProp(value *EnumresultCriteriaAssuranceTimeoutCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaLocalAssuranceLevelProp) String() string {
@@ -5006,6 +8334,14 @@ func StringSliceEnumresultCriteriaLocalAssuranceLevelProp(values []EnumresultCri
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaLocalAssuranceLevelProp(value *EnumresultCriteriaLocalAssuranceLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaMissingAnyPrivilegeProp) String() string {
 	return string(e)
 }
@@ -5016,6 +8352,14 @@ func StringSliceEnumresultCriteriaMissingAnyPrivilegeProp(values []EnumresultCri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaMissingAnyPrivilegeProp(value *EnumresultCriteriaMissingAnyPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaMissingPrivilegeProp) String() string {
@@ -5030,6 +8374,14 @@ func StringSliceEnumresultCriteriaMissingPrivilegeProp(values []EnumresultCriter
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaMissingPrivilegeProp(value *EnumresultCriteriaMissingPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaProcessingTimeCriteriaProp) String() string {
 	return string(e)
 }
@@ -5040,6 +8392,14 @@ func StringSliceEnumresultCriteriaProcessingTimeCriteriaProp(values []Enumresult
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaProcessingTimeCriteriaProp(value *EnumresultCriteriaProcessingTimeCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaQueueTimeCriteriaProp) String() string {
@@ -5054,6 +8414,14 @@ func StringSliceEnumresultCriteriaQueueTimeCriteriaProp(values []EnumresultCrite
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaQueueTimeCriteriaProp(value *EnumresultCriteriaQueueTimeCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaReferralReturnedProp) String() string {
 	return string(e)
 }
@@ -5064,6 +8432,14 @@ func StringSliceEnumresultCriteriaReferralReturnedProp(values []EnumresultCriter
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaReferralReturnedProp(value *EnumresultCriteriaReferralReturnedProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaRemoteAssuranceLevelProp) String() string {
@@ -5078,6 +8454,14 @@ func StringSliceEnumresultCriteriaRemoteAssuranceLevelProp(values []EnumresultCr
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaRemoteAssuranceLevelProp(value *EnumresultCriteriaRemoteAssuranceLevelProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaResponseDelayedByAssuranceProp) String() string {
 	return string(e)
 }
@@ -5088,6 +8472,14 @@ func StringSliceEnumresultCriteriaResponseDelayedByAssuranceProp(values []Enumre
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaResponseDelayedByAssuranceProp(value *EnumresultCriteriaResponseDelayedByAssuranceProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaResultCodeCriteriaProp) String() string {
@@ -5102,6 +8494,14 @@ func StringSliceEnumresultCriteriaResultCodeCriteriaProp(values []EnumresultCrit
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaResultCodeCriteriaProp(value *EnumresultCriteriaResultCodeCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaResultCodeValueProp) String() string {
 	return string(e)
 }
@@ -5112,6 +8512,14 @@ func StringSliceEnumresultCriteriaResultCodeValueProp(values []EnumresultCriteri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaResultCodeValueProp(value *EnumresultCriteriaResultCodeValueProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaRetiredPasswordUsedForBindProp) String() string {
@@ -5126,6 +8534,14 @@ func StringSliceEnumresultCriteriaRetiredPasswordUsedForBindProp(values []Enumre
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaRetiredPasswordUsedForBindProp(value *EnumresultCriteriaRetiredPasswordUsedForBindProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaSearchEntryReturnedCriteriaProp) String() string {
 	return string(e)
 }
@@ -5136,6 +8552,14 @@ func StringSliceEnumresultCriteriaSearchEntryReturnedCriteriaProp(values []Enumr
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaSearchEntryReturnedCriteriaProp(value *EnumresultCriteriaSearchEntryReturnedCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaSearchIndexedCriteriaProp) String() string {
@@ -5150,6 +8574,14 @@ func StringSliceEnumresultCriteriaSearchIndexedCriteriaProp(values []EnumresultC
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaSearchIndexedCriteriaProp(value *EnumresultCriteriaSearchIndexedCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaSearchReferenceReturnedCriteriaProp) String() string {
 	return string(e)
 }
@@ -5160,6 +8592,14 @@ func StringSliceEnumresultCriteriaSearchReferenceReturnedCriteriaProp(values []E
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaSearchReferenceReturnedCriteriaProp(value *EnumresultCriteriaSearchReferenceReturnedCriteriaProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaUsedAlternateAuthzidProp) String() string {
@@ -5174,6 +8614,14 @@ func StringSliceEnumresultCriteriaUsedAlternateAuthzidProp(values []EnumresultCr
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaUsedAlternateAuthzidProp(value *EnumresultCriteriaUsedAlternateAuthzidProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumresultCriteriaUsedAnyPrivilegeProp) String() string {
 	return string(e)
 }
@@ -5184,6 +8632,14 @@ func StringSliceEnumresultCriteriaUsedAnyPrivilegeProp(values []EnumresultCriter
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumresultCriteriaUsedAnyPrivilegeProp(value *EnumresultCriteriaUsedAnyPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumresultCriteriaUsedPrivilegeProp) String() string {
@@ -5198,6 +8654,14 @@ func StringSliceEnumresultCriteriaUsedPrivilegeProp(values []EnumresultCriteriaU
 	return stringSlice
 }
 
+func StringPointerEnumresultCriteriaUsedPrivilegeProp(value *EnumresultCriteriaUsedPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumreverseDnJoinVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -5208,6 +8672,14 @@ func StringSliceEnumreverseDnJoinVirtualAttributeSchemaUrn(values []EnumreverseD
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumreverseDnJoinVirtualAttributeSchemaUrn(value *EnumreverseDnJoinVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrootDnDefaultRootPrivilegeNameProp) String() string {
@@ -5222,6 +8694,14 @@ func StringSliceEnumrootDnDefaultRootPrivilegeNameProp(values []EnumrootDnDefaul
 	return stringSlice
 }
 
+func StringPointerEnumrootDnDefaultRootPrivilegeNameProp(value *EnumrootDnDefaultRootPrivilegeNameProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrootDnSchemaUrn) String() string {
 	return string(e)
 }
@@ -5232,6 +8712,14 @@ func StringSliceEnumrootDnSchemaUrn(values []EnumrootDnSchemaUrn) []string {
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrootDnSchemaUrn(value *EnumrootDnSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumrootDseBackendSchemaUrn) String() string {
@@ -5246,6 +8734,14 @@ func StringSliceEnumrootDseBackendSchemaUrn(values []EnumrootDseBackendSchemaUrn
 	return stringSlice
 }
 
+func StringPointerEnumrootDseBackendSchemaUrn(value *EnumrootDseBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumrootDseRequestCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -5256,6 +8752,14 @@ func StringSliceEnumrootDseRequestCriteriaSchemaUrn(values []EnumrootDseRequestC
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumrootDseRequestCriteriaSchemaUrn(value *EnumrootDseRequestCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsaltedMd5PasswordStorageSchemeSchemaUrn) String() string {
@@ -5270,6 +8774,14 @@ func StringSliceEnumsaltedMd5PasswordStorageSchemeSchemaUrn(values []EnumsaltedM
 	return stringSlice
 }
 
+func StringPointerEnumsaltedMd5PasswordStorageSchemeSchemaUrn(value *EnumsaltedMd5PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsaltedSha1PasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -5280,6 +8792,14 @@ func StringSliceEnumsaltedSha1PasswordStorageSchemeSchemaUrn(values []Enumsalted
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsaltedSha1PasswordStorageSchemeSchemaUrn(value *EnumsaltedSha1PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsaltedSha256PasswordStorageSchemeSchemaUrn) String() string {
@@ -5294,6 +8814,14 @@ func StringSliceEnumsaltedSha256PasswordStorageSchemeSchemaUrn(values []Enumsalt
 	return stringSlice
 }
 
+func StringPointerEnumsaltedSha256PasswordStorageSchemeSchemaUrn(value *EnumsaltedSha256PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsaltedSha384PasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -5304,6 +8832,14 @@ func StringSliceEnumsaltedSha384PasswordStorageSchemeSchemaUrn(values []Enumsalt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsaltedSha384PasswordStorageSchemeSchemaUrn(value *EnumsaltedSha384PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsaltedSha512PasswordStorageSchemeSchemaUrn) String() string {
@@ -5318,6 +8854,14 @@ func StringSliceEnumsaltedSha512PasswordStorageSchemeSchemaUrn(values []Enumsalt
 	return stringSlice
 }
 
+func StringPointerEnumsaltedSha512PasswordStorageSchemeSchemaUrn(value *EnumsaltedSha512PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsaslMechanismHandlerAllowedQualityOfProtectionProp) String() string {
 	return string(e)
 }
@@ -5328,6 +8872,14 @@ func StringSliceEnumsaslMechanismHandlerAllowedQualityOfProtectionProp(values []
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsaslMechanismHandlerAllowedQualityOfProtectionProp(value *EnumsaslMechanismHandlerAllowedQualityOfProtectionProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsaslMechanismHandlerCertificateValidationPolicyProp) String() string {
@@ -5342,6 +8894,14 @@ func StringSliceEnumsaslMechanismHandlerCertificateValidationPolicyProp(values [
 	return stringSlice
 }
 
+func StringPointerEnumsaslMechanismHandlerCertificateValidationPolicyProp(value *EnumsaslMechanismHandlerCertificateValidationPolicyProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsaslMechanismHandlerGssapiRoleProp) String() string {
 	return string(e)
 }
@@ -5352,6 +8912,14 @@ func StringSliceEnumsaslMechanismHandlerGssapiRoleProp(values []EnumsaslMechanis
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsaslMechanismHandlerGssapiRoleProp(value *EnumsaslMechanismHandlerGssapiRoleProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp) String() string {
@@ -5366,6 +8934,14 @@ func StringSliceEnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProv
 	return stringSlice
 }
 
+func StringPointerEnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp(value *EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumschemaBackendSchemaUrn) String() string {
 	return string(e)
 }
@@ -5376,6 +8952,14 @@ func StringSliceEnumschemaBackendSchemaUrn(values []EnumschemaBackendSchemaUrn) 
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumschemaBackendSchemaUrn(value *EnumschemaBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e Enumscim2HttpServletExtensionSchemaUrn) String() string {
@@ -5390,6 +8974,14 @@ func StringSliceEnumscim2HttpServletExtensionSchemaUrn(values []Enumscim2HttpSer
 	return stringSlice
 }
 
+func StringPointerEnumscim2HttpServletExtensionSchemaUrn(value *Enumscim2HttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumscimSchemaSchemaUrn) String() string {
 	return string(e)
 }
@@ -5400,6 +8992,14 @@ func StringSliceEnumscimSchemaSchemaUrn(values []EnumscimSchemaSchemaUrn) []stri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumscimSchemaSchemaUrn(value *EnumscimSchemaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumscryptPasswordStorageSchemeSchemaUrn) String() string {
@@ -5414,6 +9014,14 @@ func StringSliceEnumscryptPasswordStorageSchemeSchemaUrn(values []EnumscryptPass
 	return stringSlice
 }
 
+func StringPointerEnumscryptPasswordStorageSchemeSchemaUrn(value *EnumscryptPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsensitiveAttributeAllowInAddProp) String() string {
 	return string(e)
 }
@@ -5424,6 +9032,14 @@ func StringSliceEnumsensitiveAttributeAllowInAddProp(values []EnumsensitiveAttri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsensitiveAttributeAllowInAddProp(value *EnumsensitiveAttributeAllowInAddProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsensitiveAttributeAllowInCompareProp) String() string {
@@ -5438,6 +9054,14 @@ func StringSliceEnumsensitiveAttributeAllowInCompareProp(values []EnumsensitiveA
 	return stringSlice
 }
 
+func StringPointerEnumsensitiveAttributeAllowInCompareProp(value *EnumsensitiveAttributeAllowInCompareProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsensitiveAttributeAllowInFilterProp) String() string {
 	return string(e)
 }
@@ -5448,6 +9072,14 @@ func StringSliceEnumsensitiveAttributeAllowInFilterProp(values []EnumsensitiveAt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsensitiveAttributeAllowInFilterProp(value *EnumsensitiveAttributeAllowInFilterProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsensitiveAttributeAllowInModifyProp) String() string {
@@ -5462,6 +9094,14 @@ func StringSliceEnumsensitiveAttributeAllowInModifyProp(values []EnumsensitiveAt
 	return stringSlice
 }
 
+func StringPointerEnumsensitiveAttributeAllowInModifyProp(value *EnumsensitiveAttributeAllowInModifyProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsensitiveAttributeAllowInReturnedEntriesProp) String() string {
 	return string(e)
 }
@@ -5472,6 +9112,14 @@ func StringSliceEnumsensitiveAttributeAllowInReturnedEntriesProp(values []Enumse
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsensitiveAttributeAllowInReturnedEntriesProp(value *EnumsensitiveAttributeAllowInReturnedEntriesProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsensitiveAttributeSchemaUrn) String() string {
@@ -5486,6 +9134,14 @@ func StringSliceEnumsensitiveAttributeSchemaUrn(values []EnumsensitiveAttributeS
 	return stringSlice
 }
 
+func StringPointerEnumsensitiveAttributeSchemaUrn(value *EnumsensitiveAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumserverGroupSchemaUrn) String() string {
 	return string(e)
 }
@@ -5496,6 +9152,14 @@ func StringSliceEnumserverGroupSchemaUrn(values []EnumserverGroupSchemaUrn) []st
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumserverGroupSchemaUrn(value *EnumserverGroupSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumserverInstancePreferredSecurityProp) String() string {
@@ -5510,6 +9174,14 @@ func StringSliceEnumserverInstancePreferredSecurityProp(values []EnumserverInsta
 	return stringSlice
 }
 
+func StringPointerEnumserverInstancePreferredSecurityProp(value *EnumserverInstancePreferredSecurityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumserverInstanceServerInstanceTypeProp) String() string {
 	return string(e)
 }
@@ -5520,6 +9192,14 @@ func StringSliceEnumserverInstanceServerInstanceTypeProp(values []EnumserverInst
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumserverInstanceServerInstanceTypeProp(value *EnumserverInstanceServerInstanceTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e Enumsha1PasswordStorageSchemeSchemaUrn) String() string {
@@ -5534,6 +9214,14 @@ func StringSliceEnumsha1PasswordStorageSchemeSchemaUrn(values []Enumsha1Password
 	return stringSlice
 }
 
+func StringPointerEnumsha1PasswordStorageSchemeSchemaUrn(value *Enumsha1PasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumshortUniqueIdVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -5544,6 +9232,14 @@ func StringSliceEnumshortUniqueIdVirtualAttributeSchemaUrn(values []EnumshortUni
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumshortUniqueIdVirtualAttributeSchemaUrn(value *EnumshortUniqueIdVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsimilarityBasedPasswordValidatorSchemaUrn) String() string {
@@ -5558,6 +9254,14 @@ func StringSliceEnumsimilarityBasedPasswordValidatorSchemaUrn(values []Enumsimil
 	return stringSlice
 }
 
+func StringPointerEnumsimilarityBasedPasswordValidatorSchemaUrn(value *EnumsimilarityBasedPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsimpleConnectionCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -5568,6 +9272,14 @@ func StringSliceEnumsimpleConnectionCriteriaSchemaUrn(values []EnumsimpleConnect
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsimpleConnectionCriteriaSchemaUrn(value *EnumsimpleConnectionCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsimpleRequestCriteriaSchemaUrn) String() string {
@@ -5582,6 +9294,14 @@ func StringSliceEnumsimpleRequestCriteriaSchemaUrn(values []EnumsimpleRequestCri
 	return stringSlice
 }
 
+func StringPointerEnumsimpleRequestCriteriaSchemaUrn(value *EnumsimpleRequestCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsimpleResultCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -5592,6 +9312,14 @@ func StringSliceEnumsimpleResultCriteriaSchemaUrn(values []EnumsimpleResultCrite
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsimpleResultCriteriaSchemaUrn(value *EnumsimpleResultCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsimpleSearchEntryCriteriaSchemaUrn) String() string {
@@ -5606,6 +9334,14 @@ func StringSliceEnumsimpleSearchEntryCriteriaSchemaUrn(values []EnumsimpleSearch
 	return stringSlice
 }
 
+func StringPointerEnumsimpleSearchEntryCriteriaSchemaUrn(value *EnumsimpleSearchEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsimpleSearchReferenceCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -5616,6 +9352,14 @@ func StringSliceEnumsimpleSearchReferenceCriteriaSchemaUrn(values []EnumsimpleSe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsimpleSearchReferenceCriteriaSchemaUrn(value *EnumsimpleSearchReferenceCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsimpleUncachedAttributeCriteriaSchemaUrn) String() string {
@@ -5630,6 +9374,14 @@ func StringSliceEnumsimpleUncachedAttributeCriteriaSchemaUrn(values []Enumsimple
 	return stringSlice
 }
 
+func StringPointerEnumsimpleUncachedAttributeCriteriaSchemaUrn(value *EnumsimpleUncachedAttributeCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsingleUseTokensExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -5640,6 +9392,14 @@ func StringSliceEnumsingleUseTokensExtendedOperationHandlerSchemaUrn(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsingleUseTokensExtendedOperationHandlerSchemaUrn(value *EnumsingleUseTokensExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsizeLimitLogRetentionPolicySchemaUrn) String() string {
@@ -5654,6 +9414,14 @@ func StringSliceEnumsizeLimitLogRetentionPolicySchemaUrn(values []EnumsizeLimitL
 	return stringSlice
 }
 
+func StringPointerEnumsizeLimitLogRetentionPolicySchemaUrn(value *EnumsizeLimitLogRetentionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsizeLimitLogRotationPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -5664,6 +9432,14 @@ func StringSliceEnumsizeLimitLogRotationPolicySchemaUrn(values []EnumsizeLimitLo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsizeLimitLogRotationPolicySchemaUrn(value *EnumsizeLimitLogRotationPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsmtpAccountStatusNotificationHandlerSchemaUrn) String() string {
@@ -5678,6 +9454,14 @@ func StringSliceEnumsmtpAccountStatusNotificationHandlerSchemaUrn(values []Enums
 	return stringSlice
 }
 
+func StringPointerEnumsmtpAccountStatusNotificationHandlerSchemaUrn(value *EnumsmtpAccountStatusNotificationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsmtpAlertHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -5688,6 +9472,14 @@ func StringSliceEnumsmtpAlertHandlerSchemaUrn(values []EnumsmtpAlertHandlerSchem
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsmtpAlertHandlerSchemaUrn(value *EnumsmtpAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsmtpExternalServerSchemaUrn) String() string {
@@ -5702,6 +9494,14 @@ func StringSliceEnumsmtpExternalServerSchemaUrn(values []EnumsmtpExternalServerS
 	return stringSlice
 }
 
+func StringPointerEnumsmtpExternalServerSchemaUrn(value *EnumsmtpExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsnmpAlertHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -5712,6 +9512,14 @@ func StringSliceEnumsnmpAlertHandlerSchemaUrn(values []EnumsnmpAlertHandlerSchem
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsnmpAlertHandlerSchemaUrn(value *EnumsnmpAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsnmpSubAgentAlertHandlerSchemaUrn) String() string {
@@ -5726,6 +9534,14 @@ func StringSliceEnumsnmpSubAgentAlertHandlerSchemaUrn(values []EnumsnmpSubAgentA
 	return stringSlice
 }
 
+func StringPointerEnumsnmpSubAgentAlertHandlerSchemaUrn(value *EnumsnmpSubAgentAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsoftDeletePolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -5736,6 +9552,14 @@ func StringSliceEnumsoftDeletePolicySchemaUrn(values []EnumsoftDeletePolicySchem
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsoftDeletePolicySchemaUrn(value *EnumsoftDeletePolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsslContextMonitorProviderSchemaUrn) String() string {
@@ -5750,6 +9574,14 @@ func StringSliceEnumsslContextMonitorProviderSchemaUrn(values []EnumsslContextMo
 	return stringSlice
 }
 
+func StringPointerEnumsslContextMonitorProviderSchemaUrn(value *EnumsslContextMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumstackTraceMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -5760,6 +9592,14 @@ func StringSliceEnumstackTraceMonitorProviderSchemaUrn(values []EnumstackTraceMo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumstackTraceMonitorProviderSchemaUrn(value *EnumstackTraceMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumstartTlsExtendedOperationHandlerSchemaUrn) String() string {
@@ -5774,6 +9614,14 @@ func StringSliceEnumstartTlsExtendedOperationHandlerSchemaUrn(values []Enumstart
 	return stringSlice
 }
 
+func StringPointerEnumstartTlsExtendedOperationHandlerSchemaUrn(value *EnumstartTlsExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumstaticGroupImplementationSchemaUrn) String() string {
 	return string(e)
 }
@@ -5784,6 +9632,14 @@ func StringSliceEnumstaticGroupImplementationSchemaUrn(values []EnumstaticGroupI
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumstaticGroupImplementationSchemaUrn(value *EnumstaticGroupImplementationSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumstaticTokenVaultAuthenticationMethodSchemaUrn) String() string {
@@ -5798,6 +9654,14 @@ func StringSliceEnumstaticTokenVaultAuthenticationMethodSchemaUrn(values []Enums
 	return stringSlice
 }
 
+func StringPointerEnumstaticTokenVaultAuthenticationMethodSchemaUrn(value *EnumstaticTokenVaultAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumstaticallyDefinedRecurringTaskSchemaUrn) String() string {
 	return string(e)
 }
@@ -5808,6 +9672,14 @@ func StringSliceEnumstaticallyDefinedRecurringTaskSchemaUrn(values []Enumstatica
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumstaticallyDefinedRecurringTaskSchemaUrn(value *EnumstaticallyDefinedRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumstatsdMonitoringEndpointSchemaUrn) String() string {
@@ -5822,6 +9694,14 @@ func StringSliceEnumstatsdMonitoringEndpointSchemaUrn(values []EnumstatsdMonitor
 	return stringSlice
 }
 
+func StringPointerEnumstatsdMonitoringEndpointSchemaUrn(value *EnumstatsdMonitoringEndpointSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -5832,6 +9712,14 @@ func StringSliceEnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn(va
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn(value *EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn) String() string {
@@ -5846,6 +9734,14 @@ func StringSliceEnumsubjectDnToUserAttributeCertificateMapperSchemaUrn(values []
 	return stringSlice
 }
 
+func StringPointerEnumsubjectDnToUserAttributeCertificateMapperSchemaUrn(value *EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsubjectEqualsDnCertificateMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -5856,6 +9752,14 @@ func StringSliceEnumsubjectEqualsDnCertificateMapperSchemaUrn(values []Enumsubje
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsubjectEqualsDnCertificateMapperSchemaUrn(value *EnumsubjectEqualsDnCertificateMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsubschemaSubentryVirtualAttributeSchemaUrn) String() string {
@@ -5870,6 +9774,14 @@ func StringSliceEnumsubschemaSubentryVirtualAttributeSchemaUrn(values []Enumsubs
 	return stringSlice
 }
 
+func StringPointerEnumsubschemaSubentryVirtualAttributeSchemaUrn(value *EnumsubschemaSubentryVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsubstringMatchingRuleSchemaUrn) String() string {
 	return string(e)
 }
@@ -5880,6 +9792,14 @@ func StringSliceEnumsubstringMatchingRuleSchemaUrn(values []EnumsubstringMatchin
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsubstringMatchingRuleSchemaUrn(value *EnumsubstringMatchingRuleSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsummarizeLogFileRotationListenerSchemaUrn) String() string {
@@ -5894,6 +9814,14 @@ func StringSliceEnumsummarizeLogFileRotationListenerSchemaUrn(values []Enumsumma
 	return stringSlice
 }
 
+func StringPointerEnumsummarizeLogFileRotationListenerSchemaUrn(value *EnumsummarizeLogFileRotationListenerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsyncServerInstanceSchemaUrn) String() string {
 	return string(e)
 }
@@ -5904,6 +9832,14 @@ func StringSliceEnumsyncServerInstanceSchemaUrn(values []EnumsyncServerInstanceS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsyncServerInstanceSchemaUrn(value *EnumsyncServerInstanceSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsyslogBasedAccessLogPublisherSchemaUrn) String() string {
@@ -5918,6 +9854,14 @@ func StringSliceEnumsyslogBasedAccessLogPublisherSchemaUrn(values []EnumsyslogBa
 	return stringSlice
 }
 
+func StringPointerEnumsyslogBasedAccessLogPublisherSchemaUrn(value *EnumsyslogBasedAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsyslogBasedErrorLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -5928,6 +9872,14 @@ func StringSliceEnumsyslogBasedErrorLogPublisherSchemaUrn(values []EnumsyslogBas
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsyslogBasedErrorLogPublisherSchemaUrn(value *EnumsyslogBasedErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsyslogExternalServerSchemaUrn) String() string {
@@ -5942,6 +9894,14 @@ func StringSliceEnumsyslogExternalServerSchemaUrn(values []EnumsyslogExternalSer
 	return stringSlice
 }
 
+func StringPointerEnumsyslogExternalServerSchemaUrn(value *EnumsyslogExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsyslogJsonAccessLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -5952,6 +9912,14 @@ func StringSliceEnumsyslogJsonAccessLogPublisherSchemaUrn(values []EnumsyslogJso
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsyslogJsonAccessLogPublisherSchemaUrn(value *EnumsyslogJsonAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsyslogJsonAuditLogPublisherSchemaUrn) String() string {
@@ -5966,6 +9934,14 @@ func StringSliceEnumsyslogJsonAuditLogPublisherSchemaUrn(values []EnumsyslogJson
 	return stringSlice
 }
 
+func StringPointerEnumsyslogJsonAuditLogPublisherSchemaUrn(value *EnumsyslogJsonAuditLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsyslogJsonErrorLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -5976,6 +9952,14 @@ func StringSliceEnumsyslogJsonErrorLogPublisherSchemaUrn(values []EnumsyslogJson
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsyslogJsonErrorLogPublisherSchemaUrn(value *EnumsyslogJsonErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsyslogJsonHttpOperationLogPublisherSchemaUrn) String() string {
@@ -5990,6 +9974,14 @@ func StringSliceEnumsyslogJsonHttpOperationLogPublisherSchemaUrn(values []Enumsy
 	return stringSlice
 }
 
+func StringPointerEnumsyslogJsonHttpOperationLogPublisherSchemaUrn(value *EnumsyslogJsonHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsyslogTextAccessLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -6000,6 +9992,14 @@ func StringSliceEnumsyslogTextAccessLogPublisherSchemaUrn(values []EnumsyslogTex
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsyslogTextAccessLogPublisherSchemaUrn(value *EnumsyslogTextAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumsyslogTextErrorLogPublisherSchemaUrn) String() string {
@@ -6014,6 +10014,14 @@ func StringSliceEnumsyslogTextErrorLogPublisherSchemaUrn(values []EnumsyslogText
 	return stringSlice
 }
 
+func StringPointerEnumsyslogTextErrorLogPublisherSchemaUrn(value *EnumsyslogTextErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumsystemInfoMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -6024,6 +10032,14 @@ func StringSliceEnumsystemInfoMonitorProviderSchemaUrn(values []EnumsystemInfoMo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumsystemInfoMonitorProviderSchemaUrn(value *EnumsystemInfoMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtaskBackendSchemaUrn) String() string {
@@ -6038,6 +10054,14 @@ func StringSliceEnumtaskBackendSchemaUrn(values []EnumtaskBackendSchemaUrn) []st
 	return stringSlice
 }
 
+func StringPointerEnumtaskBackendSchemaUrn(value *EnumtaskBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumtelephoneNumberAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -6048,6 +10072,14 @@ func StringSliceEnumtelephoneNumberAttributeSyntaxSchemaUrn(values []Enumtelepho
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumtelephoneNumberAttributeSyntaxSchemaUrn(value *EnumtelephoneNumberAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtextAccessLogFieldBehaviorSchemaUrn) String() string {
@@ -6062,6 +10094,14 @@ func StringSliceEnumtextAccessLogFieldBehaviorSchemaUrn(values []EnumtextAccessL
 	return stringSlice
 }
 
+func StringPointerEnumtextAccessLogFieldBehaviorSchemaUrn(value *EnumtextAccessLogFieldBehaviorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyAccessLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -6072,6 +10112,14 @@ func StringSliceEnumthirdPartyAccessLogPublisherSchemaUrn(values []EnumthirdPart
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyAccessLogPublisherSchemaUrn(value *EnumthirdPartyAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyAccessTokenValidatorSchemaUrn) String() string {
@@ -6086,6 +10134,14 @@ func StringSliceEnumthirdPartyAccessTokenValidatorSchemaUrn(values []EnumthirdPa
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyAccessTokenValidatorSchemaUrn(value *EnumthirdPartyAccessTokenValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6096,6 +10152,14 @@ func StringSliceEnumthirdPartyAccountStatusNotificationHandlerSchemaUrn(values [
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyAccountStatusNotificationHandlerSchemaUrn(value *EnumthirdPartyAccountStatusNotificationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyAlertHandlerSchemaUrn) String() string {
@@ -6110,6 +10174,14 @@ func StringSliceEnumthirdPartyAlertHandlerSchemaUrn(values []EnumthirdPartyAlert
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyAlertHandlerSchemaUrn(value *EnumthirdPartyAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyCertificateMapperSchemaUrn) String() string {
 	return string(e)
 }
@@ -6120,6 +10192,14 @@ func StringSliceEnumthirdPartyCertificateMapperSchemaUrn(values []EnumthirdParty
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyCertificateMapperSchemaUrn(value *EnumthirdPartyCertificateMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyChangeSubscriptionHandlerSchemaUrn) String() string {
@@ -6134,6 +10214,14 @@ func StringSliceEnumthirdPartyChangeSubscriptionHandlerSchemaUrn(values []Enumth
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyChangeSubscriptionHandlerSchemaUrn(value *EnumthirdPartyChangeSubscriptionHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyCipherStreamProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -6144,6 +10232,14 @@ func StringSliceEnumthirdPartyCipherStreamProviderSchemaUrn(values []EnumthirdPa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyCipherStreamProviderSchemaUrn(value *EnumthirdPartyCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyConnectionCriteriaSchemaUrn) String() string {
@@ -6158,6 +10254,14 @@ func StringSliceEnumthirdPartyConnectionCriteriaSchemaUrn(values []EnumthirdPart
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyConnectionCriteriaSchemaUrn(value *EnumthirdPartyConnectionCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -6168,6 +10272,14 @@ func StringSliceEnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn(value *EnumthirdPartyEnhancedPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyErrorLogPublisherSchemaUrn) String() string {
@@ -6182,6 +10294,14 @@ func StringSliceEnumthirdPartyErrorLogPublisherSchemaUrn(values []EnumthirdParty
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyErrorLogPublisherSchemaUrn(value *EnumthirdPartyErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6192,6 +10312,14 @@ func StringSliceEnumthirdPartyExtendedOperationHandlerSchemaUrn(values []Enumthi
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyExtendedOperationHandlerSchemaUrn(value *EnumthirdPartyExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyFileBasedAccessLogPublisherSchemaUrn) String() string {
@@ -6206,6 +10334,14 @@ func StringSliceEnumthirdPartyFileBasedAccessLogPublisherSchemaUrn(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyFileBasedAccessLogPublisherSchemaUrn(value *EnumthirdPartyFileBasedAccessLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyFileBasedErrorLogPublisherSchemaUrn) String() string {
 	return string(e)
 }
@@ -6216,6 +10352,14 @@ func StringSliceEnumthirdPartyFileBasedErrorLogPublisherSchemaUrn(values []Enumt
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyFileBasedErrorLogPublisherSchemaUrn(value *EnumthirdPartyFileBasedErrorLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyHttpOperationLogPublisherSchemaUrn) String() string {
@@ -6230,6 +10374,14 @@ func StringSliceEnumthirdPartyHttpOperationLogPublisherSchemaUrn(values []Enumth
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyHttpOperationLogPublisherSchemaUrn(value *EnumthirdPartyHttpOperationLogPublisherSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyHttpServletExtensionSchemaUrn) String() string {
 	return string(e)
 }
@@ -6240,6 +10392,14 @@ func StringSliceEnumthirdPartyHttpServletExtensionSchemaUrn(values []EnumthirdPa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyHttpServletExtensionSchemaUrn(value *EnumthirdPartyHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyIdentityMapperSchemaUrn) String() string {
@@ -6254,6 +10414,14 @@ func StringSliceEnumthirdPartyIdentityMapperSchemaUrn(values []EnumthirdPartyIde
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyIdentityMapperSchemaUrn(value *EnumthirdPartyIdentityMapperSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyKeyManagerProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -6264,6 +10432,14 @@ func StringSliceEnumthirdPartyKeyManagerProviderSchemaUrn(values []EnumthirdPart
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyKeyManagerProviderSchemaUrn(value *EnumthirdPartyKeyManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyLogFileRotationListenerSchemaUrn) String() string {
@@ -6278,6 +10454,14 @@ func StringSliceEnumthirdPartyLogFileRotationListenerSchemaUrn(values []Enumthir
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyLogFileRotationListenerSchemaUrn(value *EnumthirdPartyLogFileRotationListenerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -6288,6 +10472,14 @@ func StringSliceEnumthirdPartyMonitorProviderSchemaUrn(values []EnumthirdPartyMo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyMonitorProviderSchemaUrn(value *EnumthirdPartyMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyNotificationManagerSchemaUrn) String() string {
@@ -6302,6 +10494,14 @@ func StringSliceEnumthirdPartyNotificationManagerSchemaUrn(values []EnumthirdPar
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyNotificationManagerSchemaUrn(value *EnumthirdPartyNotificationManagerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyOauthTokenHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6312,6 +10512,14 @@ func StringSliceEnumthirdPartyOauthTokenHandlerSchemaUrn(values []EnumthirdParty
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyOauthTokenHandlerSchemaUrn(value *EnumthirdPartyOauthTokenHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyOtpDeliveryMechanismSchemaUrn) String() string {
@@ -6326,6 +10534,14 @@ func StringSliceEnumthirdPartyOtpDeliveryMechanismSchemaUrn(values []EnumthirdPa
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyOtpDeliveryMechanismSchemaUrn(value *EnumthirdPartyOtpDeliveryMechanismSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6336,6 +10552,14 @@ func StringSliceEnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn(values [
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn(value *EnumthirdPartyPassThroughAuthenticationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyPassphraseProviderSchemaUrn) String() string {
@@ -6350,6 +10574,14 @@ func StringSliceEnumthirdPartyPassphraseProviderSchemaUrn(values []EnumthirdPart
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyPassphraseProviderSchemaUrn(value *EnumthirdPartyPassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyPasswordGeneratorSchemaUrn) String() string {
 	return string(e)
 }
@@ -6360,6 +10592,14 @@ func StringSliceEnumthirdPartyPasswordGeneratorSchemaUrn(values []EnumthirdParty
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyPasswordGeneratorSchemaUrn(value *EnumthirdPartyPasswordGeneratorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyPasswordStorageSchemeSchemaUrn) String() string {
@@ -6374,6 +10614,14 @@ func StringSliceEnumthirdPartyPasswordStorageSchemeSchemaUrn(values []EnumthirdP
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyPasswordStorageSchemeSchemaUrn(value *EnumthirdPartyPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyPasswordValidatorSchemaUrn) String() string {
 	return string(e)
 }
@@ -6384,6 +10632,14 @@ func StringSliceEnumthirdPartyPasswordValidatorSchemaUrn(values []EnumthirdParty
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyPasswordValidatorSchemaUrn(value *EnumthirdPartyPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyRecurringTaskSchemaUrn) String() string {
@@ -6398,6 +10654,14 @@ func StringSliceEnumthirdPartyRecurringTaskSchemaUrn(values []EnumthirdPartyRecu
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyRecurringTaskSchemaUrn(value *EnumthirdPartyRecurringTaskSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyRequestCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -6408,6 +10672,14 @@ func StringSliceEnumthirdPartyRequestCriteriaSchemaUrn(values []EnumthirdPartyRe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyRequestCriteriaSchemaUrn(value *EnumthirdPartyRequestCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyResultCriteriaSchemaUrn) String() string {
@@ -6422,6 +10694,14 @@ func StringSliceEnumthirdPartyResultCriteriaSchemaUrn(values []EnumthirdPartyRes
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyResultCriteriaSchemaUrn(value *EnumthirdPartyResultCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartySaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6432,6 +10712,14 @@ func StringSliceEnumthirdPartySaslMechanismHandlerSchemaUrn(values []EnumthirdPa
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartySaslMechanismHandlerSchemaUrn(value *EnumthirdPartySaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartySearchEntryCriteriaSchemaUrn) String() string {
@@ -6446,6 +10734,14 @@ func StringSliceEnumthirdPartySearchEntryCriteriaSchemaUrn(values []EnumthirdPar
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartySearchEntryCriteriaSchemaUrn(value *EnumthirdPartySearchEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartySearchReferenceCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -6456,6 +10752,14 @@ func StringSliceEnumthirdPartySearchReferenceCriteriaSchemaUrn(values []Enumthir
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartySearchReferenceCriteriaSchemaUrn(value *EnumthirdPartySearchReferenceCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyTrustManagerProviderSchemaUrn) String() string {
@@ -6470,6 +10774,14 @@ func StringSliceEnumthirdPartyTrustManagerProviderSchemaUrn(values []EnumthirdPa
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyTrustManagerProviderSchemaUrn(value *EnumthirdPartyTrustManagerProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyUncachedAttributeCriteriaSchemaUrn) String() string {
 	return string(e)
 }
@@ -6480,6 +10792,14 @@ func StringSliceEnumthirdPartyUncachedAttributeCriteriaSchemaUrn(values []Enumth
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyUncachedAttributeCriteriaSchemaUrn(value *EnumthirdPartyUncachedAttributeCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumthirdPartyUncachedEntryCriteriaSchemaUrn) String() string {
@@ -6494,6 +10814,14 @@ func StringSliceEnumthirdPartyUncachedEntryCriteriaSchemaUrn(values []EnumthirdP
 	return stringSlice
 }
 
+func StringPointerEnumthirdPartyUncachedEntryCriteriaSchemaUrn(value *EnumthirdPartyUncachedEntryCriteriaSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumthirdPartyVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -6504,6 +10832,14 @@ func StringSliceEnumthirdPartyVirtualAttributeSchemaUrn(values []EnumthirdPartyV
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumthirdPartyVirtualAttributeSchemaUrn(value *EnumthirdPartyVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtimeLimitLogRetentionPolicySchemaUrn) String() string {
@@ -6518,6 +10854,14 @@ func StringSliceEnumtimeLimitLogRetentionPolicySchemaUrn(values []EnumtimeLimitL
 	return stringSlice
 }
 
+func StringPointerEnumtimeLimitLogRetentionPolicySchemaUrn(value *EnumtimeLimitLogRetentionPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumtimeLimitLogRotationPolicySchemaUrn) String() string {
 	return string(e)
 }
@@ -6528,6 +10872,14 @@ func StringSliceEnumtimeLimitLogRotationPolicySchemaUrn(values []EnumtimeLimitLo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumtimeLimitLogRotationPolicySchemaUrn(value *EnumtimeLimitLogRotationPolicySchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtopologyAdminUserIsProxyableProp) String() string {
@@ -6542,6 +10894,14 @@ func StringSliceEnumtopologyAdminUserIsProxyableProp(values []EnumtopologyAdminU
 	return stringSlice
 }
 
+func StringPointerEnumtopologyAdminUserIsProxyableProp(value *EnumtopologyAdminUserIsProxyableProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumtopologyAdminUserPrivilegeProp) String() string {
 	return string(e)
 }
@@ -6552,6 +10912,14 @@ func StringSliceEnumtopologyAdminUserPrivilegeProp(values []EnumtopologyAdminUse
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumtopologyAdminUserPrivilegeProp(value *EnumtopologyAdminUserPrivilegeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtopologyAdminUserSchemaUrn) String() string {
@@ -6566,6 +10934,14 @@ func StringSliceEnumtopologyAdminUserSchemaUrn(values []EnumtopologyAdminUserSch
 	return stringSlice
 }
 
+func StringPointerEnumtopologyAdminUserSchemaUrn(value *EnumtopologyAdminUserSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumtripleDesPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -6576,6 +10952,14 @@ func StringSliceEnumtripleDesPasswordStorageSchemeSchemaUrn(values []EnumtripleD
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumtripleDesPasswordStorageSchemeSchemaUrn(value *EnumtripleDesPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtrustStoreBackendSchemaUrn) String() string {
@@ -6590,6 +10974,14 @@ func StringSliceEnumtrustStoreBackendSchemaUrn(values []EnumtrustStoreBackendSch
 	return stringSlice
 }
 
+func StringPointerEnumtrustStoreBackendSchemaUrn(value *EnumtrustStoreBackendSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumtrustedCertificateSchemaUrn) String() string {
 	return string(e)
 }
@@ -6600,6 +10992,14 @@ func StringSliceEnumtrustedCertificateSchemaUrn(values []EnumtrustedCertificateS
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumtrustedCertificateSchemaUrn(value *EnumtrustedCertificateSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumtwilioAlertHandlerSchemaUrn) String() string {
@@ -6614,6 +11014,14 @@ func StringSliceEnumtwilioAlertHandlerSchemaUrn(values []EnumtwilioAlertHandlerS
 	return stringSlice
 }
 
+func StringPointerEnumtwilioAlertHandlerSchemaUrn(value *EnumtwilioAlertHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumtwilioOtpDeliveryMechanismSchemaUrn) String() string {
 	return string(e)
 }
@@ -6624,6 +11032,14 @@ func StringSliceEnumtwilioOtpDeliveryMechanismSchemaUrn(values []EnumtwilioOtpDe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumtwilioOtpDeliveryMechanismSchemaUrn(value *EnumtwilioOtpDeliveryMechanismSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn) String() string {
@@ -6638,6 +11054,14 @@ func StringSliceEnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUr
 	return stringSlice
 }
 
+func StringPointerEnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn(value *EnumunboundidCertificatePlusPasswordSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6648,6 +11072,14 @@ func StringSliceEnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn(values []
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn(value *EnumunboundidDeliveredOtpSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn) String() string {
@@ -6662,6 +11094,14 @@ func StringSliceEnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn(values []
 	return stringSlice
 }
 
+func StringPointerEnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn(value *EnumunboundidExternalAuthSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6672,6 +11112,14 @@ func StringSliceEnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn(values []Enum
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn(value *EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumunboundidTotpSaslMechanismHandlerSchemaUrn) String() string {
@@ -6686,6 +11134,14 @@ func StringSliceEnumunboundidTotpSaslMechanismHandlerSchemaUrn(values []Enumunbo
 	return stringSlice
 }
 
+func StringPointerEnumunboundidTotpSaslMechanismHandlerSchemaUrn(value *EnumunboundidTotpSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6696,6 +11152,14 @@ func StringSliceEnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn(values []En
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn(value *EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumuniqueCharactersPasswordValidatorSchemaUrn) String() string {
@@ -6710,6 +11174,14 @@ func StringSliceEnumuniqueCharactersPasswordValidatorSchemaUrn(values []Enumuniq
 	return stringSlice
 }
 
+func StringPointerEnumuniqueCharactersPasswordValidatorSchemaUrn(value *EnumuniqueCharactersPasswordValidatorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumuserDefinedVirtualAttributeSchemaUrn) String() string {
 	return string(e)
 }
@@ -6720,6 +11192,14 @@ func StringSliceEnumuserDefinedVirtualAttributeSchemaUrn(values []EnumuserDefine
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumuserDefinedVirtualAttributeSchemaUrn(value *EnumuserDefinedVirtualAttributeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumuserPassVaultAuthenticationMethodSchemaUrn) String() string {
@@ -6734,6 +11214,14 @@ func StringSliceEnumuserPassVaultAuthenticationMethodSchemaUrn(values []Enumuser
 	return stringSlice
 }
 
+func StringPointerEnumuserPassVaultAuthenticationMethodSchemaUrn(value *EnumuserPassVaultAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumuserPasswordAttributeSyntaxSchemaUrn) String() string {
 	return string(e)
 }
@@ -6744,6 +11232,14 @@ func StringSliceEnumuserPasswordAttributeSyntaxSchemaUrn(values []EnumuserPasswo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumuserPasswordAttributeSyntaxSchemaUrn(value *EnumuserPasswordAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumuserRestResourceTypeSchemaUrn) String() string {
@@ -6758,6 +11254,14 @@ func StringSliceEnumuserRestResourceTypeSchemaUrn(values []EnumuserRestResourceT
 	return stringSlice
 }
 
+func StringPointerEnumuserRestResourceTypeSchemaUrn(value *EnumuserRestResourceTypeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumusernamePasswordAzureAuthenticationMethodSchemaUrn) String() string {
 	return string(e)
 }
@@ -6768,6 +11272,14 @@ func StringSliceEnumusernamePasswordAzureAuthenticationMethodSchemaUrn(values []
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumusernamePasswordAzureAuthenticationMethodSchemaUrn(value *EnumusernamePasswordAzureAuthenticationMethodSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumuuidAttributeSyntaxSchemaUrn) String() string {
@@ -6782,6 +11294,14 @@ func StringSliceEnumuuidAttributeSyntaxSchemaUrn(values []EnumuuidAttributeSynta
 	return stringSlice
 }
 
+func StringPointerEnumuuidAttributeSyntaxSchemaUrn(value *EnumuuidAttributeSyntaxSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6792,6 +11312,14 @@ func StringSliceEnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn(values
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn(value *EnumvalidateTotpPasswordExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumvaultCipherStreamProviderSchemaUrn) String() string {
@@ -6806,6 +11334,14 @@ func StringSliceEnumvaultCipherStreamProviderSchemaUrn(values []EnumvaultCipherS
 	return stringSlice
 }
 
+func StringPointerEnumvaultCipherStreamProviderSchemaUrn(value *EnumvaultCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumvaultExternalServerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6816,6 +11352,14 @@ func StringSliceEnumvaultExternalServerSchemaUrn(values []EnumvaultExternalServe
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumvaultExternalServerSchemaUrn(value *EnumvaultExternalServerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumvaultPassphraseProviderSchemaUrn) String() string {
@@ -6830,6 +11374,14 @@ func StringSliceEnumvaultPassphraseProviderSchemaUrn(values []EnumvaultPassphras
 	return stringSlice
 }
 
+func StringPointerEnumvaultPassphraseProviderSchemaUrn(value *EnumvaultPassphraseProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumvaultPasswordStorageSchemeSchemaUrn) String() string {
 	return string(e)
 }
@@ -6840,6 +11392,14 @@ func StringSliceEnumvaultPasswordStorageSchemeSchemaUrn(values []EnumvaultPasswo
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumvaultPasswordStorageSchemeSchemaUrn(value *EnumvaultPasswordStorageSchemeSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumvelocityHttpServletExtensionSchemaUrn) String() string {
@@ -6854,6 +11414,14 @@ func StringSliceEnumvelocityHttpServletExtensionSchemaUrn(values []EnumvelocityH
 	return stringSlice
 }
 
+func StringPointerEnumvelocityHttpServletExtensionSchemaUrn(value *EnumvelocityHttpServletExtensionSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumversionMonitorProviderSchemaUrn) String() string {
 	return string(e)
 }
@@ -6864,6 +11432,14 @@ func StringSliceEnumversionMonitorProviderSchemaUrn(values []EnumversionMonitorP
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumversionMonitorProviderSchemaUrn(value *EnumversionMonitorProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumvirtualAttributeConflictBehaviorProp) String() string {
@@ -6878,6 +11454,14 @@ func StringSliceEnumvirtualAttributeConflictBehaviorProp(values []EnumvirtualAtt
 	return stringSlice
 }
 
+func StringPointerEnumvirtualAttributeConflictBehaviorProp(value *EnumvirtualAttributeConflictBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumvirtualAttributeJoinBaseDNTypeProp) String() string {
 	return string(e)
 }
@@ -6888,6 +11472,14 @@ func StringSliceEnumvirtualAttributeJoinBaseDNTypeProp(values []EnumvirtualAttri
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumvirtualAttributeJoinBaseDNTypeProp(value *EnumvirtualAttributeJoinBaseDNTypeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumvirtualAttributeJoinScopeProp) String() string {
@@ -6902,6 +11494,14 @@ func StringSliceEnumvirtualAttributeJoinScopeProp(values []EnumvirtualAttributeJ
 	return stringSlice
 }
 
+func StringPointerEnumvirtualAttributeJoinScopeProp(value *EnumvirtualAttributeJoinScopeProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp) String() string {
 	return string(e)
 }
@@ -6912,6 +11512,14 @@ func StringSliceEnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp(va
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp(value *EnumvirtualAttributeMultipleVirtualAttributeMergeBehaviorProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumvirtualAttributeRewriteSearchFiltersProp) String() string {
@@ -6926,6 +11534,14 @@ func StringSliceEnumvirtualAttributeRewriteSearchFiltersProp(values []Enumvirtua
 	return stringSlice
 }
 
+func StringPointerEnumvirtualAttributeRewriteSearchFiltersProp(value *EnumvirtualAttributeRewriteSearchFiltersProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumvirtualStaticGroupImplementationSchemaUrn) String() string {
 	return string(e)
 }
@@ -6936,6 +11552,14 @@ func StringSliceEnumvirtualStaticGroupImplementationSchemaUrn(values []Enumvirtu
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumvirtualStaticGroupImplementationSchemaUrn(value *EnumvirtualStaticGroupImplementationSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumwaitForPassphraseCipherStreamProviderSchemaUrn) String() string {
@@ -6950,6 +11574,14 @@ func StringSliceEnumwaitForPassphraseCipherStreamProviderSchemaUrn(values []Enum
 	return stringSlice
 }
 
+func StringPointerEnumwaitForPassphraseCipherStreamProviderSchemaUrn(value *EnumwaitForPassphraseCipherStreamProviderSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn) String() string {
 	return string(e)
 }
@@ -6960,6 +11592,14 @@ func StringSliceEnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn(values []E
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn(value *EnumweaklyEncodedPasswordDataSecurityAuditorSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
 
 func (e EnumwebApplicationExtensionComplexityProp) String() string {
@@ -6974,6 +11614,14 @@ func StringSliceEnumwebApplicationExtensionComplexityProp(values []EnumwebApplic
 	return stringSlice
 }
 
+func StringPointerEnumwebApplicationExtensionComplexityProp(value *EnumwebApplicationExtensionComplexityProp) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
+}
+
 func (e EnumwhoAmIExtendedOperationHandlerSchemaUrn) String() string {
 	return string(e)
 }
@@ -6984,4 +11632,12 @@ func StringSliceEnumwhoAmIExtendedOperationHandlerSchemaUrn(values []EnumwhoAmIE
 		stringSlice[i] = string(values[i])
 	}
 	return stringSlice
+}
+
+func StringPointerEnumwhoAmIExtendedOperationHandlerSchemaUrn(value *EnumwhoAmIExtendedOperationHandlerSchemaUrn) *string {
+	if value == nil {
+		return nil
+	}
+	s := value.String()
+	return &s
 }
