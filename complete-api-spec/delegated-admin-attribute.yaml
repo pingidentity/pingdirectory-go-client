@@ -1,0 +1,402 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Delegated Admin Attribute config object
+  title: PingData Delegated Admin Attribute Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access delegated-admin-attributes
+  name: delegated-admin-attribute
+paths:
+  /delegated-admin-attributes:
+    post:
+      summary: Add a new Delegated Admin Attribute to the config
+      operationId: add-delegated-admin-attribute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-certificate-delegated-admin-attribute-request'
+              - $ref: '#/components/schemas/add-photo-delegated-admin-attribute-request'
+        description: Create a new Delegated Admin Attribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+                - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Delegated Admin Attribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+  /delegated-admin-attributes/{delegated-admin-attribute-name}:
+    delete:
+      summary: Delete a Delegated Admin Attribute
+      operationId: delete-delegated-admin-attribute
+      parameters:
+      - description: Name of the Delegated Admin Attribute to be deleted
+        explode: false
+        in: path
+        name: delegated-admin-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Attribute does not exist
+        "409":
+          description: The Delegated Admin Attribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+    get:
+      summary: Returns a single Delegated Admin Attribute
+      operationId: get-delegated-admin-attribute
+      parameters:
+      - description: Name of the Delegated Admin Attribute to be read
+        explode: false
+        in: path
+        name: delegated-admin-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+                - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+    patch:
+      summary: Update an existing Delegated Admin Attribute by name
+      operationId: update-delegated-admin-attribute
+      parameters:
+      - description: Name of the Delegated Admin Attribute to be updated
+        explode: false
+        in: path
+        name: delegated-admin-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Delegated Admin Attribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+                - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Delegated Admin Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+components:
+  schemas:
+    add-certificate-delegated-admin-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeType:
+            description: Name of the new Delegated Admin Attribute
+            type: string
+        required:
+        - attributeType
+      - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+    certificate-delegated-admin-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+    certificate-delegated-admin-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcertificate-delegated-admin-attributeSchemaUrn'
+        allowedMIMEType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+        description:
+          type: string
+          description: >-
+              A description for this Delegated Admin Attribute
+        attributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type.
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this Delegated Admin Attribute.
+        mutability:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+        multiValued:
+          type: boolean
+          description: >-
+              Indicates whether this Delegated Admin Attribute may have multiple values.
+        attributeCategory:
+          type: string
+          description: >-
+              Specifies which attribute category this attribute belongs to.
+        displayOrderIndex:
+          type: integer
+          description: >-
+              This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
+        referenceResourceType:
+          type: string
+          description: >-
+              For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
+        attributePresentation:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+        dateTimeFormat:
+          type: string
+          description: >-
+              Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax.
+      required:
+      - schemas
+      - attributeType
+      - displayName
+      - mutability
+      - multiValued
+      - displayOrderIndex
+    Enumcertificate-delegated-admin-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate"
+    add-photo-delegated-admin-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeType:
+            description: Name of the new Delegated Admin Attribute
+            type: string
+        required:
+        - attributeType
+      - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+    photo-delegated-admin-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+    photo-delegated-admin-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumphoto-delegated-admin-attributeSchemaUrn'
+        allowedMIMEType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+        description:
+          type: string
+          description: >-
+              A description for this Delegated Admin Attribute
+        attributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type.
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this Delegated Admin Attribute.
+        mutability:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+        multiValued:
+          type: boolean
+          description: >-
+              Indicates whether this Delegated Admin Attribute may have multiple values.
+        attributeCategory:
+          type: string
+          description: >-
+              Specifies which attribute category this attribute belongs to.
+        displayOrderIndex:
+          type: integer
+          description: >-
+              This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
+        referenceResourceType:
+          type: string
+          description: >-
+              For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
+        attributePresentation:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+        dateTimeFormat:
+          type: string
+          description: >-
+              Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax.
+      required:
+      - schemas
+      - attributeType
+      - displayName
+      - mutability
+      - multiValued
+      - displayOrderIndex
+    Enumphoto-delegated-admin-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:photo"
+    Enumdelegated-admin-attribute-allowedMIMETypeProp:
+      type: string
+      enum:
+      - "cer"
+      - "crt"
+      - "der"
+      - "key"
+      - "p7b"
+      - "p7c"
+      - "p8"
+      - "p10"
+      - "p12"
+      - "pem"
+      - "pfx"
+      - "spc"
+      description: >-
+          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
+    Enumdelegated-admin-attribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      description: >-
+          Specifies the circumstances under which the values of the attribute can be written.
+    Enumdelegated-admin-attribute-attributePresentationProp:
+      type: string
+      enum:
+      - "default"
+      - "custom"
+      description: >-
+          Indicates how the attribute is presented to the user of the app.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

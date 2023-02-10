@@ -1,0 +1,372 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Velocity Context Provider config object
+  title: PingData Velocity Context Provider Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access velocity-context-providers
+  name: velocity-context-provider
+paths:
+  /velocity-context-providers:
+    post:
+      summary: Add a new Velocity Context Provider to the config
+      operationId: add-velocity-context-provider
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-velocity-tools-velocity-context-provider-request'
+              - $ref: '#/components/schemas/add-third-party-velocity-context-provider-request'
+        description: Create a new Velocity Context Provider in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Velocity Context Provider already exists
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+  /velocity-context-providers/{velocity-context-provider-name}:
+    delete:
+      summary: Delete a Velocity Context Provider
+      operationId: delete-velocity-context-provider
+      parameters:
+      - description: Name of the Velocity Context Provider to be deleted
+        explode: false
+        in: path
+        name: velocity-context-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Velocity Context Provider does not exist
+        "409":
+          description: The Velocity Context Provider cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+    get:
+      summary: Returns a single Velocity Context Provider
+      operationId: get-velocity-context-provider
+      parameters:
+      - description: Name of the Velocity Context Provider to be read
+        explode: false
+        in: path
+        name: velocity-context-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Velocity Context Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+    patch:
+      summary: Update an existing Velocity Context Provider by name
+      operationId: update-velocity-context-provider
+      parameters:
+      - description: Name of the Velocity Context Provider to be updated
+        explode: false
+        in: path
+        name: velocity-context-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Velocity Context Provider
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Velocity Context Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+components:
+  schemas:
+    add-velocity-tools-velocity-context-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Velocity Context Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
+    velocity-tools-velocity-context-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Velocity Context Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
+    velocity-tools-velocity-context-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumvelocity-tools-velocity-context-providerSchemaUrn'
+        requestTool:
+          type: array
+          items:
+            type: string
+          description: >-
+              The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
+        sessionTool:
+          type: array
+          items:
+            type: string
+          description: >-
+              The fully-qualified name of a Velocity Tool class that will be initialized for each session. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
+        applicationTool:
+          type: array
+          items:
+            type: string
+          description: >-
+              The fully-qualified name of a Velocity Tool class that will be initialized once for the life of the server. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
+        objectScope:
+          $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
+        includedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will contribute content.
+        excludedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will not contribute content.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
+      required:
+      - schemas
+    Enumvelocity-tools-velocity-context-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:velocity-tools"
+    add-third-party-velocity-context-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Velocity Context Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
+    third-party-velocity-context-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Velocity Context Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
+    third-party-velocity-context-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-velocity-context-providerSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Velocity Context Provider. Each configuration property should be given in the form 'name=value'.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
+        objectScope:
+          $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
+        includedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will contribute content.
+        excludedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will not contribute content.
+        httpMethod:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the set of HTTP methods handled by this Velocity Context Provider, which will perform actions necessary to fulfill the request before updating the context for the response. The values of this property are not case-sensitive.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-party-velocity-context-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:third-party"
+    Enumvelocity-context-provider-objectScopeProp:
+      type: string
+      enum:
+      - "application"
+      - "session"
+      - "request"
+      description: >-
+          Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

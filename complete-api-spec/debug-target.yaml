@@ -1,0 +1,293 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Debug Target config object
+  title: PingData Debug Target Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access debug-targets
+  name: debug-target
+paths:
+  /debug-targets:
+    post:
+      summary: Add a new Debug Target to the config
+      operationId: add-debug-target
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-debug-target-request'
+        description: Create a new Debug Target in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-target-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Debug Target already exists
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+  /debug-targets/{debug-target-name}:
+    delete:
+      summary: Delete a Debug Target
+      operationId: delete-debug-target
+      parameters:
+      - description: Name of the Debug Target to be deleted
+        explode: false
+        in: path
+        name: debug-target-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Debug Target does not exist
+        "409":
+          description: The Debug Target cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+    get:
+      summary: Returns a single Debug Target
+      operationId: get-debug-target
+      parameters:
+      - description: Name of the Debug Target to be read
+        explode: false
+        in: path
+        name: debug-target-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-target-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Debug Target does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+    patch:
+      summary: Update an existing Debug Target by name
+      operationId: update-debug-target
+      parameters:
+      - description: Name of the Debug Target to be updated
+        explode: false
+        in: path
+        name: debug-target-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Debug Target
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-target-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Debug Target does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+components:
+  schemas:
+    add-debug-target-request:
+      allOf:
+      - type: object
+        properties:
+          targetName:
+            description: Name of the new Debug Target
+            type: string
+        required:
+        - targetName
+      - $ref: '#/components/schemas/debug-target-shared'
+    debug-target-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Debug Target
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/debug-target-shared'
+    debug-target-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdebug-targetSchemaUrn'
+        debugScope:
+          type: string
+          description: >-
+              Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp).
+        debugLevel:
+          $ref: '#/components/schemas/Enumdebug-target-debugLevelProp'
+        debugCategory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdebug-target-debugCategoryProp'
+        omitMethodEntryArguments:
+          type: boolean
+          description: >-
+              Specifies the property to indicate whether to include method arguments in debug messages.
+        omitMethodReturnValue:
+          type: boolean
+          description: >-
+              Specifies the property to indicate whether to include the return value in debug messages.
+        includeThrowableCause:
+          type: boolean
+          description: >-
+              Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages.
+        throwableStackFrames:
+          type: integer
+          description: >-
+              Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages.
+        description:
+          type: string
+          description: >-
+              A description for this Debug Target
+      required:
+      - debugScope
+      - debugLevel
+    Enumdebug-targetSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:debug-target"
+    Enumdebug-target-debugLevelProp:
+      type: string
+      enum:
+      - "disabled"
+      - "error"
+      - "warning"
+      - "info"
+      - "verbose"
+      - "all"
+      description: >-
+          Specifies the lowest severity level of debug messages to log.
+    Enumdebug-target-debugCategoryProp:
+      type: string
+      enum:
+      - "caught"
+      - "constructor"
+      - "data"
+      - "database-access"
+      - "enter"
+      - "exit"
+      - "message"
+      - "protocol"
+      - "thrown"
+      description: >-
+          Specifies the debug message categories to be logged.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

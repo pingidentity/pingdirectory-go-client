@@ -1,0 +1,271 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Local DB Composite Index config object
+  title: PingData Local DB Composite Index Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access local-db-composite-indexes
+  name: local-db-composite-index
+paths:
+  /local-db-composite-indexes:
+    post:
+      summary: Add a new Local DB Composite Index to the config
+      operationId: add-local-db-composite-index
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-local-db-composite-index-request'
+        description: Create a new Local DB Composite Index in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Local DB Composite Index already exists
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+  /local-db-composite-indexes/{local-db-composite-index-name}:
+    delete:
+      summary: Delete a Local DB Composite Index
+      operationId: delete-local-db-composite-index
+      parameters:
+      - description: Name of the Local DB Composite Index to be deleted
+        explode: false
+        in: path
+        name: local-db-composite-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Composite Index does not exist
+        "409":
+          description: The Local DB Composite Index cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+    get:
+      summary: Returns a single Local DB Composite Index
+      operationId: get-local-db-composite-index
+      parameters:
+      - description: Name of the Local DB Composite Index to be read
+        explode: false
+        in: path
+        name: local-db-composite-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Composite Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+    patch:
+      summary: Update an existing Local DB Composite Index by name
+      operationId: update-local-db-composite-index
+      parameters:
+      - description: Name of the Local DB Composite Index to be updated
+        explode: false
+        in: path
+        name: local-db-composite-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Local DB Composite Index
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Local DB Composite Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+components:
+  schemas:
+    add-local-db-composite-index-request:
+      allOf:
+      - type: object
+        properties:
+          indexName:
+            description: Name of the new Local DB Composite Index
+            type: string
+        required:
+        - indexName
+      - $ref: '#/components/schemas/local-db-composite-index-shared'
+    local-db-composite-index-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Local DB Composite Index
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/local-db-composite-index-shared'
+    local-db-composite-index-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-composite-indexSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Local DB Composite Index
+        indexFilterPattern:
+          type: string
+          description: >-
+              A filter pattern that identifies which entries to include in the index.
+        indexBaseDNPattern:
+          type: string
+          description: >-
+              An optional base DN pattern that identifies portions of the DIT in which entries to index may exist.
+        indexEntryLimit:
+          type: integer
+          description: >-
+              The maximum number of entries that any single index key will be allowed to match before the server stops maintaining the ID set for that index key.
+        primeIndex:
+          type: boolean
+          description: >-
+              Indicates whether the server should load the contents of this index into memory when the backend is being opened.
+        primeInternalNodesOnly:
+          type: boolean
+          description: >-
+              Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes.
+        cacheMode:
+          $ref: '#/components/schemas/Enumlocal-db-composite-index-cacheModeProp'
+      required:
+      - indexFilterPattern
+    Enumlocal-db-composite-indexSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:local-db-composite-index"
+    Enumlocal-db-composite-index-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      description: >-
+          The behavior that the server should exhibit when storing information from this index in the database cache.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

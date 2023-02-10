@@ -1,0 +1,344 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the JSON Field Constraints config object
+  title: PingData JSON Field Constraints Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access json-field-constraints
+  name: json-field-constraints
+paths:
+  /json-field-constraints:
+    post:
+      summary: Add a new JSON Field Constraints to the config
+      operationId: add-json-field-constraints
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-json-field-constraints-request'
+        description: Create a new JSON Field Constraints in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-field-constraints-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The JSON Field Constraints already exists
+      security:
+      - basicAuth: []
+      tags:
+      - json-field-constraints
+  /json-field-constraints/{json-field-constraints-name}:
+    delete:
+      summary: Delete a JSON Field Constraints
+      operationId: delete-json-field-constraints
+      parameters:
+      - description: Name of the JSON Field Constraints to be deleted
+        explode: false
+        in: path
+        name: json-field-constraints-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The JSON Field Constraints does not exist
+        "409":
+          description: The JSON Field Constraints cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - json-field-constraints
+    get:
+      summary: Returns a single JSON Field Constraints
+      operationId: get-json-field-constraints
+      parameters:
+      - description: Name of the JSON Field Constraints to be read
+        explode: false
+        in: path
+        name: json-field-constraints-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-field-constraints-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The JSON Field Constraints does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - json-field-constraints
+    patch:
+      summary: Update an existing JSON Field Constraints by name
+      operationId: update-json-field-constraints
+      parameters:
+      - description: Name of the JSON Field Constraints to be updated
+        explode: false
+        in: path
+        name: json-field-constraints-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing JSON Field Constraints
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/json-field-constraints-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The JSON Field Constraints does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - json-field-constraints
+components:
+  schemas:
+    add-json-field-constraints-request:
+      allOf:
+      - type: object
+        properties:
+          jsonField:
+            description: Name of the new JSON Field Constraints
+            type: string
+        required:
+        - jsonField
+      - $ref: '#/components/schemas/json-field-constraints-shared'
+    json-field-constraints-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the JSON Field Constraints
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/json-field-constraints-shared'
+    json-field-constraints-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumjson-field-constraintsSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this JSON Field Constraints
+        jsonField:
+          type: string
+          description: >-
+              The full name of the JSON field to which these constraints apply.
+        valueType:
+          $ref: '#/components/schemas/Enumjson-field-constraints-valueTypeProp'
+        isRequired:
+          type: boolean
+          description: >-
+              Indicates whether the target field must be present in JSON objects stored as values of the associated attribute type.
+        isArray:
+          $ref: '#/components/schemas/Enumjson-field-constraints-isArrayProp'
+        allowNullValue:
+          type: boolean
+          description: >-
+              Indicates whether the target field may have a value that is the JSON null value as an alternative to a value (or array of values) of the specified value-type.
+        allowEmptyObject:
+          type: boolean
+          description: >-
+              Indicates whether the target field may have a value that is an empty JSON object (i.e., a JSON object with zero fields). This may only be set to true if value-type property is set to object.
+        indexValues:
+          type: boolean
+          description: >-
+              Indicates whether backends that support JSON indexing should maintain an index for values of the target field.
+        indexEntryLimit:
+          type: integer
+          description: >-
+              The maximum number of entries that may contain a particular value for the target field before the server will stop maintaining the index for that value.
+        primeIndex:
+          type: boolean
+          description: >-
+              Indicates whether backends that support database priming should load the contents of the associated JSON index into memory whenever the backend is opened.
+        cacheMode:
+          $ref: '#/components/schemas/Enumjson-field-constraints-cacheModeProp'
+        tokenizeValues:
+          type: boolean
+          description: >-
+              Indicates whether the backend should attempt to assign a compact token for each distinct value for the target field in an attempt to reduce the encoded size of the field in JSON objects. These tokens would be assigned prior to using any from the token set used for automatic compaction of some JSON string values.
+        allowedValue:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an explicit set of string values that will be the only values permitted for the target field. If a set of allowed values is defined, then the server will reject any attempt to store a JSON object with a value for the target field that is not included in that set.
+        allowedValueRegularExpression:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an explicit set of regular expressions that may be used to restrict the set of values that may be used for the target field. If a set of allowed value regular expressions is defined, then the server will reject any attempt to store a JSON object with a value for the target field that does not match at least one of those regular expressions.
+        minimumNumericValue:
+          type: string
+          description: >-
+              Specifies the smallest numeric value that may be used as the value for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is less than that minimum numeric value.
+        maximumNumericValue:
+          type: string
+          description: >-
+              Specifies the largest numeric value that may be used as the value for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is greater than that maximum numeric value.
+        minimumValueLength:
+          type: integer
+          description: >-
+              Specifies the smallest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is shorter than that minimum value length.
+        maximumValueLength:
+          type: integer
+          description: >-
+              Specifies the largest number of characters that may be present in string values of the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is longer than that maximum value length.
+        minimumValueCount:
+          type: integer
+          description: >-
+              Specifies the smallest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with fewer than this number of elements.
+        maximumValueCount:
+          type: integer
+          description: >-
+              Specifies the largest number of elements that may be present in an array of values for the target field. If configured, then the server will reject any attempt to store a JSON object with a value for the target field that is an array with more than this number of elements.
+      required:
+      - jsonField
+      - valueType
+    Enumjson-field-constraintsSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:json-field-constraints"
+    Enumjson-field-constraints-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      description: >-
+          Specifies the behavior that the server should exhibit when caching data for the associated JSON index. This can be useful in environments in which the system does not have enough memory to fully cache the entire data set, as it makes it possible to prioritize which data is the most important to keep in memory.
+    Enumjson-field-constraints-isArrayProp:
+      type: string
+      enum:
+      - "required"
+      - "optional"
+      - "prohibited"
+      description: >-
+          Indicates whether the value of the target field may be an array of values rather than a single value. If this property is set to "required" or "optional", then the constraints defined for this field will be applied to each element of the array.
+    Enumjson-field-constraints-valueTypeProp:
+      type: string
+      enum:
+      - "any"
+      - "boolean"
+      - "integer"
+      - "null"
+      - "number"
+      - "object"
+      - "string"
+      description: >-
+          The data type that will be required for values of the target field.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

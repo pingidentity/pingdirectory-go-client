@@ -1,0 +1,194 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Replication Domain config object
+  title: PingData Replication Domain Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access replication-domains
+  name: replication-domain
+paths:
+  /replication-domains/{replication-domain-name}:
+    get:
+      summary: Returns a single Replication Domain
+      operationId: get-replication-domain
+      parameters:
+      - description: Name of the Replication Domain to be read
+        explode: false
+        in: path
+        name: replication-domain-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-domain-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Replication Domain does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - replication-domain
+    patch:
+      summary: Update an existing Replication Domain by name
+      operationId: update-replication-domain
+      parameters:
+      - description: Name of the Replication Domain to be updated
+        explode: false
+        in: path
+        name: replication-domain-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Replication Domain
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/replication-domain-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Replication Domain does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - replication-domain
+components:
+  schemas:
+    replication-domain-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumreplication-domainSchemaUrn'
+          serverID:
+            type: integer
+            description: >-
+                Specifies a unique identifier for the Directory Server within the Replication Domain.
+          baseDN:
+            type: string
+            description: >-
+                Specifies the base DN of the replicated data.
+          windowSize:
+            type: integer
+            description: >-
+                Specifies the maximum number of replication updates the Directory Server can have outstanding from the Replication Server.
+          heartbeatInterval:
+            type: string
+            description: >-
+                Specifies the heartbeat interval that the Directory Server will use when communicating with Replication Servers.
+          syncHistPurgeDelay:
+            type: string
+            description: >-
+                The time in seconds after which historical information used in replication conflict resolution is purged. The information is removed from entries when they are modified after the purge delay has elapsed.
+          restricted:
+            type: boolean
+            description: >-
+                When set to true, changes are only replicated with server instances that belong to the same replication set.
+          onReplayFailureWaitForDependentOpsTimeout:
+            type: string
+            description: >-
+                Defines the maximum time to retry a failed operation. An operation will be retried only if it appears that the failure might be dependent on an earlier operation from a different server that hasn't replicated yet. The frequency of the retry is determined by the dependent-ops-replay-failure-wait-time property.
+          dependentOpsReplayFailureWaitTime:
+            type: string
+            description: >-
+                Defines how long to wait before retrying certain operations, specifically operations that might have failed because they depend on an operation from a different server that has not yet replicated to this instance.
+        required:
+        - serverID
+        - baseDN
+    Enumreplication-domainSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:replication-domain"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

@@ -1,0 +1,314 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Custom Logged Stats config object
+  title: PingData Custom Logged Stats Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access custom-logged-stats
+  name: custom-logged-stats
+paths:
+  /custom-logged-stats:
+    post:
+      summary: Add a new Custom Logged Stats to the config
+      operationId: add-custom-logged-stats
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-custom-logged-stats-request'
+        description: Create a new Custom Logged Stats in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-stats-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Custom Logged Stats already exists
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+  /custom-logged-stats/{custom-logged-stats-name}:
+    delete:
+      summary: Delete a Custom Logged Stats
+      operationId: delete-custom-logged-stats
+      parameters:
+      - description: Name of the Custom Logged Stats to be deleted
+        explode: false
+        in: path
+        name: custom-logged-stats-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Custom Logged Stats does not exist
+        "409":
+          description: The Custom Logged Stats cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+    get:
+      summary: Returns a single Custom Logged Stats
+      operationId: get-custom-logged-stats
+      parameters:
+      - description: Name of the Custom Logged Stats to be read
+        explode: false
+        in: path
+        name: custom-logged-stats-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-stats-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Custom Logged Stats does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+    patch:
+      summary: Update an existing Custom Logged Stats by name
+      operationId: update-custom-logged-stats
+      parameters:
+      - description: Name of the Custom Logged Stats to be updated
+        explode: false
+        in: path
+        name: custom-logged-stats-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Custom Logged Stats
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-stats-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Custom Logged Stats does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+components:
+  schemas:
+    add-custom-logged-stats-request:
+      allOf:
+      - type: object
+        properties:
+          statsName:
+            description: Name of the new Custom Logged Stats
+            type: string
+        required:
+        - statsName
+      - $ref: '#/components/schemas/custom-logged-stats-shared'
+    custom-logged-stats-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Custom Logged Stats
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/custom-logged-stats-shared'
+    custom-logged-stats-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcustom-logged-statsSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Custom Logged Stats
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Custom Logged Stats object is enabled.
+        monitorObjectclass:
+          type: string
+          description: >-
+              The objectclass name of the monitor entries to examine for generating these statistics.
+        includeFilter:
+          type: string
+          description: >-
+              An optional LDAP filter that can be used restrict which monitor entries are used to produce the output.
+        attributeToLog:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the attributes on the monitor entries that should be included in the output.
+        columnName:
+          type: array
+          items:
+            type: string
+          description: >-
+              Optionally, specifies an explicit name for each column header instead of having these names automatically generated from the monitored attribute name.
+        statisticType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumcustom-logged-stats-statisticTypeProp'
+        headerPrefix:
+          type: string
+          description: >-
+              An optional prefix that is included in the header before the column name.
+        headerPrefixAttribute:
+          type: string
+          description: >-
+              An optional attribute from the monitor entry that is included as a prefix before the column name in the column header.
+        regexPattern:
+          type: string
+          description: >-
+              An optional regular expression pattern, that when used in conjunction with regex-replacement, can alter the value of the attribute being monitored.
+        regexReplacement:
+          type: string
+          description: >-
+              An optional regular expression replacement value, that when used in conjunction with regex-pattern, can alter the value of the attribute being monitored.
+        divideValueBy:
+          type: string
+          description: >-
+              An optional floating point value that can be used to scale the resulting value.
+        divideValueByAttribute:
+          type: string
+          description: >-
+              An optional property that can scale the resulting value by another attribute in the monitored entry.
+        decimalFormat:
+          type: string
+          description: >-
+              This provides a way to format the monitored attribute value in the output to control the precision for instance.
+        nonZeroImpliesNotIdle:
+          type: boolean
+          description: >-
+              If this property is set to true, then the value of any of the monitored attributes here can contribute to whether an interval is considered "idle" by the Periodic Stats Logger.
+      required:
+      - enabled
+      - monitorObjectclass
+      - attributeToLog
+      - statisticType
+    Enumcustom-logged-statsSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
+    Enumcustom-logged-stats-statisticTypeProp:
+      type: string
+      enum:
+      - "raw"
+      - "counter"
+      - "average"
+      - "minimum"
+      - "maximum"
+      description: >-
+          Specifies the type of statistic to include in the output for each monitored attribute.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

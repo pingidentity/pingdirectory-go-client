@@ -1,0 +1,291 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Delegated Admin Resource Rights config object
+  title: PingData Delegated Admin Resource Rights Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access delegated-admin-resource-rights
+  name: delegated-admin-resource-rights
+paths:
+  /delegated-admin-resource-rights:
+    post:
+      summary: Add a new Delegated Admin Resource Rights to the config
+      operationId: add-delegated-admin-resource-rights
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-delegated-admin-resource-rights-request'
+        description: Create a new Delegated Admin Resource Rights in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-resource-rights-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Delegated Admin Resource Rights already exists
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-resource-rights
+  /delegated-admin-resource-rights/{delegated-admin-resource-rights-name}:
+    delete:
+      summary: Delete a Delegated Admin Resource Rights
+      operationId: delete-delegated-admin-resource-rights
+      parameters:
+      - description: Name of the Delegated Admin Resource Rights to be deleted
+        explode: false
+        in: path
+        name: delegated-admin-resource-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Resource Rights does not exist
+        "409":
+          description: The Delegated Admin Resource Rights cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-resource-rights
+    get:
+      summary: Returns a single Delegated Admin Resource Rights
+      operationId: get-delegated-admin-resource-rights
+      parameters:
+      - description: Name of the Delegated Admin Resource Rights to be read
+        explode: false
+        in: path
+        name: delegated-admin-resource-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-resource-rights-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Resource Rights does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-resource-rights
+    patch:
+      summary: Update an existing Delegated Admin Resource Rights by name
+      operationId: update-delegated-admin-resource-rights
+      parameters:
+      - description: Name of the Delegated Admin Resource Rights to be updated
+        explode: false
+        in: path
+        name: delegated-admin-resource-rights-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Delegated Admin Resource Rights
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-resource-rights-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Delegated Admin Resource Rights does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-resource-rights
+components:
+  schemas:
+    add-delegated-admin-resource-rights-request:
+      allOf:
+      - type: object
+        properties:
+          restResourceType:
+            description: Name of the new Delegated Admin Resource Rights
+            type: string
+        required:
+        - restResourceType
+      - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
+    delegated-admin-resource-rights-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Resource Rights
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delegated-admin-resource-rights-shared'
+    delegated-admin-resource-rights-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-resource-rightsSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Delegated Admin Resource Rights
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether these Delegated Admin Resource Rights are enabled.
+        restResourceType:
+          type: string
+          description: >-
+              Specifies the resource type applicable to these Delegated Admin Resource Rights.
+        adminPermission:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-resource-rights-adminPermissionProp'
+        adminScope:
+          $ref: '#/components/schemas/Enumdelegated-admin-resource-rights-adminScopeProp'
+        resourceSubtree:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies subtrees within the search base whose entries can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-subtrees.
+        resourcesInGroup:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies groups whose members can be managed by the administrator(s). The admin-scope must be set to resources-in-specific-groups.
+      required:
+      - enabled
+      - restResourceType
+    Enumdelegated-admin-resource-rightsSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-resource-rights"
+    Enumdelegated-admin-resource-rights-adminScopeProp:
+      type: string
+      enum:
+      - "resources-in-specific-groups"
+      - "resources-in-specific-subtrees"
+      - "all-resources-in-base"
+      description: >-
+          Specifies the scope of these Delegated Admin Resource Rights.
+    Enumdelegated-admin-resource-rights-adminPermissionProp:
+      type: string
+      enum:
+      - "create"
+      - "read"
+      - "reference"
+      - "update"
+      - "update-profile"
+      - "reset-password"
+      - "delete"
+      - "manage-group-membership"
+      - "download"
+      - "upload"
+      description: >-
+          Specifies administrator(s) permissions.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

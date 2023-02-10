@@ -1,0 +1,266 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the SCIM Attribute Mapping config object
+  title: PingData SCIM Attribute Mapping Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access scim-attribute-mappings
+  name: scim-attribute-mapping
+paths:
+  /scim-attribute-mappings:
+    post:
+      summary: Add a new SCIM Attribute Mapping to the config
+      operationId: add-scim-attribute-mapping
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-scim-attribute-mapping-request'
+        description: Create a new SCIM Attribute Mapping in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mapping-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The SCIM Attribute Mapping already exists
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+  /scim-attribute-mappings/{scim-attribute-mapping-name}:
+    delete:
+      summary: Delete a SCIM Attribute Mapping
+      operationId: delete-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Attribute Mapping to be deleted
+        explode: false
+        in: path
+        name: scim-attribute-mapping-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Attribute Mapping does not exist
+        "409":
+          description: The SCIM Attribute Mapping cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+    get:
+      summary: Returns a single SCIM Attribute Mapping
+      operationId: get-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Attribute Mapping to be read
+        explode: false
+        in: path
+        name: scim-attribute-mapping-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mapping-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Attribute Mapping does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+    patch:
+      summary: Update an existing SCIM Attribute Mapping by name
+      operationId: update-scim-attribute-mapping
+      parameters:
+      - description: Name of the SCIM Attribute Mapping to be updated
+        explode: false
+        in: path
+        name: scim-attribute-mapping-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing SCIM Attribute Mapping
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-mapping-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The SCIM Attribute Mapping does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute-mapping
+components:
+  schemas:
+    add-scim-attribute-mapping-request:
+      allOf:
+      - type: object
+        properties:
+          mappingName:
+            description: Name of the new SCIM Attribute Mapping
+            type: string
+        required:
+        - mappingName
+      - $ref: '#/components/schemas/scim-attribute-mapping-shared'
+    scim-attribute-mapping-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the SCIM Attribute Mapping
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/scim-attribute-mapping-shared'
+    scim-attribute-mapping-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumscim-attribute-mappingSchemaUrn'
+        correlatedLDAPDataView:
+          type: string
+          description: >-
+              The Correlated LDAP Data View that persists the mapped SCIM Resource Type attribute(s).
+        scimResourceTypeAttribute:
+          type: string
+          description: >-
+              The attribute path of SCIM Resource Type attributes to be mapped.
+        ldapAttribute:
+          type: string
+          description: >-
+              The LDAP attribute to be mapped, or the path to a specific field of an LDAP attribute with the JSON object attribute syntax.
+        readable:
+          type: boolean
+          description: >-
+              Specifies whether the mapping is used to map from LDAP attribute to SCIM Resource Type attribute in a read operation.
+        writable:
+          type: boolean
+          description: >-
+              Specifies that the mapping is used to map from SCIM Resource Type attribute to LDAP attribute in a write operation.
+        searchable:
+          type: boolean
+          description: >-
+              Specifies that the mapping is used to map from SCIM Resource Type attribute to LDAP attribute in a search filter.
+        authoritative:
+          type: boolean
+          description: >-
+              Specifies that the mapping is authoritative over other mappings for the same SCIM Resource Type attribute (for read operations).
+      required:
+      - scimResourceTypeAttribute
+      - ldapAttribute
+    Enumscim-attribute-mappingSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:scim-attribute-mapping"
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

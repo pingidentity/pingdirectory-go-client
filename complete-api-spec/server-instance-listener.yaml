@@ -1,0 +1,232 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Server Instance Listener config object
+  title: PingData Server Instance Listener Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access server-instance-listeners
+  name: server-instance-listener
+paths:
+  /server-instance-listeners/{server-instance-listener-name}:
+    get:
+      summary: Returns a single Server Instance Listener
+      operationId: get-server-instance-listener
+      parameters:
+      - description: Name of the Server Instance Listener to be read
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-server-instance-listener-response'
+                - $ref: '#/components/schemas/http-server-instance-listener-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Server Instance Listener does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance-listener
+    patch:
+      summary: Update an existing Server Instance Listener by name
+      operationId: update-server-instance-listener
+      parameters:
+      - description: Name of the Server Instance Listener to be updated
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Server Instance Listener
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-server-instance-listener-response'
+                - $ref: '#/components/schemas/http-server-instance-listener-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Server Instance Listener does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance-listener
+components:
+  schemas:
+    ldap-server-instance-listener-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumldap-server-instance-listenerSchemaUrn'
+          id:
+            description: Name of the Server Instance Listener
+            type: string
+          serverLDAPPort:
+            type: integer
+            description: >-
+                The TCP port number on which the LDAP server is listening.
+          connectionSecurity:
+            $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+          listenerCertificate:
+            type: string
+            description: >-
+                The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted.
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
+        required:
+        - schemas
+        - id
+    Enumldap-server-instance-listenerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-instance-listener:ldap"
+    http-server-instance-listener-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumhttp-server-instance-listenerSchemaUrn'
+          id:
+            description: Name of the Server Instance Listener
+            type: string
+          listenAddress:
+            type: string
+            description: >-
+                If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients.
+          serverHTTPPort:
+            type: integer
+            description: >-
+                The TCP port number on which the HTTP server is listening.
+          connectionSecurity:
+            $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
+        required:
+        - schemas
+        - id
+    Enumhttp-server-instance-listenerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-instance-listener:http"
+    Enumserver-instance-listener-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Server Instance Listener.
+    Enumserver-instance-listener-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      - "starttls"
+      description: >-
+          Specifies the mechanism to use for securing connections to the server.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

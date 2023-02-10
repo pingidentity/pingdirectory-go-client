@@ -1,0 +1,305 @@
+openapi: 3.0.3
+info:
+  description: This is the PingData Configuration API for the Local DB Index config object
+  title: PingData Local DB Index Config - OpenAPI 3.0
+  version: "0.1"
+externalDocs:
+  description: PingDirectory Configuration API Docs
+  url: https://docs.pingidentity.com/bundle/pingdirectory-91/page/ddl1564011495095.html
+tags:
+- description: Access local-db-indexes
+  name: local-db-index
+paths:
+  /local-db-indexes:
+    post:
+      summary: Add a new Local DB Index to the config
+      operationId: add-local-db-index
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-local-db-index-request'
+        description: Create a new Local DB Index in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Local DB Index already exists
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+  /local-db-indexes/{local-db-index-name}:
+    delete:
+      summary: Delete a Local DB Index
+      operationId: delete-local-db-index
+      parameters:
+      - description: Name of the Local DB Index to be deleted
+        explode: false
+        in: path
+        name: local-db-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Index does not exist
+        "409":
+          description: The Local DB Index cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+    get:
+      summary: Returns a single Local DB Index
+      operationId: get-local-db-index
+      parameters:
+      - description: Name of the Local DB Index to be read
+        explode: false
+        in: path
+        name: local-db-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+    patch:
+      summary: Update an existing Local DB Index by name
+      operationId: update-local-db-index
+      parameters:
+      - description: Name of the Local DB Index to be updated
+        explode: false
+        in: path
+        name: local-db-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Local DB Index
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Local DB Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+components:
+  schemas:
+    add-local-db-index-request:
+      allOf:
+      - type: object
+        properties:
+          indexName:
+            description: Name of the new Local DB Index
+            type: string
+        required:
+        - indexName
+      - $ref: '#/components/schemas/local-db-index-shared'
+    local-db-index-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Local DB Index
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/local-db-index-shared'
+    local-db-index-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-indexSchemaUrn'
+        attribute:
+          type: string
+          description: >-
+              Specifies the name of the attribute for which the index is to be maintained.
+        indexEntryLimit:
+          type: integer
+          description: >-
+              Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained.
+        substringIndexEntryLimit:
+          type: integer
+          description: >-
+              Specifies, for substring indexes, the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. Setting a large limit can dramatically increase the database size on disk and have a big impact on server performance if the indexed attribute is modified frequently. When a very large limit is required, creating a dedicated composite index with an index-filter-pattern of (attr=*?*) will give the best balance between search and update performance.
+        maintainMatchCountForKeysExceedingEntryLimit:
+          type: boolean
+          description: >-
+              Indicates whether to continue to maintain a count of the number of matching entries for an index key even after that count exceeds the index entry limit.
+        indexType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-index-indexTypeProp'
+        substringLength:
+          type: integer
+          description: >-
+              The length of substrings in a substring index.
+        primeIndex:
+          type: boolean
+          description: >-
+              If this option is enabled and this index's backend is configured to prime indexes, then this index will be loaded at startup.
+        primeInternalNodesOnly:
+          type: boolean
+          description: >-
+              If this option is enabled and this index's backend is configured to prime indexes using the preload method, then only the internal database nodes (i.e., the database keys but not values) should be primed when the backend is initialized.
+        equalityIndexFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              A search filter that may be used in conjunction with an equality component for the associated attribute type. If an equality index filter is defined, then an additional equality index will be maintained for the associated attribute, but only for entries which match the provided filter. Further, the index will be used only for searches containing an equality component with the associated attribute type ANDed with this filter.
+        maintainEqualityIndexWithoutFilter:
+          type: boolean
+          description: >-
+              Indicates whether to maintain a separate equality index for the associated attribute without any filter, in addition to maintaining an index for each equality index filter that is defined. If this is false, then the attribute will not be indexed for equality by itself but only in conjunction with the defined equality index filters.
+        cacheMode:
+          $ref: '#/components/schemas/Enumlocal-db-index-cacheModeProp'
+      required:
+      - attribute
+      - indexType
+    Enumlocal-db-indexSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:local-db-index"
+    Enumlocal-db-index-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the database for this index. This controls how much database cache memory can be consumed by this index.
+    Enumlocal-db-index-indexTypeProp:
+      type: string
+      enum:
+      - "equality"
+      - "ordering"
+      - "presence"
+      - "substring"
+      - "approximate"
+      description: >-
+          Specifies the type(s) of indexing that should be performed for the associated attribute.
+    updateRequest:
+      type: object
+      properties:
+        operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Operation'
+      required:
+      - operations
+    Operation:
+      type: object
+      properties:
+        op:
+          $ref: '#/components/schemas/EnumOperation'
+        path:
+          type: string
+        value:
+          type: string
+      required:
+      - op
+      - path
+    EnumOperation:
+      type: string
+      enum:
+      - "add"
+      - "remove"
+      - "replace"
+    meta:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            resourceType:
+              type: string
+            location:
+              type: string
+        "urn:pingidentity:schemas:configuration:messages:2.0":
+          type: object
+          properties:
+            notifications:
+              type: array
+              items:
+                type: string
+            requiredActions:
+              type: array
+              items:
+                type: object
+                properties:
+                  property:
+                    type: string
+                  type:
+                    type: string
+                  synopsis:
+                    type: string
+                required:
+                - type
+                - synopsis
+  securitySchemes:
+    basicAuth:
+      scheme: Basic
+      type: http

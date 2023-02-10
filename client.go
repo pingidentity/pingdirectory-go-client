@@ -71,6 +71,8 @@ type APIClient struct {
 
 	ChangeSubscriptionHandlerApi *ChangeSubscriptionHandlerApiService
 
+	CipherSecretKeyApi *CipherSecretKeyApiService
+
 	CipherStreamProviderApi *CipherStreamProviderApiService
 
 	ClientConnectionPolicyApi *ClientConnectionPolicyApiService
@@ -83,15 +85,29 @@ type APIClient struct {
 
 	ConsentDefinitionApi *ConsentDefinitionApiService
 
+	ConsentDefinitionLocalizationApi *ConsentDefinitionLocalizationApiService
+
 	ConsentServiceApi *ConsentServiceApiService
 
 	ConstructedAttributeApi *ConstructedAttributeApiService
 
+	CorrelatedLdapDataViewApi *CorrelatedLdapDataViewApiService
+
 	CryptoManagerApi *CryptoManagerApiService
+
+	CustomLoggedStatsApi *CustomLoggedStatsApiService
 
 	DataSecurityAuditorApi *DataSecurityAuditorApiService
 
+	DebugTargetApi *DebugTargetApiService
+
+	DelegatedAdminAttributeApi *DelegatedAdminAttributeApiService
+
 	DelegatedAdminAttributeCategoryApi *DelegatedAdminAttributeCategoryApiService
+
+	DelegatedAdminCorrelatedRestResourceApi *DelegatedAdminCorrelatedRestResourceApiService
+
+	DelegatedAdminResourceRightsApi *DelegatedAdminResourceRightsApiService
 
 	DelegatedAdminRightsApi *DelegatedAdminRightsApiService
 
@@ -123,15 +139,27 @@ type APIClient struct {
 
 	IdentityMapperApi *IdentityMapperApiService
 
+	InterServerAuthenticationInfoApi *InterServerAuthenticationInfoApiService
+
 	JsonAttributeConstraintsApi *JsonAttributeConstraintsApiService
+
+	JsonFieldConstraintsApi *JsonFieldConstraintsApiService
 
 	KeyManagerProviderApi *KeyManagerProviderApiService
 
 	KeyPairApi *KeyPairApiService
 
+	LdapCorrelationAttributePairApi *LdapCorrelationAttributePairApiService
+
 	LdapSdkDebugLoggerApi *LdapSdkDebugLoggerApiService
 
 	LicenseApi *LicenseApiService
+
+	LocalDbCompositeIndexApi *LocalDbCompositeIndexApiService
+
+	LocalDbIndexApi *LocalDbIndexApiService
+
+	LocalDbVlvIndexApi *LocalDbVlvIndexApiService
 
 	LocationApi *LocationApiService
 
@@ -148,6 +176,8 @@ type APIClient struct {
 	LogRetentionPolicyApi *LogRetentionPolicyApiService
 
 	LogRotationPolicyApi *LogRotationPolicyApiService
+
+	MacSecretKeyApi *MacSecretKeyApiService
 
 	MatchingRuleApi *MatchingRuleApiService
 
@@ -175,6 +205,8 @@ type APIClient struct {
 
 	PasswordValidatorApi *PasswordValidatorApiService
 
+	PluginApi *PluginApiService
+
 	PluginRootApi *PluginRootApiService
 
 	RecurringTaskApi *RecurringTaskApiService
@@ -182,6 +214,8 @@ type APIClient struct {
 	RecurringTaskChainApi *RecurringTaskChainApiService
 
 	ReplicationAssurancePolicyApi *ReplicationAssurancePolicyApiService
+
+	ReplicationDomainApi *ReplicationDomainApiService
 
 	RequestCriteriaApi *RequestCriteriaApiService
 
@@ -193,11 +227,19 @@ type APIClient struct {
 
 	RootDnApi *RootDnApiService
 
+	RootDnUserApi *RootDnUserApiService
+
 	RootDseBackendApi *RootDseBackendApiService
 
 	SaslMechanismHandlerApi *SaslMechanismHandlerApiService
 
+	ScimAttributeApi *ScimAttributeApiService
+
+	ScimAttributeMappingApi *ScimAttributeMappingApiService
+
 	ScimSchemaApi *ScimSchemaApiService
+
+	ScimSubattributeApi *ScimSubattributeApiService
 
 	SearchEntryCriteriaApi *SearchEntryCriteriaApiService
 
@@ -209,9 +251,13 @@ type APIClient struct {
 
 	ServerInstanceApi *ServerInstanceApiService
 
+	ServerInstanceListenerApi *ServerInstanceListenerApiService
+
 	SoftDeletePolicyApi *SoftDeletePolicyApiService
 
 	SynchronizationProviderApi *SynchronizationProviderApiService
+
+	TokenClaimValidationApi *TokenClaimValidationApiService
 
 	TopologyAdminUserApi *TopologyAdminUserApiService
 
@@ -224,6 +270,10 @@ type APIClient struct {
 	UncachedEntryCriteriaApi *UncachedEntryCriteriaApiService
 
 	VaultAuthenticationMethodApi *VaultAuthenticationMethodApiService
+
+	VelocityContextProviderApi *VelocityContextProviderApiService
+
+	VelocityTemplateLoaderApi *VelocityTemplateLoaderApiService
 
 	VirtualAttributeApi *VirtualAttributeApiService
 
@@ -259,17 +309,25 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CertificateMapperApi = (*CertificateMapperApiService)(&c.common)
 	c.ChangeSubscriptionApi = (*ChangeSubscriptionApiService)(&c.common)
 	c.ChangeSubscriptionHandlerApi = (*ChangeSubscriptionHandlerApiService)(&c.common)
+	c.CipherSecretKeyApi = (*CipherSecretKeyApiService)(&c.common)
 	c.CipherStreamProviderApi = (*CipherStreamProviderApiService)(&c.common)
 	c.ClientConnectionPolicyApi = (*ClientConnectionPolicyApiService)(&c.common)
 	c.ConjurAuthenticationMethodApi = (*ConjurAuthenticationMethodApiService)(&c.common)
 	c.ConnectionCriteriaApi = (*ConnectionCriteriaApiService)(&c.common)
 	c.ConnectionHandlerApi = (*ConnectionHandlerApiService)(&c.common)
 	c.ConsentDefinitionApi = (*ConsentDefinitionApiService)(&c.common)
+	c.ConsentDefinitionLocalizationApi = (*ConsentDefinitionLocalizationApiService)(&c.common)
 	c.ConsentServiceApi = (*ConsentServiceApiService)(&c.common)
 	c.ConstructedAttributeApi = (*ConstructedAttributeApiService)(&c.common)
+	c.CorrelatedLdapDataViewApi = (*CorrelatedLdapDataViewApiService)(&c.common)
 	c.CryptoManagerApi = (*CryptoManagerApiService)(&c.common)
+	c.CustomLoggedStatsApi = (*CustomLoggedStatsApiService)(&c.common)
 	c.DataSecurityAuditorApi = (*DataSecurityAuditorApiService)(&c.common)
+	c.DebugTargetApi = (*DebugTargetApiService)(&c.common)
+	c.DelegatedAdminAttributeApi = (*DelegatedAdminAttributeApiService)(&c.common)
 	c.DelegatedAdminAttributeCategoryApi = (*DelegatedAdminAttributeCategoryApiService)(&c.common)
+	c.DelegatedAdminCorrelatedRestResourceApi = (*DelegatedAdminCorrelatedRestResourceApiService)(&c.common)
+	c.DelegatedAdminResourceRightsApi = (*DelegatedAdminResourceRightsApiService)(&c.common)
 	c.DelegatedAdminRightsApi = (*DelegatedAdminRightsApiService)(&c.common)
 	c.DnMapApi = (*DnMapApiService)(&c.common)
 	c.EntryCacheApi = (*EntryCacheApiService)(&c.common)
@@ -285,11 +343,17 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.HttpServletExtensionApi = (*HttpServletExtensionApiService)(&c.common)
 	c.IdTokenValidatorApi = (*IdTokenValidatorApiService)(&c.common)
 	c.IdentityMapperApi = (*IdentityMapperApiService)(&c.common)
+	c.InterServerAuthenticationInfoApi = (*InterServerAuthenticationInfoApiService)(&c.common)
 	c.JsonAttributeConstraintsApi = (*JsonAttributeConstraintsApiService)(&c.common)
+	c.JsonFieldConstraintsApi = (*JsonFieldConstraintsApiService)(&c.common)
 	c.KeyManagerProviderApi = (*KeyManagerProviderApiService)(&c.common)
 	c.KeyPairApi = (*KeyPairApiService)(&c.common)
+	c.LdapCorrelationAttributePairApi = (*LdapCorrelationAttributePairApiService)(&c.common)
 	c.LdapSdkDebugLoggerApi = (*LdapSdkDebugLoggerApiService)(&c.common)
 	c.LicenseApi = (*LicenseApiService)(&c.common)
+	c.LocalDbCompositeIndexApi = (*LocalDbCompositeIndexApiService)(&c.common)
+	c.LocalDbIndexApi = (*LocalDbIndexApiService)(&c.common)
+	c.LocalDbVlvIndexApi = (*LocalDbVlvIndexApiService)(&c.common)
 	c.LocationApi = (*LocationApiService)(&c.common)
 	c.LogFieldBehaviorApi = (*LogFieldBehaviorApiService)(&c.common)
 	c.LogFieldMappingApi = (*LogFieldMappingApiService)(&c.common)
@@ -298,6 +362,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LogPublisherApi = (*LogPublisherApiService)(&c.common)
 	c.LogRetentionPolicyApi = (*LogRetentionPolicyApiService)(&c.common)
 	c.LogRotationPolicyApi = (*LogRotationPolicyApiService)(&c.common)
+	c.MacSecretKeyApi = (*MacSecretKeyApiService)(&c.common)
 	c.MatchingRuleApi = (*MatchingRuleApiService)(&c.common)
 	c.MonitorProviderApi = (*MonitorProviderApiService)(&c.common)
 	c.MonitoringEndpointApi = (*MonitoringEndpointApiService)(&c.common)
@@ -311,31 +376,41 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PasswordPolicyApi = (*PasswordPolicyApiService)(&c.common)
 	c.PasswordStorageSchemeApi = (*PasswordStorageSchemeApiService)(&c.common)
 	c.PasswordValidatorApi = (*PasswordValidatorApiService)(&c.common)
+	c.PluginApi = (*PluginApiService)(&c.common)
 	c.PluginRootApi = (*PluginRootApiService)(&c.common)
 	c.RecurringTaskApi = (*RecurringTaskApiService)(&c.common)
 	c.RecurringTaskChainApi = (*RecurringTaskChainApiService)(&c.common)
 	c.ReplicationAssurancePolicyApi = (*ReplicationAssurancePolicyApiService)(&c.common)
+	c.ReplicationDomainApi = (*ReplicationDomainApiService)(&c.common)
 	c.RequestCriteriaApi = (*RequestCriteriaApiService)(&c.common)
 	c.RestResourceTypeApi = (*RestResourceTypeApiService)(&c.common)
 	c.ResultCodeMapApi = (*ResultCodeMapApiService)(&c.common)
 	c.ResultCriteriaApi = (*ResultCriteriaApiService)(&c.common)
 	c.RootDnApi = (*RootDnApiService)(&c.common)
+	c.RootDnUserApi = (*RootDnUserApiService)(&c.common)
 	c.RootDseBackendApi = (*RootDseBackendApiService)(&c.common)
 	c.SaslMechanismHandlerApi = (*SaslMechanismHandlerApiService)(&c.common)
+	c.ScimAttributeApi = (*ScimAttributeApiService)(&c.common)
+	c.ScimAttributeMappingApi = (*ScimAttributeMappingApiService)(&c.common)
 	c.ScimSchemaApi = (*ScimSchemaApiService)(&c.common)
+	c.ScimSubattributeApi = (*ScimSubattributeApiService)(&c.common)
 	c.SearchEntryCriteriaApi = (*SearchEntryCriteriaApiService)(&c.common)
 	c.SearchReferenceCriteriaApi = (*SearchReferenceCriteriaApiService)(&c.common)
 	c.SensitiveAttributeApi = (*SensitiveAttributeApiService)(&c.common)
 	c.ServerGroupApi = (*ServerGroupApiService)(&c.common)
 	c.ServerInstanceApi = (*ServerInstanceApiService)(&c.common)
+	c.ServerInstanceListenerApi = (*ServerInstanceListenerApiService)(&c.common)
 	c.SoftDeletePolicyApi = (*SoftDeletePolicyApiService)(&c.common)
 	c.SynchronizationProviderApi = (*SynchronizationProviderApiService)(&c.common)
+	c.TokenClaimValidationApi = (*TokenClaimValidationApiService)(&c.common)
 	c.TopologyAdminUserApi = (*TopologyAdminUserApiService)(&c.common)
 	c.TrustManagerProviderApi = (*TrustManagerProviderApiService)(&c.common)
 	c.TrustedCertificateApi = (*TrustedCertificateApiService)(&c.common)
 	c.UncachedAttributeCriteriaApi = (*UncachedAttributeCriteriaApiService)(&c.common)
 	c.UncachedEntryCriteriaApi = (*UncachedEntryCriteriaApiService)(&c.common)
 	c.VaultAuthenticationMethodApi = (*VaultAuthenticationMethodApiService)(&c.common)
+	c.VelocityContextProviderApi = (*VelocityContextProviderApiService)(&c.common)
+	c.VelocityTemplateLoaderApi = (*VelocityTemplateLoaderApiService)(&c.common)
 	c.VirtualAttributeApi = (*VirtualAttributeApiService)(&c.common)
 	c.WebApplicationExtensionApi = (*WebApplicationExtensionApiService)(&c.common)
 	c.WorkQueueApi = (*WorkQueueApiService)(&c.common)
