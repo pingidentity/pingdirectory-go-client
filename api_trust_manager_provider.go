@@ -146,7 +146,7 @@ func (r ApiDeleteTrustManagerProviderRequest) Execute() (*http.Response, error) 
 DeleteTrustManagerProvider Delete a Trust Manager Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param trustManagerProviderName Name of the Trust Manager Provider to be deleted
+	@param trustManagerProviderName Name of the Trust Manager Provider
 	@return ApiDeleteTrustManagerProviderRequest
 */
 func (a *TrustManagerProviderApiService) DeleteTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiDeleteTrustManagerProviderRequest {
@@ -236,7 +236,7 @@ func (r ApiGetTrustManagerProviderRequest) Execute() (*AddTrustManagerProvider20
 GetTrustManagerProvider Returns a single Trust Manager Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param trustManagerProviderName Name of the Trust Manager Provider to be read
+	@param trustManagerProviderName Name of the Trust Manager Provider
 	@return ApiGetTrustManagerProviderRequest
 */
 func (a *TrustManagerProviderApiService) GetTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiGetTrustManagerProviderRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateTrustManagerProviderRequest) Execute() (*AddTrustManagerProvide
 UpdateTrustManagerProvider Update an existing Trust Manager Provider by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param trustManagerProviderName Name of the Trust Manager Provider to be updated
+	@param trustManagerProviderName Name of the Trust Manager Provider
 	@return ApiUpdateTrustManagerProviderRequest
 */
 func (a *TrustManagerProviderApiService) UpdateTrustManagerProvider(ctx context.Context, trustManagerProviderName string) ApiUpdateTrustManagerProviderRequest {

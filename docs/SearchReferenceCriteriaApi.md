@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    searchReferenceCriteriaName := "searchReferenceCriteriaName_example" // string | Name of the Search Reference Criteria to be deleted
+    searchReferenceCriteriaName := "searchReferenceCriteriaName_example" // string | Name of the Search Reference Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**searchReferenceCriteriaName** | **string** | Name of the Search Reference Criteria to be deleted | 
+**searchReferenceCriteriaName** | **string** | Name of the Search Reference Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    searchReferenceCriteriaName := "searchReferenceCriteriaName_example" // string | Name of the Search Reference Criteria to be read
+    searchReferenceCriteriaName := "searchReferenceCriteriaName_example" // string | Name of the Search Reference Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**searchReferenceCriteriaName** | **string** | Name of the Search Reference Criteria to be read | 
+**searchReferenceCriteriaName** | **string** | Name of the Search Reference Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    searchReferenceCriteriaName := "searchReferenceCriteriaName_example" // string | Name of the Search Reference Criteria to be updated
+    searchReferenceCriteriaName := "searchReferenceCriteriaName_example" // string | Name of the Search Reference Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Search Reference Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**searchReferenceCriteriaName** | **string** | Name of the Search Reference Criteria to be updated | 
+**searchReferenceCriteriaName** | **string** | Name of the Search Reference Criteria | 
 
 ### Other Parameters
 

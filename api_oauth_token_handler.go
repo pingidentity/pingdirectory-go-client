@@ -146,7 +146,7 @@ func (r ApiDeleteOauthTokenHandlerRequest) Execute() (*http.Response, error) {
 DeleteOauthTokenHandler Delete a OAuth Token Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param oauthTokenHandlerName Name of the OAuth Token Handler to be deleted
+	@param oauthTokenHandlerName Name of the OAuth Token Handler
 	@return ApiDeleteOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) DeleteOauthTokenHandler(ctx context.Context, oauthTokenHandlerName string) ApiDeleteOauthTokenHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetOauthTokenHandlerRequest) Execute() (*AddOauthTokenHandler200Respo
 GetOauthTokenHandler Returns a single OAuth Token Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param oauthTokenHandlerName Name of the OAuth Token Handler to be read
+	@param oauthTokenHandlerName Name of the OAuth Token Handler
 	@return ApiGetOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) GetOauthTokenHandler(ctx context.Context, oauthTokenHandlerName string) ApiGetOauthTokenHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateOauthTokenHandlerRequest) Execute() (*AddOauthTokenHandler200Re
 UpdateOauthTokenHandler Update an existing OAuth Token Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param oauthTokenHandlerName Name of the OAuth Token Handler to be updated
+	@param oauthTokenHandlerName Name of the OAuth Token Handler
 	@return ApiUpdateOauthTokenHandlerRequest
 */
 func (a *OauthTokenHandlerApiService) UpdateOauthTokenHandler(ctx context.Context, oauthTokenHandlerName string) ApiUpdateOauthTokenHandlerRequest {

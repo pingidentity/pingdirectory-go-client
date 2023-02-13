@@ -146,7 +146,7 @@ func (r ApiDeleteServerGroupRequest) Execute() (*http.Response, error) {
 DeleteServerGroup Delete a Server Group
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param serverGroupName Name of the Server Group to be deleted
+	@param serverGroupName Name of the Server Group
 	@return ApiDeleteServerGroupRequest
 */
 func (a *ServerGroupApiService) DeleteServerGroup(ctx context.Context, serverGroupName string) ApiDeleteServerGroupRequest {
@@ -236,7 +236,7 @@ func (r ApiGetServerGroupRequest) Execute() (*ServerGroupResponse, *http.Respons
 GetServerGroup Returns a single Server Group
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param serverGroupName Name of the Server Group to be read
+	@param serverGroupName Name of the Server Group
 	@return ApiGetServerGroupRequest
 */
 func (a *ServerGroupApiService) GetServerGroup(ctx context.Context, serverGroupName string) ApiGetServerGroupRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateServerGroupRequest) Execute() (*ServerGroupResponse, *http.Resp
 UpdateServerGroup Update an existing Server Group by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param serverGroupName Name of the Server Group to be updated
+	@param serverGroupName Name of the Server Group
 	@return ApiUpdateServerGroupRequest
 */
 func (a *ServerGroupApiService) UpdateServerGroup(ctx context.Context, serverGroupName string) ApiUpdateServerGroupRequest {

@@ -429,6 +429,54 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:global"
+    Enumglobal-configuration-allowedInsecureTLSProtocolProp:
+      type: string
+      enum:
+      - "sslv3"
+      description: >-
+          Specifies a set of TLS protocols that will be permitted for use in the server even though there may be known vulnerabilities that could cause their use to be unsafe in some conditions. Enabling support for insecure TLS protocols is discouraged, and is generally recommended only as a short-term measure to permit legacy clients to interact with the server until they can be updated to support more secure communication protocols.
+    Enumglobal-configuration-startupErrorLoggerOutputLocationProp:
+      type: string
+      enum:
+      - "standard-output"
+      - "standard-error"
+      - "server-out-file"
+      - "standard-output-and-server-out-file"
+      - "standard-error-and-server-out-file"
+      - "disabled"
+      description: >-
+          Specifies how the server should handle error log messages (which may include errors, warnings, and notices) generated during startup. All of these messages will be written to all configured error loggers, but they may also be written to other locations (like standard output, standard error, or the server.out log file) so that they are displayed on the console when the server is starting.
+    Enumglobal-configuration-unrecoverableDatabaseErrorModeProp:
+      type: string
+      enum:
+      - "enter-lockdown-mode"
+      - "raise-unavailable-alarm"
+      - "initiate-server-shutdown"
+      description: >-
+          Specifies the action which should be taken for any database that experiences an unrecoverable error. Action applies to local database backends and the replication recent changes database.
+    Enumglobal-configuration-invalidAttributeSyntaxBehaviorProp:
+      type: string
+      enum:
+      - "accept"
+      - "reject"
+      - "warn"
+      description: >-
+          Specifies how the Directory Server should handle operations whenever an attribute value violates the associated attribute syntax.
+    Enumglobal-configuration-jmxValueBehaviorProp:
+      type: string
+      enum:
+      - "inferred"
+      - "string"
+      description: >-
+          Specifies how a Java type is chosen for monitor attributes exposed as JMX attribute values.
+    Enumglobal-configuration-writabilityModeProp:
+      type: string
+      enum:
+      - "enabled"
+      - "disabled"
+      - "internal-only"
+      description: >-
+          Specifies the kinds of write operations the Directory Server can process.
     Enumglobal-configuration-disabledPrivilegeProp:
       type: string
       enum:
@@ -474,21 +522,14 @@ components:
       - "permit-replace-certificate-request"
       description: >-
           Specifies the name of a privilege that should not be evaluated by the server.
-    Enumglobal-configuration-jmxValueBehaviorProp:
-      type: string
-      enum:
-      - "inferred"
-      - "string"
-      description: >-
-          Specifies how a Java type is chosen for monitor attributes exposed as JMX attribute values.
-    Enumglobal-configuration-invalidAttributeSyntaxBehaviorProp:
+    Enumglobal-configuration-singleStructuralObjectclassBehaviorProp:
       type: string
       enum:
       - "accept"
       - "reject"
       - "warn"
       description: >-
-          Specifies how the Directory Server should handle operations whenever an attribute value violates the associated attribute syntax.
+          Specifies how the Directory Server should handle operations for an entry does not contain a structural object class, or for an entry that contains multiple structural classes.
     Enumglobal-configuration-attributesModifiableWithIgnoreNoUserModificationRequestControlProp:
       type: string
       enum:
@@ -498,47 +539,6 @@ components:
       - "modifyTimestamp"
       description: >-
           Specifies the operational attribute types that are defined in the schema with the NO-USER-MODIFICATION constraint that the server will allow to be altered if the associated request contains the ignore NO-USER-MODIFICATION request control.
-    Enumglobal-configuration-startupErrorLoggerOutputLocationProp:
-      type: string
-      enum:
-      - "standard-output"
-      - "standard-error"
-      - "server-out-file"
-      - "standard-output-and-server-out-file"
-      - "standard-error-and-server-out-file"
-      - "disabled"
-      description: >-
-          Specifies how the server should handle error log messages (which may include errors, warnings, and notices) generated during startup. All of these messages will be written to all configured error loggers, but they may also be written to other locations (like standard output, standard error, or the server.out log file) so that they are displayed on the console when the server is starting.
-    Enumglobal-configuration-writabilityModeProp:
-      type: string
-      enum:
-      - "enabled"
-      - "disabled"
-      - "internal-only"
-      description: >-
-          Specifies the kinds of write operations the Directory Server can process.
-    Enumglobal-configuration-unrecoverableDatabaseErrorModeProp:
-      type: string
-      enum:
-      - "enter-lockdown-mode"
-      - "raise-unavailable-alarm"
-      - "initiate-server-shutdown"
-      description: >-
-          Specifies the action which should be taken for any database that experiences an unrecoverable error. Action applies to local database backends and the replication recent changes database.
-    Enumglobal-configuration-allowedInsecureTLSProtocolProp:
-      type: string
-      enum:
-      - "sslv3"
-      description: >-
-          Specifies a set of TLS protocols that will be permitted for use in the server even though there may be known vulnerabilities that could cause their use to be unsafe in some conditions. Enabling support for insecure TLS protocols is discouraged, and is generally recommended only as a short-term measure to permit legacy clients to interact with the server until they can be updated to support more secure communication protocols.
-    Enumglobal-configuration-singleStructuralObjectclassBehaviorProp:
-      type: string
-      enum:
-      - "accept"
-      - "reject"
-      - "warn"
-      description: >-
-          Specifies how the Directory Server should handle operations for an entry does not contain a structural object class, or for an entry that contains multiple structural classes.
     updateRequest:
       type: object
       properties:

@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    attributeSyntaxName := "attributeSyntaxName_example" // string | Name of the Attribute Syntax to be read
+    attributeSyntaxName := "attributeSyntaxName_example" // string | Name of the Attribute Syntax
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**attributeSyntaxName** | **string** | Name of the Attribute Syntax to be read | 
+**attributeSyntaxName** | **string** | Name of the Attribute Syntax | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    attributeSyntaxName := "attributeSyntaxName_example" // string | Name of the Attribute Syntax to be updated
+    attributeSyntaxName := "attributeSyntaxName_example" // string | Name of the Attribute Syntax
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Attribute Syntax
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**attributeSyntaxName** | **string** | Name of the Attribute Syntax to be updated | 
+**attributeSyntaxName** | **string** | Name of the Attribute Syntax | 
 
 ### Other Parameters
 

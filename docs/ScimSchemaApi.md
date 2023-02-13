@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema to be deleted
+    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**scimSchemaName** | **string** | Name of the SCIM Schema to be deleted | 
+**scimSchemaName** | **string** | Name of the SCIM Schema | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema to be read
+    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**scimSchemaName** | **string** | Name of the SCIM Schema to be read | 
+**scimSchemaName** | **string** | Name of the SCIM Schema | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema to be updated
+    scimSchemaName := "scimSchemaName_example" // string | Name of the SCIM Schema
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing SCIM Schema
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**scimSchemaName** | **string** | Name of the SCIM Schema to be updated | 
+**scimSchemaName** | **string** | Name of the SCIM Schema | 
 
 ### Other Parameters
 

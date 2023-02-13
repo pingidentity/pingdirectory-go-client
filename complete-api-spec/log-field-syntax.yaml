@@ -15,7 +15,7 @@ paths:
       summary: Returns a single Log Field Syntax
       operationId: get-log-field-syntax
       parameters:
-      - description: Name of the Log Field Syntax to be read
+      - description: Name of the Log Field Syntax
         explode: false
         in: path
         name: log-field-syntax-name
@@ -46,7 +46,7 @@ paths:
       summary: Update an existing Log Field Syntax by name
       operationId: update-log-field-syntax
       parameters:
-      - description: Name of the Log Field Syntax to be updated
+      - description: Name of the Log Field Syntax
         explode: false
         in: path
         name: log-field-syntax-name

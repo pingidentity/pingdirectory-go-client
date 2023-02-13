@@ -45,7 +45,7 @@ paths:
       summary: Delete a Change Subscription
       operationId: delete-change-subscription
       parameters:
-      - description: Name of the Change Subscription to be deleted
+      - description: Name of the Change Subscription
         explode: false
         in: path
         name: change-subscription-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Change Subscription
       operationId: get-change-subscription
       parameters:
-      - description: Name of the Change Subscription to be read
+      - description: Name of the Change Subscription
         explode: false
         in: path
         name: change-subscription-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Change Subscription by name
       operationId: update-change-subscription
       parameters:
-      - description: Name of the Change Subscription to be updated
+      - description: Name of the Change Subscription
         explode: false
         in: path
         name: change-subscription-name

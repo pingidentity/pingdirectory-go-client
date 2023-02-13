@@ -53,7 +53,7 @@ paths:
       summary: Delete a Uncached Attribute Criteria
       operationId: delete-uncached-attribute-criteria
       parameters:
-      - description: Name of the Uncached Attribute Criteria to be deleted
+      - description: Name of the Uncached Attribute Criteria
         explode: false
         in: path
         name: uncached-attribute-criteria-name
@@ -80,7 +80,7 @@ paths:
       summary: Returns a single Uncached Attribute Criteria
       operationId: get-uncached-attribute-criteria
       parameters:
-      - description: Name of the Uncached Attribute Criteria to be read
+      - description: Name of the Uncached Attribute Criteria
         explode: false
         in: path
         name: uncached-attribute-criteria-name
@@ -113,7 +113,7 @@ paths:
       summary: Update an existing Uncached Attribute Criteria by name
       operationId: update-uncached-attribute-criteria
       parameters:
-      - description: Name of the Uncached Attribute Criteria to be updated
+      - description: Name of the Uncached Attribute Criteria
         explode: false
         in: path
         name: uncached-attribute-criteria-name

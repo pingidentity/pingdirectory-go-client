@@ -146,7 +146,7 @@ func (r ApiDeleteLocationRequest) Execute() (*http.Response, error) {
 DeleteLocation Delete a Location
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param locationName Name of the Location to be deleted
+	@param locationName Name of the Location
 	@return ApiDeleteLocationRequest
 */
 func (a *LocationApiService) DeleteLocation(ctx context.Context, locationName string) ApiDeleteLocationRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLocationRequest) Execute() (*LocationResponse, *http.Response, err
 GetLocation Returns a single Location
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param locationName Name of the Location to be read
+	@param locationName Name of the Location
 	@return ApiGetLocationRequest
 */
 func (a *LocationApiService) GetLocation(ctx context.Context, locationName string) ApiGetLocationRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLocationRequest) Execute() (*LocationResponse, *http.Response, 
 UpdateLocation Update an existing Location by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param locationName Name of the Location to be updated
+	@param locationName Name of the Location
 	@return ApiUpdateLocationRequest
 */
 func (a *LocationApiService) UpdateLocation(ctx context.Context, locationName string) ApiUpdateLocationRequest {

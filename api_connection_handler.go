@@ -146,7 +146,7 @@ func (r ApiDeleteConnectionHandlerRequest) Execute() (*http.Response, error) {
 DeleteConnectionHandler Delete a Connection Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param connectionHandlerName Name of the Connection Handler to be deleted
+	@param connectionHandlerName Name of the Connection Handler
 	@return ApiDeleteConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) DeleteConnectionHandler(ctx context.Context, connectionHandlerName string) ApiDeleteConnectionHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetConnectionHandlerRequest) Execute() (*AddConnectionHandler200Respo
 GetConnectionHandler Returns a single Connection Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param connectionHandlerName Name of the Connection Handler to be read
+	@param connectionHandlerName Name of the Connection Handler
 	@return ApiGetConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) GetConnectionHandler(ctx context.Context, connectionHandlerName string) ApiGetConnectionHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateConnectionHandlerRequest) Execute() (*AddConnectionHandler200Re
 UpdateConnectionHandler Update an existing Connection Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param connectionHandlerName Name of the Connection Handler to be updated
+	@param connectionHandlerName Name of the Connection Handler
 	@return ApiUpdateConnectionHandlerRequest
 */
 func (a *ConnectionHandlerApiService) UpdateConnectionHandler(ctx context.Context, connectionHandlerName string) ApiUpdateConnectionHandlerRequest {

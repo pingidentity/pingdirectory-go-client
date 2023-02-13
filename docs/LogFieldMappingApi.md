@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    logFieldMappingName := "logFieldMappingName_example" // string | Name of the Log Field Mapping to be deleted
+    logFieldMappingName := "logFieldMappingName_example" // string | Name of the Log Field Mapping
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldMappingName** | **string** | Name of the Log Field Mapping to be deleted | 
+**logFieldMappingName** | **string** | Name of the Log Field Mapping | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    logFieldMappingName := "logFieldMappingName_example" // string | Name of the Log Field Mapping to be read
+    logFieldMappingName := "logFieldMappingName_example" // string | Name of the Log Field Mapping
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldMappingName** | **string** | Name of the Log Field Mapping to be read | 
+**logFieldMappingName** | **string** | Name of the Log Field Mapping | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    logFieldMappingName := "logFieldMappingName_example" // string | Name of the Log Field Mapping to be updated
+    logFieldMappingName := "logFieldMappingName_example" // string | Name of the Log Field Mapping
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log Field Mapping
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldMappingName** | **string** | Name of the Log Field Mapping to be updated | 
+**logFieldMappingName** | **string** | Name of the Log Field Mapping | 
 
 ### Other Parameters
 

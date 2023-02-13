@@ -45,7 +45,7 @@ paths:
       summary: Delete a Consent Definition
       operationId: delete-consent-definition
       parameters:
-      - description: Name of the Consent Definition to be deleted
+      - description: Name of the Consent Definition
         explode: false
         in: path
         name: consent-definition-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Consent Definition
       operationId: get-consent-definition
       parameters:
-      - description: Name of the Consent Definition to be read
+      - description: Name of the Consent Definition
         explode: false
         in: path
         name: consent-definition-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Consent Definition by name
       operationId: update-consent-definition
       parameters:
-      - description: Name of the Consent Definition to be updated
+      - description: Name of the Consent Definition
         explode: false
         in: path
         name: consent-definition-name
@@ -135,6 +135,164 @@ paths:
       - basicAuth: []
       tags:
       - consent-definition
+  /consent-definitions/{consent-definition-name}/consent-definition-localizations:
+    post:
+      summary: Add a new Consent Definition Localization to the config
+      operationId: add-consent-definition-localization
+      parameters:
+      - description: Name of the Consent Definition
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-consent-definition-localization-request'
+        description: Create a new Consent Definition Localization in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-localization-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Consent Definition Localization already exists
+      security:
+      - basicAuth: []
+      tags:
+      - consent-definition-localization
+  /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name}:
+    delete:
+      summary: Delete a Consent Definition Localization
+      operationId: delete-consent-definition-localization
+      parameters:
+      - description: Name of the Consent Definition Localization
+        explode: false
+        in: path
+        name: consent-definition-localization-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Consent Definition
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Consent Definition Localization does not exist
+        "409":
+          description: The Consent Definition Localization cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - consent-definition-localization
+    get:
+      summary: Returns a single Consent Definition Localization
+      operationId: get-consent-definition-localization
+      parameters:
+      - description: Name of the Consent Definition Localization
+        explode: false
+        in: path
+        name: consent-definition-localization-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Consent Definition
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-localization-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Consent Definition Localization does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - consent-definition-localization
+    patch:
+      summary: Update an existing Consent Definition Localization by name
+      operationId: update-consent-definition-localization
+      parameters:
+      - description: Name of the Consent Definition Localization
+        explode: false
+        in: path
+        name: consent-definition-localization-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Consent Definition
+        explode: false
+        in: path
+        name: consent-definition-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Consent Definition Localization
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consent-definition-localization-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Consent Definition Localization does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - consent-definition-localization
 components:
   schemas:
     add-consent-definition-request:
@@ -191,6 +349,65 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:consent-definition"
+    add-consent-definition-localization-request:
+      allOf:
+      - type: object
+        properties:
+          localizationName:
+            description: Name of the new Consent Definition Localization
+            type: string
+        required:
+        - localizationName
+      - $ref: '#/components/schemas/consent-definition-localization-shared'
+    consent-definition-localization-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Consent Definition Localization
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/consent-definition-localization-shared'
+    consent-definition-localization-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumconsent-definition-localizationSchemaUrn'
+        locale:
+          type: string
+          description: >-
+              The locale of this Consent Definition Localization.
+        version:
+          type: string
+          description: >-
+              The version of this Consent Definition Localization, using the format MAJOR.MINOR.
+        titleText:
+          type: string
+          description: >-
+              Localized text that may be used to provide a title or summary for a consent request or a granted consent.
+        dataText:
+          type: string
+          description: >-
+              Localized text describing the data to be shared.
+        purposeText:
+          type: string
+          description: >-
+              Localized text describing how the data is to be used.
+      required:
+      - locale
+      - version
+      - dataText
+      - purposeText
+    Enumconsent-definition-localizationSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:consent-definition-localization"
     updateRequest:
       type: object
       properties:

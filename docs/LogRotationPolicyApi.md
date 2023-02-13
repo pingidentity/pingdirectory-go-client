@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    logRotationPolicyName := "logRotationPolicyName_example" // string | Name of the Log Rotation Policy to be deleted
+    logRotationPolicyName := "logRotationPolicyName_example" // string | Name of the Log Rotation Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logRotationPolicyName** | **string** | Name of the Log Rotation Policy to be deleted | 
+**logRotationPolicyName** | **string** | Name of the Log Rotation Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    logRotationPolicyName := "logRotationPolicyName_example" // string | Name of the Log Rotation Policy to be read
+    logRotationPolicyName := "logRotationPolicyName_example" // string | Name of the Log Rotation Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logRotationPolicyName** | **string** | Name of the Log Rotation Policy to be read | 
+**logRotationPolicyName** | **string** | Name of the Log Rotation Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    logRotationPolicyName := "logRotationPolicyName_example" // string | Name of the Log Rotation Policy to be updated
+    logRotationPolicyName := "logRotationPolicyName_example" // string | Name of the Log Rotation Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log Rotation Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logRotationPolicyName** | **string** | Name of the Log Rotation Policy to be updated | 
+**logRotationPolicyName** | **string** | Name of the Log Rotation Policy | 
 
 ### Other Parameters
 

@@ -146,7 +146,7 @@ func (r ApiDeleteUncachedEntryCriteriaRequest) Execute() (*http.Response, error)
 DeleteUncachedEntryCriteria Delete a Uncached Entry Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be deleted
+	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria
 	@return ApiDeleteUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) DeleteUncachedEntryCriteria(ctx context.Context, uncachedEntryCriteriaName string) ApiDeleteUncachedEntryCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetUncachedEntryCriteriaRequest) Execute() (*AddUncachedEntryCriteria
 GetUncachedEntryCriteria Returns a single Uncached Entry Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be read
+	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria
 	@return ApiGetUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) GetUncachedEntryCriteria(ctx context.Context, uncachedEntryCriteriaName string) ApiGetUncachedEntryCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateUncachedEntryCriteriaRequest) Execute() (*AddUncachedEntryCrite
 UpdateUncachedEntryCriteria Update an existing Uncached Entry Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria to be updated
+	@param uncachedEntryCriteriaName Name of the Uncached Entry Criteria
 	@return ApiUpdateUncachedEntryCriteriaRequest
 */
 func (a *UncachedEntryCriteriaApiService) UpdateUncachedEntryCriteria(ctx context.Context, uncachedEntryCriteriaName string) ApiUpdateUncachedEntryCriteriaRequest {

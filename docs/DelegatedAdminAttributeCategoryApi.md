@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    delegatedAdminAttributeCategoryName := "delegatedAdminAttributeCategoryName_example" // string | Name of the Delegated Admin Attribute Category to be deleted
+    delegatedAdminAttributeCategoryName := "delegatedAdminAttributeCategoryName_example" // string | Name of the Delegated Admin Attribute Category
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**delegatedAdminAttributeCategoryName** | **string** | Name of the Delegated Admin Attribute Category to be deleted | 
+**delegatedAdminAttributeCategoryName** | **string** | Name of the Delegated Admin Attribute Category | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    delegatedAdminAttributeCategoryName := "delegatedAdminAttributeCategoryName_example" // string | Name of the Delegated Admin Attribute Category to be read
+    delegatedAdminAttributeCategoryName := "delegatedAdminAttributeCategoryName_example" // string | Name of the Delegated Admin Attribute Category
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**delegatedAdminAttributeCategoryName** | **string** | Name of the Delegated Admin Attribute Category to be read | 
+**delegatedAdminAttributeCategoryName** | **string** | Name of the Delegated Admin Attribute Category | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    delegatedAdminAttributeCategoryName := "delegatedAdminAttributeCategoryName_example" // string | Name of the Delegated Admin Attribute Category to be updated
+    delegatedAdminAttributeCategoryName := "delegatedAdminAttributeCategoryName_example" // string | Name of the Delegated Admin Attribute Category
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Delegated Admin Attribute Category
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**delegatedAdminAttributeCategoryName** | **string** | Name of the Delegated Admin Attribute Category to be updated | 
+**delegatedAdminAttributeCategoryName** | **string** | Name of the Delegated Admin Attribute Category | 
 
 ### Other Parameters
 

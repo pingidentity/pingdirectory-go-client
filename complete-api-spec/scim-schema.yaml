@@ -45,7 +45,7 @@ paths:
       summary: Delete a SCIM Schema
       operationId: delete-scim-schema
       parameters:
-      - description: Name of the SCIM Schema to be deleted
+      - description: Name of the SCIM Schema
         explode: false
         in: path
         name: scim-schema-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single SCIM Schema
       operationId: get-scim-schema
       parameters:
-      - description: Name of the SCIM Schema to be read
+      - description: Name of the SCIM Schema
         explode: false
         in: path
         name: scim-schema-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing SCIM Schema by name
       operationId: update-scim-schema
       parameters:
-      - description: Name of the SCIM Schema to be updated
+      - description: Name of the SCIM Schema
         explode: false
         in: path
         name: scim-schema-name
@@ -135,6 +135,354 @@ paths:
       - basicAuth: []
       tags:
       - scim-schema
+  /scim-schemas/{scim-schema-name}/scim-attributes:
+    post:
+      summary: Add a new SCIM Attribute to the config
+      operationId: add-scim-attribute
+      parameters:
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-scim-attribute-request'
+        description: Create a new SCIM Attribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The SCIM Attribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute
+  /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}:
+    delete:
+      summary: Delete a SCIM Attribute
+      operationId: delete-scim-attribute
+      parameters:
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Attribute does not exist
+        "409":
+          description: The SCIM Attribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute
+    get:
+      summary: Returns a single SCIM Attribute
+      operationId: get-scim-attribute
+      parameters:
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute
+    patch:
+      summary: Update an existing SCIM Attribute by name
+      operationId: update-scim-attribute
+      parameters:
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing SCIM Attribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The SCIM Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-attribute
+  /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes:
+    post:
+      summary: Add a new SCIM Subattribute to the config
+      operationId: add-scim-subattribute
+      parameters:
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-scim-subattribute-request'
+        description: Create a new SCIM Subattribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-subattribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The SCIM Subattribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - scim-subattribute
+  /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name}:
+    delete:
+      summary: Delete a SCIM Subattribute
+      operationId: delete-scim-subattribute
+      parameters:
+      - description: Name of the SCIM Subattribute
+        explode: false
+        in: path
+        name: scim-subattribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Subattribute does not exist
+        "409":
+          description: The SCIM Subattribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - scim-subattribute
+    get:
+      summary: Returns a single SCIM Subattribute
+      operationId: get-scim-subattribute
+      parameters:
+      - description: Name of the SCIM Subattribute
+        explode: false
+        in: path
+        name: scim-subattribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-subattribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The SCIM Subattribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-subattribute
+    patch:
+      summary: Update an existing SCIM Subattribute by name
+      operationId: update-scim-subattribute
+      parameters:
+      - description: Name of the SCIM Subattribute
+        explode: false
+        in: path
+        name: scim-subattribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Attribute
+        explode: false
+        in: path
+        name: scim-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the SCIM Schema
+        explode: false
+        in: path
+        name: scim-schema-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing SCIM Subattribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/scim-subattribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The SCIM Subattribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - scim-subattribute
 components:
   schemas:
     add-scim-schema-request:
@@ -185,6 +533,222 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:scim-schema"
+    add-scim-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeName:
+            description: Name of the new SCIM Attribute
+            type: string
+        required:
+        - attributeName
+      - $ref: '#/components/schemas/scim-attribute-shared'
+    scim-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the SCIM Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/scim-attribute-shared'
+    scim-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumscim-attributeSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this SCIM Attribute
+        name:
+          type: string
+          description: >-
+              The name of the attribute.
+        type:
+          $ref: '#/components/schemas/Enumscim-attribute-typeProp'
+        required:
+          type: boolean
+          description: >-
+              Specifies whether this attribute is required.
+        caseExact:
+          type: boolean
+          description: >-
+              Specifies whether the attribute values are case sensitive.
+        multiValued:
+          type: boolean
+          description: >-
+              Specifies whether this attribute may have multiple values.
+        canonicalValue:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the suggested canonical type values for the attribute.
+        mutability:
+          $ref: '#/components/schemas/Enumscim-attribute-mutabilityProp'
+        returned:
+          $ref: '#/components/schemas/Enumscim-attribute-returnedProp'
+        referenceType:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the SCIM resource types that may be referenced. This property is only applicable for attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
+      required:
+      - name
+      - type
+      - required
+      - caseExact
+      - multiValued
+      - mutability
+      - returned
+    Enumscim-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:scim-attribute"
+    add-scim-subattribute-request:
+      allOf:
+      - type: object
+        properties:
+          subattributeName:
+            description: Name of the new SCIM Subattribute
+            type: string
+        required:
+        - subattributeName
+      - $ref: '#/components/schemas/scim-subattribute-shared'
+    scim-subattribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the SCIM Subattribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/scim-subattribute-shared'
+    scim-subattribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumscim-subattributeSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this SCIM Subattribute
+        type:
+          $ref: '#/components/schemas/Enumscim-subattribute-typeProp'
+        required:
+          type: boolean
+          description: >-
+              Specifies whether this sub-attribute is required.
+        caseExact:
+          type: boolean
+          description: >-
+              Specifies whether the sub-attribute values are case sensitive.
+        multiValued:
+          type: boolean
+          description: >-
+              Specifies whether this attribute may have multiple values.
+        canonicalValue:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the suggested canonical type values for the sub-attribute.
+        mutability:
+          $ref: '#/components/schemas/Enumscim-subattribute-mutabilityProp'
+        returned:
+          $ref: '#/components/schemas/Enumscim-subattribute-returnedProp'
+        referenceType:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the SCIM resource types that may be referenced. This property is only applicable for sub-attributes that are of type 'reference'. Valid values are: A SCIM resource type (e.g., 'User' or 'Group'), 'external' - indicating the resource is an external resource (e.g., such as a photo), or 'uri' - indicating that the reference is to a service endpoint or an identifier (such as a schema urn).
+      required:
+      - type
+      - required
+      - caseExact
+      - multiValued
+      - mutability
+      - returned
+    Enumscim-subattributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:scim-subattribute"
+    Enumscim-attribute-typeProp:
+      type: string
+      enum:
+      - "string"
+      - "boolean"
+      - "datetime"
+      - "decimal"
+      - "integer"
+      - "binary"
+      - "reference"
+      - "complex"
+      description: >-
+          Specifies the data type for this attribute.
+    Enumscim-attribute-returnedProp:
+      type: string
+      enum:
+      - "by-default"
+      - "upon-request"
+      - "always"
+      - "never"
+      description: >-
+          Specifies the circumstances under which the values of the attribute are returned in response to a request.
+    Enumscim-attribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      - "immutable"
+      - "write-only"
+      description: >-
+          Specifies the circumstances under which the values of the attribute can be written.
+    Enumscim-subattribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      - "immutable"
+      - "write-only"
+      description: >-
+          Specifies the circumstances under which the values of the sub-attribute can be written.
+    Enumscim-subattribute-typeProp:
+      type: string
+      enum:
+      - "string"
+      - "boolean"
+      - "datetime"
+      - "decimal"
+      - "integer"
+      - "binary"
+      - "reference"
+      description: >-
+          Specifies the data type for this sub-attribute.
+    Enumscim-subattribute-returnedProp:
+      type: string
+      enum:
+      - "by-default"
+      - "upon-request"
+      - "always"
+      - "never"
+      description: >-
+          Specifies the circumstances under which the values of the sub-attribute are returned in response to a request.
     updateRequest:
       type: object
       properties:

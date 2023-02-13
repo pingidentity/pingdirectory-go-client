@@ -45,7 +45,7 @@ paths:
       summary: Delete a Conjur Authentication Method
       operationId: delete-conjur-authentication-method
       parameters:
-      - description: Name of the Conjur Authentication Method to be deleted
+      - description: Name of the Conjur Authentication Method
         explode: false
         in: path
         name: conjur-authentication-method-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Conjur Authentication Method
       operationId: get-conjur-authentication-method
       parameters:
-      - description: Name of the Conjur Authentication Method to be read
+      - description: Name of the Conjur Authentication Method
         explode: false
         in: path
         name: conjur-authentication-method-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Conjur Authentication Method by name
       operationId: update-conjur-authentication-method
       parameters:
-      - description: Name of the Conjur Authentication Method to be updated
+      - description: Name of the Conjur Authentication Method
         explode: false
         in: path
         name: conjur-authentication-method-name

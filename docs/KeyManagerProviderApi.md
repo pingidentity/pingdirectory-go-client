@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    keyManagerProviderName := "keyManagerProviderName_example" // string | Name of the Key Manager Provider to be deleted
+    keyManagerProviderName := "keyManagerProviderName_example" // string | Name of the Key Manager Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyManagerProviderName** | **string** | Name of the Key Manager Provider to be deleted | 
+**keyManagerProviderName** | **string** | Name of the Key Manager Provider | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    keyManagerProviderName := "keyManagerProviderName_example" // string | Name of the Key Manager Provider to be read
+    keyManagerProviderName := "keyManagerProviderName_example" // string | Name of the Key Manager Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyManagerProviderName** | **string** | Name of the Key Manager Provider to be read | 
+**keyManagerProviderName** | **string** | Name of the Key Manager Provider | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    keyManagerProviderName := "keyManagerProviderName_example" // string | Name of the Key Manager Provider to be updated
+    keyManagerProviderName := "keyManagerProviderName_example" // string | Name of the Key Manager Provider
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Key Manager Provider
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyManagerProviderName** | **string** | Name of the Key Manager Provider to be updated | 
+**keyManagerProviderName** | **string** | Name of the Key Manager Provider | 
 
 ### Other Parameters
 

@@ -61,7 +61,7 @@ paths:
       summary: Delete a Passphrase Provider
       operationId: delete-passphrase-provider
       parameters:
-      - description: Name of the Passphrase Provider to be deleted
+      - description: Name of the Passphrase Provider
         explode: false
         in: path
         name: passphrase-provider-name
@@ -88,7 +88,7 @@ paths:
       summary: Returns a single Passphrase Provider
       operationId: get-passphrase-provider
       parameters:
-      - description: Name of the Passphrase Provider to be read
+      - description: Name of the Passphrase Provider
         explode: false
         in: path
         name: passphrase-provider-name
@@ -125,7 +125,7 @@ paths:
       summary: Update an existing Passphrase Provider by name
       operationId: update-passphrase-provider
       parameters:
-      - description: Name of the Passphrase Provider to be updated
+      - description: Name of the Passphrase Provider
         explode: false
         in: path
         name: passphrase-provider-name

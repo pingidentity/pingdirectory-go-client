@@ -146,7 +146,7 @@ func (r ApiDeleteLogPublisherRequest) Execute() (*http.Response, error) {
 DeleteLogPublisher Delete a Log Publisher
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logPublisherName Name of the Log Publisher to be deleted
+	@param logPublisherName Name of the Log Publisher
 	@return ApiDeleteLogPublisherRequest
 */
 func (a *LogPublisherApiService) DeleteLogPublisher(ctx context.Context, logPublisherName string) ApiDeleteLogPublisherRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLogPublisherRequest) Execute() (*GetLogPublisher200Response, *http
 GetLogPublisher Returns a single Log Publisher
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logPublisherName Name of the Log Publisher to be read
+	@param logPublisherName Name of the Log Publisher
 	@return ApiGetLogPublisherRequest
 */
 func (a *LogPublisherApiService) GetLogPublisher(ctx context.Context, logPublisherName string) ApiGetLogPublisherRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLogPublisherRequest) Execute() (*GetLogPublisher200Response, *h
 UpdateLogPublisher Update an existing Log Publisher by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logPublisherName Name of the Log Publisher to be updated
+	@param logPublisherName Name of the Log Publisher
 	@return ApiUpdateLogPublisherRequest
 */
 func (a *LogPublisherApiService) UpdateLogPublisher(ctx context.Context, logPublisherName string) ApiUpdateLogPublisherRequest {

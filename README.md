@@ -116,6 +116,8 @@ Class | Method | HTTP request | Description
 *ChangeSubscriptionHandlerApi* | [**DeleteChangeSubscriptionHandler**](docs/ChangeSubscriptionHandlerApi.md#deletechangesubscriptionhandler) | **Delete** /change-subscription-handlers/{change-subscription-handler-name} | Delete a Change Subscription Handler
 *ChangeSubscriptionHandlerApi* | [**GetChangeSubscriptionHandler**](docs/ChangeSubscriptionHandlerApi.md#getchangesubscriptionhandler) | **Get** /change-subscription-handlers/{change-subscription-handler-name} | Returns a single Change Subscription Handler
 *ChangeSubscriptionHandlerApi* | [**UpdateChangeSubscriptionHandler**](docs/ChangeSubscriptionHandlerApi.md#updatechangesubscriptionhandler) | **Patch** /change-subscription-handlers/{change-subscription-handler-name} | Update an existing Change Subscription Handler by name
+*CipherSecretKeyApi* | [**GetCipherSecretKey**](docs/CipherSecretKeyApi.md#getciphersecretkey) | **Get** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Returns a single Cipher Secret Key
+*CipherSecretKeyApi* | [**UpdateCipherSecretKey**](docs/CipherSecretKeyApi.md#updateciphersecretkey) | **Patch** /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name} | Update an existing Cipher Secret Key by name
 *CipherStreamProviderApi* | [**AddCipherStreamProvider**](docs/CipherStreamProviderApi.md#addcipherstreamprovider) | **Post** /cipher-stream-providers | Add a new Cipher Stream Provider to the config
 *CipherStreamProviderApi* | [**DeleteCipherStreamProvider**](docs/CipherStreamProviderApi.md#deletecipherstreamprovider) | **Delete** /cipher-stream-providers/{cipher-stream-provider-name} | Delete a Cipher Stream Provider
 *CipherStreamProviderApi* | [**GetCipherStreamProvider**](docs/CipherStreamProviderApi.md#getcipherstreamprovider) | **Get** /cipher-stream-providers/{cipher-stream-provider-name} | Returns a single Cipher Stream Provider
@@ -140,6 +142,10 @@ Class | Method | HTTP request | Description
 *ConsentDefinitionApi* | [**DeleteConsentDefinition**](docs/ConsentDefinitionApi.md#deleteconsentdefinition) | **Delete** /consent-definitions/{consent-definition-name} | Delete a Consent Definition
 *ConsentDefinitionApi* | [**GetConsentDefinition**](docs/ConsentDefinitionApi.md#getconsentdefinition) | **Get** /consent-definitions/{consent-definition-name} | Returns a single Consent Definition
 *ConsentDefinitionApi* | [**UpdateConsentDefinition**](docs/ConsentDefinitionApi.md#updateconsentdefinition) | **Patch** /consent-definitions/{consent-definition-name} | Update an existing Consent Definition by name
+*ConsentDefinitionLocalizationApi* | [**AddConsentDefinitionLocalization**](docs/ConsentDefinitionLocalizationApi.md#addconsentdefinitionlocalization) | **Post** /consent-definitions/{consent-definition-name}/consent-definition-localizations | Add a new Consent Definition Localization to the config
+*ConsentDefinitionLocalizationApi* | [**DeleteConsentDefinitionLocalization**](docs/ConsentDefinitionLocalizationApi.md#deleteconsentdefinitionlocalization) | **Delete** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Delete a Consent Definition Localization
+*ConsentDefinitionLocalizationApi* | [**GetConsentDefinitionLocalization**](docs/ConsentDefinitionLocalizationApi.md#getconsentdefinitionlocalization) | **Get** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Returns a single Consent Definition Localization
+*ConsentDefinitionLocalizationApi* | [**UpdateConsentDefinitionLocalization**](docs/ConsentDefinitionLocalizationApi.md#updateconsentdefinitionlocalization) | **Patch** /consent-definitions/{consent-definition-name}/consent-definition-localizations/{consent-definition-localization-name} | Update an existing Consent Definition Localization by name
 *ConsentServiceApi* | [**GetConsentService**](docs/ConsentServiceApi.md#getconsentservice) | **Get** /consent-service | Returns a single Consent Service
 *ConsentServiceApi* | [**UpdateConsentService**](docs/ConsentServiceApi.md#updateconsentservice) | **Patch** /consent-service | Update an existing Consent Service by name
 *ConstructedAttributeApi* | [**AddConstructedAttribute**](docs/ConstructedAttributeApi.md#addconstructedattribute) | **Post** /constructed-attributes | Add a new Constructed Attribute to the config
@@ -148,14 +154,34 @@ Class | Method | HTTP request | Description
 *ConstructedAttributeApi* | [**UpdateConstructedAttribute**](docs/ConstructedAttributeApi.md#updateconstructedattribute) | **Patch** /constructed-attributes/{constructed-attribute-name} | Update an existing Constructed Attribute by name
 *CryptoManagerApi* | [**GetCryptoManager**](docs/CryptoManagerApi.md#getcryptomanager) | **Get** /crypto-manager | Returns a single Crypto Manager
 *CryptoManagerApi* | [**UpdateCryptoManager**](docs/CryptoManagerApi.md#updatecryptomanager) | **Patch** /crypto-manager | Update an existing Crypto Manager by name
+*CustomLoggedStatsApi* | [**AddCustomLoggedStats**](docs/CustomLoggedStatsApi.md#addcustomloggedstats) | **Post** /plugin-root/plugins/{plugin-name}/custom-logged-stats | Add a new Custom Logged Stats to the config
+*CustomLoggedStatsApi* | [**DeleteCustomLoggedStats**](docs/CustomLoggedStatsApi.md#deletecustomloggedstats) | **Delete** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Delete a Custom Logged Stats
+*CustomLoggedStatsApi* | [**GetCustomLoggedStats**](docs/CustomLoggedStatsApi.md#getcustomloggedstats) | **Get** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Returns a single Custom Logged Stats
+*CustomLoggedStatsApi* | [**UpdateCustomLoggedStats**](docs/CustomLoggedStatsApi.md#updatecustomloggedstats) | **Patch** /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name} | Update an existing Custom Logged Stats by name
 *DataSecurityAuditorApi* | [**AddDataSecurityAuditor**](docs/DataSecurityAuditorApi.md#adddatasecurityauditor) | **Post** /data-security-auditors | Add a new Data Security Auditor to the config
 *DataSecurityAuditorApi* | [**DeleteDataSecurityAuditor**](docs/DataSecurityAuditorApi.md#deletedatasecurityauditor) | **Delete** /data-security-auditors/{data-security-auditor-name} | Delete a Data Security Auditor
 *DataSecurityAuditorApi* | [**GetDataSecurityAuditor**](docs/DataSecurityAuditorApi.md#getdatasecurityauditor) | **Get** /data-security-auditors/{data-security-auditor-name} | Returns a single Data Security Auditor
 *DataSecurityAuditorApi* | [**UpdateDataSecurityAuditor**](docs/DataSecurityAuditorApi.md#updatedatasecurityauditor) | **Patch** /data-security-auditors/{data-security-auditor-name} | Update an existing Data Security Auditor by name
+*DebugTargetApi* | [**AddDebugTarget**](docs/DebugTargetApi.md#adddebugtarget) | **Post** /log-publishers/{log-publisher-name}/debug-targets | Add a new Debug Target to the config
+*DebugTargetApi* | [**DeleteDebugTarget**](docs/DebugTargetApi.md#deletedebugtarget) | **Delete** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Delete a Debug Target
+*DebugTargetApi* | [**GetDebugTarget**](docs/DebugTargetApi.md#getdebugtarget) | **Get** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Returns a single Debug Target
+*DebugTargetApi* | [**UpdateDebugTarget**](docs/DebugTargetApi.md#updatedebugtarget) | **Patch** /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name} | Update an existing Debug Target by name
+*DelegatedAdminAttributeApi* | [**AddDelegatedAdminAttribute**](docs/DelegatedAdminAttributeApi.md#adddelegatedadminattribute) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes | Add a new Delegated Admin Attribute to the config
+*DelegatedAdminAttributeApi* | [**DeleteDelegatedAdminAttribute**](docs/DelegatedAdminAttributeApi.md#deletedelegatedadminattribute) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Delete a Delegated Admin Attribute
+*DelegatedAdminAttributeApi* | [**GetDelegatedAdminAttribute**](docs/DelegatedAdminAttributeApi.md#getdelegatedadminattribute) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Returns a single Delegated Admin Attribute
+*DelegatedAdminAttributeApi* | [**UpdateDelegatedAdminAttribute**](docs/DelegatedAdminAttributeApi.md#updatedelegatedadminattribute) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name} | Update an existing Delegated Admin Attribute by name
 *DelegatedAdminAttributeCategoryApi* | [**AddDelegatedAdminAttributeCategory**](docs/DelegatedAdminAttributeCategoryApi.md#adddelegatedadminattributecategory) | **Post** /delegated-admin-attribute-categories | Add a new Delegated Admin Attribute Category to the config
 *DelegatedAdminAttributeCategoryApi* | [**DeleteDelegatedAdminAttributeCategory**](docs/DelegatedAdminAttributeCategoryApi.md#deletedelegatedadminattributecategory) | **Delete** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Delete a Delegated Admin Attribute Category
 *DelegatedAdminAttributeCategoryApi* | [**GetDelegatedAdminAttributeCategory**](docs/DelegatedAdminAttributeCategoryApi.md#getdelegatedadminattributecategory) | **Get** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Returns a single Delegated Admin Attribute Category
 *DelegatedAdminAttributeCategoryApi* | [**UpdateDelegatedAdminAttributeCategory**](docs/DelegatedAdminAttributeCategoryApi.md#updatedelegatedadminattributecategory) | **Patch** /delegated-admin-attribute-categories/{delegated-admin-attribute-category-name} | Update an existing Delegated Admin Attribute Category by name
+*DelegatedAdminCorrelatedRestResourceApi* | [**AddDelegatedAdminCorrelatedRestResource**](docs/DelegatedAdminCorrelatedRestResourceApi.md#adddelegatedadmincorrelatedrestresource) | **Post** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources | Add a new Delegated Admin Correlated REST Resource to the config
+*DelegatedAdminCorrelatedRestResourceApi* | [**DeleteDelegatedAdminCorrelatedRestResource**](docs/DelegatedAdminCorrelatedRestResourceApi.md#deletedelegatedadmincorrelatedrestresource) | **Delete** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Delete a Delegated Admin Correlated REST Resource
+*DelegatedAdminCorrelatedRestResourceApi* | [**GetDelegatedAdminCorrelatedRestResource**](docs/DelegatedAdminCorrelatedRestResourceApi.md#getdelegatedadmincorrelatedrestresource) | **Get** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Returns a single Delegated Admin Correlated REST Resource
+*DelegatedAdminCorrelatedRestResourceApi* | [**UpdateDelegatedAdminCorrelatedRestResource**](docs/DelegatedAdminCorrelatedRestResourceApi.md#updatedelegatedadmincorrelatedrestresource) | **Patch** /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name} | Update an existing Delegated Admin Correlated REST Resource by name
+*DelegatedAdminResourceRightsApi* | [**AddDelegatedAdminResourceRights**](docs/DelegatedAdminResourceRightsApi.md#adddelegatedadminresourcerights) | **Post** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights | Add a new Delegated Admin Resource Rights to the config
+*DelegatedAdminResourceRightsApi* | [**DeleteDelegatedAdminResourceRights**](docs/DelegatedAdminResourceRightsApi.md#deletedelegatedadminresourcerights) | **Delete** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Delete a Delegated Admin Resource Rights
+*DelegatedAdminResourceRightsApi* | [**GetDelegatedAdminResourceRights**](docs/DelegatedAdminResourceRightsApi.md#getdelegatedadminresourcerights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Returns a single Delegated Admin Resource Rights
+*DelegatedAdminResourceRightsApi* | [**UpdateDelegatedAdminResourceRights**](docs/DelegatedAdminResourceRightsApi.md#updatedelegatedadminresourcerights) | **Patch** /delegated-admin-rights/{delegated-admin-rights-name}/delegated-admin-resource-rights/{delegated-admin-resource-rights-name} | Update an existing Delegated Admin Resource Rights by name
 *DelegatedAdminRightsApi* | [**AddDelegatedAdminRights**](docs/DelegatedAdminRightsApi.md#adddelegatedadminrights) | **Post** /delegated-admin-rights | Add a new Delegated Admin Rights to the config
 *DelegatedAdminRightsApi* | [**DeleteDelegatedAdminRights**](docs/DelegatedAdminRightsApi.md#deletedelegatedadminrights) | **Delete** /delegated-admin-rights/{delegated-admin-rights-name} | Delete a Delegated Admin Rights
 *DelegatedAdminRightsApi* | [**GetDelegatedAdminRights**](docs/DelegatedAdminRightsApi.md#getdelegatedadminrights) | **Get** /delegated-admin-rights/{delegated-admin-rights-name} | Returns a single Delegated Admin Rights
@@ -210,10 +236,16 @@ Class | Method | HTTP request | Description
 *IdentityMapperApi* | [**DeleteIdentityMapper**](docs/IdentityMapperApi.md#deleteidentitymapper) | **Delete** /identity-mappers/{identity-mapper-name} | Delete a Identity Mapper
 *IdentityMapperApi* | [**GetIdentityMapper**](docs/IdentityMapperApi.md#getidentitymapper) | **Get** /identity-mappers/{identity-mapper-name} | Returns a single Identity Mapper
 *IdentityMapperApi* | [**UpdateIdentityMapper**](docs/IdentityMapperApi.md#updateidentitymapper) | **Patch** /identity-mappers/{identity-mapper-name} | Update an existing Identity Mapper by name
+*InterServerAuthenticationInfoApi* | [**GetInterServerAuthenticationInfo**](docs/InterServerAuthenticationInfoApi.md#getinterserverauthenticationinfo) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name} | Returns a single Inter Server Authentication Info
+*InterServerAuthenticationInfoApi* | [**UpdateInterServerAuthenticationInfo**](docs/InterServerAuthenticationInfoApi.md#updateinterserverauthenticationinfo) | **Patch** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name} | Update an existing Inter Server Authentication Info by name
 *JsonAttributeConstraintsApi* | [**AddJsonAttributeConstraints**](docs/JsonAttributeConstraintsApi.md#addjsonattributeconstraints) | **Post** /json-attribute-constraints | Add a new JSON Attribute Constraints to the config
 *JsonAttributeConstraintsApi* | [**DeleteJsonAttributeConstraints**](docs/JsonAttributeConstraintsApi.md#deletejsonattributeconstraints) | **Delete** /json-attribute-constraints/{json-attribute-constraints-name} | Delete a JSON Attribute Constraints
 *JsonAttributeConstraintsApi* | [**GetJsonAttributeConstraints**](docs/JsonAttributeConstraintsApi.md#getjsonattributeconstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name} | Returns a single JSON Attribute Constraints
 *JsonAttributeConstraintsApi* | [**UpdateJsonAttributeConstraints**](docs/JsonAttributeConstraintsApi.md#updatejsonattributeconstraints) | **Patch** /json-attribute-constraints/{json-attribute-constraints-name} | Update an existing JSON Attribute Constraints by name
+*JsonFieldConstraintsApi* | [**AddJsonFieldConstraints**](docs/JsonFieldConstraintsApi.md#addjsonfieldconstraints) | **Post** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints | Add a new JSON Field Constraints to the config
+*JsonFieldConstraintsApi* | [**DeleteJsonFieldConstraints**](docs/JsonFieldConstraintsApi.md#deletejsonfieldconstraints) | **Delete** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Delete a JSON Field Constraints
+*JsonFieldConstraintsApi* | [**GetJsonFieldConstraints**](docs/JsonFieldConstraintsApi.md#getjsonfieldconstraints) | **Get** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Returns a single JSON Field Constraints
+*JsonFieldConstraintsApi* | [**UpdateJsonFieldConstraints**](docs/JsonFieldConstraintsApi.md#updatejsonfieldconstraints) | **Patch** /json-attribute-constraints/{json-attribute-constraints-name}/json-field-constraints/{json-field-constraints-name} | Update an existing JSON Field Constraints by name
 *KeyManagerProviderApi* | [**AddKeyManagerProvider**](docs/KeyManagerProviderApi.md#addkeymanagerprovider) | **Post** /key-manager-providers | Add a new Key Manager Provider to the config
 *KeyManagerProviderApi* | [**DeleteKeyManagerProvider**](docs/KeyManagerProviderApi.md#deletekeymanagerprovider) | **Delete** /key-manager-providers/{key-manager-provider-name} | Delete a Key Manager Provider
 *KeyManagerProviderApi* | [**GetKeyManagerProvider**](docs/KeyManagerProviderApi.md#getkeymanagerprovider) | **Get** /key-manager-providers/{key-manager-provider-name} | Returns a single Key Manager Provider
@@ -226,6 +258,18 @@ Class | Method | HTTP request | Description
 *LdapSdkDebugLoggerApi* | [**UpdateLdapSdkDebugLogger**](docs/LdapSdkDebugLoggerApi.md#updateldapsdkdebuglogger) | **Patch** /ldap-sdk-debug-logger | Update an existing LDAP SDK Debug Logger by name
 *LicenseApi* | [**GetLicense**](docs/LicenseApi.md#getlicense) | **Get** /license | Returns a single License
 *LicenseApi* | [**UpdateLicense**](docs/LicenseApi.md#updatelicense) | **Patch** /license | Update an existing License by name
+*LocalDbCompositeIndexApi* | [**AddLocalDbCompositeIndex**](docs/LocalDbCompositeIndexApi.md#addlocaldbcompositeindex) | **Post** /backends/{backend-name}/local-db-composite-indexes | Add a new Local DB Composite Index to the config
+*LocalDbCompositeIndexApi* | [**DeleteLocalDbCompositeIndex**](docs/LocalDbCompositeIndexApi.md#deletelocaldbcompositeindex) | **Delete** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Delete a Local DB Composite Index
+*LocalDbCompositeIndexApi* | [**GetLocalDbCompositeIndex**](docs/LocalDbCompositeIndexApi.md#getlocaldbcompositeindex) | **Get** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Returns a single Local DB Composite Index
+*LocalDbCompositeIndexApi* | [**UpdateLocalDbCompositeIndex**](docs/LocalDbCompositeIndexApi.md#updatelocaldbcompositeindex) | **Patch** /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name} | Update an existing Local DB Composite Index by name
+*LocalDbIndexApi* | [**AddLocalDbIndex**](docs/LocalDbIndexApi.md#addlocaldbindex) | **Post** /backends/{backend-name}/local-db-indexes | Add a new Local DB Index to the config
+*LocalDbIndexApi* | [**DeleteLocalDbIndex**](docs/LocalDbIndexApi.md#deletelocaldbindex) | **Delete** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Delete a Local DB Index
+*LocalDbIndexApi* | [**GetLocalDbIndex**](docs/LocalDbIndexApi.md#getlocaldbindex) | **Get** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Returns a single Local DB Index
+*LocalDbIndexApi* | [**UpdateLocalDbIndex**](docs/LocalDbIndexApi.md#updatelocaldbindex) | **Patch** /backends/{backend-name}/local-db-indexes/{local-db-index-name} | Update an existing Local DB Index by name
+*LocalDbVlvIndexApi* | [**AddLocalDbVlvIndex**](docs/LocalDbVlvIndexApi.md#addlocaldbvlvindex) | **Post** /backends/{backend-name}/local-db-vlv-indexes | Add a new Local DB VLV Index to the config
+*LocalDbVlvIndexApi* | [**DeleteLocalDbVlvIndex**](docs/LocalDbVlvIndexApi.md#deletelocaldbvlvindex) | **Delete** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Delete a Local DB VLV Index
+*LocalDbVlvIndexApi* | [**GetLocalDbVlvIndex**](docs/LocalDbVlvIndexApi.md#getlocaldbvlvindex) | **Get** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Returns a single Local DB VLV Index
+*LocalDbVlvIndexApi* | [**UpdateLocalDbVlvIndex**](docs/LocalDbVlvIndexApi.md#updatelocaldbvlvindex) | **Patch** /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name} | Update an existing Local DB VLV Index by name
 *LocationApi* | [**AddLocation**](docs/LocationApi.md#addlocation) | **Post** /locations | Add a new Location to the config
 *LocationApi* | [**DeleteLocation**](docs/LocationApi.md#deletelocation) | **Delete** /locations/{location-name} | Delete a Location
 *LocationApi* | [**GetLocation**](docs/LocationApi.md#getlocation) | **Get** /locations/{location-name} | Returns a single Location
@@ -256,6 +300,8 @@ Class | Method | HTTP request | Description
 *LogRotationPolicyApi* | [**DeleteLogRotationPolicy**](docs/LogRotationPolicyApi.md#deletelogrotationpolicy) | **Delete** /log-rotation-policies/{log-rotation-policy-name} | Delete a Log Rotation Policy
 *LogRotationPolicyApi* | [**GetLogRotationPolicy**](docs/LogRotationPolicyApi.md#getlogrotationpolicy) | **Get** /log-rotation-policies/{log-rotation-policy-name} | Returns a single Log Rotation Policy
 *LogRotationPolicyApi* | [**UpdateLogRotationPolicy**](docs/LogRotationPolicyApi.md#updatelogrotationpolicy) | **Patch** /log-rotation-policies/{log-rotation-policy-name} | Update an existing Log Rotation Policy by name
+*MacSecretKeyApi* | [**GetMacSecretKey**](docs/MacSecretKeyApi.md#getmacsecretkey) | **Get** /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name} | Returns a single Mac Secret Key
+*MacSecretKeyApi* | [**UpdateMacSecretKey**](docs/MacSecretKeyApi.md#updatemacsecretkey) | **Patch** /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name} | Update an existing Mac Secret Key by name
 *MatchingRuleApi* | [**GetMatchingRule**](docs/MatchingRuleApi.md#getmatchingrule) | **Get** /matching-rules/{matching-rule-name} | Returns a single Matching Rule
 *MatchingRuleApi* | [**UpdateMatchingRule**](docs/MatchingRuleApi.md#updatematchingrule) | **Patch** /matching-rules/{matching-rule-name} | Update an existing Matching Rule by name
 *MonitorProviderApi* | [**AddMonitorProvider**](docs/MonitorProviderApi.md#addmonitorprovider) | **Post** /monitor-providers | Add a new Monitor Provider to the config
@@ -306,6 +352,10 @@ Class | Method | HTTP request | Description
 *PasswordValidatorApi* | [**DeletePasswordValidator**](docs/PasswordValidatorApi.md#deletepasswordvalidator) | **Delete** /password-validators/{password-validator-name} | Delete a Password Validator
 *PasswordValidatorApi* | [**GetPasswordValidator**](docs/PasswordValidatorApi.md#getpasswordvalidator) | **Get** /password-validators/{password-validator-name} | Returns a single Password Validator
 *PasswordValidatorApi* | [**UpdatePasswordValidator**](docs/PasswordValidatorApi.md#updatepasswordvalidator) | **Patch** /password-validators/{password-validator-name} | Update an existing Password Validator by name
+*PluginApi* | [**AddPlugin**](docs/PluginApi.md#addplugin) | **Post** /plugin-root/plugins | Add a new Plugin to the config
+*PluginApi* | [**DeletePlugin**](docs/PluginApi.md#deleteplugin) | **Delete** /plugin-root/plugins/{plugin-name} | Delete a Plugin
+*PluginApi* | [**GetPlugin**](docs/PluginApi.md#getplugin) | **Get** /plugin-root/plugins/{plugin-name} | Returns a single Plugin
+*PluginApi* | [**UpdatePlugin**](docs/PluginApi.md#updateplugin) | **Patch** /plugin-root/plugins/{plugin-name} | Update an existing Plugin by name
 *PluginRootApi* | [**GetPluginRoot**](docs/PluginRootApi.md#getpluginroot) | **Get** /plugin-root | Returns a single Plugin Root
 *PluginRootApi* | [**UpdatePluginRoot**](docs/PluginRootApi.md#updatepluginroot) | **Patch** /plugin-root | Update an existing Plugin Root by name
 *RecurringTaskApi* | [**AddRecurringTask**](docs/RecurringTaskApi.md#addrecurringtask) | **Post** /recurring-tasks | Add a new Recurring Task to the config
@@ -320,6 +370,8 @@ Class | Method | HTTP request | Description
 *ReplicationAssurancePolicyApi* | [**DeleteReplicationAssurancePolicy**](docs/ReplicationAssurancePolicyApi.md#deletereplicationassurancepolicy) | **Delete** /replication-assurance-policies/{replication-assurance-policy-name} | Delete a Replication Assurance Policy
 *ReplicationAssurancePolicyApi* | [**GetReplicationAssurancePolicy**](docs/ReplicationAssurancePolicyApi.md#getreplicationassurancepolicy) | **Get** /replication-assurance-policies/{replication-assurance-policy-name} | Returns a single Replication Assurance Policy
 *ReplicationAssurancePolicyApi* | [**UpdateReplicationAssurancePolicy**](docs/ReplicationAssurancePolicyApi.md#updatereplicationassurancepolicy) | **Patch** /replication-assurance-policies/{replication-assurance-policy-name} | Update an existing Replication Assurance Policy by name
+*ReplicationDomainApi* | [**GetReplicationDomain**](docs/ReplicationDomainApi.md#getreplicationdomain) | **Get** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Returns a single Replication Domain
+*ReplicationDomainApi* | [**UpdateReplicationDomain**](docs/ReplicationDomainApi.md#updatereplicationdomain) | **Patch** /synchronization-providers/{synchronization-provider-name}/replication-domains/{replication-domain-name} | Update an existing Replication Domain by name
 *RequestCriteriaApi* | [**AddRequestCriteria**](docs/RequestCriteriaApi.md#addrequestcriteria) | **Post** /request-criteria | Add a new Request Criteria to the config
 *RequestCriteriaApi* | [**DeleteRequestCriteria**](docs/RequestCriteriaApi.md#deleterequestcriteria) | **Delete** /request-criteria/{request-criteria-name} | Delete a Request Criteria
 *RequestCriteriaApi* | [**GetRequestCriteria**](docs/RequestCriteriaApi.md#getrequestcriteria) | **Get** /request-criteria/{request-criteria-name} | Returns a single Request Criteria
@@ -338,16 +390,28 @@ Class | Method | HTTP request | Description
 *ResultCriteriaApi* | [**UpdateResultCriteria**](docs/ResultCriteriaApi.md#updateresultcriteria) | **Patch** /result-criteria/{result-criteria-name} | Update an existing Result Criteria by name
 *RootDnApi* | [**GetRootDn**](docs/RootDnApi.md#getrootdn) | **Get** /root-dn | Returns a single Root DN
 *RootDnApi* | [**UpdateRootDn**](docs/RootDnApi.md#updaterootdn) | **Patch** /root-dn | Update an existing Root DN by name
+*RootDnUserApi* | [**AddRootDnUser**](docs/RootDnUserApi.md#addrootdnuser) | **Post** /root-dn/root-dn-users | Add a new Root DN User to the config
+*RootDnUserApi* | [**DeleteRootDnUser**](docs/RootDnUserApi.md#deleterootdnuser) | **Delete** /root-dn/root-dn-users/{root-dn-user-name} | Delete a Root DN User
+*RootDnUserApi* | [**GetRootDnUser**](docs/RootDnUserApi.md#getrootdnuser) | **Get** /root-dn/root-dn-users/{root-dn-user-name} | Returns a single Root DN User
+*RootDnUserApi* | [**UpdateRootDnUser**](docs/RootDnUserApi.md#updaterootdnuser) | **Patch** /root-dn/root-dn-users/{root-dn-user-name} | Update an existing Root DN User by name
 *RootDseBackendApi* | [**GetRootDseBackend**](docs/RootDseBackendApi.md#getrootdsebackend) | **Get** /root-dse-backend | Returns a single Root DSE Backend
 *RootDseBackendApi* | [**UpdateRootDseBackend**](docs/RootDseBackendApi.md#updaterootdsebackend) | **Patch** /root-dse-backend | Update an existing Root DSE Backend by name
 *SaslMechanismHandlerApi* | [**AddSaslMechanismHandler**](docs/SaslMechanismHandlerApi.md#addsaslmechanismhandler) | **Post** /sasl-mechanism-handlers | Add a new SASL Mechanism Handler to the config
 *SaslMechanismHandlerApi* | [**DeleteSaslMechanismHandler**](docs/SaslMechanismHandlerApi.md#deletesaslmechanismhandler) | **Delete** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Delete a SASL Mechanism Handler
 *SaslMechanismHandlerApi* | [**GetSaslMechanismHandler**](docs/SaslMechanismHandlerApi.md#getsaslmechanismhandler) | **Get** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Returns a single SASL Mechanism Handler
 *SaslMechanismHandlerApi* | [**UpdateSaslMechanismHandler**](docs/SaslMechanismHandlerApi.md#updatesaslmechanismhandler) | **Patch** /sasl-mechanism-handlers/{sasl-mechanism-handler-name} | Update an existing SASL Mechanism Handler by name
+*ScimAttributeApi* | [**AddScimAttribute**](docs/ScimAttributeApi.md#addscimattribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes | Add a new SCIM Attribute to the config
+*ScimAttributeApi* | [**DeleteScimAttribute**](docs/ScimAttributeApi.md#deletescimattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Delete a SCIM Attribute
+*ScimAttributeApi* | [**GetScimAttribute**](docs/ScimAttributeApi.md#getscimattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Returns a single SCIM Attribute
+*ScimAttributeApi* | [**UpdateScimAttribute**](docs/ScimAttributeApi.md#updatescimattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name} | Update an existing SCIM Attribute by name
 *ScimSchemaApi* | [**AddScimSchema**](docs/ScimSchemaApi.md#addscimschema) | **Post** /scim-schemas | Add a new SCIM Schema to the config
 *ScimSchemaApi* | [**DeleteScimSchema**](docs/ScimSchemaApi.md#deletescimschema) | **Delete** /scim-schemas/{scim-schema-name} | Delete a SCIM Schema
 *ScimSchemaApi* | [**GetScimSchema**](docs/ScimSchemaApi.md#getscimschema) | **Get** /scim-schemas/{scim-schema-name} | Returns a single SCIM Schema
 *ScimSchemaApi* | [**UpdateScimSchema**](docs/ScimSchemaApi.md#updatescimschema) | **Patch** /scim-schemas/{scim-schema-name} | Update an existing SCIM Schema by name
+*ScimSubattributeApi* | [**AddScimSubattribute**](docs/ScimSubattributeApi.md#addscimsubattribute) | **Post** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes | Add a new SCIM Subattribute to the config
+*ScimSubattributeApi* | [**DeleteScimSubattribute**](docs/ScimSubattributeApi.md#deletescimsubattribute) | **Delete** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Delete a SCIM Subattribute
+*ScimSubattributeApi* | [**GetScimSubattribute**](docs/ScimSubattributeApi.md#getscimsubattribute) | **Get** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Returns a single SCIM Subattribute
+*ScimSubattributeApi* | [**UpdateScimSubattribute**](docs/ScimSubattributeApi.md#updatescimsubattribute) | **Patch** /scim-schemas/{scim-schema-name}/scim-attributes/{scim-attribute-name}/scim-subattributes/{scim-subattribute-name} | Update an existing SCIM Subattribute by name
 *SearchEntryCriteriaApi* | [**AddSearchEntryCriteria**](docs/SearchEntryCriteriaApi.md#addsearchentrycriteria) | **Post** /search-entry-criteria | Add a new Search Entry Criteria to the config
 *SearchEntryCriteriaApi* | [**DeleteSearchEntryCriteria**](docs/SearchEntryCriteriaApi.md#deletesearchentrycriteria) | **Delete** /search-entry-criteria/{search-entry-criteria-name} | Delete a Search Entry Criteria
 *SearchEntryCriteriaApi* | [**GetSearchEntryCriteria**](docs/SearchEntryCriteriaApi.md#getsearchentrycriteria) | **Get** /search-entry-criteria/{search-entry-criteria-name} | Returns a single Search Entry Criteria
@@ -366,12 +430,18 @@ Class | Method | HTTP request | Description
 *ServerGroupApi* | [**UpdateServerGroup**](docs/ServerGroupApi.md#updateservergroup) | **Patch** /server-groups/{server-group-name} | Update an existing Server Group by name
 *ServerInstanceApi* | [**GetServerInstance**](docs/ServerInstanceApi.md#getserverinstance) | **Get** /server-instances/{server-instance-name} | Returns a single Server Instance
 *ServerInstanceApi* | [**UpdateServerInstance**](docs/ServerInstanceApi.md#updateserverinstance) | **Patch** /server-instances/{server-instance-name} | Update an existing Server Instance by name
+*ServerInstanceListenerApi* | [**GetServerInstanceListener**](docs/ServerInstanceListenerApi.md#getserverinstancelistener) | **Get** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name} | Returns a single Server Instance Listener
+*ServerInstanceListenerApi* | [**UpdateServerInstanceListener**](docs/ServerInstanceListenerApi.md#updateserverinstancelistener) | **Patch** /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name} | Update an existing Server Instance Listener by name
 *SoftDeletePolicyApi* | [**AddSoftDeletePolicy**](docs/SoftDeletePolicyApi.md#addsoftdeletepolicy) | **Post** /soft-delete-policies | Add a new Soft Delete Policy to the config
 *SoftDeletePolicyApi* | [**DeleteSoftDeletePolicy**](docs/SoftDeletePolicyApi.md#deletesoftdeletepolicy) | **Delete** /soft-delete-policies/{soft-delete-policy-name} | Delete a Soft Delete Policy
 *SoftDeletePolicyApi* | [**GetSoftDeletePolicy**](docs/SoftDeletePolicyApi.md#getsoftdeletepolicy) | **Get** /soft-delete-policies/{soft-delete-policy-name} | Returns a single Soft Delete Policy
 *SoftDeletePolicyApi* | [**UpdateSoftDeletePolicy**](docs/SoftDeletePolicyApi.md#updatesoftdeletepolicy) | **Patch** /soft-delete-policies/{soft-delete-policy-name} | Update an existing Soft Delete Policy by name
 *SynchronizationProviderApi* | [**GetSynchronizationProvider**](docs/SynchronizationProviderApi.md#getsynchronizationprovider) | **Get** /synchronization-providers/{synchronization-provider-name} | Returns a single Synchronization Provider
 *SynchronizationProviderApi* | [**UpdateSynchronizationProvider**](docs/SynchronizationProviderApi.md#updatesynchronizationprovider) | **Patch** /synchronization-providers/{synchronization-provider-name} | Update an existing Synchronization Provider by name
+*TokenClaimValidationApi* | [**AddTokenClaimValidation**](docs/TokenClaimValidationApi.md#addtokenclaimvalidation) | **Post** /id-token-validators/{id-token-validator-name}/token-claim-validations | Add a new Token Claim Validation to the config
+*TokenClaimValidationApi* | [**DeleteTokenClaimValidation**](docs/TokenClaimValidationApi.md#deletetokenclaimvalidation) | **Delete** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Delete a Token Claim Validation
+*TokenClaimValidationApi* | [**GetTokenClaimValidation**](docs/TokenClaimValidationApi.md#gettokenclaimvalidation) | **Get** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Returns a single Token Claim Validation
+*TokenClaimValidationApi* | [**UpdateTokenClaimValidation**](docs/TokenClaimValidationApi.md#updatetokenclaimvalidation) | **Patch** /id-token-validators/{id-token-validator-name}/token-claim-validations/{token-claim-validation-name} | Update an existing Token Claim Validation by name
 *TopologyAdminUserApi* | [**AddTopologyAdminUser**](docs/TopologyAdminUserApi.md#addtopologyadminuser) | **Post** /topology-admin-users | Add a new Topology Admin User to the config
 *TopologyAdminUserApi* | [**DeleteTopologyAdminUser**](docs/TopologyAdminUserApi.md#deletetopologyadminuser) | **Delete** /topology-admin-users/{topology-admin-user-name} | Delete a Topology Admin User
 *TopologyAdminUserApi* | [**GetTopologyAdminUser**](docs/TopologyAdminUserApi.md#gettopologyadminuser) | **Get** /topology-admin-users/{topology-admin-user-name} | Returns a single Topology Admin User
@@ -396,6 +466,14 @@ Class | Method | HTTP request | Description
 *VaultAuthenticationMethodApi* | [**DeleteVaultAuthenticationMethod**](docs/VaultAuthenticationMethodApi.md#deletevaultauthenticationmethod) | **Delete** /vault-authentication-methods/{vault-authentication-method-name} | Delete a Vault Authentication Method
 *VaultAuthenticationMethodApi* | [**GetVaultAuthenticationMethod**](docs/VaultAuthenticationMethodApi.md#getvaultauthenticationmethod) | **Get** /vault-authentication-methods/{vault-authentication-method-name} | Returns a single Vault Authentication Method
 *VaultAuthenticationMethodApi* | [**UpdateVaultAuthenticationMethod**](docs/VaultAuthenticationMethodApi.md#updatevaultauthenticationmethod) | **Patch** /vault-authentication-methods/{vault-authentication-method-name} | Update an existing Vault Authentication Method by name
+*VelocityContextProviderApi* | [**AddVelocityContextProvider**](docs/VelocityContextProviderApi.md#addvelocitycontextprovider) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers | Add a new Velocity Context Provider to the config
+*VelocityContextProviderApi* | [**DeleteVelocityContextProvider**](docs/VelocityContextProviderApi.md#deletevelocitycontextprovider) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Delete a Velocity Context Provider
+*VelocityContextProviderApi* | [**GetVelocityContextProvider**](docs/VelocityContextProviderApi.md#getvelocitycontextprovider) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Returns a single Velocity Context Provider
+*VelocityContextProviderApi* | [**UpdateVelocityContextProvider**](docs/VelocityContextProviderApi.md#updatevelocitycontextprovider) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name} | Update an existing Velocity Context Provider by name
+*VelocityTemplateLoaderApi* | [**AddVelocityTemplateLoader**](docs/VelocityTemplateLoaderApi.md#addvelocitytemplateloader) | **Post** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders | Add a new Velocity Template Loader to the config
+*VelocityTemplateLoaderApi* | [**DeleteVelocityTemplateLoader**](docs/VelocityTemplateLoaderApi.md#deletevelocitytemplateloader) | **Delete** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Delete a Velocity Template Loader
+*VelocityTemplateLoaderApi* | [**GetVelocityTemplateLoader**](docs/VelocityTemplateLoaderApi.md#getvelocitytemplateloader) | **Get** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Returns a single Velocity Template Loader
+*VelocityTemplateLoaderApi* | [**UpdateVelocityTemplateLoader**](docs/VelocityTemplateLoaderApi.md#updatevelocitytemplateloader) | **Patch** /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name} | Update an existing Velocity Template Loader by name
 *VirtualAttributeApi* | [**AddVirtualAttribute**](docs/VirtualAttributeApi.md#addvirtualattribute) | **Post** /virtual-attributes | Add a new Virtual Attribute to the config
 *VirtualAttributeApi* | [**DeleteVirtualAttribute**](docs/VirtualAttributeApi.md#deletevirtualattribute) | **Delete** /virtual-attributes/{virtual-attribute-name} | Delete a Virtual Attribute
 *VirtualAttributeApi* | [**GetVirtualAttribute**](docs/VirtualAttributeApi.md#getvirtualattribute) | **Get** /virtual-attributes/{virtual-attribute-name} | Returns a single Virtual Attribute
@@ -446,6 +524,7 @@ Class | Method | HTTP request | Description
  - [AddApiKeyConjurAuthenticationMethodRequestAllOf](docs/AddApiKeyConjurAuthenticationMethodRequestAllOf.md)
  - [AddAppRoleVaultAuthenticationMethodRequest](docs/AddAppRoleVaultAuthenticationMethodRequest.md)
  - [AddArgon2PasswordStorageSchemeRequest](docs/AddArgon2PasswordStorageSchemeRequest.md)
+ - [AddAttributeMapperPluginRequest](docs/AddAttributeMapperPluginRequest.md)
  - [AddAttributeValuePasswordValidatorRequest](docs/AddAttributeValuePasswordValidatorRequest.md)
  - [AddAvailabilityStateHttpServletExtensionRequest](docs/AddAvailabilityStateHttpServletExtensionRequest.md)
  - [AddAzureAuthenticationMethod200Response](docs/AddAzureAuthenticationMethod200Response.md)
@@ -458,6 +537,9 @@ Class | Method | HTTP request | Description
  - [AddBcryptPasswordStorageSchemeRequest](docs/AddBcryptPasswordStorageSchemeRequest.md)
  - [AddBlindTrustManagerProviderRequest](docs/AddBlindTrustManagerProviderRequest.md)
  - [AddBlindTrustManagerProviderRequestAllOf](docs/AddBlindTrustManagerProviderRequestAllOf.md)
+ - [AddBooleanTokenClaimValidationRequest](docs/AddBooleanTokenClaimValidationRequest.md)
+ - [AddCertificateDelegatedAdminAttributeRequest](docs/AddCertificateDelegatedAdminAttributeRequest.md)
+ - [AddCertificateDelegatedAdminAttributeRequestAllOf](docs/AddCertificateDelegatedAdminAttributeRequestAllOf.md)
  - [AddCertificateMapper200Response](docs/AddCertificateMapper200Response.md)
  - [AddCertificateMapperRequest](docs/AddCertificateMapperRequest.md)
  - [AddChangeSubscriptionHandler200Response](docs/AddChangeSubscriptionHandler200Response.md)
@@ -468,12 +550,16 @@ Class | Method | HTTP request | Description
  - [AddCharacterSetPasswordValidatorRequestAllOf](docs/AddCharacterSetPasswordValidatorRequestAllOf.md)
  - [AddCipherStreamProvider200Response](docs/AddCipherStreamProvider200Response.md)
  - [AddCipherStreamProviderRequest](docs/AddCipherStreamProviderRequest.md)
+ - [AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest](docs/AddCleanUpExpiredPingfederatePersistentAccessGrantsPluginRequest.md)
+ - [AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest](docs/AddCleanUpExpiredPingfederatePersistentSessionsPluginRequest.md)
+ - [AddCleanUpInactivePingfederatePersistentSessionsPluginRequest](docs/AddCleanUpInactivePingfederatePersistentSessionsPluginRequest.md)
  - [AddClientConnectionPolicyRequest](docs/AddClientConnectionPolicyRequest.md)
  - [AddClientConnectionPolicyRequestAllOf](docs/AddClientConnectionPolicyRequestAllOf.md)
  - [AddClientSecretAzureAuthenticationMethodRequest](docs/AddClientSecretAzureAuthenticationMethodRequest.md)
  - [AddCollectSupportDataExtendedOperationHandlerRequest](docs/AddCollectSupportDataExtendedOperationHandlerRequest.md)
  - [AddCollectSupportDataRecurringTaskRequest](docs/AddCollectSupportDataRecurringTaskRequest.md)
  - [AddCommonLogFileHttpOperationLogPublisherRequest](docs/AddCommonLogFileHttpOperationLogPublisherRequest.md)
+ - [AddComposedAttributePluginRequest](docs/AddComposedAttributePluginRequest.md)
  - [AddConjurCipherStreamProviderRequest](docs/AddConjurCipherStreamProviderRequest.md)
  - [AddConjurExternalServerRequest](docs/AddConjurExternalServerRequest.md)
  - [AddConjurPassphraseProviderRequest](docs/AddConjurPassphraseProviderRequest.md)
@@ -482,6 +568,8 @@ Class | Method | HTTP request | Description
  - [AddConnectionCriteriaRequest](docs/AddConnectionCriteriaRequest.md)
  - [AddConnectionHandler200Response](docs/AddConnectionHandler200Response.md)
  - [AddConnectionHandlerRequest](docs/AddConnectionHandlerRequest.md)
+ - [AddConsentDefinitionLocalizationRequest](docs/AddConsentDefinitionLocalizationRequest.md)
+ - [AddConsentDefinitionLocalizationRequestAllOf](docs/AddConsentDefinitionLocalizationRequestAllOf.md)
  - [AddConsentDefinitionRequest](docs/AddConsentDefinitionRequest.md)
  - [AddConsentDefinitionRequestAllOf](docs/AddConsentDefinitionRequestAllOf.md)
  - [AddConsoleJsonAuditLogPublisherRequest](docs/AddConsoleJsonAuditLogPublisherRequest.md)
@@ -492,9 +580,13 @@ Class | Method | HTTP request | Description
  - [AddCopyLogFileRotationListenerRequest](docs/AddCopyLogFileRotationListenerRequest.md)
  - [AddCryptPasswordStorageSchemeRequest](docs/AddCryptPasswordStorageSchemeRequest.md)
  - [AddCryptPasswordStorageSchemeRequestAllOf](docs/AddCryptPasswordStorageSchemeRequestAllOf.md)
+ - [AddCustomLoggedStatsRequest](docs/AddCustomLoggedStatsRequest.md)
+ - [AddCustomLoggedStatsRequestAllOf](docs/AddCustomLoggedStatsRequestAllOf.md)
  - [AddDataSecurityAuditor200Response](docs/AddDataSecurityAuditor200Response.md)
  - [AddDataSecurityAuditorRequest](docs/AddDataSecurityAuditorRequest.md)
  - [AddDebugAccessLogPublisherRequest](docs/AddDebugAccessLogPublisherRequest.md)
+ - [AddDebugTargetRequest](docs/AddDebugTargetRequest.md)
+ - [AddDebugTargetRequestAllOf](docs/AddDebugTargetRequestAllOf.md)
  - [AddDefaultAzureAuthenticationMethodRequest](docs/AddDefaultAzureAuthenticationMethodRequest.md)
  - [AddDefaultAzureAuthenticationMethodRequestAllOf](docs/AddDefaultAzureAuthenticationMethodRequestAllOf.md)
  - [AddDefaultUncachedAttributeCriteriaRequest](docs/AddDefaultUncachedAttributeCriteriaRequest.md)
@@ -503,9 +595,16 @@ Class | Method | HTTP request | Description
  - [AddDefaultUncachedEntryCriteriaRequestAllOf](docs/AddDefaultUncachedEntryCriteriaRequestAllOf.md)
  - [AddDelayBindResponseFailureLockoutActionRequest](docs/AddDelayBindResponseFailureLockoutActionRequest.md)
  - [AddDelayBindResponseFailureLockoutActionRequestAllOf](docs/AddDelayBindResponseFailureLockoutActionRequestAllOf.md)
+ - [AddDelayPluginRequest](docs/AddDelayPluginRequest.md)
  - [AddDelayRecurringTaskRequest](docs/AddDelayRecurringTaskRequest.md)
+ - [AddDelegatedAdminAttribute200Response](docs/AddDelegatedAdminAttribute200Response.md)
  - [AddDelegatedAdminAttributeCategoryRequest](docs/AddDelegatedAdminAttributeCategoryRequest.md)
  - [AddDelegatedAdminAttributeCategoryRequestAllOf](docs/AddDelegatedAdminAttributeCategoryRequestAllOf.md)
+ - [AddDelegatedAdminAttributeRequest](docs/AddDelegatedAdminAttributeRequest.md)
+ - [AddDelegatedAdminCorrelatedRestResourceRequest](docs/AddDelegatedAdminCorrelatedRestResourceRequest.md)
+ - [AddDelegatedAdminCorrelatedRestResourceRequestAllOf](docs/AddDelegatedAdminCorrelatedRestResourceRequestAllOf.md)
+ - [AddDelegatedAdminResourceRightsRequest](docs/AddDelegatedAdminResourceRightsRequest.md)
+ - [AddDelegatedAdminResourceRightsRequestAllOf](docs/AddDelegatedAdminResourceRightsRequestAllOf.md)
  - [AddDelegatedAdminRightsRequest](docs/AddDelegatedAdminRightsRequest.md)
  - [AddDelegatedAdminRightsRequestAllOf](docs/AddDelegatedAdminRightsRequestAllOf.md)
  - [AddDeliverOtpExtendedOperationHandlerRequest](docs/AddDeliverOtpExtendedOperationHandlerRequest.md)
@@ -516,6 +615,7 @@ Class | Method | HTTP request | Description
  - [AddDnJoinVirtualAttributeRequest](docs/AddDnJoinVirtualAttributeRequest.md)
  - [AddDnMapRequest](docs/AddDnMapRequest.md)
  - [AddDnMapRequestAllOf](docs/AddDnMapRequestAllOf.md)
+ - [AddDnMapperPluginRequest](docs/AddDnMapperPluginRequest.md)
  - [AddEmailOtpDeliveryMechanismRequest](docs/AddEmailOtpDeliveryMechanismRequest.md)
  - [AddEnterLockdownModeRecurringTaskRequest](docs/AddEnterLockdownModeRecurringTaskRequest.md)
  - [AddEntryDnVirtualAttributeRequest](docs/AddEntryDnVirtualAttributeRequest.md)
@@ -581,6 +681,7 @@ Class | Method | HTTP request | Description
  - [AddGroovyScriptedOauthTokenHandlerRequestAllOf](docs/AddGroovyScriptedOauthTokenHandlerRequestAllOf.md)
  - [AddGroovyScriptedPasswordGeneratorRequest](docs/AddGroovyScriptedPasswordGeneratorRequest.md)
  - [AddGroovyScriptedPasswordValidatorRequest](docs/AddGroovyScriptedPasswordValidatorRequest.md)
+ - [AddGroovyScriptedPluginRequest](docs/AddGroovyScriptedPluginRequest.md)
  - [AddGroovyScriptedUncachedAttributeCriteriaRequest](docs/AddGroovyScriptedUncachedAttributeCriteriaRequest.md)
  - [AddGroovyScriptedUncachedEntryCriteriaRequest](docs/AddGroovyScriptedUncachedEntryCriteriaRequest.md)
  - [AddGroovyScriptedVirtualAttributeRequest](docs/AddGroovyScriptedVirtualAttributeRequest.md)
@@ -600,6 +701,8 @@ Class | Method | HTTP request | Description
  - [AddIndicatorGaugeDataSourceRequestAllOf](docs/AddIndicatorGaugeDataSourceRequestAllOf.md)
  - [AddIndicatorGaugeRequest](docs/AddIndicatorGaugeRequest.md)
  - [AddIndicatorGaugeRequestAllOf](docs/AddIndicatorGaugeRequestAllOf.md)
+ - [AddInternalSearchRatePluginRequest](docs/AddInternalSearchRatePluginRequest.md)
+ - [AddInternalSearchRatePluginRequestAllOf](docs/AddInternalSearchRatePluginRequestAllOf.md)
  - [AddIsMemberOfVirtualAttributeRequest](docs/AddIsMemberOfVirtualAttributeRequest.md)
  - [AddJdbcBasedAccessLogPublisherRequest](docs/AddJdbcBasedAccessLogPublisherRequest.md)
  - [AddJdbcBasedErrorLogPublisherRequest](docs/AddJdbcBasedErrorLogPublisherRequest.md)
@@ -611,6 +714,8 @@ Class | Method | HTTP request | Description
  - [AddJsonAttributeConstraintsRequest](docs/AddJsonAttributeConstraintsRequest.md)
  - [AddJsonAttributeConstraintsRequestAllOf](docs/AddJsonAttributeConstraintsRequestAllOf.md)
  - [AddJsonErrorLogPublisherRequest](docs/AddJsonErrorLogPublisherRequest.md)
+ - [AddJsonFieldConstraintsRequest](docs/AddJsonFieldConstraintsRequest.md)
+ - [AddJsonFieldConstraintsRequestAllOf](docs/AddJsonFieldConstraintsRequestAllOf.md)
  - [AddJsonFormattedAccessLogFieldBehaviorRequest](docs/AddJsonFormattedAccessLogFieldBehaviorRequest.md)
  - [AddJvmDefaultTrustManagerProviderRequest](docs/AddJvmDefaultTrustManagerProviderRequest.md)
  - [AddJwtAccessTokenValidatorRequest](docs/AddJwtAccessTokenValidatorRequest.md)
@@ -629,6 +734,12 @@ Class | Method | HTTP request | Description
  - [AddLengthBasedPasswordValidatorRequest](docs/AddLengthBasedPasswordValidatorRequest.md)
  - [AddLocalDbBackendRequest](docs/AddLocalDbBackendRequest.md)
  - [AddLocalDbBackendRequestAllOf](docs/AddLocalDbBackendRequestAllOf.md)
+ - [AddLocalDbCompositeIndexRequest](docs/AddLocalDbCompositeIndexRequest.md)
+ - [AddLocalDbCompositeIndexRequestAllOf](docs/AddLocalDbCompositeIndexRequestAllOf.md)
+ - [AddLocalDbIndexRequest](docs/AddLocalDbIndexRequest.md)
+ - [AddLocalDbIndexRequestAllOf](docs/AddLocalDbIndexRequestAllOf.md)
+ - [AddLocalDbVlvIndexRequest](docs/AddLocalDbVlvIndexRequest.md)
+ - [AddLocalDbVlvIndexRequestAllOf](docs/AddLocalDbVlvIndexRequestAllOf.md)
  - [AddLocationRequest](docs/AddLocationRequest.md)
  - [AddLocationRequestAllOf](docs/AddLocationRequestAllOf.md)
  - [AddLockAccountFailureLockoutActionRequest](docs/AddLockAccountFailureLockoutActionRequest.md)
@@ -650,6 +761,7 @@ Class | Method | HTTP request | Description
  - [AddMirrorVirtualAttributeRequest](docs/AddMirrorVirtualAttributeRequest.md)
  - [AddMirrorVirtualAttributeRequestAllOf](docs/AddMirrorVirtualAttributeRequestAllOf.md)
  - [AddMockAccessTokenValidatorRequest](docs/AddMockAccessTokenValidatorRequest.md)
+ - [AddModifiablePasswordPolicyStatePluginRequest](docs/AddModifiablePasswordPolicyStatePluginRequest.md)
  - [AddMonitorProvider200Response](docs/AddMonitorProvider200Response.md)
  - [AddMultiPartEmailAccountStatusNotificationHandlerRequest](docs/AddMultiPartEmailAccountStatusNotificationHandlerRequest.md)
  - [AddMultiplePasswordDataSecurityAuditorRequest](docs/AddMultiplePasswordDataSecurityAuditorRequest.md)
@@ -675,6 +787,7 @@ Class | Method | HTTP request | Description
  - [AddOtpDeliveryMechanismRequest](docs/AddOtpDeliveryMechanismRequest.md)
  - [AddPassThroughAuthenticationHandler200Response](docs/AddPassThroughAuthenticationHandler200Response.md)
  - [AddPassThroughAuthenticationHandlerRequest](docs/AddPassThroughAuthenticationHandlerRequest.md)
+ - [AddPassThroughAuthenticationPluginRequest](docs/AddPassThroughAuthenticationPluginRequest.md)
  - [AddPassphrasePasswordGeneratorRequest](docs/AddPassphrasePasswordGeneratorRequest.md)
  - [AddPassphraseProvider200Response](docs/AddPassphraseProvider200Response.md)
  - [AddPassphraseProviderRequest](docs/AddPassphraseProviderRequest.md)
@@ -688,13 +801,20 @@ Class | Method | HTTP request | Description
  - [AddPasswordValidator200Response](docs/AddPasswordValidator200Response.md)
  - [AddPasswordValidatorRequest](docs/AddPasswordValidatorRequest.md)
  - [AddPbkdf2PasswordStorageSchemeRequest](docs/AddPbkdf2PasswordStorageSchemeRequest.md)
+ - [AddPeriodicGcPluginRequest](docs/AddPeriodicGcPluginRequest.md)
+ - [AddPeriodicStatsLoggerPluginRequest](docs/AddPeriodicStatsLoggerPluginRequest.md)
+ - [AddPhotoDelegatedAdminAttributeRequest](docs/AddPhotoDelegatedAdminAttributeRequest.md)
  - [AddPingFederateAccessTokenValidatorRequest](docs/AddPingFederateAccessTokenValidatorRequest.md)
  - [AddPingFederateAccessTokenValidatorRequestAllOf](docs/AddPingFederateAccessTokenValidatorRequestAllOf.md)
  - [AddPingOneHttpExternalServerRequest](docs/AddPingOneHttpExternalServerRequest.md)
  - [AddPingOneIdTokenValidatorRequest](docs/AddPingOneIdTokenValidatorRequest.md)
  - [AddPingOneIdTokenValidatorRequestAllOf](docs/AddPingOneIdTokenValidatorRequestAllOf.md)
+ - [AddPingOnePassThroughAuthenticationPluginRequest](docs/AddPingOnePassThroughAuthenticationPluginRequest.md)
  - [AddPkcs11CipherStreamProviderRequest](docs/AddPkcs11CipherStreamProviderRequest.md)
  - [AddPkcs11KeyManagerProviderRequest](docs/AddPkcs11KeyManagerProviderRequest.md)
+ - [AddPluggablePassThroughAuthenticationPluginRequest](docs/AddPluggablePassThroughAuthenticationPluginRequest.md)
+ - [AddPlugin200Response](docs/AddPlugin200Response.md)
+ - [AddPluginRequest](docs/AddPluginRequest.md)
  - [AddPrivilegeDataSecurityAuditorRequest](docs/AddPrivilegeDataSecurityAuditorRequest.md)
  - [AddPwnedPasswordsPasswordValidatorRequest](docs/AddPwnedPasswordsPasswordValidatorRequest.md)
  - [AddQuickstartHttpServletExtensionRequest](docs/AddQuickstartHttpServletExtensionRequest.md)
@@ -705,6 +825,8 @@ Class | Method | HTTP request | Description
  - [AddRecurringTaskChainRequest](docs/AddRecurringTaskChainRequest.md)
  - [AddRecurringTaskChainRequestAllOf](docs/AddRecurringTaskChainRequestAllOf.md)
  - [AddRecurringTaskRequest](docs/AddRecurringTaskRequest.md)
+ - [AddReferentialIntegrityPluginRequest](docs/AddReferentialIntegrityPluginRequest.md)
+ - [AddReferralOnUpdatePluginRequest](docs/AddReferralOnUpdatePluginRequest.md)
  - [AddRegularExpressionIdentityMapperRequest](docs/AddRegularExpressionIdentityMapperRequest.md)
  - [AddRegularExpressionPasswordValidatorRequest](docs/AddRegularExpressionPasswordValidatorRequest.md)
  - [AddRepeatedCharactersPasswordValidatorRequest](docs/AddRepeatedCharactersPasswordValidatorRequest.md)
@@ -721,21 +843,29 @@ Class | Method | HTTP request | Description
  - [AddResultCriteria200Response](docs/AddResultCriteria200Response.md)
  - [AddResultCriteriaRequest](docs/AddResultCriteriaRequest.md)
  - [AddReverseDnJoinVirtualAttributeRequest](docs/AddReverseDnJoinVirtualAttributeRequest.md)
+ - [AddRootDnUserRequest](docs/AddRootDnUserRequest.md)
+ - [AddRootDnUserRequestAllOf](docs/AddRootDnUserRequestAllOf.md)
  - [AddRootDseRequestCriteriaRequest](docs/AddRootDseRequestCriteriaRequest.md)
  - [AddRootDseRequestCriteriaRequestAllOf](docs/AddRootDseRequestCriteriaRequestAllOf.md)
  - [AddSaslMechanismHandler200Response](docs/AddSaslMechanismHandler200Response.md)
  - [AddSaslMechanismHandlerRequest](docs/AddSaslMechanismHandlerRequest.md)
+ - [AddScimAttributeRequest](docs/AddScimAttributeRequest.md)
+ - [AddScimAttributeRequestAllOf](docs/AddScimAttributeRequestAllOf.md)
  - [AddScimSchemaRequest](docs/AddScimSchemaRequest.md)
  - [AddScimSchemaRequestAllOf](docs/AddScimSchemaRequestAllOf.md)
+ - [AddScimSubattributeRequest](docs/AddScimSubattributeRequest.md)
+ - [AddScimSubattributeRequestAllOf](docs/AddScimSubattributeRequestAllOf.md)
  - [AddScryptPasswordStorageSchemeRequest](docs/AddScryptPasswordStorageSchemeRequest.md)
  - [AddSearchEntryCriteria200Response](docs/AddSearchEntryCriteria200Response.md)
  - [AddSearchEntryCriteriaRequest](docs/AddSearchEntryCriteriaRequest.md)
  - [AddSearchReferenceCriteria200Response](docs/AddSearchReferenceCriteria200Response.md)
  - [AddSearchReferenceCriteriaRequest](docs/AddSearchReferenceCriteriaRequest.md)
+ - [AddSearchShutdownPluginRequest](docs/AddSearchShutdownPluginRequest.md)
  - [AddSensitiveAttributeRequest](docs/AddSensitiveAttributeRequest.md)
  - [AddSensitiveAttributeRequestAllOf](docs/AddSensitiveAttributeRequestAllOf.md)
  - [AddServerGroupRequest](docs/AddServerGroupRequest.md)
  - [AddServerGroupRequestAllOf](docs/AddServerGroupRequestAllOf.md)
+ - [AddSevenBitCleanPluginRequest](docs/AddSevenBitCleanPluginRequest.md)
  - [AddSimilarityBasedPasswordValidatorRequest](docs/AddSimilarityBasedPasswordValidatorRequest.md)
  - [AddSimpleConnectionCriteriaRequest](docs/AddSimpleConnectionCriteriaRequest.md)
  - [AddSimpleConnectionCriteriaRequestAllOf](docs/AddSimpleConnectionCriteriaRequestAllOf.md)
@@ -746,6 +876,7 @@ Class | Method | HTTP request | Description
  - [AddSimpleSearchEntryCriteriaRequestAllOf](docs/AddSimpleSearchEntryCriteriaRequestAllOf.md)
  - [AddSimpleSearchReferenceCriteriaRequest](docs/AddSimpleSearchReferenceCriteriaRequest.md)
  - [AddSimpleSearchReferenceCriteriaRequestAllOf](docs/AddSimpleSearchReferenceCriteriaRequestAllOf.md)
+ - [AddSimpleToExternalBindPluginRequest](docs/AddSimpleToExternalBindPluginRequest.md)
  - [AddSimpleUncachedAttributeCriteriaRequest](docs/AddSimpleUncachedAttributeCriteriaRequest.md)
  - [AddSingleUseTokensExtendedOperationHandlerRequest](docs/AddSingleUseTokensExtendedOperationHandlerRequest.md)
  - [AddSizeLimitLogRetentionPolicyRequest](docs/AddSizeLimitLogRetentionPolicyRequest.md)
@@ -757,6 +888,7 @@ Class | Method | HTTP request | Description
  - [AddSmtpExternalServerRequest](docs/AddSmtpExternalServerRequest.md)
  - [AddSnmpAlertHandlerRequest](docs/AddSnmpAlertHandlerRequest.md)
  - [AddSnmpSubAgentAlertHandlerRequest](docs/AddSnmpSubAgentAlertHandlerRequest.md)
+ - [AddSnmpSubagentPluginRequest](docs/AddSnmpSubagentPluginRequest.md)
  - [AddSoftDeletePolicyRequest](docs/AddSoftDeletePolicyRequest.md)
  - [AddSoftDeletePolicyRequestAllOf](docs/AddSoftDeletePolicyRequestAllOf.md)
  - [AddStaticTokenVaultAuthenticationMethodRequest](docs/AddStaticTokenVaultAuthenticationMethodRequest.md)
@@ -764,6 +896,10 @@ Class | Method | HTTP request | Description
  - [AddStaticallyDefinedRecurringTaskRequest](docs/AddStaticallyDefinedRecurringTaskRequest.md)
  - [AddStatsdMonitoringEndpointRequest](docs/AddStatsdMonitoringEndpointRequest.md)
  - [AddStatsdMonitoringEndpointRequestAllOf](docs/AddStatsdMonitoringEndpointRequestAllOf.md)
+ - [AddStringArrayTokenClaimValidationRequest](docs/AddStringArrayTokenClaimValidationRequest.md)
+ - [AddStringArrayTokenClaimValidationRequestAllOf](docs/AddStringArrayTokenClaimValidationRequestAllOf.md)
+ - [AddStringTokenClaimValidationRequest](docs/AddStringTokenClaimValidationRequest.md)
+ - [AddSubOperationTimingPluginRequest](docs/AddSubOperationTimingPluginRequest.md)
  - [AddSubjectAttributeToUserAttributeCertificateMapperRequest](docs/AddSubjectAttributeToUserAttributeCertificateMapperRequest.md)
  - [AddSubjectDnToUserAttributeCertificateMapperRequest](docs/AddSubjectDnToUserAttributeCertificateMapperRequest.md)
  - [AddSubjectEqualsDnCertificateMapperRequest](docs/AddSubjectEqualsDnCertificateMapperRequest.md)
@@ -811,6 +947,7 @@ Class | Method | HTTP request | Description
  - [AddThirdPartyPasswordGeneratorRequest](docs/AddThirdPartyPasswordGeneratorRequest.md)
  - [AddThirdPartyPasswordStorageSchemeRequest](docs/AddThirdPartyPasswordStorageSchemeRequest.md)
  - [AddThirdPartyPasswordValidatorRequest](docs/AddThirdPartyPasswordValidatorRequest.md)
+ - [AddThirdPartyPluginRequest](docs/AddThirdPartyPluginRequest.md)
  - [AddThirdPartyRecurringTaskRequest](docs/AddThirdPartyRecurringTaskRequest.md)
  - [AddThirdPartyRequestCriteriaRequest](docs/AddThirdPartyRequestCriteriaRequest.md)
  - [AddThirdPartyResultCriteriaRequest](docs/AddThirdPartyResultCriteriaRequest.md)
@@ -820,11 +957,14 @@ Class | Method | HTTP request | Description
  - [AddThirdPartyTrustManagerProviderRequest](docs/AddThirdPartyTrustManagerProviderRequest.md)
  - [AddThirdPartyUncachedAttributeCriteriaRequest](docs/AddThirdPartyUncachedAttributeCriteriaRequest.md)
  - [AddThirdPartyUncachedEntryCriteriaRequest](docs/AddThirdPartyUncachedEntryCriteriaRequest.md)
+ - [AddThirdPartyVelocityContextProviderRequest](docs/AddThirdPartyVelocityContextProviderRequest.md)
  - [AddThirdPartyVirtualAttributeRequest](docs/AddThirdPartyVirtualAttributeRequest.md)
  - [AddTimeLimitLogRetentionPolicyRequest](docs/AddTimeLimitLogRetentionPolicyRequest.md)
  - [AddTimeLimitLogRetentionPolicyRequestAllOf](docs/AddTimeLimitLogRetentionPolicyRequestAllOf.md)
  - [AddTimeLimitLogRotationPolicyRequest](docs/AddTimeLimitLogRotationPolicyRequest.md)
  - [AddTimeLimitLogRotationPolicyRequestAllOf](docs/AddTimeLimitLogRotationPolicyRequestAllOf.md)
+ - [AddTokenClaimValidation200Response](docs/AddTokenClaimValidation200Response.md)
+ - [AddTokenClaimValidationRequest](docs/AddTokenClaimValidationRequest.md)
  - [AddTopologyAdminUserRequest](docs/AddTopologyAdminUserRequest.md)
  - [AddTopologyAdminUserRequestAllOf](docs/AddTopologyAdminUserRequestAllOf.md)
  - [AddTrustManagerProvider200Response](docs/AddTrustManagerProvider200Response.md)
@@ -841,6 +981,7 @@ Class | Method | HTTP request | Description
  - [AddUncachedAttributeCriteriaRequest](docs/AddUncachedAttributeCriteriaRequest.md)
  - [AddUncachedEntryCriteria200Response](docs/AddUncachedEntryCriteria200Response.md)
  - [AddUncachedEntryCriteriaRequest](docs/AddUncachedEntryCriteriaRequest.md)
+ - [AddUniqueAttributePluginRequest](docs/AddUniqueAttributePluginRequest.md)
  - [AddUniqueCharactersPasswordValidatorRequest](docs/AddUniqueCharactersPasswordValidatorRequest.md)
  - [AddUserDefinedVirtualAttributeRequest](docs/AddUserDefinedVirtualAttributeRequest.md)
  - [AddUserPassVaultAuthenticationMethodRequest](docs/AddUserPassVaultAuthenticationMethodRequest.md)
@@ -855,6 +996,12 @@ Class | Method | HTTP request | Description
  - [AddVaultExternalServerRequest](docs/AddVaultExternalServerRequest.md)
  - [AddVaultPassphraseProviderRequest](docs/AddVaultPassphraseProviderRequest.md)
  - [AddVaultPasswordStorageSchemeRequest](docs/AddVaultPasswordStorageSchemeRequest.md)
+ - [AddVelocityContextProvider200Response](docs/AddVelocityContextProvider200Response.md)
+ - [AddVelocityContextProviderRequest](docs/AddVelocityContextProviderRequest.md)
+ - [AddVelocityTemplateLoaderRequest](docs/AddVelocityTemplateLoaderRequest.md)
+ - [AddVelocityTemplateLoaderRequestAllOf](docs/AddVelocityTemplateLoaderRequestAllOf.md)
+ - [AddVelocityToolsVelocityContextProviderRequest](docs/AddVelocityToolsVelocityContextProviderRequest.md)
+ - [AddVelocityToolsVelocityContextProviderRequestAllOf](docs/AddVelocityToolsVelocityContextProviderRequestAllOf.md)
  - [AddVirtualAttribute200Response](docs/AddVirtualAttribute200Response.md)
  - [AddVirtualAttributeRequest](docs/AddVirtualAttributeRequest.md)
  - [AddWaitForPassphraseCipherStreamProviderRequest](docs/AddWaitForPassphraseCipherStreamProviderRequest.md)
@@ -909,6 +1056,8 @@ Class | Method | HTTP request | Description
  - [Argon2PasswordStorageSchemeShared](docs/Argon2PasswordStorageSchemeShared.md)
  - [AttributeBasedLogFieldSyntaxResponse](docs/AttributeBasedLogFieldSyntaxResponse.md)
  - [AttributeBasedLogFieldSyntaxResponseAllOf](docs/AttributeBasedLogFieldSyntaxResponseAllOf.md)
+ - [AttributeMapperPluginResponse](docs/AttributeMapperPluginResponse.md)
+ - [AttributeMapperPluginShared](docs/AttributeMapperPluginShared.md)
  - [AttributeTypeDescriptionAttributeSyntaxResponse](docs/AttributeTypeDescriptionAttributeSyntaxResponse.md)
  - [AttributeTypeDescriptionAttributeSyntaxResponseAllOf](docs/AttributeTypeDescriptionAttributeSyntaxResponseAllOf.md)
  - [AttributeValuePasswordValidatorResponse](docs/AttributeValuePasswordValidatorResponse.md)
@@ -942,16 +1091,35 @@ Class | Method | HTTP request | Description
  - [BlowfishPasswordStorageSchemeResponseAllOf](docs/BlowfishPasswordStorageSchemeResponseAllOf.md)
  - [BooleanAttributeSyntaxResponse](docs/BooleanAttributeSyntaxResponse.md)
  - [BooleanAttributeSyntaxResponseAllOf](docs/BooleanAttributeSyntaxResponseAllOf.md)
+ - [BooleanTokenClaimValidationResponse](docs/BooleanTokenClaimValidationResponse.md)
+ - [BooleanTokenClaimValidationShared](docs/BooleanTokenClaimValidationShared.md)
  - [CancelExtendedOperationHandlerResponse](docs/CancelExtendedOperationHandlerResponse.md)
  - [CancelExtendedOperationHandlerResponseAllOf](docs/CancelExtendedOperationHandlerResponseAllOf.md)
+ - [CertificateDelegatedAdminAttributeResponse](docs/CertificateDelegatedAdminAttributeResponse.md)
+ - [CertificateDelegatedAdminAttributeResponseAllOf](docs/CertificateDelegatedAdminAttributeResponseAllOf.md)
+ - [CertificateDelegatedAdminAttributeShared](docs/CertificateDelegatedAdminAttributeShared.md)
+ - [CertificateInterServerAuthenticationInfoResponse](docs/CertificateInterServerAuthenticationInfoResponse.md)
+ - [CertificateInterServerAuthenticationInfoResponseAllOf](docs/CertificateInterServerAuthenticationInfoResponseAllOf.md)
+ - [ChangeSubscriptionNotificationPluginResponse](docs/ChangeSubscriptionNotificationPluginResponse.md)
+ - [ChangeSubscriptionNotificationPluginResponseAllOf](docs/ChangeSubscriptionNotificationPluginResponseAllOf.md)
  - [ChangeSubscriptionResponse](docs/ChangeSubscriptionResponse.md)
  - [ChangeSubscriptionResponseAllOf](docs/ChangeSubscriptionResponseAllOf.md)
  - [ChangeSubscriptionShared](docs/ChangeSubscriptionShared.md)
  - [ChangelogBackendResponse](docs/ChangelogBackendResponse.md)
  - [ChangelogBackendResponseAllOf](docs/ChangelogBackendResponseAllOf.md)
+ - [ChangelogPasswordEncryptionPluginResponse](docs/ChangelogPasswordEncryptionPluginResponse.md)
+ - [ChangelogPasswordEncryptionPluginResponseAllOf](docs/ChangelogPasswordEncryptionPluginResponseAllOf.md)
  - [CharacterSetPasswordValidatorResponse](docs/CharacterSetPasswordValidatorResponse.md)
  - [CharacterSetPasswordValidatorResponseAllOf](docs/CharacterSetPasswordValidatorResponseAllOf.md)
  - [CharacterSetPasswordValidatorShared](docs/CharacterSetPasswordValidatorShared.md)
+ - [CipherSecretKeyResponse](docs/CipherSecretKeyResponse.md)
+ - [CipherSecretKeyResponseAllOf](docs/CipherSecretKeyResponseAllOf.md)
+ - [CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse](docs/CleanUpExpiredPingfederatePersistentAccessGrantsPluginResponse.md)
+ - [CleanUpExpiredPingfederatePersistentAccessGrantsPluginShared](docs/CleanUpExpiredPingfederatePersistentAccessGrantsPluginShared.md)
+ - [CleanUpExpiredPingfederatePersistentSessionsPluginResponse](docs/CleanUpExpiredPingfederatePersistentSessionsPluginResponse.md)
+ - [CleanUpExpiredPingfederatePersistentSessionsPluginShared](docs/CleanUpExpiredPingfederatePersistentSessionsPluginShared.md)
+ - [CleanUpInactivePingfederatePersistentSessionsPluginResponse](docs/CleanUpInactivePingfederatePersistentSessionsPluginResponse.md)
+ - [CleanUpInactivePingfederatePersistentSessionsPluginShared](docs/CleanUpInactivePingfederatePersistentSessionsPluginShared.md)
  - [ClearPasswordStorageSchemeResponse](docs/ClearPasswordStorageSchemeResponse.md)
  - [ClearPasswordStorageSchemeResponseAllOf](docs/ClearPasswordStorageSchemeResponseAllOf.md)
  - [ClientConnectionMonitorProviderResponse](docs/ClientConnectionMonitorProviderResponse.md)
@@ -967,6 +1135,8 @@ Class | Method | HTTP request | Description
  - [CollectSupportDataRecurringTaskShared](docs/CollectSupportDataRecurringTaskShared.md)
  - [CommonLogFileHttpOperationLogPublisherResponse](docs/CommonLogFileHttpOperationLogPublisherResponse.md)
  - [CommonLogFileHttpOperationLogPublisherShared](docs/CommonLogFileHttpOperationLogPublisherShared.md)
+ - [ComposedAttributePluginResponse](docs/ComposedAttributePluginResponse.md)
+ - [ComposedAttributePluginShared](docs/ComposedAttributePluginShared.md)
  - [ConfigFileHandlerBackendResponse](docs/ConfigFileHandlerBackendResponse.md)
  - [ConfigFileHandlerBackendResponseAllOf](docs/ConfigFileHandlerBackendResponseAllOf.md)
  - [ConfigHttpServletExtensionResponse](docs/ConfigHttpServletExtensionResponse.md)
@@ -979,6 +1149,9 @@ Class | Method | HTTP request | Description
  - [ConjurPassphraseProviderShared](docs/ConjurPassphraseProviderShared.md)
  - [ConjurPasswordStorageSchemeResponse](docs/ConjurPasswordStorageSchemeResponse.md)
  - [ConjurPasswordStorageSchemeShared](docs/ConjurPasswordStorageSchemeShared.md)
+ - [ConsentDefinitionLocalizationResponse](docs/ConsentDefinitionLocalizationResponse.md)
+ - [ConsentDefinitionLocalizationResponseAllOf](docs/ConsentDefinitionLocalizationResponseAllOf.md)
+ - [ConsentDefinitionLocalizationShared](docs/ConsentDefinitionLocalizationShared.md)
  - [ConsentDefinitionResponse](docs/ConsentDefinitionResponse.md)
  - [ConsentDefinitionResponseAllOf](docs/ConsentDefinitionResponseAllOf.md)
  - [ConsentDefinitionShared](docs/ConsentDefinitionShared.md)
@@ -1012,8 +1185,14 @@ Class | Method | HTTP request | Description
  - [CryptoManagerResponseAllOf](docs/CryptoManagerResponseAllOf.md)
  - [CurrentTimeVirtualAttributeResponse](docs/CurrentTimeVirtualAttributeResponse.md)
  - [CurrentTimeVirtualAttributeResponseAllOf](docs/CurrentTimeVirtualAttributeResponseAllOf.md)
+ - [CustomLoggedStatsResponse](docs/CustomLoggedStatsResponse.md)
+ - [CustomLoggedStatsResponseAllOf](docs/CustomLoggedStatsResponseAllOf.md)
+ - [CustomLoggedStatsShared](docs/CustomLoggedStatsShared.md)
  - [DebugAccessLogPublisherResponse](docs/DebugAccessLogPublisherResponse.md)
  - [DebugAccessLogPublisherShared](docs/DebugAccessLogPublisherShared.md)
+ - [DebugTargetResponse](docs/DebugTargetResponse.md)
+ - [DebugTargetResponseAllOf](docs/DebugTargetResponseAllOf.md)
+ - [DebugTargetShared](docs/DebugTargetShared.md)
  - [DefaultAzureAuthenticationMethodResponse](docs/DefaultAzureAuthenticationMethodResponse.md)
  - [DefaultAzureAuthenticationMethodResponseAllOf](docs/DefaultAzureAuthenticationMethodResponseAllOf.md)
  - [DefaultAzureAuthenticationMethodShared](docs/DefaultAzureAuthenticationMethodShared.md)
@@ -1026,13 +1205,21 @@ Class | Method | HTTP request | Description
  - [DelayBindResponseFailureLockoutActionResponse](docs/DelayBindResponseFailureLockoutActionResponse.md)
  - [DelayBindResponseFailureLockoutActionResponseAllOf](docs/DelayBindResponseFailureLockoutActionResponseAllOf.md)
  - [DelayBindResponseFailureLockoutActionShared](docs/DelayBindResponseFailureLockoutActionShared.md)
+ - [DelayPluginResponse](docs/DelayPluginResponse.md)
+ - [DelayPluginShared](docs/DelayPluginShared.md)
  - [DelayRecurringTaskResponse](docs/DelayRecurringTaskResponse.md)
  - [DelayRecurringTaskShared](docs/DelayRecurringTaskShared.md)
  - [DelegatedAdminAttributeCategoryResponse](docs/DelegatedAdminAttributeCategoryResponse.md)
  - [DelegatedAdminAttributeCategoryResponseAllOf](docs/DelegatedAdminAttributeCategoryResponseAllOf.md)
  - [DelegatedAdminAttributeCategoryShared](docs/DelegatedAdminAttributeCategoryShared.md)
+ - [DelegatedAdminCorrelatedRestResourceResponse](docs/DelegatedAdminCorrelatedRestResourceResponse.md)
+ - [DelegatedAdminCorrelatedRestResourceResponseAllOf](docs/DelegatedAdminCorrelatedRestResourceResponseAllOf.md)
+ - [DelegatedAdminCorrelatedRestResourceShared](docs/DelegatedAdminCorrelatedRestResourceShared.md)
  - [DelegatedAdminHttpServletExtensionResponse](docs/DelegatedAdminHttpServletExtensionResponse.md)
  - [DelegatedAdminHttpServletExtensionResponseAllOf](docs/DelegatedAdminHttpServletExtensionResponseAllOf.md)
+ - [DelegatedAdminResourceRightsResponse](docs/DelegatedAdminResourceRightsResponse.md)
+ - [DelegatedAdminResourceRightsResponseAllOf](docs/DelegatedAdminResourceRightsResponseAllOf.md)
+ - [DelegatedAdminResourceRightsShared](docs/DelegatedAdminResourceRightsShared.md)
  - [DelegatedAdminRightsResponse](docs/DelegatedAdminRightsResponse.md)
  - [DelegatedAdminRightsResponseAllOf](docs/DelegatedAdminRightsResponseAllOf.md)
  - [DelegatedAdminRightsShared](docs/DelegatedAdminRightsShared.md)
@@ -1063,12 +1250,16 @@ Class | Method | HTTP request | Description
  - [DnMapResponse](docs/DnMapResponse.md)
  - [DnMapResponseAllOf](docs/DnMapResponseAllOf.md)
  - [DnMapShared](docs/DnMapShared.md)
+ - [DnMapperPluginResponse](docs/DnMapperPluginResponse.md)
+ - [DnMapperPluginShared](docs/DnMapperPluginShared.md)
  - [DseeCompatAccessControlHandlerResponse](docs/DseeCompatAccessControlHandlerResponse.md)
  - [DseeCompatAccessControlHandlerResponseAllOf](docs/DseeCompatAccessControlHandlerResponseAllOf.md)
  - [DynamicGroupImplementationResponse](docs/DynamicGroupImplementationResponse.md)
  - [DynamicGroupImplementationResponseAllOf](docs/DynamicGroupImplementationResponseAllOf.md)
  - [EmailOtpDeliveryMechanismResponse](docs/EmailOtpDeliveryMechanismResponse.md)
  - [EmailOtpDeliveryMechanismShared](docs/EmailOtpDeliveryMechanismShared.md)
+ - [EncryptAttributeValuesPluginResponse](docs/EncryptAttributeValuesPluginResponse.md)
+ - [EncryptAttributeValuesPluginResponseAllOf](docs/EncryptAttributeValuesPluginResponseAllOf.md)
  - [EncryptionSettingsBackendResponse](docs/EncryptionSettingsBackendResponse.md)
  - [EncryptionSettingsBackendResponseAllOf](docs/EncryptionSettingsBackendResponseAllOf.md)
  - [EnterLockdownModeRecurringTaskResponse](docs/EnterLockdownModeRecurringTaskResponse.md)
@@ -1120,6 +1311,7 @@ Class | Method | HTTP request | Description
  - [EnumapproximateMatchingRuleSchemaUrn](docs/EnumapproximateMatchingRuleSchemaUrn.md)
  - [Enumargon2PasswordStorageSchemeSchemaUrn](docs/Enumargon2PasswordStorageSchemeSchemaUrn.md)
  - [EnumattributeBasedLogFieldSyntaxSchemaUrn](docs/EnumattributeBasedLogFieldSyntaxSchemaUrn.md)
+ - [EnumattributeMapperPluginSchemaUrn](docs/EnumattributeMapperPluginSchemaUrn.md)
  - [EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn](docs/EnumattributeTypeDescriptionAttributeSyntaxSchemaUrn.md)
  - [EnumattributeValuePasswordValidatorSchemaUrn](docs/EnumattributeValuePasswordValidatorSchemaUrn.md)
  - [EnumauthorizeServerInstanceSchemaUrn](docs/EnumauthorizeServerInstanceSchemaUrn.md)
@@ -1153,11 +1345,20 @@ Class | Method | HTTP request | Description
  - [EnumblindTrustManagerProviderSchemaUrn](docs/EnumblindTrustManagerProviderSchemaUrn.md)
  - [EnumblowfishPasswordStorageSchemeSchemaUrn](docs/EnumblowfishPasswordStorageSchemeSchemaUrn.md)
  - [EnumbooleanAttributeSyntaxSchemaUrn](docs/EnumbooleanAttributeSyntaxSchemaUrn.md)
+ - [EnumbooleanTokenClaimValidationSchemaUrn](docs/EnumbooleanTokenClaimValidationSchemaUrn.md)
  - [EnumcancelExtendedOperationHandlerSchemaUrn](docs/EnumcancelExtendedOperationHandlerSchemaUrn.md)
+ - [EnumcertificateDelegatedAdminAttributeSchemaUrn](docs/EnumcertificateDelegatedAdminAttributeSchemaUrn.md)
+ - [EnumcertificateInterServerAuthenticationInfoSchemaUrn](docs/EnumcertificateInterServerAuthenticationInfoSchemaUrn.md)
  - [EnumcertificateMapperFingerprintAlgorithmProp](docs/EnumcertificateMapperFingerprintAlgorithmProp.md)
+ - [EnumchangeSubscriptionNotificationPluginSchemaUrn](docs/EnumchangeSubscriptionNotificationPluginSchemaUrn.md)
  - [EnumchangeSubscriptionSchemaUrn](docs/EnumchangeSubscriptionSchemaUrn.md)
  - [EnumchangelogBackendSchemaUrn](docs/EnumchangelogBackendSchemaUrn.md)
+ - [EnumchangelogPasswordEncryptionPluginSchemaUrn](docs/EnumchangelogPasswordEncryptionPluginSchemaUrn.md)
  - [EnumcharacterSetPasswordValidatorSchemaUrn](docs/EnumcharacterSetPasswordValidatorSchemaUrn.md)
+ - [EnumcipherSecretKeySchemaUrn](docs/EnumcipherSecretKeySchemaUrn.md)
+ - [EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn](docs/EnumcleanUpExpiredPingfederatePersistentAccessGrantsPluginSchemaUrn.md)
+ - [EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn](docs/EnumcleanUpExpiredPingfederatePersistentSessionsPluginSchemaUrn.md)
+ - [EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn](docs/EnumcleanUpInactivePingfederatePersistentSessionsPluginSchemaUrn.md)
  - [EnumclearPasswordStorageSchemeSchemaUrn](docs/EnumclearPasswordStorageSchemeSchemaUrn.md)
  - [EnumclientConnectionMonitorProviderSchemaUrn](docs/EnumclientConnectionMonitorProviderSchemaUrn.md)
  - [EnumclientConnectionPolicyAllowedAuthTypeProp](docs/EnumclientConnectionPolicyAllowedAuthTypeProp.md)
@@ -1171,6 +1372,7 @@ Class | Method | HTTP request | Description
  - [EnumcollectSupportDataExtendedOperationHandlerSchemaUrn](docs/EnumcollectSupportDataExtendedOperationHandlerSchemaUrn.md)
  - [EnumcollectSupportDataRecurringTaskSchemaUrn](docs/EnumcollectSupportDataRecurringTaskSchemaUrn.md)
  - [EnumcommonLogFileHttpOperationLogPublisherSchemaUrn](docs/EnumcommonLogFileHttpOperationLogPublisherSchemaUrn.md)
+ - [EnumcomposedAttributePluginSchemaUrn](docs/EnumcomposedAttributePluginSchemaUrn.md)
  - [EnumconfigFileHandlerBackendSchemaUrn](docs/EnumconfigFileHandlerBackendSchemaUrn.md)
  - [EnumconfigHttpServletExtensionSchemaUrn](docs/EnumconfigHttpServletExtensionSchemaUrn.md)
  - [EnumconjurCipherStreamProviderSchemaUrn](docs/EnumconjurCipherStreamProviderSchemaUrn.md)
@@ -1185,6 +1387,7 @@ Class | Method | HTTP request | Description
  - [EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp](docs/EnumconnectionCriteriaNotAllIncludedUserPrivilegeProp.md)
  - [EnumconnectionCriteriaUserAuthTypeProp](docs/EnumconnectionCriteriaUserAuthTypeProp.md)
  - [EnumconnectionHandlerSslClientAuthPolicyProp](docs/EnumconnectionHandlerSslClientAuthPolicyProp.md)
+ - [EnumconsentDefinitionLocalizationSchemaUrn](docs/EnumconsentDefinitionLocalizationSchemaUrn.md)
  - [EnumconsentDefinitionSchemaUrn](docs/EnumconsentDefinitionSchemaUrn.md)
  - [EnumconsentHttpServletExtensionSchemaUrn](docs/EnumconsentHttpServletExtensionSchemaUrn.md)
  - [EnumconsentServiceSchemaUrn](docs/EnumconsentServiceSchemaUrn.md)
@@ -1200,17 +1403,30 @@ Class | Method | HTTP request | Description
  - [EnumcryptPasswordStorageSchemeSchemaUrn](docs/EnumcryptPasswordStorageSchemeSchemaUrn.md)
  - [EnumcryptoManagerSchemaUrn](docs/EnumcryptoManagerSchemaUrn.md)
  - [EnumcurrentTimeVirtualAttributeSchemaUrn](docs/EnumcurrentTimeVirtualAttributeSchemaUrn.md)
+ - [EnumcustomLoggedStatsSchemaUrn](docs/EnumcustomLoggedStatsSchemaUrn.md)
+ - [EnumcustomLoggedStatsStatisticTypeProp](docs/EnumcustomLoggedStatsStatisticTypeProp.md)
  - [EnumdataSecurityAuditorAuditSeverityProp](docs/EnumdataSecurityAuditorAuditSeverityProp.md)
  - [EnumdataSecurityAuditorIncludePrivilegeProp](docs/EnumdataSecurityAuditorIncludePrivilegeProp.md)
  - [EnumdataSecurityAuditorWeakCryptEncodingProp](docs/EnumdataSecurityAuditorWeakCryptEncodingProp.md)
  - [EnumdebugAccessLogPublisherSchemaUrn](docs/EnumdebugAccessLogPublisherSchemaUrn.md)
+ - [EnumdebugTargetDebugCategoryProp](docs/EnumdebugTargetDebugCategoryProp.md)
+ - [EnumdebugTargetDebugLevelProp](docs/EnumdebugTargetDebugLevelProp.md)
+ - [EnumdebugTargetSchemaUrn](docs/EnumdebugTargetSchemaUrn.md)
  - [EnumdefaultAzureAuthenticationMethodSchemaUrn](docs/EnumdefaultAzureAuthenticationMethodSchemaUrn.md)
  - [EnumdefaultUncachedAttributeCriteriaSchemaUrn](docs/EnumdefaultUncachedAttributeCriteriaSchemaUrn.md)
  - [EnumdefaultUncachedEntryCriteriaSchemaUrn](docs/EnumdefaultUncachedEntryCriteriaSchemaUrn.md)
  - [EnumdelayBindResponseFailureLockoutActionSchemaUrn](docs/EnumdelayBindResponseFailureLockoutActionSchemaUrn.md)
+ - [EnumdelayPluginSchemaUrn](docs/EnumdelayPluginSchemaUrn.md)
  - [EnumdelayRecurringTaskSchemaUrn](docs/EnumdelayRecurringTaskSchemaUrn.md)
+ - [EnumdelegatedAdminAttributeAllowedMIMETypeProp](docs/EnumdelegatedAdminAttributeAllowedMIMETypeProp.md)
+ - [EnumdelegatedAdminAttributeAttributePresentationProp](docs/EnumdelegatedAdminAttributeAttributePresentationProp.md)
  - [EnumdelegatedAdminAttributeCategorySchemaUrn](docs/EnumdelegatedAdminAttributeCategorySchemaUrn.md)
+ - [EnumdelegatedAdminAttributeMutabilityProp](docs/EnumdelegatedAdminAttributeMutabilityProp.md)
+ - [EnumdelegatedAdminCorrelatedRestResourceSchemaUrn](docs/EnumdelegatedAdminCorrelatedRestResourceSchemaUrn.md)
  - [EnumdelegatedAdminHttpServletExtensionSchemaUrn](docs/EnumdelegatedAdminHttpServletExtensionSchemaUrn.md)
+ - [EnumdelegatedAdminResourceRightsAdminPermissionProp](docs/EnumdelegatedAdminResourceRightsAdminPermissionProp.md)
+ - [EnumdelegatedAdminResourceRightsAdminScopeProp](docs/EnumdelegatedAdminResourceRightsAdminScopeProp.md)
+ - [EnumdelegatedAdminResourceRightsSchemaUrn](docs/EnumdelegatedAdminResourceRightsSchemaUrn.md)
  - [EnumdelegatedAdminRightsSchemaUrn](docs/EnumdelegatedAdminRightsSchemaUrn.md)
  - [EnumdeliverOtpExtendedOperationHandlerSchemaUrn](docs/EnumdeliverOtpExtendedOperationHandlerSchemaUrn.md)
  - [EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn](docs/EnumdeliverPasswordResetTokenExtendedOperationHandlerSchemaUrn.md)
@@ -1225,9 +1441,11 @@ Class | Method | HTTP request | Description
  - [EnumdistinguishedNameAttributeSyntaxSchemaUrn](docs/EnumdistinguishedNameAttributeSyntaxSchemaUrn.md)
  - [EnumdnJoinVirtualAttributeSchemaUrn](docs/EnumdnJoinVirtualAttributeSchemaUrn.md)
  - [EnumdnMapSchemaUrn](docs/EnumdnMapSchemaUrn.md)
+ - [EnumdnMapperPluginSchemaUrn](docs/EnumdnMapperPluginSchemaUrn.md)
  - [EnumdseeCompatAccessControlHandlerSchemaUrn](docs/EnumdseeCompatAccessControlHandlerSchemaUrn.md)
  - [EnumdynamicGroupImplementationSchemaUrn](docs/EnumdynamicGroupImplementationSchemaUrn.md)
  - [EnumemailOtpDeliveryMechanismSchemaUrn](docs/EnumemailOtpDeliveryMechanismSchemaUrn.md)
+ - [EnumencryptAttributeValuesPluginSchemaUrn](docs/EnumencryptAttributeValuesPluginSchemaUrn.md)
  - [EnumencryptionSettingsBackendSchemaUrn](docs/EnumencryptionSettingsBackendSchemaUrn.md)
  - [EnumenterLockdownModeRecurringTaskSchemaUrn](docs/EnumenterLockdownModeRecurringTaskSchemaUrn.md)
  - [EnumentryChecksumVirtualAttributeSchemaUrn](docs/EnumentryChecksumVirtualAttributeSchemaUrn.md)
@@ -1311,6 +1529,7 @@ Class | Method | HTTP request | Description
  - [EnumgroovyScriptedOauthTokenHandlerSchemaUrn](docs/EnumgroovyScriptedOauthTokenHandlerSchemaUrn.md)
  - [EnumgroovyScriptedPasswordGeneratorSchemaUrn](docs/EnumgroovyScriptedPasswordGeneratorSchemaUrn.md)
  - [EnumgroovyScriptedPasswordValidatorSchemaUrn](docs/EnumgroovyScriptedPasswordValidatorSchemaUrn.md)
+ - [EnumgroovyScriptedPluginSchemaUrn](docs/EnumgroovyScriptedPluginSchemaUrn.md)
  - [EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn](docs/EnumgroovyScriptedUncachedAttributeCriteriaSchemaUrn.md)
  - [EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn](docs/EnumgroovyScriptedUncachedEntryCriteriaSchemaUrn.md)
  - [EnumgroovyScriptedVirtualAttributeSchemaUrn](docs/EnumgroovyScriptedVirtualAttributeSchemaUrn.md)
@@ -1323,6 +1542,7 @@ Class | Method | HTTP request | Description
  - [EnumhostSystemMonitorProviderSchemaUrn](docs/EnumhostSystemMonitorProviderSchemaUrn.md)
  - [EnumhttpConfigurationSchemaUrn](docs/EnumhttpConfigurationSchemaUrn.md)
  - [EnumhttpConnectionHandlerSchemaUrn](docs/EnumhttpConnectionHandlerSchemaUrn.md)
+ - [EnumhttpServerInstanceListenerSchemaUrn](docs/EnumhttpServerInstanceListenerSchemaUrn.md)
  - [EnumhttpServletCrossOriginPolicySchemaUrn](docs/EnumhttpServletCrossOriginPolicySchemaUrn.md)
  - [EnumhttpServletExtensionAllowedAuthenticationTypeProp](docs/EnumhttpServletExtensionAllowedAuthenticationTypeProp.md)
  - [EnumhttpServletExtensionAllowedControlProp](docs/EnumhttpServletExtensionAllowedControlProp.md)
@@ -1335,6 +1555,9 @@ Class | Method | HTTP request | Description
  - [EnumindicatorGaugeSchemaUrn](docs/EnumindicatorGaugeSchemaUrn.md)
  - [EnuminstanceNameVirtualAttributeSchemaUrn](docs/EnuminstanceNameVirtualAttributeSchemaUrn.md)
  - [EnumintegerAttributeSyntaxSchemaUrn](docs/EnumintegerAttributeSyntaxSchemaUrn.md)
+ - [EnuminterServerAuthenticationInfoAuthenticationTypeProp](docs/EnuminterServerAuthenticationInfoAuthenticationTypeProp.md)
+ - [EnuminterServerAuthenticationInfoPurposeProp](docs/EnuminterServerAuthenticationInfoPurposeProp.md)
+ - [EnuminternalSearchRatePluginSchemaUrn](docs/EnuminternalSearchRatePluginSchemaUrn.md)
  - [EnumisMemberOfVirtualAttributeSchemaUrn](docs/EnumisMemberOfVirtualAttributeSchemaUrn.md)
  - [EnumjdbcBasedAccessLogPublisherSchemaUrn](docs/EnumjdbcBasedAccessLogPublisherSchemaUrn.md)
  - [EnumjdbcBasedErrorLogPublisherSchemaUrn](docs/EnumjdbcBasedErrorLogPublisherSchemaUrn.md)
@@ -1344,6 +1567,10 @@ Class | Method | HTTP request | Description
  - [EnumjsonAccessLogPublisherSchemaUrn](docs/EnumjsonAccessLogPublisherSchemaUrn.md)
  - [EnumjsonAttributeConstraintsSchemaUrn](docs/EnumjsonAttributeConstraintsSchemaUrn.md)
  - [EnumjsonErrorLogPublisherSchemaUrn](docs/EnumjsonErrorLogPublisherSchemaUrn.md)
+ - [EnumjsonFieldConstraintsCacheModeProp](docs/EnumjsonFieldConstraintsCacheModeProp.md)
+ - [EnumjsonFieldConstraintsIsArrayProp](docs/EnumjsonFieldConstraintsIsArrayProp.md)
+ - [EnumjsonFieldConstraintsSchemaUrn](docs/EnumjsonFieldConstraintsSchemaUrn.md)
+ - [EnumjsonFieldConstraintsValueTypeProp](docs/EnumjsonFieldConstraintsValueTypeProp.md)
  - [EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn](docs/EnumjsonFormattedAccessLogFieldBehaviorSchemaUrn.md)
  - [EnumjsonLogFieldSyntaxSchemaUrn](docs/EnumjsonLogFieldSyntaxSchemaUrn.md)
  - [EnumjsonObjectAttributeSyntaxSchemaUrn](docs/EnumjsonObjectAttributeSyntaxSchemaUrn.md)
@@ -1351,16 +1578,20 @@ Class | Method | HTTP request | Description
  - [EnumjwtAccessTokenValidatorSchemaUrn](docs/EnumjwtAccessTokenValidatorSchemaUrn.md)
  - [EnumkeyPairKeyAlgorithmProp](docs/EnumkeyPairKeyAlgorithmProp.md)
  - [EnumkeyPairSchemaUrn](docs/EnumkeyPairSchemaUrn.md)
+ - [EnumlastAccessTimePluginSchemaUrn](docs/EnumlastAccessTimePluginSchemaUrn.md)
  - [EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn](docs/EnumlastAccessTimeUncachedEntryCriteriaSchemaUrn.md)
+ - [EnumlastModPluginSchemaUrn](docs/EnumlastModPluginSchemaUrn.md)
  - [EnumldapConnectionHandlerSchemaUrn](docs/EnumldapConnectionHandlerSchemaUrn.md)
  - [EnumldapMappedScimHttpServletExtensionSchemaUrn](docs/EnumldapMappedScimHttpServletExtensionSchemaUrn.md)
  - [EnumldapPassThroughAuthenticationHandlerSchemaUrn](docs/EnumldapPassThroughAuthenticationHandlerSchemaUrn.md)
+ - [EnumldapResultCodeTrackerPluginSchemaUrn](docs/EnumldapResultCodeTrackerPluginSchemaUrn.md)
  - [EnumldapSdkDebugLoggerCompressionMechanismProp](docs/EnumldapSdkDebugLoggerCompressionMechanismProp.md)
  - [EnumldapSdkDebugLoggerDebugLevelProp](docs/EnumldapSdkDebugLoggerDebugLevelProp.md)
  - [EnumldapSdkDebugLoggerDebugTypeProp](docs/EnumldapSdkDebugLoggerDebugTypeProp.md)
  - [EnumldapSdkDebugLoggerLoggingErrorBehaviorProp](docs/EnumldapSdkDebugLoggerLoggingErrorBehaviorProp.md)
  - [EnumldapSdkDebugLoggerSchemaUrn](docs/EnumldapSdkDebugLoggerSchemaUrn.md)
  - [EnumldapSdkDebugLoggerTimestampPrecisionProp](docs/EnumldapSdkDebugLoggerTimestampPrecisionProp.md)
+ - [EnumldapServerInstanceListenerSchemaUrn](docs/EnumldapServerInstanceListenerSchemaUrn.md)
  - [EnumldapUrlAttributeSyntaxSchemaUrn](docs/EnumldapUrlAttributeSyntaxSchemaUrn.md)
  - [EnumldifConnectionHandlerSchemaUrn](docs/EnumldifConnectionHandlerSchemaUrn.md)
  - [EnumldifExportRecurringTaskSchemaUrn](docs/EnumldifExportRecurringTaskSchemaUrn.md)
@@ -1368,6 +1599,14 @@ Class | Method | HTTP request | Description
  - [EnumlengthBasedPasswordValidatorSchemaUrn](docs/EnumlengthBasedPasswordValidatorSchemaUrn.md)
  - [EnumlicenseSchemaUrn](docs/EnumlicenseSchemaUrn.md)
  - [EnumlocalDbBackendSchemaUrn](docs/EnumlocalDbBackendSchemaUrn.md)
+ - [EnumlocalDbCompositeIndexCacheModeProp](docs/EnumlocalDbCompositeIndexCacheModeProp.md)
+ - [EnumlocalDbCompositeIndexSchemaUrn](docs/EnumlocalDbCompositeIndexSchemaUrn.md)
+ - [EnumlocalDbIndexCacheModeProp](docs/EnumlocalDbIndexCacheModeProp.md)
+ - [EnumlocalDbIndexIndexTypeProp](docs/EnumlocalDbIndexIndexTypeProp.md)
+ - [EnumlocalDbIndexSchemaUrn](docs/EnumlocalDbIndexSchemaUrn.md)
+ - [EnumlocalDbVlvIndexCacheModeProp](docs/EnumlocalDbVlvIndexCacheModeProp.md)
+ - [EnumlocalDbVlvIndexSchemaUrn](docs/EnumlocalDbVlvIndexSchemaUrn.md)
+ - [EnumlocalDbVlvIndexScopeProp](docs/EnumlocalDbVlvIndexScopeProp.md)
  - [EnumlocationSchemaUrn](docs/EnumlocationSchemaUrn.md)
  - [EnumlockAccountFailureLockoutActionSchemaUrn](docs/EnumlockAccountFailureLockoutActionSchemaUrn.md)
  - [EnumlockedAccountDataSecurityAuditorSchemaUrn](docs/EnumlockedAccountDataSecurityAuditorSchemaUrn.md)
@@ -1401,6 +1640,7 @@ Class | Method | HTTP request | Description
  - [EnumlogPublisherSyslogSeverityProp](docs/EnumlogPublisherSyslogSeverityProp.md)
  - [EnumlogPublisherTimestampPrecisionProp](docs/EnumlogPublisherTimestampPrecisionProp.md)
  - [EnumloggingChangeSubscriptionHandlerSchemaUrn](docs/EnumloggingChangeSubscriptionHandlerSchemaUrn.md)
+ - [EnummacSecretKeySchemaUrn](docs/EnummacSecretKeySchemaUrn.md)
  - [Enummd5PasswordStorageSchemeSchemaUrn](docs/Enummd5PasswordStorageSchemeSchemaUrn.md)
  - [EnummemberOfServerGroupVirtualAttributeSchemaUrn](docs/EnummemberOfServerGroupVirtualAttributeSchemaUrn.md)
  - [EnummemberVirtualAttributeSchemaUrn](docs/EnummemberVirtualAttributeSchemaUrn.md)
@@ -1409,7 +1649,9 @@ Class | Method | HTTP request | Description
  - [EnummetricsEngineServerInstanceSchemaUrn](docs/EnummetricsEngineServerInstanceSchemaUrn.md)
  - [EnummirrorVirtualAttributeSchemaUrn](docs/EnummirrorVirtualAttributeSchemaUrn.md)
  - [EnummockAccessTokenValidatorSchemaUrn](docs/EnummockAccessTokenValidatorSchemaUrn.md)
+ - [EnummodifiablePasswordPolicyStatePluginSchemaUrn](docs/EnummodifiablePasswordPolicyStatePluginSchemaUrn.md)
  - [EnummonitorBackendSchemaUrn](docs/EnummonitorBackendSchemaUrn.md)
+ - [EnummonitorHistoryPluginSchemaUrn](docs/EnummonitorHistoryPluginSchemaUrn.md)
  - [EnummonitoringEndpointConnectionTypeProp](docs/EnummonitoringEndpointConnectionTypeProp.md)
  - [EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn](docs/EnummultiPartEmailAccountStatusNotificationHandlerSchemaUrn.md)
  - [EnummultiUpdateExtendedOperationHandlerSchemaUrn](docs/EnummultiUpdateExtendedOperationHandlerSchemaUrn.md)
@@ -1435,10 +1677,13 @@ Class | Method | HTTP request | Description
  - [EnumorderingMatchingRuleSchemaUrn](docs/EnumorderingMatchingRuleSchemaUrn.md)
  - [EnumoutputAlertHandlerSchemaUrn](docs/EnumoutputAlertHandlerSchemaUrn.md)
  - [EnumpassThroughAuthenticationHandlerServerAccessModeProp](docs/EnumpassThroughAuthenticationHandlerServerAccessModeProp.md)
+ - [EnumpassThroughAuthenticationPluginSchemaUrn](docs/EnumpassThroughAuthenticationPluginSchemaUrn.md)
  - [EnumpassphrasePasswordGeneratorSchemaUrn](docs/EnumpassphrasePasswordGeneratorSchemaUrn.md)
+ - [EnumpasswordInterServerAuthenticationInfoSchemaUrn](docs/EnumpasswordInterServerAuthenticationInfoSchemaUrn.md)
  - [EnumpasswordModifyExtendedOperationHandlerSchemaUrn](docs/EnumpasswordModifyExtendedOperationHandlerSchemaUrn.md)
  - [EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp](docs/EnumpasswordPolicyAllowedPasswordResetTokenUseConditionProp.md)
  - [EnumpasswordPolicyBindPasswordValidationFailureActionProp](docs/EnumpasswordPolicyBindPasswordValidationFailureActionProp.md)
+ - [EnumpasswordPolicyImportPluginSchemaUrn](docs/EnumpasswordPolicyImportPluginSchemaUrn.md)
  - [EnumpasswordPolicyPasswordRetirementBehaviorProp](docs/EnumpasswordPolicyPasswordRetirementBehaviorProp.md)
  - [EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp](docs/EnumpasswordPolicyRecentLoginHistorySimilarAttemptBehaviorProp.md)
  - [EnumpasswordPolicyReturnPasswordExpirationControlsProp](docs/EnumpasswordPolicyReturnPasswordExpirationControlsProp.md)
@@ -1450,14 +1695,54 @@ Class | Method | HTTP request | Description
  - [EnumpasswordStorageSchemePasswordEncodingMechanismProp](docs/EnumpasswordStorageSchemePasswordEncodingMechanismProp.md)
  - [EnumpasswordValidatorMatchBehaviorProp](docs/EnumpasswordValidatorMatchBehaviorProp.md)
  - [Enumpbkdf2PasswordStorageSchemeSchemaUrn](docs/Enumpbkdf2PasswordStorageSchemeSchemaUrn.md)
+ - [EnumperiodicGcPluginSchemaUrn](docs/EnumperiodicGcPluginSchemaUrn.md)
+ - [EnumperiodicStatsLoggerPluginSchemaUrn](docs/EnumperiodicStatsLoggerPluginSchemaUrn.md)
+ - [EnumphotoDelegatedAdminAttributeSchemaUrn](docs/EnumphotoDelegatedAdminAttributeSchemaUrn.md)
  - [EnumpingFederateAccessTokenValidatorSchemaUrn](docs/EnumpingFederateAccessTokenValidatorSchemaUrn.md)
  - [EnumpingOneHttpExternalServerSchemaUrn](docs/EnumpingOneHttpExternalServerSchemaUrn.md)
  - [EnumpingOneIdTokenValidatorSchemaUrn](docs/EnumpingOneIdTokenValidatorSchemaUrn.md)
+ - [EnumpingOnePassThroughAuthenticationPluginSchemaUrn](docs/EnumpingOnePassThroughAuthenticationPluginSchemaUrn.md)
  - [Enumpkcs11CipherStreamProviderSchemaUrn](docs/Enumpkcs11CipherStreamProviderSchemaUrn.md)
  - [Enumpkcs11KeyManagerProviderSchemaUrn](docs/Enumpkcs11KeyManagerProviderSchemaUrn.md)
  - [EnumplainSaslMechanismHandlerSchemaUrn](docs/EnumplainSaslMechanismHandlerSchemaUrn.md)
+ - [EnumpluggablePassThroughAuthenticationPluginSchemaUrn](docs/EnumpluggablePassThroughAuthenticationPluginSchemaUrn.md)
+ - [EnumpluginAttributeTypeProp](docs/EnumpluginAttributeTypeProp.md)
+ - [EnumpluginEntryCacheInfoProp](docs/EnumpluginEntryCacheInfoProp.md)
+ - [EnumpluginGaugeInfoProp](docs/EnumpluginGaugeInfoProp.md)
+ - [EnumpluginHistogramFormatProp](docs/EnumpluginHistogramFormatProp.md)
+ - [EnumpluginHistogramOpTypeProp](docs/EnumpluginHistogramOpTypeProp.md)
+ - [EnumpluginHostInfoProp](docs/EnumpluginHostInfoProp.md)
+ - [EnumpluginIgnoredPasswordPolicyStateErrorConditionProp](docs/EnumpluginIgnoredPasswordPolicyStateErrorConditionProp.md)
+ - [EnumpluginIncludedLDAPStatProp](docs/EnumpluginIncludedLDAPStatProp.md)
+ - [EnumpluginIncludedResourceStatProp](docs/EnumpluginIncludedResourceStatProp.md)
+ - [EnumpluginInvokeGCDayOfWeekProp](docs/EnumpluginInvokeGCDayOfWeekProp.md)
+ - [EnumpluginLdapChangelogInfoProp](docs/EnumpluginLdapChangelogInfoProp.md)
+ - [EnumpluginLdapInfoProp](docs/EnumpluginLdapInfoProp.md)
+ - [EnumpluginLocalDBBackendInfoProp](docs/EnumpluginLocalDBBackendInfoProp.md)
+ - [EnumpluginLogFileFormatProp](docs/EnumpluginLogFileFormatProp.md)
+ - [EnumpluginLoggingErrorBehaviorProp](docs/EnumpluginLoggingErrorBehaviorProp.md)
+ - [EnumpluginMultiValuedAttributeBehaviorProp](docs/EnumpluginMultiValuedAttributeBehaviorProp.md)
+ - [EnumpluginMultipleAttributeBehaviorProp](docs/EnumpluginMultipleAttributeBehaviorProp.md)
+ - [EnumpluginMultipleValuePatternBehaviorProp](docs/EnumpluginMultipleValuePatternBehaviorProp.md)
+ - [EnumpluginOperationTypeProp](docs/EnumpluginOperationTypeProp.md)
+ - [EnumpluginPerApplicationLDAPStatsProp](docs/EnumpluginPerApplicationLDAPStatsProp.md)
+ - [EnumpluginPluginTypeProp](docs/EnumpluginPluginTypeProp.md)
+ - [EnumpluginProfileActionProp](docs/EnumpluginProfileActionProp.md)
+ - [EnumpluginReplicationInfoProp](docs/EnumpluginReplicationInfoProp.md)
  - [EnumpluginRootSchemaUrn](docs/EnumpluginRootSchemaUrn.md)
+ - [EnumpluginScopeProp](docs/EnumpluginScopeProp.md)
+ - [EnumpluginServerAccessModeProp](docs/EnumpluginServerAccessModeProp.md)
+ - [EnumpluginServerInfoProp](docs/EnumpluginServerInfoProp.md)
+ - [EnumpluginSourceAttributeRemovalBehaviorProp](docs/EnumpluginSourceAttributeRemovalBehaviorProp.md)
+ - [EnumpluginStatusSummaryInfoProp](docs/EnumpluginStatusSummaryInfoProp.md)
+ - [EnumpluginTargetAttributeExistsDuringInitialPopulationBehaviorProp](docs/EnumpluginTargetAttributeExistsDuringInitialPopulationBehaviorProp.md)
+ - [EnumpluginUpdateSourceAttributeBehaviorProp](docs/EnumpluginUpdateSourceAttributeBehaviorProp.md)
+ - [EnumpluginUpdateTargetAttributeBehaviorProp](docs/EnumpluginUpdateTargetAttributeBehaviorProp.md)
+ - [EnumpluginUpdatedEntryNewlyMatchesCriteriaBehaviorProp](docs/EnumpluginUpdatedEntryNewlyMatchesCriteriaBehaviorProp.md)
+ - [EnumpluginUpdatedEntryNoLongerMatchesCriteriaBehaviorProp](docs/EnumpluginUpdatedEntryNoLongerMatchesCriteriaBehaviorProp.md)
  - [EnumprivilegeDataSecurityAuditorSchemaUrn](docs/EnumprivilegeDataSecurityAuditorSchemaUrn.md)
+ - [EnumprocessingTimeHistogramPluginSchemaUrn](docs/EnumprocessingTimeHistogramPluginSchemaUrn.md)
+ - [EnumprofilerPluginSchemaUrn](docs/EnumprofilerPluginSchemaUrn.md)
  - [EnumproxyServerInstanceSchemaUrn](docs/EnumproxyServerInstanceSchemaUrn.md)
  - [EnumpwnedPasswordsPasswordValidatorSchemaUrn](docs/EnumpwnedPasswordsPasswordValidatorSchemaUrn.md)
  - [EnumquickstartHttpServletExtensionSchemaUrn](docs/EnumquickstartHttpServletExtensionSchemaUrn.md)
@@ -1474,6 +1759,8 @@ Class | Method | HTTP request | Description
  - [EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp](docs/EnumrecurringTaskTaskCompletionStateForNonzeroExitCodeProp.md)
  - [EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp](docs/EnumrecurringTaskTaskReturnStateIfTimeoutIsEncounteredProp.md)
  - [EnumrecurringTaskTimestampFormatProp](docs/EnumrecurringTaskTimestampFormatProp.md)
+ - [EnumreferentialIntegrityPluginSchemaUrn](docs/EnumreferentialIntegrityPluginSchemaUrn.md)
+ - [EnumreferralOnUpdatePluginSchemaUrn](docs/EnumreferralOnUpdatePluginSchemaUrn.md)
  - [EnumregularExpressionIdentityMapperSchemaUrn](docs/EnumregularExpressionIdentityMapperSchemaUrn.md)
  - [EnumregularExpressionPasswordValidatorSchemaUrn](docs/EnumregularExpressionPasswordValidatorSchemaUrn.md)
  - [EnumrepeatedCharactersPasswordValidatorSchemaUrn](docs/EnumrepeatedCharactersPasswordValidatorSchemaUrn.md)
@@ -1482,6 +1769,7 @@ Class | Method | HTTP request | Description
  - [EnumreplicationAssurancePolicyRemoteLevelProp](docs/EnumreplicationAssurancePolicyRemoteLevelProp.md)
  - [EnumreplicationAssurancePolicySchemaUrn](docs/EnumreplicationAssurancePolicySchemaUrn.md)
  - [EnumreplicationAssuranceResultCriteriaSchemaUrn](docs/EnumreplicationAssuranceResultCriteriaSchemaUrn.md)
+ - [EnumreplicationDomainSchemaUrn](docs/EnumreplicationDomainSchemaUrn.md)
  - [EnumreplicationStateDetailVirtualAttributeSchemaUrn](docs/EnumreplicationStateDetailVirtualAttributeSchemaUrn.md)
  - [EnumreplicationSynchronizationProviderSchemaUrn](docs/EnumreplicationSynchronizationProviderSchemaUrn.md)
  - [EnumrequestCriteriaIncludedSearchScopeProp](docs/EnumrequestCriteriaIncludedSearchScopeProp.md)
@@ -1513,6 +1801,9 @@ Class | Method | HTTP request | Description
  - [EnumreverseDnJoinVirtualAttributeSchemaUrn](docs/EnumreverseDnJoinVirtualAttributeSchemaUrn.md)
  - [EnumrootDnDefaultRootPrivilegeNameProp](docs/EnumrootDnDefaultRootPrivilegeNameProp.md)
  - [EnumrootDnSchemaUrn](docs/EnumrootDnSchemaUrn.md)
+ - [EnumrootDnUserIsProxyableProp](docs/EnumrootDnUserIsProxyableProp.md)
+ - [EnumrootDnUserPrivilegeProp](docs/EnumrootDnUserPrivilegeProp.md)
+ - [EnumrootDnUserSchemaUrn](docs/EnumrootDnUserSchemaUrn.md)
  - [EnumrootDseBackendSchemaUrn](docs/EnumrootDseBackendSchemaUrn.md)
  - [EnumrootDseRequestCriteriaSchemaUrn](docs/EnumrootDseRequestCriteriaSchemaUrn.md)
  - [EnumsaltedMd5PasswordStorageSchemeSchemaUrn](docs/EnumsaltedMd5PasswordStorageSchemeSchemaUrn.md)
@@ -1526,8 +1817,17 @@ Class | Method | HTTP request | Description
  - [EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp](docs/EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp.md)
  - [EnumschemaBackendSchemaUrn](docs/EnumschemaBackendSchemaUrn.md)
  - [Enumscim2HttpServletExtensionSchemaUrn](docs/Enumscim2HttpServletExtensionSchemaUrn.md)
+ - [EnumscimAttributeMutabilityProp](docs/EnumscimAttributeMutabilityProp.md)
+ - [EnumscimAttributeReturnedProp](docs/EnumscimAttributeReturnedProp.md)
+ - [EnumscimAttributeSchemaUrn](docs/EnumscimAttributeSchemaUrn.md)
+ - [EnumscimAttributeTypeProp](docs/EnumscimAttributeTypeProp.md)
  - [EnumscimSchemaSchemaUrn](docs/EnumscimSchemaSchemaUrn.md)
+ - [EnumscimSubattributeMutabilityProp](docs/EnumscimSubattributeMutabilityProp.md)
+ - [EnumscimSubattributeReturnedProp](docs/EnumscimSubattributeReturnedProp.md)
+ - [EnumscimSubattributeSchemaUrn](docs/EnumscimSubattributeSchemaUrn.md)
+ - [EnumscimSubattributeTypeProp](docs/EnumscimSubattributeTypeProp.md)
  - [EnumscryptPasswordStorageSchemeSchemaUrn](docs/EnumscryptPasswordStorageSchemeSchemaUrn.md)
+ - [EnumsearchShutdownPluginSchemaUrn](docs/EnumsearchShutdownPluginSchemaUrn.md)
  - [EnumsensitiveAttributeAllowInAddProp](docs/EnumsensitiveAttributeAllowInAddProp.md)
  - [EnumsensitiveAttributeAllowInCompareProp](docs/EnumsensitiveAttributeAllowInCompareProp.md)
  - [EnumsensitiveAttributeAllowInFilterProp](docs/EnumsensitiveAttributeAllowInFilterProp.md)
@@ -1535,8 +1835,11 @@ Class | Method | HTTP request | Description
  - [EnumsensitiveAttributeAllowInReturnedEntriesProp](docs/EnumsensitiveAttributeAllowInReturnedEntriesProp.md)
  - [EnumsensitiveAttributeSchemaUrn](docs/EnumsensitiveAttributeSchemaUrn.md)
  - [EnumserverGroupSchemaUrn](docs/EnumserverGroupSchemaUrn.md)
+ - [EnumserverInstanceListenerConnectionSecurityProp](docs/EnumserverInstanceListenerConnectionSecurityProp.md)
+ - [EnumserverInstanceListenerPurposeProp](docs/EnumserverInstanceListenerPurposeProp.md)
  - [EnumserverInstancePreferredSecurityProp](docs/EnumserverInstancePreferredSecurityProp.md)
  - [EnumserverInstanceServerInstanceTypeProp](docs/EnumserverInstanceServerInstanceTypeProp.md)
+ - [EnumsevenBitCleanPluginSchemaUrn](docs/EnumsevenBitCleanPluginSchemaUrn.md)
  - [Enumsha1PasswordStorageSchemeSchemaUrn](docs/Enumsha1PasswordStorageSchemeSchemaUrn.md)
  - [EnumshortUniqueIdVirtualAttributeSchemaUrn](docs/EnumshortUniqueIdVirtualAttributeSchemaUrn.md)
  - [EnumsimilarityBasedPasswordValidatorSchemaUrn](docs/EnumsimilarityBasedPasswordValidatorSchemaUrn.md)
@@ -1545,6 +1848,7 @@ Class | Method | HTTP request | Description
  - [EnumsimpleResultCriteriaSchemaUrn](docs/EnumsimpleResultCriteriaSchemaUrn.md)
  - [EnumsimpleSearchEntryCriteriaSchemaUrn](docs/EnumsimpleSearchEntryCriteriaSchemaUrn.md)
  - [EnumsimpleSearchReferenceCriteriaSchemaUrn](docs/EnumsimpleSearchReferenceCriteriaSchemaUrn.md)
+ - [EnumsimpleToExternalBindPluginSchemaUrn](docs/EnumsimpleToExternalBindPluginSchemaUrn.md)
  - [EnumsimpleUncachedAttributeCriteriaSchemaUrn](docs/EnumsimpleUncachedAttributeCriteriaSchemaUrn.md)
  - [EnumsingleUseTokensExtendedOperationHandlerSchemaUrn](docs/EnumsingleUseTokensExtendedOperationHandlerSchemaUrn.md)
  - [EnumsizeLimitLogRetentionPolicySchemaUrn](docs/EnumsizeLimitLogRetentionPolicySchemaUrn.md)
@@ -1554,6 +1858,7 @@ Class | Method | HTTP request | Description
  - [EnumsmtpExternalServerSchemaUrn](docs/EnumsmtpExternalServerSchemaUrn.md)
  - [EnumsnmpAlertHandlerSchemaUrn](docs/EnumsnmpAlertHandlerSchemaUrn.md)
  - [EnumsnmpSubAgentAlertHandlerSchemaUrn](docs/EnumsnmpSubAgentAlertHandlerSchemaUrn.md)
+ - [EnumsnmpSubagentPluginSchemaUrn](docs/EnumsnmpSubagentPluginSchemaUrn.md)
  - [EnumsoftDeletePolicySchemaUrn](docs/EnumsoftDeletePolicySchemaUrn.md)
  - [EnumsslContextMonitorProviderSchemaUrn](docs/EnumsslContextMonitorProviderSchemaUrn.md)
  - [EnumstackTraceMonitorProviderSchemaUrn](docs/EnumstackTraceMonitorProviderSchemaUrn.md)
@@ -1561,7 +1866,11 @@ Class | Method | HTTP request | Description
  - [EnumstaticGroupImplementationSchemaUrn](docs/EnumstaticGroupImplementationSchemaUrn.md)
  - [EnumstaticTokenVaultAuthenticationMethodSchemaUrn](docs/EnumstaticTokenVaultAuthenticationMethodSchemaUrn.md)
  - [EnumstaticallyDefinedRecurringTaskSchemaUrn](docs/EnumstaticallyDefinedRecurringTaskSchemaUrn.md)
+ - [EnumstatsCollectorPluginSchemaUrn](docs/EnumstatsCollectorPluginSchemaUrn.md)
  - [EnumstatsdMonitoringEndpointSchemaUrn](docs/EnumstatsdMonitoringEndpointSchemaUrn.md)
+ - [EnumstringArrayTokenClaimValidationSchemaUrn](docs/EnumstringArrayTokenClaimValidationSchemaUrn.md)
+ - [EnumstringTokenClaimValidationSchemaUrn](docs/EnumstringTokenClaimValidationSchemaUrn.md)
+ - [EnumsubOperationTimingPluginSchemaUrn](docs/EnumsubOperationTimingPluginSchemaUrn.md)
  - [EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn](docs/EnumsubjectAttributeToUserAttributeCertificateMapperSchemaUrn.md)
  - [EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn](docs/EnumsubjectDnToUserAttributeCertificateMapperSchemaUrn.md)
  - [EnumsubjectEqualsDnCertificateMapperSchemaUrn](docs/EnumsubjectEqualsDnCertificateMapperSchemaUrn.md)
@@ -1609,6 +1918,7 @@ Class | Method | HTTP request | Description
  - [EnumthirdPartyPasswordGeneratorSchemaUrn](docs/EnumthirdPartyPasswordGeneratorSchemaUrn.md)
  - [EnumthirdPartyPasswordStorageSchemeSchemaUrn](docs/EnumthirdPartyPasswordStorageSchemeSchemaUrn.md)
  - [EnumthirdPartyPasswordValidatorSchemaUrn](docs/EnumthirdPartyPasswordValidatorSchemaUrn.md)
+ - [EnumthirdPartyPluginSchemaUrn](docs/EnumthirdPartyPluginSchemaUrn.md)
  - [EnumthirdPartyRecurringTaskSchemaUrn](docs/EnumthirdPartyRecurringTaskSchemaUrn.md)
  - [EnumthirdPartyRequestCriteriaSchemaUrn](docs/EnumthirdPartyRequestCriteriaSchemaUrn.md)
  - [EnumthirdPartyResultCriteriaSchemaUrn](docs/EnumthirdPartyResultCriteriaSchemaUrn.md)
@@ -1618,9 +1928,11 @@ Class | Method | HTTP request | Description
  - [EnumthirdPartyTrustManagerProviderSchemaUrn](docs/EnumthirdPartyTrustManagerProviderSchemaUrn.md)
  - [EnumthirdPartyUncachedAttributeCriteriaSchemaUrn](docs/EnumthirdPartyUncachedAttributeCriteriaSchemaUrn.md)
  - [EnumthirdPartyUncachedEntryCriteriaSchemaUrn](docs/EnumthirdPartyUncachedEntryCriteriaSchemaUrn.md)
+ - [EnumthirdPartyVelocityContextProviderSchemaUrn](docs/EnumthirdPartyVelocityContextProviderSchemaUrn.md)
  - [EnumthirdPartyVirtualAttributeSchemaUrn](docs/EnumthirdPartyVirtualAttributeSchemaUrn.md)
  - [EnumtimeLimitLogRetentionPolicySchemaUrn](docs/EnumtimeLimitLogRetentionPolicySchemaUrn.md)
  - [EnumtimeLimitLogRotationPolicySchemaUrn](docs/EnumtimeLimitLogRotationPolicySchemaUrn.md)
+ - [EnumtokenClaimValidationRequiredValueProp](docs/EnumtokenClaimValidationRequiredValueProp.md)
  - [EnumtopologyAdminUserIsProxyableProp](docs/EnumtopologyAdminUserIsProxyableProp.md)
  - [EnumtopologyAdminUserPrivilegeProp](docs/EnumtopologyAdminUserPrivilegeProp.md)
  - [EnumtopologyAdminUserSchemaUrn](docs/EnumtopologyAdminUserSchemaUrn.md)
@@ -1635,6 +1947,7 @@ Class | Method | HTTP request | Description
  - [EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn](docs/EnumunboundidMsChapV2SaslMechanismHandlerSchemaUrn.md)
  - [EnumunboundidTotpSaslMechanismHandlerSchemaUrn](docs/EnumunboundidTotpSaslMechanismHandlerSchemaUrn.md)
  - [EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn](docs/EnumunboundidYubikeyOtpSaslMechanismHandlerSchemaUrn.md)
+ - [EnumuniqueAttributePluginSchemaUrn](docs/EnumuniqueAttributePluginSchemaUrn.md)
  - [EnumuniqueCharactersPasswordValidatorSchemaUrn](docs/EnumuniqueCharactersPasswordValidatorSchemaUrn.md)
  - [EnumuserDefinedVirtualAttributeSchemaUrn](docs/EnumuserDefinedVirtualAttributeSchemaUrn.md)
  - [EnumuserPassVaultAuthenticationMethodSchemaUrn](docs/EnumuserPassVaultAuthenticationMethodSchemaUrn.md)
@@ -1647,7 +1960,10 @@ Class | Method | HTTP request | Description
  - [EnumvaultExternalServerSchemaUrn](docs/EnumvaultExternalServerSchemaUrn.md)
  - [EnumvaultPassphraseProviderSchemaUrn](docs/EnumvaultPassphraseProviderSchemaUrn.md)
  - [EnumvaultPasswordStorageSchemeSchemaUrn](docs/EnumvaultPasswordStorageSchemeSchemaUrn.md)
+ - [EnumvelocityContextProviderObjectScopeProp](docs/EnumvelocityContextProviderObjectScopeProp.md)
  - [EnumvelocityHttpServletExtensionSchemaUrn](docs/EnumvelocityHttpServletExtensionSchemaUrn.md)
+ - [EnumvelocityTemplateLoaderSchemaUrn](docs/EnumvelocityTemplateLoaderSchemaUrn.md)
+ - [EnumvelocityToolsVelocityContextProviderSchemaUrn](docs/EnumvelocityToolsVelocityContextProviderSchemaUrn.md)
  - [EnumversionMonitorProviderSchemaUrn](docs/EnumversionMonitorProviderSchemaUrn.md)
  - [EnumvirtualAttributeConflictBehaviorProp](docs/EnumvirtualAttributeConflictBehaviorProp.md)
  - [EnumvirtualAttributeJoinBaseDNTypeProp](docs/EnumvirtualAttributeJoinBaseDNTypeProp.md)
@@ -1745,6 +2061,7 @@ Class | Method | HTTP request | Description
  - [GetExtendedOperationHandler200Response](docs/GetExtendedOperationHandler200Response.md)
  - [GetGroupImplementation200Response](docs/GetGroupImplementation200Response.md)
  - [GetHttpServletExtension200Response](docs/GetHttpServletExtension200Response.md)
+ - [GetInterServerAuthenticationInfo200Response](docs/GetInterServerAuthenticationInfo200Response.md)
  - [GetLogFieldSyntax200Response](docs/GetLogFieldSyntax200Response.md)
  - [GetLogPublisher200Response](docs/GetLogPublisher200Response.md)
  - [GetMatchingRule200Response](docs/GetMatchingRule200Response.md)
@@ -1752,8 +2069,10 @@ Class | Method | HTTP request | Description
  - [GetPasswordQualityRequirementsExtendedOperationHandlerResponse](docs/GetPasswordQualityRequirementsExtendedOperationHandlerResponse.md)
  - [GetPasswordQualityRequirementsExtendedOperationHandlerResponseAllOf](docs/GetPasswordQualityRequirementsExtendedOperationHandlerResponseAllOf.md)
  - [GetPasswordStorageScheme200Response](docs/GetPasswordStorageScheme200Response.md)
+ - [GetPlugin200Response](docs/GetPlugin200Response.md)
  - [GetSaslMechanismHandler200Response](docs/GetSaslMechanismHandler200Response.md)
  - [GetServerInstance200Response](docs/GetServerInstance200Response.md)
+ - [GetServerInstanceListener200Response](docs/GetServerInstanceListener200Response.md)
  - [GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse](docs/GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponse.md)
  - [GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponseAllOf](docs/GetSupportedOtpDeliveryMechanismsExtendedOperationHandlerResponseAllOf.md)
  - [GetVirtualAttribute200Response](docs/GetVirtualAttribute200Response.md)
@@ -1789,6 +2108,8 @@ Class | Method | HTTP request | Description
  - [GroovyScriptedPasswordGeneratorShared](docs/GroovyScriptedPasswordGeneratorShared.md)
  - [GroovyScriptedPasswordValidatorResponse](docs/GroovyScriptedPasswordValidatorResponse.md)
  - [GroovyScriptedPasswordValidatorShared](docs/GroovyScriptedPasswordValidatorShared.md)
+ - [GroovyScriptedPluginResponse](docs/GroovyScriptedPluginResponse.md)
+ - [GroovyScriptedPluginShared](docs/GroovyScriptedPluginShared.md)
  - [GroovyScriptedUncachedAttributeCriteriaResponse](docs/GroovyScriptedUncachedAttributeCriteriaResponse.md)
  - [GroovyScriptedUncachedAttributeCriteriaShared](docs/GroovyScriptedUncachedAttributeCriteriaShared.md)
  - [GroovyScriptedUncachedEntryCriteriaResponse](docs/GroovyScriptedUncachedEntryCriteriaResponse.md)
@@ -1813,6 +2134,8 @@ Class | Method | HTTP request | Description
  - [HttpConfigurationResponseAllOf](docs/HttpConfigurationResponseAllOf.md)
  - [HttpConnectionHandlerResponse](docs/HttpConnectionHandlerResponse.md)
  - [HttpConnectionHandlerShared](docs/HttpConnectionHandlerShared.md)
+ - [HttpServerInstanceListenerResponse](docs/HttpServerInstanceListenerResponse.md)
+ - [HttpServerInstanceListenerResponseAllOf](docs/HttpServerInstanceListenerResponseAllOf.md)
  - [HttpServletCrossOriginPolicyResponse](docs/HttpServletCrossOriginPolicyResponse.md)
  - [HttpServletCrossOriginPolicyResponseAllOf](docs/HttpServletCrossOriginPolicyResponseAllOf.md)
  - [HttpServletCrossOriginPolicyShared](docs/HttpServletCrossOriginPolicyShared.md)
@@ -1828,6 +2151,9 @@ Class | Method | HTTP request | Description
  - [InstanceNameVirtualAttributeResponseAllOf](docs/InstanceNameVirtualAttributeResponseAllOf.md)
  - [IntegerAttributeSyntaxResponse](docs/IntegerAttributeSyntaxResponse.md)
  - [IntegerAttributeSyntaxResponseAllOf](docs/IntegerAttributeSyntaxResponseAllOf.md)
+ - [InternalSearchRatePluginResponse](docs/InternalSearchRatePluginResponse.md)
+ - [InternalSearchRatePluginResponseAllOf](docs/InternalSearchRatePluginResponseAllOf.md)
+ - [InternalSearchRatePluginShared](docs/InternalSearchRatePluginShared.md)
  - [IsMemberOfVirtualAttributeResponse](docs/IsMemberOfVirtualAttributeResponse.md)
  - [IsMemberOfVirtualAttributeShared](docs/IsMemberOfVirtualAttributeShared.md)
  - [JdbcBasedAccessLogPublisherResponse](docs/JdbcBasedAccessLogPublisherResponse.md)
@@ -1848,6 +2174,9 @@ Class | Method | HTTP request | Description
  - [JsonAttributeConstraintsShared](docs/JsonAttributeConstraintsShared.md)
  - [JsonErrorLogPublisherResponse](docs/JsonErrorLogPublisherResponse.md)
  - [JsonErrorLogPublisherShared](docs/JsonErrorLogPublisherShared.md)
+ - [JsonFieldConstraintsResponse](docs/JsonFieldConstraintsResponse.md)
+ - [JsonFieldConstraintsResponseAllOf](docs/JsonFieldConstraintsResponseAllOf.md)
+ - [JsonFieldConstraintsShared](docs/JsonFieldConstraintsShared.md)
  - [JsonFormattedAccessLogFieldBehaviorResponse](docs/JsonFormattedAccessLogFieldBehaviorResponse.md)
  - [JsonFormattedAccessLogFieldBehaviorShared](docs/JsonFormattedAccessLogFieldBehaviorShared.md)
  - [JsonLogFieldSyntaxResponse](docs/JsonLogFieldSyntaxResponse.md)
@@ -1861,8 +2190,12 @@ Class | Method | HTTP request | Description
  - [KeyPairResponse](docs/KeyPairResponse.md)
  - [KeyPairResponseAllOf](docs/KeyPairResponseAllOf.md)
  - [KeyPairShared](docs/KeyPairShared.md)
+ - [LastAccessTimePluginResponse](docs/LastAccessTimePluginResponse.md)
+ - [LastAccessTimePluginResponseAllOf](docs/LastAccessTimePluginResponseAllOf.md)
  - [LastAccessTimeUncachedEntryCriteriaResponse](docs/LastAccessTimeUncachedEntryCriteriaResponse.md)
  - [LastAccessTimeUncachedEntryCriteriaShared](docs/LastAccessTimeUncachedEntryCriteriaShared.md)
+ - [LastModPluginResponse](docs/LastModPluginResponse.md)
+ - [LastModPluginResponseAllOf](docs/LastModPluginResponseAllOf.md)
  - [LdapConnectionHandlerResponse](docs/LdapConnectionHandlerResponse.md)
  - [LdapConnectionHandlerShared](docs/LdapConnectionHandlerShared.md)
  - [LdapMappedScimHttpServletExtensionResponse](docs/LdapMappedScimHttpServletExtensionResponse.md)
@@ -1870,8 +2203,12 @@ Class | Method | HTTP request | Description
  - [LdapPassThroughAuthenticationHandlerResponse](docs/LdapPassThroughAuthenticationHandlerResponse.md)
  - [LdapPassThroughAuthenticationHandlerResponseAllOf](docs/LdapPassThroughAuthenticationHandlerResponseAllOf.md)
  - [LdapPassThroughAuthenticationHandlerShared](docs/LdapPassThroughAuthenticationHandlerShared.md)
+ - [LdapResultCodeTrackerPluginResponse](docs/LdapResultCodeTrackerPluginResponse.md)
+ - [LdapResultCodeTrackerPluginResponseAllOf](docs/LdapResultCodeTrackerPluginResponseAllOf.md)
  - [LdapSdkDebugLoggerResponse](docs/LdapSdkDebugLoggerResponse.md)
  - [LdapSdkDebugLoggerResponseAllOf](docs/LdapSdkDebugLoggerResponseAllOf.md)
+ - [LdapServerInstanceListenerResponse](docs/LdapServerInstanceListenerResponse.md)
+ - [LdapServerInstanceListenerResponseAllOf](docs/LdapServerInstanceListenerResponseAllOf.md)
  - [LdapUrlAttributeSyntaxResponse](docs/LdapUrlAttributeSyntaxResponse.md)
  - [LdapUrlAttributeSyntaxResponseAllOf](docs/LdapUrlAttributeSyntaxResponseAllOf.md)
  - [LdifConnectionHandlerResponse](docs/LdifConnectionHandlerResponse.md)
@@ -1887,6 +2224,15 @@ Class | Method | HTTP request | Description
  - [LocalDbBackendResponse](docs/LocalDbBackendResponse.md)
  - [LocalDbBackendResponseAllOf](docs/LocalDbBackendResponseAllOf.md)
  - [LocalDbBackendShared](docs/LocalDbBackendShared.md)
+ - [LocalDbCompositeIndexResponse](docs/LocalDbCompositeIndexResponse.md)
+ - [LocalDbCompositeIndexResponseAllOf](docs/LocalDbCompositeIndexResponseAllOf.md)
+ - [LocalDbCompositeIndexShared](docs/LocalDbCompositeIndexShared.md)
+ - [LocalDbIndexResponse](docs/LocalDbIndexResponse.md)
+ - [LocalDbIndexResponseAllOf](docs/LocalDbIndexResponseAllOf.md)
+ - [LocalDbIndexShared](docs/LocalDbIndexShared.md)
+ - [LocalDbVlvIndexResponse](docs/LocalDbVlvIndexResponse.md)
+ - [LocalDbVlvIndexResponseAllOf](docs/LocalDbVlvIndexResponseAllOf.md)
+ - [LocalDbVlvIndexShared](docs/LocalDbVlvIndexShared.md)
  - [LocationResponse](docs/LocationResponse.md)
  - [LocationResponseAllOf](docs/LocationResponseAllOf.md)
  - [LocationShared](docs/LocationShared.md)
@@ -1896,6 +2242,8 @@ Class | Method | HTTP request | Description
  - [LockedAccountDataSecurityAuditorShared](docs/LockedAccountDataSecurityAuditorShared.md)
  - [LoggingChangeSubscriptionHandlerResponse](docs/LoggingChangeSubscriptionHandlerResponse.md)
  - [LoggingChangeSubscriptionHandlerShared](docs/LoggingChangeSubscriptionHandlerShared.md)
+ - [MacSecretKeyResponse](docs/MacSecretKeyResponse.md)
+ - [MacSecretKeyResponseAllOf](docs/MacSecretKeyResponseAllOf.md)
  - [Md5PasswordStorageSchemeResponse](docs/Md5PasswordStorageSchemeResponse.md)
  - [Md5PasswordStorageSchemeResponseAllOf](docs/Md5PasswordStorageSchemeResponseAllOf.md)
  - [MemberOfServerGroupVirtualAttributeResponse](docs/MemberOfServerGroupVirtualAttributeResponse.md)
@@ -1917,8 +2265,12 @@ Class | Method | HTTP request | Description
  - [MirrorVirtualAttributeShared](docs/MirrorVirtualAttributeShared.md)
  - [MockAccessTokenValidatorResponse](docs/MockAccessTokenValidatorResponse.md)
  - [MockAccessTokenValidatorShared](docs/MockAccessTokenValidatorShared.md)
+ - [ModifiablePasswordPolicyStatePluginResponse](docs/ModifiablePasswordPolicyStatePluginResponse.md)
+ - [ModifiablePasswordPolicyStatePluginShared](docs/ModifiablePasswordPolicyStatePluginShared.md)
  - [MonitorBackendResponse](docs/MonitorBackendResponse.md)
  - [MonitorBackendResponseAllOf](docs/MonitorBackendResponseAllOf.md)
+ - [MonitorHistoryPluginResponse](docs/MonitorHistoryPluginResponse.md)
+ - [MonitorHistoryPluginResponseAllOf](docs/MonitorHistoryPluginResponseAllOf.md)
  - [MultiPartEmailAccountStatusNotificationHandlerResponse](docs/MultiPartEmailAccountStatusNotificationHandlerResponse.md)
  - [MultiPartEmailAccountStatusNotificationHandlerShared](docs/MultiPartEmailAccountStatusNotificationHandlerShared.md)
  - [MultiUpdateExtendedOperationHandlerResponse](docs/MultiUpdateExtendedOperationHandlerResponse.md)
@@ -1966,10 +2318,16 @@ Class | Method | HTTP request | Description
  - [OrderingMatchingRuleResponseAllOf](docs/OrderingMatchingRuleResponseAllOf.md)
  - [OutputAlertHandlerResponse](docs/OutputAlertHandlerResponse.md)
  - [OutputAlertHandlerResponseAllOf](docs/OutputAlertHandlerResponseAllOf.md)
+ - [PassThroughAuthenticationPluginResponse](docs/PassThroughAuthenticationPluginResponse.md)
+ - [PassThroughAuthenticationPluginShared](docs/PassThroughAuthenticationPluginShared.md)
  - [PassphrasePasswordGeneratorResponse](docs/PassphrasePasswordGeneratorResponse.md)
  - [PassphrasePasswordGeneratorShared](docs/PassphrasePasswordGeneratorShared.md)
+ - [PasswordInterServerAuthenticationInfoResponse](docs/PasswordInterServerAuthenticationInfoResponse.md)
+ - [PasswordInterServerAuthenticationInfoResponseAllOf](docs/PasswordInterServerAuthenticationInfoResponseAllOf.md)
  - [PasswordModifyExtendedOperationHandlerResponse](docs/PasswordModifyExtendedOperationHandlerResponse.md)
  - [PasswordModifyExtendedOperationHandlerResponseAllOf](docs/PasswordModifyExtendedOperationHandlerResponseAllOf.md)
+ - [PasswordPolicyImportPluginResponse](docs/PasswordPolicyImportPluginResponse.md)
+ - [PasswordPolicyImportPluginResponseAllOf](docs/PasswordPolicyImportPluginResponseAllOf.md)
  - [PasswordPolicyResponse](docs/PasswordPolicyResponse.md)
  - [PasswordPolicyResponseAllOf](docs/PasswordPolicyResponseAllOf.md)
  - [PasswordPolicyShared](docs/PasswordPolicyShared.md)
@@ -1979,6 +2337,12 @@ Class | Method | HTTP request | Description
  - [PasswordPolicyStateJsonVirtualAttributeShared](docs/PasswordPolicyStateJsonVirtualAttributeShared.md)
  - [Pbkdf2PasswordStorageSchemeResponse](docs/Pbkdf2PasswordStorageSchemeResponse.md)
  - [Pbkdf2PasswordStorageSchemeShared](docs/Pbkdf2PasswordStorageSchemeShared.md)
+ - [PeriodicGcPluginResponse](docs/PeriodicGcPluginResponse.md)
+ - [PeriodicGcPluginShared](docs/PeriodicGcPluginShared.md)
+ - [PeriodicStatsLoggerPluginResponse](docs/PeriodicStatsLoggerPluginResponse.md)
+ - [PeriodicStatsLoggerPluginShared](docs/PeriodicStatsLoggerPluginShared.md)
+ - [PhotoDelegatedAdminAttributeResponse](docs/PhotoDelegatedAdminAttributeResponse.md)
+ - [PhotoDelegatedAdminAttributeShared](docs/PhotoDelegatedAdminAttributeShared.md)
  - [PingFederateAccessTokenValidatorResponse](docs/PingFederateAccessTokenValidatorResponse.md)
  - [PingFederateAccessTokenValidatorResponseAllOf](docs/PingFederateAccessTokenValidatorResponseAllOf.md)
  - [PingFederateAccessTokenValidatorShared](docs/PingFederateAccessTokenValidatorShared.md)
@@ -1987,16 +2351,24 @@ Class | Method | HTTP request | Description
  - [PingOneIdTokenValidatorResponse](docs/PingOneIdTokenValidatorResponse.md)
  - [PingOneIdTokenValidatorResponseAllOf](docs/PingOneIdTokenValidatorResponseAllOf.md)
  - [PingOneIdTokenValidatorShared](docs/PingOneIdTokenValidatorShared.md)
+ - [PingOnePassThroughAuthenticationPluginResponse](docs/PingOnePassThroughAuthenticationPluginResponse.md)
+ - [PingOnePassThroughAuthenticationPluginShared](docs/PingOnePassThroughAuthenticationPluginShared.md)
  - [Pkcs11CipherStreamProviderResponse](docs/Pkcs11CipherStreamProviderResponse.md)
  - [Pkcs11CipherStreamProviderShared](docs/Pkcs11CipherStreamProviderShared.md)
  - [Pkcs11KeyManagerProviderResponse](docs/Pkcs11KeyManagerProviderResponse.md)
  - [Pkcs11KeyManagerProviderShared](docs/Pkcs11KeyManagerProviderShared.md)
  - [PlainSaslMechanismHandlerResponse](docs/PlainSaslMechanismHandlerResponse.md)
  - [PlainSaslMechanismHandlerResponseAllOf](docs/PlainSaslMechanismHandlerResponseAllOf.md)
+ - [PluggablePassThroughAuthenticationPluginResponse](docs/PluggablePassThroughAuthenticationPluginResponse.md)
+ - [PluggablePassThroughAuthenticationPluginShared](docs/PluggablePassThroughAuthenticationPluginShared.md)
  - [PluginRootResponse](docs/PluginRootResponse.md)
  - [PluginRootResponseAllOf](docs/PluginRootResponseAllOf.md)
  - [PrivilegeDataSecurityAuditorResponse](docs/PrivilegeDataSecurityAuditorResponse.md)
  - [PrivilegeDataSecurityAuditorShared](docs/PrivilegeDataSecurityAuditorShared.md)
+ - [ProcessingTimeHistogramPluginResponse](docs/ProcessingTimeHistogramPluginResponse.md)
+ - [ProcessingTimeHistogramPluginResponseAllOf](docs/ProcessingTimeHistogramPluginResponseAllOf.md)
+ - [ProfilerPluginResponse](docs/ProfilerPluginResponse.md)
+ - [ProfilerPluginResponseAllOf](docs/ProfilerPluginResponseAllOf.md)
  - [ProxyServerInstanceResponse](docs/ProxyServerInstanceResponse.md)
  - [ProxyServerInstanceResponseAllOf](docs/ProxyServerInstanceResponseAllOf.md)
  - [PwnedPasswordsPasswordValidatorResponse](docs/PwnedPasswordsPasswordValidatorResponse.md)
@@ -2012,6 +2384,10 @@ Class | Method | HTTP request | Description
  - [RecurringTaskChainResponse](docs/RecurringTaskChainResponse.md)
  - [RecurringTaskChainResponseAllOf](docs/RecurringTaskChainResponseAllOf.md)
  - [RecurringTaskChainShared](docs/RecurringTaskChainShared.md)
+ - [ReferentialIntegrityPluginResponse](docs/ReferentialIntegrityPluginResponse.md)
+ - [ReferentialIntegrityPluginShared](docs/ReferentialIntegrityPluginShared.md)
+ - [ReferralOnUpdatePluginResponse](docs/ReferralOnUpdatePluginResponse.md)
+ - [ReferralOnUpdatePluginShared](docs/ReferralOnUpdatePluginShared.md)
  - [RegularExpressionIdentityMapperResponse](docs/RegularExpressionIdentityMapperResponse.md)
  - [RegularExpressionIdentityMapperShared](docs/RegularExpressionIdentityMapperShared.md)
  - [RegularExpressionPasswordValidatorResponse](docs/RegularExpressionPasswordValidatorResponse.md)
@@ -2025,6 +2401,8 @@ Class | Method | HTTP request | Description
  - [ReplicationAssurancePolicyShared](docs/ReplicationAssurancePolicyShared.md)
  - [ReplicationAssuranceResultCriteriaResponse](docs/ReplicationAssuranceResultCriteriaResponse.md)
  - [ReplicationAssuranceResultCriteriaShared](docs/ReplicationAssuranceResultCriteriaShared.md)
+ - [ReplicationDomainResponse](docs/ReplicationDomainResponse.md)
+ - [ReplicationDomainResponseAllOf](docs/ReplicationDomainResponseAllOf.md)
  - [ReplicationStateDetailVirtualAttributeResponse](docs/ReplicationStateDetailVirtualAttributeResponse.md)
  - [ReplicationStateDetailVirtualAttributeResponseAllOf](docs/ReplicationStateDetailVirtualAttributeResponseAllOf.md)
  - [ReplicationSynchronizationProviderResponse](docs/ReplicationSynchronizationProviderResponse.md)
@@ -2036,6 +2414,9 @@ Class | Method | HTTP request | Description
  - [ReverseDnJoinVirtualAttributeShared](docs/ReverseDnJoinVirtualAttributeShared.md)
  - [RootDnResponse](docs/RootDnResponse.md)
  - [RootDnResponseAllOf](docs/RootDnResponseAllOf.md)
+ - [RootDnUserResponse](docs/RootDnUserResponse.md)
+ - [RootDnUserResponseAllOf](docs/RootDnUserResponseAllOf.md)
+ - [RootDnUserShared](docs/RootDnUserShared.md)
  - [RootDseBackendResponse](docs/RootDseBackendResponse.md)
  - [RootDseBackendResponseAllOf](docs/RootDseBackendResponseAllOf.md)
  - [RootDseRequestCriteriaResponse](docs/RootDseRequestCriteriaResponse.md)
@@ -2055,17 +2436,27 @@ Class | Method | HTTP request | Description
  - [SchemaBackendResponseAllOf](docs/SchemaBackendResponseAllOf.md)
  - [Scim2HttpServletExtensionResponse](docs/Scim2HttpServletExtensionResponse.md)
  - [Scim2HttpServletExtensionResponseAllOf](docs/Scim2HttpServletExtensionResponseAllOf.md)
+ - [ScimAttributeResponse](docs/ScimAttributeResponse.md)
+ - [ScimAttributeResponseAllOf](docs/ScimAttributeResponseAllOf.md)
+ - [ScimAttributeShared](docs/ScimAttributeShared.md)
  - [ScimSchemaResponse](docs/ScimSchemaResponse.md)
  - [ScimSchemaResponseAllOf](docs/ScimSchemaResponseAllOf.md)
  - [ScimSchemaShared](docs/ScimSchemaShared.md)
+ - [ScimSubattributeResponse](docs/ScimSubattributeResponse.md)
+ - [ScimSubattributeResponseAllOf](docs/ScimSubattributeResponseAllOf.md)
+ - [ScimSubattributeShared](docs/ScimSubattributeShared.md)
  - [ScryptPasswordStorageSchemeResponse](docs/ScryptPasswordStorageSchemeResponse.md)
  - [ScryptPasswordStorageSchemeShared](docs/ScryptPasswordStorageSchemeShared.md)
+ - [SearchShutdownPluginResponse](docs/SearchShutdownPluginResponse.md)
+ - [SearchShutdownPluginShared](docs/SearchShutdownPluginShared.md)
  - [SensitiveAttributeResponse](docs/SensitiveAttributeResponse.md)
  - [SensitiveAttributeResponseAllOf](docs/SensitiveAttributeResponseAllOf.md)
  - [SensitiveAttributeShared](docs/SensitiveAttributeShared.md)
  - [ServerGroupResponse](docs/ServerGroupResponse.md)
  - [ServerGroupResponseAllOf](docs/ServerGroupResponseAllOf.md)
  - [ServerGroupShared](docs/ServerGroupShared.md)
+ - [SevenBitCleanPluginResponse](docs/SevenBitCleanPluginResponse.md)
+ - [SevenBitCleanPluginShared](docs/SevenBitCleanPluginShared.md)
  - [Sha1PasswordStorageSchemeResponse](docs/Sha1PasswordStorageSchemeResponse.md)
  - [Sha1PasswordStorageSchemeResponseAllOf](docs/Sha1PasswordStorageSchemeResponseAllOf.md)
  - [ShortUniqueIdVirtualAttributeResponse](docs/ShortUniqueIdVirtualAttributeResponse.md)
@@ -2086,6 +2477,8 @@ Class | Method | HTTP request | Description
  - [SimpleSearchReferenceCriteriaResponse](docs/SimpleSearchReferenceCriteriaResponse.md)
  - [SimpleSearchReferenceCriteriaResponseAllOf](docs/SimpleSearchReferenceCriteriaResponseAllOf.md)
  - [SimpleSearchReferenceCriteriaShared](docs/SimpleSearchReferenceCriteriaShared.md)
+ - [SimpleToExternalBindPluginResponse](docs/SimpleToExternalBindPluginResponse.md)
+ - [SimpleToExternalBindPluginShared](docs/SimpleToExternalBindPluginShared.md)
  - [SimpleUncachedAttributeCriteriaResponse](docs/SimpleUncachedAttributeCriteriaResponse.md)
  - [SimpleUncachedAttributeCriteriaShared](docs/SimpleUncachedAttributeCriteriaShared.md)
  - [SingleUseTokensExtendedOperationHandlerResponse](docs/SingleUseTokensExtendedOperationHandlerResponse.md)
@@ -2106,6 +2499,8 @@ Class | Method | HTTP request | Description
  - [SnmpAlertHandlerShared](docs/SnmpAlertHandlerShared.md)
  - [SnmpSubAgentAlertHandlerResponse](docs/SnmpSubAgentAlertHandlerResponse.md)
  - [SnmpSubAgentAlertHandlerShared](docs/SnmpSubAgentAlertHandlerShared.md)
+ - [SnmpSubagentPluginResponse](docs/SnmpSubagentPluginResponse.md)
+ - [SnmpSubagentPluginShared](docs/SnmpSubagentPluginShared.md)
  - [SoftDeletePolicyResponse](docs/SoftDeletePolicyResponse.md)
  - [SoftDeletePolicyResponseAllOf](docs/SoftDeletePolicyResponseAllOf.md)
  - [SoftDeletePolicyShared](docs/SoftDeletePolicyShared.md)
@@ -2122,9 +2517,18 @@ Class | Method | HTTP request | Description
  - [StaticTokenVaultAuthenticationMethodShared](docs/StaticTokenVaultAuthenticationMethodShared.md)
  - [StaticallyDefinedRecurringTaskResponse](docs/StaticallyDefinedRecurringTaskResponse.md)
  - [StaticallyDefinedRecurringTaskShared](docs/StaticallyDefinedRecurringTaskShared.md)
+ - [StatsCollectorPluginResponse](docs/StatsCollectorPluginResponse.md)
+ - [StatsCollectorPluginResponseAllOf](docs/StatsCollectorPluginResponseAllOf.md)
  - [StatsdMonitoringEndpointResponse](docs/StatsdMonitoringEndpointResponse.md)
  - [StatsdMonitoringEndpointResponseAllOf](docs/StatsdMonitoringEndpointResponseAllOf.md)
  - [StatsdMonitoringEndpointShared](docs/StatsdMonitoringEndpointShared.md)
+ - [StringArrayTokenClaimValidationResponse](docs/StringArrayTokenClaimValidationResponse.md)
+ - [StringArrayTokenClaimValidationResponseAllOf](docs/StringArrayTokenClaimValidationResponseAllOf.md)
+ - [StringArrayTokenClaimValidationShared](docs/StringArrayTokenClaimValidationShared.md)
+ - [StringTokenClaimValidationResponse](docs/StringTokenClaimValidationResponse.md)
+ - [StringTokenClaimValidationShared](docs/StringTokenClaimValidationShared.md)
+ - [SubOperationTimingPluginResponse](docs/SubOperationTimingPluginResponse.md)
+ - [SubOperationTimingPluginShared](docs/SubOperationTimingPluginShared.md)
  - [SubjectAttributeToUserAttributeCertificateMapperResponse](docs/SubjectAttributeToUserAttributeCertificateMapperResponse.md)
  - [SubjectAttributeToUserAttributeCertificateMapperShared](docs/SubjectAttributeToUserAttributeCertificateMapperShared.md)
  - [SubjectDnToUserAttributeCertificateMapperResponse](docs/SubjectDnToUserAttributeCertificateMapperResponse.md)
@@ -2225,6 +2629,8 @@ Class | Method | HTTP request | Description
  - [ThirdPartyPasswordStorageSchemeShared](docs/ThirdPartyPasswordStorageSchemeShared.md)
  - [ThirdPartyPasswordValidatorResponse](docs/ThirdPartyPasswordValidatorResponse.md)
  - [ThirdPartyPasswordValidatorShared](docs/ThirdPartyPasswordValidatorShared.md)
+ - [ThirdPartyPluginResponse](docs/ThirdPartyPluginResponse.md)
+ - [ThirdPartyPluginShared](docs/ThirdPartyPluginShared.md)
  - [ThirdPartyRecurringTaskResponse](docs/ThirdPartyRecurringTaskResponse.md)
  - [ThirdPartyRecurringTaskShared](docs/ThirdPartyRecurringTaskShared.md)
  - [ThirdPartyRequestCriteriaResponse](docs/ThirdPartyRequestCriteriaResponse.md)
@@ -2243,6 +2649,8 @@ Class | Method | HTTP request | Description
  - [ThirdPartyUncachedAttributeCriteriaShared](docs/ThirdPartyUncachedAttributeCriteriaShared.md)
  - [ThirdPartyUncachedEntryCriteriaResponse](docs/ThirdPartyUncachedEntryCriteriaResponse.md)
  - [ThirdPartyUncachedEntryCriteriaShared](docs/ThirdPartyUncachedEntryCriteriaShared.md)
+ - [ThirdPartyVelocityContextProviderResponse](docs/ThirdPartyVelocityContextProviderResponse.md)
+ - [ThirdPartyVelocityContextProviderShared](docs/ThirdPartyVelocityContextProviderShared.md)
  - [ThirdPartyVirtualAttributeResponse](docs/ThirdPartyVirtualAttributeResponse.md)
  - [ThirdPartyVirtualAttributeShared](docs/ThirdPartyVirtualAttributeShared.md)
  - [TimeLimitLogRetentionPolicyResponse](docs/TimeLimitLogRetentionPolicyResponse.md)
@@ -2279,6 +2687,8 @@ Class | Method | HTTP request | Description
  - [UnboundidTotpSaslMechanismHandlerResponseAllOf](docs/UnboundidTotpSaslMechanismHandlerResponseAllOf.md)
  - [UnboundidYubikeyOtpSaslMechanismHandlerResponse](docs/UnboundidYubikeyOtpSaslMechanismHandlerResponse.md)
  - [UnboundidYubikeyOtpSaslMechanismHandlerResponseAllOf](docs/UnboundidYubikeyOtpSaslMechanismHandlerResponseAllOf.md)
+ - [UniqueAttributePluginResponse](docs/UniqueAttributePluginResponse.md)
+ - [UniqueAttributePluginShared](docs/UniqueAttributePluginShared.md)
  - [UniqueCharactersPasswordValidatorResponse](docs/UniqueCharactersPasswordValidatorResponse.md)
  - [UniqueCharactersPasswordValidatorShared](docs/UniqueCharactersPasswordValidatorShared.md)
  - [UpdateRequest](docs/UpdateRequest.md)
@@ -2308,6 +2718,12 @@ Class | Method | HTTP request | Description
  - [VaultPasswordStorageSchemeShared](docs/VaultPasswordStorageSchemeShared.md)
  - [VelocityHttpServletExtensionResponse](docs/VelocityHttpServletExtensionResponse.md)
  - [VelocityHttpServletExtensionResponseAllOf](docs/VelocityHttpServletExtensionResponseAllOf.md)
+ - [VelocityTemplateLoaderResponse](docs/VelocityTemplateLoaderResponse.md)
+ - [VelocityTemplateLoaderResponseAllOf](docs/VelocityTemplateLoaderResponseAllOf.md)
+ - [VelocityTemplateLoaderShared](docs/VelocityTemplateLoaderShared.md)
+ - [VelocityToolsVelocityContextProviderResponse](docs/VelocityToolsVelocityContextProviderResponse.md)
+ - [VelocityToolsVelocityContextProviderResponseAllOf](docs/VelocityToolsVelocityContextProviderResponseAllOf.md)
+ - [VelocityToolsVelocityContextProviderShared](docs/VelocityToolsVelocityContextProviderShared.md)
  - [VersionMonitorProviderResponse](docs/VersionMonitorProviderResponse.md)
  - [VersionMonitorProviderResponseAllOf](docs/VersionMonitorProviderResponseAllOf.md)
  - [VirtualStaticGroupImplementationResponse](docs/VirtualStaticGroupImplementationResponse.md)

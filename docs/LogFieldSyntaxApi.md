@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    logFieldSyntaxName := "logFieldSyntaxName_example" // string | Name of the Log Field Syntax to be read
+    logFieldSyntaxName := "logFieldSyntaxName_example" // string | Name of the Log Field Syntax
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldSyntaxName** | **string** | Name of the Log Field Syntax to be read | 
+**logFieldSyntaxName** | **string** | Name of the Log Field Syntax | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    logFieldSyntaxName := "logFieldSyntaxName_example" // string | Name of the Log Field Syntax to be updated
+    logFieldSyntaxName := "logFieldSyntaxName_example" // string | Name of the Log Field Syntax
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log Field Syntax
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldSyntaxName** | **string** | Name of the Log Field Syntax to be updated | 
+**logFieldSyntaxName** | **string** | Name of the Log Field Syntax | 
 
 ### Other Parameters
 

@@ -15,7 +15,7 @@ paths:
       summary: Returns a single Attribute Syntax
       operationId: get-attribute-syntax
       parameters:
-      - description: Name of the Attribute Syntax to be read
+      - description: Name of the Attribute Syntax
         explode: false
         in: path
         name: attribute-syntax-name
@@ -58,7 +58,7 @@ paths:
       summary: Update an existing Attribute Syntax by name
       operationId: update-attribute-syntax
       parameters:
-      - description: Name of the Attribute Syntax to be updated
+      - description: Name of the Attribute Syntax
         explode: false
         in: path
         name: attribute-syntax-name

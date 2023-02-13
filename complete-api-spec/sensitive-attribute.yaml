@@ -45,7 +45,7 @@ paths:
       summary: Delete a Sensitive Attribute
       operationId: delete-sensitive-attribute
       parameters:
-      - description: Name of the Sensitive Attribute to be deleted
+      - description: Name of the Sensitive Attribute
         explode: false
         in: path
         name: sensitive-attribute-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Sensitive Attribute
       operationId: get-sensitive-attribute
       parameters:
-      - description: Name of the Sensitive Attribute to be read
+      - description: Name of the Sensitive Attribute
         explode: false
         in: path
         name: sensitive-attribute-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Sensitive Attribute by name
       operationId: update-sensitive-attribute
       parameters:
-      - description: Name of the Sensitive Attribute to be updated
+      - description: Name of the Sensitive Attribute
         explode: false
         in: path
         name: sensitive-attribute-name
@@ -197,22 +197,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:sensitive-attribute"
-    Enumsensitive-attribute-allowInCompareProp:
-      type: string
-      enum:
-      - "allow"
-      - "reject"
-      - "secure-only"
-      description: >-
-          Indicates whether clients will be allowed to target sensitive attributes with compare requests.
-    Enumsensitive-attribute-allowInFilterProp:
-      type: string
-      enum:
-      - "allow"
-      - "reject"
-      - "secure-only"
-      description: >-
-          Indicates whether clients will be allowed to include sensitive attributes in search filters. This also includes filters that may be used in other forms, including assertion and LDAP join request controls.
     Enumsensitive-attribute-allowInAddProp:
       type: string
       enum:
@@ -229,6 +213,14 @@ components:
       - "secure-only"
       description: >-
           Indicates whether sensitive attributes should be included in entries returned to the client. This includes not only search result entries, but also other forms including in the values of controls like the pre-read, post-read, get authorization entry, and LDAP join response controls.
+    Enumsensitive-attribute-allowInFilterProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: >-
+          Indicates whether clients will be allowed to include sensitive attributes in search filters. This also includes filters that may be used in other forms, including assertion and LDAP join request controls.
     Enumsensitive-attribute-allowInModifyProp:
       type: string
       enum:
@@ -237,6 +229,14 @@ components:
       - "secure-only"
       description: >-
           Indicates whether clients will be allowed to target sensitive attributes with modify requests.
+    Enumsensitive-attribute-allowInCompareProp:
+      type: string
+      enum:
+      - "allow"
+      - "reject"
+      - "secure-only"
+      description: >-
+          Indicates whether clients will be allowed to target sensitive attributes with compare requests.
     updateRequest:
       type: object
       properties:

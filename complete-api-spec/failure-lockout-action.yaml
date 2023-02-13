@@ -51,7 +51,7 @@ paths:
       summary: Delete a Failure Lockout Action
       operationId: delete-failure-lockout-action
       parameters:
-      - description: Name of the Failure Lockout Action to be deleted
+      - description: Name of the Failure Lockout Action
         explode: false
         in: path
         name: failure-lockout-action-name
@@ -78,7 +78,7 @@ paths:
       summary: Returns a single Failure Lockout Action
       operationId: get-failure-lockout-action
       parameters:
-      - description: Name of the Failure Lockout Action to be read
+      - description: Name of the Failure Lockout Action
         explode: false
         in: path
         name: failure-lockout-action-name
@@ -110,7 +110,7 @@ paths:
       summary: Update an existing Failure Lockout Action by name
       operationId: update-failure-lockout-action
       parameters:
-      - description: Name of the Failure Lockout Action to be updated
+      - description: Name of the Failure Lockout Action
         explode: false
         in: path
         name: failure-lockout-action-name

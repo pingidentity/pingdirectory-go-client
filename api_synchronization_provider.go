@@ -36,7 +36,7 @@ func (r ApiGetSynchronizationProviderRequest) Execute() (*ReplicationSynchroniza
 GetSynchronizationProvider Returns a single Synchronization Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param synchronizationProviderName Name of the Synchronization Provider to be read
+	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiGetSynchronizationProviderRequest
 */
 func (a *SynchronizationProviderApiService) GetSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiGetSynchronizationProviderRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateSynchronizationProviderRequest) Execute() (*ReplicationSynchron
 UpdateSynchronizationProvider Update an existing Synchronization Provider by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param synchronizationProviderName Name of the Synchronization Provider to be updated
+	@param synchronizationProviderName Name of the Synchronization Provider
 	@return ApiUpdateSynchronizationProviderRequest
 */
 func (a *SynchronizationProviderApiService) UpdateSynchronizationProvider(ctx context.Context, synchronizationProviderName string) ApiUpdateSynchronizationProviderRequest {

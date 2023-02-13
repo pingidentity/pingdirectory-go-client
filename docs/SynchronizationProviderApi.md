@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    synchronizationProviderName := "synchronizationProviderName_example" // string | Name of the Synchronization Provider to be read
+    synchronizationProviderName := "synchronizationProviderName_example" // string | Name of the Synchronization Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**synchronizationProviderName** | **string** | Name of the Synchronization Provider to be read | 
+**synchronizationProviderName** | **string** | Name of the Synchronization Provider | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    synchronizationProviderName := "synchronizationProviderName_example" // string | Name of the Synchronization Provider to be updated
+    synchronizationProviderName := "synchronizationProviderName_example" // string | Name of the Synchronization Provider
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Synchronization Provider
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**synchronizationProviderName** | **string** | Name of the Synchronization Provider to be updated | 
+**synchronizationProviderName** | **string** | Name of the Synchronization Provider | 
 
 ### Other Parameters
 

@@ -146,7 +146,7 @@ func (r ApiDeleteConsentDefinitionRequest) Execute() (*http.Response, error) {
 DeleteConsentDefinition Delete a Consent Definition
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param consentDefinitionName Name of the Consent Definition to be deleted
+	@param consentDefinitionName Name of the Consent Definition
 	@return ApiDeleteConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) DeleteConsentDefinition(ctx context.Context, consentDefinitionName string) ApiDeleteConsentDefinitionRequest {
@@ -236,7 +236,7 @@ func (r ApiGetConsentDefinitionRequest) Execute() (*ConsentDefinitionResponse, *
 GetConsentDefinition Returns a single Consent Definition
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param consentDefinitionName Name of the Consent Definition to be read
+	@param consentDefinitionName Name of the Consent Definition
 	@return ApiGetConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) GetConsentDefinition(ctx context.Context, consentDefinitionName string) ApiGetConsentDefinitionRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateConsentDefinitionRequest) Execute() (*ConsentDefinitionResponse
 UpdateConsentDefinition Update an existing Consent Definition by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param consentDefinitionName Name of the Consent Definition to be updated
+	@param consentDefinitionName Name of the Consent Definition
 	@return ApiUpdateConsentDefinitionRequest
 */
 func (a *ConsentDefinitionApiService) UpdateConsentDefinition(ctx context.Context, consentDefinitionName string) ApiUpdateConsentDefinitionRequest {

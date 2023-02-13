@@ -146,7 +146,7 @@ func (r ApiDeletePasswordGeneratorRequest) Execute() (*http.Response, error) {
 DeletePasswordGenerator Delete a Password Generator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordGeneratorName Name of the Password Generator to be deleted
+	@param passwordGeneratorName Name of the Password Generator
 	@return ApiDeletePasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) DeletePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiDeletePasswordGeneratorRequest {
@@ -236,7 +236,7 @@ func (r ApiGetPasswordGeneratorRequest) Execute() (*AddPasswordGenerator200Respo
 GetPasswordGenerator Returns a single Password Generator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordGeneratorName Name of the Password Generator to be read
+	@param passwordGeneratorName Name of the Password Generator
 	@return ApiGetPasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) GetPasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiGetPasswordGeneratorRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdatePasswordGeneratorRequest) Execute() (*AddPasswordGenerator200Re
 UpdatePasswordGenerator Update an existing Password Generator by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordGeneratorName Name of the Password Generator to be updated
+	@param passwordGeneratorName Name of the Password Generator
 	@return ApiUpdatePasswordGeneratorRequest
 */
 func (a *PasswordGeneratorApiService) UpdatePasswordGenerator(ctx context.Context, passwordGeneratorName string) ApiUpdatePasswordGeneratorRequest {

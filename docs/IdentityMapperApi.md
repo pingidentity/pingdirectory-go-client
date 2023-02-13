@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    identityMapperName := "identityMapperName_example" // string | Name of the Identity Mapper to be deleted
+    identityMapperName := "identityMapperName_example" // string | Name of the Identity Mapper
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**identityMapperName** | **string** | Name of the Identity Mapper to be deleted | 
+**identityMapperName** | **string** | Name of the Identity Mapper | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    identityMapperName := "identityMapperName_example" // string | Name of the Identity Mapper to be read
+    identityMapperName := "identityMapperName_example" // string | Name of the Identity Mapper
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**identityMapperName** | **string** | Name of the Identity Mapper to be read | 
+**identityMapperName** | **string** | Name of the Identity Mapper | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    identityMapperName := "identityMapperName_example" // string | Name of the Identity Mapper to be updated
+    identityMapperName := "identityMapperName_example" // string | Name of the Identity Mapper
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Identity Mapper
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**identityMapperName** | **string** | Name of the Identity Mapper to be updated | 
+**identityMapperName** | **string** | Name of the Identity Mapper | 
 
 ### Other Parameters
 

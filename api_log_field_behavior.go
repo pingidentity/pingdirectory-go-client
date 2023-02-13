@@ -146,7 +146,7 @@ func (r ApiDeleteLogFieldBehaviorRequest) Execute() (*http.Response, error) {
 DeleteLogFieldBehavior Delete a Log Field Behavior
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldBehaviorName Name of the Log Field Behavior to be deleted
+	@param logFieldBehaviorName Name of the Log Field Behavior
 	@return ApiDeleteLogFieldBehaviorRequest
 */
 func (a *LogFieldBehaviorApiService) DeleteLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiDeleteLogFieldBehaviorRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLogFieldBehaviorRequest) Execute() (*AddLogFieldBehavior200Respons
 GetLogFieldBehavior Returns a single Log Field Behavior
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldBehaviorName Name of the Log Field Behavior to be read
+	@param logFieldBehaviorName Name of the Log Field Behavior
 	@return ApiGetLogFieldBehaviorRequest
 */
 func (a *LogFieldBehaviorApiService) GetLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiGetLogFieldBehaviorRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLogFieldBehaviorRequest) Execute() (*AddLogFieldBehavior200Resp
 UpdateLogFieldBehavior Update an existing Log Field Behavior by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldBehaviorName Name of the Log Field Behavior to be updated
+	@param logFieldBehaviorName Name of the Log Field Behavior
 	@return ApiUpdateLogFieldBehaviorRequest
 */
 func (a *LogFieldBehaviorApiService) UpdateLogFieldBehavior(ctx context.Context, logFieldBehaviorName string) ApiUpdateLogFieldBehaviorRequest {

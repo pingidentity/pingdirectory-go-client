@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    jsonAttributeConstraintsName := "jsonAttributeConstraintsName_example" // string | Name of the JSON Attribute Constraints to be deleted
+    jsonAttributeConstraintsName := "jsonAttributeConstraintsName_example" // string | Name of the JSON Attribute Constraints
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**jsonAttributeConstraintsName** | **string** | Name of the JSON Attribute Constraints to be deleted | 
+**jsonAttributeConstraintsName** | **string** | Name of the JSON Attribute Constraints | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    jsonAttributeConstraintsName := "jsonAttributeConstraintsName_example" // string | Name of the JSON Attribute Constraints to be read
+    jsonAttributeConstraintsName := "jsonAttributeConstraintsName_example" // string | Name of the JSON Attribute Constraints
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**jsonAttributeConstraintsName** | **string** | Name of the JSON Attribute Constraints to be read | 
+**jsonAttributeConstraintsName** | **string** | Name of the JSON Attribute Constraints | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    jsonAttributeConstraintsName := "jsonAttributeConstraintsName_example" // string | Name of the JSON Attribute Constraints to be updated
+    jsonAttributeConstraintsName := "jsonAttributeConstraintsName_example" // string | Name of the JSON Attribute Constraints
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing JSON Attribute Constraints
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**jsonAttributeConstraintsName** | **string** | Name of the JSON Attribute Constraints to be updated | 
+**jsonAttributeConstraintsName** | **string** | Name of the JSON Attribute Constraints | 
 
 ### Other Parameters
 

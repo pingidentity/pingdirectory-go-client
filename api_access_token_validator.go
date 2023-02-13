@@ -146,7 +146,7 @@ func (r ApiDeleteAccessTokenValidatorRequest) Execute() (*http.Response, error) 
 DeleteAccessTokenValidator Delete a Access Token Validator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param accessTokenValidatorName Name of the Access Token Validator to be deleted
+	@param accessTokenValidatorName Name of the Access Token Validator
 	@return ApiDeleteAccessTokenValidatorRequest
 */
 func (a *AccessTokenValidatorApiService) DeleteAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiDeleteAccessTokenValidatorRequest {
@@ -236,7 +236,7 @@ func (r ApiGetAccessTokenValidatorRequest) Execute() (*AddAccessTokenValidator20
 GetAccessTokenValidator Returns a single Access Token Validator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param accessTokenValidatorName Name of the Access Token Validator to be read
+	@param accessTokenValidatorName Name of the Access Token Validator
 	@return ApiGetAccessTokenValidatorRequest
 */
 func (a *AccessTokenValidatorApiService) GetAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiGetAccessTokenValidatorRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateAccessTokenValidatorRequest) Execute() (*AddAccessTokenValidato
 UpdateAccessTokenValidator Update an existing Access Token Validator by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param accessTokenValidatorName Name of the Access Token Validator to be updated
+	@param accessTokenValidatorName Name of the Access Token Validator
 	@return ApiUpdateAccessTokenValidatorRequest
 */
 func (a *AccessTokenValidatorApiService) UpdateAccessTokenValidator(ctx context.Context, accessTokenValidatorName string) ApiUpdateAccessTokenValidatorRequest {

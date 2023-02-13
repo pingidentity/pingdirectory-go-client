@@ -71,7 +71,7 @@ paths:
       summary: Delete a Virtual Attribute
       operationId: delete-virtual-attribute
       parameters:
-      - description: Name of the Virtual Attribute to be deleted
+      - description: Name of the Virtual Attribute
         explode: false
         in: path
         name: virtual-attribute-name
@@ -98,7 +98,7 @@ paths:
       summary: Returns a single Virtual Attribute
       operationId: get-virtual-attribute
       parameters:
-      - description: Name of the Virtual Attribute to be read
+      - description: Name of the Virtual Attribute
         explode: false
         in: path
         name: virtual-attribute-name
@@ -149,7 +149,7 @@ paths:
       summary: Update an existing Virtual Attribute by name
       operationId: update-virtual-attribute
       parameters:
-      - description: Name of the Virtual Attribute to be updated
+      - description: Name of the Virtual Attribute
         explode: false
         in: path
         name: virtual-attribute-name
@@ -2185,22 +2185,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:virtual-attribute:third-party"
-    Enumvirtual-attribute-conflictBehaviorProp:
-      type: string
-      enum:
-      - "real-overrides-virtual"
-      - "virtual-overrides-real"
-      - "merge-real-and-virtual"
-      description: >-
-          Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
-    Enumvirtual-attribute-rewriteSearchFiltersProp:
-      type: string
-      enum:
-      - "always"
-      - "within-group-scope"
-      - "never"
-      description: >-
-          Search filters that include Is Member Of Virtual Attribute searches on dynamic groups can be updated to include the dynamic group filter in the search filter itself. This can allow the backend to more efficiently process the search filter by using attribute indexes sooner in the search processing.
     Enumvirtual-attribute-joinScopeProp:
       type: string
       enum:
@@ -2210,6 +2194,14 @@ components:
       - "subordinate-subtree"
       description: >-
           The scope for searches used to identify joined entries.
+    Enumvirtual-attribute-rewriteSearchFiltersProp:
+      type: string
+      enum:
+      - "always"
+      - "within-group-scope"
+      - "never"
+      description: >-
+          Search filters that include Is Member Of Virtual Attribute searches on dynamic groups can be updated to include the dynamic group filter in the search filter itself. This can allow the backend to more efficiently process the search filter by using attribute indexes sooner in the search processing.
     Enumvirtual-attribute-multipleVirtualAttributeMergeBehaviorProp:
       type: string
       enum:
@@ -2218,6 +2210,14 @@ components:
       - "use-all-definitions"
       description: >-
           Specifies the behavior that will be exhibited for cases in which multiple virtual attribute definitions apply to the same multivalued attribute type. This will be ignored for single-valued attribute types.
+    Enumvirtual-attribute-conflictBehaviorProp:
+      type: string
+      enum:
+      - "real-overrides-virtual"
+      - "virtual-overrides-real"
+      - "merge-real-and-virtual"
+      description: >-
+          Specifies the behavior that the server is to exhibit for entries that already contain one or more real values for the associated attribute.
     Enumvirtual-attribute-joinBaseDNTypeProp:
       type: string
       enum:

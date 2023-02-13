@@ -146,7 +146,7 @@ func (r ApiDeleteDelegatedAdminRightsRequest) Execute() (*http.Response, error) 
 DeleteDelegatedAdminRights Delete a Delegated Admin Rights
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param delegatedAdminRightsName Name of the Delegated Admin Rights to be deleted
+	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiDeleteDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) DeleteDelegatedAdminRights(ctx context.Context, delegatedAdminRightsName string) ApiDeleteDelegatedAdminRightsRequest {
@@ -236,7 +236,7 @@ func (r ApiGetDelegatedAdminRightsRequest) Execute() (*DelegatedAdminRightsRespo
 GetDelegatedAdminRights Returns a single Delegated Admin Rights
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param delegatedAdminRightsName Name of the Delegated Admin Rights to be read
+	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiGetDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) GetDelegatedAdminRights(ctx context.Context, delegatedAdminRightsName string) ApiGetDelegatedAdminRightsRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateDelegatedAdminRightsRequest) Execute() (*DelegatedAdminRightsRe
 UpdateDelegatedAdminRights Update an existing Delegated Admin Rights by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param delegatedAdminRightsName Name of the Delegated Admin Rights to be updated
+	@param delegatedAdminRightsName Name of the Delegated Admin Rights
 	@return ApiUpdateDelegatedAdminRightsRequest
 */
 func (a *DelegatedAdminRightsApiService) UpdateDelegatedAdminRights(ctx context.Context, delegatedAdminRightsName string) ApiUpdateDelegatedAdminRightsRequest {

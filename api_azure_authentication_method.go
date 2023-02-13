@@ -146,7 +146,7 @@ func (r ApiDeleteAzureAuthenticationMethodRequest) Execute() (*http.Response, er
 DeleteAzureAuthenticationMethod Delete a Azure Authentication Method
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param azureAuthenticationMethodName Name of the Azure Authentication Method to be deleted
+	@param azureAuthenticationMethodName Name of the Azure Authentication Method
 	@return ApiDeleteAzureAuthenticationMethodRequest
 */
 func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiDeleteAzureAuthenticationMethodRequest {
@@ -236,7 +236,7 @@ func (r ApiGetAzureAuthenticationMethodRequest) Execute() (*AddAzureAuthenticati
 GetAzureAuthenticationMethod Returns a single Azure Authentication Method
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param azureAuthenticationMethodName Name of the Azure Authentication Method to be read
+	@param azureAuthenticationMethodName Name of the Azure Authentication Method
 	@return ApiGetAzureAuthenticationMethodRequest
 */
 func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiGetAzureAuthenticationMethodRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateAzureAuthenticationMethodRequest) Execute() (*AddAzureAuthentic
 UpdateAzureAuthenticationMethod Update an existing Azure Authentication Method by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param azureAuthenticationMethodName Name of the Azure Authentication Method to be updated
+	@param azureAuthenticationMethodName Name of the Azure Authentication Method
 	@return ApiUpdateAzureAuthenticationMethodRequest
 */
 func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethod(ctx context.Context, azureAuthenticationMethodName string) ApiUpdateAzureAuthenticationMethodRequest {

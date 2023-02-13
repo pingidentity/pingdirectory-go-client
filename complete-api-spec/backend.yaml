@@ -46,7 +46,7 @@ paths:
       summary: Delete a Backend
       operationId: delete-backend
       parameters:
-      - description: Name of the Backend to be deleted
+      - description: Name of the Backend
         explode: false
         in: path
         name: backend-name
@@ -73,7 +73,7 @@ paths:
       summary: Returns a single Backend
       operationId: get-backend
       parameters:
-      - description: Name of the Backend to be read
+      - description: Name of the Backend
         explode: false
         in: path
         name: backend-name
@@ -114,7 +114,7 @@ paths:
       summary: Update an existing Backend by name
       operationId: update-backend
       parameters:
-      - description: Name of the Backend to be updated
+      - description: Name of the Backend
         explode: false
         in: path
         name: backend-name
@@ -160,6 +160,480 @@ paths:
       - basicAuth: []
       tags:
       - backend
+  /backends/{backend-name}/local-db-composite-indexes:
+    post:
+      summary: Add a new Local DB Composite Index to the config
+      operationId: add-local-db-composite-index
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-local-db-composite-index-request'
+        description: Create a new Local DB Composite Index in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Local DB Composite Index already exists
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+  /backends/{backend-name}/local-db-composite-indexes/{local-db-composite-index-name}:
+    delete:
+      summary: Delete a Local DB Composite Index
+      operationId: delete-local-db-composite-index
+      parameters:
+      - description: Name of the Local DB Composite Index
+        explode: false
+        in: path
+        name: local-db-composite-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Composite Index does not exist
+        "409":
+          description: The Local DB Composite Index cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+    get:
+      summary: Returns a single Local DB Composite Index
+      operationId: get-local-db-composite-index
+      parameters:
+      - description: Name of the Local DB Composite Index
+        explode: false
+        in: path
+        name: local-db-composite-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Composite Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+    patch:
+      summary: Update an existing Local DB Composite Index by name
+      operationId: update-local-db-composite-index
+      parameters:
+      - description: Name of the Local DB Composite Index
+        explode: false
+        in: path
+        name: local-db-composite-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Local DB Composite Index
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-composite-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Local DB Composite Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-composite-index
+  /backends/{backend-name}/local-db-vlv-indexes:
+    post:
+      summary: Add a new Local DB VLV Index to the config
+      operationId: add-local-db-vlv-index
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-local-db-vlv-index-request'
+        description: Create a new Local DB VLV Index in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-vlv-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Local DB VLV Index already exists
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-vlv-index
+  /backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name}:
+    delete:
+      summary: Delete a Local DB VLV Index
+      operationId: delete-local-db-vlv-index
+      parameters:
+      - description: Name of the Local DB VLV Index
+        explode: false
+        in: path
+        name: local-db-vlv-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB VLV Index does not exist
+        "409":
+          description: The Local DB VLV Index cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-vlv-index
+    get:
+      summary: Returns a single Local DB VLV Index
+      operationId: get-local-db-vlv-index
+      parameters:
+      - description: Name of the Local DB VLV Index
+        explode: false
+        in: path
+        name: local-db-vlv-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-vlv-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB VLV Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-vlv-index
+    patch:
+      summary: Update an existing Local DB VLV Index by name
+      operationId: update-local-db-vlv-index
+      parameters:
+      - description: Name of the Local DB VLV Index
+        explode: false
+        in: path
+        name: local-db-vlv-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Local DB VLV Index
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-vlv-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Local DB VLV Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-vlv-index
+  /backends/{backend-name}/local-db-indexes:
+    post:
+      summary: Add a new Local DB Index to the config
+      operationId: add-local-db-index
+      parameters:
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-local-db-index-request'
+        description: Create a new Local DB Index in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Local DB Index already exists
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+  /backends/{backend-name}/local-db-indexes/{local-db-index-name}:
+    delete:
+      summary: Delete a Local DB Index
+      operationId: delete-local-db-index
+      parameters:
+      - description: Name of the Local DB Index
+        explode: false
+        in: path
+        name: local-db-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Index does not exist
+        "409":
+          description: The Local DB Index cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+    get:
+      summary: Returns a single Local DB Index
+      operationId: get-local-db-index
+      parameters:
+      - description: Name of the Local DB Index
+        explode: false
+        in: path
+        name: local-db-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Local DB Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
+    patch:
+      summary: Update an existing Local DB Index by name
+      operationId: update-local-db-index
+      parameters:
+      - description: Name of the Local DB Index
+        explode: false
+        in: path
+        name: local-db-index-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Backend
+        explode: false
+        in: path
+        name: backend-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Local DB Index
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/local-db-index-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Local DB Index does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - local-db-index
 components:
   schemas:
     config-file-handler-backend-response:
@@ -1326,131 +1800,213 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:metrics"
-    Enumbackend-softDeleteEntryIncludedOperationProp:
+    add-local-db-composite-index-request:
+      allOf:
+      - type: object
+        properties:
+          indexName:
+            description: Name of the new Local DB Composite Index
+            type: string
+        required:
+        - indexName
+      - $ref: '#/components/schemas/local-db-composite-index-shared'
+    local-db-composite-index-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Local DB Composite Index
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/local-db-composite-index-shared'
+    local-db-composite-index-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-composite-indexSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Local DB Composite Index
+        indexFilterPattern:
+          type: string
+          description: >-
+              A filter pattern that identifies which entries to include in the index.
+        indexBaseDNPattern:
+          type: string
+          description: >-
+              An optional base DN pattern that identifies portions of the DIT in which entries to index may exist.
+        indexEntryLimit:
+          type: integer
+          description: >-
+              The maximum number of entries that any single index key will be allowed to match before the server stops maintaining the ID set for that index key.
+        primeIndex:
+          type: boolean
+          description: >-
+              Indicates whether the server should load the contents of this index into memory when the backend is being opened.
+        primeInternalNodesOnly:
+          type: boolean
+          description: >-
+              Indicates whether to only prime the internal nodes of the index database, rather than priming both internal and leaf nodes.
+        cacheMode:
+          $ref: '#/components/schemas/Enumlocal-db-composite-index-cacheModeProp'
+      required:
+      - indexFilterPattern
+    Enumlocal-db-composite-indexSchemaUrn:
       type: string
       enum:
-      - "modify"
-      - "delete"
-      description: >-
-          Specifies which operations performed on soft-deleted entries will appear in the changelog.
-    Enumbackend-writabilityModeProp:
+      - "urn:pingidentity:schemas:configuration:2.0:local-db-composite-index"
+    add-local-db-vlv-index-request:
+      allOf:
+      - type: object
+        properties:
+          indexName:
+            description: Name of the new Local DB VLV Index
+            type: string
+        required:
+        - indexName
+      - $ref: '#/components/schemas/local-db-vlv-index-shared'
+    local-db-vlv-index-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Local DB VLV Index
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/local-db-vlv-index-shared'
+    local-db-vlv-index-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-vlv-indexSchemaUrn'
+        baseDN:
+          type: string
+          description: >-
+              Specifies the base DN used in the search query that is being indexed.
+        scope:
+          $ref: '#/components/schemas/Enumlocal-db-vlv-index-scopeProp'
+        filter:
+          type: string
+          description: >-
+              Specifies the LDAP filter used in the query that is being indexed.
+        sortOrder:
+          type: string
+          description: >-
+              Specifies the names of the attributes that are used to sort the entries for the query being indexed.
+        name:
+          type: string
+          description: >-
+              Specifies a unique name for this VLV index.
+        maxBlockSize:
+          type: integer
+          description: >-
+              Specifies the number of entry IDs to store in a single sorted set before it must be split.
+        cacheMode:
+          $ref: '#/components/schemas/Enumlocal-db-vlv-index-cacheModeProp'
+      required:
+      - baseDN
+      - scope
+      - filter
+      - sortOrder
+      - name
+    Enumlocal-db-vlv-indexSchemaUrn:
       type: string
       enum:
-      - "enabled"
-      - "disabled"
-      - "internal-only"
-      description: >-
-          Specifies the behavior that the backend should use when processing write operations.
-    Enumbackend-includeVirtualAttributesProp:
+      - "urn:pingidentity:schemas:configuration:2.0:local-db-vlv-index"
+    add-local-db-index-request:
+      allOf:
+      - type: object
+        properties:
+          indexName:
+            description: Name of the new Local DB Index
+            type: string
+        required:
+        - indexName
+      - $ref: '#/components/schemas/local-db-index-shared'
+    local-db-index-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Local DB Index
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/local-db-index-shared'
+    local-db-index-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-indexSchemaUrn'
+        attribute:
+          type: string
+          description: >-
+              Specifies the name of the attribute for which the index is to be maintained.
+        indexEntryLimit:
+          type: integer
+          description: >-
+              Specifies the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained.
+        substringIndexEntryLimit:
+          type: integer
+          description: >-
+              Specifies, for substring indexes, the maximum number of entries that are allowed to match a given index key before that particular index key is no longer maintained. Setting a large limit can dramatically increase the database size on disk and have a big impact on server performance if the indexed attribute is modified frequently. When a very large limit is required, creating a dedicated composite index with an index-filter-pattern of (attr=*?*) will give the best balance between search and update performance.
+        maintainMatchCountForKeysExceedingEntryLimit:
+          type: boolean
+          description: >-
+              Indicates whether to continue to maintain a count of the number of matching entries for an index key even after that count exceeds the index entry limit.
+        indexType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumlocal-db-index-indexTypeProp'
+        substringLength:
+          type: integer
+          description: >-
+              The length of substrings in a substring index.
+        primeIndex:
+          type: boolean
+          description: >-
+              If this option is enabled and this index's backend is configured to prime indexes, then this index will be loaded at startup.
+        primeInternalNodesOnly:
+          type: boolean
+          description: >-
+              If this option is enabled and this index's backend is configured to prime indexes using the preload method, then only the internal database nodes (i.e., the database keys but not values) should be primed when the backend is initialized.
+        equalityIndexFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              A search filter that may be used in conjunction with an equality component for the associated attribute type. If an equality index filter is defined, then an additional equality index will be maintained for the associated attribute, but only for entries which match the provided filter. Further, the index will be used only for searches containing an equality component with the associated attribute type ANDed with this filter.
+        maintainEqualityIndexWithoutFilter:
+          type: boolean
+          description: >-
+              Indicates whether to maintain a separate equality index for the associated attribute without any filter, in addition to maintaining an index for each equality index filter that is defined. If this is false, then the attribute will not be indexed for equality by itself but only in conjunction with the defined equality index filters.
+        cacheMode:
+          $ref: '#/components/schemas/Enumlocal-db-index-cacheModeProp'
+      required:
+      - attribute
+      - indexType
+    Enumlocal-db-indexSchemaUrn:
       type: string
       enum:
-      - "add-attributes"
-      - "deleted-entry-attributes"
-      - "before-and-after-values"
-      - "key-attribute-values"
-      description: >-
-          Specifies the changelog entry elements (if any) in which virtual attributes should be included.
-    Enumbackend-uncachedId2entryCacheModeProp:
-      type: string
-      enum:
-      - "cache-keys-and-values"
-      - "cache-keys-only"
-      - "no-caching"
-      - "keep-hot"
-      - "default"
-      - "make-cold"
-      - "evict-leaf-immediately"
-      - "evict-bin-immediately"
-      description: >-
-          Specifies the cache mode that should be used when accessing the records in the uncached-id2entry database, which provides a way to store complete or partial encoded entries with a different (and presumably less memory-intensive) cache mode than records written to id2entry.
-    Enumbackend-primeMethodProp:
-      type: string
-      enum:
-      - "none"
-      - "preload"
-      - "preload-internal-nodes-only"
-      - "cursor-across-indexes"
-      - "prime-to-filesystem-cache"
-      - "prime-to-filesystem-cache-non-sequential"
-      description: >-
-          Specifies the method that should be used to prime caches with data for this backend.
-    Enumbackend-defaultCacheModeProp:
-      type: string
-      enum:
-      - "cache-keys-and-values"
-      - "cache-keys-only"
-      - "no-caching"
-      - "keep-hot"
-      - "default"
-      - "make-cold"
-      - "evict-leaf-immediately"
-      - "evict-bin-immediately"
-      description: >-
-          Specifies the cache mode that should be used for any database for which the cache mode is not explicitly specified. This includes the id2entry database, which stores encoded entries, and all attribute indexes.
-    Enumbackend-externalTxnDefaultBackendLockBehaviorProp:
-      type: string
-      enum:
-      - "do-not-acquire"
-      - "acquire-after-retries"
-      - "acquire-before-retries"
-      - "acquire-before-initial-attempt"
-      description: >-
-          Specifies the default behavior that should be exhibited by external transactions (e.g., an LDAP transaction or an atomic multi-update operation) with regard to acquiring an exclusive lock in this backend.
-    Enumbackend-systemIndexToPrimeProp:
-      type: string
-      enum:
-      - "dn2id"
-      - "id2entry"
-      - "id2children"
-      - "id2subtree"
-      - "dn2uri"
-      description: >-
-          Specifies which system index(es) should be primed when the backend is initialized.
-    Enumbackend-singleWriterLockBehaviorProp:
-      type: string
-      enum:
-      - "never-acquire"
-      - "acquire-on-retry"
-      - "always-acquire"
-      description: >-
-          Specifies the condition under which to acquire a single-writer lock to ensure that the associated operation will be the only write in progress at the time the lock is held. The single-writer lock can help avoid problems that result from database lock conflicts that arise between two write operations being processed at the same time in the same backend. This will not have any effect on the read operations processed while the write is in progress.
-    Enumbackend-id2subtreeCacheModeProp:
-      type: string
-      enum:
-      - "cache-keys-and-values"
-      - "cache-keys-only"
-      - "no-caching"
-      - "keep-hot"
-      - "default"
-      - "make-cold"
-      - "evict-leaf-immediately"
-      - "evict-bin-immediately"
-      description: >-
-          Specifies the cache mode that should be used when accessing the records in the id2subtree database, which provides a mapping between the entry ID of a particular entry and the entry IDs of all of its children to any depth. This index may be used when performing searches with a whole-subtree or subordinate-subtree scope if the search filter cannot be resolved to a small enough candidate list. The size of this database directly depends on the number of entries that have children.
-    Enumbackend-systemIndexToPrimeInternalNodesOnlyProp:
-      type: string
-      enum:
-      - "dn2id"
-      - "id2entry"
-      - "uncached-id2entry"
-      - "id2children"
-      - "id2subtree"
-      - "dn2uri"
-      description: >-
-          Specifies the system index(es) for which internal database nodes only (i.e., the database keys but not values) should be primed when the backend is initialized.
-    Enumbackend-dn2uriCacheModeProp:
-      type: string
-      enum:
-      - "cache-keys-and-values"
-      - "cache-keys-only"
-      - "no-caching"
-      - "keep-hot"
-      - "default"
-      - "make-cold"
-      - "evict-leaf-immediately"
-      - "evict-bin-immediately"
-      description: >-
-          Specifies the cache mode that should be used when accessing the records in the dn2uri database, which provides a mapping between a normalized entry DN and a set of referral URLs contained in the associated smart referral entry.
+      - "urn:pingidentity:schemas:configuration:2.0:local-db-index"
     Enumbackend-dn2idCacheModeProp:
       type: string
       enum:
@@ -1464,7 +2020,16 @@ components:
       - "evict-bin-immediately"
       description: >-
           Specifies the cache mode that should be used when accessing the records in the dn2id database, which provides a mapping between normalized entry DNs and the corresponding entry IDs.
-    Enumbackend-id2entryCacheModeProp:
+    Enumbackend-includeVirtualAttributesProp:
+      type: string
+      enum:
+      - "add-attributes"
+      - "deleted-entry-attributes"
+      - "before-and-after-values"
+      - "key-attribute-values"
+      description: >-
+          Specifies the changelog entry elements (if any) in which virtual attributes should be included.
+    Enumbackend-dn2uriCacheModeProp:
       type: string
       enum:
       - "cache-keys-and-values"
@@ -1476,20 +2041,36 @@ components:
       - "evict-leaf-immediately"
       - "evict-bin-immediately"
       description: >-
-          Specifies the cache mode that should be used when accessing the records in the id2entry database, which provides a mapping between entry IDs and entry contents. Consider configuring uncached entries or uncached attributes in lieu of changing from the "cache-keys-and-values" default value.
-    Enumbackend-id2childrenCacheModeProp:
+          Specifies the cache mode that should be used when accessing the records in the dn2uri database, which provides a mapping between a normalized entry DN and a set of referral URLs contained in the associated smart referral entry.
+    Enumbackend-primeMethodProp:
       type: string
       enum:
-      - "cache-keys-and-values"
-      - "cache-keys-only"
-      - "no-caching"
-      - "keep-hot"
-      - "default"
-      - "make-cold"
-      - "evict-leaf-immediately"
-      - "evict-bin-immediately"
+      - "none"
+      - "preload"
+      - "preload-internal-nodes-only"
+      - "cursor-across-indexes"
+      - "prime-to-filesystem-cache"
+      - "prime-to-filesystem-cache-non-sequential"
       description: >-
-          Specifies the cache mode that should be used when accessing the records in the id2children database, which provides a mapping between the entry ID of a particular entry and the entry IDs of all of its immediate children. This index may be used when performing searches with a single-level scope if the search filter cannot be resolved to a small enough candidate list. The size of this database directly depends on the number of entries that have children.
+          Specifies the method that should be used to prime caches with data for this backend.
+    Enumbackend-singleWriterLockBehaviorProp:
+      type: string
+      enum:
+      - "never-acquire"
+      - "acquire-on-retry"
+      - "always-acquire"
+      description: >-
+          Specifies the condition under which to acquire a single-writer lock to ensure that the associated operation will be the only write in progress at the time the lock is held. The single-writer lock can help avoid problems that result from database lock conflicts that arise between two write operations being processed at the same time in the same backend. This will not have any effect on the read operations processed while the write is in progress.
+    Enumlocal-db-index-indexTypeProp:
+      type: string
+      enum:
+      - "equality"
+      - "ordering"
+      - "presence"
+      - "substring"
+      - "approximate"
+      description: >-
+          Specifies the type(s) of indexing that should be performed for the associated attribute.
     Enumbackend-reportExcludedChangelogAttributesProp:
       type: string
       enum:
@@ -1498,6 +2079,69 @@ components:
       - "attribute-names"
       description: >-
           Indicates whether changelog entries that have been altered by applying access controls should include additional information about any attributes that may have been removed.
+    Enumbackend-id2subtreeCacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the id2subtree database, which provides a mapping between the entry ID of a particular entry and the entry IDs of all of its children to any depth. This index may be used when performing searches with a whole-subtree or subordinate-subtree scope if the search filter cannot be resolved to a small enough candidate list. The size of this database directly depends on the number of entries that have children.
+    Enumlocal-db-vlv-index-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the database for this index.
+    Enumbackend-softDeleteEntryIncludedOperationProp:
+      type: string
+      enum:
+      - "modify"
+      - "delete"
+      description: >-
+          Specifies which operations performed on soft-deleted entries will appear in the changelog.
+    Enumlocal-db-vlv-index-scopeProp:
+      type: string
+      enum:
+      - "base-object"
+      - "single-level"
+      - "whole-subtree"
+      - "subordinate-subtree"
+      description: >-
+          Specifies the LDAP scope of the query that is being indexed.
+    Enumbackend-uncachedId2entryCacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the uncached-id2entry database, which provides a way to store complete or partial encoded entries with a different (and presumably less memory-intensive) cache mode than records written to id2entry.
+    Enumbackend-writabilityModeProp:
+      type: string
+      enum:
+      - "enabled"
+      - "disabled"
+      - "internal-only"
+      description: >-
+          Specifies the behavior that the backend should use when processing write operations.
     Enumbackend-disabledAlertTypeProp:
       type: string
       enum:
@@ -1686,6 +2330,96 @@ components:
       - "replace-certificate-failed"
       description: >-
           Specifies the names of the alert types that should not be added to the backend. This can be used to suppress high volume alerts that might trigger hitting the max-alerts limit sooner than desired. Disabled alert types will not be sent out over persistent searches on this backend.
+    Enumlocal-db-composite-index-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      description: >-
+          The behavior that the server should exhibit when storing information from this index in the database cache.
+    Enumbackend-systemIndexToPrimeInternalNodesOnlyProp:
+      type: string
+      enum:
+      - "dn2id"
+      - "id2entry"
+      - "uncached-id2entry"
+      - "id2children"
+      - "id2subtree"
+      - "dn2uri"
+      description: >-
+          Specifies the system index(es) for which internal database nodes only (i.e., the database keys but not values) should be primed when the backend is initialized.
+    Enumbackend-id2entryCacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the id2entry database, which provides a mapping between entry IDs and entry contents. Consider configuring uncached entries or uncached attributes in lieu of changing from the "cache-keys-and-values" default value.
+    Enumbackend-externalTxnDefaultBackendLockBehaviorProp:
+      type: string
+      enum:
+      - "do-not-acquire"
+      - "acquire-after-retries"
+      - "acquire-before-retries"
+      - "acquire-before-initial-attempt"
+      description: >-
+          Specifies the default behavior that should be exhibited by external transactions (e.g., an LDAP transaction or an atomic multi-update operation) with regard to acquiring an exclusive lock in this backend.
+    Enumbackend-defaultCacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used for any database for which the cache mode is not explicitly specified. This includes the id2entry database, which stores encoded entries, and all attribute indexes.
+    Enumlocal-db-index-cacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the database for this index. This controls how much database cache memory can be consumed by this index.
+    Enumbackend-systemIndexToPrimeProp:
+      type: string
+      enum:
+      - "dn2id"
+      - "id2entry"
+      - "id2children"
+      - "id2subtree"
+      - "dn2uri"
+      description: >-
+          Specifies which system index(es) should be primed when the backend is initialized.
+    Enumbackend-id2childrenCacheModeProp:
+      type: string
+      enum:
+      - "cache-keys-and-values"
+      - "cache-keys-only"
+      - "no-caching"
+      - "keep-hot"
+      - "default"
+      - "make-cold"
+      - "evict-leaf-immediately"
+      - "evict-bin-immediately"
+      description: >-
+          Specifies the cache mode that should be used when accessing the records in the id2children database, which provides a mapping between the entry ID of a particular entry and the entry IDs of all of its immediate children. This index may be used when performing searches with a single-level scope if the search filter cannot be resolved to a small enough candidate list. The size of this database directly depends on the number of entries that have children.
     updateRequest:
       type: object
       properties:

@@ -49,7 +49,7 @@ paths:
       summary: Delete a Log Field Mapping
       operationId: delete-log-field-mapping
       parameters:
-      - description: Name of the Log Field Mapping to be deleted
+      - description: Name of the Log Field Mapping
         explode: false
         in: path
         name: log-field-mapping-name
@@ -76,7 +76,7 @@ paths:
       summary: Returns a single Log Field Mapping
       operationId: get-log-field-mapping
       parameters:
-      - description: Name of the Log Field Mapping to be read
+      - description: Name of the Log Field Mapping
         explode: false
         in: path
         name: log-field-mapping-name
@@ -107,7 +107,7 @@ paths:
       summary: Update an existing Log Field Mapping by name
       operationId: update-log-field-mapping
       parameters:
-      - description: Name of the Log Field Mapping to be updated
+      - description: Name of the Log Field Mapping
         explode: false
         in: path
         name: log-field-mapping-name

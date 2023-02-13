@@ -146,7 +146,7 @@ func (r ApiDeleteCertificateMapperRequest) Execute() (*http.Response, error) {
 DeleteCertificateMapper Delete a Certificate Mapper
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param certificateMapperName Name of the Certificate Mapper to be deleted
+	@param certificateMapperName Name of the Certificate Mapper
 	@return ApiDeleteCertificateMapperRequest
 */
 func (a *CertificateMapperApiService) DeleteCertificateMapper(ctx context.Context, certificateMapperName string) ApiDeleteCertificateMapperRequest {
@@ -236,7 +236,7 @@ func (r ApiGetCertificateMapperRequest) Execute() (*AddCertificateMapper200Respo
 GetCertificateMapper Returns a single Certificate Mapper
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param certificateMapperName Name of the Certificate Mapper to be read
+	@param certificateMapperName Name of the Certificate Mapper
 	@return ApiGetCertificateMapperRequest
 */
 func (a *CertificateMapperApiService) GetCertificateMapper(ctx context.Context, certificateMapperName string) ApiGetCertificateMapperRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateCertificateMapperRequest) Execute() (*AddCertificateMapper200Re
 UpdateCertificateMapper Update an existing Certificate Mapper by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param certificateMapperName Name of the Certificate Mapper to be updated
+	@param certificateMapperName Name of the Certificate Mapper
 	@return ApiUpdateCertificateMapperRequest
 */
 func (a *CertificateMapperApiService) UpdateCertificateMapper(ctx context.Context, certificateMapperName string) ApiUpdateCertificateMapperRequest {

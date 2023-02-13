@@ -146,7 +146,7 @@ func (r ApiDeleteOtpDeliveryMechanismRequest) Execute() (*http.Response, error) 
 DeleteOtpDeliveryMechanism Delete a OTP Delivery Mechanism
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be deleted
+	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism
 	@return ApiDeleteOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) DeleteOtpDeliveryMechanism(ctx context.Context, otpDeliveryMechanismName string) ApiDeleteOtpDeliveryMechanismRequest {
@@ -236,7 +236,7 @@ func (r ApiGetOtpDeliveryMechanismRequest) Execute() (*AddOtpDeliveryMechanism20
 GetOtpDeliveryMechanism Returns a single OTP Delivery Mechanism
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be read
+	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism
 	@return ApiGetOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) GetOtpDeliveryMechanism(ctx context.Context, otpDeliveryMechanismName string) ApiGetOtpDeliveryMechanismRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateOtpDeliveryMechanismRequest) Execute() (*AddOtpDeliveryMechanis
 UpdateOtpDeliveryMechanism Update an existing OTP Delivery Mechanism by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism to be updated
+	@param otpDeliveryMechanismName Name of the OTP Delivery Mechanism
 	@return ApiUpdateOtpDeliveryMechanismRequest
 */
 func (a *OtpDeliveryMechanismApiService) UpdateOtpDeliveryMechanism(ctx context.Context, otpDeliveryMechanismName string) ApiUpdateOtpDeliveryMechanismRequest {

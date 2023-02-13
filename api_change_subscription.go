@@ -146,7 +146,7 @@ func (r ApiDeleteChangeSubscriptionRequest) Execute() (*http.Response, error) {
 DeleteChangeSubscription Delete a Change Subscription
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param changeSubscriptionName Name of the Change Subscription to be deleted
+	@param changeSubscriptionName Name of the Change Subscription
 	@return ApiDeleteChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) DeleteChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiDeleteChangeSubscriptionRequest {
@@ -236,7 +236,7 @@ func (r ApiGetChangeSubscriptionRequest) Execute() (*ChangeSubscriptionResponse,
 GetChangeSubscription Returns a single Change Subscription
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param changeSubscriptionName Name of the Change Subscription to be read
+	@param changeSubscriptionName Name of the Change Subscription
 	@return ApiGetChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) GetChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiGetChangeSubscriptionRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateChangeSubscriptionRequest) Execute() (*ChangeSubscriptionRespon
 UpdateChangeSubscription Update an existing Change Subscription by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param changeSubscriptionName Name of the Change Subscription to be updated
+	@param changeSubscriptionName Name of the Change Subscription
 	@return ApiUpdateChangeSubscriptionRequest
 */
 func (a *ChangeSubscriptionApiService) UpdateChangeSubscription(ctx context.Context, changeSubscriptionName string) ApiUpdateChangeSubscriptionRequest {

@@ -49,7 +49,7 @@ paths:
       summary: Delete a Gauge Data Source
       operationId: delete-gauge-data-source
       parameters:
-      - description: Name of the Gauge Data Source to be deleted
+      - description: Name of the Gauge Data Source
         explode: false
         in: path
         name: gauge-data-source-name
@@ -76,7 +76,7 @@ paths:
       summary: Returns a single Gauge Data Source
       operationId: get-gauge-data-source
       parameters:
-      - description: Name of the Gauge Data Source to be read
+      - description: Name of the Gauge Data Source
         explode: false
         in: path
         name: gauge-data-source-name
@@ -107,7 +107,7 @@ paths:
       summary: Update an existing Gauge Data Source by name
       operationId: update-gauge-data-source
       parameters:
-      - description: Name of the Gauge Data Source to be updated
+      - description: Name of the Gauge Data Source
         explode: false
         in: path
         name: gauge-data-source-name

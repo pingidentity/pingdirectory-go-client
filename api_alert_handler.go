@@ -146,7 +146,7 @@ func (r ApiDeleteAlertHandlerRequest) Execute() (*http.Response, error) {
 DeleteAlertHandler Delete a Alert Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param alertHandlerName Name of the Alert Handler to be deleted
+	@param alertHandlerName Name of the Alert Handler
 	@return ApiDeleteAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) DeleteAlertHandler(ctx context.Context, alertHandlerName string) ApiDeleteAlertHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetAlertHandlerRequest) Execute() (*GetAlertHandler200Response, *http
 GetAlertHandler Returns a single Alert Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param alertHandlerName Name of the Alert Handler to be read
+	@param alertHandlerName Name of the Alert Handler
 	@return ApiGetAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) GetAlertHandler(ctx context.Context, alertHandlerName string) ApiGetAlertHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateAlertHandlerRequest) Execute() (*GetAlertHandler200Response, *h
 UpdateAlertHandler Update an existing Alert Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param alertHandlerName Name of the Alert Handler to be updated
+	@param alertHandlerName Name of the Alert Handler
 	@return ApiUpdateAlertHandlerRequest
 */
 func (a *AlertHandlerApiService) UpdateAlertHandler(ctx context.Context, alertHandlerName string) ApiUpdateAlertHandlerRequest {

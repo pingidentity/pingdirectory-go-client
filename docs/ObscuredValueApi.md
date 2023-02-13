@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    obscuredValueName := "obscuredValueName_example" // string | Name of the Obscured Value to be deleted
+    obscuredValueName := "obscuredValueName_example" // string | Name of the Obscured Value
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**obscuredValueName** | **string** | Name of the Obscured Value to be deleted | 
+**obscuredValueName** | **string** | Name of the Obscured Value | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    obscuredValueName := "obscuredValueName_example" // string | Name of the Obscured Value to be read
+    obscuredValueName := "obscuredValueName_example" // string | Name of the Obscured Value
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**obscuredValueName** | **string** | Name of the Obscured Value to be read | 
+**obscuredValueName** | **string** | Name of the Obscured Value | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    obscuredValueName := "obscuredValueName_example" // string | Name of the Obscured Value to be updated
+    obscuredValueName := "obscuredValueName_example" // string | Name of the Obscured Value
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Obscured Value
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**obscuredValueName** | **string** | Name of the Obscured Value to be updated | 
+**obscuredValueName** | **string** | Name of the Obscured Value | 
 
 ### Other Parameters
 

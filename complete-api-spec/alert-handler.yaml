@@ -63,7 +63,7 @@ paths:
       summary: Delete a Alert Handler
       operationId: delete-alert-handler
       parameters:
-      - description: Name of the Alert Handler to be deleted
+      - description: Name of the Alert Handler
         explode: false
         in: path
         name: alert-handler-name
@@ -90,7 +90,7 @@ paths:
       summary: Returns a single Alert Handler
       operationId: get-alert-handler
       parameters:
-      - description: Name of the Alert Handler to be read
+      - description: Name of the Alert Handler
         explode: false
         in: path
         name: alert-handler-name
@@ -129,7 +129,7 @@ paths:
       summary: Update an existing Alert Handler by name
       operationId: update-alert-handler
       parameters:
-      - description: Name of the Alert Handler to be updated
+      - description: Name of the Alert Handler
         explode: false
         in: path
         name: alert-handler-name
@@ -873,15 +873,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:alert-handler:third-party"
-    Enumalert-handler-enabledAlertSeverityProp:
-      type: string
-      enum:
-      - "info"
-      - "warning"
-      - "error"
-      - "fatal"
-      description: >-
-          Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
     Enumalert-handler-outputFormatProp:
       type: string
       enum:
@@ -890,14 +881,6 @@ components:
       - "multi-line-json"
       description: >-
           The format to use when writing the alert messages.
-    Enumalert-handler-outputLocationProp:
-      type: string
-      enum:
-      - "server-out-file"
-      - "standard-output"
-      - "standard-error"
-      description: >-
-          The location to which alert messages will be written.
     Enumalert-handler-enabledAlertTypeProp:
       type: string
       enum:
@@ -1086,13 +1069,15 @@ components:
       - "replace-certificate-failed"
       description: >-
           Specifies the names of the alert types that are enabled for this alert handler.
-    Enumalert-handler-longMessageBehaviorProp:
+    Enumalert-handler-enabledAlertSeverityProp:
       type: string
       enum:
-      - "truncate"
-      - "send-as-multiple-messages"
+      - "info"
+      - "warning"
+      - "error"
+      - "fatal"
       description: >-
-          The behavior to use for alert messages that are longer than the 160-character size limit for SMS messages.
+          Specifies the alert severities for which this alert handler should be used. If no values are provided, then this alert handler will be enabled for alerts with any severity.
     Enumalert-handler-disabledAlertTypeProp:
       type: string
       enum:
@@ -1281,6 +1266,21 @@ components:
       - "replace-certificate-failed"
       description: >-
           Specifies the names of the alert types that are disabled for this alert handler.
+    Enumalert-handler-longMessageBehaviorProp:
+      type: string
+      enum:
+      - "truncate"
+      - "send-as-multiple-messages"
+      description: >-
+          The behavior to use for alert messages that are longer than the 160-character size limit for SMS messages.
+    Enumalert-handler-outputLocationProp:
+      type: string
+      enum:
+      - "server-out-file"
+      - "standard-output"
+      - "standard-error"
+      description: >-
+          The location to which alert messages will be written.
     updateRequest:
       type: object
       properties:

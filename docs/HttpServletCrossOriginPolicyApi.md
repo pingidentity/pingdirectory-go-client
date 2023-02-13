@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    httpServletCrossOriginPolicyName := "httpServletCrossOriginPolicyName_example" // string | Name of the HTTP Servlet Cross Origin Policy to be deleted
+    httpServletCrossOriginPolicyName := "httpServletCrossOriginPolicyName_example" // string | Name of the HTTP Servlet Cross Origin Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**httpServletCrossOriginPolicyName** | **string** | Name of the HTTP Servlet Cross Origin Policy to be deleted | 
+**httpServletCrossOriginPolicyName** | **string** | Name of the HTTP Servlet Cross Origin Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    httpServletCrossOriginPolicyName := "httpServletCrossOriginPolicyName_example" // string | Name of the HTTP Servlet Cross Origin Policy to be read
+    httpServletCrossOriginPolicyName := "httpServletCrossOriginPolicyName_example" // string | Name of the HTTP Servlet Cross Origin Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**httpServletCrossOriginPolicyName** | **string** | Name of the HTTP Servlet Cross Origin Policy to be read | 
+**httpServletCrossOriginPolicyName** | **string** | Name of the HTTP Servlet Cross Origin Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    httpServletCrossOriginPolicyName := "httpServletCrossOriginPolicyName_example" // string | Name of the HTTP Servlet Cross Origin Policy to be updated
+    httpServletCrossOriginPolicyName := "httpServletCrossOriginPolicyName_example" // string | Name of the HTTP Servlet Cross Origin Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing HTTP Servlet Cross Origin Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**httpServletCrossOriginPolicyName** | **string** | Name of the HTTP Servlet Cross Origin Policy to be updated | 
+**httpServletCrossOriginPolicyName** | **string** | Name of the HTTP Servlet Cross Origin Policy | 
 
 ### Other Parameters
 

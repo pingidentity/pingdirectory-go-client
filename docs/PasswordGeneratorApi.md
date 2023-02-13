@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    passwordGeneratorName := "passwordGeneratorName_example" // string | Name of the Password Generator to be deleted
+    passwordGeneratorName := "passwordGeneratorName_example" // string | Name of the Password Generator
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordGeneratorName** | **string** | Name of the Password Generator to be deleted | 
+**passwordGeneratorName** | **string** | Name of the Password Generator | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    passwordGeneratorName := "passwordGeneratorName_example" // string | Name of the Password Generator to be read
+    passwordGeneratorName := "passwordGeneratorName_example" // string | Name of the Password Generator
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordGeneratorName** | **string** | Name of the Password Generator to be read | 
+**passwordGeneratorName** | **string** | Name of the Password Generator | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    passwordGeneratorName := "passwordGeneratorName_example" // string | Name of the Password Generator to be updated
+    passwordGeneratorName := "passwordGeneratorName_example" // string | Name of the Password Generator
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Password Generator
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordGeneratorName** | **string** | Name of the Password Generator to be updated | 
+**passwordGeneratorName** | **string** | Name of the Password Generator | 
 
 ### Other Parameters
 

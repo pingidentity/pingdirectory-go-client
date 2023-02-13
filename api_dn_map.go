@@ -146,7 +146,7 @@ func (r ApiDeleteDnMapRequest) Execute() (*http.Response, error) {
 DeleteDnMap Delete a DN Map
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param dnMapName Name of the DN Map to be deleted
+	@param dnMapName Name of the DN Map
 	@return ApiDeleteDnMapRequest
 */
 func (a *DnMapApiService) DeleteDnMap(ctx context.Context, dnMapName string) ApiDeleteDnMapRequest {
@@ -236,7 +236,7 @@ func (r ApiGetDnMapRequest) Execute() (*DnMapResponse, *http.Response, error) {
 GetDnMap Returns a single DN Map
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param dnMapName Name of the DN Map to be read
+	@param dnMapName Name of the DN Map
 	@return ApiGetDnMapRequest
 */
 func (a *DnMapApiService) GetDnMap(ctx context.Context, dnMapName string) ApiGetDnMapRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateDnMapRequest) Execute() (*DnMapResponse, *http.Response, error)
 UpdateDnMap Update an existing DN Map by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param dnMapName Name of the DN Map to be updated
+	@param dnMapName Name of the DN Map
 	@return ApiUpdateDnMapRequest
 */
 func (a *DnMapApiService) UpdateDnMap(ctx context.Context, dnMapName string) ApiUpdateDnMapRequest {

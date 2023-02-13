@@ -146,7 +146,7 @@ func (r ApiDeleteChangeSubscriptionHandlerRequest) Execute() (*http.Response, er
 DeleteChangeSubscriptionHandler Delete a Change Subscription Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param changeSubscriptionHandlerName Name of the Change Subscription Handler to be deleted
+	@param changeSubscriptionHandlerName Name of the Change Subscription Handler
 	@return ApiDeleteChangeSubscriptionHandlerRequest
 */
 func (a *ChangeSubscriptionHandlerApiService) DeleteChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiDeleteChangeSubscriptionHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetChangeSubscriptionHandlerRequest) Execute() (*AddChangeSubscriptio
 GetChangeSubscriptionHandler Returns a single Change Subscription Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param changeSubscriptionHandlerName Name of the Change Subscription Handler to be read
+	@param changeSubscriptionHandlerName Name of the Change Subscription Handler
 	@return ApiGetChangeSubscriptionHandlerRequest
 */
 func (a *ChangeSubscriptionHandlerApiService) GetChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiGetChangeSubscriptionHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateChangeSubscriptionHandlerRequest) Execute() (*AddChangeSubscrip
 UpdateChangeSubscriptionHandler Update an existing Change Subscription Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param changeSubscriptionHandlerName Name of the Change Subscription Handler to be updated
+	@param changeSubscriptionHandlerName Name of the Change Subscription Handler
 	@return ApiUpdateChangeSubscriptionHandlerRequest
 */
 func (a *ChangeSubscriptionHandlerApiService) UpdateChangeSubscriptionHandler(ctx context.Context, changeSubscriptionHandlerName string) ApiUpdateChangeSubscriptionHandlerRequest {

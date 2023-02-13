@@ -36,7 +36,7 @@ func (r ApiGetWebApplicationExtensionRequest) Execute() (*ConsoleWebApplicationE
 GetWebApplicationExtension Returns a single Web Application Extension
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param webApplicationExtensionName Name of the Web Application Extension to be read
+	@param webApplicationExtensionName Name of the Web Application Extension
 	@return ApiGetWebApplicationExtensionRequest
 */
 func (a *WebApplicationExtensionApiService) GetWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiGetWebApplicationExtensionRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateWebApplicationExtensionRequest) Execute() (*ConsoleWebApplicati
 UpdateWebApplicationExtension Update an existing Web Application Extension by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param webApplicationExtensionName Name of the Web Application Extension to be updated
+	@param webApplicationExtensionName Name of the Web Application Extension
 	@return ApiUpdateWebApplicationExtensionRequest
 */
 func (a *WebApplicationExtensionApiService) UpdateWebApplicationExtension(ctx context.Context, webApplicationExtensionName string) ApiUpdateWebApplicationExtensionRequest {

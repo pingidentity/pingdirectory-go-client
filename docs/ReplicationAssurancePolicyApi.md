@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    replicationAssurancePolicyName := "replicationAssurancePolicyName_example" // string | Name of the Replication Assurance Policy to be deleted
+    replicationAssurancePolicyName := "replicationAssurancePolicyName_example" // string | Name of the Replication Assurance Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**replicationAssurancePolicyName** | **string** | Name of the Replication Assurance Policy to be deleted | 
+**replicationAssurancePolicyName** | **string** | Name of the Replication Assurance Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    replicationAssurancePolicyName := "replicationAssurancePolicyName_example" // string | Name of the Replication Assurance Policy to be read
+    replicationAssurancePolicyName := "replicationAssurancePolicyName_example" // string | Name of the Replication Assurance Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**replicationAssurancePolicyName** | **string** | Name of the Replication Assurance Policy to be read | 
+**replicationAssurancePolicyName** | **string** | Name of the Replication Assurance Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    replicationAssurancePolicyName := "replicationAssurancePolicyName_example" // string | Name of the Replication Assurance Policy to be updated
+    replicationAssurancePolicyName := "replicationAssurancePolicyName_example" // string | Name of the Replication Assurance Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Replication Assurance Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**replicationAssurancePolicyName** | **string** | Name of the Replication Assurance Policy to be updated | 
+**replicationAssurancePolicyName** | **string** | Name of the Replication Assurance Policy | 
 
 ### Other Parameters
 

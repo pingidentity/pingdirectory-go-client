@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    accessTokenValidatorName := "accessTokenValidatorName_example" // string | Name of the Access Token Validator to be deleted
+    accessTokenValidatorName := "accessTokenValidatorName_example" // string | Name of the Access Token Validator
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accessTokenValidatorName** | **string** | Name of the Access Token Validator to be deleted | 
+**accessTokenValidatorName** | **string** | Name of the Access Token Validator | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    accessTokenValidatorName := "accessTokenValidatorName_example" // string | Name of the Access Token Validator to be read
+    accessTokenValidatorName := "accessTokenValidatorName_example" // string | Name of the Access Token Validator
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accessTokenValidatorName** | **string** | Name of the Access Token Validator to be read | 
+**accessTokenValidatorName** | **string** | Name of the Access Token Validator | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    accessTokenValidatorName := "accessTokenValidatorName_example" // string | Name of the Access Token Validator to be updated
+    accessTokenValidatorName := "accessTokenValidatorName_example" // string | Name of the Access Token Validator
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Access Token Validator
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accessTokenValidatorName** | **string** | Name of the Access Token Validator to be updated | 
+**accessTokenValidatorName** | **string** | Name of the Access Token Validator | 
 
 ### Other Parameters
 

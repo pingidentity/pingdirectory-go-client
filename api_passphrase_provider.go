@@ -146,7 +146,7 @@ func (r ApiDeletePassphraseProviderRequest) Execute() (*http.Response, error) {
 DeletePassphraseProvider Delete a Passphrase Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passphraseProviderName Name of the Passphrase Provider to be deleted
+	@param passphraseProviderName Name of the Passphrase Provider
 	@return ApiDeletePassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) DeletePassphraseProvider(ctx context.Context, passphraseProviderName string) ApiDeletePassphraseProviderRequest {
@@ -236,7 +236,7 @@ func (r ApiGetPassphraseProviderRequest) Execute() (*AddPassphraseProvider200Res
 GetPassphraseProvider Returns a single Passphrase Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passphraseProviderName Name of the Passphrase Provider to be read
+	@param passphraseProviderName Name of the Passphrase Provider
 	@return ApiGetPassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) GetPassphraseProvider(ctx context.Context, passphraseProviderName string) ApiGetPassphraseProviderRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdatePassphraseProviderRequest) Execute() (*AddPassphraseProvider200
 UpdatePassphraseProvider Update an existing Passphrase Provider by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passphraseProviderName Name of the Passphrase Provider to be updated
+	@param passphraseProviderName Name of the Passphrase Provider
 	@return ApiUpdatePassphraseProviderRequest
 */
 func (a *PassphraseProviderApiService) UpdatePassphraseProvider(ctx context.Context, passphraseProviderName string) ApiUpdatePassphraseProviderRequest {

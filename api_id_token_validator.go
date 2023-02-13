@@ -146,7 +146,7 @@ func (r ApiDeleteIdTokenValidatorRequest) Execute() (*http.Response, error) {
 DeleteIdTokenValidator Delete a ID Token Validator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param idTokenValidatorName Name of the ID Token Validator to be deleted
+	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiDeleteIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) DeleteIdTokenValidator(ctx context.Context, idTokenValidatorName string) ApiDeleteIdTokenValidatorRequest {
@@ -236,7 +236,7 @@ func (r ApiGetIdTokenValidatorRequest) Execute() (*AddIdTokenValidator200Respons
 GetIdTokenValidator Returns a single ID Token Validator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param idTokenValidatorName Name of the ID Token Validator to be read
+	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiGetIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) GetIdTokenValidator(ctx context.Context, idTokenValidatorName string) ApiGetIdTokenValidatorRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateIdTokenValidatorRequest) Execute() (*AddIdTokenValidator200Resp
 UpdateIdTokenValidator Update an existing ID Token Validator by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param idTokenValidatorName Name of the ID Token Validator to be updated
+	@param idTokenValidatorName Name of the ID Token Validator
 	@return ApiUpdateIdTokenValidatorRequest
 */
 func (a *IdTokenValidatorApiService) UpdateIdTokenValidator(ctx context.Context, idTokenValidatorName string) ApiUpdateIdTokenValidatorRequest {

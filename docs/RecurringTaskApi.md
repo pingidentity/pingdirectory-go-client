@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    recurringTaskName := "recurringTaskName_example" // string | Name of the Recurring Task to be deleted
+    recurringTaskName := "recurringTaskName_example" // string | Name of the Recurring Task
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**recurringTaskName** | **string** | Name of the Recurring Task to be deleted | 
+**recurringTaskName** | **string** | Name of the Recurring Task | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    recurringTaskName := "recurringTaskName_example" // string | Name of the Recurring Task to be read
+    recurringTaskName := "recurringTaskName_example" // string | Name of the Recurring Task
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**recurringTaskName** | **string** | Name of the Recurring Task to be read | 
+**recurringTaskName** | **string** | Name of the Recurring Task | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    recurringTaskName := "recurringTaskName_example" // string | Name of the Recurring Task to be updated
+    recurringTaskName := "recurringTaskName_example" // string | Name of the Recurring Task
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Recurring Task
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**recurringTaskName** | **string** | Name of the Recurring Task to be updated | 
+**recurringTaskName** | **string** | Name of the Recurring Task | 
 
 ### Other Parameters
 

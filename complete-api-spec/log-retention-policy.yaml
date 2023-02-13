@@ -55,7 +55,7 @@ paths:
       summary: Delete a Log Retention Policy
       operationId: delete-log-retention-policy
       parameters:
-      - description: Name of the Log Retention Policy to be deleted
+      - description: Name of the Log Retention Policy
         explode: false
         in: path
         name: log-retention-policy-name
@@ -82,7 +82,7 @@ paths:
       summary: Returns a single Log Retention Policy
       operationId: get-log-retention-policy
       parameters:
-      - description: Name of the Log Retention Policy to be read
+      - description: Name of the Log Retention Policy
         explode: false
         in: path
         name: log-retention-policy-name
@@ -116,7 +116,7 @@ paths:
       summary: Update an existing Log Retention Policy by name
       operationId: update-log-retention-policy
       parameters:
-      - description: Name of the Log Retention Policy to be updated
+      - description: Name of the Log Retention Policy
         explode: false
         in: path
         name: log-retention-policy-name

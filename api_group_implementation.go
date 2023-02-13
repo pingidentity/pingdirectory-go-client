@@ -36,7 +36,7 @@ func (r ApiGetGroupImplementationRequest) Execute() (*GetGroupImplementation200R
 GetGroupImplementation Returns a single Group Implementation
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param groupImplementationName Name of the Group Implementation to be read
+	@param groupImplementationName Name of the Group Implementation
 	@return ApiGetGroupImplementationRequest
 */
 func (a *GroupImplementationApiService) GetGroupImplementation(ctx context.Context, groupImplementationName string) ApiGetGroupImplementationRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateGroupImplementationRequest) Execute() (*GetGroupImplementation2
 UpdateGroupImplementation Update an existing Group Implementation by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param groupImplementationName Name of the Group Implementation to be updated
+	@param groupImplementationName Name of the Group Implementation
 	@return ApiUpdateGroupImplementationRequest
 */
 func (a *GroupImplementationApiService) UpdateGroupImplementation(ctx context.Context, groupImplementationName string) ApiUpdateGroupImplementationRequest {

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    otpDeliveryMechanismName := "otpDeliveryMechanismName_example" // string | Name of the OTP Delivery Mechanism to be deleted
+    otpDeliveryMechanismName := "otpDeliveryMechanismName_example" // string | Name of the OTP Delivery Mechanism
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**otpDeliveryMechanismName** | **string** | Name of the OTP Delivery Mechanism to be deleted | 
+**otpDeliveryMechanismName** | **string** | Name of the OTP Delivery Mechanism | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    otpDeliveryMechanismName := "otpDeliveryMechanismName_example" // string | Name of the OTP Delivery Mechanism to be read
+    otpDeliveryMechanismName := "otpDeliveryMechanismName_example" // string | Name of the OTP Delivery Mechanism
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**otpDeliveryMechanismName** | **string** | Name of the OTP Delivery Mechanism to be read | 
+**otpDeliveryMechanismName** | **string** | Name of the OTP Delivery Mechanism | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    otpDeliveryMechanismName := "otpDeliveryMechanismName_example" // string | Name of the OTP Delivery Mechanism to be updated
+    otpDeliveryMechanismName := "otpDeliveryMechanismName_example" // string | Name of the OTP Delivery Mechanism
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing OTP Delivery Mechanism
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**otpDeliveryMechanismName** | **string** | Name of the OTP Delivery Mechanism to be updated | 
+**otpDeliveryMechanismName** | **string** | Name of the OTP Delivery Mechanism | 
 
 ### Other Parameters
 

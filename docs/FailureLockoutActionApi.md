@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    failureLockoutActionName := "failureLockoutActionName_example" // string | Name of the Failure Lockout Action to be deleted
+    failureLockoutActionName := "failureLockoutActionName_example" // string | Name of the Failure Lockout Action
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**failureLockoutActionName** | **string** | Name of the Failure Lockout Action to be deleted | 
+**failureLockoutActionName** | **string** | Name of the Failure Lockout Action | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    failureLockoutActionName := "failureLockoutActionName_example" // string | Name of the Failure Lockout Action to be read
+    failureLockoutActionName := "failureLockoutActionName_example" // string | Name of the Failure Lockout Action
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**failureLockoutActionName** | **string** | Name of the Failure Lockout Action to be read | 
+**failureLockoutActionName** | **string** | Name of the Failure Lockout Action | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    failureLockoutActionName := "failureLockoutActionName_example" // string | Name of the Failure Lockout Action to be updated
+    failureLockoutActionName := "failureLockoutActionName_example" // string | Name of the Failure Lockout Action
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Failure Lockout Action
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**failureLockoutActionName** | **string** | Name of the Failure Lockout Action to be updated | 
+**failureLockoutActionName** | **string** | Name of the Failure Lockout Action | 
 
 ### Other Parameters
 

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    locationName := "locationName_example" // string | Name of the Location to be deleted
+    locationName := "locationName_example" // string | Name of the Location
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**locationName** | **string** | Name of the Location to be deleted | 
+**locationName** | **string** | Name of the Location | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    locationName := "locationName_example" // string | Name of the Location to be read
+    locationName := "locationName_example" // string | Name of the Location
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**locationName** | **string** | Name of the Location to be read | 
+**locationName** | **string** | Name of the Location | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    locationName := "locationName_example" // string | Name of the Location to be updated
+    locationName := "locationName_example" // string | Name of the Location
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Location
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**locationName** | **string** | Name of the Location to be updated | 
+**locationName** | **string** | Name of the Location | 
 
 ### Other Parameters
 

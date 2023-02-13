@@ -46,7 +46,7 @@ paths:
       summary: Delete a Monitor Provider
       operationId: delete-monitor-provider
       parameters:
-      - description: Name of the Monitor Provider to be deleted
+      - description: Name of the Monitor Provider
         explode: false
         in: path
         name: monitor-provider-name
@@ -73,7 +73,7 @@ paths:
       summary: Returns a single Monitor Provider
       operationId: get-monitor-provider
       parameters:
-      - description: Name of the Monitor Provider to be read
+      - description: Name of the Monitor Provider
         explode: false
         in: path
         name: monitor-provider-name
@@ -113,7 +113,7 @@ paths:
       summary: Update an existing Monitor Provider by name
       operationId: update-monitor-provider
       parameters:
-      - description: Name of the Monitor Provider to be updated
+      - description: Name of the Monitor Provider
         explode: false
         in: path
         name: monitor-provider-name

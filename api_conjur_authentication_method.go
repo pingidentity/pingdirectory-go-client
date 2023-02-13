@@ -146,7 +146,7 @@ func (r ApiDeleteConjurAuthenticationMethodRequest) Execute() (*http.Response, e
 DeleteConjurAuthenticationMethod Delete a Conjur Authentication Method
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be deleted
+	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method
 	@return ApiDeleteConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) DeleteConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiDeleteConjurAuthenticationMethodRequest {
@@ -236,7 +236,7 @@ func (r ApiGetConjurAuthenticationMethodRequest) Execute() (*ApiKeyConjurAuthent
 GetConjurAuthenticationMethod Returns a single Conjur Authentication Method
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be read
+	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method
 	@return ApiGetConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) GetConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiGetConjurAuthenticationMethodRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateConjurAuthenticationMethodRequest) Execute() (*ApiKeyConjurAuth
 UpdateConjurAuthenticationMethod Update an existing Conjur Authentication Method by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method to be updated
+	@param conjurAuthenticationMethodName Name of the Conjur Authentication Method
 	@return ApiUpdateConjurAuthenticationMethodRequest
 */
 func (a *ConjurAuthenticationMethodApiService) UpdateConjurAuthenticationMethod(ctx context.Context, conjurAuthenticationMethodName string) ApiUpdateConjurAuthenticationMethodRequest {

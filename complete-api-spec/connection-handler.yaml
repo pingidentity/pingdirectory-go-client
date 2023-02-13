@@ -53,7 +53,7 @@ paths:
       summary: Delete a Connection Handler
       operationId: delete-connection-handler
       parameters:
-      - description: Name of the Connection Handler to be deleted
+      - description: Name of the Connection Handler
         explode: false
         in: path
         name: connection-handler-name
@@ -80,7 +80,7 @@ paths:
       summary: Returns a single Connection Handler
       operationId: get-connection-handler
       parameters:
-      - description: Name of the Connection Handler to be read
+      - description: Name of the Connection Handler
         explode: false
         in: path
         name: connection-handler-name
@@ -113,7 +113,7 @@ paths:
       summary: Update an existing Connection Handler by name
       operationId: update-connection-handler
       parameters:
-      - description: Name of the Connection Handler to be updated
+      - description: Name of the Connection Handler
         explode: false
         in: path
         name: connection-handler-name

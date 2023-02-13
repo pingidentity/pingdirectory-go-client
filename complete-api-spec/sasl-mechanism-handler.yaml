@@ -53,7 +53,7 @@ paths:
       summary: Delete a SASL Mechanism Handler
       operationId: delete-sasl-mechanism-handler
       parameters:
-      - description: Name of the SASL Mechanism Handler to be deleted
+      - description: Name of the SASL Mechanism Handler
         explode: false
         in: path
         name: sasl-mechanism-handler-name
@@ -80,7 +80,7 @@ paths:
       summary: Returns a single SASL Mechanism Handler
       operationId: get-sasl-mechanism-handler
       parameters:
-      - description: Name of the SASL Mechanism Handler to be read
+      - description: Name of the SASL Mechanism Handler
         explode: false
         in: path
         name: sasl-mechanism-handler-name
@@ -123,7 +123,7 @@ paths:
       summary: Update an existing SASL Mechanism Handler by name
       operationId: update-sasl-mechanism-handler
       parameters:
-      - description: Name of the SASL Mechanism Handler to be updated
+      - description: Name of the SASL Mechanism Handler
         explode: false
         in: path
         name: sasl-mechanism-handler-name

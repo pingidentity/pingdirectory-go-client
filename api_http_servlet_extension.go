@@ -146,7 +146,7 @@ func (r ApiDeleteHttpServletExtensionRequest) Execute() (*http.Response, error) 
 DeleteHttpServletExtension Delete a HTTP Servlet Extension
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param httpServletExtensionName Name of the HTTP Servlet Extension to be deleted
+	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiDeleteHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) DeleteHttpServletExtension(ctx context.Context, httpServletExtensionName string) ApiDeleteHttpServletExtensionRequest {
@@ -236,7 +236,7 @@ func (r ApiGetHttpServletExtensionRequest) Execute() (*GetHttpServletExtension20
 GetHttpServletExtension Returns a single HTTP Servlet Extension
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param httpServletExtensionName Name of the HTTP Servlet Extension to be read
+	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiGetHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) GetHttpServletExtension(ctx context.Context, httpServletExtensionName string) ApiGetHttpServletExtensionRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateHttpServletExtensionRequest) Execute() (*GetHttpServletExtensio
 UpdateHttpServletExtension Update an existing HTTP Servlet Extension by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param httpServletExtensionName Name of the HTTP Servlet Extension to be updated
+	@param httpServletExtensionName Name of the HTTP Servlet Extension
 	@return ApiUpdateHttpServletExtensionRequest
 */
 func (a *HttpServletExtensionApiService) UpdateHttpServletExtension(ctx context.Context, httpServletExtensionName string) ApiUpdateHttpServletExtensionRequest {

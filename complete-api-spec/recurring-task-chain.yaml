@@ -45,7 +45,7 @@ paths:
       summary: Delete a Recurring Task Chain
       operationId: delete-recurring-task-chain
       parameters:
-      - description: Name of the Recurring Task Chain to be deleted
+      - description: Name of the Recurring Task Chain
         explode: false
         in: path
         name: recurring-task-chain-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Recurring Task Chain
       operationId: get-recurring-task-chain
       parameters:
-      - description: Name of the Recurring Task Chain to be read
+      - description: Name of the Recurring Task Chain
         explode: false
         in: path
         name: recurring-task-chain-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Recurring Task Chain by name
       operationId: update-recurring-task-chain
       parameters:
-      - description: Name of the Recurring Task Chain to be updated
+      - description: Name of the Recurring Task Chain
         explode: false
         in: path
         name: recurring-task-chain-name
@@ -219,30 +219,52 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:recurring-task-chain"
-    Enumrecurring-task-chain-scheduledMonthProp:
+    Enumrecurring-task-chain-scheduledDayOfTheMonthProp:
       type: string
       enum:
-      - "january"
-      - "february"
-      - "march"
-      - "april"
-      - "may"
-      - "june"
-      - "july"
-      - "august"
-      - "september"
-      - "october"
-      - "november"
-      - "december"
+      - "day-01"
+      - "day-02"
+      - "day-03"
+      - "day-04"
+      - "day-05"
+      - "day-06"
+      - "day-07"
+      - "day-08"
+      - "day-09"
+      - "day-10"
+      - "day-11"
+      - "day-12"
+      - "day-13"
+      - "day-14"
+      - "day-15"
+      - "day-16"
+      - "day-17"
+      - "day-18"
+      - "day-19"
+      - "day-20"
+      - "day-21"
+      - "day-22"
+      - "day-23"
+      - "day-24"
+      - "day-25"
+      - "day-26"
+      - "day-27"
+      - "day-28"
+      - "day-29"
+      - "day-30"
+      - "day-31"
+      - "next-to-last-day-of-the-month"
+      - "last-day-of-the-month"
       description: >-
-          The months of the year in which instances of this Recurring Task Chain may be scheduled to start.
-    Enumrecurring-task-chain-interruptedByShutdownBehaviorProp:
+          The specific days of the month on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-month, then this property must have one or more values; otherwise, it must be left undefined.
+    Enumrecurring-task-chain-scheduledDateSelectionTypeProp:
       type: string
       enum:
-      - "cancel-interrupted-task-and-dependencies"
-      - "cancel-only-interrupted-task-but-preserve-dependencies"
+      - "every-day"
+      - "selected-days-of-the-week"
+      - "selected-days-of-the-month"
       description: >-
-          Specifies the behavior that the server should exhibit if it is shut down or abnormally terminated while an instance of this Recurring Task Chain is running.
+          The mechanism used to determine the dates on which instances of this Recurring Task Chain may be scheduled to start.
     Enumrecurring-task-chain-scheduledDayOfTheWeekProp:
       type: string
       enum:
@@ -297,6 +319,30 @@ components:
       - "last-saturday-of-the-month"
       description: >-
           The specific days of the week on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-week, then this property must have one or more values; otherwise, it must be left undefined.
+    Enumrecurring-task-chain-interruptedByShutdownBehaviorProp:
+      type: string
+      enum:
+      - "cancel-interrupted-task-and-dependencies"
+      - "cancel-only-interrupted-task-but-preserve-dependencies"
+      description: >-
+          Specifies the behavior that the server should exhibit if it is shut down or abnormally terminated while an instance of this Recurring Task Chain is running.
+    Enumrecurring-task-chain-scheduledMonthProp:
+      type: string
+      enum:
+      - "january"
+      - "february"
+      - "march"
+      - "april"
+      - "may"
+      - "june"
+      - "july"
+      - "august"
+      - "september"
+      - "october"
+      - "november"
+      - "december"
+      description: >-
+          The months of the year in which instances of this Recurring Task Chain may be scheduled to start.
     Enumrecurring-task-chain-serverOfflineAtStartTimeBehaviorProp:
       type: string
       enum:
@@ -304,52 +350,6 @@ components:
       - "cancel-iteration-and-wait-for-next-scheduled-start-time"
       description: >-
           Specifies the behavior that the server should exhibit if it is offline when the start time arrives for the tasks in this Recurring Task Chain.
-    Enumrecurring-task-chain-scheduledDayOfTheMonthProp:
-      type: string
-      enum:
-      - "day-01"
-      - "day-02"
-      - "day-03"
-      - "day-04"
-      - "day-05"
-      - "day-06"
-      - "day-07"
-      - "day-08"
-      - "day-09"
-      - "day-10"
-      - "day-11"
-      - "day-12"
-      - "day-13"
-      - "day-14"
-      - "day-15"
-      - "day-16"
-      - "day-17"
-      - "day-18"
-      - "day-19"
-      - "day-20"
-      - "day-21"
-      - "day-22"
-      - "day-23"
-      - "day-24"
-      - "day-25"
-      - "day-26"
-      - "day-27"
-      - "day-28"
-      - "day-29"
-      - "day-30"
-      - "day-31"
-      - "next-to-last-day-of-the-month"
-      - "last-day-of-the-month"
-      description: >-
-          The specific days of the month on which instances of this Recurring Task Chain may be scheduled to start. If the scheduled-day-selection-type property has a value of selected-days-of-the-month, then this property must have one or more values; otherwise, it must be left undefined.
-    Enumrecurring-task-chain-scheduledDateSelectionTypeProp:
-      type: string
-      enum:
-      - "every-day"
-      - "selected-days-of-the-week"
-      - "selected-days-of-the-month"
-      description: >-
-          The mechanism used to determine the dates on which instances of this Recurring Task Chain may be scheduled to start.
     updateRequest:
       type: object
       properties:

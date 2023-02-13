@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights to be deleted
+    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights to be deleted | 
+**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights to be read
+    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights to be read | 
+**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights to be updated
+    delegatedAdminRightsName := "delegatedAdminRightsName_example" // string | Name of the Delegated Admin Rights
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Delegated Admin Rights
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights to be updated | 
+**delegatedAdminRightsName** | **string** | Name of the Delegated Admin Rights | 
 
 ### Other Parameters
 

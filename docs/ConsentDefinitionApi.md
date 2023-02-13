@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition to be deleted
+    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**consentDefinitionName** | **string** | Name of the Consent Definition to be deleted | 
+**consentDefinitionName** | **string** | Name of the Consent Definition | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition to be read
+    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**consentDefinitionName** | **string** | Name of the Consent Definition to be read | 
+**consentDefinitionName** | **string** | Name of the Consent Definition | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition to be updated
+    consentDefinitionName := "consentDefinitionName_example" // string | Name of the Consent Definition
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Consent Definition
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**consentDefinitionName** | **string** | Name of the Consent Definition to be updated | 
+**consentDefinitionName** | **string** | Name of the Consent Definition | 
 
 ### Other Parameters
 

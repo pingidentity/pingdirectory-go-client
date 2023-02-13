@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    accountStatusNotificationHandlerName := "accountStatusNotificationHandlerName_example" // string | Name of the Account Status Notification Handler to be deleted
+    accountStatusNotificationHandlerName := "accountStatusNotificationHandlerName_example" // string | Name of the Account Status Notification Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountStatusNotificationHandlerName** | **string** | Name of the Account Status Notification Handler to be deleted | 
+**accountStatusNotificationHandlerName** | **string** | Name of the Account Status Notification Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    accountStatusNotificationHandlerName := "accountStatusNotificationHandlerName_example" // string | Name of the Account Status Notification Handler to be read
+    accountStatusNotificationHandlerName := "accountStatusNotificationHandlerName_example" // string | Name of the Account Status Notification Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountStatusNotificationHandlerName** | **string** | Name of the Account Status Notification Handler to be read | 
+**accountStatusNotificationHandlerName** | **string** | Name of the Account Status Notification Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    accountStatusNotificationHandlerName := "accountStatusNotificationHandlerName_example" // string | Name of the Account Status Notification Handler to be updated
+    accountStatusNotificationHandlerName := "accountStatusNotificationHandlerName_example" // string | Name of the Account Status Notification Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Account Status Notification Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**accountStatusNotificationHandlerName** | **string** | Name of the Account Status Notification Handler to be updated | 
+**accountStatusNotificationHandlerName** | **string** | Name of the Account Status Notification Handler | 
 
 ### Other Parameters
 

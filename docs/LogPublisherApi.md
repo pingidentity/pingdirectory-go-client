@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher to be deleted
+    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logPublisherName** | **string** | Name of the Log Publisher to be deleted | 
+**logPublisherName** | **string** | Name of the Log Publisher | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher to be read
+    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logPublisherName** | **string** | Name of the Log Publisher to be read | 
+**logPublisherName** | **string** | Name of the Log Publisher | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher to be updated
+    logPublisherName := "logPublisherName_example" // string | Name of the Log Publisher
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log Publisher
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logPublisherName** | **string** | Name of the Log Publisher to be updated | 
+**logPublisherName** | **string** | Name of the Log Publisher | 
 
 ### Other Parameters
 

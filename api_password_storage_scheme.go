@@ -146,7 +146,7 @@ func (r ApiDeletePasswordStorageSchemeRequest) Execute() (*http.Response, error)
 DeletePasswordStorageScheme Delete a Password Storage Scheme
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordStorageSchemeName Name of the Password Storage Scheme to be deleted
+	@param passwordStorageSchemeName Name of the Password Storage Scheme
 	@return ApiDeletePasswordStorageSchemeRequest
 */
 func (a *PasswordStorageSchemeApiService) DeletePasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiDeletePasswordStorageSchemeRequest {
@@ -236,7 +236,7 @@ func (r ApiGetPasswordStorageSchemeRequest) Execute() (*GetPasswordStorageScheme
 GetPasswordStorageScheme Returns a single Password Storage Scheme
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordStorageSchemeName Name of the Password Storage Scheme to be read
+	@param passwordStorageSchemeName Name of the Password Storage Scheme
 	@return ApiGetPasswordStorageSchemeRequest
 */
 func (a *PasswordStorageSchemeApiService) GetPasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiGetPasswordStorageSchemeRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdatePasswordStorageSchemeRequest) Execute() (*GetPasswordStorageSch
 UpdatePasswordStorageScheme Update an existing Password Storage Scheme by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordStorageSchemeName Name of the Password Storage Scheme to be updated
+	@param passwordStorageSchemeName Name of the Password Storage Scheme
 	@return ApiUpdatePasswordStorageSchemeRequest
 */
 func (a *PasswordStorageSchemeApiService) UpdatePasswordStorageScheme(ctx context.Context, passwordStorageSchemeName string) ApiUpdatePasswordStorageSchemeRequest {

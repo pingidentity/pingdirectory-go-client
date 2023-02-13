@@ -45,7 +45,7 @@ paths:
       summary: Delete a Topology Admin User
       operationId: delete-topology-admin-user
       parameters:
-      - description: Name of the Topology Admin User to be deleted
+      - description: Name of the Topology Admin User
         explode: false
         in: path
         name: topology-admin-user-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Topology Admin User
       operationId: get-topology-admin-user
       parameters:
-      - description: Name of the Topology Admin User to be read
+      - description: Name of the Topology Admin User
         explode: false
         in: path
         name: topology-admin-user-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Topology Admin User by name
       operationId: update-topology-admin-user
       parameters:
-      - description: Name of the Topology Admin User to be updated
+      - description: Name of the Topology Admin User
         explode: false
         in: path
         name: topology-admin-user-name
@@ -345,6 +345,14 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:topology-admin-user"
+    Enumtopology-admin-user-isProxyableProp:
+      type: string
+      enum:
+      - "allowed"
+      - "prohibited"
+      - "required"
+      description: >-
+          This can be used to indicate whether the User can be used as an alternate authorization identity (using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity).
     Enumtopology-admin-user-privilegeProp:
       type: string
       enum:
@@ -430,14 +438,6 @@ components:
       - "-permit-replace-certificate-request"
       description: >-
           Privileges that are either explicitly granted or revoked from the root user. Privileges can be revoked by including a minus sign (-) before the privilege name. This is stored in the ds-privilege-name LDAP attribute.
-    Enumtopology-admin-user-isProxyableProp:
-      type: string
-      enum:
-      - "allowed"
-      - "prohibited"
-      - "required"
-      description: >-
-          This can be used to indicate whether the User can be used as an alternate authorization identity (using the proxied authorization v1 or v2 control, the intermediate client control, or a SASL mechanism that allows specifying an alternate authorization identity).
     updateRequest:
       type: object
       properties:

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    passThroughAuthenticationHandlerName := "passThroughAuthenticationHandlerName_example" // string | Name of the Pass Through Authentication Handler to be deleted
+    passThroughAuthenticationHandlerName := "passThroughAuthenticationHandlerName_example" // string | Name of the Pass Through Authentication Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passThroughAuthenticationHandlerName** | **string** | Name of the Pass Through Authentication Handler to be deleted | 
+**passThroughAuthenticationHandlerName** | **string** | Name of the Pass Through Authentication Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    passThroughAuthenticationHandlerName := "passThroughAuthenticationHandlerName_example" // string | Name of the Pass Through Authentication Handler to be read
+    passThroughAuthenticationHandlerName := "passThroughAuthenticationHandlerName_example" // string | Name of the Pass Through Authentication Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passThroughAuthenticationHandlerName** | **string** | Name of the Pass Through Authentication Handler to be read | 
+**passThroughAuthenticationHandlerName** | **string** | Name of the Pass Through Authentication Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    passThroughAuthenticationHandlerName := "passThroughAuthenticationHandlerName_example" // string | Name of the Pass Through Authentication Handler to be updated
+    passThroughAuthenticationHandlerName := "passThroughAuthenticationHandlerName_example" // string | Name of the Pass Through Authentication Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Pass Through Authentication Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passThroughAuthenticationHandlerName** | **string** | Name of the Pass Through Authentication Handler to be updated | 
+**passThroughAuthenticationHandlerName** | **string** | Name of the Pass Through Authentication Handler | 
 
 ### Other Parameters
 

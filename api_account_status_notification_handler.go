@@ -146,7 +146,7 @@ func (r ApiDeleteAccountStatusNotificationHandlerRequest) Execute() (*http.Respo
 DeleteAccountStatusNotificationHandler Delete a Account Status Notification Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be deleted
+	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler
 	@return ApiDeleteAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiDeleteAccountStatusNotificationHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetAccountStatusNotificationHandlerRequest) Execute() (*AddAccountSta
 GetAccountStatusNotificationHandler Returns a single Account Status Notification Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be read
+	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler
 	@return ApiGetAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiGetAccountStatusNotificationHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateAccountStatusNotificationHandlerRequest) Execute() (*AddAccount
 UpdateAccountStatusNotificationHandler Update an existing Account Status Notification Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler to be updated
+	@param accountStatusNotificationHandlerName Name of the Account Status Notification Handler
 	@return ApiUpdateAccountStatusNotificationHandlerRequest
 */
 func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotificationHandler(ctx context.Context, accountStatusNotificationHandlerName string) ApiUpdateAccountStatusNotificationHandlerRequest {

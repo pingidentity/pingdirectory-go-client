@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    logRetentionPolicyName := "logRetentionPolicyName_example" // string | Name of the Log Retention Policy to be deleted
+    logRetentionPolicyName := "logRetentionPolicyName_example" // string | Name of the Log Retention Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logRetentionPolicyName** | **string** | Name of the Log Retention Policy to be deleted | 
+**logRetentionPolicyName** | **string** | Name of the Log Retention Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    logRetentionPolicyName := "logRetentionPolicyName_example" // string | Name of the Log Retention Policy to be read
+    logRetentionPolicyName := "logRetentionPolicyName_example" // string | Name of the Log Retention Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logRetentionPolicyName** | **string** | Name of the Log Retention Policy to be read | 
+**logRetentionPolicyName** | **string** | Name of the Log Retention Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    logRetentionPolicyName := "logRetentionPolicyName_example" // string | Name of the Log Retention Policy to be updated
+    logRetentionPolicyName := "logRetentionPolicyName_example" // string | Name of the Log Retention Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log Retention Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logRetentionPolicyName** | **string** | Name of the Log Retention Policy to be updated | 
+**logRetentionPolicyName** | **string** | Name of the Log Retention Policy | 
 
 ### Other Parameters
 

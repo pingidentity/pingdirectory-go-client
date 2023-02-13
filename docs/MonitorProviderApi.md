@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    monitorProviderName := "monitorProviderName_example" // string | Name of the Monitor Provider to be deleted
+    monitorProviderName := "monitorProviderName_example" // string | Name of the Monitor Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**monitorProviderName** | **string** | Name of the Monitor Provider to be deleted | 
+**monitorProviderName** | **string** | Name of the Monitor Provider | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    monitorProviderName := "monitorProviderName_example" // string | Name of the Monitor Provider to be read
+    monitorProviderName := "monitorProviderName_example" // string | Name of the Monitor Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**monitorProviderName** | **string** | Name of the Monitor Provider to be read | 
+**monitorProviderName** | **string** | Name of the Monitor Provider | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    monitorProviderName := "monitorProviderName_example" // string | Name of the Monitor Provider to be updated
+    monitorProviderName := "monitorProviderName_example" // string | Name of the Monitor Provider
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Monitor Provider
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**monitorProviderName** | **string** | Name of the Monitor Provider to be updated | 
+**monitorProviderName** | **string** | Name of the Monitor Provider | 
 
 ### Other Parameters
 

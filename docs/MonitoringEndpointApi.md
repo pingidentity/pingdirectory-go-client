@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    monitoringEndpointName := "monitoringEndpointName_example" // string | Name of the Monitoring Endpoint to be deleted
+    monitoringEndpointName := "monitoringEndpointName_example" // string | Name of the Monitoring Endpoint
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**monitoringEndpointName** | **string** | Name of the Monitoring Endpoint to be deleted | 
+**monitoringEndpointName** | **string** | Name of the Monitoring Endpoint | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    monitoringEndpointName := "monitoringEndpointName_example" // string | Name of the Monitoring Endpoint to be read
+    monitoringEndpointName := "monitoringEndpointName_example" // string | Name of the Monitoring Endpoint
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**monitoringEndpointName** | **string** | Name of the Monitoring Endpoint to be read | 
+**monitoringEndpointName** | **string** | Name of the Monitoring Endpoint | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    monitoringEndpointName := "monitoringEndpointName_example" // string | Name of the Monitoring Endpoint to be updated
+    monitoringEndpointName := "monitoringEndpointName_example" // string | Name of the Monitoring Endpoint
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Monitoring Endpoint
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**monitoringEndpointName** | **string** | Name of the Monitoring Endpoint to be updated | 
+**monitoringEndpointName** | **string** | Name of the Monitoring Endpoint | 
 
 ### Other Parameters
 

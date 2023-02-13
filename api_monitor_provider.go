@@ -146,7 +146,7 @@ func (r ApiDeleteMonitorProviderRequest) Execute() (*http.Response, error) {
 DeleteMonitorProvider Delete a Monitor Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param monitorProviderName Name of the Monitor Provider to be deleted
+	@param monitorProviderName Name of the Monitor Provider
 	@return ApiDeleteMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) DeleteMonitorProvider(ctx context.Context, monitorProviderName string) ApiDeleteMonitorProviderRequest {
@@ -236,7 +236,7 @@ func (r ApiGetMonitorProviderRequest) Execute() (*GetMonitorProvider200Response,
 GetMonitorProvider Returns a single Monitor Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param monitorProviderName Name of the Monitor Provider to be read
+	@param monitorProviderName Name of the Monitor Provider
 	@return ApiGetMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) GetMonitorProvider(ctx context.Context, monitorProviderName string) ApiGetMonitorProviderRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateMonitorProviderRequest) Execute() (*GetMonitorProvider200Respon
 UpdateMonitorProvider Update an existing Monitor Provider by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param monitorProviderName Name of the Monitor Provider to be updated
+	@param monitorProviderName Name of the Monitor Provider
 	@return ApiUpdateMonitorProviderRequest
 */
 func (a *MonitorProviderApiService) UpdateMonitorProvider(ctx context.Context, monitorProviderName string) ApiUpdateMonitorProviderRequest {

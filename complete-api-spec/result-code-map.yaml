@@ -45,7 +45,7 @@ paths:
       summary: Delete a Result Code Map
       operationId: delete-result-code-map
       parameters:
-      - description: Name of the Result Code Map to be deleted
+      - description: Name of the Result Code Map
         explode: false
         in: path
         name: result-code-map-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Result Code Map
       operationId: get-result-code-map
       parameters:
-      - description: Name of the Result Code Map to be read
+      - description: Name of the Result Code Map
         explode: false
         in: path
         name: result-code-map-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Result Code Map by name
       operationId: update-result-code-map
       parameters:
-      - description: Name of the Result Code Map to be updated
+      - description: Name of the Result Code Map
         explode: false
         in: path
         name: result-code-map-name

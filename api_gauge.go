@@ -146,7 +146,7 @@ func (r ApiDeleteGaugeRequest) Execute() (*http.Response, error) {
 DeleteGauge Delete a Gauge
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param gaugeName Name of the Gauge to be deleted
+	@param gaugeName Name of the Gauge
 	@return ApiDeleteGaugeRequest
 */
 func (a *GaugeApiService) DeleteGauge(ctx context.Context, gaugeName string) ApiDeleteGaugeRequest {
@@ -236,7 +236,7 @@ func (r ApiGetGaugeRequest) Execute() (*AddGauge200Response, *http.Response, err
 GetGauge Returns a single Gauge
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param gaugeName Name of the Gauge to be read
+	@param gaugeName Name of the Gauge
 	@return ApiGetGaugeRequest
 */
 func (a *GaugeApiService) GetGauge(ctx context.Context, gaugeName string) ApiGetGaugeRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateGaugeRequest) Execute() (*AddGauge200Response, *http.Response, 
 UpdateGauge Update an existing Gauge by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param gaugeName Name of the Gauge to be updated
+	@param gaugeName Name of the Gauge
 	@return ApiUpdateGaugeRequest
 */
 func (a *GaugeApiService) UpdateGauge(ctx context.Context, gaugeName string) ApiUpdateGaugeRequest {

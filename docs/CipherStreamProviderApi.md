@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    cipherStreamProviderName := "cipherStreamProviderName_example" // string | Name of the Cipher Stream Provider to be deleted
+    cipherStreamProviderName := "cipherStreamProviderName_example" // string | Name of the Cipher Stream Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cipherStreamProviderName** | **string** | Name of the Cipher Stream Provider to be deleted | 
+**cipherStreamProviderName** | **string** | Name of the Cipher Stream Provider | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    cipherStreamProviderName := "cipherStreamProviderName_example" // string | Name of the Cipher Stream Provider to be read
+    cipherStreamProviderName := "cipherStreamProviderName_example" // string | Name of the Cipher Stream Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cipherStreamProviderName** | **string** | Name of the Cipher Stream Provider to be read | 
+**cipherStreamProviderName** | **string** | Name of the Cipher Stream Provider | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    cipherStreamProviderName := "cipherStreamProviderName_example" // string | Name of the Cipher Stream Provider to be updated
+    cipherStreamProviderName := "cipherStreamProviderName_example" // string | Name of the Cipher Stream Provider
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Cipher Stream Provider
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cipherStreamProviderName** | **string** | Name of the Cipher Stream Provider to be updated | 
+**cipherStreamProviderName** | **string** | Name of the Cipher Stream Provider | 
 
 ### Other Parameters
 

@@ -15,7 +15,7 @@ paths:
       summary: Returns a single Server Instance
       operationId: get-server-instance
       parameters:
-      - description: Name of the Server Instance to be read
+      - description: Name of the Server Instance
         explode: false
         in: path
         name: server-instance-name
@@ -49,7 +49,7 @@ paths:
       summary: Update an existing Server Instance by name
       operationId: update-server-instance
       parameters:
-      - description: Name of the Server Instance to be updated
+      - description: Name of the Server Instance
         explode: false
         in: path
         name: server-instance-name
@@ -88,6 +88,366 @@ paths:
       - basicAuth: []
       tags:
       - server-instance
+  /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}:
+    get:
+      summary: Returns a single Server Instance Listener
+      operationId: get-server-instance-listener
+      parameters:
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-server-instance-listener-response'
+                - $ref: '#/components/schemas/http-server-instance-listener-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Server Instance Listener does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance-listener
+    patch:
+      summary: Update an existing Server Instance Listener by name
+      operationId: update-server-instance-listener
+      parameters:
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Server Instance Listener
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/ldap-server-instance-listener-response'
+                - $ref: '#/components/schemas/http-server-instance-listener-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Server Instance Listener does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - server-instance-listener
+  /server-instances/{server-instance-name}/mac-secret-keys/{mac-secret-key-name}:
+    get:
+      summary: Returns a single Mac Secret Key
+      operationId: get-mac-secret-key
+      parameters:
+      - description: Name of the Mac Secret Key
+        explode: false
+        in: path
+        name: mac-secret-key-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mac-secret-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Mac Secret Key does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - mac-secret-key
+    patch:
+      summary: Update an existing Mac Secret Key by name
+      operationId: update-mac-secret-key
+      parameters:
+      - description: Name of the Mac Secret Key
+        explode: false
+        in: path
+        name: mac-secret-key-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Mac Secret Key
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mac-secret-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Mac Secret Key does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - mac-secret-key
+  /server-instances/{server-instance-name}/cipher-secret-keys/{cipher-secret-key-name}:
+    get:
+      summary: Returns a single Cipher Secret Key
+      operationId: get-cipher-secret-key
+      parameters:
+      - description: Name of the Cipher Secret Key
+        explode: false
+        in: path
+        name: cipher-secret-key-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-secret-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Cipher Secret Key does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - cipher-secret-key
+    patch:
+      summary: Update an existing Cipher Secret Key by name
+      operationId: update-cipher-secret-key
+      parameters:
+      - description: Name of the Cipher Secret Key
+        explode: false
+        in: path
+        name: cipher-secret-key-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Cipher Secret Key
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cipher-secret-key-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Cipher Secret Key does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - cipher-secret-key
+  /server-instances/{server-instance-name}/server-instance-listeners/{server-instance-listener-name}/inter-server-authentication-info/{inter-server-authentication-info-name}:
+    get:
+      summary: Returns a single Inter Server Authentication Info
+      operationId: get-inter-server-authentication-info
+      parameters:
+      - description: Name of the Inter Server Authentication Info
+        explode: false
+        in: path
+        name: inter-server-authentication-info-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
+                - $ref: '#/components/schemas/certificate-inter-server-authentication-info-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Inter Server Authentication Info does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - inter-server-authentication-info
+    patch:
+      summary: Update an existing Inter Server Authentication Info by name
+      operationId: update-inter-server-authentication-info
+      parameters:
+      - description: Name of the Inter Server Authentication Info
+        explode: false
+        in: path
+        name: inter-server-authentication-info-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance Listener
+        explode: false
+        in: path
+        name: server-instance-listener-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Server Instance
+        explode: false
+        in: path
+        name: server-instance-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Inter Server Authentication Info
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/password-inter-server-authentication-info-response'
+                - $ref: '#/components/schemas/certificate-inter-server-authentication-info-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Inter Server Authentication Info does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - inter-server-authentication-info
 components:
   schemas:
     proxy-server-instance-response:
@@ -650,6 +1010,226 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:server-instance:sync"
+    ldap-server-instance-listener-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumldap-server-instance-listenerSchemaUrn'
+          id:
+            description: Name of the Server Instance Listener
+            type: string
+          serverLDAPPort:
+            type: integer
+            description: >-
+                The TCP port number on which the LDAP server is listening.
+          connectionSecurity:
+            $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+          listenerCertificate:
+            type: string
+            description: >-
+                The public component of the certificate that the listener is expected to present to clients. When establishing a connection to this server, only the certificate(s) listed here will be trusted.
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
+        required:
+        - schemas
+        - id
+    Enumldap-server-instance-listenerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-instance-listener:ldap"
+    http-server-instance-listener-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumhttp-server-instance-listenerSchemaUrn'
+          id:
+            description: Name of the Server Instance Listener
+            type: string
+          listenAddress:
+            type: string
+            description: >-
+                If the server is listening on a particular address different from the hostname, then this property may be used to specify the address on which to listen for connections from HTTP clients.
+          serverHTTPPort:
+            type: integer
+            description: >-
+                The TCP port number on which the HTTP server is listening.
+          connectionSecurity:
+            $ref: '#/components/schemas/Enumserver-instance-listener-connectionSecurityProp'
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumserver-instance-listener-purposeProp'
+        required:
+        - schemas
+        - id
+    Enumhttp-server-instance-listenerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:server-instance-listener:http"
+    mac-secret-key-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummac-secret-keySchemaUrn'
+          macAlgorithmName:
+            type: string
+            description: >-
+                The algorithm name used to generate this MAC key, e.g. HmacMD5, HmacSHA1, HMacSHA256, etc.
+          keyID:
+            type: string
+            description: >-
+                The unique system-generated identifier for the Secret Key.
+          isCompromised:
+            type: boolean
+            description: >-
+                If the key is compromised, an administrator may set this flag to immediately trigger the creation of a new secret key. After the new key is generated, the value of this property will be reset to false.
+          symmetricKey:
+            type: array
+            items:
+              type: string
+            description: >-
+                The symmetric key that is used for both encryption of plain text and decryption of cipher text. This stores the secret key for each server instance encrypted with that server's inter-server certificate.
+          keyLengthBits:
+            type: integer
+            description: >-
+                The length of the key in bits.
+        required:
+        - keyID
+        - keyLengthBits
+    Enummac-secret-keySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:mac-secret-key"
+    cipher-secret-key-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcipher-secret-keySchemaUrn'
+          cipherTransformationName:
+            type: string
+            description: >-
+                The algorithm name used to produce this cipher, e.g. AES/CBC/PKCS5Padding.
+          initializationVectorLengthBits:
+            type: integer
+            description: >-
+                The initialization vector length of the cipher in bits.
+          keyID:
+            type: string
+            description: >-
+                The unique system-generated identifier for the Secret Key.
+          isCompromised:
+            type: boolean
+            description: >-
+                If the key is compromised, an administrator may set this flag to immediately trigger the creation of a new secret key. After the new key is generated, the value of this property will be reset to false.
+          symmetricKey:
+            type: array
+            items:
+              type: string
+            description: >-
+                The symmetric key that is used for both encryption of plain text and decryption of cipher text. This stores the secret key for each server instance encrypted with that server's inter-server certificate.
+          keyLengthBits:
+            type: integer
+            description: >-
+                The length of the key in bits.
+        required:
+        - keyID
+        - keyLengthBits
+    Enumcipher-secret-keySchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:cipher-secret-key"
+    password-inter-server-authentication-info-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumpassword-inter-server-authentication-infoSchemaUrn'
+          id:
+            description: Name of the Inter Server Authentication Info
+            type: string
+          authenticationType:
+            $ref: '#/components/schemas/Enuminter-server-authentication-info-authenticationTypeProp'
+          bindDN:
+            type: string
+            description: >-
+                A DN of the username that should be used for the bind request.
+          username:
+            type: string
+            description: >-
+                The username that should be used for the bind request.
+          password:
+            type: string
+            format: password
+            description: >-
+                The password for the username or bind-dn.
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
+        required:
+        - schemas
+        - password
+        - id
+    Enumpassword-inter-server-authentication-infoSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:password"
+    certificate-inter-server-authentication-info-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumcertificate-inter-server-authentication-infoSchemaUrn'
+          id:
+            description: Name of the Inter Server Authentication Info
+            type: string
+          purpose:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enuminter-server-authentication-info-purposeProp'
+        required:
+        - schemas
+        - id
+    Enumcertificate-inter-server-authentication-infoSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:inter-server-authentication-info:certificate"
     Enumserver-instance-preferredSecurityProp:
       type: string
       enum:
@@ -658,6 +1238,33 @@ components:
       - "starttls"
       description: >-
           Specifies the preferred mechanism to use for securing connections to the server.
+    Enumserver-instance-listener-connectionSecurityProp:
+      type: string
+      enum:
+      - "none"
+      - "ssl"
+      - "starttls"
+      description: >-
+          Specifies the mechanism to use for securing connections to the server.
+    Enumserver-instance-listener-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Server Instance Listener.
+    Enuminter-server-authentication-info-authenticationTypeProp:
+      type: string
+      enum:
+      - "simple"
+      - "sasl-plain"
+      description: >-
+          Identifies the type of password authentication that will be used.
+    Enuminter-server-authentication-info-purposeProp:
+      type: string
+      enum:
+      - "mirrored-config"
+      description: >-
+          Identifies the purpose of this Inter Server Authentication Info.
     Enumserver-instance-serverInstanceTypeProp:
       type: string
       enum:
