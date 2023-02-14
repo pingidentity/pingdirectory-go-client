@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    addRestResourceTypeRequest := openapiclient.add_rest_resource_type_request{AddGroupRestResourceTypeRequest: openapiclient.NewAddGroupRestResourceTypeRequest("TypeName_example", []openapiclient.EnumgroupRestResourceTypeSchemaUrn{openapiclient.Enumgroup-rest-resource-typeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group")}, false, "ResourceEndpoint_example", "StructuralLDAPObjectclass_example", "SearchBaseDN_example")} // AddRestResourceTypeRequest | Create a new REST Resource Type in the config
+    addRestResourceTypeRequest := openapiclient.add_rest_resource_type_request{AddGenericRestResourceTypeRequest: openapiclient.NewAddGenericRestResourceTypeRequest("TypeName_example", []openapiclient.EnumgenericRestResourceTypeSchemaUrn{openapiclient.Enumgeneric-rest-resource-typeSchemaUrn("urn:pingidentity:schemas:configuration:2.0:rest-resource-type:generic")}, false, "ResourceEndpoint_example", "StructuralLDAPObjectclass_example", "SearchBaseDN_example")} // AddRestResourceTypeRequest | Create a new REST Resource Type in the config
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

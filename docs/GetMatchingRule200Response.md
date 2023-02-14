@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
-**Schemas** | [**[]EnumsubstringMatchingRuleSchemaUrn**](EnumsubstringMatchingRuleSchemaUrn.md) |  | 
+**Schemas** | [**[]EnumgenericMatchingRuleSchemaUrn**](EnumgenericMatchingRuleSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Matching Rule | 
 **Enabled** | **bool** | Indicates whether the Matching Rule is enabled for use. | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewGetMatchingRule200Response
 
-`func NewGetMatchingRule200Response(schemas []EnumsubstringMatchingRuleSchemaUrn, id string, enabled bool, ) *GetMatchingRule200Response`
+`func NewGetMatchingRule200Response(schemas []EnumgenericMatchingRuleSchemaUrn, id string, enabled bool, ) *GetMatchingRule200Response`
 
 NewGetMatchingRule200Response instantiates a new GetMatchingRule200Response object
 This constructor will assign default values to properties that have it defined,
@@ -81,20 +81,20 @@ HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field ha
 
 ### GetSchemas
 
-`func (o *GetMatchingRule200Response) GetSchemas() []EnumsubstringMatchingRuleSchemaUrn`
+`func (o *GetMatchingRule200Response) GetSchemas() []EnumgenericMatchingRuleSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *GetMatchingRule200Response) GetSchemasOk() (*[]EnumsubstringMatchingRuleSchemaUrn, bool)`
+`func (o *GetMatchingRule200Response) GetSchemasOk() (*[]EnumgenericMatchingRuleSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *GetMatchingRule200Response) SetSchemas(v []EnumsubstringMatchingRuleSchemaUrn)`
+`func (o *GetMatchingRule200Response) SetSchemas(v []EnumgenericMatchingRuleSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 

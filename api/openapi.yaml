@@ -6914,7 +6914,64 @@ paths:
       summary: Update an existing Connection Handler by name
       tags:
       - connection-handler
+  /web-application-extensions:
+    post:
+      operationId: add-web-application-extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-generic-web-application-extension-request'
+        description: Create a new Web Application Extension in the config
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/add_web_application_extension_200_response'
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Web Application Extension already exists
+      security:
+      - basicAuth: []
+      summary: Add a new Web Application Extension to the config
+      tags:
+      - web-application-extension
   /web-application-extensions/{web-application-extension-name}:
+    delete:
+      operationId: delete-web-application-extension
+      parameters:
+      - description: Name of the Web Application Extension
+        explode: false
+        in: path
+        name: web-application-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Web Application Extension does not exist
+        "409":
+          description: The Web Application Extension cannot be deleted
+      security:
+      - basicAuth: []
+      summary: Delete a Web Application Extension
+      tags:
+      - web-application-extension
     get:
       operationId: get-web-application-extension
       parameters:
@@ -6931,7 +6988,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/console-web-application-extension-response'
+                $ref: '#/components/schemas/get_web_application_extension_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -6967,7 +7024,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/console-web-application-extension-response'
+                $ref: '#/components/schemas/get_web_application_extension_200_response'
           description: Successful operation
         "401":
           description: Requestor cannot be authenticated
@@ -14449,6 +14506,102 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:plugin:periodic-stats-logger
       type: string
+    add-purge-expired-data-plugin-request:
+      allOf:
+      - $ref: '#/components/schemas/add_internal_search_rate_plugin_request_allOf'
+      - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+    purge-expired-data-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/internal_search_rate_plugin_response_allOf'
+      - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+    purge-expired-data-plugin-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumpurge-expired-data-pluginSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        datetimeAttribute:
+          description: "The LDAP attribute that determines when data should be deleted.\
+            \ This could store the expiration time, or it could store the creation\
+            \ time and the expiration-offset property specifies the duration before\
+            \ data is deleted."
+          type: string
+        datetimeJSONField:
+          description: "The top-level JSON field within the configured datetime-attribute\
+            \ that determines when data should be deleted. This could store the expiration\
+            \ time, or it could store the creation time and the expiration-offset\
+            \ property specifies the duration before data is deleted."
+          type: string
+        datetimeFormat:
+          $ref: '#/components/schemas/Enumplugin-datetimeFormatProp'
+        customDatetimeFormat:
+          description: "When the datetime-format property is configured with a value\
+            \ of \"custom\", this specifies the format (using a string compatible\
+            \ with the java.text.SimpleDateFormat class) that will be used to search\
+            \ for expired data."
+          type: string
+        customTimezone:
+          description: Specifies the time zone to use when generating a date string
+            using the configured custom-datetime-format value. The provided value
+            must be accepted by java.util.TimeZone.getTimeZone.
+          type: string
+        expirationOffset:
+          description: The duration to wait after the value specified in datetime-attribute
+            (and optionally datetime-json-field) before purging the data.
+          type: string
+        purgeBehavior:
+          $ref: '#/components/schemas/Enumplugin-purgeBehaviorProp'
+        baseDN:
+          description: Only entries located within the subtree specified by this base
+            DN are eligible for purging.
+          type: string
+        filter:
+          description: Only entries that match this LDAP filter will be eligible for
+            having data purged.
+          type: string
+        pollingInterval:
+          description: This specifies how often the plugin should check for expired
+            data. It also controls the offset of peer servers (see the peer-server-priority-index
+            for more information).
+          type: string
+        maxUpdatesPerSecond:
+          description: "This setting smooths out the performance impact on the server\
+            \ by throttling the purging to the specified maximum number of updates\
+            \ per second. To avoid a large backlog, this value should be set comfortably\
+            \ above the average rate that expired data is generated. When purge-behavior\
+            \ is set to subtree-delete-entries, then deletion of the entire subtree\
+            \ is considered a single update for the purposes of throttling."
+          type: integer
+        peerServerPriorityIndex:
+          description: "In a replicated environment, this determines the order in\
+            \ which peer servers should attempt to purge data."
+          type: integer
+        numDeleteThreads:
+          description: The number of threads used to delete expired entries.
+          type: integer
+        description:
+          description: A description for this Plugin
+          type: string
+        enabled:
+          description: Indicates whether the plug-in is enabled for use.
+          type: boolean
+      required:
+      - datetimeAttribute
+      - datetimeFormat
+      - enabled
+      - expirationOffset
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - pollingInterval
+      - schemas
+      type: object
+    Enumpurge-expired-data-pluginSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:plugin:purge-expired-data
+      type: string
     change-subscription-notification-plugin-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -15876,6 +16029,14 @@ components:
       enum:
       - memory-utilization
       type: string
+    Enumplugin-purgeBehaviorProp:
+      description: Specifies whether to delete expired entries or attribute values.
+        By default entries are deleted.
+      enum:
+      - delete-entries
+      - subtree-delete-entries
+      - delete-json-attribute-values
+      type: string
     Enumplugin-serverAccessModeProp:
       description: Specifies the manner in which external servers should be used for
         pass-through authentication attempts if multiple servers are defined.
@@ -15937,6 +16098,14 @@ components:
       - none
       - basic
       - extended
+      type: string
+    Enumplugin-datetimeFormatProp:
+      description: Specifies the format of the datetime stored within the entry that
+        determines when data should be purged.
+      enum:
+      - generalized-time
+      - java-system-time-millis
+      - custom
       type: string
     Enumplugin-attributeTypeProp:
       description: The attribute types whose values should be encrypted.
@@ -21518,6 +21687,14 @@ components:
     Enumattribute-based-log-field-syntaxSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based
+      type: string
+    generic-log-field-syntax-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/generic_log_field_syntax_response_allOf'
+    Enumgeneric-log-field-syntaxSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:log-field-syntax:generic
       type: string
     Enumlog-field-syntax-defaultBehaviorProp:
       description: The default behavior that the server should exhibit when logging
@@ -27336,6 +27513,63 @@ components:
     Enumconsole-web-application-extensionSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:web-application-extension:console
+      type: string
+    add-generic-web-application-extension-request:
+      allOf:
+      - $ref: '#/components/schemas/add_generic_web_application_extension_request_allOf'
+      - $ref: '#/components/schemas/generic-web-application-extension-shared'
+    generic-web-application-extension-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/generic_web_application_extension_response_allOf'
+      - $ref: '#/components/schemas/generic-web-application-extension-shared'
+    generic-web-application-extension-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneric-web-application-extensionSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        description:
+          description: A description for this Web Application Extension
+          type: string
+        baseContextPath:
+          description: Specifies the base context path that should be used by HTTP
+            clients to reference content. The value must start with a forward slash
+            and at least one additional character and must represent a valid HTTP
+            context path.
+          type: string
+        warFile:
+          description: Specifies the path to a standard web application archive (WAR)
+            file.
+          type: string
+        documentRootDirectory:
+          description: "Specifies the path to the directory on the local filesystem\
+            \ containing the files to be served by this Web Application Extension.\
+            \ The path must exist, and it must be a directory."
+          type: string
+        deploymentDescriptorFile:
+          description: Specifies the path to the deployment descriptor file when used
+            with document-root-directory.
+          type: string
+        temporaryDirectory:
+          description: Specifies the path to the directory that may be used to store
+            temporary files such as extracted WAR files and compiled JSP files.
+          type: string
+        initParameter:
+          description: Specifies an initialization parameter to pass into the web
+            application during startup.
+          items:
+            type: string
+          type: array
+      required:
+      - baseContextPath
+      - schemas
+      type: object
+    Enumgeneric-web-application-extensionSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic
       type: string
     Enumweb-application-extension-complexityProp:
       description: Specifies the maximum complexity level for managed configuration
@@ -34111,137 +34345,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:key-manager-provider:third-party
       type: string
-    add-opendj-external-server-request:
-      allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/opendj-external-server-shared'
-    opendj-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/opendj-external-server-shared'
-    opendj-external-server-shared:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumopendj-external-serverSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        serverHostName:
-          description: The host name or IP address of the target LDAP server.
-          type: string
-        serverPort:
-          description: The port number on which the server listens for requests.
-          type: integer
-        location:
-          description: Specifies the location for the LDAP External Server.
-          type: string
-        bindDN:
-          description: The DN to use to bind to the target LDAP server if simple authentication
-            is required.
-          type: string
-        password:
-          description: The login password for the specified user.
-          format: password
-          type: string
-        passphraseProvider:
-          description: The passphrase provider to use to obtain the login password
-            for the specified user.
-          type: string
-        connectionSecurity:
-          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
-        authenticationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
-        healthCheckConnectTimeout:
-          description: "Specifies the maximum length of time to wait for a connection\
-            \ to be established for the purpose of performing a health check. If the\
-            \ connection cannot be established within this length of time, the server\
-            \ will be classified as unavailable."
-          type: string
-        maxConnectionAge:
-          description: Specifies the maximum length of time that connections to this
-            server should be allowed to remain established before being closed and
-            replaced with newly-established connections.
-          type: string
-        minExpiredConnectionDisconnectInterval:
-          description: Specifies the minimum length of time that should pass between
-            connection closures as a result of the connections being established for
-            longer than the maximum connection age. This may help avoid cases in which
-            a large number of connections are closed and re-established in a short
-            period of time because of the maximum connection age.
-          type: string
-        connectTimeout:
-          description: Specifies the maximum length of time to wait for a connection
-            to be established before giving up and considering the server unavailable.
-          type: string
-        maxResponseSize:
-          description: Specifies the maximum response size that should be supported
-            for messages received from the LDAP external server.
-          type: string
-        keyManagerProvider:
-          description: The key manager provider to use if SSL or StartTLS is to be
-            used for connection-level security. When specifying a value for this property
-            (except when using the Null key manager provider) you must ensure that
-            the external server trusts this server's public certificate by adding
-            this server's public certificate to the external server's trust store.
-          type: string
-        trustManagerProvider:
-          description: The trust manager provider to use if SSL or StartTLS is to
-            be used for connection-level security.
-          type: string
-        initialConnections:
-          description: The number of connections to initially establish to the LDAP
-            external server. A value of zero indicates that the number of connections
-            should be dynamically based on the number of available worker threads.
-            This will be ignored when using a thread-local connection pool.
-          type: integer
-        maxConnections:
-          description: The maximum number of concurrent connections to maintain for
-            the LDAP external server. A value of zero indicates that the number of
-            connections should be dynamically based on the number of available worker
-            threads. This will be ignored when using a thread-local connection pool.
-          type: integer
-        defunctConnectionResultCode:
-          items:
-            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
-          type: array
-        abandonOnTimeout:
-          description: "Indicates whether to send an abandon request for an operation\
-            \ for which a response timeout is encountered. A request which has timed\
-            \ out on one server may be retried on another server regardless of whether\
-            \ an abandon request is sent, but if the initial attempt is not abandoned\
-            \ then a long-running operation may unnecessarily continue to consume\
-            \ processing resources on the initial server."
-          type: boolean
-        description:
-          description: A description for this External Server
-          type: string
-      required:
-      - authenticationMethod
-      - connectTimeout
-      - connectionSecurity
-      - maxConnectionAge
-      - maxResponseSize
-      - schemas
-      - serverHostName
-      - serverPort
-      - verifyCredentialsMethod
-      type: object
-    Enumopendj-external-serverSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:opendj
-      type: string
     add-smtp-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
       - $ref: '#/components/schemas/smtp-external-server-shared'
     smtp-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/smtp-external-server-shared'
     smtp-external-server-shared:
       properties:
@@ -34295,12 +34406,12 @@ components:
       type: string
     add-nokia-ds-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
     nokia-ds-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/nokia-ds-external-server-shared'
     nokia-ds-external-server-shared:
       properties:
@@ -34422,56 +34533,143 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:external-server:nokia-ds
       type: string
-    add-ping-one-http-external-server-request:
+    add-ping-identity-ds-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
-    ping-one-http-external-server-response:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+    ping-identity-ds-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
-    ping-one-http-external-server-shared:
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/ping-identity-ds-external-server-shared'
+    ping-identity-ds-external-server-shared:
       properties:
         schemas:
           items:
-            $ref: '#/components/schemas/Enumping-one-http-external-serverSchemaUrn'
+            $ref: '#/components/schemas/Enumping-identity-ds-external-serverSchemaUrn'
           maxItems: 1
           minItems: 1
           type: array
-        hostnameVerificationMethod:
-          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
-        trustManagerProvider:
-          description: The trust manager provider to use for HTTPS connection-level
-            security.
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+        useAdministrativeOperationControl:
+          description: "Indicates whether to include the administrative operation\
+            \ request control in requests sent to this server which are intended for\
+            \ administrative operations (e.g., health checking) rather than requests\
+            \ directly from clients."
+          type: boolean
+        serverHostName:
+          description: The host name or IP address of the target LDAP server.
+          type: string
+        serverPort:
+          description: The port number on which the server listens for requests.
+          type: integer
+        location:
+          description: Specifies the location for the LDAP External Server.
+          type: string
+        bindDN:
+          description: The DN to use to bind to the target LDAP server if simple authentication
+            is required.
+          type: string
+        password:
+          description: The login password for the specified user.
+          format: password
+          type: string
+        passphraseProvider:
+          description: The passphrase provider to use to obtain the login password
+            for the specified user.
+          type: string
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+        healthCheckConnectTimeout:
+          description: "Specifies the maximum length of time to wait for a connection\
+            \ to be established for the purpose of performing a health check. If the\
+            \ connection cannot be established within this length of time, the server\
+            \ will be classified as unavailable."
+          type: string
+        maxConnectionAge:
+          description: Specifies the maximum length of time that connections to this
+            server should be allowed to remain established before being closed and
+            replaced with newly-established connections.
+          type: string
+        minExpiredConnectionDisconnectInterval:
+          description: Specifies the minimum length of time that should pass between
+            connection closures as a result of the connections being established for
+            longer than the maximum connection age. This may help avoid cases in which
+            a large number of connections are closed and re-established in a short
+            period of time because of the maximum connection age.
           type: string
         connectTimeout:
           description: Specifies the maximum length of time to wait for a connection
-            to be established before aborting a request to PingOne.
+            to be established before giving up and considering the server unavailable.
           type: string
-        responseTimeout:
-          description: Specifies the maximum length of time to wait for response data
-            to be read from an established connection before aborting a request to
-            PingOne.
+        maxResponseSize:
+          description: Specifies the maximum response size that should be supported
+            for messages received from the LDAP external server.
           type: string
+        keyManagerProvider:
+          description: The key manager provider to use if SSL or StartTLS is to be
+            used for connection-level security. When specifying a value for this property
+            (except when using the Null key manager provider) you must ensure that
+            the external server trusts this server's public certificate by adding
+            this server's public certificate to the external server's trust store.
+          type: string
+        trustManagerProvider:
+          description: The trust manager provider to use if SSL or StartTLS is to
+            be used for connection-level security.
+          type: string
+        initialConnections:
+          description: The number of connections to initially establish to the LDAP
+            external server. A value of zero indicates that the number of connections
+            should be dynamically based on the number of available worker threads.
+            This will be ignored when using a thread-local connection pool.
+          type: integer
+        maxConnections:
+          description: The maximum number of concurrent connections to maintain for
+            the LDAP external server. A value of zero indicates that the number of
+            connections should be dynamically based on the number of available worker
+            threads. This will be ignored when using a thread-local connection pool.
+          type: integer
+        defunctConnectionResultCode:
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          type: array
+        abandonOnTimeout:
+          description: "Indicates whether to send an abandon request for an operation\
+            \ for which a response timeout is encountered. A request which has timed\
+            \ out on one server may be retried on another server regardless of whether\
+            \ an abandon request is sent, but if the initial attempt is not abandoned\
+            \ then a long-running operation may unnecessarily continue to consume\
+            \ processing resources on the initial server."
+          type: boolean
         description:
           description: A description for this External Server
           type: string
       required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
       - schemas
+      - serverHostName
+      - serverPort
+      - verifyCredentialsMethod
       type: object
-    Enumping-one-http-external-serverSchemaUrn:
+    Enumping-identity-ds-external-serverSchemaUrn:
       enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:ping-one-http
+      - urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-ds
       type: string
     add-active-directory-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
       - $ref: '#/components/schemas/active-directory-external-server-shared'
     active-directory-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/active-directory-external-server-shared'
     active-directory-external-server-shared:
       properties:
@@ -34588,23 +34786,163 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:external-server:active-directory
       type: string
-    add-oracle-unified-directory-external-server-request:
+    add-jdbc-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
-    oracle-unified-directory-external-server-response:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/jdbc-external-server-shared'
+    jdbc-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
-    oracle-unified-directory-external-server-shared:
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/jdbc-external-server-shared'
+    jdbc-external-server-shared:
       properties:
         schemas:
           items:
-            $ref: '#/components/schemas/Enumoracle-unified-directory-external-serverSchemaUrn'
+            $ref: '#/components/schemas/Enumjdbc-external-serverSchemaUrn'
           maxItems: 1
           minItems: 1
           type: array
+        jdbcDriverType:
+          $ref: '#/components/schemas/Enumexternal-server-jdbcDriverTypeProp'
+        jdbcDriverURL:
+          description: Specify the complete JDBC URL which will be used instead of
+            the automatic URL format. You must select type 'other' for the jdbc-driver-type.
+          type: string
+        databaseName:
+          description: Specifies which database to connect to. This is ignored if
+            jdbc-driver-url is specified.
+          type: string
+        serverHostName:
+          description: The host name of the database server. This is ignored if jdbc-driver-url
+            is specified.
+          type: string
+        serverPort:
+          description: The port number where the database server listens for requests.
+            This is ignored if jdbc-driver-url is specified
+          type: integer
+        userName:
+          description: The name of the login account to use when connecting to the
+            database server.
+          type: string
+        password:
+          description: The login password for the specified user name.
+          format: password
+          type: string
+        passphraseProvider:
+          description: The passphrase provider to use to obtain the login password
+            for the specified user.
+          type: string
+        validationQuery:
+          description: The SQL query that will be used to validate connections to
+            the database before making them available to the Directory Server.
+          type: string
+        validationQueryTimeout:
+          description: "Specifies the amount of time to wait for a response from the\
+            \ database when executing the validation query, if one is set. If the\
+            \ timeout is exceeded, the Directory Server will drop the connection and\
+            \ obtain a new one. A value of zero indicates no timeout."
+          type: string
+        jdbcConnectionProperties:
+          description: Specifies the connection properties for the JDBC datasource.
+          items:
+            type: string
+          type: array
+        transactionIsolationLevel:
+          $ref: '#/components/schemas/Enumexternal-server-transactionIsolationLevelProp'
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - jdbcDriverType
+      - schemas
+      type: object
+    Enumjdbc-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:jdbc
+      type: string
+    add-syslog-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/syslog-external-server-shared'
+    syslog-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/syslog-external-server-shared'
+    syslog-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumsyslog-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        serverHostName:
+          description: The address of the syslog server.
+          type: string
+        serverPort:
+          description: The port on which the syslog server accepts connections.
+          type: integer
+        transportMechanism:
+          $ref: '#/components/schemas/Enumexternal-server-transportMechanismProp'
+        connectTimeout:
+          description: Specifies the maximum length of time to wait for a connection
+            to be established before giving up and considering the server unavailable.
+            This will only be used when communicating with the syslog server over
+            TCP (with or without TLS encryption).
+          type: string
+        maxConnectionAge:
+          description: The maximum length of time that TCP connections should remain
+            established. This will be ignored for UDP-based connections. A zero duration
+            indicates that no maximum age will be imposed.
+          type: string
+        trustManagerProvider:
+          description: A trust manager provider that will be used to determine whether
+            to trust the certificate chain presented by the syslog server when communication
+            is encrypted with TLS. This property will be ignored when not using TLS
+            encryption.
+          type: string
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - connectTimeout
+      - maxConnectionAge
+      - schemas
+      - serverHostName
+      - transportMechanism
+      - trustManagerProvider
+      type: object
+    Enumsyslog-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:syslog
+      type: string
+    add-ping-identity-proxy-server-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+    ping-identity-proxy-server-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-shared'
+    ping-identity-proxy-server-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumping-identity-proxy-server-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+        useAdministrativeOperationControl:
+          description: "Indicates whether to include the administrative operation\
+            \ request control in requests sent to this server which are intended for\
+            \ administrative operations (e.g., health checking) rather than requests\
+            \ directly from clients."
+          type: boolean
         serverHostName:
           description: The host name or IP address of the target LDAP server.
           type: string
@@ -34630,8 +34968,6 @@ components:
           $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
         authenticationMethod:
           $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
-        verifyCredentialsMethod:
-          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
         healthCheckConnectTimeout:
           description: "Specifies the maximum length of time to wait for a connection\
             \ to be established for the purpose of performing a health check. If the\
@@ -34707,258 +35043,18 @@ components:
       - serverPort
       - verifyCredentialsMethod
       type: object
-    Enumoracle-unified-directory-external-serverSchemaUrn:
+    Enumping-identity-proxy-server-external-serverSchemaUrn:
       enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:oracle-unified-directory
-      type: string
-    add-conjur-external-server-request:
-      allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/conjur-external-server-shared'
-    conjur-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/conjur-external-server-shared'
-    conjur-external-server-shared:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumconjur-external-serverSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        conjurServerBaseURI:
-          description: "The base URL needed to access the CyberArk Conjur server.\
-            \ The base URL should consist of the protocol (\"http\" or \"https\"),\
-            \ the server address (resolvable name or IP address), and the port number.\
-            \ For example, \"https://conjur.example.com:8443/\"."
-          items:
-            type: string
-          type: array
-        conjurAuthenticationMethod:
-          description: The mechanism used to authenticate to the Conjur server.
-          type: string
-        conjurAccountName:
-          description: The name of the account with which the desired secrets are
-            associated.
-          type: string
-        trustStoreFile:
-          description: The path to a file containing the information needed to trust
-            the certificate presented by the Conjur servers.
-          type: string
-        trustStorePin:
-          description: "The PIN needed to access the contents of the trust store.\
-            \ This is only required if a trust store file is required, and if that\
-            \ trust store requires a PIN to access its contents."
-          format: password
-          type: string
-        trustStoreType:
-          description: "The store type for the specified trust store file. The value\
-            \ should likely be one of \"JKS\", \"PKCS12\", or \"BCFKS\"."
-          type: string
-        description:
-          description: A description for this External Server
-          type: string
-      required:
-      - conjurAccountName
-      - conjurAuthenticationMethod
-      - conjurServerBaseURI
-      - schemas
-      type: object
-    Enumconjur-external-serverSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:conjur
-      type: string
-    add-jdbc-external-server-request:
-      allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/jdbc-external-server-shared'
-    jdbc-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/jdbc-external-server-shared'
-    jdbc-external-server-shared:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumjdbc-external-serverSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        jdbcDriverType:
-          $ref: '#/components/schemas/Enumexternal-server-jdbcDriverTypeProp'
-        jdbcDriverURL:
-          description: Specify the complete JDBC URL which will be used instead of
-            the automatic URL format. You must select type 'other' for the jdbc-driver-type.
-          type: string
-        databaseName:
-          description: Specifies which database to connect to. This is ignored if
-            jdbc-driver-url is specified.
-          type: string
-        serverHostName:
-          description: The host name of the database server. This is ignored if jdbc-driver-url
-            is specified.
-          type: string
-        serverPort:
-          description: The port number where the database server listens for requests.
-            This is ignored if jdbc-driver-url is specified
-          type: integer
-        userName:
-          description: The name of the login account to use when connecting to the
-            database server.
-          type: string
-        password:
-          description: The login password for the specified user name.
-          format: password
-          type: string
-        passphraseProvider:
-          description: The passphrase provider to use to obtain the login password
-            for the specified user.
-          type: string
-        validationQuery:
-          description: The SQL query that will be used to validate connections to
-            the database before making them available to the Directory Server.
-          type: string
-        validationQueryTimeout:
-          description: "Specifies the amount of time to wait for a response from the\
-            \ database when executing the validation query, if one is set. If the\
-            \ timeout is exceeded, the Directory Server will drop the connection and\
-            \ obtain a new one. A value of zero indicates no timeout."
-          type: string
-        jdbcConnectionProperties:
-          description: Specifies the connection properties for the JDBC datasource.
-          items:
-            type: string
-          type: array
-        transactionIsolationLevel:
-          $ref: '#/components/schemas/Enumexternal-server-transactionIsolationLevelProp'
-        description:
-          description: A description for this External Server
-          type: string
-      required:
-      - jdbcDriverType
-      - schemas
-      type: object
-    Enumjdbc-external-serverSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:jdbc
-      type: string
-    add-amazon-aws-external-server-request:
-      allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
-    amazon-aws-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
-    amazon-aws-external-server-shared:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumamazon-aws-external-serverSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        awsAccessKeyID:
-          description: "The access key ID that will be used if authentication should\
-            \ use an access key. If this is provided, then an aws-secret-access-key\
-            \ must also be provided. If this is not provided, then no aws-secret-access-key\
-            \ may be configured, and the server must be running in an EC2 instance\
-            \ that is configured with an IAM role with permission to perform the necessary\
-            \ operations."
-          type: string
-        awsSecretAccessKey:
-          description: "The secret access key that will be used if authentication\
-            \ should use an access key. If this is provided, then an aws-access-key-id\
-            \ must also be provided. If this is not provided, then no aws-access-key-id\
-            \ may be configured, and the server must be running in an EC2 instance\
-            \ that is configured with an IAM role with permission to perform the necessary\
-            \ operations."
-          format: password
-          type: string
-        awsRegionName:
-          description: The name of the AWS region containing the resources that will
-            be accessed.
-          type: string
-        description:
-          description: A description for this External Server
-          type: string
-      required:
-      - awsRegionName
-      - schemas
-      type: object
-    Enumamazon-aws-external-serverSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:amazon-aws
-      type: string
-    add-syslog-external-server-request:
-      allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
-      - $ref: '#/components/schemas/syslog-external-server-shared'
-    syslog-external-server-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
-      - $ref: '#/components/schemas/syslog-external-server-shared'
-    syslog-external-server-shared:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumsyslog-external-serverSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        serverHostName:
-          description: The address of the syslog server.
-          type: string
-        serverPort:
-          description: The port on which the syslog server accepts connections.
-          type: integer
-        transportMechanism:
-          $ref: '#/components/schemas/Enumexternal-server-transportMechanismProp'
-        connectTimeout:
-          description: Specifies the maximum length of time to wait for a connection
-            to be established before giving up and considering the server unavailable.
-            This will only be used when communicating with the syslog server over
-            TCP (with or without TLS encryption).
-          type: string
-        maxConnectionAge:
-          description: The maximum length of time that TCP connections should remain
-            established. This will be ignored for UDP-based connections. A zero duration
-            indicates that no maximum age will be imposed.
-          type: string
-        trustManagerProvider:
-          description: A trust manager provider that will be used to determine whether
-            to trust the certificate chain presented by the syslog server when communication
-            is encrypted with TLS. This property will be ignored when not using TLS
-            encryption.
-          type: string
-        description:
-          description: A description for this External Server
-          type: string
-      required:
-      - connectTimeout
-      - maxConnectionAge
-      - schemas
-      - serverHostName
-      - transportMechanism
-      - trustManagerProvider
-      type: object
-    Enumsyslog-external-serverSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:external-server:syslog
+      - urn:pingidentity:schemas:configuration:2.0:external-server:ping-identity-proxy-server
       type: string
     add-nokia-proxy-server-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
     nokia-proxy-server-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/nokia-proxy-server-external-server-shared'
     nokia-proxy-server-external-server-shared:
       properties:
@@ -35080,14 +35176,594 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:external-server:nokia-proxy-server
       type: string
+    add-opendj-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/opendj-external-server-shared'
+    opendj-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/opendj-external-server-shared'
+    opendj-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumopendj-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        serverHostName:
+          description: The host name or IP address of the target LDAP server.
+          type: string
+        serverPort:
+          description: The port number on which the server listens for requests.
+          type: integer
+        location:
+          description: Specifies the location for the LDAP External Server.
+          type: string
+        bindDN:
+          description: The DN to use to bind to the target LDAP server if simple authentication
+            is required.
+          type: string
+        password:
+          description: The login password for the specified user.
+          format: password
+          type: string
+        passphraseProvider:
+          description: The passphrase provider to use to obtain the login password
+            for the specified user.
+          type: string
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+        healthCheckConnectTimeout:
+          description: "Specifies the maximum length of time to wait for a connection\
+            \ to be established for the purpose of performing a health check. If the\
+            \ connection cannot be established within this length of time, the server\
+            \ will be classified as unavailable."
+          type: string
+        maxConnectionAge:
+          description: Specifies the maximum length of time that connections to this
+            server should be allowed to remain established before being closed and
+            replaced with newly-established connections.
+          type: string
+        minExpiredConnectionDisconnectInterval:
+          description: Specifies the minimum length of time that should pass between
+            connection closures as a result of the connections being established for
+            longer than the maximum connection age. This may help avoid cases in which
+            a large number of connections are closed and re-established in a short
+            period of time because of the maximum connection age.
+          type: string
+        connectTimeout:
+          description: Specifies the maximum length of time to wait for a connection
+            to be established before giving up and considering the server unavailable.
+          type: string
+        maxResponseSize:
+          description: Specifies the maximum response size that should be supported
+            for messages received from the LDAP external server.
+          type: string
+        keyManagerProvider:
+          description: The key manager provider to use if SSL or StartTLS is to be
+            used for connection-level security. When specifying a value for this property
+            (except when using the Null key manager provider) you must ensure that
+            the external server trusts this server's public certificate by adding
+            this server's public certificate to the external server's trust store.
+          type: string
+        trustManagerProvider:
+          description: The trust manager provider to use if SSL or StartTLS is to
+            be used for connection-level security.
+          type: string
+        initialConnections:
+          description: The number of connections to initially establish to the LDAP
+            external server. A value of zero indicates that the number of connections
+            should be dynamically based on the number of available worker threads.
+            This will be ignored when using a thread-local connection pool.
+          type: integer
+        maxConnections:
+          description: The maximum number of concurrent connections to maintain for
+            the LDAP external server. A value of zero indicates that the number of
+            connections should be dynamically based on the number of available worker
+            threads. This will be ignored when using a thread-local connection pool.
+          type: integer
+        defunctConnectionResultCode:
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          type: array
+        abandonOnTimeout:
+          description: "Indicates whether to send an abandon request for an operation\
+            \ for which a response timeout is encountered. A request which has timed\
+            \ out on one server may be retried on another server regardless of whether\
+            \ an abandon request is sent, but if the initial attempt is not abandoned\
+            \ then a long-running operation may unnecessarily continue to consume\
+            \ processing resources on the initial server."
+          type: boolean
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - schemas
+      - serverHostName
+      - serverPort
+      - verifyCredentialsMethod
+      type: object
+    Enumopendj-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:opendj
+      type: string
+    add-ldap-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/ldap-external-server-shared'
+    ldap-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/ldap-external-server-shared'
+    ldap-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumldap-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        serverHostName:
+          description: The host name or IP address of the target LDAP server.
+          type: string
+        serverPort:
+          description: The port number on which the server listens for requests.
+          type: integer
+        location:
+          description: Specifies the location for the LDAP External Server.
+          type: string
+        bindDN:
+          description: The DN to use to bind to the target LDAP server if simple authentication
+            is required.
+          type: string
+        password:
+          description: The login password for the specified user.
+          format: password
+          type: string
+        passphraseProvider:
+          description: The passphrase provider to use to obtain the login password
+            for the specified user.
+          type: string
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+        healthCheckConnectTimeout:
+          description: "Specifies the maximum length of time to wait for a connection\
+            \ to be established for the purpose of performing a health check. If the\
+            \ connection cannot be established within this length of time, the server\
+            \ will be classified as unavailable."
+          type: string
+        maxConnectionAge:
+          description: Specifies the maximum length of time that connections to this
+            server should be allowed to remain established before being closed and
+            replaced with newly-established connections.
+          type: string
+        minExpiredConnectionDisconnectInterval:
+          description: Specifies the minimum length of time that should pass between
+            connection closures as a result of the connections being established for
+            longer than the maximum connection age. This may help avoid cases in which
+            a large number of connections are closed and re-established in a short
+            period of time because of the maximum connection age.
+          type: string
+        connectTimeout:
+          description: Specifies the maximum length of time to wait for a connection
+            to be established before giving up and considering the server unavailable.
+          type: string
+        maxResponseSize:
+          description: Specifies the maximum response size that should be supported
+            for messages received from the LDAP external server.
+          type: string
+        keyManagerProvider:
+          description: The key manager provider to use if SSL or StartTLS is to be
+            used for connection-level security. When specifying a value for this property
+            (except when using the Null key manager provider) you must ensure that
+            the external server trusts this server's public certificate by adding
+            this server's public certificate to the external server's trust store.
+          type: string
+        trustManagerProvider:
+          description: The trust manager provider to use if SSL or StartTLS is to
+            be used for connection-level security.
+          type: string
+        initialConnections:
+          description: The number of connections to initially establish to the LDAP
+            external server. A value of zero indicates that the number of connections
+            should be dynamically based on the number of available worker threads.
+            This will be ignored when using a thread-local connection pool.
+          type: integer
+        maxConnections:
+          description: The maximum number of concurrent connections to maintain for
+            the LDAP external server. A value of zero indicates that the number of
+            connections should be dynamically based on the number of available worker
+            threads. This will be ignored when using a thread-local connection pool.
+          type: integer
+        defunctConnectionResultCode:
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          type: array
+        abandonOnTimeout:
+          description: "Indicates whether to send an abandon request for an operation\
+            \ for which a response timeout is encountered. A request which has timed\
+            \ out on one server may be retried on another server regardless of whether\
+            \ an abandon request is sent, but if the initial attempt is not abandoned\
+            \ then a long-running operation may unnecessarily continue to consume\
+            \ processing resources on the initial server."
+          type: boolean
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - schemas
+      - serverHostName
+      - serverPort
+      - verifyCredentialsMethod
+      type: object
+    Enumldap-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:ldap
+      type: string
+    add-ping-one-http-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+    ping-one-http-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/ping-one-http-external-server-shared'
+    ping-one-http-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumping-one-http-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        hostnameVerificationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
+        trustManagerProvider:
+          description: The trust manager provider to use for HTTPS connection-level
+            security.
+          type: string
+        connectTimeout:
+          description: Specifies the maximum length of time to wait for a connection
+            to be established before aborting a request to PingOne.
+          type: string
+        responseTimeout:
+          description: Specifies the maximum length of time to wait for response data
+            to be read from an established connection before aborting a request to
+            PingOne.
+          type: string
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - schemas
+      type: object
+    Enumping-one-http-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:ping-one-http
+      type: string
+    add-http-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/http-external-server-shared'
+    http-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/http-external-server-shared'
+    http-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumhttp-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        baseURL:
+          description: "The base URL of the external server, optionally including\
+            \ port number, for example \"https://externalService:9031\"."
+          type: string
+        hostnameVerificationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-hostnameVerificationMethodProp'
+        keyManagerProvider:
+          description: The key manager provider to use if SSL (HTTPS) is to be used
+            for connection-level security. When specifying a value for this property
+            (except when using the Null key manager provider) you must ensure that
+            the external server trusts this server's public certificate by adding
+            this server's public certificate to the external server's trust store.
+          type: string
+        trustManagerProvider:
+          description: The trust manager provider to use if SSL (HTTPS) is to be used
+            for connection-level security.
+          type: string
+        sslCertNickname:
+          description: The certificate alias within the keystore to use if SSL (HTTPS)
+            is to be used for connection-level security. When specifying a value for
+            this property you must ensure that the external server trusts this server's
+            public certificate by adding this server's public certificate to the external
+            server's trust store.
+          type: string
+        connectTimeout:
+          description: Specifies the maximum length of time to wait for a connection
+            to be established before aborting a request to the server.
+          type: string
+        responseTimeout:
+          description: Specifies the maximum length of time to wait for response data
+            to be read from an established connection before aborting a request to
+            the server.
+          type: string
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - baseURL
+      - schemas
+      type: object
+    Enumhttp-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:http
+      type: string
+    add-oracle-unified-directory-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+    oracle-unified-directory-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/oracle-unified-directory-external-server-shared'
+    oracle-unified-directory-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumoracle-unified-directory-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        serverHostName:
+          description: The host name or IP address of the target LDAP server.
+          type: string
+        serverPort:
+          description: The port number on which the server listens for requests.
+          type: integer
+        location:
+          description: Specifies the location for the LDAP External Server.
+          type: string
+        bindDN:
+          description: The DN to use to bind to the target LDAP server if simple authentication
+            is required.
+          type: string
+        password:
+          description: The login password for the specified user.
+          format: password
+          type: string
+        passphraseProvider:
+          description: The passphrase provider to use to obtain the login password
+            for the specified user.
+          type: string
+        connectionSecurity:
+          $ref: '#/components/schemas/Enumexternal-server-connectionSecurityProp'
+        authenticationMethod:
+          $ref: '#/components/schemas/Enumexternal-server-authenticationMethodProp'
+        verifyCredentialsMethod:
+          $ref: '#/components/schemas/Enumexternal-server-verifyCredentialsMethodProp'
+        healthCheckConnectTimeout:
+          description: "Specifies the maximum length of time to wait for a connection\
+            \ to be established for the purpose of performing a health check. If the\
+            \ connection cannot be established within this length of time, the server\
+            \ will be classified as unavailable."
+          type: string
+        maxConnectionAge:
+          description: Specifies the maximum length of time that connections to this
+            server should be allowed to remain established before being closed and
+            replaced with newly-established connections.
+          type: string
+        minExpiredConnectionDisconnectInterval:
+          description: Specifies the minimum length of time that should pass between
+            connection closures as a result of the connections being established for
+            longer than the maximum connection age. This may help avoid cases in which
+            a large number of connections are closed and re-established in a short
+            period of time because of the maximum connection age.
+          type: string
+        connectTimeout:
+          description: Specifies the maximum length of time to wait for a connection
+            to be established before giving up and considering the server unavailable.
+          type: string
+        maxResponseSize:
+          description: Specifies the maximum response size that should be supported
+            for messages received from the LDAP external server.
+          type: string
+        keyManagerProvider:
+          description: The key manager provider to use if SSL or StartTLS is to be
+            used for connection-level security. When specifying a value for this property
+            (except when using the Null key manager provider) you must ensure that
+            the external server trusts this server's public certificate by adding
+            this server's public certificate to the external server's trust store.
+          type: string
+        trustManagerProvider:
+          description: The trust manager provider to use if SSL or StartTLS is to
+            be used for connection-level security.
+          type: string
+        initialConnections:
+          description: The number of connections to initially establish to the LDAP
+            external server. A value of zero indicates that the number of connections
+            should be dynamically based on the number of available worker threads.
+            This will be ignored when using a thread-local connection pool.
+          type: integer
+        maxConnections:
+          description: The maximum number of concurrent connections to maintain for
+            the LDAP external server. A value of zero indicates that the number of
+            connections should be dynamically based on the number of available worker
+            threads. This will be ignored when using a thread-local connection pool.
+          type: integer
+        defunctConnectionResultCode:
+          items:
+            $ref: '#/components/schemas/Enumexternal-server-defunctConnectionResultCodeProp'
+          type: array
+        abandonOnTimeout:
+          description: "Indicates whether to send an abandon request for an operation\
+            \ for which a response timeout is encountered. A request which has timed\
+            \ out on one server may be retried on another server regardless of whether\
+            \ an abandon request is sent, but if the initial attempt is not abandoned\
+            \ then a long-running operation may unnecessarily continue to consume\
+            \ processing resources on the initial server."
+          type: boolean
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - authenticationMethod
+      - connectTimeout
+      - connectionSecurity
+      - maxConnectionAge
+      - maxResponseSize
+      - schemas
+      - serverHostName
+      - serverPort
+      - verifyCredentialsMethod
+      type: object
+    Enumoracle-unified-directory-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:oracle-unified-directory
+      type: string
+    add-conjur-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/conjur-external-server-shared'
+    conjur-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/conjur-external-server-shared'
+    conjur-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumconjur-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        conjurServerBaseURI:
+          description: "The base URL needed to access the CyberArk Conjur server.\
+            \ The base URL should consist of the protocol (\"http\" or \"https\"),\
+            \ the server address (resolvable name or IP address), and the port number.\
+            \ For example, \"https://conjur.example.com:8443/\"."
+          items:
+            type: string
+          type: array
+        conjurAuthenticationMethod:
+          description: The mechanism used to authenticate to the Conjur server.
+          type: string
+        conjurAccountName:
+          description: The name of the account with which the desired secrets are
+            associated.
+          type: string
+        trustStoreFile:
+          description: The path to a file containing the information needed to trust
+            the certificate presented by the Conjur servers.
+          type: string
+        trustStorePin:
+          description: "The PIN needed to access the contents of the trust store.\
+            \ This is only required if a trust store file is required, and if that\
+            \ trust store requires a PIN to access its contents."
+          format: password
+          type: string
+        trustStoreType:
+          description: "The store type for the specified trust store file. The value\
+            \ should likely be one of \"JKS\", \"PKCS12\", or \"BCFKS\"."
+          type: string
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - conjurAccountName
+      - conjurAuthenticationMethod
+      - conjurServerBaseURI
+      - schemas
+      type: object
+    Enumconjur-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:conjur
+      type: string
+    add-amazon-aws-external-server-request:
+      allOf:
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
+      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+    amazon-aws-external-server-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
+      - $ref: '#/components/schemas/amazon-aws-external-server-shared'
+    amazon-aws-external-server-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumamazon-aws-external-serverSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        awsAccessKeyID:
+          description: "The access key ID that will be used if authentication should\
+            \ use an access key. If this is provided, then an aws-secret-access-key\
+            \ must also be provided. If this is not provided, then no aws-secret-access-key\
+            \ may be configured, and the server must be running in an EC2 instance\
+            \ that is configured with an IAM role with permission to perform the necessary\
+            \ operations."
+          type: string
+        awsSecretAccessKey:
+          description: "The secret access key that will be used if authentication\
+            \ should use an access key. If this is provided, then an aws-access-key-id\
+            \ must also be provided. If this is not provided, then no aws-access-key-id\
+            \ may be configured, and the server must be running in an EC2 instance\
+            \ that is configured with an IAM role with permission to perform the necessary\
+            \ operations."
+          format: password
+          type: string
+        awsRegionName:
+          description: The name of the AWS region containing the resources that will
+            be accessed.
+          type: string
+        description:
+          description: A description for this External Server
+          type: string
+      required:
+      - awsRegionName
+      - schemas
+      type: object
+    Enumamazon-aws-external-serverSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:external-server:amazon-aws
+      type: string
     add-vault-external-server-request:
       allOf:
-      - $ref: '#/components/schemas/add_opendj_external_server_request_allOf'
+      - $ref: '#/components/schemas/add_smtp_external_server_request_allOf'
       - $ref: '#/components/schemas/vault-external-server-shared'
     vault-external-server-response:
       allOf:
       - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/opendj_external_server_response_allOf'
+      - $ref: '#/components/schemas/smtp_external_server_response_allOf'
       - $ref: '#/components/schemas/vault-external-server-shared'
     vault-external-server-shared:
       properties:
@@ -35134,14 +35810,6 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:external-server:vault
       type: string
-    Enumexternal-server-authenticationMethodProp:
-      description: The mechanism to use to authenticate to the target server.
-      enum:
-      - none
-      - simple
-      - external
-      - inter-server
-      type: string
     Enumexternal-server-smtpSecurityProp:
       description: This property specifies type of connection security to use when
         connecting to the outgoing mail server.
@@ -35149,6 +35817,14 @@ components:
       - none
       - starttls
       - ssl
+      type: string
+    Enumexternal-server-authenticationMethodProp:
+      description: The mechanism to use to authenticate to the target server.
+      enum:
+      - none
+      - simple
+      - external
+      - inter-server
       type: string
     Enumexternal-server-connectionSecurityProp:
       description: The mechanism to use to secure communication with the directory
@@ -35254,14 +35930,6 @@ components:
       - retain-identity-control
       - bind-on-existing-connections
       type: string
-    Enumexternal-server-hostnameVerificationMethodProp:
-      description: The mechanism for checking if the hostname in the PingOne ID Token
-        Validator's base-url value matches the name(s) stored inside the X.509 certificate
-        presented by PingOne.
-      enum:
-      - allow-all
-      - strict
-      type: string
     Enumexternal-server-transactionIsolationLevelProp:
       description: This property specifies the default transaction isolation level
         for connections to this JDBC External Server.
@@ -35278,6 +35946,14 @@ components:
       - unencrypted-udp
       - unencrypted-tcp
       - tls-encrypted-tcp
+      type: string
+    Enumexternal-server-hostnameVerificationMethodProp:
+      description: The mechanism for checking if the hostname in the PingOne ID Token
+        Validator's base-url value matches the name(s) stored inside the X.509 certificate
+        presented by PingOne.
+      enum:
+      - allow-all
+      - strict
       type: string
     add-dn-map-request:
       allOf:
@@ -35799,14 +36475,6 @@ components:
       - minimum
       - maximum
       type: string
-    config-file-handler-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/config_file_handler_backend_response_allOf'
-    Enumconfig-file-handler-backendSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler
-      type: string
     schema-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -35823,22 +36491,6 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:backend:backup
       type: string
-    task-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/task_backend_response_allOf'
-    Enumtask-backendSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:backend:task
-      type: string
-    alert-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/alert_backend_response_allOf'
-    Enumalert-backendSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:backend:alert
-      type: string
     encryption-settings-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -35847,6 +36499,14 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:backend:encryption-settings
       type: string
+    ldif-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/ldif_backend_response_allOf'
+    Enumldif-backendSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:backend:ldif
+      type: string
     trust-store-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -35854,14 +36514,6 @@ components:
     Enumtrust-store-backendSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:backend:trust-store
-      type: string
-    alarm-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - $ref: '#/components/schemas/alarm_backend_response_allOf'
-    Enumalarm-backendSchemaUrn:
-      enum:
-      - urn:pingidentity:schemas:configuration:2.0:backend:alarm
       type: string
     changelog-backend-response:
       allOf:
@@ -36163,6 +36815,38 @@ components:
     Enumlocal-db-backendSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:backend:local-db
+      type: string
+    config-file-handler-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/config_file_handler_backend_response_allOf'
+    Enumconfig-file-handler-backendSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler
+      type: string
+    task-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/task_backend_response_allOf'
+    Enumtask-backendSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:backend:task
+      type: string
+    alert-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/alert_backend_response_allOf'
+    Enumalert-backendSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:backend:alert
+      type: string
+    alarm-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/alarm_backend_response_allOf'
+    Enumalarm-backendSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:backend:alarm
       type: string
     metrics-backend-response:
       allOf:
@@ -36853,6 +37537,14 @@ components:
     Enumuuid-attribute-syntaxSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:attribute-syntax:uuid
+      type: string
+    generic-attribute-syntax-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/generic_attribute_syntax_response_allOf'
+    Enumgeneric-attribute-syntaxSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:attribute-syntax:generic
       type: string
     json-object-attribute-syntax-response:
       allOf:
@@ -38297,6 +38989,14 @@ components:
     Enumsubstring-matching-ruleSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:matching-rule:substring
+      type: string
+    generic-matching-rule-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/generic_matching_rule_response_allOf'
+    Enumgeneric-matching-ruleSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:matching-rule:generic
       type: string
     add-mirror-virtual-attribute-request:
       allOf:
@@ -41973,6 +42673,129 @@ components:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:rest-resource-type:user
       type: string
+    add-generic-rest-resource-type-request:
+      allOf:
+      - $ref: '#/components/schemas/add_user_rest_resource_type_request_allOf'
+      - $ref: '#/components/schemas/generic-rest-resource-type-shared'
+    generic-rest-resource-type-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/user_rest_resource_type_response_allOf'
+      - $ref: '#/components/schemas/generic-rest-resource-type-shared'
+    generic-rest-resource-type-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneric-rest-resource-typeSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        description:
+          description: A description for this REST Resource Type
+          type: string
+        enabled:
+          description: Indicates whether the REST Resource Type is enabled.
+          type: boolean
+        resourceEndpoint:
+          description: The HTTP addressable endpoint of this REST Resource Type relative
+            to a REST API base URL. Do not include a leading '/'.
+          type: string
+        structuralLDAPObjectclass:
+          description: Specifies the LDAP structural object class that should be exposed
+            by this REST Resource Type.
+          type: string
+        auxiliaryLDAPObjectclass:
+          description: Specifies an auxiliary LDAP object class that should be exposed
+            by this REST Resource Type.
+          items:
+            type: string
+          type: array
+        searchBaseDN:
+          description: Specifies the base DN of the branch of the LDAP directory where
+            resources of this type are located.
+          type: string
+        includeFilter:
+          description: The set of LDAP filters that define the LDAP entries that should
+            be included in this REST Resource Type.
+          items:
+            type: string
+          type: array
+        parentDN:
+          description: "Specifies the DN of the parent entry for new resources of\
+            \ this type, when a parent resource is not provided by the app. The parent\
+            \ DN must be at or below the search base of this resource type."
+          type: string
+        parentResourceType:
+          description: Specifies the name of another resource type which may be a
+            parent of new resources of this type. The search base DN of the parent
+            resource type must be at or above the search base DN of this resource
+            type.
+          type: string
+        relativeDNFromParentResource:
+          description: Specifies a template for a relative DN from the parent resource
+            which identifies the parent entry for a new resource of this type. If
+            this property is not specified then new resources are created immediately
+            below the parent resource or parent DN.
+          type: string
+        createRDNAttributeType:
+          description: Specifies the name or OID of the LDAP attribute type to be
+            used as the RDN of new resources.
+          type: string
+        postCreateConstructedAttribute:
+          description: Specifies an attribute whose values are to be constructed when
+            a new resource is created. The values are only set at creation time. Subsequent
+            modifications to attributes in the constructed attribute value-pattern
+            are not propagated here.
+          items:
+            type: string
+          type: array
+        updateConstructedAttribute:
+          description: Specifies an attribute whose values are to be constructed when
+            a resource is updated. The constructed values replace any existing values
+            of the attribute.
+          items:
+            type: string
+          type: array
+        displayName:
+          description: A human readable display name for this REST Resource Type.
+          type: string
+        searchFilterPattern:
+          description: Specifies the LDAP filter that should be used when searching
+            for resources matching provided search text. All attribute types in the
+            filter pattern referencing the search text must have a Delegated Admin
+            Attribute definition.
+          type: string
+        primaryDisplayAttributeType:
+          description: Specifies the name or OID of the LDAP attribute type which
+            is the primary display attribute. This attribute type must be in the search
+            filter pattern and must have a Delegated Admin Attribute definition.
+          type: string
+        delegatedAdminSearchSizeLimit:
+          description: The maximum number of resources that may be returned from a
+            search request.
+          type: integer
+        delegatedAdminReportSizeLimit:
+          description: The maximum number of resources that may be included in a report.
+          type: integer
+        membersColumnName:
+          description: Specifies the name of the group member column that will be
+            displayed in the Delegated Admin UI
+          type: string
+        nonmembersColumnName:
+          description: Specifies the name of the group nonmember column that will
+            be displayed in the Delegated Admin UI
+          type: string
+      required:
+      - enabled
+      - resourceEndpoint
+      - schemas
+      - searchBaseDN
+      - structuralLDAPObjectclass
+      type: object
+    Enumgeneric-rest-resource-typeSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:rest-resource-type:generic
+      type: string
     add-group-rest-resource-type-request:
       allOf:
       - $ref: '#/components/schemas/add_user_rest_resource_type_request_allOf'
@@ -42231,6 +43054,75 @@ components:
     Enumphoto-delegated-admin-attributeSchemaUrn:
       enum:
       - urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:photo
+      type: string
+    add-generic-delegated-admin-attribute-request:
+      allOf:
+      - $ref: '#/components/schemas/add_certificate_delegated_admin_attribute_request_allOf'
+      - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
+    generic-delegated-admin-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - $ref: '#/components/schemas/certificate_delegated_admin_attribute_response_allOf'
+      - $ref: '#/components/schemas/generic-delegated-admin-attribute-shared'
+    generic-delegated-admin-attribute-shared:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneric-delegated-admin-attributeSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        description:
+          description: A description for this Delegated Admin Attribute
+          type: string
+        attributeType:
+          description: Specifies the name or OID of the LDAP attribute type.
+          type: string
+        displayName:
+          description: A human readable display name for this Delegated Admin Attribute.
+          type: string
+        mutability:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+        multiValued:
+          description: Indicates whether this Delegated Admin Attribute may have multiple
+            values.
+          type: boolean
+        includeInSummary:
+          description: Indicates whether this Delegated Admin Attribute is to be included
+            in the summary display for a resource.
+          type: boolean
+        attributeCategory:
+          description: Specifies which attribute category this attribute belongs to.
+          type: string
+        displayOrderIndex:
+          description: This property determines a display order for attributes within
+            a given attribute category. Attributes are ordered within their category
+            based on this index from least to greatest.
+          type: integer
+        referenceResourceType:
+          description: "For LDAP attributes with DN syntax, specifies what kind of\
+            \ resource is referenced."
+          type: string
+        attributePresentation:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+        dateTimeFormat:
+          description: Specifies the format string that is used to present a date
+            and/or time value to the user of the app. This property only applies to
+            LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored
+            if the attribute type has any other syntax.
+          type: string
+      required:
+      - attributeType
+      - displayName
+      - displayOrderIndex
+      - includeInSummary
+      - multiValued
+      - mutability
+      - schemas
+      type: object
+    Enumgeneric-delegated-admin-attributeSchemaUrn:
+      enum:
+      - urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:generic
       type: string
     add-delegated-admin-correlated-rest-resource-request:
       allOf:
@@ -44625,6 +45517,7 @@ components:
       - $ref: '#/components/schemas/add-ping-one-pass-through-authentication-plugin-request'
       - $ref: '#/components/schemas/add-search-shutdown-plugin-request'
       - $ref: '#/components/schemas/add-periodic-stats-logger-plugin-request'
+      - $ref: '#/components/schemas/add-purge-expired-data-plugin-request'
       - $ref: '#/components/schemas/add-sub-operation-timing-plugin-request'
       - $ref: '#/components/schemas/add-third-party-plugin-request'
       - $ref: '#/components/schemas/add-pass-through-authentication-plugin-request'
@@ -44651,6 +45544,7 @@ components:
       - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-response'
       - $ref: '#/components/schemas/search-shutdown-plugin-response'
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+      - $ref: '#/components/schemas/purge-expired-data-plugin-response'
       - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
       - $ref: '#/components/schemas/third-party-plugin-response'
       - $ref: '#/components/schemas/pass-through-authentication-plugin-response'
@@ -44681,6 +45575,7 @@ components:
       - $ref: '#/components/schemas/processing-time-histogram-plugin-response'
       - $ref: '#/components/schemas/search-shutdown-plugin-response'
       - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+      - $ref: '#/components/schemas/purge-expired-data-plugin-response'
       - $ref: '#/components/schemas/change-subscription-notification-plugin-response'
       - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
       - $ref: '#/components/schemas/third-party-plugin-response'
@@ -44841,6 +45736,7 @@ components:
       oneOf:
       - $ref: '#/components/schemas/json-log-field-syntax-response'
       - $ref: '#/components/schemas/attribute-based-log-field-syntax-response'
+      - $ref: '#/components/schemas/generic-log-field-syntax-response'
     add_extended_operation_handler_request:
       oneOf:
       - $ref: '#/components/schemas/add-validate-totp-password-extended-operation-handler-request'
@@ -45062,6 +45958,13 @@ components:
       - $ref: '#/components/schemas/ldap-connection-handler-response'
       - $ref: '#/components/schemas/ldif-connection-handler-response'
       - $ref: '#/components/schemas/http-connection-handler-response'
+    add_web_application_extension_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/generic-web-application-extension-response'
+    get_web_application_extension_200_response:
+      oneOf:
+      - $ref: '#/components/schemas/console-web-application-extension-response'
+      - $ref: '#/components/schemas/generic-web-application-extension-response'
     add_search_entry_criteria_request:
       oneOf:
       - $ref: '#/components/schemas/add-simple-search-entry-criteria-request'
@@ -45226,31 +46129,39 @@ components:
       - $ref: '#/components/schemas/third-party-key-manager-provider-response'
     add_external_server_request:
       oneOf:
-      - $ref: '#/components/schemas/add-opendj-external-server-request'
       - $ref: '#/components/schemas/add-smtp-external-server-request'
       - $ref: '#/components/schemas/add-nokia-ds-external-server-request'
-      - $ref: '#/components/schemas/add-ping-one-http-external-server-request'
+      - $ref: '#/components/schemas/add-ping-identity-ds-external-server-request'
       - $ref: '#/components/schemas/add-active-directory-external-server-request'
+      - $ref: '#/components/schemas/add-jdbc-external-server-request'
+      - $ref: '#/components/schemas/add-syslog-external-server-request'
+      - $ref: '#/components/schemas/add-ping-identity-proxy-server-external-server-request'
+      - $ref: '#/components/schemas/add-nokia-proxy-server-external-server-request'
+      - $ref: '#/components/schemas/add-opendj-external-server-request'
+      - $ref: '#/components/schemas/add-ldap-external-server-request'
+      - $ref: '#/components/schemas/add-ping-one-http-external-server-request'
+      - $ref: '#/components/schemas/add-http-external-server-request'
       - $ref: '#/components/schemas/add-oracle-unified-directory-external-server-request'
       - $ref: '#/components/schemas/add-conjur-external-server-request'
-      - $ref: '#/components/schemas/add-jdbc-external-server-request'
       - $ref: '#/components/schemas/add-amazon-aws-external-server-request'
-      - $ref: '#/components/schemas/add-syslog-external-server-request'
-      - $ref: '#/components/schemas/add-nokia-proxy-server-external-server-request'
       - $ref: '#/components/schemas/add-vault-external-server-request'
     add_external_server_200_response:
       oneOf:
-      - $ref: '#/components/schemas/opendj-external-server-response'
       - $ref: '#/components/schemas/smtp-external-server-response'
       - $ref: '#/components/schemas/nokia-ds-external-server-response'
-      - $ref: '#/components/schemas/ping-one-http-external-server-response'
+      - $ref: '#/components/schemas/ping-identity-ds-external-server-response'
       - $ref: '#/components/schemas/active-directory-external-server-response'
+      - $ref: '#/components/schemas/jdbc-external-server-response'
+      - $ref: '#/components/schemas/syslog-external-server-response'
+      - $ref: '#/components/schemas/ping-identity-proxy-server-external-server-response'
+      - $ref: '#/components/schemas/nokia-proxy-server-external-server-response'
+      - $ref: '#/components/schemas/opendj-external-server-response'
+      - $ref: '#/components/schemas/ldap-external-server-response'
+      - $ref: '#/components/schemas/ping-one-http-external-server-response'
+      - $ref: '#/components/schemas/http-external-server-response'
       - $ref: '#/components/schemas/oracle-unified-directory-external-server-response'
       - $ref: '#/components/schemas/conjur-external-server-response'
-      - $ref: '#/components/schemas/jdbc-external-server-response'
       - $ref: '#/components/schemas/amazon-aws-external-server-response'
-      - $ref: '#/components/schemas/syslog-external-server-response'
-      - $ref: '#/components/schemas/nokia-proxy-server-external-server-response'
       - $ref: '#/components/schemas/vault-external-server-response'
     add_change_subscription_handler_request:
       oneOf:
@@ -45296,17 +46207,18 @@ components:
       - $ref: '#/components/schemas/local-db-backend-response'
     get_backend_200_response:
       oneOf:
-      - $ref: '#/components/schemas/config-file-handler-backend-response'
       - $ref: '#/components/schemas/schema-backend-response'
       - $ref: '#/components/schemas/backup-backend-response'
-      - $ref: '#/components/schemas/task-backend-response'
-      - $ref: '#/components/schemas/alert-backend-response'
       - $ref: '#/components/schemas/encryption-settings-backend-response'
+      - $ref: '#/components/schemas/ldif-backend-response'
       - $ref: '#/components/schemas/trust-store-backend-response'
-      - $ref: '#/components/schemas/alarm-backend-response'
       - $ref: '#/components/schemas/changelog-backend-response'
       - $ref: '#/components/schemas/monitor-backend-response'
       - $ref: '#/components/schemas/local-db-backend-response'
+      - $ref: '#/components/schemas/config-file-handler-backend-response'
+      - $ref: '#/components/schemas/task-backend-response'
+      - $ref: '#/components/schemas/alert-backend-response'
+      - $ref: '#/components/schemas/alarm-backend-response'
       - $ref: '#/components/schemas/metrics-backend-response'
     get_attribute_syntax_200_response:
       oneOf:
@@ -45317,6 +46229,7 @@ components:
       - $ref: '#/components/schemas/generalized-time-attribute-syntax-response'
       - $ref: '#/components/schemas/integer-attribute-syntax-response'
       - $ref: '#/components/schemas/uuid-attribute-syntax-response'
+      - $ref: '#/components/schemas/generic-attribute-syntax-response'
       - $ref: '#/components/schemas/json-object-attribute-syntax-response'
       - $ref: '#/components/schemas/user-password-attribute-syntax-response'
       - $ref: '#/components/schemas/boolean-attribute-syntax-response'
@@ -45382,6 +46295,7 @@ components:
       - $ref: '#/components/schemas/approximate-matching-rule-response'
       - $ref: '#/components/schemas/equality-matching-rule-response'
       - $ref: '#/components/schemas/substring-matching-rule-response'
+      - $ref: '#/components/schemas/generic-matching-rule-response'
     add_virtual_attribute_request:
       oneOf:
       - $ref: '#/components/schemas/add-mirror-virtual-attribute-request'
@@ -45491,19 +46405,23 @@ components:
     add_rest_resource_type_request:
       oneOf:
       - $ref: '#/components/schemas/add-user-rest-resource-type-request'
+      - $ref: '#/components/schemas/add-generic-rest-resource-type-request'
       - $ref: '#/components/schemas/add-group-rest-resource-type-request'
     add_rest_resource_type_200_response:
       oneOf:
       - $ref: '#/components/schemas/user-rest-resource-type-response'
+      - $ref: '#/components/schemas/generic-rest-resource-type-response'
       - $ref: '#/components/schemas/group-rest-resource-type-response'
     add_delegated_admin_attribute_request:
       oneOf:
       - $ref: '#/components/schemas/add-certificate-delegated-admin-attribute-request'
       - $ref: '#/components/schemas/add-photo-delegated-admin-attribute-request'
+      - $ref: '#/components/schemas/add-generic-delegated-admin-attribute-request'
     add_delegated_admin_attribute_200_response:
       oneOf:
       - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
       - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+      - $ref: '#/components/schemas/generic-delegated-admin-attribute-response'
     add_sasl_mechanism_handler_request:
       oneOf:
       - $ref: '#/components/schemas/add-unboundid-ms-chap-v2-sasl-mechanism-handler-request'
@@ -48059,6 +48977,27 @@ components:
       - schemas
       type: object
       example: null
+    generic_log_field_syntax_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneric-log-field-syntaxSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Log Field Syntax
+          type: string
+        description:
+          description: A description for this Log Field Syntax
+          type: string
+        defaultBehavior:
+          $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
+      required:
+      - id
+      - schemas
+      type: object
+      example: null
     cancel_extended_operation_handler_response_allOf:
       properties:
         schemas:
@@ -49085,6 +50024,9 @@ components:
           maxItems: 1
           minItems: 1
           type: array
+        id:
+          description: Name of the Web Application Extension
+          type: string
         ssoEnabled:
           description: Indicates that SSO login into the Administrative Console is
             enabled.
@@ -49185,6 +50127,26 @@ components:
           type: array
       required:
       - baseContextPath
+      - id
+      - schemas
+      type: object
+      example: null
+    add_generic_web_application_extension_request_allOf:
+      properties:
+        extensionName:
+          description: Name of the new Web Application Extension
+          type: string
+      required:
+      - extensionName
+      type: object
+      example: null
+    generic_web_application_extension_response_allOf:
+      properties:
+        id:
+          description: Name of the Web Application Extension
+          type: string
+      required:
+      - id
       type: object
       example: null
     add_trusted_certificate_request_allOf:
@@ -49618,7 +50580,7 @@ components:
       - id
       type: object
       example: null
-    add_opendj_external_server_request_allOf:
+    add_smtp_external_server_request_allOf:
       properties:
         serverName:
           description: Name of the new External Server
@@ -49627,7 +50589,7 @@ components:
       - serverName
       type: object
       example: null
-    opendj_external_server_response_allOf:
+    smtp_external_server_response_allOf:
       properties:
         id:
           description: Name of the External Server
@@ -50164,88 +51126,6 @@ components:
       - id
       type: object
       example: null
-    config_file_handler_backend_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumconfig-file-handler-backendSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Backend
-          type: string
-        backendID:
-          description: Specifies a name to identify the associated backend.
-          type: string
-        baseDN:
-          description: Specifies the base DN(s) for the data that the backend handles.
-          items:
-            type: string
-          type: array
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        insignificantConfigArchiveAttribute:
-          description: The name or OID of an attribute type that is considered insignificant
-            for the purpose of maintaining the configuration archive.
-          items:
-            type: string
-          type: array
-        mirroredSubtreePeerPollingInterval:
-          description: Tells the server component that is responsible for mirroring
-            configuration data across a topology of servers the maximum amount of
-            time to wait before polling the peer servers in the topology to determine
-            if there are any changes in the topology. Mirrored data includes meta-data
-            about the servers in the topology as well as cluster-wide configuration
-            data.
-          type: string
-        mirroredSubtreeEntryUpdateTimeout:
-          description: "Tells the server component that is responsible for mirroring\
-            \ configuration data across a topology of servers the maximum amount of\
-            \ time to wait for an update operation (add, delete, modify and modify-dn)\
-            \ on an entry to be applied on all servers in the topology. Mirrored data\
-            \ includes meta-data about the servers in the topology as well as cluster-wide\
-            \ configuration data."
-          type: string
-        mirroredSubtreeSearchTimeout:
-          description: Tells the server component that is responsible for mirroring
-            configuration data across a topology of servers the maximum amount of
-            time to wait for a search operation to complete. Mirrored data includes
-            meta-data about the servers in the topology as well as cluster-wide configuration
-            data. Search requests that take longer than this timeout will be canceled
-            and considered failures.
-          type: string
-        description:
-          description: A description for this Backend
-          type: string
-        enabled:
-          description: Indicates whether the backend is enabled in the server.
-          type: boolean
-        setDegradedAlertWhenDisabled:
-          description: Determines whether the Directory Server enters a DEGRADED state
-            (and sends a corresponding alert) when this Backend is disabled.
-          type: boolean
-        returnUnavailableWhenDisabled:
-          description: Determines whether any LDAP operation that would use this Backend
-            is to return UNAVAILABLE when this Backend is disabled.
-          type: boolean
-        backupFilePermissions:
-          description: Specifies the permissions that should be applied to files and
-            directories created by a backup of the backend.
-          type: string
-        notificationManager:
-          description: Specifies a notification manager for changes resulting from
-            operations processed through this Backend
-          type: string
-      required:
-      - backendID
-      - baseDN
-      - enabled
-      - id
-      - schemas
-      - writabilityMode
-      type: object
-      example: null
     schema_backend_response_allOf:
       properties:
         schemas:
@@ -50372,160 +51252,6 @@ components:
       - writabilityMode
       type: object
       example: null
-    task_backend_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumtask-backendSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Backend
-          type: string
-        backendID:
-          description: Specifies a name to identify the associated backend.
-          type: string
-        baseDN:
-          description: Specifies the base DN(s) for the data that the backend handles.
-          items:
-            type: string
-          type: array
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        taskBackingFile:
-          description: Specifies the path to the backing file for storing information
-            about the tasks configured in the server.
-          type: string
-        maximumInitialTaskLogMessagesToRetain:
-          description: "The maximum number of log messages to retain in each task\
-            \ entry from the beginning of the processing for that task. If too many\
-            \ messages are logged during task processing, then retaining only a limited\
-            \ number of messages from the beginning and/or end of task processing\
-            \ can reduce the amount of memory that the server consumes by caching\
-            \ information about currently-active and recently-completed tasks."
-          type: integer
-        maximumFinalTaskLogMessagesToRetain:
-          description: "The maximum number of log messages to retain in each task\
-            \ entry from the end of the processing for that task. If too many messages\
-            \ are logged during task processing, then retaining only a limited number\
-            \ of messages from the beginning and/or end of task processing can reduce\
-            \ the amount of memory that the server consumes by caching information\
-            \ about currently-active and recently-completed tasks."
-          type: integer
-        taskRetentionTime:
-          description: Specifies the length of time that task entries should be retained
-            after processing on the associated task has been completed.
-          type: string
-        notificationSenderAddress:
-          description: "Specifies the email address to use as the sender address (that\
-            \ is, the \"From:\" address) for notification mail messages generated\
-            \ when a task completes execution."
-          type: string
-        description:
-          description: A description for this Backend
-          type: string
-        enabled:
-          description: Indicates whether the backend is enabled in the server.
-          type: boolean
-        setDegradedAlertWhenDisabled:
-          description: Determines whether the Directory Server enters a DEGRADED state
-            (and sends a corresponding alert) when this Backend is disabled.
-          type: boolean
-        returnUnavailableWhenDisabled:
-          description: Determines whether any LDAP operation that would use this Backend
-            is to return UNAVAILABLE when this Backend is disabled.
-          type: boolean
-        backupFilePermissions:
-          description: Specifies the permissions that should be applied to files and
-            directories created by a backup of the backend.
-          type: string
-        notificationManager:
-          description: Specifies a notification manager for changes resulting from
-            operations processed through this Backend
-          type: string
-      required:
-      - backendID
-      - baseDN
-      - enabled
-      - id
-      - schemas
-      - taskBackingFile
-      - writabilityMode
-      type: object
-      example: null
-    alert_backend_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumalert-backendSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Backend
-          type: string
-        backendID:
-          description: Specifies a name to identify the associated backend.
-          type: string
-        baseDN:
-          description: Specifies the base DN(s) for the data that the backend handles.
-          items:
-            type: string
-          type: array
-        ldifFile:
-          description: Specifies the path to the LDIF file that serves as the backing
-            file for this backend.
-          type: string
-        alertRetentionTime:
-          description: Specifies the maximum length of time that information about
-            generated alerts should be maintained before they will be purged.
-          type: string
-        maxAlerts:
-          description: "Specifies the maximum number of alerts that should be retained.\
-            \ If more alerts than this configured maximum are generated within the\
-            \ alert retention time, then the oldest alerts will be purged to achieve\
-            \ this maximum."
-          type: integer
-        disabledAlertType:
-          items:
-            $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
-          type: array
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        description:
-          description: A description for this Backend
-          type: string
-        enabled:
-          description: Indicates whether the backend is enabled in the server.
-          type: boolean
-        setDegradedAlertWhenDisabled:
-          description: Determines whether the Directory Server enters a DEGRADED state
-            (and sends a corresponding alert) when this Backend is disabled.
-          type: boolean
-        returnUnavailableWhenDisabled:
-          description: Determines whether any LDAP operation that would use this Backend
-            is to return UNAVAILABLE when this Backend is disabled.
-          type: boolean
-        backupFilePermissions:
-          description: Specifies the permissions that should be applied to files and
-            directories created by a backup of the backend.
-          type: string
-        notificationManager:
-          description: Specifies a notification manager for changes resulting from
-            operations processed through this Backend
-          type: string
-      required:
-      - alertRetentionTime
-      - backendID
-      - baseDN
-      - enabled
-      - id
-      - ldifFile
-      - schemas
-      - writabilityMode
-      type: object
-      example: null
     encryption_settings_backend_response_allOf:
       properties:
         schemas:
@@ -50573,6 +51299,68 @@ components:
       - enabled
       - id
       - schemas
+      type: object
+      example: null
+    ldif_backend_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumldif-backendSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Backend
+          type: string
+        writabilityMode:
+          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+        isPrivateBackend:
+          description: "Indicates whether the backend should be considered a private\
+            \ backend, which indicates that it is used for storing operational data\
+            \ rather than user-defined information."
+          type: boolean
+        ldifFile:
+          description: Specifies the path to the LDIF file containing the data for
+            this backend.
+          type: string
+        backendID:
+          description: Specifies a name to identify the associated backend.
+          type: string
+        description:
+          description: A description for this Backend
+          type: string
+        enabled:
+          description: Indicates whether the backend is enabled in the server.
+          type: boolean
+        baseDN:
+          description: Specifies the base DN(s) for the data that the backend handles.
+          items:
+            type: string
+          type: array
+        setDegradedAlertWhenDisabled:
+          description: Determines whether the Directory Server enters a DEGRADED state
+            (and sends a corresponding alert) when this Backend is disabled.
+          type: boolean
+        returnUnavailableWhenDisabled:
+          description: Determines whether any LDAP operation that would use this Backend
+            is to return UNAVAILABLE when this Backend is disabled.
+          type: boolean
+        backupFilePermissions:
+          description: Specifies the permissions that should be applied to files and
+            directories created by a backup of the backend.
+          type: string
+        notificationManager:
+          description: Specifies a notification manager for changes resulting from
+            operations processed through this Backend
+          type: string
+      required:
+      - backendID
+      - baseDN
+      - enabled
+      - id
+      - ldifFile
+      - schemas
+      - writabilityMode
       type: object
       example: null
     trust_store_backend_response_allOf:
@@ -50645,74 +51433,6 @@ components:
       - id
       - schemas
       - trustStoreFile
-      - writabilityMode
-      type: object
-      example: null
-    alarm_backend_response_allOf:
-      properties:
-        schemas:
-          items:
-            $ref: '#/components/schemas/Enumalarm-backendSchemaUrn'
-          maxItems: 1
-          minItems: 1
-          type: array
-        id:
-          description: Name of the Backend
-          type: string
-        backendID:
-          description: Specifies a name to identify the associated backend.
-          type: string
-        baseDN:
-          description: Specifies the base DN(s) for the data that the backend handles.
-          items:
-            type: string
-          type: array
-        ldifFile:
-          description: Specifies the path to the LDIF file that serves as the backing
-            file for this backend.
-          type: string
-        alarmRetentionTime:
-          description: Specifies the maximum length of time that information about
-            raised alarms should be maintained before they will be purged.
-          type: string
-        maxAlarms:
-          description: "Specifies the maximum number of alarms that should be retained.\
-            \ If more alarms than this configured maximum are generated within the\
-            \ alarm retention time, then the oldest alarms will be purged to achieve\
-            \ this maximum. Only alarms at normal severity will be purged."
-          type: integer
-        writabilityMode:
-          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-        description:
-          description: A description for this Backend
-          type: string
-        enabled:
-          description: Indicates whether the backend is enabled in the server.
-          type: boolean
-        setDegradedAlertWhenDisabled:
-          description: Determines whether the Directory Server enters a DEGRADED state
-            (and sends a corresponding alert) when this Backend is disabled.
-          type: boolean
-        returnUnavailableWhenDisabled:
-          description: Determines whether any LDAP operation that would use this Backend
-            is to return UNAVAILABLE when this Backend is disabled.
-          type: boolean
-        backupFilePermissions:
-          description: Specifies the permissions that should be applied to files and
-            directories created by a backup of the backend.
-          type: string
-        notificationManager:
-          description: Specifies a notification manager for changes resulting from
-            operations processed through this Backend
-          type: string
-      required:
-      - alarmRetentionTime
-      - backendID
-      - baseDN
-      - enabled
-      - id
-      - ldifFile
-      - schemas
       - writabilityMode
       type: object
       example: null
@@ -50977,6 +51697,310 @@ components:
           type: string
       required:
       - id
+      type: object
+      example: null
+    config_file_handler_backend_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumconfig-file-handler-backendSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Backend
+          type: string
+        backendID:
+          description: Specifies a name to identify the associated backend.
+          type: string
+        baseDN:
+          description: Specifies the base DN(s) for the data that the backend handles.
+          items:
+            type: string
+          type: array
+        writabilityMode:
+          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+        insignificantConfigArchiveAttribute:
+          description: The name or OID of an attribute type that is considered insignificant
+            for the purpose of maintaining the configuration archive.
+          items:
+            type: string
+          type: array
+        mirroredSubtreePeerPollingInterval:
+          description: Tells the server component that is responsible for mirroring
+            configuration data across a topology of servers the maximum amount of
+            time to wait before polling the peer servers in the topology to determine
+            if there are any changes in the topology. Mirrored data includes meta-data
+            about the servers in the topology as well as cluster-wide configuration
+            data.
+          type: string
+        mirroredSubtreeEntryUpdateTimeout:
+          description: "Tells the server component that is responsible for mirroring\
+            \ configuration data across a topology of servers the maximum amount of\
+            \ time to wait for an update operation (add, delete, modify and modify-dn)\
+            \ on an entry to be applied on all servers in the topology. Mirrored data\
+            \ includes meta-data about the servers in the topology as well as cluster-wide\
+            \ configuration data."
+          type: string
+        mirroredSubtreeSearchTimeout:
+          description: Tells the server component that is responsible for mirroring
+            configuration data across a topology of servers the maximum amount of
+            time to wait for a search operation to complete. Mirrored data includes
+            meta-data about the servers in the topology as well as cluster-wide configuration
+            data. Search requests that take longer than this timeout will be canceled
+            and considered failures.
+          type: string
+        description:
+          description: A description for this Backend
+          type: string
+        enabled:
+          description: Indicates whether the backend is enabled in the server.
+          type: boolean
+        setDegradedAlertWhenDisabled:
+          description: Determines whether the Directory Server enters a DEGRADED state
+            (and sends a corresponding alert) when this Backend is disabled.
+          type: boolean
+        returnUnavailableWhenDisabled:
+          description: Determines whether any LDAP operation that would use this Backend
+            is to return UNAVAILABLE when this Backend is disabled.
+          type: boolean
+        backupFilePermissions:
+          description: Specifies the permissions that should be applied to files and
+            directories created by a backup of the backend.
+          type: string
+        notificationManager:
+          description: Specifies a notification manager for changes resulting from
+            operations processed through this Backend
+          type: string
+      required:
+      - backendID
+      - baseDN
+      - enabled
+      - id
+      - schemas
+      - writabilityMode
+      type: object
+      example: null
+    task_backend_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumtask-backendSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Backend
+          type: string
+        backendID:
+          description: Specifies a name to identify the associated backend.
+          type: string
+        baseDN:
+          description: Specifies the base DN(s) for the data that the backend handles.
+          items:
+            type: string
+          type: array
+        writabilityMode:
+          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+        taskBackingFile:
+          description: Specifies the path to the backing file for storing information
+            about the tasks configured in the server.
+          type: string
+        maximumInitialTaskLogMessagesToRetain:
+          description: "The maximum number of log messages to retain in each task\
+            \ entry from the beginning of the processing for that task. If too many\
+            \ messages are logged during task processing, then retaining only a limited\
+            \ number of messages from the beginning and/or end of task processing\
+            \ can reduce the amount of memory that the server consumes by caching\
+            \ information about currently-active and recently-completed tasks."
+          type: integer
+        maximumFinalTaskLogMessagesToRetain:
+          description: "The maximum number of log messages to retain in each task\
+            \ entry from the end of the processing for that task. If too many messages\
+            \ are logged during task processing, then retaining only a limited number\
+            \ of messages from the beginning and/or end of task processing can reduce\
+            \ the amount of memory that the server consumes by caching information\
+            \ about currently-active and recently-completed tasks."
+          type: integer
+        taskRetentionTime:
+          description: Specifies the length of time that task entries should be retained
+            after processing on the associated task has been completed.
+          type: string
+        notificationSenderAddress:
+          description: "Specifies the email address to use as the sender address (that\
+            \ is, the \"From:\" address) for notification mail messages generated\
+            \ when a task completes execution."
+          type: string
+        description:
+          description: A description for this Backend
+          type: string
+        enabled:
+          description: Indicates whether the backend is enabled in the server.
+          type: boolean
+        setDegradedAlertWhenDisabled:
+          description: Determines whether the Directory Server enters a DEGRADED state
+            (and sends a corresponding alert) when this Backend is disabled.
+          type: boolean
+        returnUnavailableWhenDisabled:
+          description: Determines whether any LDAP operation that would use this Backend
+            is to return UNAVAILABLE when this Backend is disabled.
+          type: boolean
+        backupFilePermissions:
+          description: Specifies the permissions that should be applied to files and
+            directories created by a backup of the backend.
+          type: string
+        notificationManager:
+          description: Specifies a notification manager for changes resulting from
+            operations processed through this Backend
+          type: string
+      required:
+      - backendID
+      - baseDN
+      - enabled
+      - id
+      - schemas
+      - taskBackingFile
+      - writabilityMode
+      type: object
+      example: null
+    alert_backend_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumalert-backendSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Backend
+          type: string
+        backendID:
+          description: Specifies a name to identify the associated backend.
+          type: string
+        baseDN:
+          description: Specifies the base DN(s) for the data that the backend handles.
+          items:
+            type: string
+          type: array
+        ldifFile:
+          description: Specifies the path to the LDIF file that serves as the backing
+            file for this backend.
+          type: string
+        alertRetentionTime:
+          description: Specifies the maximum length of time that information about
+            generated alerts should be maintained before they will be purged.
+          type: string
+        maxAlerts:
+          description: "Specifies the maximum number of alerts that should be retained.\
+            \ If more alerts than this configured maximum are generated within the\
+            \ alert retention time, then the oldest alerts will be purged to achieve\
+            \ this maximum."
+          type: integer
+        disabledAlertType:
+          items:
+            $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
+          type: array
+        writabilityMode:
+          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+        description:
+          description: A description for this Backend
+          type: string
+        enabled:
+          description: Indicates whether the backend is enabled in the server.
+          type: boolean
+        setDegradedAlertWhenDisabled:
+          description: Determines whether the Directory Server enters a DEGRADED state
+            (and sends a corresponding alert) when this Backend is disabled.
+          type: boolean
+        returnUnavailableWhenDisabled:
+          description: Determines whether any LDAP operation that would use this Backend
+            is to return UNAVAILABLE when this Backend is disabled.
+          type: boolean
+        backupFilePermissions:
+          description: Specifies the permissions that should be applied to files and
+            directories created by a backup of the backend.
+          type: string
+        notificationManager:
+          description: Specifies a notification manager for changes resulting from
+            operations processed through this Backend
+          type: string
+      required:
+      - alertRetentionTime
+      - backendID
+      - baseDN
+      - enabled
+      - id
+      - ldifFile
+      - schemas
+      - writabilityMode
+      type: object
+      example: null
+    alarm_backend_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumalarm-backendSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Backend
+          type: string
+        backendID:
+          description: Specifies a name to identify the associated backend.
+          type: string
+        baseDN:
+          description: Specifies the base DN(s) for the data that the backend handles.
+          items:
+            type: string
+          type: array
+        ldifFile:
+          description: Specifies the path to the LDIF file that serves as the backing
+            file for this backend.
+          type: string
+        alarmRetentionTime:
+          description: Specifies the maximum length of time that information about
+            raised alarms should be maintained before they will be purged.
+          type: string
+        maxAlarms:
+          description: "Specifies the maximum number of alarms that should be retained.\
+            \ If more alarms than this configured maximum are generated within the\
+            \ alarm retention time, then the oldest alarms will be purged to achieve\
+            \ this maximum. Only alarms at normal severity will be purged."
+          type: integer
+        writabilityMode:
+          $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+        description:
+          description: A description for this Backend
+          type: string
+        enabled:
+          description: Indicates whether the backend is enabled in the server.
+          type: boolean
+        setDegradedAlertWhenDisabled:
+          description: Determines whether the Directory Server enters a DEGRADED state
+            (and sends a corresponding alert) when this Backend is disabled.
+          type: boolean
+        returnUnavailableWhenDisabled:
+          description: Determines whether any LDAP operation that would use this Backend
+            is to return UNAVAILABLE when this Backend is disabled.
+          type: boolean
+        backupFilePermissions:
+          description: Specifies the permissions that should be applied to files and
+            directories created by a backup of the backend.
+          type: string
+        notificationManager:
+          description: Specifies a notification manager for changes resulting from
+            operations processed through this Backend
+          type: string
+      required:
+      - alarmRetentionTime
+      - backendID
+      - baseDN
+      - enabled
+      - id
+      - ldifFile
+      - schemas
+      - writabilityMode
       type: object
       example: null
     metrics_backend_response_allOf:
@@ -51361,6 +52385,32 @@ components:
           items:
             type: string
           type: array
+        enabled:
+          description: Indicates whether the Attribute Syntax is enabled.
+          type: boolean
+        requireBinaryTransfer:
+          description: "Indicates whether values of this attribute are required to\
+            \ have a \"binary\" transfer option as described in RFC 4522. Attributes\
+            \ with this syntax will generally be referenced with names including \"\
+            ;binary\" (e.g., \"userCertificate;binary\")."
+          type: boolean
+      required:
+      - enabled
+      - id
+      - schemas
+      type: object
+      example: null
+    generic_attribute_syntax_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneric-attribute-syntaxSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Attribute Syntax
+          type: string
         enabled:
           description: Indicates whether the Attribute Syntax is enabled.
           type: boolean
@@ -52327,6 +53377,26 @@ components:
         schemas:
           items:
             $ref: '#/components/schemas/Enumsubstring-matching-ruleSchemaUrn'
+          maxItems: 1
+          minItems: 1
+          type: array
+        id:
+          description: Name of the Matching Rule
+          type: string
+        enabled:
+          description: Indicates whether the Matching Rule is enabled for use.
+          type: boolean
+      required:
+      - enabled
+      - id
+      - schemas
+      type: object
+      example: null
+    generic_matching_rule_response_allOf:
+      properties:
+        schemas:
+          items:
+            $ref: '#/components/schemas/Enumgeneric-matching-ruleSchemaUrn'
           maxItems: 1
           minItems: 1
           type: array

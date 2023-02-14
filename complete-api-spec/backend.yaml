@@ -88,17 +88,18 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/config-file-handler-backend-response'
                 - $ref: '#/components/schemas/schema-backend-response'
                 - $ref: '#/components/schemas/backup-backend-response'
-                - $ref: '#/components/schemas/task-backend-response'
-                - $ref: '#/components/schemas/alert-backend-response'
                 - $ref: '#/components/schemas/encryption-settings-backend-response'
+                - $ref: '#/components/schemas/ldif-backend-response'
                 - $ref: '#/components/schemas/trust-store-backend-response'
-                - $ref: '#/components/schemas/alarm-backend-response'
                 - $ref: '#/components/schemas/changelog-backend-response'
                 - $ref: '#/components/schemas/monitor-backend-response'
                 - $ref: '#/components/schemas/local-db-backend-response'
+                - $ref: '#/components/schemas/config-file-handler-backend-response'
+                - $ref: '#/components/schemas/task-backend-response'
+                - $ref: '#/components/schemas/alert-backend-response'
+                - $ref: '#/components/schemas/alarm-backend-response'
                 - $ref: '#/components/schemas/metrics-backend-response'
         "401":
           description: Requestor cannot be authenticated
@@ -136,17 +137,18 @@ paths:
             application/json:
               schema:
                 oneOf:
-                - $ref: '#/components/schemas/config-file-handler-backend-response'
                 - $ref: '#/components/schemas/schema-backend-response'
                 - $ref: '#/components/schemas/backup-backend-response'
-                - $ref: '#/components/schemas/task-backend-response'
-                - $ref: '#/components/schemas/alert-backend-response'
                 - $ref: '#/components/schemas/encryption-settings-backend-response'
+                - $ref: '#/components/schemas/ldif-backend-response'
                 - $ref: '#/components/schemas/trust-store-backend-response'
-                - $ref: '#/components/schemas/alarm-backend-response'
                 - $ref: '#/components/schemas/changelog-backend-response'
                 - $ref: '#/components/schemas/monitor-backend-response'
                 - $ref: '#/components/schemas/local-db-backend-response'
+                - $ref: '#/components/schemas/config-file-handler-backend-response'
+                - $ref: '#/components/schemas/task-backend-response'
+                - $ref: '#/components/schemas/alert-backend-response'
+                - $ref: '#/components/schemas/alarm-backend-response'
                 - $ref: '#/components/schemas/metrics-backend-response'
         "401":
           description: Requestor cannot be authenticated
@@ -636,85 +638,6 @@ paths:
       - local-db-index
 components:
   schemas:
-    config-file-handler-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumconfig-file-handler-backendSchemaUrn'
-          id:
-            description: Name of the Backend
-            type: string
-          backendID:
-            type: string
-            description: >-
-                Specifies a name to identify the associated backend.
-          baseDN:
-            type: array
-            items:
-              type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
-          writabilityMode:
-            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-          insignificantConfigArchiveAttribute:
-            type: array
-            items:
-              type: string
-            description: >-
-                The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
-          mirroredSubtreePeerPollingInterval:
-            type: string
-            description: >-
-                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
-          mirroredSubtreeEntryUpdateTimeout:
-            type: string
-            description: >-
-                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
-          mirroredSubtreeSearchTimeout:
-            type: string
-            description: >-
-                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures.
-          description:
-            type: string
-            description: >-
-                A description for this Backend
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the backend is enabled in the server.
-          setDegradedAlertWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-          returnUnavailableWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-          backupFilePermissions:
-            type: string
-            description: >-
-                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-          notificationManager:
-            type: string
-            description: >-
-                Specifies a notification manager for changes resulting from operations processed through this Backend
-        required:
-        - schemas
-        - backendID
-        - baseDN
-        - writabilityMode
-        - enabled
-        - id
-    Enumconfig-file-handler-backendSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler"
     schema-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -857,167 +780,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:backup"
-    task-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumtask-backendSchemaUrn'
-          id:
-            description: Name of the Backend
-            type: string
-          backendID:
-            type: string
-            description: >-
-                Specifies a name to identify the associated backend.
-          baseDN:
-            type: array
-            items:
-              type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
-          writabilityMode:
-            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-          taskBackingFile:
-            type: string
-            description: >-
-                Specifies the path to the backing file for storing information about the tasks configured in the server.
-          maximumInitialTaskLogMessagesToRetain:
-            type: integer
-            description: >-
-                The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
-          maximumFinalTaskLogMessagesToRetain:
-            type: integer
-            description: >-
-                The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
-          taskRetentionTime:
-            type: string
-            description: >-
-                Specifies the length of time that task entries should be retained after processing on the associated task has been completed.
-          notificationSenderAddress:
-            type: string
-            description: >-
-                Specifies the email address to use as the sender address (that is, the "From:" address) for notification mail messages generated when a task completes execution.
-          description:
-            type: string
-            description: >-
-                A description for this Backend
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the backend is enabled in the server.
-          setDegradedAlertWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-          returnUnavailableWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-          backupFilePermissions:
-            type: string
-            description: >-
-                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-          notificationManager:
-            type: string
-            description: >-
-                Specifies a notification manager for changes resulting from operations processed through this Backend
-        required:
-        - schemas
-        - backendID
-        - baseDN
-        - writabilityMode
-        - taskBackingFile
-        - enabled
-        - id
-    Enumtask-backendSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:backend:task"
-    alert-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumalert-backendSchemaUrn'
-          id:
-            description: Name of the Backend
-            type: string
-          backendID:
-            type: string
-            description: >-
-                Specifies a name to identify the associated backend.
-          baseDN:
-            type: array
-            items:
-              type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
-          ldifFile:
-            type: string
-            description: >-
-                Specifies the path to the LDIF file that serves as the backing file for this backend.
-          alertRetentionTime:
-            type: string
-            description: >-
-                Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
-          maxAlerts:
-            type: integer
-            description: >-
-                Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
-          disabledAlertType:
-            type: array
-            items:
-              $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
-          writabilityMode:
-            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-          description:
-            type: string
-            description: >-
-                A description for this Backend
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the backend is enabled in the server.
-          setDegradedAlertWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-          returnUnavailableWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-          backupFilePermissions:
-            type: string
-            description: >-
-                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-          notificationManager:
-            type: string
-            description: >-
-                Specifies a notification manager for changes resulting from operations processed through this Backend
-        required:
-        - schemas
-        - backendID
-        - baseDN
-        - ldifFile
-        - alertRetentionTime
-        - writabilityMode
-        - enabled
-        - id
-    Enumalert-backendSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:backend:alert"
     encryption-settings-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -1076,6 +838,76 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:encryption-settings"
+    ldif-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumldif-backendSchemaUrn'
+          id:
+            description: Name of the Backend
+            type: string
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          isPrivateBackend:
+            type: boolean
+            description: >-
+                Indicates whether the backend should be considered a private backend, which indicates that it is used for storing operational data rather than user-defined information.
+          ldifFile:
+            type: string
+            description: >-
+                Specifies the path to the LDIF file containing the data for this backend.
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - writabilityMode
+        - ldifFile
+        - backendID
+        - enabled
+        - baseDN
+        - id
+    Enumldif-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:ldif"
     trust-store-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -1159,81 +991,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:trust-store"
-    alarm-backend-response:
-      allOf:
-      - $ref: '#/components/schemas/meta'
-      - type: object
-        properties:
-          schemas:
-            type: array
-            minItems: 1
-            maxItems: 1
-            items:
-              $ref: '#/components/schemas/Enumalarm-backendSchemaUrn'
-          id:
-            description: Name of the Backend
-            type: string
-          backendID:
-            type: string
-            description: >-
-                Specifies a name to identify the associated backend.
-          baseDN:
-            type: array
-            items:
-              type: string
-            description: >-
-                Specifies the base DN(s) for the data that the backend handles.
-          ldifFile:
-            type: string
-            description: >-
-                Specifies the path to the LDIF file that serves as the backing file for this backend.
-          alarmRetentionTime:
-            type: string
-            description: >-
-                Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged.
-          maxAlarms:
-            type: integer
-            description: >-
-                Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged.
-          writabilityMode:
-            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
-          description:
-            type: string
-            description: >-
-                A description for this Backend
-          enabled:
-            type: boolean
-            description: >-
-                Indicates whether the backend is enabled in the server.
-          setDegradedAlertWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
-          returnUnavailableWhenDisabled:
-            type: boolean
-            description: >-
-                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
-          backupFilePermissions:
-            type: string
-            description: >-
-                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
-          notificationManager:
-            type: string
-            description: >-
-                Specifies a notification manager for changes resulting from operations processed through this Backend
-        required:
-        - schemas
-        - backendID
-        - baseDN
-        - ldifFile
-        - alarmRetentionTime
-        - writabilityMode
-        - enabled
-        - id
-    Enumalarm-backendSchemaUrn:
-      type: string
-      enum:
-      - "urn:pingidentity:schemas:configuration:2.0:backend:alarm"
     changelog-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -1733,6 +1490,321 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:backend:local-db"
+    config-file-handler-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumconfig-file-handler-backendSchemaUrn'
+          id:
+            description: Name of the Backend
+            type: string
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          insignificantConfigArchiveAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive.
+          mirroredSubtreePeerPollingInterval:
+            type: string
+            description: >-
+                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
+          mirroredSubtreeEntryUpdateTimeout:
+            type: string
+            description: >-
+                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data.
+          mirroredSubtreeSearchTimeout:
+            type: string
+            description: >-
+                Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - enabled
+        - id
+    Enumconfig-file-handler-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:config-file-handler"
+    task-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumtask-backendSchemaUrn'
+          id:
+            description: Name of the Backend
+            type: string
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          taskBackingFile:
+            type: string
+            description: >-
+                Specifies the path to the backing file for storing information about the tasks configured in the server.
+          maximumInitialTaskLogMessagesToRetain:
+            type: integer
+            description: >-
+                The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
+          maximumFinalTaskLogMessagesToRetain:
+            type: integer
+            description: >-
+                The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks.
+          taskRetentionTime:
+            type: string
+            description: >-
+                Specifies the length of time that task entries should be retained after processing on the associated task has been completed.
+          notificationSenderAddress:
+            type: string
+            description: >-
+                Specifies the email address to use as the sender address (that is, the "From:" address) for notification mail messages generated when a task completes execution.
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - writabilityMode
+        - taskBackingFile
+        - enabled
+        - id
+    Enumtask-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:task"
+    alert-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumalert-backendSchemaUrn'
+          id:
+            description: Name of the Backend
+            type: string
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          ldifFile:
+            type: string
+            description: >-
+                Specifies the path to the LDIF file that serves as the backing file for this backend.
+          alertRetentionTime:
+            type: string
+            description: >-
+                Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged.
+          maxAlerts:
+            type: integer
+            description: >-
+                Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum.
+          disabledAlertType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumbackend-disabledAlertTypeProp'
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - ldifFile
+        - alertRetentionTime
+        - writabilityMode
+        - enabled
+        - id
+    Enumalert-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:alert"
+    alarm-backend-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumalarm-backendSchemaUrn'
+          id:
+            description: Name of the Backend
+            type: string
+          backendID:
+            type: string
+            description: >-
+                Specifies a name to identify the associated backend.
+          baseDN:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the base DN(s) for the data that the backend handles.
+          ldifFile:
+            type: string
+            description: >-
+                Specifies the path to the LDIF file that serves as the backing file for this backend.
+          alarmRetentionTime:
+            type: string
+            description: >-
+                Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged.
+          maxAlarms:
+            type: integer
+            description: >-
+                Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged.
+          writabilityMode:
+            $ref: '#/components/schemas/Enumbackend-writabilityModeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Backend
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the backend is enabled in the server.
+          setDegradedAlertWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled.
+          returnUnavailableWhenDisabled:
+            type: boolean
+            description: >-
+                Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled.
+          backupFilePermissions:
+            type: string
+            description: >-
+                Specifies the permissions that should be applied to files and directories created by a backup of the backend.
+          notificationManager:
+            type: string
+            description: >-
+                Specifies a notification manager for changes resulting from operations processed through this Backend
+        required:
+        - schemas
+        - backendID
+        - baseDN
+        - ldifFile
+        - alarmRetentionTime
+        - writabilityMode
+        - enabled
+        - id
+    Enumalarm-backendSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:backend:alarm"
     metrics-backend-response:
       allOf:
       - $ref: '#/components/schemas/meta'

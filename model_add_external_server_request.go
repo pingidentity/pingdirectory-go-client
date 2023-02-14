@@ -17,18 +17,22 @@ import (
 
 // AddExternalServerRequest - struct for AddExternalServerRequest
 type AddExternalServerRequest struct {
-	AddActiveDirectoryExternalServerRequest        *AddActiveDirectoryExternalServerRequest
-	AddAmazonAwsExternalServerRequest              *AddAmazonAwsExternalServerRequest
-	AddConjurExternalServerRequest                 *AddConjurExternalServerRequest
-	AddJdbcExternalServerRequest                   *AddJdbcExternalServerRequest
-	AddNokiaDsExternalServerRequest                *AddNokiaDsExternalServerRequest
-	AddNokiaProxyServerExternalServerRequest       *AddNokiaProxyServerExternalServerRequest
-	AddOpendjExternalServerRequest                 *AddOpendjExternalServerRequest
-	AddOracleUnifiedDirectoryExternalServerRequest *AddOracleUnifiedDirectoryExternalServerRequest
-	AddPingOneHttpExternalServerRequest            *AddPingOneHttpExternalServerRequest
-	AddSmtpExternalServerRequest                   *AddSmtpExternalServerRequest
-	AddSyslogExternalServerRequest                 *AddSyslogExternalServerRequest
-	AddVaultExternalServerRequest                  *AddVaultExternalServerRequest
+	AddActiveDirectoryExternalServerRequest         *AddActiveDirectoryExternalServerRequest
+	AddAmazonAwsExternalServerRequest               *AddAmazonAwsExternalServerRequest
+	AddConjurExternalServerRequest                  *AddConjurExternalServerRequest
+	AddHttpExternalServerRequest                    *AddHttpExternalServerRequest
+	AddJdbcExternalServerRequest                    *AddJdbcExternalServerRequest
+	AddLdapExternalServerRequest                    *AddLdapExternalServerRequest
+	AddNokiaDsExternalServerRequest                 *AddNokiaDsExternalServerRequest
+	AddNokiaProxyServerExternalServerRequest        *AddNokiaProxyServerExternalServerRequest
+	AddOpendjExternalServerRequest                  *AddOpendjExternalServerRequest
+	AddOracleUnifiedDirectoryExternalServerRequest  *AddOracleUnifiedDirectoryExternalServerRequest
+	AddPingIdentityDsExternalServerRequest          *AddPingIdentityDsExternalServerRequest
+	AddPingIdentityProxyServerExternalServerRequest *AddPingIdentityProxyServerExternalServerRequest
+	AddPingOneHttpExternalServerRequest             *AddPingOneHttpExternalServerRequest
+	AddSmtpExternalServerRequest                    *AddSmtpExternalServerRequest
+	AddSyslogExternalServerRequest                  *AddSyslogExternalServerRequest
+	AddVaultExternalServerRequest                   *AddVaultExternalServerRequest
 }
 
 // AddActiveDirectoryExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddActiveDirectoryExternalServerRequest wrapped in AddExternalServerRequest
@@ -52,10 +56,24 @@ func AddConjurExternalServerRequestAsAddExternalServerRequest(v *AddConjurExtern
 	}
 }
 
+// AddHttpExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddHttpExternalServerRequest wrapped in AddExternalServerRequest
+func AddHttpExternalServerRequestAsAddExternalServerRequest(v *AddHttpExternalServerRequest) AddExternalServerRequest {
+	return AddExternalServerRequest{
+		AddHttpExternalServerRequest: v,
+	}
+}
+
 // AddJdbcExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddJdbcExternalServerRequest wrapped in AddExternalServerRequest
 func AddJdbcExternalServerRequestAsAddExternalServerRequest(v *AddJdbcExternalServerRequest) AddExternalServerRequest {
 	return AddExternalServerRequest{
 		AddJdbcExternalServerRequest: v,
+	}
+}
+
+// AddLdapExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddLdapExternalServerRequest wrapped in AddExternalServerRequest
+func AddLdapExternalServerRequestAsAddExternalServerRequest(v *AddLdapExternalServerRequest) AddExternalServerRequest {
+	return AddExternalServerRequest{
+		AddLdapExternalServerRequest: v,
 	}
 }
 
@@ -84,6 +102,20 @@ func AddOpendjExternalServerRequestAsAddExternalServerRequest(v *AddOpendjExtern
 func AddOracleUnifiedDirectoryExternalServerRequestAsAddExternalServerRequest(v *AddOracleUnifiedDirectoryExternalServerRequest) AddExternalServerRequest {
 	return AddExternalServerRequest{
 		AddOracleUnifiedDirectoryExternalServerRequest: v,
+	}
+}
+
+// AddPingIdentityDsExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddPingIdentityDsExternalServerRequest wrapped in AddExternalServerRequest
+func AddPingIdentityDsExternalServerRequestAsAddExternalServerRequest(v *AddPingIdentityDsExternalServerRequest) AddExternalServerRequest {
+	return AddExternalServerRequest{
+		AddPingIdentityDsExternalServerRequest: v,
+	}
+}
+
+// AddPingIdentityProxyServerExternalServerRequestAsAddExternalServerRequest is a convenience function that returns AddPingIdentityProxyServerExternalServerRequest wrapped in AddExternalServerRequest
+func AddPingIdentityProxyServerExternalServerRequestAsAddExternalServerRequest(v *AddPingIdentityProxyServerExternalServerRequest) AddExternalServerRequest {
+	return AddExternalServerRequest{
+		AddPingIdentityProxyServerExternalServerRequest: v,
 	}
 }
 
@@ -158,6 +190,19 @@ func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
 		dst.AddConjurExternalServerRequest = nil
 	}
 
+	// try to unmarshal data into AddHttpExternalServerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddHttpExternalServerRequest)
+	if err == nil {
+		jsonAddHttpExternalServerRequest, _ := json.Marshal(dst.AddHttpExternalServerRequest)
+		if string(jsonAddHttpExternalServerRequest) == "{}" { // empty struct
+			dst.AddHttpExternalServerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddHttpExternalServerRequest = nil
+	}
+
 	// try to unmarshal data into AddJdbcExternalServerRequest
 	err = newStrictDecoder(data).Decode(&dst.AddJdbcExternalServerRequest)
 	if err == nil {
@@ -169,6 +214,19 @@ func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddJdbcExternalServerRequest = nil
+	}
+
+	// try to unmarshal data into AddLdapExternalServerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddLdapExternalServerRequest)
+	if err == nil {
+		jsonAddLdapExternalServerRequest, _ := json.Marshal(dst.AddLdapExternalServerRequest)
+		if string(jsonAddLdapExternalServerRequest) == "{}" { // empty struct
+			dst.AddLdapExternalServerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddLdapExternalServerRequest = nil
 	}
 
 	// try to unmarshal data into AddNokiaDsExternalServerRequest
@@ -221,6 +279,32 @@ func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.AddOracleUnifiedDirectoryExternalServerRequest = nil
+	}
+
+	// try to unmarshal data into AddPingIdentityDsExternalServerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddPingIdentityDsExternalServerRequest)
+	if err == nil {
+		jsonAddPingIdentityDsExternalServerRequest, _ := json.Marshal(dst.AddPingIdentityDsExternalServerRequest)
+		if string(jsonAddPingIdentityDsExternalServerRequest) == "{}" { // empty struct
+			dst.AddPingIdentityDsExternalServerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddPingIdentityDsExternalServerRequest = nil
+	}
+
+	// try to unmarshal data into AddPingIdentityProxyServerExternalServerRequest
+	err = newStrictDecoder(data).Decode(&dst.AddPingIdentityProxyServerExternalServerRequest)
+	if err == nil {
+		jsonAddPingIdentityProxyServerExternalServerRequest, _ := json.Marshal(dst.AddPingIdentityProxyServerExternalServerRequest)
+		if string(jsonAddPingIdentityProxyServerExternalServerRequest) == "{}" { // empty struct
+			dst.AddPingIdentityProxyServerExternalServerRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddPingIdentityProxyServerExternalServerRequest = nil
 	}
 
 	// try to unmarshal data into AddPingOneHttpExternalServerRequest
@@ -280,11 +364,15 @@ func (dst *AddExternalServerRequest) UnmarshalJSON(data []byte) error {
 		dst.AddActiveDirectoryExternalServerRequest = nil
 		dst.AddAmazonAwsExternalServerRequest = nil
 		dst.AddConjurExternalServerRequest = nil
+		dst.AddHttpExternalServerRequest = nil
 		dst.AddJdbcExternalServerRequest = nil
+		dst.AddLdapExternalServerRequest = nil
 		dst.AddNokiaDsExternalServerRequest = nil
 		dst.AddNokiaProxyServerExternalServerRequest = nil
 		dst.AddOpendjExternalServerRequest = nil
 		dst.AddOracleUnifiedDirectoryExternalServerRequest = nil
+		dst.AddPingIdentityDsExternalServerRequest = nil
+		dst.AddPingIdentityProxyServerExternalServerRequest = nil
 		dst.AddPingOneHttpExternalServerRequest = nil
 		dst.AddSmtpExternalServerRequest = nil
 		dst.AddSyslogExternalServerRequest = nil
@@ -312,8 +400,16 @@ func (src AddExternalServerRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AddConjurExternalServerRequest)
 	}
 
+	if src.AddHttpExternalServerRequest != nil {
+		return json.Marshal(&src.AddHttpExternalServerRequest)
+	}
+
 	if src.AddJdbcExternalServerRequest != nil {
 		return json.Marshal(&src.AddJdbcExternalServerRequest)
+	}
+
+	if src.AddLdapExternalServerRequest != nil {
+		return json.Marshal(&src.AddLdapExternalServerRequest)
 	}
 
 	if src.AddNokiaDsExternalServerRequest != nil {
@@ -330,6 +426,14 @@ func (src AddExternalServerRequest) MarshalJSON() ([]byte, error) {
 
 	if src.AddOracleUnifiedDirectoryExternalServerRequest != nil {
 		return json.Marshal(&src.AddOracleUnifiedDirectoryExternalServerRequest)
+	}
+
+	if src.AddPingIdentityDsExternalServerRequest != nil {
+		return json.Marshal(&src.AddPingIdentityDsExternalServerRequest)
+	}
+
+	if src.AddPingIdentityProxyServerExternalServerRequest != nil {
+		return json.Marshal(&src.AddPingIdentityProxyServerExternalServerRequest)
 	}
 
 	if src.AddPingOneHttpExternalServerRequest != nil {
@@ -368,8 +472,16 @@ func (obj *AddExternalServerRequest) GetActualInstance() interface{} {
 		return obj.AddConjurExternalServerRequest
 	}
 
+	if obj.AddHttpExternalServerRequest != nil {
+		return obj.AddHttpExternalServerRequest
+	}
+
 	if obj.AddJdbcExternalServerRequest != nil {
 		return obj.AddJdbcExternalServerRequest
+	}
+
+	if obj.AddLdapExternalServerRequest != nil {
+		return obj.AddLdapExternalServerRequest
 	}
 
 	if obj.AddNokiaDsExternalServerRequest != nil {
@@ -386,6 +498,14 @@ func (obj *AddExternalServerRequest) GetActualInstance() interface{} {
 
 	if obj.AddOracleUnifiedDirectoryExternalServerRequest != nil {
 		return obj.AddOracleUnifiedDirectoryExternalServerRequest
+	}
+
+	if obj.AddPingIdentityDsExternalServerRequest != nil {
+		return obj.AddPingIdentityDsExternalServerRequest
+	}
+
+	if obj.AddPingIdentityProxyServerExternalServerRequest != nil {
+		return obj.AddPingIdentityProxyServerExternalServerRequest
 	}
 
 	if obj.AddPingOneHttpExternalServerRequest != nil {

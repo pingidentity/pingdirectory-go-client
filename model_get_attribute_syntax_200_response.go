@@ -23,6 +23,7 @@ type GetAttributeSyntax200Response struct {
 	DirectoryStringAttributeSyntaxResponse          *DirectoryStringAttributeSyntaxResponse
 	DistinguishedNameAttributeSyntaxResponse        *DistinguishedNameAttributeSyntaxResponse
 	GeneralizedTimeAttributeSyntaxResponse          *GeneralizedTimeAttributeSyntaxResponse
+	GenericAttributeSyntaxResponse                  *GenericAttributeSyntaxResponse
 	HexStringAttributeSyntaxResponse                *HexStringAttributeSyntaxResponse
 	IntegerAttributeSyntaxResponse                  *IntegerAttributeSyntaxResponse
 	JsonObjectAttributeSyntaxResponse               *JsonObjectAttributeSyntaxResponse
@@ -72,6 +73,13 @@ func DistinguishedNameAttributeSyntaxResponseAsGetAttributeSyntax200Response(v *
 func GeneralizedTimeAttributeSyntaxResponseAsGetAttributeSyntax200Response(v *GeneralizedTimeAttributeSyntaxResponse) GetAttributeSyntax200Response {
 	return GetAttributeSyntax200Response{
 		GeneralizedTimeAttributeSyntaxResponse: v,
+	}
+}
+
+// GenericAttributeSyntaxResponseAsGetAttributeSyntax200Response is a convenience function that returns GenericAttributeSyntaxResponse wrapped in GetAttributeSyntax200Response
+func GenericAttributeSyntaxResponseAsGetAttributeSyntax200Response(v *GenericAttributeSyntaxResponse) GetAttributeSyntax200Response {
+	return GetAttributeSyntax200Response{
+		GenericAttributeSyntaxResponse: v,
 	}
 }
 
@@ -213,6 +221,19 @@ func (dst *GetAttributeSyntax200Response) UnmarshalJSON(data []byte) error {
 		dst.GeneralizedTimeAttributeSyntaxResponse = nil
 	}
 
+	// try to unmarshal data into GenericAttributeSyntaxResponse
+	err = newStrictDecoder(data).Decode(&dst.GenericAttributeSyntaxResponse)
+	if err == nil {
+		jsonGenericAttributeSyntaxResponse, _ := json.Marshal(dst.GenericAttributeSyntaxResponse)
+		if string(jsonGenericAttributeSyntaxResponse) == "{}" { // empty struct
+			dst.GenericAttributeSyntaxResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.GenericAttributeSyntaxResponse = nil
+	}
+
 	// try to unmarshal data into HexStringAttributeSyntaxResponse
 	err = newStrictDecoder(data).Decode(&dst.HexStringAttributeSyntaxResponse)
 	if err == nil {
@@ -325,6 +346,7 @@ func (dst *GetAttributeSyntax200Response) UnmarshalJSON(data []byte) error {
 		dst.DirectoryStringAttributeSyntaxResponse = nil
 		dst.DistinguishedNameAttributeSyntaxResponse = nil
 		dst.GeneralizedTimeAttributeSyntaxResponse = nil
+		dst.GenericAttributeSyntaxResponse = nil
 		dst.HexStringAttributeSyntaxResponse = nil
 		dst.IntegerAttributeSyntaxResponse = nil
 		dst.JsonObjectAttributeSyntaxResponse = nil
@@ -366,6 +388,10 @@ func (src GetAttributeSyntax200Response) MarshalJSON() ([]byte, error) {
 
 	if src.GeneralizedTimeAttributeSyntaxResponse != nil {
 		return json.Marshal(&src.GeneralizedTimeAttributeSyntaxResponse)
+	}
+
+	if src.GenericAttributeSyntaxResponse != nil {
+		return json.Marshal(&src.GenericAttributeSyntaxResponse)
 	}
 
 	if src.HexStringAttributeSyntaxResponse != nil {
@@ -430,6 +456,10 @@ func (obj *GetAttributeSyntax200Response) GetActualInstance() interface{} {
 
 	if obj.GeneralizedTimeAttributeSyntaxResponse != nil {
 		return obj.GeneralizedTimeAttributeSyntaxResponse
+	}
+
+	if obj.GenericAttributeSyntaxResponse != nil {
+		return obj.GenericAttributeSyntaxResponse
 	}
 
 	if obj.HexStringAttributeSyntaxResponse != nil {

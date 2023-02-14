@@ -8,13 +8,19 @@ Name | Type | Description | Notes
 **Schemas** | [**[]EnumvaultExternalServerSchemaUrn**](EnumvaultExternalServerSchemaUrn.md) |  | 
 **ServerHostName** | **string** | The host name or IP address of the target LDAP server. | 
 **ServerPort** | **int32** | The port number on which the server listens for requests. | 
-**Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
-**BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
+**SmtpSecurity** | Pointer to [**EnumexternalServerSmtpSecurityProp**](EnumexternalServerSmtpSecurityProp.md) |  | [optional] 
+**UserName** | Pointer to **string** | The name of the login account to use when connecting to the database server. | [optional] 
 **Password** | Pointer to **string** | The login password for the specified user. | [optional] 
 **PassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the login password for the specified user. | [optional] 
+**SmtpTimeout** | Pointer to **string** | Specifies the maximum length of time that a connection or attempted connection to a SMTP server may take. | [optional] 
+**SmtpConnectionProperties** | Pointer to **[]string** | Specifies the connection properties for the smtp server. | [optional] 
+**Description** | Pointer to **string** | A description for this External Server | [optional] 
+**VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
+**UseAdministrativeOperationControl** | Pointer to **bool** | Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients. | [optional] 
+**Location** | Pointer to **string** | Specifies the location for the LDAP External Server. | [optional] 
+**BindDN** | Pointer to **string** | The DN to use to bind to the target LDAP server if simple authentication is required. | [optional] 
 **ConnectionSecurity** | [**EnumexternalServerConnectionSecurityProp**](EnumexternalServerConnectionSecurityProp.md) |  | 
 **AuthenticationMethod** | [**EnumexternalServerAuthenticationMethodProp**](EnumexternalServerAuthenticationMethodProp.md) |  | 
-**VerifyCredentialsMethod** | [**EnumexternalServerVerifyCredentialsMethodProp**](EnumexternalServerVerifyCredentialsMethodProp.md) |  | 
 **HealthCheckConnectTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for a connection to be established for the purpose of performing a health check. If the connection cannot be established within this length of time, the server will be classified as unavailable. | [optional] 
 **MaxConnectionAge** | **string** | Specifies the maximum length of time that connections to this server should be allowed to remain established before being closed and replaced with newly-established connections. | 
 **MinExpiredConnectionDisconnectInterval** | Pointer to **string** | Specifies the minimum length of time that should pass between connection closures as a result of the connections being established for longer than the maximum connection age. This may help avoid cases in which a large number of connections are closed and re-established in a short period of time because of the maximum connection age. | [optional] 
@@ -26,20 +32,6 @@ Name | Type | Description | Notes
 **MaxConnections** | Pointer to **int32** | The maximum number of concurrent connections to maintain for the LDAP external server. A value of zero indicates that the number of connections should be dynamically based on the number of available worker threads. This will be ignored when using a thread-local connection pool. | [optional] 
 **DefunctConnectionResultCode** | Pointer to [**[]EnumexternalServerDefunctConnectionResultCodeProp**](EnumexternalServerDefunctConnectionResultCodeProp.md) |  | [optional] 
 **AbandonOnTimeout** | Pointer to **bool** | Indicates whether to send an abandon request for an operation for which a response timeout is encountered. A request which has timed out on one server may be retried on another server regardless of whether an abandon request is sent, but if the initial attempt is not abandoned then a long-running operation may unnecessarily continue to consume processing resources on the initial server. | [optional] 
-**Description** | Pointer to **string** | A description for this External Server | [optional] 
-**SmtpSecurity** | Pointer to [**EnumexternalServerSmtpSecurityProp**](EnumexternalServerSmtpSecurityProp.md) |  | [optional] 
-**UserName** | Pointer to **string** | The name of the login account to use when connecting to the database server. | [optional] 
-**SmtpTimeout** | Pointer to **string** | Specifies the maximum length of time that a connection or attempted connection to a SMTP server may take. | [optional] 
-**SmtpConnectionProperties** | Pointer to **[]string** | Specifies the connection properties for the smtp server. | [optional] 
-**UseAdministrativeOperationControl** | Pointer to **bool** | Indicates whether to include the administrative operation request control in requests sent to this server which are intended for administrative operations (e.g., health checking) rather than requests directly from clients. | [optional] 
-**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
-**ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to PingOne. | [optional] 
-**ConjurServerBaseURI** | **[]string** | The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://conjur.example.com:8443/\&quot;. | 
-**ConjurAuthenticationMethod** | **string** | The mechanism used to authenticate to the Conjur server. | 
-**ConjurAccountName** | **string** | The name of the account with which the desired secrets are associated. | 
-**TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
-**TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
-**TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
 **JdbcDriverType** | [**EnumexternalServerJdbcDriverTypeProp**](EnumexternalServerJdbcDriverTypeProp.md) |  | 
 **JdbcDriverURL** | Pointer to **string** | Specify the complete JDBC URL which will be used instead of the automatic URL format. You must select type &#39;other&#39; for the jdbc-driver-type. | [optional] 
 **DatabaseName** | Pointer to **string** | Specifies which database to connect to. This is ignored if jdbc-driver-url is specified. | [optional] 
@@ -47,10 +39,20 @@ Name | Type | Description | Notes
 **ValidationQueryTimeout** | Pointer to **string** | Specifies the amount of time to wait for a response from the database when executing the validation query, if one is set. If the timeout is exceeded, the Directory Server will drop the connection and obtain a new one. A value of zero indicates no timeout. | [optional] 
 **JdbcConnectionProperties** | Pointer to **[]string** | Specifies the connection properties for the JDBC datasource. | [optional] 
 **TransactionIsolationLevel** | Pointer to [**EnumexternalServerTransactionIsolationLevelProp**](EnumexternalServerTransactionIsolationLevelProp.md) |  | [optional] 
+**TransportMechanism** | [**EnumexternalServerTransportMechanismProp**](EnumexternalServerTransportMechanismProp.md) |  | 
+**HostnameVerificationMethod** | Pointer to [**EnumexternalServerHostnameVerificationMethodProp**](EnumexternalServerHostnameVerificationMethodProp.md) |  | [optional] 
+**ResponseTimeout** | Pointer to **string** | Specifies the maximum length of time to wait for response data to be read from an established connection before aborting a request to the server. | [optional] 
+**BaseURL** | **string** | The base URL of the external server, optionally including port number, for example \&quot;https://externalService:9031\&quot;. | 
+**SslCertNickname** | Pointer to **string** | The certificate alias within the keystore to use if SSL (HTTPS) is to be used for connection-level security. When specifying a value for this property you must ensure that the external server trusts this server&#39;s public certificate by adding this server&#39;s public certificate to the external server&#39;s trust store. | [optional] 
+**ConjurServerBaseURI** | **[]string** | The base URL needed to access the CyberArk Conjur server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://conjur.example.com:8443/\&quot;. | 
+**ConjurAuthenticationMethod** | **string** | The mechanism used to authenticate to the Conjur server. | 
+**ConjurAccountName** | **string** | The name of the account with which the desired secrets are associated. | 
+**TrustStoreFile** | Pointer to **string** | The path to a file containing the information needed to trust the certificate presented by the Vault servers. | [optional] 
+**TrustStorePin** | Pointer to **string** | The passphrase needed to access the contents of the trust store. This is only required if a trust store file is required, and if that trust store requires a PIN to access its contents. | [optional] 
+**TrustStoreType** | Pointer to **string** | The store type for the specified trust store file. The value should likely be one of \&quot;JKS\&quot;, \&quot;PKCS12\&quot;, or \&quot;BCFKS\&quot;. | [optional] 
 **AwsAccessKeyID** | Pointer to **string** | The access key ID that will be used if authentication should use an access key. If this is provided, then an aws-secret-access-key must also be provided. If this is not provided, then no aws-secret-access-key may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations. | [optional] 
 **AwsSecretAccessKey** | Pointer to **string** | The secret access key that will be used if authentication should use an access key. If this is provided, then an aws-access-key-id must also be provided. If this is not provided, then no aws-access-key-id may be configured, and the server must be running in an EC2 instance that is configured with an IAM role with permission to perform the necessary operations. | [optional] 
 **AwsRegionName** | **string** | The name of the AWS region containing the resources that will be accessed. | 
-**TransportMechanism** | [**EnumexternalServerTransportMechanismProp**](EnumexternalServerTransportMechanismProp.md) |  | 
 **VaultServerBaseURI** | **[]string** | The base URL needed to access the Vault server. The base URL should consist of the protocol (\&quot;http\&quot; or \&quot;https\&quot;), the server address (resolvable name or IP address), and the port number. For example, \&quot;https://vault.example.com:8200/\&quot;. | 
 **VaultAuthenticationMethod** | **string** | The mechanism used to authenticate to the Vault server. | 
 
@@ -58,7 +60,7 @@ Name | Type | Description | Notes
 
 ### NewAddExternalServerRequest
 
-`func NewAddExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, trustManagerProvider string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, awsRegionName string, transportMechanism EnumexternalServerTransportMechanismProp, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServerRequest`
+`func NewAddExternalServerRequest(serverName string, schemas []EnumvaultExternalServerSchemaUrn, serverHostName string, serverPort int32, verifyCredentialsMethod EnumexternalServerVerifyCredentialsMethodProp, connectionSecurity EnumexternalServerConnectionSecurityProp, authenticationMethod EnumexternalServerAuthenticationMethodProp, maxConnectionAge string, connectTimeout string, maxResponseSize string, trustManagerProvider string, jdbcDriverType EnumexternalServerJdbcDriverTypeProp, transportMechanism EnumexternalServerTransportMechanismProp, baseURL string, conjurServerBaseURI []string, conjurAuthenticationMethod string, conjurAccountName string, awsRegionName string, vaultServerBaseURI []string, vaultAuthenticationMethod string, ) *AddExternalServerRequest`
 
 NewAddExternalServerRequest instantiates a new AddExternalServerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -153,55 +155,55 @@ and a boolean to check if the value has been set.
 SetServerPort sets ServerPort field to given value.
 
 
-### GetLocation
+### GetSmtpSecurity
 
-`func (o *AddExternalServerRequest) GetLocation() string`
+`func (o *AddExternalServerRequest) GetSmtpSecurity() EnumexternalServerSmtpSecurityProp`
 
-GetLocation returns the Location field if non-nil, zero value otherwise.
+GetSmtpSecurity returns the SmtpSecurity field if non-nil, zero value otherwise.
 
-### GetLocationOk
+### GetSmtpSecurityOk
 
-`func (o *AddExternalServerRequest) GetLocationOk() (*string, bool)`
+`func (o *AddExternalServerRequest) GetSmtpSecurityOk() (*EnumexternalServerSmtpSecurityProp, bool)`
 
-GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
+GetSmtpSecurityOk returns a tuple with the SmtpSecurity field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLocation
+### SetSmtpSecurity
 
-`func (o *AddExternalServerRequest) SetLocation(v string)`
+`func (o *AddExternalServerRequest) SetSmtpSecurity(v EnumexternalServerSmtpSecurityProp)`
 
-SetLocation sets Location field to given value.
+SetSmtpSecurity sets SmtpSecurity field to given value.
 
-### HasLocation
+### HasSmtpSecurity
 
-`func (o *AddExternalServerRequest) HasLocation() bool`
+`func (o *AddExternalServerRequest) HasSmtpSecurity() bool`
 
-HasLocation returns a boolean if a field has been set.
+HasSmtpSecurity returns a boolean if a field has been set.
 
-### GetBindDN
+### GetUserName
 
-`func (o *AddExternalServerRequest) GetBindDN() string`
+`func (o *AddExternalServerRequest) GetUserName() string`
 
-GetBindDN returns the BindDN field if non-nil, zero value otherwise.
+GetUserName returns the UserName field if non-nil, zero value otherwise.
 
-### GetBindDNOk
+### GetUserNameOk
 
-`func (o *AddExternalServerRequest) GetBindDNOk() (*string, bool)`
+`func (o *AddExternalServerRequest) GetUserNameOk() (*string, bool)`
 
-GetBindDNOk returns a tuple with the BindDN field if it's non-nil, zero value otherwise
+GetUserNameOk returns a tuple with the UserName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBindDN
+### SetUserName
 
-`func (o *AddExternalServerRequest) SetBindDN(v string)`
+`func (o *AddExternalServerRequest) SetUserName(v string)`
 
-SetBindDN sets BindDN field to given value.
+SetUserName sets UserName field to given value.
 
-### HasBindDN
+### HasUserName
 
-`func (o *AddExternalServerRequest) HasBindDN() bool`
+`func (o *AddExternalServerRequest) HasUserName() bool`
 
-HasBindDN returns a boolean if a field has been set.
+HasUserName returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -253,6 +255,176 @@ SetPassphraseProvider sets PassphraseProvider field to given value.
 
 HasPassphraseProvider returns a boolean if a field has been set.
 
+### GetSmtpTimeout
+
+`func (o *AddExternalServerRequest) GetSmtpTimeout() string`
+
+GetSmtpTimeout returns the SmtpTimeout field if non-nil, zero value otherwise.
+
+### GetSmtpTimeoutOk
+
+`func (o *AddExternalServerRequest) GetSmtpTimeoutOk() (*string, bool)`
+
+GetSmtpTimeoutOk returns a tuple with the SmtpTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSmtpTimeout
+
+`func (o *AddExternalServerRequest) SetSmtpTimeout(v string)`
+
+SetSmtpTimeout sets SmtpTimeout field to given value.
+
+### HasSmtpTimeout
+
+`func (o *AddExternalServerRequest) HasSmtpTimeout() bool`
+
+HasSmtpTimeout returns a boolean if a field has been set.
+
+### GetSmtpConnectionProperties
+
+`func (o *AddExternalServerRequest) GetSmtpConnectionProperties() []string`
+
+GetSmtpConnectionProperties returns the SmtpConnectionProperties field if non-nil, zero value otherwise.
+
+### GetSmtpConnectionPropertiesOk
+
+`func (o *AddExternalServerRequest) GetSmtpConnectionPropertiesOk() (*[]string, bool)`
+
+GetSmtpConnectionPropertiesOk returns a tuple with the SmtpConnectionProperties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSmtpConnectionProperties
+
+`func (o *AddExternalServerRequest) SetSmtpConnectionProperties(v []string)`
+
+SetSmtpConnectionProperties sets SmtpConnectionProperties field to given value.
+
+### HasSmtpConnectionProperties
+
+`func (o *AddExternalServerRequest) HasSmtpConnectionProperties() bool`
+
+HasSmtpConnectionProperties returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *AddExternalServerRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *AddExternalServerRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *AddExternalServerRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *AddExternalServerRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetVerifyCredentialsMethod
+
+`func (o *AddExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp`
+
+GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field if non-nil, zero value otherwise.
+
+### GetVerifyCredentialsMethodOk
+
+`func (o *AddExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool)`
+
+GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVerifyCredentialsMethod
+
+`func (o *AddExternalServerRequest) SetVerifyCredentialsMethod(v EnumexternalServerVerifyCredentialsMethodProp)`
+
+SetVerifyCredentialsMethod sets VerifyCredentialsMethod field to given value.
+
+
+### GetUseAdministrativeOperationControl
+
+`func (o *AddExternalServerRequest) GetUseAdministrativeOperationControl() bool`
+
+GetUseAdministrativeOperationControl returns the UseAdministrativeOperationControl field if non-nil, zero value otherwise.
+
+### GetUseAdministrativeOperationControlOk
+
+`func (o *AddExternalServerRequest) GetUseAdministrativeOperationControlOk() (*bool, bool)`
+
+GetUseAdministrativeOperationControlOk returns a tuple with the UseAdministrativeOperationControl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseAdministrativeOperationControl
+
+`func (o *AddExternalServerRequest) SetUseAdministrativeOperationControl(v bool)`
+
+SetUseAdministrativeOperationControl sets UseAdministrativeOperationControl field to given value.
+
+### HasUseAdministrativeOperationControl
+
+`func (o *AddExternalServerRequest) HasUseAdministrativeOperationControl() bool`
+
+HasUseAdministrativeOperationControl returns a boolean if a field has been set.
+
+### GetLocation
+
+`func (o *AddExternalServerRequest) GetLocation() string`
+
+GetLocation returns the Location field if non-nil, zero value otherwise.
+
+### GetLocationOk
+
+`func (o *AddExternalServerRequest) GetLocationOk() (*string, bool)`
+
+GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLocation
+
+`func (o *AddExternalServerRequest) SetLocation(v string)`
+
+SetLocation sets Location field to given value.
+
+### HasLocation
+
+`func (o *AddExternalServerRequest) HasLocation() bool`
+
+HasLocation returns a boolean if a field has been set.
+
+### GetBindDN
+
+`func (o *AddExternalServerRequest) GetBindDN() string`
+
+GetBindDN returns the BindDN field if non-nil, zero value otherwise.
+
+### GetBindDNOk
+
+`func (o *AddExternalServerRequest) GetBindDNOk() (*string, bool)`
+
+GetBindDNOk returns a tuple with the BindDN field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBindDN
+
+`func (o *AddExternalServerRequest) SetBindDN(v string)`
+
+SetBindDN sets BindDN field to given value.
+
+### HasBindDN
+
+`func (o *AddExternalServerRequest) HasBindDN() bool`
+
+HasBindDN returns a boolean if a field has been set.
+
 ### GetConnectionSecurity
 
 `func (o *AddExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp`
@@ -291,26 +463,6 @@ and a boolean to check if the value has been set.
 `func (o *AddExternalServerRequest) SetAuthenticationMethod(v EnumexternalServerAuthenticationMethodProp)`
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
-
-
-### GetVerifyCredentialsMethod
-
-`func (o *AddExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp`
-
-GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field if non-nil, zero value otherwise.
-
-### GetVerifyCredentialsMethodOk
-
-`func (o *AddExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool)`
-
-GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVerifyCredentialsMethod
-
-`func (o *AddExternalServerRequest) SetVerifyCredentialsMethod(v EnumexternalServerVerifyCredentialsMethodProp)`
-
-SetVerifyCredentialsMethod sets VerifyCredentialsMethod field to given value.
 
 
 ### GetHealthCheckConnectTimeout
@@ -568,341 +720,6 @@ SetAbandonOnTimeout sets AbandonOnTimeout field to given value.
 
 HasAbandonOnTimeout returns a boolean if a field has been set.
 
-### GetDescription
-
-`func (o *AddExternalServerRequest) GetDescription() string`
-
-GetDescription returns the Description field if non-nil, zero value otherwise.
-
-### GetDescriptionOk
-
-`func (o *AddExternalServerRequest) GetDescriptionOk() (*string, bool)`
-
-GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDescription
-
-`func (o *AddExternalServerRequest) SetDescription(v string)`
-
-SetDescription sets Description field to given value.
-
-### HasDescription
-
-`func (o *AddExternalServerRequest) HasDescription() bool`
-
-HasDescription returns a boolean if a field has been set.
-
-### GetSmtpSecurity
-
-`func (o *AddExternalServerRequest) GetSmtpSecurity() EnumexternalServerSmtpSecurityProp`
-
-GetSmtpSecurity returns the SmtpSecurity field if non-nil, zero value otherwise.
-
-### GetSmtpSecurityOk
-
-`func (o *AddExternalServerRequest) GetSmtpSecurityOk() (*EnumexternalServerSmtpSecurityProp, bool)`
-
-GetSmtpSecurityOk returns a tuple with the SmtpSecurity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSmtpSecurity
-
-`func (o *AddExternalServerRequest) SetSmtpSecurity(v EnumexternalServerSmtpSecurityProp)`
-
-SetSmtpSecurity sets SmtpSecurity field to given value.
-
-### HasSmtpSecurity
-
-`func (o *AddExternalServerRequest) HasSmtpSecurity() bool`
-
-HasSmtpSecurity returns a boolean if a field has been set.
-
-### GetUserName
-
-`func (o *AddExternalServerRequest) GetUserName() string`
-
-GetUserName returns the UserName field if non-nil, zero value otherwise.
-
-### GetUserNameOk
-
-`func (o *AddExternalServerRequest) GetUserNameOk() (*string, bool)`
-
-GetUserNameOk returns a tuple with the UserName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserName
-
-`func (o *AddExternalServerRequest) SetUserName(v string)`
-
-SetUserName sets UserName field to given value.
-
-### HasUserName
-
-`func (o *AddExternalServerRequest) HasUserName() bool`
-
-HasUserName returns a boolean if a field has been set.
-
-### GetSmtpTimeout
-
-`func (o *AddExternalServerRequest) GetSmtpTimeout() string`
-
-GetSmtpTimeout returns the SmtpTimeout field if non-nil, zero value otherwise.
-
-### GetSmtpTimeoutOk
-
-`func (o *AddExternalServerRequest) GetSmtpTimeoutOk() (*string, bool)`
-
-GetSmtpTimeoutOk returns a tuple with the SmtpTimeout field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSmtpTimeout
-
-`func (o *AddExternalServerRequest) SetSmtpTimeout(v string)`
-
-SetSmtpTimeout sets SmtpTimeout field to given value.
-
-### HasSmtpTimeout
-
-`func (o *AddExternalServerRequest) HasSmtpTimeout() bool`
-
-HasSmtpTimeout returns a boolean if a field has been set.
-
-### GetSmtpConnectionProperties
-
-`func (o *AddExternalServerRequest) GetSmtpConnectionProperties() []string`
-
-GetSmtpConnectionProperties returns the SmtpConnectionProperties field if non-nil, zero value otherwise.
-
-### GetSmtpConnectionPropertiesOk
-
-`func (o *AddExternalServerRequest) GetSmtpConnectionPropertiesOk() (*[]string, bool)`
-
-GetSmtpConnectionPropertiesOk returns a tuple with the SmtpConnectionProperties field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSmtpConnectionProperties
-
-`func (o *AddExternalServerRequest) SetSmtpConnectionProperties(v []string)`
-
-SetSmtpConnectionProperties sets SmtpConnectionProperties field to given value.
-
-### HasSmtpConnectionProperties
-
-`func (o *AddExternalServerRequest) HasSmtpConnectionProperties() bool`
-
-HasSmtpConnectionProperties returns a boolean if a field has been set.
-
-### GetUseAdministrativeOperationControl
-
-`func (o *AddExternalServerRequest) GetUseAdministrativeOperationControl() bool`
-
-GetUseAdministrativeOperationControl returns the UseAdministrativeOperationControl field if non-nil, zero value otherwise.
-
-### GetUseAdministrativeOperationControlOk
-
-`func (o *AddExternalServerRequest) GetUseAdministrativeOperationControlOk() (*bool, bool)`
-
-GetUseAdministrativeOperationControlOk returns a tuple with the UseAdministrativeOperationControl field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseAdministrativeOperationControl
-
-`func (o *AddExternalServerRequest) SetUseAdministrativeOperationControl(v bool)`
-
-SetUseAdministrativeOperationControl sets UseAdministrativeOperationControl field to given value.
-
-### HasUseAdministrativeOperationControl
-
-`func (o *AddExternalServerRequest) HasUseAdministrativeOperationControl() bool`
-
-HasUseAdministrativeOperationControl returns a boolean if a field has been set.
-
-### GetHostnameVerificationMethod
-
-`func (o *AddExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp`
-
-GetHostnameVerificationMethod returns the HostnameVerificationMethod field if non-nil, zero value otherwise.
-
-### GetHostnameVerificationMethodOk
-
-`func (o *AddExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool)`
-
-GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHostnameVerificationMethod
-
-`func (o *AddExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHostnameVerificationMethodProp)`
-
-SetHostnameVerificationMethod sets HostnameVerificationMethod field to given value.
-
-### HasHostnameVerificationMethod
-
-`func (o *AddExternalServerRequest) HasHostnameVerificationMethod() bool`
-
-HasHostnameVerificationMethod returns a boolean if a field has been set.
-
-### GetResponseTimeout
-
-`func (o *AddExternalServerRequest) GetResponseTimeout() string`
-
-GetResponseTimeout returns the ResponseTimeout field if non-nil, zero value otherwise.
-
-### GetResponseTimeoutOk
-
-`func (o *AddExternalServerRequest) GetResponseTimeoutOk() (*string, bool)`
-
-GetResponseTimeoutOk returns a tuple with the ResponseTimeout field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetResponseTimeout
-
-`func (o *AddExternalServerRequest) SetResponseTimeout(v string)`
-
-SetResponseTimeout sets ResponseTimeout field to given value.
-
-### HasResponseTimeout
-
-`func (o *AddExternalServerRequest) HasResponseTimeout() bool`
-
-HasResponseTimeout returns a boolean if a field has been set.
-
-### GetConjurServerBaseURI
-
-`func (o *AddExternalServerRequest) GetConjurServerBaseURI() []string`
-
-GetConjurServerBaseURI returns the ConjurServerBaseURI field if non-nil, zero value otherwise.
-
-### GetConjurServerBaseURIOk
-
-`func (o *AddExternalServerRequest) GetConjurServerBaseURIOk() (*[]string, bool)`
-
-GetConjurServerBaseURIOk returns a tuple with the ConjurServerBaseURI field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConjurServerBaseURI
-
-`func (o *AddExternalServerRequest) SetConjurServerBaseURI(v []string)`
-
-SetConjurServerBaseURI sets ConjurServerBaseURI field to given value.
-
-
-### GetConjurAuthenticationMethod
-
-`func (o *AddExternalServerRequest) GetConjurAuthenticationMethod() string`
-
-GetConjurAuthenticationMethod returns the ConjurAuthenticationMethod field if non-nil, zero value otherwise.
-
-### GetConjurAuthenticationMethodOk
-
-`func (o *AddExternalServerRequest) GetConjurAuthenticationMethodOk() (*string, bool)`
-
-GetConjurAuthenticationMethodOk returns a tuple with the ConjurAuthenticationMethod field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConjurAuthenticationMethod
-
-`func (o *AddExternalServerRequest) SetConjurAuthenticationMethod(v string)`
-
-SetConjurAuthenticationMethod sets ConjurAuthenticationMethod field to given value.
-
-
-### GetConjurAccountName
-
-`func (o *AddExternalServerRequest) GetConjurAccountName() string`
-
-GetConjurAccountName returns the ConjurAccountName field if non-nil, zero value otherwise.
-
-### GetConjurAccountNameOk
-
-`func (o *AddExternalServerRequest) GetConjurAccountNameOk() (*string, bool)`
-
-GetConjurAccountNameOk returns a tuple with the ConjurAccountName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConjurAccountName
-
-`func (o *AddExternalServerRequest) SetConjurAccountName(v string)`
-
-SetConjurAccountName sets ConjurAccountName field to given value.
-
-
-### GetTrustStoreFile
-
-`func (o *AddExternalServerRequest) GetTrustStoreFile() string`
-
-GetTrustStoreFile returns the TrustStoreFile field if non-nil, zero value otherwise.
-
-### GetTrustStoreFileOk
-
-`func (o *AddExternalServerRequest) GetTrustStoreFileOk() (*string, bool)`
-
-GetTrustStoreFileOk returns a tuple with the TrustStoreFile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrustStoreFile
-
-`func (o *AddExternalServerRequest) SetTrustStoreFile(v string)`
-
-SetTrustStoreFile sets TrustStoreFile field to given value.
-
-### HasTrustStoreFile
-
-`func (o *AddExternalServerRequest) HasTrustStoreFile() bool`
-
-HasTrustStoreFile returns a boolean if a field has been set.
-
-### GetTrustStorePin
-
-`func (o *AddExternalServerRequest) GetTrustStorePin() string`
-
-GetTrustStorePin returns the TrustStorePin field if non-nil, zero value otherwise.
-
-### GetTrustStorePinOk
-
-`func (o *AddExternalServerRequest) GetTrustStorePinOk() (*string, bool)`
-
-GetTrustStorePinOk returns a tuple with the TrustStorePin field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrustStorePin
-
-`func (o *AddExternalServerRequest) SetTrustStorePin(v string)`
-
-SetTrustStorePin sets TrustStorePin field to given value.
-
-### HasTrustStorePin
-
-`func (o *AddExternalServerRequest) HasTrustStorePin() bool`
-
-HasTrustStorePin returns a boolean if a field has been set.
-
-### GetTrustStoreType
-
-`func (o *AddExternalServerRequest) GetTrustStoreType() string`
-
-GetTrustStoreType returns the TrustStoreType field if non-nil, zero value otherwise.
-
-### GetTrustStoreTypeOk
-
-`func (o *AddExternalServerRequest) GetTrustStoreTypeOk() (*string, bool)`
-
-GetTrustStoreTypeOk returns a tuple with the TrustStoreType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrustStoreType
-
-`func (o *AddExternalServerRequest) SetTrustStoreType(v string)`
-
-SetTrustStoreType sets TrustStoreType field to given value.
-
-### HasTrustStoreType
-
-`func (o *AddExternalServerRequest) HasTrustStoreType() bool`
-
-HasTrustStoreType returns a boolean if a field has been set.
-
 ### GetJdbcDriverType
 
 `func (o *AddExternalServerRequest) GetJdbcDriverType() EnumexternalServerJdbcDriverTypeProp`
@@ -1073,6 +890,256 @@ SetTransactionIsolationLevel sets TransactionIsolationLevel field to given value
 
 HasTransactionIsolationLevel returns a boolean if a field has been set.
 
+### GetTransportMechanism
+
+`func (o *AddExternalServerRequest) GetTransportMechanism() EnumexternalServerTransportMechanismProp`
+
+GetTransportMechanism returns the TransportMechanism field if non-nil, zero value otherwise.
+
+### GetTransportMechanismOk
+
+`func (o *AddExternalServerRequest) GetTransportMechanismOk() (*EnumexternalServerTransportMechanismProp, bool)`
+
+GetTransportMechanismOk returns a tuple with the TransportMechanism field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransportMechanism
+
+`func (o *AddExternalServerRequest) SetTransportMechanism(v EnumexternalServerTransportMechanismProp)`
+
+SetTransportMechanism sets TransportMechanism field to given value.
+
+
+### GetHostnameVerificationMethod
+
+`func (o *AddExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp`
+
+GetHostnameVerificationMethod returns the HostnameVerificationMethod field if non-nil, zero value otherwise.
+
+### GetHostnameVerificationMethodOk
+
+`func (o *AddExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool)`
+
+GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostnameVerificationMethod
+
+`func (o *AddExternalServerRequest) SetHostnameVerificationMethod(v EnumexternalServerHostnameVerificationMethodProp)`
+
+SetHostnameVerificationMethod sets HostnameVerificationMethod field to given value.
+
+### HasHostnameVerificationMethod
+
+`func (o *AddExternalServerRequest) HasHostnameVerificationMethod() bool`
+
+HasHostnameVerificationMethod returns a boolean if a field has been set.
+
+### GetResponseTimeout
+
+`func (o *AddExternalServerRequest) GetResponseTimeout() string`
+
+GetResponseTimeout returns the ResponseTimeout field if non-nil, zero value otherwise.
+
+### GetResponseTimeoutOk
+
+`func (o *AddExternalServerRequest) GetResponseTimeoutOk() (*string, bool)`
+
+GetResponseTimeoutOk returns a tuple with the ResponseTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResponseTimeout
+
+`func (o *AddExternalServerRequest) SetResponseTimeout(v string)`
+
+SetResponseTimeout sets ResponseTimeout field to given value.
+
+### HasResponseTimeout
+
+`func (o *AddExternalServerRequest) HasResponseTimeout() bool`
+
+HasResponseTimeout returns a boolean if a field has been set.
+
+### GetBaseURL
+
+`func (o *AddExternalServerRequest) GetBaseURL() string`
+
+GetBaseURL returns the BaseURL field if non-nil, zero value otherwise.
+
+### GetBaseURLOk
+
+`func (o *AddExternalServerRequest) GetBaseURLOk() (*string, bool)`
+
+GetBaseURLOk returns a tuple with the BaseURL field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBaseURL
+
+`func (o *AddExternalServerRequest) SetBaseURL(v string)`
+
+SetBaseURL sets BaseURL field to given value.
+
+
+### GetSslCertNickname
+
+`func (o *AddExternalServerRequest) GetSslCertNickname() string`
+
+GetSslCertNickname returns the SslCertNickname field if non-nil, zero value otherwise.
+
+### GetSslCertNicknameOk
+
+`func (o *AddExternalServerRequest) GetSslCertNicknameOk() (*string, bool)`
+
+GetSslCertNicknameOk returns a tuple with the SslCertNickname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSslCertNickname
+
+`func (o *AddExternalServerRequest) SetSslCertNickname(v string)`
+
+SetSslCertNickname sets SslCertNickname field to given value.
+
+### HasSslCertNickname
+
+`func (o *AddExternalServerRequest) HasSslCertNickname() bool`
+
+HasSslCertNickname returns a boolean if a field has been set.
+
+### GetConjurServerBaseURI
+
+`func (o *AddExternalServerRequest) GetConjurServerBaseURI() []string`
+
+GetConjurServerBaseURI returns the ConjurServerBaseURI field if non-nil, zero value otherwise.
+
+### GetConjurServerBaseURIOk
+
+`func (o *AddExternalServerRequest) GetConjurServerBaseURIOk() (*[]string, bool)`
+
+GetConjurServerBaseURIOk returns a tuple with the ConjurServerBaseURI field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConjurServerBaseURI
+
+`func (o *AddExternalServerRequest) SetConjurServerBaseURI(v []string)`
+
+SetConjurServerBaseURI sets ConjurServerBaseURI field to given value.
+
+
+### GetConjurAuthenticationMethod
+
+`func (o *AddExternalServerRequest) GetConjurAuthenticationMethod() string`
+
+GetConjurAuthenticationMethod returns the ConjurAuthenticationMethod field if non-nil, zero value otherwise.
+
+### GetConjurAuthenticationMethodOk
+
+`func (o *AddExternalServerRequest) GetConjurAuthenticationMethodOk() (*string, bool)`
+
+GetConjurAuthenticationMethodOk returns a tuple with the ConjurAuthenticationMethod field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConjurAuthenticationMethod
+
+`func (o *AddExternalServerRequest) SetConjurAuthenticationMethod(v string)`
+
+SetConjurAuthenticationMethod sets ConjurAuthenticationMethod field to given value.
+
+
+### GetConjurAccountName
+
+`func (o *AddExternalServerRequest) GetConjurAccountName() string`
+
+GetConjurAccountName returns the ConjurAccountName field if non-nil, zero value otherwise.
+
+### GetConjurAccountNameOk
+
+`func (o *AddExternalServerRequest) GetConjurAccountNameOk() (*string, bool)`
+
+GetConjurAccountNameOk returns a tuple with the ConjurAccountName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConjurAccountName
+
+`func (o *AddExternalServerRequest) SetConjurAccountName(v string)`
+
+SetConjurAccountName sets ConjurAccountName field to given value.
+
+
+### GetTrustStoreFile
+
+`func (o *AddExternalServerRequest) GetTrustStoreFile() string`
+
+GetTrustStoreFile returns the TrustStoreFile field if non-nil, zero value otherwise.
+
+### GetTrustStoreFileOk
+
+`func (o *AddExternalServerRequest) GetTrustStoreFileOk() (*string, bool)`
+
+GetTrustStoreFileOk returns a tuple with the TrustStoreFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustStoreFile
+
+`func (o *AddExternalServerRequest) SetTrustStoreFile(v string)`
+
+SetTrustStoreFile sets TrustStoreFile field to given value.
+
+### HasTrustStoreFile
+
+`func (o *AddExternalServerRequest) HasTrustStoreFile() bool`
+
+HasTrustStoreFile returns a boolean if a field has been set.
+
+### GetTrustStorePin
+
+`func (o *AddExternalServerRequest) GetTrustStorePin() string`
+
+GetTrustStorePin returns the TrustStorePin field if non-nil, zero value otherwise.
+
+### GetTrustStorePinOk
+
+`func (o *AddExternalServerRequest) GetTrustStorePinOk() (*string, bool)`
+
+GetTrustStorePinOk returns a tuple with the TrustStorePin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustStorePin
+
+`func (o *AddExternalServerRequest) SetTrustStorePin(v string)`
+
+SetTrustStorePin sets TrustStorePin field to given value.
+
+### HasTrustStorePin
+
+`func (o *AddExternalServerRequest) HasTrustStorePin() bool`
+
+HasTrustStorePin returns a boolean if a field has been set.
+
+### GetTrustStoreType
+
+`func (o *AddExternalServerRequest) GetTrustStoreType() string`
+
+GetTrustStoreType returns the TrustStoreType field if non-nil, zero value otherwise.
+
+### GetTrustStoreTypeOk
+
+`func (o *AddExternalServerRequest) GetTrustStoreTypeOk() (*string, bool)`
+
+GetTrustStoreTypeOk returns a tuple with the TrustStoreType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustStoreType
+
+`func (o *AddExternalServerRequest) SetTrustStoreType(v string)`
+
+SetTrustStoreType sets TrustStoreType field to given value.
+
+### HasTrustStoreType
+
+`func (o *AddExternalServerRequest) HasTrustStoreType() bool`
+
+HasTrustStoreType returns a boolean if a field has been set.
+
 ### GetAwsAccessKeyID
 
 `func (o *AddExternalServerRequest) GetAwsAccessKeyID() string`
@@ -1141,26 +1208,6 @@ and a boolean to check if the value has been set.
 `func (o *AddExternalServerRequest) SetAwsRegionName(v string)`
 
 SetAwsRegionName sets AwsRegionName field to given value.
-
-
-### GetTransportMechanism
-
-`func (o *AddExternalServerRequest) GetTransportMechanism() EnumexternalServerTransportMechanismProp`
-
-GetTransportMechanism returns the TransportMechanism field if non-nil, zero value otherwise.
-
-### GetTransportMechanismOk
-
-`func (o *AddExternalServerRequest) GetTransportMechanismOk() (*EnumexternalServerTransportMechanismProp, bool)`
-
-GetTransportMechanismOk returns a tuple with the TransportMechanism field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTransportMechanism
-
-`func (o *AddExternalServerRequest) SetTransportMechanism(v EnumexternalServerTransportMechanismProp)`
-
-SetTransportMechanism sets TransportMechanism field to given value.
 
 
 ### GetVaultServerBaseURI

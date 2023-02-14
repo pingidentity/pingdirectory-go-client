@@ -19,6 +19,7 @@ import (
 type GetMatchingRule200Response struct {
 	ApproximateMatchingRuleResponse *ApproximateMatchingRuleResponse
 	EqualityMatchingRuleResponse    *EqualityMatchingRuleResponse
+	GenericMatchingRuleResponse     *GenericMatchingRuleResponse
 	OrderingMatchingRuleResponse    *OrderingMatchingRuleResponse
 	SubstringMatchingRuleResponse   *SubstringMatchingRuleResponse
 }
@@ -34,6 +35,13 @@ func ApproximateMatchingRuleResponseAsGetMatchingRule200Response(v *ApproximateM
 func EqualityMatchingRuleResponseAsGetMatchingRule200Response(v *EqualityMatchingRuleResponse) GetMatchingRule200Response {
 	return GetMatchingRule200Response{
 		EqualityMatchingRuleResponse: v,
+	}
+}
+
+// GenericMatchingRuleResponseAsGetMatchingRule200Response is a convenience function that returns GenericMatchingRuleResponse wrapped in GetMatchingRule200Response
+func GenericMatchingRuleResponseAsGetMatchingRule200Response(v *GenericMatchingRuleResponse) GetMatchingRule200Response {
+	return GetMatchingRule200Response{
+		GenericMatchingRuleResponse: v,
 	}
 }
 
@@ -81,6 +89,19 @@ func (dst *GetMatchingRule200Response) UnmarshalJSON(data []byte) error {
 		dst.EqualityMatchingRuleResponse = nil
 	}
 
+	// try to unmarshal data into GenericMatchingRuleResponse
+	err = newStrictDecoder(data).Decode(&dst.GenericMatchingRuleResponse)
+	if err == nil {
+		jsonGenericMatchingRuleResponse, _ := json.Marshal(dst.GenericMatchingRuleResponse)
+		if string(jsonGenericMatchingRuleResponse) == "{}" { // empty struct
+			dst.GenericMatchingRuleResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.GenericMatchingRuleResponse = nil
+	}
+
 	// try to unmarshal data into OrderingMatchingRuleResponse
 	err = newStrictDecoder(data).Decode(&dst.OrderingMatchingRuleResponse)
 	if err == nil {
@@ -111,6 +132,7 @@ func (dst *GetMatchingRule200Response) UnmarshalJSON(data []byte) error {
 		// reset to nil
 		dst.ApproximateMatchingRuleResponse = nil
 		dst.EqualityMatchingRuleResponse = nil
+		dst.GenericMatchingRuleResponse = nil
 		dst.OrderingMatchingRuleResponse = nil
 		dst.SubstringMatchingRuleResponse = nil
 
@@ -130,6 +152,10 @@ func (src GetMatchingRule200Response) MarshalJSON() ([]byte, error) {
 
 	if src.EqualityMatchingRuleResponse != nil {
 		return json.Marshal(&src.EqualityMatchingRuleResponse)
+	}
+
+	if src.GenericMatchingRuleResponse != nil {
+		return json.Marshal(&src.GenericMatchingRuleResponse)
 	}
 
 	if src.OrderingMatchingRuleResponse != nil {
@@ -154,6 +180,10 @@ func (obj *GetMatchingRule200Response) GetActualInstance() interface{} {
 
 	if obj.EqualityMatchingRuleResponse != nil {
 		return obj.EqualityMatchingRuleResponse
+	}
+
+	if obj.GenericMatchingRuleResponse != nil {
+		return obj.GenericMatchingRuleResponse
 	}
 
 	if obj.OrderingMatchingRuleResponse != nil {

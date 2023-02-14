@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
-**Schemas** | [**[]EnumattributeBasedLogFieldSyntaxSchemaUrn**](EnumattributeBasedLogFieldSyntaxSchemaUrn.md) |  | 
+**Schemas** | [**[]EnumgenericLogFieldSyntaxSchemaUrn**](EnumgenericLogFieldSyntaxSchemaUrn.md) |  | 
 **Id** | **string** | Name of the Log Field Syntax | 
 **IncludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will be considered sensitive. | [optional] 
 **ExcludedSensitiveField** | Pointer to **[]string** | The names of the JSON fields that will not be considered sensitive. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewGetLogFieldSyntax200Response
 
-`func NewGetLogFieldSyntax200Response(schemas []EnumattributeBasedLogFieldSyntaxSchemaUrn, id string, ) *GetLogFieldSyntax200Response`
+`func NewGetLogFieldSyntax200Response(schemas []EnumgenericLogFieldSyntaxSchemaUrn, id string, ) *GetLogFieldSyntax200Response`
 
 NewGetLogFieldSyntax200Response instantiates a new GetLogFieldSyntax200Response object
 This constructor will assign default values to properties that have it defined,
@@ -86,20 +86,20 @@ HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field ha
 
 ### GetSchemas
 
-`func (o *GetLogFieldSyntax200Response) GetSchemas() []EnumattributeBasedLogFieldSyntaxSchemaUrn`
+`func (o *GetLogFieldSyntax200Response) GetSchemas() []EnumgenericLogFieldSyntaxSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *GetLogFieldSyntax200Response) GetSchemasOk() (*[]EnumattributeBasedLogFieldSyntaxSchemaUrn, bool)`
+`func (o *GetLogFieldSyntax200Response) GetSchemasOk() (*[]EnumgenericLogFieldSyntaxSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *GetLogFieldSyntax200Response) SetSchemas(v []EnumattributeBasedLogFieldSyntaxSchemaUrn)`
+`func (o *GetLogFieldSyntax200Response) SetSchemas(v []EnumgenericLogFieldSyntaxSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 

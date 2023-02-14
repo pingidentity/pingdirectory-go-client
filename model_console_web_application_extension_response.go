@@ -18,7 +18,9 @@ import (
 type ConsoleWebApplicationExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
 	Urnpingidentityschemasconfigurationmessages20 *MetaUrnPingidentitySchemasConfigurationMessages20 `json:"urn:pingidentity:schemas:configuration:messages:2.0,omitempty"`
-	Schemas                                       []EnumconsoleWebApplicationExtensionSchemaUrn      `json:"schemas,omitempty"`
+	Schemas                                       []EnumconsoleWebApplicationExtensionSchemaUrn      `json:"schemas"`
+	// Name of the Web Application Extension
+	Id string `json:"id"`
 	// Indicates that SSO login into the Administrative Console is enabled.
 	SsoEnabled *bool `json:"ssoEnabled,omitempty"`
 	// The client ID to use when authenticating to the OpenID Connect provider.
@@ -70,8 +72,10 @@ type ConsoleWebApplicationExtensionResponse struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsoleWebApplicationExtensionResponse(baseContextPath string) *ConsoleWebApplicationExtensionResponse {
+func NewConsoleWebApplicationExtensionResponse(schemas []EnumconsoleWebApplicationExtensionSchemaUrn, id string, baseContextPath string) *ConsoleWebApplicationExtensionResponse {
 	this := ConsoleWebApplicationExtensionResponse{}
+	this.Schemas = schemas
+	this.Id = id
 	this.BaseContextPath = baseContextPath
 	return &this
 }
@@ -148,36 +152,52 @@ func (o *ConsoleWebApplicationExtensionResponse) SetUrnpingidentityschemasconfig
 	o.Urnpingidentityschemasconfigurationmessages20 = &v
 }
 
-// GetSchemas returns the Schemas field value if set, zero value otherwise.
+// GetSchemas returns the Schemas field value
 func (o *ConsoleWebApplicationExtensionResponse) GetSchemas() []EnumconsoleWebApplicationExtensionSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil {
 		var ret []EnumconsoleWebApplicationExtensionSchemaUrn
 		return ret
 	}
+
 	return o.Schemas
 }
 
-// GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
+// GetSchemasOk returns a tuple with the Schemas field value
 // and a boolean to check if the value has been set.
 func (o *ConsoleWebApplicationExtensionResponse) GetSchemasOk() ([]EnumconsoleWebApplicationExtensionSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil {
 		return nil, false
 	}
 	return o.Schemas, true
 }
 
-// HasSchemas returns a boolean if a field has been set.
-func (o *ConsoleWebApplicationExtensionResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
-		return true
-	}
-
-	return false
-}
-
-// SetSchemas gets a reference to the given []EnumconsoleWebApplicationExtensionSchemaUrn and assigns it to the Schemas field.
+// SetSchemas sets field value
 func (o *ConsoleWebApplicationExtensionResponse) SetSchemas(v []EnumconsoleWebApplicationExtensionSchemaUrn) {
 	o.Schemas = v
+}
+
+// GetId returns the Id field value
+func (o *ConsoleWebApplicationExtensionResponse) GetId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *ConsoleWebApplicationExtensionResponse) GetIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *ConsoleWebApplicationExtensionResponse) SetId(v string) {
+	o.Id = v
 }
 
 // GetSsoEnabled returns the SsoEnabled field value if set, zero value otherwise.
@@ -916,8 +936,11 @@ func (o ConsoleWebApplicationExtensionResponse) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
 	}
-	if !isNil(o.Schemas) {
+	if true {
 		toSerialize["schemas"] = o.Schemas
+	}
+	if true {
+		toSerialize["id"] = o.Id
 	}
 	if !isNil(o.SsoEnabled) {
 		toSerialize["ssoEnabled"] = o.SsoEnabled

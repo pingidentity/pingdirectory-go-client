@@ -6,7 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
-**Schemas** | Pointer to [**[]EnumconsoleWebApplicationExtensionSchemaUrn**](EnumconsoleWebApplicationExtensionSchemaUrn.md) |  | [optional] 
+**Schemas** | [**[]EnumconsoleWebApplicationExtensionSchemaUrn**](EnumconsoleWebApplicationExtensionSchemaUrn.md) |  | 
+**Id** | **string** | Name of the Web Application Extension | 
 **SsoEnabled** | Pointer to **bool** | Indicates that SSO login into the Administrative Console is enabled. | [optional] 
 **OidcClientID** | Pointer to **string** | The client ID to use when authenticating to the OpenID Connect provider. | [optional] 
 **OidcClientSecret** | Pointer to **string** | The client secret to use when authenticating to the OpenID Connect provider. | [optional] 
@@ -35,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewConsoleWebApplicationExtensionResponse
 
-`func NewConsoleWebApplicationExtensionResponse(baseContextPath string, ) *ConsoleWebApplicationExtensionResponse`
+`func NewConsoleWebApplicationExtensionResponse(schemas []EnumconsoleWebApplicationExtensionSchemaUrn, id string, baseContextPath string, ) *ConsoleWebApplicationExtensionResponse`
 
 NewConsoleWebApplicationExtensionResponse instantiates a new ConsoleWebApplicationExtensionResponse object
 This constructor will assign default values to properties that have it defined,
@@ -119,11 +120,26 @@ and a boolean to check if the value has been set.
 
 SetSchemas sets Schemas field to given value.
 
-### HasSchemas
 
-`func (o *ConsoleWebApplicationExtensionResponse) HasSchemas() bool`
+### GetId
 
-HasSchemas returns a boolean if a field has been set.
+`func (o *ConsoleWebApplicationExtensionResponse) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *ConsoleWebApplicationExtensionResponse) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *ConsoleWebApplicationExtensionResponse) SetId(v string)`
+
+SetId sets Id field to given value.
+
 
 ### GetSsoEnabled
 

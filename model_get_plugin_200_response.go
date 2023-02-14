@@ -42,6 +42,7 @@ type GetPlugin200Response struct {
 	PluggablePassThroughAuthenticationPluginResponse               *PluggablePassThroughAuthenticationPluginResponse
 	ProcessingTimeHistogramPluginResponse                          *ProcessingTimeHistogramPluginResponse
 	ProfilerPluginResponse                                         *ProfilerPluginResponse
+	PurgeExpiredDataPluginResponse                                 *PurgeExpiredDataPluginResponse
 	ReferentialIntegrityPluginResponse                             *ReferentialIntegrityPluginResponse
 	ReferralOnUpdatePluginResponse                                 *ReferralOnUpdatePluginResponse
 	SearchShutdownPluginResponse                                   *SearchShutdownPluginResponse
@@ -226,6 +227,13 @@ func ProcessingTimeHistogramPluginResponseAsGetPlugin200Response(v *ProcessingTi
 func ProfilerPluginResponseAsGetPlugin200Response(v *ProfilerPluginResponse) GetPlugin200Response {
 	return GetPlugin200Response{
 		ProfilerPluginResponse: v,
+	}
+}
+
+// PurgeExpiredDataPluginResponseAsGetPlugin200Response is a convenience function that returns PurgeExpiredDataPluginResponse wrapped in GetPlugin200Response
+func PurgeExpiredDataPluginResponseAsGetPlugin200Response(v *PurgeExpiredDataPluginResponse) GetPlugin200Response {
+	return GetPlugin200Response{
+		PurgeExpiredDataPluginResponse: v,
 	}
 }
 
@@ -628,6 +636,19 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.ProfilerPluginResponse = nil
 	}
 
+	// try to unmarshal data into PurgeExpiredDataPluginResponse
+	err = newStrictDecoder(data).Decode(&dst.PurgeExpiredDataPluginResponse)
+	if err == nil {
+		jsonPurgeExpiredDataPluginResponse, _ := json.Marshal(dst.PurgeExpiredDataPluginResponse)
+		if string(jsonPurgeExpiredDataPluginResponse) == "{}" { // empty struct
+			dst.PurgeExpiredDataPluginResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.PurgeExpiredDataPluginResponse = nil
+	}
+
 	// try to unmarshal data into ReferentialIntegrityPluginResponse
 	err = newStrictDecoder(data).Decode(&dst.ReferentialIntegrityPluginResponse)
 	if err == nil {
@@ -785,6 +806,7 @@ func (dst *GetPlugin200Response) UnmarshalJSON(data []byte) error {
 		dst.PluggablePassThroughAuthenticationPluginResponse = nil
 		dst.ProcessingTimeHistogramPluginResponse = nil
 		dst.ProfilerPluginResponse = nil
+		dst.PurgeExpiredDataPluginResponse = nil
 		dst.ReferentialIntegrityPluginResponse = nil
 		dst.ReferralOnUpdatePluginResponse = nil
 		dst.SearchShutdownPluginResponse = nil
@@ -904,6 +926,10 @@ func (src GetPlugin200Response) MarshalJSON() ([]byte, error) {
 
 	if src.ProfilerPluginResponse != nil {
 		return json.Marshal(&src.ProfilerPluginResponse)
+	}
+
+	if src.PurgeExpiredDataPluginResponse != nil {
+		return json.Marshal(&src.PurgeExpiredDataPluginResponse)
 	}
 
 	if src.ReferentialIntegrityPluginResponse != nil {
@@ -1052,6 +1078,10 @@ func (obj *GetPlugin200Response) GetActualInstance() interface{} {
 
 	if obj.ProfilerPluginResponse != nil {
 		return obj.ProfilerPluginResponse
+	}
+
+	if obj.PurgeExpiredDataPluginResponse != nil {
+		return obj.PurgeExpiredDataPluginResponse
 	}
 
 	if obj.ReferentialIntegrityPluginResponse != nil {
