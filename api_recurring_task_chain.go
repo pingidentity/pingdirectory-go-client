@@ -146,7 +146,7 @@ func (r ApiDeleteRecurringTaskChainRequest) Execute() (*http.Response, error) {
 DeleteRecurringTaskChain Delete a Recurring Task Chain
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recurringTaskChainName Name of the Recurring Task Chain to be deleted
+	@param recurringTaskChainName Name of the Recurring Task Chain
 	@return ApiDeleteRecurringTaskChainRequest
 */
 func (a *RecurringTaskChainApiService) DeleteRecurringTaskChain(ctx context.Context, recurringTaskChainName string) ApiDeleteRecurringTaskChainRequest {
@@ -236,7 +236,7 @@ func (r ApiGetRecurringTaskChainRequest) Execute() (*RecurringTaskChainResponse,
 GetRecurringTaskChain Returns a single Recurring Task Chain
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recurringTaskChainName Name of the Recurring Task Chain to be read
+	@param recurringTaskChainName Name of the Recurring Task Chain
 	@return ApiGetRecurringTaskChainRequest
 */
 func (a *RecurringTaskChainApiService) GetRecurringTaskChain(ctx context.Context, recurringTaskChainName string) ApiGetRecurringTaskChainRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateRecurringTaskChainRequest) Execute() (*RecurringTaskChainRespon
 UpdateRecurringTaskChain Update an existing Recurring Task Chain by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recurringTaskChainName Name of the Recurring Task Chain to be updated
+	@param recurringTaskChainName Name of the Recurring Task Chain
 	@return ApiUpdateRecurringTaskChainRequest
 */
 func (a *RecurringTaskChainApiService) UpdateRecurringTaskChain(ctx context.Context, recurringTaskChainName string) ApiUpdateRecurringTaskChainRequest {

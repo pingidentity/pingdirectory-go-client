@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    changeSubscriptionHandlerName := "changeSubscriptionHandlerName_example" // string | Name of the Change Subscription Handler to be deleted
+    changeSubscriptionHandlerName := "changeSubscriptionHandlerName_example" // string | Name of the Change Subscription Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**changeSubscriptionHandlerName** | **string** | Name of the Change Subscription Handler to be deleted | 
+**changeSubscriptionHandlerName** | **string** | Name of the Change Subscription Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    changeSubscriptionHandlerName := "changeSubscriptionHandlerName_example" // string | Name of the Change Subscription Handler to be read
+    changeSubscriptionHandlerName := "changeSubscriptionHandlerName_example" // string | Name of the Change Subscription Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**changeSubscriptionHandlerName** | **string** | Name of the Change Subscription Handler to be read | 
+**changeSubscriptionHandlerName** | **string** | Name of the Change Subscription Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    changeSubscriptionHandlerName := "changeSubscriptionHandlerName_example" // string | Name of the Change Subscription Handler to be updated
+    changeSubscriptionHandlerName := "changeSubscriptionHandlerName_example" // string | Name of the Change Subscription Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Change Subscription Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**changeSubscriptionHandlerName** | **string** | Name of the Change Subscription Handler to be updated | 
+**changeSubscriptionHandlerName** | **string** | Name of the Change Subscription Handler | 
 
 ### Other Parameters
 

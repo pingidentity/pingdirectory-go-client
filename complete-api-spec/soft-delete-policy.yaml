@@ -45,7 +45,7 @@ paths:
       summary: Delete a Soft Delete Policy
       operationId: delete-soft-delete-policy
       parameters:
-      - description: Name of the Soft Delete Policy to be deleted
+      - description: Name of the Soft Delete Policy
         explode: false
         in: path
         name: soft-delete-policy-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Soft Delete Policy
       operationId: get-soft-delete-policy
       parameters:
-      - description: Name of the Soft Delete Policy to be read
+      - description: Name of the Soft Delete Policy
         explode: false
         in: path
         name: soft-delete-policy-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Soft Delete Policy by name
       operationId: update-soft-delete-policy
       parameters:
-      - description: Name of the Soft Delete Policy to be updated
+      - description: Name of the Soft Delete Policy
         explode: false
         in: path
         name: soft-delete-policy-name

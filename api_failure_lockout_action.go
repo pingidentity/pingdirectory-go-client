@@ -146,7 +146,7 @@ func (r ApiDeleteFailureLockoutActionRequest) Execute() (*http.Response, error) 
 DeleteFailureLockoutAction Delete a Failure Lockout Action
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param failureLockoutActionName Name of the Failure Lockout Action to be deleted
+	@param failureLockoutActionName Name of the Failure Lockout Action
 	@return ApiDeleteFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) DeleteFailureLockoutAction(ctx context.Context, failureLockoutActionName string) ApiDeleteFailureLockoutActionRequest {
@@ -236,7 +236,7 @@ func (r ApiGetFailureLockoutActionRequest) Execute() (*AddFailureLockoutAction20
 GetFailureLockoutAction Returns a single Failure Lockout Action
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param failureLockoutActionName Name of the Failure Lockout Action to be read
+	@param failureLockoutActionName Name of the Failure Lockout Action
 	@return ApiGetFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) GetFailureLockoutAction(ctx context.Context, failureLockoutActionName string) ApiGetFailureLockoutActionRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateFailureLockoutActionRequest) Execute() (*AddFailureLockoutActio
 UpdateFailureLockoutAction Update an existing Failure Lockout Action by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param failureLockoutActionName Name of the Failure Lockout Action to be updated
+	@param failureLockoutActionName Name of the Failure Lockout Action
 	@return ApiUpdateFailureLockoutActionRequest
 */
 func (a *FailureLockoutActionApiService) UpdateFailureLockoutAction(ctx context.Context, failureLockoutActionName string) ApiUpdateFailureLockoutActionRequest {

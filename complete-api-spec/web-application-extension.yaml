@@ -15,7 +15,7 @@ paths:
       summary: Returns a single Web Application Extension
       operationId: get-web-application-extension
       parameters:
-      - description: Name of the Web Application Extension to be read
+      - description: Name of the Web Application Extension
         explode: false
         in: path
         name: web-application-extension-name
@@ -44,7 +44,7 @@ paths:
       summary: Update an existing Web Application Extension by name
       operationId: update-web-application-extension
       parameters:
-      - description: Name of the Web Application Extension to be updated
+      - description: Name of the Web Application Extension
         explode: false
         in: path
         name: web-application-extension-name

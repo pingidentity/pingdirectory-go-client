@@ -59,7 +59,7 @@ paths:
       summary: Delete a Data Security Auditor
       operationId: delete-data-security-auditor
       parameters:
-      - description: Name of the Data Security Auditor to be deleted
+      - description: Name of the Data Security Auditor
         explode: false
         in: path
         name: data-security-auditor-name
@@ -86,7 +86,7 @@ paths:
       summary: Returns a single Data Security Auditor
       operationId: get-data-security-auditor
       parameters:
-      - description: Name of the Data Security Auditor to be read
+      - description: Name of the Data Security Auditor
         explode: false
         in: path
         name: data-security-auditor-name
@@ -122,7 +122,7 @@ paths:
       summary: Update an existing Data Security Auditor by name
       operationId: update-data-security-auditor
       parameters:
-      - description: Name of the Data Security Auditor to be updated
+      - description: Name of the Data Security Auditor
         explode: false
         in: path
         name: data-security-auditor-name
@@ -608,6 +608,15 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:data-security-auditor:access-control"
+    Enumdata-security-auditor-auditSeverityProp:
+      type: string
+      enum:
+      - "error"
+      - "warning"
+      - "notice"
+      - "verbose"
+      description: >-
+          Specifies the severity of events to include in the report.
     Enumdata-security-auditor-includePrivilegeProp:
       type: string
       enum:
@@ -650,15 +659,6 @@ components:
       - "permit-replace-certificate-request"
       description: >-
           If defined, only entries with the specified privileges will be reported. By default, entries with any privilege assigned will be reported.
-    Enumdata-security-auditor-auditSeverityProp:
-      type: string
-      enum:
-      - "error"
-      - "warning"
-      - "notice"
-      - "verbose"
-      description: >-
-          Specifies the severity of events to include in the report.
     Enumdata-security-auditor-weakCryptEncodingProp:
       type: string
       enum:

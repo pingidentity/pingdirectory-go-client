@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension to be deleted
+    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension to be deleted | 
+**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension to be read
+    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension to be read | 
+**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension to be updated
+    httpServletExtensionName := "httpServletExtensionName_example" // string | Name of the HTTP Servlet Extension
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing HTTP Servlet Extension
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension to be updated | 
+**httpServletExtensionName** | **string** | Name of the HTTP Servlet Extension | 
 
 ### Other Parameters
 

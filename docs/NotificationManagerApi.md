@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    notificationManagerName := "notificationManagerName_example" // string | Name of the Notification Manager to be deleted
+    notificationManagerName := "notificationManagerName_example" // string | Name of the Notification Manager
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**notificationManagerName** | **string** | Name of the Notification Manager to be deleted | 
+**notificationManagerName** | **string** | Name of the Notification Manager | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    notificationManagerName := "notificationManagerName_example" // string | Name of the Notification Manager to be read
+    notificationManagerName := "notificationManagerName_example" // string | Name of the Notification Manager
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**notificationManagerName** | **string** | Name of the Notification Manager to be read | 
+**notificationManagerName** | **string** | Name of the Notification Manager | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    notificationManagerName := "notificationManagerName_example" // string | Name of the Notification Manager to be updated
+    notificationManagerName := "notificationManagerName_example" // string | Name of the Notification Manager
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Notification Manager
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**notificationManagerName** | **string** | Name of the Notification Manager to be updated | 
+**notificationManagerName** | **string** | Name of the Notification Manager | 
 
 ### Other Parameters
 

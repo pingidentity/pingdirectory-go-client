@@ -146,7 +146,7 @@ func (r ApiDeleteVirtualAttributeRequest) Execute() (*http.Response, error) {
 DeleteVirtualAttribute Delete a Virtual Attribute
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param virtualAttributeName Name of the Virtual Attribute to be deleted
+	@param virtualAttributeName Name of the Virtual Attribute
 	@return ApiDeleteVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) DeleteVirtualAttribute(ctx context.Context, virtualAttributeName string) ApiDeleteVirtualAttributeRequest {
@@ -236,7 +236,7 @@ func (r ApiGetVirtualAttributeRequest) Execute() (*GetVirtualAttribute200Respons
 GetVirtualAttribute Returns a single Virtual Attribute
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param virtualAttributeName Name of the Virtual Attribute to be read
+	@param virtualAttributeName Name of the Virtual Attribute
 	@return ApiGetVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) GetVirtualAttribute(ctx context.Context, virtualAttributeName string) ApiGetVirtualAttributeRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateVirtualAttributeRequest) Execute() (*GetVirtualAttribute200Resp
 UpdateVirtualAttribute Update an existing Virtual Attribute by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param virtualAttributeName Name of the Virtual Attribute to be updated
+	@param virtualAttributeName Name of the Virtual Attribute
 	@return ApiUpdateVirtualAttributeRequest
 */
 func (a *VirtualAttributeApiService) UpdateVirtualAttribute(ctx context.Context, virtualAttributeName string) ApiUpdateVirtualAttributeRequest {

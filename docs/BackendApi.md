@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    backendName := "backendName_example" // string | Name of the Backend to be deleted
+    backendName := "backendName_example" // string | Name of the Backend
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**backendName** | **string** | Name of the Backend to be deleted | 
+**backendName** | **string** | Name of the Backend | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    backendName := "backendName_example" // string | Name of the Backend to be read
+    backendName := "backendName_example" // string | Name of the Backend
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**backendName** | **string** | Name of the Backend to be read | 
+**backendName** | **string** | Name of the Backend | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    backendName := "backendName_example" // string | Name of the Backend to be updated
+    backendName := "backendName_example" // string | Name of the Backend
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Backend
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**backendName** | **string** | Name of the Backend to be updated | 
+**backendName** | **string** | Name of the Backend | 
 
 ### Other Parameters
 

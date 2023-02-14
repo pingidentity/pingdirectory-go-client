@@ -146,7 +146,7 @@ func (r ApiDeleteTopologyAdminUserRequest) Execute() (*http.Response, error) {
 DeleteTopologyAdminUser Delete a Topology Admin User
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param topologyAdminUserName Name of the Topology Admin User to be deleted
+	@param topologyAdminUserName Name of the Topology Admin User
 	@return ApiDeleteTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) DeleteTopologyAdminUser(ctx context.Context, topologyAdminUserName string) ApiDeleteTopologyAdminUserRequest {
@@ -236,7 +236,7 @@ func (r ApiGetTopologyAdminUserRequest) Execute() (*TopologyAdminUserResponse, *
 GetTopologyAdminUser Returns a single Topology Admin User
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param topologyAdminUserName Name of the Topology Admin User to be read
+	@param topologyAdminUserName Name of the Topology Admin User
 	@return ApiGetTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) GetTopologyAdminUser(ctx context.Context, topologyAdminUserName string) ApiGetTopologyAdminUserRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateTopologyAdminUserRequest) Execute() (*TopologyAdminUserResponse
 UpdateTopologyAdminUser Update an existing Topology Admin User by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param topologyAdminUserName Name of the Topology Admin User to be updated
+	@param topologyAdminUserName Name of the Topology Admin User
 	@return ApiUpdateTopologyAdminUserRequest
 */
 func (a *TopologyAdminUserApiService) UpdateTopologyAdminUser(ctx context.Context, topologyAdminUserName string) ApiUpdateTopologyAdminUserRequest {

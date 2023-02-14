@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    dataSecurityAuditorName := "dataSecurityAuditorName_example" // string | Name of the Data Security Auditor to be deleted
+    dataSecurityAuditorName := "dataSecurityAuditorName_example" // string | Name of the Data Security Auditor
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dataSecurityAuditorName** | **string** | Name of the Data Security Auditor to be deleted | 
+**dataSecurityAuditorName** | **string** | Name of the Data Security Auditor | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    dataSecurityAuditorName := "dataSecurityAuditorName_example" // string | Name of the Data Security Auditor to be read
+    dataSecurityAuditorName := "dataSecurityAuditorName_example" // string | Name of the Data Security Auditor
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dataSecurityAuditorName** | **string** | Name of the Data Security Auditor to be read | 
+**dataSecurityAuditorName** | **string** | Name of the Data Security Auditor | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    dataSecurityAuditorName := "dataSecurityAuditorName_example" // string | Name of the Data Security Auditor to be updated
+    dataSecurityAuditorName := "dataSecurityAuditorName_example" // string | Name of the Data Security Auditor
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Data Security Auditor
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dataSecurityAuditorName** | **string** | Name of the Data Security Auditor to be updated | 
+**dataSecurityAuditorName** | **string** | Name of the Data Security Auditor | 
 
 ### Other Parameters
 

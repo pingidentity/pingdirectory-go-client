@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    softDeletePolicyName := "softDeletePolicyName_example" // string | Name of the Soft Delete Policy to be deleted
+    softDeletePolicyName := "softDeletePolicyName_example" // string | Name of the Soft Delete Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**softDeletePolicyName** | **string** | Name of the Soft Delete Policy to be deleted | 
+**softDeletePolicyName** | **string** | Name of the Soft Delete Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    softDeletePolicyName := "softDeletePolicyName_example" // string | Name of the Soft Delete Policy to be read
+    softDeletePolicyName := "softDeletePolicyName_example" // string | Name of the Soft Delete Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**softDeletePolicyName** | **string** | Name of the Soft Delete Policy to be read | 
+**softDeletePolicyName** | **string** | Name of the Soft Delete Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    softDeletePolicyName := "softDeletePolicyName_example" // string | Name of the Soft Delete Policy to be updated
+    softDeletePolicyName := "softDeletePolicyName_example" // string | Name of the Soft Delete Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Soft Delete Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**softDeletePolicyName** | **string** | Name of the Soft Delete Policy to be updated | 
+**softDeletePolicyName** | **string** | Name of the Soft Delete Policy | 
 
 ### Other Parameters
 

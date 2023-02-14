@@ -146,7 +146,7 @@ func (r ApiDeleteIdentityMapperRequest) Execute() (*http.Response, error) {
 DeleteIdentityMapper Delete a Identity Mapper
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param identityMapperName Name of the Identity Mapper to be deleted
+	@param identityMapperName Name of the Identity Mapper
 	@return ApiDeleteIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) DeleteIdentityMapper(ctx context.Context, identityMapperName string) ApiDeleteIdentityMapperRequest {
@@ -236,7 +236,7 @@ func (r ApiGetIdentityMapperRequest) Execute() (*AddIdentityMapper200Response, *
 GetIdentityMapper Returns a single Identity Mapper
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param identityMapperName Name of the Identity Mapper to be read
+	@param identityMapperName Name of the Identity Mapper
 	@return ApiGetIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) GetIdentityMapper(ctx context.Context, identityMapperName string) ApiGetIdentityMapperRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateIdentityMapperRequest) Execute() (*AddIdentityMapper200Response
 UpdateIdentityMapper Update an existing Identity Mapper by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param identityMapperName Name of the Identity Mapper to be updated
+	@param identityMapperName Name of the Identity Mapper
 	@return ApiUpdateIdentityMapperRequest
 */
 func (a *IdentityMapperApiService) UpdateIdentityMapper(ctx context.Context, identityMapperName string) ApiUpdateIdentityMapperRequest {

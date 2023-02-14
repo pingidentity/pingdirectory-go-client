@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    clientConnectionPolicyName := "clientConnectionPolicyName_example" // string | Name of the Client Connection Policy to be deleted
+    clientConnectionPolicyName := "clientConnectionPolicyName_example" // string | Name of the Client Connection Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clientConnectionPolicyName** | **string** | Name of the Client Connection Policy to be deleted | 
+**clientConnectionPolicyName** | **string** | Name of the Client Connection Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    clientConnectionPolicyName := "clientConnectionPolicyName_example" // string | Name of the Client Connection Policy to be read
+    clientConnectionPolicyName := "clientConnectionPolicyName_example" // string | Name of the Client Connection Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clientConnectionPolicyName** | **string** | Name of the Client Connection Policy to be read | 
+**clientConnectionPolicyName** | **string** | Name of the Client Connection Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    clientConnectionPolicyName := "clientConnectionPolicyName_example" // string | Name of the Client Connection Policy to be updated
+    clientConnectionPolicyName := "clientConnectionPolicyName_example" // string | Name of the Client Connection Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Client Connection Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**clientConnectionPolicyName** | **string** | Name of the Client Connection Policy to be updated | 
+**clientConnectionPolicyName** | **string** | Name of the Client Connection Policy | 
 
 ### Other Parameters
 

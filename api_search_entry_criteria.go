@@ -146,7 +146,7 @@ func (r ApiDeleteSearchEntryCriteriaRequest) Execute() (*http.Response, error) {
 DeleteSearchEntryCriteria Delete a Search Entry Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param searchEntryCriteriaName Name of the Search Entry Criteria to be deleted
+	@param searchEntryCriteriaName Name of the Search Entry Criteria
 	@return ApiDeleteSearchEntryCriteriaRequest
 */
 func (a *SearchEntryCriteriaApiService) DeleteSearchEntryCriteria(ctx context.Context, searchEntryCriteriaName string) ApiDeleteSearchEntryCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetSearchEntryCriteriaRequest) Execute() (*AddSearchEntryCriteria200R
 GetSearchEntryCriteria Returns a single Search Entry Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param searchEntryCriteriaName Name of the Search Entry Criteria to be read
+	@param searchEntryCriteriaName Name of the Search Entry Criteria
 	@return ApiGetSearchEntryCriteriaRequest
 */
 func (a *SearchEntryCriteriaApiService) GetSearchEntryCriteria(ctx context.Context, searchEntryCriteriaName string) ApiGetSearchEntryCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateSearchEntryCriteriaRequest) Execute() (*AddSearchEntryCriteria2
 UpdateSearchEntryCriteria Update an existing Search Entry Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param searchEntryCriteriaName Name of the Search Entry Criteria to be updated
+	@param searchEntryCriteriaName Name of the Search Entry Criteria
 	@return ApiUpdateSearchEntryCriteriaRequest
 */
 func (a *SearchEntryCriteriaApiService) UpdateSearchEntryCriteria(ctx context.Context, searchEntryCriteriaName string) ApiUpdateSearchEntryCriteriaRequest {

@@ -15,7 +15,7 @@ paths:
       summary: Returns a single Group Implementation
       operationId: get-group-implementation
       parameters:
-      - description: Name of the Group Implementation to be read
+      - description: Name of the Group Implementation
         explode: false
         in: path
         name: group-implementation-name
@@ -47,7 +47,7 @@ paths:
       summary: Update an existing Group Implementation by name
       operationId: update-group-implementation
       parameters:
-      - description: Name of the Group Implementation to be updated
+      - description: Name of the Group Implementation
         explode: false
         in: path
         name: group-implementation-name

@@ -173,6 +173,27 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:ldap-sdk-debug-logger"
+    Enumldap-sdk-debug-logger-compressionMechanismProp:
+      type: string
+      enum:
+      - "none"
+      - "gzip"
+      description: >-
+          Specifies the type of compression (if any) to use for log files that are written.
+    Enumldap-sdk-debug-logger-timestampPrecisionProp:
+      type: string
+      enum:
+      - "seconds"
+      - "milliseconds"
+      description: >-
+          Specifies the smallest time unit to be included in timestamps.
+    Enumldap-sdk-debug-logger-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
     Enumldap-sdk-debug-logger-debugLevelProp:
       type: string
       enum:
@@ -185,13 +206,6 @@ components:
       - "finest"
       description: >-
           The minimum debug level that should be used for messages to be logged.
-    Enumldap-sdk-debug-logger-loggingErrorBehaviorProp:
-      type: string
-      enum:
-      - "standard-error"
-      - "lockdown-mode"
-      description: >-
-          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
     Enumldap-sdk-debug-logger-debugTypeProp:
       type: string
       enum:
@@ -205,20 +219,6 @@ components:
       - "other"
       description: >-
           The types of debug messages that should be logged.
-    Enumldap-sdk-debug-logger-timestampPrecisionProp:
-      type: string
-      enum:
-      - "seconds"
-      - "milliseconds"
-      description: >-
-          Specifies the smallest time unit to be included in timestamps.
-    Enumldap-sdk-debug-logger-compressionMechanismProp:
-      type: string
-      enum:
-      - "none"
-      - "gzip"
-      description: >-
-          Specifies the type of compression (if any) to use for log files that are written.
     updateRequest:
       type: object
       properties:

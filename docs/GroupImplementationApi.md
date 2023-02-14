@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    groupImplementationName := "groupImplementationName_example" // string | Name of the Group Implementation to be read
+    groupImplementationName := "groupImplementationName_example" // string | Name of the Group Implementation
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**groupImplementationName** | **string** | Name of the Group Implementation to be read | 
+**groupImplementationName** | **string** | Name of the Group Implementation | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    groupImplementationName := "groupImplementationName_example" // string | Name of the Group Implementation to be updated
+    groupImplementationName := "groupImplementationName_example" // string | Name of the Group Implementation
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Group Implementation
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**groupImplementationName** | **string** | Name of the Group Implementation to be updated | 
+**groupImplementationName** | **string** | Name of the Group Implementation | 
 
 ### Other Parameters
 

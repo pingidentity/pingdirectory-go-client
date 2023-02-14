@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    resultCodeMapName := "resultCodeMapName_example" // string | Name of the Result Code Map to be deleted
+    resultCodeMapName := "resultCodeMapName_example" // string | Name of the Result Code Map
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resultCodeMapName** | **string** | Name of the Result Code Map to be deleted | 
+**resultCodeMapName** | **string** | Name of the Result Code Map | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    resultCodeMapName := "resultCodeMapName_example" // string | Name of the Result Code Map to be read
+    resultCodeMapName := "resultCodeMapName_example" // string | Name of the Result Code Map
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resultCodeMapName** | **string** | Name of the Result Code Map to be read | 
+**resultCodeMapName** | **string** | Name of the Result Code Map | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    resultCodeMapName := "resultCodeMapName_example" // string | Name of the Result Code Map to be updated
+    resultCodeMapName := "resultCodeMapName_example" // string | Name of the Result Code Map
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Result Code Map
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resultCodeMapName** | **string** | Name of the Result Code Map to be updated | 
+**resultCodeMapName** | **string** | Name of the Result Code Map | 
 
 ### Other Parameters
 

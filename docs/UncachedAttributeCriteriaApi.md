@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    uncachedAttributeCriteriaName := "uncachedAttributeCriteriaName_example" // string | Name of the Uncached Attribute Criteria to be deleted
+    uncachedAttributeCriteriaName := "uncachedAttributeCriteriaName_example" // string | Name of the Uncached Attribute Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uncachedAttributeCriteriaName** | **string** | Name of the Uncached Attribute Criteria to be deleted | 
+**uncachedAttributeCriteriaName** | **string** | Name of the Uncached Attribute Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    uncachedAttributeCriteriaName := "uncachedAttributeCriteriaName_example" // string | Name of the Uncached Attribute Criteria to be read
+    uncachedAttributeCriteriaName := "uncachedAttributeCriteriaName_example" // string | Name of the Uncached Attribute Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uncachedAttributeCriteriaName** | **string** | Name of the Uncached Attribute Criteria to be read | 
+**uncachedAttributeCriteriaName** | **string** | Name of the Uncached Attribute Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    uncachedAttributeCriteriaName := "uncachedAttributeCriteriaName_example" // string | Name of the Uncached Attribute Criteria to be updated
+    uncachedAttributeCriteriaName := "uncachedAttributeCriteriaName_example" // string | Name of the Uncached Attribute Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Uncached Attribute Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uncachedAttributeCriteriaName** | **string** | Name of the Uncached Attribute Criteria to be updated | 
+**uncachedAttributeCriteriaName** | **string** | Name of the Uncached Attribute Criteria | 
 
 ### Other Parameters
 

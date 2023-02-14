@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator to be deleted
+    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idTokenValidatorName** | **string** | Name of the ID Token Validator to be deleted | 
+**idTokenValidatorName** | **string** | Name of the ID Token Validator | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator to be read
+    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idTokenValidatorName** | **string** | Name of the ID Token Validator to be read | 
+**idTokenValidatorName** | **string** | Name of the ID Token Validator | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator to be updated
+    idTokenValidatorName := "idTokenValidatorName_example" // string | Name of the ID Token Validator
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing ID Token Validator
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**idTokenValidatorName** | **string** | Name of the ID Token Validator to be updated | 
+**idTokenValidatorName** | **string** | Name of the ID Token Validator | 
 
 ### Other Parameters
 

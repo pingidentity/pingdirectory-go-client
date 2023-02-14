@@ -90,13 +90,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:alarm-manager"
-    Enumalarm-manager-generatedAlertTypesProp:
-      type: string
-      enum:
-      - "standard"
-      - "alarm"
-      description: >-
-          Indicates what kind of alert types should be generated.
     Enumalarm-manager-defaultGaugeAlertLevelProp:
       type: string
       enum:
@@ -115,6 +108,13 @@ components:
       - "pdp-unavailable"
       description: >-
           Specifies the names of the alarm alert types that should be suppressed. If the condition that triggers an alarm in this list occurs, then the alarm will not be raised and no alerts will be generated. Only a subset of alarms can be suppressed in this way. Alarms triggered by a gauge can be disabled by disabling the gauge.
+    Enumalarm-manager-generatedAlertTypesProp:
+      type: string
+      enum:
+      - "standard"
+      - "alarm"
+      description: >-
+          Indicates what kind of alert types should be generated.
     updateRequest:
       type: object
       properties:

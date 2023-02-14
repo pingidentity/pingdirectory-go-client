@@ -146,7 +146,7 @@ func (r ApiDeleteResultCodeMapRequest) Execute() (*http.Response, error) {
 DeleteResultCodeMap Delete a Result Code Map
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param resultCodeMapName Name of the Result Code Map to be deleted
+	@param resultCodeMapName Name of the Result Code Map
 	@return ApiDeleteResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) DeleteResultCodeMap(ctx context.Context, resultCodeMapName string) ApiDeleteResultCodeMapRequest {
@@ -236,7 +236,7 @@ func (r ApiGetResultCodeMapRequest) Execute() (*ResultCodeMapResponse, *http.Res
 GetResultCodeMap Returns a single Result Code Map
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param resultCodeMapName Name of the Result Code Map to be read
+	@param resultCodeMapName Name of the Result Code Map
 	@return ApiGetResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) GetResultCodeMap(ctx context.Context, resultCodeMapName string) ApiGetResultCodeMapRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateResultCodeMapRequest) Execute() (*ResultCodeMapResponse, *http.
 UpdateResultCodeMap Update an existing Result Code Map by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param resultCodeMapName Name of the Result Code Map to be updated
+	@param resultCodeMapName Name of the Result Code Map
 	@return ApiUpdateResultCodeMapRequest
 */
 func (a *ResultCodeMapApiService) UpdateResultCodeMap(ctx context.Context, resultCodeMapName string) ApiUpdateResultCodeMapRequest {

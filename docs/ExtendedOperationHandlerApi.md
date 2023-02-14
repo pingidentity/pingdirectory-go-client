@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    extendedOperationHandlerName := "extendedOperationHandlerName_example" // string | Name of the Extended Operation Handler to be deleted
+    extendedOperationHandlerName := "extendedOperationHandlerName_example" // string | Name of the Extended Operation Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**extendedOperationHandlerName** | **string** | Name of the Extended Operation Handler to be deleted | 
+**extendedOperationHandlerName** | **string** | Name of the Extended Operation Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    extendedOperationHandlerName := "extendedOperationHandlerName_example" // string | Name of the Extended Operation Handler to be read
+    extendedOperationHandlerName := "extendedOperationHandlerName_example" // string | Name of the Extended Operation Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**extendedOperationHandlerName** | **string** | Name of the Extended Operation Handler to be read | 
+**extendedOperationHandlerName** | **string** | Name of the Extended Operation Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    extendedOperationHandlerName := "extendedOperationHandlerName_example" // string | Name of the Extended Operation Handler to be updated
+    extendedOperationHandlerName := "extendedOperationHandlerName_example" // string | Name of the Extended Operation Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Extended Operation Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**extendedOperationHandlerName** | **string** | Name of the Extended Operation Handler to be updated | 
+**extendedOperationHandlerName** | **string** | Name of the Extended Operation Handler | 
 
 ### Other Parameters
 

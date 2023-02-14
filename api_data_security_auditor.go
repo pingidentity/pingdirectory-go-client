@@ -146,7 +146,7 @@ func (r ApiDeleteDataSecurityAuditorRequest) Execute() (*http.Response, error) {
 DeleteDataSecurityAuditor Delete a Data Security Auditor
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param dataSecurityAuditorName Name of the Data Security Auditor to be deleted
+	@param dataSecurityAuditorName Name of the Data Security Auditor
 	@return ApiDeleteDataSecurityAuditorRequest
 */
 func (a *DataSecurityAuditorApiService) DeleteDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiDeleteDataSecurityAuditorRequest {
@@ -236,7 +236,7 @@ func (r ApiGetDataSecurityAuditorRequest) Execute() (*AddDataSecurityAuditor200R
 GetDataSecurityAuditor Returns a single Data Security Auditor
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param dataSecurityAuditorName Name of the Data Security Auditor to be read
+	@param dataSecurityAuditorName Name of the Data Security Auditor
 	@return ApiGetDataSecurityAuditorRequest
 */
 func (a *DataSecurityAuditorApiService) GetDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiGetDataSecurityAuditorRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateDataSecurityAuditorRequest) Execute() (*AddDataSecurityAuditor2
 UpdateDataSecurityAuditor Update an existing Data Security Auditor by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param dataSecurityAuditorName Name of the Data Security Auditor to be updated
+	@param dataSecurityAuditorName Name of the Data Security Auditor
 	@return ApiUpdateDataSecurityAuditorRequest
 */
 func (a *DataSecurityAuditorApiService) UpdateDataSecurityAuditor(ctx context.Context, dataSecurityAuditorName string) ApiUpdateDataSecurityAuditorRequest {

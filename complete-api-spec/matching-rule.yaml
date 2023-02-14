@@ -15,7 +15,7 @@ paths:
       summary: Returns a single Matching Rule
       operationId: get-matching-rule
       parameters:
-      - description: Name of the Matching Rule to be read
+      - description: Name of the Matching Rule
         explode: false
         in: path
         name: matching-rule-name
@@ -48,7 +48,7 @@ paths:
       summary: Update an existing Matching Rule by name
       operationId: update-matching-rule
       parameters:
-      - description: Name of the Matching Rule to be updated
+      - description: Name of the Matching Rule
         explode: false
         in: path
         name: matching-rule-name

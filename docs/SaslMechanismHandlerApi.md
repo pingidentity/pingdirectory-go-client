@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    saslMechanismHandlerName := "saslMechanismHandlerName_example" // string | Name of the SASL Mechanism Handler to be deleted
+    saslMechanismHandlerName := "saslMechanismHandlerName_example" // string | Name of the SASL Mechanism Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**saslMechanismHandlerName** | **string** | Name of the SASL Mechanism Handler to be deleted | 
+**saslMechanismHandlerName** | **string** | Name of the SASL Mechanism Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    saslMechanismHandlerName := "saslMechanismHandlerName_example" // string | Name of the SASL Mechanism Handler to be read
+    saslMechanismHandlerName := "saslMechanismHandlerName_example" // string | Name of the SASL Mechanism Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**saslMechanismHandlerName** | **string** | Name of the SASL Mechanism Handler to be read | 
+**saslMechanismHandlerName** | **string** | Name of the SASL Mechanism Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    saslMechanismHandlerName := "saslMechanismHandlerName_example" // string | Name of the SASL Mechanism Handler to be updated
+    saslMechanismHandlerName := "saslMechanismHandlerName_example" // string | Name of the SASL Mechanism Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing SASL Mechanism Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**saslMechanismHandlerName** | **string** | Name of the SASL Mechanism Handler to be updated | 
+**saslMechanismHandlerName** | **string** | Name of the SASL Mechanism Handler | 
 
 ### Other Parameters
 

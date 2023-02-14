@@ -146,7 +146,7 @@ func (r ApiDeleteVaultAuthenticationMethodRequest) Execute() (*http.Response, er
 DeleteVaultAuthenticationMethod Delete a Vault Authentication Method
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param vaultAuthenticationMethodName Name of the Vault Authentication Method to be deleted
+	@param vaultAuthenticationMethodName Name of the Vault Authentication Method
 	@return ApiDeleteVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) DeleteVaultAuthenticationMethod(ctx context.Context, vaultAuthenticationMethodName string) ApiDeleteVaultAuthenticationMethodRequest {
@@ -236,7 +236,7 @@ func (r ApiGetVaultAuthenticationMethodRequest) Execute() (*AddVaultAuthenticati
 GetVaultAuthenticationMethod Returns a single Vault Authentication Method
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param vaultAuthenticationMethodName Name of the Vault Authentication Method to be read
+	@param vaultAuthenticationMethodName Name of the Vault Authentication Method
 	@return ApiGetVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) GetVaultAuthenticationMethod(ctx context.Context, vaultAuthenticationMethodName string) ApiGetVaultAuthenticationMethodRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateVaultAuthenticationMethodRequest) Execute() (*AddVaultAuthentic
 UpdateVaultAuthenticationMethod Update an existing Vault Authentication Method by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param vaultAuthenticationMethodName Name of the Vault Authentication Method to be updated
+	@param vaultAuthenticationMethodName Name of the Vault Authentication Method
 	@return ApiUpdateVaultAuthenticationMethodRequest
 */
 func (a *VaultAuthenticationMethodApiService) UpdateVaultAuthenticationMethod(ctx context.Context, vaultAuthenticationMethodName string) ApiUpdateVaultAuthenticationMethodRequest {

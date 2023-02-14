@@ -45,7 +45,7 @@ paths:
       summary: Delete a DN Map
       operationId: delete-dn-map
       parameters:
-      - description: Name of the DN Map to be deleted
+      - description: Name of the DN Map
         explode: false
         in: path
         name: dn-map-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single DN Map
       operationId: get-dn-map
       parameters:
-      - description: Name of the DN Map to be read
+      - description: Name of the DN Map
         explode: false
         in: path
         name: dn-map-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing DN Map by name
       operationId: update-dn-map
       parameters:
-      - description: Name of the DN Map to be updated
+      - description: Name of the DN Map
         explode: false
         in: path
         name: dn-map-name

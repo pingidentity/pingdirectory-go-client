@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    resultCriteriaName := "resultCriteriaName_example" // string | Name of the Result Criteria to be deleted
+    resultCriteriaName := "resultCriteriaName_example" // string | Name of the Result Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resultCriteriaName** | **string** | Name of the Result Criteria to be deleted | 
+**resultCriteriaName** | **string** | Name of the Result Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    resultCriteriaName := "resultCriteriaName_example" // string | Name of the Result Criteria to be read
+    resultCriteriaName := "resultCriteriaName_example" // string | Name of the Result Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resultCriteriaName** | **string** | Name of the Result Criteria to be read | 
+**resultCriteriaName** | **string** | Name of the Result Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    resultCriteriaName := "resultCriteriaName_example" // string | Name of the Result Criteria to be updated
+    resultCriteriaName := "resultCriteriaName_example" // string | Name of the Result Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Result Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resultCriteriaName** | **string** | Name of the Result Criteria to be updated | 
+**resultCriteriaName** | **string** | Name of the Result Criteria | 
 
 ### Other Parameters
 

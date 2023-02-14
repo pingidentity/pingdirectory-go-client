@@ -45,7 +45,7 @@ paths:
       summary: Delete a Replication Assurance Policy
       operationId: delete-replication-assurance-policy
       parameters:
-      - description: Name of the Replication Assurance Policy to be deleted
+      - description: Name of the Replication Assurance Policy
         explode: false
         in: path
         name: replication-assurance-policy-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Replication Assurance Policy
       operationId: get-replication-assurance-policy
       parameters:
-      - description: Name of the Replication Assurance Policy to be read
+      - description: Name of the Replication Assurance Policy
         explode: false
         in: path
         name: replication-assurance-policy-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Replication Assurance Policy by name
       operationId: update-replication-assurance-policy
       parameters:
-      - description: Name of the Replication Assurance Policy to be updated
+      - description: Name of the Replication Assurance Policy
         explode: false
         in: path
         name: replication-assurance-policy-name

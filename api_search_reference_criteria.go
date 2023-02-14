@@ -146,7 +146,7 @@ func (r ApiDeleteSearchReferenceCriteriaRequest) Execute() (*http.Response, erro
 DeleteSearchReferenceCriteria Delete a Search Reference Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param searchReferenceCriteriaName Name of the Search Reference Criteria to be deleted
+	@param searchReferenceCriteriaName Name of the Search Reference Criteria
 	@return ApiDeleteSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) DeleteSearchReferenceCriteria(ctx context.Context, searchReferenceCriteriaName string) ApiDeleteSearchReferenceCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetSearchReferenceCriteriaRequest) Execute() (*AddSearchReferenceCrit
 GetSearchReferenceCriteria Returns a single Search Reference Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param searchReferenceCriteriaName Name of the Search Reference Criteria to be read
+	@param searchReferenceCriteriaName Name of the Search Reference Criteria
 	@return ApiGetSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) GetSearchReferenceCriteria(ctx context.Context, searchReferenceCriteriaName string) ApiGetSearchReferenceCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateSearchReferenceCriteriaRequest) Execute() (*AddSearchReferenceC
 UpdateSearchReferenceCriteria Update an existing Search Reference Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param searchReferenceCriteriaName Name of the Search Reference Criteria to be updated
+	@param searchReferenceCriteriaName Name of the Search Reference Criteria
 	@return ApiUpdateSearchReferenceCriteriaRequest
 */
 func (a *SearchReferenceCriteriaApiService) UpdateSearchReferenceCriteria(ctx context.Context, searchReferenceCriteriaName string) ApiUpdateSearchReferenceCriteriaRequest {

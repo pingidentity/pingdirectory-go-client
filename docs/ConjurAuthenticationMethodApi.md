@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    conjurAuthenticationMethodName := "conjurAuthenticationMethodName_example" // string | Name of the Conjur Authentication Method to be deleted
+    conjurAuthenticationMethodName := "conjurAuthenticationMethodName_example" // string | Name of the Conjur Authentication Method
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**conjurAuthenticationMethodName** | **string** | Name of the Conjur Authentication Method to be deleted | 
+**conjurAuthenticationMethodName** | **string** | Name of the Conjur Authentication Method | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    conjurAuthenticationMethodName := "conjurAuthenticationMethodName_example" // string | Name of the Conjur Authentication Method to be read
+    conjurAuthenticationMethodName := "conjurAuthenticationMethodName_example" // string | Name of the Conjur Authentication Method
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**conjurAuthenticationMethodName** | **string** | Name of the Conjur Authentication Method to be read | 
+**conjurAuthenticationMethodName** | **string** | Name of the Conjur Authentication Method | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    conjurAuthenticationMethodName := "conjurAuthenticationMethodName_example" // string | Name of the Conjur Authentication Method to be updated
+    conjurAuthenticationMethodName := "conjurAuthenticationMethodName_example" // string | Name of the Conjur Authentication Method
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Conjur Authentication Method
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**conjurAuthenticationMethodName** | **string** | Name of the Conjur Authentication Method to be updated | 
+**conjurAuthenticationMethodName** | **string** | Name of the Conjur Authentication Method | 
 
 ### Other Parameters
 

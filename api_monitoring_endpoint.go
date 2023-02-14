@@ -146,7 +146,7 @@ func (r ApiDeleteMonitoringEndpointRequest) Execute() (*http.Response, error) {
 DeleteMonitoringEndpoint Delete a Monitoring Endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param monitoringEndpointName Name of the Monitoring Endpoint to be deleted
+	@param monitoringEndpointName Name of the Monitoring Endpoint
 	@return ApiDeleteMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) DeleteMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiDeleteMonitoringEndpointRequest {
@@ -236,7 +236,7 @@ func (r ApiGetMonitoringEndpointRequest) Execute() (*StatsdMonitoringEndpointRes
 GetMonitoringEndpoint Returns a single Monitoring Endpoint
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param monitoringEndpointName Name of the Monitoring Endpoint to be read
+	@param monitoringEndpointName Name of the Monitoring Endpoint
 	@return ApiGetMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) GetMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiGetMonitoringEndpointRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateMonitoringEndpointRequest) Execute() (*StatsdMonitoringEndpoint
 UpdateMonitoringEndpoint Update an existing Monitoring Endpoint by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param monitoringEndpointName Name of the Monitoring Endpoint to be updated
+	@param monitoringEndpointName Name of the Monitoring Endpoint
 	@return ApiUpdateMonitoringEndpointRequest
 */
 func (a *MonitoringEndpointApiService) UpdateMonitoringEndpoint(ctx context.Context, monitoringEndpointName string) ApiUpdateMonitoringEndpointRequest {

@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    serverInstanceName := "serverInstanceName_example" // string | Name of the Server Instance to be read
+    serverInstanceName := "serverInstanceName_example" // string | Name of the Server Instance
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverInstanceName** | **string** | Name of the Server Instance to be read | 
+**serverInstanceName** | **string** | Name of the Server Instance | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    serverInstanceName := "serverInstanceName_example" // string | Name of the Server Instance to be updated
+    serverInstanceName := "serverInstanceName_example" // string | Name of the Server Instance
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Server Instance
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverInstanceName** | **string** | Name of the Server Instance to be updated | 
+**serverInstanceName** | **string** | Name of the Server Instance | 
 
 ### Other Parameters
 

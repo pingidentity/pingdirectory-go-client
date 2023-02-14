@@ -146,7 +146,7 @@ func (r ApiDeleteLogFileRotationListenerRequest) Execute() (*http.Response, erro
 DeleteLogFileRotationListener Delete a Log File Rotation Listener
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFileRotationListenerName Name of the Log File Rotation Listener to be deleted
+	@param logFileRotationListenerName Name of the Log File Rotation Listener
 	@return ApiDeleteLogFileRotationListenerRequest
 */
 func (a *LogFileRotationListenerApiService) DeleteLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiDeleteLogFileRotationListenerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLogFileRotationListenerRequest) Execute() (*AddLogFileRotationList
 GetLogFileRotationListener Returns a single Log File Rotation Listener
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFileRotationListenerName Name of the Log File Rotation Listener to be read
+	@param logFileRotationListenerName Name of the Log File Rotation Listener
 	@return ApiGetLogFileRotationListenerRequest
 */
 func (a *LogFileRotationListenerApiService) GetLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiGetLogFileRotationListenerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLogFileRotationListenerRequest) Execute() (*AddLogFileRotationL
 UpdateLogFileRotationListener Update an existing Log File Rotation Listener by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFileRotationListenerName Name of the Log File Rotation Listener to be updated
+	@param logFileRotationListenerName Name of the Log File Rotation Listener
 	@return ApiUpdateLogFileRotationListenerRequest
 */
 func (a *LogFileRotationListenerApiService) UpdateLogFileRotationListener(ctx context.Context, logFileRotationListenerName string) ApiUpdateLogFileRotationListenerRequest {

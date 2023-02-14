@@ -51,7 +51,7 @@ paths:
       summary: Delete a Azure Authentication Method
       operationId: delete-azure-authentication-method
       parameters:
-      - description: Name of the Azure Authentication Method to be deleted
+      - description: Name of the Azure Authentication Method
         explode: false
         in: path
         name: azure-authentication-method-name
@@ -78,7 +78,7 @@ paths:
       summary: Returns a single Azure Authentication Method
       operationId: get-azure-authentication-method
       parameters:
-      - description: Name of the Azure Authentication Method to be read
+      - description: Name of the Azure Authentication Method
         explode: false
         in: path
         name: azure-authentication-method-name
@@ -110,7 +110,7 @@ paths:
       summary: Update an existing Azure Authentication Method by name
       operationId: update-azure-authentication-method
       parameters:
-      - description: Name of the Azure Authentication Method to be updated
+      - description: Name of the Azure Authentication Method
         explode: false
         in: path
         name: azure-authentication-method-name

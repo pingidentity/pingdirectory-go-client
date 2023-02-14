@@ -146,7 +146,7 @@ func (r ApiDeleteExternalServerRequest) Execute() (*http.Response, error) {
 DeleteExternalServer Delete a External Server
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param externalServerName Name of the External Server to be deleted
+	@param externalServerName Name of the External Server
 	@return ApiDeleteExternalServerRequest
 */
 func (a *ExternalServerApiService) DeleteExternalServer(ctx context.Context, externalServerName string) ApiDeleteExternalServerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetExternalServerRequest) Execute() (*AddExternalServer200Response, *
 GetExternalServer Returns a single External Server
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param externalServerName Name of the External Server to be read
+	@param externalServerName Name of the External Server
 	@return ApiGetExternalServerRequest
 */
 func (a *ExternalServerApiService) GetExternalServer(ctx context.Context, externalServerName string) ApiGetExternalServerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateExternalServerRequest) Execute() (*AddExternalServer200Response
 UpdateExternalServer Update an existing External Server by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param externalServerName Name of the External Server to be updated
+	@param externalServerName Name of the External Server
 	@return ApiUpdateExternalServerRequest
 */
 func (a *ExternalServerApiService) UpdateExternalServer(ctx context.Context, externalServerName string) ApiUpdateExternalServerRequest {

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    changeSubscriptionName := "changeSubscriptionName_example" // string | Name of the Change Subscription to be deleted
+    changeSubscriptionName := "changeSubscriptionName_example" // string | Name of the Change Subscription
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**changeSubscriptionName** | **string** | Name of the Change Subscription to be deleted | 
+**changeSubscriptionName** | **string** | Name of the Change Subscription | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    changeSubscriptionName := "changeSubscriptionName_example" // string | Name of the Change Subscription to be read
+    changeSubscriptionName := "changeSubscriptionName_example" // string | Name of the Change Subscription
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**changeSubscriptionName** | **string** | Name of the Change Subscription to be read | 
+**changeSubscriptionName** | **string** | Name of the Change Subscription | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    changeSubscriptionName := "changeSubscriptionName_example" // string | Name of the Change Subscription to be updated
+    changeSubscriptionName := "changeSubscriptionName_example" // string | Name of the Change Subscription
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Change Subscription
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**changeSubscriptionName** | **string** | Name of the Change Subscription to be updated | 
+**changeSubscriptionName** | **string** | Name of the Change Subscription | 
 
 ### Other Parameters
 

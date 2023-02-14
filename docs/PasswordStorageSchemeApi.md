@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    passwordStorageSchemeName := "passwordStorageSchemeName_example" // string | Name of the Password Storage Scheme to be deleted
+    passwordStorageSchemeName := "passwordStorageSchemeName_example" // string | Name of the Password Storage Scheme
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordStorageSchemeName** | **string** | Name of the Password Storage Scheme to be deleted | 
+**passwordStorageSchemeName** | **string** | Name of the Password Storage Scheme | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    passwordStorageSchemeName := "passwordStorageSchemeName_example" // string | Name of the Password Storage Scheme to be read
+    passwordStorageSchemeName := "passwordStorageSchemeName_example" // string | Name of the Password Storage Scheme
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordStorageSchemeName** | **string** | Name of the Password Storage Scheme to be read | 
+**passwordStorageSchemeName** | **string** | Name of the Password Storage Scheme | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    passwordStorageSchemeName := "passwordStorageSchemeName_example" // string | Name of the Password Storage Scheme to be updated
+    passwordStorageSchemeName := "passwordStorageSchemeName_example" // string | Name of the Password Storage Scheme
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Password Storage Scheme
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordStorageSchemeName** | **string** | Name of the Password Storage Scheme to be updated | 
+**passwordStorageSchemeName** | **string** | Name of the Password Storage Scheme | 
 
 ### Other Parameters
 

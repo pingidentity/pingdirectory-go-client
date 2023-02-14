@@ -146,7 +146,7 @@ func (r ApiDeletePasswordValidatorRequest) Execute() (*http.Response, error) {
 DeletePasswordValidator Delete a Password Validator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordValidatorName Name of the Password Validator to be deleted
+	@param passwordValidatorName Name of the Password Validator
 	@return ApiDeletePasswordValidatorRequest
 */
 func (a *PasswordValidatorApiService) DeletePasswordValidator(ctx context.Context, passwordValidatorName string) ApiDeletePasswordValidatorRequest {
@@ -236,7 +236,7 @@ func (r ApiGetPasswordValidatorRequest) Execute() (*AddPasswordValidator200Respo
 GetPasswordValidator Returns a single Password Validator
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordValidatorName Name of the Password Validator to be read
+	@param passwordValidatorName Name of the Password Validator
 	@return ApiGetPasswordValidatorRequest
 */
 func (a *PasswordValidatorApiService) GetPasswordValidator(ctx context.Context, passwordValidatorName string) ApiGetPasswordValidatorRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdatePasswordValidatorRequest) Execute() (*AddPasswordValidator200Re
 UpdatePasswordValidator Update an existing Password Validator by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordValidatorName Name of the Password Validator to be updated
+	@param passwordValidatorName Name of the Password Validator
 	@return ApiUpdatePasswordValidatorRequest
 */
 func (a *PasswordValidatorApiService) UpdatePasswordValidator(ctx context.Context, passwordValidatorName string) ApiUpdatePasswordValidatorRequest {

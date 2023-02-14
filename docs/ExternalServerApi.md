@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    externalServerName := "externalServerName_example" // string | Name of the External Server to be deleted
+    externalServerName := "externalServerName_example" // string | Name of the External Server
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalServerName** | **string** | Name of the External Server to be deleted | 
+**externalServerName** | **string** | Name of the External Server | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    externalServerName := "externalServerName_example" // string | Name of the External Server to be read
+    externalServerName := "externalServerName_example" // string | Name of the External Server
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalServerName** | **string** | Name of the External Server to be read | 
+**externalServerName** | **string** | Name of the External Server | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    externalServerName := "externalServerName_example" // string | Name of the External Server to be updated
+    externalServerName := "externalServerName_example" // string | Name of the External Server
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing External Server
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalServerName** | **string** | Name of the External Server to be updated | 
+**externalServerName** | **string** | Name of the External Server | 
 
 ### Other Parameters
 

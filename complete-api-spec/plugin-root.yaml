@@ -60,6 +60,407 @@ paths:
       - basicAuth: []
       tags:
       - plugin-root
+  /plugin-root/plugins:
+    post:
+      summary: Add a new Plugin to the config
+      operationId: add-plugin
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-internal-search-rate-plugin-request'
+              - $ref: '#/components/schemas/add-modifiable-password-policy-state-plugin-request'
+              - $ref: '#/components/schemas/add-seven-bit-clean-plugin-request'
+              - $ref: '#/components/schemas/add-clean-up-expired-pingfederate-persistent-access-grants-plugin-request'
+              - $ref: '#/components/schemas/add-periodic-gc-plugin-request'
+              - $ref: '#/components/schemas/add-ping-one-pass-through-authentication-plugin-request'
+              - $ref: '#/components/schemas/add-search-shutdown-plugin-request'
+              - $ref: '#/components/schemas/add-periodic-stats-logger-plugin-request'
+              - $ref: '#/components/schemas/add-sub-operation-timing-plugin-request'
+              - $ref: '#/components/schemas/add-third-party-plugin-request'
+              - $ref: '#/components/schemas/add-pass-through-authentication-plugin-request'
+              - $ref: '#/components/schemas/add-dn-mapper-plugin-request'
+              - $ref: '#/components/schemas/add-referral-on-update-plugin-request'
+              - $ref: '#/components/schemas/add-simple-to-external-bind-plugin-request'
+              - $ref: '#/components/schemas/add-snmp-subagent-plugin-request'
+              - $ref: '#/components/schemas/add-clean-up-inactive-pingfederate-persistent-sessions-plugin-request'
+              - $ref: '#/components/schemas/add-composed-attribute-plugin-request'
+              - $ref: '#/components/schemas/add-attribute-mapper-plugin-request'
+              - $ref: '#/components/schemas/add-delay-plugin-request'
+              - $ref: '#/components/schemas/add-clean-up-expired-pingfederate-persistent-sessions-plugin-request'
+              - $ref: '#/components/schemas/add-groovy-scripted-plugin-request'
+              - $ref: '#/components/schemas/add-pluggable-pass-through-authentication-plugin-request'
+              - $ref: '#/components/schemas/add-referential-integrity-plugin-request'
+              - $ref: '#/components/schemas/add-unique-attribute-plugin-request'
+        description: Create a new Plugin in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/internal-search-rate-plugin-response'
+                - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
+                - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
+                - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-response'
+                - $ref: '#/components/schemas/periodic-gc-plugin-response'
+                - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/search-shutdown-plugin-response'
+                - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+                - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
+                - $ref: '#/components/schemas/third-party-plugin-response'
+                - $ref: '#/components/schemas/pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/dn-mapper-plugin-response'
+                - $ref: '#/components/schemas/referral-on-update-plugin-response'
+                - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+                - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+                - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
+                - $ref: '#/components/schemas/composed-attribute-plugin-response'
+                - $ref: '#/components/schemas/attribute-mapper-plugin-response'
+                - $ref: '#/components/schemas/delay-plugin-response'
+                - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-response'
+                - $ref: '#/components/schemas/groovy-scripted-plugin-response'
+                - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/referential-integrity-plugin-response'
+                - $ref: '#/components/schemas/unique-attribute-plugin-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Plugin already exists
+      security:
+      - basicAuth: []
+      tags:
+      - plugin
+  /plugin-root/plugins/{plugin-name}:
+    delete:
+      summary: Delete a Plugin
+      operationId: delete-plugin
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Plugin does not exist
+        "409":
+          description: The Plugin cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - plugin
+    get:
+      summary: Returns a single Plugin
+      operationId: get-plugin
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/last-access-time-plugin-response'
+                - $ref: '#/components/schemas/stats-collector-plugin-response'
+                - $ref: '#/components/schemas/internal-search-rate-plugin-response'
+                - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
+                - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
+                - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-response'
+                - $ref: '#/components/schemas/periodic-gc-plugin-response'
+                - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/changelog-password-encryption-plugin-response'
+                - $ref: '#/components/schemas/processing-time-histogram-plugin-response'
+                - $ref: '#/components/schemas/search-shutdown-plugin-response'
+                - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+                - $ref: '#/components/schemas/change-subscription-notification-plugin-response'
+                - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
+                - $ref: '#/components/schemas/third-party-plugin-response'
+                - $ref: '#/components/schemas/encrypt-attribute-values-plugin-response'
+                - $ref: '#/components/schemas/pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/dn-mapper-plugin-response'
+                - $ref: '#/components/schemas/monitor-history-plugin-response'
+                - $ref: '#/components/schemas/referral-on-update-plugin-response'
+                - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+                - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+                - $ref: '#/components/schemas/password-policy-import-plugin-response'
+                - $ref: '#/components/schemas/profiler-plugin-response'
+                - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
+                - $ref: '#/components/schemas/composed-attribute-plugin-response'
+                - $ref: '#/components/schemas/ldap-result-code-tracker-plugin-response'
+                - $ref: '#/components/schemas/attribute-mapper-plugin-response'
+                - $ref: '#/components/schemas/delay-plugin-response'
+                - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-response'
+                - $ref: '#/components/schemas/groovy-scripted-plugin-response'
+                - $ref: '#/components/schemas/last-mod-plugin-response'
+                - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/referential-integrity-plugin-response'
+                - $ref: '#/components/schemas/unique-attribute-plugin-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Plugin does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - plugin
+    patch:
+      summary: Update an existing Plugin by name
+      operationId: update-plugin
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Plugin
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/last-access-time-plugin-response'
+                - $ref: '#/components/schemas/stats-collector-plugin-response'
+                - $ref: '#/components/schemas/internal-search-rate-plugin-response'
+                - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-response'
+                - $ref: '#/components/schemas/seven-bit-clean-plugin-response'
+                - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-response'
+                - $ref: '#/components/schemas/periodic-gc-plugin-response'
+                - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/changelog-password-encryption-plugin-response'
+                - $ref: '#/components/schemas/processing-time-histogram-plugin-response'
+                - $ref: '#/components/schemas/search-shutdown-plugin-response'
+                - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+                - $ref: '#/components/schemas/change-subscription-notification-plugin-response'
+                - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
+                - $ref: '#/components/schemas/third-party-plugin-response'
+                - $ref: '#/components/schemas/encrypt-attribute-values-plugin-response'
+                - $ref: '#/components/schemas/pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/dn-mapper-plugin-response'
+                - $ref: '#/components/schemas/monitor-history-plugin-response'
+                - $ref: '#/components/schemas/referral-on-update-plugin-response'
+                - $ref: '#/components/schemas/simple-to-external-bind-plugin-response'
+                - $ref: '#/components/schemas/snmp-subagent-plugin-response'
+                - $ref: '#/components/schemas/password-policy-import-plugin-response'
+                - $ref: '#/components/schemas/profiler-plugin-response'
+                - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-response'
+                - $ref: '#/components/schemas/composed-attribute-plugin-response'
+                - $ref: '#/components/schemas/ldap-result-code-tracker-plugin-response'
+                - $ref: '#/components/schemas/attribute-mapper-plugin-response'
+                - $ref: '#/components/schemas/delay-plugin-response'
+                - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-response'
+                - $ref: '#/components/schemas/groovy-scripted-plugin-response'
+                - $ref: '#/components/schemas/last-mod-plugin-response'
+                - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-response'
+                - $ref: '#/components/schemas/referential-integrity-plugin-response'
+                - $ref: '#/components/schemas/unique-attribute-plugin-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Plugin does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - plugin
+  /plugin-root/plugins/{plugin-name}/custom-logged-stats:
+    post:
+      summary: Add a new Custom Logged Stats to the config
+      operationId: add-custom-logged-stats
+      parameters:
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-custom-logged-stats-request'
+        description: Create a new Custom Logged Stats in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-stats-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Custom Logged Stats already exists
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+  /plugin-root/plugins/{plugin-name}/custom-logged-stats/{custom-logged-stats-name}:
+    delete:
+      summary: Delete a Custom Logged Stats
+      operationId: delete-custom-logged-stats
+      parameters:
+      - description: Name of the Custom Logged Stats
+        explode: false
+        in: path
+        name: custom-logged-stats-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Custom Logged Stats does not exist
+        "409":
+          description: The Custom Logged Stats cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+    get:
+      summary: Returns a single Custom Logged Stats
+      operationId: get-custom-logged-stats
+      parameters:
+      - description: Name of the Custom Logged Stats
+        explode: false
+        in: path
+        name: custom-logged-stats-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-stats-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Custom Logged Stats does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
+    patch:
+      summary: Update an existing Custom Logged Stats by name
+      operationId: update-custom-logged-stats
+      parameters:
+      - description: Name of the Custom Logged Stats
+        explode: false
+        in: path
+        name: custom-logged-stats-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Plugin
+        explode: false
+        in: path
+        name: plugin-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Custom Logged Stats
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom-logged-stats-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Custom Logged Stats does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - custom-logged-stats
 components:
   schemas:
     plugin-root-response:
@@ -277,6 +678,2957 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin-root"
+    last-access-time-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumlast-access-time-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          maxUpdateFrequency:
+            type: string
+            description: >-
+                Specifies the maximum frequency with which last access time values should be written for an entry. This may help limit the rate of internal write operations processed in the server.
+          operationType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-operationTypeProp'
+          invokeForFailedBinds:
+            type: boolean
+            description: >-
+                Indicates whether to update the last access time for an entry targeted by a bind operation if the bind is unsuccessful.
+          maxSearchResultEntriesToUpdate:
+            type: integer
+            description: >-
+                Specifies the maximum number of entries that should be updated in a search operation. Only search result entries actually returned to the client may have their last access time updated, but because a single search operation may return a very large number of entries, the plugin will only update entries if no more than a specified number of entries are updated.
+          requestCriteria:
+            type: string
+            description: >-
+                Specifies a set of request criteria that may be used to indicate whether to apply access time updates for the associated operation.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+        required:
+        - schemas
+        - enabled
+        - id
+    Enumlast-access-time-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:last-access-time"
+    stats-collector-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumstats-collector-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          sampleInterval:
+            type: string
+            description: >-
+                The duration between statistics collections. Setting this value too small can have an impact on performance. This value should be a multiple of collection-interval.
+          collectionInterval:
+            type: string
+            description: >-
+                Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered, and setting this value too small can have an adverse impact on performance.
+          ldapInfo:
+            $ref: '#/components/schemas/Enumplugin-ldapInfoProp'
+          serverInfo:
+            $ref: '#/components/schemas/Enumplugin-serverInfoProp'
+          perApplicationLDAPStats:
+            $ref: '#/components/schemas/Enumplugin-perApplicationLDAPStatsProp'
+          ldapChangelogInfo:
+            $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
+          statusSummaryInfo:
+            $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
+          generateCollectorFiles:
+            type: boolean
+            description: >-
+                Indicates whether this plugin should store metric samples on disk for use by the Data Metrics Server. If the Stats Collector Plugin is only being used to collect metrics for one or more StatsD Monitoring Endpoints, then this can be set to false to prevent unnecessary I/O.
+          localDBBackendInfo:
+            $ref: '#/components/schemas/Enumplugin-localDBBackendInfoProp'
+          replicationInfo:
+            $ref: '#/components/schemas/Enumplugin-replicationInfoProp'
+          entryCacheInfo:
+            $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
+          hostInfo:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-hostInfoProp'
+          includedLDAPApplication:
+            type: array
+            items:
+              type: string
+            description: >-
+                If statistics should not be included for all applications, this property names the subset of applications that should be included.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+        required:
+        - schemas
+        - sampleInterval
+        - collectionInterval
+        - enabled
+        - id
+    Enumstats-collector-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:stats-collector"
+    add-internal-search-rate-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
+    internal-search-rate-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/internal-search-rate-plugin-shared'
+    internal-search-rate-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enuminternal-search-rate-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        numThreads:
+          type: integer
+          description: >-
+              Specifies the number of concurrent threads that should be used to process the search operations.
+        baseDN:
+          type: string
+          description: >-
+              Specifies the base DN to use for the searches to perform.
+        lowerBound:
+          type: integer
+          description: >-
+              Specifies the lower bound for the numeric value which will be inserted into the search filter.
+        upperBound:
+          type: integer
+          description: >-
+              Specifies the upper bound for the numeric value which will be inserted into the search filter.
+        filterPrefix:
+          type: string
+          description: >-
+              Specifies a prefix which will be used in front of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should contain the entire filter string.
+        filterSuffix:
+          type: string
+          description: >-
+              Specifies a suffix which will be used after of the randomly-selected numeric value in all search filters used. If no upper bound is defined, then this should be omitted.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - numThreads
+      - baseDN
+      - filterPrefix
+      - enabled
+    Enuminternal-search-rate-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:internal-search-rate"
+    add-modifiable-password-policy-state-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-shared'
+    modifiable-password-policy-state-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/modifiable-password-policy-state-plugin-shared'
+    modifiable-password-policy-state-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enummodifiable-password-policy-state-pluginSchemaUrn'
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              A base DN that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute.
+        filter:
+          type: array
+          items:
+            type: string
+          description: >-
+              A filter that may be used to identify entries that should support the ds-pwp-modifiable-state-json operational attribute.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enummodifiable-password-policy-state-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:modifiable-password-policy-state"
+    add-seven-bit-clean-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
+    seven-bit-clean-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/seven-bit-clean-plugin-shared'
+    seven-bit-clean-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumseven-bit-clean-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        attributeType:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the name or OID of an attribute type for which values should be checked to ensure that they are 7-bit clean.
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the base DN below which the checking is performed.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - attributeType
+      - enabled
+    Enumseven-bit-clean-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:seven-bit-clean"
+    add-clean-up-expired-pingfederate-persistent-access-grants-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
+    clean-up-expired-pingfederate-persistent-access-grants-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-access-grants-plugin-shared'
+    clean-up-expired-pingfederate-persistent-access-grants-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumclean-up-expired-pingfederate-persistent-access-grants-pluginSchemaUrn'
+        pollingInterval:
+          type: string
+          description: >-
+              This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
+        peerServerPriorityIndex:
+          type: integer
+          description: >-
+              In a replicated environment, this determines the order in which peer servers should attempt to purge data.
+        baseDN:
+          type: string
+          description: >-
+              Only entries located within the subtree specified by this base DN are eligible for purging.
+        maxUpdatesPerSecond:
+          type: integer
+          description: >-
+              This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
+        numDeleteThreads:
+          type: integer
+          description: >-
+              The number of threads used to delete expired entries.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - enabled
+    Enumclean-up-expired-pingfederate-persistent-access-grants-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:clean-up-expired-pingfederate-persistent-access-grants"
+    add-periodic-gc-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/periodic-gc-plugin-shared'
+    periodic-gc-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/periodic-gc-plugin-shared'
+    periodic-gc-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumperiodic-gc-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        invokeGCDayOfWeek:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-invokeGCDayOfWeekProp'
+        invokeGCTimeUtc:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the times of the day at which garbage collection may be explicitly invoked. The times should be specified in "HH:MM" format, with "HH" as a two-digit numeric value between 00 and 23 representing the hour of the day, and MM as a two-digit numeric value between 00 and 59 representing the minute of the hour. All times will be interpreted in the UTC time zone.
+        delayAfterAlert:
+          type: string
+          description: >-
+              Specifies the length of time that the Directory Server should wait after sending the "force-gc-starting" administrative alert before actually invoking the garbage collection processing.
+        delayPostGC:
+          type: string
+          description: >-
+              Specifies the length of time that the Directory Server should wait after successfully completing the garbage collection processing, before removing the "force-gc-starting" administrative alert, which marks the server as unavailable.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - invokeGCTimeUtc
+      - enabled
+    Enumperiodic-gc-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:periodic-gc"
+    add-ping-one-pass-through-authentication-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-shared'
+    ping-one-pass-through-authentication-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-shared'
+    ping-one-pass-through-authentication-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumping-one-pass-through-authentication-pluginSchemaUrn'
+        apiURL:
+          type: string
+          description: >-
+              Specifies the API endpoint for the PingOne web service.
+        authURL:
+          type: string
+          description: >-
+              Specifies the API endpoint for the PingOne authentication service.
+        OAuthClientID:
+          type: string
+          description: >-
+              Specifies the OAuth Client ID used to authenticate connections to the PingOne API.
+        OAuthClientSecret:
+          type: string
+          format: password
+          description: >-
+              Specifies the OAuth Client Secret used to authenticate connections to the PingOne API.
+        OAuthClientSecretPassphraseProvider:
+          type: string
+          description: >-
+              Specifies a passphrase provider that can be used to obtain the OAuth Client Secret used to authenticate connections to the PingOne API.
+        environmentID:
+          type: string
+          description: >-
+              Specifies the PingOne Environment that will be associated with this PingOne Pass Through Authentication Plugin.
+        includedLocalEntryBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base DNs for the local users whose authentication attempts may be passed through to the PingOne service.
+        connectionCriteria:
+          type: string
+          description: >-
+              A reference to connection criteria that will be used to indicate which bind requests should be passed through to the PingOne service.
+        requestCriteria:
+          type: string
+          description: >-
+              A reference to request criteria that will be used to indicate which bind requests should be passed through to the PingOne service.
+        tryLocalBind:
+          type: boolean
+          description: >-
+              Indicates whether to attempt the bind in the local server first, or to only send it to the PingOne service.
+        overrideLocalPassword:
+          type: boolean
+          description: >-
+              Indicates whether to attempt the authentication in the PingOne service if the local user entry includes a password. This property will only be used if try-local-bind is true.
+        updateLocalPassword:
+          type: boolean
+          description: >-
+              Indicates whether to overwrite the user's local password if the local bind fails but the authentication attempt succeeds when attempted in the PingOne service.
+        updateLocalPasswordDN:
+          type: string
+          description: >-
+              This is the DN of the user that will be used to overwrite the user's local password if update-local-password is set. The DN put here should be added to 'ignore-changes-by-dn' in the appropriate Sync Source.
+        allowLaxPassThroughAuthenticationPasswords:
+          type: boolean
+          description: >-
+              Indicates whether to overwrite the user's local password even if the password used to authenticate to the PingOne service would have failed validation if the user attempted to set it directly.
+        ignoredPasswordPolicyStateErrorCondition:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
+        userMappingLocalAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              The names of the attributes in the local user entry whose values must match the values of the corresponding fields in the PingOne service.
+        userMappingRemoteJSONField:
+          type: array
+          items:
+            type: string
+          description: >-
+              The names of the fields in the PingOne service whose values must match the values of the corresponding attributes in the local user entry, as specified in the user-mapping-local-attribute property.
+        additionalUserMappingSCIMFilter:
+          type: string
+          description: >-
+              An optional SCIM filter that will be ANDed with the filter created to identify the account in the PingOne service that corresponds to the local entry. Only the "eq", "sw", "and", and "or" filter types may be used.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - apiURL
+      - authURL
+      - OAuthClientID
+      - environmentID
+      - userMappingLocalAttribute
+      - userMappingRemoteJSONField
+      - enabled
+    Enumping-one-pass-through-authentication-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:ping-one-pass-through-authentication"
+    changelog-password-encryption-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumchangelog-password-encryption-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          changelogPasswordEncryptionKey:
+            type: string
+            format: password
+            description: >-
+                A passphrase that may be used to generate the key for encrypting passwords stored in the changelog. The same passphrase also needs to be set (either through the "changelog-password-decryption-key" property or the "changelog-password-decryption-key-passphrase-provider" property) in the Global Sync Configuration in the Data Sync Server.
+          changelogPasswordEncryptionKeyPassphraseProvider:
+            type: string
+            description: >-
+                A passphrase provider that may be used to obtain the passphrase that will be used to generate the key for encrypting passwords stored in the changelog. The same passphrase also needs to be set (either through the "changelog-password-decryption-key" property or the "changelog-password-decryption-key-passphrase-provider" property) in the Global Sync Configuration in the Data Sync Server.
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - pluginType
+        - enabled
+        - id
+    Enumchangelog-password-encryption-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:changelog-password-encryption"
+    processing-time-histogram-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumprocessing-time-histogram-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          histogramCategoryBoundary:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the boundary values that will be used to separate the processing times into categories. Values should be specified as durations, and all values must be greater than zero.
+          includeQueueTime:
+            type: boolean
+            description: >-
+                Indicates whether operation processing times should include the time spent waiting on the work queue. This will only be available if the work queue is configured to monitor the queue time.
+          separateMonitorEntryPerTrackedApplication:
+            type: boolean
+            description: >-
+                When enabled, separate monitor entries will be included for each application defined in the Global Configuration's tracked-application property.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - pluginType
+        - histogramCategoryBoundary
+        - enabled
+        - id
+    Enumprocessing-time-histogram-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:processing-time-histogram"
+    add-search-shutdown-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/search-shutdown-plugin-shared'
+    search-shutdown-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/search-shutdown-plugin-shared'
+    search-shutdown-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsearch-shutdown-pluginSchemaUrn'
+        baseDN:
+          type: string
+          description: >-
+              The base DN to use for the search.
+        scope:
+          $ref: '#/components/schemas/Enumplugin-scopeProp'
+        filter:
+          type: string
+          description: >-
+              The filter to use for the search.
+        includeAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of an attribute that should be included in the results. This may include any token which is allowed as a requested attribute in search requests, including the name of an attribute, an asterisk (to indicate all user attributes), a plus sign (to indicate all operational attributes), an object class name preceded with an at symbol (to indicate all attributes associated with that object class), an attribute name preceded by a caret (to indicate that attribute should be excluded), or an object class name preceded by a caret and an at symbol (to indicate that all attributes associated with that object class should be excluded).
+        outputFile:
+          type: string
+          description: >-
+              The path of an LDIF file that should be created with the results of the search.
+        previousFileExtension:
+          type: string
+          description: >-
+              An extension that should be appended to the name of an existing output file rather than deleting it. If a file already exists with the full previous file name, then it will be deleted before the current file is renamed to become the previous file.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - scope
+      - filter
+      - outputFile
+      - enabled
+    Enumsearch-shutdown-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:search-shutdown"
+    add-periodic-stats-logger-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
+    periodic-stats-logger-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/periodic-stats-logger-plugin-shared'
+    periodic-stats-logger-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumperiodic-stats-logger-pluginSchemaUrn'
+        logInterval:
+          type: string
+          description: >-
+              The duration between statistics collection and logging. A new line is logged to the output for each interval. Setting this value too small can have an impact on performance.
+        collectionInterval:
+          type: string
+          description: >-
+              Some of the calculated statistics, such as the average and maximum queue sizes, can use multiple samples within a log interval. This value controls how often samples are gathered. It should be a multiple of the log-interval.
+        suppressIfIdle:
+          type: boolean
+          description: >-
+              If the server is idle during the specified interval, then do not log any output if this property is set to true. The server is idle if during the interval, no new connections were established, no operations were processed, and no operations are pending.
+        headerPrefixPerColumn:
+          type: boolean
+          description: >-
+              This property controls whether the header prefix, which applies to a group of columns, appears at the start of each column header or only the first column in a group.
+        emptyInsteadOfZero:
+          type: boolean
+          description: >-
+              This property controls whether a value in the output is shown as empty if the value is zero.
+        linesBetweenHeader:
+          type: integer
+          description: >-
+              The number of lines to log between logging the header line that summarizes the columns in the table.
+        includedLDAPStat:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-includedLDAPStatProp'
+        includedResourceStat:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-includedResourceStatProp'
+        histogramFormat:
+          $ref: '#/components/schemas/Enumplugin-histogramFormatProp'
+        histogramOpType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-histogramOpTypeProp'
+        perApplicationLDAPStats:
+          $ref: '#/components/schemas/Enumplugin-perApplicationLDAPStatsProp'
+        statusSummaryInfo:
+          $ref: '#/components/schemas/Enumplugin-statusSummaryInfoProp'
+        ldapChangelogInfo:
+          $ref: '#/components/schemas/Enumplugin-ldapChangelogInfoProp'
+        gaugeInfo:
+          $ref: '#/components/schemas/Enumplugin-gaugeInfoProp'
+        logFileFormat:
+          $ref: '#/components/schemas/Enumplugin-logFileFormatProp'
+        logFile:
+          type: string
+          description: >-
+              The file name to use for the log files generated by the Periodic Stats Logger Plugin. The path to the file can be specified either as relative to the server root or as an absolute path.
+        logFilePermissions:
+          type: string
+          description: >-
+              The UNIX permissions of the log files created by this Periodic Stats Logger Plugin.
+        append:
+          type: boolean
+          description: >-
+              Specifies whether to append to existing log files.
+        rotationPolicy:
+          type: array
+          items:
+            type: string
+          description: >-
+              The rotation policy to use for the Periodic Stats Logger Plugin .
+        rotationListener:
+          type: array
+          items:
+            type: string
+          description: >-
+              A listener that should be notified whenever a log file is rotated out of service.
+        retentionPolicy:
+          type: array
+          items:
+            type: string
+          description: >-
+              The retention policy to use for the Periodic Stats Logger Plugin .
+        loggingErrorBehavior:
+          $ref: '#/components/schemas/Enumplugin-loggingErrorBehaviorProp'
+        localDBBackendInfo:
+          $ref: '#/components/schemas/Enumplugin-localDBBackendInfoProp'
+        replicationInfo:
+          $ref: '#/components/schemas/Enumplugin-replicationInfoProp'
+        entryCacheInfo:
+          $ref: '#/components/schemas/Enumplugin-entryCacheInfoProp'
+        hostInfo:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-hostInfoProp'
+        includedLDAPApplication:
+          type: array
+          items:
+            type: string
+          description: >-
+              If statistics should not be included for all applications, this property names the subset of applications that should be included.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - logInterval
+      - collectionInterval
+      - suppressIfIdle
+      - linesBetweenHeader
+      - histogramFormat
+      - logFile
+      - logFilePermissions
+      - rotationPolicy
+      - retentionPolicy
+      - enabled
+    Enumperiodic-stats-logger-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:periodic-stats-logger"
+    change-subscription-notification-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumchange-subscription-notification-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - pluginType
+        - enabled
+        - id
+    Enumchange-subscription-notification-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:change-subscription-notification"
+    add-sub-operation-timing-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
+    sub-operation-timing-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/sub-operation-timing-plugin-shared'
+    sub-operation-timing-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsub-operation-timing-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be counted when aggregating timing data.
+        numMostExpensivePhasesShown:
+          type: integer
+          description: >-
+              This controls how many of the most expensive phases are included per operation type in the monitor entry.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - pluginType
+      - numMostExpensivePhasesShown
+      - enabled
+    Enumsub-operation-timing-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:sub-operation-timing"
+    add-third-party-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/third-party-plugin-shared'
+    third-party-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-plugin-shared'
+    third-party-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-pluginSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Plugin.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Plugin. Each configuration property should be given in the form 'name=value'.
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a set of request criteria that may be used to indicate that this Third Party Plugin should only be invoked for operations in which the associated request matches this criteria.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - extensionClass
+      - enabled
+      - pluginType
+    Enumthird-party-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:third-party"
+    encrypt-attribute-values-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumencrypt-attribute-values-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          attributeType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-attributeTypeProp'
+          encryptionSettingsDefinitionID:
+            type: string
+            description: >-
+                Specifies the ID of the encryption settings definition that should be used to encrypt the data. If this is not provided, the server's preferred encryption settings definition will be used. The "encryption-settings list" command can be used to obtain a list of the encryption settings definitions available in the server.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - pluginType
+        - attributeType
+        - enabled
+        - id
+    Enumencrypt-attribute-values-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:encrypt-attribute-values"
+    add-pass-through-authentication-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
+    pass-through-authentication-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/pass-through-authentication-plugin-shared'
+    pass-through-authentication-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpass-through-authentication-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        server:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the LDAP external server(s) to which authentication attempts should be forwarded.
+        tryLocalBind:
+          type: boolean
+          description: >-
+              Indicates whether the bind attempt should first be attempted against the local server. Depending on the value of the override-local-password property, the bind attempt may then be attempted against a remote server if the local bind fails.
+        overrideLocalPassword:
+          type: boolean
+          description: >-
+              Indicates whether the bind attempt should be attempted against a remote server in the event that the local bind fails but the local password is present.
+        updateLocalPassword:
+          type: boolean
+          description: >-
+              Indicates whether the local password value should be updated to the value used in the bind request in the event that the local bind fails but the remote bind succeeds.
+        allowLaxPassThroughAuthenticationPasswords:
+          type: boolean
+          description: >-
+              Indicates whether updates to the local password value should accept passwords that do not meet password policy constraints.
+        serverAccessMode:
+          $ref: '#/components/schemas/Enumplugin-serverAccessModeProp'
+        includedLocalEntryBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base DNs for the local users whose authentication attempts may be passed through to an alternate server.
+        connectionCriteria:
+          type: string
+          description: >-
+              Specifies a set of connection criteria that must match the client associated with the bind request for the bind to be passed through to an alternate server.
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a set of request criteria that must match the bind request for the bind to be passed through to an alternate server.
+        dnMap:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies one or more DN mappings that may be used to transform bind DNs before attempting to bind to the external servers.
+        bindDNPattern:
+          type: string
+          description: >-
+              A pattern to use to construct the bind DN for the simple bind request to send to the remote server. This may consist of a combination of static text and attribute values and other directives enclosed in curly braces.  For example, the value "cn={cn},ou=People,dc=example,dc=com" indicates that the remote bind DN should be constructed from the text "cn=" followed by the value of the local entry's cn attribute followed by the text "ou=People,dc=example,dc=com". If an attribute contains the value to use as the bind DN for pass-through authentication, then the pattern may simply be the name of that attribute in curly braces (e.g., if the seeAlso attribute contains the bind DN for the target user, then a bind DN pattern of "{seeAlso}" would be appropriate).  Note that a bind DN pattern can be used to construct a bind DN that is not actually a valid LDAP distinguished name. For example, if authentication is being passed through to a Microsoft Active Directory server, then a bind DN pattern could be used to construct a user principal name (UPN) as an alternative to a distinguished name.
+        searchBaseDN:
+          type: string
+          description: >-
+              The base DN to use when searching for the user entry using a filter constructed from the pattern defined in the search-filter-pattern property. If no base DN is specified, the null DN will be used as the search base DN.
+        searchFilterPattern:
+          type: string
+          description: >-
+              A pattern to use to construct a filter to use when searching an external server for the entry of the user as whom to bind. For example, "(mail={uid:ldapFilterEscape}@example.com)" would construct a search filter to search for a user whose entry in the local server contains a uid attribute whose value appears before "@example.com" in the mail attribute in the external server. Note that the "ldapFilterEscape" modifier should almost always be used with attributes specified in the pattern.
+        initialConnections:
+          type: integer
+          description: >-
+              Specifies the initial number of connections to establish to each external server against which authentication may be attempted.
+        maxConnections:
+          type: integer
+          description: >-
+              Specifies the maximum number of connections to maintain to each external server against which authentication may be attempted. This value must be greater than or equal to the value for the initial-connections property.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - server
+      - tryLocalBind
+      - overrideLocalPassword
+      - updateLocalPassword
+      - serverAccessMode
+      - initialConnections
+      - maxConnections
+      - enabled
+    Enumpass-through-authentication-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:pass-through-authentication"
+    add-dn-mapper-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/dn-mapper-plugin-shared'
+    dn-mapper-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/dn-mapper-plugin-shared'
+    dn-mapper-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdn-mapper-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        sourceDN:
+          type: string
+          description: >-
+              Specifies the source DN that may appear in client requests which should be remapped to the target DN. Note that the source DN must not be equal to the target DN.
+        targetDN:
+          type: string
+          description: >-
+              Specifies the DN to which the source DN should be mapped. Note that the target DN must not be equal to the source DN.
+        enableAttributeMapping:
+          type: boolean
+          description: >-
+              Indicates whether DN mapping should be applied to the values of attributes with appropriate syntaxes.
+        mapAttribute:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies a set of specific attributes for which DN mapping should be applied. This will only be applicable if the enable-attribute-mapping property has a value of "true". Any attributes listed must be defined in the server schema with either the distinguished name syntax or the name and optional UID syntax.
+        enableControlMapping:
+          type: boolean
+          description: >-
+              Indicates whether DN mapping should be applied to DNs that may be present in specific controls. DN mapping will only be applied for control types which are specifically supported by the DN mapper plugin.
+        alwaysMapResponses:
+          type: boolean
+          description: >-
+              Indicates whether DNs in response messages containing the target DN should always be remapped back to the source DN. If this is "false", then mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - sourceDN
+      - targetDN
+      - enableAttributeMapping
+      - enableControlMapping
+      - alwaysMapResponses
+      - enabled
+    Enumdn-mapper-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:dn-mapper"
+    monitor-history-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enummonitor-history-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          logInterval:
+            type: string
+            description: >-
+                The duration between logging dumps of cn=monitor to a file.
+          logFile:
+            type: string
+            description: >-
+                The file name to use for the log files generated by the Monitor History Plugin. The path to the file can be specified either as relative to the server root or as an absolute path.
+          logFilePermissions:
+            type: string
+            description: >-
+                The UNIX permissions of the log files created by this Monitor History Plugin.
+          loggingErrorBehavior:
+            $ref: '#/components/schemas/Enumplugin-loggingErrorBehaviorProp'
+          retentionPolicy:
+            type: array
+            items:
+              type: string
+            description: >-
+                The retention policy to use for the Monitor History Plugin .
+          retainFilesSparselyByAge:
+            type: boolean
+            description: >-
+                Retain some older files to give greater perspective on how monitoring information has changed over time.
+          sanitize:
+            type: boolean
+            description: >-
+                Server monitoring data can include a small amount of personally identifiable information in the form of LDAP DNs and search filters. Setting this property to true will redact this information from the monitor files. This should only be used when necessary, as it reduces the information available in the archive and can increase the time to find the source of support issues.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+        required:
+        - schemas
+        - logInterval
+        - logFile
+        - logFilePermissions
+        - retentionPolicy
+        - enabled
+        - id
+    Enummonitor-history-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:monitor-history"
+    add-referral-on-update-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/referral-on-update-plugin-shared'
+    referral-on-update-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/referral-on-update-plugin-shared'
+    referral-on-update-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumreferral-on-update-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        referralBaseURL:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the base URL to use for the referrals generated by this plugin. It should include only the scheme, address, and port to use to communicate with the target server (e.g., "ldap://server.example.com:389/").
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies a base DN for requests for which to send referrals in response to update operations.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - pluginType
+      - referralBaseURL
+      - enabled
+    Enumreferral-on-update-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:referral-on-update"
+    add-simple-to-external-bind-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/simple-to-external-bind-plugin-shared'
+    simple-to-external-bind-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/simple-to-external-bind-plugin-shared'
+    simple-to-external-bind-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsimple-to-external-bind-pluginSchemaUrn'
+        connectionCriteria:
+          type: string
+          description: >-
+              Specifies a connection criteria object that may be used to indicate the set of clients for which this plugin should be used. If a value is provided, then this plugin will only be used for requests from client connections matching this criteria.
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a request criteria object that may be used to indicate the set of requests for which this plugin should be used. If a value is provided, then this plugin will only be used for bind requests matching this criteria.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - enabled
+    Enumsimple-to-external-bind-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:simple-to-external-bind"
+    add-snmp-subagent-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
+    snmp-subagent-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/snmp-subagent-plugin-shared'
+    snmp-subagent-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumsnmp-subagent-pluginSchemaUrn'
+        contextName:
+          type: string
+          description: >-
+              The SNMP context name for this sub-agent. The context name must not be longer than 30 ASCII characters. Each server in a topology must have a unique SNMP context name.
+        agentxAddress:
+          type: string
+          description: >-
+              The hostname or IP address of the SNMP master agent.
+        agentxPort:
+          type: integer
+          description: >-
+              The port number on which the SNMP master agent will be contacted.
+        numWorkerThreads:
+          type: integer
+          description: >-
+              The number of worker threads to use to handle SNMP requests.
+        sessionTimeout:
+          type: string
+          description: >-
+              Specifies the maximum amount of time to wait for a session to the master agent to be established.
+        connectRetryMaxWait:
+          type: string
+          description: >-
+              The maximum amount of time to wait between attempts to establish a connection to the master agent.
+        pingInterval:
+          type: string
+          description: >-
+              The amount of time between consecutive pings sent by the sub-agent on its connection to the master agent. A value of zero disables the sending of pings by the sub-agent.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - agentxAddress
+      - agentxPort
+      - enabled
+    Enumsnmp-subagent-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:snmp-subagent"
+    password-policy-import-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumpassword-policy-import-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+          defaultUserPasswordStorageScheme:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of the password storage schemes to be used for encoding passwords contained in attributes with the user password syntax for entries that do not include the ds-pwp-password-policy-dn attribute specifying which password policy is to be used to govern them.
+          defaultAuthPasswordStorageScheme:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the names of password storage schemes that to be used for encoding passwords contained in attributes with the auth password syntax for entries that do not include the ds-pwp-password-policy-dn attribute specifying which password policy should be used to govern them.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+        required:
+        - schemas
+        - enabled
+        - id
+    Enumpassword-policy-import-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:password-policy-import"
+    profiler-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumprofiler-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          profileSampleInterval:
+            type: string
+            description: >-
+                Specifies the sample interval in milliseconds to be used when capturing profiling information in the server.
+          profileDirectory:
+            type: string
+            description: >-
+                Specifies the path to the directory where profile information is to be written. This path may be either an absolute path or a path that is relative to the root of the Directory Server instance.
+          enableProfilingOnStartup:
+            type: boolean
+            description: >-
+                Indicates whether the profiler plug-in is to start collecting data automatically when the Directory Server is started.
+          profileAction:
+            $ref: '#/components/schemas/Enumplugin-profileActionProp'
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+        required:
+        - schemas
+        - profileSampleInterval
+        - profileDirectory
+        - enableProfilingOnStartup
+        - enabled
+        - id
+    Enumprofiler-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:profiler"
+    add-clean-up-inactive-pingfederate-persistent-sessions-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
+    clean-up-inactive-pingfederate-persistent-sessions-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/clean-up-inactive-pingfederate-persistent-sessions-plugin-shared'
+    clean-up-inactive-pingfederate-persistent-sessions-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumclean-up-inactive-pingfederate-persistent-sessions-pluginSchemaUrn'
+        expirationOffset:
+          type: string
+          description: >-
+              Sessions whose last activity timestamp is older than this offset will be removed.
+        pollingInterval:
+          type: string
+          description: >-
+              This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
+        peerServerPriorityIndex:
+          type: integer
+          description: >-
+              In a replicated environment, this determines the order in which peer servers should attempt to purge data.
+        baseDN:
+          type: string
+          description: >-
+              Only entries located within the subtree specified by this base DN are eligible for purging.
+        maxUpdatesPerSecond:
+          type: integer
+          description: >-
+              This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
+        numDeleteThreads:
+          type: integer
+          description: >-
+              The number of threads used to delete expired entries.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - expirationOffset
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - enabled
+    Enumclean-up-inactive-pingfederate-persistent-sessions-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:clean-up-inactive-pingfederate-persistent-sessions"
+    add-composed-attribute-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/composed-attribute-plugin-shared'
+    composed-attribute-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/composed-attribute-plugin-shared'
+    composed-attribute-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcomposed-attribute-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        attributeType:
+          type: string
+          description: >-
+              The name or OID of the attribute type for which values are to be generated.
+        valuePattern:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies a pattern for constructing the values to use for the target attribute type.
+        multipleValuePatternBehavior:
+          $ref: '#/components/schemas/Enumplugin-multipleValuePatternBehaviorProp'
+        multiValuedAttributeBehavior:
+          $ref: '#/components/schemas/Enumplugin-multiValuedAttributeBehaviorProp'
+        targetAttributeExistsDuringInitialPopulationBehavior:
+          $ref: '#/components/schemas/Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp'
+        updateSourceAttributeBehavior:
+          $ref: '#/components/schemas/Enumplugin-updateSourceAttributeBehaviorProp'
+        sourceAttributeRemovalBehavior:
+          $ref: '#/components/schemas/Enumplugin-sourceAttributeRemovalBehaviorProp'
+        updateTargetAttributeBehavior:
+          $ref: '#/components/schemas/Enumplugin-updateTargetAttributeBehaviorProp'
+        includeBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of base DNs below which composed values may be generated.
+        excludeBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of base DNs below which composed values will not be generated.
+        includeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of search filters that identify entries for which composed values may be generated.
+        excludeFilter:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of search filters that identify entries for which composed values will not be generated.
+        updatedEntryNewlyMatchesCriteriaBehavior:
+          $ref: '#/components/schemas/Enumplugin-updatedEntryNewlyMatchesCriteriaBehaviorProp'
+        updatedEntryNoLongerMatchesCriteriaBehavior:
+          $ref: '#/components/schemas/Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp'
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - attributeType
+      - valuePattern
+      - enabled
+    Enumcomposed-attribute-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:composed-attribute"
+    ldap-result-code-tracker-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumldap-result-code-tracker-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - pluginType
+        - enabled
+        - id
+    Enumldap-result-code-tracker-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:ldap-result-code-tracker"
+    add-attribute-mapper-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
+    attribute-mapper-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/attribute-mapper-plugin-shared'
+    attribute-mapper-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumattribute-mapper-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        sourceAttribute:
+          type: string
+          description: >-
+              Specifies the source attribute type that may appear in client requests which should be remapped to the target attribute. Note that the source attribute type must be defined in the server schema and must not be equal to the target attribute type.
+        targetAttribute:
+          type: string
+          description: >-
+              Specifies the target attribute type to which the source attribute type should be mapped. Note that the target attribute type must be defined in the server schema and must not be equal to the source attribute type.
+        enableControlMapping:
+          type: boolean
+          description: >-
+              Indicates whether mapping should be applied to attribute types that may be present in specific controls. If enabled, attribute mapping will only be applied for control types which are specifically supported by the attribute mapper plugin.
+        alwaysMapResponses:
+          type: boolean
+          description: >-
+              Indicates whether the target attribute in response messages should always be remapped back to the source attribute. If this is "false", then the mapping will be performed for a response message only if one or more elements of the associated request are mapped. Otherwise, the mapping will be performed for all responses regardless of whether the mapping was applied to the request.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - sourceAttribute
+      - targetAttribute
+      - enableControlMapping
+      - alwaysMapResponses
+      - enabled
+    Enumattribute-mapper-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:attribute-mapper"
+    add-delay-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/delay-plugin-shared'
+    delay-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delay-plugin-shared'
+    delay-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelay-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        delay:
+          type: string
+          description: >-
+              The delay to inject for operations matching the associated criteria.
+        connectionCriteria:
+          type: string
+          description: >-
+              Specifies a set of connection criteria used to indicate that only operations from clients matching this criteria should be subject to the configured delay.
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a set of request criteria used to indicate that only operations for requests matching this criteria should be subject to the configured delay.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - delay
+      - enabled
+    Enumdelay-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:delay"
+    add-clean-up-expired-pingfederate-persistent-sessions-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
+    clean-up-expired-pingfederate-persistent-sessions-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/clean-up-expired-pingfederate-persistent-sessions-plugin-shared'
+    clean-up-expired-pingfederate-persistent-sessions-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumclean-up-expired-pingfederate-persistent-sessions-pluginSchemaUrn'
+        pollingInterval:
+          type: string
+          description: >-
+              This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
+        peerServerPriorityIndex:
+          type: integer
+          description: >-
+              In a replicated environment, this determines the order in which peer servers should attempt to purge data.
+        baseDN:
+          type: string
+          description: >-
+              Only entries located within the subtree specified by this base DN are eligible for purging.
+        maxUpdatesPerSecond:
+          type: integer
+          description: >-
+              This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
+        numDeleteThreads:
+          type: integer
+          description: >-
+              The number of threads used to delete expired entries.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - enabled
+    Enumclean-up-expired-pingfederate-persistent-sessions-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:clean-up-expired-pingfederate-persistent-sessions"
+    add-groovy-scripted-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/groovy-scripted-plugin-shared'
+    groovy-scripted-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/groovy-scripted-plugin-shared'
+    groovy-scripted-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgroovy-scripted-pluginSchemaUrn'
+        scriptClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Groovy class providing the logic for the Groovy Scripted Plugin.
+        requestCriteria:
+          type: string
+          description: >-
+              Specifies a set of request criteria that may be used to indicate that this Groovy Scripted Plugin should only be invoked for operations in which the associated request matches this criteria.
+        scriptArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Scripted Plugin. Each configuration property should be given in the form 'name=value'.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - scriptClass
+      - enabled
+      - pluginType
+    Enumgroovy-scripted-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:groovy-scripted"
+    last-mod-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumlast-mod-pluginSchemaUrn'
+          id:
+            description: Name of the Plugin
+            type: string
+          pluginType:
+            type: array
+            items:
+              $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+          includeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the name or OID of an attribute type that must be updated in order for the modifiersName and modifyTimestamp attributes to be updated in the target entry.
+          excludeAttribute:
+            type: array
+            items:
+              type: string
+            description: >-
+                Specifies the name or OID of an attribute type which may be updated in a modify or modify DN operation without causing the modifiersName and modifyTimestamp values to be updated for that entry.
+          description:
+            type: string
+            description: >-
+                A description for this Plugin
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in is enabled for use.
+          invokeForInternalOperations:
+            type: boolean
+            description: >-
+                Indicates whether the plug-in should be invoked for internal operations.
+        required:
+        - schemas
+        - pluginType
+        - enabled
+        - id
+    Enumlast-mod-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:last-mod"
+    add-pluggable-pass-through-authentication-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-shared'
+    pluggable-pass-through-authentication-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/pluggable-pass-through-authentication-plugin-shared'
+    pluggable-pass-through-authentication-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpluggable-pass-through-authentication-pluginSchemaUrn'
+        passThroughAuthenticationHandler:
+          type: string
+          description: >-
+              The component used to manage authentication with the external authentication service.
+        includedLocalEntryBaseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              The base DNs for the local users whose authentication attempts may be passed through to the external authentication service.
+        connectionCriteria:
+          type: string
+          description: >-
+              A reference to connection criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
+        requestCriteria:
+          type: string
+          description: >-
+              A reference to request criteria that will be used to indicate which bind requests should be passed through to the external authentication service.
+        tryLocalBind:
+          type: boolean
+          description: >-
+              Indicates whether to attempt the bind in the local server first and only send the request to the external authentication service if the local bind attempt fails, or to only attempt the bind in the external service.
+        overrideLocalPassword:
+          type: boolean
+          description: >-
+              Indicates whether to attempt the authentication in the external service if the local user entry includes a password. This property will be ignored if try-local-bind is false.
+        updateLocalPassword:
+          type: boolean
+          description: >-
+              Indicates whether to overwrite the user's local password if the local bind fails but the authentication attempt succeeds when attempted in the external service. This property may only be set to true if try-local-bind is also true.
+        updateLocalPasswordDN:
+          type: string
+          description: >-
+              The DN of the authorization identity that will be used when updating the user's local password if update-local-password is true. This is primarily intended for use if the Data Sync Server will be used to synchronize passwords between the local server and the external service, and in that case, the DN used here should also be added to the ignore-changes-by-dn property in the appropriate Sync Source object in the Data Sync Server configuration.
+        allowLaxPassThroughAuthenticationPasswords:
+          type: boolean
+          description: >-
+              Indicates whether to overwrite the user's local password even if the password used to authenticate to the external service would have failed validation if the user attempted to set it directly.
+        ignoredPasswordPolicyStateErrorCondition:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-ignoredPasswordPolicyStateErrorConditionProp'
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - passThroughAuthenticationHandler
+      - enabled
+    Enumpluggable-pass-through-authentication-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:pluggable-pass-through-authentication"
+    add-referential-integrity-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/referential-integrity-plugin-shared'
+    referential-integrity-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/referential-integrity-plugin-shared'
+    referential-integrity-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumreferential-integrity-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        attributeType:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the attribute types for which referential integrity is to be maintained.
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the base DN that limits the scope within which referential integrity is maintained.
+        logFile:
+          type: string
+          description: >-
+              Specifies the log file location where the update records are written when the plug-in is in background-mode processing.
+        updateInterval:
+          type: string
+          description: >-
+              Specifies the interval in seconds when referential integrity updates are made.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - attributeType
+      - enabled
+    Enumreferential-integrity-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:referential-integrity"
+    add-unique-attribute-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/unique-attribute-plugin-shared'
+    unique-attribute-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/unique-attribute-plugin-shared'
+    unique-attribute-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumunique-attribute-pluginSchemaUrn'
+        pluginType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumplugin-pluginTypeProp'
+        type:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the type of attributes to check for value uniqueness.
+        multipleAttributeBehavior:
+          $ref: '#/components/schemas/Enumplugin-multipleAttributeBehaviorProp'
+        baseDN:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies a base DN within which the attribute must be unique.
+        preventConflictsWithSoftDeletedEntries:
+          type: boolean
+          description: >-
+              Indicates whether this Unique Attribute Plugin should reject a change that would result in one or more conflicts, even if those conflicts only exist in soft-deleted entries.
+        filter:
+          type: string
+          description: >-
+              Specifies the search filter to apply to determine if attribute uniqueness is enforced for the matching entries.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+        invokeForInternalOperations:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in should be invoked for internal operations.
+      required:
+      - schemas
+      - pluginType
+      - type
+      - enabled
+    Enumunique-attribute-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:unique-attribute"
+    add-custom-logged-stats-request:
+      allOf:
+      - type: object
+        properties:
+          statsName:
+            description: Name of the new Custom Logged Stats
+            type: string
+        required:
+        - statsName
+      - $ref: '#/components/schemas/custom-logged-stats-shared'
+    custom-logged-stats-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Custom Logged Stats
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/custom-logged-stats-shared'
+    custom-logged-stats-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcustom-logged-statsSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Custom Logged Stats
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the Custom Logged Stats object is enabled.
+        monitorObjectclass:
+          type: string
+          description: >-
+              The objectclass name of the monitor entries to examine for generating these statistics.
+        includeFilter:
+          type: string
+          description: >-
+              An optional LDAP filter that can be used restrict which monitor entries are used to produce the output.
+        attributeToLog:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the attributes on the monitor entries that should be included in the output.
+        columnName:
+          type: array
+          items:
+            type: string
+          description: >-
+              Optionally, specifies an explicit name for each column header instead of having these names automatically generated from the monitored attribute name.
+        statisticType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumcustom-logged-stats-statisticTypeProp'
+        headerPrefix:
+          type: string
+          description: >-
+              An optional prefix that is included in the header before the column name.
+        headerPrefixAttribute:
+          type: string
+          description: >-
+              An optional attribute from the monitor entry that is included as a prefix before the column name in the column header.
+        regexPattern:
+          type: string
+          description: >-
+              An optional regular expression pattern, that when used in conjunction with regex-replacement, can alter the value of the attribute being monitored.
+        regexReplacement:
+          type: string
+          description: >-
+              An optional regular expression replacement value, that when used in conjunction with regex-pattern, can alter the value of the attribute being monitored.
+        divideValueBy:
+          type: string
+          description: >-
+              An optional floating point value that can be used to scale the resulting value.
+        divideValueByAttribute:
+          type: string
+          description: >-
+              An optional property that can scale the resulting value by another attribute in the monitored entry.
+        decimalFormat:
+          type: string
+          description: >-
+              This provides a way to format the monitored attribute value in the output to control the precision for instance.
+        nonZeroImpliesNotIdle:
+          type: boolean
+          description: >-
+              If this property is set to true, then the value of any of the monitored attributes here can contribute to whether an interval is considered "idle" by the Periodic Stats Logger.
+      required:
+      - enabled
+      - monitorObjectclass
+      - attributeToLog
+      - statisticType
+    Enumcustom-logged-statsSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:custom-logged-stats"
+    Enumplugin-ldapInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies the level of detail to include about the LDAP connection handlers.
+    Enumplugin-histogramOpTypeProp:
+      type: string
+      enum:
+      - "all"
+      - "add"
+      - "bind"
+      - "compare"
+      - "delete"
+      - "extended"
+      - "modify"
+      - "modify-dn"
+      - "search"
+      description: >-
+          Specifies the operation type(s) to use when outputting the response time histogram data. The order of the operations here determines the order of the columns in the output. Use the per-application-ldap-stats setting to further control this.
+    Enumplugin-logFileFormatProp:
+      type: string
+      enum:
+      - "csv"
+      - "json"
+      description: >-
+          Specifies the format to use when logging server statistics.
+    Enumplugin-multiValuedAttributeBehaviorProp:
+      type: string
+      enum:
+      - "use-first-value"
+      - "reject-entries-with-any-multivalued-source-attribute"
+      - "use-all-values-if-possible-but-reject-if-not"
+      - "use-all-values-if-possible-but-only-first-value-if-not"
+      description: >-
+          The behavior to exhibit for source attributes that have multiple values.
+    Enumplugin-updatedEntryNoLongerMatchesCriteriaBehaviorProp:
+      type: string
+      enum:
+      - "preserve-all-values"
+      - "preserve-non-composed-values"
+      - "remove-all-values-but-preserve-all-if-required"
+      - "remove-all-values-but-preserve-non-composed-if-required"
+      description: >-
+          The behavior to exhibit for modify or modify DN operations that update an entry that previously satisfied the base DN and filter criteria, but now no longer satisfies that criteria.
+    Enumplugin-profileActionProp:
+      type: string
+      enum:
+      - "none"
+      - "start"
+      - "stop"
+      - "cancel"
+      description: >-
+          Specifies the action that should be taken by the profiler.
+    Enumplugin-perApplicationLDAPStatsProp:
+      type: string
+      enum:
+      - "aggregate-only"
+      - "per-application-only"
+      description: >-
+          Controls whether per application LDAP statistics are included in the output for selected LDAP operation statistics.
+    Enumplugin-targetAttributeExistsDuringInitialPopulationBehaviorProp:
+      type: string
+      enum:
+      - "preserve-existing-values"
+      - "overwrite-existing-values"
+      - "merge-existing-and-composed-values"
+      - "reject-existing-values-in-add-but-preserve-in-ldif-import"
+      - "reject-existing-values-in-add-but-overwrite-in-ldif-import"
+      - "reject-existing-values-in-add-but-merge-in-ldif-import"
+      description: >-
+          The behavior to exhibit if the target attribute exists when initially populating the entry with composed values (whether during an LDIF import, an add operation, or an invocation of the populate composed attribute values task).
+    Enumplugin-statusSummaryInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include about the status summary monitor entry.
+    Enumplugin-ignoredPasswordPolicyStateErrorConditionProp:
+      type: string
+      enum:
+      - "temporarily-locked-due-to-failures"
+      - "permanently-locked-due-to-failures"
+      - "locked-due-to-idle-interval"
+      - "locked-due-to-maximum-reset-age"
+      - "locked-due-to-validation-failure"
+      - "password-is-expired"
+      description: >-
+          A set of password policy state error conditions that should not be enforced when authentication succeeds when attempted in the PingOne service. This option can only be used if try-local-bind is true.
+    Enumplugin-multipleAttributeBehaviorProp:
+      type: string
+      enum:
+      - "unique-within-each-attribute"
+      - "unique-across-all-attributes-including-in-same-entry"
+      - "unique-across-all-attributes-except-in-same-entry"
+      description: >-
+          The behavior to exhibit if multiple attribute types are specified.
+    Enumplugin-hostInfoProp:
+      type: string
+      enum:
+      - "cpu"
+      - "disk"
+      - "network"
+      description: >-
+          Specifies the level of detail to include about the host system resource utilization including CPU, memory, disk and network activity.
+    Enumplugin-updatedEntryNewlyMatchesCriteriaBehaviorProp:
+      type: string
+      enum:
+      - "preserve-existing-values-without-composing-new-values"
+      - "preserve-existing-values-or-compose-new-values"
+      - "preserve-existing-values-and-compose-new-values"
+      - "compose-new-values-without-preserving-existing-values"
+      description: >-
+          The behavior to exhibit for modify or modify DN operations that update an entry that previously did not satisfy either the base DN or filter criteria, but now do satisfy that criteria.
+    Enumcustom-logged-stats-statisticTypeProp:
+      type: string
+      enum:
+      - "raw"
+      - "counter"
+      - "average"
+      - "minimum"
+      - "maximum"
+      description: >-
+          Specifies the type of statistic to include in the output for each monitored attribute.
+    Enumplugin-invokeGCDayOfWeekProp:
+      type: string
+      enum:
+      - "sunday"
+      - "monday"
+      - "tuesday"
+      - "wednesday"
+      - "thursday"
+      - "friday"
+      - "saturday"
+      description: >-
+          Specifies the days of the week which the Periodic GC Plugin should run. If no values are provided, then the plugin will run every day at the specified time.
+    Enumplugin-ldapChangelogInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include for the LDAP changelog.
+    Enumplugin-multipleValuePatternBehaviorProp:
+      type: string
+      enum:
+      - "use-first-non-rejected-value-pattern-with-non-empty-values-but-may-reject"
+      - "use-first-non-rejected-value-pattern-with-non-empty-values-and-never-reject"
+      - "use-first-rejection-or-first-value-pattern-with-non-empty-values"
+      - "use-all-non-rejected-value-patterns-with-non-empty-values-but-may-reject"
+      - "use-all-non-rejected-value-patterns-with-non-empty-values-and-never-reject"
+      - "use-first-rejection-or-all-value-patterns-with-non-empty-values"
+      description: >-
+          The behavior to exhibit if the plugin is configured with multiple value patterns.
+    Enumplugin-scopeProp:
+      type: string
+      enum:
+      - "base"
+      - "one"
+      - "sub"
+      - "subordinate-subtree"
+      description: >-
+          The scope to use for the search.
+    Enumplugin-includedLDAPStatProp:
+      type: string
+      enum:
+      - "active-operations"
+      - "num-connections"
+      - "op-count-and-latency"
+      - "work-queue"
+      - "ldap-protocol"
+      description: >-
+          Specifies the types of statistics related to LDAP connections and operation processing that should be included in the output.
+    Enumplugin-includedResourceStatProp:
+      type: string
+      enum:
+      - "memory-utilization"
+      description: >-
+          Specifies whether statistics related to resource utilization such as JVM memory.
+    Enumplugin-serverAccessModeProp:
+      type: string
+      enum:
+      - "round-robin"
+      - "failover-on-unavailable"
+      - "failover-on-any-failure"
+      description: >-
+          Specifies the manner in which external servers should be used for pass-through authentication attempts if multiple servers are defined.
+    Enumplugin-operationTypeProp:
+      type: string
+      enum:
+      - "add"
+      - "bind"
+      - "compare"
+      - "modify"
+      - "modify-dn"
+      - "search"
+      description: >-
+          Specifies the types of operations that should result in access time updates.
+    Enumplugin-serverInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies whether statistics related to resource utilization such as JVM memory and CPU/Network/Disk utilization.
+    Enumplugin-histogramFormatProp:
+      type: string
+      enum:
+      - "count"
+      - "aggregate-percentage"
+      description: >-
+          The format of the data in the processing time histogram.
+    Enumplugin-localDBBackendInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include about the Local DB Backends.
+    Enumplugin-gaugeInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies the level of detail to include for Gauges.
+    Enumplugin-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
+    Enumplugin-entryCacheInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      description: >-
+          Specifies the level of detail to include for each entry cache.
+    Enumplugin-attributeTypeProp:
+      type: string
+      enum:
+      - "ds-auth-totp-shared-secret"
+      - "ds-auth-totp-last-password-used"
+      - "ds-auth-delivered-otp"
+      - "ds-auth-password-reset-token"
+      - "ds-auth-single-use-token"
+      description: >-
+          The attribute types whose values should be encrypted.
+    Enumplugin-replicationInfoProp:
+      type: string
+      enum:
+      - "none"
+      - "basic"
+      - "extended"
+      - "verbose"
+      description: >-
+          Specifies the level of detail to include about replication.
+    Enumplugin-pluginTypeProp:
+      type: string
+      enum:
+      - "startup"
+      - "shutdown"
+      - "postconnect"
+      - "postdisconnect"
+      - "ldifimport"
+      - "ldifexport"
+      - "preparseabandon"
+      - "preparseadd"
+      - "preparsebind"
+      - "preparsecompare"
+      - "preparsedelete"
+      - "preparseextended"
+      - "preparsemodify"
+      - "preparsemodifydn"
+      - "preparsesearch"
+      - "preparseunbind"
+      - "preoperationadd"
+      - "preoperationbind"
+      - "preoperationcompare"
+      - "preoperationdelete"
+      - "preoperationextended"
+      - "preoperationmodify"
+      - "preoperationmodifydn"
+      - "preoperationsearch"
+      - "postoperationabandon"
+      - "postoperationadd"
+      - "postoperationbind"
+      - "postoperationcompare"
+      - "postoperationdelete"
+      - "postoperationextended"
+      - "postoperationmodify"
+      - "postoperationmodifydn"
+      - "postoperationsearch"
+      - "postoperationunbind"
+      - "preresponseadd"
+      - "preresponsebind"
+      - "preresponsecompare"
+      - "preresponsedelete"
+      - "preresponseextended"
+      - "preresponsemodify"
+      - "preresponsemodifydn"
+      - "preresponsesearch"
+      - "postresponseadd"
+      - "postresponsebind"
+      - "postresponsecompare"
+      - "postresponsedelete"
+      - "postresponseextended"
+      - "postresponsemodify"
+      - "postresponsemodifydn"
+      - "postresponsesearch"
+      - "postsynchronizationadd"
+      - "postsynchronizationdelete"
+      - "postsynchronizationmodify"
+      - "postsynchronizationmodifydn"
+      - "searchresultentry"
+      - "searchresultreference"
+      - "subordinatemodifydn"
+      - "intermediateresponse"
+      description: >-
+          Specifies the set of plug-in types for the plug-in, which specifies the times at which the plug-in is invoked.
+    Enumplugin-sourceAttributeRemovalBehaviorProp:
+      type: string
+      enum:
+      - "preserve-non-composed-values"
+      - "preserve-all-values"
+      - "remove-all-values-but-preserve-all-if-required"
+      - "remove-all-values-but-preserve-non-composed-if-required"
+      description: >-
+          The behavior to exhibit for modify and modify DN operations that update an entry to remove source attributes in such a way that this plugin would no longer generate any composed values for that entry.
+    Enumplugin-updateTargetAttributeBehaviorProp:
+      type: string
+      enum:
+      - "always-allow"
+      - "allow-only-for-non-composed-values"
+      - "never-allow"
+      description: >-
+          The behavior to exhibit for modify and modify DN operations that attempt to update the set of values for the target attribute.
+    Enumplugin-updateSourceAttributeBehaviorProp:
+      type: string
+      enum:
+      - "replace-composed-values"
+      - "replace-all-values"
+      - "preserve-existing-values"
+      description: >-
+          The behavior to exhibit for modify and modify DN operations that update one or more of the source attributes used in any of the value patterns.
     updateRequest:
       type: object
       properties:

@@ -146,7 +146,7 @@ func (r ApiDeleteResultCriteriaRequest) Execute() (*http.Response, error) {
 DeleteResultCriteria Delete a Result Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param resultCriteriaName Name of the Result Criteria to be deleted
+	@param resultCriteriaName Name of the Result Criteria
 	@return ApiDeleteResultCriteriaRequest
 */
 func (a *ResultCriteriaApiService) DeleteResultCriteria(ctx context.Context, resultCriteriaName string) ApiDeleteResultCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetResultCriteriaRequest) Execute() (*AddResultCriteria200Response, *
 GetResultCriteria Returns a single Result Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param resultCriteriaName Name of the Result Criteria to be read
+	@param resultCriteriaName Name of the Result Criteria
 	@return ApiGetResultCriteriaRequest
 */
 func (a *ResultCriteriaApiService) GetResultCriteria(ctx context.Context, resultCriteriaName string) ApiGetResultCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateResultCriteriaRequest) Execute() (*AddResultCriteria200Response
 UpdateResultCriteria Update an existing Result Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param resultCriteriaName Name of the Result Criteria to be updated
+	@param resultCriteriaName Name of the Result Criteria
 	@return ApiUpdateResultCriteriaRequest
 */
 func (a *ResultCriteriaApiService) UpdateResultCriteria(ctx context.Context, resultCriteriaName string) ApiUpdateResultCriteriaRequest {

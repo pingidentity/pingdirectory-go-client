@@ -36,7 +36,7 @@ func (r ApiGetAttributeSyntaxRequest) Execute() (*GetAttributeSyntax200Response,
 GetAttributeSyntax Returns a single Attribute Syntax
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param attributeSyntaxName Name of the Attribute Syntax to be read
+	@param attributeSyntaxName Name of the Attribute Syntax
 	@return ApiGetAttributeSyntaxRequest
 */
 func (a *AttributeSyntaxApiService) GetAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiGetAttributeSyntaxRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateAttributeSyntaxRequest) Execute() (*GetAttributeSyntax200Respon
 UpdateAttributeSyntax Update an existing Attribute Syntax by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param attributeSyntaxName Name of the Attribute Syntax to be updated
+	@param attributeSyntaxName Name of the Attribute Syntax
 	@return ApiUpdateAttributeSyntaxRequest
 */
 func (a *AttributeSyntaxApiService) UpdateAttributeSyntax(ctx context.Context, attributeSyntaxName string) ApiUpdateAttributeSyntaxRequest {

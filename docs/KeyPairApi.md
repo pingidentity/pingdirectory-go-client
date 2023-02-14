@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    keyPairName := "keyPairName_example" // string | Name of the Key Pair to be deleted
+    keyPairName := "keyPairName_example" // string | Name of the Key Pair
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyPairName** | **string** | Name of the Key Pair to be deleted | 
+**keyPairName** | **string** | Name of the Key Pair | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    keyPairName := "keyPairName_example" // string | Name of the Key Pair to be read
+    keyPairName := "keyPairName_example" // string | Name of the Key Pair
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyPairName** | **string** | Name of the Key Pair to be read | 
+**keyPairName** | **string** | Name of the Key Pair | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    keyPairName := "keyPairName_example" // string | Name of the Key Pair to be updated
+    keyPairName := "keyPairName_example" // string | Name of the Key Pair
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Key Pair
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**keyPairName** | **string** | Name of the Key Pair to be updated | 
+**keyPairName** | **string** | Name of the Key Pair | 
 
 ### Other Parameters
 

@@ -146,7 +146,7 @@ func (r ApiDeleteSensitiveAttributeRequest) Execute() (*http.Response, error) {
 DeleteSensitiveAttribute Delete a Sensitive Attribute
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param sensitiveAttributeName Name of the Sensitive Attribute to be deleted
+	@param sensitiveAttributeName Name of the Sensitive Attribute
 	@return ApiDeleteSensitiveAttributeRequest
 */
 func (a *SensitiveAttributeApiService) DeleteSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiDeleteSensitiveAttributeRequest {
@@ -236,7 +236,7 @@ func (r ApiGetSensitiveAttributeRequest) Execute() (*SensitiveAttributeResponse,
 GetSensitiveAttribute Returns a single Sensitive Attribute
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param sensitiveAttributeName Name of the Sensitive Attribute to be read
+	@param sensitiveAttributeName Name of the Sensitive Attribute
 	@return ApiGetSensitiveAttributeRequest
 */
 func (a *SensitiveAttributeApiService) GetSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiGetSensitiveAttributeRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateSensitiveAttributeRequest) Execute() (*SensitiveAttributeRespon
 UpdateSensitiveAttribute Update an existing Sensitive Attribute by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param sensitiveAttributeName Name of the Sensitive Attribute to be updated
+	@param sensitiveAttributeName Name of the Sensitive Attribute
 	@return ApiUpdateSensitiveAttributeRequest
 */
 func (a *SensitiveAttributeApiService) UpdateSensitiveAttribute(ctx context.Context, sensitiveAttributeName string) ApiUpdateSensitiveAttributeRequest {

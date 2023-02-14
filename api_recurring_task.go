@@ -146,7 +146,7 @@ func (r ApiDeleteRecurringTaskRequest) Execute() (*http.Response, error) {
 DeleteRecurringTask Delete a Recurring Task
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recurringTaskName Name of the Recurring Task to be deleted
+	@param recurringTaskName Name of the Recurring Task
 	@return ApiDeleteRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) DeleteRecurringTask(ctx context.Context, recurringTaskName string) ApiDeleteRecurringTaskRequest {
@@ -236,7 +236,7 @@ func (r ApiGetRecurringTaskRequest) Execute() (*AddRecurringTask200Response, *ht
 GetRecurringTask Returns a single Recurring Task
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recurringTaskName Name of the Recurring Task to be read
+	@param recurringTaskName Name of the Recurring Task
 	@return ApiGetRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) GetRecurringTask(ctx context.Context, recurringTaskName string) ApiGetRecurringTaskRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateRecurringTaskRequest) Execute() (*AddRecurringTask200Response, 
 UpdateRecurringTask Update an existing Recurring Task by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param recurringTaskName Name of the Recurring Task to be updated
+	@param recurringTaskName Name of the Recurring Task
 	@return ApiUpdateRecurringTaskRequest
 */
 func (a *RecurringTaskApiService) UpdateRecurringTask(ctx context.Context, recurringTaskName string) ApiUpdateRecurringTaskRequest {

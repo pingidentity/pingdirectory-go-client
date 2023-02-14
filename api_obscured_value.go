@@ -146,7 +146,7 @@ func (r ApiDeleteObscuredValueRequest) Execute() (*http.Response, error) {
 DeleteObscuredValue Delete a Obscured Value
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param obscuredValueName Name of the Obscured Value to be deleted
+	@param obscuredValueName Name of the Obscured Value
 	@return ApiDeleteObscuredValueRequest
 */
 func (a *ObscuredValueApiService) DeleteObscuredValue(ctx context.Context, obscuredValueName string) ApiDeleteObscuredValueRequest {
@@ -236,7 +236,7 @@ func (r ApiGetObscuredValueRequest) Execute() (*ObscuredValueResponse, *http.Res
 GetObscuredValue Returns a single Obscured Value
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param obscuredValueName Name of the Obscured Value to be read
+	@param obscuredValueName Name of the Obscured Value
 	@return ApiGetObscuredValueRequest
 */
 func (a *ObscuredValueApiService) GetObscuredValue(ctx context.Context, obscuredValueName string) ApiGetObscuredValueRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateObscuredValueRequest) Execute() (*ObscuredValueResponse, *http.
 UpdateObscuredValue Update an existing Obscured Value by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param obscuredValueName Name of the Obscured Value to be updated
+	@param obscuredValueName Name of the Obscured Value
 	@return ApiUpdateObscuredValueRequest
 */
 func (a *ObscuredValueApiService) UpdateObscuredValue(ctx context.Context, obscuredValueName string) ApiUpdateObscuredValueRequest {

@@ -36,7 +36,7 @@ func (r ApiGetLogFieldSyntaxRequest) Execute() (*GetLogFieldSyntax200Response, *
 GetLogFieldSyntax Returns a single Log Field Syntax
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldSyntaxName Name of the Log Field Syntax to be read
+	@param logFieldSyntaxName Name of the Log Field Syntax
 	@return ApiGetLogFieldSyntaxRequest
 */
 func (a *LogFieldSyntaxApiService) GetLogFieldSyntax(ctx context.Context, logFieldSyntaxName string) ApiGetLogFieldSyntaxRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateLogFieldSyntaxRequest) Execute() (*GetLogFieldSyntax200Response
 UpdateLogFieldSyntax Update an existing Log Field Syntax by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldSyntaxName Name of the Log Field Syntax to be updated
+	@param logFieldSyntaxName Name of the Log Field Syntax
 	@return ApiUpdateLogFieldSyntaxRequest
 */
 func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntax(ctx context.Context, logFieldSyntaxName string) ApiUpdateLogFieldSyntaxRequest {

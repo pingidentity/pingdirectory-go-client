@@ -146,7 +146,7 @@ func (r ApiDeleteClientConnectionPolicyRequest) Execute() (*http.Response, error
 DeleteClientConnectionPolicy Delete a Client Connection Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param clientConnectionPolicyName Name of the Client Connection Policy to be deleted
+	@param clientConnectionPolicyName Name of the Client Connection Policy
 	@return ApiDeleteClientConnectionPolicyRequest
 */
 func (a *ClientConnectionPolicyApiService) DeleteClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiDeleteClientConnectionPolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetClientConnectionPolicyRequest) Execute() (*ClientConnectionPolicyR
 GetClientConnectionPolicy Returns a single Client Connection Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param clientConnectionPolicyName Name of the Client Connection Policy to be read
+	@param clientConnectionPolicyName Name of the Client Connection Policy
 	@return ApiGetClientConnectionPolicyRequest
 */
 func (a *ClientConnectionPolicyApiService) GetClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiGetClientConnectionPolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateClientConnectionPolicyRequest) Execute() (*ClientConnectionPoli
 UpdateClientConnectionPolicy Update an existing Client Connection Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param clientConnectionPolicyName Name of the Client Connection Policy to be updated
+	@param clientConnectionPolicyName Name of the Client Connection Policy
 	@return ApiUpdateClientConnectionPolicyRequest
 */
 func (a *ClientConnectionPolicyApiService) UpdateClientConnectionPolicy(ctx context.Context, clientConnectionPolicyName string) ApiUpdateClientConnectionPolicyRequest {

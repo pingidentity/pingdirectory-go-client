@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    dnMapName := "dnMapName_example" // string | Name of the DN Map to be deleted
+    dnMapName := "dnMapName_example" // string | Name of the DN Map
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dnMapName** | **string** | Name of the DN Map to be deleted | 
+**dnMapName** | **string** | Name of the DN Map | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    dnMapName := "dnMapName_example" // string | Name of the DN Map to be read
+    dnMapName := "dnMapName_example" // string | Name of the DN Map
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dnMapName** | **string** | Name of the DN Map to be read | 
+**dnMapName** | **string** | Name of the DN Map | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    dnMapName := "dnMapName_example" // string | Name of the DN Map to be updated
+    dnMapName := "dnMapName_example" // string | Name of the DN Map
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing DN Map
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**dnMapName** | **string** | Name of the DN Map to be updated | 
+**dnMapName** | **string** | Name of the DN Map | 
 
 ### Other Parameters
 

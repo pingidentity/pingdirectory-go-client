@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    requestCriteriaName := "requestCriteriaName_example" // string | Name of the Request Criteria to be deleted
+    requestCriteriaName := "requestCriteriaName_example" // string | Name of the Request Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestCriteriaName** | **string** | Name of the Request Criteria to be deleted | 
+**requestCriteriaName** | **string** | Name of the Request Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    requestCriteriaName := "requestCriteriaName_example" // string | Name of the Request Criteria to be read
+    requestCriteriaName := "requestCriteriaName_example" // string | Name of the Request Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestCriteriaName** | **string** | Name of the Request Criteria to be read | 
+**requestCriteriaName** | **string** | Name of the Request Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    requestCriteriaName := "requestCriteriaName_example" // string | Name of the Request Criteria to be updated
+    requestCriteriaName := "requestCriteriaName_example" // string | Name of the Request Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Request Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**requestCriteriaName** | **string** | Name of the Request Criteria to be updated | 
+**requestCriteriaName** | **string** | Name of the Request Criteria | 
 
 ### Other Parameters
 

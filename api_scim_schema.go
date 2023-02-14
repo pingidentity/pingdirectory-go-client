@@ -146,7 +146,7 @@ func (r ApiDeleteScimSchemaRequest) Execute() (*http.Response, error) {
 DeleteScimSchema Delete a SCIM Schema
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param scimSchemaName Name of the SCIM Schema to be deleted
+	@param scimSchemaName Name of the SCIM Schema
 	@return ApiDeleteScimSchemaRequest
 */
 func (a *ScimSchemaApiService) DeleteScimSchema(ctx context.Context, scimSchemaName string) ApiDeleteScimSchemaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetScimSchemaRequest) Execute() (*ScimSchemaResponse, *http.Response,
 GetScimSchema Returns a single SCIM Schema
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param scimSchemaName Name of the SCIM Schema to be read
+	@param scimSchemaName Name of the SCIM Schema
 	@return ApiGetScimSchemaRequest
 */
 func (a *ScimSchemaApiService) GetScimSchema(ctx context.Context, scimSchemaName string) ApiGetScimSchemaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateScimSchemaRequest) Execute() (*ScimSchemaResponse, *http.Respon
 UpdateScimSchema Update an existing SCIM Schema by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param scimSchemaName Name of the SCIM Schema to be updated
+	@param scimSchemaName Name of the SCIM Schema
 	@return ApiUpdateScimSchemaRequest
 */
 func (a *ScimSchemaApiService) UpdateScimSchema(ctx context.Context, scimSchemaName string) ApiUpdateScimSchemaRequest {

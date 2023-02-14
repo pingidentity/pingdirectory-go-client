@@ -51,7 +51,7 @@ paths:
       summary: Delete a OTP Delivery Mechanism
       operationId: delete-otp-delivery-mechanism
       parameters:
-      - description: Name of the OTP Delivery Mechanism to be deleted
+      - description: Name of the OTP Delivery Mechanism
         explode: false
         in: path
         name: otp-delivery-mechanism-name
@@ -78,7 +78,7 @@ paths:
       summary: Returns a single OTP Delivery Mechanism
       operationId: get-otp-delivery-mechanism
       parameters:
-      - description: Name of the OTP Delivery Mechanism to be read
+      - description: Name of the OTP Delivery Mechanism
         explode: false
         in: path
         name: otp-delivery-mechanism-name
@@ -110,7 +110,7 @@ paths:
       summary: Update an existing OTP Delivery Mechanism by name
       operationId: update-otp-delivery-mechanism
       parameters:
-      - description: Name of the OTP Delivery Mechanism to be updated
+      - description: Name of the OTP Delivery Mechanism
         explode: false
         in: path
         name: otp-delivery-mechanism-name

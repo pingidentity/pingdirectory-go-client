@@ -146,7 +146,7 @@ func (r ApiDeleteGaugeDataSourceRequest) Execute() (*http.Response, error) {
 DeleteGaugeDataSource Delete a Gauge Data Source
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param gaugeDataSourceName Name of the Gauge Data Source to be deleted
+	@param gaugeDataSourceName Name of the Gauge Data Source
 	@return ApiDeleteGaugeDataSourceRequest
 */
 func (a *GaugeDataSourceApiService) DeleteGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiDeleteGaugeDataSourceRequest {
@@ -236,7 +236,7 @@ func (r ApiGetGaugeDataSourceRequest) Execute() (*AddGaugeDataSource200Response,
 GetGaugeDataSource Returns a single Gauge Data Source
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param gaugeDataSourceName Name of the Gauge Data Source to be read
+	@param gaugeDataSourceName Name of the Gauge Data Source
 	@return ApiGetGaugeDataSourceRequest
 */
 func (a *GaugeDataSourceApiService) GetGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiGetGaugeDataSourceRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateGaugeDataSourceRequest) Execute() (*AddGaugeDataSource200Respon
 UpdateGaugeDataSource Update an existing Gauge Data Source by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param gaugeDataSourceName Name of the Gauge Data Source to be updated
+	@param gaugeDataSourceName Name of the Gauge Data Source
 	@return ApiUpdateGaugeDataSourceRequest
 */
 func (a *GaugeDataSourceApiService) UpdateGaugeDataSource(ctx context.Context, gaugeDataSourceName string) ApiUpdateGaugeDataSourceRequest {

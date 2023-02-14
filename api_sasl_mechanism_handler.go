@@ -146,7 +146,7 @@ func (r ApiDeleteSaslMechanismHandlerRequest) Execute() (*http.Response, error) 
 DeleteSaslMechanismHandler Delete a SASL Mechanism Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param saslMechanismHandlerName Name of the SASL Mechanism Handler to be deleted
+	@param saslMechanismHandlerName Name of the SASL Mechanism Handler
 	@return ApiDeleteSaslMechanismHandlerRequest
 */
 func (a *SaslMechanismHandlerApiService) DeleteSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiDeleteSaslMechanismHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetSaslMechanismHandlerRequest) Execute() (*GetSaslMechanismHandler20
 GetSaslMechanismHandler Returns a single SASL Mechanism Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param saslMechanismHandlerName Name of the SASL Mechanism Handler to be read
+	@param saslMechanismHandlerName Name of the SASL Mechanism Handler
 	@return ApiGetSaslMechanismHandlerRequest
 */
 func (a *SaslMechanismHandlerApiService) GetSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiGetSaslMechanismHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateSaslMechanismHandlerRequest) Execute() (*GetSaslMechanismHandle
 UpdateSaslMechanismHandler Update an existing SASL Mechanism Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param saslMechanismHandlerName Name of the SASL Mechanism Handler to be updated
+	@param saslMechanismHandlerName Name of the SASL Mechanism Handler
 	@return ApiUpdateSaslMechanismHandlerRequest
 */
 func (a *SaslMechanismHandlerApiService) UpdateSaslMechanismHandler(ctx context.Context, saslMechanismHandlerName string) ApiUpdateSaslMechanismHandlerRequest {
