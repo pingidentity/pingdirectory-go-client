@@ -17,18 +17,22 @@ import (
 
 // AddExternalServer200Response - struct for AddExternalServer200Response
 type AddExternalServer200Response struct {
-	ActiveDirectoryExternalServerResponse        *ActiveDirectoryExternalServerResponse
-	AmazonAwsExternalServerResponse              *AmazonAwsExternalServerResponse
-	ConjurExternalServerResponse                 *ConjurExternalServerResponse
-	JdbcExternalServerResponse                   *JdbcExternalServerResponse
-	NokiaDsExternalServerResponse                *NokiaDsExternalServerResponse
-	NokiaProxyServerExternalServerResponse       *NokiaProxyServerExternalServerResponse
-	OpendjExternalServerResponse                 *OpendjExternalServerResponse
-	OracleUnifiedDirectoryExternalServerResponse *OracleUnifiedDirectoryExternalServerResponse
-	PingOneHttpExternalServerResponse            *PingOneHttpExternalServerResponse
-	SmtpExternalServerResponse                   *SmtpExternalServerResponse
-	SyslogExternalServerResponse                 *SyslogExternalServerResponse
-	VaultExternalServerResponse                  *VaultExternalServerResponse
+	ActiveDirectoryExternalServerResponse         *ActiveDirectoryExternalServerResponse
+	AmazonAwsExternalServerResponse               *AmazonAwsExternalServerResponse
+	ConjurExternalServerResponse                  *ConjurExternalServerResponse
+	HttpExternalServerResponse                    *HttpExternalServerResponse
+	JdbcExternalServerResponse                    *JdbcExternalServerResponse
+	LdapExternalServerResponse                    *LdapExternalServerResponse
+	NokiaDsExternalServerResponse                 *NokiaDsExternalServerResponse
+	NokiaProxyServerExternalServerResponse        *NokiaProxyServerExternalServerResponse
+	OpendjExternalServerResponse                  *OpendjExternalServerResponse
+	OracleUnifiedDirectoryExternalServerResponse  *OracleUnifiedDirectoryExternalServerResponse
+	PingIdentityDsExternalServerResponse          *PingIdentityDsExternalServerResponse
+	PingIdentityProxyServerExternalServerResponse *PingIdentityProxyServerExternalServerResponse
+	PingOneHttpExternalServerResponse             *PingOneHttpExternalServerResponse
+	SmtpExternalServerResponse                    *SmtpExternalServerResponse
+	SyslogExternalServerResponse                  *SyslogExternalServerResponse
+	VaultExternalServerResponse                   *VaultExternalServerResponse
 }
 
 // ActiveDirectoryExternalServerResponseAsAddExternalServer200Response is a convenience function that returns ActiveDirectoryExternalServerResponse wrapped in AddExternalServer200Response
@@ -52,10 +56,24 @@ func ConjurExternalServerResponseAsAddExternalServer200Response(v *ConjurExterna
 	}
 }
 
+// HttpExternalServerResponseAsAddExternalServer200Response is a convenience function that returns HttpExternalServerResponse wrapped in AddExternalServer200Response
+func HttpExternalServerResponseAsAddExternalServer200Response(v *HttpExternalServerResponse) AddExternalServer200Response {
+	return AddExternalServer200Response{
+		HttpExternalServerResponse: v,
+	}
+}
+
 // JdbcExternalServerResponseAsAddExternalServer200Response is a convenience function that returns JdbcExternalServerResponse wrapped in AddExternalServer200Response
 func JdbcExternalServerResponseAsAddExternalServer200Response(v *JdbcExternalServerResponse) AddExternalServer200Response {
 	return AddExternalServer200Response{
 		JdbcExternalServerResponse: v,
+	}
+}
+
+// LdapExternalServerResponseAsAddExternalServer200Response is a convenience function that returns LdapExternalServerResponse wrapped in AddExternalServer200Response
+func LdapExternalServerResponseAsAddExternalServer200Response(v *LdapExternalServerResponse) AddExternalServer200Response {
+	return AddExternalServer200Response{
+		LdapExternalServerResponse: v,
 	}
 }
 
@@ -84,6 +102,20 @@ func OpendjExternalServerResponseAsAddExternalServer200Response(v *OpendjExterna
 func OracleUnifiedDirectoryExternalServerResponseAsAddExternalServer200Response(v *OracleUnifiedDirectoryExternalServerResponse) AddExternalServer200Response {
 	return AddExternalServer200Response{
 		OracleUnifiedDirectoryExternalServerResponse: v,
+	}
+}
+
+// PingIdentityDsExternalServerResponseAsAddExternalServer200Response is a convenience function that returns PingIdentityDsExternalServerResponse wrapped in AddExternalServer200Response
+func PingIdentityDsExternalServerResponseAsAddExternalServer200Response(v *PingIdentityDsExternalServerResponse) AddExternalServer200Response {
+	return AddExternalServer200Response{
+		PingIdentityDsExternalServerResponse: v,
+	}
+}
+
+// PingIdentityProxyServerExternalServerResponseAsAddExternalServer200Response is a convenience function that returns PingIdentityProxyServerExternalServerResponse wrapped in AddExternalServer200Response
+func PingIdentityProxyServerExternalServerResponseAsAddExternalServer200Response(v *PingIdentityProxyServerExternalServerResponse) AddExternalServer200Response {
+	return AddExternalServer200Response{
+		PingIdentityProxyServerExternalServerResponse: v,
 	}
 }
 
@@ -158,6 +190,19 @@ func (dst *AddExternalServer200Response) UnmarshalJSON(data []byte) error {
 		dst.ConjurExternalServerResponse = nil
 	}
 
+	// try to unmarshal data into HttpExternalServerResponse
+	err = newStrictDecoder(data).Decode(&dst.HttpExternalServerResponse)
+	if err == nil {
+		jsonHttpExternalServerResponse, _ := json.Marshal(dst.HttpExternalServerResponse)
+		if string(jsonHttpExternalServerResponse) == "{}" { // empty struct
+			dst.HttpExternalServerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.HttpExternalServerResponse = nil
+	}
+
 	// try to unmarshal data into JdbcExternalServerResponse
 	err = newStrictDecoder(data).Decode(&dst.JdbcExternalServerResponse)
 	if err == nil {
@@ -169,6 +214,19 @@ func (dst *AddExternalServer200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.JdbcExternalServerResponse = nil
+	}
+
+	// try to unmarshal data into LdapExternalServerResponse
+	err = newStrictDecoder(data).Decode(&dst.LdapExternalServerResponse)
+	if err == nil {
+		jsonLdapExternalServerResponse, _ := json.Marshal(dst.LdapExternalServerResponse)
+		if string(jsonLdapExternalServerResponse) == "{}" { // empty struct
+			dst.LdapExternalServerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.LdapExternalServerResponse = nil
 	}
 
 	// try to unmarshal data into NokiaDsExternalServerResponse
@@ -221,6 +279,32 @@ func (dst *AddExternalServer200Response) UnmarshalJSON(data []byte) error {
 		}
 	} else {
 		dst.OracleUnifiedDirectoryExternalServerResponse = nil
+	}
+
+	// try to unmarshal data into PingIdentityDsExternalServerResponse
+	err = newStrictDecoder(data).Decode(&dst.PingIdentityDsExternalServerResponse)
+	if err == nil {
+		jsonPingIdentityDsExternalServerResponse, _ := json.Marshal(dst.PingIdentityDsExternalServerResponse)
+		if string(jsonPingIdentityDsExternalServerResponse) == "{}" { // empty struct
+			dst.PingIdentityDsExternalServerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.PingIdentityDsExternalServerResponse = nil
+	}
+
+	// try to unmarshal data into PingIdentityProxyServerExternalServerResponse
+	err = newStrictDecoder(data).Decode(&dst.PingIdentityProxyServerExternalServerResponse)
+	if err == nil {
+		jsonPingIdentityProxyServerExternalServerResponse, _ := json.Marshal(dst.PingIdentityProxyServerExternalServerResponse)
+		if string(jsonPingIdentityProxyServerExternalServerResponse) == "{}" { // empty struct
+			dst.PingIdentityProxyServerExternalServerResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.PingIdentityProxyServerExternalServerResponse = nil
 	}
 
 	// try to unmarshal data into PingOneHttpExternalServerResponse
@@ -280,11 +364,15 @@ func (dst *AddExternalServer200Response) UnmarshalJSON(data []byte) error {
 		dst.ActiveDirectoryExternalServerResponse = nil
 		dst.AmazonAwsExternalServerResponse = nil
 		dst.ConjurExternalServerResponse = nil
+		dst.HttpExternalServerResponse = nil
 		dst.JdbcExternalServerResponse = nil
+		dst.LdapExternalServerResponse = nil
 		dst.NokiaDsExternalServerResponse = nil
 		dst.NokiaProxyServerExternalServerResponse = nil
 		dst.OpendjExternalServerResponse = nil
 		dst.OracleUnifiedDirectoryExternalServerResponse = nil
+		dst.PingIdentityDsExternalServerResponse = nil
+		dst.PingIdentityProxyServerExternalServerResponse = nil
 		dst.PingOneHttpExternalServerResponse = nil
 		dst.SmtpExternalServerResponse = nil
 		dst.SyslogExternalServerResponse = nil
@@ -312,8 +400,16 @@ func (src AddExternalServer200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.ConjurExternalServerResponse)
 	}
 
+	if src.HttpExternalServerResponse != nil {
+		return json.Marshal(&src.HttpExternalServerResponse)
+	}
+
 	if src.JdbcExternalServerResponse != nil {
 		return json.Marshal(&src.JdbcExternalServerResponse)
+	}
+
+	if src.LdapExternalServerResponse != nil {
+		return json.Marshal(&src.LdapExternalServerResponse)
 	}
 
 	if src.NokiaDsExternalServerResponse != nil {
@@ -330,6 +426,14 @@ func (src AddExternalServer200Response) MarshalJSON() ([]byte, error) {
 
 	if src.OracleUnifiedDirectoryExternalServerResponse != nil {
 		return json.Marshal(&src.OracleUnifiedDirectoryExternalServerResponse)
+	}
+
+	if src.PingIdentityDsExternalServerResponse != nil {
+		return json.Marshal(&src.PingIdentityDsExternalServerResponse)
+	}
+
+	if src.PingIdentityProxyServerExternalServerResponse != nil {
+		return json.Marshal(&src.PingIdentityProxyServerExternalServerResponse)
 	}
 
 	if src.PingOneHttpExternalServerResponse != nil {
@@ -368,8 +472,16 @@ func (obj *AddExternalServer200Response) GetActualInstance() interface{} {
 		return obj.ConjurExternalServerResponse
 	}
 
+	if obj.HttpExternalServerResponse != nil {
+		return obj.HttpExternalServerResponse
+	}
+
 	if obj.JdbcExternalServerResponse != nil {
 		return obj.JdbcExternalServerResponse
+	}
+
+	if obj.LdapExternalServerResponse != nil {
+		return obj.LdapExternalServerResponse
 	}
 
 	if obj.NokiaDsExternalServerResponse != nil {
@@ -386,6 +498,14 @@ func (obj *AddExternalServer200Response) GetActualInstance() interface{} {
 
 	if obj.OracleUnifiedDirectoryExternalServerResponse != nil {
 		return obj.OracleUnifiedDirectoryExternalServerResponse
+	}
+
+	if obj.PingIdentityDsExternalServerResponse != nil {
+		return obj.PingIdentityDsExternalServerResponse
+	}
+
+	if obj.PingIdentityProxyServerExternalServerResponse != nil {
+		return obj.PingIdentityProxyServerExternalServerResponse
 	}
 
 	if obj.PingOneHttpExternalServerResponse != nil {

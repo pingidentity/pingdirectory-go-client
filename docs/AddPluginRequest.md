@@ -75,6 +75,13 @@ Name | Type | Description | Notes
 **EntryCacheInfo** | Pointer to [**EnumpluginEntryCacheInfoProp**](EnumpluginEntryCacheInfoProp.md) |  | [optional] 
 **HostInfo** | Pointer to [**[]EnumpluginHostInfoProp**](EnumpluginHostInfoProp.md) |  | [optional] 
 **IncludedLDAPApplication** | Pointer to **[]string** | If statistics should not be included for all applications, this property names the subset of applications that should be included. | [optional] 
+**DatetimeAttribute** | **string** | The LDAP attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted. | 
+**DatetimeJSONField** | Pointer to **string** | The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted. | [optional] 
+**DatetimeFormat** | [**EnumpluginDatetimeFormatProp**](EnumpluginDatetimeFormatProp.md) |  | 
+**CustomDatetimeFormat** | Pointer to **string** | When the datetime-format property is configured with a value of \&quot;custom\&quot;, this specifies the format (using a string compatible with the java.text.SimpleDateFormat class) that will be used to search for expired data. | [optional] 
+**CustomTimezone** | Pointer to **string** | Specifies the time zone to use when generating a date string using the configured custom-datetime-format value. The provided value must be accepted by java.util.TimeZone.getTimeZone. | [optional] 
+**ExpirationOffset** | **string** | Sessions whose last activity timestamp is older than this offset will be removed. | 
+**PurgeBehavior** | Pointer to [**EnumpluginPurgeBehaviorProp**](EnumpluginPurgeBehaviorProp.md) |  | [optional] 
 **NumMostExpensivePhasesShown** | **int32** | This controls how many of the most expensive phases are included per operation type in the monitor entry. | 
 **ExtensionClass** | **string** | The fully-qualified name of the Java class providing the logic for the Third Party Plugin. | 
 **ExtensionArgument** | Pointer to **[]string** | The set of arguments used to customize the behavior for the Third Party Plugin. Each configuration property should be given in the form &#39;name&#x3D;value&#39;. | [optional] 
@@ -100,7 +107,6 @@ Name | Type | Description | Notes
 **SessionTimeout** | Pointer to **string** | Specifies the maximum amount of time to wait for a session to the master agent to be established. | [optional] 
 **ConnectRetryMaxWait** | Pointer to **string** | The maximum amount of time to wait between attempts to establish a connection to the master agent. | [optional] 
 **PingInterval** | Pointer to **string** | The amount of time between consecutive pings sent by the sub-agent on its connection to the master agent. A value of zero disables the sending of pings by the sub-agent. | [optional] 
-**ExpirationOffset** | **string** | Sessions whose last activity timestamp is older than this offset will be removed. | 
 **ValuePattern** | **[]string** | Specifies a pattern for constructing the values to use for the target attribute type. | 
 **MultipleValuePatternBehavior** | Pointer to [**EnumpluginMultipleValuePatternBehaviorProp**](EnumpluginMultipleValuePatternBehaviorProp.md) |  | [optional] 
 **MultiValuedAttributeBehavior** | Pointer to [**EnumpluginMultiValuedAttributeBehaviorProp**](EnumpluginMultiValuedAttributeBehaviorProp.md) |  | [optional] 
@@ -129,7 +135,7 @@ Name | Type | Description | Notes
 
 ### NewAddPluginRequest
 
-`func NewAddPluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int32, baseDN []string, filterPrefix string, enabled bool, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int32, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, numMostExpensivePhasesShown int32, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int32, maxConnections int32, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int32, expirationOffset string, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPluginRequest`
+`func NewAddPluginRequest(pluginName string, schemas []EnumuniqueAttributePluginSchemaUrn, pluginType []EnumpluginPluginTypeProp, numThreads int32, baseDN []string, filterPrefix string, enabled bool, filter string, attributeType []string, pollingInterval string, maxUpdatesPerSecond int32, numDeleteThreads int32, invokeGCTimeUtc []string, apiURL string, authURL string, oAuthClientID string, environmentID string, tryLocalBind bool, overrideLocalPassword bool, updateLocalPassword bool, userMappingLocalAttribute []string, userMappingRemoteJSONField []string, scope EnumpluginScopeProp, outputFile string, logInterval string, collectionInterval string, suppressIfIdle bool, linesBetweenHeader int32, histogramFormat EnumpluginHistogramFormatProp, logFile string, logFilePermissions string, rotationPolicy []string, retentionPolicy []string, datetimeAttribute string, datetimeFormat EnumpluginDatetimeFormatProp, expirationOffset string, numMostExpensivePhasesShown int32, extensionClass string, server []string, serverAccessMode EnumpluginServerAccessModeProp, initialConnections int32, maxConnections int32, sourceDN string, targetDN string, enableAttributeMapping bool, enableControlMapping bool, alwaysMapResponses bool, referralBaseURL []string, agentxAddress string, agentxPort int32, valuePattern []string, sourceAttribute string, targetAttribute string, delay string, scriptClass string, passThroughAuthenticationHandler string, type_ []string, ) *AddPluginRequest`
 
 NewAddPluginRequest instantiates a new AddPluginRequest object
 This constructor will assign default values to properties that have it defined,
@@ -1754,6 +1760,166 @@ SetIncludedLDAPApplication sets IncludedLDAPApplication field to given value.
 
 HasIncludedLDAPApplication returns a boolean if a field has been set.
 
+### GetDatetimeAttribute
+
+`func (o *AddPluginRequest) GetDatetimeAttribute() string`
+
+GetDatetimeAttribute returns the DatetimeAttribute field if non-nil, zero value otherwise.
+
+### GetDatetimeAttributeOk
+
+`func (o *AddPluginRequest) GetDatetimeAttributeOk() (*string, bool)`
+
+GetDatetimeAttributeOk returns a tuple with the DatetimeAttribute field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatetimeAttribute
+
+`func (o *AddPluginRequest) SetDatetimeAttribute(v string)`
+
+SetDatetimeAttribute sets DatetimeAttribute field to given value.
+
+
+### GetDatetimeJSONField
+
+`func (o *AddPluginRequest) GetDatetimeJSONField() string`
+
+GetDatetimeJSONField returns the DatetimeJSONField field if non-nil, zero value otherwise.
+
+### GetDatetimeJSONFieldOk
+
+`func (o *AddPluginRequest) GetDatetimeJSONFieldOk() (*string, bool)`
+
+GetDatetimeJSONFieldOk returns a tuple with the DatetimeJSONField field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatetimeJSONField
+
+`func (o *AddPluginRequest) SetDatetimeJSONField(v string)`
+
+SetDatetimeJSONField sets DatetimeJSONField field to given value.
+
+### HasDatetimeJSONField
+
+`func (o *AddPluginRequest) HasDatetimeJSONField() bool`
+
+HasDatetimeJSONField returns a boolean if a field has been set.
+
+### GetDatetimeFormat
+
+`func (o *AddPluginRequest) GetDatetimeFormat() EnumpluginDatetimeFormatProp`
+
+GetDatetimeFormat returns the DatetimeFormat field if non-nil, zero value otherwise.
+
+### GetDatetimeFormatOk
+
+`func (o *AddPluginRequest) GetDatetimeFormatOk() (*EnumpluginDatetimeFormatProp, bool)`
+
+GetDatetimeFormatOk returns a tuple with the DatetimeFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatetimeFormat
+
+`func (o *AddPluginRequest) SetDatetimeFormat(v EnumpluginDatetimeFormatProp)`
+
+SetDatetimeFormat sets DatetimeFormat field to given value.
+
+
+### GetCustomDatetimeFormat
+
+`func (o *AddPluginRequest) GetCustomDatetimeFormat() string`
+
+GetCustomDatetimeFormat returns the CustomDatetimeFormat field if non-nil, zero value otherwise.
+
+### GetCustomDatetimeFormatOk
+
+`func (o *AddPluginRequest) GetCustomDatetimeFormatOk() (*string, bool)`
+
+GetCustomDatetimeFormatOk returns a tuple with the CustomDatetimeFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomDatetimeFormat
+
+`func (o *AddPluginRequest) SetCustomDatetimeFormat(v string)`
+
+SetCustomDatetimeFormat sets CustomDatetimeFormat field to given value.
+
+### HasCustomDatetimeFormat
+
+`func (o *AddPluginRequest) HasCustomDatetimeFormat() bool`
+
+HasCustomDatetimeFormat returns a boolean if a field has been set.
+
+### GetCustomTimezone
+
+`func (o *AddPluginRequest) GetCustomTimezone() string`
+
+GetCustomTimezone returns the CustomTimezone field if non-nil, zero value otherwise.
+
+### GetCustomTimezoneOk
+
+`func (o *AddPluginRequest) GetCustomTimezoneOk() (*string, bool)`
+
+GetCustomTimezoneOk returns a tuple with the CustomTimezone field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomTimezone
+
+`func (o *AddPluginRequest) SetCustomTimezone(v string)`
+
+SetCustomTimezone sets CustomTimezone field to given value.
+
+### HasCustomTimezone
+
+`func (o *AddPluginRequest) HasCustomTimezone() bool`
+
+HasCustomTimezone returns a boolean if a field has been set.
+
+### GetExpirationOffset
+
+`func (o *AddPluginRequest) GetExpirationOffset() string`
+
+GetExpirationOffset returns the ExpirationOffset field if non-nil, zero value otherwise.
+
+### GetExpirationOffsetOk
+
+`func (o *AddPluginRequest) GetExpirationOffsetOk() (*string, bool)`
+
+GetExpirationOffsetOk returns a tuple with the ExpirationOffset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpirationOffset
+
+`func (o *AddPluginRequest) SetExpirationOffset(v string)`
+
+SetExpirationOffset sets ExpirationOffset field to given value.
+
+
+### GetPurgeBehavior
+
+`func (o *AddPluginRequest) GetPurgeBehavior() EnumpluginPurgeBehaviorProp`
+
+GetPurgeBehavior returns the PurgeBehavior field if non-nil, zero value otherwise.
+
+### GetPurgeBehaviorOk
+
+`func (o *AddPluginRequest) GetPurgeBehaviorOk() (*EnumpluginPurgeBehaviorProp, bool)`
+
+GetPurgeBehaviorOk returns a tuple with the PurgeBehavior field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPurgeBehavior
+
+`func (o *AddPluginRequest) SetPurgeBehavior(v EnumpluginPurgeBehaviorProp)`
+
+SetPurgeBehavior sets PurgeBehavior field to given value.
+
+### HasPurgeBehavior
+
+`func (o *AddPluginRequest) HasPurgeBehavior() bool`
+
+HasPurgeBehavior returns a boolean if a field has been set.
+
 ### GetNumMostExpensivePhasesShown
 
 `func (o *AddPluginRequest) GetNumMostExpensivePhasesShown() int32`
@@ -2308,26 +2474,6 @@ SetPingInterval sets PingInterval field to given value.
 `func (o *AddPluginRequest) HasPingInterval() bool`
 
 HasPingInterval returns a boolean if a field has been set.
-
-### GetExpirationOffset
-
-`func (o *AddPluginRequest) GetExpirationOffset() string`
-
-GetExpirationOffset returns the ExpirationOffset field if non-nil, zero value otherwise.
-
-### GetExpirationOffsetOk
-
-`func (o *AddPluginRequest) GetExpirationOffsetOk() (*string, bool)`
-
-GetExpirationOffsetOk returns a tuple with the ExpirationOffset field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpirationOffset
-
-`func (o *AddPluginRequest) SetExpirationOffset(v string)`
-
-SetExpirationOffset sets ExpirationOffset field to given value.
-
 
 ### GetValuePattern
 

@@ -23,6 +23,7 @@ type GetBackend200Response struct {
 	ChangelogBackendResponse          *ChangelogBackendResponse
 	ConfigFileHandlerBackendResponse  *ConfigFileHandlerBackendResponse
 	EncryptionSettingsBackendResponse *EncryptionSettingsBackendResponse
+	LdifBackendResponse               *LdifBackendResponse
 	LocalDbBackendResponse            *LocalDbBackendResponse
 	MetricsBackendResponse            *MetricsBackendResponse
 	MonitorBackendResponse            *MonitorBackendResponse
@@ -70,6 +71,13 @@ func ConfigFileHandlerBackendResponseAsGetBackend200Response(v *ConfigFileHandle
 func EncryptionSettingsBackendResponseAsGetBackend200Response(v *EncryptionSettingsBackendResponse) GetBackend200Response {
 	return GetBackend200Response{
 		EncryptionSettingsBackendResponse: v,
+	}
+}
+
+// LdifBackendResponseAsGetBackend200Response is a convenience function that returns LdifBackendResponse wrapped in GetBackend200Response
+func LdifBackendResponseAsGetBackend200Response(v *LdifBackendResponse) GetBackend200Response {
+	return GetBackend200Response{
+		LdifBackendResponse: v,
 	}
 }
 
@@ -197,6 +205,19 @@ func (dst *GetBackend200Response) UnmarshalJSON(data []byte) error {
 		dst.EncryptionSettingsBackendResponse = nil
 	}
 
+	// try to unmarshal data into LdifBackendResponse
+	err = newStrictDecoder(data).Decode(&dst.LdifBackendResponse)
+	if err == nil {
+		jsonLdifBackendResponse, _ := json.Marshal(dst.LdifBackendResponse)
+		if string(jsonLdifBackendResponse) == "{}" { // empty struct
+			dst.LdifBackendResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.LdifBackendResponse = nil
+	}
+
 	// try to unmarshal data into LocalDbBackendResponse
 	err = newStrictDecoder(data).Decode(&dst.LocalDbBackendResponse)
 	if err == nil {
@@ -283,6 +304,7 @@ func (dst *GetBackend200Response) UnmarshalJSON(data []byte) error {
 		dst.ChangelogBackendResponse = nil
 		dst.ConfigFileHandlerBackendResponse = nil
 		dst.EncryptionSettingsBackendResponse = nil
+		dst.LdifBackendResponse = nil
 		dst.LocalDbBackendResponse = nil
 		dst.MetricsBackendResponse = nil
 		dst.MonitorBackendResponse = nil
@@ -322,6 +344,10 @@ func (src GetBackend200Response) MarshalJSON() ([]byte, error) {
 
 	if src.EncryptionSettingsBackendResponse != nil {
 		return json.Marshal(&src.EncryptionSettingsBackendResponse)
+	}
+
+	if src.LdifBackendResponse != nil {
+		return json.Marshal(&src.LdifBackendResponse)
 	}
 
 	if src.LocalDbBackendResponse != nil {
@@ -378,6 +404,10 @@ func (obj *GetBackend200Response) GetActualInstance() interface{} {
 
 	if obj.EncryptionSettingsBackendResponse != nil {
 		return obj.EncryptionSettingsBackendResponse
+	}
+
+	if obj.LdifBackendResponse != nil {
+		return obj.LdifBackendResponse
 	}
 
 	if obj.LocalDbBackendResponse != nil {

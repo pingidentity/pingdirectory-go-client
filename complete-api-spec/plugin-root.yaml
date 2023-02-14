@@ -77,6 +77,7 @@ paths:
               - $ref: '#/components/schemas/add-ping-one-pass-through-authentication-plugin-request'
               - $ref: '#/components/schemas/add-search-shutdown-plugin-request'
               - $ref: '#/components/schemas/add-periodic-stats-logger-plugin-request'
+              - $ref: '#/components/schemas/add-purge-expired-data-plugin-request'
               - $ref: '#/components/schemas/add-sub-operation-timing-plugin-request'
               - $ref: '#/components/schemas/add-third-party-plugin-request'
               - $ref: '#/components/schemas/add-pass-through-authentication-plugin-request'
@@ -110,6 +111,7 @@ paths:
                 - $ref: '#/components/schemas/ping-one-pass-through-authentication-plugin-response'
                 - $ref: '#/components/schemas/search-shutdown-plugin-response'
                 - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+                - $ref: '#/components/schemas/purge-expired-data-plugin-response'
                 - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
                 - $ref: '#/components/schemas/third-party-plugin-response'
                 - $ref: '#/components/schemas/pass-through-authentication-plugin-response'
@@ -197,6 +199,7 @@ paths:
                 - $ref: '#/components/schemas/processing-time-histogram-plugin-response'
                 - $ref: '#/components/schemas/search-shutdown-plugin-response'
                 - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+                - $ref: '#/components/schemas/purge-expired-data-plugin-response'
                 - $ref: '#/components/schemas/change-subscription-notification-plugin-response'
                 - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
                 - $ref: '#/components/schemas/third-party-plugin-response'
@@ -268,6 +271,7 @@ paths:
                 - $ref: '#/components/schemas/processing-time-histogram-plugin-response'
                 - $ref: '#/components/schemas/search-shutdown-plugin-response'
                 - $ref: '#/components/schemas/periodic-stats-logger-plugin-response'
+                - $ref: '#/components/schemas/purge-expired-data-plugin-response'
                 - $ref: '#/components/schemas/change-subscription-notification-plugin-response'
                 - $ref: '#/components/schemas/sub-operation-timing-plugin-response'
                 - $ref: '#/components/schemas/third-party-plugin-response'
@@ -1602,6 +1606,105 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:plugin:periodic-stats-logger"
+    add-purge-expired-data-plugin-request:
+      allOf:
+      - type: object
+        properties:
+          pluginName:
+            description: Name of the new Plugin
+            type: string
+        required:
+        - pluginName
+      - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+    purge-expired-data-plugin-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Plugin
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/purge-expired-data-plugin-shared'
+    purge-expired-data-plugin-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumpurge-expired-data-pluginSchemaUrn'
+        datetimeAttribute:
+          type: string
+          description: >-
+              The LDAP attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.
+        datetimeJSONField:
+          type: string
+          description: >-
+              The top-level JSON field within the configured datetime-attribute that determines when data should be deleted. This could store the expiration time, or it could store the creation time and the expiration-offset property specifies the duration before data is deleted.
+        datetimeFormat:
+          $ref: '#/components/schemas/Enumplugin-datetimeFormatProp'
+        customDatetimeFormat:
+          type: string
+          description: >-
+              When the datetime-format property is configured with a value of "custom", this specifies the format (using a string compatible with the java.text.SimpleDateFormat class) that will be used to search for expired data.
+        customTimezone:
+          type: string
+          description: >-
+              Specifies the time zone to use when generating a date string using the configured custom-datetime-format value. The provided value must be accepted by java.util.TimeZone.getTimeZone.
+        expirationOffset:
+          type: string
+          description: >-
+              The duration to wait after the value specified in datetime-attribute (and optionally datetime-json-field) before purging the data.
+        purgeBehavior:
+          $ref: '#/components/schemas/Enumplugin-purgeBehaviorProp'
+        baseDN:
+          type: string
+          description: >-
+              Only entries located within the subtree specified by this base DN are eligible for purging.
+        filter:
+          type: string
+          description: >-
+              Only entries that match this LDAP filter will be eligible for having data purged.
+        pollingInterval:
+          type: string
+          description: >-
+              This specifies how often the plugin should check for expired data. It also controls the offset of peer servers (see the peer-server-priority-index for more information).
+        maxUpdatesPerSecond:
+          type: integer
+          description: >-
+              This setting smooths out the performance impact on the server by throttling the purging to the specified maximum number of updates per second. To avoid a large backlog, this value should be set comfortably above the average rate that expired data is generated. When purge-behavior is set to subtree-delete-entries, then deletion of the entire subtree is considered a single update for the purposes of throttling.
+        peerServerPriorityIndex:
+          type: integer
+          description: >-
+              In a replicated environment, this determines the order in which peer servers should attempt to purge data.
+        numDeleteThreads:
+          type: integer
+          description: >-
+              The number of threads used to delete expired entries.
+        description:
+          type: string
+          description: >-
+              A description for this Plugin
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether the plug-in is enabled for use.
+      required:
+      - schemas
+      - datetimeAttribute
+      - datetimeFormat
+      - expirationOffset
+      - pollingInterval
+      - maxUpdatesPerSecond
+      - numDeleteThreads
+      - enabled
+    Enumpurge-expired-data-pluginSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:plugin:purge-expired-data"
     change-subscription-notification-plugin-response:
       allOf:
       - $ref: '#/components/schemas/meta'
@@ -3456,6 +3559,14 @@ components:
       - "memory-utilization"
       description: >-
           Specifies whether statistics related to resource utilization such as JVM memory.
+    Enumplugin-purgeBehaviorProp:
+      type: string
+      enum:
+      - "delete-entries"
+      - "subtree-delete-entries"
+      - "delete-json-attribute-values"
+      description: >-
+          Specifies whether to delete expired entries or attribute values. By default entries are deleted.
     Enumplugin-serverAccessModeProp:
       type: string
       enum:
@@ -3522,6 +3633,14 @@ components:
       - "extended"
       description: >-
           Specifies the level of detail to include for each entry cache.
+    Enumplugin-datetimeFormatProp:
+      type: string
+      enum:
+      - "generalized-time"
+      - "java-system-time-millis"
+      - "custom"
+      description: >-
+          Specifies the format of the datetime stored within the entry that determines when data should be purged.
     Enumplugin-attributeTypeProp:
       type: string
       enum:

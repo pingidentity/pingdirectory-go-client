@@ -10,7 +10,65 @@ tags:
 - description: Access web-application-extensions
   name: web-application-extension
 paths:
+  /web-application-extensions:
+    post:
+      summary: Add a new Web Application Extension to the config
+      operationId: add-web-application-extension
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-generic-web-application-extension-request'
+        description: Create a new Web Application Extension in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/generic-web-application-extension-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Web Application Extension already exists
+      security:
+      - basicAuth: []
+      tags:
+      - web-application-extension
   /web-application-extensions/{web-application-extension-name}:
+    delete:
+      summary: Delete a Web Application Extension
+      operationId: delete-web-application-extension
+      parameters:
+      - description: Name of the Web Application Extension
+        explode: false
+        in: path
+        name: web-application-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Web Application Extension does not exist
+        "409":
+          description: The Web Application Extension cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - web-application-extension
     get:
       summary: Returns a single Web Application Extension
       operationId: get-web-application-extension
@@ -29,7 +87,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/console-web-application-extension-response'
+                oneOf:
+                - $ref: '#/components/schemas/console-web-application-extension-response'
+                - $ref: '#/components/schemas/generic-web-application-extension-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -65,7 +125,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/console-web-application-extension-response'
+                oneOf:
+                - $ref: '#/components/schemas/console-web-application-extension-response'
+                - $ref: '#/components/schemas/generic-web-application-extension-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -91,6 +153,9 @@ components:
             maxItems: 1
             items:
               $ref: '#/components/schemas/Enumconsole-web-application-extensionSchemaUrn'
+          id:
+            description: Name of the Web Application Extension
+            type: string
           ssoEnabled:
             type: boolean
             description: >-
@@ -185,11 +250,80 @@ components:
             description: >-
                 Specifies an initialization parameter to pass into the web application during startup.
         required:
+        - schemas
         - baseContextPath
+        - id
     Enumconsole-web-application-extensionSchemaUrn:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:web-application-extension:console"
+    add-generic-web-application-extension-request:
+      allOf:
+      - type: object
+        properties:
+          extensionName:
+            description: Name of the new Web Application Extension
+            type: string
+        required:
+        - extensionName
+      - $ref: '#/components/schemas/generic-web-application-extension-shared'
+    generic-web-application-extension-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Web Application Extension
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/generic-web-application-extension-shared'
+    generic-web-application-extension-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumgeneric-web-application-extensionSchemaUrn'
+        description:
+          type: string
+          description: >-
+              A description for this Web Application Extension
+        baseContextPath:
+          type: string
+          description: >-
+              Specifies the base context path that should be used by HTTP clients to reference content. The value must start with a forward slash and at least one additional character and must represent a valid HTTP context path.
+        warFile:
+          type: string
+          description: >-
+              Specifies the path to a standard web application archive (WAR) file.
+        documentRootDirectory:
+          type: string
+          description: >-
+              Specifies the path to the directory on the local filesystem containing the files to be served by this Web Application Extension. The path must exist, and it must be a directory.
+        deploymentDescriptorFile:
+          type: string
+          description: >-
+              Specifies the path to the deployment descriptor file when used with document-root-directory.
+        temporaryDirectory:
+          type: string
+          description: >-
+              Specifies the path to the directory that may be used to store temporary files such as extracted WAR files and compiled JSP files.
+        initParameter:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies an initialization parameter to pass into the web application during startup.
+      required:
+      - schemas
+      - baseContextPath
+    Enumgeneric-web-application-extensionSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:web-application-extension:generic"
     Enumweb-application-extension-complexityProp:
       type: string
       enum:

@@ -34,6 +34,7 @@ paths:
                 - $ref: '#/components/schemas/approximate-matching-rule-response'
                 - $ref: '#/components/schemas/equality-matching-rule-response'
                 - $ref: '#/components/schemas/substring-matching-rule-response'
+                - $ref: '#/components/schemas/generic-matching-rule-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -74,6 +75,7 @@ paths:
                 - $ref: '#/components/schemas/approximate-matching-rule-response'
                 - $ref: '#/components/schemas/equality-matching-rule-response'
                 - $ref: '#/components/schemas/substring-matching-rule-response'
+                - $ref: '#/components/schemas/generic-matching-rule-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -192,6 +194,32 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:matching-rule:substring"
+    generic-matching-rule-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumgeneric-matching-ruleSchemaUrn'
+          id:
+            description: Name of the Matching Rule
+            type: string
+          enabled:
+            type: boolean
+            description: >-
+                Indicates whether the Matching Rule is enabled for use.
+        required:
+        - schemas
+        - enabled
+        - id
+    Enumgeneric-matching-ruleSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:matching-rule:generic"
     updateRequest:
       type: object
       properties:

@@ -18,6 +18,7 @@ import (
 // GetLogFieldSyntax200Response - struct for GetLogFieldSyntax200Response
 type GetLogFieldSyntax200Response struct {
 	AttributeBasedLogFieldSyntaxResponse *AttributeBasedLogFieldSyntaxResponse
+	GenericLogFieldSyntaxResponse        *GenericLogFieldSyntaxResponse
 	JsonLogFieldSyntaxResponse           *JsonLogFieldSyntaxResponse
 }
 
@@ -25,6 +26,13 @@ type GetLogFieldSyntax200Response struct {
 func AttributeBasedLogFieldSyntaxResponseAsGetLogFieldSyntax200Response(v *AttributeBasedLogFieldSyntaxResponse) GetLogFieldSyntax200Response {
 	return GetLogFieldSyntax200Response{
 		AttributeBasedLogFieldSyntaxResponse: v,
+	}
+}
+
+// GenericLogFieldSyntaxResponseAsGetLogFieldSyntax200Response is a convenience function that returns GenericLogFieldSyntaxResponse wrapped in GetLogFieldSyntax200Response
+func GenericLogFieldSyntaxResponseAsGetLogFieldSyntax200Response(v *GenericLogFieldSyntaxResponse) GetLogFieldSyntax200Response {
+	return GetLogFieldSyntax200Response{
+		GenericLogFieldSyntaxResponse: v,
 	}
 }
 
@@ -52,6 +60,19 @@ func (dst *GetLogFieldSyntax200Response) UnmarshalJSON(data []byte) error {
 		dst.AttributeBasedLogFieldSyntaxResponse = nil
 	}
 
+	// try to unmarshal data into GenericLogFieldSyntaxResponse
+	err = newStrictDecoder(data).Decode(&dst.GenericLogFieldSyntaxResponse)
+	if err == nil {
+		jsonGenericLogFieldSyntaxResponse, _ := json.Marshal(dst.GenericLogFieldSyntaxResponse)
+		if string(jsonGenericLogFieldSyntaxResponse) == "{}" { // empty struct
+			dst.GenericLogFieldSyntaxResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.GenericLogFieldSyntaxResponse = nil
+	}
+
 	// try to unmarshal data into JsonLogFieldSyntaxResponse
 	err = newStrictDecoder(data).Decode(&dst.JsonLogFieldSyntaxResponse)
 	if err == nil {
@@ -68,6 +89,7 @@ func (dst *GetLogFieldSyntax200Response) UnmarshalJSON(data []byte) error {
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AttributeBasedLogFieldSyntaxResponse = nil
+		dst.GenericLogFieldSyntaxResponse = nil
 		dst.JsonLogFieldSyntaxResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(GetLogFieldSyntax200Response)")
@@ -84,6 +106,10 @@ func (src GetLogFieldSyntax200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AttributeBasedLogFieldSyntaxResponse)
 	}
 
+	if src.GenericLogFieldSyntaxResponse != nil {
+		return json.Marshal(&src.GenericLogFieldSyntaxResponse)
+	}
+
 	if src.JsonLogFieldSyntaxResponse != nil {
 		return json.Marshal(&src.JsonLogFieldSyntaxResponse)
 	}
@@ -98,6 +124,10 @@ func (obj *GetLogFieldSyntax200Response) GetActualInstance() interface{} {
 	}
 	if obj.AttributeBasedLogFieldSyntaxResponse != nil {
 		return obj.AttributeBasedLogFieldSyntaxResponse
+	}
+
+	if obj.GenericLogFieldSyntaxResponse != nil {
+		return obj.GenericLogFieldSyntaxResponse
 	}
 
 	if obj.JsonLogFieldSyntaxResponse != nil {

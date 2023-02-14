@@ -11,36 +11,23 @@ Name | Type | Description | Notes
 **BackendID** | **string** | Specifies a name to identify the associated backend. | 
 **BaseDN** | **[]string** | Specifies the base DN(s) for the data that the backend handles. | 
 **WritabilityMode** | [**EnumbackendWritabilityModeProp**](EnumbackendWritabilityModeProp.md) |  | 
-**InsignificantConfigArchiveAttribute** | Pointer to **[]string** | The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive. | [optional] 
-**MirroredSubtreePeerPollingInterval** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
-**MirroredSubtreeEntryUpdateTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
-**MirroredSubtreeSearchTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures. | [optional] 
+**SchemaEntryDN** | Pointer to **[]string** | Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property. | [optional] 
+**ShowAllAttributes** | **bool** | Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration. | 
+**ReadOnlySchemaFile** | Pointer to **[]string** | Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients. | [optional] 
 **Description** | Pointer to **string** | A description for this Backend | [optional] 
 **Enabled** | **bool** | Indicates whether the backend is enabled in the server. | 
 **SetDegradedAlertWhenDisabled** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state (and sends a corresponding alert) when this Backend is disabled. | [optional] 
 **ReturnUnavailableWhenDisabled** | Pointer to **bool** | Determines whether any LDAP operation that would use this Backend is to return UNAVAILABLE when this Backend is disabled. | [optional] 
 **BackupFilePermissions** | Pointer to **string** | Specifies the permissions that should be applied to files and directories created by a backup of the backend. | [optional] 
 **NotificationManager** | Pointer to **string** | Specifies a notification manager for changes resulting from operations processed through this Backend | [optional] 
-**SchemaEntryDN** | Pointer to **[]string** | Defines the base DNs of the subtrees in which the schema information is published in addition to the value included in the base-dn property. | [optional] 
-**ShowAllAttributes** | **bool** | Indicates whether to treat all attributes in the schema entry as if they were user attributes regardless of their configuration. | 
-**ReadOnlySchemaFile** | Pointer to **[]string** | Specifies the name of a file (which must exist in the config/schema directory) containing schema elements that should be considered read-only. Any schema definitions contained in read-only files cannot be altered by external clients. | [optional] 
 **BackupDirectory** | **[]string** | Specifies the path to a backup directory containing one or more backups for a particular backend. | 
-**TaskBackingFile** | **string** | Specifies the path to the backing file for storing information about the tasks configured in the server. | 
-**MaximumInitialTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
-**MaximumFinalTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
-**TaskRetentionTime** | Pointer to **string** | Specifies the length of time that task entries should be retained after processing on the associated task has been completed. | [optional] 
-**NotificationSenderAddress** | Pointer to **string** | Specifies the email address to use as the sender address (that is, the \&quot;From:\&quot; address) for notification mail messages generated when a task completes execution. | [optional] 
+**IsPrivateBackend** | Pointer to **bool** | Indicates whether this backend should be considered a private backend in the server. Private backends are meant for storing server-internal information and should not be used for user or application data. | [optional] 
 **LdifFile** | **string** | Specifies the path to the LDIF file that serves as the backing file for this backend. | 
-**AlertRetentionTime** | **string** | Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged. | 
-**MaxAlerts** | Pointer to **int32** | Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum. | [optional] 
-**DisabledAlertType** | Pointer to [**[]EnumbackendDisabledAlertTypeProp**](EnumbackendDisabledAlertTypeProp.md) |  | [optional] 
 **TrustStoreFile** | **string** | Specifies the path to the file that stores the trust information. | 
 **TrustStoreType** | Pointer to **string** | Specifies the format for the data in the key store file. | [optional] 
 **TrustStorePin** | Pointer to **string** | Specifies the clear-text PIN needed to access the Trust Store Backend. | [optional] 
 **TrustStorePinFile** | Pointer to **string** | Specifies the path to the text file whose only contents should be a single line containing the clear-text PIN needed to access the Trust Store Backend. | [optional] 
 **TrustStorePinPassphraseProvider** | Pointer to **string** | The passphrase provider to use to obtain the clear-text PIN needed to access the Trust Store Backend. | [optional] 
-**AlarmRetentionTime** | **string** | Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged. | 
-**MaxAlarms** | Pointer to **int32** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 
 **DbDirectory** | **string** | Specifies the path to the filesystem directory that is used to hold the Berkeley DB Java Edition database files containing the data for this backend. The files for this backend are stored in a sub-directory named after the backend-id. | 
 **DbDirectoryPermissions** | Pointer to **string** | Specifies the permissions that should be applied to the directory containing the backend database files and to directories and files created during backup or LDIF export of the backend. | [optional] 
 **DbCachePercent** | Pointer to **int32** | Specifies the percentage of JVM memory to allocate to the database cache. | [optional] 
@@ -74,7 +61,6 @@ Name | Type | Description | Notes
 **SetDegradedAlertForUntrustedIndex** | Pointer to **bool** | Determines whether the Directory Server enters a DEGRADED state when this Local DB Backend has an index whose contents cannot be trusted. | [optional] 
 **ReturnUnavailableForUntrustedIndex** | Pointer to **bool** | Determines whether the Directory Server returns UNAVAILABLE for any LDAP search operation in this Local DB Backend that would use an index whose contents cannot be trusted. | [optional] 
 **ProcessFiltersWithUndefinedAttributeTypes** | Pointer to **bool** | Determines whether the Directory Server should continue filter processing for LDAP search operations in this Local DB Backend that includes a search filter with an attribute that is not defined in the schema. This will only apply if check-schema is enabled in the global configuration. | [optional] 
-**IsPrivateBackend** | Pointer to **bool** | Indicates whether this backend should be considered a private backend in the server. Private backends are meant for storing server-internal information and should not be used for user or application data. | [optional] 
 **CompactCommonParentDN** | Pointer to **[]string** | Provides a DN of an entry that may be the parent for a large number of entries in the backend. This may be used to help increase the space efficiency when encoding entries for storage. | [optional] 
 **CompressEntries** | Pointer to **bool** | Indicates whether the backend should attempt to compress entries before storing them in the database. | [optional] 
 **HashEntries** | Pointer to **bool** | Indicates whether to calculate and store a message digest of the entry contents along with the entry data, in order to provide a means of verifying the integrity of the entry data. | [optional] 
@@ -114,6 +100,20 @@ Name | Type | Description | Notes
 **SubtreeDeleteSizeLimit** | Pointer to **int32** | Specifies the maximum number of entries that may be deleted from the backend when using the subtree delete control. | [optional] 
 **NumRecentChanges** | Pointer to **int32** | Specifies the number of recent LDAP entry changes per replica for which the backend keeps a record to allow replication to recover in the event that the server is abruptly terminated. Increasing this value can lead to an increased peak server modification rate as well as increased replication throughput. | [optional] 
 **OfflineProcessDatabaseOpenTimeout** | Pointer to **string** | Specifies a timeout duration which will be used for opening the database environment by an offline process, such as export-ldif. | [optional] 
+**InsignificantConfigArchiveAttribute** | Pointer to **[]string** | The name or OID of an attribute type that is considered insignificant for the purpose of maintaining the configuration archive. | [optional] 
+**MirroredSubtreePeerPollingInterval** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait before polling the peer servers in the topology to determine if there are any changes in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
+**MirroredSubtreeEntryUpdateTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for an update operation (add, delete, modify and modify-dn) on an entry to be applied on all servers in the topology. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. | [optional] 
+**MirroredSubtreeSearchTimeout** | Pointer to **string** | Tells the server component that is responsible for mirroring configuration data across a topology of servers the maximum amount of time to wait for a search operation to complete. Mirrored data includes meta-data about the servers in the topology as well as cluster-wide configuration data. Search requests that take longer than this timeout will be canceled and considered failures. | [optional] 
+**TaskBackingFile** | **string** | Specifies the path to the backing file for storing information about the tasks configured in the server. | 
+**MaximumInitialTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the beginning of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
+**MaximumFinalTaskLogMessagesToRetain** | Pointer to **int32** | The maximum number of log messages to retain in each task entry from the end of the processing for that task. If too many messages are logged during task processing, then retaining only a limited number of messages from the beginning and/or end of task processing can reduce the amount of memory that the server consumes by caching information about currently-active and recently-completed tasks. | [optional] 
+**TaskRetentionTime** | Pointer to **string** | Specifies the length of time that task entries should be retained after processing on the associated task has been completed. | [optional] 
+**NotificationSenderAddress** | Pointer to **string** | Specifies the email address to use as the sender address (that is, the \&quot;From:\&quot; address) for notification mail messages generated when a task completes execution. | [optional] 
+**AlertRetentionTime** | **string** | Specifies the maximum length of time that information about generated alerts should be maintained before they will be purged. | 
+**MaxAlerts** | Pointer to **int32** | Specifies the maximum number of alerts that should be retained. If more alerts than this configured maximum are generated within the alert retention time, then the oldest alerts will be purged to achieve this maximum. | [optional] 
+**DisabledAlertType** | Pointer to [**[]EnumbackendDisabledAlertTypeProp**](EnumbackendDisabledAlertTypeProp.md) |  | [optional] 
+**AlarmRetentionTime** | **string** | Specifies the maximum length of time that information about raised alarms should be maintained before they will be purged. | 
+**MaxAlarms** | Pointer to **int32** | Specifies the maximum number of alarms that should be retained. If more alarms than this configured maximum are generated within the alarm retention time, then the oldest alarms will be purged to achieve this maximum. Only alarms at normal severity will be purged. | [optional] 
 **StorageDir** | **string** | Specifies the path to the directory that will be used to store queued samples. | 
 **MetricsDir** | **string** | Specifies the path to the directory that contains metric definitions. | 
 **SampleFlushInterval** | Pointer to **string** | Period when samples are flushed to disk. | [optional] 
@@ -123,7 +123,7 @@ Name | Type | Description | Notes
 
 ### NewGetBackend200Response
 
-`func NewGetBackend200Response(schemas []EnummetricsBackendSchemaUrn, id string, backendID string, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, enabled bool, showAllAttributes bool, backupDirectory []string, taskBackingFile string, ldifFile string, alertRetentionTime string, trustStoreFile string, alarmRetentionTime string, dbDirectory string, changelogMaximumAge string, importTempDirectory string, storageDir string, metricsDir string, retentionPolicy []string, ) *GetBackend200Response`
+`func NewGetBackend200Response(schemas []EnummetricsBackendSchemaUrn, id string, backendID string, baseDN []string, writabilityMode EnumbackendWritabilityModeProp, showAllAttributes bool, enabled bool, backupDirectory []string, ldifFile string, trustStoreFile string, dbDirectory string, changelogMaximumAge string, importTempDirectory string, taskBackingFile string, alertRetentionTime string, alarmRetentionTime string, storageDir string, metricsDir string, retentionPolicy []string, ) *GetBackend200Response`
 
 NewGetBackend200Response instantiates a new GetBackend200Response object
 This constructor will assign default values to properties that have it defined,
@@ -288,105 +288,75 @@ and a boolean to check if the value has been set.
 SetWritabilityMode sets WritabilityMode field to given value.
 
 
-### GetInsignificantConfigArchiveAttribute
+### GetSchemaEntryDN
 
-`func (o *GetBackend200Response) GetInsignificantConfigArchiveAttribute() []string`
+`func (o *GetBackend200Response) GetSchemaEntryDN() []string`
 
-GetInsignificantConfigArchiveAttribute returns the InsignificantConfigArchiveAttribute field if non-nil, zero value otherwise.
+GetSchemaEntryDN returns the SchemaEntryDN field if non-nil, zero value otherwise.
 
-### GetInsignificantConfigArchiveAttributeOk
+### GetSchemaEntryDNOk
 
-`func (o *GetBackend200Response) GetInsignificantConfigArchiveAttributeOk() (*[]string, bool)`
+`func (o *GetBackend200Response) GetSchemaEntryDNOk() (*[]string, bool)`
 
-GetInsignificantConfigArchiveAttributeOk returns a tuple with the InsignificantConfigArchiveAttribute field if it's non-nil, zero value otherwise
+GetSchemaEntryDNOk returns a tuple with the SchemaEntryDN field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInsignificantConfigArchiveAttribute
+### SetSchemaEntryDN
 
-`func (o *GetBackend200Response) SetInsignificantConfigArchiveAttribute(v []string)`
+`func (o *GetBackend200Response) SetSchemaEntryDN(v []string)`
 
-SetInsignificantConfigArchiveAttribute sets InsignificantConfigArchiveAttribute field to given value.
+SetSchemaEntryDN sets SchemaEntryDN field to given value.
 
-### HasInsignificantConfigArchiveAttribute
+### HasSchemaEntryDN
 
-`func (o *GetBackend200Response) HasInsignificantConfigArchiveAttribute() bool`
+`func (o *GetBackend200Response) HasSchemaEntryDN() bool`
 
-HasInsignificantConfigArchiveAttribute returns a boolean if a field has been set.
+HasSchemaEntryDN returns a boolean if a field has been set.
 
-### GetMirroredSubtreePeerPollingInterval
+### GetShowAllAttributes
 
-`func (o *GetBackend200Response) GetMirroredSubtreePeerPollingInterval() string`
+`func (o *GetBackend200Response) GetShowAllAttributes() bool`
 
-GetMirroredSubtreePeerPollingInterval returns the MirroredSubtreePeerPollingInterval field if non-nil, zero value otherwise.
+GetShowAllAttributes returns the ShowAllAttributes field if non-nil, zero value otherwise.
 
-### GetMirroredSubtreePeerPollingIntervalOk
+### GetShowAllAttributesOk
 
-`func (o *GetBackend200Response) GetMirroredSubtreePeerPollingIntervalOk() (*string, bool)`
+`func (o *GetBackend200Response) GetShowAllAttributesOk() (*bool, bool)`
 
-GetMirroredSubtreePeerPollingIntervalOk returns a tuple with the MirroredSubtreePeerPollingInterval field if it's non-nil, zero value otherwise
+GetShowAllAttributesOk returns a tuple with the ShowAllAttributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMirroredSubtreePeerPollingInterval
+### SetShowAllAttributes
 
-`func (o *GetBackend200Response) SetMirroredSubtreePeerPollingInterval(v string)`
+`func (o *GetBackend200Response) SetShowAllAttributes(v bool)`
 
-SetMirroredSubtreePeerPollingInterval sets MirroredSubtreePeerPollingInterval field to given value.
+SetShowAllAttributes sets ShowAllAttributes field to given value.
 
-### HasMirroredSubtreePeerPollingInterval
 
-`func (o *GetBackend200Response) HasMirroredSubtreePeerPollingInterval() bool`
+### GetReadOnlySchemaFile
 
-HasMirroredSubtreePeerPollingInterval returns a boolean if a field has been set.
+`func (o *GetBackend200Response) GetReadOnlySchemaFile() []string`
 
-### GetMirroredSubtreeEntryUpdateTimeout
+GetReadOnlySchemaFile returns the ReadOnlySchemaFile field if non-nil, zero value otherwise.
 
-`func (o *GetBackend200Response) GetMirroredSubtreeEntryUpdateTimeout() string`
+### GetReadOnlySchemaFileOk
 
-GetMirroredSubtreeEntryUpdateTimeout returns the MirroredSubtreeEntryUpdateTimeout field if non-nil, zero value otherwise.
+`func (o *GetBackend200Response) GetReadOnlySchemaFileOk() (*[]string, bool)`
 
-### GetMirroredSubtreeEntryUpdateTimeoutOk
-
-`func (o *GetBackend200Response) GetMirroredSubtreeEntryUpdateTimeoutOk() (*string, bool)`
-
-GetMirroredSubtreeEntryUpdateTimeoutOk returns a tuple with the MirroredSubtreeEntryUpdateTimeout field if it's non-nil, zero value otherwise
+GetReadOnlySchemaFileOk returns a tuple with the ReadOnlySchemaFile field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMirroredSubtreeEntryUpdateTimeout
+### SetReadOnlySchemaFile
 
-`func (o *GetBackend200Response) SetMirroredSubtreeEntryUpdateTimeout(v string)`
+`func (o *GetBackend200Response) SetReadOnlySchemaFile(v []string)`
 
-SetMirroredSubtreeEntryUpdateTimeout sets MirroredSubtreeEntryUpdateTimeout field to given value.
+SetReadOnlySchemaFile sets ReadOnlySchemaFile field to given value.
 
-### HasMirroredSubtreeEntryUpdateTimeout
+### HasReadOnlySchemaFile
 
-`func (o *GetBackend200Response) HasMirroredSubtreeEntryUpdateTimeout() bool`
+`func (o *GetBackend200Response) HasReadOnlySchemaFile() bool`
 
-HasMirroredSubtreeEntryUpdateTimeout returns a boolean if a field has been set.
-
-### GetMirroredSubtreeSearchTimeout
-
-`func (o *GetBackend200Response) GetMirroredSubtreeSearchTimeout() string`
-
-GetMirroredSubtreeSearchTimeout returns the MirroredSubtreeSearchTimeout field if non-nil, zero value otherwise.
-
-### GetMirroredSubtreeSearchTimeoutOk
-
-`func (o *GetBackend200Response) GetMirroredSubtreeSearchTimeoutOk() (*string, bool)`
-
-GetMirroredSubtreeSearchTimeoutOk returns a tuple with the MirroredSubtreeSearchTimeout field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMirroredSubtreeSearchTimeout
-
-`func (o *GetBackend200Response) SetMirroredSubtreeSearchTimeout(v string)`
-
-SetMirroredSubtreeSearchTimeout sets MirroredSubtreeSearchTimeout field to given value.
-
-### HasMirroredSubtreeSearchTimeout
-
-`func (o *GetBackend200Response) HasMirroredSubtreeSearchTimeout() bool`
-
-HasMirroredSubtreeSearchTimeout returns a boolean if a field has been set.
+HasReadOnlySchemaFile returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -533,76 +503,6 @@ SetNotificationManager sets NotificationManager field to given value.
 
 HasNotificationManager returns a boolean if a field has been set.
 
-### GetSchemaEntryDN
-
-`func (o *GetBackend200Response) GetSchemaEntryDN() []string`
-
-GetSchemaEntryDN returns the SchemaEntryDN field if non-nil, zero value otherwise.
-
-### GetSchemaEntryDNOk
-
-`func (o *GetBackend200Response) GetSchemaEntryDNOk() (*[]string, bool)`
-
-GetSchemaEntryDNOk returns a tuple with the SchemaEntryDN field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSchemaEntryDN
-
-`func (o *GetBackend200Response) SetSchemaEntryDN(v []string)`
-
-SetSchemaEntryDN sets SchemaEntryDN field to given value.
-
-### HasSchemaEntryDN
-
-`func (o *GetBackend200Response) HasSchemaEntryDN() bool`
-
-HasSchemaEntryDN returns a boolean if a field has been set.
-
-### GetShowAllAttributes
-
-`func (o *GetBackend200Response) GetShowAllAttributes() bool`
-
-GetShowAllAttributes returns the ShowAllAttributes field if non-nil, zero value otherwise.
-
-### GetShowAllAttributesOk
-
-`func (o *GetBackend200Response) GetShowAllAttributesOk() (*bool, bool)`
-
-GetShowAllAttributesOk returns a tuple with the ShowAllAttributes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetShowAllAttributes
-
-`func (o *GetBackend200Response) SetShowAllAttributes(v bool)`
-
-SetShowAllAttributes sets ShowAllAttributes field to given value.
-
-
-### GetReadOnlySchemaFile
-
-`func (o *GetBackend200Response) GetReadOnlySchemaFile() []string`
-
-GetReadOnlySchemaFile returns the ReadOnlySchemaFile field if non-nil, zero value otherwise.
-
-### GetReadOnlySchemaFileOk
-
-`func (o *GetBackend200Response) GetReadOnlySchemaFileOk() (*[]string, bool)`
-
-GetReadOnlySchemaFileOk returns a tuple with the ReadOnlySchemaFile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReadOnlySchemaFile
-
-`func (o *GetBackend200Response) SetReadOnlySchemaFile(v []string)`
-
-SetReadOnlySchemaFile sets ReadOnlySchemaFile field to given value.
-
-### HasReadOnlySchemaFile
-
-`func (o *GetBackend200Response) HasReadOnlySchemaFile() bool`
-
-HasReadOnlySchemaFile returns a boolean if a field has been set.
-
 ### GetBackupDirectory
 
 `func (o *GetBackend200Response) GetBackupDirectory() []string`
@@ -623,125 +523,30 @@ and a boolean to check if the value has been set.
 SetBackupDirectory sets BackupDirectory field to given value.
 
 
-### GetTaskBackingFile
+### GetIsPrivateBackend
 
-`func (o *GetBackend200Response) GetTaskBackingFile() string`
+`func (o *GetBackend200Response) GetIsPrivateBackend() bool`
 
-GetTaskBackingFile returns the TaskBackingFile field if non-nil, zero value otherwise.
+GetIsPrivateBackend returns the IsPrivateBackend field if non-nil, zero value otherwise.
 
-### GetTaskBackingFileOk
+### GetIsPrivateBackendOk
 
-`func (o *GetBackend200Response) GetTaskBackingFileOk() (*string, bool)`
+`func (o *GetBackend200Response) GetIsPrivateBackendOk() (*bool, bool)`
 
-GetTaskBackingFileOk returns a tuple with the TaskBackingFile field if it's non-nil, zero value otherwise
+GetIsPrivateBackendOk returns a tuple with the IsPrivateBackend field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTaskBackingFile
+### SetIsPrivateBackend
 
-`func (o *GetBackend200Response) SetTaskBackingFile(v string)`
+`func (o *GetBackend200Response) SetIsPrivateBackend(v bool)`
 
-SetTaskBackingFile sets TaskBackingFile field to given value.
+SetIsPrivateBackend sets IsPrivateBackend field to given value.
 
+### HasIsPrivateBackend
 
-### GetMaximumInitialTaskLogMessagesToRetain
+`func (o *GetBackend200Response) HasIsPrivateBackend() bool`
 
-`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetain() int32`
-
-GetMaximumInitialTaskLogMessagesToRetain returns the MaximumInitialTaskLogMessagesToRetain field if non-nil, zero value otherwise.
-
-### GetMaximumInitialTaskLogMessagesToRetainOk
-
-`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool)`
-
-GetMaximumInitialTaskLogMessagesToRetainOk returns a tuple with the MaximumInitialTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaximumInitialTaskLogMessagesToRetain
-
-`func (o *GetBackend200Response) SetMaximumInitialTaskLogMessagesToRetain(v int32)`
-
-SetMaximumInitialTaskLogMessagesToRetain sets MaximumInitialTaskLogMessagesToRetain field to given value.
-
-### HasMaximumInitialTaskLogMessagesToRetain
-
-`func (o *GetBackend200Response) HasMaximumInitialTaskLogMessagesToRetain() bool`
-
-HasMaximumInitialTaskLogMessagesToRetain returns a boolean if a field has been set.
-
-### GetMaximumFinalTaskLogMessagesToRetain
-
-`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetain() int32`
-
-GetMaximumFinalTaskLogMessagesToRetain returns the MaximumFinalTaskLogMessagesToRetain field if non-nil, zero value otherwise.
-
-### GetMaximumFinalTaskLogMessagesToRetainOk
-
-`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool)`
-
-GetMaximumFinalTaskLogMessagesToRetainOk returns a tuple with the MaximumFinalTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaximumFinalTaskLogMessagesToRetain
-
-`func (o *GetBackend200Response) SetMaximumFinalTaskLogMessagesToRetain(v int32)`
-
-SetMaximumFinalTaskLogMessagesToRetain sets MaximumFinalTaskLogMessagesToRetain field to given value.
-
-### HasMaximumFinalTaskLogMessagesToRetain
-
-`func (o *GetBackend200Response) HasMaximumFinalTaskLogMessagesToRetain() bool`
-
-HasMaximumFinalTaskLogMessagesToRetain returns a boolean if a field has been set.
-
-### GetTaskRetentionTime
-
-`func (o *GetBackend200Response) GetTaskRetentionTime() string`
-
-GetTaskRetentionTime returns the TaskRetentionTime field if non-nil, zero value otherwise.
-
-### GetTaskRetentionTimeOk
-
-`func (o *GetBackend200Response) GetTaskRetentionTimeOk() (*string, bool)`
-
-GetTaskRetentionTimeOk returns a tuple with the TaskRetentionTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskRetentionTime
-
-`func (o *GetBackend200Response) SetTaskRetentionTime(v string)`
-
-SetTaskRetentionTime sets TaskRetentionTime field to given value.
-
-### HasTaskRetentionTime
-
-`func (o *GetBackend200Response) HasTaskRetentionTime() bool`
-
-HasTaskRetentionTime returns a boolean if a field has been set.
-
-### GetNotificationSenderAddress
-
-`func (o *GetBackend200Response) GetNotificationSenderAddress() string`
-
-GetNotificationSenderAddress returns the NotificationSenderAddress field if non-nil, zero value otherwise.
-
-### GetNotificationSenderAddressOk
-
-`func (o *GetBackend200Response) GetNotificationSenderAddressOk() (*string, bool)`
-
-GetNotificationSenderAddressOk returns a tuple with the NotificationSenderAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNotificationSenderAddress
-
-`func (o *GetBackend200Response) SetNotificationSenderAddress(v string)`
-
-SetNotificationSenderAddress sets NotificationSenderAddress field to given value.
-
-### HasNotificationSenderAddress
-
-`func (o *GetBackend200Response) HasNotificationSenderAddress() bool`
-
-HasNotificationSenderAddress returns a boolean if a field has been set.
+HasIsPrivateBackend returns a boolean if a field has been set.
 
 ### GetLdifFile
 
@@ -762,76 +567,6 @@ and a boolean to check if the value has been set.
 
 SetLdifFile sets LdifFile field to given value.
 
-
-### GetAlertRetentionTime
-
-`func (o *GetBackend200Response) GetAlertRetentionTime() string`
-
-GetAlertRetentionTime returns the AlertRetentionTime field if non-nil, zero value otherwise.
-
-### GetAlertRetentionTimeOk
-
-`func (o *GetBackend200Response) GetAlertRetentionTimeOk() (*string, bool)`
-
-GetAlertRetentionTimeOk returns a tuple with the AlertRetentionTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlertRetentionTime
-
-`func (o *GetBackend200Response) SetAlertRetentionTime(v string)`
-
-SetAlertRetentionTime sets AlertRetentionTime field to given value.
-
-
-### GetMaxAlerts
-
-`func (o *GetBackend200Response) GetMaxAlerts() int32`
-
-GetMaxAlerts returns the MaxAlerts field if non-nil, zero value otherwise.
-
-### GetMaxAlertsOk
-
-`func (o *GetBackend200Response) GetMaxAlertsOk() (*int32, bool)`
-
-GetMaxAlertsOk returns a tuple with the MaxAlerts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxAlerts
-
-`func (o *GetBackend200Response) SetMaxAlerts(v int32)`
-
-SetMaxAlerts sets MaxAlerts field to given value.
-
-### HasMaxAlerts
-
-`func (o *GetBackend200Response) HasMaxAlerts() bool`
-
-HasMaxAlerts returns a boolean if a field has been set.
-
-### GetDisabledAlertType
-
-`func (o *GetBackend200Response) GetDisabledAlertType() []EnumbackendDisabledAlertTypeProp`
-
-GetDisabledAlertType returns the DisabledAlertType field if non-nil, zero value otherwise.
-
-### GetDisabledAlertTypeOk
-
-`func (o *GetBackend200Response) GetDisabledAlertTypeOk() (*[]EnumbackendDisabledAlertTypeProp, bool)`
-
-GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDisabledAlertType
-
-`func (o *GetBackend200Response) SetDisabledAlertType(v []EnumbackendDisabledAlertTypeProp)`
-
-SetDisabledAlertType sets DisabledAlertType field to given value.
-
-### HasDisabledAlertType
-
-`func (o *GetBackend200Response) HasDisabledAlertType() bool`
-
-HasDisabledAlertType returns a boolean if a field has been set.
 
 ### GetTrustStoreFile
 
@@ -952,51 +687,6 @@ SetTrustStorePinPassphraseProvider sets TrustStorePinPassphraseProvider field to
 `func (o *GetBackend200Response) HasTrustStorePinPassphraseProvider() bool`
 
 HasTrustStorePinPassphraseProvider returns a boolean if a field has been set.
-
-### GetAlarmRetentionTime
-
-`func (o *GetBackend200Response) GetAlarmRetentionTime() string`
-
-GetAlarmRetentionTime returns the AlarmRetentionTime field if non-nil, zero value otherwise.
-
-### GetAlarmRetentionTimeOk
-
-`func (o *GetBackend200Response) GetAlarmRetentionTimeOk() (*string, bool)`
-
-GetAlarmRetentionTimeOk returns a tuple with the AlarmRetentionTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlarmRetentionTime
-
-`func (o *GetBackend200Response) SetAlarmRetentionTime(v string)`
-
-SetAlarmRetentionTime sets AlarmRetentionTime field to given value.
-
-
-### GetMaxAlarms
-
-`func (o *GetBackend200Response) GetMaxAlarms() int32`
-
-GetMaxAlarms returns the MaxAlarms field if non-nil, zero value otherwise.
-
-### GetMaxAlarmsOk
-
-`func (o *GetBackend200Response) GetMaxAlarmsOk() (*int32, bool)`
-
-GetMaxAlarmsOk returns a tuple with the MaxAlarms field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaxAlarms
-
-`func (o *GetBackend200Response) SetMaxAlarms(v int32)`
-
-SetMaxAlarms sets MaxAlarms field to given value.
-
-### HasMaxAlarms
-
-`func (o *GetBackend200Response) HasMaxAlarms() bool`
-
-HasMaxAlarms returns a boolean if a field has been set.
 
 ### GetDbDirectory
 
@@ -1812,31 +1502,6 @@ SetProcessFiltersWithUndefinedAttributeTypes sets ProcessFiltersWithUndefinedAtt
 `func (o *GetBackend200Response) HasProcessFiltersWithUndefinedAttributeTypes() bool`
 
 HasProcessFiltersWithUndefinedAttributeTypes returns a boolean if a field has been set.
-
-### GetIsPrivateBackend
-
-`func (o *GetBackend200Response) GetIsPrivateBackend() bool`
-
-GetIsPrivateBackend returns the IsPrivateBackend field if non-nil, zero value otherwise.
-
-### GetIsPrivateBackendOk
-
-`func (o *GetBackend200Response) GetIsPrivateBackendOk() (*bool, bool)`
-
-GetIsPrivateBackendOk returns a tuple with the IsPrivateBackend field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsPrivateBackend
-
-`func (o *GetBackend200Response) SetIsPrivateBackend(v bool)`
-
-SetIsPrivateBackend sets IsPrivateBackend field to given value.
-
-### HasIsPrivateBackend
-
-`func (o *GetBackend200Response) HasIsPrivateBackend() bool`
-
-HasIsPrivateBackend returns a boolean if a field has been set.
 
 ### GetCompactCommonParentDN
 
@@ -2807,6 +2472,341 @@ SetOfflineProcessDatabaseOpenTimeout sets OfflineProcessDatabaseOpenTimeout fiel
 `func (o *GetBackend200Response) HasOfflineProcessDatabaseOpenTimeout() bool`
 
 HasOfflineProcessDatabaseOpenTimeout returns a boolean if a field has been set.
+
+### GetInsignificantConfigArchiveAttribute
+
+`func (o *GetBackend200Response) GetInsignificantConfigArchiveAttribute() []string`
+
+GetInsignificantConfigArchiveAttribute returns the InsignificantConfigArchiveAttribute field if non-nil, zero value otherwise.
+
+### GetInsignificantConfigArchiveAttributeOk
+
+`func (o *GetBackend200Response) GetInsignificantConfigArchiveAttributeOk() (*[]string, bool)`
+
+GetInsignificantConfigArchiveAttributeOk returns a tuple with the InsignificantConfigArchiveAttribute field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInsignificantConfigArchiveAttribute
+
+`func (o *GetBackend200Response) SetInsignificantConfigArchiveAttribute(v []string)`
+
+SetInsignificantConfigArchiveAttribute sets InsignificantConfigArchiveAttribute field to given value.
+
+### HasInsignificantConfigArchiveAttribute
+
+`func (o *GetBackend200Response) HasInsignificantConfigArchiveAttribute() bool`
+
+HasInsignificantConfigArchiveAttribute returns a boolean if a field has been set.
+
+### GetMirroredSubtreePeerPollingInterval
+
+`func (o *GetBackend200Response) GetMirroredSubtreePeerPollingInterval() string`
+
+GetMirroredSubtreePeerPollingInterval returns the MirroredSubtreePeerPollingInterval field if non-nil, zero value otherwise.
+
+### GetMirroredSubtreePeerPollingIntervalOk
+
+`func (o *GetBackend200Response) GetMirroredSubtreePeerPollingIntervalOk() (*string, bool)`
+
+GetMirroredSubtreePeerPollingIntervalOk returns a tuple with the MirroredSubtreePeerPollingInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMirroredSubtreePeerPollingInterval
+
+`func (o *GetBackend200Response) SetMirroredSubtreePeerPollingInterval(v string)`
+
+SetMirroredSubtreePeerPollingInterval sets MirroredSubtreePeerPollingInterval field to given value.
+
+### HasMirroredSubtreePeerPollingInterval
+
+`func (o *GetBackend200Response) HasMirroredSubtreePeerPollingInterval() bool`
+
+HasMirroredSubtreePeerPollingInterval returns a boolean if a field has been set.
+
+### GetMirroredSubtreeEntryUpdateTimeout
+
+`func (o *GetBackend200Response) GetMirroredSubtreeEntryUpdateTimeout() string`
+
+GetMirroredSubtreeEntryUpdateTimeout returns the MirroredSubtreeEntryUpdateTimeout field if non-nil, zero value otherwise.
+
+### GetMirroredSubtreeEntryUpdateTimeoutOk
+
+`func (o *GetBackend200Response) GetMirroredSubtreeEntryUpdateTimeoutOk() (*string, bool)`
+
+GetMirroredSubtreeEntryUpdateTimeoutOk returns a tuple with the MirroredSubtreeEntryUpdateTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMirroredSubtreeEntryUpdateTimeout
+
+`func (o *GetBackend200Response) SetMirroredSubtreeEntryUpdateTimeout(v string)`
+
+SetMirroredSubtreeEntryUpdateTimeout sets MirroredSubtreeEntryUpdateTimeout field to given value.
+
+### HasMirroredSubtreeEntryUpdateTimeout
+
+`func (o *GetBackend200Response) HasMirroredSubtreeEntryUpdateTimeout() bool`
+
+HasMirroredSubtreeEntryUpdateTimeout returns a boolean if a field has been set.
+
+### GetMirroredSubtreeSearchTimeout
+
+`func (o *GetBackend200Response) GetMirroredSubtreeSearchTimeout() string`
+
+GetMirroredSubtreeSearchTimeout returns the MirroredSubtreeSearchTimeout field if non-nil, zero value otherwise.
+
+### GetMirroredSubtreeSearchTimeoutOk
+
+`func (o *GetBackend200Response) GetMirroredSubtreeSearchTimeoutOk() (*string, bool)`
+
+GetMirroredSubtreeSearchTimeoutOk returns a tuple with the MirroredSubtreeSearchTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMirroredSubtreeSearchTimeout
+
+`func (o *GetBackend200Response) SetMirroredSubtreeSearchTimeout(v string)`
+
+SetMirroredSubtreeSearchTimeout sets MirroredSubtreeSearchTimeout field to given value.
+
+### HasMirroredSubtreeSearchTimeout
+
+`func (o *GetBackend200Response) HasMirroredSubtreeSearchTimeout() bool`
+
+HasMirroredSubtreeSearchTimeout returns a boolean if a field has been set.
+
+### GetTaskBackingFile
+
+`func (o *GetBackend200Response) GetTaskBackingFile() string`
+
+GetTaskBackingFile returns the TaskBackingFile field if non-nil, zero value otherwise.
+
+### GetTaskBackingFileOk
+
+`func (o *GetBackend200Response) GetTaskBackingFileOk() (*string, bool)`
+
+GetTaskBackingFileOk returns a tuple with the TaskBackingFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskBackingFile
+
+`func (o *GetBackend200Response) SetTaskBackingFile(v string)`
+
+SetTaskBackingFile sets TaskBackingFile field to given value.
+
+
+### GetMaximumInitialTaskLogMessagesToRetain
+
+`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetain() int32`
+
+GetMaximumInitialTaskLogMessagesToRetain returns the MaximumInitialTaskLogMessagesToRetain field if non-nil, zero value otherwise.
+
+### GetMaximumInitialTaskLogMessagesToRetainOk
+
+`func (o *GetBackend200Response) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool)`
+
+GetMaximumInitialTaskLogMessagesToRetainOk returns a tuple with the MaximumInitialTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumInitialTaskLogMessagesToRetain
+
+`func (o *GetBackend200Response) SetMaximumInitialTaskLogMessagesToRetain(v int32)`
+
+SetMaximumInitialTaskLogMessagesToRetain sets MaximumInitialTaskLogMessagesToRetain field to given value.
+
+### HasMaximumInitialTaskLogMessagesToRetain
+
+`func (o *GetBackend200Response) HasMaximumInitialTaskLogMessagesToRetain() bool`
+
+HasMaximumInitialTaskLogMessagesToRetain returns a boolean if a field has been set.
+
+### GetMaximumFinalTaskLogMessagesToRetain
+
+`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetain() int32`
+
+GetMaximumFinalTaskLogMessagesToRetain returns the MaximumFinalTaskLogMessagesToRetain field if non-nil, zero value otherwise.
+
+### GetMaximumFinalTaskLogMessagesToRetainOk
+
+`func (o *GetBackend200Response) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool)`
+
+GetMaximumFinalTaskLogMessagesToRetainOk returns a tuple with the MaximumFinalTaskLogMessagesToRetain field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaximumFinalTaskLogMessagesToRetain
+
+`func (o *GetBackend200Response) SetMaximumFinalTaskLogMessagesToRetain(v int32)`
+
+SetMaximumFinalTaskLogMessagesToRetain sets MaximumFinalTaskLogMessagesToRetain field to given value.
+
+### HasMaximumFinalTaskLogMessagesToRetain
+
+`func (o *GetBackend200Response) HasMaximumFinalTaskLogMessagesToRetain() bool`
+
+HasMaximumFinalTaskLogMessagesToRetain returns a boolean if a field has been set.
+
+### GetTaskRetentionTime
+
+`func (o *GetBackend200Response) GetTaskRetentionTime() string`
+
+GetTaskRetentionTime returns the TaskRetentionTime field if non-nil, zero value otherwise.
+
+### GetTaskRetentionTimeOk
+
+`func (o *GetBackend200Response) GetTaskRetentionTimeOk() (*string, bool)`
+
+GetTaskRetentionTimeOk returns a tuple with the TaskRetentionTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskRetentionTime
+
+`func (o *GetBackend200Response) SetTaskRetentionTime(v string)`
+
+SetTaskRetentionTime sets TaskRetentionTime field to given value.
+
+### HasTaskRetentionTime
+
+`func (o *GetBackend200Response) HasTaskRetentionTime() bool`
+
+HasTaskRetentionTime returns a boolean if a field has been set.
+
+### GetNotificationSenderAddress
+
+`func (o *GetBackend200Response) GetNotificationSenderAddress() string`
+
+GetNotificationSenderAddress returns the NotificationSenderAddress field if non-nil, zero value otherwise.
+
+### GetNotificationSenderAddressOk
+
+`func (o *GetBackend200Response) GetNotificationSenderAddressOk() (*string, bool)`
+
+GetNotificationSenderAddressOk returns a tuple with the NotificationSenderAddress field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotificationSenderAddress
+
+`func (o *GetBackend200Response) SetNotificationSenderAddress(v string)`
+
+SetNotificationSenderAddress sets NotificationSenderAddress field to given value.
+
+### HasNotificationSenderAddress
+
+`func (o *GetBackend200Response) HasNotificationSenderAddress() bool`
+
+HasNotificationSenderAddress returns a boolean if a field has been set.
+
+### GetAlertRetentionTime
+
+`func (o *GetBackend200Response) GetAlertRetentionTime() string`
+
+GetAlertRetentionTime returns the AlertRetentionTime field if non-nil, zero value otherwise.
+
+### GetAlertRetentionTimeOk
+
+`func (o *GetBackend200Response) GetAlertRetentionTimeOk() (*string, bool)`
+
+GetAlertRetentionTimeOk returns a tuple with the AlertRetentionTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlertRetentionTime
+
+`func (o *GetBackend200Response) SetAlertRetentionTime(v string)`
+
+SetAlertRetentionTime sets AlertRetentionTime field to given value.
+
+
+### GetMaxAlerts
+
+`func (o *GetBackend200Response) GetMaxAlerts() int32`
+
+GetMaxAlerts returns the MaxAlerts field if non-nil, zero value otherwise.
+
+### GetMaxAlertsOk
+
+`func (o *GetBackend200Response) GetMaxAlertsOk() (*int32, bool)`
+
+GetMaxAlertsOk returns a tuple with the MaxAlerts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxAlerts
+
+`func (o *GetBackend200Response) SetMaxAlerts(v int32)`
+
+SetMaxAlerts sets MaxAlerts field to given value.
+
+### HasMaxAlerts
+
+`func (o *GetBackend200Response) HasMaxAlerts() bool`
+
+HasMaxAlerts returns a boolean if a field has been set.
+
+### GetDisabledAlertType
+
+`func (o *GetBackend200Response) GetDisabledAlertType() []EnumbackendDisabledAlertTypeProp`
+
+GetDisabledAlertType returns the DisabledAlertType field if non-nil, zero value otherwise.
+
+### GetDisabledAlertTypeOk
+
+`func (o *GetBackend200Response) GetDisabledAlertTypeOk() (*[]EnumbackendDisabledAlertTypeProp, bool)`
+
+GetDisabledAlertTypeOk returns a tuple with the DisabledAlertType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAlertType
+
+`func (o *GetBackend200Response) SetDisabledAlertType(v []EnumbackendDisabledAlertTypeProp)`
+
+SetDisabledAlertType sets DisabledAlertType field to given value.
+
+### HasDisabledAlertType
+
+`func (o *GetBackend200Response) HasDisabledAlertType() bool`
+
+HasDisabledAlertType returns a boolean if a field has been set.
+
+### GetAlarmRetentionTime
+
+`func (o *GetBackend200Response) GetAlarmRetentionTime() string`
+
+GetAlarmRetentionTime returns the AlarmRetentionTime field if non-nil, zero value otherwise.
+
+### GetAlarmRetentionTimeOk
+
+`func (o *GetBackend200Response) GetAlarmRetentionTimeOk() (*string, bool)`
+
+GetAlarmRetentionTimeOk returns a tuple with the AlarmRetentionTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlarmRetentionTime
+
+`func (o *GetBackend200Response) SetAlarmRetentionTime(v string)`
+
+SetAlarmRetentionTime sets AlarmRetentionTime field to given value.
+
+
+### GetMaxAlarms
+
+`func (o *GetBackend200Response) GetMaxAlarms() int32`
+
+GetMaxAlarms returns the MaxAlarms field if non-nil, zero value otherwise.
+
+### GetMaxAlarmsOk
+
+`func (o *GetBackend200Response) GetMaxAlarmsOk() (*int32, bool)`
+
+GetMaxAlarmsOk returns a tuple with the MaxAlarms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxAlarms
+
+`func (o *GetBackend200Response) SetMaxAlarms(v int32)`
+
+SetMaxAlarms sets MaxAlarms field to given value.
+
+### HasMaxAlarms
+
+`func (o *GetBackend200Response) HasMaxAlarms() bool`
+
+HasMaxAlarms returns a boolean if a field has been set.
 
 ### GetStorageDir
 
