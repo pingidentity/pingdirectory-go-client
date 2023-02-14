@@ -57,7 +57,7 @@ paths:
       summary: Delete a HTTP Servlet Extension
       operationId: delete-http-servlet-extension
       parameters:
-      - description: Name of the HTTP Servlet Extension to be deleted
+      - description: Name of the HTTP Servlet Extension
         explode: false
         in: path
         name: http-servlet-extension-name
@@ -84,7 +84,7 @@ paths:
       summary: Returns a single HTTP Servlet Extension
       operationId: get-http-servlet-extension
       parameters:
-      - description: Name of the HTTP Servlet Extension to be read
+      - description: Name of the HTTP Servlet Extension
         explode: false
         in: path
         name: http-servlet-extension-name
@@ -125,7 +125,7 @@ paths:
       summary: Update an existing HTTP Servlet Extension by name
       operationId: update-http-servlet-extension
       parameters:
-      - description: Name of the HTTP Servlet Extension to be updated
+      - description: Name of the HTTP Servlet Extension
         explode: false
         in: path
         name: http-servlet-extension-name
@@ -171,6 +171,330 @@ paths:
       - basicAuth: []
       tags:
       - http-servlet-extension
+  /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers:
+    post:
+      summary: Add a new Velocity Context Provider to the config
+      operationId: add-velocity-context-provider
+      parameters:
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-velocity-tools-velocity-context-provider-request'
+              - $ref: '#/components/schemas/add-third-party-velocity-context-provider-request'
+        description: Create a new Velocity Context Provider in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Velocity Context Provider already exists
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+  /http-servlet-extensions/{http-servlet-extension-name}/velocity-context-providers/{velocity-context-provider-name}:
+    delete:
+      summary: Delete a Velocity Context Provider
+      operationId: delete-velocity-context-provider
+      parameters:
+      - description: Name of the Velocity Context Provider
+        explode: false
+        in: path
+        name: velocity-context-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Velocity Context Provider does not exist
+        "409":
+          description: The Velocity Context Provider cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+    get:
+      summary: Returns a single Velocity Context Provider
+      operationId: get-velocity-context-provider
+      parameters:
+      - description: Name of the Velocity Context Provider
+        explode: false
+        in: path
+        name: velocity-context-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Velocity Context Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+    patch:
+      summary: Update an existing Velocity Context Provider by name
+      operationId: update-velocity-context-provider
+      parameters:
+      - description: Name of the Velocity Context Provider
+        explode: false
+        in: path
+        name: velocity-context-provider-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Velocity Context Provider
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-response'
+                - $ref: '#/components/schemas/third-party-velocity-context-provider-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Velocity Context Provider does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-context-provider
+  /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders:
+    post:
+      summary: Add a new Velocity Template Loader to the config
+      operationId: add-velocity-template-loader
+      parameters:
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-velocity-template-loader-request'
+        description: Create a new Velocity Template Loader in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/velocity-template-loader-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Velocity Template Loader already exists
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-template-loader
+  /http-servlet-extensions/{http-servlet-extension-name}/velocity-template-loaders/{velocity-template-loader-name}:
+    delete:
+      summary: Delete a Velocity Template Loader
+      operationId: delete-velocity-template-loader
+      parameters:
+      - description: Name of the Velocity Template Loader
+        explode: false
+        in: path
+        name: velocity-template-loader-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Velocity Template Loader does not exist
+        "409":
+          description: The Velocity Template Loader cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-template-loader
+    get:
+      summary: Returns a single Velocity Template Loader
+      operationId: get-velocity-template-loader
+      parameters:
+      - description: Name of the Velocity Template Loader
+        explode: false
+        in: path
+        name: velocity-template-loader-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/velocity-template-loader-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Velocity Template Loader does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-template-loader
+    patch:
+      summary: Update an existing Velocity Template Loader by name
+      operationId: update-velocity-template-loader
+      parameters:
+      - description: Name of the Velocity Template Loader
+        explode: false
+        in: path
+        name: velocity-template-loader-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the HTTP Servlet Extension
+        explode: false
+        in: path
+        name: http-servlet-extension-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Velocity Template Loader
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/velocity-template-loader-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Velocity Template Loader does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - velocity-template-loader
 components:
   schemas:
     delegated-admin-http-servlet-extension-response:
@@ -1135,18 +1459,222 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:http-servlet-extension:third-party"
-    Enumhttp-servlet-extension-debugLevelProp:
+    add-velocity-tools-velocity-context-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Velocity Context Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
+    velocity-tools-velocity-context-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Velocity Context Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/velocity-tools-velocity-context-provider-shared'
+    velocity-tools-velocity-context-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumvelocity-tools-velocity-context-providerSchemaUrn'
+        requestTool:
+          type: array
+          items:
+            type: string
+          description: >-
+              The fully-qualified name of a Velocity Tool class that will be initialized for each request. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
+        sessionTool:
+          type: array
+          items:
+            type: string
+          description: >-
+              The fully-qualified name of a Velocity Tool class that will be initialized for each session. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
+        applicationTool:
+          type: array
+          items:
+            type: string
+          description: >-
+              The fully-qualified name of a Velocity Tool class that will be initialized once for the life of the server. May optionally include a path to a properties file used to configure this tool separated from the class name by a semi-colon (;). The path may absolute or relative to the server root.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
+        objectScope:
+          $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
+        includedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will contribute content.
+        excludedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will not contribute content.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
+      required:
+      - schemas
+    Enumvelocity-tools-velocity-context-providerSchemaUrn:
       type: string
       enum:
-      - "severe"
-      - "warning"
-      - "info"
-      - "config"
-      - "fine"
-      - "finer"
-      - "finest"
-      description: >-
-          The minimum debug level that should be used for messages to be logged.
+      - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:velocity-tools"
+    add-third-party-velocity-context-provider-request:
+      allOf:
+      - type: object
+        properties:
+          providerName:
+            description: Name of the new Velocity Context Provider
+            type: string
+        required:
+        - providerName
+      - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
+    third-party-velocity-context-provider-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Velocity Context Provider
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/third-party-velocity-context-provider-shared'
+    third-party-velocity-context-provider-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumthird-party-velocity-context-providerSchemaUrn'
+        extensionClass:
+          type: string
+          description: >-
+              The fully-qualified name of the Java class providing the logic for the Third Party Velocity Context Provider.
+        extensionArgument:
+          type: array
+          items:
+            type: string
+          description: >-
+              The set of arguments used to customize the behavior for the Third Party Velocity Context Provider. Each configuration property should be given in the form 'name=value'.
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Velocity Context Provider is enabled. If set to 'false' this Velocity Context Provider will not contribute context content for any requests.
+        objectScope:
+          $ref: '#/components/schemas/Enumvelocity-context-provider-objectScopeProp'
+        includedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will contribute content.
+        excludedView:
+          type: array
+          items:
+            type: string
+          description: >-
+              The name of a view for which this Velocity Context Provider will not contribute content.
+        httpMethod:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies the set of HTTP methods handled by this Velocity Context Provider, which will perform actions necessary to fulfill the request before updating the context for the response. The values of this property are not case-sensitive.
+        responseHeader:
+          type: array
+          items:
+            type: string
+          description: >-
+              Specifies HTTP header fields and values added to response headers for template page requests to which this Velocity Context Provider contributes content.
+      required:
+      - schemas
+      - extensionClass
+    Enumthird-party-velocity-context-providerSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:velocity-context-provider:third-party"
+    add-velocity-template-loader-request:
+      allOf:
+      - type: object
+        properties:
+          loaderName:
+            description: Name of the new Velocity Template Loader
+            type: string
+        required:
+        - loaderName
+      - $ref: '#/components/schemas/velocity-template-loader-shared'
+    velocity-template-loader-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Velocity Template Loader
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/velocity-template-loader-shared'
+    velocity-template-loader-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumvelocity-template-loaderSchemaUrn'
+        enabled:
+          type: boolean
+          description: >-
+              Indicates whether this Velocity Template Loader is enabled.
+        evaluationOrderIndex:
+          type: integer
+          description: >-
+              This property determines the evaluation order for determining the correct Velocity Template Loader to load a template for generating content for a particular request.
+        mimeTypeMatcher:
+          type: string
+          description: >-
+              Specifies a media type for matching Accept request-header values.
+        mimeType:
+          type: string
+          description: >-
+              Specifies a the value that will be used in the response's Content-Type header that indicates the type of content to return.
+        templateSuffix:
+          type: string
+          description: >-
+              Specifies the suffix to append to the requested resource name when searching for the template file with which to form a response.
+        templateDirectory:
+          type: string
+          description: >-
+              Specifies the directory in which to search for the template files.
+      required:
+      - evaluationOrderIndex
+      - mimeTypeMatcher
+    Enumvelocity-template-loaderSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:velocity-template-loader"
     Enumhttp-servlet-extension-debugTypeProp:
       type: string
       enum:
@@ -1171,6 +1699,26 @@ components:
       - "required"
       description: >-
           Indicates whether the SCIM2 servlet should attempt to map the presented access token to a local user.
+    Enumvelocity-context-provider-objectScopeProp:
+      type: string
+      enum:
+      - "application"
+      - "session"
+      - "request"
+      description: >-
+          Scope for context objects contributed by this Velocity Context Provider. Must be either 'request' or 'session' or 'application'.
+    Enumhttp-servlet-extension-debugLevelProp:
+      type: string
+      enum:
+      - "severe"
+      - "warning"
+      - "info"
+      - "config"
+      - "fine"
+      - "finer"
+      - "finest"
+      description: >-
+          The minimum debug level that should be used for messages to be logged.
     Enumhttp-servlet-extension-allowedControlProp:
       type: string
       enum:

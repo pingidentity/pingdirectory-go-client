@@ -146,7 +146,7 @@ func (r ApiDeleteExtendedOperationHandlerRequest) Execute() (*http.Response, err
 DeleteExtendedOperationHandler Delete a Extended Operation Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param extendedOperationHandlerName Name of the Extended Operation Handler to be deleted
+	@param extendedOperationHandlerName Name of the Extended Operation Handler
 	@return ApiDeleteExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) DeleteExtendedOperationHandler(ctx context.Context, extendedOperationHandlerName string) ApiDeleteExtendedOperationHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetExtendedOperationHandlerRequest) Execute() (*GetExtendedOperationH
 GetExtendedOperationHandler Returns a single Extended Operation Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param extendedOperationHandlerName Name of the Extended Operation Handler to be read
+	@param extendedOperationHandlerName Name of the Extended Operation Handler
 	@return ApiGetExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) GetExtendedOperationHandler(ctx context.Context, extendedOperationHandlerName string) ApiGetExtendedOperationHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateExtendedOperationHandlerRequest) Execute() (*GetExtendedOperati
 UpdateExtendedOperationHandler Update an existing Extended Operation Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param extendedOperationHandlerName Name of the Extended Operation Handler to be updated
+	@param extendedOperationHandlerName Name of the Extended Operation Handler
 	@return ApiUpdateExtendedOperationHandlerRequest
 */
 func (a *ExtendedOperationHandlerApiService) UpdateExtendedOperationHandler(ctx context.Context, extendedOperationHandlerName string) ApiUpdateExtendedOperationHandlerRequest {

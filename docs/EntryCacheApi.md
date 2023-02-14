@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    entryCacheName := "entryCacheName_example" // string | Name of the Entry Cache to be deleted
+    entryCacheName := "entryCacheName_example" // string | Name of the Entry Cache
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**entryCacheName** | **string** | Name of the Entry Cache to be deleted | 
+**entryCacheName** | **string** | Name of the Entry Cache | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    entryCacheName := "entryCacheName_example" // string | Name of the Entry Cache to be read
+    entryCacheName := "entryCacheName_example" // string | Name of the Entry Cache
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**entryCacheName** | **string** | Name of the Entry Cache to be read | 
+**entryCacheName** | **string** | Name of the Entry Cache | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    entryCacheName := "entryCacheName_example" // string | Name of the Entry Cache to be updated
+    entryCacheName := "entryCacheName_example" // string | Name of the Entry Cache
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Entry Cache
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**entryCacheName** | **string** | Name of the Entry Cache to be updated | 
+**entryCacheName** | **string** | Name of the Entry Cache | 
 
 ### Other Parameters
 

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    trustedCertificateName := "trustedCertificateName_example" // string | Name of the Trusted Certificate to be deleted
+    trustedCertificateName := "trustedCertificateName_example" // string | Name of the Trusted Certificate
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**trustedCertificateName** | **string** | Name of the Trusted Certificate to be deleted | 
+**trustedCertificateName** | **string** | Name of the Trusted Certificate | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    trustedCertificateName := "trustedCertificateName_example" // string | Name of the Trusted Certificate to be read
+    trustedCertificateName := "trustedCertificateName_example" // string | Name of the Trusted Certificate
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**trustedCertificateName** | **string** | Name of the Trusted Certificate to be read | 
+**trustedCertificateName** | **string** | Name of the Trusted Certificate | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    trustedCertificateName := "trustedCertificateName_example" // string | Name of the Trusted Certificate to be updated
+    trustedCertificateName := "trustedCertificateName_example" // string | Name of the Trusted Certificate
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Trusted Certificate
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**trustedCertificateName** | **string** | Name of the Trusted Certificate to be updated | 
+**trustedCertificateName** | **string** | Name of the Trusted Certificate | 
 
 ### Other Parameters
 

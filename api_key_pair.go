@@ -146,7 +146,7 @@ func (r ApiDeleteKeyPairRequest) Execute() (*http.Response, error) {
 DeleteKeyPair Delete a Key Pair
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param keyPairName Name of the Key Pair to be deleted
+	@param keyPairName Name of the Key Pair
 	@return ApiDeleteKeyPairRequest
 */
 func (a *KeyPairApiService) DeleteKeyPair(ctx context.Context, keyPairName string) ApiDeleteKeyPairRequest {
@@ -236,7 +236,7 @@ func (r ApiGetKeyPairRequest) Execute() (*KeyPairResponse, *http.Response, error
 GetKeyPair Returns a single Key Pair
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param keyPairName Name of the Key Pair to be read
+	@param keyPairName Name of the Key Pair
 	@return ApiGetKeyPairRequest
 */
 func (a *KeyPairApiService) GetKeyPair(ctx context.Context, keyPairName string) ApiGetKeyPairRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateKeyPairRequest) Execute() (*KeyPairResponse, *http.Response, er
 UpdateKeyPair Update an existing Key Pair by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param keyPairName Name of the Key Pair to be updated
+	@param keyPairName Name of the Key Pair
 	@return ApiUpdateKeyPairRequest
 */
 func (a *KeyPairApiService) UpdateKeyPair(ctx context.Context, keyPairName string) ApiUpdateKeyPairRequest {

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    azureAuthenticationMethodName := "azureAuthenticationMethodName_example" // string | Name of the Azure Authentication Method to be deleted
+    azureAuthenticationMethodName := "azureAuthenticationMethodName_example" // string | Name of the Azure Authentication Method
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**azureAuthenticationMethodName** | **string** | Name of the Azure Authentication Method to be deleted | 
+**azureAuthenticationMethodName** | **string** | Name of the Azure Authentication Method | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    azureAuthenticationMethodName := "azureAuthenticationMethodName_example" // string | Name of the Azure Authentication Method to be read
+    azureAuthenticationMethodName := "azureAuthenticationMethodName_example" // string | Name of the Azure Authentication Method
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**azureAuthenticationMethodName** | **string** | Name of the Azure Authentication Method to be read | 
+**azureAuthenticationMethodName** | **string** | Name of the Azure Authentication Method | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    azureAuthenticationMethodName := "azureAuthenticationMethodName_example" // string | Name of the Azure Authentication Method to be updated
+    azureAuthenticationMethodName := "azureAuthenticationMethodName_example" // string | Name of the Azure Authentication Method
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Azure Authentication Method
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**azureAuthenticationMethodName** | **string** | Name of the Azure Authentication Method to be updated | 
+**azureAuthenticationMethodName** | **string** | Name of the Azure Authentication Method | 
 
 ### Other Parameters
 

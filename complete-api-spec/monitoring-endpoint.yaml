@@ -45,7 +45,7 @@ paths:
       summary: Delete a Monitoring Endpoint
       operationId: delete-monitoring-endpoint
       parameters:
-      - description: Name of the Monitoring Endpoint to be deleted
+      - description: Name of the Monitoring Endpoint
         explode: false
         in: path
         name: monitoring-endpoint-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Monitoring Endpoint
       operationId: get-monitoring-endpoint
       parameters:
-      - description: Name of the Monitoring Endpoint to be read
+      - description: Name of the Monitoring Endpoint
         explode: false
         in: path
         name: monitoring-endpoint-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Monitoring Endpoint by name
       operationId: update-monitoring-endpoint
       parameters:
-      - description: Name of the Monitoring Endpoint to be updated
+      - description: Name of the Monitoring Endpoint
         explode: false
         in: path
         name: monitoring-endpoint-name

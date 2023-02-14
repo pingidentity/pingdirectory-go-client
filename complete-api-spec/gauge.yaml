@@ -49,7 +49,7 @@ paths:
       summary: Delete a Gauge
       operationId: delete-gauge
       parameters:
-      - description: Name of the Gauge to be deleted
+      - description: Name of the Gauge
         explode: false
         in: path
         name: gauge-name
@@ -76,7 +76,7 @@ paths:
       summary: Returns a single Gauge
       operationId: get-gauge
       parameters:
-      - description: Name of the Gauge to be read
+      - description: Name of the Gauge
         explode: false
         in: path
         name: gauge-name
@@ -107,7 +107,7 @@ paths:
       summary: Update an existing Gauge by name
       operationId: update-gauge
       parameters:
-      - description: Name of the Gauge to be updated
+      - description: Name of the Gauge
         explode: false
         in: path
         name: gauge-name
@@ -349,27 +349,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:gauge:numeric"
-    Enumgauge-alertLevelProp:
-      type: string
-      enum:
-      - "always"
-      - "warning-and-above"
-      - "minor-and-above"
-      - "major-and-above"
-      - "critical-only"
-      - "never"
-      description: >-
-          Specifies the level at which alerts are sent for alarms raised by this Gauge.
-    Enumgauge-serverUnavailableSeverityLevelProp:
-      type: string
-      enum:
-      - "critical"
-      - "major"
-      - "minor"
-      - "warning"
-      - "none"
-      description: >-
-          Specifies the alarm severity level at or above which the server is considered unavailable.
     Enumgauge-overrideSeverityProp:
       type: string
       enum:
@@ -390,6 +369,27 @@ components:
       - "none"
       description: >-
           Specifies the alarm severity level at or above which the server is considered degraded.
+    Enumgauge-serverUnavailableSeverityLevelProp:
+      type: string
+      enum:
+      - "critical"
+      - "major"
+      - "minor"
+      - "warning"
+      - "none"
+      description: >-
+          Specifies the alarm severity level at or above which the server is considered unavailable.
+    Enumgauge-alertLevelProp:
+      type: string
+      enum:
+      - "always"
+      - "warning-and-above"
+      - "minor-and-above"
+      - "major-and-above"
+      - "critical-only"
+      - "never"
+      description: >-
+          Specifies the level at which alerts are sent for alarms raised by this Gauge.
     updateRequest:
       type: object
       properties:

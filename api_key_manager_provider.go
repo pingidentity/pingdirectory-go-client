@@ -146,7 +146,7 @@ func (r ApiDeleteKeyManagerProviderRequest) Execute() (*http.Response, error) {
 DeleteKeyManagerProvider Delete a Key Manager Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param keyManagerProviderName Name of the Key Manager Provider to be deleted
+	@param keyManagerProviderName Name of the Key Manager Provider
 	@return ApiDeleteKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) DeleteKeyManagerProvider(ctx context.Context, keyManagerProviderName string) ApiDeleteKeyManagerProviderRequest {
@@ -236,7 +236,7 @@ func (r ApiGetKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200Res
 GetKeyManagerProvider Returns a single Key Manager Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param keyManagerProviderName Name of the Key Manager Provider to be read
+	@param keyManagerProviderName Name of the Key Manager Provider
 	@return ApiGetKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) GetKeyManagerProvider(ctx context.Context, keyManagerProviderName string) ApiGetKeyManagerProviderRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateKeyManagerProviderRequest) Execute() (*AddKeyManagerProvider200
 UpdateKeyManagerProvider Update an existing Key Manager Provider by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param keyManagerProviderName Name of the Key Manager Provider to be updated
+	@param keyManagerProviderName Name of the Key Manager Provider
 	@return ApiUpdateKeyManagerProviderRequest
 */
 func (a *KeyManagerProviderApiService) UpdateKeyManagerProvider(ctx context.Context, keyManagerProviderName string) ApiUpdateKeyManagerProviderRequest {

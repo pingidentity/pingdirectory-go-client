@@ -146,7 +146,7 @@ func (r ApiDeleteRestResourceTypeRequest) Execute() (*http.Response, error) {
 DeleteRestResourceType Delete a REST Resource Type
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param restResourceTypeName Name of the REST Resource Type to be deleted
+	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiDeleteRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) DeleteRestResourceType(ctx context.Context, restResourceTypeName string) ApiDeleteRestResourceTypeRequest {
@@ -236,7 +236,7 @@ func (r ApiGetRestResourceTypeRequest) Execute() (*AddRestResourceType200Respons
 GetRestResourceType Returns a single REST Resource Type
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param restResourceTypeName Name of the REST Resource Type to be read
+	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiGetRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) GetRestResourceType(ctx context.Context, restResourceTypeName string) ApiGetRestResourceTypeRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateRestResourceTypeRequest) Execute() (*AddRestResourceType200Resp
 UpdateRestResourceType Update an existing REST Resource Type by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param restResourceTypeName Name of the REST Resource Type to be updated
+	@param restResourceTypeName Name of the REST Resource Type
 	@return ApiUpdateRestResourceTypeRequest
 */
 func (a *RestResourceTypeApiService) UpdateRestResourceType(ctx context.Context, restResourceTypeName string) ApiUpdateRestResourceTypeRequest {

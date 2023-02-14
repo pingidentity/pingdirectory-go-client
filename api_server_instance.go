@@ -36,7 +36,7 @@ func (r ApiGetServerInstanceRequest) Execute() (*GetServerInstance200Response, *
 GetServerInstance Returns a single Server Instance
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param serverInstanceName Name of the Server Instance to be read
+	@param serverInstanceName Name of the Server Instance
 	@return ApiGetServerInstanceRequest
 */
 func (a *ServerInstanceApiService) GetServerInstance(ctx context.Context, serverInstanceName string) ApiGetServerInstanceRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateServerInstanceRequest) Execute() (*GetServerInstance200Response
 UpdateServerInstance Update an existing Server Instance by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param serverInstanceName Name of the Server Instance to be updated
+	@param serverInstanceName Name of the Server Instance
 	@return ApiUpdateServerInstanceRequest
 */
 func (a *ServerInstanceApiService) UpdateServerInstance(ctx context.Context, serverInstanceName string) ApiUpdateServerInstanceRequest {

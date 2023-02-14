@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    logFieldBehaviorName := "logFieldBehaviorName_example" // string | Name of the Log Field Behavior to be deleted
+    logFieldBehaviorName := "logFieldBehaviorName_example" // string | Name of the Log Field Behavior
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldBehaviorName** | **string** | Name of the Log Field Behavior to be deleted | 
+**logFieldBehaviorName** | **string** | Name of the Log Field Behavior | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    logFieldBehaviorName := "logFieldBehaviorName_example" // string | Name of the Log Field Behavior to be read
+    logFieldBehaviorName := "logFieldBehaviorName_example" // string | Name of the Log Field Behavior
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldBehaviorName** | **string** | Name of the Log Field Behavior to be read | 
+**logFieldBehaviorName** | **string** | Name of the Log Field Behavior | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    logFieldBehaviorName := "logFieldBehaviorName_example" // string | Name of the Log Field Behavior to be updated
+    logFieldBehaviorName := "logFieldBehaviorName_example" // string | Name of the Log Field Behavior
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log Field Behavior
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFieldBehaviorName** | **string** | Name of the Log Field Behavior to be updated | 
+**logFieldBehaviorName** | **string** | Name of the Log Field Behavior | 
 
 ### Other Parameters
 

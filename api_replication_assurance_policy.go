@@ -146,7 +146,7 @@ func (r ApiDeleteReplicationAssurancePolicyRequest) Execute() (*http.Response, e
 DeleteReplicationAssurancePolicy Delete a Replication Assurance Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param replicationAssurancePolicyName Name of the Replication Assurance Policy to be deleted
+	@param replicationAssurancePolicyName Name of the Replication Assurance Policy
 	@return ApiDeleteReplicationAssurancePolicyRequest
 */
 func (a *ReplicationAssurancePolicyApiService) DeleteReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiDeleteReplicationAssurancePolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetReplicationAssurancePolicyRequest) Execute() (*ReplicationAssuranc
 GetReplicationAssurancePolicy Returns a single Replication Assurance Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param replicationAssurancePolicyName Name of the Replication Assurance Policy to be read
+	@param replicationAssurancePolicyName Name of the Replication Assurance Policy
 	@return ApiGetReplicationAssurancePolicyRequest
 */
 func (a *ReplicationAssurancePolicyApiService) GetReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiGetReplicationAssurancePolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateReplicationAssurancePolicyRequest) Execute() (*ReplicationAssur
 UpdateReplicationAssurancePolicy Update an existing Replication Assurance Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param replicationAssurancePolicyName Name of the Replication Assurance Policy to be updated
+	@param replicationAssurancePolicyName Name of the Replication Assurance Policy
 	@return ApiUpdateReplicationAssurancePolicyRequest
 */
 func (a *ReplicationAssurancePolicyApiService) UpdateReplicationAssurancePolicy(ctx context.Context, replicationAssurancePolicyName string) ApiUpdateReplicationAssurancePolicyRequest {

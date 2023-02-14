@@ -146,7 +146,7 @@ func (r ApiDeleteConstructedAttributeRequest) Execute() (*http.Response, error) 
 DeleteConstructedAttribute Delete a Constructed Attribute
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param constructedAttributeName Name of the Constructed Attribute to be deleted
+	@param constructedAttributeName Name of the Constructed Attribute
 	@return ApiDeleteConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) DeleteConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiDeleteConstructedAttributeRequest {
@@ -236,7 +236,7 @@ func (r ApiGetConstructedAttributeRequest) Execute() (*ConstructedAttributeRespo
 GetConstructedAttribute Returns a single Constructed Attribute
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param constructedAttributeName Name of the Constructed Attribute to be read
+	@param constructedAttributeName Name of the Constructed Attribute
 	@return ApiGetConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) GetConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiGetConstructedAttributeRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateConstructedAttributeRequest) Execute() (*ConstructedAttributeRe
 UpdateConstructedAttribute Update an existing Constructed Attribute by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param constructedAttributeName Name of the Constructed Attribute to be updated
+	@param constructedAttributeName Name of the Constructed Attribute
 	@return ApiUpdateConstructedAttributeRequest
 */
 func (a *ConstructedAttributeApiService) UpdateConstructedAttribute(ctx context.Context, constructedAttributeName string) ApiUpdateConstructedAttributeRequest {

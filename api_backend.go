@@ -146,7 +146,7 @@ func (r ApiDeleteBackendRequest) Execute() (*http.Response, error) {
 DeleteBackend Delete a Backend
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param backendName Name of the Backend to be deleted
+	@param backendName Name of the Backend
 	@return ApiDeleteBackendRequest
 */
 func (a *BackendApiService) DeleteBackend(ctx context.Context, backendName string) ApiDeleteBackendRequest {
@@ -236,7 +236,7 @@ func (r ApiGetBackendRequest) Execute() (*GetBackend200Response, *http.Response,
 GetBackend Returns a single Backend
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param backendName Name of the Backend to be read
+	@param backendName Name of the Backend
 	@return ApiGetBackendRequest
 */
 func (a *BackendApiService) GetBackend(ctx context.Context, backendName string) ApiGetBackendRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateBackendRequest) Execute() (*GetBackend200Response, *http.Respon
 UpdateBackend Update an existing Backend by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param backendName Name of the Backend to be updated
+	@param backendName Name of the Backend
 	@return ApiUpdateBackendRequest
 */
 func (a *BackendApiService) UpdateBackend(ctx context.Context, backendName string) ApiUpdateBackendRequest {

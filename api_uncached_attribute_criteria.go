@@ -146,7 +146,7 @@ func (r ApiDeleteUncachedAttributeCriteriaRequest) Execute() (*http.Response, er
 DeleteUncachedAttributeCriteria Delete a Uncached Attribute Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be deleted
+	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria
 	@return ApiDeleteUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteria(ctx context.Context, uncachedAttributeCriteriaName string) ApiDeleteUncachedAttributeCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetUncachedAttributeCriteriaRequest) Execute() (*AddUncachedAttribute
 GetUncachedAttributeCriteria Returns a single Uncached Attribute Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be read
+	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria
 	@return ApiGetUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) GetUncachedAttributeCriteria(ctx context.Context, uncachedAttributeCriteriaName string) ApiGetUncachedAttributeCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateUncachedAttributeCriteriaRequest) Execute() (*AddUncachedAttrib
 UpdateUncachedAttributeCriteria Update an existing Uncached Attribute Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria to be updated
+	@param uncachedAttributeCriteriaName Name of the Uncached Attribute Criteria
 	@return ApiUpdateUncachedAttributeCriteriaRequest
 */
 func (a *UncachedAttributeCriteriaApiService) UpdateUncachedAttributeCriteria(ctx context.Context, uncachedAttributeCriteriaName string) ApiUpdateUncachedAttributeCriteriaRequest {

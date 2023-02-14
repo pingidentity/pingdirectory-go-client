@@ -146,7 +146,7 @@ func (r ApiDeleteHttpServletCrossOriginPolicyRequest) Execute() (*http.Response,
 DeleteHttpServletCrossOriginPolicy Delete a HTTP Servlet Cross Origin Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy to be deleted
+	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy
 	@return ApiDeleteHttpServletCrossOriginPolicyRequest
 */
 func (a *HttpServletCrossOriginPolicyApiService) DeleteHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiDeleteHttpServletCrossOriginPolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetHttpServletCrossOriginPolicyRequest) Execute() (*HttpServletCrossO
 GetHttpServletCrossOriginPolicy Returns a single HTTP Servlet Cross Origin Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy to be read
+	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy
 	@return ApiGetHttpServletCrossOriginPolicyRequest
 */
 func (a *HttpServletCrossOriginPolicyApiService) GetHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiGetHttpServletCrossOriginPolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateHttpServletCrossOriginPolicyRequest) Execute() (*HttpServletCro
 UpdateHttpServletCrossOriginPolicy Update an existing HTTP Servlet Cross Origin Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy to be updated
+	@param httpServletCrossOriginPolicyName Name of the HTTP Servlet Cross Origin Policy
 	@return ApiUpdateHttpServletCrossOriginPolicyRequest
 */
 func (a *HttpServletCrossOriginPolicyApiService) UpdateHttpServletCrossOriginPolicy(ctx context.Context, httpServletCrossOriginPolicyName string) ApiUpdateHttpServletCrossOriginPolicyRequest {

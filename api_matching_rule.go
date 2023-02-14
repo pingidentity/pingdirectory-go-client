@@ -36,7 +36,7 @@ func (r ApiGetMatchingRuleRequest) Execute() (*GetMatchingRule200Response, *http
 GetMatchingRule Returns a single Matching Rule
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param matchingRuleName Name of the Matching Rule to be read
+	@param matchingRuleName Name of the Matching Rule
 	@return ApiGetMatchingRuleRequest
 */
 func (a *MatchingRuleApiService) GetMatchingRule(ctx context.Context, matchingRuleName string) ApiGetMatchingRuleRequest {
@@ -145,7 +145,7 @@ func (r ApiUpdateMatchingRuleRequest) Execute() (*GetMatchingRule200Response, *h
 UpdateMatchingRule Update an existing Matching Rule by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param matchingRuleName Name of the Matching Rule to be updated
+	@param matchingRuleName Name of the Matching Rule
 	@return ApiUpdateMatchingRuleRequest
 */
 func (a *MatchingRuleApiService) UpdateMatchingRule(ctx context.Context, matchingRuleName string) ApiUpdateMatchingRuleRequest {

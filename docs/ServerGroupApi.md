@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    serverGroupName := "serverGroupName_example" // string | Name of the Server Group to be deleted
+    serverGroupName := "serverGroupName_example" // string | Name of the Server Group
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverGroupName** | **string** | Name of the Server Group to be deleted | 
+**serverGroupName** | **string** | Name of the Server Group | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    serverGroupName := "serverGroupName_example" // string | Name of the Server Group to be read
+    serverGroupName := "serverGroupName_example" // string | Name of the Server Group
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverGroupName** | **string** | Name of the Server Group to be read | 
+**serverGroupName** | **string** | Name of the Server Group | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    serverGroupName := "serverGroupName_example" // string | Name of the Server Group to be updated
+    serverGroupName := "serverGroupName_example" // string | Name of the Server Group
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Server Group
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serverGroupName** | **string** | Name of the Server Group to be updated | 
+**serverGroupName** | **string** | Name of the Server Group | 
 
 ### Other Parameters
 

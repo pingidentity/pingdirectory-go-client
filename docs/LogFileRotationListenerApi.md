@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    logFileRotationListenerName := "logFileRotationListenerName_example" // string | Name of the Log File Rotation Listener to be deleted
+    logFileRotationListenerName := "logFileRotationListenerName_example" // string | Name of the Log File Rotation Listener
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFileRotationListenerName** | **string** | Name of the Log File Rotation Listener to be deleted | 
+**logFileRotationListenerName** | **string** | Name of the Log File Rotation Listener | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    logFileRotationListenerName := "logFileRotationListenerName_example" // string | Name of the Log File Rotation Listener to be read
+    logFileRotationListenerName := "logFileRotationListenerName_example" // string | Name of the Log File Rotation Listener
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFileRotationListenerName** | **string** | Name of the Log File Rotation Listener to be read | 
+**logFileRotationListenerName** | **string** | Name of the Log File Rotation Listener | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    logFileRotationListenerName := "logFileRotationListenerName_example" // string | Name of the Log File Rotation Listener to be updated
+    logFileRotationListenerName := "logFileRotationListenerName_example" // string | Name of the Log File Rotation Listener
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Log File Rotation Listener
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logFileRotationListenerName** | **string** | Name of the Log File Rotation Listener to be updated | 
+**logFileRotationListenerName** | **string** | Name of the Log File Rotation Listener | 
 
 ### Other Parameters
 

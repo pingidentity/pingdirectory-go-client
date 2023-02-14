@@ -49,7 +49,7 @@ paths:
       summary: Delete a OAuth Token Handler
       operationId: delete-oauth-token-handler
       parameters:
-      - description: Name of the OAuth Token Handler to be deleted
+      - description: Name of the OAuth Token Handler
         explode: false
         in: path
         name: oauth-token-handler-name
@@ -76,7 +76,7 @@ paths:
       summary: Returns a single OAuth Token Handler
       operationId: get-oauth-token-handler
       parameters:
-      - description: Name of the OAuth Token Handler to be read
+      - description: Name of the OAuth Token Handler
         explode: false
         in: path
         name: oauth-token-handler-name
@@ -107,7 +107,7 @@ paths:
       summary: Update an existing OAuth Token Handler by name
       operationId: update-oauth-token-handler
       parameters:
-      - description: Name of the OAuth Token Handler to be updated
+      - description: Name of the OAuth Token Handler
         explode: false
         in: path
         name: oauth-token-handler-name

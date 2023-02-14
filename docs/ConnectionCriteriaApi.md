@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    connectionCriteriaName := "connectionCriteriaName_example" // string | Name of the Connection Criteria to be deleted
+    connectionCriteriaName := "connectionCriteriaName_example" // string | Name of the Connection Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionCriteriaName** | **string** | Name of the Connection Criteria to be deleted | 
+**connectionCriteriaName** | **string** | Name of the Connection Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    connectionCriteriaName := "connectionCriteriaName_example" // string | Name of the Connection Criteria to be read
+    connectionCriteriaName := "connectionCriteriaName_example" // string | Name of the Connection Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionCriteriaName** | **string** | Name of the Connection Criteria to be read | 
+**connectionCriteriaName** | **string** | Name of the Connection Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    connectionCriteriaName := "connectionCriteriaName_example" // string | Name of the Connection Criteria to be updated
+    connectionCriteriaName := "connectionCriteriaName_example" // string | Name of the Connection Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Connection Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionCriteriaName** | **string** | Name of the Connection Criteria to be updated | 
+**connectionCriteriaName** | **string** | Name of the Connection Criteria | 
 
 ### Other Parameters
 

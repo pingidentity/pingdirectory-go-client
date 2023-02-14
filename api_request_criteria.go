@@ -146,7 +146,7 @@ func (r ApiDeleteRequestCriteriaRequest) Execute() (*http.Response, error) {
 DeleteRequestCriteria Delete a Request Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param requestCriteriaName Name of the Request Criteria to be deleted
+	@param requestCriteriaName Name of the Request Criteria
 	@return ApiDeleteRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) DeleteRequestCriteria(ctx context.Context, requestCriteriaName string) ApiDeleteRequestCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetRequestCriteriaRequest) Execute() (*AddRequestCriteria200Response,
 GetRequestCriteria Returns a single Request Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param requestCriteriaName Name of the Request Criteria to be read
+	@param requestCriteriaName Name of the Request Criteria
 	@return ApiGetRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) GetRequestCriteria(ctx context.Context, requestCriteriaName string) ApiGetRequestCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateRequestCriteriaRequest) Execute() (*AddRequestCriteria200Respon
 UpdateRequestCriteria Update an existing Request Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param requestCriteriaName Name of the Request Criteria to be updated
+	@param requestCriteriaName Name of the Request Criteria
 	@return ApiUpdateRequestCriteriaRequest
 */
 func (a *RequestCriteriaApiService) UpdateRequestCriteria(ctx context.Context, requestCriteriaName string) ApiUpdateRequestCriteriaRequest {

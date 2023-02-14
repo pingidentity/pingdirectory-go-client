@@ -146,7 +146,7 @@ func (r ApiDeleteNotificationManagerRequest) Execute() (*http.Response, error) {
 DeleteNotificationManager Delete a Notification Manager
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param notificationManagerName Name of the Notification Manager to be deleted
+	@param notificationManagerName Name of the Notification Manager
 	@return ApiDeleteNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) DeleteNotificationManager(ctx context.Context, notificationManagerName string) ApiDeleteNotificationManagerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetNotificationManagerRequest) Execute() (*ThirdPartyNotificationMana
 GetNotificationManager Returns a single Notification Manager
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param notificationManagerName Name of the Notification Manager to be read
+	@param notificationManagerName Name of the Notification Manager
 	@return ApiGetNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) GetNotificationManager(ctx context.Context, notificationManagerName string) ApiGetNotificationManagerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateNotificationManagerRequest) Execute() (*ThirdPartyNotificationM
 UpdateNotificationManager Update an existing Notification Manager by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param notificationManagerName Name of the Notification Manager to be updated
+	@param notificationManagerName Name of the Notification Manager
 	@return ApiUpdateNotificationManagerRequest
 */
 func (a *NotificationManagerApiService) UpdateNotificationManager(ctx context.Context, notificationManagerName string) ApiUpdateNotificationManagerRequest {

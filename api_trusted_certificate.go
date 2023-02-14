@@ -146,7 +146,7 @@ func (r ApiDeleteTrustedCertificateRequest) Execute() (*http.Response, error) {
 DeleteTrustedCertificate Delete a Trusted Certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param trustedCertificateName Name of the Trusted Certificate to be deleted
+	@param trustedCertificateName Name of the Trusted Certificate
 	@return ApiDeleteTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) DeleteTrustedCertificate(ctx context.Context, trustedCertificateName string) ApiDeleteTrustedCertificateRequest {
@@ -236,7 +236,7 @@ func (r ApiGetTrustedCertificateRequest) Execute() (*TrustedCertificateResponse,
 GetTrustedCertificate Returns a single Trusted Certificate
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param trustedCertificateName Name of the Trusted Certificate to be read
+	@param trustedCertificateName Name of the Trusted Certificate
 	@return ApiGetTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) GetTrustedCertificate(ctx context.Context, trustedCertificateName string) ApiGetTrustedCertificateRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateTrustedCertificateRequest) Execute() (*TrustedCertificateRespon
 UpdateTrustedCertificate Update an existing Trusted Certificate by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param trustedCertificateName Name of the Trusted Certificate to be updated
+	@param trustedCertificateName Name of the Trusted Certificate
 	@return ApiUpdateTrustedCertificateRequest
 */
 func (a *TrustedCertificateApiService) UpdateTrustedCertificate(ctx context.Context, trustedCertificateName string) ApiUpdateTrustedCertificateRequest {

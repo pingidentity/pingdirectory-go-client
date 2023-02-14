@@ -146,7 +146,7 @@ func (r ApiDeleteJsonAttributeConstraintsRequest) Execute() (*http.Response, err
 DeleteJsonAttributeConstraints Delete a JSON Attribute Constraints
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be deleted
+	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiDeleteJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) DeleteJsonAttributeConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiDeleteJsonAttributeConstraintsRequest {
@@ -236,7 +236,7 @@ func (r ApiGetJsonAttributeConstraintsRequest) Execute() (*JsonAttributeConstrai
 GetJsonAttributeConstraints Returns a single JSON Attribute Constraints
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be read
+	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiGetJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) GetJsonAttributeConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiGetJsonAttributeConstraintsRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateJsonAttributeConstraintsRequest) Execute() (*JsonAttributeConst
 UpdateJsonAttributeConstraints Update an existing JSON Attribute Constraints by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints to be updated
+	@param jsonAttributeConstraintsName Name of the JSON Attribute Constraints
 	@return ApiUpdateJsonAttributeConstraintsRequest
 */
 func (a *JsonAttributeConstraintsApiService) UpdateJsonAttributeConstraints(ctx context.Context, jsonAttributeConstraintsName string) ApiUpdateJsonAttributeConstraintsRequest {

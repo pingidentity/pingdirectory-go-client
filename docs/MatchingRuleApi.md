@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    matchingRuleName := "matchingRuleName_example" // string | Name of the Matching Rule to be read
+    matchingRuleName := "matchingRuleName_example" // string | Name of the Matching Rule
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**matchingRuleName** | **string** | Name of the Matching Rule to be read | 
+**matchingRuleName** | **string** | Name of the Matching Rule | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    matchingRuleName := "matchingRuleName_example" // string | Name of the Matching Rule to be updated
+    matchingRuleName := "matchingRuleName_example" // string | Name of the Matching Rule
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Matching Rule
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**matchingRuleName** | **string** | Name of the Matching Rule to be updated | 
+**matchingRuleName** | **string** | Name of the Matching Rule | 
 
 ### Other Parameters
 

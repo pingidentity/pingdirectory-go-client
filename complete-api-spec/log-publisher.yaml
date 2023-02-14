@@ -117,7 +117,7 @@ paths:
       summary: Delete a Log Publisher
       operationId: delete-log-publisher
       parameters:
-      - description: Name of the Log Publisher to be deleted
+      - description: Name of the Log Publisher
         explode: false
         in: path
         name: log-publisher-name
@@ -144,7 +144,7 @@ paths:
       summary: Returns a single Log Publisher
       operationId: get-log-publisher
       parameters:
-      - description: Name of the Log Publisher to be read
+      - description: Name of the Log Publisher
         explode: false
         in: path
         name: log-publisher-name
@@ -211,7 +211,7 @@ paths:
       summary: Update an existing Log Publisher by name
       operationId: update-log-publisher
       parameters:
-      - description: Name of the Log Publisher to be updated
+      - description: Name of the Log Publisher
         explode: false
         in: path
         name: log-publisher-name
@@ -283,6 +283,164 @@ paths:
       - basicAuth: []
       tags:
       - log-publisher
+  /log-publishers/{log-publisher-name}/debug-targets:
+    post:
+      summary: Add a new Debug Target to the config
+      operationId: add-debug-target
+      parameters:
+      - description: Name of the Log Publisher
+        explode: false
+        in: path
+        name: log-publisher-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-debug-target-request'
+        description: Create a new Debug Target in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-target-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Debug Target already exists
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+  /log-publishers/{log-publisher-name}/debug-targets/{debug-target-name}:
+    delete:
+      summary: Delete a Debug Target
+      operationId: delete-debug-target
+      parameters:
+      - description: Name of the Debug Target
+        explode: false
+        in: path
+        name: debug-target-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Log Publisher
+        explode: false
+        in: path
+        name: log-publisher-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Debug Target does not exist
+        "409":
+          description: The Debug Target cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+    get:
+      summary: Returns a single Debug Target
+      operationId: get-debug-target
+      parameters:
+      - description: Name of the Debug Target
+        explode: false
+        in: path
+        name: debug-target-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Log Publisher
+        explode: false
+        in: path
+        name: log-publisher-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-target-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Debug Target does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
+    patch:
+      summary: Update an existing Debug Target by name
+      operationId: update-debug-target
+      parameters:
+      - description: Name of the Debug Target
+        explode: false
+        in: path
+        name: debug-target-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the Log Publisher
+        explode: false
+        in: path
+        name: log-publisher-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Debug Target
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/debug-target-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Debug Target does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - debug-target
 components:
   schemas:
     add-syslog-json-audit-log-publisher-request:
@@ -6139,6 +6297,80 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-publisher:groovy-scripted-http-operation"
+    add-debug-target-request:
+      allOf:
+      - type: object
+        properties:
+          targetName:
+            description: Name of the new Debug Target
+            type: string
+        required:
+        - targetName
+      - $ref: '#/components/schemas/debug-target-shared'
+    debug-target-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Debug Target
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/debug-target-shared'
+    debug-target-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdebug-targetSchemaUrn'
+        debugScope:
+          type: string
+          description: >-
+              Specifies the fully-qualified Java package, class, or method affected by the settings in this target definition. Use the number character (#) to separate the class name and the method name (that is, com.unboundid.directory.server.core.DirectoryServer#startUp).
+        debugLevel:
+          $ref: '#/components/schemas/Enumdebug-target-debugLevelProp'
+        debugCategory:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdebug-target-debugCategoryProp'
+        omitMethodEntryArguments:
+          type: boolean
+          description: >-
+              Specifies the property to indicate whether to include method arguments in debug messages.
+        omitMethodReturnValue:
+          type: boolean
+          description: >-
+              Specifies the property to indicate whether to include the return value in debug messages.
+        includeThrowableCause:
+          type: boolean
+          description: >-
+              Specifies the property to indicate whether to include the cause of exceptions in exception thrown and caught messages.
+        throwableStackFrames:
+          type: integer
+          description: >-
+              Specifies the property to indicate the number of stack frames to include in the stack trace for method entry and exception thrown messages.
+        description:
+          type: string
+          description: >-
+              A description for this Debug Target
+      required:
+      - debugScope
+      - debugLevel
+    Enumdebug-targetSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:debug-target"
+    Enumlog-publisher-httpMessageTypeProp:
+      type: string
+      enum:
+      - "request"
+      - "response"
+      description: >-
+          Specifies the HTTP message types which can be logged.
     Enumlog-publisher-debugMessageTypeProp:
       type: string
       enum:
@@ -6156,13 +6388,21 @@ components:
       - "policy-request-and-response"
       description: >-
           Specifies the debug message types which can be logged. Note that enabling these may result in sensitive information being logged.
-    Enumlog-publisher-loggingErrorBehaviorProp:
+    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
       type: string
       enum:
-      - "standard-error"
-      - "lockdown-mode"
+      - "error"
       description: >-
-          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
+          Specifies the Directory REST API message types which can be logged.
+    Enumlog-publisher-extensionMessageTypeProp:
+      type: string
+      enum:
+      - "error"
+      - "warning"
+      - "notice"
+      - "info"
+      description: >-
+          Specifies the Server SDK extension message types that can be logged.
     Enumlog-publisher-defaultDebugLevelProp:
       type: string
       enum:
@@ -6174,51 +6414,43 @@ components:
       - "all"
       description: >-
           The lowest severity level of debug messages to log when none of the defined targets match the message.
-    Enumlog-publisher-logRequestParametersProp:
+    Enumlog-publisher-syslogSeverityProp:
       type: string
       enum:
-      - "none"
-      - "parameter-names"
-      - "parameter-names-and-values"
-      description: >-
-          Indicates what (if any) information about request parameters should be included in request log messages. Note that this will only be used for requests with a method other than GET, since GET request parameters will be included in the request URL.
-    Enumlog-publisher-extensionMessageTypeProp:
-      type: string
-      enum:
+      - "emergency"
+      - "alert"
+      - "critical"
       - "error"
       - "warning"
       - "notice"
-      - "info"
+      - "informational"
+      - "debug"
       description: >-
-          Specifies the Server SDK extension message types that can be logged.
-    Enumlog-publisher-httpMessageTypeProp:
+          The syslog severity to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
+    Enumlog-publisher-timestampPrecisionProp:
+      type: string
+      enum:
+      - "seconds"
+      - "milliseconds"
+      description: >-
+          Specifies the smallest time unit to be included in timestamps.
+    Enumlog-publisher-softDeleteEntryAuditBehaviorProp:
+      type: string
+      enum:
+      - "included"
+      - "excluded"
+      description: >-
+          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
+    Enumlog-publisher-scimMessageTypeProp:
       type: string
       enum:
       - "request"
-      - "response"
-      description: >-
-          Specifies the HTTP message types which can be logged.
-    Enumlog-publisher-directoryRESTAPIMessageTypeProp:
-      type: string
-      enum:
+      - "result"
+      - "internal-request"
+      - "internal-result"
       - "error"
       description: >-
-          Specifies the Directory REST API message types which can be logged.
-    Enumlog-publisher-defaultSeverityProp:
-      type: string
-      enum:
-      - "all"
-      - "none"
-      - "fatal-error"
-      - "info"
-      - "mild-error"
-      - "mild-warning"
-      - "notice"
-      - "severe-error"
-      - "severe-warning"
-      - "debug"
-      description: >-
-          Specifies the default severity levels for the logger.
+          Specifies the SCIM message types which can be logged.
     Enumlog-publisher-logRequestHeadersProp:
       type: string
       enum:
@@ -6227,52 +6459,6 @@ components:
       - "header-names-and-values"
       description: >-
           Indicates whether request log messages should include information about HTTP headers included in the request.
-    Enumlog-publisher-softDeleteEntryAuditBehaviorProp:
-      type: string
-      enum:
-      - "included"
-      - "excluded"
-      description: >-
-          Specifies the audit behavior for delete and modify operations on soft-deleted entries.
-    Enumlog-publisher-consentMessageTypeProp:
-      type: string
-      enum:
-      - "consent-created"
-      - "consent-updated"
-      - "consent-deleted"
-      - "consent-retrieved"
-      - "consent-search"
-      - "definition-created"
-      - "definition-updated"
-      - "definition-deleted"
-      - "definition-retrieved"
-      - "definition-search"
-      - "localization-created"
-      - "localization-updated"
-      - "localization-deleted"
-      - "localization-retrieved"
-      - "localization-search"
-      - "error"
-      - "audit"
-      description: >-
-          Specifies the consent message types that can be logged.
-    Enumlog-publisher-timestampPrecisionProp:
-      type: string
-      enum:
-      - "seconds"
-      - "milliseconds"
-      description: >-
-          Specifies the smallest time unit to be included in timestamps.
-    Enumlog-publisher-accessTokenValidatorMessageTypeProp:
-      type: string
-      enum:
-      - "subject-lookup"
-      - "external-server-request"
-      - "external-server-response"
-      - "validation"
-      - "error"
-      description: >-
-          Specifies the access token validator message types that can be logged.
     Enumlog-publisher-idTokenValidatorMessageTypeProp:
       type: string
       enum:
@@ -6283,20 +6469,14 @@ components:
       - "error"
       description: >-
           Specifies the ID token validator message types that can be logged.
-    Enumlog-publisher-defaultDebugCategoryProp:
+    Enumlog-publisher-logResponseHeadersProp:
       type: string
       enum:
-      - "caught"
-      - "constructor"
-      - "data"
-      - "database-access"
-      - "enter"
-      - "exit"
-      - "message"
-      - "protocol"
-      - "thrown"
+      - "none"
+      - "header-names"
+      - "header-names-and-values"
       description: >-
-          The debug message categories to be logged when none of the defined targets match the message.
+          Indicates whether response log messages should include information about HTTP headers included in the response.
     Enumlog-publisher-syslogFacilityProp:
       type: string
       enum:
@@ -6326,14 +6506,6 @@ components:
       - "clock-daemon-alternative"
       description: >-
           The syslog facility to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
-    Enumlog-publisher-logResponseHeadersProp:
-      type: string
-      enum:
-      - "none"
-      - "header-names"
-      - "header-names-and-values"
-      description: >-
-          Indicates whether response log messages should include information about HTTP headers included in the response.
     Enumlog-publisher-outputLocationProp:
       type: string
       enum:
@@ -6341,29 +6513,6 @@ components:
       - "standard-error"
       description: >-
           Specifies the output stream to which JSON-formatted error log messages should be written.
-    Enumlog-publisher-scimMessageTypeProp:
-      type: string
-      enum:
-      - "request"
-      - "result"
-      - "internal-request"
-      - "internal-result"
-      - "error"
-      description: >-
-          Specifies the SCIM message types which can be logged.
-    Enumlog-publisher-syslogSeverityProp:
-      type: string
-      enum:
-      - "emergency"
-      - "alert"
-      - "critical"
-      - "error"
-      - "warning"
-      - "notice"
-      - "informational"
-      - "debug"
-      description: >-
-          The syslog severity to use for the messages that are logged by this Syslog JSON Audit Log Publisher.
     Enumlog-publisher-compressionMechanismProp:
       type: string
       enum:
@@ -6371,6 +6520,107 @@ components:
       - "gzip"
       description: >-
           Specifies the type of compression (if any) to use for log files that are written.
+    Enumlog-publisher-loggingErrorBehaviorProp:
+      type: string
+      enum:
+      - "standard-error"
+      - "lockdown-mode"
+      description: >-
+          Specifies the behavior that the server should exhibit if an error occurs during logging processing.
+    Enumdebug-target-debugCategoryProp:
+      type: string
+      enum:
+      - "caught"
+      - "constructor"
+      - "data"
+      - "database-access"
+      - "enter"
+      - "exit"
+      - "message"
+      - "protocol"
+      - "thrown"
+      description: >-
+          Specifies the debug message categories to be logged.
+    Enumlog-publisher-consentMessageTypeProp:
+      type: string
+      enum:
+      - "consent-created"
+      - "consent-updated"
+      - "consent-deleted"
+      - "consent-retrieved"
+      - "consent-search"
+      - "definition-created"
+      - "definition-updated"
+      - "definition-deleted"
+      - "definition-retrieved"
+      - "definition-search"
+      - "localization-created"
+      - "localization-updated"
+      - "localization-deleted"
+      - "localization-retrieved"
+      - "localization-search"
+      - "error"
+      - "audit"
+      description: >-
+          Specifies the consent message types that can be logged.
+    Enumdebug-target-debugLevelProp:
+      type: string
+      enum:
+      - "disabled"
+      - "error"
+      - "warning"
+      - "info"
+      - "verbose"
+      - "all"
+      description: >-
+          Specifies the lowest severity level of debug messages to log.
+    Enumlog-publisher-logRequestParametersProp:
+      type: string
+      enum:
+      - "none"
+      - "parameter-names"
+      - "parameter-names-and-values"
+      description: >-
+          Indicates what (if any) information about request parameters should be included in request log messages. Note that this will only be used for requests with a method other than GET, since GET request parameters will be included in the request URL.
+    Enumlog-publisher-accessTokenValidatorMessageTypeProp:
+      type: string
+      enum:
+      - "subject-lookup"
+      - "external-server-request"
+      - "external-server-response"
+      - "validation"
+      - "error"
+      description: >-
+          Specifies the access token validator message types that can be logged.
+    Enumlog-publisher-defaultSeverityProp:
+      type: string
+      enum:
+      - "all"
+      - "none"
+      - "fatal-error"
+      - "info"
+      - "mild-error"
+      - "mild-warning"
+      - "notice"
+      - "severe-error"
+      - "severe-warning"
+      - "debug"
+      description: >-
+          Specifies the default severity levels for the logger.
+    Enumlog-publisher-defaultDebugCategoryProp:
+      type: string
+      enum:
+      - "caught"
+      - "constructor"
+      - "data"
+      - "database-access"
+      - "enter"
+      - "exit"
+      - "message"
+      - "protocol"
+      - "thrown"
+      description: >-
+          The debug message categories to be logged when none of the defined targets match the message.
     updateRequest:
       type: object
       properties:

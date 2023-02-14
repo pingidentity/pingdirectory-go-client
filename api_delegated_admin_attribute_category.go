@@ -146,7 +146,7 @@ func (r ApiDeleteDelegatedAdminAttributeCategoryRequest) Execute() (*http.Respon
 DeleteDelegatedAdminAttributeCategory Delete a Delegated Admin Attribute Category
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be deleted
+	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category
 	@return ApiDeleteDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) DeleteDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiDeleteDelegatedAdminAttributeCategoryRequest {
@@ -236,7 +236,7 @@ func (r ApiGetDelegatedAdminAttributeCategoryRequest) Execute() (*DelegatedAdmin
 GetDelegatedAdminAttributeCategory Returns a single Delegated Admin Attribute Category
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be read
+	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category
 	@return ApiGetDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) GetDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiGetDelegatedAdminAttributeCategoryRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateDelegatedAdminAttributeCategoryRequest) Execute() (*DelegatedAd
 UpdateDelegatedAdminAttributeCategory Update an existing Delegated Admin Attribute Category by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category to be updated
+	@param delegatedAdminAttributeCategoryName Name of the Delegated Admin Attribute Category
 	@return ApiUpdateDelegatedAdminAttributeCategoryRequest
 */
 func (a *DelegatedAdminAttributeCategoryApiService) UpdateDelegatedAdminAttributeCategory(ctx context.Context, delegatedAdminAttributeCategoryName string) ApiUpdateDelegatedAdminAttributeCategoryRequest {

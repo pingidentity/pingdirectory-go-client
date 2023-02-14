@@ -146,7 +146,7 @@ func (r ApiDeleteLogRotationPolicyRequest) Execute() (*http.Response, error) {
 DeleteLogRotationPolicy Delete a Log Rotation Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logRotationPolicyName Name of the Log Rotation Policy to be deleted
+	@param logRotationPolicyName Name of the Log Rotation Policy
 	@return ApiDeleteLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) DeleteLogRotationPolicy(ctx context.Context, logRotationPolicyName string) ApiDeleteLogRotationPolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLogRotationPolicyRequest) Execute() (*AddLogRotationPolicy200Respo
 GetLogRotationPolicy Returns a single Log Rotation Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logRotationPolicyName Name of the Log Rotation Policy to be read
+	@param logRotationPolicyName Name of the Log Rotation Policy
 	@return ApiGetLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) GetLogRotationPolicy(ctx context.Context, logRotationPolicyName string) ApiGetLogRotationPolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLogRotationPolicyRequest) Execute() (*AddLogRotationPolicy200Re
 UpdateLogRotationPolicy Update an existing Log Rotation Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logRotationPolicyName Name of the Log Rotation Policy to be updated
+	@param logRotationPolicyName Name of the Log Rotation Policy
 	@return ApiUpdateLogRotationPolicyRequest
 */
 func (a *LogRotationPolicyApiService) UpdateLogRotationPolicy(ctx context.Context, logRotationPolicyName string) ApiUpdateLogRotationPolicyRequest {

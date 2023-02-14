@@ -146,7 +146,7 @@ func (r ApiDeleteCipherStreamProviderRequest) Execute() (*http.Response, error) 
 DeleteCipherStreamProvider Delete a Cipher Stream Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cipherStreamProviderName Name of the Cipher Stream Provider to be deleted
+	@param cipherStreamProviderName Name of the Cipher Stream Provider
 	@return ApiDeleteCipherStreamProviderRequest
 */
 func (a *CipherStreamProviderApiService) DeleteCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiDeleteCipherStreamProviderRequest {
@@ -236,7 +236,7 @@ func (r ApiGetCipherStreamProviderRequest) Execute() (*AddCipherStreamProvider20
 GetCipherStreamProvider Returns a single Cipher Stream Provider
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cipherStreamProviderName Name of the Cipher Stream Provider to be read
+	@param cipherStreamProviderName Name of the Cipher Stream Provider
 	@return ApiGetCipherStreamProviderRequest
 */
 func (a *CipherStreamProviderApiService) GetCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiGetCipherStreamProviderRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateCipherStreamProviderRequest) Execute() (*AddCipherStreamProvide
 UpdateCipherStreamProvider Update an existing Cipher Stream Provider by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cipherStreamProviderName Name of the Cipher Stream Provider to be updated
+	@param cipherStreamProviderName Name of the Cipher Stream Provider
 	@return ApiUpdateCipherStreamProviderRequest
 */
 func (a *CipherStreamProviderApiService) UpdateCipherStreamProvider(ctx context.Context, cipherStreamProviderName string) ApiUpdateCipherStreamProviderRequest {

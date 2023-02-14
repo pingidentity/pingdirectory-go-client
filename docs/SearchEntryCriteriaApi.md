@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    searchEntryCriteriaName := "searchEntryCriteriaName_example" // string | Name of the Search Entry Criteria to be deleted
+    searchEntryCriteriaName := "searchEntryCriteriaName_example" // string | Name of the Search Entry Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**searchEntryCriteriaName** | **string** | Name of the Search Entry Criteria to be deleted | 
+**searchEntryCriteriaName** | **string** | Name of the Search Entry Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    searchEntryCriteriaName := "searchEntryCriteriaName_example" // string | Name of the Search Entry Criteria to be read
+    searchEntryCriteriaName := "searchEntryCriteriaName_example" // string | Name of the Search Entry Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**searchEntryCriteriaName** | **string** | Name of the Search Entry Criteria to be read | 
+**searchEntryCriteriaName** | **string** | Name of the Search Entry Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    searchEntryCriteriaName := "searchEntryCriteriaName_example" // string | Name of the Search Entry Criteria to be updated
+    searchEntryCriteriaName := "searchEntryCriteriaName_example" // string | Name of the Search Entry Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Search Entry Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**searchEntryCriteriaName** | **string** | Name of the Search Entry Criteria to be updated | 
+**searchEntryCriteriaName** | **string** | Name of the Search Entry Criteria | 
 
 ### Other Parameters
 

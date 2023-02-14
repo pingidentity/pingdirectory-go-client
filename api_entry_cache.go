@@ -146,7 +146,7 @@ func (r ApiDeleteEntryCacheRequest) Execute() (*http.Response, error) {
 DeleteEntryCache Delete a Entry Cache
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param entryCacheName Name of the Entry Cache to be deleted
+	@param entryCacheName Name of the Entry Cache
 	@return ApiDeleteEntryCacheRequest
 */
 func (a *EntryCacheApiService) DeleteEntryCache(ctx context.Context, entryCacheName string) ApiDeleteEntryCacheRequest {
@@ -236,7 +236,7 @@ func (r ApiGetEntryCacheRequest) Execute() (*FifoEntryCacheResponse, *http.Respo
 GetEntryCache Returns a single Entry Cache
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param entryCacheName Name of the Entry Cache to be read
+	@param entryCacheName Name of the Entry Cache
 	@return ApiGetEntryCacheRequest
 */
 func (a *EntryCacheApiService) GetEntryCache(ctx context.Context, entryCacheName string) ApiGetEntryCacheRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateEntryCacheRequest) Execute() (*FifoEntryCacheResponse, *http.Re
 UpdateEntryCache Update an existing Entry Cache by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param entryCacheName Name of the Entry Cache to be updated
+	@param entryCacheName Name of the Entry Cache
 	@return ApiUpdateEntryCacheRequest
 */
 func (a *EntryCacheApiService) UpdateEntryCache(ctx context.Context, entryCacheName string) ApiUpdateEntryCacheRequest {

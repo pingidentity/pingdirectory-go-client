@@ -57,7 +57,7 @@ paths:
       summary: Delete a Certificate Mapper
       operationId: delete-certificate-mapper
       parameters:
-      - description: Name of the Certificate Mapper to be deleted
+      - description: Name of the Certificate Mapper
         explode: false
         in: path
         name: certificate-mapper-name
@@ -84,7 +84,7 @@ paths:
       summary: Returns a single Certificate Mapper
       operationId: get-certificate-mapper
       parameters:
-      - description: Name of the Certificate Mapper to be read
+      - description: Name of the Certificate Mapper
         explode: false
         in: path
         name: certificate-mapper-name
@@ -119,7 +119,7 @@ paths:
       summary: Update an existing Certificate Mapper by name
       operationId: update-certificate-mapper
       parameters:
-      - description: Name of the Certificate Mapper to be updated
+      - description: Name of the Certificate Mapper
         explode: false
         in: path
         name: certificate-mapper-name

@@ -146,7 +146,7 @@ func (r ApiDeleteLogFieldMappingRequest) Execute() (*http.Response, error) {
 DeleteLogFieldMapping Delete a Log Field Mapping
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldMappingName Name of the Log Field Mapping to be deleted
+	@param logFieldMappingName Name of the Log Field Mapping
 	@return ApiDeleteLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) DeleteLogFieldMapping(ctx context.Context, logFieldMappingName string) ApiDeleteLogFieldMappingRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLogFieldMappingRequest) Execute() (*AddLogFieldMapping200Response,
 GetLogFieldMapping Returns a single Log Field Mapping
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldMappingName Name of the Log Field Mapping to be read
+	@param logFieldMappingName Name of the Log Field Mapping
 	@return ApiGetLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) GetLogFieldMapping(ctx context.Context, logFieldMappingName string) ApiGetLogFieldMappingRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLogFieldMappingRequest) Execute() (*AddLogFieldMapping200Respon
 UpdateLogFieldMapping Update an existing Log Field Mapping by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logFieldMappingName Name of the Log Field Mapping to be updated
+	@param logFieldMappingName Name of the Log Field Mapping
 	@return ApiUpdateLogFieldMappingRequest
 */
 func (a *LogFieldMappingApiService) UpdateLogFieldMapping(ctx context.Context, logFieldMappingName string) ApiUpdateLogFieldMappingRequest {

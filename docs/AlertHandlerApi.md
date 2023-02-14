@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    alertHandlerName := "alertHandlerName_example" // string | Name of the Alert Handler to be deleted
+    alertHandlerName := "alertHandlerName_example" // string | Name of the Alert Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**alertHandlerName** | **string** | Name of the Alert Handler to be deleted | 
+**alertHandlerName** | **string** | Name of the Alert Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    alertHandlerName := "alertHandlerName_example" // string | Name of the Alert Handler to be read
+    alertHandlerName := "alertHandlerName_example" // string | Name of the Alert Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**alertHandlerName** | **string** | Name of the Alert Handler to be read | 
+**alertHandlerName** | **string** | Name of the Alert Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    alertHandlerName := "alertHandlerName_example" // string | Name of the Alert Handler to be updated
+    alertHandlerName := "alertHandlerName_example" // string | Name of the Alert Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Alert Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**alertHandlerName** | **string** | Name of the Alert Handler to be updated | 
+**alertHandlerName** | **string** | Name of the Alert Handler | 
 
 ### Other Parameters
 

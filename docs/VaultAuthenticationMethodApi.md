@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    vaultAuthenticationMethodName := "vaultAuthenticationMethodName_example" // string | Name of the Vault Authentication Method to be deleted
+    vaultAuthenticationMethodName := "vaultAuthenticationMethodName_example" // string | Name of the Vault Authentication Method
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**vaultAuthenticationMethodName** | **string** | Name of the Vault Authentication Method to be deleted | 
+**vaultAuthenticationMethodName** | **string** | Name of the Vault Authentication Method | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    vaultAuthenticationMethodName := "vaultAuthenticationMethodName_example" // string | Name of the Vault Authentication Method to be read
+    vaultAuthenticationMethodName := "vaultAuthenticationMethodName_example" // string | Name of the Vault Authentication Method
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**vaultAuthenticationMethodName** | **string** | Name of the Vault Authentication Method to be read | 
+**vaultAuthenticationMethodName** | **string** | Name of the Vault Authentication Method | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    vaultAuthenticationMethodName := "vaultAuthenticationMethodName_example" // string | Name of the Vault Authentication Method to be updated
+    vaultAuthenticationMethodName := "vaultAuthenticationMethodName_example" // string | Name of the Vault Authentication Method
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Vault Authentication Method
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**vaultAuthenticationMethodName** | **string** | Name of the Vault Authentication Method to be updated | 
+**vaultAuthenticationMethodName** | **string** | Name of the Vault Authentication Method | 
 
 ### Other Parameters
 

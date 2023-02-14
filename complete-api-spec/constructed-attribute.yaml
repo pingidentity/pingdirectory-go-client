@@ -45,7 +45,7 @@ paths:
       summary: Delete a Constructed Attribute
       operationId: delete-constructed-attribute
       parameters:
-      - description: Name of the Constructed Attribute to be deleted
+      - description: Name of the Constructed Attribute
         explode: false
         in: path
         name: constructed-attribute-name
@@ -72,7 +72,7 @@ paths:
       summary: Returns a single Constructed Attribute
       operationId: get-constructed-attribute
       parameters:
-      - description: Name of the Constructed Attribute to be read
+      - description: Name of the Constructed Attribute
         explode: false
         in: path
         name: constructed-attribute-name
@@ -101,7 +101,7 @@ paths:
       summary: Update an existing Constructed Attribute by name
       operationId: update-constructed-attribute
       parameters:
-      - description: Name of the Constructed Attribute to be updated
+      - description: Name of the Constructed Attribute
         explode: false
         in: path
         name: constructed-attribute-name

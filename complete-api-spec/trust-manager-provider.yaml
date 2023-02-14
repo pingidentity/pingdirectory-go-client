@@ -53,7 +53,7 @@ paths:
       summary: Delete a Trust Manager Provider
       operationId: delete-trust-manager-provider
       parameters:
-      - description: Name of the Trust Manager Provider to be deleted
+      - description: Name of the Trust Manager Provider
         explode: false
         in: path
         name: trust-manager-provider-name
@@ -80,7 +80,7 @@ paths:
       summary: Returns a single Trust Manager Provider
       operationId: get-trust-manager-provider
       parameters:
-      - description: Name of the Trust Manager Provider to be read
+      - description: Name of the Trust Manager Provider
         explode: false
         in: path
         name: trust-manager-provider-name
@@ -113,7 +113,7 @@ paths:
       summary: Update an existing Trust Manager Provider by name
       operationId: update-trust-manager-provider
       parameters:
-      - description: Name of the Trust Manager Provider to be updated
+      - description: Name of the Trust Manager Provider
         explode: false
         in: path
         name: trust-manager-provider-name

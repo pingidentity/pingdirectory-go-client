@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    connectionHandlerName := "connectionHandlerName_example" // string | Name of the Connection Handler to be deleted
+    connectionHandlerName := "connectionHandlerName_example" // string | Name of the Connection Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionHandlerName** | **string** | Name of the Connection Handler to be deleted | 
+**connectionHandlerName** | **string** | Name of the Connection Handler | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    connectionHandlerName := "connectionHandlerName_example" // string | Name of the Connection Handler to be read
+    connectionHandlerName := "connectionHandlerName_example" // string | Name of the Connection Handler
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionHandlerName** | **string** | Name of the Connection Handler to be read | 
+**connectionHandlerName** | **string** | Name of the Connection Handler | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    connectionHandlerName := "connectionHandlerName_example" // string | Name of the Connection Handler to be updated
+    connectionHandlerName := "connectionHandlerName_example" // string | Name of the Connection Handler
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Connection Handler
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**connectionHandlerName** | **string** | Name of the Connection Handler to be updated | 
+**connectionHandlerName** | **string** | Name of the Connection Handler | 
 
 ### Other Parameters
 

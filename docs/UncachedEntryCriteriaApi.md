@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    uncachedEntryCriteriaName := "uncachedEntryCriteriaName_example" // string | Name of the Uncached Entry Criteria to be deleted
+    uncachedEntryCriteriaName := "uncachedEntryCriteriaName_example" // string | Name of the Uncached Entry Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uncachedEntryCriteriaName** | **string** | Name of the Uncached Entry Criteria to be deleted | 
+**uncachedEntryCriteriaName** | **string** | Name of the Uncached Entry Criteria | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    uncachedEntryCriteriaName := "uncachedEntryCriteriaName_example" // string | Name of the Uncached Entry Criteria to be read
+    uncachedEntryCriteriaName := "uncachedEntryCriteriaName_example" // string | Name of the Uncached Entry Criteria
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uncachedEntryCriteriaName** | **string** | Name of the Uncached Entry Criteria to be read | 
+**uncachedEntryCriteriaName** | **string** | Name of the Uncached Entry Criteria | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    uncachedEntryCriteriaName := "uncachedEntryCriteriaName_example" // string | Name of the Uncached Entry Criteria to be updated
+    uncachedEntryCriteriaName := "uncachedEntryCriteriaName_example" // string | Name of the Uncached Entry Criteria
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Uncached Entry Criteria
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**uncachedEntryCriteriaName** | **string** | Name of the Uncached Entry Criteria to be updated | 
+**uncachedEntryCriteriaName** | **string** | Name of the Uncached Entry Criteria | 
 
 ### Other Parameters
 

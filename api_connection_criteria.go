@@ -146,7 +146,7 @@ func (r ApiDeleteConnectionCriteriaRequest) Execute() (*http.Response, error) {
 DeleteConnectionCriteria Delete a Connection Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param connectionCriteriaName Name of the Connection Criteria to be deleted
+	@param connectionCriteriaName Name of the Connection Criteria
 	@return ApiDeleteConnectionCriteriaRequest
 */
 func (a *ConnectionCriteriaApiService) DeleteConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiDeleteConnectionCriteriaRequest {
@@ -236,7 +236,7 @@ func (r ApiGetConnectionCriteriaRequest) Execute() (*AddConnectionCriteria200Res
 GetConnectionCriteria Returns a single Connection Criteria
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param connectionCriteriaName Name of the Connection Criteria to be read
+	@param connectionCriteriaName Name of the Connection Criteria
 	@return ApiGetConnectionCriteriaRequest
 */
 func (a *ConnectionCriteriaApiService) GetConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiGetConnectionCriteriaRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateConnectionCriteriaRequest) Execute() (*AddConnectionCriteria200
 UpdateConnectionCriteria Update an existing Connection Criteria by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param connectionCriteriaName Name of the Connection Criteria to be updated
+	@param connectionCriteriaName Name of the Connection Criteria
 	@return ApiUpdateConnectionCriteriaRequest
 */
 func (a *ConnectionCriteriaApiService) UpdateConnectionCriteria(ctx context.Context, connectionCriteriaName string) ApiUpdateConnectionCriteriaRequest {

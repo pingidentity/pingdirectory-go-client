@@ -146,7 +146,7 @@ func (r ApiDeletePassThroughAuthenticationHandlerRequest) Execute() (*http.Respo
 DeletePassThroughAuthenticationHandler Delete a Pass Through Authentication Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be deleted
+	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler
 	@return ApiDeletePassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) DeletePassThroughAuthenticationHandler(ctx context.Context, passThroughAuthenticationHandlerName string) ApiDeletePassThroughAuthenticationHandlerRequest {
@@ -236,7 +236,7 @@ func (r ApiGetPassThroughAuthenticationHandlerRequest) Execute() (*AddPassThroug
 GetPassThroughAuthenticationHandler Returns a single Pass Through Authentication Handler
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be read
+	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler
 	@return ApiGetPassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) GetPassThroughAuthenticationHandler(ctx context.Context, passThroughAuthenticationHandlerName string) ApiGetPassThroughAuthenticationHandlerRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdatePassThroughAuthenticationHandlerRequest) Execute() (*AddPassThr
 UpdatePassThroughAuthenticationHandler Update an existing Pass Through Authentication Handler by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler to be updated
+	@param passThroughAuthenticationHandlerName Name of the Pass Through Authentication Handler
 	@return ApiUpdatePassThroughAuthenticationHandlerRequest
 */
 func (a *PassThroughAuthenticationHandlerApiService) UpdatePassThroughAuthenticationHandler(ctx context.Context, passThroughAuthenticationHandlerName string) ApiUpdatePassThroughAuthenticationHandlerRequest {

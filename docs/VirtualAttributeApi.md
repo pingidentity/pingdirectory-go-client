@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    virtualAttributeName := "virtualAttributeName_example" // string | Name of the Virtual Attribute to be deleted
+    virtualAttributeName := "virtualAttributeName_example" // string | Name of the Virtual Attribute
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualAttributeName** | **string** | Name of the Virtual Attribute to be deleted | 
+**virtualAttributeName** | **string** | Name of the Virtual Attribute | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    virtualAttributeName := "virtualAttributeName_example" // string | Name of the Virtual Attribute to be read
+    virtualAttributeName := "virtualAttributeName_example" // string | Name of the Virtual Attribute
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualAttributeName** | **string** | Name of the Virtual Attribute to be read | 
+**virtualAttributeName** | **string** | Name of the Virtual Attribute | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    virtualAttributeName := "virtualAttributeName_example" // string | Name of the Virtual Attribute to be updated
+    virtualAttributeName := "virtualAttributeName_example" // string | Name of the Virtual Attribute
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Virtual Attribute
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**virtualAttributeName** | **string** | Name of the Virtual Attribute to be updated | 
+**virtualAttributeName** | **string** | Name of the Virtual Attribute | 
 
 ### Other Parameters
 

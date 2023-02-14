@@ -53,7 +53,7 @@ paths:
       summary: Delete a Request Criteria
       operationId: delete-request-criteria
       parameters:
-      - description: Name of the Request Criteria to be deleted
+      - description: Name of the Request Criteria
         explode: false
         in: path
         name: request-criteria-name
@@ -80,7 +80,7 @@ paths:
       summary: Returns a single Request Criteria
       operationId: get-request-criteria
       parameters:
-      - description: Name of the Request Criteria to be read
+      - description: Name of the Request Criteria
         explode: false
         in: path
         name: request-criteria-name
@@ -113,7 +113,7 @@ paths:
       summary: Update an existing Request Criteria by name
       operationId: update-request-criteria
       parameters:
-      - description: Name of the Request Criteria to be updated
+      - description: Name of the Request Criteria
         explode: false
         in: path
         name: request-criteria-name
@@ -506,14 +506,6 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:request-criteria:third-party"
-    Enumrequest-criteria-operationOriginProp:
-      type: string
-      enum:
-      - "external-request"
-      - "internal-operation"
-      - "replicated-operation"
-      description: >-
-          Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
     Enumrequest-criteria-operationTypeProp:
       type: string
       enum:
@@ -532,13 +524,6 @@ components:
       - "any"
       description: >-
           Indicates whether operations being processed using a dedicated administrative session worker thread should be included in this Simple Request Criteria.
-    Enumrequest-criteria-targetBindTypeProp:
-      type: string
-      enum:
-      - "simple"
-      - "sasl"
-      description: >-
-          Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
     Enumrequest-criteria-includedSearchScopeProp:
       type: string
       enum:
@@ -548,6 +533,21 @@ components:
       - "subordinate-subtree"
       description: >-
           Specifies the search scope values included in this Simple Request Criteria. This will only be taken into account for search requests and will be ignored for all other types of requests.
+    Enumrequest-criteria-targetBindTypeProp:
+      type: string
+      enum:
+      - "simple"
+      - "sasl"
+      description: >-
+          Specifies the authentication type for bind requests included in this Simple Request Criteria. This will only be taken into account for bind operations and will be ignored for any other type of operation. If no values are provided, then the authentication type will not be considered when determining whether the request should be included in this Simple Request Criteria.
+    Enumrequest-criteria-operationOriginProp:
+      type: string
+      enum:
+      - "external-request"
+      - "internal-operation"
+      - "replicated-operation"
+      description: >-
+          Specifies the origin for operations to be included in this Simple Request Criteria. If no values are provided, then the operation origin will not be taken into consideration when determining whether an operation matches this Simple Request Criteria.
     updateRequest:
       type: object
       properties:

@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    trustManagerProviderName := "trustManagerProviderName_example" // string | Name of the Trust Manager Provider to be deleted
+    trustManagerProviderName := "trustManagerProviderName_example" // string | Name of the Trust Manager Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**trustManagerProviderName** | **string** | Name of the Trust Manager Provider to be deleted | 
+**trustManagerProviderName** | **string** | Name of the Trust Manager Provider | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    trustManagerProviderName := "trustManagerProviderName_example" // string | Name of the Trust Manager Provider to be read
+    trustManagerProviderName := "trustManagerProviderName_example" // string | Name of the Trust Manager Provider
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**trustManagerProviderName** | **string** | Name of the Trust Manager Provider to be read | 
+**trustManagerProviderName** | **string** | Name of the Trust Manager Provider | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    trustManagerProviderName := "trustManagerProviderName_example" // string | Name of the Trust Manager Provider to be updated
+    trustManagerProviderName := "trustManagerProviderName_example" // string | Name of the Trust Manager Provider
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Trust Manager Provider
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**trustManagerProviderName** | **string** | Name of the Trust Manager Provider to be updated | 
+**trustManagerProviderName** | **string** | Name of the Trust Manager Provider | 
 
 ### Other Parameters
 

@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    webApplicationExtensionName := "webApplicationExtensionName_example" // string | Name of the Web Application Extension to be read
+    webApplicationExtensionName := "webApplicationExtensionName_example" // string | Name of the Web Application Extension
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -48,7 +48,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**webApplicationExtensionName** | **string** | Name of the Web Application Extension to be read | 
+**webApplicationExtensionName** | **string** | Name of the Web Application Extension | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    webApplicationExtensionName := "webApplicationExtensionName_example" // string | Name of the Web Application Extension to be updated
+    webApplicationExtensionName := "webApplicationExtensionName_example" // string | Name of the Web Application Extension
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Web Application Extension
 
     configuration := openapiclient.NewConfiguration()
@@ -117,7 +117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**webApplicationExtensionName** | **string** | Name of the Web Application Extension to be updated | 
+**webApplicationExtensionName** | **string** | Name of the Web Application Extension | 
 
 ### Other Parameters
 

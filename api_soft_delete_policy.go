@@ -146,7 +146,7 @@ func (r ApiDeleteSoftDeletePolicyRequest) Execute() (*http.Response, error) {
 DeleteSoftDeletePolicy Delete a Soft Delete Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param softDeletePolicyName Name of the Soft Delete Policy to be deleted
+	@param softDeletePolicyName Name of the Soft Delete Policy
 	@return ApiDeleteSoftDeletePolicyRequest
 */
 func (a *SoftDeletePolicyApiService) DeleteSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiDeleteSoftDeletePolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetSoftDeletePolicyRequest) Execute() (*SoftDeletePolicyResponse, *ht
 GetSoftDeletePolicy Returns a single Soft Delete Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param softDeletePolicyName Name of the Soft Delete Policy to be read
+	@param softDeletePolicyName Name of the Soft Delete Policy
 	@return ApiGetSoftDeletePolicyRequest
 */
 func (a *SoftDeletePolicyApiService) GetSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiGetSoftDeletePolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateSoftDeletePolicyRequest) Execute() (*SoftDeletePolicyResponse, 
 UpdateSoftDeletePolicy Update an existing Soft Delete Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param softDeletePolicyName Name of the Soft Delete Policy to be updated
+	@param softDeletePolicyName Name of the Soft Delete Policy
 	@return ApiUpdateSoftDeletePolicyRequest
 */
 func (a *SoftDeletePolicyApiService) UpdateSoftDeletePolicy(ctx context.Context, softDeletePolicyName string) ApiUpdateSoftDeletePolicyRequest {

@@ -146,7 +146,7 @@ func (r ApiDeletePasswordPolicyRequest) Execute() (*http.Response, error) {
 DeletePasswordPolicy Delete a Password Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordPolicyName Name of the Password Policy to be deleted
+	@param passwordPolicyName Name of the Password Policy
 	@return ApiDeletePasswordPolicyRequest
 */
 func (a *PasswordPolicyApiService) DeletePasswordPolicy(ctx context.Context, passwordPolicyName string) ApiDeletePasswordPolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetPasswordPolicyRequest) Execute() (*PasswordPolicyResponse, *http.R
 GetPasswordPolicy Returns a single Password Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordPolicyName Name of the Password Policy to be read
+	@param passwordPolicyName Name of the Password Policy
 	@return ApiGetPasswordPolicyRequest
 */
 func (a *PasswordPolicyApiService) GetPasswordPolicy(ctx context.Context, passwordPolicyName string) ApiGetPasswordPolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdatePasswordPolicyRequest) Execute() (*PasswordPolicyResponse, *htt
 UpdatePasswordPolicy Update an existing Password Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param passwordPolicyName Name of the Password Policy to be updated
+	@param passwordPolicyName Name of the Password Policy
 	@return ApiUpdatePasswordPolicyRequest
 */
 func (a *PasswordPolicyApiService) UpdatePasswordPolicy(ctx context.Context, passwordPolicyName string) ApiUpdatePasswordPolicyRequest {

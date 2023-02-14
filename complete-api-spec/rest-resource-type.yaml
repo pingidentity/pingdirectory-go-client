@@ -49,7 +49,7 @@ paths:
       summary: Delete a REST Resource Type
       operationId: delete-rest-resource-type
       parameters:
-      - description: Name of the REST Resource Type to be deleted
+      - description: Name of the REST Resource Type
         explode: false
         in: path
         name: rest-resource-type-name
@@ -76,7 +76,7 @@ paths:
       summary: Returns a single REST Resource Type
       operationId: get-rest-resource-type
       parameters:
-      - description: Name of the REST Resource Type to be read
+      - description: Name of the REST Resource Type
         explode: false
         in: path
         name: rest-resource-type-name
@@ -107,7 +107,7 @@ paths:
       summary: Update an existing REST Resource Type by name
       operationId: update-rest-resource-type
       parameters:
-      - description: Name of the REST Resource Type to be updated
+      - description: Name of the REST Resource Type
         explode: false
         in: path
         name: rest-resource-type-name
@@ -143,6 +143,330 @@ paths:
       - basicAuth: []
       tags:
       - rest-resource-type
+  /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes:
+    post:
+      summary: Add a new Delegated Admin Attribute to the config
+      operationId: add-delegated-admin-attribute
+      parameters:
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+              - $ref: '#/components/schemas/add-certificate-delegated-admin-attribute-request'
+              - $ref: '#/components/schemas/add-photo-delegated-admin-attribute-request'
+        description: Create a new Delegated Admin Attribute in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+                - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Delegated Admin Attribute already exists
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+  /rest-resource-types/{rest-resource-type-name}/delegated-admin-attributes/{delegated-admin-attribute-name}:
+    delete:
+      summary: Delete a Delegated Admin Attribute
+      operationId: delete-delegated-admin-attribute
+      parameters:
+      - description: Name of the Delegated Admin Attribute
+        explode: false
+        in: path
+        name: delegated-admin-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Attribute does not exist
+        "409":
+          description: The Delegated Admin Attribute cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+    get:
+      summary: Returns a single Delegated Admin Attribute
+      operationId: get-delegated-admin-attribute
+      parameters:
+      - description: Name of the Delegated Admin Attribute
+        explode: false
+        in: path
+        name: delegated-admin-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+                - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+    patch:
+      summary: Update an existing Delegated Admin Attribute by name
+      operationId: update-delegated-admin-attribute
+      parameters:
+      - description: Name of the Delegated Admin Attribute
+        explode: false
+        in: path
+        name: delegated-admin-attribute-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Delegated Admin Attribute
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/certificate-delegated-admin-attribute-response'
+                - $ref: '#/components/schemas/photo-delegated-admin-attribute-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Delegated Admin Attribute does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-attribute
+  /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources:
+    post:
+      summary: Add a new Delegated Admin Correlated REST Resource to the config
+      operationId: add-delegated-admin-correlated-rest-resource
+      parameters:
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add-delegated-admin-correlated-rest-resource-request'
+        description: Create a new Delegated Admin Correlated REST Resource in the config
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Bad request
+        "409":
+          description: The Delegated Admin Correlated REST Resource already exists
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-correlated-rest-resource
+  /rest-resource-types/{rest-resource-type-name}/delegated-admin-correlated-rest-resources/{delegated-admin-correlated-rest-resource-name}:
+    delete:
+      summary: Delete a Delegated Admin Correlated REST Resource
+      operationId: delete-delegated-admin-correlated-rest-resource
+      parameters:
+      - description: Name of the Delegated Admin Correlated REST Resource
+        explode: false
+        in: path
+        name: delegated-admin-correlated-rest-resource-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Correlated REST Resource does not exist
+        "409":
+          description: The Delegated Admin Correlated REST Resource cannot be deleted
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-correlated-rest-resource
+    get:
+      summary: Returns a single Delegated Admin Correlated REST Resource
+      operationId: get-delegated-admin-correlated-rest-resource
+      parameters:
+      - description: Name of the Delegated Admin Correlated REST Resource
+        explode: false
+        in: path
+        name: delegated-admin-correlated-rest-resource-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "404":
+          description: The Delegated Admin Correlated REST Resource does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-correlated-rest-resource
+    patch:
+      summary: Update an existing Delegated Admin Correlated REST Resource by name
+      operationId: update-delegated-admin-correlated-rest-resource
+      parameters:
+      - description: Name of the Delegated Admin Correlated REST Resource
+        explode: false
+        in: path
+        name: delegated-admin-correlated-rest-resource-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Name of the REST Resource Type
+        explode: false
+        in: path
+        name: rest-resource-type-name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateRequest'
+        description: Update an existing Delegated Admin Correlated REST Resource
+        required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-response'
+        "401":
+          description: Requestor cannot be authenticated
+        "403":
+          description: Requestor does not have the required privileges
+        "400":
+          description: Invalid request
+        "404":
+          description: The Delegated Admin Correlated REST Resource does not exist
+      security:
+      - basicAuth: []
+      tags:
+      - delegated-admin-correlated-rest-resource
 components:
   schemas:
     add-user-rest-resource-type-request:
@@ -409,6 +733,258 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:rest-resource-type:group"
+    add-certificate-delegated-admin-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeType:
+            description: Name of the new Delegated Admin Attribute
+            type: string
+        required:
+        - attributeType
+      - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+    certificate-delegated-admin-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/certificate-delegated-admin-attribute-shared'
+    certificate-delegated-admin-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumcertificate-delegated-admin-attributeSchemaUrn'
+        allowedMIMEType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+        description:
+          type: string
+          description: >-
+              A description for this Delegated Admin Attribute
+        attributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type.
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this Delegated Admin Attribute.
+        mutability:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+        multiValued:
+          type: boolean
+          description: >-
+              Indicates whether this Delegated Admin Attribute may have multiple values.
+        attributeCategory:
+          type: string
+          description: >-
+              Specifies which attribute category this attribute belongs to.
+        displayOrderIndex:
+          type: integer
+          description: >-
+              This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
+        referenceResourceType:
+          type: string
+          description: >-
+              For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
+        attributePresentation:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+        dateTimeFormat:
+          type: string
+          description: >-
+              Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax.
+      required:
+      - schemas
+      - attributeType
+      - displayName
+      - mutability
+      - multiValued
+      - displayOrderIndex
+    Enumcertificate-delegated-admin-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:certificate"
+    add-photo-delegated-admin-attribute-request:
+      allOf:
+      - type: object
+        properties:
+          attributeType:
+            description: Name of the new Delegated Admin Attribute
+            type: string
+        required:
+        - attributeType
+      - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+    photo-delegated-admin-attribute-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Attribute
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/photo-delegated-admin-attribute-shared'
+    photo-delegated-admin-attribute-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumphoto-delegated-admin-attributeSchemaUrn'
+        allowedMIMEType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-attribute-allowedMIMETypeProp'
+        description:
+          type: string
+          description: >-
+              A description for this Delegated Admin Attribute
+        attributeType:
+          type: string
+          description: >-
+              Specifies the name or OID of the LDAP attribute type.
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this Delegated Admin Attribute.
+        mutability:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-mutabilityProp'
+        multiValued:
+          type: boolean
+          description: >-
+              Indicates whether this Delegated Admin Attribute may have multiple values.
+        attributeCategory:
+          type: string
+          description: >-
+              Specifies which attribute category this attribute belongs to.
+        displayOrderIndex:
+          type: integer
+          description: >-
+              This property determines a display order for attributes within a given attribute category. Attributes are ordered within their category based on this index from least to greatest.
+        referenceResourceType:
+          type: string
+          description: >-
+              For LDAP attributes with DN syntax, specifies what kind of resource is referenced.
+        attributePresentation:
+          $ref: '#/components/schemas/Enumdelegated-admin-attribute-attributePresentationProp'
+        dateTimeFormat:
+          type: string
+          description: >-
+              Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax.
+      required:
+      - schemas
+      - attributeType
+      - displayName
+      - mutability
+      - multiValued
+      - displayOrderIndex
+    Enumphoto-delegated-admin-attributeSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-attribute:photo"
+    add-delegated-admin-correlated-rest-resource-request:
+      allOf:
+      - type: object
+        properties:
+          resourceName:
+            description: Name of the new Delegated Admin Correlated REST Resource
+            type: string
+        required:
+        - resourceName
+      - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
+    delegated-admin-correlated-rest-resource-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          id:
+            description: Name of the Delegated Admin Correlated REST Resource
+            type: string
+        required:
+        - id
+      - $ref: '#/components/schemas/delegated-admin-correlated-rest-resource-shared'
+    delegated-admin-correlated-rest-resource-shared:
+      type: object
+      properties:
+        schemas:
+          type: array
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/Enumdelegated-admin-correlated-rest-resourceSchemaUrn'
+        displayName:
+          type: string
+          description: >-
+              A human readable display name for this Delegated Admin Correlated REST Resource.
+        correlatedRESTResource:
+          type: string
+          description: >-
+              The REST Resource Type that will be linked to this REST Resource Type.
+        primaryRESTResourceCorrelationAttribute:
+          type: string
+          description: >-
+              The LDAP attribute from the parent REST Resource Type whose value will be used to match objects in the Delegated Admin Correlated REST Resource. This attribute must be writeable when use-secondary-value-for-linking is enabled.
+        secondaryRESTResourceCorrelationAttribute:
+          type: string
+          description: >-
+              The LDAP attribute from the Delegated Admin Correlated REST Resource whose value will be matched with the primary-rest-resource-correlation-attribute. This attribute must be writeable when use-secondary-value-for-linking is disabled.
+        useSecondaryValueForLinking:
+          type: boolean
+          description: >-
+              Indicates whether links should be created using the secondary correlation attribute value.
+      required:
+      - displayName
+      - correlatedRESTResource
+      - primaryRESTResourceCorrelationAttribute
+      - secondaryRESTResourceCorrelationAttribute
+    Enumdelegated-admin-correlated-rest-resourceSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:delegated-admin-correlated-rest-resource"
+    Enumdelegated-admin-attribute-mutabilityProp:
+      type: string
+      enum:
+      - "read-only"
+      - "read-write"
+      description: >-
+          Specifies the circumstances under which the values of the attribute can be written.
+    Enumdelegated-admin-attribute-allowedMIMETypeProp:
+      type: string
+      enum:
+      - "cer"
+      - "crt"
+      - "der"
+      - "key"
+      - "p7b"
+      - "p7c"
+      - "p8"
+      - "p10"
+      - "p12"
+      - "pem"
+      - "pfx"
+      - "spc"
+      description: >-
+          The list of file types allowed to be uploaded. If no types are specified, then all types will be allowed.
+    Enumdelegated-admin-attribute-attributePresentationProp:
+      type: string
+      enum:
+      - "default"
+      - "custom"
+      description: >-
+          Indicates how the attribute is presented to the user of the app.
     updateRequest:
       type: object
       properties:

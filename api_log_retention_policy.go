@@ -146,7 +146,7 @@ func (r ApiDeleteLogRetentionPolicyRequest) Execute() (*http.Response, error) {
 DeleteLogRetentionPolicy Delete a Log Retention Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logRetentionPolicyName Name of the Log Retention Policy to be deleted
+	@param logRetentionPolicyName Name of the Log Retention Policy
 	@return ApiDeleteLogRetentionPolicyRequest
 */
 func (a *LogRetentionPolicyApiService) DeleteLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiDeleteLogRetentionPolicyRequest {
@@ -236,7 +236,7 @@ func (r ApiGetLogRetentionPolicyRequest) Execute() (*AddLogRetentionPolicy200Res
 GetLogRetentionPolicy Returns a single Log Retention Policy
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logRetentionPolicyName Name of the Log Retention Policy to be read
+	@param logRetentionPolicyName Name of the Log Retention Policy
 	@return ApiGetLogRetentionPolicyRequest
 */
 func (a *LogRetentionPolicyApiService) GetLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiGetLogRetentionPolicyRequest {
@@ -345,7 +345,7 @@ func (r ApiUpdateLogRetentionPolicyRequest) Execute() (*AddLogRetentionPolicy200
 UpdateLogRetentionPolicy Update an existing Log Retention Policy by name
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param logRetentionPolicyName Name of the Log Retention Policy to be updated
+	@param logRetentionPolicyName Name of the Log Retention Policy
 	@return ApiUpdateLogRetentionPolicyRequest
 */
 func (a *LogRetentionPolicyApiService) UpdateLogRetentionPolicy(ctx context.Context, logRetentionPolicyName string) ApiUpdateLogRetentionPolicyRequest {

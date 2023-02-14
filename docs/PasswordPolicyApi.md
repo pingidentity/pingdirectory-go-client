@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    passwordPolicyName := "passwordPolicyName_example" // string | Name of the Password Policy to be deleted
+    passwordPolicyName := "passwordPolicyName_example" // string | Name of the Password Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordPolicyName** | **string** | Name of the Password Policy to be deleted | 
+**passwordPolicyName** | **string** | Name of the Password Policy | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    passwordPolicyName := "passwordPolicyName_example" // string | Name of the Password Policy to be read
+    passwordPolicyName := "passwordPolicyName_example" // string | Name of the Password Policy
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordPolicyName** | **string** | Name of the Password Policy to be read | 
+**passwordPolicyName** | **string** | Name of the Password Policy | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    passwordPolicyName := "passwordPolicyName_example" // string | Name of the Password Policy to be updated
+    passwordPolicyName := "passwordPolicyName_example" // string | Name of the Password Policy
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Password Policy
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**passwordPolicyName** | **string** | Name of the Password Policy to be updated | 
+**passwordPolicyName** | **string** | Name of the Password Policy | 
 
 ### Other Parameters
 

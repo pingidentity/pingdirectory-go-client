@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-    gaugeName := "gaugeName_example" // string | Name of the Gauge to be deleted
+    gaugeName := "gaugeName_example" // string | Name of the Gauge
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**gaugeName** | **string** | Name of the Gauge to be deleted | 
+**gaugeName** | **string** | Name of the Gauge | 
 
 ### Other Parameters
 
@@ -160,7 +160,7 @@ import (
 )
 
 func main() {
-    gaugeName := "gaugeName_example" // string | Name of the Gauge to be read
+    gaugeName := "gaugeName_example" // string | Name of the Gauge
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**gaugeName** | **string** | Name of the Gauge to be read | 
+**gaugeName** | **string** | Name of the Gauge | 
 
 ### Other Parameters
 
@@ -228,7 +228,7 @@ import (
 )
 
 func main() {
-    gaugeName := "gaugeName_example" // string | Name of the Gauge to be updated
+    gaugeName := "gaugeName_example" // string | Name of the Gauge
     updateRequest := *openapiclient.NewUpdateRequest([]openapiclient.Operation{*openapiclient.NewOperation(openapiclient.EnumOperation("add"), "Path_example")}) // UpdateRequest | Update an existing Gauge
 
     configuration := openapiclient.NewConfiguration()
@@ -249,7 +249,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**gaugeName** | **string** | Name of the Gauge to be updated | 
+**gaugeName** | **string** | Name of the Gauge | 
 
 ### Other Parameters
 
