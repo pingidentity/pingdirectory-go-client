@@ -17,8 +17,16 @@ import (
 
 // AddRestResourceType200Response - struct for AddRestResourceType200Response
 type AddRestResourceType200Response struct {
-	GroupRestResourceTypeResponse *GroupRestResourceTypeResponse
-	UserRestResourceTypeResponse  *UserRestResourceTypeResponse
+	GenericRestResourceTypeResponse *GenericRestResourceTypeResponse
+	GroupRestResourceTypeResponse   *GroupRestResourceTypeResponse
+	UserRestResourceTypeResponse    *UserRestResourceTypeResponse
+}
+
+// GenericRestResourceTypeResponseAsAddRestResourceType200Response is a convenience function that returns GenericRestResourceTypeResponse wrapped in AddRestResourceType200Response
+func GenericRestResourceTypeResponseAsAddRestResourceType200Response(v *GenericRestResourceTypeResponse) AddRestResourceType200Response {
+	return AddRestResourceType200Response{
+		GenericRestResourceTypeResponse: v,
+	}
 }
 
 // GroupRestResourceTypeResponseAsAddRestResourceType200Response is a convenience function that returns GroupRestResourceTypeResponse wrapped in AddRestResourceType200Response
@@ -39,6 +47,19 @@ func UserRestResourceTypeResponseAsAddRestResourceType200Response(v *UserRestRes
 func (dst *AddRestResourceType200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into GenericRestResourceTypeResponse
+	err = newStrictDecoder(data).Decode(&dst.GenericRestResourceTypeResponse)
+	if err == nil {
+		jsonGenericRestResourceTypeResponse, _ := json.Marshal(dst.GenericRestResourceTypeResponse)
+		if string(jsonGenericRestResourceTypeResponse) == "{}" { // empty struct
+			dst.GenericRestResourceTypeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.GenericRestResourceTypeResponse = nil
+	}
+
 	// try to unmarshal data into GroupRestResourceTypeResponse
 	err = newStrictDecoder(data).Decode(&dst.GroupRestResourceTypeResponse)
 	if err == nil {
@@ -67,6 +88,7 @@ func (dst *AddRestResourceType200Response) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.GenericRestResourceTypeResponse = nil
 		dst.GroupRestResourceTypeResponse = nil
 		dst.UserRestResourceTypeResponse = nil
 
@@ -80,6 +102,10 @@ func (dst *AddRestResourceType200Response) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AddRestResourceType200Response) MarshalJSON() ([]byte, error) {
+	if src.GenericRestResourceTypeResponse != nil {
+		return json.Marshal(&src.GenericRestResourceTypeResponse)
+	}
+
 	if src.GroupRestResourceTypeResponse != nil {
 		return json.Marshal(&src.GroupRestResourceTypeResponse)
 	}
@@ -96,6 +122,10 @@ func (obj *AddRestResourceType200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
+	if obj.GenericRestResourceTypeResponse != nil {
+		return obj.GenericRestResourceTypeResponse
+	}
+
 	if obj.GroupRestResourceTypeResponse != nil {
 		return obj.GroupRestResourceTypeResponse
 	}

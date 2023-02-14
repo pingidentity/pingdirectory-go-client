@@ -32,6 +32,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/json-log-field-syntax-response'
                 - $ref: '#/components/schemas/attribute-based-log-field-syntax-response'
+                - $ref: '#/components/schemas/generic-log-field-syntax-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -70,6 +71,7 @@ paths:
                 oneOf:
                 - $ref: '#/components/schemas/json-log-field-syntax-response'
                 - $ref: '#/components/schemas/attribute-based-log-field-syntax-response'
+                - $ref: '#/components/schemas/generic-log-field-syntax-response'
         "401":
           description: Requestor cannot be authenticated
         "403":
@@ -162,6 +164,33 @@ components:
       type: string
       enum:
       - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:attribute-based"
+    generic-log-field-syntax-response:
+      allOf:
+      - $ref: '#/components/schemas/meta'
+      - type: object
+        properties:
+          schemas:
+            type: array
+            minItems: 1
+            maxItems: 1
+            items:
+              $ref: '#/components/schemas/Enumgeneric-log-field-syntaxSchemaUrn'
+          id:
+            description: Name of the Log Field Syntax
+            type: string
+          description:
+            type: string
+            description: >-
+                A description for this Log Field Syntax
+          defaultBehavior:
+            $ref: '#/components/schemas/Enumlog-field-syntax-defaultBehaviorProp'
+        required:
+        - schemas
+        - id
+    Enumgeneric-log-field-syntaxSchemaUrn:
+      type: string
+      enum:
+      - "urn:pingidentity:schemas:configuration:2.0:log-field-syntax:generic"
     Enumlog-field-syntax-defaultBehaviorProp:
       type: string
       enum:

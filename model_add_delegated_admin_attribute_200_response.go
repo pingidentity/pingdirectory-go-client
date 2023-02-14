@@ -18,6 +18,7 @@ import (
 // AddDelegatedAdminAttribute200Response - struct for AddDelegatedAdminAttribute200Response
 type AddDelegatedAdminAttribute200Response struct {
 	CertificateDelegatedAdminAttributeResponse *CertificateDelegatedAdminAttributeResponse
+	GenericDelegatedAdminAttributeResponse     *GenericDelegatedAdminAttributeResponse
 	PhotoDelegatedAdminAttributeResponse       *PhotoDelegatedAdminAttributeResponse
 }
 
@@ -25,6 +26,13 @@ type AddDelegatedAdminAttribute200Response struct {
 func CertificateDelegatedAdminAttributeResponseAsAddDelegatedAdminAttribute200Response(v *CertificateDelegatedAdminAttributeResponse) AddDelegatedAdminAttribute200Response {
 	return AddDelegatedAdminAttribute200Response{
 		CertificateDelegatedAdminAttributeResponse: v,
+	}
+}
+
+// GenericDelegatedAdminAttributeResponseAsAddDelegatedAdminAttribute200Response is a convenience function that returns GenericDelegatedAdminAttributeResponse wrapped in AddDelegatedAdminAttribute200Response
+func GenericDelegatedAdminAttributeResponseAsAddDelegatedAdminAttribute200Response(v *GenericDelegatedAdminAttributeResponse) AddDelegatedAdminAttribute200Response {
+	return AddDelegatedAdminAttribute200Response{
+		GenericDelegatedAdminAttributeResponse: v,
 	}
 }
 
@@ -52,6 +60,19 @@ func (dst *AddDelegatedAdminAttribute200Response) UnmarshalJSON(data []byte) err
 		dst.CertificateDelegatedAdminAttributeResponse = nil
 	}
 
+	// try to unmarshal data into GenericDelegatedAdminAttributeResponse
+	err = newStrictDecoder(data).Decode(&dst.GenericDelegatedAdminAttributeResponse)
+	if err == nil {
+		jsonGenericDelegatedAdminAttributeResponse, _ := json.Marshal(dst.GenericDelegatedAdminAttributeResponse)
+		if string(jsonGenericDelegatedAdminAttributeResponse) == "{}" { // empty struct
+			dst.GenericDelegatedAdminAttributeResponse = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.GenericDelegatedAdminAttributeResponse = nil
+	}
+
 	// try to unmarshal data into PhotoDelegatedAdminAttributeResponse
 	err = newStrictDecoder(data).Decode(&dst.PhotoDelegatedAdminAttributeResponse)
 	if err == nil {
@@ -68,6 +89,7 @@ func (dst *AddDelegatedAdminAttribute200Response) UnmarshalJSON(data []byte) err
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.CertificateDelegatedAdminAttributeResponse = nil
+		dst.GenericDelegatedAdminAttributeResponse = nil
 		dst.PhotoDelegatedAdminAttributeResponse = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddDelegatedAdminAttribute200Response)")
@@ -84,6 +106,10 @@ func (src AddDelegatedAdminAttribute200Response) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.CertificateDelegatedAdminAttributeResponse)
 	}
 
+	if src.GenericDelegatedAdminAttributeResponse != nil {
+		return json.Marshal(&src.GenericDelegatedAdminAttributeResponse)
+	}
+
 	if src.PhotoDelegatedAdminAttributeResponse != nil {
 		return json.Marshal(&src.PhotoDelegatedAdminAttributeResponse)
 	}
@@ -98,6 +124,10 @@ func (obj *AddDelegatedAdminAttribute200Response) GetActualInstance() interface{
 	}
 	if obj.CertificateDelegatedAdminAttributeResponse != nil {
 		return obj.CertificateDelegatedAdminAttributeResponse
+	}
+
+	if obj.GenericDelegatedAdminAttributeResponse != nil {
+		return obj.GenericDelegatedAdminAttributeResponse
 	}
 
 	if obj.PhotoDelegatedAdminAttributeResponse != nil {

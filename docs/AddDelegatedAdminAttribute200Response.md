@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Meta** | Pointer to [**MetaMeta**](MetaMeta.md) |  | [optional] 
 **Urnpingidentityschemasconfigurationmessages20** | Pointer to [**MetaUrnPingidentitySchemasConfigurationMessages20**](MetaUrnPingidentitySchemasConfigurationMessages20.md) |  | [optional] 
 **Id** | **string** | Name of the Delegated Admin Attribute | 
-**Schemas** | [**[]EnumphotoDelegatedAdminAttributeSchemaUrn**](EnumphotoDelegatedAdminAttributeSchemaUrn.md) |  | 
+**Schemas** | [**[]EnumgenericDelegatedAdminAttributeSchemaUrn**](EnumgenericDelegatedAdminAttributeSchemaUrn.md) |  | 
 **AllowedMIMEType** | Pointer to [**[]EnumdelegatedAdminAttributeAllowedMIMETypeProp**](EnumdelegatedAdminAttributeAllowedMIMETypeProp.md) |  | [optional] 
 **Description** | Pointer to **string** | A description for this Delegated Admin Attribute | [optional] 
 **AttributeType** | **string** | Specifies the name or OID of the LDAP attribute type. | 
@@ -19,12 +19,13 @@ Name | Type | Description | Notes
 **ReferenceResourceType** | Pointer to **string** | For LDAP attributes with DN syntax, specifies what kind of resource is referenced. | [optional] 
 **AttributePresentation** | Pointer to [**EnumdelegatedAdminAttributeAttributePresentationProp**](EnumdelegatedAdminAttributeAttributePresentationProp.md) |  | [optional] 
 **DateTimeFormat** | Pointer to **string** | Specifies the format string that is used to present a date and/or time value to the user of the app. This property only applies to LDAP attribute types whose LDAP syntax is GeneralizedTime and is ignored if the attribute type has any other syntax. | [optional] 
+**IncludeInSummary** | **bool** | Indicates whether this Delegated Admin Attribute is to be included in the summary display for a resource. | 
 
 ## Methods
 
 ### NewAddDelegatedAdminAttribute200Response
 
-`func NewAddDelegatedAdminAttribute200Response(id string, schemas []EnumphotoDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int32, ) *AddDelegatedAdminAttribute200Response`
+`func NewAddDelegatedAdminAttribute200Response(id string, schemas []EnumgenericDelegatedAdminAttributeSchemaUrn, attributeType string, displayName string, mutability EnumdelegatedAdminAttributeMutabilityProp, multiValued bool, displayOrderIndex int32, includeInSummary bool, ) *AddDelegatedAdminAttribute200Response`
 
 NewAddDelegatedAdminAttribute200Response instantiates a new AddDelegatedAdminAttribute200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +112,20 @@ SetId sets Id field to given value.
 
 ### GetSchemas
 
-`func (o *AddDelegatedAdminAttribute200Response) GetSchemas() []EnumphotoDelegatedAdminAttributeSchemaUrn`
+`func (o *AddDelegatedAdminAttribute200Response) GetSchemas() []EnumgenericDelegatedAdminAttributeSchemaUrn`
 
 GetSchemas returns the Schemas field if non-nil, zero value otherwise.
 
 ### GetSchemasOk
 
-`func (o *AddDelegatedAdminAttribute200Response) GetSchemasOk() (*[]EnumphotoDelegatedAdminAttributeSchemaUrn, bool)`
+`func (o *AddDelegatedAdminAttribute200Response) GetSchemasOk() (*[]EnumgenericDelegatedAdminAttributeSchemaUrn, bool)`
 
 GetSchemasOk returns a tuple with the Schemas field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSchemas
 
-`func (o *AddDelegatedAdminAttribute200Response) SetSchemas(v []EnumphotoDelegatedAdminAttributeSchemaUrn)`
+`func (o *AddDelegatedAdminAttribute200Response) SetSchemas(v []EnumgenericDelegatedAdminAttributeSchemaUrn)`
 
 SetSchemas sets Schemas field to given value.
 
@@ -378,6 +379,26 @@ SetDateTimeFormat sets DateTimeFormat field to given value.
 `func (o *AddDelegatedAdminAttribute200Response) HasDateTimeFormat() bool`
 
 HasDateTimeFormat returns a boolean if a field has been set.
+
+### GetIncludeInSummary
+
+`func (o *AddDelegatedAdminAttribute200Response) GetIncludeInSummary() bool`
+
+GetIncludeInSummary returns the IncludeInSummary field if non-nil, zero value otherwise.
+
+### GetIncludeInSummaryOk
+
+`func (o *AddDelegatedAdminAttribute200Response) GetIncludeInSummaryOk() (*bool, bool)`
+
+GetIncludeInSummaryOk returns a tuple with the IncludeInSummary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeInSummary
+
+`func (o *AddDelegatedAdminAttribute200Response) SetIncludeInSummary(v bool)`
+
+SetIncludeInSummary sets IncludeInSummary field to given value.
+
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

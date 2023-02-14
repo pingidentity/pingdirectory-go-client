@@ -18,6 +18,7 @@ import (
 // AddDelegatedAdminAttributeRequest - struct for AddDelegatedAdminAttributeRequest
 type AddDelegatedAdminAttributeRequest struct {
 	AddCertificateDelegatedAdminAttributeRequest *AddCertificateDelegatedAdminAttributeRequest
+	AddGenericDelegatedAdminAttributeRequest     *AddGenericDelegatedAdminAttributeRequest
 	AddPhotoDelegatedAdminAttributeRequest       *AddPhotoDelegatedAdminAttributeRequest
 }
 
@@ -25,6 +26,13 @@ type AddDelegatedAdminAttributeRequest struct {
 func AddCertificateDelegatedAdminAttributeRequestAsAddDelegatedAdminAttributeRequest(v *AddCertificateDelegatedAdminAttributeRequest) AddDelegatedAdminAttributeRequest {
 	return AddDelegatedAdminAttributeRequest{
 		AddCertificateDelegatedAdminAttributeRequest: v,
+	}
+}
+
+// AddGenericDelegatedAdminAttributeRequestAsAddDelegatedAdminAttributeRequest is a convenience function that returns AddGenericDelegatedAdminAttributeRequest wrapped in AddDelegatedAdminAttributeRequest
+func AddGenericDelegatedAdminAttributeRequestAsAddDelegatedAdminAttributeRequest(v *AddGenericDelegatedAdminAttributeRequest) AddDelegatedAdminAttributeRequest {
+	return AddDelegatedAdminAttributeRequest{
+		AddGenericDelegatedAdminAttributeRequest: v,
 	}
 }
 
@@ -52,6 +60,19 @@ func (dst *AddDelegatedAdminAttributeRequest) UnmarshalJSON(data []byte) error {
 		dst.AddCertificateDelegatedAdminAttributeRequest = nil
 	}
 
+	// try to unmarshal data into AddGenericDelegatedAdminAttributeRequest
+	err = newStrictDecoder(data).Decode(&dst.AddGenericDelegatedAdminAttributeRequest)
+	if err == nil {
+		jsonAddGenericDelegatedAdminAttributeRequest, _ := json.Marshal(dst.AddGenericDelegatedAdminAttributeRequest)
+		if string(jsonAddGenericDelegatedAdminAttributeRequest) == "{}" { // empty struct
+			dst.AddGenericDelegatedAdminAttributeRequest = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.AddGenericDelegatedAdminAttributeRequest = nil
+	}
+
 	// try to unmarshal data into AddPhotoDelegatedAdminAttributeRequest
 	err = newStrictDecoder(data).Decode(&dst.AddPhotoDelegatedAdminAttributeRequest)
 	if err == nil {
@@ -68,6 +89,7 @@ func (dst *AddDelegatedAdminAttributeRequest) UnmarshalJSON(data []byte) error {
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AddCertificateDelegatedAdminAttributeRequest = nil
+		dst.AddGenericDelegatedAdminAttributeRequest = nil
 		dst.AddPhotoDelegatedAdminAttributeRequest = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AddDelegatedAdminAttributeRequest)")
@@ -84,6 +106,10 @@ func (src AddDelegatedAdminAttributeRequest) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AddCertificateDelegatedAdminAttributeRequest)
 	}
 
+	if src.AddGenericDelegatedAdminAttributeRequest != nil {
+		return json.Marshal(&src.AddGenericDelegatedAdminAttributeRequest)
+	}
+
 	if src.AddPhotoDelegatedAdminAttributeRequest != nil {
 		return json.Marshal(&src.AddPhotoDelegatedAdminAttributeRequest)
 	}
@@ -98,6 +124,10 @@ func (obj *AddDelegatedAdminAttributeRequest) GetActualInstance() interface{} {
 	}
 	if obj.AddCertificateDelegatedAdminAttributeRequest != nil {
 		return obj.AddCertificateDelegatedAdminAttributeRequest
+	}
+
+	if obj.AddGenericDelegatedAdminAttributeRequest != nil {
+		return obj.AddGenericDelegatedAdminAttributeRequest
 	}
 
 	if obj.AddPhotoDelegatedAdminAttributeRequest != nil {
