@@ -29,7 +29,7 @@ jobs:
             (echo; echo "Unexpected difference after 'go mod tidy'. Run 'go mod tidy' command and commit."; exit 1)
       - name: Build
         run: |
-          go build .
+          go build ./...
   fmt:
     name: go fmt
     needs: [build]
