@@ -1,0 +1,11 @@
+# EnumjwtAccessTokenValidatorSchemaUrn
+
+## Enum
+
+
+* `URNPINGIDENTITYSCHEMASCONFIGURATION2_0ACCESS_TOKEN_VALIDATORJWT` (value: `"urn:pingidentity:schemas:configuration:2.0:access-token-validator:jwt"`)
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
