@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPwnedPasswordsPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPwnedPasswordsPasswordValidatorRequest{}
+
 // AddPwnedPasswordsPasswordValidatorRequest struct for AddPwnedPasswordsPasswordValidatorRequest
 type AddPwnedPasswordsPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -113,7 +116,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetSchemas(v []EnumpwnedPass
 
 // GetPwnedPasswordsBaseURL returns the PwnedPasswordsBaseURL field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetPwnedPasswordsBaseURL() string {
-	if o == nil || isNil(o.PwnedPasswordsBaseURL) {
+	if o == nil || IsNil(o.PwnedPasswordsBaseURL) {
 		var ret string
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetPwnedPasswordsBaseURL() s
 // GetPwnedPasswordsBaseURLOk returns a tuple with the PwnedPasswordsBaseURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetPwnedPasswordsBaseURLOk() (*string, bool) {
-	if o == nil || isNil(o.PwnedPasswordsBaseURL) {
+	if o == nil || IsNil(o.PwnedPasswordsBaseURL) {
 		return nil, false
 	}
 	return o.PwnedPasswordsBaseURL, true
@@ -131,7 +134,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetPwnedPasswordsBaseURLOk()
 
 // HasPwnedPasswordsBaseURL returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasPwnedPasswordsBaseURL() bool {
-	if o != nil && !isNil(o.PwnedPasswordsBaseURL) {
+	if o != nil && !IsNil(o.PwnedPasswordsBaseURL) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetPwnedPasswordsBaseURL(v s
 
 // GetInvokeForAdd returns the InvokeForAdd field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdd() bool {
-	if o == nil || isNil(o.InvokeForAdd) {
+	if o == nil || IsNil(o.InvokeForAdd) {
 		var ret bool
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdd() bool {
 // GetInvokeForAddOk returns a tuple with the InvokeForAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAddOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForAdd) {
+	if o == nil || IsNil(o.InvokeForAdd) {
 		return nil, false
 	}
 	return o.InvokeForAdd, true
@@ -163,7 +166,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAddOk() (*bool, 
 
 // HasInvokeForAdd returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForAdd() bool {
-	if o != nil && !isNil(o.InvokeForAdd) {
+	if o != nil && !IsNil(o.InvokeForAdd) {
 		return true
 	}
 
@@ -177,7 +180,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetInvokeForAdd(v bool) {
 
 // GetInvokeForSelfChange returns the InvokeForSelfChange field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForSelfChange() bool {
-	if o == nil || isNil(o.InvokeForSelfChange) {
+	if o == nil || IsNil(o.InvokeForSelfChange) {
 		var ret bool
 		return ret
 	}
@@ -187,7 +190,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForSelfChange() boo
 // GetInvokeForSelfChangeOk returns a tuple with the InvokeForSelfChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForSelfChangeOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForSelfChange) {
+	if o == nil || IsNil(o.InvokeForSelfChange) {
 		return nil, false
 	}
 	return o.InvokeForSelfChange, true
@@ -195,7 +198,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForSelfChangeOk() (
 
 // HasInvokeForSelfChange returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForSelfChange() bool {
-	if o != nil && !isNil(o.InvokeForSelfChange) {
+	if o != nil && !IsNil(o.InvokeForSelfChange) {
 		return true
 	}
 
@@ -209,7 +212,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetInvokeForSelfChange(v boo
 
 // GetInvokeForAdminReset returns the InvokeForAdminReset field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdminReset() bool {
-	if o == nil || isNil(o.InvokeForAdminReset) {
+	if o == nil || IsNil(o.InvokeForAdminReset) {
 		var ret bool
 		return ret
 	}
@@ -219,7 +222,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdminReset() boo
 // GetInvokeForAdminResetOk returns a tuple with the InvokeForAdminReset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdminResetOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForAdminReset) {
+	if o == nil || IsNil(o.InvokeForAdminReset) {
 		return nil, false
 	}
 	return o.InvokeForAdminReset, true
@@ -227,7 +230,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetInvokeForAdminResetOk() (
 
 // HasInvokeForAdminReset returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasInvokeForAdminReset() bool {
-	if o != nil && !isNil(o.InvokeForAdminReset) {
+	if o != nil && !IsNil(o.InvokeForAdminReset) {
 		return true
 	}
 
@@ -241,7 +244,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetInvokeForAdminReset(v boo
 
 // GetAcceptPasswordOnServiceError returns the AcceptPasswordOnServiceError field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetAcceptPasswordOnServiceError() bool {
-	if o == nil || isNil(o.AcceptPasswordOnServiceError) {
+	if o == nil || IsNil(o.AcceptPasswordOnServiceError) {
 		var ret bool
 		return ret
 	}
@@ -251,7 +254,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetAcceptPasswordOnServiceEr
 // GetAcceptPasswordOnServiceErrorOk returns a tuple with the AcceptPasswordOnServiceError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetAcceptPasswordOnServiceErrorOk() (*bool, bool) {
-	if o == nil || isNil(o.AcceptPasswordOnServiceError) {
+	if o == nil || IsNil(o.AcceptPasswordOnServiceError) {
 		return nil, false
 	}
 	return o.AcceptPasswordOnServiceError, true
@@ -259,7 +262,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetAcceptPasswordOnServiceEr
 
 // HasAcceptPasswordOnServiceError returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasAcceptPasswordOnServiceError() bool {
-	if o != nil && !isNil(o.AcceptPasswordOnServiceError) {
+	if o != nil && !IsNil(o.AcceptPasswordOnServiceError) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetAcceptPasswordOnServiceEr
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetKeyManagerProvider() stri
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -291,7 +294,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetKeyManagerProviderOk() (*
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -305,7 +308,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetKeyManagerProvider(v stri
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -315,7 +318,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetTrustManagerProvider() st
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -323,7 +326,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetTrustManagerProviderOk() 
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetTrustManagerProvider(v st
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -347,7 +350,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -355,7 +358,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -393,7 +396,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -403,7 +406,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorRequirementDescr
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -411,7 +414,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorRequirementDescr
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -425,7 +428,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetValidatorRequirementDescr
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -435,7 +438,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorFailureMessage()
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -443,7 +446,7 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) GetValidatorFailureMessageOk
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddPwnedPasswordsPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -456,47 +459,49 @@ func (o *AddPwnedPasswordsPasswordValidatorRequest) SetValidatorFailureMessage(v
 }
 
 func (o AddPwnedPasswordsPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PwnedPasswordsBaseURL) {
-		toSerialize["pwnedPasswordsBaseURL"] = o.PwnedPasswordsBaseURL
-	}
-	if !isNil(o.InvokeForAdd) {
-		toSerialize["invokeForAdd"] = o.InvokeForAdd
-	}
-	if !isNil(o.InvokeForSelfChange) {
-		toSerialize["invokeForSelfChange"] = o.InvokeForSelfChange
-	}
-	if !isNil(o.InvokeForAdminReset) {
-		toSerialize["invokeForAdminReset"] = o.InvokeForAdminReset
-	}
-	if !isNil(o.AcceptPasswordOnServiceError) {
-		toSerialize["acceptPasswordOnServiceError"] = o.AcceptPasswordOnServiceError
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPwnedPasswordsPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PwnedPasswordsBaseURL) {
+		toSerialize["pwnedPasswordsBaseURL"] = o.PwnedPasswordsBaseURL
+	}
+	if !IsNil(o.InvokeForAdd) {
+		toSerialize["invokeForAdd"] = o.InvokeForAdd
+	}
+	if !IsNil(o.InvokeForSelfChange) {
+		toSerialize["invokeForSelfChange"] = o.InvokeForSelfChange
+	}
+	if !IsNil(o.InvokeForAdminReset) {
+		toSerialize["invokeForAdminReset"] = o.InvokeForAdminReset
+	}
+	if !IsNil(o.AcceptPasswordOnServiceError) {
+		toSerialize["acceptPasswordOnServiceError"] = o.AcceptPasswordOnServiceError
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddPwnedPasswordsPasswordValidatorRequest struct {

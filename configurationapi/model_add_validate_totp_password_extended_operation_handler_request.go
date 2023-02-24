@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddValidateTotpPasswordExtendedOperationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddValidateTotpPasswordExtendedOperationHandlerRequest{}
+
 // AddValidateTotpPasswordExtendedOperationHandlerRequest struct for AddValidateTotpPasswordExtendedOperationHandlerRequest
 type AddValidateTotpPasswordExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
@@ -103,7 +106,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetSchemas(v []
 
 // GetSharedSecretAttributeType returns the SharedSecretAttributeType field value if set, zero value otherwise.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSharedSecretAttributeType() string {
-	if o == nil || isNil(o.SharedSecretAttributeType) {
+	if o == nil || IsNil(o.SharedSecretAttributeType) {
 		var ret string
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSharedSecret
 // GetSharedSecretAttributeTypeOk returns a tuple with the SharedSecretAttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSharedSecretAttributeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.SharedSecretAttributeType) {
+	if o == nil || IsNil(o.SharedSecretAttributeType) {
 		return nil, false
 	}
 	return o.SharedSecretAttributeType, true
@@ -121,7 +124,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetSharedSecret
 
 // HasSharedSecretAttributeType returns a boolean if a field has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) HasSharedSecretAttributeType() bool {
-	if o != nil && !isNil(o.SharedSecretAttributeType) {
+	if o != nil && !IsNil(o.SharedSecretAttributeType) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetSharedSecret
 
 // GetTimeIntervalDuration returns the TimeIntervalDuration field value if set, zero value otherwise.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetTimeIntervalDuration() string {
-	if o == nil || isNil(o.TimeIntervalDuration) {
+	if o == nil || IsNil(o.TimeIntervalDuration) {
 		var ret string
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetTimeInterval
 // GetTimeIntervalDurationOk returns a tuple with the TimeIntervalDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetTimeIntervalDurationOk() (*string, bool) {
-	if o == nil || isNil(o.TimeIntervalDuration) {
+	if o == nil || IsNil(o.TimeIntervalDuration) {
 		return nil, false
 	}
 	return o.TimeIntervalDuration, true
@@ -153,7 +156,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetTimeInterval
 
 // HasTimeIntervalDuration returns a boolean if a field has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) HasTimeIntervalDuration() bool {
-	if o != nil && !isNil(o.TimeIntervalDuration) {
+	if o != nil && !IsNil(o.TimeIntervalDuration) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetTimeInterval
 
 // GetAdjacentIntervalsToCheck returns the AdjacentIntervalsToCheck field value if set, zero value otherwise.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheck() int32 {
-	if o == nil || isNil(o.AdjacentIntervalsToCheck) {
+	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentInte
 // GetAdjacentIntervalsToCheckOk returns a tuple with the AdjacentIntervalsToCheck field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentIntervalsToCheckOk() (*int32, bool) {
-	if o == nil || isNil(o.AdjacentIntervalsToCheck) {
+	if o == nil || IsNil(o.AdjacentIntervalsToCheck) {
 		return nil, false
 	}
 	return o.AdjacentIntervalsToCheck, true
@@ -185,7 +188,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetAdjacentInte
 
 // HasAdjacentIntervalsToCheck returns a boolean if a field has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) HasAdjacentIntervalsToCheck() bool {
-	if o != nil && !isNil(o.AdjacentIntervalsToCheck) {
+	if o != nil && !IsNil(o.AdjacentIntervalsToCheck) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetAdjacentInte
 
 // GetPreventTOTPReuse returns the PreventTOTPReuse field value if set, zero value otherwise.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetPreventTOTPReuse() bool {
-	if o == nil || isNil(o.PreventTOTPReuse) {
+	if o == nil || IsNil(o.PreventTOTPReuse) {
 		var ret bool
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetPreventTOTPR
 // GetPreventTOTPReuseOk returns a tuple with the PreventTOTPReuse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetPreventTOTPReuseOk() (*bool, bool) {
-	if o == nil || isNil(o.PreventTOTPReuse) {
+	if o == nil || IsNil(o.PreventTOTPReuse) {
 		return nil, false
 	}
 	return o.PreventTOTPReuse, true
@@ -217,7 +220,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetPreventTOTPR
 
 // HasPreventTOTPReuse returns a boolean if a field has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) HasPreventTOTPReuse() bool {
-	if o != nil && !isNil(o.PreventTOTPReuse) {
+	if o != nil && !IsNil(o.PreventTOTPReuse) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetPreventTOTPR
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetDescription(
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -249,7 +252,7 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) GetDescriptionO
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddValidateTotpPasswordExtendedOperationHandlerRequest) SetEnabled(v bo
 }
 
 func (o AddValidateTotpPasswordExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.SharedSecretAttributeType) {
-		toSerialize["sharedSecretAttributeType"] = o.SharedSecretAttributeType
-	}
-	if !isNil(o.TimeIntervalDuration) {
-		toSerialize["timeIntervalDuration"] = o.TimeIntervalDuration
-	}
-	if !isNil(o.AdjacentIntervalsToCheck) {
-		toSerialize["adjacentIntervalsToCheck"] = o.AdjacentIntervalsToCheck
-	}
-	if !isNil(o.PreventTOTPReuse) {
-		toSerialize["preventTOTPReuse"] = o.PreventTOTPReuse
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddValidateTotpPasswordExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.SharedSecretAttributeType) {
+		toSerialize["sharedSecretAttributeType"] = o.SharedSecretAttributeType
+	}
+	if !IsNil(o.TimeIntervalDuration) {
+		toSerialize["timeIntervalDuration"] = o.TimeIntervalDuration
+	}
+	if !IsNil(o.AdjacentIntervalsToCheck) {
+		toSerialize["adjacentIntervalsToCheck"] = o.AdjacentIntervalsToCheck
+	}
+	if !IsNil(o.PreventTOTPReuse) {
+		toSerialize["preventTOTPReuse"] = o.PreventTOTPReuse
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddValidateTotpPasswordExtendedOperationHandlerRequest struct {

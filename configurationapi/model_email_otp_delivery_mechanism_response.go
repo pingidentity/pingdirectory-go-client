@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the EmailOtpDeliveryMechanismResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EmailOtpDeliveryMechanismResponse{}
+
 // EmailOtpDeliveryMechanismResponse struct for EmailOtpDeliveryMechanismResponse
 type EmailOtpDeliveryMechanismResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -66,7 +69,7 @@ func NewEmailOtpDeliveryMechanismResponseWithDefaults() *EmailOtpDeliveryMechani
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -76,7 +79,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -84,7 +87,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -98,7 +101,7 @@ func (o *EmailOtpDeliveryMechanismResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -108,7 +111,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurati
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -116,7 +119,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurati
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *EmailOtpDeliveryMechanismResponse) SetEmailAddressAttributeType(v strin
 
 // GetEmailAddressJSONField returns the EmailAddressJSONField field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONField() string {
-	if o == nil || isNil(o.EmailAddressJSONField) {
+	if o == nil || IsNil(o.EmailAddressJSONField) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONField() string {
 // GetEmailAddressJSONFieldOk returns a tuple with the EmailAddressJSONField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONFieldOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressJSONField) {
+	if o == nil || IsNil(o.EmailAddressJSONField) {
 		return nil, false
 	}
 	return o.EmailAddressJSONField, true
@@ -220,7 +223,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONFieldOk() (*strin
 
 // HasEmailAddressJSONField returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasEmailAddressJSONField() bool {
-	if o != nil && !isNil(o.EmailAddressJSONField) {
+	if o != nil && !IsNil(o.EmailAddressJSONField) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *EmailOtpDeliveryMechanismResponse) SetEmailAddressJSONField(v string) {
 
 // GetEmailAddressJSONObjectFilter returns the EmailAddressJSONObjectFilter field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONObjectFilter() string {
-	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
+	if o == nil || IsNil(o.EmailAddressJSONObjectFilter) {
 		var ret string
 		return ret
 	}
@@ -244,7 +247,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONObjectFilter() st
 // GetEmailAddressJSONObjectFilterOk returns a tuple with the EmailAddressJSONObjectFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONObjectFilterOk() (*string, bool) {
-	if o == nil || isNil(o.EmailAddressJSONObjectFilter) {
+	if o == nil || IsNil(o.EmailAddressJSONObjectFilter) {
 		return nil, false
 	}
 	return o.EmailAddressJSONObjectFilter, true
@@ -252,7 +255,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetEmailAddressJSONObjectFilterOk() 
 
 // HasEmailAddressJSONObjectFilter returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasEmailAddressJSONObjectFilter() bool {
-	if o != nil && !isNil(o.EmailAddressJSONObjectFilter) {
+	if o != nil && !IsNil(o.EmailAddressJSONObjectFilter) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *EmailOtpDeliveryMechanismResponse) SetMessageSubject(v string) {
 
 // GetMessageTextBeforeOTP returns the MessageTextBeforeOTP field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextBeforeOTP() string {
-	if o == nil || isNil(o.MessageTextBeforeOTP) {
+	if o == nil || IsNil(o.MessageTextBeforeOTP) {
 		var ret string
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextBeforeOTP() string {
 // GetMessageTextBeforeOTPOk returns a tuple with the MessageTextBeforeOTP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextBeforeOTPOk() (*string, bool) {
-	if o == nil || isNil(o.MessageTextBeforeOTP) {
+	if o == nil || IsNil(o.MessageTextBeforeOTP) {
 		return nil, false
 	}
 	return o.MessageTextBeforeOTP, true
@@ -332,7 +335,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextBeforeOTPOk() (*string
 
 // HasMessageTextBeforeOTP returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasMessageTextBeforeOTP() bool {
-	if o != nil && !isNil(o.MessageTextBeforeOTP) {
+	if o != nil && !IsNil(o.MessageTextBeforeOTP) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *EmailOtpDeliveryMechanismResponse) SetMessageTextBeforeOTP(v string) {
 
 // GetMessageTextAfterOTP returns the MessageTextAfterOTP field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextAfterOTP() string {
-	if o == nil || isNil(o.MessageTextAfterOTP) {
+	if o == nil || IsNil(o.MessageTextAfterOTP) {
 		var ret string
 		return ret
 	}
@@ -356,7 +359,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextAfterOTP() string {
 // GetMessageTextAfterOTPOk returns a tuple with the MessageTextAfterOTP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextAfterOTPOk() (*string, bool) {
-	if o == nil || isNil(o.MessageTextAfterOTP) {
+	if o == nil || IsNil(o.MessageTextAfterOTP) {
 		return nil, false
 	}
 	return o.MessageTextAfterOTP, true
@@ -364,7 +367,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetMessageTextAfterOTPOk() (*string,
 
 // HasMessageTextAfterOTP returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasMessageTextAfterOTP() bool {
-	if o != nil && !isNil(o.MessageTextAfterOTP) {
+	if o != nil && !IsNil(o.MessageTextAfterOTP) {
 		return true
 	}
 
@@ -378,7 +381,7 @@ func (o *EmailOtpDeliveryMechanismResponse) SetMessageTextAfterOTP(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *EmailOtpDeliveryMechanismResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -388,7 +391,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EmailOtpDeliveryMechanismResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -396,7 +399,7 @@ func (o *EmailOtpDeliveryMechanismResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *EmailOtpDeliveryMechanismResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -433,47 +436,43 @@ func (o *EmailOtpDeliveryMechanismResponse) SetEnabled(v bool) {
 }
 
 func (o EmailOtpDeliveryMechanismResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
-	}
-	if !isNil(o.EmailAddressJSONField) {
-		toSerialize["emailAddressJSONField"] = o.EmailAddressJSONField
-	}
-	if !isNil(o.EmailAddressJSONObjectFilter) {
-		toSerialize["emailAddressJSONObjectFilter"] = o.EmailAddressJSONObjectFilter
-	}
-	if true {
-		toSerialize["senderAddress"] = o.SenderAddress
-	}
-	if true {
-		toSerialize["messageSubject"] = o.MessageSubject
-	}
-	if !isNil(o.MessageTextBeforeOTP) {
-		toSerialize["messageTextBeforeOTP"] = o.MessageTextBeforeOTP
-	}
-	if !isNil(o.MessageTextAfterOTP) {
-		toSerialize["messageTextAfterOTP"] = o.MessageTextAfterOTP
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o EmailOtpDeliveryMechanismResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["emailAddressAttributeType"] = o.EmailAddressAttributeType
+	if !IsNil(o.EmailAddressJSONField) {
+		toSerialize["emailAddressJSONField"] = o.EmailAddressJSONField
+	}
+	if !IsNil(o.EmailAddressJSONObjectFilter) {
+		toSerialize["emailAddressJSONObjectFilter"] = o.EmailAddressJSONObjectFilter
+	}
+	toSerialize["senderAddress"] = o.SenderAddress
+	toSerialize["messageSubject"] = o.MessageSubject
+	if !IsNil(o.MessageTextBeforeOTP) {
+		toSerialize["messageTextBeforeOTP"] = o.MessageTextBeforeOTP
+	}
+	if !IsNil(o.MessageTextAfterOTP) {
+		toSerialize["messageTextAfterOTP"] = o.MessageTextAfterOTP
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableEmailOtpDeliveryMechanismResponse struct {

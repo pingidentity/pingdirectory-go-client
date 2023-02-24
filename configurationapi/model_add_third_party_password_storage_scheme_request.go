@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyPasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyPasswordStorageSchemeRequest{}
+
 // AddThirdPartyPasswordStorageSchemeRequest struct for AddThirdPartyPasswordStorageSchemeRequest
 type AddThirdPartyPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -124,7 +127,7 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) SetExtensionClass(v string) 
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyPasswordStorageSchemeRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) GetExtensionArgument() []str
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordStorageSchemeRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -142,7 +145,7 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) GetExtensionArgumentOk() ([]
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyPasswordStorageSchemeRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) SetExtensionArgument(v []str
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyPasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyPasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddThirdPartyPasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddThirdPartyPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyPasswordStorageSchemeRequest struct {

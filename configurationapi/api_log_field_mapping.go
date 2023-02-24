@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *LogFieldMappingApiService) AddLogFieldMappingExecute(r ApiAddLogFieldMa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *LogFieldMappingApiService) DeleteLogFieldMappingExecute(r ApiDeleteLogF
 	}
 
 	localVarPath := localBasePath + "/log-field-mappings/{log-field-mapping-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-mapping-name"+"}", url.PathEscape(parameterToString(r.logFieldMappingName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-mapping-name"+"}", url.PathEscape(parameterValueToString(r.logFieldMappingName, "logFieldMappingName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *LogFieldMappingApiService) DeleteLogFieldMappingExecute(r ApiDeleteLogF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *LogFieldMappingApiService) GetLogFieldMappingExecute(r ApiGetLogFieldMa
 	}
 
 	localVarPath := localBasePath + "/log-field-mappings/{log-field-mapping-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-mapping-name"+"}", url.PathEscape(parameterToString(r.logFieldMappingName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-mapping-name"+"}", url.PathEscape(parameterValueToString(r.logFieldMappingName, "logFieldMappingName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *LogFieldMappingApiService) GetLogFieldMappingExecute(r ApiGetLogFieldMa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *LogFieldMappingApiService) UpdateLogFieldMappingExecute(r ApiUpdateLogF
 	}
 
 	localVarPath := localBasePath + "/log-field-mappings/{log-field-mapping-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-mapping-name"+"}", url.PathEscape(parameterToString(r.logFieldMappingName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-mapping-name"+"}", url.PathEscape(parameterValueToString(r.logFieldMappingName, "logFieldMappingName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *LogFieldMappingApiService) UpdateLogFieldMappingExecute(r ApiUpdateLogF
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

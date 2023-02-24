@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvailabilityStateHttpServletExtensionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvailabilityStateHttpServletExtensionResponse{}
+
 // AvailabilityStateHttpServletExtensionResponse struct for AvailabilityStateHttpServletExtensionResponse
 type AvailabilityStateHttpServletExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -70,7 +73,7 @@ func NewAvailabilityStateHttpServletExtensionResponseWithDefaults() *Availabilit
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -80,7 +83,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -88,7 +91,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetMetaOk() (*MetaMeta, 
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetUrnpingidentityschema
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -120,7 +123,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetUrnpingidentityschema
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -278,7 +281,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetUnavailableStatusCode
 
 // GetOverrideStatusCode returns the OverrideStatusCode field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetOverrideStatusCode() int32 {
-	if o == nil || isNil(o.OverrideStatusCode) {
+	if o == nil || IsNil(o.OverrideStatusCode) {
 		var ret int32
 		return ret
 	}
@@ -288,7 +291,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetOverrideStatusCode() 
 // GetOverrideStatusCodeOk returns a tuple with the OverrideStatusCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetOverrideStatusCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.OverrideStatusCode) {
+	if o == nil || IsNil(o.OverrideStatusCode) {
 		return nil, false
 	}
 	return o.OverrideStatusCode, true
@@ -296,7 +299,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetOverrideStatusCodeOk(
 
 // HasOverrideStatusCode returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasOverrideStatusCode() bool {
-	if o != nil && !isNil(o.OverrideStatusCode) {
+	if o != nil && !IsNil(o.OverrideStatusCode) {
 		return true
 	}
 
@@ -310,7 +313,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetOverrideStatusCode(v 
 
 // GetIncludeResponseBody returns the IncludeResponseBody field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetIncludeResponseBody() bool {
-	if o == nil || isNil(o.IncludeResponseBody) {
+	if o == nil || IsNil(o.IncludeResponseBody) {
 		var ret bool
 		return ret
 	}
@@ -320,7 +323,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetIncludeResponseBody()
 // GetIncludeResponseBodyOk returns a tuple with the IncludeResponseBody field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetIncludeResponseBodyOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeResponseBody) {
+	if o == nil || IsNil(o.IncludeResponseBody) {
 		return nil, false
 	}
 	return o.IncludeResponseBody, true
@@ -328,7 +331,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetIncludeResponseBodyOk
 
 // HasIncludeResponseBody returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasIncludeResponseBody() bool {
-	if o != nil && !isNil(o.IncludeResponseBody) {
+	if o != nil && !IsNil(o.IncludeResponseBody) {
 		return true
 	}
 
@@ -342,7 +345,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetIncludeResponseBody(v
 
 // GetAdditionalResponseContents returns the AdditionalResponseContents field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetAdditionalResponseContents() string {
-	if o == nil || isNil(o.AdditionalResponseContents) {
+	if o == nil || IsNil(o.AdditionalResponseContents) {
 		var ret string
 		return ret
 	}
@@ -352,7 +355,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetAdditionalResponseCon
 // GetAdditionalResponseContentsOk returns a tuple with the AdditionalResponseContents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetAdditionalResponseContentsOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalResponseContents) {
+	if o == nil || IsNil(o.AdditionalResponseContents) {
 		return nil, false
 	}
 	return o.AdditionalResponseContents, true
@@ -360,7 +363,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetAdditionalResponseCon
 
 // HasAdditionalResponseContents returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasAdditionalResponseContents() bool {
-	if o != nil && !isNil(o.AdditionalResponseContents) {
+	if o != nil && !IsNil(o.AdditionalResponseContents) {
 		return true
 	}
 
@@ -374,7 +377,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetAdditionalResponseCon
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -384,7 +387,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetDescription() string 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -392,7 +395,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetDescriptionOk() (*str
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -406,7 +409,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetDescription(v string)
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -416,7 +419,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetCrossOriginPolicy() s
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -424,7 +427,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetCrossOriginPolicyOk()
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -438,7 +441,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetCrossOriginPolicy(v s
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -448,7 +451,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetResponseHeader() []st
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -456,7 +459,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetResponseHeaderOk() ([
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -470,7 +473,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetResponseHeader(v []st
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -480,7 +483,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetCorrelationIDResponse
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -488,7 +491,7 @@ func (o *AvailabilityStateHttpServletExtensionResponse) GetCorrelationIDResponse
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *AvailabilityStateHttpServletExtensionResponse) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -501,53 +504,49 @@ func (o *AvailabilityStateHttpServletExtensionResponse) SetCorrelationIDResponse
 }
 
 func (o AvailabilityStateHttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["baseContextPath"] = o.BaseContextPath
-	}
-	if true {
-		toSerialize["availableStatusCode"] = o.AvailableStatusCode
-	}
-	if true {
-		toSerialize["degradedStatusCode"] = o.DegradedStatusCode
-	}
-	if true {
-		toSerialize["unavailableStatusCode"] = o.UnavailableStatusCode
-	}
-	if !isNil(o.OverrideStatusCode) {
-		toSerialize["overrideStatusCode"] = o.OverrideStatusCode
-	}
-	if !isNil(o.IncludeResponseBody) {
-		toSerialize["includeResponseBody"] = o.IncludeResponseBody
-	}
-	if !isNil(o.AdditionalResponseContents) {
-		toSerialize["additionalResponseContents"] = o.AdditionalResponseContents
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvailabilityStateHttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["baseContextPath"] = o.BaseContextPath
+	toSerialize["availableStatusCode"] = o.AvailableStatusCode
+	toSerialize["degradedStatusCode"] = o.DegradedStatusCode
+	toSerialize["unavailableStatusCode"] = o.UnavailableStatusCode
+	if !IsNil(o.OverrideStatusCode) {
+		toSerialize["overrideStatusCode"] = o.OverrideStatusCode
+	}
+	if !IsNil(o.IncludeResponseBody) {
+		toSerialize["includeResponseBody"] = o.IncludeResponseBody
+	}
+	if !IsNil(o.AdditionalResponseContents) {
+		toSerialize["additionalResponseContents"] = o.AdditionalResponseContents
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableAvailabilityStateHttpServletExtensionResponse struct {

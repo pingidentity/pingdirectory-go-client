@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -71,7 +71,7 @@ func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndexExecute(r ApiAddLocalDbVlv
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-vlv-indexes"
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -109,9 +109,9 @@ func (a *LocalDbVlvIndexApiService) AddLocalDbVlvIndexExecute(r ApiAddLocalDbVlv
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -178,8 +178,8 @@ func (a *LocalDbVlvIndexApiService) DeleteLocalDbVlvIndexExecute(r ApiDeleteLoca
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-vlv-index-name"+"}", url.PathEscape(parameterToString(r.localDbVlvIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-vlv-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbVlvIndexName, "localDbVlvIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -212,9 +212,9 @@ func (a *LocalDbVlvIndexApiService) DeleteLocalDbVlvIndexExecute(r ApiDeleteLoca
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -275,8 +275,8 @@ func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndexExecute(r ApiGetLocalDbVlv
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-vlv-index-name"+"}", url.PathEscape(parameterToString(r.localDbVlvIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-vlv-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbVlvIndexName, "localDbVlvIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -309,9 +309,9 @@ func (a *LocalDbVlvIndexApiService) GetLocalDbVlvIndexExecute(r ApiGetLocalDbVlv
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -388,8 +388,8 @@ func (a *LocalDbVlvIndexApiService) UpdateLocalDbVlvIndexExecute(r ApiUpdateLoca
 	}
 
 	localVarPath := localBasePath + "/backends/{backend-name}/local-db-vlv-indexes/{local-db-vlv-index-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"local-db-vlv-index-name"+"}", url.PathEscape(parameterToString(r.localDbVlvIndexName, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterToString(r.backendName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"local-db-vlv-index-name"+"}", url.PathEscape(parameterValueToString(r.localDbVlvIndexName, "localDbVlvIndexName")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"backend-name"+"}", url.PathEscape(parameterValueToString(r.backendName, "backendName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,9 +427,9 @@ func (a *LocalDbVlvIndexApiService) UpdateLocalDbVlvIndexExecute(r ApiUpdateLoca
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *UncachedAttributeCriteriaApiService) AddUncachedAttributeCriteriaExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteriaExe
 	}
 
 	localVarPath := localBasePath + "/uncached-attribute-criteria/{uncached-attribute-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"uncached-attribute-criteria-name"+"}", url.PathEscape(parameterToString(r.uncachedAttributeCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"uncached-attribute-criteria-name"+"}", url.PathEscape(parameterValueToString(r.uncachedAttributeCriteriaName, "uncachedAttributeCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *UncachedAttributeCriteriaApiService) DeleteUncachedAttributeCriteriaExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *UncachedAttributeCriteriaApiService) GetUncachedAttributeCriteriaExecut
 	}
 
 	localVarPath := localBasePath + "/uncached-attribute-criteria/{uncached-attribute-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"uncached-attribute-criteria-name"+"}", url.PathEscape(parameterToString(r.uncachedAttributeCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"uncached-attribute-criteria-name"+"}", url.PathEscape(parameterValueToString(r.uncachedAttributeCriteriaName, "uncachedAttributeCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *UncachedAttributeCriteriaApiService) GetUncachedAttributeCriteriaExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *UncachedAttributeCriteriaApiService) UpdateUncachedAttributeCriteriaExe
 	}
 
 	localVarPath := localBasePath + "/uncached-attribute-criteria/{uncached-attribute-criteria-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"uncached-attribute-criteria-name"+"}", url.PathEscape(parameterToString(r.uncachedAttributeCriteriaName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"uncached-attribute-criteria-name"+"}", url.PathEscape(parameterValueToString(r.uncachedAttributeCriteriaName, "uncachedAttributeCriteriaName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *UncachedAttributeCriteriaApiService) UpdateUncachedAttributeCriteriaExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

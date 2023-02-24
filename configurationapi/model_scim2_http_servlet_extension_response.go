@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Scim2HttpServletExtensionResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Scim2HttpServletExtensionResponse{}
+
 // Scim2HttpServletExtensionResponse struct for Scim2HttpServletExtensionResponse
 type Scim2HttpServletExtensionResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -69,7 +72,7 @@ func NewScim2HttpServletExtensionResponseWithDefaults() *Scim2HttpServletExtensi
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -79,7 +82,7 @@ func (o *Scim2HttpServletExtensionResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -87,7 +90,7 @@ func (o *Scim2HttpServletExtensionResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -101,7 +104,7 @@ func (o *Scim2HttpServletExtensionResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *Scim2HttpServletExtensionResponse) GetUrnpingidentityschemasconfigurati
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -119,7 +122,7 @@ func (o *Scim2HttpServletExtensionResponse) GetUrnpingidentityschemasconfigurati
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *Scim2HttpServletExtensionResponse) SetBaseContextPath(v string) {
 
 // GetAccessTokenValidator returns the AccessTokenValidator field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetAccessTokenValidator() []string {
-	if o == nil || isNil(o.AccessTokenValidator) {
+	if o == nil || IsNil(o.AccessTokenValidator) {
 		var ret []string
 		return ret
 	}
@@ -215,7 +218,7 @@ func (o *Scim2HttpServletExtensionResponse) GetAccessTokenValidator() []string {
 // GetAccessTokenValidatorOk returns a tuple with the AccessTokenValidator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]string, bool) {
-	if o == nil || isNil(o.AccessTokenValidator) {
+	if o == nil || IsNil(o.AccessTokenValidator) {
 		return nil, false
 	}
 	return o.AccessTokenValidator, true
@@ -223,7 +226,7 @@ func (o *Scim2HttpServletExtensionResponse) GetAccessTokenValidatorOk() ([]strin
 
 // HasAccessTokenValidator returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasAccessTokenValidator() bool {
-	if o != nil && !isNil(o.AccessTokenValidator) {
+	if o != nil && !IsNil(o.AccessTokenValidator) {
 		return true
 	}
 
@@ -237,7 +240,7 @@ func (o *Scim2HttpServletExtensionResponse) SetAccessTokenValidator(v []string) 
 
 // GetMapAccessTokensToLocalUsers returns the MapAccessTokensToLocalUsers field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetMapAccessTokensToLocalUsers() EnumhttpServletExtensionMapAccessTokensToLocalUsersProp {
-	if o == nil || isNil(o.MapAccessTokensToLocalUsers) {
+	if o == nil || IsNil(o.MapAccessTokensToLocalUsers) {
 		var ret EnumhttpServletExtensionMapAccessTokensToLocalUsersProp
 		return ret
 	}
@@ -247,7 +250,7 @@ func (o *Scim2HttpServletExtensionResponse) GetMapAccessTokensToLocalUsers() Enu
 // GetMapAccessTokensToLocalUsersOk returns a tuple with the MapAccessTokensToLocalUsers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetMapAccessTokensToLocalUsersOk() (*EnumhttpServletExtensionMapAccessTokensToLocalUsersProp, bool) {
-	if o == nil || isNil(o.MapAccessTokensToLocalUsers) {
+	if o == nil || IsNil(o.MapAccessTokensToLocalUsers) {
 		return nil, false
 	}
 	return o.MapAccessTokensToLocalUsers, true
@@ -255,7 +258,7 @@ func (o *Scim2HttpServletExtensionResponse) GetMapAccessTokensToLocalUsersOk() (
 
 // HasMapAccessTokensToLocalUsers returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasMapAccessTokensToLocalUsers() bool {
-	if o != nil && !isNil(o.MapAccessTokensToLocalUsers) {
+	if o != nil && !IsNil(o.MapAccessTokensToLocalUsers) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *Scim2HttpServletExtensionResponse) SetMapAccessTokensToLocalUsers(v Enu
 
 // GetDebugEnabled returns the DebugEnabled field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetDebugEnabled() bool {
-	if o == nil || isNil(o.DebugEnabled) {
+	if o == nil || IsNil(o.DebugEnabled) {
 		var ret bool
 		return ret
 	}
@@ -279,7 +282,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDebugEnabled() bool {
 // GetDebugEnabledOk returns a tuple with the DebugEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetDebugEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.DebugEnabled) {
+	if o == nil || IsNil(o.DebugEnabled) {
 		return nil, false
 	}
 	return o.DebugEnabled, true
@@ -287,7 +290,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDebugEnabledOk() (*bool, bool) {
 
 // HasDebugEnabled returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasDebugEnabled() bool {
-	if o != nil && !isNil(o.DebugEnabled) {
+	if o != nil && !IsNil(o.DebugEnabled) {
 		return true
 	}
 
@@ -373,7 +376,7 @@ func (o *Scim2HttpServletExtensionResponse) SetIncludeStackTrace(v bool) {
 
 // GetSwaggerEnabled returns the SwaggerEnabled field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetSwaggerEnabled() bool {
-	if o == nil || isNil(o.SwaggerEnabled) {
+	if o == nil || IsNil(o.SwaggerEnabled) {
 		var ret bool
 		return ret
 	}
@@ -383,7 +386,7 @@ func (o *Scim2HttpServletExtensionResponse) GetSwaggerEnabled() bool {
 // GetSwaggerEnabledOk returns a tuple with the SwaggerEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetSwaggerEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SwaggerEnabled) {
+	if o == nil || IsNil(o.SwaggerEnabled) {
 		return nil, false
 	}
 	return o.SwaggerEnabled, true
@@ -391,7 +394,7 @@ func (o *Scim2HttpServletExtensionResponse) GetSwaggerEnabledOk() (*bool, bool) 
 
 // HasSwaggerEnabled returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasSwaggerEnabled() bool {
-	if o != nil && !isNil(o.SwaggerEnabled) {
+	if o != nil && !IsNil(o.SwaggerEnabled) {
 		return true
 	}
 
@@ -405,7 +408,7 @@ func (o *Scim2HttpServletExtensionResponse) SetSwaggerEnabled(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -415,7 +418,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -423,7 +426,7 @@ func (o *Scim2HttpServletExtensionResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -437,7 +440,7 @@ func (o *Scim2HttpServletExtensionResponse) SetDescription(v string) {
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -447,7 +450,7 @@ func (o *Scim2HttpServletExtensionResponse) GetCrossOriginPolicy() string {
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -455,7 +458,7 @@ func (o *Scim2HttpServletExtensionResponse) GetCrossOriginPolicyOk() (*string, b
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -469,7 +472,7 @@ func (o *Scim2HttpServletExtensionResponse) SetCrossOriginPolicy(v string) {
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -479,7 +482,7 @@ func (o *Scim2HttpServletExtensionResponse) GetResponseHeader() []string {
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -487,7 +490,7 @@ func (o *Scim2HttpServletExtensionResponse) GetResponseHeaderOk() ([]string, boo
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -501,7 +504,7 @@ func (o *Scim2HttpServletExtensionResponse) SetResponseHeader(v []string) {
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *Scim2HttpServletExtensionResponse) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -511,7 +514,7 @@ func (o *Scim2HttpServletExtensionResponse) GetCorrelationIDResponseHeader() str
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scim2HttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -519,7 +522,7 @@ func (o *Scim2HttpServletExtensionResponse) GetCorrelationIDResponseHeaderOk() (
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *Scim2HttpServletExtensionResponse) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -532,56 +535,52 @@ func (o *Scim2HttpServletExtensionResponse) SetCorrelationIDResponseHeader(v str
 }
 
 func (o Scim2HttpServletExtensionResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["baseContextPath"] = o.BaseContextPath
-	}
-	if !isNil(o.AccessTokenValidator) {
-		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
-	}
-	if !isNil(o.MapAccessTokensToLocalUsers) {
-		toSerialize["mapAccessTokensToLocalUsers"] = o.MapAccessTokensToLocalUsers
-	}
-	if !isNil(o.DebugEnabled) {
-		toSerialize["debugEnabled"] = o.DebugEnabled
-	}
-	if true {
-		toSerialize["debugLevel"] = o.DebugLevel
-	}
-	if true {
-		toSerialize["debugType"] = o.DebugType
-	}
-	if true {
-		toSerialize["includeStackTrace"] = o.IncludeStackTrace
-	}
-	if !isNil(o.SwaggerEnabled) {
-		toSerialize["swaggerEnabled"] = o.SwaggerEnabled
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Scim2HttpServletExtensionResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["baseContextPath"] = o.BaseContextPath
+	if !IsNil(o.AccessTokenValidator) {
+		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
+	}
+	if !IsNil(o.MapAccessTokensToLocalUsers) {
+		toSerialize["mapAccessTokensToLocalUsers"] = o.MapAccessTokensToLocalUsers
+	}
+	if !IsNil(o.DebugEnabled) {
+		toSerialize["debugEnabled"] = o.DebugEnabled
+	}
+	toSerialize["debugLevel"] = o.DebugLevel
+	toSerialize["debugType"] = o.DebugType
+	toSerialize["includeStackTrace"] = o.IncludeStackTrace
+	if !IsNil(o.SwaggerEnabled) {
+		toSerialize["swaggerEnabled"] = o.SwaggerEnabled
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableScim2HttpServletExtensionResponse struct {

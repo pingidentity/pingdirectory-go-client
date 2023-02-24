@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddVelocityTemplateLoaderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddVelocityTemplateLoaderRequest{}
+
 // AddVelocityTemplateLoaderRequest struct for AddVelocityTemplateLoaderRequest
 type AddVelocityTemplateLoaderRequest struct {
 	// Name of the new Velocity Template Loader
@@ -78,7 +81,7 @@ func (o *AddVelocityTemplateLoaderRequest) SetLoaderName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetSchemas() []EnumvelocityTemplateLoaderSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumvelocityTemplateLoaderSchemaUrn
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetSchemas() []EnumvelocityTemplateLo
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetSchemasOk() ([]EnumvelocityTemplateLoaderSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -96,7 +99,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetSchemasOk() ([]EnumvelocityTemplat
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddVelocityTemplateLoaderRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -110,7 +113,7 @@ func (o *AddVelocityTemplateLoaderRequest) SetSchemas(v []EnumvelocityTemplateLo
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +123,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -128,7 +131,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetEnabledOk() (*bool, bool) {
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddVelocityTemplateLoaderRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *AddVelocityTemplateLoaderRequest) SetEnabled(v bool) {
 
 // GetEvaluationOrderIndex returns the EvaluationOrderIndex field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int32 {
-	if o == nil || isNil(o.EvaluationOrderIndex) {
+	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +155,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndex() int32 {
 // GetEvaluationOrderIndexOk returns a tuple with the EvaluationOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.EvaluationOrderIndex) {
+	if o == nil || IsNil(o.EvaluationOrderIndex) {
 		return nil, false
 	}
 	return o.EvaluationOrderIndex, true
@@ -160,7 +163,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetEvaluationOrderIndexOk() (*int32, 
 
 // HasEvaluationOrderIndex returns a boolean if a field has been set.
 func (o *AddVelocityTemplateLoaderRequest) HasEvaluationOrderIndex() bool {
-	if o != nil && !isNil(o.EvaluationOrderIndex) {
+	if o != nil && !IsNil(o.EvaluationOrderIndex) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AddVelocityTemplateLoaderRequest) SetMimeTypeMatcher(v string) {
 
 // GetMimeType returns the MimeType field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetMimeType() string {
-	if o == nil || isNil(o.MimeType) {
+	if o == nil || IsNil(o.MimeType) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetMimeType() string {
 // GetMimeTypeOk returns a tuple with the MimeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetMimeTypeOk() (*string, bool) {
-	if o == nil || isNil(o.MimeType) {
+	if o == nil || IsNil(o.MimeType) {
 		return nil, false
 	}
 	return o.MimeType, true
@@ -216,7 +219,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetMimeTypeOk() (*string, bool) {
 
 // HasMimeType returns a boolean if a field has been set.
 func (o *AddVelocityTemplateLoaderRequest) HasMimeType() bool {
-	if o != nil && !isNil(o.MimeType) {
+	if o != nil && !IsNil(o.MimeType) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AddVelocityTemplateLoaderRequest) SetMimeType(v string) {
 
 // GetTemplateSuffix returns the TemplateSuffix field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetTemplateSuffix() string {
-	if o == nil || isNil(o.TemplateSuffix) {
+	if o == nil || IsNil(o.TemplateSuffix) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetTemplateSuffix() string {
 // GetTemplateSuffixOk returns a tuple with the TemplateSuffix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetTemplateSuffixOk() (*string, bool) {
-	if o == nil || isNil(o.TemplateSuffix) {
+	if o == nil || IsNil(o.TemplateSuffix) {
 		return nil, false
 	}
 	return o.TemplateSuffix, true
@@ -248,7 +251,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetTemplateSuffixOk() (*string, bool)
 
 // HasTemplateSuffix returns a boolean if a field has been set.
 func (o *AddVelocityTemplateLoaderRequest) HasTemplateSuffix() bool {
-	if o != nil && !isNil(o.TemplateSuffix) {
+	if o != nil && !IsNil(o.TemplateSuffix) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *AddVelocityTemplateLoaderRequest) SetTemplateSuffix(v string) {
 
 // GetTemplateDirectory returns the TemplateDirectory field value if set, zero value otherwise.
 func (o *AddVelocityTemplateLoaderRequest) GetTemplateDirectory() string {
-	if o == nil || isNil(o.TemplateDirectory) {
+	if o == nil || IsNil(o.TemplateDirectory) {
 		var ret string
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetTemplateDirectory() string {
 // GetTemplateDirectoryOk returns a tuple with the TemplateDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVelocityTemplateLoaderRequest) GetTemplateDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.TemplateDirectory) {
+	if o == nil || IsNil(o.TemplateDirectory) {
 		return nil, false
 	}
 	return o.TemplateDirectory, true
@@ -280,7 +283,7 @@ func (o *AddVelocityTemplateLoaderRequest) GetTemplateDirectoryOk() (*string, bo
 
 // HasTemplateDirectory returns a boolean if a field has been set.
 func (o *AddVelocityTemplateLoaderRequest) HasTemplateDirectory() bool {
-	if o != nil && !isNil(o.TemplateDirectory) {
+	if o != nil && !IsNil(o.TemplateDirectory) {
 		return true
 	}
 
@@ -293,32 +296,36 @@ func (o *AddVelocityTemplateLoaderRequest) SetTemplateDirectory(v string) {
 }
 
 func (o AddVelocityTemplateLoaderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["loaderName"] = o.LoaderName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.EvaluationOrderIndex) {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if true {
-		toSerialize["mimeTypeMatcher"] = o.MimeTypeMatcher
-	}
-	if !isNil(o.MimeType) {
-		toSerialize["mimeType"] = o.MimeType
-	}
-	if !isNil(o.TemplateSuffix) {
-		toSerialize["templateSuffix"] = o.TemplateSuffix
-	}
-	if !isNil(o.TemplateDirectory) {
-		toSerialize["templateDirectory"] = o.TemplateDirectory
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddVelocityTemplateLoaderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["loaderName"] = o.LoaderName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.EvaluationOrderIndex) {
+		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	}
+	toSerialize["mimeTypeMatcher"] = o.MimeTypeMatcher
+	if !IsNil(o.MimeType) {
+		toSerialize["mimeType"] = o.MimeType
+	}
+	if !IsNil(o.TemplateSuffix) {
+		toSerialize["templateSuffix"] = o.TemplateSuffix
+	}
+	if !IsNil(o.TemplateDirectory) {
+		toSerialize["templateDirectory"] = o.TemplateDirectory
+	}
+	return toSerialize, nil
 }
 
 type NullableAddVelocityTemplateLoaderRequest struct {

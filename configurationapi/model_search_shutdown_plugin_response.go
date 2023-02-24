@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SearchShutdownPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SearchShutdownPluginResponse{}
+
 // SearchShutdownPluginResponse struct for SearchShutdownPluginResponse
 type SearchShutdownPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -63,7 +66,7 @@ func NewSearchShutdownPluginResponseWithDefaults() *SearchShutdownPluginResponse
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SearchShutdownPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -73,7 +76,7 @@ func (o *SearchShutdownPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchShutdownPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -81,7 +84,7 @@ func (o *SearchShutdownPluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SearchShutdownPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -95,7 +98,7 @@ func (o *SearchShutdownPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SearchShutdownPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -105,7 +108,7 @@ func (o *SearchShutdownPluginResponse) GetUrnpingidentityschemasconfigurationmes
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchShutdownPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -113,7 +116,7 @@ func (o *SearchShutdownPluginResponse) GetUrnpingidentityschemasconfigurationmes
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SearchShutdownPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -175,7 +178,7 @@ func (o *SearchShutdownPluginResponse) SetSchemas(v []EnumsearchShutdownPluginSc
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *SearchShutdownPluginResponse) GetBaseDN() string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret string
 		return ret
 	}
@@ -185,7 +188,7 @@ func (o *SearchShutdownPluginResponse) GetBaseDN() string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchShutdownPluginResponse) GetBaseDNOk() (*string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -193,7 +196,7 @@ func (o *SearchShutdownPluginResponse) GetBaseDNOk() (*string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *SearchShutdownPluginResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -255,7 +258,7 @@ func (o *SearchShutdownPluginResponse) SetFilter(v string) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *SearchShutdownPluginResponse) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -265,7 +268,7 @@ func (o *SearchShutdownPluginResponse) GetIncludeAttribute() []string {
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchShutdownPluginResponse) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -273,7 +276,7 @@ func (o *SearchShutdownPluginResponse) GetIncludeAttributeOk() ([]string, bool) 
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *SearchShutdownPluginResponse) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -311,7 +314,7 @@ func (o *SearchShutdownPluginResponse) SetOutputFile(v string) {
 
 // GetPreviousFileExtension returns the PreviousFileExtension field value if set, zero value otherwise.
 func (o *SearchShutdownPluginResponse) GetPreviousFileExtension() string {
-	if o == nil || isNil(o.PreviousFileExtension) {
+	if o == nil || IsNil(o.PreviousFileExtension) {
 		var ret string
 		return ret
 	}
@@ -321,7 +324,7 @@ func (o *SearchShutdownPluginResponse) GetPreviousFileExtension() string {
 // GetPreviousFileExtensionOk returns a tuple with the PreviousFileExtension field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchShutdownPluginResponse) GetPreviousFileExtensionOk() (*string, bool) {
-	if o == nil || isNil(o.PreviousFileExtension) {
+	if o == nil || IsNil(o.PreviousFileExtension) {
 		return nil, false
 	}
 	return o.PreviousFileExtension, true
@@ -329,7 +332,7 @@ func (o *SearchShutdownPluginResponse) GetPreviousFileExtensionOk() (*string, bo
 
 // HasPreviousFileExtension returns a boolean if a field has been set.
 func (o *SearchShutdownPluginResponse) HasPreviousFileExtension() bool {
-	if o != nil && !isNil(o.PreviousFileExtension) {
+	if o != nil && !IsNil(o.PreviousFileExtension) {
 		return true
 	}
 
@@ -343,7 +346,7 @@ func (o *SearchShutdownPluginResponse) SetPreviousFileExtension(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SearchShutdownPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -353,7 +356,7 @@ func (o *SearchShutdownPluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchShutdownPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -361,7 +364,7 @@ func (o *SearchShutdownPluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SearchShutdownPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -398,44 +401,40 @@ func (o *SearchShutdownPluginResponse) SetEnabled(v bool) {
 }
 
 func (o SearchShutdownPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["scope"] = o.Scope
-	}
-	if true {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if true {
-		toSerialize["outputFile"] = o.OutputFile
-	}
-	if !isNil(o.PreviousFileExtension) {
-		toSerialize["previousFileExtension"] = o.PreviousFileExtension
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SearchShutdownPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	toSerialize["scope"] = o.Scope
+	toSerialize["filter"] = o.Filter
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	toSerialize["outputFile"] = o.OutputFile
+	if !IsNil(o.PreviousFileExtension) {
+		toSerialize["previousFileExtension"] = o.PreviousFileExtension
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableSearchShutdownPluginResponse struct {

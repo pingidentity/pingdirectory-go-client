@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddConsentDefinitionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddConsentDefinitionRequest{}
+
 // AddConsentDefinitionRequest struct for AddConsentDefinitionRequest
 type AddConsentDefinitionRequest struct {
 	// Name of the new Consent Definition
@@ -74,7 +77,7 @@ func (o *AddConsentDefinitionRequest) SetDefinitionName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddConsentDefinitionRequest) GetSchemas() []EnumconsentDefinitionSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumconsentDefinitionSchemaUrn
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *AddConsentDefinitionRequest) GetSchemas() []EnumconsentDefinitionSchema
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetSchemasOk() ([]EnumconsentDefinitionSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -92,7 +95,7 @@ func (o *AddConsentDefinitionRequest) GetSchemasOk() ([]EnumconsentDefinitionSch
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddConsentDefinitionRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *AddConsentDefinitionRequest) SetUniqueID(v string) {
 
 // GetDisplayName returns the DisplayName field value if set, zero value otherwise.
 func (o *AddConsentDefinitionRequest) GetDisplayName() string {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		var ret string
 		return ret
 	}
@@ -140,7 +143,7 @@ func (o *AddConsentDefinitionRequest) GetDisplayName() string {
 // GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetDisplayNameOk() (*string, bool) {
-	if o == nil || isNil(o.DisplayName) {
+	if o == nil || IsNil(o.DisplayName) {
 		return nil, false
 	}
 	return o.DisplayName, true
@@ -148,7 +151,7 @@ func (o *AddConsentDefinitionRequest) GetDisplayNameOk() (*string, bool) {
 
 // HasDisplayName returns a boolean if a field has been set.
 func (o *AddConsentDefinitionRequest) HasDisplayName() bool {
-	if o != nil && !isNil(o.DisplayName) {
+	if o != nil && !IsNil(o.DisplayName) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddConsentDefinitionRequest) SetDisplayName(v string) {
 
 // GetParameter returns the Parameter field value if set, zero value otherwise.
 func (o *AddConsentDefinitionRequest) GetParameter() []string {
-	if o == nil || isNil(o.Parameter) {
+	if o == nil || IsNil(o.Parameter) {
 		var ret []string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddConsentDefinitionRequest) GetParameter() []string {
 // GetParameterOk returns a tuple with the Parameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetParameterOk() ([]string, bool) {
-	if o == nil || isNil(o.Parameter) {
+	if o == nil || IsNil(o.Parameter) {
 		return nil, false
 	}
 	return o.Parameter, true
@@ -180,7 +183,7 @@ func (o *AddConsentDefinitionRequest) GetParameterOk() ([]string, bool) {
 
 // HasParameter returns a boolean if a field has been set.
 func (o *AddConsentDefinitionRequest) HasParameter() bool {
-	if o != nil && !isNil(o.Parameter) {
+	if o != nil && !IsNil(o.Parameter) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddConsentDefinitionRequest) SetParameter(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddConsentDefinitionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddConsentDefinitionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsentDefinitionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -212,7 +215,7 @@ func (o *AddConsentDefinitionRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddConsentDefinitionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -225,26 +228,30 @@ func (o *AddConsentDefinitionRequest) SetDescription(v string) {
 }
 
 func (o AddConsentDefinitionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["definitionName"] = o.DefinitionName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["uniqueID"] = o.UniqueID
-	}
-	if !isNil(o.DisplayName) {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if !isNil(o.Parameter) {
-		toSerialize["parameter"] = o.Parameter
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddConsentDefinitionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["definitionName"] = o.DefinitionName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["uniqueID"] = o.UniqueID
+	if !IsNil(o.DisplayName) {
+		toSerialize["displayName"] = o.DisplayName
+	}
+	if !IsNil(o.Parameter) {
+		toSerialize["parameter"] = o.Parameter
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddConsentDefinitionRequest struct {

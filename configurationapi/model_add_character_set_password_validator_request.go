@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddCharacterSetPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCharacterSetPasswordValidatorRequest{}
+
 // AddCharacterSetPasswordValidatorRequest struct for AddCharacterSetPasswordValidatorRequest
 type AddCharacterSetPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -155,7 +158,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) SetAllowUnclassifiedCharacters
 
 // GetMinimumRequiredCharacterSets returns the MinimumRequiredCharacterSets field value if set, zero value otherwise.
 func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSets() int32 {
-	if o == nil || isNil(o.MinimumRequiredCharacterSets) {
+	if o == nil || IsNil(o.MinimumRequiredCharacterSets) {
 		var ret int32
 		return ret
 	}
@@ -165,7 +168,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSet
 // GetMinimumRequiredCharacterSetsOk returns a tuple with the MinimumRequiredCharacterSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSetsOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumRequiredCharacterSets) {
+	if o == nil || IsNil(o.MinimumRequiredCharacterSets) {
 		return nil, false
 	}
 	return o.MinimumRequiredCharacterSets, true
@@ -173,7 +176,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetMinimumRequiredCharacterSet
 
 // HasMinimumRequiredCharacterSets returns a boolean if a field has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) HasMinimumRequiredCharacterSets() bool {
-	if o != nil && !isNil(o.MinimumRequiredCharacterSets) {
+	if o != nil && !IsNil(o.MinimumRequiredCharacterSets) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) SetMinimumRequiredCharacterSet
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddCharacterSetPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -205,7 +208,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -243,7 +246,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -253,7 +256,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorRequirementDescrip
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -261,7 +264,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorRequirementDescrip
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -275,7 +278,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) SetValidatorRequirementDescrip
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -285,7 +288,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorFailureMessage() s
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -293,7 +296,7 @@ func (o *AddCharacterSetPasswordValidatorRequest) GetValidatorFailureMessageOk()
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddCharacterSetPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -306,35 +309,33 @@ func (o *AddCharacterSetPasswordValidatorRequest) SetValidatorFailureMessage(v s
 }
 
 func (o AddCharacterSetPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["characterSet"] = o.CharacterSet
-	}
-	if true {
-		toSerialize["allowUnclassifiedCharacters"] = o.AllowUnclassifiedCharacters
-	}
-	if !isNil(o.MinimumRequiredCharacterSets) {
-		toSerialize["minimumRequiredCharacterSets"] = o.MinimumRequiredCharacterSets
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddCharacterSetPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["characterSet"] = o.CharacterSet
+	toSerialize["allowUnclassifiedCharacters"] = o.AllowUnclassifiedCharacters
+	if !IsNil(o.MinimumRequiredCharacterSets) {
+		toSerialize["minimumRequiredCharacterSets"] = o.MinimumRequiredCharacterSets
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddCharacterSetPasswordValidatorRequest struct {

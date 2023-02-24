@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LicenseResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LicenseResponse{}
+
 // LicenseResponse struct for LicenseResponse
 type LicenseResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -42,7 +45,7 @@ func NewLicenseResponseWithDefaults() *LicenseResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LicenseResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *LicenseResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -60,7 +63,7 @@ func (o *LicenseResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LicenseResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *LicenseResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LicenseResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *LicenseResponse) GetUrnpingidentityschemasconfigurationmessages20() Met
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -92,7 +95,7 @@ func (o *LicenseResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LicenseResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *LicenseResponse) SetUrnpingidentityschemasconfigurationmessages20(v Met
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *LicenseResponse) GetSchemas() []EnumlicenseSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumlicenseSchemaUrn
 		return ret
 	}
@@ -116,7 +119,7 @@ func (o *LicenseResponse) GetSchemas() []EnumlicenseSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetSchemasOk() ([]EnumlicenseSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -124,7 +127,7 @@ func (o *LicenseResponse) GetSchemasOk() ([]EnumlicenseSchemaUrn, bool) {
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *LicenseResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *LicenseResponse) SetSchemas(v []EnumlicenseSchemaUrn) {
 
 // GetDirectoryPlatformLicenseKey returns the DirectoryPlatformLicenseKey field value if set, zero value otherwise.
 func (o *LicenseResponse) GetDirectoryPlatformLicenseKey() string {
-	if o == nil || isNil(o.DirectoryPlatformLicenseKey) {
+	if o == nil || IsNil(o.DirectoryPlatformLicenseKey) {
 		var ret string
 		return ret
 	}
@@ -148,7 +151,7 @@ func (o *LicenseResponse) GetDirectoryPlatformLicenseKey() string {
 // GetDirectoryPlatformLicenseKeyOk returns a tuple with the DirectoryPlatformLicenseKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LicenseResponse) GetDirectoryPlatformLicenseKeyOk() (*string, bool) {
-	if o == nil || isNil(o.DirectoryPlatformLicenseKey) {
+	if o == nil || IsNil(o.DirectoryPlatformLicenseKey) {
 		return nil, false
 	}
 	return o.DirectoryPlatformLicenseKey, true
@@ -156,7 +159,7 @@ func (o *LicenseResponse) GetDirectoryPlatformLicenseKeyOk() (*string, bool) {
 
 // HasDirectoryPlatformLicenseKey returns a boolean if a field has been set.
 func (o *LicenseResponse) HasDirectoryPlatformLicenseKey() bool {
-	if o != nil && !isNil(o.DirectoryPlatformLicenseKey) {
+	if o != nil && !IsNil(o.DirectoryPlatformLicenseKey) {
 		return true
 	}
 
@@ -169,20 +172,28 @@ func (o *LicenseResponse) SetDirectoryPlatformLicenseKey(v string) {
 }
 
 func (o LicenseResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.DirectoryPlatformLicenseKey) {
-		toSerialize["directoryPlatformLicenseKey"] = o.DirectoryPlatformLicenseKey
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LicenseResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.DirectoryPlatformLicenseKey) {
+		toSerialize["directoryPlatformLicenseKey"] = o.DirectoryPlatformLicenseKey
+	}
+	return toSerialize, nil
 }
 
 type NullableLicenseResponse struct {

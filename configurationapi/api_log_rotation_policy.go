@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *LogRotationPolicyApiService) AddLogRotationPolicyExecute(r ApiAddLogRot
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *LogRotationPolicyApiService) DeleteLogRotationPolicyExecute(r ApiDelete
 	}
 
 	localVarPath := localBasePath + "/log-rotation-policies/{log-rotation-policy-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-rotation-policy-name"+"}", url.PathEscape(parameterToString(r.logRotationPolicyName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-rotation-policy-name"+"}", url.PathEscape(parameterValueToString(r.logRotationPolicyName, "logRotationPolicyName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *LogRotationPolicyApiService) DeleteLogRotationPolicyExecute(r ApiDelete
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *LogRotationPolicyApiService) GetLogRotationPolicyExecute(r ApiGetLogRot
 	}
 
 	localVarPath := localBasePath + "/log-rotation-policies/{log-rotation-policy-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-rotation-policy-name"+"}", url.PathEscape(parameterToString(r.logRotationPolicyName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-rotation-policy-name"+"}", url.PathEscape(parameterValueToString(r.logRotationPolicyName, "logRotationPolicyName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *LogRotationPolicyApiService) GetLogRotationPolicyExecute(r ApiGetLogRot
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *LogRotationPolicyApiService) UpdateLogRotationPolicyExecute(r ApiUpdate
 	}
 
 	localVarPath := localBasePath + "/log-rotation-policies/{log-rotation-policy-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-rotation-policy-name"+"}", url.PathEscape(parameterToString(r.logRotationPolicyName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-rotation-policy-name"+"}", url.PathEscape(parameterValueToString(r.logRotationPolicyName, "logRotationPolicyName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *LogRotationPolicyApiService) UpdateLogRotationPolicyExecute(r ApiUpdate
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

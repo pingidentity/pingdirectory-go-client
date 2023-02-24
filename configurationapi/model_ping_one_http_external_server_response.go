@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PingOneHttpExternalServerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PingOneHttpExternalServerResponse{}
+
 // PingOneHttpExternalServerResponse struct for PingOneHttpExternalServerResponse
 type PingOneHttpExternalServerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewPingOneHttpExternalServerResponseWithDefaults() *PingOneHttpExternalServ
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *PingOneHttpExternalServerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *PingOneHttpExternalServerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *PingOneHttpExternalServerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *PingOneHttpExternalServerResponse) GetUrnpingidentityschemasconfigurati
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *PingOneHttpExternalServerResponse) GetUrnpingidentityschemasconfigurati
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *PingOneHttpExternalServerResponse) SetSchemas(v []EnumpingOneHttpExtern
 
 // GetHostnameVerificationMethod returns the HostnameVerificationMethod field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp {
-	if o == nil || isNil(o.HostnameVerificationMethod) {
+	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		var ret EnumexternalServerHostnameVerificationMethodProp
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *PingOneHttpExternalServerResponse) GetHostnameVerificationMethod() Enum
 // GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool) {
-	if o == nil || isNil(o.HostnameVerificationMethod) {
+	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		return nil, false
 	}
 	return o.HostnameVerificationMethod, true
@@ -183,7 +186,7 @@ func (o *PingOneHttpExternalServerResponse) GetHostnameVerificationMethodOk() (*
 
 // HasHostnameVerificationMethod returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasHostnameVerificationMethod() bool {
-	if o != nil && !isNil(o.HostnameVerificationMethod) {
+	if o != nil && !IsNil(o.HostnameVerificationMethod) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *PingOneHttpExternalServerResponse) SetHostnameVerificationMethod(v Enum
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *PingOneHttpExternalServerResponse) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -215,7 +218,7 @@ func (o *PingOneHttpExternalServerResponse) GetTrustManagerProviderOk() (*string
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *PingOneHttpExternalServerResponse) SetTrustManagerProvider(v string) {
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *PingOneHttpExternalServerResponse) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -247,7 +250,7 @@ func (o *PingOneHttpExternalServerResponse) GetConnectTimeoutOk() (*string, bool
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *PingOneHttpExternalServerResponse) SetConnectTimeout(v string) {
 
 // GetResponseTimeout returns the ResponseTimeout field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetResponseTimeout() string {
-	if o == nil || isNil(o.ResponseTimeout) {
+	if o == nil || IsNil(o.ResponseTimeout) {
 		var ret string
 		return ret
 	}
@@ -271,7 +274,7 @@ func (o *PingOneHttpExternalServerResponse) GetResponseTimeout() string {
 // GetResponseTimeoutOk returns a tuple with the ResponseTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetResponseTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ResponseTimeout) {
+	if o == nil || IsNil(o.ResponseTimeout) {
 		return nil, false
 	}
 	return o.ResponseTimeout, true
@@ -279,7 +282,7 @@ func (o *PingOneHttpExternalServerResponse) GetResponseTimeoutOk() (*string, boo
 
 // HasResponseTimeout returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasResponseTimeout() bool {
-	if o != nil && !isNil(o.ResponseTimeout) {
+	if o != nil && !IsNil(o.ResponseTimeout) {
 		return true
 	}
 
@@ -293,7 +296,7 @@ func (o *PingOneHttpExternalServerResponse) SetResponseTimeout(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PingOneHttpExternalServerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -303,7 +306,7 @@ func (o *PingOneHttpExternalServerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOneHttpExternalServerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -311,7 +314,7 @@ func (o *PingOneHttpExternalServerResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PingOneHttpExternalServerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -324,35 +327,39 @@ func (o *PingOneHttpExternalServerResponse) SetDescription(v string) {
 }
 
 func (o PingOneHttpExternalServerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.HostnameVerificationMethod) {
-		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.ResponseTimeout) {
-		toSerialize["responseTimeout"] = o.ResponseTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PingOneHttpExternalServerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.HostnameVerificationMethod) {
+		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.ResponseTimeout) {
+		toSerialize["responseTimeout"] = o.ResponseTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullablePingOneHttpExternalServerResponse struct {

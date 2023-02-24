@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddStaticallyDefinedRecurringTaskRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddStaticallyDefinedRecurringTaskRequest{}
+
 // AddStaticallyDefinedRecurringTaskRequest struct for AddStaticallyDefinedRecurringTaskRequest
 type AddStaticallyDefinedRecurringTaskRequest struct {
 	// Name of the new Recurring Task
@@ -162,7 +165,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetTaskObjectClass(v []string
 
 // GetTaskAttributeValue returns the TaskAttributeValue field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskAttributeValue() []string {
-	if o == nil || isNil(o.TaskAttributeValue) {
+	if o == nil || IsNil(o.TaskAttributeValue) {
 		var ret []string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskAttributeValue() []str
 // GetTaskAttributeValueOk returns a tuple with the TaskAttributeValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskAttributeValueOk() ([]string, bool) {
-	if o == nil || isNil(o.TaskAttributeValue) {
+	if o == nil || IsNil(o.TaskAttributeValue) {
 		return nil, false
 	}
 	return o.TaskAttributeValue, true
@@ -180,7 +183,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetTaskAttributeValueOk() ([]
 
 // HasTaskAttributeValue returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasTaskAttributeValue() bool {
-	if o != nil && !isNil(o.TaskAttributeValue) {
+	if o != nil && !IsNil(o.TaskAttributeValue) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetTaskAttributeValue(v []str
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -212,7 +215,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetDescription(v string) {
 
 // GetCancelOnTaskDependencyFailure returns the CancelOnTaskDependencyFailure field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetCancelOnTaskDependencyFailure() bool {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		var ret bool
 		return ret
 	}
@@ -236,7 +239,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetCancelOnTaskDependencyFail
 // GetCancelOnTaskDependencyFailureOk returns a tuple with the CancelOnTaskDependencyFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetCancelOnTaskDependencyFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.CancelOnTaskDependencyFailure) {
+	if o == nil || IsNil(o.CancelOnTaskDependencyFailure) {
 		return nil, false
 	}
 	return o.CancelOnTaskDependencyFailure, true
@@ -244,7 +247,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetCancelOnTaskDependencyFail
 
 // HasCancelOnTaskDependencyFailure returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasCancelOnTaskDependencyFailure() bool {
-	if o != nil && !isNil(o.CancelOnTaskDependencyFailure) {
+	if o != nil && !IsNil(o.CancelOnTaskDependencyFailure) {
 		return true
 	}
 
@@ -258,7 +261,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetCancelOnTaskDependencyFail
 
 // GetEmailOnStart returns the EmailOnStart field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnStart() []string {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		var ret []string
 		return ret
 	}
@@ -268,7 +271,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnStart() []string {
 // GetEmailOnStartOk returns a tuple with the EmailOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnStartOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnStart) {
+	if o == nil || IsNil(o.EmailOnStart) {
 		return nil, false
 	}
 	return o.EmailOnStart, true
@@ -276,7 +279,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnStartOk() ([]string
 
 // HasEmailOnStart returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasEmailOnStart() bool {
-	if o != nil && !isNil(o.EmailOnStart) {
+	if o != nil && !IsNil(o.EmailOnStart) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetEmailOnStart(v []string) {
 
 // GetEmailOnSuccess returns the EmailOnSuccess field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnSuccess() []string {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		var ret []string
 		return ret
 	}
@@ -300,7 +303,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnSuccess() []string 
 // GetEmailOnSuccessOk returns a tuple with the EmailOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnSuccessOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnSuccess) {
+	if o == nil || IsNil(o.EmailOnSuccess) {
 		return nil, false
 	}
 	return o.EmailOnSuccess, true
@@ -308,7 +311,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnSuccessOk() ([]stri
 
 // HasEmailOnSuccess returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasEmailOnSuccess() bool {
-	if o != nil && !isNil(o.EmailOnSuccess) {
+	if o != nil && !IsNil(o.EmailOnSuccess) {
 		return true
 	}
 
@@ -322,7 +325,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetEmailOnSuccess(v []string)
 
 // GetEmailOnFailure returns the EmailOnFailure field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnFailure() []string {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		var ret []string
 		return ret
 	}
@@ -332,7 +335,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnFailure() []string 
 // GetEmailOnFailureOk returns a tuple with the EmailOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnFailureOk() ([]string, bool) {
-	if o == nil || isNil(o.EmailOnFailure) {
+	if o == nil || IsNil(o.EmailOnFailure) {
 		return nil, false
 	}
 	return o.EmailOnFailure, true
@@ -340,7 +343,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetEmailOnFailureOk() ([]stri
 
 // HasEmailOnFailure returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasEmailOnFailure() bool {
-	if o != nil && !isNil(o.EmailOnFailure) {
+	if o != nil && !IsNil(o.EmailOnFailure) {
 		return true
 	}
 
@@ -354,7 +357,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetEmailOnFailure(v []string)
 
 // GetAlertOnStart returns the AlertOnStart field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnStart() bool {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		var ret bool
 		return ret
 	}
@@ -364,7 +367,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnStart() bool {
 // GetAlertOnStartOk returns a tuple with the AlertOnStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnStartOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnStart) {
+	if o == nil || IsNil(o.AlertOnStart) {
 		return nil, false
 	}
 	return o.AlertOnStart, true
@@ -372,7 +375,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnStartOk() (*bool, b
 
 // HasAlertOnStart returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasAlertOnStart() bool {
-	if o != nil && !isNil(o.AlertOnStart) {
+	if o != nil && !IsNil(o.AlertOnStart) {
 		return true
 	}
 
@@ -386,7 +389,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetAlertOnStart(v bool) {
 
 // GetAlertOnSuccess returns the AlertOnSuccess field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnSuccess() bool {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		var ret bool
 		return ret
 	}
@@ -396,7 +399,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnSuccess() bool {
 // GetAlertOnSuccessOk returns a tuple with the AlertOnSuccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnSuccessOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnSuccess) {
+	if o == nil || IsNil(o.AlertOnSuccess) {
 		return nil, false
 	}
 	return o.AlertOnSuccess, true
@@ -404,7 +407,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnSuccessOk() (*bool,
 
 // HasAlertOnSuccess returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasAlertOnSuccess() bool {
-	if o != nil && !isNil(o.AlertOnSuccess) {
+	if o != nil && !IsNil(o.AlertOnSuccess) {
 		return true
 	}
 
@@ -418,7 +421,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetAlertOnSuccess(v bool) {
 
 // GetAlertOnFailure returns the AlertOnFailure field value if set, zero value otherwise.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnFailure() bool {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		var ret bool
 		return ret
 	}
@@ -428,7 +431,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnFailure() bool {
 // GetAlertOnFailureOk returns a tuple with the AlertOnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnFailureOk() (*bool, bool) {
-	if o == nil || isNil(o.AlertOnFailure) {
+	if o == nil || IsNil(o.AlertOnFailure) {
 		return nil, false
 	}
 	return o.AlertOnFailure, true
@@ -436,7 +439,7 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) GetAlertOnFailureOk() (*bool,
 
 // HasAlertOnFailure returns a boolean if a field has been set.
 func (o *AddStaticallyDefinedRecurringTaskRequest) HasAlertOnFailure() bool {
-	if o != nil && !isNil(o.AlertOnFailure) {
+	if o != nil && !IsNil(o.AlertOnFailure) {
 		return true
 	}
 
@@ -449,47 +452,47 @@ func (o *AddStaticallyDefinedRecurringTaskRequest) SetAlertOnFailure(v bool) {
 }
 
 func (o AddStaticallyDefinedRecurringTaskRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["taskName"] = o.TaskName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["taskJavaClass"] = o.TaskJavaClass
-	}
-	if true {
-		toSerialize["taskObjectClass"] = o.TaskObjectClass
-	}
-	if !isNil(o.TaskAttributeValue) {
-		toSerialize["taskAttributeValue"] = o.TaskAttributeValue
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CancelOnTaskDependencyFailure) {
-		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
-	}
-	if !isNil(o.EmailOnStart) {
-		toSerialize["emailOnStart"] = o.EmailOnStart
-	}
-	if !isNil(o.EmailOnSuccess) {
-		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
-	}
-	if !isNil(o.EmailOnFailure) {
-		toSerialize["emailOnFailure"] = o.EmailOnFailure
-	}
-	if !isNil(o.AlertOnStart) {
-		toSerialize["alertOnStart"] = o.AlertOnStart
-	}
-	if !isNil(o.AlertOnSuccess) {
-		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
-	}
-	if !isNil(o.AlertOnFailure) {
-		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddStaticallyDefinedRecurringTaskRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["taskName"] = o.TaskName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["taskJavaClass"] = o.TaskJavaClass
+	toSerialize["taskObjectClass"] = o.TaskObjectClass
+	if !IsNil(o.TaskAttributeValue) {
+		toSerialize["taskAttributeValue"] = o.TaskAttributeValue
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CancelOnTaskDependencyFailure) {
+		toSerialize["cancelOnTaskDependencyFailure"] = o.CancelOnTaskDependencyFailure
+	}
+	if !IsNil(o.EmailOnStart) {
+		toSerialize["emailOnStart"] = o.EmailOnStart
+	}
+	if !IsNil(o.EmailOnSuccess) {
+		toSerialize["emailOnSuccess"] = o.EmailOnSuccess
+	}
+	if !IsNil(o.EmailOnFailure) {
+		toSerialize["emailOnFailure"] = o.EmailOnFailure
+	}
+	if !IsNil(o.AlertOnStart) {
+		toSerialize["alertOnStart"] = o.AlertOnStart
+	}
+	if !IsNil(o.AlertOnSuccess) {
+		toSerialize["alertOnSuccess"] = o.AlertOnSuccess
+	}
+	if !IsNil(o.AlertOnFailure) {
+		toSerialize["alertOnFailure"] = o.AlertOnFailure
+	}
+	return toSerialize, nil
 }
 
 type NullableAddStaticallyDefinedRecurringTaskRequest struct {

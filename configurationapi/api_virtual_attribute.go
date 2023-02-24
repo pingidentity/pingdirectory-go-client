@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *VirtualAttributeApiService) AddVirtualAttributeExecute(r ApiAddVirtualA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *VirtualAttributeApiService) DeleteVirtualAttributeExecute(r ApiDeleteVi
 	}
 
 	localVarPath := localBasePath + "/virtual-attributes/{virtual-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"virtual-attribute-name"+"}", url.PathEscape(parameterToString(r.virtualAttributeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"virtual-attribute-name"+"}", url.PathEscape(parameterValueToString(r.virtualAttributeName, "virtualAttributeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *VirtualAttributeApiService) DeleteVirtualAttributeExecute(r ApiDeleteVi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *VirtualAttributeApiService) GetVirtualAttributeExecute(r ApiGetVirtualA
 	}
 
 	localVarPath := localBasePath + "/virtual-attributes/{virtual-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"virtual-attribute-name"+"}", url.PathEscape(parameterToString(r.virtualAttributeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"virtual-attribute-name"+"}", url.PathEscape(parameterValueToString(r.virtualAttributeName, "virtualAttributeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *VirtualAttributeApiService) GetVirtualAttributeExecute(r ApiGetVirtualA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *VirtualAttributeApiService) UpdateVirtualAttributeExecute(r ApiUpdateVi
 	}
 
 	localVarPath := localBasePath + "/virtual-attributes/{virtual-attribute-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"virtual-attribute-name"+"}", url.PathEscape(parameterToString(r.virtualAttributeName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"virtual-attribute-name"+"}", url.PathEscape(parameterValueToString(r.virtualAttributeName, "virtualAttributeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *VirtualAttributeApiService) UpdateVirtualAttributeExecute(r ApiUpdateVi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

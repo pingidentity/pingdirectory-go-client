@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ThirdPartyTrustManagerProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ThirdPartyTrustManagerProviderResponse{}
+
 // ThirdPartyTrustManagerProviderResponse struct for ThirdPartyTrustManagerProviderResponse
 type ThirdPartyTrustManagerProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewThirdPartyTrustManagerProviderResponseWithDefaults() *ThirdPartyTrustMan
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ThirdPartyTrustManagerProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ThirdPartyTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetUrnpingidentityschemasconfig
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetUrnpingidentityschemasconfig
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) SetExtensionClass(v string) {
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionArgument() []string
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -208,7 +211,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetExtensionArgumentOk() ([]str
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -246,7 +249,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) SetEnabled(v bool) {
 
 // GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
 func (o *ThirdPartyTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		var ret bool
 		return ret
 	}
@@ -256,7 +259,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() b
 // GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
@@ -264,7 +267,7 @@ func (o *ThirdPartyTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk()
 
 // HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 func (o *ThirdPartyTrustManagerProviderResponse) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
+	if o != nil && !IsNil(o.IncludeJVMDefaultIssuers) {
 		return true
 	}
 
@@ -277,32 +280,32 @@ func (o *ThirdPartyTrustManagerProviderResponse) SetIncludeJVMDefaultIssuers(v b
 }
 
 func (o ThirdPartyTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ThirdPartyTrustManagerProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeJVMDefaultIssuers) {
+		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	return toSerialize, nil
 }
 
 type NullableThirdPartyTrustManagerProviderResponse struct {

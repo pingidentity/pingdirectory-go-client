@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FileBasedKeyManagerProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FileBasedKeyManagerProviderResponse{}
+
 // FileBasedKeyManagerProviderResponse struct for FileBasedKeyManagerProviderResponse
 type FileBasedKeyManagerProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -66,7 +69,7 @@ func NewFileBasedKeyManagerProviderResponseWithDefaults() *FileBasedKeyManagerPr
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -76,7 +79,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -84,7 +87,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -98,7 +101,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -108,7 +111,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetUrnpingidentityschemasconfigura
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -116,7 +119,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetUrnpingidentityschemasconfigura
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetKeyStoreFile(v string) {
 
 // GetKeyStoreType returns the KeyStoreType field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreType() string {
-	if o == nil || isNil(o.KeyStoreType) {
+	if o == nil || IsNil(o.KeyStoreType) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreType() string {
 // GetKeyStoreTypeOk returns a tuple with the KeyStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStoreType) {
+	if o == nil || IsNil(o.KeyStoreType) {
 		return nil, false
 	}
 	return o.KeyStoreType, true
@@ -220,7 +223,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStoreTypeOk() (*string, bool
 
 // HasKeyStoreType returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasKeyStoreType() bool {
-	if o != nil && !isNil(o.KeyStoreType) {
+	if o != nil && !IsNil(o.KeyStoreType) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetKeyStoreType(v string) {
 
 // GetKeyStorePin returns the KeyStorePin field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePin() string {
-	if o == nil || isNil(o.KeyStorePin) {
+	if o == nil || IsNil(o.KeyStorePin) {
 		var ret string
 		return ret
 	}
@@ -244,7 +247,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePin() string {
 // GetKeyStorePinOk returns a tuple with the KeyStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStorePin) {
+	if o == nil || IsNil(o.KeyStorePin) {
 		return nil, false
 	}
 	return o.KeyStorePin, true
@@ -252,7 +255,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinOk() (*string, bool)
 
 // HasKeyStorePin returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasKeyStorePin() bool {
-	if o != nil && !isNil(o.KeyStorePin) {
+	if o != nil && !IsNil(o.KeyStorePin) {
 		return true
 	}
 
@@ -266,7 +269,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetKeyStorePin(v string) {
 
 // GetKeyStorePinFile returns the KeyStorePinFile field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinFile() string {
-	if o == nil || isNil(o.KeyStorePinFile) {
+	if o == nil || IsNil(o.KeyStorePinFile) {
 		var ret string
 		return ret
 	}
@@ -276,7 +279,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinFile() string {
 // GetKeyStorePinFileOk returns a tuple with the KeyStorePinFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinFileOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStorePinFile) {
+	if o == nil || IsNil(o.KeyStorePinFile) {
 		return nil, false
 	}
 	return o.KeyStorePinFile, true
@@ -284,7 +287,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinFileOk() (*string, b
 
 // HasKeyStorePinFile returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasKeyStorePinFile() bool {
-	if o != nil && !isNil(o.KeyStorePinFile) {
+	if o != nil && !IsNil(o.KeyStorePinFile) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetKeyStorePinFile(v string) {
 
 // GetKeyStorePinPassphraseProvider returns the KeyStorePinPassphraseProvider field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinPassphraseProvider() string {
-	if o == nil || isNil(o.KeyStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.KeyStorePinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -308,7 +311,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinPassphraseProvider()
 // GetKeyStorePinPassphraseProviderOk returns a tuple with the KeyStorePinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.KeyStorePinPassphraseProvider) {
 		return nil, false
 	}
 	return o.KeyStorePinPassphraseProvider, true
@@ -316,7 +319,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetKeyStorePinPassphraseProviderOk
 
 // HasKeyStorePinPassphraseProvider returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasKeyStorePinPassphraseProvider() bool {
-	if o != nil && !isNil(o.KeyStorePinPassphraseProvider) {
+	if o != nil && !IsNil(o.KeyStorePinPassphraseProvider) {
 		return true
 	}
 
@@ -330,7 +333,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetKeyStorePinPassphraseProvider(v
 
 // GetPrivateKeyPin returns the PrivateKeyPin field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPin() string {
-	if o == nil || isNil(o.PrivateKeyPin) {
+	if o == nil || IsNil(o.PrivateKeyPin) {
 		var ret string
 		return ret
 	}
@@ -340,7 +343,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPin() string {
 // GetPrivateKeyPinOk returns a tuple with the PrivateKeyPin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinOk() (*string, bool) {
-	if o == nil || isNil(o.PrivateKeyPin) {
+	if o == nil || IsNil(o.PrivateKeyPin) {
 		return nil, false
 	}
 	return o.PrivateKeyPin, true
@@ -348,7 +351,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinOk() (*string, boo
 
 // HasPrivateKeyPin returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasPrivateKeyPin() bool {
-	if o != nil && !isNil(o.PrivateKeyPin) {
+	if o != nil && !IsNil(o.PrivateKeyPin) {
 		return true
 	}
 
@@ -362,7 +365,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetPrivateKeyPin(v string) {
 
 // GetPrivateKeyPinFile returns the PrivateKeyPinFile field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinFile() string {
-	if o == nil || isNil(o.PrivateKeyPinFile) {
+	if o == nil || IsNil(o.PrivateKeyPinFile) {
 		var ret string
 		return ret
 	}
@@ -372,7 +375,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinFile() string {
 // GetPrivateKeyPinFileOk returns a tuple with the PrivateKeyPinFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinFileOk() (*string, bool) {
-	if o == nil || isNil(o.PrivateKeyPinFile) {
+	if o == nil || IsNil(o.PrivateKeyPinFile) {
 		return nil, false
 	}
 	return o.PrivateKeyPinFile, true
@@ -380,7 +383,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinFileOk() (*string,
 
 // HasPrivateKeyPinFile returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasPrivateKeyPinFile() bool {
-	if o != nil && !isNil(o.PrivateKeyPinFile) {
+	if o != nil && !IsNil(o.PrivateKeyPinFile) {
 		return true
 	}
 
@@ -394,7 +397,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetPrivateKeyPinFile(v string) {
 
 // GetPrivateKeyPinPassphraseProvider returns the PrivateKeyPinPassphraseProvider field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinPassphraseProvider() string {
-	if o == nil || isNil(o.PrivateKeyPinPassphraseProvider) {
+	if o == nil || IsNil(o.PrivateKeyPinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -404,7 +407,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinPassphraseProvider
 // GetPrivateKeyPinPassphraseProviderOk returns a tuple with the PrivateKeyPinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PrivateKeyPinPassphraseProvider) {
+	if o == nil || IsNil(o.PrivateKeyPinPassphraseProvider) {
 		return nil, false
 	}
 	return o.PrivateKeyPinPassphraseProvider, true
@@ -412,7 +415,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetPrivateKeyPinPassphraseProvider
 
 // HasPrivateKeyPinPassphraseProvider returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasPrivateKeyPinPassphraseProvider() bool {
-	if o != nil && !isNil(o.PrivateKeyPinPassphraseProvider) {
+	if o != nil && !IsNil(o.PrivateKeyPinPassphraseProvider) {
 		return true
 	}
 
@@ -426,7 +429,7 @@ func (o *FileBasedKeyManagerProviderResponse) SetPrivateKeyPinPassphraseProvider
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *FileBasedKeyManagerProviderResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -436,7 +439,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedKeyManagerProviderResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -444,7 +447,7 @@ func (o *FileBasedKeyManagerProviderResponse) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *FileBasedKeyManagerProviderResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -481,50 +484,50 @@ func (o *FileBasedKeyManagerProviderResponse) SetEnabled(v bool) {
 }
 
 func (o FileBasedKeyManagerProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["keyStoreFile"] = o.KeyStoreFile
-	}
-	if !isNil(o.KeyStoreType) {
-		toSerialize["keyStoreType"] = o.KeyStoreType
-	}
-	if !isNil(o.KeyStorePin) {
-		toSerialize["keyStorePin"] = o.KeyStorePin
-	}
-	if !isNil(o.KeyStorePinFile) {
-		toSerialize["keyStorePinFile"] = o.KeyStorePinFile
-	}
-	if !isNil(o.KeyStorePinPassphraseProvider) {
-		toSerialize["keyStorePinPassphraseProvider"] = o.KeyStorePinPassphraseProvider
-	}
-	if !isNil(o.PrivateKeyPin) {
-		toSerialize["privateKeyPin"] = o.PrivateKeyPin
-	}
-	if !isNil(o.PrivateKeyPinFile) {
-		toSerialize["privateKeyPinFile"] = o.PrivateKeyPinFile
-	}
-	if !isNil(o.PrivateKeyPinPassphraseProvider) {
-		toSerialize["privateKeyPinPassphraseProvider"] = o.PrivateKeyPinPassphraseProvider
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FileBasedKeyManagerProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["keyStoreFile"] = o.KeyStoreFile
+	if !IsNil(o.KeyStoreType) {
+		toSerialize["keyStoreType"] = o.KeyStoreType
+	}
+	if !IsNil(o.KeyStorePin) {
+		toSerialize["keyStorePin"] = o.KeyStorePin
+	}
+	if !IsNil(o.KeyStorePinFile) {
+		toSerialize["keyStorePinFile"] = o.KeyStorePinFile
+	}
+	if !IsNil(o.KeyStorePinPassphraseProvider) {
+		toSerialize["keyStorePinPassphraseProvider"] = o.KeyStorePinPassphraseProvider
+	}
+	if !IsNil(o.PrivateKeyPin) {
+		toSerialize["privateKeyPin"] = o.PrivateKeyPin
+	}
+	if !IsNil(o.PrivateKeyPinFile) {
+		toSerialize["privateKeyPinFile"] = o.PrivateKeyPinFile
+	}
+	if !IsNil(o.PrivateKeyPinPassphraseProvider) {
+		toSerialize["privateKeyPinPassphraseProvider"] = o.PrivateKeyPinPassphraseProvider
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableFileBasedKeyManagerProviderResponse struct {

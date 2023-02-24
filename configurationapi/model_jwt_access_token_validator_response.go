@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the JwtAccessTokenValidatorResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &JwtAccessTokenValidatorResponse{}
+
 // JwtAccessTokenValidatorResponse struct for JwtAccessTokenValidatorResponse
 type JwtAccessTokenValidatorResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -76,7 +79,7 @@ func NewJwtAccessTokenValidatorResponseWithDefaults() *JwtAccessTokenValidatorRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *JwtAccessTokenValidatorResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -94,7 +97,7 @@ func (o *JwtAccessTokenValidatorResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *JwtAccessTokenValidatorResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *JwtAccessTokenValidatorResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -126,7 +129,7 @@ func (o *JwtAccessTokenValidatorResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -212,7 +215,7 @@ func (o *JwtAccessTokenValidatorResponse) SetAllowedSigningAlgorithm(v []Enumacc
 
 // GetSigningCertificate returns the SigningCertificate field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetSigningCertificate() []string {
-	if o == nil || isNil(o.SigningCertificate) {
+	if o == nil || IsNil(o.SigningCertificate) {
 		var ret []string
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSigningCertificate() []string {
 // GetSigningCertificateOk returns a tuple with the SigningCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetSigningCertificateOk() ([]string, bool) {
-	if o == nil || isNil(o.SigningCertificate) {
+	if o == nil || IsNil(o.SigningCertificate) {
 		return nil, false
 	}
 	return o.SigningCertificate, true
@@ -230,7 +233,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSigningCertificateOk() ([]string, b
 
 // HasSigningCertificate returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasSigningCertificate() bool {
-	if o != nil && !isNil(o.SigningCertificate) {
+	if o != nil && !IsNil(o.SigningCertificate) {
 		return true
 	}
 
@@ -244,7 +247,7 @@ func (o *JwtAccessTokenValidatorResponse) SetSigningCertificate(v []string) {
 
 // GetJwksEndpointPath returns the JwksEndpointPath field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetJwksEndpointPath() string {
-	if o == nil || isNil(o.JwksEndpointPath) {
+	if o == nil || IsNil(o.JwksEndpointPath) {
 		var ret string
 		return ret
 	}
@@ -254,7 +257,7 @@ func (o *JwtAccessTokenValidatorResponse) GetJwksEndpointPath() string {
 // GetJwksEndpointPathOk returns a tuple with the JwksEndpointPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetJwksEndpointPathOk() (*string, bool) {
-	if o == nil || isNil(o.JwksEndpointPath) {
+	if o == nil || IsNil(o.JwksEndpointPath) {
 		return nil, false
 	}
 	return o.JwksEndpointPath, true
@@ -262,7 +265,7 @@ func (o *JwtAccessTokenValidatorResponse) GetJwksEndpointPathOk() (*string, bool
 
 // HasJwksEndpointPath returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasJwksEndpointPath() bool {
-	if o != nil && !isNil(o.JwksEndpointPath) {
+	if o != nil && !IsNil(o.JwksEndpointPath) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *JwtAccessTokenValidatorResponse) SetJwksEndpointPath(v string) {
 
 // GetEncryptionKeyPair returns the EncryptionKeyPair field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetEncryptionKeyPair() string {
-	if o == nil || isNil(o.EncryptionKeyPair) {
+	if o == nil || IsNil(o.EncryptionKeyPair) {
 		var ret string
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEncryptionKeyPair() string {
 // GetEncryptionKeyPairOk returns a tuple with the EncryptionKeyPair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetEncryptionKeyPairOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionKeyPair) {
+	if o == nil || IsNil(o.EncryptionKeyPair) {
 		return nil, false
 	}
 	return o.EncryptionKeyPair, true
@@ -294,7 +297,7 @@ func (o *JwtAccessTokenValidatorResponse) GetEncryptionKeyPairOk() (*string, boo
 
 // HasEncryptionKeyPair returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasEncryptionKeyPair() bool {
-	if o != nil && !isNil(o.EncryptionKeyPair) {
+	if o != nil && !IsNil(o.EncryptionKeyPair) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *JwtAccessTokenValidatorResponse) SetAllowedContentEncryptionAlgorithm(v
 
 // GetClockSkewGracePeriod returns the ClockSkewGracePeriod field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetClockSkewGracePeriod() string {
-	if o == nil || isNil(o.ClockSkewGracePeriod) {
+	if o == nil || IsNil(o.ClockSkewGracePeriod) {
 		var ret string
 		return ret
 	}
@@ -366,7 +369,7 @@ func (o *JwtAccessTokenValidatorResponse) GetClockSkewGracePeriod() string {
 // GetClockSkewGracePeriodOk returns a tuple with the ClockSkewGracePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetClockSkewGracePeriodOk() (*string, bool) {
-	if o == nil || isNil(o.ClockSkewGracePeriod) {
+	if o == nil || IsNil(o.ClockSkewGracePeriod) {
 		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
@@ -374,7 +377,7 @@ func (o *JwtAccessTokenValidatorResponse) GetClockSkewGracePeriodOk() (*string, 
 
 // HasClockSkewGracePeriod returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasClockSkewGracePeriod() bool {
-	if o != nil && !isNil(o.ClockSkewGracePeriod) {
+	if o != nil && !IsNil(o.ClockSkewGracePeriod) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *JwtAccessTokenValidatorResponse) SetClockSkewGracePeriod(v string) {
 
 // GetClientIDClaimName returns the ClientIDClaimName field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetClientIDClaimName() string {
-	if o == nil || isNil(o.ClientIDClaimName) {
+	if o == nil || IsNil(o.ClientIDClaimName) {
 		var ret string
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *JwtAccessTokenValidatorResponse) GetClientIDClaimName() string {
 // GetClientIDClaimNameOk returns a tuple with the ClientIDClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetClientIDClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.ClientIDClaimName) {
+	if o == nil || IsNil(o.ClientIDClaimName) {
 		return nil, false
 	}
 	return o.ClientIDClaimName, true
@@ -406,7 +409,7 @@ func (o *JwtAccessTokenValidatorResponse) GetClientIDClaimNameOk() (*string, boo
 
 // HasClientIDClaimName returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasClientIDClaimName() bool {
-	if o != nil && !isNil(o.ClientIDClaimName) {
+	if o != nil && !IsNil(o.ClientIDClaimName) {
 		return true
 	}
 
@@ -420,7 +423,7 @@ func (o *JwtAccessTokenValidatorResponse) SetClientIDClaimName(v string) {
 
 // GetScopeClaimName returns the ScopeClaimName field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetScopeClaimName() string {
-	if o == nil || isNil(o.ScopeClaimName) {
+	if o == nil || IsNil(o.ScopeClaimName) {
 		var ret string
 		return ret
 	}
@@ -430,7 +433,7 @@ func (o *JwtAccessTokenValidatorResponse) GetScopeClaimName() string {
 // GetScopeClaimNameOk returns a tuple with the ScopeClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetScopeClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.ScopeClaimName) {
+	if o == nil || IsNil(o.ScopeClaimName) {
 		return nil, false
 	}
 	return o.ScopeClaimName, true
@@ -438,7 +441,7 @@ func (o *JwtAccessTokenValidatorResponse) GetScopeClaimNameOk() (*string, bool) 
 
 // HasScopeClaimName returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasScopeClaimName() bool {
-	if o != nil && !isNil(o.ScopeClaimName) {
+	if o != nil && !IsNil(o.ScopeClaimName) {
 		return true
 	}
 
@@ -476,7 +479,7 @@ func (o *JwtAccessTokenValidatorResponse) SetEvaluationOrderIndex(v int32) {
 
 // GetAuthorizationServer returns the AuthorizationServer field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetAuthorizationServer() string {
-	if o == nil || isNil(o.AuthorizationServer) {
+	if o == nil || IsNil(o.AuthorizationServer) {
 		var ret string
 		return ret
 	}
@@ -486,7 +489,7 @@ func (o *JwtAccessTokenValidatorResponse) GetAuthorizationServer() string {
 // GetAuthorizationServerOk returns a tuple with the AuthorizationServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetAuthorizationServerOk() (*string, bool) {
-	if o == nil || isNil(o.AuthorizationServer) {
+	if o == nil || IsNil(o.AuthorizationServer) {
 		return nil, false
 	}
 	return o.AuthorizationServer, true
@@ -494,7 +497,7 @@ func (o *JwtAccessTokenValidatorResponse) GetAuthorizationServerOk() (*string, b
 
 // HasAuthorizationServer returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasAuthorizationServer() bool {
-	if o != nil && !isNil(o.AuthorizationServer) {
+	if o != nil && !IsNil(o.AuthorizationServer) {
 		return true
 	}
 
@@ -508,7 +511,7 @@ func (o *JwtAccessTokenValidatorResponse) SetAuthorizationServer(v string) {
 
 // GetIdentityMapper returns the IdentityMapper field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetIdentityMapper() string {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -518,7 +521,7 @@ func (o *JwtAccessTokenValidatorResponse) GetIdentityMapper() string {
 // GetIdentityMapperOk returns a tuple with the IdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.IdentityMapper) {
+	if o == nil || IsNil(o.IdentityMapper) {
 		return nil, false
 	}
 	return o.IdentityMapper, true
@@ -526,7 +529,7 @@ func (o *JwtAccessTokenValidatorResponse) GetIdentityMapperOk() (*string, bool) 
 
 // HasIdentityMapper returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasIdentityMapper() bool {
-	if o != nil && !isNil(o.IdentityMapper) {
+	if o != nil && !IsNil(o.IdentityMapper) {
 		return true
 	}
 
@@ -540,7 +543,7 @@ func (o *JwtAccessTokenValidatorResponse) SetIdentityMapper(v string) {
 
 // GetSubjectClaimName returns the SubjectClaimName field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetSubjectClaimName() string {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		var ret string
 		return ret
 	}
@@ -550,7 +553,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSubjectClaimName() string {
 // GetSubjectClaimNameOk returns a tuple with the SubjectClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		return nil, false
 	}
 	return o.SubjectClaimName, true
@@ -558,7 +561,7 @@ func (o *JwtAccessTokenValidatorResponse) GetSubjectClaimNameOk() (*string, bool
 
 // HasSubjectClaimName returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasSubjectClaimName() bool {
-	if o != nil && !isNil(o.SubjectClaimName) {
+	if o != nil && !IsNil(o.SubjectClaimName) {
 		return true
 	}
 
@@ -572,7 +575,7 @@ func (o *JwtAccessTokenValidatorResponse) SetSubjectClaimName(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *JwtAccessTokenValidatorResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -582,7 +585,7 @@ func (o *JwtAccessTokenValidatorResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JwtAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -590,7 +593,7 @@ func (o *JwtAccessTokenValidatorResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *JwtAccessTokenValidatorResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -627,65 +630,59 @@ func (o *JwtAccessTokenValidatorResponse) SetEnabled(v bool) {
 }
 
 func (o JwtAccessTokenValidatorResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
-	}
-	if !isNil(o.SigningCertificate) {
-		toSerialize["signingCertificate"] = o.SigningCertificate
-	}
-	if !isNil(o.JwksEndpointPath) {
-		toSerialize["jwksEndpointPath"] = o.JwksEndpointPath
-	}
-	if !isNil(o.EncryptionKeyPair) {
-		toSerialize["encryptionKeyPair"] = o.EncryptionKeyPair
-	}
-	if true {
-		toSerialize["allowedKeyEncryptionAlgorithm"] = o.AllowedKeyEncryptionAlgorithm
-	}
-	if true {
-		toSerialize["allowedContentEncryptionAlgorithm"] = o.AllowedContentEncryptionAlgorithm
-	}
-	if !isNil(o.ClockSkewGracePeriod) {
-		toSerialize["clockSkewGracePeriod"] = o.ClockSkewGracePeriod
-	}
-	if !isNil(o.ClientIDClaimName) {
-		toSerialize["clientIDClaimName"] = o.ClientIDClaimName
-	}
-	if !isNil(o.ScopeClaimName) {
-		toSerialize["scopeClaimName"] = o.ScopeClaimName
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if !isNil(o.AuthorizationServer) {
-		toSerialize["authorizationServer"] = o.AuthorizationServer
-	}
-	if !isNil(o.IdentityMapper) {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SubjectClaimName) {
-		toSerialize["subjectClaimName"] = o.SubjectClaimName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o JwtAccessTokenValidatorResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
+	if !IsNil(o.SigningCertificate) {
+		toSerialize["signingCertificate"] = o.SigningCertificate
+	}
+	if !IsNil(o.JwksEndpointPath) {
+		toSerialize["jwksEndpointPath"] = o.JwksEndpointPath
+	}
+	if !IsNil(o.EncryptionKeyPair) {
+		toSerialize["encryptionKeyPair"] = o.EncryptionKeyPair
+	}
+	toSerialize["allowedKeyEncryptionAlgorithm"] = o.AllowedKeyEncryptionAlgorithm
+	toSerialize["allowedContentEncryptionAlgorithm"] = o.AllowedContentEncryptionAlgorithm
+	if !IsNil(o.ClockSkewGracePeriod) {
+		toSerialize["clockSkewGracePeriod"] = o.ClockSkewGracePeriod
+	}
+	if !IsNil(o.ClientIDClaimName) {
+		toSerialize["clientIDClaimName"] = o.ClientIDClaimName
+	}
+	if !IsNil(o.ScopeClaimName) {
+		toSerialize["scopeClaimName"] = o.ScopeClaimName
+	}
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	if !IsNil(o.AuthorizationServer) {
+		toSerialize["authorizationServer"] = o.AuthorizationServer
+	}
+	if !IsNil(o.IdentityMapper) {
+		toSerialize["identityMapper"] = o.IdentityMapper
+	}
+	if !IsNil(o.SubjectClaimName) {
+		toSerialize["subjectClaimName"] = o.SubjectClaimName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableJwtAccessTokenValidatorResponse struct {

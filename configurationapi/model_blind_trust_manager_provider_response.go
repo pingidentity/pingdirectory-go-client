@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BlindTrustManagerProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BlindTrustManagerProviderResponse{}
+
 // BlindTrustManagerProviderResponse struct for BlindTrustManagerProviderResponse
 type BlindTrustManagerProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -49,7 +52,7 @@ func NewBlindTrustManagerProviderResponseWithDefaults() *BlindTrustManagerProvid
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *BlindTrustManagerProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -59,7 +62,7 @@ func (o *BlindTrustManagerProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -67,7 +70,7 @@ func (o *BlindTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *BlindTrustManagerProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *BlindTrustManagerProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *BlindTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *BlindTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurati
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -99,7 +102,7 @@ func (o *BlindTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurati
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *BlindTrustManagerProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *BlindTrustManagerProviderResponse) SetEnabled(v bool) {
 
 // GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
 func (o *BlindTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		var ret bool
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *BlindTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool {
 // GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlindTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
@@ -203,7 +206,7 @@ func (o *BlindTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bo
 
 // HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 func (o *BlindTrustManagerProviderResponse) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
+	if o != nil && !IsNil(o.IncludeJVMDefaultIssuers) {
 		return true
 	}
 
@@ -216,26 +219,28 @@ func (o *BlindTrustManagerProviderResponse) SetIncludeJVMDefaultIssuers(v bool) 
 }
 
 func (o BlindTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BlindTrustManagerProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeJVMDefaultIssuers) {
+		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	return toSerialize, nil
 }
 
 type NullableBlindTrustManagerProviderResponse struct {

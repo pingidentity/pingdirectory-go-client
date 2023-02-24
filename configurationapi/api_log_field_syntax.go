@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *LogFieldSyntaxApiService) GetLogFieldSyntaxExecute(r ApiGetLogFieldSynt
 	}
 
 	localVarPath := localBasePath + "/log-field-syntaxes/{log-field-syntax-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-syntax-name"+"}", url.PathEscape(parameterToString(r.logFieldSyntaxName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-syntax-name"+"}", url.PathEscape(parameterValueToString(r.logFieldSyntaxName, "logFieldSyntaxName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *LogFieldSyntaxApiService) GetLogFieldSyntaxExecute(r ApiGetLogFieldSynt
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -173,7 +173,7 @@ func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntaxExecute(r ApiUpdateLogFie
 	}
 
 	localVarPath := localBasePath + "/log-field-syntaxes/{log-field-syntax-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"log-field-syntax-name"+"}", url.PathEscape(parameterToString(r.logFieldSyntaxName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"log-field-syntax-name"+"}", url.PathEscape(parameterValueToString(r.logFieldSyntaxName, "logFieldSyntaxName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -211,9 +211,9 @@ func (a *LogFieldSyntaxApiService) UpdateLogFieldSyntaxExecute(r ApiUpdateLogFie
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

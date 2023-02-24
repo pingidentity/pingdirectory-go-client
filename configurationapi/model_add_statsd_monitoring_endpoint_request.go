@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddStatsdMonitoringEndpointRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddStatsdMonitoringEndpointRequest{}
+
 // AddStatsdMonitoringEndpointRequest struct for AddStatsdMonitoringEndpointRequest
 type AddStatsdMonitoringEndpointRequest struct {
 	// Name of the new Monitoring Endpoint
@@ -78,7 +81,7 @@ func (o *AddStatsdMonitoringEndpointRequest) SetEndpointName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetSchemas() []EnumstatsdMonitoringEndpointSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumstatsdMonitoringEndpointSchemaUrn
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetSchemas() []EnumstatsdMonitoring
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetSchemasOk() ([]EnumstatsdMonitoringEndpointSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -96,7 +99,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetSchemasOk() ([]EnumstatsdMonitor
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddStatsdMonitoringEndpointRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -134,7 +137,7 @@ func (o *AddStatsdMonitoringEndpointRequest) SetHostname(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -144,7 +147,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -152,7 +155,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetServerPortOk() (*int32, bool) {
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddStatsdMonitoringEndpointRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *AddStatsdMonitoringEndpointRequest) SetServerPort(v int32) {
 
 // GetConnectionType returns the ConnectionType field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetConnectionType() EnummonitoringEndpointConnectionTypeProp {
-	if o == nil || isNil(o.ConnectionType) {
+	if o == nil || IsNil(o.ConnectionType) {
 		var ret EnummonitoringEndpointConnectionTypeProp
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetConnectionType() EnummonitoringE
 // GetConnectionTypeOk returns a tuple with the ConnectionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetConnectionTypeOk() (*EnummonitoringEndpointConnectionTypeProp, bool) {
-	if o == nil || isNil(o.ConnectionType) {
+	if o == nil || IsNil(o.ConnectionType) {
 		return nil, false
 	}
 	return o.ConnectionType, true
@@ -184,7 +187,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetConnectionTypeOk() (*Enummonitor
 
 // HasConnectionType returns a boolean if a field has been set.
 func (o *AddStatsdMonitoringEndpointRequest) HasConnectionType() bool {
-	if o != nil && !isNil(o.ConnectionType) {
+	if o != nil && !IsNil(o.ConnectionType) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AddStatsdMonitoringEndpointRequest) SetConnectionType(v EnummonitoringE
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -216,7 +219,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetTrustManagerProviderOk() (*strin
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddStatsdMonitoringEndpointRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AddStatsdMonitoringEndpointRequest) SetTrustManagerProvider(v string) {
 
 // GetAdditionalTags returns the AdditionalTags field value if set, zero value otherwise.
 func (o *AddStatsdMonitoringEndpointRequest) GetAdditionalTags() []string {
-	if o == nil || isNil(o.AdditionalTags) {
+	if o == nil || IsNil(o.AdditionalTags) {
 		var ret []string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetAdditionalTags() []string {
 // GetAdditionalTagsOk returns a tuple with the AdditionalTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddStatsdMonitoringEndpointRequest) GetAdditionalTagsOk() ([]string, bool) {
-	if o == nil || isNil(o.AdditionalTags) {
+	if o == nil || IsNil(o.AdditionalTags) {
 		return nil, false
 	}
 	return o.AdditionalTags, true
@@ -248,7 +251,7 @@ func (o *AddStatsdMonitoringEndpointRequest) GetAdditionalTagsOk() ([]string, bo
 
 // HasAdditionalTags returns a boolean if a field has been set.
 func (o *AddStatsdMonitoringEndpointRequest) HasAdditionalTags() bool {
-	if o != nil && !isNil(o.AdditionalTags) {
+	if o != nil && !IsNil(o.AdditionalTags) {
 		return true
 	}
 
@@ -285,32 +288,34 @@ func (o *AddStatsdMonitoringEndpointRequest) SetEnabled(v bool) {
 }
 
 func (o AddStatsdMonitoringEndpointRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["endpointName"] = o.EndpointName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["hostname"] = o.Hostname
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.ConnectionType) {
-		toSerialize["connectionType"] = o.ConnectionType
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.AdditionalTags) {
-		toSerialize["additionalTags"] = o.AdditionalTags
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddStatsdMonitoringEndpointRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["endpointName"] = o.EndpointName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["hostname"] = o.Hostname
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.ConnectionType) {
+		toSerialize["connectionType"] = o.ConnectionType
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.AdditionalTags) {
+		toSerialize["additionalTags"] = o.AdditionalTags
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddStatsdMonitoringEndpointRequest struct {

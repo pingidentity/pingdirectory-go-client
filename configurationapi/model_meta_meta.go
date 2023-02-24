@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MetaMeta type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetaMeta{}
+
 // MetaMeta struct for MetaMeta
 type MetaMeta struct {
 	ResourceType *string `json:"resourceType,omitempty"`
@@ -39,7 +42,7 @@ func NewMetaMetaWithDefaults() *MetaMeta {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *MetaMeta) GetResourceType() string {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		var ret string
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *MetaMeta) GetResourceType() string {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetaMeta) GetResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ResourceType) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -57,7 +60,7 @@ func (o *MetaMeta) GetResourceTypeOk() (*string, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *MetaMeta) HasResourceType() bool {
-	if o != nil && !isNil(o.ResourceType) {
+	if o != nil && !IsNil(o.ResourceType) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *MetaMeta) SetResourceType(v string) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *MetaMeta) GetLocation() string {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret string
 		return ret
 	}
@@ -81,7 +84,7 @@ func (o *MetaMeta) GetLocation() string {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetaMeta) GetLocationOk() (*string, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -89,7 +92,7 @@ func (o *MetaMeta) GetLocationOk() (*string, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *MetaMeta) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *MetaMeta) SetLocation(v string) {
 }
 
 func (o MetaMeta) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.ResourceType) {
-		toSerialize["resourceType"] = o.ResourceType
-	}
-	if !isNil(o.Location) {
-		toSerialize["location"] = o.Location
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MetaMeta) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ResourceType) {
+		toSerialize["resourceType"] = o.ResourceType
+	}
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	return toSerialize, nil
 }
 
 type NullableMetaMeta struct {

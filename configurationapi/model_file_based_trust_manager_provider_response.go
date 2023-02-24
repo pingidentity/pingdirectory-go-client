@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FileBasedTrustManagerProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FileBasedTrustManagerProviderResponse{}
+
 // FileBasedTrustManagerProviderResponse struct for FileBasedTrustManagerProviderResponse
 type FileBasedTrustManagerProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewFileBasedTrustManagerProviderResponseWithDefaults() *FileBasedTrustManag
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *FileBasedTrustManagerProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetUrnpingidentityschemasconfigu
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetUrnpingidentityschemasconfigu
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *FileBasedTrustManagerProviderResponse) SetTrustStoreFile(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -214,7 +217,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStoreTypeOk() (*string, 
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *FileBasedTrustManagerProviderResponse) SetTrustStoreType(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -246,7 +249,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinOk() (*string, b
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *FileBasedTrustManagerProviderResponse) SetTrustStorePin(v string) {
 
 // GetTrustStorePinFile returns the TrustStorePinFile field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinFile() string {
-	if o == nil || isNil(o.TrustStorePinFile) {
+	if o == nil || IsNil(o.TrustStorePinFile) {
 		var ret string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinFile() string {
 // GetTrustStorePinFileOk returns a tuple with the TrustStorePinFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinFile) {
+	if o == nil || IsNil(o.TrustStorePinFile) {
 		return nil, false
 	}
 	return o.TrustStorePinFile, true
@@ -278,7 +281,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinFileOk() (*strin
 
 // HasTrustStorePinFile returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasTrustStorePinFile() bool {
-	if o != nil && !isNil(o.TrustStorePinFile) {
+	if o != nil && !IsNil(o.TrustStorePinFile) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *FileBasedTrustManagerProviderResponse) SetTrustStorePinFile(v string) {
 
 // GetTrustStorePinPassphraseProvider returns the TrustStorePinPassphraseProvider field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinPassphraseProvider() string {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinPassphraseProvid
 // GetTrustStorePinPassphraseProviderOk returns a tuple with the TrustStorePinPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePinPassphraseProvider) {
+	if o == nil || IsNil(o.TrustStorePinPassphraseProvider) {
 		return nil, false
 	}
 	return o.TrustStorePinPassphraseProvider, true
@@ -310,7 +313,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetTrustStorePinPassphraseProvid
 
 // HasTrustStorePinPassphraseProvider returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasTrustStorePinPassphraseProvider() bool {
-	if o != nil && !isNil(o.TrustStorePinPassphraseProvider) {
+	if o != nil && !IsNil(o.TrustStorePinPassphraseProvider) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *FileBasedTrustManagerProviderResponse) SetEnabled(v bool) {
 
 // GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
 func (o *FileBasedTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		var ret bool
 		return ret
 	}
@@ -358,7 +361,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetIncludeJVMDefaultIssuers() bo
 // GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
@@ -366,7 +369,7 @@ func (o *FileBasedTrustManagerProviderResponse) GetIncludeJVMDefaultIssuersOk() 
 
 // HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 func (o *FileBasedTrustManagerProviderResponse) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
+	if o != nil && !IsNil(o.IncludeJVMDefaultIssuers) {
 		return true
 	}
 
@@ -379,41 +382,41 @@ func (o *FileBasedTrustManagerProviderResponse) SetIncludeJVMDefaultIssuers(v bo
 }
 
 func (o FileBasedTrustManagerProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStorePinFile) {
-		toSerialize["trustStorePinFile"] = o.TrustStorePinFile
-	}
-	if !isNil(o.TrustStorePinPassphraseProvider) {
-		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FileBasedTrustManagerProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["trustStoreFile"] = o.TrustStoreFile
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStorePinFile) {
+		toSerialize["trustStorePinFile"] = o.TrustStorePinFile
+	}
+	if !IsNil(o.TrustStorePinPassphraseProvider) {
+		toSerialize["trustStorePinPassphraseProvider"] = o.TrustStorePinPassphraseProvider
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeJVMDefaultIssuers) {
+		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	return toSerialize, nil
 }
 
 type NullableFileBasedTrustManagerProviderResponse struct {

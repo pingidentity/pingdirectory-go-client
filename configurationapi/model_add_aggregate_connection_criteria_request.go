@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAggregateConnectionCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAggregateConnectionCriteriaRequest{}
+
 // AddAggregateConnectionCriteriaRequest struct for AddAggregateConnectionCriteriaRequest
 type AddAggregateConnectionCriteriaRequest struct {
 	// Name of the new Connection Criteria
@@ -100,7 +103,7 @@ func (o *AddAggregateConnectionCriteriaRequest) SetSchemas(v []EnumaggregateConn
 
 // GetAllIncludedConnectionCriteria returns the AllIncludedConnectionCriteria field value if set, zero value otherwise.
 func (o *AddAggregateConnectionCriteriaRequest) GetAllIncludedConnectionCriteria() []string {
-	if o == nil || isNil(o.AllIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.AllIncludedConnectionCriteria) {
 		var ret []string
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetAllIncludedConnectionCriteria
 // GetAllIncludedConnectionCriteriaOk returns a tuple with the AllIncludedConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetAllIncludedConnectionCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.AllIncludedConnectionCriteria) {
 		return nil, false
 	}
 	return o.AllIncludedConnectionCriteria, true
@@ -118,7 +121,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetAllIncludedConnectionCriteria
 
 // HasAllIncludedConnectionCriteria returns a boolean if a field has been set.
 func (o *AddAggregateConnectionCriteriaRequest) HasAllIncludedConnectionCriteria() bool {
-	if o != nil && !isNil(o.AllIncludedConnectionCriteria) {
+	if o != nil && !IsNil(o.AllIncludedConnectionCriteria) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddAggregateConnectionCriteriaRequest) SetAllIncludedConnectionCriteria
 
 // GetAnyIncludedConnectionCriteria returns the AnyIncludedConnectionCriteria field value if set, zero value otherwise.
 func (o *AddAggregateConnectionCriteriaRequest) GetAnyIncludedConnectionCriteria() []string {
-	if o == nil || isNil(o.AnyIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.AnyIncludedConnectionCriteria) {
 		var ret []string
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetAnyIncludedConnectionCriteria
 // GetAnyIncludedConnectionCriteriaOk returns a tuple with the AnyIncludedConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetAnyIncludedConnectionCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.AnyIncludedConnectionCriteria) {
 		return nil, false
 	}
 	return o.AnyIncludedConnectionCriteria, true
@@ -150,7 +153,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetAnyIncludedConnectionCriteria
 
 // HasAnyIncludedConnectionCriteria returns a boolean if a field has been set.
 func (o *AddAggregateConnectionCriteriaRequest) HasAnyIncludedConnectionCriteria() bool {
-	if o != nil && !isNil(o.AnyIncludedConnectionCriteria) {
+	if o != nil && !IsNil(o.AnyIncludedConnectionCriteria) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddAggregateConnectionCriteriaRequest) SetAnyIncludedConnectionCriteria
 
 // GetNotAllIncludedConnectionCriteria returns the NotAllIncludedConnectionCriteria field value if set, zero value otherwise.
 func (o *AddAggregateConnectionCriteriaRequest) GetNotAllIncludedConnectionCriteria() []string {
-	if o == nil || isNil(o.NotAllIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.NotAllIncludedConnectionCriteria) {
 		var ret []string
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetNotAllIncludedConnectionCrite
 // GetNotAllIncludedConnectionCriteriaOk returns a tuple with the NotAllIncludedConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetNotAllIncludedConnectionCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.NotAllIncludedConnectionCriteria) {
 		return nil, false
 	}
 	return o.NotAllIncludedConnectionCriteria, true
@@ -182,7 +185,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetNotAllIncludedConnectionCrite
 
 // HasNotAllIncludedConnectionCriteria returns a boolean if a field has been set.
 func (o *AddAggregateConnectionCriteriaRequest) HasNotAllIncludedConnectionCriteria() bool {
-	if o != nil && !isNil(o.NotAllIncludedConnectionCriteria) {
+	if o != nil && !IsNil(o.NotAllIncludedConnectionCriteria) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddAggregateConnectionCriteriaRequest) SetNotAllIncludedConnectionCrite
 
 // GetNoneIncludedConnectionCriteria returns the NoneIncludedConnectionCriteria field value if set, zero value otherwise.
 func (o *AddAggregateConnectionCriteriaRequest) GetNoneIncludedConnectionCriteria() []string {
-	if o == nil || isNil(o.NoneIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.NoneIncludedConnectionCriteria) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetNoneIncludedConnectionCriteri
 // GetNoneIncludedConnectionCriteriaOk returns a tuple with the NoneIncludedConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetNoneIncludedConnectionCriteriaOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedConnectionCriteria) {
+	if o == nil || IsNil(o.NoneIncludedConnectionCriteria) {
 		return nil, false
 	}
 	return o.NoneIncludedConnectionCriteria, true
@@ -214,7 +217,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetNoneIncludedConnectionCriteri
 
 // HasNoneIncludedConnectionCriteria returns a boolean if a field has been set.
 func (o *AddAggregateConnectionCriteriaRequest) HasNoneIncludedConnectionCriteria() bool {
-	if o != nil && !isNil(o.NoneIncludedConnectionCriteria) {
+	if o != nil && !IsNil(o.NoneIncludedConnectionCriteria) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddAggregateConnectionCriteriaRequest) SetNoneIncludedConnectionCriteri
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAggregateConnectionCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateConnectionCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -246,7 +249,7 @@ func (o *AddAggregateConnectionCriteriaRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAggregateConnectionCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -259,29 +262,33 @@ func (o *AddAggregateConnectionCriteriaRequest) SetDescription(v string) {
 }
 
 func (o AddAggregateConnectionCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllIncludedConnectionCriteria) {
-		toSerialize["allIncludedConnectionCriteria"] = o.AllIncludedConnectionCriteria
-	}
-	if !isNil(o.AnyIncludedConnectionCriteria) {
-		toSerialize["anyIncludedConnectionCriteria"] = o.AnyIncludedConnectionCriteria
-	}
-	if !isNil(o.NotAllIncludedConnectionCriteria) {
-		toSerialize["notAllIncludedConnectionCriteria"] = o.NotAllIncludedConnectionCriteria
-	}
-	if !isNil(o.NoneIncludedConnectionCriteria) {
-		toSerialize["noneIncludedConnectionCriteria"] = o.NoneIncludedConnectionCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAggregateConnectionCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllIncludedConnectionCriteria) {
+		toSerialize["allIncludedConnectionCriteria"] = o.AllIncludedConnectionCriteria
+	}
+	if !IsNil(o.AnyIncludedConnectionCriteria) {
+		toSerialize["anyIncludedConnectionCriteria"] = o.AnyIncludedConnectionCriteria
+	}
+	if !IsNil(o.NotAllIncludedConnectionCriteria) {
+		toSerialize["notAllIncludedConnectionCriteria"] = o.NotAllIncludedConnectionCriteria
+	}
+	if !IsNil(o.NoneIncludedConnectionCriteria) {
+		toSerialize["noneIncludedConnectionCriteria"] = o.NoneIncludedConnectionCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddAggregateConnectionCriteriaRequest struct {

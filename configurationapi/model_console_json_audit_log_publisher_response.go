@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConsoleJsonAuditLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConsoleJsonAuditLogPublisherResponse{}
+
 // ConsoleJsonAuditLogPublisherResponse struct for ConsoleJsonAuditLogPublisherResponse
 type ConsoleJsonAuditLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -94,7 +97,7 @@ func NewConsoleJsonAuditLogPublisherResponseWithDefaults() *ConsoleJsonAuditLogP
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -112,7 +115,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -126,7 +129,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetUrnpingidentityschemasconfigur
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -144,7 +147,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetUrnpingidentityschemasconfigur
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetEnabled(v bool) {
 
 // GetOutputLocation returns the OutputLocation field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetOutputLocation() EnumlogPublisherOutputLocationProp {
-	if o == nil || isNil(o.OutputLocation) {
+	if o == nil || IsNil(o.OutputLocation) {
 		var ret EnumlogPublisherOutputLocationProp
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetOutputLocation() EnumlogPublis
 // GetOutputLocationOk returns a tuple with the OutputLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetOutputLocationOk() (*EnumlogPublisherOutputLocationProp, bool) {
-	if o == nil || isNil(o.OutputLocation) {
+	if o == nil || IsNil(o.OutputLocation) {
 		return nil, false
 	}
 	return o.OutputLocation, true
@@ -248,7 +251,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetOutputLocationOk() (*EnumlogPu
 
 // HasOutputLocation returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasOutputLocation() bool {
-	if o != nil && !isNil(o.OutputLocation) {
+	if o != nil && !IsNil(o.OutputLocation) {
 		return true
 	}
 
@@ -262,7 +265,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetOutputLocation(v EnumlogPublis
 
 // GetWriteMultiLineMessages returns the WriteMultiLineMessages field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetWriteMultiLineMessages() bool {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
+	if o == nil || IsNil(o.WriteMultiLineMessages) {
 		var ret bool
 		return ret
 	}
@@ -272,7 +275,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetWriteMultiLineMessages() bool 
 // GetWriteMultiLineMessagesOk returns a tuple with the WriteMultiLineMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetWriteMultiLineMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
+	if o == nil || IsNil(o.WriteMultiLineMessages) {
 		return nil, false
 	}
 	return o.WriteMultiLineMessages, true
@@ -280,7 +283,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetWriteMultiLineMessagesOk() (*b
 
 // HasWriteMultiLineMessages returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasWriteMultiLineMessages() bool {
-	if o != nil && !isNil(o.WriteMultiLineMessages) {
+	if o != nil && !IsNil(o.WriteMultiLineMessages) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetWriteMultiLineMessages(v bool)
 
 // GetUseReversibleForm returns the UseReversibleForm field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetUseReversibleForm() bool {
-	if o == nil || isNil(o.UseReversibleForm) {
+	if o == nil || IsNil(o.UseReversibleForm) {
 		var ret bool
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetUseReversibleForm() bool {
 // GetUseReversibleFormOk returns a tuple with the UseReversibleForm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetUseReversibleFormOk() (*bool, bool) {
-	if o == nil || isNil(o.UseReversibleForm) {
+	if o == nil || IsNil(o.UseReversibleForm) {
 		return nil, false
 	}
 	return o.UseReversibleForm, true
@@ -312,7 +315,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetUseReversibleFormOk() (*bool, 
 
 // HasUseReversibleForm returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasUseReversibleForm() bool {
-	if o != nil && !isNil(o.UseReversibleForm) {
+	if o != nil && !IsNil(o.UseReversibleForm) {
 		return true
 	}
 
@@ -326,7 +329,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetUseReversibleForm(v bool) {
 
 // GetSoftDeleteEntryAuditBehavior returns the SoftDeleteEntryAuditBehavior field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehavior() EnumlogPublisherSoftDeleteEntryAuditBehaviorProp {
-	if o == nil || isNil(o.SoftDeleteEntryAuditBehavior) {
+	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
 		var ret EnumlogPublisherSoftDeleteEntryAuditBehaviorProp
 		return ret
 	}
@@ -336,7 +339,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehavior()
 // GetSoftDeleteEntryAuditBehaviorOk returns a tuple with the SoftDeleteEntryAuditBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehaviorOk() (*EnumlogPublisherSoftDeleteEntryAuditBehaviorProp, bool) {
-	if o == nil || isNil(o.SoftDeleteEntryAuditBehavior) {
+	if o == nil || IsNil(o.SoftDeleteEntryAuditBehavior) {
 		return nil, false
 	}
 	return o.SoftDeleteEntryAuditBehavior, true
@@ -344,7 +347,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetSoftDeleteEntryAuditBehaviorOk
 
 // HasSoftDeleteEntryAuditBehavior returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasSoftDeleteEntryAuditBehavior() bool {
-	if o != nil && !isNil(o.SoftDeleteEntryAuditBehavior) {
+	if o != nil && !IsNil(o.SoftDeleteEntryAuditBehavior) {
 		return true
 	}
 
@@ -358,7 +361,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetSoftDeleteEntryAuditBehavior(v
 
 // GetIncludeOperationPurposeRequestControl returns the IncludeOperationPurposeRequestControl field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeOperationPurposeRequestControl() bool {
-	if o == nil || isNil(o.IncludeOperationPurposeRequestControl) {
+	if o == nil || IsNil(o.IncludeOperationPurposeRequestControl) {
 		var ret bool
 		return ret
 	}
@@ -368,7 +371,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeOperationPurposeRequest
 // GetIncludeOperationPurposeRequestControlOk returns a tuple with the IncludeOperationPurposeRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeOperationPurposeRequestControlOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeOperationPurposeRequestControl) {
+	if o == nil || IsNil(o.IncludeOperationPurposeRequestControl) {
 		return nil, false
 	}
 	return o.IncludeOperationPurposeRequestControl, true
@@ -376,7 +379,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeOperationPurposeRequest
 
 // HasIncludeOperationPurposeRequestControl returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeOperationPurposeRequestControl() bool {
-	if o != nil && !isNil(o.IncludeOperationPurposeRequestControl) {
+	if o != nil && !IsNil(o.IncludeOperationPurposeRequestControl) {
 		return true
 	}
 
@@ -390,7 +393,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeOperationPurposeRequest
 
 // GetIncludeIntermediateClientRequestControl returns the IncludeIntermediateClientRequestControl field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeIntermediateClientRequestControl() bool {
-	if o == nil || isNil(o.IncludeIntermediateClientRequestControl) {
+	if o == nil || IsNil(o.IncludeIntermediateClientRequestControl) {
 		var ret bool
 		return ret
 	}
@@ -400,7 +403,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeIntermediateClientReque
 // GetIncludeIntermediateClientRequestControlOk returns a tuple with the IncludeIntermediateClientRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeIntermediateClientRequestControlOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeIntermediateClientRequestControl) {
+	if o == nil || IsNil(o.IncludeIntermediateClientRequestControl) {
 		return nil, false
 	}
 	return o.IncludeIntermediateClientRequestControl, true
@@ -408,7 +411,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeIntermediateClientReque
 
 // HasIncludeIntermediateClientRequestControl returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeIntermediateClientRequestControl() bool {
-	if o != nil && !isNil(o.IncludeIntermediateClientRequestControl) {
+	if o != nil && !IsNil(o.IncludeIntermediateClientRequestControl) {
 		return true
 	}
 
@@ -422,7 +425,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeIntermediateClientReque
 
 // GetObscureAttribute returns the ObscureAttribute field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetObscureAttribute() []string {
-	if o == nil || isNil(o.ObscureAttribute) {
+	if o == nil || IsNil(o.ObscureAttribute) {
 		var ret []string
 		return ret
 	}
@@ -432,7 +435,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetObscureAttribute() []string {
 // GetObscureAttributeOk returns a tuple with the ObscureAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetObscureAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ObscureAttribute) {
+	if o == nil || IsNil(o.ObscureAttribute) {
 		return nil, false
 	}
 	return o.ObscureAttribute, true
@@ -440,7 +443,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetObscureAttributeOk() ([]string
 
 // HasObscureAttribute returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasObscureAttribute() bool {
-	if o != nil && !isNil(o.ObscureAttribute) {
+	if o != nil && !IsNil(o.ObscureAttribute) {
 		return true
 	}
 
@@ -454,7 +457,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetObscureAttribute(v []string) {
 
 // GetExcludeAttribute returns the ExcludeAttribute field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetExcludeAttribute() []string {
-	if o == nil || isNil(o.ExcludeAttribute) {
+	if o == nil || IsNil(o.ExcludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -464,7 +467,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetExcludeAttribute() []string {
 // GetExcludeAttributeOk returns a tuple with the ExcludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetExcludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeAttribute) {
+	if o == nil || IsNil(o.ExcludeAttribute) {
 		return nil, false
 	}
 	return o.ExcludeAttribute, true
@@ -472,7 +475,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetExcludeAttributeOk() ([]string
 
 // HasExcludeAttribute returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasExcludeAttribute() bool {
-	if o != nil && !isNil(o.ExcludeAttribute) {
+	if o != nil && !IsNil(o.ExcludeAttribute) {
 		return true
 	}
 
@@ -486,7 +489,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetExcludeAttribute(v []string) {
 
 // GetSuppressInternalOperations returns the SuppressInternalOperations field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressInternalOperations() bool {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -496,7 +499,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressInternalOperations() b
 // GetSuppressInternalOperationsOk returns a tuple with the SuppressInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		return nil, false
 	}
 	return o.SuppressInternalOperations, true
@@ -504,7 +507,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressInternalOperationsOk()
 
 // HasSuppressInternalOperations returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasSuppressInternalOperations() bool {
-	if o != nil && !isNil(o.SuppressInternalOperations) {
+	if o != nil && !IsNil(o.SuppressInternalOperations) {
 		return true
 	}
 
@@ -518,7 +521,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetSuppressInternalOperations(v b
 
 // GetIncludeProductName returns the IncludeProductName field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeProductName() bool {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		var ret bool
 		return ret
 	}
@@ -528,7 +531,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeProductName() bool {
 // GetIncludeProductNameOk returns a tuple with the IncludeProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeProductNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		return nil, false
 	}
 	return o.IncludeProductName, true
@@ -536,7 +539,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeProductNameOk() (*bool,
 
 // HasIncludeProductName returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeProductName() bool {
-	if o != nil && !isNil(o.IncludeProductName) {
+	if o != nil && !IsNil(o.IncludeProductName) {
 		return true
 	}
 
@@ -550,7 +553,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeProductName(v bool) {
 
 // GetIncludeInstanceName returns the IncludeInstanceName field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeInstanceName() bool {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		var ret bool
 		return ret
 	}
@@ -560,7 +563,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeInstanceName() bool {
 // GetIncludeInstanceNameOk returns a tuple with the IncludeInstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeInstanceNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		return nil, false
 	}
 	return o.IncludeInstanceName, true
@@ -568,7 +571,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeInstanceNameOk() (*bool
 
 // HasIncludeInstanceName returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeInstanceName() bool {
-	if o != nil && !isNil(o.IncludeInstanceName) {
+	if o != nil && !IsNil(o.IncludeInstanceName) {
 		return true
 	}
 
@@ -582,7 +585,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeInstanceName(v bool) {
 
 // GetIncludeStartupID returns the IncludeStartupID field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeStartupID() bool {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		var ret bool
 		return ret
 	}
@@ -592,7 +595,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeStartupID() bool {
 // GetIncludeStartupIDOk returns a tuple with the IncludeStartupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeStartupIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		return nil, false
 	}
 	return o.IncludeStartupID, true
@@ -600,7 +603,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeStartupIDOk() (*bool, b
 
 // HasIncludeStartupID returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeStartupID() bool {
-	if o != nil && !isNil(o.IncludeStartupID) {
+	if o != nil && !IsNil(o.IncludeStartupID) {
 		return true
 	}
 
@@ -614,7 +617,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeStartupID(v bool) {
 
 // GetIncludeThreadID returns the IncludeThreadID field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeThreadID() bool {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		var ret bool
 		return ret
 	}
@@ -624,7 +627,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeThreadID() bool {
 // GetIncludeThreadIDOk returns a tuple with the IncludeThreadID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		return nil, false
 	}
 	return o.IncludeThreadID, true
@@ -632,7 +635,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeThreadIDOk() (*bool, bo
 
 // HasIncludeThreadID returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeThreadID() bool {
-	if o != nil && !isNil(o.IncludeThreadID) {
+	if o != nil && !IsNil(o.IncludeThreadID) {
 		return true
 	}
 
@@ -646,7 +649,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeThreadID(v bool) {
 
 // GetIncludeRequesterDN returns the IncludeRequesterDN field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterDN() bool {
-	if o == nil || isNil(o.IncludeRequesterDN) {
+	if o == nil || IsNil(o.IncludeRequesterDN) {
 		var ret bool
 		return ret
 	}
@@ -656,7 +659,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterDN() bool {
 // GetIncludeRequesterDNOk returns a tuple with the IncludeRequesterDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterDNOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequesterDN) {
+	if o == nil || IsNil(o.IncludeRequesterDN) {
 		return nil, false
 	}
 	return o.IncludeRequesterDN, true
@@ -664,7 +667,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterDNOk() (*bool,
 
 // HasIncludeRequesterDN returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeRequesterDN() bool {
-	if o != nil && !isNil(o.IncludeRequesterDN) {
+	if o != nil && !IsNil(o.IncludeRequesterDN) {
 		return true
 	}
 
@@ -678,7 +681,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeRequesterDN(v bool) {
 
 // GetIncludeRequesterIPAddress returns the IncludeRequesterIPAddress field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterIPAddress() bool {
-	if o == nil || isNil(o.IncludeRequesterIPAddress) {
+	if o == nil || IsNil(o.IncludeRequesterIPAddress) {
 		var ret bool
 		return ret
 	}
@@ -688,7 +691,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterIPAddress() bo
 // GetIncludeRequesterIPAddressOk returns a tuple with the IncludeRequesterIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterIPAddressOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequesterIPAddress) {
+	if o == nil || IsNil(o.IncludeRequesterIPAddress) {
 		return nil, false
 	}
 	return o.IncludeRequesterIPAddress, true
@@ -696,7 +699,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequesterIPAddressOk() 
 
 // HasIncludeRequesterIPAddress returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeRequesterIPAddress() bool {
-	if o != nil && !isNil(o.IncludeRequesterIPAddress) {
+	if o != nil && !IsNil(o.IncludeRequesterIPAddress) {
 		return true
 	}
 
@@ -710,7 +713,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeRequesterIPAddress(v bo
 
 // GetIncludeRequestControls returns the IncludeRequestControls field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequestControls() bool {
-	if o == nil || isNil(o.IncludeRequestControls) {
+	if o == nil || IsNil(o.IncludeRequestControls) {
 		var ret bool
 		return ret
 	}
@@ -720,7 +723,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequestControls() bool 
 // GetIncludeRequestControlsOk returns a tuple with the IncludeRequestControls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequestControlsOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequestControls) {
+	if o == nil || IsNil(o.IncludeRequestControls) {
 		return nil, false
 	}
 	return o.IncludeRequestControls, true
@@ -728,7 +731,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeRequestControlsOk() (*b
 
 // HasIncludeRequestControls returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeRequestControls() bool {
-	if o != nil && !isNil(o.IncludeRequestControls) {
+	if o != nil && !IsNil(o.IncludeRequestControls) {
 		return true
 	}
 
@@ -742,7 +745,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeRequestControls(v bool)
 
 // GetIncludeResponseControls returns the IncludeResponseControls field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeResponseControls() bool {
-	if o == nil || isNil(o.IncludeResponseControls) {
+	if o == nil || IsNil(o.IncludeResponseControls) {
 		var ret bool
 		return ret
 	}
@@ -752,7 +755,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeResponseControls() bool
 // GetIncludeResponseControlsOk returns a tuple with the IncludeResponseControls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeResponseControlsOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeResponseControls) {
+	if o == nil || IsNil(o.IncludeResponseControls) {
 		return nil, false
 	}
 	return o.IncludeResponseControls, true
@@ -760,7 +763,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeResponseControlsOk() (*
 
 // HasIncludeResponseControls returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeResponseControls() bool {
-	if o != nil && !isNil(o.IncludeResponseControls) {
+	if o != nil && !IsNil(o.IncludeResponseControls) {
 		return true
 	}
 
@@ -774,7 +777,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeResponseControls(v bool
 
 // GetIncludeReplicationChangeID returns the IncludeReplicationChangeID field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeReplicationChangeID() bool {
-	if o == nil || isNil(o.IncludeReplicationChangeID) {
+	if o == nil || IsNil(o.IncludeReplicationChangeID) {
 		var ret bool
 		return ret
 	}
@@ -784,7 +787,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeReplicationChangeID() b
 // GetIncludeReplicationChangeIDOk returns a tuple with the IncludeReplicationChangeID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeReplicationChangeIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeReplicationChangeID) {
+	if o == nil || IsNil(o.IncludeReplicationChangeID) {
 		return nil, false
 	}
 	return o.IncludeReplicationChangeID, true
@@ -792,7 +795,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetIncludeReplicationChangeIDOk()
 
 // HasIncludeReplicationChangeID returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasIncludeReplicationChangeID() bool {
-	if o != nil && !isNil(o.IncludeReplicationChangeID) {
+	if o != nil && !IsNil(o.IncludeReplicationChangeID) {
 		return true
 	}
 
@@ -806,7 +809,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetIncludeReplicationChangeID(v b
 
 // GetLogSecurityNegotiation returns the LogSecurityNegotiation field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetLogSecurityNegotiation() bool {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		var ret bool
 		return ret
 	}
@@ -816,7 +819,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetLogSecurityNegotiation() bool 
 // GetLogSecurityNegotiationOk returns a tuple with the LogSecurityNegotiation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetLogSecurityNegotiationOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
@@ -824,7 +827,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetLogSecurityNegotiationOk() (*b
 
 // HasLogSecurityNegotiation returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasLogSecurityNegotiation() bool {
-	if o != nil && !isNil(o.LogSecurityNegotiation) {
+	if o != nil && !IsNil(o.LogSecurityNegotiation) {
 		return true
 	}
 
@@ -838,7 +841,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetLogSecurityNegotiation(v bool)
 
 // GetSuppressReplicationOperations returns the SuppressReplicationOperations field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressReplicationOperations() bool {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		var ret bool
 		return ret
 	}
@@ -848,7 +851,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressReplicationOperations(
 // GetSuppressReplicationOperationsOk returns a tuple with the SuppressReplicationOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressReplicationOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
@@ -856,7 +859,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetSuppressReplicationOperationsO
 
 // HasSuppressReplicationOperations returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasSuppressReplicationOperations() bool {
-	if o != nil && !isNil(o.SuppressReplicationOperations) {
+	if o != nil && !IsNil(o.SuppressReplicationOperations) {
 		return true
 	}
 
@@ -870,7 +873,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetSuppressReplicationOperations(
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -880,7 +883,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -888,7 +891,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetConnectionCriteriaOk() (*strin
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -902,7 +905,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -912,7 +915,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -920,7 +923,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetRequestCriteriaOk() (*string, 
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -934,7 +937,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetRequestCriteria(v string) {
 
 // GetResultCriteria returns the ResultCriteria field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetResultCriteria() string {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		var ret string
 		return ret
 	}
@@ -944,7 +947,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetResultCriteria() string {
 // GetResultCriteriaOk returns a tuple with the ResultCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetResultCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		return nil, false
 	}
 	return o.ResultCriteria, true
@@ -952,7 +955,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetResultCriteriaOk() (*string, b
 
 // HasResultCriteria returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasResultCriteria() bool {
-	if o != nil && !isNil(o.ResultCriteria) {
+	if o != nil && !IsNil(o.ResultCriteria) {
 		return true
 	}
 
@@ -966,7 +969,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetResultCriteria(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -976,7 +979,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -984,7 +987,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -998,7 +1001,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetDescription(v string) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -1008,7 +1011,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetLoggingErrorBehavior() Enumlog
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -1016,7 +1019,7 @@ func (o *ConsoleJsonAuditLogPublisherResponse) GetLoggingErrorBehaviorOk() (*Enu
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *ConsoleJsonAuditLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -1029,98 +1032,100 @@ func (o *ConsoleJsonAuditLogPublisherResponse) SetLoggingErrorBehavior(v Enumlog
 }
 
 func (o ConsoleJsonAuditLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.OutputLocation) {
-		toSerialize["outputLocation"] = o.OutputLocation
-	}
-	if !isNil(o.WriteMultiLineMessages) {
-		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
-	}
-	if !isNil(o.UseReversibleForm) {
-		toSerialize["useReversibleForm"] = o.UseReversibleForm
-	}
-	if !isNil(o.SoftDeleteEntryAuditBehavior) {
-		toSerialize["softDeleteEntryAuditBehavior"] = o.SoftDeleteEntryAuditBehavior
-	}
-	if !isNil(o.IncludeOperationPurposeRequestControl) {
-		toSerialize["includeOperationPurposeRequestControl"] = o.IncludeOperationPurposeRequestControl
-	}
-	if !isNil(o.IncludeIntermediateClientRequestControl) {
-		toSerialize["includeIntermediateClientRequestControl"] = o.IncludeIntermediateClientRequestControl
-	}
-	if !isNil(o.ObscureAttribute) {
-		toSerialize["obscureAttribute"] = o.ObscureAttribute
-	}
-	if !isNil(o.ExcludeAttribute) {
-		toSerialize["excludeAttribute"] = o.ExcludeAttribute
-	}
-	if !isNil(o.SuppressInternalOperations) {
-		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
-	}
-	if !isNil(o.IncludeProductName) {
-		toSerialize["includeProductName"] = o.IncludeProductName
-	}
-	if !isNil(o.IncludeInstanceName) {
-		toSerialize["includeInstanceName"] = o.IncludeInstanceName
-	}
-	if !isNil(o.IncludeStartupID) {
-		toSerialize["includeStartupID"] = o.IncludeStartupID
-	}
-	if !isNil(o.IncludeThreadID) {
-		toSerialize["includeThreadID"] = o.IncludeThreadID
-	}
-	if !isNil(o.IncludeRequesterDN) {
-		toSerialize["includeRequesterDN"] = o.IncludeRequesterDN
-	}
-	if !isNil(o.IncludeRequesterIPAddress) {
-		toSerialize["includeRequesterIPAddress"] = o.IncludeRequesterIPAddress
-	}
-	if !isNil(o.IncludeRequestControls) {
-		toSerialize["includeRequestControls"] = o.IncludeRequestControls
-	}
-	if !isNil(o.IncludeResponseControls) {
-		toSerialize["includeResponseControls"] = o.IncludeResponseControls
-	}
-	if !isNil(o.IncludeReplicationChangeID) {
-		toSerialize["includeReplicationChangeID"] = o.IncludeReplicationChangeID
-	}
-	if !isNil(o.LogSecurityNegotiation) {
-		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
-	}
-	if !isNil(o.SuppressReplicationOperations) {
-		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCriteria) {
-		toSerialize["resultCriteria"] = o.ResultCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConsoleJsonAuditLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.OutputLocation) {
+		toSerialize["outputLocation"] = o.OutputLocation
+	}
+	if !IsNil(o.WriteMultiLineMessages) {
+		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
+	}
+	if !IsNil(o.UseReversibleForm) {
+		toSerialize["useReversibleForm"] = o.UseReversibleForm
+	}
+	if !IsNil(o.SoftDeleteEntryAuditBehavior) {
+		toSerialize["softDeleteEntryAuditBehavior"] = o.SoftDeleteEntryAuditBehavior
+	}
+	if !IsNil(o.IncludeOperationPurposeRequestControl) {
+		toSerialize["includeOperationPurposeRequestControl"] = o.IncludeOperationPurposeRequestControl
+	}
+	if !IsNil(o.IncludeIntermediateClientRequestControl) {
+		toSerialize["includeIntermediateClientRequestControl"] = o.IncludeIntermediateClientRequestControl
+	}
+	if !IsNil(o.ObscureAttribute) {
+		toSerialize["obscureAttribute"] = o.ObscureAttribute
+	}
+	if !IsNil(o.ExcludeAttribute) {
+		toSerialize["excludeAttribute"] = o.ExcludeAttribute
+	}
+	if !IsNil(o.SuppressInternalOperations) {
+		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
+	}
+	if !IsNil(o.IncludeProductName) {
+		toSerialize["includeProductName"] = o.IncludeProductName
+	}
+	if !IsNil(o.IncludeInstanceName) {
+		toSerialize["includeInstanceName"] = o.IncludeInstanceName
+	}
+	if !IsNil(o.IncludeStartupID) {
+		toSerialize["includeStartupID"] = o.IncludeStartupID
+	}
+	if !IsNil(o.IncludeThreadID) {
+		toSerialize["includeThreadID"] = o.IncludeThreadID
+	}
+	if !IsNil(o.IncludeRequesterDN) {
+		toSerialize["includeRequesterDN"] = o.IncludeRequesterDN
+	}
+	if !IsNil(o.IncludeRequesterIPAddress) {
+		toSerialize["includeRequesterIPAddress"] = o.IncludeRequesterIPAddress
+	}
+	if !IsNil(o.IncludeRequestControls) {
+		toSerialize["includeRequestControls"] = o.IncludeRequestControls
+	}
+	if !IsNil(o.IncludeResponseControls) {
+		toSerialize["includeResponseControls"] = o.IncludeResponseControls
+	}
+	if !IsNil(o.IncludeReplicationChangeID) {
+		toSerialize["includeReplicationChangeID"] = o.IncludeReplicationChangeID
+	}
+	if !IsNil(o.LogSecurityNegotiation) {
+		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
+	}
+	if !IsNil(o.SuppressReplicationOperations) {
+		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCriteria) {
+		toSerialize["resultCriteria"] = o.ResultCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableConsoleJsonAuditLogPublisherResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLdapExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLdapExternalServerRequest{}
+
 // AddLdapExternalServerRequest struct for AddLdapExternalServerRequest
 type AddLdapExternalServerRequest struct {
 	// Name of the new External Server
@@ -153,7 +156,7 @@ func (o *AddLdapExternalServerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -163,7 +166,7 @@ func (o *AddLdapExternalServerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -171,7 +174,7 @@ func (o *AddLdapExternalServerRequest) GetServerPortOk() (*int32, bool) {
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *AddLdapExternalServerRequest) SetServerPort(v int32) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetLocation() string {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret string
 		return ret
 	}
@@ -195,7 +198,7 @@ func (o *AddLdapExternalServerRequest) GetLocation() string {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetLocationOk() (*string, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -203,7 +206,7 @@ func (o *AddLdapExternalServerRequest) GetLocationOk() (*string, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -217,7 +220,7 @@ func (o *AddLdapExternalServerRequest) SetLocation(v string) {
 
 // GetBindDN returns the BindDN field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetBindDN() string {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		var ret string
 		return ret
 	}
@@ -227,7 +230,7 @@ func (o *AddLdapExternalServerRequest) GetBindDN() string {
 // GetBindDNOk returns a tuple with the BindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		return nil, false
 	}
 	return o.BindDN, true
@@ -235,7 +238,7 @@ func (o *AddLdapExternalServerRequest) GetBindDNOk() (*string, bool) {
 
 // HasBindDN returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasBindDN() bool {
-	if o != nil && !isNil(o.BindDN) {
+	if o != nil && !IsNil(o.BindDN) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *AddLdapExternalServerRequest) SetBindDN(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -259,7 +262,7 @@ func (o *AddLdapExternalServerRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -267,7 +270,7 @@ func (o *AddLdapExternalServerRequest) GetPasswordOk() (*string, bool) {
 
 // HasPassword returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -281,7 +284,7 @@ func (o *AddLdapExternalServerRequest) SetPassword(v string) {
 
 // GetPassphraseProvider returns the PassphraseProvider field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetPassphraseProvider() string {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -291,7 +294,7 @@ func (o *AddLdapExternalServerRequest) GetPassphraseProvider() string {
 // GetPassphraseProviderOk returns a tuple with the PassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		return nil, false
 	}
 	return o.PassphraseProvider, true
@@ -299,7 +302,7 @@ func (o *AddLdapExternalServerRequest) GetPassphraseProviderOk() (*string, bool)
 
 // HasPassphraseProvider returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasPassphraseProvider() bool {
-	if o != nil && !isNil(o.PassphraseProvider) {
+	if o != nil && !IsNil(o.PassphraseProvider) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *AddLdapExternalServerRequest) SetPassphraseProvider(v string) {
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		var ret EnumexternalServerConnectionSecurityProp
 		return ret
 	}
@@ -323,7 +326,7 @@ func (o *AddLdapExternalServerRequest) GetConnectionSecurity() EnumexternalServe
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
 	return o.ConnectionSecurity, true
@@ -331,7 +334,7 @@ func (o *AddLdapExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalS
 
 // HasConnectionSecurity returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasConnectionSecurity() bool {
-	if o != nil && !isNil(o.ConnectionSecurity) {
+	if o != nil && !IsNil(o.ConnectionSecurity) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *AddLdapExternalServerRequest) SetConnectionSecurity(v EnumexternalServe
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		var ret EnumexternalServerAuthenticationMethodProp
 		return ret
 	}
@@ -355,7 +358,7 @@ func (o *AddLdapExternalServerRequest) GetAuthenticationMethod() EnumexternalSer
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		return nil, false
 	}
 	return o.AuthenticationMethod, true
@@ -363,7 +366,7 @@ func (o *AddLdapExternalServerRequest) GetAuthenticationMethodOk() (*Enumexterna
 
 // HasAuthenticationMethod returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasAuthenticationMethod() bool {
-	if o != nil && !isNil(o.AuthenticationMethod) {
+	if o != nil && !IsNil(o.AuthenticationMethod) {
 		return true
 	}
 
@@ -377,7 +380,7 @@ func (o *AddLdapExternalServerRequest) SetAuthenticationMethod(v EnumexternalSer
 
 // GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp {
-	if o == nil || isNil(o.VerifyCredentialsMethod) {
+	if o == nil || IsNil(o.VerifyCredentialsMethod) {
 		var ret EnumexternalServerVerifyCredentialsMethodProp
 		return ret
 	}
@@ -387,7 +390,7 @@ func (o *AddLdapExternalServerRequest) GetVerifyCredentialsMethod() Enumexternal
 // GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
-	if o == nil || isNil(o.VerifyCredentialsMethod) {
+	if o == nil || IsNil(o.VerifyCredentialsMethod) {
 		return nil, false
 	}
 	return o.VerifyCredentialsMethod, true
@@ -395,7 +398,7 @@ func (o *AddLdapExternalServerRequest) GetVerifyCredentialsMethodOk() (*Enumexte
 
 // HasVerifyCredentialsMethod returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasVerifyCredentialsMethod() bool {
-	if o != nil && !isNil(o.VerifyCredentialsMethod) {
+	if o != nil && !IsNil(o.VerifyCredentialsMethod) {
 		return true
 	}
 
@@ -409,7 +412,7 @@ func (o *AddLdapExternalServerRequest) SetVerifyCredentialsMethod(v Enumexternal
 
 // GetHealthCheckConnectTimeout returns the HealthCheckConnectTimeout field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetHealthCheckConnectTimeout() string {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -419,7 +422,7 @@ func (o *AddLdapExternalServerRequest) GetHealthCheckConnectTimeout() string {
 // GetHealthCheckConnectTimeoutOk returns a tuple with the HealthCheckConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetHealthCheckConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
@@ -427,7 +430,7 @@ func (o *AddLdapExternalServerRequest) GetHealthCheckConnectTimeoutOk() (*string
 
 // HasHealthCheckConnectTimeout returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasHealthCheckConnectTimeout() bool {
-	if o != nil && !isNil(o.HealthCheckConnectTimeout) {
+	if o != nil && !IsNil(o.HealthCheckConnectTimeout) {
 		return true
 	}
 
@@ -441,7 +444,7 @@ func (o *AddLdapExternalServerRequest) SetHealthCheckConnectTimeout(v string) {
 
 // GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
@@ -451,7 +454,7 @@ func (o *AddLdapExternalServerRequest) GetMaxConnectionAge() string {
 // GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		return nil, false
 	}
 	return o.MaxConnectionAge, true
@@ -459,7 +462,7 @@ func (o *AddLdapExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
 
 // HasMaxConnectionAge returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasMaxConnectionAge() bool {
-	if o != nil && !isNil(o.MaxConnectionAge) {
+	if o != nil && !IsNil(o.MaxConnectionAge) {
 		return true
 	}
 
@@ -473,7 +476,7 @@ func (o *AddLdapExternalServerRequest) SetMaxConnectionAge(v string) {
 
 // GetMinExpiredConnectionDisconnectInterval returns the MinExpiredConnectionDisconnectInterval field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetMinExpiredConnectionDisconnectInterval() string {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		var ret string
 		return ret
 	}
@@ -483,7 +486,7 @@ func (o *AddLdapExternalServerRequest) GetMinExpiredConnectionDisconnectInterval
 // GetMinExpiredConnectionDisconnectIntervalOk returns a tuple with the MinExpiredConnectionDisconnectInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
@@ -491,7 +494,7 @@ func (o *AddLdapExternalServerRequest) GetMinExpiredConnectionDisconnectInterval
 
 // HasMinExpiredConnectionDisconnectInterval returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasMinExpiredConnectionDisconnectInterval() bool {
-	if o != nil && !isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o != nil && !IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return true
 	}
 
@@ -505,7 +508,7 @@ func (o *AddLdapExternalServerRequest) SetMinExpiredConnectionDisconnectInterval
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -515,7 +518,7 @@ func (o *AddLdapExternalServerRequest) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -523,7 +526,7 @@ func (o *AddLdapExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -537,7 +540,7 @@ func (o *AddLdapExternalServerRequest) SetConnectTimeout(v string) {
 
 // GetMaxResponseSize returns the MaxResponseSize field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetMaxResponseSize() string {
-	if o == nil || isNil(o.MaxResponseSize) {
+	if o == nil || IsNil(o.MaxResponseSize) {
 		var ret string
 		return ret
 	}
@@ -547,7 +550,7 @@ func (o *AddLdapExternalServerRequest) GetMaxResponseSize() string {
 // GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxResponseSize) {
+	if o == nil || IsNil(o.MaxResponseSize) {
 		return nil, false
 	}
 	return o.MaxResponseSize, true
@@ -555,7 +558,7 @@ func (o *AddLdapExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
 
 // HasMaxResponseSize returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasMaxResponseSize() bool {
-	if o != nil && !isNil(o.MaxResponseSize) {
+	if o != nil && !IsNil(o.MaxResponseSize) {
 		return true
 	}
 
@@ -569,7 +572,7 @@ func (o *AddLdapExternalServerRequest) SetMaxResponseSize(v string) {
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -579,7 +582,7 @@ func (o *AddLdapExternalServerRequest) GetKeyManagerProvider() string {
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -587,7 +590,7 @@ func (o *AddLdapExternalServerRequest) GetKeyManagerProviderOk() (*string, bool)
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -601,7 +604,7 @@ func (o *AddLdapExternalServerRequest) SetKeyManagerProvider(v string) {
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -611,7 +614,7 @@ func (o *AddLdapExternalServerRequest) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -619,7 +622,7 @@ func (o *AddLdapExternalServerRequest) GetTrustManagerProviderOk() (*string, boo
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -633,7 +636,7 @@ func (o *AddLdapExternalServerRequest) SetTrustManagerProvider(v string) {
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetInitialConnections() int32 {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		var ret int32
 		return ret
 	}
@@ -643,7 +646,7 @@ func (o *AddLdapExternalServerRequest) GetInitialConnections() int32 {
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
 	return o.InitialConnections, true
@@ -651,7 +654,7 @@ func (o *AddLdapExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) 
 
 // HasInitialConnections returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasInitialConnections() bool {
-	if o != nil && !isNil(o.InitialConnections) {
+	if o != nil && !IsNil(o.InitialConnections) {
 		return true
 	}
 
@@ -665,7 +668,7 @@ func (o *AddLdapExternalServerRequest) SetInitialConnections(v int32) {
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetMaxConnections() int32 {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		var ret int32
 		return ret
 	}
@@ -675,7 +678,7 @@ func (o *AddLdapExternalServerRequest) GetMaxConnections() int32 {
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
 	return o.MaxConnections, true
@@ -683,7 +686,7 @@ func (o *AddLdapExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
 
 // HasMaxConnections returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasMaxConnections() bool {
-	if o != nil && !isNil(o.MaxConnections) {
+	if o != nil && !IsNil(o.MaxConnections) {
 		return true
 	}
 
@@ -697,7 +700,7 @@ func (o *AddLdapExternalServerRequest) SetMaxConnections(v int32) {
 
 // GetDefunctConnectionResultCode returns the DefunctConnectionResultCode field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetDefunctConnectionResultCode() []EnumexternalServerDefunctConnectionResultCodeProp {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		var ret []EnumexternalServerDefunctConnectionResultCodeProp
 		return ret
 	}
@@ -707,7 +710,7 @@ func (o *AddLdapExternalServerRequest) GetDefunctConnectionResultCode() []Enumex
 // GetDefunctConnectionResultCodeOk returns a tuple with the DefunctConnectionResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
@@ -715,7 +718,7 @@ func (o *AddLdapExternalServerRequest) GetDefunctConnectionResultCodeOk() ([]Enu
 
 // HasDefunctConnectionResultCode returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasDefunctConnectionResultCode() bool {
-	if o != nil && !isNil(o.DefunctConnectionResultCode) {
+	if o != nil && !IsNil(o.DefunctConnectionResultCode) {
 		return true
 	}
 
@@ -729,7 +732,7 @@ func (o *AddLdapExternalServerRequest) SetDefunctConnectionResultCode(v []Enumex
 
 // GetAbandonOnTimeout returns the AbandonOnTimeout field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetAbandonOnTimeout() bool {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		var ret bool
 		return ret
 	}
@@ -739,7 +742,7 @@ func (o *AddLdapExternalServerRequest) GetAbandonOnTimeout() bool {
 // GetAbandonOnTimeoutOk returns a tuple with the AbandonOnTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetAbandonOnTimeoutOk() (*bool, bool) {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		return nil, false
 	}
 	return o.AbandonOnTimeout, true
@@ -747,7 +750,7 @@ func (o *AddLdapExternalServerRequest) GetAbandonOnTimeoutOk() (*bool, bool) {
 
 // HasAbandonOnTimeout returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasAbandonOnTimeout() bool {
-	if o != nil && !isNil(o.AbandonOnTimeout) {
+	if o != nil && !IsNil(o.AbandonOnTimeout) {
 		return true
 	}
 
@@ -761,7 +764,7 @@ func (o *AddLdapExternalServerRequest) SetAbandonOnTimeout(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLdapExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -771,7 +774,7 @@ func (o *AddLdapExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdapExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -779,7 +782,7 @@ func (o *AddLdapExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLdapExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -792,77 +795,79 @@ func (o *AddLdapExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddLdapExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.Location) {
-		toSerialize["location"] = o.Location
-	}
-	if !isNil(o.BindDN) {
-		toSerialize["bindDN"] = o.BindDN
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.PassphraseProvider) {
-		toSerialize["passphraseProvider"] = o.PassphraseProvider
-	}
-	if !isNil(o.ConnectionSecurity) {
-		toSerialize["connectionSecurity"] = o.ConnectionSecurity
-	}
-	if !isNil(o.AuthenticationMethod) {
-		toSerialize["authenticationMethod"] = o.AuthenticationMethod
-	}
-	if !isNil(o.VerifyCredentialsMethod) {
-		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
-	}
-	if !isNil(o.HealthCheckConnectTimeout) {
-		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
-	}
-	if !isNil(o.MaxConnectionAge) {
-		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
-	}
-	if !isNil(o.MinExpiredConnectionDisconnectInterval) {
-		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.MaxResponseSize) {
-		toSerialize["maxResponseSize"] = o.MaxResponseSize
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.InitialConnections) {
-		toSerialize["initialConnections"] = o.InitialConnections
-	}
-	if !isNil(o.MaxConnections) {
-		toSerialize["maxConnections"] = o.MaxConnections
-	}
-	if !isNil(o.DefunctConnectionResultCode) {
-		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
-	}
-	if !isNil(o.AbandonOnTimeout) {
-		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLdapExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["serverHostName"] = o.ServerHostName
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.BindDN) {
+		toSerialize["bindDN"] = o.BindDN
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PassphraseProvider) {
+		toSerialize["passphraseProvider"] = o.PassphraseProvider
+	}
+	if !IsNil(o.ConnectionSecurity) {
+		toSerialize["connectionSecurity"] = o.ConnectionSecurity
+	}
+	if !IsNil(o.AuthenticationMethod) {
+		toSerialize["authenticationMethod"] = o.AuthenticationMethod
+	}
+	if !IsNil(o.VerifyCredentialsMethod) {
+		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
+	}
+	if !IsNil(o.HealthCheckConnectTimeout) {
+		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
+	}
+	if !IsNil(o.MaxConnectionAge) {
+		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
+	}
+	if !IsNil(o.MinExpiredConnectionDisconnectInterval) {
+		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
+	}
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.MaxResponseSize) {
+		toSerialize["maxResponseSize"] = o.MaxResponseSize
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.InitialConnections) {
+		toSerialize["initialConnections"] = o.InitialConnections
+	}
+	if !IsNil(o.MaxConnections) {
+		toSerialize["maxConnections"] = o.MaxConnections
+	}
+	if !IsNil(o.DefunctConnectionResultCode) {
+		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
+	}
+	if !IsNil(o.AbandonOnTimeout) {
+		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLdapExternalServerRequest struct {

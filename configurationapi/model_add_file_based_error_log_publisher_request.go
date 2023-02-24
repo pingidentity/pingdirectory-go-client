@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddFileBasedErrorLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddFileBasedErrorLogPublisherRequest{}
+
 // AddFileBasedErrorLogPublisherRequest struct for AddFileBasedErrorLogPublisherRequest
 type AddFileBasedErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -164,7 +167,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetLogFile(v string) {
 
 // GetLogFilePermissions returns the LogFilePermissions field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetLogFilePermissions() string {
-	if o == nil || isNil(o.LogFilePermissions) {
+	if o == nil || IsNil(o.LogFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetLogFilePermissions() string {
 // GetLogFilePermissionsOk returns a tuple with the LogFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetLogFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.LogFilePermissions) {
+	if o == nil || IsNil(o.LogFilePermissions) {
 		return nil, false
 	}
 	return o.LogFilePermissions, true
@@ -182,7 +185,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetLogFilePermissionsOk() (*strin
 
 // HasLogFilePermissions returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasLogFilePermissions() bool {
-	if o != nil && !isNil(o.LogFilePermissions) {
+	if o != nil && !IsNil(o.LogFilePermissions) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetLogFilePermissions(v string) {
 
 // GetRotationPolicy returns the RotationPolicy field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetRotationPolicy() []string {
-	if o == nil || isNil(o.RotationPolicy) {
+	if o == nil || IsNil(o.RotationPolicy) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetRotationPolicy() []string {
 // GetRotationPolicyOk returns a tuple with the RotationPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetRotationPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationPolicy) {
+	if o == nil || IsNil(o.RotationPolicy) {
 		return nil, false
 	}
 	return o.RotationPolicy, true
@@ -214,7 +217,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetRotationPolicyOk() ([]string, 
 
 // HasRotationPolicy returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasRotationPolicy() bool {
-	if o != nil && !isNil(o.RotationPolicy) {
+	if o != nil && !IsNil(o.RotationPolicy) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetRotationPolicy(v []string) {
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetRotationListener() []string {
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -246,7 +249,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetRotationListenerOk() ([]string
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetRotationListener(v []string) {
 
 // GetRetentionPolicy returns the RetentionPolicy field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetRetentionPolicy() []string {
-	if o == nil || isNil(o.RetentionPolicy) {
+	if o == nil || IsNil(o.RetentionPolicy) {
 		var ret []string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetRetentionPolicy() []string {
 // GetRetentionPolicyOk returns a tuple with the RetentionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetRetentionPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.RetentionPolicy) {
+	if o == nil || IsNil(o.RetentionPolicy) {
 		return nil, false
 	}
 	return o.RetentionPolicy, true
@@ -278,7 +281,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetRetentionPolicyOk() ([]string,
 
 // HasRetentionPolicy returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasRetentionPolicy() bool {
-	if o != nil && !isNil(o.RetentionPolicy) {
+	if o != nil && !IsNil(o.RetentionPolicy) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetRetentionPolicy(v []string) {
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetCompressionMechanism() EnumlogPublisherCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumlogPublisherCompressionMechanismProp
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetCompressionMechanism() Enumlog
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -310,7 +313,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetCompressionMechanismOk() (*Enu
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetCompressionMechanism(v Enumlog
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -342,7 +345,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetSignLogOk() (*bool, bool) {
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -366,7 +369,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptLog() bool {
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -374,7 +377,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptLogOk() (*bool, bool) {
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetEncryptLog(v bool) {
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptionSettingsDefinitionID
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -406,7 +409,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetEncryptionSettingsDefinitionID
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -420,7 +423,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetEncryptionSettingsDefinitionID
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -430,7 +433,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -438,7 +441,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetAppendOk() (*bool, bool) {
 
 // HasAppend returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -452,7 +455,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetAppend(v bool) {
 
 // GetIncludeProductName returns the IncludeProductName field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeProductName() bool {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		var ret bool
 		return ret
 	}
@@ -462,7 +465,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeProductName() bool {
 // GetIncludeProductNameOk returns a tuple with the IncludeProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeProductNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		return nil, false
 	}
 	return o.IncludeProductName, true
@@ -470,7 +473,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeProductNameOk() (*bool,
 
 // HasIncludeProductName returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasIncludeProductName() bool {
-	if o != nil && !isNil(o.IncludeProductName) {
+	if o != nil && !IsNil(o.IncludeProductName) {
 		return true
 	}
 
@@ -484,7 +487,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetIncludeProductName(v bool) {
 
 // GetIncludeInstanceName returns the IncludeInstanceName field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeInstanceName() bool {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		var ret bool
 		return ret
 	}
@@ -494,7 +497,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeInstanceName() bool {
 // GetIncludeInstanceNameOk returns a tuple with the IncludeInstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeInstanceNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		return nil, false
 	}
 	return o.IncludeInstanceName, true
@@ -502,7 +505,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeInstanceNameOk() (*bool
 
 // HasIncludeInstanceName returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasIncludeInstanceName() bool {
-	if o != nil && !isNil(o.IncludeInstanceName) {
+	if o != nil && !IsNil(o.IncludeInstanceName) {
 		return true
 	}
 
@@ -516,7 +519,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetIncludeInstanceName(v bool) {
 
 // GetIncludeStartupID returns the IncludeStartupID field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeStartupID() bool {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		var ret bool
 		return ret
 	}
@@ -526,7 +529,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeStartupID() bool {
 // GetIncludeStartupIDOk returns a tuple with the IncludeStartupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeStartupIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		return nil, false
 	}
 	return o.IncludeStartupID, true
@@ -534,7 +537,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeStartupIDOk() (*bool, b
 
 // HasIncludeStartupID returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasIncludeStartupID() bool {
-	if o != nil && !isNil(o.IncludeStartupID) {
+	if o != nil && !IsNil(o.IncludeStartupID) {
 		return true
 	}
 
@@ -548,7 +551,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetIncludeStartupID(v bool) {
 
 // GetIncludeThreadID returns the IncludeThreadID field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeThreadID() bool {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		var ret bool
 		return ret
 	}
@@ -558,7 +561,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeThreadID() bool {
 // GetIncludeThreadIDOk returns a tuple with the IncludeThreadID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeThreadIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		return nil, false
 	}
 	return o.IncludeThreadID, true
@@ -566,7 +569,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetIncludeThreadIDOk() (*bool, bo
 
 // HasIncludeThreadID returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasIncludeThreadID() bool {
-	if o != nil && !isNil(o.IncludeThreadID) {
+	if o != nil && !IsNil(o.IncludeThreadID) {
 		return true
 	}
 
@@ -580,7 +583,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetIncludeThreadID(v bool) {
 
 // GetGenerifyMessageStringsWhenPossible returns the GenerifyMessageStringsWhenPossible field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPossible() bool {
-	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
+	if o == nil || IsNil(o.GenerifyMessageStringsWhenPossible) {
 		var ret bool
 		return ret
 	}
@@ -590,7 +593,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPoss
 // GetGenerifyMessageStringsWhenPossibleOk returns a tuple with the GenerifyMessageStringsWhenPossible field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPossibleOk() (*bool, bool) {
-	if o == nil || isNil(o.GenerifyMessageStringsWhenPossible) {
+	if o == nil || IsNil(o.GenerifyMessageStringsWhenPossible) {
 		return nil, false
 	}
 	return o.GenerifyMessageStringsWhenPossible, true
@@ -598,7 +601,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetGenerifyMessageStringsWhenPoss
 
 // HasGenerifyMessageStringsWhenPossible returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasGenerifyMessageStringsWhenPossible() bool {
-	if o != nil && !isNil(o.GenerifyMessageStringsWhenPossible) {
+	if o != nil && !IsNil(o.GenerifyMessageStringsWhenPossible) {
 		return true
 	}
 
@@ -612,7 +615,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetGenerifyMessageStringsWhenPoss
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -622,7 +625,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetAsynchronous() bool {
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -630,7 +633,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetAsynchronousOk() (*bool, bool)
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -644,7 +647,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetAsynchronous(v bool) {
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -654,7 +657,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetAutoFlush() bool {
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -662,7 +665,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetAutoFlushOk() (*bool, bool) {
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -676,7 +679,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetAutoFlush(v bool) {
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -686,7 +689,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetBufferSize() string {
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -694,7 +697,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetBufferSizeOk() (*string, bool)
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -708,7 +711,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetBufferSize(v string) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -718,7 +721,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -726,7 +729,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -740,7 +743,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetQueueSize(v int32) {
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -750,7 +753,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetTimeInterval() string {
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -758,7 +761,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetTimeIntervalOk() (*string, boo
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -772,7 +775,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetTimeInterval(v string) {
 
 // GetTimestampPrecision returns the TimestampPrecision field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetTimestampPrecision() EnumlogPublisherTimestampPrecisionProp {
-	if o == nil || isNil(o.TimestampPrecision) {
+	if o == nil || IsNil(o.TimestampPrecision) {
 		var ret EnumlogPublisherTimestampPrecisionProp
 		return ret
 	}
@@ -782,7 +785,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetTimestampPrecision() EnumlogPu
 // GetTimestampPrecisionOk returns a tuple with the TimestampPrecision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetTimestampPrecisionOk() (*EnumlogPublisherTimestampPrecisionProp, bool) {
-	if o == nil || isNil(o.TimestampPrecision) {
+	if o == nil || IsNil(o.TimestampPrecision) {
 		return nil, false
 	}
 	return o.TimestampPrecision, true
@@ -790,7 +793,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetTimestampPrecisionOk() (*Enuml
 
 // HasTimestampPrecision returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasTimestampPrecision() bool {
-	if o != nil && !isNil(o.TimestampPrecision) {
+	if o != nil && !IsNil(o.TimestampPrecision) {
 		return true
 	}
 
@@ -804,7 +807,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetTimestampPrecision(v EnumlogPu
 
 // GetDefaultSeverity returns the DefaultSeverity field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPublisherDefaultSeverityProp {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		var ret []EnumlogPublisherDefaultSeverityProp
 		return ret
 	}
@@ -814,7 +817,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPub
 // GetDefaultSeverityOk returns a tuple with the DefaultSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		return nil, false
 	}
 	return o.DefaultSeverity, true
@@ -822,7 +825,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]Enumlog
 
 // HasDefaultSeverity returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasDefaultSeverity() bool {
-	if o != nil && !isNil(o.DefaultSeverity) {
+	if o != nil && !IsNil(o.DefaultSeverity) {
 		return true
 	}
 
@@ -836,7 +839,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetDefaultSeverity(v []EnumlogPub
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetOverrideSeverity() []string {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret []string
 		return ret
 	}
@@ -846,7 +849,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetOverrideSeverity() []string {
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -854,7 +857,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -868,7 +871,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetOverrideSeverity(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -878,7 +881,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -886,7 +889,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -924,7 +927,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddFileBasedErrorLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -934,7 +937,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetLoggingErrorBehavior() Enumlog
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -942,7 +945,7 @@ func (o *AddFileBasedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*Enu
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddFileBasedErrorLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -955,92 +958,92 @@ func (o *AddFileBasedErrorLogPublisherRequest) SetLoggingErrorBehavior(v Enumlog
 }
 
 func (o AddFileBasedErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if !isNil(o.LogFilePermissions) {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if !isNil(o.RotationPolicy) {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if !isNil(o.RetentionPolicy) {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if !isNil(o.IncludeProductName) {
-		toSerialize["includeProductName"] = o.IncludeProductName
-	}
-	if !isNil(o.IncludeInstanceName) {
-		toSerialize["includeInstanceName"] = o.IncludeInstanceName
-	}
-	if !isNil(o.IncludeStartupID) {
-		toSerialize["includeStartupID"] = o.IncludeStartupID
-	}
-	if !isNil(o.IncludeThreadID) {
-		toSerialize["includeThreadID"] = o.IncludeThreadID
-	}
-	if !isNil(o.GenerifyMessageStringsWhenPossible) {
-		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if !isNil(o.TimestampPrecision) {
-		toSerialize["timestampPrecision"] = o.TimestampPrecision
-	}
-	if !isNil(o.DefaultSeverity) {
-		toSerialize["defaultSeverity"] = o.DefaultSeverity
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddFileBasedErrorLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["logFile"] = o.LogFile
+	if !IsNil(o.LogFilePermissions) {
+		toSerialize["logFilePermissions"] = o.LogFilePermissions
+	}
+	if !IsNil(o.RotationPolicy) {
+		toSerialize["rotationPolicy"] = o.RotationPolicy
+	}
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	if !IsNil(o.RetentionPolicy) {
+		toSerialize["retentionPolicy"] = o.RetentionPolicy
+	}
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	if !IsNil(o.IncludeProductName) {
+		toSerialize["includeProductName"] = o.IncludeProductName
+	}
+	if !IsNil(o.IncludeInstanceName) {
+		toSerialize["includeInstanceName"] = o.IncludeInstanceName
+	}
+	if !IsNil(o.IncludeStartupID) {
+		toSerialize["includeStartupID"] = o.IncludeStartupID
+	}
+	if !IsNil(o.IncludeThreadID) {
+		toSerialize["includeThreadID"] = o.IncludeThreadID
+	}
+	if !IsNil(o.GenerifyMessageStringsWhenPossible) {
+		toSerialize["generifyMessageStringsWhenPossible"] = o.GenerifyMessageStringsWhenPossible
+	}
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	if !IsNil(o.TimestampPrecision) {
+		toSerialize["timestampPrecision"] = o.TimestampPrecision
+	}
+	if !IsNil(o.DefaultSeverity) {
+		toSerialize["defaultSeverity"] = o.DefaultSeverity
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddFileBasedErrorLogPublisherRequest struct {

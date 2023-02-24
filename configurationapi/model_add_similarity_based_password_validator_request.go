@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSimilarityBasedPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSimilarityBasedPasswordValidatorRequest{}
+
 // AddSimilarityBasedPasswordValidatorRequest struct for AddSimilarityBasedPasswordValidatorRequest
 type AddSimilarityBasedPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -126,7 +129,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) SetMinPasswordDifference(v 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -144,7 +147,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorRequirementDesc
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -200,7 +203,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorRequirementDesc
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) SetValidatorRequirementDesc
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -224,7 +227,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorFailureMessage(
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -232,7 +235,7 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) GetValidatorFailureMessageO
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddSimilarityBasedPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -245,29 +248,29 @@ func (o *AddSimilarityBasedPasswordValidatorRequest) SetValidatorFailureMessage(
 }
 
 func (o AddSimilarityBasedPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["minPasswordDifference"] = o.MinPasswordDifference
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSimilarityBasedPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["minPasswordDifference"] = o.MinPasswordDifference
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSimilarityBasedPasswordValidatorRequest struct {

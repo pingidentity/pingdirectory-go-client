@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CopyLogFileRotationListenerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CopyLogFileRotationListenerResponse{}
+
 // CopyLogFileRotationListenerResponse struct for CopyLogFileRotationListenerResponse
 type CopyLogFileRotationListenerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -54,7 +57,7 @@ func NewCopyLogFileRotationListenerResponseWithDefaults() *CopyLogFileRotationLi
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *CopyLogFileRotationListenerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -64,7 +67,7 @@ func (o *CopyLogFileRotationListenerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -72,7 +75,7 @@ func (o *CopyLogFileRotationListenerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *CopyLogFileRotationListenerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *CopyLogFileRotationListenerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *CopyLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *CopyLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigura
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -104,7 +107,7 @@ func (o *CopyLogFileRotationListenerResponse) GetUrnpingidentityschemasconfigura
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *CopyLogFileRotationListenerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *CopyLogFileRotationListenerResponse) SetCopyToDirectory(v string) {
 
 // GetCompressOnCopy returns the CompressOnCopy field value if set, zero value otherwise.
 func (o *CopyLogFileRotationListenerResponse) GetCompressOnCopy() bool {
-	if o == nil || isNil(o.CompressOnCopy) {
+	if o == nil || IsNil(o.CompressOnCopy) {
 		var ret bool
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *CopyLogFileRotationListenerResponse) GetCompressOnCopy() bool {
 // GetCompressOnCopyOk returns a tuple with the CompressOnCopy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetCompressOnCopyOk() (*bool, bool) {
-	if o == nil || isNil(o.CompressOnCopy) {
+	if o == nil || IsNil(o.CompressOnCopy) {
 		return nil, false
 	}
 	return o.CompressOnCopy, true
@@ -208,7 +211,7 @@ func (o *CopyLogFileRotationListenerResponse) GetCompressOnCopyOk() (*bool, bool
 
 // HasCompressOnCopy returns a boolean if a field has been set.
 func (o *CopyLogFileRotationListenerResponse) HasCompressOnCopy() bool {
-	if o != nil && !isNil(o.CompressOnCopy) {
+	if o != nil && !IsNil(o.CompressOnCopy) {
 		return true
 	}
 
@@ -222,7 +225,7 @@ func (o *CopyLogFileRotationListenerResponse) SetCompressOnCopy(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *CopyLogFileRotationListenerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -232,7 +235,7 @@ func (o *CopyLogFileRotationListenerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CopyLogFileRotationListenerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -240,7 +243,7 @@ func (o *CopyLogFileRotationListenerResponse) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *CopyLogFileRotationListenerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -277,32 +280,32 @@ func (o *CopyLogFileRotationListenerResponse) SetEnabled(v bool) {
 }
 
 func (o CopyLogFileRotationListenerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["copyToDirectory"] = o.CopyToDirectory
-	}
-	if !isNil(o.CompressOnCopy) {
-		toSerialize["compressOnCopy"] = o.CompressOnCopy
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CopyLogFileRotationListenerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["copyToDirectory"] = o.CopyToDirectory
+	if !IsNil(o.CompressOnCopy) {
+		toSerialize["compressOnCopy"] = o.CompressOnCopy
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableCopyLogFileRotationListenerResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LocalDbVlvIndexResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LocalDbVlvIndexResponse{}
+
 // LocalDbVlvIndexResponse struct for LocalDbVlvIndexResponse
 type LocalDbVlvIndexResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -60,7 +63,7 @@ func NewLocalDbVlvIndexResponseWithDefaults() *LocalDbVlvIndexResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *LocalDbVlvIndexResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -70,7 +73,7 @@ func (o *LocalDbVlvIndexResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbVlvIndexResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -78,7 +81,7 @@ func (o *LocalDbVlvIndexResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *LocalDbVlvIndexResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *LocalDbVlvIndexResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -110,7 +113,7 @@ func (o *LocalDbVlvIndexResponse) GetUrnpingidentityschemasconfigurationmessages
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *LocalDbVlvIndexResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *LocalDbVlvIndexResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *LocalDbVlvIndexResponse) GetSchemas() []EnumlocalDbVlvIndexSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumlocalDbVlvIndexSchemaUrn
 		return ret
 	}
@@ -158,7 +161,7 @@ func (o *LocalDbVlvIndexResponse) GetSchemas() []EnumlocalDbVlvIndexSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbVlvIndexResponse) GetSchemasOk() ([]EnumlocalDbVlvIndexSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -166,7 +169,7 @@ func (o *LocalDbVlvIndexResponse) GetSchemasOk() ([]EnumlocalDbVlvIndexSchemaUrn
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *LocalDbVlvIndexResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *LocalDbVlvIndexResponse) SetName(v string) {
 
 // GetMaxBlockSize returns the MaxBlockSize field value if set, zero value otherwise.
 func (o *LocalDbVlvIndexResponse) GetMaxBlockSize() int32 {
-	if o == nil || isNil(o.MaxBlockSize) {
+	if o == nil || IsNil(o.MaxBlockSize) {
 		var ret int32
 		return ret
 	}
@@ -310,7 +313,7 @@ func (o *LocalDbVlvIndexResponse) GetMaxBlockSize() int32 {
 // GetMaxBlockSizeOk returns a tuple with the MaxBlockSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbVlvIndexResponse) GetMaxBlockSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxBlockSize) {
+	if o == nil || IsNil(o.MaxBlockSize) {
 		return nil, false
 	}
 	return o.MaxBlockSize, true
@@ -318,7 +321,7 @@ func (o *LocalDbVlvIndexResponse) GetMaxBlockSizeOk() (*int32, bool) {
 
 // HasMaxBlockSize returns a boolean if a field has been set.
 func (o *LocalDbVlvIndexResponse) HasMaxBlockSize() bool {
-	if o != nil && !isNil(o.MaxBlockSize) {
+	if o != nil && !IsNil(o.MaxBlockSize) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *LocalDbVlvIndexResponse) SetMaxBlockSize(v int32) {
 
 // GetCacheMode returns the CacheMode field value if set, zero value otherwise.
 func (o *LocalDbVlvIndexResponse) GetCacheMode() EnumlocalDbVlvIndexCacheModeProp {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		var ret EnumlocalDbVlvIndexCacheModeProp
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *LocalDbVlvIndexResponse) GetCacheMode() EnumlocalDbVlvIndexCacheModePro
 // GetCacheModeOk returns a tuple with the CacheMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalDbVlvIndexResponse) GetCacheModeOk() (*EnumlocalDbVlvIndexCacheModeProp, bool) {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		return nil, false
 	}
 	return o.CacheMode, true
@@ -350,7 +353,7 @@ func (o *LocalDbVlvIndexResponse) GetCacheModeOk() (*EnumlocalDbVlvIndexCacheMod
 
 // HasCacheMode returns a boolean if a field has been set.
 func (o *LocalDbVlvIndexResponse) HasCacheMode() bool {
-	if o != nil && !isNil(o.CacheMode) {
+	if o != nil && !IsNil(o.CacheMode) {
 		return true
 	}
 
@@ -363,41 +366,37 @@ func (o *LocalDbVlvIndexResponse) SetCacheMode(v EnumlocalDbVlvIndexCacheModePro
 }
 
 func (o LocalDbVlvIndexResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["scope"] = o.Scope
-	}
-	if true {
-		toSerialize["filter"] = o.Filter
-	}
-	if true {
-		toSerialize["sortOrder"] = o.SortOrder
-	}
-	if true {
-		toSerialize["name"] = o.Name
-	}
-	if !isNil(o.MaxBlockSize) {
-		toSerialize["maxBlockSize"] = o.MaxBlockSize
-	}
-	if !isNil(o.CacheMode) {
-		toSerialize["cacheMode"] = o.CacheMode
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LocalDbVlvIndexResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["baseDN"] = o.BaseDN
+	toSerialize["scope"] = o.Scope
+	toSerialize["filter"] = o.Filter
+	toSerialize["sortOrder"] = o.SortOrder
+	toSerialize["name"] = o.Name
+	if !IsNil(o.MaxBlockSize) {
+		toSerialize["maxBlockSize"] = o.MaxBlockSize
+	}
+	if !IsNil(o.CacheMode) {
+		toSerialize["cacheMode"] = o.CacheMode
+	}
+	return toSerialize, nil
 }
 
 type NullableLocalDbVlvIndexResponse struct {

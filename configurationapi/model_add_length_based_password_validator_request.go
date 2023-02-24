@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLengthBasedPasswordValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLengthBasedPasswordValidatorRequest{}
+
 // AddLengthBasedPasswordValidatorRequest struct for AddLengthBasedPasswordValidatorRequest
 type AddLengthBasedPasswordValidatorRequest struct {
 	// Name of the new Password Validator
@@ -103,7 +106,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) SetSchemas(v []EnumlengthBasedP
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
 func (o *AddLengthBasedPasswordValidatorRequest) GetMaxPasswordLength() int32 {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetMaxPasswordLength() int32 {
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) GetMaxPasswordLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
 	return o.MaxPasswordLength, true
@@ -121,7 +124,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetMaxPasswordLengthOk() (*int3
 
 // HasMaxPasswordLength returns a boolean if a field has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) HasMaxPasswordLength() bool {
-	if o != nil && !isNil(o.MaxPasswordLength) {
+	if o != nil && !IsNil(o.MaxPasswordLength) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) SetMaxPasswordLength(v int32) {
 
 // GetMinPasswordLength returns the MinPasswordLength field value if set, zero value otherwise.
 func (o *AddLengthBasedPasswordValidatorRequest) GetMinPasswordLength() int32 {
-	if o == nil || isNil(o.MinPasswordLength) {
+	if o == nil || IsNil(o.MinPasswordLength) {
 		var ret int32
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetMinPasswordLength() int32 {
 // GetMinPasswordLengthOk returns a tuple with the MinPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) GetMinPasswordLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MinPasswordLength) {
+	if o == nil || IsNil(o.MinPasswordLength) {
 		return nil, false
 	}
 	return o.MinPasswordLength, true
@@ -153,7 +156,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetMinPasswordLengthOk() (*int3
 
 // HasMinPasswordLength returns a boolean if a field has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) HasMinPasswordLength() bool {
-	if o != nil && !isNil(o.MinPasswordLength) {
+	if o != nil && !IsNil(o.MinPasswordLength) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) SetMinPasswordLength(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLengthBasedPasswordValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -185,7 +188,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -223,7 +226,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) SetEnabled(v bool) {
 
 // GetValidatorRequirementDescription returns the ValidatorRequirementDescription field value if set, zero value otherwise.
 func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorRequirementDescription() string {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		var ret string
 		return ret
 	}
@@ -233,7 +236,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorRequirementDescript
 // GetValidatorRequirementDescriptionOk returns a tuple with the ValidatorRequirementDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorRequirementDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorRequirementDescription) {
+	if o == nil || IsNil(o.ValidatorRequirementDescription) {
 		return nil, false
 	}
 	return o.ValidatorRequirementDescription, true
@@ -241,7 +244,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorRequirementDescript
 
 // HasValidatorRequirementDescription returns a boolean if a field has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) HasValidatorRequirementDescription() bool {
-	if o != nil && !isNil(o.ValidatorRequirementDescription) {
+	if o != nil && !IsNil(o.ValidatorRequirementDescription) {
 		return true
 	}
 
@@ -255,7 +258,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) SetValidatorRequirementDescript
 
 // GetValidatorFailureMessage returns the ValidatorFailureMessage field value if set, zero value otherwise.
 func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorFailureMessage() string {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		var ret string
 		return ret
 	}
@@ -265,7 +268,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorFailureMessage() st
 // GetValidatorFailureMessageOk returns a tuple with the ValidatorFailureMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorFailureMessageOk() (*string, bool) {
-	if o == nil || isNil(o.ValidatorFailureMessage) {
+	if o == nil || IsNil(o.ValidatorFailureMessage) {
 		return nil, false
 	}
 	return o.ValidatorFailureMessage, true
@@ -273,7 +276,7 @@ func (o *AddLengthBasedPasswordValidatorRequest) GetValidatorFailureMessageOk() 
 
 // HasValidatorFailureMessage returns a boolean if a field has been set.
 func (o *AddLengthBasedPasswordValidatorRequest) HasValidatorFailureMessage() bool {
-	if o != nil && !isNil(o.ValidatorFailureMessage) {
+	if o != nil && !IsNil(o.ValidatorFailureMessage) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddLengthBasedPasswordValidatorRequest) SetValidatorFailureMessage(v st
 }
 
 func (o AddLengthBasedPasswordValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.MaxPasswordLength) {
-		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
-	}
-	if !isNil(o.MinPasswordLength) {
-		toSerialize["minPasswordLength"] = o.MinPasswordLength
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ValidatorRequirementDescription) {
-		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
-	}
-	if !isNil(o.ValidatorFailureMessage) {
-		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLengthBasedPasswordValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.MaxPasswordLength) {
+		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
+	}
+	if !IsNil(o.MinPasswordLength) {
+		toSerialize["minPasswordLength"] = o.MinPasswordLength
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ValidatorRequirementDescription) {
+		toSerialize["validatorRequirementDescription"] = o.ValidatorRequirementDescription
+	}
+	if !IsNil(o.ValidatorFailureMessage) {
+		toSerialize["validatorFailureMessage"] = o.ValidatorFailureMessage
+	}
+	return toSerialize, nil
 }
 
 type NullableAddLengthBasedPasswordValidatorRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AmazonSecretsManagerPassphraseProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AmazonSecretsManagerPassphraseProviderResponse{}
+
 // AmazonSecretsManagerPassphraseProviderResponse struct for AmazonSecretsManagerPassphraseProviderResponse
 type AmazonSecretsManagerPassphraseProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -64,7 +67,7 @@ func NewAmazonSecretsManagerPassphraseProviderResponseWithDefaults() *AmazonSecr
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -74,7 +77,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -82,7 +85,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMetaOk() (*MetaMeta,
 
 // HasMeta returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetUrnpingidentityschem
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -114,7 +117,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetUrnpingidentityschem
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -248,7 +251,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetSecretFieldName(v st
 
 // GetSecretVersionID returns the SecretVersionID field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionID() string {
-	if o == nil || isNil(o.SecretVersionID) {
+	if o == nil || IsNil(o.SecretVersionID) {
 		var ret string
 		return ret
 	}
@@ -258,7 +261,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionID() st
 // GetSecretVersionIDOk returns a tuple with the SecretVersionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionIDOk() (*string, bool) {
-	if o == nil || isNil(o.SecretVersionID) {
+	if o == nil || IsNil(o.SecretVersionID) {
 		return nil, false
 	}
 	return o.SecretVersionID, true
@@ -266,7 +269,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionIDOk() 
 
 // HasSecretVersionID returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) HasSecretVersionID() bool {
-	if o != nil && !isNil(o.SecretVersionID) {
+	if o != nil && !IsNil(o.SecretVersionID) {
 		return true
 	}
 
@@ -280,7 +283,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetSecretVersionID(v st
 
 // GetSecretVersionStage returns the SecretVersionStage field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionStage() string {
-	if o == nil || isNil(o.SecretVersionStage) {
+	if o == nil || IsNil(o.SecretVersionStage) {
 		var ret string
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionStage()
 // GetSecretVersionStageOk returns a tuple with the SecretVersionStage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionStageOk() (*string, bool) {
-	if o == nil || isNil(o.SecretVersionStage) {
+	if o == nil || IsNil(o.SecretVersionStage) {
 		return nil, false
 	}
 	return o.SecretVersionStage, true
@@ -298,7 +301,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetSecretVersionStageOk
 
 // HasSecretVersionStage returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) HasSecretVersionStage() bool {
-	if o != nil && !isNil(o.SecretVersionStage) {
+	if o != nil && !IsNil(o.SecretVersionStage) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetSecretVersionStage(v
 
 // GetMaxCacheDuration returns the MaxCacheDuration field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMaxCacheDuration() string {
-	if o == nil || isNil(o.MaxCacheDuration) {
+	if o == nil || IsNil(o.MaxCacheDuration) {
 		var ret string
 		return ret
 	}
@@ -322,7 +325,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMaxCacheDuration() s
 // GetMaxCacheDurationOk returns a tuple with the MaxCacheDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMaxCacheDurationOk() (*string, bool) {
-	if o == nil || isNil(o.MaxCacheDuration) {
+	if o == nil || IsNil(o.MaxCacheDuration) {
 		return nil, false
 	}
 	return o.MaxCacheDuration, true
@@ -330,7 +333,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetMaxCacheDurationOk()
 
 // HasMaxCacheDuration returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) HasMaxCacheDuration() bool {
-	if o != nil && !isNil(o.MaxCacheDuration) {
+	if o != nil && !IsNil(o.MaxCacheDuration) {
 		return true
 	}
 
@@ -344,7 +347,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetMaxCacheDuration(v s
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -354,7 +357,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetDescription() string
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -362,7 +365,7 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) GetDescriptionOk() (*st
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AmazonSecretsManagerPassphraseProviderResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -399,44 +402,40 @@ func (o *AmazonSecretsManagerPassphraseProviderResponse) SetEnabled(v bool) {
 }
 
 func (o AmazonSecretsManagerPassphraseProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["awsExternalServer"] = o.AwsExternalServer
-	}
-	if true {
-		toSerialize["secretID"] = o.SecretID
-	}
-	if true {
-		toSerialize["secretFieldName"] = o.SecretFieldName
-	}
-	if !isNil(o.SecretVersionID) {
-		toSerialize["secretVersionID"] = o.SecretVersionID
-	}
-	if !isNil(o.SecretVersionStage) {
-		toSerialize["secretVersionStage"] = o.SecretVersionStage
-	}
-	if !isNil(o.MaxCacheDuration) {
-		toSerialize["maxCacheDuration"] = o.MaxCacheDuration
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AmazonSecretsManagerPassphraseProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["awsExternalServer"] = o.AwsExternalServer
+	toSerialize["secretID"] = o.SecretID
+	toSerialize["secretFieldName"] = o.SecretFieldName
+	if !IsNil(o.SecretVersionID) {
+		toSerialize["secretVersionID"] = o.SecretVersionID
+	}
+	if !IsNil(o.SecretVersionStage) {
+		toSerialize["secretVersionStage"] = o.SecretVersionStage
+	}
+	if !IsNil(o.MaxCacheDuration) {
+		toSerialize["maxCacheDuration"] = o.MaxCacheDuration
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAmazonSecretsManagerPassphraseProviderResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPkcs11CipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPkcs11CipherStreamProviderRequest{}
+
 // AddPkcs11CipherStreamProviderRequest struct for AddPkcs11CipherStreamProviderRequest
 type AddPkcs11CipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -112,7 +115,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetSchemas(v []Enumpkcs11CipherSt
 
 // GetPkcs11ProviderClass returns the Pkcs11ProviderClass field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderClass() string {
-	if o == nil || isNil(o.Pkcs11ProviderClass) {
+	if o == nil || IsNil(o.Pkcs11ProviderClass) {
 		var ret string
 		return ret
 	}
@@ -122,7 +125,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderClass() string {
 // GetPkcs11ProviderClassOk returns a tuple with the Pkcs11ProviderClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderClassOk() (*string, bool) {
-	if o == nil || isNil(o.Pkcs11ProviderClass) {
+	if o == nil || IsNil(o.Pkcs11ProviderClass) {
 		return nil, false
 	}
 	return o.Pkcs11ProviderClass, true
@@ -130,7 +133,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderClassOk() (*stri
 
 // HasPkcs11ProviderClass returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasPkcs11ProviderClass() bool {
-	if o != nil && !isNil(o.Pkcs11ProviderClass) {
+	if o != nil && !IsNil(o.Pkcs11ProviderClass) {
 		return true
 	}
 
@@ -144,7 +147,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetPkcs11ProviderClass(v string) 
 
 // GetPkcs11ProviderConfigurationFile returns the Pkcs11ProviderConfigurationFile field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderConfigurationFile() string {
-	if o == nil || isNil(o.Pkcs11ProviderConfigurationFile) {
+	if o == nil || IsNil(o.Pkcs11ProviderConfigurationFile) {
 		var ret string
 		return ret
 	}
@@ -154,7 +157,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderConfigurationFil
 // GetPkcs11ProviderConfigurationFileOk returns a tuple with the Pkcs11ProviderConfigurationFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderConfigurationFileOk() (*string, bool) {
-	if o == nil || isNil(o.Pkcs11ProviderConfigurationFile) {
+	if o == nil || IsNil(o.Pkcs11ProviderConfigurationFile) {
 		return nil, false
 	}
 	return o.Pkcs11ProviderConfigurationFile, true
@@ -162,7 +165,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11ProviderConfigurationFil
 
 // HasPkcs11ProviderConfigurationFile returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasPkcs11ProviderConfigurationFile() bool {
-	if o != nil && !isNil(o.Pkcs11ProviderConfigurationFile) {
+	if o != nil && !IsNil(o.Pkcs11ProviderConfigurationFile) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetPkcs11ProviderConfigurationFil
 
 // GetKeyStorePin returns the KeyStorePin field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePin() string {
-	if o == nil || isNil(o.KeyStorePin) {
+	if o == nil || IsNil(o.KeyStorePin) {
 		var ret string
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePin() string {
 // GetKeyStorePinOk returns a tuple with the KeyStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStorePin) {
+	if o == nil || IsNil(o.KeyStorePin) {
 		return nil, false
 	}
 	return o.KeyStorePin, true
@@ -194,7 +197,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinOk() (*string, bool
 
 // HasKeyStorePin returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasKeyStorePin() bool {
-	if o != nil && !isNil(o.KeyStorePin) {
+	if o != nil && !IsNil(o.KeyStorePin) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetKeyStorePin(v string) {
 
 // GetKeyStorePinFile returns the KeyStorePinFile field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinFile() string {
-	if o == nil || isNil(o.KeyStorePinFile) {
+	if o == nil || IsNil(o.KeyStorePinFile) {
 		var ret string
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinFile() string {
 // GetKeyStorePinFileOk returns a tuple with the KeyStorePinFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinFileOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStorePinFile) {
+	if o == nil || IsNil(o.KeyStorePinFile) {
 		return nil, false
 	}
 	return o.KeyStorePinFile, true
@@ -226,7 +229,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinFileOk() (*string, 
 
 // HasKeyStorePinFile returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasKeyStorePinFile() bool {
-	if o != nil && !isNil(o.KeyStorePinFile) {
+	if o != nil && !IsNil(o.KeyStorePinFile) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetKeyStorePinFile(v string) {
 
 // GetKeyStorePinEnvironmentVariable returns the KeyStorePinEnvironmentVariable field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinEnvironmentVariable() string {
-	if o == nil || isNil(o.KeyStorePinEnvironmentVariable) {
+	if o == nil || IsNil(o.KeyStorePinEnvironmentVariable) {
 		var ret string
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinEnvironmentVariable
 // GetKeyStorePinEnvironmentVariableOk returns a tuple with the KeyStorePinEnvironmentVariable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinEnvironmentVariableOk() (*string, bool) {
-	if o == nil || isNil(o.KeyStorePinEnvironmentVariable) {
+	if o == nil || IsNil(o.KeyStorePinEnvironmentVariable) {
 		return nil, false
 	}
 	return o.KeyStorePinEnvironmentVariable, true
@@ -258,7 +261,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetKeyStorePinEnvironmentVariable
 
 // HasKeyStorePinEnvironmentVariable returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasKeyStorePinEnvironmentVariable() bool {
-	if o != nil && !isNil(o.KeyStorePinEnvironmentVariable) {
+	if o != nil && !IsNil(o.KeyStorePinEnvironmentVariable) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetKeyStorePinEnvironmentVariable
 
 // GetPkcs11KeyStoreType returns the Pkcs11KeyStoreType field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11KeyStoreType() string {
-	if o == nil || isNil(o.Pkcs11KeyStoreType) {
+	if o == nil || IsNil(o.Pkcs11KeyStoreType) {
 		var ret string
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11KeyStoreType() string {
 // GetPkcs11KeyStoreTypeOk returns a tuple with the Pkcs11KeyStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11KeyStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.Pkcs11KeyStoreType) {
+	if o == nil || IsNil(o.Pkcs11KeyStoreType) {
 		return nil, false
 	}
 	return o.Pkcs11KeyStoreType, true
@@ -290,7 +293,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetPkcs11KeyStoreTypeOk() (*strin
 
 // HasPkcs11KeyStoreType returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasPkcs11KeyStoreType() bool {
-	if o != nil && !isNil(o.Pkcs11KeyStoreType) {
+	if o != nil && !IsNil(o.Pkcs11KeyStoreType) {
 		return true
 	}
 
@@ -328,7 +331,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetSslCertNickname(v string) {
 
 // GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
@@ -338,7 +341,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFile() strin
 // GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
 	return o.EncryptionMetadataFile, true
@@ -346,7 +349,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*s
 
 // HasEncryptionMetadataFile returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
-	if o != nil && !isNil(o.EncryptionMetadataFile) {
+	if o != nil && !IsNil(o.EncryptionMetadataFile) {
 		return true
 	}
 
@@ -360,7 +363,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetEncryptionMetadataFile(v strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPkcs11CipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -370,7 +373,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -378,7 +381,7 @@ func (o *AddPkcs11CipherStreamProviderRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPkcs11CipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -415,44 +418,44 @@ func (o *AddPkcs11CipherStreamProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddPkcs11CipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Pkcs11ProviderClass) {
-		toSerialize["pkcs11ProviderClass"] = o.Pkcs11ProviderClass
-	}
-	if !isNil(o.Pkcs11ProviderConfigurationFile) {
-		toSerialize["pkcs11ProviderConfigurationFile"] = o.Pkcs11ProviderConfigurationFile
-	}
-	if !isNil(o.KeyStorePin) {
-		toSerialize["keyStorePin"] = o.KeyStorePin
-	}
-	if !isNil(o.KeyStorePinFile) {
-		toSerialize["keyStorePinFile"] = o.KeyStorePinFile
-	}
-	if !isNil(o.KeyStorePinEnvironmentVariable) {
-		toSerialize["keyStorePinEnvironmentVariable"] = o.KeyStorePinEnvironmentVariable
-	}
-	if !isNil(o.Pkcs11KeyStoreType) {
-		toSerialize["pkcs11KeyStoreType"] = o.Pkcs11KeyStoreType
-	}
-	if true {
-		toSerialize["sslCertNickname"] = o.SslCertNickname
-	}
-	if !isNil(o.EncryptionMetadataFile) {
-		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPkcs11CipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Pkcs11ProviderClass) {
+		toSerialize["pkcs11ProviderClass"] = o.Pkcs11ProviderClass
+	}
+	if !IsNil(o.Pkcs11ProviderConfigurationFile) {
+		toSerialize["pkcs11ProviderConfigurationFile"] = o.Pkcs11ProviderConfigurationFile
+	}
+	if !IsNil(o.KeyStorePin) {
+		toSerialize["keyStorePin"] = o.KeyStorePin
+	}
+	if !IsNil(o.KeyStorePinFile) {
+		toSerialize["keyStorePinFile"] = o.KeyStorePinFile
+	}
+	if !IsNil(o.KeyStorePinEnvironmentVariable) {
+		toSerialize["keyStorePinEnvironmentVariable"] = o.KeyStorePinEnvironmentVariable
+	}
+	if !IsNil(o.Pkcs11KeyStoreType) {
+		toSerialize["pkcs11KeyStoreType"] = o.Pkcs11KeyStoreType
+	}
+	toSerialize["sslCertNickname"] = o.SslCertNickname
+	if !IsNil(o.EncryptionMetadataFile) {
+		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddPkcs11CipherStreamProviderRequest struct {

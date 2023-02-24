@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPingOneIdTokenValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPingOneIdTokenValidatorRequest{}
+
 // AddPingOneIdTokenValidatorRequest struct for AddPingOneIdTokenValidatorRequest
 type AddPingOneIdTokenValidatorRequest struct {
 	// Name of the new ID Token Validator
@@ -138,7 +141,7 @@ func (o *AddPingOneIdTokenValidatorRequest) SetIssuerURL(v string) {
 
 // GetOpenIDConnectProvider returns the OpenIDConnectProvider field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProvider() string {
-	if o == nil || isNil(o.OpenIDConnectProvider) {
+	if o == nil || IsNil(o.OpenIDConnectProvider) {
 		var ret string
 		return ret
 	}
@@ -148,7 +151,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProvider() string {
 // GetOpenIDConnectProviderOk returns a tuple with the OpenIDConnectProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (*string, bool) {
-	if o == nil || isNil(o.OpenIDConnectProvider) {
+	if o == nil || IsNil(o.OpenIDConnectProvider) {
 		return nil, false
 	}
 	return o.OpenIDConnectProvider, true
@@ -156,7 +159,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (*strin
 
 // HasOpenIDConnectProvider returns a boolean if a field has been set.
 func (o *AddPingOneIdTokenValidatorRequest) HasOpenIDConnectProvider() bool {
-	if o != nil && !isNil(o.OpenIDConnectProvider) {
+	if o != nil && !IsNil(o.OpenIDConnectProvider) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *AddPingOneIdTokenValidatorRequest) SetOpenIDConnectProvider(v string) {
 
 // GetOpenIDConnectMetadataCacheDuration returns the OpenIDConnectMetadataCacheDuration field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectMetadataCacheDuration() string {
-	if o == nil || isNil(o.OpenIDConnectMetadataCacheDuration) {
+	if o == nil || IsNil(o.OpenIDConnectMetadataCacheDuration) {
 		var ret string
 		return ret
 	}
@@ -180,7 +183,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectMetadataCacheDuratio
 // GetOpenIDConnectMetadataCacheDurationOk returns a tuple with the OpenIDConnectMetadataCacheDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectMetadataCacheDurationOk() (*string, bool) {
-	if o == nil || isNil(o.OpenIDConnectMetadataCacheDuration) {
+	if o == nil || IsNil(o.OpenIDConnectMetadataCacheDuration) {
 		return nil, false
 	}
 	return o.OpenIDConnectMetadataCacheDuration, true
@@ -188,7 +191,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetOpenIDConnectMetadataCacheDuratio
 
 // HasOpenIDConnectMetadataCacheDuration returns a boolean if a field has been set.
 func (o *AddPingOneIdTokenValidatorRequest) HasOpenIDConnectMetadataCacheDuration() bool {
-	if o != nil && !isNil(o.OpenIDConnectMetadataCacheDuration) {
+	if o != nil && !IsNil(o.OpenIDConnectMetadataCacheDuration) {
 		return true
 	}
 
@@ -202,7 +205,7 @@ func (o *AddPingOneIdTokenValidatorRequest) SetOpenIDConnectMetadataCacheDuratio
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -212,7 +215,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -220,7 +223,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPingOneIdTokenValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -282,7 +285,7 @@ func (o *AddPingOneIdTokenValidatorRequest) SetIdentityMapper(v string) {
 
 // GetSubjectClaimName returns the SubjectClaimName field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetSubjectClaimName() string {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		var ret string
 		return ret
 	}
@@ -292,7 +295,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetSubjectClaimName() string {
 // GetSubjectClaimNameOk returns a tuple with the SubjectClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		return nil, false
 	}
 	return o.SubjectClaimName, true
@@ -300,7 +303,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bo
 
 // HasSubjectClaimName returns a boolean if a field has been set.
 func (o *AddPingOneIdTokenValidatorRequest) HasSubjectClaimName() bool {
-	if o != nil && !isNil(o.SubjectClaimName) {
+	if o != nil && !IsNil(o.SubjectClaimName) {
 		return true
 	}
 
@@ -314,7 +317,7 @@ func (o *AddPingOneIdTokenValidatorRequest) SetSubjectClaimName(v string) {
 
 // GetClockSkewGracePeriod returns the ClockSkewGracePeriod field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetClockSkewGracePeriod() string {
-	if o == nil || isNil(o.ClockSkewGracePeriod) {
+	if o == nil || IsNil(o.ClockSkewGracePeriod) {
 		var ret string
 		return ret
 	}
@@ -324,7 +327,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetClockSkewGracePeriod() string {
 // GetClockSkewGracePeriodOk returns a tuple with the ClockSkewGracePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetClockSkewGracePeriodOk() (*string, bool) {
-	if o == nil || isNil(o.ClockSkewGracePeriod) {
+	if o == nil || IsNil(o.ClockSkewGracePeriod) {
 		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
@@ -332,7 +335,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetClockSkewGracePeriodOk() (*string
 
 // HasClockSkewGracePeriod returns a boolean if a field has been set.
 func (o *AddPingOneIdTokenValidatorRequest) HasClockSkewGracePeriod() bool {
-	if o != nil && !isNil(o.ClockSkewGracePeriod) {
+	if o != nil && !IsNil(o.ClockSkewGracePeriod) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *AddPingOneIdTokenValidatorRequest) SetClockSkewGracePeriod(v string) {
 
 // GetJwksCacheDuration returns the JwksCacheDuration field value if set, zero value otherwise.
 func (o *AddPingOneIdTokenValidatorRequest) GetJwksCacheDuration() string {
-	if o == nil || isNil(o.JwksCacheDuration) {
+	if o == nil || IsNil(o.JwksCacheDuration) {
 		var ret string
 		return ret
 	}
@@ -356,7 +359,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetJwksCacheDuration() string {
 // GetJwksCacheDurationOk returns a tuple with the JwksCacheDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneIdTokenValidatorRequest) GetJwksCacheDurationOk() (*string, bool) {
-	if o == nil || isNil(o.JwksCacheDuration) {
+	if o == nil || IsNil(o.JwksCacheDuration) {
 		return nil, false
 	}
 	return o.JwksCacheDuration, true
@@ -364,7 +367,7 @@ func (o *AddPingOneIdTokenValidatorRequest) GetJwksCacheDurationOk() (*string, b
 
 // HasJwksCacheDuration returns a boolean if a field has been set.
 func (o *AddPingOneIdTokenValidatorRequest) HasJwksCacheDuration() bool {
-	if o != nil && !isNil(o.JwksCacheDuration) {
+	if o != nil && !IsNil(o.JwksCacheDuration) {
 		return true
 	}
 
@@ -401,44 +404,40 @@ func (o *AddPingOneIdTokenValidatorRequest) SetEvaluationOrderIndex(v int32) {
 }
 
 func (o AddPingOneIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["issuerURL"] = o.IssuerURL
-	}
-	if !isNil(o.OpenIDConnectProvider) {
-		toSerialize["OpenIDConnectProvider"] = o.OpenIDConnectProvider
-	}
-	if !isNil(o.OpenIDConnectMetadataCacheDuration) {
-		toSerialize["OpenIDConnectMetadataCacheDuration"] = o.OpenIDConnectMetadataCacheDuration
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SubjectClaimName) {
-		toSerialize["subjectClaimName"] = o.SubjectClaimName
-	}
-	if !isNil(o.ClockSkewGracePeriod) {
-		toSerialize["clockSkewGracePeriod"] = o.ClockSkewGracePeriod
-	}
-	if !isNil(o.JwksCacheDuration) {
-		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPingOneIdTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["issuerURL"] = o.IssuerURL
+	if !IsNil(o.OpenIDConnectProvider) {
+		toSerialize["OpenIDConnectProvider"] = o.OpenIDConnectProvider
+	}
+	if !IsNil(o.OpenIDConnectMetadataCacheDuration) {
+		toSerialize["OpenIDConnectMetadataCacheDuration"] = o.OpenIDConnectMetadataCacheDuration
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.SubjectClaimName) {
+		toSerialize["subjectClaimName"] = o.SubjectClaimName
+	}
+	if !IsNil(o.ClockSkewGracePeriod) {
+		toSerialize["clockSkewGracePeriod"] = o.ClockSkewGracePeriod
+	}
+	if !IsNil(o.JwksCacheDuration) {
+		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
+	}
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	return toSerialize, nil
 }
 
 type NullableAddPingOneIdTokenValidatorRequest struct {

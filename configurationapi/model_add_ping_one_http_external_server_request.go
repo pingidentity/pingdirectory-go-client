@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPingOneHttpExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPingOneHttpExternalServerRequest{}
+
 // AddPingOneHttpExternalServerRequest struct for AddPingOneHttpExternalServerRequest
 type AddPingOneHttpExternalServerRequest struct {
 	// Name of the new External Server
@@ -99,7 +102,7 @@ func (o *AddPingOneHttpExternalServerRequest) SetSchemas(v []EnumpingOneHttpExte
 
 // GetHostnameVerificationMethod returns the HostnameVerificationMethod field value if set, zero value otherwise.
 func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethod() EnumexternalServerHostnameVerificationMethodProp {
-	if o == nil || isNil(o.HostnameVerificationMethod) {
+	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		var ret EnumexternalServerHostnameVerificationMethodProp
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethod() En
 // GetHostnameVerificationMethodOk returns a tuple with the HostnameVerificationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethodOk() (*EnumexternalServerHostnameVerificationMethodProp, bool) {
-	if o == nil || isNil(o.HostnameVerificationMethod) {
+	if o == nil || IsNil(o.HostnameVerificationMethod) {
 		return nil, false
 	}
 	return o.HostnameVerificationMethod, true
@@ -117,7 +120,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetHostnameVerificationMethodOk() 
 
 // HasHostnameVerificationMethod returns a boolean if a field has been set.
 func (o *AddPingOneHttpExternalServerRequest) HasHostnameVerificationMethod() bool {
-	if o != nil && !isNil(o.HostnameVerificationMethod) {
+	if o != nil && !IsNil(o.HostnameVerificationMethod) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *AddPingOneHttpExternalServerRequest) SetHostnameVerificationMethod(v En
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddPingOneHttpExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetTrustManagerProvider() string {
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneHttpExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -149,7 +152,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetTrustManagerProviderOk() (*stri
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddPingOneHttpExternalServerRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddPingOneHttpExternalServerRequest) SetTrustManagerProvider(v string) 
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddPingOneHttpExternalServerRequest) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneHttpExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -181,7 +184,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetConnectTimeoutOk() (*string, bo
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *AddPingOneHttpExternalServerRequest) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *AddPingOneHttpExternalServerRequest) SetConnectTimeout(v string) {
 
 // GetResponseTimeout returns the ResponseTimeout field value if set, zero value otherwise.
 func (o *AddPingOneHttpExternalServerRequest) GetResponseTimeout() string {
-	if o == nil || isNil(o.ResponseTimeout) {
+	if o == nil || IsNil(o.ResponseTimeout) {
 		var ret string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetResponseTimeout() string {
 // GetResponseTimeoutOk returns a tuple with the ResponseTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneHttpExternalServerRequest) GetResponseTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ResponseTimeout) {
+	if o == nil || IsNil(o.ResponseTimeout) {
 		return nil, false
 	}
 	return o.ResponseTimeout, true
@@ -213,7 +216,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetResponseTimeoutOk() (*string, b
 
 // HasResponseTimeout returns a boolean if a field has been set.
 func (o *AddPingOneHttpExternalServerRequest) HasResponseTimeout() bool {
-	if o != nil && !isNil(o.ResponseTimeout) {
+	if o != nil && !IsNil(o.ResponseTimeout) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *AddPingOneHttpExternalServerRequest) SetResponseTimeout(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPingOneHttpExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPingOneHttpExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -245,7 +248,7 @@ func (o *AddPingOneHttpExternalServerRequest) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPingOneHttpExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -258,29 +261,33 @@ func (o *AddPingOneHttpExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddPingOneHttpExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.HostnameVerificationMethod) {
-		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.ResponseTimeout) {
-		toSerialize["responseTimeout"] = o.ResponseTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPingOneHttpExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.HostnameVerificationMethod) {
+		toSerialize["hostnameVerificationMethod"] = o.HostnameVerificationMethod
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.ResponseTimeout) {
+		toSerialize["responseTimeout"] = o.ResponseTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddPingOneHttpExternalServerRequest struct {

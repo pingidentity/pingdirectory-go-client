@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddVaultCipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddVaultCipherStreamProviderRequest{}
+
 // AddVaultCipherStreamProviderRequest struct for AddVaultCipherStreamProviderRequest
 type AddVaultCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -115,7 +118,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetSchemas(v []EnumvaultCipherStre
 
 // GetVaultExternalServer returns the VaultExternalServer field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultExternalServer() string {
-	if o == nil || isNil(o.VaultExternalServer) {
+	if o == nil || IsNil(o.VaultExternalServer) {
 		var ret string
 		return ret
 	}
@@ -125,7 +128,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultExternalServer() string {
 // GetVaultExternalServerOk returns a tuple with the VaultExternalServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultExternalServerOk() (*string, bool) {
-	if o == nil || isNil(o.VaultExternalServer) {
+	if o == nil || IsNil(o.VaultExternalServer) {
 		return nil, false
 	}
 	return o.VaultExternalServer, true
@@ -133,7 +136,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultExternalServerOk() (*strin
 
 // HasVaultExternalServer returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasVaultExternalServer() bool {
-	if o != nil && !isNil(o.VaultExternalServer) {
+	if o != nil && !IsNil(o.VaultExternalServer) {
 		return true
 	}
 
@@ -147,7 +150,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetVaultExternalServer(v string) {
 
 // GetVaultServerBaseURI returns the VaultServerBaseURI field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultServerBaseURI() []string {
-	if o == nil || isNil(o.VaultServerBaseURI) {
+	if o == nil || IsNil(o.VaultServerBaseURI) {
 		var ret []string
 		return ret
 	}
@@ -157,7 +160,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultServerBaseURI() []string {
 // GetVaultServerBaseURIOk returns a tuple with the VaultServerBaseURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultServerBaseURIOk() ([]string, bool) {
-	if o == nil || isNil(o.VaultServerBaseURI) {
+	if o == nil || IsNil(o.VaultServerBaseURI) {
 		return nil, false
 	}
 	return o.VaultServerBaseURI, true
@@ -165,7 +168,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultServerBaseURIOk() ([]strin
 
 // HasVaultServerBaseURI returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasVaultServerBaseURI() bool {
-	if o != nil && !isNil(o.VaultServerBaseURI) {
+	if o != nil && !IsNil(o.VaultServerBaseURI) {
 		return true
 	}
 
@@ -179,7 +182,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetVaultServerBaseURI(v []string) 
 
 // GetVaultAuthenticationMethod returns the VaultAuthenticationMethod field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultAuthenticationMethod() string {
-	if o == nil || isNil(o.VaultAuthenticationMethod) {
+	if o == nil || IsNil(o.VaultAuthenticationMethod) {
 		var ret string
 		return ret
 	}
@@ -189,7 +192,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultAuthenticationMethod() str
 // GetVaultAuthenticationMethodOk returns a tuple with the VaultAuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultAuthenticationMethodOk() (*string, bool) {
-	if o == nil || isNil(o.VaultAuthenticationMethod) {
+	if o == nil || IsNil(o.VaultAuthenticationMethod) {
 		return nil, false
 	}
 	return o.VaultAuthenticationMethod, true
@@ -197,7 +200,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultAuthenticationMethodOk() (
 
 // HasVaultAuthenticationMethod returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasVaultAuthenticationMethod() bool {
-	if o != nil && !isNil(o.VaultAuthenticationMethod) {
+	if o != nil && !IsNil(o.VaultAuthenticationMethod) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetVaultSecretFieldName(v string) 
 
 // GetVaultEncryptionMetadataFile returns the VaultEncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFile() string {
-	if o == nil || isNil(o.VaultEncryptionMetadataFile) {
+	if o == nil || IsNil(o.VaultEncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFile() s
 // GetVaultEncryptionMetadataFileOk returns a tuple with the VaultEncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil || isNil(o.VaultEncryptionMetadataFile) {
+	if o == nil || IsNil(o.VaultEncryptionMetadataFile) {
 		return nil, false
 	}
 	return o.VaultEncryptionMetadataFile, true
@@ -277,7 +280,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetVaultEncryptionMetadataFileOk()
 
 // HasVaultEncryptionMetadataFile returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasVaultEncryptionMetadataFile() bool {
-	if o != nil && !isNil(o.VaultEncryptionMetadataFile) {
+	if o != nil && !IsNil(o.VaultEncryptionMetadataFile) {
 		return true
 	}
 
@@ -291,7 +294,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetVaultEncryptionMetadataFile(v s
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreFile() string {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -301,7 +304,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreFile() string {
 // GetTrustStoreFileOk returns a tuple with the TrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		return nil, false
 	}
 	return o.TrustStoreFile, true
@@ -309,7 +312,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreFileOk() (*string, bo
 
 // HasTrustStoreFile returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasTrustStoreFile() bool {
-	if o != nil && !isNil(o.TrustStoreFile) {
+	if o != nil && !IsNil(o.TrustStoreFile) {
 		return true
 	}
 
@@ -323,7 +326,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetTrustStoreFile(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -333,7 +336,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -341,7 +344,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStorePinOk() (*string, boo
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -355,7 +358,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetTrustStorePin(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -365,7 +368,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -373,7 +376,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetTrustStoreTypeOk() (*string, bo
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -387,7 +390,7 @@ func (o *AddVaultCipherStreamProviderRequest) SetTrustStoreType(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddVaultCipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -397,7 +400,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddVaultCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -405,7 +408,7 @@ func (o *AddVaultCipherStreamProviderRequest) GetDescriptionOk() (*string, bool)
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddVaultCipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -442,47 +445,45 @@ func (o *AddVaultCipherStreamProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.VaultExternalServer) {
-		toSerialize["vaultExternalServer"] = o.VaultExternalServer
-	}
-	if !isNil(o.VaultServerBaseURI) {
-		toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
-	}
-	if !isNil(o.VaultAuthenticationMethod) {
-		toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
-	}
-	if true {
-		toSerialize["vaultSecretPath"] = o.VaultSecretPath
-	}
-	if true {
-		toSerialize["vaultSecretFieldName"] = o.VaultSecretFieldName
-	}
-	if !isNil(o.VaultEncryptionMetadataFile) {
-		toSerialize["vaultEncryptionMetadataFile"] = o.VaultEncryptionMetadataFile
-	}
-	if !isNil(o.TrustStoreFile) {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddVaultCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.VaultExternalServer) {
+		toSerialize["vaultExternalServer"] = o.VaultExternalServer
+	}
+	if !IsNil(o.VaultServerBaseURI) {
+		toSerialize["vaultServerBaseURI"] = o.VaultServerBaseURI
+	}
+	if !IsNil(o.VaultAuthenticationMethod) {
+		toSerialize["vaultAuthenticationMethod"] = o.VaultAuthenticationMethod
+	}
+	toSerialize["vaultSecretPath"] = o.VaultSecretPath
+	toSerialize["vaultSecretFieldName"] = o.VaultSecretFieldName
+	if !IsNil(o.VaultEncryptionMetadataFile) {
+		toSerialize["vaultEncryptionMetadataFile"] = o.VaultEncryptionMetadataFile
+	}
+	if !IsNil(o.TrustStoreFile) {
+		toSerialize["trustStoreFile"] = o.TrustStoreFile
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddVaultCipherStreamProviderRequest struct {

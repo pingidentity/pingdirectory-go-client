@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Operation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Operation{}
+
 // Operation struct for Operation
 type Operation struct {
 	Op    EnumOperation `json:"op"`
@@ -90,7 +93,7 @@ func (o *Operation) SetPath(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *Operation) GetValue() string {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret string
 		return ret
 	}
@@ -100,7 +103,7 @@ func (o *Operation) GetValue() string {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Operation) GetValueOk() (*string, bool) {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
 	return o.Value, true
@@ -108,7 +111,7 @@ func (o *Operation) GetValueOk() (*string, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *Operation) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -121,17 +124,21 @@ func (o *Operation) SetValue(v string) {
 }
 
 func (o Operation) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["op"] = o.Op
-	}
-	if true {
-		toSerialize["path"] = o.Path
-	}
-	if !isNil(o.Value) {
-		toSerialize["value"] = o.Value
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Operation) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["op"] = o.Op
+	toSerialize["path"] = o.Path
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
+	}
+	return toSerialize, nil
 }
 
 type NullableOperation struct {

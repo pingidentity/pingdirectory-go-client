@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddReplicationAssurancePolicyRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddReplicationAssurancePolicyRequest{}
+
 // AddReplicationAssurancePolicyRequest struct for AddReplicationAssurancePolicyRequest
 type AddReplicationAssurancePolicyRequest struct {
 	// Name of the new Replication Assurance Policy
@@ -81,7 +84,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetPolicyName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetSchemas() []EnumreplicationAssurancePolicySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumreplicationAssurancePolicySchemaUrn
 		return ret
 	}
@@ -91,7 +94,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetSchemas() []EnumreplicationAss
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetSchemasOk() ([]EnumreplicationAssurancePolicySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -99,7 +102,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetSchemasOk() ([]Enumreplication
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -113,7 +116,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetSchemas(v []EnumreplicationAss
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -131,7 +134,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetDescription(v string) {
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -155,7 +158,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -163,7 +166,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetEnabledOk() (*bool, bool) {
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetEvaluationOrderIndex(v int32) 
 
 // GetLocalLevel returns the LocalLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetLocalLevel() EnumreplicationAssurancePolicyLocalLevelProp {
-	if o == nil || isNil(o.LocalLevel) {
+	if o == nil || IsNil(o.LocalLevel) {
 		var ret EnumreplicationAssurancePolicyLocalLevelProp
 		return ret
 	}
@@ -211,7 +214,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetLocalLevel() EnumreplicationAs
 // GetLocalLevelOk returns a tuple with the LocalLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetLocalLevelOk() (*EnumreplicationAssurancePolicyLocalLevelProp, bool) {
-	if o == nil || isNil(o.LocalLevel) {
+	if o == nil || IsNil(o.LocalLevel) {
 		return nil, false
 	}
 	return o.LocalLevel, true
@@ -219,7 +222,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetLocalLevelOk() (*Enumreplicati
 
 // HasLocalLevel returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasLocalLevel() bool {
-	if o != nil && !isNil(o.LocalLevel) {
+	if o != nil && !IsNil(o.LocalLevel) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetLocalLevel(v EnumreplicationAs
 
 // GetRemoteLevel returns the RemoteLevel field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetRemoteLevel() EnumreplicationAssurancePolicyRemoteLevelProp {
-	if o == nil || isNil(o.RemoteLevel) {
+	if o == nil || IsNil(o.RemoteLevel) {
 		var ret EnumreplicationAssurancePolicyRemoteLevelProp
 		return ret
 	}
@@ -243,7 +246,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetRemoteLevel() EnumreplicationA
 // GetRemoteLevelOk returns a tuple with the RemoteLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetRemoteLevelOk() (*EnumreplicationAssurancePolicyRemoteLevelProp, bool) {
-	if o == nil || isNil(o.RemoteLevel) {
+	if o == nil || IsNil(o.RemoteLevel) {
 		return nil, false
 	}
 	return o.RemoteLevel, true
@@ -251,7 +254,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetRemoteLevelOk() (*Enumreplicat
 
 // HasRemoteLevel returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasRemoteLevel() bool {
-	if o != nil && !isNil(o.RemoteLevel) {
+	if o != nil && !IsNil(o.RemoteLevel) {
 		return true
 	}
 
@@ -289,7 +292,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetTimeout(v string) {
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -299,7 +302,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetConnectionCriteria() string {
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -307,7 +310,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetConnectionCriteriaOk() (*strin
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -321,7 +324,7 @@ func (o *AddReplicationAssurancePolicyRequest) SetConnectionCriteria(v string) {
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddReplicationAssurancePolicyRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -331,7 +334,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReplicationAssurancePolicyRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -339,7 +342,7 @@ func (o *AddReplicationAssurancePolicyRequest) GetRequestCriteriaOk() (*string, 
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddReplicationAssurancePolicyRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -352,38 +355,40 @@ func (o *AddReplicationAssurancePolicyRequest) SetRequestCriteria(v string) {
 }
 
 func (o AddReplicationAssurancePolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["policyName"] = o.PolicyName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
-	}
-	if !isNil(o.LocalLevel) {
-		toSerialize["localLevel"] = o.LocalLevel
-	}
-	if !isNil(o.RemoteLevel) {
-		toSerialize["remoteLevel"] = o.RemoteLevel
-	}
-	if true {
-		toSerialize["timeout"] = o.Timeout
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddReplicationAssurancePolicyRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["policyName"] = o.PolicyName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	if !IsNil(o.LocalLevel) {
+		toSerialize["localLevel"] = o.LocalLevel
+	}
+	if !IsNil(o.RemoteLevel) {
+		toSerialize["remoteLevel"] = o.RemoteLevel
+	}
+	toSerialize["timeout"] = o.Timeout
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	return toSerialize, nil
 }
 
 type NullableAddReplicationAssurancePolicyRequest struct {

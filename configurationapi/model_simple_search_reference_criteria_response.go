@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SimpleSearchReferenceCriteriaResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SimpleSearchReferenceCriteriaResponse{}
+
 // SimpleSearchReferenceCriteriaResponse struct for SimpleSearchReferenceCriteriaResponse
 type SimpleSearchReferenceCriteriaResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewSimpleSearchReferenceCriteriaResponseWithDefaults() *SimpleSearchReferen
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetUrnpingidentityschemasconfigu
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetUrnpingidentityschemasconfigu
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetSchemas(v []EnumsimpleSearchR
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -178,7 +181,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -186,7 +189,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetRequestCriteriaOk() (*string,
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -200,7 +203,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetRequestCriteria(v string) {
 
 // GetAllIncludedReferenceControl returns the AllIncludedReferenceControl field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetAllIncludedReferenceControl() []string {
-	if o == nil || isNil(o.AllIncludedReferenceControl) {
+	if o == nil || IsNil(o.AllIncludedReferenceControl) {
 		var ret []string
 		return ret
 	}
@@ -210,7 +213,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetAllIncludedReferenceControl()
 // GetAllIncludedReferenceControlOk returns a tuple with the AllIncludedReferenceControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetAllIncludedReferenceControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedReferenceControl) {
+	if o == nil || IsNil(o.AllIncludedReferenceControl) {
 		return nil, false
 	}
 	return o.AllIncludedReferenceControl, true
@@ -218,7 +221,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetAllIncludedReferenceControlOk
 
 // HasAllIncludedReferenceControl returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasAllIncludedReferenceControl() bool {
-	if o != nil && !isNil(o.AllIncludedReferenceControl) {
+	if o != nil && !IsNil(o.AllIncludedReferenceControl) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetAllIncludedReferenceControl(v
 
 // GetAnyIncludedReferenceControl returns the AnyIncludedReferenceControl field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetAnyIncludedReferenceControl() []string {
-	if o == nil || isNil(o.AnyIncludedReferenceControl) {
+	if o == nil || IsNil(o.AnyIncludedReferenceControl) {
 		var ret []string
 		return ret
 	}
@@ -242,7 +245,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetAnyIncludedReferenceControl()
 // GetAnyIncludedReferenceControlOk returns a tuple with the AnyIncludedReferenceControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetAnyIncludedReferenceControlOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedReferenceControl) {
+	if o == nil || IsNil(o.AnyIncludedReferenceControl) {
 		return nil, false
 	}
 	return o.AnyIncludedReferenceControl, true
@@ -250,7 +253,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetAnyIncludedReferenceControlOk
 
 // HasAnyIncludedReferenceControl returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasAnyIncludedReferenceControl() bool {
-	if o != nil && !isNil(o.AnyIncludedReferenceControl) {
+	if o != nil && !IsNil(o.AnyIncludedReferenceControl) {
 		return true
 	}
 
@@ -264,7 +267,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetAnyIncludedReferenceControl(v
 
 // GetNotAllIncludedReferenceControl returns the NotAllIncludedReferenceControl field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetNotAllIncludedReferenceControl() []string {
-	if o == nil || isNil(o.NotAllIncludedReferenceControl) {
+	if o == nil || IsNil(o.NotAllIncludedReferenceControl) {
 		var ret []string
 		return ret
 	}
@@ -274,7 +277,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetNotAllIncludedReferenceContro
 // GetNotAllIncludedReferenceControlOk returns a tuple with the NotAllIncludedReferenceControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetNotAllIncludedReferenceControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NotAllIncludedReferenceControl) {
+	if o == nil || IsNil(o.NotAllIncludedReferenceControl) {
 		return nil, false
 	}
 	return o.NotAllIncludedReferenceControl, true
@@ -282,7 +285,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetNotAllIncludedReferenceContro
 
 // HasNotAllIncludedReferenceControl returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasNotAllIncludedReferenceControl() bool {
-	if o != nil && !isNil(o.NotAllIncludedReferenceControl) {
+	if o != nil && !IsNil(o.NotAllIncludedReferenceControl) {
 		return true
 	}
 
@@ -296,7 +299,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetNotAllIncludedReferenceContro
 
 // GetNoneIncludedReferenceControl returns the NoneIncludedReferenceControl field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetNoneIncludedReferenceControl() []string {
-	if o == nil || isNil(o.NoneIncludedReferenceControl) {
+	if o == nil || IsNil(o.NoneIncludedReferenceControl) {
 		var ret []string
 		return ret
 	}
@@ -306,7 +309,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetNoneIncludedReferenceControl(
 // GetNoneIncludedReferenceControlOk returns a tuple with the NoneIncludedReferenceControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetNoneIncludedReferenceControlOk() ([]string, bool) {
-	if o == nil || isNil(o.NoneIncludedReferenceControl) {
+	if o == nil || IsNil(o.NoneIncludedReferenceControl) {
 		return nil, false
 	}
 	return o.NoneIncludedReferenceControl, true
@@ -314,7 +317,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetNoneIncludedReferenceControlO
 
 // HasNoneIncludedReferenceControl returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasNoneIncludedReferenceControl() bool {
-	if o != nil && !isNil(o.NoneIncludedReferenceControl) {
+	if o != nil && !IsNil(o.NoneIncludedReferenceControl) {
 		return true
 	}
 
@@ -328,7 +331,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetNoneIncludedReferenceControl(
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SimpleSearchReferenceCriteriaResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -338,7 +341,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -346,7 +349,7 @@ func (o *SimpleSearchReferenceCriteriaResponse) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *SimpleSearchReferenceCriteriaResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -359,38 +362,42 @@ func (o *SimpleSearchReferenceCriteriaResponse) SetDescription(v string) {
 }
 
 func (o SimpleSearchReferenceCriteriaResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.AllIncludedReferenceControl) {
-		toSerialize["allIncludedReferenceControl"] = o.AllIncludedReferenceControl
-	}
-	if !isNil(o.AnyIncludedReferenceControl) {
-		toSerialize["anyIncludedReferenceControl"] = o.AnyIncludedReferenceControl
-	}
-	if !isNil(o.NotAllIncludedReferenceControl) {
-		toSerialize["notAllIncludedReferenceControl"] = o.NotAllIncludedReferenceControl
-	}
-	if !isNil(o.NoneIncludedReferenceControl) {
-		toSerialize["noneIncludedReferenceControl"] = o.NoneIncludedReferenceControl
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SimpleSearchReferenceCriteriaResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.AllIncludedReferenceControl) {
+		toSerialize["allIncludedReferenceControl"] = o.AllIncludedReferenceControl
+	}
+	if !IsNil(o.AnyIncludedReferenceControl) {
+		toSerialize["anyIncludedReferenceControl"] = o.AnyIncludedReferenceControl
+	}
+	if !IsNil(o.NotAllIncludedReferenceControl) {
+		toSerialize["notAllIncludedReferenceControl"] = o.NotAllIncludedReferenceControl
+	}
+	if !IsNil(o.NoneIncludedReferenceControl) {
+		toSerialize["noneIncludedReferenceControl"] = o.NoneIncludedReferenceControl
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableSimpleSearchReferenceCriteriaResponse struct {

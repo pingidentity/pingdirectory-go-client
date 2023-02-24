@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddJsonFieldConstraintsRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddJsonFieldConstraintsRequest{}
+
 // AddJsonFieldConstraintsRequest struct for AddJsonFieldConstraintsRequest
 type AddJsonFieldConstraintsRequest struct {
 	// The full name of the JSON field to which these constraints apply.
@@ -101,7 +104,7 @@ func (o *AddJsonFieldConstraintsRequest) SetJsonField(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetSchemas() []EnumjsonFieldConstraintsSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumjsonFieldConstraintsSchemaUrn
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *AddJsonFieldConstraintsRequest) GetSchemas() []EnumjsonFieldConstraints
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetSchemasOk() ([]EnumjsonFieldConstraintsSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -119,7 +122,7 @@ func (o *AddJsonFieldConstraintsRequest) GetSchemasOk() ([]EnumjsonFieldConstrai
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *AddJsonFieldConstraintsRequest) SetSchemas(v []EnumjsonFieldConstraints
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *AddJsonFieldConstraintsRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -151,7 +154,7 @@ func (o *AddJsonFieldConstraintsRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *AddJsonFieldConstraintsRequest) SetValueType(v EnumjsonFieldConstraints
 
 // GetIsRequired returns the IsRequired field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetIsRequired() bool {
-	if o == nil || isNil(o.IsRequired) {
+	if o == nil || IsNil(o.IsRequired) {
 		var ret bool
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIsRequired() bool {
 // GetIsRequiredOk returns a tuple with the IsRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetIsRequiredOk() (*bool, bool) {
-	if o == nil || isNil(o.IsRequired) {
+	if o == nil || IsNil(o.IsRequired) {
 		return nil, false
 	}
 	return o.IsRequired, true
@@ -207,7 +210,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIsRequiredOk() (*bool, bool) {
 
 // HasIsRequired returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasIsRequired() bool {
-	if o != nil && !isNil(o.IsRequired) {
+	if o != nil && !IsNil(o.IsRequired) {
 		return true
 	}
 
@@ -221,7 +224,7 @@ func (o *AddJsonFieldConstraintsRequest) SetIsRequired(v bool) {
 
 // GetIsArray returns the IsArray field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetIsArray() EnumjsonFieldConstraintsIsArrayProp {
-	if o == nil || isNil(o.IsArray) {
+	if o == nil || IsNil(o.IsArray) {
 		var ret EnumjsonFieldConstraintsIsArrayProp
 		return ret
 	}
@@ -231,7 +234,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIsArray() EnumjsonFieldConstraintsIs
 // GetIsArrayOk returns a tuple with the IsArray field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetIsArrayOk() (*EnumjsonFieldConstraintsIsArrayProp, bool) {
-	if o == nil || isNil(o.IsArray) {
+	if o == nil || IsNil(o.IsArray) {
 		return nil, false
 	}
 	return o.IsArray, true
@@ -239,7 +242,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIsArrayOk() (*EnumjsonFieldConstrain
 
 // HasIsArray returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasIsArray() bool {
-	if o != nil && !isNil(o.IsArray) {
+	if o != nil && !IsNil(o.IsArray) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *AddJsonFieldConstraintsRequest) SetIsArray(v EnumjsonFieldConstraintsIs
 
 // GetAllowNullValue returns the AllowNullValue field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetAllowNullValue() bool {
-	if o == nil || isNil(o.AllowNullValue) {
+	if o == nil || IsNil(o.AllowNullValue) {
 		var ret bool
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowNullValue() bool {
 // GetAllowNullValueOk returns a tuple with the AllowNullValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetAllowNullValueOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowNullValue) {
+	if o == nil || IsNil(o.AllowNullValue) {
 		return nil, false
 	}
 	return o.AllowNullValue, true
@@ -271,7 +274,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowNullValueOk() (*bool, bool) {
 
 // HasAllowNullValue returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasAllowNullValue() bool {
-	if o != nil && !isNil(o.AllowNullValue) {
+	if o != nil && !IsNil(o.AllowNullValue) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *AddJsonFieldConstraintsRequest) SetAllowNullValue(v bool) {
 
 // GetAllowEmptyObject returns the AllowEmptyObject field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetAllowEmptyObject() bool {
-	if o == nil || isNil(o.AllowEmptyObject) {
+	if o == nil || IsNil(o.AllowEmptyObject) {
 		var ret bool
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowEmptyObject() bool {
 // GetAllowEmptyObjectOk returns a tuple with the AllowEmptyObject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetAllowEmptyObjectOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowEmptyObject) {
+	if o == nil || IsNil(o.AllowEmptyObject) {
 		return nil, false
 	}
 	return o.AllowEmptyObject, true
@@ -303,7 +306,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowEmptyObjectOk() (*bool, bool) {
 
 // HasAllowEmptyObject returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasAllowEmptyObject() bool {
-	if o != nil && !isNil(o.AllowEmptyObject) {
+	if o != nil && !IsNil(o.AllowEmptyObject) {
 		return true
 	}
 
@@ -317,7 +320,7 @@ func (o *AddJsonFieldConstraintsRequest) SetAllowEmptyObject(v bool) {
 
 // GetIndexValues returns the IndexValues field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetIndexValues() bool {
-	if o == nil || isNil(o.IndexValues) {
+	if o == nil || IsNil(o.IndexValues) {
 		var ret bool
 		return ret
 	}
@@ -327,7 +330,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIndexValues() bool {
 // GetIndexValuesOk returns a tuple with the IndexValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetIndexValuesOk() (*bool, bool) {
-	if o == nil || isNil(o.IndexValues) {
+	if o == nil || IsNil(o.IndexValues) {
 		return nil, false
 	}
 	return o.IndexValues, true
@@ -335,7 +338,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIndexValuesOk() (*bool, bool) {
 
 // HasIndexValues returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasIndexValues() bool {
-	if o != nil && !isNil(o.IndexValues) {
+	if o != nil && !IsNil(o.IndexValues) {
 		return true
 	}
 
@@ -349,7 +352,7 @@ func (o *AddJsonFieldConstraintsRequest) SetIndexValues(v bool) {
 
 // GetIndexEntryLimit returns the IndexEntryLimit field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimit() int32 {
-	if o == nil || isNil(o.IndexEntryLimit) {
+	if o == nil || IsNil(o.IndexEntryLimit) {
 		var ret int32
 		return ret
 	}
@@ -359,7 +362,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimit() int32 {
 // GetIndexEntryLimitOk returns a tuple with the IndexEntryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.IndexEntryLimit) {
+	if o == nil || IsNil(o.IndexEntryLimit) {
 		return nil, false
 	}
 	return o.IndexEntryLimit, true
@@ -367,7 +370,7 @@ func (o *AddJsonFieldConstraintsRequest) GetIndexEntryLimitOk() (*int32, bool) {
 
 // HasIndexEntryLimit returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasIndexEntryLimit() bool {
-	if o != nil && !isNil(o.IndexEntryLimit) {
+	if o != nil && !IsNil(o.IndexEntryLimit) {
 		return true
 	}
 
@@ -381,7 +384,7 @@ func (o *AddJsonFieldConstraintsRequest) SetIndexEntryLimit(v int32) {
 
 // GetPrimeIndex returns the PrimeIndex field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetPrimeIndex() bool {
-	if o == nil || isNil(o.PrimeIndex) {
+	if o == nil || IsNil(o.PrimeIndex) {
 		var ret bool
 		return ret
 	}
@@ -391,7 +394,7 @@ func (o *AddJsonFieldConstraintsRequest) GetPrimeIndex() bool {
 // GetPrimeIndexOk returns a tuple with the PrimeIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetPrimeIndexOk() (*bool, bool) {
-	if o == nil || isNil(o.PrimeIndex) {
+	if o == nil || IsNil(o.PrimeIndex) {
 		return nil, false
 	}
 	return o.PrimeIndex, true
@@ -399,7 +402,7 @@ func (o *AddJsonFieldConstraintsRequest) GetPrimeIndexOk() (*bool, bool) {
 
 // HasPrimeIndex returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasPrimeIndex() bool {
-	if o != nil && !isNil(o.PrimeIndex) {
+	if o != nil && !IsNil(o.PrimeIndex) {
 		return true
 	}
 
@@ -413,7 +416,7 @@ func (o *AddJsonFieldConstraintsRequest) SetPrimeIndex(v bool) {
 
 // GetCacheMode returns the CacheMode field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetCacheMode() EnumjsonFieldConstraintsCacheModeProp {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		var ret EnumjsonFieldConstraintsCacheModeProp
 		return ret
 	}
@@ -423,7 +426,7 @@ func (o *AddJsonFieldConstraintsRequest) GetCacheMode() EnumjsonFieldConstraints
 // GetCacheModeOk returns a tuple with the CacheMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetCacheModeOk() (*EnumjsonFieldConstraintsCacheModeProp, bool) {
-	if o == nil || isNil(o.CacheMode) {
+	if o == nil || IsNil(o.CacheMode) {
 		return nil, false
 	}
 	return o.CacheMode, true
@@ -431,7 +434,7 @@ func (o *AddJsonFieldConstraintsRequest) GetCacheModeOk() (*EnumjsonFieldConstra
 
 // HasCacheMode returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasCacheMode() bool {
-	if o != nil && !isNil(o.CacheMode) {
+	if o != nil && !IsNil(o.CacheMode) {
 		return true
 	}
 
@@ -445,7 +448,7 @@ func (o *AddJsonFieldConstraintsRequest) SetCacheMode(v EnumjsonFieldConstraints
 
 // GetTokenizeValues returns the TokenizeValues field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetTokenizeValues() bool {
-	if o == nil || isNil(o.TokenizeValues) {
+	if o == nil || IsNil(o.TokenizeValues) {
 		var ret bool
 		return ret
 	}
@@ -455,7 +458,7 @@ func (o *AddJsonFieldConstraintsRequest) GetTokenizeValues() bool {
 // GetTokenizeValuesOk returns a tuple with the TokenizeValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetTokenizeValuesOk() (*bool, bool) {
-	if o == nil || isNil(o.TokenizeValues) {
+	if o == nil || IsNil(o.TokenizeValues) {
 		return nil, false
 	}
 	return o.TokenizeValues, true
@@ -463,7 +466,7 @@ func (o *AddJsonFieldConstraintsRequest) GetTokenizeValuesOk() (*bool, bool) {
 
 // HasTokenizeValues returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasTokenizeValues() bool {
-	if o != nil && !isNil(o.TokenizeValues) {
+	if o != nil && !IsNil(o.TokenizeValues) {
 		return true
 	}
 
@@ -477,7 +480,7 @@ func (o *AddJsonFieldConstraintsRequest) SetTokenizeValues(v bool) {
 
 // GetAllowedValue returns the AllowedValue field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetAllowedValue() []string {
-	if o == nil || isNil(o.AllowedValue) {
+	if o == nil || IsNil(o.AllowedValue) {
 		var ret []string
 		return ret
 	}
@@ -487,7 +490,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowedValue() []string {
 // GetAllowedValueOk returns a tuple with the AllowedValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetAllowedValueOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedValue) {
+	if o == nil || IsNil(o.AllowedValue) {
 		return nil, false
 	}
 	return o.AllowedValue, true
@@ -495,7 +498,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowedValueOk() ([]string, bool) {
 
 // HasAllowedValue returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasAllowedValue() bool {
-	if o != nil && !isNil(o.AllowedValue) {
+	if o != nil && !IsNil(o.AllowedValue) {
 		return true
 	}
 
@@ -509,7 +512,7 @@ func (o *AddJsonFieldConstraintsRequest) SetAllowedValue(v []string) {
 
 // GetAllowedValueRegularExpression returns the AllowedValueRegularExpression field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetAllowedValueRegularExpression() []string {
-	if o == nil || isNil(o.AllowedValueRegularExpression) {
+	if o == nil || IsNil(o.AllowedValueRegularExpression) {
 		var ret []string
 		return ret
 	}
@@ -519,7 +522,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowedValueRegularExpression() []st
 // GetAllowedValueRegularExpressionOk returns a tuple with the AllowedValueRegularExpression field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetAllowedValueRegularExpressionOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedValueRegularExpression) {
+	if o == nil || IsNil(o.AllowedValueRegularExpression) {
 		return nil, false
 	}
 	return o.AllowedValueRegularExpression, true
@@ -527,7 +530,7 @@ func (o *AddJsonFieldConstraintsRequest) GetAllowedValueRegularExpressionOk() ([
 
 // HasAllowedValueRegularExpression returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasAllowedValueRegularExpression() bool {
-	if o != nil && !isNil(o.AllowedValueRegularExpression) {
+	if o != nil && !IsNil(o.AllowedValueRegularExpression) {
 		return true
 	}
 
@@ -541,7 +544,7 @@ func (o *AddJsonFieldConstraintsRequest) SetAllowedValueRegularExpression(v []st
 
 // GetMinimumNumericValue returns the MinimumNumericValue field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetMinimumNumericValue() string {
-	if o == nil || isNil(o.MinimumNumericValue) {
+	if o == nil || IsNil(o.MinimumNumericValue) {
 		var ret string
 		return ret
 	}
@@ -551,7 +554,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumNumericValue() string {
 // GetMinimumNumericValueOk returns a tuple with the MinimumNumericValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetMinimumNumericValueOk() (*string, bool) {
-	if o == nil || isNil(o.MinimumNumericValue) {
+	if o == nil || IsNil(o.MinimumNumericValue) {
 		return nil, false
 	}
 	return o.MinimumNumericValue, true
@@ -559,7 +562,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumNumericValueOk() (*string, bo
 
 // HasMinimumNumericValue returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasMinimumNumericValue() bool {
-	if o != nil && !isNil(o.MinimumNumericValue) {
+	if o != nil && !IsNil(o.MinimumNumericValue) {
 		return true
 	}
 
@@ -573,7 +576,7 @@ func (o *AddJsonFieldConstraintsRequest) SetMinimumNumericValue(v string) {
 
 // GetMaximumNumericValue returns the MaximumNumericValue field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetMaximumNumericValue() string {
-	if o == nil || isNil(o.MaximumNumericValue) {
+	if o == nil || IsNil(o.MaximumNumericValue) {
 		var ret string
 		return ret
 	}
@@ -583,7 +586,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumNumericValue() string {
 // GetMaximumNumericValueOk returns a tuple with the MaximumNumericValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetMaximumNumericValueOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumNumericValue) {
+	if o == nil || IsNil(o.MaximumNumericValue) {
 		return nil, false
 	}
 	return o.MaximumNumericValue, true
@@ -591,7 +594,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumNumericValueOk() (*string, bo
 
 // HasMaximumNumericValue returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasMaximumNumericValue() bool {
-	if o != nil && !isNil(o.MaximumNumericValue) {
+	if o != nil && !IsNil(o.MaximumNumericValue) {
 		return true
 	}
 
@@ -605,7 +608,7 @@ func (o *AddJsonFieldConstraintsRequest) SetMaximumNumericValue(v string) {
 
 // GetMinimumValueLength returns the MinimumValueLength field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLength() int32 {
-	if o == nil || isNil(o.MinimumValueLength) {
+	if o == nil || IsNil(o.MinimumValueLength) {
 		var ret int32
 		return ret
 	}
@@ -615,7 +618,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLength() int32 {
 // GetMinimumValueLengthOk returns a tuple with the MinimumValueLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumValueLength) {
+	if o == nil || IsNil(o.MinimumValueLength) {
 		return nil, false
 	}
 	return o.MinimumValueLength, true
@@ -623,7 +626,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumValueLengthOk() (*int32, bool
 
 // HasMinimumValueLength returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasMinimumValueLength() bool {
-	if o != nil && !isNil(o.MinimumValueLength) {
+	if o != nil && !IsNil(o.MinimumValueLength) {
 		return true
 	}
 
@@ -637,7 +640,7 @@ func (o *AddJsonFieldConstraintsRequest) SetMinimumValueLength(v int32) {
 
 // GetMaximumValueLength returns the MaximumValueLength field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLength() int32 {
-	if o == nil || isNil(o.MaximumValueLength) {
+	if o == nil || IsNil(o.MaximumValueLength) {
 		var ret int32
 		return ret
 	}
@@ -647,7 +650,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLength() int32 {
 // GetMaximumValueLengthOk returns a tuple with the MaximumValueLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumValueLength) {
+	if o == nil || IsNil(o.MaximumValueLength) {
 		return nil, false
 	}
 	return o.MaximumValueLength, true
@@ -655,7 +658,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumValueLengthOk() (*int32, bool
 
 // HasMaximumValueLength returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasMaximumValueLength() bool {
-	if o != nil && !isNil(o.MaximumValueLength) {
+	if o != nil && !IsNil(o.MaximumValueLength) {
 		return true
 	}
 
@@ -669,7 +672,7 @@ func (o *AddJsonFieldConstraintsRequest) SetMaximumValueLength(v int32) {
 
 // GetMinimumValueCount returns the MinimumValueCount field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCount() int32 {
-	if o == nil || isNil(o.MinimumValueCount) {
+	if o == nil || IsNil(o.MinimumValueCount) {
 		var ret int32
 		return ret
 	}
@@ -679,7 +682,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCount() int32 {
 // GetMinimumValueCountOk returns a tuple with the MinimumValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumValueCount) {
+	if o == nil || IsNil(o.MinimumValueCount) {
 		return nil, false
 	}
 	return o.MinimumValueCount, true
@@ -687,7 +690,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMinimumValueCountOk() (*int32, bool)
 
 // HasMinimumValueCount returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasMinimumValueCount() bool {
-	if o != nil && !isNil(o.MinimumValueCount) {
+	if o != nil && !IsNil(o.MinimumValueCount) {
 		return true
 	}
 
@@ -701,7 +704,7 @@ func (o *AddJsonFieldConstraintsRequest) SetMinimumValueCount(v int32) {
 
 // GetMaximumValueCount returns the MaximumValueCount field value if set, zero value otherwise.
 func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCount() int32 {
-	if o == nil || isNil(o.MaximumValueCount) {
+	if o == nil || IsNil(o.MaximumValueCount) {
 		var ret int32
 		return ret
 	}
@@ -711,7 +714,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCount() int32 {
 // GetMaximumValueCountOk returns a tuple with the MaximumValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumValueCount) {
+	if o == nil || IsNil(o.MaximumValueCount) {
 		return nil, false
 	}
 	return o.MaximumValueCount, true
@@ -719,7 +722,7 @@ func (o *AddJsonFieldConstraintsRequest) GetMaximumValueCountOk() (*int32, bool)
 
 // HasMaximumValueCount returns a boolean if a field has been set.
 func (o *AddJsonFieldConstraintsRequest) HasMaximumValueCount() bool {
-	if o != nil && !isNil(o.MaximumValueCount) {
+	if o != nil && !IsNil(o.MaximumValueCount) {
 		return true
 	}
 
@@ -732,71 +735,75 @@ func (o *AddJsonFieldConstraintsRequest) SetMaximumValueCount(v int32) {
 }
 
 func (o AddJsonFieldConstraintsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["jsonField"] = o.JsonField
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["valueType"] = o.ValueType
-	}
-	if !isNil(o.IsRequired) {
-		toSerialize["isRequired"] = o.IsRequired
-	}
-	if !isNil(o.IsArray) {
-		toSerialize["isArray"] = o.IsArray
-	}
-	if !isNil(o.AllowNullValue) {
-		toSerialize["allowNullValue"] = o.AllowNullValue
-	}
-	if !isNil(o.AllowEmptyObject) {
-		toSerialize["allowEmptyObject"] = o.AllowEmptyObject
-	}
-	if !isNil(o.IndexValues) {
-		toSerialize["indexValues"] = o.IndexValues
-	}
-	if !isNil(o.IndexEntryLimit) {
-		toSerialize["indexEntryLimit"] = o.IndexEntryLimit
-	}
-	if !isNil(o.PrimeIndex) {
-		toSerialize["primeIndex"] = o.PrimeIndex
-	}
-	if !isNil(o.CacheMode) {
-		toSerialize["cacheMode"] = o.CacheMode
-	}
-	if !isNil(o.TokenizeValues) {
-		toSerialize["tokenizeValues"] = o.TokenizeValues
-	}
-	if !isNil(o.AllowedValue) {
-		toSerialize["allowedValue"] = o.AllowedValue
-	}
-	if !isNil(o.AllowedValueRegularExpression) {
-		toSerialize["allowedValueRegularExpression"] = o.AllowedValueRegularExpression
-	}
-	if !isNil(o.MinimumNumericValue) {
-		toSerialize["minimumNumericValue"] = o.MinimumNumericValue
-	}
-	if !isNil(o.MaximumNumericValue) {
-		toSerialize["maximumNumericValue"] = o.MaximumNumericValue
-	}
-	if !isNil(o.MinimumValueLength) {
-		toSerialize["minimumValueLength"] = o.MinimumValueLength
-	}
-	if !isNil(o.MaximumValueLength) {
-		toSerialize["maximumValueLength"] = o.MaximumValueLength
-	}
-	if !isNil(o.MinimumValueCount) {
-		toSerialize["minimumValueCount"] = o.MinimumValueCount
-	}
-	if !isNil(o.MaximumValueCount) {
-		toSerialize["maximumValueCount"] = o.MaximumValueCount
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddJsonFieldConstraintsRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["jsonField"] = o.JsonField
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["valueType"] = o.ValueType
+	if !IsNil(o.IsRequired) {
+		toSerialize["isRequired"] = o.IsRequired
+	}
+	if !IsNil(o.IsArray) {
+		toSerialize["isArray"] = o.IsArray
+	}
+	if !IsNil(o.AllowNullValue) {
+		toSerialize["allowNullValue"] = o.AllowNullValue
+	}
+	if !IsNil(o.AllowEmptyObject) {
+		toSerialize["allowEmptyObject"] = o.AllowEmptyObject
+	}
+	if !IsNil(o.IndexValues) {
+		toSerialize["indexValues"] = o.IndexValues
+	}
+	if !IsNil(o.IndexEntryLimit) {
+		toSerialize["indexEntryLimit"] = o.IndexEntryLimit
+	}
+	if !IsNil(o.PrimeIndex) {
+		toSerialize["primeIndex"] = o.PrimeIndex
+	}
+	if !IsNil(o.CacheMode) {
+		toSerialize["cacheMode"] = o.CacheMode
+	}
+	if !IsNil(o.TokenizeValues) {
+		toSerialize["tokenizeValues"] = o.TokenizeValues
+	}
+	if !IsNil(o.AllowedValue) {
+		toSerialize["allowedValue"] = o.AllowedValue
+	}
+	if !IsNil(o.AllowedValueRegularExpression) {
+		toSerialize["allowedValueRegularExpression"] = o.AllowedValueRegularExpression
+	}
+	if !IsNil(o.MinimumNumericValue) {
+		toSerialize["minimumNumericValue"] = o.MinimumNumericValue
+	}
+	if !IsNil(o.MaximumNumericValue) {
+		toSerialize["maximumNumericValue"] = o.MaximumNumericValue
+	}
+	if !IsNil(o.MinimumValueLength) {
+		toSerialize["minimumValueLength"] = o.MinimumValueLength
+	}
+	if !IsNil(o.MaximumValueLength) {
+		toSerialize["maximumValueLength"] = o.MaximumValueLength
+	}
+	if !IsNil(o.MinimumValueCount) {
+		toSerialize["minimumValueCount"] = o.MinimumValueCount
+	}
+	if !IsNil(o.MaximumValueCount) {
+		toSerialize["maximumValueCount"] = o.MaximumValueCount
+	}
+	return toSerialize, nil
 }
 
 type NullableAddJsonFieldConstraintsRequest struct {

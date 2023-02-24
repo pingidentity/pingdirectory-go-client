@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSevenBitCleanPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSevenBitCleanPluginRequest{}
+
 // AddSevenBitCleanPluginRequest struct for AddSevenBitCleanPluginRequest
 type AddSevenBitCleanPluginRequest struct {
 	// Name of the new Plugin
@@ -102,7 +105,7 @@ func (o *AddSevenBitCleanPluginRequest) SetSchemas(v []EnumsevenBitCleanPluginSc
 
 // GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *AddSevenBitCleanPluginRequest) GetPluginType() []EnumpluginPluginTypePr
 // GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
@@ -120,7 +123,7 @@ func (o *AddSevenBitCleanPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTyp
 
 // HasPluginType returns a boolean if a field has been set.
 func (o *AddSevenBitCleanPluginRequest) HasPluginType() bool {
-	if o != nil && !isNil(o.PluginType) {
+	if o != nil && !IsNil(o.PluginType) {
 		return true
 	}
 
@@ -134,7 +137,7 @@ func (o *AddSevenBitCleanPluginRequest) SetPluginType(v []EnumpluginPluginTypePr
 
 // GetAttributeType returns the AttributeType field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetAttributeType() []string {
-	if o == nil || isNil(o.AttributeType) {
+	if o == nil || IsNil(o.AttributeType) {
 		var ret []string
 		return ret
 	}
@@ -144,7 +147,7 @@ func (o *AddSevenBitCleanPluginRequest) GetAttributeType() []string {
 // GetAttributeTypeOk returns a tuple with the AttributeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetAttributeTypeOk() ([]string, bool) {
-	if o == nil || isNil(o.AttributeType) {
+	if o == nil || IsNil(o.AttributeType) {
 		return nil, false
 	}
 	return o.AttributeType, true
@@ -152,7 +155,7 @@ func (o *AddSevenBitCleanPluginRequest) GetAttributeTypeOk() ([]string, bool) {
 
 // HasAttributeType returns a boolean if a field has been set.
 func (o *AddSevenBitCleanPluginRequest) HasAttributeType() bool {
-	if o != nil && !isNil(o.AttributeType) {
+	if o != nil && !IsNil(o.AttributeType) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *AddSevenBitCleanPluginRequest) SetAttributeType(v []string) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *AddSevenBitCleanPluginRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -184,7 +187,7 @@ func (o *AddSevenBitCleanPluginRequest) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddSevenBitCleanPluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AddSevenBitCleanPluginRequest) SetBaseDN(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AddSevenBitCleanPluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -216,7 +219,7 @@ func (o *AddSevenBitCleanPluginRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSevenBitCleanPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -254,7 +257,7 @@ func (o *AddSevenBitCleanPluginRequest) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddSevenBitCleanPluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -264,7 +267,7 @@ func (o *AddSevenBitCleanPluginRequest) GetInvokeForInternalOperations() bool {
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSevenBitCleanPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -272,7 +275,7 @@ func (o *AddSevenBitCleanPluginRequest) GetInvokeForInternalOperationsOk() (*boo
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddSevenBitCleanPluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -285,32 +288,34 @@ func (o *AddSevenBitCleanPluginRequest) SetInvokeForInternalOperations(v bool) {
 }
 
 func (o AddSevenBitCleanPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginType) {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if !isNil(o.AttributeType) {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSevenBitCleanPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PluginType) {
+		toSerialize["pluginType"] = o.PluginType
+	}
+	if !IsNil(o.AttributeType) {
+		toSerialize["attributeType"] = o.AttributeType
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSevenBitCleanPluginRequest struct {

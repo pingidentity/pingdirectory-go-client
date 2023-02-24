@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FifoEntryCacheResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FifoEntryCacheResponse{}
+
 // FifoEntryCacheResponse struct for FifoEntryCacheResponse
 type FifoEntryCacheResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -67,7 +70,7 @@ func NewFifoEntryCacheResponseWithDefaults() *FifoEntryCacheResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -77,7 +80,7 @@ func (o *FifoEntryCacheResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -85,7 +88,7 @@ func (o *FifoEntryCacheResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -99,7 +102,7 @@ func (o *FifoEntryCacheResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *FifoEntryCacheResponse) GetUrnpingidentityschemasconfigurationmessages2
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -117,7 +120,7 @@ func (o *FifoEntryCacheResponse) GetUrnpingidentityschemasconfigurationmessages2
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -155,7 +158,7 @@ func (o *FifoEntryCacheResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetSchemas() []EnumfifoEntryCacheSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumfifoEntryCacheSchemaUrn
 		return ret
 	}
@@ -165,7 +168,7 @@ func (o *FifoEntryCacheResponse) GetSchemas() []EnumfifoEntryCacheSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetSchemasOk() ([]EnumfifoEntryCacheSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -173,7 +176,7 @@ func (o *FifoEntryCacheResponse) GetSchemasOk() ([]EnumfifoEntryCacheSchemaUrn, 
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *FifoEntryCacheResponse) SetSchemas(v []EnumfifoEntryCacheSchemaUrn) {
 
 // GetMaxMemoryPercent returns the MaxMemoryPercent field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetMaxMemoryPercent() int32 {
-	if o == nil || isNil(o.MaxMemoryPercent) {
+	if o == nil || IsNil(o.MaxMemoryPercent) {
 		var ret int32
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *FifoEntryCacheResponse) GetMaxMemoryPercent() int32 {
 // GetMaxMemoryPercentOk returns a tuple with the MaxMemoryPercent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMaxMemoryPercentOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxMemoryPercent) {
+	if o == nil || IsNil(o.MaxMemoryPercent) {
 		return nil, false
 	}
 	return o.MaxMemoryPercent, true
@@ -205,7 +208,7 @@ func (o *FifoEntryCacheResponse) GetMaxMemoryPercentOk() (*int32, bool) {
 
 // HasMaxMemoryPercent returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasMaxMemoryPercent() bool {
-	if o != nil && !isNil(o.MaxMemoryPercent) {
+	if o != nil && !IsNil(o.MaxMemoryPercent) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *FifoEntryCacheResponse) SetMaxMemoryPercent(v int32) {
 
 // GetMaxEntries returns the MaxEntries field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetMaxEntries() int32 {
-	if o == nil || isNil(o.MaxEntries) {
+	if o == nil || IsNil(o.MaxEntries) {
 		var ret int32
 		return ret
 	}
@@ -229,7 +232,7 @@ func (o *FifoEntryCacheResponse) GetMaxEntries() int32 {
 // GetMaxEntriesOk returns a tuple with the MaxEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMaxEntriesOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxEntries) {
+	if o == nil || IsNil(o.MaxEntries) {
 		return nil, false
 	}
 	return o.MaxEntries, true
@@ -237,7 +240,7 @@ func (o *FifoEntryCacheResponse) GetMaxEntriesOk() (*int32, bool) {
 
 // HasMaxEntries returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasMaxEntries() bool {
-	if o != nil && !isNil(o.MaxEntries) {
+	if o != nil && !IsNil(o.MaxEntries) {
 		return true
 	}
 
@@ -251,7 +254,7 @@ func (o *FifoEntryCacheResponse) SetMaxEntries(v int32) {
 
 // GetOnlyCacheFrequentlyAccessed returns the OnlyCacheFrequentlyAccessed field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetOnlyCacheFrequentlyAccessed() bool {
-	if o == nil || isNil(o.OnlyCacheFrequentlyAccessed) {
+	if o == nil || IsNil(o.OnlyCacheFrequentlyAccessed) {
 		var ret bool
 		return ret
 	}
@@ -261,7 +264,7 @@ func (o *FifoEntryCacheResponse) GetOnlyCacheFrequentlyAccessed() bool {
 // GetOnlyCacheFrequentlyAccessedOk returns a tuple with the OnlyCacheFrequentlyAccessed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetOnlyCacheFrequentlyAccessedOk() (*bool, bool) {
-	if o == nil || isNil(o.OnlyCacheFrequentlyAccessed) {
+	if o == nil || IsNil(o.OnlyCacheFrequentlyAccessed) {
 		return nil, false
 	}
 	return o.OnlyCacheFrequentlyAccessed, true
@@ -269,7 +272,7 @@ func (o *FifoEntryCacheResponse) GetOnlyCacheFrequentlyAccessedOk() (*bool, bool
 
 // HasOnlyCacheFrequentlyAccessed returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasOnlyCacheFrequentlyAccessed() bool {
-	if o != nil && !isNil(o.OnlyCacheFrequentlyAccessed) {
+	if o != nil && !IsNil(o.OnlyCacheFrequentlyAccessed) {
 		return true
 	}
 
@@ -283,7 +286,7 @@ func (o *FifoEntryCacheResponse) SetOnlyCacheFrequentlyAccessed(v bool) {
 
 // GetIncludeFilter returns the IncludeFilter field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetIncludeFilter() []string {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -293,7 +296,7 @@ func (o *FifoEntryCacheResponse) GetIncludeFilter() []string {
 // GetIncludeFilterOk returns a tuple with the IncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetIncludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		return nil, false
 	}
 	return o.IncludeFilter, true
@@ -301,7 +304,7 @@ func (o *FifoEntryCacheResponse) GetIncludeFilterOk() ([]string, bool) {
 
 // HasIncludeFilter returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasIncludeFilter() bool {
-	if o != nil && !isNil(o.IncludeFilter) {
+	if o != nil && !IsNil(o.IncludeFilter) {
 		return true
 	}
 
@@ -315,7 +318,7 @@ func (o *FifoEntryCacheResponse) SetIncludeFilter(v []string) {
 
 // GetExcludeFilter returns the ExcludeFilter field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetExcludeFilter() []string {
-	if o == nil || isNil(o.ExcludeFilter) {
+	if o == nil || IsNil(o.ExcludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -325,7 +328,7 @@ func (o *FifoEntryCacheResponse) GetExcludeFilter() []string {
 // GetExcludeFilterOk returns a tuple with the ExcludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetExcludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeFilter) {
+	if o == nil || IsNil(o.ExcludeFilter) {
 		return nil, false
 	}
 	return o.ExcludeFilter, true
@@ -333,7 +336,7 @@ func (o *FifoEntryCacheResponse) GetExcludeFilterOk() ([]string, bool) {
 
 // HasExcludeFilter returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasExcludeFilter() bool {
-	if o != nil && !isNil(o.ExcludeFilter) {
+	if o != nil && !IsNil(o.ExcludeFilter) {
 		return true
 	}
 
@@ -347,7 +350,7 @@ func (o *FifoEntryCacheResponse) SetExcludeFilter(v []string) {
 
 // GetMinCacheEntryValueCount returns the MinCacheEntryValueCount field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCount() int32 {
-	if o == nil || isNil(o.MinCacheEntryValueCount) {
+	if o == nil || IsNil(o.MinCacheEntryValueCount) {
 		var ret int32
 		return ret
 	}
@@ -357,7 +360,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCount() int32 {
 // GetMinCacheEntryValueCountOk returns a tuple with the MinCacheEntryValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MinCacheEntryValueCount) {
+	if o == nil || IsNil(o.MinCacheEntryValueCount) {
 		return nil, false
 	}
 	return o.MinCacheEntryValueCount, true
@@ -365,7 +368,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryValueCountOk() (*int32, bool) {
 
 // HasMinCacheEntryValueCount returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasMinCacheEntryValueCount() bool {
-	if o != nil && !isNil(o.MinCacheEntryValueCount) {
+	if o != nil && !IsNil(o.MinCacheEntryValueCount) {
 		return true
 	}
 
@@ -379,7 +382,7 @@ func (o *FifoEntryCacheResponse) SetMinCacheEntryValueCount(v int32) {
 
 // GetMinCacheEntryAttribute returns the MinCacheEntryAttribute field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetMinCacheEntryAttribute() []string {
-	if o == nil || isNil(o.MinCacheEntryAttribute) {
+	if o == nil || IsNil(o.MinCacheEntryAttribute) {
 		var ret []string
 		return ret
 	}
@@ -389,7 +392,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryAttribute() []string {
 // GetMinCacheEntryAttributeOk returns a tuple with the MinCacheEntryAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetMinCacheEntryAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.MinCacheEntryAttribute) {
+	if o == nil || IsNil(o.MinCacheEntryAttribute) {
 		return nil, false
 	}
 	return o.MinCacheEntryAttribute, true
@@ -397,7 +400,7 @@ func (o *FifoEntryCacheResponse) GetMinCacheEntryAttributeOk() ([]string, bool) 
 
 // HasMinCacheEntryAttribute returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasMinCacheEntryAttribute() bool {
-	if o != nil && !isNil(o.MinCacheEntryAttribute) {
+	if o != nil && !IsNil(o.MinCacheEntryAttribute) {
 		return true
 	}
 
@@ -411,7 +414,7 @@ func (o *FifoEntryCacheResponse) SetMinCacheEntryAttribute(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -421,7 +424,7 @@ func (o *FifoEntryCacheResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -429,7 +432,7 @@ func (o *FifoEntryCacheResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -491,7 +494,7 @@ func (o *FifoEntryCacheResponse) SetCacheLevel(v int32) {
 
 // GetCacheUnindexedSearchResults returns the CacheUnindexedSearchResults field value if set, zero value otherwise.
 func (o *FifoEntryCacheResponse) GetCacheUnindexedSearchResults() bool {
-	if o == nil || isNil(o.CacheUnindexedSearchResults) {
+	if o == nil || IsNil(o.CacheUnindexedSearchResults) {
 		var ret bool
 		return ret
 	}
@@ -501,7 +504,7 @@ func (o *FifoEntryCacheResponse) GetCacheUnindexedSearchResults() bool {
 // GetCacheUnindexedSearchResultsOk returns a tuple with the CacheUnindexedSearchResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FifoEntryCacheResponse) GetCacheUnindexedSearchResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.CacheUnindexedSearchResults) {
+	if o == nil || IsNil(o.CacheUnindexedSearchResults) {
 		return nil, false
 	}
 	return o.CacheUnindexedSearchResults, true
@@ -509,7 +512,7 @@ func (o *FifoEntryCacheResponse) GetCacheUnindexedSearchResultsOk() (*bool, bool
 
 // HasCacheUnindexedSearchResults returns a boolean if a field has been set.
 func (o *FifoEntryCacheResponse) HasCacheUnindexedSearchResults() bool {
-	if o != nil && !isNil(o.CacheUnindexedSearchResults) {
+	if o != nil && !IsNil(o.CacheUnindexedSearchResults) {
 		return true
 	}
 
@@ -522,53 +525,55 @@ func (o *FifoEntryCacheResponse) SetCacheUnindexedSearchResults(v bool) {
 }
 
 func (o FifoEntryCacheResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.MaxMemoryPercent) {
-		toSerialize["maxMemoryPercent"] = o.MaxMemoryPercent
-	}
-	if !isNil(o.MaxEntries) {
-		toSerialize["maxEntries"] = o.MaxEntries
-	}
-	if !isNil(o.OnlyCacheFrequentlyAccessed) {
-		toSerialize["onlyCacheFrequentlyAccessed"] = o.OnlyCacheFrequentlyAccessed
-	}
-	if !isNil(o.IncludeFilter) {
-		toSerialize["includeFilter"] = o.IncludeFilter
-	}
-	if !isNil(o.ExcludeFilter) {
-		toSerialize["excludeFilter"] = o.ExcludeFilter
-	}
-	if !isNil(o.MinCacheEntryValueCount) {
-		toSerialize["minCacheEntryValueCount"] = o.MinCacheEntryValueCount
-	}
-	if !isNil(o.MinCacheEntryAttribute) {
-		toSerialize["minCacheEntryAttribute"] = o.MinCacheEntryAttribute
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["cacheLevel"] = o.CacheLevel
-	}
-	if !isNil(o.CacheUnindexedSearchResults) {
-		toSerialize["cacheUnindexedSearchResults"] = o.CacheUnindexedSearchResults
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FifoEntryCacheResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.MaxMemoryPercent) {
+		toSerialize["maxMemoryPercent"] = o.MaxMemoryPercent
+	}
+	if !IsNil(o.MaxEntries) {
+		toSerialize["maxEntries"] = o.MaxEntries
+	}
+	if !IsNil(o.OnlyCacheFrequentlyAccessed) {
+		toSerialize["onlyCacheFrequentlyAccessed"] = o.OnlyCacheFrequentlyAccessed
+	}
+	if !IsNil(o.IncludeFilter) {
+		toSerialize["includeFilter"] = o.IncludeFilter
+	}
+	if !IsNil(o.ExcludeFilter) {
+		toSerialize["excludeFilter"] = o.ExcludeFilter
+	}
+	if !IsNil(o.MinCacheEntryValueCount) {
+		toSerialize["minCacheEntryValueCount"] = o.MinCacheEntryValueCount
+	}
+	if !IsNil(o.MinCacheEntryAttribute) {
+		toSerialize["minCacheEntryAttribute"] = o.MinCacheEntryAttribute
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["cacheLevel"] = o.CacheLevel
+	if !IsNil(o.CacheUnindexedSearchResults) {
+		toSerialize["cacheUnindexedSearchResults"] = o.CacheUnindexedSearchResults
+	}
+	return toSerialize, nil
 }
 
 type NullableFifoEntryCacheResponse struct {

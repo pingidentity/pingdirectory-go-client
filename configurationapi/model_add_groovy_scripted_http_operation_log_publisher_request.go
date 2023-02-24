@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedHttpOperationLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedHttpOperationLogPublisherRequest{}
+
 // AddGroovyScriptedHttpOperationLogPublisherRequest struct for AddGroovyScriptedHttpOperationLogPublisherRequest
 type AddGroovyScriptedHttpOperationLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -125,7 +128,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetScriptClass(v str
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -135,7 +138,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptArgument() 
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -143,7 +146,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetScriptArgumentOk(
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -157,7 +160,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetScriptArgument(v 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -167,7 +170,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetDescription() str
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -175,7 +178,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetDescriptionOk() (
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -223,7 +226,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetLoggingErrorBehav
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -231,7 +234,7 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) GetLoggingErrorBehav
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -244,29 +247,29 @@ func (o *AddGroovyScriptedHttpOperationLogPublisherRequest) SetLoggingErrorBehav
 }
 
 func (o AddGroovyScriptedHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedHttpOperationLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedHttpOperationLogPublisherRequest struct {

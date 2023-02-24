@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddObscuredValuePassphraseProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddObscuredValuePassphraseProviderRequest{}
+
 // AddObscuredValuePassphraseProviderRequest struct for AddObscuredValuePassphraseProviderRequest
 type AddObscuredValuePassphraseProviderRequest struct {
 	// Name of the new Passphrase Provider
@@ -122,7 +125,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) SetObscuredValue(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddObscuredValuePassphraseProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -140,7 +143,7 @@ func (o *AddObscuredValuePassphraseProviderRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddObscuredValuePassphraseProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -177,23 +180,23 @@ func (o *AddObscuredValuePassphraseProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddObscuredValuePassphraseProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["obscuredValue"] = o.ObscuredValue
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddObscuredValuePassphraseProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["obscuredValue"] = o.ObscuredValue
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddObscuredValuePassphraseProviderRequest struct {

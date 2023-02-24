@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddExactMatchIdentityMapperRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddExactMatchIdentityMapperRequest{}
+
 // AddExactMatchIdentityMapperRequest struct for AddExactMatchIdentityMapperRequest
 type AddExactMatchIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
@@ -101,7 +104,7 @@ func (o *AddExactMatchIdentityMapperRequest) SetSchemas(v []EnumexactMatchIdenti
 
 // GetMatchAttribute returns the MatchAttribute field value if set, zero value otherwise.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchAttribute() []string {
-	if o == nil || isNil(o.MatchAttribute) {
+	if o == nil || IsNil(o.MatchAttribute) {
 		var ret []string
 		return ret
 	}
@@ -111,7 +114,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchAttribute() []string {
 // GetMatchAttributeOk returns a tuple with the MatchAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.MatchAttribute) {
+	if o == nil || IsNil(o.MatchAttribute) {
 		return nil, false
 	}
 	return o.MatchAttribute, true
@@ -119,7 +122,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchAttributeOk() ([]string, bo
 
 // HasMatchAttribute returns a boolean if a field has been set.
 func (o *AddExactMatchIdentityMapperRequest) HasMatchAttribute() bool {
-	if o != nil && !isNil(o.MatchAttribute) {
+	if o != nil && !IsNil(o.MatchAttribute) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *AddExactMatchIdentityMapperRequest) SetMatchAttribute(v []string) {
 
 // GetMatchBaseDN returns the MatchBaseDN field value if set, zero value otherwise.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchBaseDN() []string {
-	if o == nil || isNil(o.MatchBaseDN) {
+	if o == nil || IsNil(o.MatchBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -143,7 +146,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchBaseDN() []string {
 // GetMatchBaseDNOk returns a tuple with the MatchBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.MatchBaseDN) {
+	if o == nil || IsNil(o.MatchBaseDN) {
 		return nil, false
 	}
 	return o.MatchBaseDN, true
@@ -151,7 +154,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchBaseDNOk() ([]string, bool)
 
 // HasMatchBaseDN returns a boolean if a field has been set.
 func (o *AddExactMatchIdentityMapperRequest) HasMatchBaseDN() bool {
-	if o != nil && !isNil(o.MatchBaseDN) {
+	if o != nil && !IsNil(o.MatchBaseDN) {
 		return true
 	}
 
@@ -165,7 +168,7 @@ func (o *AddExactMatchIdentityMapperRequest) SetMatchBaseDN(v []string) {
 
 // GetMatchFilter returns the MatchFilter field value if set, zero value otherwise.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchFilter() string {
-	if o == nil || isNil(o.MatchFilter) {
+	if o == nil || IsNil(o.MatchFilter) {
 		var ret string
 		return ret
 	}
@@ -175,7 +178,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchFilter() string {
 // GetMatchFilterOk returns a tuple with the MatchFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetMatchFilterOk() (*string, bool) {
-	if o == nil || isNil(o.MatchFilter) {
+	if o == nil || IsNil(o.MatchFilter) {
 		return nil, false
 	}
 	return o.MatchFilter, true
@@ -183,7 +186,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetMatchFilterOk() (*string, bool) 
 
 // HasMatchFilter returns a boolean if a field has been set.
 func (o *AddExactMatchIdentityMapperRequest) HasMatchFilter() bool {
-	if o != nil && !isNil(o.MatchFilter) {
+	if o != nil && !IsNil(o.MatchFilter) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *AddExactMatchIdentityMapperRequest) SetMatchFilter(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddExactMatchIdentityMapperRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddExactMatchIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -215,7 +218,7 @@ func (o *AddExactMatchIdentityMapperRequest) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddExactMatchIdentityMapperRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -252,29 +255,31 @@ func (o *AddExactMatchIdentityMapperRequest) SetEnabled(v bool) {
 }
 
 func (o AddExactMatchIdentityMapperRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapperName"] = o.MapperName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.MatchAttribute) {
-		toSerialize["matchAttribute"] = o.MatchAttribute
-	}
-	if !isNil(o.MatchBaseDN) {
-		toSerialize["matchBaseDN"] = o.MatchBaseDN
-	}
-	if !isNil(o.MatchFilter) {
-		toSerialize["matchFilter"] = o.MatchFilter
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddExactMatchIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapperName"] = o.MapperName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.MatchAttribute) {
+		toSerialize["matchAttribute"] = o.MatchAttribute
+	}
+	if !IsNil(o.MatchBaseDN) {
+		toSerialize["matchBaseDN"] = o.MatchBaseDN
+	}
+	if !IsNil(o.MatchFilter) {
+		toSerialize["matchFilter"] = o.MatchFilter
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddExactMatchIdentityMapperRequest struct {

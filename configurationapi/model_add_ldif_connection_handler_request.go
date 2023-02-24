@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddLdifConnectionHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddLdifConnectionHandlerRequest{}
+
 // AddLdifConnectionHandlerRequest struct for AddLdifConnectionHandlerRequest
 type AddLdifConnectionHandlerRequest struct {
 	// Name of the new Connection Handler
@@ -103,7 +106,7 @@ func (o *AddLdifConnectionHandlerRequest) SetSchemas(v []EnumldifConnectionHandl
 
 // GetAllowedClient returns the AllowedClient field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetAllowedClient() []string {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		var ret []string
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddLdifConnectionHandlerRequest) GetAllowedClient() []string {
 // GetAllowedClientOk returns a tuple with the AllowedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedClient) {
+	if o == nil || IsNil(o.AllowedClient) {
 		return nil, false
 	}
 	return o.AllowedClient, true
@@ -121,7 +124,7 @@ func (o *AddLdifConnectionHandlerRequest) GetAllowedClientOk() ([]string, bool) 
 
 // HasAllowedClient returns a boolean if a field has been set.
 func (o *AddLdifConnectionHandlerRequest) HasAllowedClient() bool {
-	if o != nil && !isNil(o.AllowedClient) {
+	if o != nil && !IsNil(o.AllowedClient) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *AddLdifConnectionHandlerRequest) SetAllowedClient(v []string) {
 
 // GetDeniedClient returns the DeniedClient field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetDeniedClient() []string {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		var ret []string
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddLdifConnectionHandlerRequest) GetDeniedClient() []string {
 // GetDeniedClientOk returns a tuple with the DeniedClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
-	if o == nil || isNil(o.DeniedClient) {
+	if o == nil || IsNil(o.DeniedClient) {
 		return nil, false
 	}
 	return o.DeniedClient, true
@@ -153,7 +156,7 @@ func (o *AddLdifConnectionHandlerRequest) GetDeniedClientOk() ([]string, bool) {
 
 // HasDeniedClient returns a boolean if a field has been set.
 func (o *AddLdifConnectionHandlerRequest) HasDeniedClient() bool {
-	if o != nil && !isNil(o.DeniedClient) {
+	if o != nil && !IsNil(o.DeniedClient) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddLdifConnectionHandlerRequest) SetDeniedClient(v []string) {
 
 // GetLdifDirectory returns the LdifDirectory field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetLdifDirectory() string {
-	if o == nil || isNil(o.LdifDirectory) {
+	if o == nil || IsNil(o.LdifDirectory) {
 		var ret string
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddLdifConnectionHandlerRequest) GetLdifDirectory() string {
 // GetLdifDirectoryOk returns a tuple with the LdifDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetLdifDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.LdifDirectory) {
+	if o == nil || IsNil(o.LdifDirectory) {
 		return nil, false
 	}
 	return o.LdifDirectory, true
@@ -185,7 +188,7 @@ func (o *AddLdifConnectionHandlerRequest) GetLdifDirectoryOk() (*string, bool) {
 
 // HasLdifDirectory returns a boolean if a field has been set.
 func (o *AddLdifConnectionHandlerRequest) HasLdifDirectory() bool {
-	if o != nil && !isNil(o.LdifDirectory) {
+	if o != nil && !IsNil(o.LdifDirectory) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *AddLdifConnectionHandlerRequest) SetLdifDirectory(v string) {
 
 // GetPollInterval returns the PollInterval field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetPollInterval() string {
-	if o == nil || isNil(o.PollInterval) {
+	if o == nil || IsNil(o.PollInterval) {
 		var ret string
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *AddLdifConnectionHandlerRequest) GetPollInterval() string {
 // GetPollIntervalOk returns a tuple with the PollInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetPollIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.PollInterval) {
+	if o == nil || IsNil(o.PollInterval) {
 		return nil, false
 	}
 	return o.PollInterval, true
@@ -217,7 +220,7 @@ func (o *AddLdifConnectionHandlerRequest) GetPollIntervalOk() (*string, bool) {
 
 // HasPollInterval returns a boolean if a field has been set.
 func (o *AddLdifConnectionHandlerRequest) HasPollInterval() bool {
-	if o != nil && !isNil(o.PollInterval) {
+	if o != nil && !IsNil(o.PollInterval) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *AddLdifConnectionHandlerRequest) SetPollInterval(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddLdifConnectionHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *AddLdifConnectionHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddLdifConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -249,7 +252,7 @@ func (o *AddLdifConnectionHandlerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddLdifConnectionHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddLdifConnectionHandlerRequest) SetEnabled(v bool) {
 }
 
 func (o AddLdifConnectionHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllowedClient) {
-		toSerialize["allowedClient"] = o.AllowedClient
-	}
-	if !isNil(o.DeniedClient) {
-		toSerialize["deniedClient"] = o.DeniedClient
-	}
-	if !isNil(o.LdifDirectory) {
-		toSerialize["ldifDirectory"] = o.LdifDirectory
-	}
-	if !isNil(o.PollInterval) {
-		toSerialize["pollInterval"] = o.PollInterval
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddLdifConnectionHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllowedClient) {
+		toSerialize["allowedClient"] = o.AllowedClient
+	}
+	if !IsNil(o.DeniedClient) {
+		toSerialize["deniedClient"] = o.DeniedClient
+	}
+	if !IsNil(o.LdifDirectory) {
+		toSerialize["ldifDirectory"] = o.LdifDirectory
+	}
+	if !IsNil(o.PollInterval) {
+		toSerialize["pollInterval"] = o.PollInterval
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddLdifConnectionHandlerRequest struct {

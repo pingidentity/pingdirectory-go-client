@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KeyPairResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KeyPairResponse{}
+
 // KeyPairResponse struct for KeyPairResponse
 type KeyPairResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewKeyPairResponseWithDefaults() *KeyPairResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *KeyPairResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *KeyPairResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *KeyPairResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *KeyPairResponse) GetUrnpingidentityschemasconfigurationmessages20() Met
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *KeyPairResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -141,7 +144,7 @@ func (o *KeyPairResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetSchemas() []EnumkeyPairSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumkeyPairSchemaUrn
 		return ret
 	}
@@ -151,7 +154,7 @@ func (o *KeyPairResponse) GetSchemas() []EnumkeyPairSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetSchemasOk() ([]EnumkeyPairSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -159,7 +162,7 @@ func (o *KeyPairResponse) GetSchemasOk() ([]EnumkeyPairSchemaUrn, bool) {
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *KeyPairResponse) SetKeyAlgorithm(v EnumkeyPairKeyAlgorithmProp) {
 
 // GetSelfSignedCertificateValidity returns the SelfSignedCertificateValidity field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetSelfSignedCertificateValidity() string {
-	if o == nil || isNil(o.SelfSignedCertificateValidity) {
+	if o == nil || IsNil(o.SelfSignedCertificateValidity) {
 		var ret string
 		return ret
 	}
@@ -207,7 +210,7 @@ func (o *KeyPairResponse) GetSelfSignedCertificateValidity() string {
 // GetSelfSignedCertificateValidityOk returns a tuple with the SelfSignedCertificateValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetSelfSignedCertificateValidityOk() (*string, bool) {
-	if o == nil || isNil(o.SelfSignedCertificateValidity) {
+	if o == nil || IsNil(o.SelfSignedCertificateValidity) {
 		return nil, false
 	}
 	return o.SelfSignedCertificateValidity, true
@@ -215,7 +218,7 @@ func (o *KeyPairResponse) GetSelfSignedCertificateValidityOk() (*string, bool) {
 
 // HasSelfSignedCertificateValidity returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasSelfSignedCertificateValidity() bool {
-	if o != nil && !isNil(o.SelfSignedCertificateValidity) {
+	if o != nil && !IsNil(o.SelfSignedCertificateValidity) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *KeyPairResponse) SetSelfSignedCertificateValidity(v string) {
 
 // GetSubjectDN returns the SubjectDN field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetSubjectDN() string {
-	if o == nil || isNil(o.SubjectDN) {
+	if o == nil || IsNil(o.SubjectDN) {
 		var ret string
 		return ret
 	}
@@ -239,7 +242,7 @@ func (o *KeyPairResponse) GetSubjectDN() string {
 // GetSubjectDNOk returns a tuple with the SubjectDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetSubjectDNOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectDN) {
+	if o == nil || IsNil(o.SubjectDN) {
 		return nil, false
 	}
 	return o.SubjectDN, true
@@ -247,7 +250,7 @@ func (o *KeyPairResponse) GetSubjectDNOk() (*string, bool) {
 
 // HasSubjectDN returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasSubjectDN() bool {
-	if o != nil && !isNil(o.SubjectDN) {
+	if o != nil && !IsNil(o.SubjectDN) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *KeyPairResponse) SetSubjectDN(v string) {
 
 // GetCertificateChain returns the CertificateChain field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetCertificateChain() string {
-	if o == nil || isNil(o.CertificateChain) {
+	if o == nil || IsNil(o.CertificateChain) {
 		var ret string
 		return ret
 	}
@@ -271,7 +274,7 @@ func (o *KeyPairResponse) GetCertificateChain() string {
 // GetCertificateChainOk returns a tuple with the CertificateChain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetCertificateChainOk() (*string, bool) {
-	if o == nil || isNil(o.CertificateChain) {
+	if o == nil || IsNil(o.CertificateChain) {
 		return nil, false
 	}
 	return o.CertificateChain, true
@@ -279,7 +282,7 @@ func (o *KeyPairResponse) GetCertificateChainOk() (*string, bool) {
 
 // HasCertificateChain returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasCertificateChain() bool {
-	if o != nil && !isNil(o.CertificateChain) {
+	if o != nil && !IsNil(o.CertificateChain) {
 		return true
 	}
 
@@ -293,7 +296,7 @@ func (o *KeyPairResponse) SetCertificateChain(v string) {
 
 // GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
 func (o *KeyPairResponse) GetPrivateKey() string {
-	if o == nil || isNil(o.PrivateKey) {
+	if o == nil || IsNil(o.PrivateKey) {
 		var ret string
 		return ret
 	}
@@ -303,7 +306,7 @@ func (o *KeyPairResponse) GetPrivateKey() string {
 // GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KeyPairResponse) GetPrivateKeyOk() (*string, bool) {
-	if o == nil || isNil(o.PrivateKey) {
+	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
 	return o.PrivateKey, true
@@ -311,7 +314,7 @@ func (o *KeyPairResponse) GetPrivateKeyOk() (*string, bool) {
 
 // HasPrivateKey returns a boolean if a field has been set.
 func (o *KeyPairResponse) HasPrivateKey() bool {
-	if o != nil && !isNil(o.PrivateKey) {
+	if o != nil && !IsNil(o.PrivateKey) {
 		return true
 	}
 
@@ -324,35 +327,39 @@ func (o *KeyPairResponse) SetPrivateKey(v string) {
 }
 
 func (o KeyPairResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["keyAlgorithm"] = o.KeyAlgorithm
-	}
-	if !isNil(o.SelfSignedCertificateValidity) {
-		toSerialize["selfSignedCertificateValidity"] = o.SelfSignedCertificateValidity
-	}
-	if !isNil(o.SubjectDN) {
-		toSerialize["subjectDN"] = o.SubjectDN
-	}
-	if !isNil(o.CertificateChain) {
-		toSerialize["certificateChain"] = o.CertificateChain
-	}
-	if !isNil(o.PrivateKey) {
-		toSerialize["privateKey"] = o.PrivateKey
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o KeyPairResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["keyAlgorithm"] = o.KeyAlgorithm
+	if !IsNil(o.SelfSignedCertificateValidity) {
+		toSerialize["selfSignedCertificateValidity"] = o.SelfSignedCertificateValidity
+	}
+	if !IsNil(o.SubjectDN) {
+		toSerialize["subjectDN"] = o.SubjectDN
+	}
+	if !IsNil(o.CertificateChain) {
+		toSerialize["certificateChain"] = o.CertificateChain
+	}
+	if !IsNil(o.PrivateKey) {
+		toSerialize["privateKey"] = o.PrivateKey
+	}
+	return toSerialize, nil
 }
 
 type NullableKeyPairResponse struct {

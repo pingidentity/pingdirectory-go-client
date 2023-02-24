@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDelayBindResponseFailureLockoutActionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDelayBindResponseFailureLockoutActionRequest{}
+
 // AddDelayBindResponseFailureLockoutActionRequest struct for AddDelayBindResponseFailureLockoutActionRequest
 type AddDelayBindResponseFailureLockoutActionRequest struct {
 	// Name of the new Failure Lockout Action
@@ -123,7 +126,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) SetDelay(v string) {
 
 // GetAllowBlockingDelay returns the AllowBlockingDelay field value if set, zero value otherwise.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetAllowBlockingDelay() bool {
-	if o == nil || isNil(o.AllowBlockingDelay) {
+	if o == nil || IsNil(o.AllowBlockingDelay) {
 		var ret bool
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetAllowBlockingDelay(
 // GetAllowBlockingDelayOk returns a tuple with the AllowBlockingDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetAllowBlockingDelayOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowBlockingDelay) {
+	if o == nil || IsNil(o.AllowBlockingDelay) {
 		return nil, false
 	}
 	return o.AllowBlockingDelay, true
@@ -141,7 +144,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetAllowBlockingDelayO
 
 // HasAllowBlockingDelay returns a boolean if a field has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) HasAllowBlockingDelay() bool {
-	if o != nil && !isNil(o.AllowBlockingDelay) {
+	if o != nil && !IsNil(o.AllowBlockingDelay) {
 		return true
 	}
 
@@ -155,7 +158,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) SetAllowBlockingDelay(
 
 // GetGenerateAccountStatusNotification returns the GenerateAccountStatusNotification field value if set, zero value otherwise.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetGenerateAccountStatusNotification() bool {
-	if o == nil || isNil(o.GenerateAccountStatusNotification) {
+	if o == nil || IsNil(o.GenerateAccountStatusNotification) {
 		var ret bool
 		return ret
 	}
@@ -165,7 +168,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetGenerateAccountStat
 // GetGenerateAccountStatusNotificationOk returns a tuple with the GenerateAccountStatusNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.GenerateAccountStatusNotification) {
+	if o == nil || IsNil(o.GenerateAccountStatusNotification) {
 		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
@@ -173,7 +176,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetGenerateAccountStat
 
 // HasGenerateAccountStatusNotification returns a boolean if a field has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) HasGenerateAccountStatusNotification() bool {
-	if o != nil && !isNil(o.GenerateAccountStatusNotification) {
+	if o != nil && !IsNil(o.GenerateAccountStatusNotification) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) SetGenerateAccountStat
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -197,7 +200,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -205,7 +208,7 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDelayBindResponseFailureLockoutActionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -218,26 +221,28 @@ func (o *AddDelayBindResponseFailureLockoutActionRequest) SetDescription(v strin
 }
 
 func (o AddDelayBindResponseFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["actionName"] = o.ActionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["delay"] = o.Delay
-	}
-	if !isNil(o.AllowBlockingDelay) {
-		toSerialize["allowBlockingDelay"] = o.AllowBlockingDelay
-	}
-	if !isNil(o.GenerateAccountStatusNotification) {
-		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDelayBindResponseFailureLockoutActionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["actionName"] = o.ActionName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["delay"] = o.Delay
+	if !IsNil(o.AllowBlockingDelay) {
+		toSerialize["allowBlockingDelay"] = o.AllowBlockingDelay
+	}
+	if !IsNil(o.GenerateAccountStatusNotification) {
+		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddDelayBindResponseFailureLockoutActionRequest struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddConsoleJsonHttpOperationLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddConsoleJsonHttpOperationLogPublisherRequest{}
+
 // AddConsoleJsonHttpOperationLogPublisherRequest struct for AddConsoleJsonHttpOperationLogPublisherRequest
 type AddConsoleJsonHttpOperationLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -156,7 +159,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetEnabled(v bool) {
 
 // GetOutputLocation returns the OutputLocation field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetOutputLocation() EnumlogPublisherOutputLocationProp {
-	if o == nil || isNil(o.OutputLocation) {
+	if o == nil || IsNil(o.OutputLocation) {
 		var ret EnumlogPublisherOutputLocationProp
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetOutputLocation() Enu
 // GetOutputLocationOk returns a tuple with the OutputLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetOutputLocationOk() (*EnumlogPublisherOutputLocationProp, bool) {
-	if o == nil || isNil(o.OutputLocation) {
+	if o == nil || IsNil(o.OutputLocation) {
 		return nil, false
 	}
 	return o.OutputLocation, true
@@ -174,7 +177,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetOutputLocationOk() (
 
 // HasOutputLocation returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasOutputLocation() bool {
-	if o != nil && !isNil(o.OutputLocation) {
+	if o != nil && !IsNil(o.OutputLocation) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetOutputLocation(v Enu
 
 // GetLogRequests returns the LogRequests field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequests() bool {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		var ret bool
 		return ret
 	}
@@ -198,7 +201,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequests() bool {
 // GetLogRequestsOk returns a tuple with the LogRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		return nil, false
 	}
 	return o.LogRequests, true
@@ -206,7 +209,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestsOk() (*bo
 
 // HasLogRequests returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRequests() bool {
-	if o != nil && !isNil(o.LogRequests) {
+	if o != nil && !IsNil(o.LogRequests) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRequests(v bool) 
 
 // GetLogResults returns the LogResults field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResults() bool {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		var ret bool
 		return ret
 	}
@@ -230,7 +233,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResults() bool {
 // GetLogResultsOk returns a tuple with the LogResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		return nil, false
 	}
 	return o.LogResults, true
@@ -238,7 +241,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResultsOk() (*boo
 
 // HasLogResults returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogResults() bool {
-	if o != nil && !isNil(o.LogResults) {
+	if o != nil && !IsNil(o.LogResults) {
 		return true
 	}
 
@@ -252,7 +255,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogResults(v bool) {
 
 // GetIncludeProductName returns the IncludeProductName field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeProductName() bool {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		var ret bool
 		return ret
 	}
@@ -262,7 +265,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeProductName()
 // GetIncludeProductNameOk returns a tuple with the IncludeProductName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeProductNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeProductName) {
+	if o == nil || IsNil(o.IncludeProductName) {
 		return nil, false
 	}
 	return o.IncludeProductName, true
@@ -270,7 +273,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeProductNameOk
 
 // HasIncludeProductName returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasIncludeProductName() bool {
-	if o != nil && !isNil(o.IncludeProductName) {
+	if o != nil && !IsNil(o.IncludeProductName) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetIncludeProductName(v
 
 // GetIncludeInstanceName returns the IncludeInstanceName field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeInstanceName() bool {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		var ret bool
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeInstanceName(
 // GetIncludeInstanceNameOk returns a tuple with the IncludeInstanceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeInstanceNameOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeInstanceName) {
+	if o == nil || IsNil(o.IncludeInstanceName) {
 		return nil, false
 	}
 	return o.IncludeInstanceName, true
@@ -302,7 +305,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeInstanceNameO
 
 // HasIncludeInstanceName returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasIncludeInstanceName() bool {
-	if o != nil && !isNil(o.IncludeInstanceName) {
+	if o != nil && !IsNil(o.IncludeInstanceName) {
 		return true
 	}
 
@@ -316,7 +319,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetIncludeInstanceName(
 
 // GetIncludeStartupID returns the IncludeStartupID field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeStartupID() bool {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		var ret bool
 		return ret
 	}
@@ -326,7 +329,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeStartupID() b
 // GetIncludeStartupIDOk returns a tuple with the IncludeStartupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeStartupIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeStartupID) {
+	if o == nil || IsNil(o.IncludeStartupID) {
 		return nil, false
 	}
 	return o.IncludeStartupID, true
@@ -334,7 +337,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeStartupIDOk()
 
 // HasIncludeStartupID returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasIncludeStartupID() bool {
-	if o != nil && !isNil(o.IncludeStartupID) {
+	if o != nil && !IsNil(o.IncludeStartupID) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetIncludeStartupID(v b
 
 // GetIncludeThreadID returns the IncludeThreadID field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeThreadID() bool {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		var ret bool
 		return ret
 	}
@@ -358,7 +361,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeThreadID() bo
 // GetIncludeThreadIDOk returns a tuple with the IncludeThreadID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeThreadIDOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeThreadID) {
+	if o == nil || IsNil(o.IncludeThreadID) {
 		return nil, false
 	}
 	return o.IncludeThreadID, true
@@ -366,7 +369,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeThreadIDOk() 
 
 // HasIncludeThreadID returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasIncludeThreadID() bool {
-	if o != nil && !isNil(o.IncludeThreadID) {
+	if o != nil && !IsNil(o.IncludeThreadID) {
 		return true
 	}
 
@@ -380,7 +383,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetIncludeThreadID(v bo
 
 // GetIncludeRequestDetailsInResultMessages returns the IncludeRequestDetailsInResultMessages field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeRequestDetailsInResultMessages() bool {
-	if o == nil || isNil(o.IncludeRequestDetailsInResultMessages) {
+	if o == nil || IsNil(o.IncludeRequestDetailsInResultMessages) {
 		var ret bool
 		return ret
 	}
@@ -390,7 +393,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeRequestDetail
 // GetIncludeRequestDetailsInResultMessagesOk returns a tuple with the IncludeRequestDetailsInResultMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeRequestDetailsInResultMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeRequestDetailsInResultMessages) {
+	if o == nil || IsNil(o.IncludeRequestDetailsInResultMessages) {
 		return nil, false
 	}
 	return o.IncludeRequestDetailsInResultMessages, true
@@ -398,7 +401,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetIncludeRequestDetail
 
 // HasIncludeRequestDetailsInResultMessages returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasIncludeRequestDetailsInResultMessages() bool {
-	if o != nil && !isNil(o.IncludeRequestDetailsInResultMessages) {
+	if o != nil && !IsNil(o.IncludeRequestDetailsInResultMessages) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetIncludeRequestDetail
 
 // GetLogRequestHeaders returns the LogRequestHeaders field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestHeaders() EnumlogPublisherLogRequestHeadersProp {
-	if o == nil || isNil(o.LogRequestHeaders) {
+	if o == nil || IsNil(o.LogRequestHeaders) {
 		var ret EnumlogPublisherLogRequestHeadersProp
 		return ret
 	}
@@ -422,7 +425,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestHeaders() 
 // GetLogRequestHeadersOk returns a tuple with the LogRequestHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestHeadersOk() (*EnumlogPublisherLogRequestHeadersProp, bool) {
-	if o == nil || isNil(o.LogRequestHeaders) {
+	if o == nil || IsNil(o.LogRequestHeaders) {
 		return nil, false
 	}
 	return o.LogRequestHeaders, true
@@ -430,7 +433,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestHeadersOk(
 
 // HasLogRequestHeaders returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRequestHeaders() bool {
-	if o != nil && !isNil(o.LogRequestHeaders) {
+	if o != nil && !IsNil(o.LogRequestHeaders) {
 		return true
 	}
 
@@ -444,7 +447,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRequestHeaders(v 
 
 // GetSuppressedRequestHeaderName returns the SuppressedRequestHeaderName field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestHeaderName() []string {
-	if o == nil || isNil(o.SuppressedRequestHeaderName) {
+	if o == nil || IsNil(o.SuppressedRequestHeaderName) {
 		var ret []string
 		return ret
 	}
@@ -454,7 +457,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestHea
 // GetSuppressedRequestHeaderNameOk returns a tuple with the SuppressedRequestHeaderName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestHeaderNameOk() ([]string, bool) {
-	if o == nil || isNil(o.SuppressedRequestHeaderName) {
+	if o == nil || IsNil(o.SuppressedRequestHeaderName) {
 		return nil, false
 	}
 	return o.SuppressedRequestHeaderName, true
@@ -462,7 +465,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestHea
 
 // HasSuppressedRequestHeaderName returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasSuppressedRequestHeaderName() bool {
-	if o != nil && !isNil(o.SuppressedRequestHeaderName) {
+	if o != nil && !IsNil(o.SuppressedRequestHeaderName) {
 		return true
 	}
 
@@ -476,7 +479,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetSuppressedRequestHea
 
 // GetLogResponseHeaders returns the LogResponseHeaders field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseHeaders() EnumlogPublisherLogResponseHeadersProp {
-	if o == nil || isNil(o.LogResponseHeaders) {
+	if o == nil || IsNil(o.LogResponseHeaders) {
 		var ret EnumlogPublisherLogResponseHeadersProp
 		return ret
 	}
@@ -486,7 +489,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseHeaders()
 // GetLogResponseHeadersOk returns a tuple with the LogResponseHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseHeadersOk() (*EnumlogPublisherLogResponseHeadersProp, bool) {
-	if o == nil || isNil(o.LogResponseHeaders) {
+	if o == nil || IsNil(o.LogResponseHeaders) {
 		return nil, false
 	}
 	return o.LogResponseHeaders, true
@@ -494,7 +497,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseHeadersOk
 
 // HasLogResponseHeaders returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogResponseHeaders() bool {
-	if o != nil && !isNil(o.LogResponseHeaders) {
+	if o != nil && !IsNil(o.LogResponseHeaders) {
 		return true
 	}
 
@@ -508,7 +511,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogResponseHeaders(v
 
 // GetSuppressedResponseHeaderName returns the SuppressedResponseHeaderName field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedResponseHeaderName() []string {
-	if o == nil || isNil(o.SuppressedResponseHeaderName) {
+	if o == nil || IsNil(o.SuppressedResponseHeaderName) {
 		var ret []string
 		return ret
 	}
@@ -518,7 +521,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedResponseHe
 // GetSuppressedResponseHeaderNameOk returns a tuple with the SuppressedResponseHeaderName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedResponseHeaderNameOk() ([]string, bool) {
-	if o == nil || isNil(o.SuppressedResponseHeaderName) {
+	if o == nil || IsNil(o.SuppressedResponseHeaderName) {
 		return nil, false
 	}
 	return o.SuppressedResponseHeaderName, true
@@ -526,7 +529,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedResponseHe
 
 // HasSuppressedResponseHeaderName returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasSuppressedResponseHeaderName() bool {
-	if o != nil && !isNil(o.SuppressedResponseHeaderName) {
+	if o != nil && !IsNil(o.SuppressedResponseHeaderName) {
 		return true
 	}
 
@@ -540,7 +543,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetSuppressedResponseHe
 
 // GetLogRequestAuthorizationType returns the LogRequestAuthorizationType field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestAuthorizationType() bool {
-	if o == nil || isNil(o.LogRequestAuthorizationType) {
+	if o == nil || IsNil(o.LogRequestAuthorizationType) {
 		var ret bool
 		return ret
 	}
@@ -550,7 +553,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestAuthorizat
 // GetLogRequestAuthorizationTypeOk returns a tuple with the LogRequestAuthorizationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestAuthorizationTypeOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequestAuthorizationType) {
+	if o == nil || IsNil(o.LogRequestAuthorizationType) {
 		return nil, false
 	}
 	return o.LogRequestAuthorizationType, true
@@ -558,7 +561,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestAuthorizat
 
 // HasLogRequestAuthorizationType returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRequestAuthorizationType() bool {
-	if o != nil && !isNil(o.LogRequestAuthorizationType) {
+	if o != nil && !IsNil(o.LogRequestAuthorizationType) {
 		return true
 	}
 
@@ -572,7 +575,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRequestAuthorizat
 
 // GetLogRequestCookieNames returns the LogRequestCookieNames field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestCookieNames() bool {
-	if o == nil || isNil(o.LogRequestCookieNames) {
+	if o == nil || IsNil(o.LogRequestCookieNames) {
 		var ret bool
 		return ret
 	}
@@ -582,7 +585,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestCookieName
 // GetLogRequestCookieNamesOk returns a tuple with the LogRequestCookieNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestCookieNamesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequestCookieNames) {
+	if o == nil || IsNil(o.LogRequestCookieNames) {
 		return nil, false
 	}
 	return o.LogRequestCookieNames, true
@@ -590,7 +593,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestCookieName
 
 // HasLogRequestCookieNames returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRequestCookieNames() bool {
-	if o != nil && !isNil(o.LogRequestCookieNames) {
+	if o != nil && !IsNil(o.LogRequestCookieNames) {
 		return true
 	}
 
@@ -604,7 +607,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRequestCookieName
 
 // GetLogResponseCookieNames returns the LogResponseCookieNames field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseCookieNames() bool {
-	if o == nil || isNil(o.LogResponseCookieNames) {
+	if o == nil || IsNil(o.LogResponseCookieNames) {
 		var ret bool
 		return ret
 	}
@@ -614,7 +617,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseCookieNam
 // GetLogResponseCookieNamesOk returns a tuple with the LogResponseCookieNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseCookieNamesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogResponseCookieNames) {
+	if o == nil || IsNil(o.LogResponseCookieNames) {
 		return nil, false
 	}
 	return o.LogResponseCookieNames, true
@@ -622,7 +625,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogResponseCookieNam
 
 // HasLogResponseCookieNames returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogResponseCookieNames() bool {
-	if o != nil && !isNil(o.LogResponseCookieNames) {
+	if o != nil && !IsNil(o.LogResponseCookieNames) {
 		return true
 	}
 
@@ -636,7 +639,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogResponseCookieNam
 
 // GetLogRequestParameters returns the LogRequestParameters field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestParameters() EnumlogPublisherLogRequestParametersProp {
-	if o == nil || isNil(o.LogRequestParameters) {
+	if o == nil || IsNil(o.LogRequestParameters) {
 		var ret EnumlogPublisherLogRequestParametersProp
 		return ret
 	}
@@ -646,7 +649,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestParameters
 // GetLogRequestParametersOk returns a tuple with the LogRequestParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestParametersOk() (*EnumlogPublisherLogRequestParametersProp, bool) {
-	if o == nil || isNil(o.LogRequestParameters) {
+	if o == nil || IsNil(o.LogRequestParameters) {
 		return nil, false
 	}
 	return o.LogRequestParameters, true
@@ -654,7 +657,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestParameters
 
 // HasLogRequestParameters returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRequestParameters() bool {
-	if o != nil && !isNil(o.LogRequestParameters) {
+	if o != nil && !IsNil(o.LogRequestParameters) {
 		return true
 	}
 
@@ -668,7 +671,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRequestParameters
 
 // GetSuppressedRequestParameterName returns the SuppressedRequestParameterName field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestParameterName() []string {
-	if o == nil || isNil(o.SuppressedRequestParameterName) {
+	if o == nil || IsNil(o.SuppressedRequestParameterName) {
 		var ret []string
 		return ret
 	}
@@ -678,7 +681,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestPar
 // GetSuppressedRequestParameterNameOk returns a tuple with the SuppressedRequestParameterName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestParameterNameOk() ([]string, bool) {
-	if o == nil || isNil(o.SuppressedRequestParameterName) {
+	if o == nil || IsNil(o.SuppressedRequestParameterName) {
 		return nil, false
 	}
 	return o.SuppressedRequestParameterName, true
@@ -686,7 +689,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetSuppressedRequestPar
 
 // HasSuppressedRequestParameterName returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasSuppressedRequestParameterName() bool {
-	if o != nil && !isNil(o.SuppressedRequestParameterName) {
+	if o != nil && !IsNil(o.SuppressedRequestParameterName) {
 		return true
 	}
 
@@ -700,7 +703,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetSuppressedRequestPar
 
 // GetLogRequestProtocol returns the LogRequestProtocol field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestProtocol() bool {
-	if o == nil || isNil(o.LogRequestProtocol) {
+	if o == nil || IsNil(o.LogRequestProtocol) {
 		var ret bool
 		return ret
 	}
@@ -710,7 +713,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestProtocol()
 // GetLogRequestProtocolOk returns a tuple with the LogRequestProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestProtocolOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequestProtocol) {
+	if o == nil || IsNil(o.LogRequestProtocol) {
 		return nil, false
 	}
 	return o.LogRequestProtocol, true
@@ -718,7 +721,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRequestProtocolOk
 
 // HasLogRequestProtocol returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRequestProtocol() bool {
-	if o != nil && !isNil(o.LogRequestProtocol) {
+	if o != nil && !IsNil(o.LogRequestProtocol) {
 		return true
 	}
 
@@ -732,7 +735,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRequestProtocol(v
 
 // GetLogRedirectURI returns the LogRedirectURI field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRedirectURI() bool {
-	if o == nil || isNil(o.LogRedirectURI) {
+	if o == nil || IsNil(o.LogRedirectURI) {
 		var ret bool
 		return ret
 	}
@@ -742,7 +745,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRedirectURI() boo
 // GetLogRedirectURIOk returns a tuple with the LogRedirectURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRedirectURIOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRedirectURI) {
+	if o == nil || IsNil(o.LogRedirectURI) {
 		return nil, false
 	}
 	return o.LogRedirectURI, true
@@ -750,7 +753,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLogRedirectURIOk() (
 
 // HasLogRedirectURI returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLogRedirectURI() bool {
-	if o != nil && !isNil(o.LogRedirectURI) {
+	if o != nil && !IsNil(o.LogRedirectURI) {
 		return true
 	}
 
@@ -764,7 +767,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLogRedirectURI(v boo
 
 // GetWriteMultiLineMessages returns the WriteMultiLineMessages field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetWriteMultiLineMessages() bool {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
+	if o == nil || IsNil(o.WriteMultiLineMessages) {
 		var ret bool
 		return ret
 	}
@@ -774,7 +777,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetWriteMultiLineMessag
 // GetWriteMultiLineMessagesOk returns a tuple with the WriteMultiLineMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetWriteMultiLineMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.WriteMultiLineMessages) {
+	if o == nil || IsNil(o.WriteMultiLineMessages) {
 		return nil, false
 	}
 	return o.WriteMultiLineMessages, true
@@ -782,7 +785,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetWriteMultiLineMessag
 
 // HasWriteMultiLineMessages returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasWriteMultiLineMessages() bool {
-	if o != nil && !isNil(o.WriteMultiLineMessages) {
+	if o != nil && !IsNil(o.WriteMultiLineMessages) {
 		return true
 	}
 
@@ -796,7 +799,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetWriteMultiLineMessag
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -806,7 +809,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetDescription() string
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -814,7 +817,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetDescriptionOk() (*st
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -828,7 +831,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetDescription(v string
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -838,7 +841,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLoggingErrorBehavior
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -846,7 +849,7 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) GetLoggingErrorBehavior
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddConsoleJsonHttpOperationLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -859,83 +862,85 @@ func (o *AddConsoleJsonHttpOperationLogPublisherRequest) SetLoggingErrorBehavior
 }
 
 func (o AddConsoleJsonHttpOperationLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.OutputLocation) {
-		toSerialize["outputLocation"] = o.OutputLocation
-	}
-	if !isNil(o.LogRequests) {
-		toSerialize["logRequests"] = o.LogRequests
-	}
-	if !isNil(o.LogResults) {
-		toSerialize["logResults"] = o.LogResults
-	}
-	if !isNil(o.IncludeProductName) {
-		toSerialize["includeProductName"] = o.IncludeProductName
-	}
-	if !isNil(o.IncludeInstanceName) {
-		toSerialize["includeInstanceName"] = o.IncludeInstanceName
-	}
-	if !isNil(o.IncludeStartupID) {
-		toSerialize["includeStartupID"] = o.IncludeStartupID
-	}
-	if !isNil(o.IncludeThreadID) {
-		toSerialize["includeThreadID"] = o.IncludeThreadID
-	}
-	if !isNil(o.IncludeRequestDetailsInResultMessages) {
-		toSerialize["includeRequestDetailsInResultMessages"] = o.IncludeRequestDetailsInResultMessages
-	}
-	if !isNil(o.LogRequestHeaders) {
-		toSerialize["logRequestHeaders"] = o.LogRequestHeaders
-	}
-	if !isNil(o.SuppressedRequestHeaderName) {
-		toSerialize["suppressedRequestHeaderName"] = o.SuppressedRequestHeaderName
-	}
-	if !isNil(o.LogResponseHeaders) {
-		toSerialize["logResponseHeaders"] = o.LogResponseHeaders
-	}
-	if !isNil(o.SuppressedResponseHeaderName) {
-		toSerialize["suppressedResponseHeaderName"] = o.SuppressedResponseHeaderName
-	}
-	if !isNil(o.LogRequestAuthorizationType) {
-		toSerialize["logRequestAuthorizationType"] = o.LogRequestAuthorizationType
-	}
-	if !isNil(o.LogRequestCookieNames) {
-		toSerialize["logRequestCookieNames"] = o.LogRequestCookieNames
-	}
-	if !isNil(o.LogResponseCookieNames) {
-		toSerialize["logResponseCookieNames"] = o.LogResponseCookieNames
-	}
-	if !isNil(o.LogRequestParameters) {
-		toSerialize["logRequestParameters"] = o.LogRequestParameters
-	}
-	if !isNil(o.SuppressedRequestParameterName) {
-		toSerialize["suppressedRequestParameterName"] = o.SuppressedRequestParameterName
-	}
-	if !isNil(o.LogRequestProtocol) {
-		toSerialize["logRequestProtocol"] = o.LogRequestProtocol
-	}
-	if !isNil(o.LogRedirectURI) {
-		toSerialize["logRedirectURI"] = o.LogRedirectURI
-	}
-	if !isNil(o.WriteMultiLineMessages) {
-		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddConsoleJsonHttpOperationLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.OutputLocation) {
+		toSerialize["outputLocation"] = o.OutputLocation
+	}
+	if !IsNil(o.LogRequests) {
+		toSerialize["logRequests"] = o.LogRequests
+	}
+	if !IsNil(o.LogResults) {
+		toSerialize["logResults"] = o.LogResults
+	}
+	if !IsNil(o.IncludeProductName) {
+		toSerialize["includeProductName"] = o.IncludeProductName
+	}
+	if !IsNil(o.IncludeInstanceName) {
+		toSerialize["includeInstanceName"] = o.IncludeInstanceName
+	}
+	if !IsNil(o.IncludeStartupID) {
+		toSerialize["includeStartupID"] = o.IncludeStartupID
+	}
+	if !IsNil(o.IncludeThreadID) {
+		toSerialize["includeThreadID"] = o.IncludeThreadID
+	}
+	if !IsNil(o.IncludeRequestDetailsInResultMessages) {
+		toSerialize["includeRequestDetailsInResultMessages"] = o.IncludeRequestDetailsInResultMessages
+	}
+	if !IsNil(o.LogRequestHeaders) {
+		toSerialize["logRequestHeaders"] = o.LogRequestHeaders
+	}
+	if !IsNil(o.SuppressedRequestHeaderName) {
+		toSerialize["suppressedRequestHeaderName"] = o.SuppressedRequestHeaderName
+	}
+	if !IsNil(o.LogResponseHeaders) {
+		toSerialize["logResponseHeaders"] = o.LogResponseHeaders
+	}
+	if !IsNil(o.SuppressedResponseHeaderName) {
+		toSerialize["suppressedResponseHeaderName"] = o.SuppressedResponseHeaderName
+	}
+	if !IsNil(o.LogRequestAuthorizationType) {
+		toSerialize["logRequestAuthorizationType"] = o.LogRequestAuthorizationType
+	}
+	if !IsNil(o.LogRequestCookieNames) {
+		toSerialize["logRequestCookieNames"] = o.LogRequestCookieNames
+	}
+	if !IsNil(o.LogResponseCookieNames) {
+		toSerialize["logResponseCookieNames"] = o.LogResponseCookieNames
+	}
+	if !IsNil(o.LogRequestParameters) {
+		toSerialize["logRequestParameters"] = o.LogRequestParameters
+	}
+	if !IsNil(o.SuppressedRequestParameterName) {
+		toSerialize["suppressedRequestParameterName"] = o.SuppressedRequestParameterName
+	}
+	if !IsNil(o.LogRequestProtocol) {
+		toSerialize["logRequestProtocol"] = o.LogRequestProtocol
+	}
+	if !IsNil(o.LogRedirectURI) {
+		toSerialize["logRedirectURI"] = o.LogRedirectURI
+	}
+	if !IsNil(o.WriteMultiLineMessages) {
+		toSerialize["writeMultiLineMessages"] = o.WriteMultiLineMessages
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddConsoleJsonHttpOperationLogPublisherRequest struct {

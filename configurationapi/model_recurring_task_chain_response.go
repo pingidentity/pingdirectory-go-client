@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RecurringTaskChainResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RecurringTaskChainResponse{}
+
 // RecurringTaskChainResponse struct for RecurringTaskChainResponse
 type RecurringTaskChainResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -64,7 +67,7 @@ func NewRecurringTaskChainResponseWithDefaults() *RecurringTaskChainResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -74,7 +77,7 @@ func (o *RecurringTaskChainResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -82,7 +85,7 @@ func (o *RecurringTaskChainResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *RecurringTaskChainResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessa
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -114,7 +117,7 @@ func (o *RecurringTaskChainResponse) GetUrnpingidentityschemasconfigurationmessa
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *RecurringTaskChainResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetSchemas() []EnumrecurringTaskChainSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumrecurringTaskChainSchemaUrn
 		return ret
 	}
@@ -162,7 +165,7 @@ func (o *RecurringTaskChainResponse) GetSchemas() []EnumrecurringTaskChainSchema
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetSchemasOk() ([]EnumrecurringTaskChainSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -170,7 +173,7 @@ func (o *RecurringTaskChainResponse) GetSchemasOk() ([]EnumrecurringTaskChainSch
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -184,7 +187,7 @@ func (o *RecurringTaskChainResponse) SetSchemas(v []EnumrecurringTaskChainSchema
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -194,7 +197,7 @@ func (o *RecurringTaskChainResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -202,7 +205,7 @@ func (o *RecurringTaskChainResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *RecurringTaskChainResponse) SetScheduledDateSelectionType(v Enumrecurri
 
 // GetScheduledDayOfTheWeek returns the ScheduledDayOfTheWeek field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetScheduledDayOfTheWeek() []EnumrecurringTaskChainScheduledDayOfTheWeekProp {
-	if o == nil || isNil(o.ScheduledDayOfTheWeek) {
+	if o == nil || IsNil(o.ScheduledDayOfTheWeek) {
 		var ret []EnumrecurringTaskChainScheduledDayOfTheWeekProp
 		return ret
 	}
@@ -322,7 +325,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDayOfTheWeek() []EnumrecurringT
 // GetScheduledDayOfTheWeekOk returns a tuple with the ScheduledDayOfTheWeek field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledDayOfTheWeekOk() ([]EnumrecurringTaskChainScheduledDayOfTheWeekProp, bool) {
-	if o == nil || isNil(o.ScheduledDayOfTheWeek) {
+	if o == nil || IsNil(o.ScheduledDayOfTheWeek) {
 		return nil, false
 	}
 	return o.ScheduledDayOfTheWeek, true
@@ -330,7 +333,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDayOfTheWeekOk() ([]Enumrecurri
 
 // HasScheduledDayOfTheWeek returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasScheduledDayOfTheWeek() bool {
-	if o != nil && !isNil(o.ScheduledDayOfTheWeek) {
+	if o != nil && !IsNil(o.ScheduledDayOfTheWeek) {
 		return true
 	}
 
@@ -344,7 +347,7 @@ func (o *RecurringTaskChainResponse) SetScheduledDayOfTheWeek(v []EnumrecurringT
 
 // GetScheduledDayOfTheMonth returns the ScheduledDayOfTheMonth field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetScheduledDayOfTheMonth() []EnumrecurringTaskChainScheduledDayOfTheMonthProp {
-	if o == nil || isNil(o.ScheduledDayOfTheMonth) {
+	if o == nil || IsNil(o.ScheduledDayOfTheMonth) {
 		var ret []EnumrecurringTaskChainScheduledDayOfTheMonthProp
 		return ret
 	}
@@ -354,7 +357,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDayOfTheMonth() []Enumrecurring
 // GetScheduledDayOfTheMonthOk returns a tuple with the ScheduledDayOfTheMonth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetScheduledDayOfTheMonthOk() ([]EnumrecurringTaskChainScheduledDayOfTheMonthProp, bool) {
-	if o == nil || isNil(o.ScheduledDayOfTheMonth) {
+	if o == nil || IsNil(o.ScheduledDayOfTheMonth) {
 		return nil, false
 	}
 	return o.ScheduledDayOfTheMonth, true
@@ -362,7 +365,7 @@ func (o *RecurringTaskChainResponse) GetScheduledDayOfTheMonthOk() ([]Enumrecurr
 
 // HasScheduledDayOfTheMonth returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasScheduledDayOfTheMonth() bool {
-	if o != nil && !isNil(o.ScheduledDayOfTheMonth) {
+	if o != nil && !IsNil(o.ScheduledDayOfTheMonth) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *RecurringTaskChainResponse) SetScheduledTimeOfDay(v []string) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetTimeZone() string {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -410,7 +413,7 @@ func (o *RecurringTaskChainResponse) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetTimeZoneOk() (*string, bool) {
-	if o == nil || isNil(o.TimeZone) {
+	if o == nil || IsNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -418,7 +421,7 @@ func (o *RecurringTaskChainResponse) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasTimeZone() bool {
-	if o != nil && !isNil(o.TimeZone) {
+	if o != nil && !IsNil(o.TimeZone) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *RecurringTaskChainResponse) SetTimeZone(v string) {
 
 // GetInterruptedByShutdownBehavior returns the InterruptedByShutdownBehavior field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetInterruptedByShutdownBehavior() EnumrecurringTaskChainInterruptedByShutdownBehaviorProp {
-	if o == nil || isNil(o.InterruptedByShutdownBehavior) {
+	if o == nil || IsNil(o.InterruptedByShutdownBehavior) {
 		var ret EnumrecurringTaskChainInterruptedByShutdownBehaviorProp
 		return ret
 	}
@@ -442,7 +445,7 @@ func (o *RecurringTaskChainResponse) GetInterruptedByShutdownBehavior() Enumrecu
 // GetInterruptedByShutdownBehaviorOk returns a tuple with the InterruptedByShutdownBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetInterruptedByShutdownBehaviorOk() (*EnumrecurringTaskChainInterruptedByShutdownBehaviorProp, bool) {
-	if o == nil || isNil(o.InterruptedByShutdownBehavior) {
+	if o == nil || IsNil(o.InterruptedByShutdownBehavior) {
 		return nil, false
 	}
 	return o.InterruptedByShutdownBehavior, true
@@ -450,7 +453,7 @@ func (o *RecurringTaskChainResponse) GetInterruptedByShutdownBehaviorOk() (*Enum
 
 // HasInterruptedByShutdownBehavior returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasInterruptedByShutdownBehavior() bool {
-	if o != nil && !isNil(o.InterruptedByShutdownBehavior) {
+	if o != nil && !IsNil(o.InterruptedByShutdownBehavior) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *RecurringTaskChainResponse) SetInterruptedByShutdownBehavior(v Enumrecu
 
 // GetServerOfflineAtStartTimeBehavior returns the ServerOfflineAtStartTimeBehavior field value if set, zero value otherwise.
 func (o *RecurringTaskChainResponse) GetServerOfflineAtStartTimeBehavior() EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp {
-	if o == nil || isNil(o.ServerOfflineAtStartTimeBehavior) {
+	if o == nil || IsNil(o.ServerOfflineAtStartTimeBehavior) {
 		var ret EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *RecurringTaskChainResponse) GetServerOfflineAtStartTimeBehavior() Enumr
 // GetServerOfflineAtStartTimeBehaviorOk returns a tuple with the ServerOfflineAtStartTimeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringTaskChainResponse) GetServerOfflineAtStartTimeBehaviorOk() (*EnumrecurringTaskChainServerOfflineAtStartTimeBehaviorProp, bool) {
-	if o == nil || isNil(o.ServerOfflineAtStartTimeBehavior) {
+	if o == nil || IsNil(o.ServerOfflineAtStartTimeBehavior) {
 		return nil, false
 	}
 	return o.ServerOfflineAtStartTimeBehavior, true
@@ -482,7 +485,7 @@ func (o *RecurringTaskChainResponse) GetServerOfflineAtStartTimeBehaviorOk() (*E
 
 // HasServerOfflineAtStartTimeBehavior returns a boolean if a field has been set.
 func (o *RecurringTaskChainResponse) HasServerOfflineAtStartTimeBehavior() bool {
-	if o != nil && !isNil(o.ServerOfflineAtStartTimeBehavior) {
+	if o != nil && !IsNil(o.ServerOfflineAtStartTimeBehavior) {
 		return true
 	}
 
@@ -495,53 +498,49 @@ func (o *RecurringTaskChainResponse) SetServerOfflineAtStartTimeBehavior(v Enumr
 }
 
 func (o RecurringTaskChainResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["recurringTask"] = o.RecurringTask
-	}
-	if true {
-		toSerialize["scheduledMonth"] = o.ScheduledMonth
-	}
-	if true {
-		toSerialize["scheduledDateSelectionType"] = o.ScheduledDateSelectionType
-	}
-	if !isNil(o.ScheduledDayOfTheWeek) {
-		toSerialize["scheduledDayOfTheWeek"] = o.ScheduledDayOfTheWeek
-	}
-	if !isNil(o.ScheduledDayOfTheMonth) {
-		toSerialize["scheduledDayOfTheMonth"] = o.ScheduledDayOfTheMonth
-	}
-	if true {
-		toSerialize["scheduledTimeOfDay"] = o.ScheduledTimeOfDay
-	}
-	if !isNil(o.TimeZone) {
-		toSerialize["timeZone"] = o.TimeZone
-	}
-	if !isNil(o.InterruptedByShutdownBehavior) {
-		toSerialize["interruptedByShutdownBehavior"] = o.InterruptedByShutdownBehavior
-	}
-	if !isNil(o.ServerOfflineAtStartTimeBehavior) {
-		toSerialize["serverOfflineAtStartTimeBehavior"] = o.ServerOfflineAtStartTimeBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RecurringTaskChainResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["recurringTask"] = o.RecurringTask
+	toSerialize["scheduledMonth"] = o.ScheduledMonth
+	toSerialize["scheduledDateSelectionType"] = o.ScheduledDateSelectionType
+	if !IsNil(o.ScheduledDayOfTheWeek) {
+		toSerialize["scheduledDayOfTheWeek"] = o.ScheduledDayOfTheWeek
+	}
+	if !IsNil(o.ScheduledDayOfTheMonth) {
+		toSerialize["scheduledDayOfTheMonth"] = o.ScheduledDayOfTheMonth
+	}
+	toSerialize["scheduledTimeOfDay"] = o.ScheduledTimeOfDay
+	if !IsNil(o.TimeZone) {
+		toSerialize["timeZone"] = o.TimeZone
+	}
+	if !IsNil(o.InterruptedByShutdownBehavior) {
+		toSerialize["interruptedByShutdownBehavior"] = o.InterruptedByShutdownBehavior
+	}
+	if !IsNil(o.ServerOfflineAtStartTimeBehavior) {
+		toSerialize["serverOfflineAtStartTimeBehavior"] = o.ServerOfflineAtStartTimeBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableRecurringTaskChainResponse struct {

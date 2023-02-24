@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddNoOperationFailureLockoutActionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddNoOperationFailureLockoutActionRequest{}
+
 // AddNoOperationFailureLockoutActionRequest struct for AddNoOperationFailureLockoutActionRequest
 type AddNoOperationFailureLockoutActionRequest struct {
 	// Name of the new Failure Lockout Action
@@ -94,7 +97,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) SetSchemas(v []EnumnoOperati
 
 // GetGenerateAccountStatusNotification returns the GenerateAccountStatusNotification field value if set, zero value otherwise.
 func (o *AddNoOperationFailureLockoutActionRequest) GetGenerateAccountStatusNotification() bool {
-	if o == nil || isNil(o.GenerateAccountStatusNotification) {
+	if o == nil || IsNil(o.GenerateAccountStatusNotification) {
 		var ret bool
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetGenerateAccountStatusNoti
 // GetGenerateAccountStatusNotificationOk returns a tuple with the GenerateAccountStatusNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) GetGenerateAccountStatusNotificationOk() (*bool, bool) {
-	if o == nil || isNil(o.GenerateAccountStatusNotification) {
+	if o == nil || IsNil(o.GenerateAccountStatusNotification) {
 		return nil, false
 	}
 	return o.GenerateAccountStatusNotification, true
@@ -112,7 +115,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetGenerateAccountStatusNoti
 
 // HasGenerateAccountStatusNotification returns a boolean if a field has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) HasGenerateAccountStatusNotification() bool {
-	if o != nil && !isNil(o.GenerateAccountStatusNotification) {
+	if o != nil && !IsNil(o.GenerateAccountStatusNotification) {
 		return true
 	}
 
@@ -126,7 +129,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) SetGenerateAccountStatusNoti
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddNoOperationFailureLockoutActionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -144,7 +147,7 @@ func (o *AddNoOperationFailureLockoutActionRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddNoOperationFailureLockoutActionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -157,20 +160,24 @@ func (o *AddNoOperationFailureLockoutActionRequest) SetDescription(v string) {
 }
 
 func (o AddNoOperationFailureLockoutActionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["actionName"] = o.ActionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.GenerateAccountStatusNotification) {
-		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddNoOperationFailureLockoutActionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["actionName"] = o.ActionName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.GenerateAccountStatusNotification) {
+		toSerialize["generateAccountStatusNotification"] = o.GenerateAccountStatusNotification
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddNoOperationFailureLockoutActionRequest struct {

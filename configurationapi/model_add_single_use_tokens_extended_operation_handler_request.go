@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSingleUseTokensExtendedOperationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSingleUseTokensExtendedOperationHandlerRequest{}
+
 // AddSingleUseTokensExtendedOperationHandlerRequest struct for AddSingleUseTokensExtendedOperationHandlerRequest
 type AddSingleUseTokensExtendedOperationHandlerRequest struct {
 	// Name of the new Extended Operation Handler
@@ -151,7 +154,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) SetDefaultOTPDeliver
 
 // GetDefaultSingleUseTokenValidityDuration returns the DefaultSingleUseTokenValidityDuration field value if set, zero value otherwise.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultSingleUseTokenValidityDuration() string {
-	if o == nil || isNil(o.DefaultSingleUseTokenValidityDuration) {
+	if o == nil || IsNil(o.DefaultSingleUseTokenValidityDuration) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultSingleUseT
 // GetDefaultSingleUseTokenValidityDurationOk returns a tuple with the DefaultSingleUseTokenValidityDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultSingleUseTokenValidityDurationOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultSingleUseTokenValidityDuration) {
+	if o == nil || IsNil(o.DefaultSingleUseTokenValidityDuration) {
 		return nil, false
 	}
 	return o.DefaultSingleUseTokenValidityDuration, true
@@ -169,7 +172,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDefaultSingleUseT
 
 // HasDefaultSingleUseTokenValidityDuration returns a boolean if a field has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) HasDefaultSingleUseTokenValidityDuration() bool {
-	if o != nil && !isNil(o.DefaultSingleUseTokenValidityDuration) {
+	if o != nil && !IsNil(o.DefaultSingleUseTokenValidityDuration) {
 		return true
 	}
 
@@ -183,7 +186,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) SetDefaultSingleUseT
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -193,7 +196,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDescription() str
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -201,7 +204,7 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) GetDescriptionOk() (
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSingleUseTokensExtendedOperationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -238,29 +241,27 @@ func (o *AddSingleUseTokensExtendedOperationHandlerRequest) SetEnabled(v bool) {
 }
 
 func (o AddSingleUseTokensExtendedOperationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["passwordGenerator"] = o.PasswordGenerator
-	}
-	if true {
-		toSerialize["defaultOTPDeliveryMechanism"] = o.DefaultOTPDeliveryMechanism
-	}
-	if !isNil(o.DefaultSingleUseTokenValidityDuration) {
-		toSerialize["defaultSingleUseTokenValidityDuration"] = o.DefaultSingleUseTokenValidityDuration
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSingleUseTokensExtendedOperationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["passwordGenerator"] = o.PasswordGenerator
+	toSerialize["defaultOTPDeliveryMechanism"] = o.DefaultOTPDeliveryMechanism
+	if !IsNil(o.DefaultSingleUseTokenValidityDuration) {
+		toSerialize["defaultSingleUseTokenValidityDuration"] = o.DefaultSingleUseTokenValidityDuration
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddSingleUseTokensExtendedOperationHandlerRequest struct {

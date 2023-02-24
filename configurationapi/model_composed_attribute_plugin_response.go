@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ComposedAttributePluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ComposedAttributePluginResponse{}
+
 // ComposedAttributePluginResponse struct for ComposedAttributePluginResponse
 type ComposedAttributePluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -75,7 +78,7 @@ func NewComposedAttributePluginResponseWithDefaults() *ComposedAttributePluginRe
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *ComposedAttributePluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -93,7 +96,7 @@ func (o *ComposedAttributePluginResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *ComposedAttributePluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *ComposedAttributePluginResponse) GetUrnpingidentityschemasconfiguration
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -125,7 +128,7 @@ func (o *ComposedAttributePluginResponse) GetUrnpingidentityschemasconfiguration
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *ComposedAttributePluginResponse) SetValuePattern(v []string) {
 
 // GetMultipleValuePatternBehavior returns the MultipleValuePatternBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetMultipleValuePatternBehavior() EnumpluginMultipleValuePatternBehaviorProp {
-	if o == nil || isNil(o.MultipleValuePatternBehavior) {
+	if o == nil || IsNil(o.MultipleValuePatternBehavior) {
 		var ret EnumpluginMultipleValuePatternBehaviorProp
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *ComposedAttributePluginResponse) GetMultipleValuePatternBehavior() Enum
 // GetMultipleValuePatternBehaviorOk returns a tuple with the MultipleValuePatternBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetMultipleValuePatternBehaviorOk() (*EnumpluginMultipleValuePatternBehaviorProp, bool) {
-	if o == nil || isNil(o.MultipleValuePatternBehavior) {
+	if o == nil || IsNil(o.MultipleValuePatternBehavior) {
 		return nil, false
 	}
 	return o.MultipleValuePatternBehavior, true
@@ -277,7 +280,7 @@ func (o *ComposedAttributePluginResponse) GetMultipleValuePatternBehaviorOk() (*
 
 // HasMultipleValuePatternBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasMultipleValuePatternBehavior() bool {
-	if o != nil && !isNil(o.MultipleValuePatternBehavior) {
+	if o != nil && !IsNil(o.MultipleValuePatternBehavior) {
 		return true
 	}
 
@@ -291,7 +294,7 @@ func (o *ComposedAttributePluginResponse) SetMultipleValuePatternBehavior(v Enum
 
 // GetMultiValuedAttributeBehavior returns the MultiValuedAttributeBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetMultiValuedAttributeBehavior() EnumpluginMultiValuedAttributeBehaviorProp {
-	if o == nil || isNil(o.MultiValuedAttributeBehavior) {
+	if o == nil || IsNil(o.MultiValuedAttributeBehavior) {
 		var ret EnumpluginMultiValuedAttributeBehaviorProp
 		return ret
 	}
@@ -301,7 +304,7 @@ func (o *ComposedAttributePluginResponse) GetMultiValuedAttributeBehavior() Enum
 // GetMultiValuedAttributeBehaviorOk returns a tuple with the MultiValuedAttributeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetMultiValuedAttributeBehaviorOk() (*EnumpluginMultiValuedAttributeBehaviorProp, bool) {
-	if o == nil || isNil(o.MultiValuedAttributeBehavior) {
+	if o == nil || IsNil(o.MultiValuedAttributeBehavior) {
 		return nil, false
 	}
 	return o.MultiValuedAttributeBehavior, true
@@ -309,7 +312,7 @@ func (o *ComposedAttributePluginResponse) GetMultiValuedAttributeBehaviorOk() (*
 
 // HasMultiValuedAttributeBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasMultiValuedAttributeBehavior() bool {
-	if o != nil && !isNil(o.MultiValuedAttributeBehavior) {
+	if o != nil && !IsNil(o.MultiValuedAttributeBehavior) {
 		return true
 	}
 
@@ -323,7 +326,7 @@ func (o *ComposedAttributePluginResponse) SetMultiValuedAttributeBehavior(v Enum
 
 // GetTargetAttributeExistsDuringInitialPopulationBehavior returns the TargetAttributeExistsDuringInitialPopulationBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetTargetAttributeExistsDuringInitialPopulationBehavior() EnumpluginTargetAttributeExistsDuringInitialPopulationBehaviorProp {
-	if o == nil || isNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
+	if o == nil || IsNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
 		var ret EnumpluginTargetAttributeExistsDuringInitialPopulationBehaviorProp
 		return ret
 	}
@@ -333,7 +336,7 @@ func (o *ComposedAttributePluginResponse) GetTargetAttributeExistsDuringInitialP
 // GetTargetAttributeExistsDuringInitialPopulationBehaviorOk returns a tuple with the TargetAttributeExistsDuringInitialPopulationBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetTargetAttributeExistsDuringInitialPopulationBehaviorOk() (*EnumpluginTargetAttributeExistsDuringInitialPopulationBehaviorProp, bool) {
-	if o == nil || isNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
+	if o == nil || IsNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
 		return nil, false
 	}
 	return o.TargetAttributeExistsDuringInitialPopulationBehavior, true
@@ -341,7 +344,7 @@ func (o *ComposedAttributePluginResponse) GetTargetAttributeExistsDuringInitialP
 
 // HasTargetAttributeExistsDuringInitialPopulationBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasTargetAttributeExistsDuringInitialPopulationBehavior() bool {
-	if o != nil && !isNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
+	if o != nil && !IsNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
 		return true
 	}
 
@@ -355,7 +358,7 @@ func (o *ComposedAttributePluginResponse) SetTargetAttributeExistsDuringInitialP
 
 // GetUpdateSourceAttributeBehavior returns the UpdateSourceAttributeBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetUpdateSourceAttributeBehavior() EnumpluginUpdateSourceAttributeBehaviorProp {
-	if o == nil || isNil(o.UpdateSourceAttributeBehavior) {
+	if o == nil || IsNil(o.UpdateSourceAttributeBehavior) {
 		var ret EnumpluginUpdateSourceAttributeBehaviorProp
 		return ret
 	}
@@ -365,7 +368,7 @@ func (o *ComposedAttributePluginResponse) GetUpdateSourceAttributeBehavior() Enu
 // GetUpdateSourceAttributeBehaviorOk returns a tuple with the UpdateSourceAttributeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetUpdateSourceAttributeBehaviorOk() (*EnumpluginUpdateSourceAttributeBehaviorProp, bool) {
-	if o == nil || isNil(o.UpdateSourceAttributeBehavior) {
+	if o == nil || IsNil(o.UpdateSourceAttributeBehavior) {
 		return nil, false
 	}
 	return o.UpdateSourceAttributeBehavior, true
@@ -373,7 +376,7 @@ func (o *ComposedAttributePluginResponse) GetUpdateSourceAttributeBehaviorOk() (
 
 // HasUpdateSourceAttributeBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasUpdateSourceAttributeBehavior() bool {
-	if o != nil && !isNil(o.UpdateSourceAttributeBehavior) {
+	if o != nil && !IsNil(o.UpdateSourceAttributeBehavior) {
 		return true
 	}
 
@@ -387,7 +390,7 @@ func (o *ComposedAttributePluginResponse) SetUpdateSourceAttributeBehavior(v Enu
 
 // GetSourceAttributeRemovalBehavior returns the SourceAttributeRemovalBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetSourceAttributeRemovalBehavior() EnumpluginSourceAttributeRemovalBehaviorProp {
-	if o == nil || isNil(o.SourceAttributeRemovalBehavior) {
+	if o == nil || IsNil(o.SourceAttributeRemovalBehavior) {
 		var ret EnumpluginSourceAttributeRemovalBehaviorProp
 		return ret
 	}
@@ -397,7 +400,7 @@ func (o *ComposedAttributePluginResponse) GetSourceAttributeRemovalBehavior() En
 // GetSourceAttributeRemovalBehaviorOk returns a tuple with the SourceAttributeRemovalBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetSourceAttributeRemovalBehaviorOk() (*EnumpluginSourceAttributeRemovalBehaviorProp, bool) {
-	if o == nil || isNil(o.SourceAttributeRemovalBehavior) {
+	if o == nil || IsNil(o.SourceAttributeRemovalBehavior) {
 		return nil, false
 	}
 	return o.SourceAttributeRemovalBehavior, true
@@ -405,7 +408,7 @@ func (o *ComposedAttributePluginResponse) GetSourceAttributeRemovalBehaviorOk() 
 
 // HasSourceAttributeRemovalBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasSourceAttributeRemovalBehavior() bool {
-	if o != nil && !isNil(o.SourceAttributeRemovalBehavior) {
+	if o != nil && !IsNil(o.SourceAttributeRemovalBehavior) {
 		return true
 	}
 
@@ -419,7 +422,7 @@ func (o *ComposedAttributePluginResponse) SetSourceAttributeRemovalBehavior(v En
 
 // GetUpdateTargetAttributeBehavior returns the UpdateTargetAttributeBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetUpdateTargetAttributeBehavior() EnumpluginUpdateTargetAttributeBehaviorProp {
-	if o == nil || isNil(o.UpdateTargetAttributeBehavior) {
+	if o == nil || IsNil(o.UpdateTargetAttributeBehavior) {
 		var ret EnumpluginUpdateTargetAttributeBehaviorProp
 		return ret
 	}
@@ -429,7 +432,7 @@ func (o *ComposedAttributePluginResponse) GetUpdateTargetAttributeBehavior() Enu
 // GetUpdateTargetAttributeBehaviorOk returns a tuple with the UpdateTargetAttributeBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetUpdateTargetAttributeBehaviorOk() (*EnumpluginUpdateTargetAttributeBehaviorProp, bool) {
-	if o == nil || isNil(o.UpdateTargetAttributeBehavior) {
+	if o == nil || IsNil(o.UpdateTargetAttributeBehavior) {
 		return nil, false
 	}
 	return o.UpdateTargetAttributeBehavior, true
@@ -437,7 +440,7 @@ func (o *ComposedAttributePluginResponse) GetUpdateTargetAttributeBehaviorOk() (
 
 // HasUpdateTargetAttributeBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasUpdateTargetAttributeBehavior() bool {
-	if o != nil && !isNil(o.UpdateTargetAttributeBehavior) {
+	if o != nil && !IsNil(o.UpdateTargetAttributeBehavior) {
 		return true
 	}
 
@@ -451,7 +454,7 @@ func (o *ComposedAttributePluginResponse) SetUpdateTargetAttributeBehavior(v Enu
 
 // GetIncludeBaseDN returns the IncludeBaseDN field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetIncludeBaseDN() []string {
-	if o == nil || isNil(o.IncludeBaseDN) {
+	if o == nil || IsNil(o.IncludeBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -461,7 +464,7 @@ func (o *ComposedAttributePluginResponse) GetIncludeBaseDN() []string {
 // GetIncludeBaseDNOk returns a tuple with the IncludeBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetIncludeBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeBaseDN) {
+	if o == nil || IsNil(o.IncludeBaseDN) {
 		return nil, false
 	}
 	return o.IncludeBaseDN, true
@@ -469,7 +472,7 @@ func (o *ComposedAttributePluginResponse) GetIncludeBaseDNOk() ([]string, bool) 
 
 // HasIncludeBaseDN returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasIncludeBaseDN() bool {
-	if o != nil && !isNil(o.IncludeBaseDN) {
+	if o != nil && !IsNil(o.IncludeBaseDN) {
 		return true
 	}
 
@@ -483,7 +486,7 @@ func (o *ComposedAttributePluginResponse) SetIncludeBaseDN(v []string) {
 
 // GetExcludeBaseDN returns the ExcludeBaseDN field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetExcludeBaseDN() []string {
-	if o == nil || isNil(o.ExcludeBaseDN) {
+	if o == nil || IsNil(o.ExcludeBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -493,7 +496,7 @@ func (o *ComposedAttributePluginResponse) GetExcludeBaseDN() []string {
 // GetExcludeBaseDNOk returns a tuple with the ExcludeBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetExcludeBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeBaseDN) {
+	if o == nil || IsNil(o.ExcludeBaseDN) {
 		return nil, false
 	}
 	return o.ExcludeBaseDN, true
@@ -501,7 +504,7 @@ func (o *ComposedAttributePluginResponse) GetExcludeBaseDNOk() ([]string, bool) 
 
 // HasExcludeBaseDN returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasExcludeBaseDN() bool {
-	if o != nil && !isNil(o.ExcludeBaseDN) {
+	if o != nil && !IsNil(o.ExcludeBaseDN) {
 		return true
 	}
 
@@ -515,7 +518,7 @@ func (o *ComposedAttributePluginResponse) SetExcludeBaseDN(v []string) {
 
 // GetIncludeFilter returns the IncludeFilter field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetIncludeFilter() []string {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -525,7 +528,7 @@ func (o *ComposedAttributePluginResponse) GetIncludeFilter() []string {
 // GetIncludeFilterOk returns a tuple with the IncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetIncludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		return nil, false
 	}
 	return o.IncludeFilter, true
@@ -533,7 +536,7 @@ func (o *ComposedAttributePluginResponse) GetIncludeFilterOk() ([]string, bool) 
 
 // HasIncludeFilter returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasIncludeFilter() bool {
-	if o != nil && !isNil(o.IncludeFilter) {
+	if o != nil && !IsNil(o.IncludeFilter) {
 		return true
 	}
 
@@ -547,7 +550,7 @@ func (o *ComposedAttributePluginResponse) SetIncludeFilter(v []string) {
 
 // GetExcludeFilter returns the ExcludeFilter field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetExcludeFilter() []string {
-	if o == nil || isNil(o.ExcludeFilter) {
+	if o == nil || IsNil(o.ExcludeFilter) {
 		var ret []string
 		return ret
 	}
@@ -557,7 +560,7 @@ func (o *ComposedAttributePluginResponse) GetExcludeFilter() []string {
 // GetExcludeFilterOk returns a tuple with the ExcludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetExcludeFilterOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeFilter) {
+	if o == nil || IsNil(o.ExcludeFilter) {
 		return nil, false
 	}
 	return o.ExcludeFilter, true
@@ -565,7 +568,7 @@ func (o *ComposedAttributePluginResponse) GetExcludeFilterOk() ([]string, bool) 
 
 // HasExcludeFilter returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasExcludeFilter() bool {
-	if o != nil && !isNil(o.ExcludeFilter) {
+	if o != nil && !IsNil(o.ExcludeFilter) {
 		return true
 	}
 
@@ -579,7 +582,7 @@ func (o *ComposedAttributePluginResponse) SetExcludeFilter(v []string) {
 
 // GetUpdatedEntryNewlyMatchesCriteriaBehavior returns the UpdatedEntryNewlyMatchesCriteriaBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetUpdatedEntryNewlyMatchesCriteriaBehavior() EnumpluginUpdatedEntryNewlyMatchesCriteriaBehaviorProp {
-	if o == nil || isNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
+	if o == nil || IsNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
 		var ret EnumpluginUpdatedEntryNewlyMatchesCriteriaBehaviorProp
 		return ret
 	}
@@ -589,7 +592,7 @@ func (o *ComposedAttributePluginResponse) GetUpdatedEntryNewlyMatchesCriteriaBeh
 // GetUpdatedEntryNewlyMatchesCriteriaBehaviorOk returns a tuple with the UpdatedEntryNewlyMatchesCriteriaBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetUpdatedEntryNewlyMatchesCriteriaBehaviorOk() (*EnumpluginUpdatedEntryNewlyMatchesCriteriaBehaviorProp, bool) {
-	if o == nil || isNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
+	if o == nil || IsNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
 		return nil, false
 	}
 	return o.UpdatedEntryNewlyMatchesCriteriaBehavior, true
@@ -597,7 +600,7 @@ func (o *ComposedAttributePluginResponse) GetUpdatedEntryNewlyMatchesCriteriaBeh
 
 // HasUpdatedEntryNewlyMatchesCriteriaBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasUpdatedEntryNewlyMatchesCriteriaBehavior() bool {
-	if o != nil && !isNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
+	if o != nil && !IsNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
 		return true
 	}
 
@@ -611,7 +614,7 @@ func (o *ComposedAttributePluginResponse) SetUpdatedEntryNewlyMatchesCriteriaBeh
 
 // GetUpdatedEntryNoLongerMatchesCriteriaBehavior returns the UpdatedEntryNoLongerMatchesCriteriaBehavior field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetUpdatedEntryNoLongerMatchesCriteriaBehavior() EnumpluginUpdatedEntryNoLongerMatchesCriteriaBehaviorProp {
-	if o == nil || isNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
+	if o == nil || IsNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
 		var ret EnumpluginUpdatedEntryNoLongerMatchesCriteriaBehaviorProp
 		return ret
 	}
@@ -621,7 +624,7 @@ func (o *ComposedAttributePluginResponse) GetUpdatedEntryNoLongerMatchesCriteria
 // GetUpdatedEntryNoLongerMatchesCriteriaBehaviorOk returns a tuple with the UpdatedEntryNoLongerMatchesCriteriaBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetUpdatedEntryNoLongerMatchesCriteriaBehaviorOk() (*EnumpluginUpdatedEntryNoLongerMatchesCriteriaBehaviorProp, bool) {
-	if o == nil || isNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
+	if o == nil || IsNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
 		return nil, false
 	}
 	return o.UpdatedEntryNoLongerMatchesCriteriaBehavior, true
@@ -629,7 +632,7 @@ func (o *ComposedAttributePluginResponse) GetUpdatedEntryNoLongerMatchesCriteria
 
 // HasUpdatedEntryNoLongerMatchesCriteriaBehavior returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasUpdatedEntryNoLongerMatchesCriteriaBehavior() bool {
-	if o != nil && !isNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
+	if o != nil && !IsNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
 		return true
 	}
 
@@ -643,7 +646,7 @@ func (o *ComposedAttributePluginResponse) SetUpdatedEntryNoLongerMatchesCriteria
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -653,7 +656,7 @@ func (o *ComposedAttributePluginResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -661,7 +664,7 @@ func (o *ComposedAttributePluginResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -699,7 +702,7 @@ func (o *ComposedAttributePluginResponse) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *ComposedAttributePluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -709,7 +712,7 @@ func (o *ComposedAttributePluginResponse) GetInvokeForInternalOperations() bool 
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ComposedAttributePluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -717,7 +720,7 @@ func (o *ComposedAttributePluginResponse) GetInvokeForInternalOperationsOk() (*b
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *ComposedAttributePluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -730,74 +733,70 @@ func (o *ComposedAttributePluginResponse) SetInvokeForInternalOperations(v bool)
 }
 
 func (o ComposedAttributePluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["valuePattern"] = o.ValuePattern
-	}
-	if !isNil(o.MultipleValuePatternBehavior) {
-		toSerialize["multipleValuePatternBehavior"] = o.MultipleValuePatternBehavior
-	}
-	if !isNil(o.MultiValuedAttributeBehavior) {
-		toSerialize["multiValuedAttributeBehavior"] = o.MultiValuedAttributeBehavior
-	}
-	if !isNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
-		toSerialize["targetAttributeExistsDuringInitialPopulationBehavior"] = o.TargetAttributeExistsDuringInitialPopulationBehavior
-	}
-	if !isNil(o.UpdateSourceAttributeBehavior) {
-		toSerialize["updateSourceAttributeBehavior"] = o.UpdateSourceAttributeBehavior
-	}
-	if !isNil(o.SourceAttributeRemovalBehavior) {
-		toSerialize["sourceAttributeRemovalBehavior"] = o.SourceAttributeRemovalBehavior
-	}
-	if !isNil(o.UpdateTargetAttributeBehavior) {
-		toSerialize["updateTargetAttributeBehavior"] = o.UpdateTargetAttributeBehavior
-	}
-	if !isNil(o.IncludeBaseDN) {
-		toSerialize["includeBaseDN"] = o.IncludeBaseDN
-	}
-	if !isNil(o.ExcludeBaseDN) {
-		toSerialize["excludeBaseDN"] = o.ExcludeBaseDN
-	}
-	if !isNil(o.IncludeFilter) {
-		toSerialize["includeFilter"] = o.IncludeFilter
-	}
-	if !isNil(o.ExcludeFilter) {
-		toSerialize["excludeFilter"] = o.ExcludeFilter
-	}
-	if !isNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
-		toSerialize["updatedEntryNewlyMatchesCriteriaBehavior"] = o.UpdatedEntryNewlyMatchesCriteriaBehavior
-	}
-	if !isNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
-		toSerialize["updatedEntryNoLongerMatchesCriteriaBehavior"] = o.UpdatedEntryNoLongerMatchesCriteriaBehavior
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ComposedAttributePluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["pluginType"] = o.PluginType
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["valuePattern"] = o.ValuePattern
+	if !IsNil(o.MultipleValuePatternBehavior) {
+		toSerialize["multipleValuePatternBehavior"] = o.MultipleValuePatternBehavior
+	}
+	if !IsNil(o.MultiValuedAttributeBehavior) {
+		toSerialize["multiValuedAttributeBehavior"] = o.MultiValuedAttributeBehavior
+	}
+	if !IsNil(o.TargetAttributeExistsDuringInitialPopulationBehavior) {
+		toSerialize["targetAttributeExistsDuringInitialPopulationBehavior"] = o.TargetAttributeExistsDuringInitialPopulationBehavior
+	}
+	if !IsNil(o.UpdateSourceAttributeBehavior) {
+		toSerialize["updateSourceAttributeBehavior"] = o.UpdateSourceAttributeBehavior
+	}
+	if !IsNil(o.SourceAttributeRemovalBehavior) {
+		toSerialize["sourceAttributeRemovalBehavior"] = o.SourceAttributeRemovalBehavior
+	}
+	if !IsNil(o.UpdateTargetAttributeBehavior) {
+		toSerialize["updateTargetAttributeBehavior"] = o.UpdateTargetAttributeBehavior
+	}
+	if !IsNil(o.IncludeBaseDN) {
+		toSerialize["includeBaseDN"] = o.IncludeBaseDN
+	}
+	if !IsNil(o.ExcludeBaseDN) {
+		toSerialize["excludeBaseDN"] = o.ExcludeBaseDN
+	}
+	if !IsNil(o.IncludeFilter) {
+		toSerialize["includeFilter"] = o.IncludeFilter
+	}
+	if !IsNil(o.ExcludeFilter) {
+		toSerialize["excludeFilter"] = o.ExcludeFilter
+	}
+	if !IsNil(o.UpdatedEntryNewlyMatchesCriteriaBehavior) {
+		toSerialize["updatedEntryNewlyMatchesCriteriaBehavior"] = o.UpdatedEntryNewlyMatchesCriteriaBehavior
+	}
+	if !IsNil(o.UpdatedEntryNoLongerMatchesCriteriaBehavior) {
+		toSerialize["updatedEntryNoLongerMatchesCriteriaBehavior"] = o.UpdatedEntryNoLongerMatchesCriteriaBehavior
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullableComposedAttributePluginResponse struct {

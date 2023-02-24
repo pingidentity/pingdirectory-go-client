@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddNokiaProxyServerExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddNokiaProxyServerExternalServerRequest{}
+
 // AddNokiaProxyServerExternalServerRequest struct for AddNokiaProxyServerExternalServerRequest
 type AddNokiaProxyServerExternalServerRequest struct {
 	// Name of the new External Server
@@ -131,7 +134,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetSchemas(v []EnumnokiaProxy
 
 // GetVerifyCredentialsMethod returns the VerifyCredentialsMethod field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetVerifyCredentialsMethod() EnumexternalServerVerifyCredentialsMethodProp {
-	if o == nil || isNil(o.VerifyCredentialsMethod) {
+	if o == nil || IsNil(o.VerifyCredentialsMethod) {
 		var ret EnumexternalServerVerifyCredentialsMethodProp
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetVerifyCredentialsMethod() 
 // GetVerifyCredentialsMethodOk returns a tuple with the VerifyCredentialsMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetVerifyCredentialsMethodOk() (*EnumexternalServerVerifyCredentialsMethodProp, bool) {
-	if o == nil || isNil(o.VerifyCredentialsMethod) {
+	if o == nil || IsNil(o.VerifyCredentialsMethod) {
 		return nil, false
 	}
 	return o.VerifyCredentialsMethod, true
@@ -149,7 +152,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetVerifyCredentialsMethodOk(
 
 // HasVerifyCredentialsMethod returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasVerifyCredentialsMethod() bool {
-	if o != nil && !isNil(o.VerifyCredentialsMethod) {
+	if o != nil && !IsNil(o.VerifyCredentialsMethod) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetVerifyCredentialsMethod(v 
 
 // GetUseAdministrativeOperationControl returns the UseAdministrativeOperationControl field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetUseAdministrativeOperationControl() bool {
-	if o == nil || isNil(o.UseAdministrativeOperationControl) {
+	if o == nil || IsNil(o.UseAdministrativeOperationControl) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetUseAdministrativeOperation
 // GetUseAdministrativeOperationControlOk returns a tuple with the UseAdministrativeOperationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetUseAdministrativeOperationControlOk() (*bool, bool) {
-	if o == nil || isNil(o.UseAdministrativeOperationControl) {
+	if o == nil || IsNil(o.UseAdministrativeOperationControl) {
 		return nil, false
 	}
 	return o.UseAdministrativeOperationControl, true
@@ -181,7 +184,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetUseAdministrativeOperation
 
 // HasUseAdministrativeOperationControl returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasUseAdministrativeOperationControl() bool {
-	if o != nil && !isNil(o.UseAdministrativeOperationControl) {
+	if o != nil && !IsNil(o.UseAdministrativeOperationControl) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetServerHostName(v string) {
 
 // GetServerPort returns the ServerPort field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetServerPort() int32 {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		var ret int32
 		return ret
 	}
@@ -229,7 +232,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetServerPort() int32 {
 // GetServerPortOk returns a tuple with the ServerPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetServerPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerPort) {
+	if o == nil || IsNil(o.ServerPort) {
 		return nil, false
 	}
 	return o.ServerPort, true
@@ -237,7 +240,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetServerPortOk() (*int32, bo
 
 // HasServerPort returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasServerPort() bool {
-	if o != nil && !isNil(o.ServerPort) {
+	if o != nil && !IsNil(o.ServerPort) {
 		return true
 	}
 
@@ -251,7 +254,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetServerPort(v int32) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetLocation() string {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret string
 		return ret
 	}
@@ -261,7 +264,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetLocation() string {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetLocationOk() (*string, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -269,7 +272,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetLocationOk() (*string, boo
 
 // HasLocation returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -283,7 +286,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetLocation(v string) {
 
 // GetBindDN returns the BindDN field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetBindDN() string {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		var ret string
 		return ret
 	}
@@ -293,7 +296,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetBindDN() string {
 // GetBindDNOk returns a tuple with the BindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetBindDNOk() (*string, bool) {
-	if o == nil || isNil(o.BindDN) {
+	if o == nil || IsNil(o.BindDN) {
 		return nil, false
 	}
 	return o.BindDN, true
@@ -301,7 +304,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetBindDNOk() (*string, bool)
 
 // HasBindDN returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasBindDN() bool {
-	if o != nil && !isNil(o.BindDN) {
+	if o != nil && !IsNil(o.BindDN) {
 		return true
 	}
 
@@ -315,7 +318,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetBindDN(v string) {
 
 // GetPassword returns the Password field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetPassword() string {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		var ret string
 		return ret
 	}
@@ -325,7 +328,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetPasswordOk() (*string, bool) {
-	if o == nil || isNil(o.Password) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return o.Password, true
@@ -333,7 +336,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetPasswordOk() (*string, boo
 
 // HasPassword returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasPassword() bool {
-	if o != nil && !isNil(o.Password) {
+	if o != nil && !IsNil(o.Password) {
 		return true
 	}
 
@@ -347,7 +350,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetPassword(v string) {
 
 // GetPassphraseProvider returns the PassphraseProvider field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetPassphraseProvider() string {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -357,7 +360,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetPassphraseProvider() strin
 // GetPassphraseProviderOk returns a tuple with the PassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.PassphraseProvider) {
+	if o == nil || IsNil(o.PassphraseProvider) {
 		return nil, false
 	}
 	return o.PassphraseProvider, true
@@ -365,7 +368,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetPassphraseProviderOk() (*s
 
 // HasPassphraseProvider returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasPassphraseProvider() bool {
-	if o != nil && !isNil(o.PassphraseProvider) {
+	if o != nil && !IsNil(o.PassphraseProvider) {
 		return true
 	}
 
@@ -379,7 +382,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetPassphraseProvider(v strin
 
 // GetConnectionSecurity returns the ConnectionSecurity field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurity() EnumexternalServerConnectionSecurityProp {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		var ret EnumexternalServerConnectionSecurityProp
 		return ret
 	}
@@ -389,7 +392,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurity() Enume
 // GetConnectionSecurityOk returns a tuple with the ConnectionSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurityOk() (*EnumexternalServerConnectionSecurityProp, bool) {
-	if o == nil || isNil(o.ConnectionSecurity) {
+	if o == nil || IsNil(o.ConnectionSecurity) {
 		return nil, false
 	}
 	return o.ConnectionSecurity, true
@@ -397,7 +400,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectionSecurityOk() (*E
 
 // HasConnectionSecurity returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasConnectionSecurity() bool {
-	if o != nil && !isNil(o.ConnectionSecurity) {
+	if o != nil && !IsNil(o.ConnectionSecurity) {
 		return true
 	}
 
@@ -411,7 +414,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetConnectionSecurity(v Enume
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethod() EnumexternalServerAuthenticationMethodProp {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		var ret EnumexternalServerAuthenticationMethodProp
 		return ret
 	}
@@ -421,7 +424,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethod() Enu
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethodOk() (*EnumexternalServerAuthenticationMethodProp, bool) {
-	if o == nil || isNil(o.AuthenticationMethod) {
+	if o == nil || IsNil(o.AuthenticationMethod) {
 		return nil, false
 	}
 	return o.AuthenticationMethod, true
@@ -429,7 +432,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetAuthenticationMethodOk() (
 
 // HasAuthenticationMethod returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasAuthenticationMethod() bool {
-	if o != nil && !isNil(o.AuthenticationMethod) {
+	if o != nil && !IsNil(o.AuthenticationMethod) {
 		return true
 	}
 
@@ -443,7 +446,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetAuthenticationMethod(v Enu
 
 // GetHealthCheckConnectTimeout returns the HealthCheckConnectTimeout field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetHealthCheckConnectTimeout() string {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -453,7 +456,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetHealthCheckConnectTimeout(
 // GetHealthCheckConnectTimeoutOk returns a tuple with the HealthCheckConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetHealthCheckConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.HealthCheckConnectTimeout) {
+	if o == nil || IsNil(o.HealthCheckConnectTimeout) {
 		return nil, false
 	}
 	return o.HealthCheckConnectTimeout, true
@@ -461,7 +464,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetHealthCheckConnectTimeoutO
 
 // HasHealthCheckConnectTimeout returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasHealthCheckConnectTimeout() bool {
-	if o != nil && !isNil(o.HealthCheckConnectTimeout) {
+	if o != nil && !IsNil(o.HealthCheckConnectTimeout) {
 		return true
 	}
 
@@ -475,7 +478,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetHealthCheckConnectTimeout(
 
 // GetMaxConnectionAge returns the MaxConnectionAge field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionAge() string {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		var ret string
 		return ret
 	}
@@ -485,7 +488,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionAge() string 
 // GetMaxConnectionAgeOk returns a tuple with the MaxConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionAgeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxConnectionAge) {
+	if o == nil || IsNil(o.MaxConnectionAge) {
 		return nil, false
 	}
 	return o.MaxConnectionAge, true
@@ -493,7 +496,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionAgeOk() (*str
 
 // HasMaxConnectionAge returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasMaxConnectionAge() bool {
-	if o != nil && !isNil(o.MaxConnectionAge) {
+	if o != nil && !IsNil(o.MaxConnectionAge) {
 		return true
 	}
 
@@ -507,7 +510,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetMaxConnectionAge(v string)
 
 // GetMinExpiredConnectionDisconnectInterval returns the MinExpiredConnectionDisconnectInterval field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMinExpiredConnectionDisconnectInterval() string {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		var ret string
 		return ret
 	}
@@ -517,7 +520,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMinExpiredConnectionDiscon
 // GetMinExpiredConnectionDisconnectIntervalOk returns a tuple with the MinExpiredConnectionDisconnectInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMinExpiredConnectionDisconnectIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o == nil || IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return nil, false
 	}
 	return o.MinExpiredConnectionDisconnectInterval, true
@@ -525,7 +528,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMinExpiredConnectionDiscon
 
 // HasMinExpiredConnectionDisconnectInterval returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasMinExpiredConnectionDisconnectInterval() bool {
-	if o != nil && !isNil(o.MinExpiredConnectionDisconnectInterval) {
+	if o != nil && !IsNil(o.MinExpiredConnectionDisconnectInterval) {
 		return true
 	}
 
@@ -539,7 +542,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetMinExpiredConnectionDiscon
 
 // GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetConnectTimeout() string {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		var ret string
 		return ret
 	}
@@ -549,7 +552,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectTimeout() string {
 // GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetConnectTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectTimeout) {
+	if o == nil || IsNil(o.ConnectTimeout) {
 		return nil, false
 	}
 	return o.ConnectTimeout, true
@@ -557,7 +560,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetConnectTimeoutOk() (*strin
 
 // HasConnectTimeout returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasConnectTimeout() bool {
-	if o != nil && !isNil(o.ConnectTimeout) {
+	if o != nil && !IsNil(o.ConnectTimeout) {
 		return true
 	}
 
@@ -571,7 +574,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetConnectTimeout(v string) {
 
 // GetMaxResponseSize returns the MaxResponseSize field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxResponseSize() string {
-	if o == nil || isNil(o.MaxResponseSize) {
+	if o == nil || IsNil(o.MaxResponseSize) {
 		var ret string
 		return ret
 	}
@@ -581,7 +584,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxResponseSize() string {
 // GetMaxResponseSizeOk returns a tuple with the MaxResponseSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxResponseSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxResponseSize) {
+	if o == nil || IsNil(o.MaxResponseSize) {
 		return nil, false
 	}
 	return o.MaxResponseSize, true
@@ -589,7 +592,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxResponseSizeOk() (*stri
 
 // HasMaxResponseSize returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasMaxResponseSize() bool {
-	if o != nil && !isNil(o.MaxResponseSize) {
+	if o != nil && !IsNil(o.MaxResponseSize) {
 		return true
 	}
 
@@ -603,7 +606,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetMaxResponseSize(v string) 
 
 // GetKeyManagerProvider returns the KeyManagerProvider field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetKeyManagerProvider() string {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -613,7 +616,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetKeyManagerProvider() strin
 // GetKeyManagerProviderOk returns a tuple with the KeyManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetKeyManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.KeyManagerProvider) {
+	if o == nil || IsNil(o.KeyManagerProvider) {
 		return nil, false
 	}
 	return o.KeyManagerProvider, true
@@ -621,7 +624,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetKeyManagerProviderOk() (*s
 
 // HasKeyManagerProvider returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasKeyManagerProvider() bool {
-	if o != nil && !isNil(o.KeyManagerProvider) {
+	if o != nil && !IsNil(o.KeyManagerProvider) {
 		return true
 	}
 
@@ -635,7 +638,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetKeyManagerProvider(v strin
 
 // GetTrustManagerProvider returns the TrustManagerProvider field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetTrustManagerProvider() string {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		var ret string
 		return ret
 	}
@@ -645,7 +648,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetTrustManagerProvider() str
 // GetTrustManagerProviderOk returns a tuple with the TrustManagerProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetTrustManagerProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TrustManagerProvider) {
+	if o == nil || IsNil(o.TrustManagerProvider) {
 		return nil, false
 	}
 	return o.TrustManagerProvider, true
@@ -653,7 +656,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetTrustManagerProviderOk() (
 
 // HasTrustManagerProvider returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasTrustManagerProvider() bool {
-	if o != nil && !isNil(o.TrustManagerProvider) {
+	if o != nil && !IsNil(o.TrustManagerProvider) {
 		return true
 	}
 
@@ -667,7 +670,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetTrustManagerProvider(v str
 
 // GetInitialConnections returns the InitialConnections field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetInitialConnections() int32 {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		var ret int32
 		return ret
 	}
@@ -677,7 +680,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetInitialConnections() int32
 // GetInitialConnectionsOk returns a tuple with the InitialConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetInitialConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.InitialConnections) {
+	if o == nil || IsNil(o.InitialConnections) {
 		return nil, false
 	}
 	return o.InitialConnections, true
@@ -685,7 +688,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetInitialConnectionsOk() (*i
 
 // HasInitialConnections returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasInitialConnections() bool {
-	if o != nil && !isNil(o.InitialConnections) {
+	if o != nil && !IsNil(o.InitialConnections) {
 		return true
 	}
 
@@ -699,7 +702,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetInitialConnections(v int32
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnections() int32 {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		var ret int32
 		return ret
 	}
@@ -709,7 +712,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnections() int32 {
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxConnections) {
+	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
 	return o.MaxConnections, true
@@ -717,7 +720,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetMaxConnectionsOk() (*int32
 
 // HasMaxConnections returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasMaxConnections() bool {
-	if o != nil && !isNil(o.MaxConnections) {
+	if o != nil && !IsNil(o.MaxConnections) {
 		return true
 	}
 
@@ -731,7 +734,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetMaxConnections(v int32) {
 
 // GetDefunctConnectionResultCode returns the DefunctConnectionResultCode field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetDefunctConnectionResultCode() []EnumexternalServerDefunctConnectionResultCodeProp {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		var ret []EnumexternalServerDefunctConnectionResultCodeProp
 		return ret
 	}
@@ -741,7 +744,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetDefunctConnectionResultCod
 // GetDefunctConnectionResultCodeOk returns a tuple with the DefunctConnectionResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetDefunctConnectionResultCodeOk() ([]EnumexternalServerDefunctConnectionResultCodeProp, bool) {
-	if o == nil || isNil(o.DefunctConnectionResultCode) {
+	if o == nil || IsNil(o.DefunctConnectionResultCode) {
 		return nil, false
 	}
 	return o.DefunctConnectionResultCode, true
@@ -749,7 +752,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetDefunctConnectionResultCod
 
 // HasDefunctConnectionResultCode returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasDefunctConnectionResultCode() bool {
-	if o != nil && !isNil(o.DefunctConnectionResultCode) {
+	if o != nil && !IsNil(o.DefunctConnectionResultCode) {
 		return true
 	}
 
@@ -763,7 +766,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetDefunctConnectionResultCod
 
 // GetAbandonOnTimeout returns the AbandonOnTimeout field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetAbandonOnTimeout() bool {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		var ret bool
 		return ret
 	}
@@ -773,7 +776,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetAbandonOnTimeout() bool {
 // GetAbandonOnTimeoutOk returns a tuple with the AbandonOnTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetAbandonOnTimeoutOk() (*bool, bool) {
-	if o == nil || isNil(o.AbandonOnTimeout) {
+	if o == nil || IsNil(o.AbandonOnTimeout) {
 		return nil, false
 	}
 	return o.AbandonOnTimeout, true
@@ -781,7 +784,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetAbandonOnTimeoutOk() (*boo
 
 // HasAbandonOnTimeout returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasAbandonOnTimeout() bool {
-	if o != nil && !isNil(o.AbandonOnTimeout) {
+	if o != nil && !IsNil(o.AbandonOnTimeout) {
 		return true
 	}
 
@@ -795,7 +798,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetAbandonOnTimeout(v bool) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddNokiaProxyServerExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -805,7 +808,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -813,7 +816,7 @@ func (o *AddNokiaProxyServerExternalServerRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddNokiaProxyServerExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -826,80 +829,82 @@ func (o *AddNokiaProxyServerExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddNokiaProxyServerExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.VerifyCredentialsMethod) {
-		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
-	}
-	if !isNil(o.UseAdministrativeOperationControl) {
-		toSerialize["useAdministrativeOperationControl"] = o.UseAdministrativeOperationControl
-	}
-	if true {
-		toSerialize["serverHostName"] = o.ServerHostName
-	}
-	if !isNil(o.ServerPort) {
-		toSerialize["serverPort"] = o.ServerPort
-	}
-	if !isNil(o.Location) {
-		toSerialize["location"] = o.Location
-	}
-	if !isNil(o.BindDN) {
-		toSerialize["bindDN"] = o.BindDN
-	}
-	if !isNil(o.Password) {
-		toSerialize["password"] = o.Password
-	}
-	if !isNil(o.PassphraseProvider) {
-		toSerialize["passphraseProvider"] = o.PassphraseProvider
-	}
-	if !isNil(o.ConnectionSecurity) {
-		toSerialize["connectionSecurity"] = o.ConnectionSecurity
-	}
-	if !isNil(o.AuthenticationMethod) {
-		toSerialize["authenticationMethod"] = o.AuthenticationMethod
-	}
-	if !isNil(o.HealthCheckConnectTimeout) {
-		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
-	}
-	if !isNil(o.MaxConnectionAge) {
-		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
-	}
-	if !isNil(o.MinExpiredConnectionDisconnectInterval) {
-		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
-	}
-	if !isNil(o.ConnectTimeout) {
-		toSerialize["connectTimeout"] = o.ConnectTimeout
-	}
-	if !isNil(o.MaxResponseSize) {
-		toSerialize["maxResponseSize"] = o.MaxResponseSize
-	}
-	if !isNil(o.KeyManagerProvider) {
-		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
-	}
-	if !isNil(o.TrustManagerProvider) {
-		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
-	}
-	if !isNil(o.InitialConnections) {
-		toSerialize["initialConnections"] = o.InitialConnections
-	}
-	if !isNil(o.MaxConnections) {
-		toSerialize["maxConnections"] = o.MaxConnections
-	}
-	if !isNil(o.DefunctConnectionResultCode) {
-		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
-	}
-	if !isNil(o.AbandonOnTimeout) {
-		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddNokiaProxyServerExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.VerifyCredentialsMethod) {
+		toSerialize["verifyCredentialsMethod"] = o.VerifyCredentialsMethod
+	}
+	if !IsNil(o.UseAdministrativeOperationControl) {
+		toSerialize["useAdministrativeOperationControl"] = o.UseAdministrativeOperationControl
+	}
+	toSerialize["serverHostName"] = o.ServerHostName
+	if !IsNil(o.ServerPort) {
+		toSerialize["serverPort"] = o.ServerPort
+	}
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.BindDN) {
+		toSerialize["bindDN"] = o.BindDN
+	}
+	if !IsNil(o.Password) {
+		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.PassphraseProvider) {
+		toSerialize["passphraseProvider"] = o.PassphraseProvider
+	}
+	if !IsNil(o.ConnectionSecurity) {
+		toSerialize["connectionSecurity"] = o.ConnectionSecurity
+	}
+	if !IsNil(o.AuthenticationMethod) {
+		toSerialize["authenticationMethod"] = o.AuthenticationMethod
+	}
+	if !IsNil(o.HealthCheckConnectTimeout) {
+		toSerialize["healthCheckConnectTimeout"] = o.HealthCheckConnectTimeout
+	}
+	if !IsNil(o.MaxConnectionAge) {
+		toSerialize["maxConnectionAge"] = o.MaxConnectionAge
+	}
+	if !IsNil(o.MinExpiredConnectionDisconnectInterval) {
+		toSerialize["minExpiredConnectionDisconnectInterval"] = o.MinExpiredConnectionDisconnectInterval
+	}
+	if !IsNil(o.ConnectTimeout) {
+		toSerialize["connectTimeout"] = o.ConnectTimeout
+	}
+	if !IsNil(o.MaxResponseSize) {
+		toSerialize["maxResponseSize"] = o.MaxResponseSize
+	}
+	if !IsNil(o.KeyManagerProvider) {
+		toSerialize["keyManagerProvider"] = o.KeyManagerProvider
+	}
+	if !IsNil(o.TrustManagerProvider) {
+		toSerialize["trustManagerProvider"] = o.TrustManagerProvider
+	}
+	if !IsNil(o.InitialConnections) {
+		toSerialize["initialConnections"] = o.InitialConnections
+	}
+	if !IsNil(o.MaxConnections) {
+		toSerialize["maxConnections"] = o.MaxConnections
+	}
+	if !IsNil(o.DefunctConnectionResultCode) {
+		toSerialize["defunctConnectionResultCode"] = o.DefunctConnectionResultCode
+	}
+	if !IsNil(o.AbandonOnTimeout) {
+		toSerialize["abandonOnTimeout"] = o.AbandonOnTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddNokiaProxyServerExternalServerRequest struct {

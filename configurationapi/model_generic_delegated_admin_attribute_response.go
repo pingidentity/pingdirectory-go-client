@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GenericDelegatedAdminAttributeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GenericDelegatedAdminAttributeResponse{}
+
 // GenericDelegatedAdminAttributeResponse struct for GenericDelegatedAdminAttributeResponse
 type GenericDelegatedAdminAttributeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -70,7 +73,7 @@ func NewGenericDelegatedAdminAttributeResponseWithDefaults() *GenericDelegatedAd
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -80,7 +83,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -88,7 +91,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *GenericDelegatedAdminAttributeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfig
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -120,7 +123,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetUrnpingidentityschemasconfig
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -182,7 +185,7 @@ func (o *GenericDelegatedAdminAttributeResponse) SetSchemas(v []EnumgenericDeleg
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -200,7 +203,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetDescriptionOk() (*string, bo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -334,7 +337,7 @@ func (o *GenericDelegatedAdminAttributeResponse) SetIncludeInSummary(v bool) {
 
 // GetAttributeCategory returns the AttributeCategory field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetAttributeCategory() string {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		var ret string
 		return ret
 	}
@@ -344,7 +347,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetAttributeCategory() string {
 // GetAttributeCategoryOk returns a tuple with the AttributeCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetAttributeCategoryOk() (*string, bool) {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		return nil, false
 	}
 	return o.AttributeCategory, true
@@ -352,7 +355,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetAttributeCategoryOk() (*stri
 
 // HasAttributeCategory returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasAttributeCategory() bool {
-	if o != nil && !isNil(o.AttributeCategory) {
+	if o != nil && !IsNil(o.AttributeCategory) {
 		return true
 	}
 
@@ -390,7 +393,7 @@ func (o *GenericDelegatedAdminAttributeResponse) SetDisplayOrderIndex(v int32) {
 
 // GetReferenceResourceType returns the ReferenceResourceType field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetReferenceResourceType() string {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		var ret string
 		return ret
 	}
@@ -400,7 +403,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetReferenceResourceType() stri
 // GetReferenceResourceTypeOk returns a tuple with the ReferenceResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetReferenceResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		return nil, false
 	}
 	return o.ReferenceResourceType, true
@@ -408,7 +411,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetReferenceResourceTypeOk() (*
 
 // HasReferenceResourceType returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasReferenceResourceType() bool {
-	if o != nil && !isNil(o.ReferenceResourceType) {
+	if o != nil && !IsNil(o.ReferenceResourceType) {
 		return true
 	}
 
@@ -422,7 +425,7 @@ func (o *GenericDelegatedAdminAttributeResponse) SetReferenceResourceType(v stri
 
 // GetAttributePresentation returns the AttributePresentation field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetAttributePresentation() EnumdelegatedAdminAttributeAttributePresentationProp {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		var ret EnumdelegatedAdminAttributeAttributePresentationProp
 		return ret
 	}
@@ -432,7 +435,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetAttributePresentation() Enum
 // GetAttributePresentationOk returns a tuple with the AttributePresentation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetAttributePresentationOk() (*EnumdelegatedAdminAttributeAttributePresentationProp, bool) {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		return nil, false
 	}
 	return o.AttributePresentation, true
@@ -440,7 +443,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetAttributePresentationOk() (*
 
 // HasAttributePresentation returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasAttributePresentation() bool {
-	if o != nil && !isNil(o.AttributePresentation) {
+	if o != nil && !IsNil(o.AttributePresentation) {
 		return true
 	}
 
@@ -454,7 +457,7 @@ func (o *GenericDelegatedAdminAttributeResponse) SetAttributePresentation(v Enum
 
 // GetDateTimeFormat returns the DateTimeFormat field value if set, zero value otherwise.
 func (o *GenericDelegatedAdminAttributeResponse) GetDateTimeFormat() string {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		var ret string
 		return ret
 	}
@@ -464,7 +467,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetDateTimeFormat() string {
 // GetDateTimeFormatOk returns a tuple with the DateTimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GenericDelegatedAdminAttributeResponse) GetDateTimeFormatOk() (*string, bool) {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		return nil, false
 	}
 	return o.DateTimeFormat, true
@@ -472,7 +475,7 @@ func (o *GenericDelegatedAdminAttributeResponse) GetDateTimeFormatOk() (*string,
 
 // HasDateTimeFormat returns a boolean if a field has been set.
 func (o *GenericDelegatedAdminAttributeResponse) HasDateTimeFormat() bool {
-	if o != nil && !isNil(o.DateTimeFormat) {
+	if o != nil && !IsNil(o.DateTimeFormat) {
 		return true
 	}
 
@@ -485,53 +488,45 @@ func (o *GenericDelegatedAdminAttributeResponse) SetDateTimeFormat(v string) {
 }
 
 func (o GenericDelegatedAdminAttributeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if true {
-		toSerialize["mutability"] = o.Mutability
-	}
-	if true {
-		toSerialize["multiValued"] = o.MultiValued
-	}
-	if true {
-		toSerialize["includeInSummary"] = o.IncludeInSummary
-	}
-	if !isNil(o.AttributeCategory) {
-		toSerialize["attributeCategory"] = o.AttributeCategory
-	}
-	if true {
-		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
-	}
-	if !isNil(o.ReferenceResourceType) {
-		toSerialize["referenceResourceType"] = o.ReferenceResourceType
-	}
-	if !isNil(o.AttributePresentation) {
-		toSerialize["attributePresentation"] = o.AttributePresentation
-	}
-	if !isNil(o.DateTimeFormat) {
-		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GenericDelegatedAdminAttributeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["displayName"] = o.DisplayName
+	toSerialize["mutability"] = o.Mutability
+	toSerialize["multiValued"] = o.MultiValued
+	toSerialize["includeInSummary"] = o.IncludeInSummary
+	if !IsNil(o.AttributeCategory) {
+		toSerialize["attributeCategory"] = o.AttributeCategory
+	}
+	toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
+	if !IsNil(o.ReferenceResourceType) {
+		toSerialize["referenceResourceType"] = o.ReferenceResourceType
+	}
+	if !IsNil(o.AttributePresentation) {
+		toSerialize["attributePresentation"] = o.AttributePresentation
+	}
+	if !IsNil(o.DateTimeFormat) {
+		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	}
+	return toSerialize, nil
 }
 
 type NullableGenericDelegatedAdminAttributeResponse struct {

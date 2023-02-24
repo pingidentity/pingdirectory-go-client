@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FileBasedTraceLogPublisherResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FileBasedTraceLogPublisherResponse{}
+
 // FileBasedTraceLogPublisherResponse struct for FileBasedTraceLogPublisherResponse
 type FileBasedTraceLogPublisherResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -96,7 +99,7 @@ func NewFileBasedTraceLogPublisherResponseWithDefaults() *FileBasedTraceLogPubli
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -114,7 +117,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -128,7 +131,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -146,7 +149,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -280,7 +283,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetRotationPolicy(v []string) {
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -290,7 +293,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetRotationListener() []string {
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -298,7 +301,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetRotationListenerOk() ([]string, 
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetRetentionPolicy(v []string) {
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetCompressionMechanism() EnumlogPublisherCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumlogPublisherCompressionMechanismProp
 		return ret
 	}
@@ -346,7 +349,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetCompressionMechanism() EnumlogPu
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -354,7 +357,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetCompressionMechanismOk() (*Enuml
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -368,7 +371,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetCompressionMechanism(v EnumlogPu
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -378,7 +381,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -386,7 +389,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetSignLogOk() (*bool, bool) {
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -400,7 +403,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -410,7 +413,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetEncryptLog() bool {
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -418,7 +421,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetEncryptLogOk() (*bool, bool) {
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -432,7 +435,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetEncryptLog(v bool) {
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -442,7 +445,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetEncryptionSettingsDefinitionID()
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -450,7 +453,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetEncryptionSettingsDefinitionIDOk
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetEncryptionSettingsDefinitionID(v
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -474,7 +477,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -482,7 +485,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetAppendOk() (*bool, bool) {
 
 // HasAppend returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -496,7 +499,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetAppend(v bool) {
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -506,7 +509,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetBufferSize() string {
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -514,7 +517,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetBufferSizeOk() (*string, bool) {
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -528,7 +531,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetBufferSize(v string) {
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -538,7 +541,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetTimeInterval() string {
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -546,7 +549,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetTimeIntervalOk() (*string, bool)
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -584,7 +587,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetAsynchronous(v bool) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -594,7 +597,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -602,7 +605,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetQueueSizeOk() (*int32, bool) {
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -616,7 +619,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetQueueSize(v int32) {
 
 // GetMaxStringLength returns the MaxStringLength field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int32 {
-	if o == nil || isNil(o.MaxStringLength) {
+	if o == nil || IsNil(o.MaxStringLength) {
 		var ret int32
 		return ret
 	}
@@ -626,7 +629,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLength() int32 {
 // GetMaxStringLengthOk returns a tuple with the MaxStringLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxStringLength) {
+	if o == nil || IsNil(o.MaxStringLength) {
 		return nil, false
 	}
 	return o.MaxStringLength, true
@@ -634,7 +637,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetMaxStringLengthOk() (*int32, boo
 
 // HasMaxStringLength returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasMaxStringLength() bool {
-	if o != nil && !isNil(o.MaxStringLength) {
+	if o != nil && !IsNil(o.MaxStringLength) {
 		return true
 	}
 
@@ -648,7 +651,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetMaxStringLength(v int32) {
 
 // GetDebugMessageType returns the DebugMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetDebugMessageType() []EnumlogPublisherDebugMessageTypeProp {
-	if o == nil || isNil(o.DebugMessageType) {
+	if o == nil || IsNil(o.DebugMessageType) {
 		var ret []EnumlogPublisherDebugMessageTypeProp
 		return ret
 	}
@@ -658,7 +661,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetDebugMessageType() []EnumlogPubl
 // GetDebugMessageTypeOk returns a tuple with the DebugMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetDebugMessageTypeOk() ([]EnumlogPublisherDebugMessageTypeProp, bool) {
-	if o == nil || isNil(o.DebugMessageType) {
+	if o == nil || IsNil(o.DebugMessageType) {
 		return nil, false
 	}
 	return o.DebugMessageType, true
@@ -666,7 +669,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetDebugMessageTypeOk() ([]EnumlogP
 
 // HasDebugMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasDebugMessageType() bool {
-	if o != nil && !isNil(o.DebugMessageType) {
+	if o != nil && !IsNil(o.DebugMessageType) {
 		return true
 	}
 
@@ -680,7 +683,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetDebugMessageType(v []EnumlogPubl
 
 // GetHttpMessageType returns the HttpMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetHttpMessageType() []EnumlogPublisherHttpMessageTypeProp {
-	if o == nil || isNil(o.HttpMessageType) {
+	if o == nil || IsNil(o.HttpMessageType) {
 		var ret []EnumlogPublisherHttpMessageTypeProp
 		return ret
 	}
@@ -690,7 +693,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetHttpMessageType() []EnumlogPubli
 // GetHttpMessageTypeOk returns a tuple with the HttpMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetHttpMessageTypeOk() ([]EnumlogPublisherHttpMessageTypeProp, bool) {
-	if o == nil || isNil(o.HttpMessageType) {
+	if o == nil || IsNil(o.HttpMessageType) {
 		return nil, false
 	}
 	return o.HttpMessageType, true
@@ -698,7 +701,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetHttpMessageTypeOk() ([]EnumlogPu
 
 // HasHttpMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasHttpMessageType() bool {
-	if o != nil && !isNil(o.HttpMessageType) {
+	if o != nil && !IsNil(o.HttpMessageType) {
 		return true
 	}
 
@@ -712,7 +715,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetHttpMessageType(v []EnumlogPubli
 
 // GetAccessTokenValidatorMessageType returns the AccessTokenValidatorMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetAccessTokenValidatorMessageType() []EnumlogPublisherAccessTokenValidatorMessageTypeProp {
-	if o == nil || isNil(o.AccessTokenValidatorMessageType) {
+	if o == nil || IsNil(o.AccessTokenValidatorMessageType) {
 		var ret []EnumlogPublisherAccessTokenValidatorMessageTypeProp
 		return ret
 	}
@@ -722,7 +725,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetAccessTokenValidatorMessageType(
 // GetAccessTokenValidatorMessageTypeOk returns a tuple with the AccessTokenValidatorMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetAccessTokenValidatorMessageTypeOk() ([]EnumlogPublisherAccessTokenValidatorMessageTypeProp, bool) {
-	if o == nil || isNil(o.AccessTokenValidatorMessageType) {
+	if o == nil || IsNil(o.AccessTokenValidatorMessageType) {
 		return nil, false
 	}
 	return o.AccessTokenValidatorMessageType, true
@@ -730,7 +733,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetAccessTokenValidatorMessageTypeO
 
 // HasAccessTokenValidatorMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasAccessTokenValidatorMessageType() bool {
-	if o != nil && !isNil(o.AccessTokenValidatorMessageType) {
+	if o != nil && !IsNil(o.AccessTokenValidatorMessageType) {
 		return true
 	}
 
@@ -744,7 +747,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetAccessTokenValidatorMessageType(
 
 // GetIdTokenValidatorMessageType returns the IdTokenValidatorMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetIdTokenValidatorMessageType() []EnumlogPublisherIdTokenValidatorMessageTypeProp {
-	if o == nil || isNil(o.IdTokenValidatorMessageType) {
+	if o == nil || IsNil(o.IdTokenValidatorMessageType) {
 		var ret []EnumlogPublisherIdTokenValidatorMessageTypeProp
 		return ret
 	}
@@ -754,7 +757,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetIdTokenValidatorMessageType() []
 // GetIdTokenValidatorMessageTypeOk returns a tuple with the IdTokenValidatorMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetIdTokenValidatorMessageTypeOk() ([]EnumlogPublisherIdTokenValidatorMessageTypeProp, bool) {
-	if o == nil || isNil(o.IdTokenValidatorMessageType) {
+	if o == nil || IsNil(o.IdTokenValidatorMessageType) {
 		return nil, false
 	}
 	return o.IdTokenValidatorMessageType, true
@@ -762,7 +765,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetIdTokenValidatorMessageTypeOk() 
 
 // HasIdTokenValidatorMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasIdTokenValidatorMessageType() bool {
-	if o != nil && !isNil(o.IdTokenValidatorMessageType) {
+	if o != nil && !IsNil(o.IdTokenValidatorMessageType) {
 		return true
 	}
 
@@ -776,7 +779,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetIdTokenValidatorMessageType(v []
 
 // GetScimMessageType returns the ScimMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetScimMessageType() []EnumlogPublisherScimMessageTypeProp {
-	if o == nil || isNil(o.ScimMessageType) {
+	if o == nil || IsNil(o.ScimMessageType) {
 		var ret []EnumlogPublisherScimMessageTypeProp
 		return ret
 	}
@@ -786,7 +789,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetScimMessageType() []EnumlogPubli
 // GetScimMessageTypeOk returns a tuple with the ScimMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetScimMessageTypeOk() ([]EnumlogPublisherScimMessageTypeProp, bool) {
-	if o == nil || isNil(o.ScimMessageType) {
+	if o == nil || IsNil(o.ScimMessageType) {
 		return nil, false
 	}
 	return o.ScimMessageType, true
@@ -794,7 +797,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetScimMessageTypeOk() ([]EnumlogPu
 
 // HasScimMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasScimMessageType() bool {
-	if o != nil && !isNil(o.ScimMessageType) {
+	if o != nil && !IsNil(o.ScimMessageType) {
 		return true
 	}
 
@@ -808,7 +811,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetScimMessageType(v []EnumlogPubli
 
 // GetConsentMessageType returns the ConsentMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetConsentMessageType() []EnumlogPublisherConsentMessageTypeProp {
-	if o == nil || isNil(o.ConsentMessageType) {
+	if o == nil || IsNil(o.ConsentMessageType) {
 		var ret []EnumlogPublisherConsentMessageTypeProp
 		return ret
 	}
@@ -818,7 +821,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetConsentMessageType() []EnumlogPu
 // GetConsentMessageTypeOk returns a tuple with the ConsentMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetConsentMessageTypeOk() ([]EnumlogPublisherConsentMessageTypeProp, bool) {
-	if o == nil || isNil(o.ConsentMessageType) {
+	if o == nil || IsNil(o.ConsentMessageType) {
 		return nil, false
 	}
 	return o.ConsentMessageType, true
@@ -826,7 +829,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetConsentMessageTypeOk() ([]Enumlo
 
 // HasConsentMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasConsentMessageType() bool {
-	if o != nil && !isNil(o.ConsentMessageType) {
+	if o != nil && !IsNil(o.ConsentMessageType) {
 		return true
 	}
 
@@ -840,7 +843,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetConsentMessageType(v []EnumlogPu
 
 // GetDirectoryRESTAPIMessageType returns the DirectoryRESTAPIMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetDirectoryRESTAPIMessageType() []EnumlogPublisherDirectoryRESTAPIMessageTypeProp {
-	if o == nil || isNil(o.DirectoryRESTAPIMessageType) {
+	if o == nil || IsNil(o.DirectoryRESTAPIMessageType) {
 		var ret []EnumlogPublisherDirectoryRESTAPIMessageTypeProp
 		return ret
 	}
@@ -850,7 +853,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetDirectoryRESTAPIMessageType() []
 // GetDirectoryRESTAPIMessageTypeOk returns a tuple with the DirectoryRESTAPIMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetDirectoryRESTAPIMessageTypeOk() ([]EnumlogPublisherDirectoryRESTAPIMessageTypeProp, bool) {
-	if o == nil || isNil(o.DirectoryRESTAPIMessageType) {
+	if o == nil || IsNil(o.DirectoryRESTAPIMessageType) {
 		return nil, false
 	}
 	return o.DirectoryRESTAPIMessageType, true
@@ -858,7 +861,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetDirectoryRESTAPIMessageTypeOk() 
 
 // HasDirectoryRESTAPIMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasDirectoryRESTAPIMessageType() bool {
-	if o != nil && !isNil(o.DirectoryRESTAPIMessageType) {
+	if o != nil && !IsNil(o.DirectoryRESTAPIMessageType) {
 		return true
 	}
 
@@ -872,7 +875,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetDirectoryRESTAPIMessageType(v []
 
 // GetExtensionMessageType returns the ExtensionMessageType field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetExtensionMessageType() []EnumlogPublisherExtensionMessageTypeProp {
-	if o == nil || isNil(o.ExtensionMessageType) {
+	if o == nil || IsNil(o.ExtensionMessageType) {
 		var ret []EnumlogPublisherExtensionMessageTypeProp
 		return ret
 	}
@@ -882,7 +885,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetExtensionMessageType() []Enumlog
 // GetExtensionMessageTypeOk returns a tuple with the ExtensionMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetExtensionMessageTypeOk() ([]EnumlogPublisherExtensionMessageTypeProp, bool) {
-	if o == nil || isNil(o.ExtensionMessageType) {
+	if o == nil || IsNil(o.ExtensionMessageType) {
 		return nil, false
 	}
 	return o.ExtensionMessageType, true
@@ -890,7 +893,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetExtensionMessageTypeOk() ([]Enum
 
 // HasExtensionMessageType returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasExtensionMessageType() bool {
-	if o != nil && !isNil(o.ExtensionMessageType) {
+	if o != nil && !IsNil(o.ExtensionMessageType) {
 		return true
 	}
 
@@ -904,7 +907,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetExtensionMessageType(v []Enumlog
 
 // GetIncludePathPattern returns the IncludePathPattern field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetIncludePathPattern() []string {
-	if o == nil || isNil(o.IncludePathPattern) {
+	if o == nil || IsNil(o.IncludePathPattern) {
 		var ret []string
 		return ret
 	}
@@ -914,7 +917,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetIncludePathPattern() []string {
 // GetIncludePathPatternOk returns a tuple with the IncludePathPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetIncludePathPatternOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludePathPattern) {
+	if o == nil || IsNil(o.IncludePathPattern) {
 		return nil, false
 	}
 	return o.IncludePathPattern, true
@@ -922,7 +925,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetIncludePathPatternOk() ([]string
 
 // HasIncludePathPattern returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasIncludePathPattern() bool {
-	if o != nil && !isNil(o.IncludePathPattern) {
+	if o != nil && !IsNil(o.IncludePathPattern) {
 		return true
 	}
 
@@ -936,7 +939,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetIncludePathPattern(v []string) {
 
 // GetExcludePathPattern returns the ExcludePathPattern field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetExcludePathPattern() []string {
-	if o == nil || isNil(o.ExcludePathPattern) {
+	if o == nil || IsNil(o.ExcludePathPattern) {
 		var ret []string
 		return ret
 	}
@@ -946,7 +949,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetExcludePathPattern() []string {
 // GetExcludePathPatternOk returns a tuple with the ExcludePathPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetExcludePathPatternOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludePathPattern) {
+	if o == nil || IsNil(o.ExcludePathPattern) {
 		return nil, false
 	}
 	return o.ExcludePathPattern, true
@@ -954,7 +957,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetExcludePathPatternOk() ([]string
 
 // HasExcludePathPattern returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasExcludePathPattern() bool {
-	if o != nil && !isNil(o.ExcludePathPattern) {
+	if o != nil && !IsNil(o.ExcludePathPattern) {
 		return true
 	}
 
@@ -968,7 +971,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetExcludePathPattern(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -978,7 +981,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -986,7 +989,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1024,7 +1027,7 @@ func (o *FileBasedTraceLogPublisherResponse) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *FileBasedTraceLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -1034,7 +1037,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetLoggingErrorBehavior() EnumlogPu
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileBasedTraceLogPublisherResponse) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -1042,7 +1045,7 @@ func (o *FileBasedTraceLogPublisherResponse) GetLoggingErrorBehaviorOk() (*Enuml
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *FileBasedTraceLogPublisherResponse) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -1055,104 +1058,96 @@ func (o *FileBasedTraceLogPublisherResponse) SetLoggingErrorBehavior(v EnumlogPu
 }
 
 func (o FileBasedTraceLogPublisherResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if true {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if true {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if true {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if true {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.MaxStringLength) {
-		toSerialize["maxStringLength"] = o.MaxStringLength
-	}
-	if !isNil(o.DebugMessageType) {
-		toSerialize["debugMessageType"] = o.DebugMessageType
-	}
-	if !isNil(o.HttpMessageType) {
-		toSerialize["httpMessageType"] = o.HttpMessageType
-	}
-	if !isNil(o.AccessTokenValidatorMessageType) {
-		toSerialize["accessTokenValidatorMessageType"] = o.AccessTokenValidatorMessageType
-	}
-	if !isNil(o.IdTokenValidatorMessageType) {
-		toSerialize["idTokenValidatorMessageType"] = o.IdTokenValidatorMessageType
-	}
-	if !isNil(o.ScimMessageType) {
-		toSerialize["scimMessageType"] = o.ScimMessageType
-	}
-	if !isNil(o.ConsentMessageType) {
-		toSerialize["consentMessageType"] = o.ConsentMessageType
-	}
-	if !isNil(o.DirectoryRESTAPIMessageType) {
-		toSerialize["directoryRESTAPIMessageType"] = o.DirectoryRESTAPIMessageType
-	}
-	if !isNil(o.ExtensionMessageType) {
-		toSerialize["extensionMessageType"] = o.ExtensionMessageType
-	}
-	if !isNil(o.IncludePathPattern) {
-		toSerialize["includePathPattern"] = o.IncludePathPattern
-	}
-	if !isNil(o.ExcludePathPattern) {
-		toSerialize["excludePathPattern"] = o.ExcludePathPattern
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FileBasedTraceLogPublisherResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["logFile"] = o.LogFile
+	toSerialize["logFilePermissions"] = o.LogFilePermissions
+	toSerialize["rotationPolicy"] = o.RotationPolicy
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	toSerialize["retentionPolicy"] = o.RetentionPolicy
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	toSerialize["asynchronous"] = o.Asynchronous
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.MaxStringLength) {
+		toSerialize["maxStringLength"] = o.MaxStringLength
+	}
+	if !IsNil(o.DebugMessageType) {
+		toSerialize["debugMessageType"] = o.DebugMessageType
+	}
+	if !IsNil(o.HttpMessageType) {
+		toSerialize["httpMessageType"] = o.HttpMessageType
+	}
+	if !IsNil(o.AccessTokenValidatorMessageType) {
+		toSerialize["accessTokenValidatorMessageType"] = o.AccessTokenValidatorMessageType
+	}
+	if !IsNil(o.IdTokenValidatorMessageType) {
+		toSerialize["idTokenValidatorMessageType"] = o.IdTokenValidatorMessageType
+	}
+	if !IsNil(o.ScimMessageType) {
+		toSerialize["scimMessageType"] = o.ScimMessageType
+	}
+	if !IsNil(o.ConsentMessageType) {
+		toSerialize["consentMessageType"] = o.ConsentMessageType
+	}
+	if !IsNil(o.DirectoryRESTAPIMessageType) {
+		toSerialize["directoryRESTAPIMessageType"] = o.DirectoryRESTAPIMessageType
+	}
+	if !IsNil(o.ExtensionMessageType) {
+		toSerialize["extensionMessageType"] = o.ExtensionMessageType
+	}
+	if !IsNil(o.IncludePathPattern) {
+		toSerialize["includePathPattern"] = o.IncludePathPattern
+	}
+	if !IsNil(o.ExcludePathPattern) {
+		toSerialize["excludePathPattern"] = o.ExcludePathPattern
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableFileBasedTraceLogPublisherResponse struct {

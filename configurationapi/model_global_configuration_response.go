@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GlobalConfigurationResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GlobalConfigurationResponse{}
+
 // GlobalConfigurationResponse struct for GlobalConfigurationResponse
 type GlobalConfigurationResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -214,7 +217,7 @@ func NewGlobalConfigurationResponseWithDefaults() *GlobalConfigurationResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -224,7 +227,7 @@ func (o *GlobalConfigurationResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -232,7 +235,7 @@ func (o *GlobalConfigurationResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -246,7 +249,7 @@ func (o *GlobalConfigurationResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -256,7 +259,7 @@ func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmess
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -264,7 +267,7 @@ func (o *GlobalConfigurationResponse) GetUrnpingidentityschemasconfigurationmess
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -278,7 +281,7 @@ func (o *GlobalConfigurationResponse) SetUrnpingidentityschemasconfigurationmess
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSchemas() []EnumglobalConfigurationSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumglobalConfigurationSchemaUrn
 		return ret
 	}
@@ -288,7 +291,7 @@ func (o *GlobalConfigurationResponse) GetSchemas() []EnumglobalConfigurationSche
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSchemasOk() ([]EnumglobalConfigurationSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -296,7 +299,7 @@ func (o *GlobalConfigurationResponse) GetSchemasOk() ([]EnumglobalConfigurationS
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -334,7 +337,7 @@ func (o *GlobalConfigurationResponse) SetInstanceName(v string) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetLocation() string {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		var ret string
 		return ret
 	}
@@ -344,7 +347,7 @@ func (o *GlobalConfigurationResponse) GetLocation() string {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLocationOk() (*string, bool) {
-	if o == nil || isNil(o.Location) {
+	if o == nil || IsNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -352,7 +355,7 @@ func (o *GlobalConfigurationResponse) GetLocationOk() (*string, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasLocation() bool {
-	if o != nil && !isNil(o.Location) {
+	if o != nil && !IsNil(o.Location) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *GlobalConfigurationResponse) SetLocation(v string) {
 
 // GetConfigurationServerGroup returns the ConfigurationServerGroup field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetConfigurationServerGroup() string {
-	if o == nil || isNil(o.ConfigurationServerGroup) {
+	if o == nil || IsNil(o.ConfigurationServerGroup) {
 		var ret string
 		return ret
 	}
@@ -376,7 +379,7 @@ func (o *GlobalConfigurationResponse) GetConfigurationServerGroup() string {
 // GetConfigurationServerGroupOk returns a tuple with the ConfigurationServerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetConfigurationServerGroupOk() (*string, bool) {
-	if o == nil || isNil(o.ConfigurationServerGroup) {
+	if o == nil || IsNil(o.ConfigurationServerGroup) {
 		return nil, false
 	}
 	return o.ConfigurationServerGroup, true
@@ -384,7 +387,7 @@ func (o *GlobalConfigurationResponse) GetConfigurationServerGroupOk() (*string, 
 
 // HasConfigurationServerGroup returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasConfigurationServerGroup() bool {
-	if o != nil && !isNil(o.ConfigurationServerGroup) {
+	if o != nil && !IsNil(o.ConfigurationServerGroup) {
 		return true
 	}
 
@@ -398,7 +401,7 @@ func (o *GlobalConfigurationResponse) SetConfigurationServerGroup(v string) {
 
 // GetForceAsMasterForMirroredData returns the ForceAsMasterForMirroredData field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetForceAsMasterForMirroredData() bool {
-	if o == nil || isNil(o.ForceAsMasterForMirroredData) {
+	if o == nil || IsNil(o.ForceAsMasterForMirroredData) {
 		var ret bool
 		return ret
 	}
@@ -408,7 +411,7 @@ func (o *GlobalConfigurationResponse) GetForceAsMasterForMirroredData() bool {
 // GetForceAsMasterForMirroredDataOk returns a tuple with the ForceAsMasterForMirroredData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetForceAsMasterForMirroredDataOk() (*bool, bool) {
-	if o == nil || isNil(o.ForceAsMasterForMirroredData) {
+	if o == nil || IsNil(o.ForceAsMasterForMirroredData) {
 		return nil, false
 	}
 	return o.ForceAsMasterForMirroredData, true
@@ -416,7 +419,7 @@ func (o *GlobalConfigurationResponse) GetForceAsMasterForMirroredDataOk() (*bool
 
 // HasForceAsMasterForMirroredData returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasForceAsMasterForMirroredData() bool {
-	if o != nil && !isNil(o.ForceAsMasterForMirroredData) {
+	if o != nil && !IsNil(o.ForceAsMasterForMirroredData) {
 		return true
 	}
 
@@ -430,7 +433,7 @@ func (o *GlobalConfigurationResponse) SetForceAsMasterForMirroredData(v bool) {
 
 // GetEncryptData returns the EncryptData field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetEncryptData() bool {
-	if o == nil || isNil(o.EncryptData) {
+	if o == nil || IsNil(o.EncryptData) {
 		var ret bool
 		return ret
 	}
@@ -440,7 +443,7 @@ func (o *GlobalConfigurationResponse) GetEncryptData() bool {
 // GetEncryptDataOk returns a tuple with the EncryptData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptDataOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptData) {
+	if o == nil || IsNil(o.EncryptData) {
 		return nil, false
 	}
 	return o.EncryptData, true
@@ -448,7 +451,7 @@ func (o *GlobalConfigurationResponse) GetEncryptDataOk() (*bool, bool) {
 
 // HasEncryptData returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasEncryptData() bool {
-	if o != nil && !isNil(o.EncryptData) {
+	if o != nil && !IsNil(o.EncryptData) {
 		return true
 	}
 
@@ -462,7 +465,7 @@ func (o *GlobalConfigurationResponse) SetEncryptData(v bool) {
 
 // GetEncryptionSettingsCipherStreamProvider returns the EncryptionSettingsCipherStreamProvider field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetEncryptionSettingsCipherStreamProvider() string {
-	if o == nil || isNil(o.EncryptionSettingsCipherStreamProvider) {
+	if o == nil || IsNil(o.EncryptionSettingsCipherStreamProvider) {
 		var ret string
 		return ret
 	}
@@ -472,7 +475,7 @@ func (o *GlobalConfigurationResponse) GetEncryptionSettingsCipherStreamProvider(
 // GetEncryptionSettingsCipherStreamProviderOk returns a tuple with the EncryptionSettingsCipherStreamProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptionSettingsCipherStreamProviderOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsCipherStreamProvider) {
+	if o == nil || IsNil(o.EncryptionSettingsCipherStreamProvider) {
 		return nil, false
 	}
 	return o.EncryptionSettingsCipherStreamProvider, true
@@ -480,7 +483,7 @@ func (o *GlobalConfigurationResponse) GetEncryptionSettingsCipherStreamProviderO
 
 // HasEncryptionSettingsCipherStreamProvider returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasEncryptionSettingsCipherStreamProvider() bool {
-	if o != nil && !isNil(o.EncryptionSettingsCipherStreamProvider) {
+	if o != nil && !IsNil(o.EncryptionSettingsCipherStreamProvider) {
 		return true
 	}
 
@@ -494,7 +497,7 @@ func (o *GlobalConfigurationResponse) SetEncryptionSettingsCipherStreamProvider(
 
 // GetEncryptBackupsByDefault returns the EncryptBackupsByDefault field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetEncryptBackupsByDefault() bool {
-	if o == nil || isNil(o.EncryptBackupsByDefault) {
+	if o == nil || IsNil(o.EncryptBackupsByDefault) {
 		var ret bool
 		return ret
 	}
@@ -504,7 +507,7 @@ func (o *GlobalConfigurationResponse) GetEncryptBackupsByDefault() bool {
 // GetEncryptBackupsByDefaultOk returns a tuple with the EncryptBackupsByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptBackupsByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptBackupsByDefault) {
+	if o == nil || IsNil(o.EncryptBackupsByDefault) {
 		return nil, false
 	}
 	return o.EncryptBackupsByDefault, true
@@ -512,7 +515,7 @@ func (o *GlobalConfigurationResponse) GetEncryptBackupsByDefaultOk() (*bool, boo
 
 // HasEncryptBackupsByDefault returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasEncryptBackupsByDefault() bool {
-	if o != nil && !isNil(o.EncryptBackupsByDefault) {
+	if o != nil && !IsNil(o.EncryptBackupsByDefault) {
 		return true
 	}
 
@@ -526,7 +529,7 @@ func (o *GlobalConfigurationResponse) SetEncryptBackupsByDefault(v bool) {
 
 // GetBackupEncryptionSettingsDefinitionID returns the BackupEncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetBackupEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.BackupEncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.BackupEncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -536,7 +539,7 @@ func (o *GlobalConfigurationResponse) GetBackupEncryptionSettingsDefinitionID() 
 // GetBackupEncryptionSettingsDefinitionIDOk returns a tuple with the BackupEncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetBackupEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.BackupEncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.BackupEncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.BackupEncryptionSettingsDefinitionID, true
@@ -544,7 +547,7 @@ func (o *GlobalConfigurationResponse) GetBackupEncryptionSettingsDefinitionIDOk(
 
 // HasBackupEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasBackupEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.BackupEncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.BackupEncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -558,7 +561,7 @@ func (o *GlobalConfigurationResponse) SetBackupEncryptionSettingsDefinitionID(v 
 
 // GetEncryptLDIFExportsByDefault returns the EncryptLDIFExportsByDefault field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetEncryptLDIFExportsByDefault() bool {
-	if o == nil || isNil(o.EncryptLDIFExportsByDefault) {
+	if o == nil || IsNil(o.EncryptLDIFExportsByDefault) {
 		var ret bool
 		return ret
 	}
@@ -568,7 +571,7 @@ func (o *GlobalConfigurationResponse) GetEncryptLDIFExportsByDefault() bool {
 // GetEncryptLDIFExportsByDefaultOk returns a tuple with the EncryptLDIFExportsByDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEncryptLDIFExportsByDefaultOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLDIFExportsByDefault) {
+	if o == nil || IsNil(o.EncryptLDIFExportsByDefault) {
 		return nil, false
 	}
 	return o.EncryptLDIFExportsByDefault, true
@@ -576,7 +579,7 @@ func (o *GlobalConfigurationResponse) GetEncryptLDIFExportsByDefaultOk() (*bool,
 
 // HasEncryptLDIFExportsByDefault returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasEncryptLDIFExportsByDefault() bool {
-	if o != nil && !isNil(o.EncryptLDIFExportsByDefault) {
+	if o != nil && !IsNil(o.EncryptLDIFExportsByDefault) {
 		return true
 	}
 
@@ -590,7 +593,7 @@ func (o *GlobalConfigurationResponse) SetEncryptLDIFExportsByDefault(v bool) {
 
 // GetLdifExportEncryptionSettingsDefinitionID returns the LdifExportEncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetLdifExportEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.LdifExportEncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.LdifExportEncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -600,7 +603,7 @@ func (o *GlobalConfigurationResponse) GetLdifExportEncryptionSettingsDefinitionI
 // GetLdifExportEncryptionSettingsDefinitionIDOk returns a tuple with the LdifExportEncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLdifExportEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.LdifExportEncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.LdifExportEncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.LdifExportEncryptionSettingsDefinitionID, true
@@ -608,7 +611,7 @@ func (o *GlobalConfigurationResponse) GetLdifExportEncryptionSettingsDefinitionI
 
 // HasLdifExportEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasLdifExportEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.LdifExportEncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.LdifExportEncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -622,7 +625,7 @@ func (o *GlobalConfigurationResponse) SetLdifExportEncryptionSettingsDefinitionI
 
 // GetAutomaticallyCompressEncryptedLDIFExports returns the AutomaticallyCompressEncryptedLDIFExports field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAutomaticallyCompressEncryptedLDIFExports() bool {
-	if o == nil || isNil(o.AutomaticallyCompressEncryptedLDIFExports) {
+	if o == nil || IsNil(o.AutomaticallyCompressEncryptedLDIFExports) {
 		var ret bool
 		return ret
 	}
@@ -632,7 +635,7 @@ func (o *GlobalConfigurationResponse) GetAutomaticallyCompressEncryptedLDIFExpor
 // GetAutomaticallyCompressEncryptedLDIFExportsOk returns a tuple with the AutomaticallyCompressEncryptedLDIFExports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAutomaticallyCompressEncryptedLDIFExportsOk() (*bool, bool) {
-	if o == nil || isNil(o.AutomaticallyCompressEncryptedLDIFExports) {
+	if o == nil || IsNil(o.AutomaticallyCompressEncryptedLDIFExports) {
 		return nil, false
 	}
 	return o.AutomaticallyCompressEncryptedLDIFExports, true
@@ -640,7 +643,7 @@ func (o *GlobalConfigurationResponse) GetAutomaticallyCompressEncryptedLDIFExpor
 
 // HasAutomaticallyCompressEncryptedLDIFExports returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAutomaticallyCompressEncryptedLDIFExports() bool {
-	if o != nil && !isNil(o.AutomaticallyCompressEncryptedLDIFExports) {
+	if o != nil && !IsNil(o.AutomaticallyCompressEncryptedLDIFExports) {
 		return true
 	}
 
@@ -654,7 +657,7 @@ func (o *GlobalConfigurationResponse) SetAutomaticallyCompressEncryptedLDIFExpor
 
 // GetRedactSensitiveValuesInConfigLogs returns the RedactSensitiveValuesInConfigLogs field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetRedactSensitiveValuesInConfigLogs() bool {
-	if o == nil || isNil(o.RedactSensitiveValuesInConfigLogs) {
+	if o == nil || IsNil(o.RedactSensitiveValuesInConfigLogs) {
 		var ret bool
 		return ret
 	}
@@ -664,7 +667,7 @@ func (o *GlobalConfigurationResponse) GetRedactSensitiveValuesInConfigLogs() boo
 // GetRedactSensitiveValuesInConfigLogsOk returns a tuple with the RedactSensitiveValuesInConfigLogs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetRedactSensitiveValuesInConfigLogsOk() (*bool, bool) {
-	if o == nil || isNil(o.RedactSensitiveValuesInConfigLogs) {
+	if o == nil || IsNil(o.RedactSensitiveValuesInConfigLogs) {
 		return nil, false
 	}
 	return o.RedactSensitiveValuesInConfigLogs, true
@@ -672,7 +675,7 @@ func (o *GlobalConfigurationResponse) GetRedactSensitiveValuesInConfigLogsOk() (
 
 // HasRedactSensitiveValuesInConfigLogs returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasRedactSensitiveValuesInConfigLogs() bool {
-	if o != nil && !isNil(o.RedactSensitiveValuesInConfigLogs) {
+	if o != nil && !IsNil(o.RedactSensitiveValuesInConfigLogs) {
 		return true
 	}
 
@@ -686,7 +689,7 @@ func (o *GlobalConfigurationResponse) SetRedactSensitiveValuesInConfigLogs(v boo
 
 // GetSensitiveAttribute returns the SensitiveAttribute field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSensitiveAttribute() []string {
-	if o == nil || isNil(o.SensitiveAttribute) {
+	if o == nil || IsNil(o.SensitiveAttribute) {
 		var ret []string
 		return ret
 	}
@@ -696,7 +699,7 @@ func (o *GlobalConfigurationResponse) GetSensitiveAttribute() []string {
 // GetSensitiveAttributeOk returns a tuple with the SensitiveAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSensitiveAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.SensitiveAttribute) {
+	if o == nil || IsNil(o.SensitiveAttribute) {
 		return nil, false
 	}
 	return o.SensitiveAttribute, true
@@ -704,7 +707,7 @@ func (o *GlobalConfigurationResponse) GetSensitiveAttributeOk() ([]string, bool)
 
 // HasSensitiveAttribute returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSensitiveAttribute() bool {
-	if o != nil && !isNil(o.SensitiveAttribute) {
+	if o != nil && !IsNil(o.SensitiveAttribute) {
 		return true
 	}
 
@@ -718,7 +721,7 @@ func (o *GlobalConfigurationResponse) SetSensitiveAttribute(v []string) {
 
 // GetRejectInsecureRequests returns the RejectInsecureRequests field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetRejectInsecureRequests() bool {
-	if o == nil || isNil(o.RejectInsecureRequests) {
+	if o == nil || IsNil(o.RejectInsecureRequests) {
 		var ret bool
 		return ret
 	}
@@ -728,7 +731,7 @@ func (o *GlobalConfigurationResponse) GetRejectInsecureRequests() bool {
 // GetRejectInsecureRequestsOk returns a tuple with the RejectInsecureRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetRejectInsecureRequestsOk() (*bool, bool) {
-	if o == nil || isNil(o.RejectInsecureRequests) {
+	if o == nil || IsNil(o.RejectInsecureRequests) {
 		return nil, false
 	}
 	return o.RejectInsecureRequests, true
@@ -736,7 +739,7 @@ func (o *GlobalConfigurationResponse) GetRejectInsecureRequestsOk() (*bool, bool
 
 // HasRejectInsecureRequests returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasRejectInsecureRequests() bool {
-	if o != nil && !isNil(o.RejectInsecureRequests) {
+	if o != nil && !IsNil(o.RejectInsecureRequests) {
 		return true
 	}
 
@@ -750,7 +753,7 @@ func (o *GlobalConfigurationResponse) SetRejectInsecureRequests(v bool) {
 
 // GetAllowedInsecureRequestCriteria returns the AllowedInsecureRequestCriteria field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAllowedInsecureRequestCriteria() string {
-	if o == nil || isNil(o.AllowedInsecureRequestCriteria) {
+	if o == nil || IsNil(o.AllowedInsecureRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -760,7 +763,7 @@ func (o *GlobalConfigurationResponse) GetAllowedInsecureRequestCriteria() string
 // GetAllowedInsecureRequestCriteriaOk returns a tuple with the AllowedInsecureRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedInsecureRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AllowedInsecureRequestCriteria) {
+	if o == nil || IsNil(o.AllowedInsecureRequestCriteria) {
 		return nil, false
 	}
 	return o.AllowedInsecureRequestCriteria, true
@@ -768,7 +771,7 @@ func (o *GlobalConfigurationResponse) GetAllowedInsecureRequestCriteriaOk() (*st
 
 // HasAllowedInsecureRequestCriteria returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAllowedInsecureRequestCriteria() bool {
-	if o != nil && !isNil(o.AllowedInsecureRequestCriteria) {
+	if o != nil && !IsNil(o.AllowedInsecureRequestCriteria) {
 		return true
 	}
 
@@ -782,7 +785,7 @@ func (o *GlobalConfigurationResponse) SetAllowedInsecureRequestCriteria(v string
 
 // GetRejectUnauthenticatedRequests returns the RejectUnauthenticatedRequests field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetRejectUnauthenticatedRequests() bool {
-	if o == nil || isNil(o.RejectUnauthenticatedRequests) {
+	if o == nil || IsNil(o.RejectUnauthenticatedRequests) {
 		var ret bool
 		return ret
 	}
@@ -792,7 +795,7 @@ func (o *GlobalConfigurationResponse) GetRejectUnauthenticatedRequests() bool {
 // GetRejectUnauthenticatedRequestsOk returns a tuple with the RejectUnauthenticatedRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetRejectUnauthenticatedRequestsOk() (*bool, bool) {
-	if o == nil || isNil(o.RejectUnauthenticatedRequests) {
+	if o == nil || IsNil(o.RejectUnauthenticatedRequests) {
 		return nil, false
 	}
 	return o.RejectUnauthenticatedRequests, true
@@ -800,7 +803,7 @@ func (o *GlobalConfigurationResponse) GetRejectUnauthenticatedRequestsOk() (*boo
 
 // HasRejectUnauthenticatedRequests returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasRejectUnauthenticatedRequests() bool {
-	if o != nil && !isNil(o.RejectUnauthenticatedRequests) {
+	if o != nil && !IsNil(o.RejectUnauthenticatedRequests) {
 		return true
 	}
 
@@ -814,7 +817,7 @@ func (o *GlobalConfigurationResponse) SetRejectUnauthenticatedRequests(v bool) {
 
 // GetAllowedUnauthenticatedRequestCriteria returns the AllowedUnauthenticatedRequestCriteria field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAllowedUnauthenticatedRequestCriteria() string {
-	if o == nil || isNil(o.AllowedUnauthenticatedRequestCriteria) {
+	if o == nil || IsNil(o.AllowedUnauthenticatedRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -824,7 +827,7 @@ func (o *GlobalConfigurationResponse) GetAllowedUnauthenticatedRequestCriteria()
 // GetAllowedUnauthenticatedRequestCriteriaOk returns a tuple with the AllowedUnauthenticatedRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedUnauthenticatedRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AllowedUnauthenticatedRequestCriteria) {
+	if o == nil || IsNil(o.AllowedUnauthenticatedRequestCriteria) {
 		return nil, false
 	}
 	return o.AllowedUnauthenticatedRequestCriteria, true
@@ -832,7 +835,7 @@ func (o *GlobalConfigurationResponse) GetAllowedUnauthenticatedRequestCriteriaOk
 
 // HasAllowedUnauthenticatedRequestCriteria returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAllowedUnauthenticatedRequestCriteria() bool {
-	if o != nil && !isNil(o.AllowedUnauthenticatedRequestCriteria) {
+	if o != nil && !IsNil(o.AllowedUnauthenticatedRequestCriteria) {
 		return true
 	}
 
@@ -846,7 +849,7 @@ func (o *GlobalConfigurationResponse) SetAllowedUnauthenticatedRequestCriteria(v
 
 // GetBindWithDNRequiresPassword returns the BindWithDNRequiresPassword field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetBindWithDNRequiresPassword() bool {
-	if o == nil || isNil(o.BindWithDNRequiresPassword) {
+	if o == nil || IsNil(o.BindWithDNRequiresPassword) {
 		var ret bool
 		return ret
 	}
@@ -856,7 +859,7 @@ func (o *GlobalConfigurationResponse) GetBindWithDNRequiresPassword() bool {
 // GetBindWithDNRequiresPasswordOk returns a tuple with the BindWithDNRequiresPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetBindWithDNRequiresPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.BindWithDNRequiresPassword) {
+	if o == nil || IsNil(o.BindWithDNRequiresPassword) {
 		return nil, false
 	}
 	return o.BindWithDNRequiresPassword, true
@@ -864,7 +867,7 @@ func (o *GlobalConfigurationResponse) GetBindWithDNRequiresPasswordOk() (*bool, 
 
 // HasBindWithDNRequiresPassword returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasBindWithDNRequiresPassword() bool {
-	if o != nil && !isNil(o.BindWithDNRequiresPassword) {
+	if o != nil && !IsNil(o.BindWithDNRequiresPassword) {
 		return true
 	}
 
@@ -878,7 +881,7 @@ func (o *GlobalConfigurationResponse) SetBindWithDNRequiresPassword(v bool) {
 
 // GetDisabledPrivilege returns the DisabledPrivilege field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetDisabledPrivilege() []EnumglobalConfigurationDisabledPrivilegeProp {
-	if o == nil || isNil(o.DisabledPrivilege) {
+	if o == nil || IsNil(o.DisabledPrivilege) {
 		var ret []EnumglobalConfigurationDisabledPrivilegeProp
 		return ret
 	}
@@ -888,7 +891,7 @@ func (o *GlobalConfigurationResponse) GetDisabledPrivilege() []EnumglobalConfigu
 // GetDisabledPrivilegeOk returns a tuple with the DisabledPrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDisabledPrivilegeOk() ([]EnumglobalConfigurationDisabledPrivilegeProp, bool) {
-	if o == nil || isNil(o.DisabledPrivilege) {
+	if o == nil || IsNil(o.DisabledPrivilege) {
 		return nil, false
 	}
 	return o.DisabledPrivilege, true
@@ -896,7 +899,7 @@ func (o *GlobalConfigurationResponse) GetDisabledPrivilegeOk() ([]EnumglobalConf
 
 // HasDisabledPrivilege returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasDisabledPrivilege() bool {
-	if o != nil && !isNil(o.DisabledPrivilege) {
+	if o != nil && !IsNil(o.DisabledPrivilege) {
 		return true
 	}
 
@@ -934,7 +937,7 @@ func (o *GlobalConfigurationResponse) SetDefaultPasswordPolicy(v string) {
 
 // GetMaximumUserDataPasswordPoliciesToCache returns the MaximumUserDataPasswordPoliciesToCache field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache() int32 {
-	if o == nil || isNil(o.MaximumUserDataPasswordPoliciesToCache) {
+	if o == nil || IsNil(o.MaximumUserDataPasswordPoliciesToCache) {
 		var ret int32
 		return ret
 	}
@@ -944,7 +947,7 @@ func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCache(
 // GetMaximumUserDataPasswordPoliciesToCacheOk returns a tuple with the MaximumUserDataPasswordPoliciesToCache field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumUserDataPasswordPoliciesToCache) {
+	if o == nil || IsNil(o.MaximumUserDataPasswordPoliciesToCache) {
 		return nil, false
 	}
 	return o.MaximumUserDataPasswordPoliciesToCache, true
@@ -952,7 +955,7 @@ func (o *GlobalConfigurationResponse) GetMaximumUserDataPasswordPoliciesToCacheO
 
 // HasMaximumUserDataPasswordPoliciesToCache returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumUserDataPasswordPoliciesToCache() bool {
-	if o != nil && !isNil(o.MaximumUserDataPasswordPoliciesToCache) {
+	if o != nil && !IsNil(o.MaximumUserDataPasswordPoliciesToCache) {
 		return true
 	}
 
@@ -990,7 +993,7 @@ func (o *GlobalConfigurationResponse) SetProxiedAuthorizationIdentityMapper(v st
 
 // GetVerifyEntryDigests returns the VerifyEntryDigests field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetVerifyEntryDigests() bool {
-	if o == nil || isNil(o.VerifyEntryDigests) {
+	if o == nil || IsNil(o.VerifyEntryDigests) {
 		var ret bool
 		return ret
 	}
@@ -1000,7 +1003,7 @@ func (o *GlobalConfigurationResponse) GetVerifyEntryDigests() bool {
 // GetVerifyEntryDigestsOk returns a tuple with the VerifyEntryDigests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetVerifyEntryDigestsOk() (*bool, bool) {
-	if o == nil || isNil(o.VerifyEntryDigests) {
+	if o == nil || IsNil(o.VerifyEntryDigests) {
 		return nil, false
 	}
 	return o.VerifyEntryDigests, true
@@ -1008,7 +1011,7 @@ func (o *GlobalConfigurationResponse) GetVerifyEntryDigestsOk() (*bool, bool) {
 
 // HasVerifyEntryDigests returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasVerifyEntryDigests() bool {
-	if o != nil && !isNil(o.VerifyEntryDigests) {
+	if o != nil && !IsNil(o.VerifyEntryDigests) {
 		return true
 	}
 
@@ -1022,7 +1025,7 @@ func (o *GlobalConfigurationResponse) SetVerifyEntryDigests(v bool) {
 
 // GetAllowedInsecureTLSProtocol returns the AllowedInsecureTLSProtocol field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAllowedInsecureTLSProtocol() []EnumglobalConfigurationAllowedInsecureTLSProtocolProp {
-	if o == nil || isNil(o.AllowedInsecureTLSProtocol) {
+	if o == nil || IsNil(o.AllowedInsecureTLSProtocol) {
 		var ret []EnumglobalConfigurationAllowedInsecureTLSProtocolProp
 		return ret
 	}
@@ -1032,7 +1035,7 @@ func (o *GlobalConfigurationResponse) GetAllowedInsecureTLSProtocol() []Enumglob
 // GetAllowedInsecureTLSProtocolOk returns a tuple with the AllowedInsecureTLSProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedInsecureTLSProtocolOk() ([]EnumglobalConfigurationAllowedInsecureTLSProtocolProp, bool) {
-	if o == nil || isNil(o.AllowedInsecureTLSProtocol) {
+	if o == nil || IsNil(o.AllowedInsecureTLSProtocol) {
 		return nil, false
 	}
 	return o.AllowedInsecureTLSProtocol, true
@@ -1040,7 +1043,7 @@ func (o *GlobalConfigurationResponse) GetAllowedInsecureTLSProtocolOk() ([]Enumg
 
 // HasAllowedInsecureTLSProtocol returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAllowedInsecureTLSProtocol() bool {
-	if o != nil && !isNil(o.AllowedInsecureTLSProtocol) {
+	if o != nil && !IsNil(o.AllowedInsecureTLSProtocol) {
 		return true
 	}
 
@@ -1054,7 +1057,7 @@ func (o *GlobalConfigurationResponse) SetAllowedInsecureTLSProtocol(v []Enumglob
 
 // GetAllowInsecureLocalJMXConnections returns the AllowInsecureLocalJMXConnections field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAllowInsecureLocalJMXConnections() bool {
-	if o == nil || isNil(o.AllowInsecureLocalJMXConnections) {
+	if o == nil || IsNil(o.AllowInsecureLocalJMXConnections) {
 		var ret bool
 		return ret
 	}
@@ -1064,7 +1067,7 @@ func (o *GlobalConfigurationResponse) GetAllowInsecureLocalJMXConnections() bool
 // GetAllowInsecureLocalJMXConnectionsOk returns a tuple with the AllowInsecureLocalJMXConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowInsecureLocalJMXConnectionsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowInsecureLocalJMXConnections) {
+	if o == nil || IsNil(o.AllowInsecureLocalJMXConnections) {
 		return nil, false
 	}
 	return o.AllowInsecureLocalJMXConnections, true
@@ -1072,7 +1075,7 @@ func (o *GlobalConfigurationResponse) GetAllowInsecureLocalJMXConnectionsOk() (*
 
 // HasAllowInsecureLocalJMXConnections returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAllowInsecureLocalJMXConnections() bool {
-	if o != nil && !isNil(o.AllowInsecureLocalJMXConnections) {
+	if o != nil && !IsNil(o.AllowInsecureLocalJMXConnections) {
 		return true
 	}
 
@@ -1086,7 +1089,7 @@ func (o *GlobalConfigurationResponse) SetAllowInsecureLocalJMXConnections(v bool
 
 // GetDefaultInternalOperationClientConnectionPolicy returns the DefaultInternalOperationClientConnectionPolicy field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetDefaultInternalOperationClientConnectionPolicy() string {
-	if o == nil || isNil(o.DefaultInternalOperationClientConnectionPolicy) {
+	if o == nil || IsNil(o.DefaultInternalOperationClientConnectionPolicy) {
 		var ret string
 		return ret
 	}
@@ -1096,7 +1099,7 @@ func (o *GlobalConfigurationResponse) GetDefaultInternalOperationClientConnectio
 // GetDefaultInternalOperationClientConnectionPolicyOk returns a tuple with the DefaultInternalOperationClientConnectionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDefaultInternalOperationClientConnectionPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultInternalOperationClientConnectionPolicy) {
+	if o == nil || IsNil(o.DefaultInternalOperationClientConnectionPolicy) {
 		return nil, false
 	}
 	return o.DefaultInternalOperationClientConnectionPolicy, true
@@ -1104,7 +1107,7 @@ func (o *GlobalConfigurationResponse) GetDefaultInternalOperationClientConnectio
 
 // HasDefaultInternalOperationClientConnectionPolicy returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasDefaultInternalOperationClientConnectionPolicy() bool {
-	if o != nil && !isNil(o.DefaultInternalOperationClientConnectionPolicy) {
+	if o != nil && !IsNil(o.DefaultInternalOperationClientConnectionPolicy) {
 		return true
 	}
 
@@ -1118,7 +1121,7 @@ func (o *GlobalConfigurationResponse) SetDefaultInternalOperationClientConnectio
 
 // GetSizeLimit returns the SizeLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSizeLimit() int32 {
-	if o == nil || isNil(o.SizeLimit) {
+	if o == nil || IsNil(o.SizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -1128,7 +1131,7 @@ func (o *GlobalConfigurationResponse) GetSizeLimit() int32 {
 // GetSizeLimitOk returns a tuple with the SizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.SizeLimit) {
+	if o == nil || IsNil(o.SizeLimit) {
 		return nil, false
 	}
 	return o.SizeLimit, true
@@ -1136,7 +1139,7 @@ func (o *GlobalConfigurationResponse) GetSizeLimitOk() (*int32, bool) {
 
 // HasSizeLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSizeLimit() bool {
-	if o != nil && !isNil(o.SizeLimit) {
+	if o != nil && !IsNil(o.SizeLimit) {
 		return true
 	}
 
@@ -1150,7 +1153,7 @@ func (o *GlobalConfigurationResponse) SetSizeLimit(v int32) {
 
 // GetTimeLimit returns the TimeLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetTimeLimit() string {
-	if o == nil || isNil(o.TimeLimit) {
+	if o == nil || IsNil(o.TimeLimit) {
 		var ret string
 		return ret
 	}
@@ -1160,7 +1163,7 @@ func (o *GlobalConfigurationResponse) GetTimeLimit() string {
 // GetTimeLimitOk returns a tuple with the TimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.TimeLimit) {
+	if o == nil || IsNil(o.TimeLimit) {
 		return nil, false
 	}
 	return o.TimeLimit, true
@@ -1168,7 +1171,7 @@ func (o *GlobalConfigurationResponse) GetTimeLimitOk() (*string, bool) {
 
 // HasTimeLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasTimeLimit() bool {
-	if o != nil && !isNil(o.TimeLimit) {
+	if o != nil && !IsNil(o.TimeLimit) {
 		return true
 	}
 
@@ -1182,7 +1185,7 @@ func (o *GlobalConfigurationResponse) SetTimeLimit(v string) {
 
 // GetIdleTimeLimit returns the IdleTimeLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetIdleTimeLimit() string {
-	if o == nil || isNil(o.IdleTimeLimit) {
+	if o == nil || IsNil(o.IdleTimeLimit) {
 		var ret string
 		return ret
 	}
@@ -1192,7 +1195,7 @@ func (o *GlobalConfigurationResponse) GetIdleTimeLimit() string {
 // GetIdleTimeLimitOk returns a tuple with the IdleTimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetIdleTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.IdleTimeLimit) {
+	if o == nil || IsNil(o.IdleTimeLimit) {
 		return nil, false
 	}
 	return o.IdleTimeLimit, true
@@ -1200,7 +1203,7 @@ func (o *GlobalConfigurationResponse) GetIdleTimeLimitOk() (*string, bool) {
 
 // HasIdleTimeLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasIdleTimeLimit() bool {
-	if o != nil && !isNil(o.IdleTimeLimit) {
+	if o != nil && !IsNil(o.IdleTimeLimit) {
 		return true
 	}
 
@@ -1214,7 +1217,7 @@ func (o *GlobalConfigurationResponse) SetIdleTimeLimit(v string) {
 
 // GetLookthroughLimit returns the LookthroughLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32 {
-	if o == nil || isNil(o.LookthroughLimit) {
+	if o == nil || IsNil(o.LookthroughLimit) {
 		var ret int32
 		return ret
 	}
@@ -1224,7 +1227,7 @@ func (o *GlobalConfigurationResponse) GetLookthroughLimit() int32 {
 // GetLookthroughLimitOk returns a tuple with the LookthroughLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.LookthroughLimit) {
+	if o == nil || IsNil(o.LookthroughLimit) {
 		return nil, false
 	}
 	return o.LookthroughLimit, true
@@ -1232,7 +1235,7 @@ func (o *GlobalConfigurationResponse) GetLookthroughLimitOk() (*int32, bool) {
 
 // HasLookthroughLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasLookthroughLimit() bool {
-	if o != nil && !isNil(o.LookthroughLimit) {
+	if o != nil && !IsNil(o.LookthroughLimit) {
 		return true
 	}
 
@@ -1246,7 +1249,7 @@ func (o *GlobalConfigurationResponse) SetLookthroughLimit(v int32) {
 
 // GetLdapJoinSizeLimit returns the LdapJoinSizeLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int32 {
-	if o == nil || isNil(o.LdapJoinSizeLimit) {
+	if o == nil || IsNil(o.LdapJoinSizeLimit) {
 		var ret int32
 		return ret
 	}
@@ -1256,7 +1259,7 @@ func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimit() int32 {
 // GetLdapJoinSizeLimitOk returns a tuple with the LdapJoinSizeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapJoinSizeLimit) {
+	if o == nil || IsNil(o.LdapJoinSizeLimit) {
 		return nil, false
 	}
 	return o.LdapJoinSizeLimit, true
@@ -1264,7 +1267,7 @@ func (o *GlobalConfigurationResponse) GetLdapJoinSizeLimitOk() (*int32, bool) {
 
 // HasLdapJoinSizeLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasLdapJoinSizeLimit() bool {
-	if o != nil && !isNil(o.LdapJoinSizeLimit) {
+	if o != nil && !IsNil(o.LdapJoinSizeLimit) {
 		return true
 	}
 
@@ -1278,7 +1281,7 @@ func (o *GlobalConfigurationResponse) SetLdapJoinSizeLimit(v int32) {
 
 // GetMaximumConcurrentConnections returns the MaximumConcurrentConnections field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int32 {
-	if o == nil || isNil(o.MaximumConcurrentConnections) {
+	if o == nil || IsNil(o.MaximumConcurrentConnections) {
 		var ret int32
 		return ret
 	}
@@ -1288,7 +1291,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnections() int32 {
 // GetMaximumConcurrentConnectionsOk returns a tuple with the MaximumConcurrentConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumConcurrentConnections) {
+	if o == nil || IsNil(o.MaximumConcurrentConnections) {
 		return nil, false
 	}
 	return o.MaximumConcurrentConnections, true
@@ -1296,7 +1299,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsOk() (*int3
 
 // HasMaximumConcurrentConnections returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumConcurrentConnections() bool {
-	if o != nil && !isNil(o.MaximumConcurrentConnections) {
+	if o != nil && !IsNil(o.MaximumConcurrentConnections) {
 		return true
 	}
 
@@ -1310,7 +1313,7 @@ func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnections(v int32) {
 
 // GetMaximumConcurrentConnectionsPerIPAddress returns the MaximumConcurrentConnectionsPerIPAddress field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddress() int32 {
-	if o == nil || isNil(o.MaximumConcurrentConnectionsPerIPAddress) {
+	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerIPAddress) {
 		var ret int32
 		return ret
 	}
@@ -1320,7 +1323,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddres
 // GetMaximumConcurrentConnectionsPerIPAddressOk returns a tuple with the MaximumConcurrentConnectionsPerIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddressOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumConcurrentConnectionsPerIPAddress) {
+	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerIPAddress) {
 		return nil, false
 	}
 	return o.MaximumConcurrentConnectionsPerIPAddress, true
@@ -1328,7 +1331,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerIPAddres
 
 // HasMaximumConcurrentConnectionsPerIPAddress returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumConcurrentConnectionsPerIPAddress() bool {
-	if o != nil && !isNil(o.MaximumConcurrentConnectionsPerIPAddress) {
+	if o != nil && !IsNil(o.MaximumConcurrentConnectionsPerIPAddress) {
 		return true
 	}
 
@@ -1342,7 +1345,7 @@ func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerIPAddres
 
 // GetMaximumConcurrentConnectionsPerBindDN returns the MaximumConcurrentConnectionsPerBindDN field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN() int32 {
-	if o == nil || isNil(o.MaximumConcurrentConnectionsPerBindDN) {
+	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerBindDN) {
 		var ret int32
 		return ret
 	}
@@ -1352,7 +1355,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDN()
 // GetMaximumConcurrentConnectionsPerBindDNOk returns a tuple with the MaximumConcurrentConnectionsPerBindDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumConcurrentConnectionsPerBindDN) {
+	if o == nil || IsNil(o.MaximumConcurrentConnectionsPerBindDN) {
 		return nil, false
 	}
 	return o.MaximumConcurrentConnectionsPerBindDN, true
@@ -1360,7 +1363,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentConnectionsPerBindDNOk
 
 // HasMaximumConcurrentConnectionsPerBindDN returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumConcurrentConnectionsPerBindDN() bool {
-	if o != nil && !isNil(o.MaximumConcurrentConnectionsPerBindDN) {
+	if o != nil && !IsNil(o.MaximumConcurrentConnectionsPerBindDN) {
 		return true
 	}
 
@@ -1374,7 +1377,7 @@ func (o *GlobalConfigurationResponse) SetMaximumConcurrentConnectionsPerBindDN(v
 
 // GetMaximumConcurrentUnindexedSearches returns the MaximumConcurrentUnindexedSearches field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() int32 {
-	if o == nil || isNil(o.MaximumConcurrentUnindexedSearches) {
+	if o == nil || IsNil(o.MaximumConcurrentUnindexedSearches) {
 		var ret int32
 		return ret
 	}
@@ -1384,7 +1387,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearches() in
 // GetMaximumConcurrentUnindexedSearchesOk returns a tuple with the MaximumConcurrentUnindexedSearches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumConcurrentUnindexedSearches) {
+	if o == nil || IsNil(o.MaximumConcurrentUnindexedSearches) {
 		return nil, false
 	}
 	return o.MaximumConcurrentUnindexedSearches, true
@@ -1392,7 +1395,7 @@ func (o *GlobalConfigurationResponse) GetMaximumConcurrentUnindexedSearchesOk() 
 
 // HasMaximumConcurrentUnindexedSearches returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumConcurrentUnindexedSearches() bool {
-	if o != nil && !isNil(o.MaximumConcurrentUnindexedSearches) {
+	if o != nil && !IsNil(o.MaximumConcurrentUnindexedSearches) {
 		return true
 	}
 
@@ -1406,7 +1409,7 @@ func (o *GlobalConfigurationResponse) SetMaximumConcurrentUnindexedSearches(v in
 
 // GetMaximumAttributesPerAddRequest returns the MaximumAttributesPerAddRequest field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int32 {
-	if o == nil || isNil(o.MaximumAttributesPerAddRequest) {
+	if o == nil || IsNil(o.MaximumAttributesPerAddRequest) {
 		var ret int32
 		return ret
 	}
@@ -1416,7 +1419,7 @@ func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequest() int32 
 // GetMaximumAttributesPerAddRequestOk returns a tuple with the MaximumAttributesPerAddRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumAttributesPerAddRequest) {
+	if o == nil || IsNil(o.MaximumAttributesPerAddRequest) {
 		return nil, false
 	}
 	return o.MaximumAttributesPerAddRequest, true
@@ -1424,7 +1427,7 @@ func (o *GlobalConfigurationResponse) GetMaximumAttributesPerAddRequestOk() (*in
 
 // HasMaximumAttributesPerAddRequest returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumAttributesPerAddRequest() bool {
-	if o != nil && !isNil(o.MaximumAttributesPerAddRequest) {
+	if o != nil && !IsNil(o.MaximumAttributesPerAddRequest) {
 		return true
 	}
 
@@ -1438,7 +1441,7 @@ func (o *GlobalConfigurationResponse) SetMaximumAttributesPerAddRequest(v int32)
 
 // GetMaximumModificationsPerModifyRequest returns the MaximumModificationsPerModifyRequest field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() int32 {
-	if o == nil || isNil(o.MaximumModificationsPerModifyRequest) {
+	if o == nil || IsNil(o.MaximumModificationsPerModifyRequest) {
 		var ret int32
 		return ret
 	}
@@ -1448,7 +1451,7 @@ func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequest() 
 // GetMaximumModificationsPerModifyRequestOk returns a tuple with the MaximumModificationsPerModifyRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumModificationsPerModifyRequest) {
+	if o == nil || IsNil(o.MaximumModificationsPerModifyRequest) {
 		return nil, false
 	}
 	return o.MaximumModificationsPerModifyRequest, true
@@ -1456,7 +1459,7 @@ func (o *GlobalConfigurationResponse) GetMaximumModificationsPerModifyRequestOk(
 
 // HasMaximumModificationsPerModifyRequest returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumModificationsPerModifyRequest() bool {
-	if o != nil && !isNil(o.MaximumModificationsPerModifyRequest) {
+	if o != nil && !IsNil(o.MaximumModificationsPerModifyRequest) {
 		return true
 	}
 
@@ -1470,7 +1473,7 @@ func (o *GlobalConfigurationResponse) SetMaximumModificationsPerModifyRequest(v 
 
 // GetBackgroundThreadForEachPersistentSearch returns the BackgroundThreadForEachPersistentSearch field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetBackgroundThreadForEachPersistentSearch() bool {
-	if o == nil || isNil(o.BackgroundThreadForEachPersistentSearch) {
+	if o == nil || IsNil(o.BackgroundThreadForEachPersistentSearch) {
 		var ret bool
 		return ret
 	}
@@ -1480,7 +1483,7 @@ func (o *GlobalConfigurationResponse) GetBackgroundThreadForEachPersistentSearch
 // GetBackgroundThreadForEachPersistentSearchOk returns a tuple with the BackgroundThreadForEachPersistentSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetBackgroundThreadForEachPersistentSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.BackgroundThreadForEachPersistentSearch) {
+	if o == nil || IsNil(o.BackgroundThreadForEachPersistentSearch) {
 		return nil, false
 	}
 	return o.BackgroundThreadForEachPersistentSearch, true
@@ -1488,7 +1491,7 @@ func (o *GlobalConfigurationResponse) GetBackgroundThreadForEachPersistentSearch
 
 // HasBackgroundThreadForEachPersistentSearch returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasBackgroundThreadForEachPersistentSearch() bool {
-	if o != nil && !isNil(o.BackgroundThreadForEachPersistentSearch) {
+	if o != nil && !IsNil(o.BackgroundThreadForEachPersistentSearch) {
 		return true
 	}
 
@@ -1502,7 +1505,7 @@ func (o *GlobalConfigurationResponse) SetBackgroundThreadForEachPersistentSearch
 
 // GetAllowAttributeNameExceptions returns the AllowAttributeNameExceptions field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAllowAttributeNameExceptions() bool {
-	if o == nil || isNil(o.AllowAttributeNameExceptions) {
+	if o == nil || IsNil(o.AllowAttributeNameExceptions) {
 		var ret bool
 		return ret
 	}
@@ -1512,7 +1515,7 @@ func (o *GlobalConfigurationResponse) GetAllowAttributeNameExceptions() bool {
 // GetAllowAttributeNameExceptionsOk returns a tuple with the AllowAttributeNameExceptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowAttributeNameExceptionsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowAttributeNameExceptions) {
+	if o == nil || IsNil(o.AllowAttributeNameExceptions) {
 		return nil, false
 	}
 	return o.AllowAttributeNameExceptions, true
@@ -1520,7 +1523,7 @@ func (o *GlobalConfigurationResponse) GetAllowAttributeNameExceptionsOk() (*bool
 
 // HasAllowAttributeNameExceptions returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAllowAttributeNameExceptions() bool {
-	if o != nil && !isNil(o.AllowAttributeNameExceptions) {
+	if o != nil && !IsNil(o.AllowAttributeNameExceptions) {
 		return true
 	}
 
@@ -1534,7 +1537,7 @@ func (o *GlobalConfigurationResponse) SetAllowAttributeNameExceptions(v bool) {
 
 // GetInvalidAttributeSyntaxBehavior returns the InvalidAttributeSyntaxBehavior field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetInvalidAttributeSyntaxBehavior() EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp {
-	if o == nil || isNil(o.InvalidAttributeSyntaxBehavior) {
+	if o == nil || IsNil(o.InvalidAttributeSyntaxBehavior) {
 		var ret EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp
 		return ret
 	}
@@ -1544,7 +1547,7 @@ func (o *GlobalConfigurationResponse) GetInvalidAttributeSyntaxBehavior() Enumgl
 // GetInvalidAttributeSyntaxBehaviorOk returns a tuple with the InvalidAttributeSyntaxBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetInvalidAttributeSyntaxBehaviorOk() (*EnumglobalConfigurationInvalidAttributeSyntaxBehaviorProp, bool) {
-	if o == nil || isNil(o.InvalidAttributeSyntaxBehavior) {
+	if o == nil || IsNil(o.InvalidAttributeSyntaxBehavior) {
 		return nil, false
 	}
 	return o.InvalidAttributeSyntaxBehavior, true
@@ -1552,7 +1555,7 @@ func (o *GlobalConfigurationResponse) GetInvalidAttributeSyntaxBehaviorOk() (*En
 
 // HasInvalidAttributeSyntaxBehavior returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasInvalidAttributeSyntaxBehavior() bool {
-	if o != nil && !isNil(o.InvalidAttributeSyntaxBehavior) {
+	if o != nil && !IsNil(o.InvalidAttributeSyntaxBehavior) {
 		return true
 	}
 
@@ -1566,7 +1569,7 @@ func (o *GlobalConfigurationResponse) SetInvalidAttributeSyntaxBehavior(v Enumgl
 
 // GetPermitSyntaxViolationsForAttribute returns the PermitSyntaxViolationsForAttribute field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetPermitSyntaxViolationsForAttribute() []string {
-	if o == nil || isNil(o.PermitSyntaxViolationsForAttribute) {
+	if o == nil || IsNil(o.PermitSyntaxViolationsForAttribute) {
 		var ret []string
 		return ret
 	}
@@ -1576,7 +1579,7 @@ func (o *GlobalConfigurationResponse) GetPermitSyntaxViolationsForAttribute() []
 // GetPermitSyntaxViolationsForAttributeOk returns a tuple with the PermitSyntaxViolationsForAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetPermitSyntaxViolationsForAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.PermitSyntaxViolationsForAttribute) {
+	if o == nil || IsNil(o.PermitSyntaxViolationsForAttribute) {
 		return nil, false
 	}
 	return o.PermitSyntaxViolationsForAttribute, true
@@ -1584,7 +1587,7 @@ func (o *GlobalConfigurationResponse) GetPermitSyntaxViolationsForAttributeOk() 
 
 // HasPermitSyntaxViolationsForAttribute returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasPermitSyntaxViolationsForAttribute() bool {
-	if o != nil && !isNil(o.PermitSyntaxViolationsForAttribute) {
+	if o != nil && !IsNil(o.PermitSyntaxViolationsForAttribute) {
 		return true
 	}
 
@@ -1598,7 +1601,7 @@ func (o *GlobalConfigurationResponse) SetPermitSyntaxViolationsForAttribute(v []
 
 // GetSingleStructuralObjectclassBehavior returns the SingleStructuralObjectclassBehavior field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSingleStructuralObjectclassBehavior() EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp {
-	if o == nil || isNil(o.SingleStructuralObjectclassBehavior) {
+	if o == nil || IsNil(o.SingleStructuralObjectclassBehavior) {
 		var ret EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp
 		return ret
 	}
@@ -1608,7 +1611,7 @@ func (o *GlobalConfigurationResponse) GetSingleStructuralObjectclassBehavior() E
 // GetSingleStructuralObjectclassBehaviorOk returns a tuple with the SingleStructuralObjectclassBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSingleStructuralObjectclassBehaviorOk() (*EnumglobalConfigurationSingleStructuralObjectclassBehaviorProp, bool) {
-	if o == nil || isNil(o.SingleStructuralObjectclassBehavior) {
+	if o == nil || IsNil(o.SingleStructuralObjectclassBehavior) {
 		return nil, false
 	}
 	return o.SingleStructuralObjectclassBehavior, true
@@ -1616,7 +1619,7 @@ func (o *GlobalConfigurationResponse) GetSingleStructuralObjectclassBehaviorOk()
 
 // HasSingleStructuralObjectclassBehavior returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSingleStructuralObjectclassBehavior() bool {
-	if o != nil && !isNil(o.SingleStructuralObjectclassBehavior) {
+	if o != nil && !IsNil(o.SingleStructuralObjectclassBehavior) {
 		return true
 	}
 
@@ -1630,7 +1633,7 @@ func (o *GlobalConfigurationResponse) SetSingleStructuralObjectclassBehavior(v E
 
 // GetAttributesModifiableWithIgnoreNoUserModificationRequestControl returns the AttributesModifiableWithIgnoreNoUserModificationRequestControl field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAttributesModifiableWithIgnoreNoUserModificationRequestControl() []EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp {
-	if o == nil || isNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
+	if o == nil || IsNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
 		var ret []EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp
 		return ret
 	}
@@ -1640,7 +1643,7 @@ func (o *GlobalConfigurationResponse) GetAttributesModifiableWithIgnoreNoUserMod
 // GetAttributesModifiableWithIgnoreNoUserModificationRequestControlOk returns a tuple with the AttributesModifiableWithIgnoreNoUserModificationRequestControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAttributesModifiableWithIgnoreNoUserModificationRequestControlOk() ([]EnumglobalConfigurationAttributesModifiableWithIgnoreNoUserModificationRequestControlProp, bool) {
-	if o == nil || isNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
+	if o == nil || IsNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
 		return nil, false
 	}
 	return o.AttributesModifiableWithIgnoreNoUserModificationRequestControl, true
@@ -1648,7 +1651,7 @@ func (o *GlobalConfigurationResponse) GetAttributesModifiableWithIgnoreNoUserMod
 
 // HasAttributesModifiableWithIgnoreNoUserModificationRequestControl returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAttributesModifiableWithIgnoreNoUserModificationRequestControl() bool {
-	if o != nil && !isNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
+	if o != nil && !IsNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
 		return true
 	}
 
@@ -1662,7 +1665,7 @@ func (o *GlobalConfigurationResponse) SetAttributesModifiableWithIgnoreNoUserMod
 
 // GetMaximumServerOutLogFileSize returns the MaximumServerOutLogFileSize field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileSize() string {
-	if o == nil || isNil(o.MaximumServerOutLogFileSize) {
+	if o == nil || IsNil(o.MaximumServerOutLogFileSize) {
 		var ret string
 		return ret
 	}
@@ -1672,7 +1675,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileSize() string {
 // GetMaximumServerOutLogFileSizeOk returns a tuple with the MaximumServerOutLogFileSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumServerOutLogFileSize) {
+	if o == nil || IsNil(o.MaximumServerOutLogFileSize) {
 		return nil, false
 	}
 	return o.MaximumServerOutLogFileSize, true
@@ -1680,7 +1683,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileSizeOk() (*strin
 
 // HasMaximumServerOutLogFileSize returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumServerOutLogFileSize() bool {
-	if o != nil && !isNil(o.MaximumServerOutLogFileSize) {
+	if o != nil && !IsNil(o.MaximumServerOutLogFileSize) {
 		return true
 	}
 
@@ -1694,7 +1697,7 @@ func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileSize(v string) {
 
 // GetMaximumServerOutLogFileCount returns the MaximumServerOutLogFileCount field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int32 {
-	if o == nil || isNil(o.MaximumServerOutLogFileCount) {
+	if o == nil || IsNil(o.MaximumServerOutLogFileCount) {
 		var ret int32
 		return ret
 	}
@@ -1704,7 +1707,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCount() int32 {
 // GetMaximumServerOutLogFileCountOk returns a tuple with the MaximumServerOutLogFileCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumServerOutLogFileCount) {
+	if o == nil || IsNil(o.MaximumServerOutLogFileCount) {
 		return nil, false
 	}
 	return o.MaximumServerOutLogFileCount, true
@@ -1712,7 +1715,7 @@ func (o *GlobalConfigurationResponse) GetMaximumServerOutLogFileCountOk() (*int3
 
 // HasMaximumServerOutLogFileCount returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumServerOutLogFileCount() bool {
-	if o != nil && !isNil(o.MaximumServerOutLogFileCount) {
+	if o != nil && !IsNil(o.MaximumServerOutLogFileCount) {
 		return true
 	}
 
@@ -1726,7 +1729,7 @@ func (o *GlobalConfigurationResponse) SetMaximumServerOutLogFileCount(v int32) {
 
 // GetStartupErrorLoggerOutputLocation returns the StartupErrorLoggerOutputLocation field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetStartupErrorLoggerOutputLocation() EnumglobalConfigurationStartupErrorLoggerOutputLocationProp {
-	if o == nil || isNil(o.StartupErrorLoggerOutputLocation) {
+	if o == nil || IsNil(o.StartupErrorLoggerOutputLocation) {
 		var ret EnumglobalConfigurationStartupErrorLoggerOutputLocationProp
 		return ret
 	}
@@ -1736,7 +1739,7 @@ func (o *GlobalConfigurationResponse) GetStartupErrorLoggerOutputLocation() Enum
 // GetStartupErrorLoggerOutputLocationOk returns a tuple with the StartupErrorLoggerOutputLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetStartupErrorLoggerOutputLocationOk() (*EnumglobalConfigurationStartupErrorLoggerOutputLocationProp, bool) {
-	if o == nil || isNil(o.StartupErrorLoggerOutputLocation) {
+	if o == nil || IsNil(o.StartupErrorLoggerOutputLocation) {
 		return nil, false
 	}
 	return o.StartupErrorLoggerOutputLocation, true
@@ -1744,7 +1747,7 @@ func (o *GlobalConfigurationResponse) GetStartupErrorLoggerOutputLocationOk() (*
 
 // HasStartupErrorLoggerOutputLocation returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasStartupErrorLoggerOutputLocation() bool {
-	if o != nil && !isNil(o.StartupErrorLoggerOutputLocation) {
+	if o != nil && !IsNil(o.StartupErrorLoggerOutputLocation) {
 		return true
 	}
 
@@ -1758,7 +1761,7 @@ func (o *GlobalConfigurationResponse) SetStartupErrorLoggerOutputLocation(v Enum
 
 // GetExitOnJVMError returns the ExitOnJVMError field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetExitOnJVMError() bool {
-	if o == nil || isNil(o.ExitOnJVMError) {
+	if o == nil || IsNil(o.ExitOnJVMError) {
 		var ret bool
 		return ret
 	}
@@ -1768,7 +1771,7 @@ func (o *GlobalConfigurationResponse) GetExitOnJVMError() bool {
 // GetExitOnJVMErrorOk returns a tuple with the ExitOnJVMError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetExitOnJVMErrorOk() (*bool, bool) {
-	if o == nil || isNil(o.ExitOnJVMError) {
+	if o == nil || IsNil(o.ExitOnJVMError) {
 		return nil, false
 	}
 	return o.ExitOnJVMError, true
@@ -1776,7 +1779,7 @@ func (o *GlobalConfigurationResponse) GetExitOnJVMErrorOk() (*bool, bool) {
 
 // HasExitOnJVMError returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasExitOnJVMError() bool {
-	if o != nil && !isNil(o.ExitOnJVMError) {
+	if o != nil && !IsNil(o.ExitOnJVMError) {
 		return true
 	}
 
@@ -1790,7 +1793,7 @@ func (o *GlobalConfigurationResponse) SetExitOnJVMError(v bool) {
 
 // GetServerErrorResultCode returns the ServerErrorResultCode field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int32 {
-	if o == nil || isNil(o.ServerErrorResultCode) {
+	if o == nil || IsNil(o.ServerErrorResultCode) {
 		var ret int32
 		return ret
 	}
@@ -1800,7 +1803,7 @@ func (o *GlobalConfigurationResponse) GetServerErrorResultCode() int32 {
 // GetServerErrorResultCodeOk returns a tuple with the ServerErrorResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerErrorResultCode) {
+	if o == nil || IsNil(o.ServerErrorResultCode) {
 		return nil, false
 	}
 	return o.ServerErrorResultCode, true
@@ -1808,7 +1811,7 @@ func (o *GlobalConfigurationResponse) GetServerErrorResultCodeOk() (*int32, bool
 
 // HasServerErrorResultCode returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasServerErrorResultCode() bool {
-	if o != nil && !isNil(o.ServerErrorResultCode) {
+	if o != nil && !IsNil(o.ServerErrorResultCode) {
 		return true
 	}
 
@@ -1822,7 +1825,7 @@ func (o *GlobalConfigurationResponse) SetServerErrorResultCode(v int32) {
 
 // GetResultCodeMap returns the ResultCodeMap field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetResultCodeMap() string {
-	if o == nil || isNil(o.ResultCodeMap) {
+	if o == nil || IsNil(o.ResultCodeMap) {
 		var ret string
 		return ret
 	}
@@ -1832,7 +1835,7 @@ func (o *GlobalConfigurationResponse) GetResultCodeMap() string {
 // GetResultCodeMapOk returns a tuple with the ResultCodeMap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetResultCodeMapOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCodeMap) {
+	if o == nil || IsNil(o.ResultCodeMap) {
 		return nil, false
 	}
 	return o.ResultCodeMap, true
@@ -1840,7 +1843,7 @@ func (o *GlobalConfigurationResponse) GetResultCodeMapOk() (*string, bool) {
 
 // HasResultCodeMap returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasResultCodeMap() bool {
-	if o != nil && !isNil(o.ResultCodeMap) {
+	if o != nil && !IsNil(o.ResultCodeMap) {
 		return true
 	}
 
@@ -1854,7 +1857,7 @@ func (o *GlobalConfigurationResponse) SetResultCodeMap(v string) {
 
 // GetReturnBindErrorMessages returns the ReturnBindErrorMessages field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetReturnBindErrorMessages() bool {
-	if o == nil || isNil(o.ReturnBindErrorMessages) {
+	if o == nil || IsNil(o.ReturnBindErrorMessages) {
 		var ret bool
 		return ret
 	}
@@ -1864,7 +1867,7 @@ func (o *GlobalConfigurationResponse) GetReturnBindErrorMessages() bool {
 // GetReturnBindErrorMessagesOk returns a tuple with the ReturnBindErrorMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReturnBindErrorMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnBindErrorMessages) {
+	if o == nil || IsNil(o.ReturnBindErrorMessages) {
 		return nil, false
 	}
 	return o.ReturnBindErrorMessages, true
@@ -1872,7 +1875,7 @@ func (o *GlobalConfigurationResponse) GetReturnBindErrorMessagesOk() (*bool, boo
 
 // HasReturnBindErrorMessages returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasReturnBindErrorMessages() bool {
-	if o != nil && !isNil(o.ReturnBindErrorMessages) {
+	if o != nil && !IsNil(o.ReturnBindErrorMessages) {
 		return true
 	}
 
@@ -1886,7 +1889,7 @@ func (o *GlobalConfigurationResponse) SetReturnBindErrorMessages(v bool) {
 
 // GetNotifyAbandonedOperations returns the NotifyAbandonedOperations field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetNotifyAbandonedOperations() bool {
-	if o == nil || isNil(o.NotifyAbandonedOperations) {
+	if o == nil || IsNil(o.NotifyAbandonedOperations) {
 		var ret bool
 		return ret
 	}
@@ -1896,7 +1899,7 @@ func (o *GlobalConfigurationResponse) GetNotifyAbandonedOperations() bool {
 // GetNotifyAbandonedOperationsOk returns a tuple with the NotifyAbandonedOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetNotifyAbandonedOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.NotifyAbandonedOperations) {
+	if o == nil || IsNil(o.NotifyAbandonedOperations) {
 		return nil, false
 	}
 	return o.NotifyAbandonedOperations, true
@@ -1904,7 +1907,7 @@ func (o *GlobalConfigurationResponse) GetNotifyAbandonedOperationsOk() (*bool, b
 
 // HasNotifyAbandonedOperations returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasNotifyAbandonedOperations() bool {
-	if o != nil && !isNil(o.NotifyAbandonedOperations) {
+	if o != nil && !IsNil(o.NotifyAbandonedOperations) {
 		return true
 	}
 
@@ -2014,7 +2017,7 @@ func (o *GlobalConfigurationResponse) SetDuplicateAlertTimeLimit(v string) {
 
 // GetWritabilityMode returns the WritabilityMode field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetWritabilityMode() EnumglobalConfigurationWritabilityModeProp {
-	if o == nil || isNil(o.WritabilityMode) {
+	if o == nil || IsNil(o.WritabilityMode) {
 		var ret EnumglobalConfigurationWritabilityModeProp
 		return ret
 	}
@@ -2024,7 +2027,7 @@ func (o *GlobalConfigurationResponse) GetWritabilityMode() EnumglobalConfigurati
 // GetWritabilityModeOk returns a tuple with the WritabilityMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetWritabilityModeOk() (*EnumglobalConfigurationWritabilityModeProp, bool) {
-	if o == nil || isNil(o.WritabilityMode) {
+	if o == nil || IsNil(o.WritabilityMode) {
 		return nil, false
 	}
 	return o.WritabilityMode, true
@@ -2032,7 +2035,7 @@ func (o *GlobalConfigurationResponse) GetWritabilityModeOk() (*EnumglobalConfigu
 
 // HasWritabilityMode returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasWritabilityMode() bool {
-	if o != nil && !isNil(o.WritabilityMode) {
+	if o != nil && !IsNil(o.WritabilityMode) {
 		return true
 	}
 
@@ -2046,7 +2049,7 @@ func (o *GlobalConfigurationResponse) SetWritabilityMode(v EnumglobalConfigurati
 
 // GetUnrecoverableDatabaseErrorMode returns the UnrecoverableDatabaseErrorMode field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorMode() EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp {
-	if o == nil || isNil(o.UnrecoverableDatabaseErrorMode) {
+	if o == nil || IsNil(o.UnrecoverableDatabaseErrorMode) {
 		var ret EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp
 		return ret
 	}
@@ -2056,7 +2059,7 @@ func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorMode() Enumgl
 // GetUnrecoverableDatabaseErrorModeOk returns a tuple with the UnrecoverableDatabaseErrorMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorModeOk() (*EnumglobalConfigurationUnrecoverableDatabaseErrorModeProp, bool) {
-	if o == nil || isNil(o.UnrecoverableDatabaseErrorMode) {
+	if o == nil || IsNil(o.UnrecoverableDatabaseErrorMode) {
 		return nil, false
 	}
 	return o.UnrecoverableDatabaseErrorMode, true
@@ -2064,7 +2067,7 @@ func (o *GlobalConfigurationResponse) GetUnrecoverableDatabaseErrorModeOk() (*En
 
 // HasUnrecoverableDatabaseErrorMode returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasUnrecoverableDatabaseErrorMode() bool {
-	if o != nil && !isNil(o.UnrecoverableDatabaseErrorMode) {
+	if o != nil && !IsNil(o.UnrecoverableDatabaseErrorMode) {
 		return true
 	}
 
@@ -2078,7 +2081,7 @@ func (o *GlobalConfigurationResponse) SetUnrecoverableDatabaseErrorMode(v Enumgl
 
 // GetDatabaseOnVirtualizedOrNetworkStorage returns the DatabaseOnVirtualizedOrNetworkStorage field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetDatabaseOnVirtualizedOrNetworkStorage() bool {
-	if o == nil || isNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
+	if o == nil || IsNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
 		var ret bool
 		return ret
 	}
@@ -2088,7 +2091,7 @@ func (o *GlobalConfigurationResponse) GetDatabaseOnVirtualizedOrNetworkStorage()
 // GetDatabaseOnVirtualizedOrNetworkStorageOk returns a tuple with the DatabaseOnVirtualizedOrNetworkStorage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetDatabaseOnVirtualizedOrNetworkStorageOk() (*bool, bool) {
-	if o == nil || isNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
+	if o == nil || IsNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
 		return nil, false
 	}
 	return o.DatabaseOnVirtualizedOrNetworkStorage, true
@@ -2096,7 +2099,7 @@ func (o *GlobalConfigurationResponse) GetDatabaseOnVirtualizedOrNetworkStorageOk
 
 // HasDatabaseOnVirtualizedOrNetworkStorage returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasDatabaseOnVirtualizedOrNetworkStorage() bool {
-	if o != nil && !isNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
+	if o != nil && !IsNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
 		return true
 	}
 
@@ -2110,7 +2113,7 @@ func (o *GlobalConfigurationResponse) SetDatabaseOnVirtualizedOrNetworkStorage(v
 
 // GetAutoNameWithEntryUUIDConnectionCriteria returns the AutoNameWithEntryUUIDConnectionCriteria field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDConnectionCriteria() string {
-	if o == nil || isNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
+	if o == nil || IsNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -2120,7 +2123,7 @@ func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDConnectionCriteria
 // GetAutoNameWithEntryUUIDConnectionCriteriaOk returns a tuple with the AutoNameWithEntryUUIDConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
+	if o == nil || IsNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
 		return nil, false
 	}
 	return o.AutoNameWithEntryUUIDConnectionCriteria, true
@@ -2128,7 +2131,7 @@ func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDConnectionCriteria
 
 // HasAutoNameWithEntryUUIDConnectionCriteria returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAutoNameWithEntryUUIDConnectionCriteria() bool {
-	if o != nil && !isNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
+	if o != nil && !IsNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
 		return true
 	}
 
@@ -2142,7 +2145,7 @@ func (o *GlobalConfigurationResponse) SetAutoNameWithEntryUUIDConnectionCriteria
 
 // GetAutoNameWithEntryUUIDRequestCriteria returns the AutoNameWithEntryUUIDRequestCriteria field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDRequestCriteria() string {
-	if o == nil || isNil(o.AutoNameWithEntryUUIDRequestCriteria) {
+	if o == nil || IsNil(o.AutoNameWithEntryUUIDRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -2152,7 +2155,7 @@ func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDRequestCriteria() 
 // GetAutoNameWithEntryUUIDRequestCriteriaOk returns a tuple with the AutoNameWithEntryUUIDRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AutoNameWithEntryUUIDRequestCriteria) {
+	if o == nil || IsNil(o.AutoNameWithEntryUUIDRequestCriteria) {
 		return nil, false
 	}
 	return o.AutoNameWithEntryUUIDRequestCriteria, true
@@ -2160,7 +2163,7 @@ func (o *GlobalConfigurationResponse) GetAutoNameWithEntryUUIDRequestCriteriaOk(
 
 // HasAutoNameWithEntryUUIDRequestCriteria returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAutoNameWithEntryUUIDRequestCriteria() bool {
-	if o != nil && !isNil(o.AutoNameWithEntryUUIDRequestCriteria) {
+	if o != nil && !IsNil(o.AutoNameWithEntryUUIDRequestCriteria) {
 		return true
 	}
 
@@ -2174,7 +2177,7 @@ func (o *GlobalConfigurationResponse) SetAutoNameWithEntryUUIDRequestCriteria(v 
 
 // GetSoftDeletePolicy returns the SoftDeletePolicy field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSoftDeletePolicy() string {
-	if o == nil || isNil(o.SoftDeletePolicy) {
+	if o == nil || IsNil(o.SoftDeletePolicy) {
 		var ret string
 		return ret
 	}
@@ -2184,7 +2187,7 @@ func (o *GlobalConfigurationResponse) GetSoftDeletePolicy() string {
 // GetSoftDeletePolicyOk returns a tuple with the SoftDeletePolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSoftDeletePolicyOk() (*string, bool) {
-	if o == nil || isNil(o.SoftDeletePolicy) {
+	if o == nil || IsNil(o.SoftDeletePolicy) {
 		return nil, false
 	}
 	return o.SoftDeletePolicy, true
@@ -2192,7 +2195,7 @@ func (o *GlobalConfigurationResponse) GetSoftDeletePolicyOk() (*string, bool) {
 
 // HasSoftDeletePolicy returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSoftDeletePolicy() bool {
-	if o != nil && !isNil(o.SoftDeletePolicy) {
+	if o != nil && !IsNil(o.SoftDeletePolicy) {
 		return true
 	}
 
@@ -2206,7 +2209,7 @@ func (o *GlobalConfigurationResponse) SetSoftDeletePolicy(v string) {
 
 // GetSubtreeAccessibilityAlertTimeLimit returns the SubtreeAccessibilityAlertTimeLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSubtreeAccessibilityAlertTimeLimit() string {
-	if o == nil || isNil(o.SubtreeAccessibilityAlertTimeLimit) {
+	if o == nil || IsNil(o.SubtreeAccessibilityAlertTimeLimit) {
 		var ret string
 		return ret
 	}
@@ -2216,7 +2219,7 @@ func (o *GlobalConfigurationResponse) GetSubtreeAccessibilityAlertTimeLimit() st
 // GetSubtreeAccessibilityAlertTimeLimitOk returns a tuple with the SubtreeAccessibilityAlertTimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSubtreeAccessibilityAlertTimeLimitOk() (*string, bool) {
-	if o == nil || isNil(o.SubtreeAccessibilityAlertTimeLimit) {
+	if o == nil || IsNil(o.SubtreeAccessibilityAlertTimeLimit) {
 		return nil, false
 	}
 	return o.SubtreeAccessibilityAlertTimeLimit, true
@@ -2224,7 +2227,7 @@ func (o *GlobalConfigurationResponse) GetSubtreeAccessibilityAlertTimeLimitOk() 
 
 // HasSubtreeAccessibilityAlertTimeLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSubtreeAccessibilityAlertTimeLimit() bool {
-	if o != nil && !isNil(o.SubtreeAccessibilityAlertTimeLimit) {
+	if o != nil && !IsNil(o.SubtreeAccessibilityAlertTimeLimit) {
 		return true
 	}
 
@@ -2238,7 +2241,7 @@ func (o *GlobalConfigurationResponse) SetSubtreeAccessibilityAlertTimeLimit(v st
 
 // GetWarnForBackendsWithMultipleBaseDns returns the WarnForBackendsWithMultipleBaseDns field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetWarnForBackendsWithMultipleBaseDns() bool {
-	if o == nil || isNil(o.WarnForBackendsWithMultipleBaseDns) {
+	if o == nil || IsNil(o.WarnForBackendsWithMultipleBaseDns) {
 		var ret bool
 		return ret
 	}
@@ -2248,7 +2251,7 @@ func (o *GlobalConfigurationResponse) GetWarnForBackendsWithMultipleBaseDns() bo
 // GetWarnForBackendsWithMultipleBaseDnsOk returns a tuple with the WarnForBackendsWithMultipleBaseDns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetWarnForBackendsWithMultipleBaseDnsOk() (*bool, bool) {
-	if o == nil || isNil(o.WarnForBackendsWithMultipleBaseDns) {
+	if o == nil || IsNil(o.WarnForBackendsWithMultipleBaseDns) {
 		return nil, false
 	}
 	return o.WarnForBackendsWithMultipleBaseDns, true
@@ -2256,7 +2259,7 @@ func (o *GlobalConfigurationResponse) GetWarnForBackendsWithMultipleBaseDnsOk() 
 
 // HasWarnForBackendsWithMultipleBaseDns returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasWarnForBackendsWithMultipleBaseDns() bool {
-	if o != nil && !isNil(o.WarnForBackendsWithMultipleBaseDns) {
+	if o != nil && !IsNil(o.WarnForBackendsWithMultipleBaseDns) {
 		return true
 	}
 
@@ -2270,7 +2273,7 @@ func (o *GlobalConfigurationResponse) SetWarnForBackendsWithMultipleBaseDns(v bo
 
 // GetForcedGCPrimeDuration returns the ForcedGCPrimeDuration field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetForcedGCPrimeDuration() string {
-	if o == nil || isNil(o.ForcedGCPrimeDuration) {
+	if o == nil || IsNil(o.ForcedGCPrimeDuration) {
 		var ret string
 		return ret
 	}
@@ -2280,7 +2283,7 @@ func (o *GlobalConfigurationResponse) GetForcedGCPrimeDuration() string {
 // GetForcedGCPrimeDurationOk returns a tuple with the ForcedGCPrimeDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetForcedGCPrimeDurationOk() (*string, bool) {
-	if o == nil || isNil(o.ForcedGCPrimeDuration) {
+	if o == nil || IsNil(o.ForcedGCPrimeDuration) {
 		return nil, false
 	}
 	return o.ForcedGCPrimeDuration, true
@@ -2288,7 +2291,7 @@ func (o *GlobalConfigurationResponse) GetForcedGCPrimeDurationOk() (*string, boo
 
 // HasForcedGCPrimeDuration returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasForcedGCPrimeDuration() bool {
-	if o != nil && !isNil(o.ForcedGCPrimeDuration) {
+	if o != nil && !IsNil(o.ForcedGCPrimeDuration) {
 		return true
 	}
 
@@ -2302,7 +2305,7 @@ func (o *GlobalConfigurationResponse) SetForcedGCPrimeDuration(v string) {
 
 // GetReplicationSetName returns the ReplicationSetName field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetReplicationSetName() string {
-	if o == nil || isNil(o.ReplicationSetName) {
+	if o == nil || IsNil(o.ReplicationSetName) {
 		var ret string
 		return ret
 	}
@@ -2312,7 +2315,7 @@ func (o *GlobalConfigurationResponse) GetReplicationSetName() string {
 // GetReplicationSetNameOk returns a tuple with the ReplicationSetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationSetNameOk() (*string, bool) {
-	if o == nil || isNil(o.ReplicationSetName) {
+	if o == nil || IsNil(o.ReplicationSetName) {
 		return nil, false
 	}
 	return o.ReplicationSetName, true
@@ -2320,7 +2323,7 @@ func (o *GlobalConfigurationResponse) GetReplicationSetNameOk() (*string, bool) 
 
 // HasReplicationSetName returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasReplicationSetName() bool {
-	if o != nil && !isNil(o.ReplicationSetName) {
+	if o != nil && !IsNil(o.ReplicationSetName) {
 		return true
 	}
 
@@ -2454,7 +2457,7 @@ func (o *GlobalConfigurationResponse) SetReplicationAssuranceSourceBacklogFastSt
 
 // GetReplicationHistoryLimit returns the ReplicationHistoryLimit field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int32 {
-	if o == nil || isNil(o.ReplicationHistoryLimit) {
+	if o == nil || IsNil(o.ReplicationHistoryLimit) {
 		var ret int32
 		return ret
 	}
@@ -2464,7 +2467,7 @@ func (o *GlobalConfigurationResponse) GetReplicationHistoryLimit() int32 {
 // GetReplicationHistoryLimitOk returns a tuple with the ReplicationHistoryLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationHistoryLimit) {
+	if o == nil || IsNil(o.ReplicationHistoryLimit) {
 		return nil, false
 	}
 	return o.ReplicationHistoryLimit, true
@@ -2472,7 +2475,7 @@ func (o *GlobalConfigurationResponse) GetReplicationHistoryLimitOk() (*int32, bo
 
 // HasReplicationHistoryLimit returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasReplicationHistoryLimit() bool {
-	if o != nil && !isNil(o.ReplicationHistoryLimit) {
+	if o != nil && !IsNil(o.ReplicationHistoryLimit) {
 		return true
 	}
 
@@ -2510,7 +2513,7 @@ func (o *GlobalConfigurationResponse) SetAllowInheritedReplicationOfSubordinateB
 
 // GetReplicationPurgeObsoleteReplicas returns the ReplicationPurgeObsoleteReplicas field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetReplicationPurgeObsoleteReplicas() bool {
-	if o == nil || isNil(o.ReplicationPurgeObsoleteReplicas) {
+	if o == nil || IsNil(o.ReplicationPurgeObsoleteReplicas) {
 		var ret bool
 		return ret
 	}
@@ -2520,7 +2523,7 @@ func (o *GlobalConfigurationResponse) GetReplicationPurgeObsoleteReplicas() bool
 // GetReplicationPurgeObsoleteReplicasOk returns a tuple with the ReplicationPurgeObsoleteReplicas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetReplicationPurgeObsoleteReplicasOk() (*bool, bool) {
-	if o == nil || isNil(o.ReplicationPurgeObsoleteReplicas) {
+	if o == nil || IsNil(o.ReplicationPurgeObsoleteReplicas) {
 		return nil, false
 	}
 	return o.ReplicationPurgeObsoleteReplicas, true
@@ -2528,7 +2531,7 @@ func (o *GlobalConfigurationResponse) GetReplicationPurgeObsoleteReplicasOk() (*
 
 // HasReplicationPurgeObsoleteReplicas returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasReplicationPurgeObsoleteReplicas() bool {
-	if o != nil && !isNil(o.ReplicationPurgeObsoleteReplicas) {
+	if o != nil && !IsNil(o.ReplicationPurgeObsoleteReplicas) {
 		return true
 	}
 
@@ -2542,7 +2545,7 @@ func (o *GlobalConfigurationResponse) SetReplicationPurgeObsoleteReplicas(v bool
 
 // GetSmtpServer returns the SmtpServer field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSmtpServer() []string {
-	if o == nil || isNil(o.SmtpServer) {
+	if o == nil || IsNil(o.SmtpServer) {
 		var ret []string
 		return ret
 	}
@@ -2552,7 +2555,7 @@ func (o *GlobalConfigurationResponse) GetSmtpServer() []string {
 // GetSmtpServerOk returns a tuple with the SmtpServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSmtpServerOk() ([]string, bool) {
-	if o == nil || isNil(o.SmtpServer) {
+	if o == nil || IsNil(o.SmtpServer) {
 		return nil, false
 	}
 	return o.SmtpServer, true
@@ -2560,7 +2563,7 @@ func (o *GlobalConfigurationResponse) GetSmtpServerOk() ([]string, bool) {
 
 // HasSmtpServer returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSmtpServer() bool {
-	if o != nil && !isNil(o.SmtpServer) {
+	if o != nil && !IsNil(o.SmtpServer) {
 		return true
 	}
 
@@ -2574,7 +2577,7 @@ func (o *GlobalConfigurationResponse) SetSmtpServer(v []string) {
 
 // GetMaxSMTPConnectionCount returns the MaxSMTPConnectionCount field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int32 {
-	if o == nil || isNil(o.MaxSMTPConnectionCount) {
+	if o == nil || IsNil(o.MaxSMTPConnectionCount) {
 		var ret int32
 		return ret
 	}
@@ -2584,7 +2587,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCount() int32 {
 // GetMaxSMTPConnectionCountOk returns a tuple with the MaxSMTPConnectionCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxSMTPConnectionCount) {
+	if o == nil || IsNil(o.MaxSMTPConnectionCount) {
 		return nil, false
 	}
 	return o.MaxSMTPConnectionCount, true
@@ -2592,7 +2595,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionCountOk() (*int32, boo
 
 // HasMaxSMTPConnectionCount returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaxSMTPConnectionCount() bool {
-	if o != nil && !isNil(o.MaxSMTPConnectionCount) {
+	if o != nil && !IsNil(o.MaxSMTPConnectionCount) {
 		return true
 	}
 
@@ -2606,7 +2609,7 @@ func (o *GlobalConfigurationResponse) SetMaxSMTPConnectionCount(v int32) {
 
 // GetMaxSMTPConnectionAge returns the MaxSMTPConnectionAge field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionAge() string {
-	if o == nil || isNil(o.MaxSMTPConnectionAge) {
+	if o == nil || IsNil(o.MaxSMTPConnectionAge) {
 		var ret string
 		return ret
 	}
@@ -2616,7 +2619,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionAge() string {
 // GetMaxSMTPConnectionAgeOk returns a tuple with the MaxSMTPConnectionAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionAgeOk() (*string, bool) {
-	if o == nil || isNil(o.MaxSMTPConnectionAge) {
+	if o == nil || IsNil(o.MaxSMTPConnectionAge) {
 		return nil, false
 	}
 	return o.MaxSMTPConnectionAge, true
@@ -2624,7 +2627,7 @@ func (o *GlobalConfigurationResponse) GetMaxSMTPConnectionAgeOk() (*string, bool
 
 // HasMaxSMTPConnectionAge returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaxSMTPConnectionAge() bool {
-	if o != nil && !isNil(o.MaxSMTPConnectionAge) {
+	if o != nil && !IsNil(o.MaxSMTPConnectionAge) {
 		return true
 	}
 
@@ -2638,7 +2641,7 @@ func (o *GlobalConfigurationResponse) SetMaxSMTPConnectionAge(v string) {
 
 // GetSmtpConnectionHealthCheckInterval returns the SmtpConnectionHealthCheckInterval field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetSmtpConnectionHealthCheckInterval() string {
-	if o == nil || isNil(o.SmtpConnectionHealthCheckInterval) {
+	if o == nil || IsNil(o.SmtpConnectionHealthCheckInterval) {
 		var ret string
 		return ret
 	}
@@ -2648,7 +2651,7 @@ func (o *GlobalConfigurationResponse) GetSmtpConnectionHealthCheckInterval() str
 // GetSmtpConnectionHealthCheckIntervalOk returns a tuple with the SmtpConnectionHealthCheckInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetSmtpConnectionHealthCheckIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.SmtpConnectionHealthCheckInterval) {
+	if o == nil || IsNil(o.SmtpConnectionHealthCheckInterval) {
 		return nil, false
 	}
 	return o.SmtpConnectionHealthCheckInterval, true
@@ -2656,7 +2659,7 @@ func (o *GlobalConfigurationResponse) GetSmtpConnectionHealthCheckIntervalOk() (
 
 // HasSmtpConnectionHealthCheckInterval returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasSmtpConnectionHealthCheckInterval() bool {
-	if o != nil && !isNil(o.SmtpConnectionHealthCheckInterval) {
+	if o != nil && !IsNil(o.SmtpConnectionHealthCheckInterval) {
 		return true
 	}
 
@@ -2670,7 +2673,7 @@ func (o *GlobalConfigurationResponse) SetSmtpConnectionHealthCheckInterval(v str
 
 // GetAllowedTask returns the AllowedTask field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetAllowedTask() []string {
-	if o == nil || isNil(o.AllowedTask) {
+	if o == nil || IsNil(o.AllowedTask) {
 		var ret []string
 		return ret
 	}
@@ -2680,7 +2683,7 @@ func (o *GlobalConfigurationResponse) GetAllowedTask() []string {
 // GetAllowedTaskOk returns a tuple with the AllowedTask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetAllowedTaskOk() ([]string, bool) {
-	if o == nil || isNil(o.AllowedTask) {
+	if o == nil || IsNil(o.AllowedTask) {
 		return nil, false
 	}
 	return o.AllowedTask, true
@@ -2688,7 +2691,7 @@ func (o *GlobalConfigurationResponse) GetAllowedTaskOk() ([]string, bool) {
 
 // HasAllowedTask returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasAllowedTask() bool {
-	if o != nil && !isNil(o.AllowedTask) {
+	if o != nil && !IsNil(o.AllowedTask) {
 		return true
 	}
 
@@ -2702,7 +2705,7 @@ func (o *GlobalConfigurationResponse) SetAllowedTask(v []string) {
 
 // GetEnableSubOperationTimer returns the EnableSubOperationTimer field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetEnableSubOperationTimer() bool {
-	if o == nil || isNil(o.EnableSubOperationTimer) {
+	if o == nil || IsNil(o.EnableSubOperationTimer) {
 		var ret bool
 		return ret
 	}
@@ -2712,7 +2715,7 @@ func (o *GlobalConfigurationResponse) GetEnableSubOperationTimer() bool {
 // GetEnableSubOperationTimerOk returns a tuple with the EnableSubOperationTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetEnableSubOperationTimerOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableSubOperationTimer) {
+	if o == nil || IsNil(o.EnableSubOperationTimer) {
 		return nil, false
 	}
 	return o.EnableSubOperationTimer, true
@@ -2720,7 +2723,7 @@ func (o *GlobalConfigurationResponse) GetEnableSubOperationTimerOk() (*bool, boo
 
 // HasEnableSubOperationTimer returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasEnableSubOperationTimer() bool {
-	if o != nil && !isNil(o.EnableSubOperationTimer) {
+	if o != nil && !IsNil(o.EnableSubOperationTimer) {
 		return true
 	}
 
@@ -2734,7 +2737,7 @@ func (o *GlobalConfigurationResponse) SetEnableSubOperationTimer(v bool) {
 
 // GetMaximumShutdownTime returns the MaximumShutdownTime field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetMaximumShutdownTime() string {
-	if o == nil || isNil(o.MaximumShutdownTime) {
+	if o == nil || IsNil(o.MaximumShutdownTime) {
 		var ret string
 		return ret
 	}
@@ -2744,7 +2747,7 @@ func (o *GlobalConfigurationResponse) GetMaximumShutdownTime() string {
 // GetMaximumShutdownTimeOk returns a tuple with the MaximumShutdownTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetMaximumShutdownTimeOk() (*string, bool) {
-	if o == nil || isNil(o.MaximumShutdownTime) {
+	if o == nil || IsNil(o.MaximumShutdownTime) {
 		return nil, false
 	}
 	return o.MaximumShutdownTime, true
@@ -2752,7 +2755,7 @@ func (o *GlobalConfigurationResponse) GetMaximumShutdownTimeOk() (*string, bool)
 
 // HasMaximumShutdownTime returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasMaximumShutdownTime() bool {
-	if o != nil && !isNil(o.MaximumShutdownTime) {
+	if o != nil && !IsNil(o.MaximumShutdownTime) {
 		return true
 	}
 
@@ -2766,7 +2769,7 @@ func (o *GlobalConfigurationResponse) SetMaximumShutdownTime(v string) {
 
 // GetNetworkAddressCacheTTL returns the NetworkAddressCacheTTL field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetNetworkAddressCacheTTL() string {
-	if o == nil || isNil(o.NetworkAddressCacheTTL) {
+	if o == nil || IsNil(o.NetworkAddressCacheTTL) {
 		var ret string
 		return ret
 	}
@@ -2776,7 +2779,7 @@ func (o *GlobalConfigurationResponse) GetNetworkAddressCacheTTL() string {
 // GetNetworkAddressCacheTTLOk returns a tuple with the NetworkAddressCacheTTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetNetworkAddressCacheTTLOk() (*string, bool) {
-	if o == nil || isNil(o.NetworkAddressCacheTTL) {
+	if o == nil || IsNil(o.NetworkAddressCacheTTL) {
 		return nil, false
 	}
 	return o.NetworkAddressCacheTTL, true
@@ -2784,7 +2787,7 @@ func (o *GlobalConfigurationResponse) GetNetworkAddressCacheTTLOk() (*string, bo
 
 // HasNetworkAddressCacheTTL returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasNetworkAddressCacheTTL() bool {
-	if o != nil && !isNil(o.NetworkAddressCacheTTL) {
+	if o != nil && !IsNil(o.NetworkAddressCacheTTL) {
 		return true
 	}
 
@@ -2798,7 +2801,7 @@ func (o *GlobalConfigurationResponse) SetNetworkAddressCacheTTL(v string) {
 
 // GetNetworkAddressOutageCacheEnabled returns the NetworkAddressOutageCacheEnabled field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetNetworkAddressOutageCacheEnabled() bool {
-	if o == nil || isNil(o.NetworkAddressOutageCacheEnabled) {
+	if o == nil || IsNil(o.NetworkAddressOutageCacheEnabled) {
 		var ret bool
 		return ret
 	}
@@ -2808,7 +2811,7 @@ func (o *GlobalConfigurationResponse) GetNetworkAddressOutageCacheEnabled() bool
 // GetNetworkAddressOutageCacheEnabledOk returns a tuple with the NetworkAddressOutageCacheEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetNetworkAddressOutageCacheEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.NetworkAddressOutageCacheEnabled) {
+	if o == nil || IsNil(o.NetworkAddressOutageCacheEnabled) {
 		return nil, false
 	}
 	return o.NetworkAddressOutageCacheEnabled, true
@@ -2816,7 +2819,7 @@ func (o *GlobalConfigurationResponse) GetNetworkAddressOutageCacheEnabledOk() (*
 
 // HasNetworkAddressOutageCacheEnabled returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasNetworkAddressOutageCacheEnabled() bool {
-	if o != nil && !isNil(o.NetworkAddressOutageCacheEnabled) {
+	if o != nil && !IsNil(o.NetworkAddressOutageCacheEnabled) {
 		return true
 	}
 
@@ -2830,7 +2833,7 @@ func (o *GlobalConfigurationResponse) SetNetworkAddressOutageCacheEnabled(v bool
 
 // GetTrackedApplication returns the TrackedApplication field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetTrackedApplication() []string {
-	if o == nil || isNil(o.TrackedApplication) {
+	if o == nil || IsNil(o.TrackedApplication) {
 		var ret []string
 		return ret
 	}
@@ -2840,7 +2843,7 @@ func (o *GlobalConfigurationResponse) GetTrackedApplication() []string {
 // GetTrackedApplicationOk returns a tuple with the TrackedApplication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetTrackedApplicationOk() ([]string, bool) {
-	if o == nil || isNil(o.TrackedApplication) {
+	if o == nil || IsNil(o.TrackedApplication) {
 		return nil, false
 	}
 	return o.TrackedApplication, true
@@ -2848,7 +2851,7 @@ func (o *GlobalConfigurationResponse) GetTrackedApplicationOk() ([]string, bool)
 
 // HasTrackedApplication returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasTrackedApplication() bool {
-	if o != nil && !isNil(o.TrackedApplication) {
+	if o != nil && !IsNil(o.TrackedApplication) {
 		return true
 	}
 
@@ -2862,7 +2865,7 @@ func (o *GlobalConfigurationResponse) SetTrackedApplication(v []string) {
 
 // GetJmxValueBehavior returns the JmxValueBehavior field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetJmxValueBehavior() EnumglobalConfigurationJmxValueBehaviorProp {
-	if o == nil || isNil(o.JmxValueBehavior) {
+	if o == nil || IsNil(o.JmxValueBehavior) {
 		var ret EnumglobalConfigurationJmxValueBehaviorProp
 		return ret
 	}
@@ -2872,7 +2875,7 @@ func (o *GlobalConfigurationResponse) GetJmxValueBehavior() EnumglobalConfigurat
 // GetJmxValueBehaviorOk returns a tuple with the JmxValueBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetJmxValueBehaviorOk() (*EnumglobalConfigurationJmxValueBehaviorProp, bool) {
-	if o == nil || isNil(o.JmxValueBehavior) {
+	if o == nil || IsNil(o.JmxValueBehavior) {
 		return nil, false
 	}
 	return o.JmxValueBehavior, true
@@ -2880,7 +2883,7 @@ func (o *GlobalConfigurationResponse) GetJmxValueBehaviorOk() (*EnumglobalConfig
 
 // HasJmxValueBehavior returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasJmxValueBehavior() bool {
-	if o != nil && !isNil(o.JmxValueBehavior) {
+	if o != nil && !IsNil(o.JmxValueBehavior) {
 		return true
 	}
 
@@ -2894,7 +2897,7 @@ func (o *GlobalConfigurationResponse) SetJmxValueBehavior(v EnumglobalConfigurat
 
 // GetJmxUseLegacyMbeanNames returns the JmxUseLegacyMbeanNames field value if set, zero value otherwise.
 func (o *GlobalConfigurationResponse) GetJmxUseLegacyMbeanNames() bool {
-	if o == nil || isNil(o.JmxUseLegacyMbeanNames) {
+	if o == nil || IsNil(o.JmxUseLegacyMbeanNames) {
 		var ret bool
 		return ret
 	}
@@ -2904,7 +2907,7 @@ func (o *GlobalConfigurationResponse) GetJmxUseLegacyMbeanNames() bool {
 // GetJmxUseLegacyMbeanNamesOk returns a tuple with the JmxUseLegacyMbeanNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GlobalConfigurationResponse) GetJmxUseLegacyMbeanNamesOk() (*bool, bool) {
-	if o == nil || isNil(o.JmxUseLegacyMbeanNames) {
+	if o == nil || IsNil(o.JmxUseLegacyMbeanNames) {
 		return nil, false
 	}
 	return o.JmxUseLegacyMbeanNames, true
@@ -2912,7 +2915,7 @@ func (o *GlobalConfigurationResponse) GetJmxUseLegacyMbeanNamesOk() (*bool, bool
 
 // HasJmxUseLegacyMbeanNames returns a boolean if a field has been set.
 func (o *GlobalConfigurationResponse) HasJmxUseLegacyMbeanNames() bool {
-	if o != nil && !isNil(o.JmxUseLegacyMbeanNames) {
+	if o != nil && !IsNil(o.JmxUseLegacyMbeanNames) {
 		return true
 	}
 
@@ -2925,272 +2928,254 @@ func (o *GlobalConfigurationResponse) SetJmxUseLegacyMbeanNames(v bool) {
 }
 
 func (o GlobalConfigurationResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["instanceName"] = o.InstanceName
-	}
-	if !isNil(o.Location) {
-		toSerialize["location"] = o.Location
-	}
-	if !isNil(o.ConfigurationServerGroup) {
-		toSerialize["configurationServerGroup"] = o.ConfigurationServerGroup
-	}
-	if !isNil(o.ForceAsMasterForMirroredData) {
-		toSerialize["forceAsMasterForMirroredData"] = o.ForceAsMasterForMirroredData
-	}
-	if !isNil(o.EncryptData) {
-		toSerialize["encryptData"] = o.EncryptData
-	}
-	if !isNil(o.EncryptionSettingsCipherStreamProvider) {
-		toSerialize["encryptionSettingsCipherStreamProvider"] = o.EncryptionSettingsCipherStreamProvider
-	}
-	if !isNil(o.EncryptBackupsByDefault) {
-		toSerialize["encryptBackupsByDefault"] = o.EncryptBackupsByDefault
-	}
-	if !isNil(o.BackupEncryptionSettingsDefinitionID) {
-		toSerialize["backupEncryptionSettingsDefinitionID"] = o.BackupEncryptionSettingsDefinitionID
-	}
-	if !isNil(o.EncryptLDIFExportsByDefault) {
-		toSerialize["encryptLDIFExportsByDefault"] = o.EncryptLDIFExportsByDefault
-	}
-	if !isNil(o.LdifExportEncryptionSettingsDefinitionID) {
-		toSerialize["ldifExportEncryptionSettingsDefinitionID"] = o.LdifExportEncryptionSettingsDefinitionID
-	}
-	if !isNil(o.AutomaticallyCompressEncryptedLDIFExports) {
-		toSerialize["automaticallyCompressEncryptedLDIFExports"] = o.AutomaticallyCompressEncryptedLDIFExports
-	}
-	if !isNil(o.RedactSensitiveValuesInConfigLogs) {
-		toSerialize["redactSensitiveValuesInConfigLogs"] = o.RedactSensitiveValuesInConfigLogs
-	}
-	if !isNil(o.SensitiveAttribute) {
-		toSerialize["sensitiveAttribute"] = o.SensitiveAttribute
-	}
-	if !isNil(o.RejectInsecureRequests) {
-		toSerialize["rejectInsecureRequests"] = o.RejectInsecureRequests
-	}
-	if !isNil(o.AllowedInsecureRequestCriteria) {
-		toSerialize["allowedInsecureRequestCriteria"] = o.AllowedInsecureRequestCriteria
-	}
-	if !isNil(o.RejectUnauthenticatedRequests) {
-		toSerialize["rejectUnauthenticatedRequests"] = o.RejectUnauthenticatedRequests
-	}
-	if !isNil(o.AllowedUnauthenticatedRequestCriteria) {
-		toSerialize["allowedUnauthenticatedRequestCriteria"] = o.AllowedUnauthenticatedRequestCriteria
-	}
-	if !isNil(o.BindWithDNRequiresPassword) {
-		toSerialize["bindWithDNRequiresPassword"] = o.BindWithDNRequiresPassword
-	}
-	if !isNil(o.DisabledPrivilege) {
-		toSerialize["disabledPrivilege"] = o.DisabledPrivilege
-	}
-	if true {
-		toSerialize["defaultPasswordPolicy"] = o.DefaultPasswordPolicy
-	}
-	if !isNil(o.MaximumUserDataPasswordPoliciesToCache) {
-		toSerialize["maximumUserDataPasswordPoliciesToCache"] = o.MaximumUserDataPasswordPoliciesToCache
-	}
-	if true {
-		toSerialize["proxiedAuthorizationIdentityMapper"] = o.ProxiedAuthorizationIdentityMapper
-	}
-	if !isNil(o.VerifyEntryDigests) {
-		toSerialize["verifyEntryDigests"] = o.VerifyEntryDigests
-	}
-	if !isNil(o.AllowedInsecureTLSProtocol) {
-		toSerialize["allowedInsecureTLSProtocol"] = o.AllowedInsecureTLSProtocol
-	}
-	if !isNil(o.AllowInsecureLocalJMXConnections) {
-		toSerialize["allowInsecureLocalJMXConnections"] = o.AllowInsecureLocalJMXConnections
-	}
-	if !isNil(o.DefaultInternalOperationClientConnectionPolicy) {
-		toSerialize["defaultInternalOperationClientConnectionPolicy"] = o.DefaultInternalOperationClientConnectionPolicy
-	}
-	if !isNil(o.SizeLimit) {
-		toSerialize["sizeLimit"] = o.SizeLimit
-	}
-	if !isNil(o.TimeLimit) {
-		toSerialize["timeLimit"] = o.TimeLimit
-	}
-	if !isNil(o.IdleTimeLimit) {
-		toSerialize["idleTimeLimit"] = o.IdleTimeLimit
-	}
-	if !isNil(o.LookthroughLimit) {
-		toSerialize["lookthroughLimit"] = o.LookthroughLimit
-	}
-	if !isNil(o.LdapJoinSizeLimit) {
-		toSerialize["ldapJoinSizeLimit"] = o.LdapJoinSizeLimit
-	}
-	if !isNil(o.MaximumConcurrentConnections) {
-		toSerialize["maximumConcurrentConnections"] = o.MaximumConcurrentConnections
-	}
-	if !isNil(o.MaximumConcurrentConnectionsPerIPAddress) {
-		toSerialize["maximumConcurrentConnectionsPerIPAddress"] = o.MaximumConcurrentConnectionsPerIPAddress
-	}
-	if !isNil(o.MaximumConcurrentConnectionsPerBindDN) {
-		toSerialize["maximumConcurrentConnectionsPerBindDN"] = o.MaximumConcurrentConnectionsPerBindDN
-	}
-	if !isNil(o.MaximumConcurrentUnindexedSearches) {
-		toSerialize["maximumConcurrentUnindexedSearches"] = o.MaximumConcurrentUnindexedSearches
-	}
-	if !isNil(o.MaximumAttributesPerAddRequest) {
-		toSerialize["maximumAttributesPerAddRequest"] = o.MaximumAttributesPerAddRequest
-	}
-	if !isNil(o.MaximumModificationsPerModifyRequest) {
-		toSerialize["maximumModificationsPerModifyRequest"] = o.MaximumModificationsPerModifyRequest
-	}
-	if !isNil(o.BackgroundThreadForEachPersistentSearch) {
-		toSerialize["backgroundThreadForEachPersistentSearch"] = o.BackgroundThreadForEachPersistentSearch
-	}
-	if !isNil(o.AllowAttributeNameExceptions) {
-		toSerialize["allowAttributeNameExceptions"] = o.AllowAttributeNameExceptions
-	}
-	if !isNil(o.InvalidAttributeSyntaxBehavior) {
-		toSerialize["invalidAttributeSyntaxBehavior"] = o.InvalidAttributeSyntaxBehavior
-	}
-	if !isNil(o.PermitSyntaxViolationsForAttribute) {
-		toSerialize["permitSyntaxViolationsForAttribute"] = o.PermitSyntaxViolationsForAttribute
-	}
-	if !isNil(o.SingleStructuralObjectclassBehavior) {
-		toSerialize["singleStructuralObjectclassBehavior"] = o.SingleStructuralObjectclassBehavior
-	}
-	if !isNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
-		toSerialize["attributesModifiableWithIgnoreNoUserModificationRequestControl"] = o.AttributesModifiableWithIgnoreNoUserModificationRequestControl
-	}
-	if !isNil(o.MaximumServerOutLogFileSize) {
-		toSerialize["maximumServerOutLogFileSize"] = o.MaximumServerOutLogFileSize
-	}
-	if !isNil(o.MaximumServerOutLogFileCount) {
-		toSerialize["maximumServerOutLogFileCount"] = o.MaximumServerOutLogFileCount
-	}
-	if !isNil(o.StartupErrorLoggerOutputLocation) {
-		toSerialize["startupErrorLoggerOutputLocation"] = o.StartupErrorLoggerOutputLocation
-	}
-	if !isNil(o.ExitOnJVMError) {
-		toSerialize["exitOnJVMError"] = o.ExitOnJVMError
-	}
-	if !isNil(o.ServerErrorResultCode) {
-		toSerialize["serverErrorResultCode"] = o.ServerErrorResultCode
-	}
-	if !isNil(o.ResultCodeMap) {
-		toSerialize["resultCodeMap"] = o.ResultCodeMap
-	}
-	if !isNil(o.ReturnBindErrorMessages) {
-		toSerialize["returnBindErrorMessages"] = o.ReturnBindErrorMessages
-	}
-	if !isNil(o.NotifyAbandonedOperations) {
-		toSerialize["notifyAbandonedOperations"] = o.NotifyAbandonedOperations
-	}
-	if true {
-		toSerialize["duplicateErrorLogLimit"] = o.DuplicateErrorLogLimit
-	}
-	if true {
-		toSerialize["duplicateErrorLogTimeLimit"] = o.DuplicateErrorLogTimeLimit
-	}
-	if true {
-		toSerialize["duplicateAlertLimit"] = o.DuplicateAlertLimit
-	}
-	if true {
-		toSerialize["duplicateAlertTimeLimit"] = o.DuplicateAlertTimeLimit
-	}
-	if !isNil(o.WritabilityMode) {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if !isNil(o.UnrecoverableDatabaseErrorMode) {
-		toSerialize["unrecoverableDatabaseErrorMode"] = o.UnrecoverableDatabaseErrorMode
-	}
-	if !isNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
-		toSerialize["databaseOnVirtualizedOrNetworkStorage"] = o.DatabaseOnVirtualizedOrNetworkStorage
-	}
-	if !isNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
-		toSerialize["autoNameWithEntryUUIDConnectionCriteria"] = o.AutoNameWithEntryUUIDConnectionCriteria
-	}
-	if !isNil(o.AutoNameWithEntryUUIDRequestCriteria) {
-		toSerialize["autoNameWithEntryUUIDRequestCriteria"] = o.AutoNameWithEntryUUIDRequestCriteria
-	}
-	if !isNil(o.SoftDeletePolicy) {
-		toSerialize["softDeletePolicy"] = o.SoftDeletePolicy
-	}
-	if !isNil(o.SubtreeAccessibilityAlertTimeLimit) {
-		toSerialize["subtreeAccessibilityAlertTimeLimit"] = o.SubtreeAccessibilityAlertTimeLimit
-	}
-	if !isNil(o.WarnForBackendsWithMultipleBaseDns) {
-		toSerialize["warnForBackendsWithMultipleBaseDns"] = o.WarnForBackendsWithMultipleBaseDns
-	}
-	if !isNil(o.ForcedGCPrimeDuration) {
-		toSerialize["forcedGCPrimeDuration"] = o.ForcedGCPrimeDuration
-	}
-	if !isNil(o.ReplicationSetName) {
-		toSerialize["replicationSetName"] = o.ReplicationSetName
-	}
-	if true {
-		toSerialize["startupMinReplicationBacklogCount"] = o.StartupMinReplicationBacklogCount
-	}
-	if true {
-		toSerialize["replicationBacklogCountAlertThreshold"] = o.ReplicationBacklogCountAlertThreshold
-	}
-	if true {
-		toSerialize["replicationBacklogDurationAlertThreshold"] = o.ReplicationBacklogDurationAlertThreshold
-	}
-	if true {
-		toSerialize["replicationAssuranceSourceTimeoutSuspendDuration"] = o.ReplicationAssuranceSourceTimeoutSuspendDuration
-	}
-	if true {
-		toSerialize["replicationAssuranceSourceBacklogFastStartThreshold"] = o.ReplicationAssuranceSourceBacklogFastStartThreshold
-	}
-	if !isNil(o.ReplicationHistoryLimit) {
-		toSerialize["replicationHistoryLimit"] = o.ReplicationHistoryLimit
-	}
-	if true {
-		toSerialize["allowInheritedReplicationOfSubordinateBackends"] = o.AllowInheritedReplicationOfSubordinateBackends
-	}
-	if !isNil(o.ReplicationPurgeObsoleteReplicas) {
-		toSerialize["replicationPurgeObsoleteReplicas"] = o.ReplicationPurgeObsoleteReplicas
-	}
-	if !isNil(o.SmtpServer) {
-		toSerialize["smtpServer"] = o.SmtpServer
-	}
-	if !isNil(o.MaxSMTPConnectionCount) {
-		toSerialize["maxSMTPConnectionCount"] = o.MaxSMTPConnectionCount
-	}
-	if !isNil(o.MaxSMTPConnectionAge) {
-		toSerialize["maxSMTPConnectionAge"] = o.MaxSMTPConnectionAge
-	}
-	if !isNil(o.SmtpConnectionHealthCheckInterval) {
-		toSerialize["smtpConnectionHealthCheckInterval"] = o.SmtpConnectionHealthCheckInterval
-	}
-	if !isNil(o.AllowedTask) {
-		toSerialize["allowedTask"] = o.AllowedTask
-	}
-	if !isNil(o.EnableSubOperationTimer) {
-		toSerialize["enableSubOperationTimer"] = o.EnableSubOperationTimer
-	}
-	if !isNil(o.MaximumShutdownTime) {
-		toSerialize["maximumShutdownTime"] = o.MaximumShutdownTime
-	}
-	if !isNil(o.NetworkAddressCacheTTL) {
-		toSerialize["networkAddressCacheTTL"] = o.NetworkAddressCacheTTL
-	}
-	if !isNil(o.NetworkAddressOutageCacheEnabled) {
-		toSerialize["networkAddressOutageCacheEnabled"] = o.NetworkAddressOutageCacheEnabled
-	}
-	if !isNil(o.TrackedApplication) {
-		toSerialize["trackedApplication"] = o.TrackedApplication
-	}
-	if !isNil(o.JmxValueBehavior) {
-		toSerialize["jmxValueBehavior"] = o.JmxValueBehavior
-	}
-	if !isNil(o.JmxUseLegacyMbeanNames) {
-		toSerialize["jmxUseLegacyMbeanNames"] = o.JmxUseLegacyMbeanNames
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GlobalConfigurationResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	toSerialize["instanceName"] = o.InstanceName
+	if !IsNil(o.Location) {
+		toSerialize["location"] = o.Location
+	}
+	if !IsNil(o.ConfigurationServerGroup) {
+		toSerialize["configurationServerGroup"] = o.ConfigurationServerGroup
+	}
+	if !IsNil(o.ForceAsMasterForMirroredData) {
+		toSerialize["forceAsMasterForMirroredData"] = o.ForceAsMasterForMirroredData
+	}
+	if !IsNil(o.EncryptData) {
+		toSerialize["encryptData"] = o.EncryptData
+	}
+	if !IsNil(o.EncryptionSettingsCipherStreamProvider) {
+		toSerialize["encryptionSettingsCipherStreamProvider"] = o.EncryptionSettingsCipherStreamProvider
+	}
+	if !IsNil(o.EncryptBackupsByDefault) {
+		toSerialize["encryptBackupsByDefault"] = o.EncryptBackupsByDefault
+	}
+	if !IsNil(o.BackupEncryptionSettingsDefinitionID) {
+		toSerialize["backupEncryptionSettingsDefinitionID"] = o.BackupEncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.EncryptLDIFExportsByDefault) {
+		toSerialize["encryptLDIFExportsByDefault"] = o.EncryptLDIFExportsByDefault
+	}
+	if !IsNil(o.LdifExportEncryptionSettingsDefinitionID) {
+		toSerialize["ldifExportEncryptionSettingsDefinitionID"] = o.LdifExportEncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.AutomaticallyCompressEncryptedLDIFExports) {
+		toSerialize["automaticallyCompressEncryptedLDIFExports"] = o.AutomaticallyCompressEncryptedLDIFExports
+	}
+	if !IsNil(o.RedactSensitiveValuesInConfigLogs) {
+		toSerialize["redactSensitiveValuesInConfigLogs"] = o.RedactSensitiveValuesInConfigLogs
+	}
+	if !IsNil(o.SensitiveAttribute) {
+		toSerialize["sensitiveAttribute"] = o.SensitiveAttribute
+	}
+	if !IsNil(o.RejectInsecureRequests) {
+		toSerialize["rejectInsecureRequests"] = o.RejectInsecureRequests
+	}
+	if !IsNil(o.AllowedInsecureRequestCriteria) {
+		toSerialize["allowedInsecureRequestCriteria"] = o.AllowedInsecureRequestCriteria
+	}
+	if !IsNil(o.RejectUnauthenticatedRequests) {
+		toSerialize["rejectUnauthenticatedRequests"] = o.RejectUnauthenticatedRequests
+	}
+	if !IsNil(o.AllowedUnauthenticatedRequestCriteria) {
+		toSerialize["allowedUnauthenticatedRequestCriteria"] = o.AllowedUnauthenticatedRequestCriteria
+	}
+	if !IsNil(o.BindWithDNRequiresPassword) {
+		toSerialize["bindWithDNRequiresPassword"] = o.BindWithDNRequiresPassword
+	}
+	if !IsNil(o.DisabledPrivilege) {
+		toSerialize["disabledPrivilege"] = o.DisabledPrivilege
+	}
+	toSerialize["defaultPasswordPolicy"] = o.DefaultPasswordPolicy
+	if !IsNil(o.MaximumUserDataPasswordPoliciesToCache) {
+		toSerialize["maximumUserDataPasswordPoliciesToCache"] = o.MaximumUserDataPasswordPoliciesToCache
+	}
+	toSerialize["proxiedAuthorizationIdentityMapper"] = o.ProxiedAuthorizationIdentityMapper
+	if !IsNil(o.VerifyEntryDigests) {
+		toSerialize["verifyEntryDigests"] = o.VerifyEntryDigests
+	}
+	if !IsNil(o.AllowedInsecureTLSProtocol) {
+		toSerialize["allowedInsecureTLSProtocol"] = o.AllowedInsecureTLSProtocol
+	}
+	if !IsNil(o.AllowInsecureLocalJMXConnections) {
+		toSerialize["allowInsecureLocalJMXConnections"] = o.AllowInsecureLocalJMXConnections
+	}
+	if !IsNil(o.DefaultInternalOperationClientConnectionPolicy) {
+		toSerialize["defaultInternalOperationClientConnectionPolicy"] = o.DefaultInternalOperationClientConnectionPolicy
+	}
+	if !IsNil(o.SizeLimit) {
+		toSerialize["sizeLimit"] = o.SizeLimit
+	}
+	if !IsNil(o.TimeLimit) {
+		toSerialize["timeLimit"] = o.TimeLimit
+	}
+	if !IsNil(o.IdleTimeLimit) {
+		toSerialize["idleTimeLimit"] = o.IdleTimeLimit
+	}
+	if !IsNil(o.LookthroughLimit) {
+		toSerialize["lookthroughLimit"] = o.LookthroughLimit
+	}
+	if !IsNil(o.LdapJoinSizeLimit) {
+		toSerialize["ldapJoinSizeLimit"] = o.LdapJoinSizeLimit
+	}
+	if !IsNil(o.MaximumConcurrentConnections) {
+		toSerialize["maximumConcurrentConnections"] = o.MaximumConcurrentConnections
+	}
+	if !IsNil(o.MaximumConcurrentConnectionsPerIPAddress) {
+		toSerialize["maximumConcurrentConnectionsPerIPAddress"] = o.MaximumConcurrentConnectionsPerIPAddress
+	}
+	if !IsNil(o.MaximumConcurrentConnectionsPerBindDN) {
+		toSerialize["maximumConcurrentConnectionsPerBindDN"] = o.MaximumConcurrentConnectionsPerBindDN
+	}
+	if !IsNil(o.MaximumConcurrentUnindexedSearches) {
+		toSerialize["maximumConcurrentUnindexedSearches"] = o.MaximumConcurrentUnindexedSearches
+	}
+	if !IsNil(o.MaximumAttributesPerAddRequest) {
+		toSerialize["maximumAttributesPerAddRequest"] = o.MaximumAttributesPerAddRequest
+	}
+	if !IsNil(o.MaximumModificationsPerModifyRequest) {
+		toSerialize["maximumModificationsPerModifyRequest"] = o.MaximumModificationsPerModifyRequest
+	}
+	if !IsNil(o.BackgroundThreadForEachPersistentSearch) {
+		toSerialize["backgroundThreadForEachPersistentSearch"] = o.BackgroundThreadForEachPersistentSearch
+	}
+	if !IsNil(o.AllowAttributeNameExceptions) {
+		toSerialize["allowAttributeNameExceptions"] = o.AllowAttributeNameExceptions
+	}
+	if !IsNil(o.InvalidAttributeSyntaxBehavior) {
+		toSerialize["invalidAttributeSyntaxBehavior"] = o.InvalidAttributeSyntaxBehavior
+	}
+	if !IsNil(o.PermitSyntaxViolationsForAttribute) {
+		toSerialize["permitSyntaxViolationsForAttribute"] = o.PermitSyntaxViolationsForAttribute
+	}
+	if !IsNil(o.SingleStructuralObjectclassBehavior) {
+		toSerialize["singleStructuralObjectclassBehavior"] = o.SingleStructuralObjectclassBehavior
+	}
+	if !IsNil(o.AttributesModifiableWithIgnoreNoUserModificationRequestControl) {
+		toSerialize["attributesModifiableWithIgnoreNoUserModificationRequestControl"] = o.AttributesModifiableWithIgnoreNoUserModificationRequestControl
+	}
+	if !IsNil(o.MaximumServerOutLogFileSize) {
+		toSerialize["maximumServerOutLogFileSize"] = o.MaximumServerOutLogFileSize
+	}
+	if !IsNil(o.MaximumServerOutLogFileCount) {
+		toSerialize["maximumServerOutLogFileCount"] = o.MaximumServerOutLogFileCount
+	}
+	if !IsNil(o.StartupErrorLoggerOutputLocation) {
+		toSerialize["startupErrorLoggerOutputLocation"] = o.StartupErrorLoggerOutputLocation
+	}
+	if !IsNil(o.ExitOnJVMError) {
+		toSerialize["exitOnJVMError"] = o.ExitOnJVMError
+	}
+	if !IsNil(o.ServerErrorResultCode) {
+		toSerialize["serverErrorResultCode"] = o.ServerErrorResultCode
+	}
+	if !IsNil(o.ResultCodeMap) {
+		toSerialize["resultCodeMap"] = o.ResultCodeMap
+	}
+	if !IsNil(o.ReturnBindErrorMessages) {
+		toSerialize["returnBindErrorMessages"] = o.ReturnBindErrorMessages
+	}
+	if !IsNil(o.NotifyAbandonedOperations) {
+		toSerialize["notifyAbandonedOperations"] = o.NotifyAbandonedOperations
+	}
+	toSerialize["duplicateErrorLogLimit"] = o.DuplicateErrorLogLimit
+	toSerialize["duplicateErrorLogTimeLimit"] = o.DuplicateErrorLogTimeLimit
+	toSerialize["duplicateAlertLimit"] = o.DuplicateAlertLimit
+	toSerialize["duplicateAlertTimeLimit"] = o.DuplicateAlertTimeLimit
+	if !IsNil(o.WritabilityMode) {
+		toSerialize["writabilityMode"] = o.WritabilityMode
+	}
+	if !IsNil(o.UnrecoverableDatabaseErrorMode) {
+		toSerialize["unrecoverableDatabaseErrorMode"] = o.UnrecoverableDatabaseErrorMode
+	}
+	if !IsNil(o.DatabaseOnVirtualizedOrNetworkStorage) {
+		toSerialize["databaseOnVirtualizedOrNetworkStorage"] = o.DatabaseOnVirtualizedOrNetworkStorage
+	}
+	if !IsNil(o.AutoNameWithEntryUUIDConnectionCriteria) {
+		toSerialize["autoNameWithEntryUUIDConnectionCriteria"] = o.AutoNameWithEntryUUIDConnectionCriteria
+	}
+	if !IsNil(o.AutoNameWithEntryUUIDRequestCriteria) {
+		toSerialize["autoNameWithEntryUUIDRequestCriteria"] = o.AutoNameWithEntryUUIDRequestCriteria
+	}
+	if !IsNil(o.SoftDeletePolicy) {
+		toSerialize["softDeletePolicy"] = o.SoftDeletePolicy
+	}
+	if !IsNil(o.SubtreeAccessibilityAlertTimeLimit) {
+		toSerialize["subtreeAccessibilityAlertTimeLimit"] = o.SubtreeAccessibilityAlertTimeLimit
+	}
+	if !IsNil(o.WarnForBackendsWithMultipleBaseDns) {
+		toSerialize["warnForBackendsWithMultipleBaseDns"] = o.WarnForBackendsWithMultipleBaseDns
+	}
+	if !IsNil(o.ForcedGCPrimeDuration) {
+		toSerialize["forcedGCPrimeDuration"] = o.ForcedGCPrimeDuration
+	}
+	if !IsNil(o.ReplicationSetName) {
+		toSerialize["replicationSetName"] = o.ReplicationSetName
+	}
+	toSerialize["startupMinReplicationBacklogCount"] = o.StartupMinReplicationBacklogCount
+	toSerialize["replicationBacklogCountAlertThreshold"] = o.ReplicationBacklogCountAlertThreshold
+	toSerialize["replicationBacklogDurationAlertThreshold"] = o.ReplicationBacklogDurationAlertThreshold
+	toSerialize["replicationAssuranceSourceTimeoutSuspendDuration"] = o.ReplicationAssuranceSourceTimeoutSuspendDuration
+	toSerialize["replicationAssuranceSourceBacklogFastStartThreshold"] = o.ReplicationAssuranceSourceBacklogFastStartThreshold
+	if !IsNil(o.ReplicationHistoryLimit) {
+		toSerialize["replicationHistoryLimit"] = o.ReplicationHistoryLimit
+	}
+	toSerialize["allowInheritedReplicationOfSubordinateBackends"] = o.AllowInheritedReplicationOfSubordinateBackends
+	if !IsNil(o.ReplicationPurgeObsoleteReplicas) {
+		toSerialize["replicationPurgeObsoleteReplicas"] = o.ReplicationPurgeObsoleteReplicas
+	}
+	if !IsNil(o.SmtpServer) {
+		toSerialize["smtpServer"] = o.SmtpServer
+	}
+	if !IsNil(o.MaxSMTPConnectionCount) {
+		toSerialize["maxSMTPConnectionCount"] = o.MaxSMTPConnectionCount
+	}
+	if !IsNil(o.MaxSMTPConnectionAge) {
+		toSerialize["maxSMTPConnectionAge"] = o.MaxSMTPConnectionAge
+	}
+	if !IsNil(o.SmtpConnectionHealthCheckInterval) {
+		toSerialize["smtpConnectionHealthCheckInterval"] = o.SmtpConnectionHealthCheckInterval
+	}
+	if !IsNil(o.AllowedTask) {
+		toSerialize["allowedTask"] = o.AllowedTask
+	}
+	if !IsNil(o.EnableSubOperationTimer) {
+		toSerialize["enableSubOperationTimer"] = o.EnableSubOperationTimer
+	}
+	if !IsNil(o.MaximumShutdownTime) {
+		toSerialize["maximumShutdownTime"] = o.MaximumShutdownTime
+	}
+	if !IsNil(o.NetworkAddressCacheTTL) {
+		toSerialize["networkAddressCacheTTL"] = o.NetworkAddressCacheTTL
+	}
+	if !IsNil(o.NetworkAddressOutageCacheEnabled) {
+		toSerialize["networkAddressOutageCacheEnabled"] = o.NetworkAddressOutageCacheEnabled
+	}
+	if !IsNil(o.TrackedApplication) {
+		toSerialize["trackedApplication"] = o.TrackedApplication
+	}
+	if !IsNil(o.JmxValueBehavior) {
+		toSerialize["jmxValueBehavior"] = o.JmxValueBehavior
+	}
+	if !IsNil(o.JmxUseLegacyMbeanNames) {
+		toSerialize["jmxUseLegacyMbeanNames"] = o.JmxUseLegacyMbeanNames
+	}
+	return toSerialize, nil
 }
 
 type NullableGlobalConfigurationResponse struct {

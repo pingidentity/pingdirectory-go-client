@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *GaugeDataSourceApiService) AddGaugeDataSourceExecute(r ApiAddGaugeDataS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *GaugeDataSourceApiService) DeleteGaugeDataSourceExecute(r ApiDeleteGaug
 	}
 
 	localVarPath := localBasePath + "/gauge-data-sources/{gauge-data-source-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"gauge-data-source-name"+"}", url.PathEscape(parameterToString(r.gaugeDataSourceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gauge-data-source-name"+"}", url.PathEscape(parameterValueToString(r.gaugeDataSourceName, "gaugeDataSourceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *GaugeDataSourceApiService) DeleteGaugeDataSourceExecute(r ApiDeleteGaug
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *GaugeDataSourceApiService) GetGaugeDataSourceExecute(r ApiGetGaugeDataS
 	}
 
 	localVarPath := localBasePath + "/gauge-data-sources/{gauge-data-source-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"gauge-data-source-name"+"}", url.PathEscape(parameterToString(r.gaugeDataSourceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gauge-data-source-name"+"}", url.PathEscape(parameterValueToString(r.gaugeDataSourceName, "gaugeDataSourceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *GaugeDataSourceApiService) GetGaugeDataSourceExecute(r ApiGetGaugeDataS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *GaugeDataSourceApiService) UpdateGaugeDataSourceExecute(r ApiUpdateGaug
 	}
 
 	localVarPath := localBasePath + "/gauge-data-sources/{gauge-data-source-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"gauge-data-source-name"+"}", url.PathEscape(parameterToString(r.gaugeDataSourceName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"gauge-data-source-name"+"}", url.PathEscape(parameterValueToString(r.gaugeDataSourceName, "gaugeDataSourceName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *GaugeDataSourceApiService) UpdateGaugeDataSourceExecute(r ApiUpdateGaug
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

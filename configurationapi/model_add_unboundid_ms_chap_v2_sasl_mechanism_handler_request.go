@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddUnboundidMsChapV2SaslMechanismHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddUnboundidMsChapV2SaslMechanismHandlerRequest{}
+
 // AddUnboundidMsChapV2SaslMechanismHandlerRequest struct for AddUnboundidMsChapV2SaslMechanismHandlerRequest
 type AddUnboundidMsChapV2SaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
@@ -122,7 +125,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetIdentityMapper(v st
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -132,7 +135,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -140,7 +143,7 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -177,23 +180,23 @@ func (o *AddUnboundidMsChapV2SaslMechanismHandlerRequest) SetEnabled(v bool) {
 }
 
 func (o AddUnboundidMsChapV2SaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddUnboundidMsChapV2SaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddUnboundidMsChapV2SaslMechanismHandlerRequest struct {

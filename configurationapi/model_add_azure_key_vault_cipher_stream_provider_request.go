@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAzureKeyVaultCipherStreamProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAzureKeyVaultCipherStreamProviderRequest{}
+
 // AddAzureKeyVaultCipherStreamProviderRequest struct for AddAzureKeyVaultCipherStreamProviderRequest
 type AddAzureKeyVaultCipherStreamProviderRequest struct {
 	// Name of the new Cipher Stream Provider
@@ -178,7 +181,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetSecretName(v string) {
 
 // GetEncryptionMetadataFile returns the EncryptionMetadataFile field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFile() string {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		var ret string
 		return ret
 	}
@@ -188,7 +191,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFile(
 // GetEncryptionMetadataFileOk returns a tuple with the EncryptionMetadataFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFileOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionMetadataFile) {
+	if o == nil || IsNil(o.EncryptionMetadataFile) {
 		return nil, false
 	}
 	return o.EncryptionMetadataFile, true
@@ -196,7 +199,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetEncryptionMetadataFileO
 
 // HasEncryptionMetadataFile returns a boolean if a field has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) HasEncryptionMetadataFile() bool {
-	if o != nil && !isNil(o.EncryptionMetadataFile) {
+	if o != nil && !IsNil(o.EncryptionMetadataFile) {
 		return true
 	}
 
@@ -210,7 +213,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetEncryptionMetadataFile(
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -220,7 +223,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -228,7 +231,7 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) GetDescriptionOk() (*strin
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAzureKeyVaultCipherStreamProviderRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -265,32 +268,28 @@ func (o *AddAzureKeyVaultCipherStreamProviderRequest) SetEnabled(v bool) {
 }
 
 func (o AddAzureKeyVaultCipherStreamProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["keyVaultURI"] = o.KeyVaultURI
-	}
-	if true {
-		toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
-	}
-	if true {
-		toSerialize["secretName"] = o.SecretName
-	}
-	if !isNil(o.EncryptionMetadataFile) {
-		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAzureKeyVaultCipherStreamProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["keyVaultURI"] = o.KeyVaultURI
+	toSerialize["azureAuthenticationMethod"] = o.AzureAuthenticationMethod
+	toSerialize["secretName"] = o.SecretName
+	if !IsNil(o.EncryptionMetadataFile) {
+		toSerialize["encryptionMetadataFile"] = o.EncryptionMetadataFile
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddAzureKeyVaultCipherStreamProviderRequest struct {

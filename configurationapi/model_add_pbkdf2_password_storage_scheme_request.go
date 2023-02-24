@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPbkdf2PasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPbkdf2PasswordStorageSchemeRequest{}
+
 // AddPbkdf2PasswordStorageSchemeRequest struct for AddPbkdf2PasswordStorageSchemeRequest
 type AddPbkdf2PasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -104,7 +107,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSchemas(v []Enumpbkdf2Passwor
 
 // GetDigestAlgorithm returns the DigestAlgorithm field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDigestAlgorithm() EnumpasswordStorageSchemeDigestAlgorithmProp {
-	if o == nil || isNil(o.DigestAlgorithm) {
+	if o == nil || IsNil(o.DigestAlgorithm) {
 		var ret EnumpasswordStorageSchemeDigestAlgorithmProp
 		return ret
 	}
@@ -114,7 +117,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDigestAlgorithm() Enumpasswor
 // GetDigestAlgorithmOk returns a tuple with the DigestAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDigestAlgorithmOk() (*EnumpasswordStorageSchemeDigestAlgorithmProp, bool) {
-	if o == nil || isNil(o.DigestAlgorithm) {
+	if o == nil || IsNil(o.DigestAlgorithm) {
 		return nil, false
 	}
 	return o.DigestAlgorithm, true
@@ -122,7 +125,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDigestAlgorithmOk() (*Enumpas
 
 // HasDigestAlgorithm returns a boolean if a field has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) HasDigestAlgorithm() bool {
-	if o != nil && !isNil(o.DigestAlgorithm) {
+	if o != nil && !IsNil(o.DigestAlgorithm) {
 		return true
 	}
 
@@ -136,7 +139,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDigestAlgorithm(v Enumpasswor
 
 // GetIterationCount returns the IterationCount field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32 {
-	if o == nil || isNil(o.IterationCount) {
+	if o == nil || IsNil(o.IterationCount) {
 		var ret int32
 		return ret
 	}
@@ -146,7 +149,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCount() int32 {
 // GetIterationCountOk returns a tuple with the IterationCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int32, bool) {
-	if o == nil || isNil(o.IterationCount) {
+	if o == nil || IsNil(o.IterationCount) {
 		return nil, false
 	}
 	return o.IterationCount, true
@@ -154,7 +157,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetIterationCountOk() (*int32, b
 
 // HasIterationCount returns a boolean if a field has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) HasIterationCount() bool {
-	if o != nil && !isNil(o.IterationCount) {
+	if o != nil && !IsNil(o.IterationCount) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetIterationCount(v int32) {
 
 // GetSaltLengthBytes returns the SaltLengthBytes field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
-	if o == nil || isNil(o.SaltLengthBytes) {
+	if o == nil || IsNil(o.SaltLengthBytes) {
 		var ret int32
 		return ret
 	}
@@ -178,7 +181,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytes() int32 {
 // GetSaltLengthBytesOk returns a tuple with the SaltLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, bool) {
-	if o == nil || isNil(o.SaltLengthBytes) {
+	if o == nil || IsNil(o.SaltLengthBytes) {
 		return nil, false
 	}
 	return o.SaltLengthBytes, true
@@ -186,7 +189,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetSaltLengthBytesOk() (*int32, 
 
 // HasSaltLengthBytes returns a boolean if a field has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) HasSaltLengthBytes() bool {
-	if o != nil && !isNil(o.SaltLengthBytes) {
+	if o != nil && !IsNil(o.SaltLengthBytes) {
 		return true
 	}
 
@@ -200,7 +203,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetSaltLengthBytes(v int32) {
 
 // GetDerivedKeyLengthBytes returns the DerivedKeyLengthBytes field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32 {
-	if o == nil || isNil(o.DerivedKeyLengthBytes) {
+	if o == nil || IsNil(o.DerivedKeyLengthBytes) {
 		var ret int32
 		return ret
 	}
@@ -210,7 +213,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytes() int32
 // GetDerivedKeyLengthBytesOk returns a tuple with the DerivedKeyLengthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*int32, bool) {
-	if o == nil || isNil(o.DerivedKeyLengthBytes) {
+	if o == nil || IsNil(o.DerivedKeyLengthBytes) {
 		return nil, false
 	}
 	return o.DerivedKeyLengthBytes, true
@@ -218,7 +221,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDerivedKeyLengthBytesOk() (*i
 
 // HasDerivedKeyLengthBytes returns a boolean if a field has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) HasDerivedKeyLengthBytes() bool {
-	if o != nil && !isNil(o.DerivedKeyLengthBytes) {
+	if o != nil && !IsNil(o.DerivedKeyLengthBytes) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetDerivedKeyLengthBytes(v int32
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		var ret int32
 		return ret
 	}
@@ -242,7 +245,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
 	return o.MaxPasswordLength, true
@@ -250,7 +253,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32
 
 // HasMaxPasswordLength returns a boolean if a field has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) HasMaxPasswordLength() bool {
-	if o != nil && !isNil(o.MaxPasswordLength) {
+	if o != nil && !IsNil(o.MaxPasswordLength) {
 		return true
 	}
 
@@ -264,7 +267,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetMaxPasswordLength(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -274,7 +277,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -282,7 +285,7 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddPbkdf2PasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -319,35 +322,37 @@ func (o *AddPbkdf2PasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddPbkdf2PasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.DigestAlgorithm) {
-		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
-	}
-	if !isNil(o.IterationCount) {
-		toSerialize["iterationCount"] = o.IterationCount
-	}
-	if !isNil(o.SaltLengthBytes) {
-		toSerialize["saltLengthBytes"] = o.SaltLengthBytes
-	}
-	if !isNil(o.DerivedKeyLengthBytes) {
-		toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
-	}
-	if !isNil(o.MaxPasswordLength) {
-		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPbkdf2PasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.DigestAlgorithm) {
+		toSerialize["digestAlgorithm"] = o.DigestAlgorithm
+	}
+	if !IsNil(o.IterationCount) {
+		toSerialize["iterationCount"] = o.IterationCount
+	}
+	if !IsNil(o.SaltLengthBytes) {
+		toSerialize["saltLengthBytes"] = o.SaltLengthBytes
+	}
+	if !IsNil(o.DerivedKeyLengthBytes) {
+		toSerialize["derivedKeyLengthBytes"] = o.DerivedKeyLengthBytes
+	}
+	if !IsNil(o.MaxPasswordLength) {
+		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddPbkdf2PasswordStorageSchemeRequest struct {

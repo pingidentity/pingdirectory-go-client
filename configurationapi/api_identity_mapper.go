@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *IdentityMapperApiService) AddIdentityMapperExecute(r ApiAddIdentityMapp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *IdentityMapperApiService) DeleteIdentityMapperExecute(r ApiDeleteIdenti
 	}
 
 	localVarPath := localBasePath + "/identity-mappers/{identity-mapper-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"identity-mapper-name"+"}", url.PathEscape(parameterToString(r.identityMapperName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"identity-mapper-name"+"}", url.PathEscape(parameterValueToString(r.identityMapperName, "identityMapperName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *IdentityMapperApiService) DeleteIdentityMapperExecute(r ApiDeleteIdenti
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *IdentityMapperApiService) GetIdentityMapperExecute(r ApiGetIdentityMapp
 	}
 
 	localVarPath := localBasePath + "/identity-mappers/{identity-mapper-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"identity-mapper-name"+"}", url.PathEscape(parameterToString(r.identityMapperName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"identity-mapper-name"+"}", url.PathEscape(parameterValueToString(r.identityMapperName, "identityMapperName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *IdentityMapperApiService) GetIdentityMapperExecute(r ApiGetIdentityMapp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *IdentityMapperApiService) UpdateIdentityMapperExecute(r ApiUpdateIdenti
 	}
 
 	localVarPath := localBasePath + "/identity-mappers/{identity-mapper-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"identity-mapper-name"+"}", url.PathEscape(parameterToString(r.identityMapperName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"identity-mapper-name"+"}", url.PathEscape(parameterValueToString(r.identityMapperName, "identityMapperName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *IdentityMapperApiService) UpdateIdentityMapperExecute(r ApiUpdateIdenti
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

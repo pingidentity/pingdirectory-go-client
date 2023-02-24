@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAppRoleVaultAuthenticationMethodRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAppRoleVaultAuthenticationMethodRequest{}
+
 // AddAppRoleVaultAuthenticationMethodRequest struct for AddAppRoleVaultAuthenticationMethodRequest
 type AddAppRoleVaultAuthenticationMethodRequest struct {
 	// Name of the new Vault Authentication Method
@@ -148,7 +151,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) SetVaultSecretID(v string) 
 
 // GetLoginMechanismName returns the LoginMechanismName field value if set, zero value otherwise.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetLoginMechanismName() string {
-	if o == nil || isNil(o.LoginMechanismName) {
+	if o == nil || IsNil(o.LoginMechanismName) {
 		var ret string
 		return ret
 	}
@@ -158,7 +161,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetLoginMechanismName() str
 // GetLoginMechanismNameOk returns a tuple with the LoginMechanismName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetLoginMechanismNameOk() (*string, bool) {
-	if o == nil || isNil(o.LoginMechanismName) {
+	if o == nil || IsNil(o.LoginMechanismName) {
 		return nil, false
 	}
 	return o.LoginMechanismName, true
@@ -166,7 +169,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetLoginMechanismNameOk() (
 
 // HasLoginMechanismName returns a boolean if a field has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) HasLoginMechanismName() bool {
-	if o != nil && !isNil(o.LoginMechanismName) {
+	if o != nil && !IsNil(o.LoginMechanismName) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) SetLoginMechanismName(v str
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -190,7 +193,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -198,7 +201,7 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAppRoleVaultAuthenticationMethodRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddAppRoleVaultAuthenticationMethodRequest) SetDescription(v string) {
 }
 
 func (o AddAppRoleVaultAuthenticationMethodRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["methodName"] = o.MethodName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["vaultRoleID"] = o.VaultRoleID
-	}
-	if true {
-		toSerialize["vaultSecretID"] = o.VaultSecretID
-	}
-	if !isNil(o.LoginMechanismName) {
-		toSerialize["loginMechanismName"] = o.LoginMechanismName
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAppRoleVaultAuthenticationMethodRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["methodName"] = o.MethodName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["vaultRoleID"] = o.VaultRoleID
+	toSerialize["vaultSecretID"] = o.VaultSecretID
+	if !IsNil(o.LoginMechanismName) {
+		toSerialize["loginMechanismName"] = o.LoginMechanismName
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddAppRoleVaultAuthenticationMethodRequest struct {

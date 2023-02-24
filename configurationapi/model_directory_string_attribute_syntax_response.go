@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DirectoryStringAttributeSyntaxResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DirectoryStringAttributeSyntaxResponse{}
+
 // DirectoryStringAttributeSyntaxResponse struct for DirectoryStringAttributeSyntaxResponse
 type DirectoryStringAttributeSyntaxResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewDirectoryStringAttributeSyntaxResponseWithDefaults() *DirectoryStringAtt
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DirectoryStringAttributeSyntaxResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DirectoryStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfig
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetUrnpingidentityschemasconfig
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) SetId(v string) {
 
 // GetAllowZeroLengthValues returns the AllowZeroLengthValues field value if set, zero value otherwise.
 func (o *DirectoryStringAttributeSyntaxResponse) GetAllowZeroLengthValues() bool {
-	if o == nil || isNil(o.AllowZeroLengthValues) {
+	if o == nil || IsNil(o.AllowZeroLengthValues) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetAllowZeroLengthValues() bool
 // GetAllowZeroLengthValuesOk returns a tuple with the AllowZeroLengthValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetAllowZeroLengthValuesOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowZeroLengthValues) {
+	if o == nil || IsNil(o.AllowZeroLengthValues) {
 		return nil, false
 	}
 	return o.AllowZeroLengthValues, true
@@ -181,7 +184,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetAllowZeroLengthValuesOk() (*
 
 // HasAllowZeroLengthValues returns a boolean if a field has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) HasAllowZeroLengthValues() bool {
-	if o != nil && !isNil(o.AllowZeroLengthValues) {
+	if o != nil && !IsNil(o.AllowZeroLengthValues) {
 		return true
 	}
 
@@ -219,7 +222,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) SetEnabled(v bool) {
 
 // GetRequireBinaryTransfer returns the RequireBinaryTransfer field value if set, zero value otherwise.
 func (o *DirectoryStringAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
-	if o == nil || isNil(o.RequireBinaryTransfer) {
+	if o == nil || IsNil(o.RequireBinaryTransfer) {
 		var ret bool
 		return ret
 	}
@@ -229,7 +232,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetRequireBinaryTransfer() bool
 // GetRequireBinaryTransferOk returns a tuple with the RequireBinaryTransfer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireBinaryTransfer) {
+	if o == nil || IsNil(o.RequireBinaryTransfer) {
 		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
@@ -237,7 +240,7 @@ func (o *DirectoryStringAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*
 
 // HasRequireBinaryTransfer returns a boolean if a field has been set.
 func (o *DirectoryStringAttributeSyntaxResponse) HasRequireBinaryTransfer() bool {
-	if o != nil && !isNil(o.RequireBinaryTransfer) {
+	if o != nil && !IsNil(o.RequireBinaryTransfer) {
 		return true
 	}
 
@@ -250,29 +253,31 @@ func (o *DirectoryStringAttributeSyntaxResponse) SetRequireBinaryTransfer(v bool
 }
 
 func (o DirectoryStringAttributeSyntaxResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.AllowZeroLengthValues) {
-		toSerialize["allowZeroLengthValues"] = o.AllowZeroLengthValues
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.RequireBinaryTransfer) {
-		toSerialize["requireBinaryTransfer"] = o.RequireBinaryTransfer
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DirectoryStringAttributeSyntaxResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.AllowZeroLengthValues) {
+		toSerialize["allowZeroLengthValues"] = o.AllowZeroLengthValues
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.RequireBinaryTransfer) {
+		toSerialize["requireBinaryTransfer"] = o.RequireBinaryTransfer
+	}
+	return toSerialize, nil
 }
 
 type NullableDirectoryStringAttributeSyntaxResponse struct {

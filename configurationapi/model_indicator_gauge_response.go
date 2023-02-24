@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndicatorGaugeResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndicatorGaugeResponse{}
+
 // IndicatorGaugeResponse struct for IndicatorGaugeResponse
 type IndicatorGaugeResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -72,7 +75,7 @@ func NewIndicatorGaugeResponseWithDefaults() *IndicatorGaugeResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *IndicatorGaugeResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -90,7 +93,7 @@ func (o *IndicatorGaugeResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *IndicatorGaugeResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -114,7 +117,7 @@ func (o *IndicatorGaugeResponse) GetUrnpingidentityschemasconfigurationmessages2
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -122,7 +125,7 @@ func (o *IndicatorGaugeResponse) GetUrnpingidentityschemasconfigurationmessages2
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *IndicatorGaugeResponse) SetGaugeDataSource(v string) {
 
 // GetCriticalValue returns the CriticalValue field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetCriticalValue() string {
-	if o == nil || isNil(o.CriticalValue) {
+	if o == nil || IsNil(o.CriticalValue) {
 		var ret string
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *IndicatorGaugeResponse) GetCriticalValue() string {
 // GetCriticalValueOk returns a tuple with the CriticalValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetCriticalValueOk() (*string, bool) {
-	if o == nil || isNil(o.CriticalValue) {
+	if o == nil || IsNil(o.CriticalValue) {
 		return nil, false
 	}
 	return o.CriticalValue, true
@@ -226,7 +229,7 @@ func (o *IndicatorGaugeResponse) GetCriticalValueOk() (*string, bool) {
 
 // HasCriticalValue returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasCriticalValue() bool {
-	if o != nil && !isNil(o.CriticalValue) {
+	if o != nil && !IsNil(o.CriticalValue) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *IndicatorGaugeResponse) SetCriticalValue(v string) {
 
 // GetMajorValue returns the MajorValue field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetMajorValue() string {
-	if o == nil || isNil(o.MajorValue) {
+	if o == nil || IsNil(o.MajorValue) {
 		var ret string
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *IndicatorGaugeResponse) GetMajorValue() string {
 // GetMajorValueOk returns a tuple with the MajorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetMajorValueOk() (*string, bool) {
-	if o == nil || isNil(o.MajorValue) {
+	if o == nil || IsNil(o.MajorValue) {
 		return nil, false
 	}
 	return o.MajorValue, true
@@ -258,7 +261,7 @@ func (o *IndicatorGaugeResponse) GetMajorValueOk() (*string, bool) {
 
 // HasMajorValue returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasMajorValue() bool {
-	if o != nil && !isNil(o.MajorValue) {
+	if o != nil && !IsNil(o.MajorValue) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *IndicatorGaugeResponse) SetMajorValue(v string) {
 
 // GetMinorValue returns the MinorValue field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetMinorValue() string {
-	if o == nil || isNil(o.MinorValue) {
+	if o == nil || IsNil(o.MinorValue) {
 		var ret string
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *IndicatorGaugeResponse) GetMinorValue() string {
 // GetMinorValueOk returns a tuple with the MinorValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetMinorValueOk() (*string, bool) {
-	if o == nil || isNil(o.MinorValue) {
+	if o == nil || IsNil(o.MinorValue) {
 		return nil, false
 	}
 	return o.MinorValue, true
@@ -290,7 +293,7 @@ func (o *IndicatorGaugeResponse) GetMinorValueOk() (*string, bool) {
 
 // HasMinorValue returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasMinorValue() bool {
-	if o != nil && !isNil(o.MinorValue) {
+	if o != nil && !IsNil(o.MinorValue) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *IndicatorGaugeResponse) SetMinorValue(v string) {
 
 // GetWarningValue returns the WarningValue field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetWarningValue() string {
-	if o == nil || isNil(o.WarningValue) {
+	if o == nil || IsNil(o.WarningValue) {
 		var ret string
 		return ret
 	}
@@ -314,7 +317,7 @@ func (o *IndicatorGaugeResponse) GetWarningValue() string {
 // GetWarningValueOk returns a tuple with the WarningValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetWarningValueOk() (*string, bool) {
-	if o == nil || isNil(o.WarningValue) {
+	if o == nil || IsNil(o.WarningValue) {
 		return nil, false
 	}
 	return o.WarningValue, true
@@ -322,7 +325,7 @@ func (o *IndicatorGaugeResponse) GetWarningValueOk() (*string, bool) {
 
 // HasWarningValue returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasWarningValue() bool {
-	if o != nil && !isNil(o.WarningValue) {
+	if o != nil && !IsNil(o.WarningValue) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *IndicatorGaugeResponse) SetWarningValue(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -346,7 +349,7 @@ func (o *IndicatorGaugeResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -354,7 +357,7 @@ func (o *IndicatorGaugeResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -392,7 +395,7 @@ func (o *IndicatorGaugeResponse) SetEnabled(v bool) {
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetOverrideSeverity() EnumgaugeOverrideSeverityProp {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret EnumgaugeOverrideSeverityProp
 		return ret
 	}
@@ -402,7 +405,7 @@ func (o *IndicatorGaugeResponse) GetOverrideSeverity() EnumgaugeOverrideSeverity
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetOverrideSeverityOk() (*EnumgaugeOverrideSeverityProp, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -410,7 +413,7 @@ func (o *IndicatorGaugeResponse) GetOverrideSeverityOk() (*EnumgaugeOverrideSeve
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -424,7 +427,7 @@ func (o *IndicatorGaugeResponse) SetOverrideSeverity(v EnumgaugeOverrideSeverity
 
 // GetAlertLevel returns the AlertLevel field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetAlertLevel() EnumgaugeAlertLevelProp {
-	if o == nil || isNil(o.AlertLevel) {
+	if o == nil || IsNil(o.AlertLevel) {
 		var ret EnumgaugeAlertLevelProp
 		return ret
 	}
@@ -434,7 +437,7 @@ func (o *IndicatorGaugeResponse) GetAlertLevel() EnumgaugeAlertLevelProp {
 // GetAlertLevelOk returns a tuple with the AlertLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetAlertLevelOk() (*EnumgaugeAlertLevelProp, bool) {
-	if o == nil || isNil(o.AlertLevel) {
+	if o == nil || IsNil(o.AlertLevel) {
 		return nil, false
 	}
 	return o.AlertLevel, true
@@ -442,7 +445,7 @@ func (o *IndicatorGaugeResponse) GetAlertLevelOk() (*EnumgaugeAlertLevelProp, bo
 
 // HasAlertLevel returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasAlertLevel() bool {
-	if o != nil && !isNil(o.AlertLevel) {
+	if o != nil && !IsNil(o.AlertLevel) {
 		return true
 	}
 
@@ -456,7 +459,7 @@ func (o *IndicatorGaugeResponse) SetAlertLevel(v EnumgaugeAlertLevelProp) {
 
 // GetUpdateInterval returns the UpdateInterval field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetUpdateInterval() string {
-	if o == nil || isNil(o.UpdateInterval) {
+	if o == nil || IsNil(o.UpdateInterval) {
 		var ret string
 		return ret
 	}
@@ -466,7 +469,7 @@ func (o *IndicatorGaugeResponse) GetUpdateInterval() string {
 // GetUpdateIntervalOk returns a tuple with the UpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetUpdateIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.UpdateInterval) {
+	if o == nil || IsNil(o.UpdateInterval) {
 		return nil, false
 	}
 	return o.UpdateInterval, true
@@ -474,7 +477,7 @@ func (o *IndicatorGaugeResponse) GetUpdateIntervalOk() (*string, bool) {
 
 // HasUpdateInterval returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasUpdateInterval() bool {
-	if o != nil && !isNil(o.UpdateInterval) {
+	if o != nil && !IsNil(o.UpdateInterval) {
 		return true
 	}
 
@@ -488,7 +491,7 @@ func (o *IndicatorGaugeResponse) SetUpdateInterval(v string) {
 
 // GetSamplesPerUpdateInterval returns the SamplesPerUpdateInterval field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetSamplesPerUpdateInterval() int32 {
-	if o == nil || isNil(o.SamplesPerUpdateInterval) {
+	if o == nil || IsNil(o.SamplesPerUpdateInterval) {
 		var ret int32
 		return ret
 	}
@@ -498,7 +501,7 @@ func (o *IndicatorGaugeResponse) GetSamplesPerUpdateInterval() int32 {
 // GetSamplesPerUpdateIntervalOk returns a tuple with the SamplesPerUpdateInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetSamplesPerUpdateIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.SamplesPerUpdateInterval) {
+	if o == nil || IsNil(o.SamplesPerUpdateInterval) {
 		return nil, false
 	}
 	return o.SamplesPerUpdateInterval, true
@@ -506,7 +509,7 @@ func (o *IndicatorGaugeResponse) GetSamplesPerUpdateIntervalOk() (*int32, bool) 
 
 // HasSamplesPerUpdateInterval returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasSamplesPerUpdateInterval() bool {
-	if o != nil && !isNil(o.SamplesPerUpdateInterval) {
+	if o != nil && !IsNil(o.SamplesPerUpdateInterval) {
 		return true
 	}
 
@@ -520,7 +523,7 @@ func (o *IndicatorGaugeResponse) SetSamplesPerUpdateInterval(v int32) {
 
 // GetIncludeResource returns the IncludeResource field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetIncludeResource() []string {
-	if o == nil || isNil(o.IncludeResource) {
+	if o == nil || IsNil(o.IncludeResource) {
 		var ret []string
 		return ret
 	}
@@ -530,7 +533,7 @@ func (o *IndicatorGaugeResponse) GetIncludeResource() []string {
 // GetIncludeResourceOk returns a tuple with the IncludeResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetIncludeResourceOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeResource) {
+	if o == nil || IsNil(o.IncludeResource) {
 		return nil, false
 	}
 	return o.IncludeResource, true
@@ -538,7 +541,7 @@ func (o *IndicatorGaugeResponse) GetIncludeResourceOk() ([]string, bool) {
 
 // HasIncludeResource returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasIncludeResource() bool {
-	if o != nil && !isNil(o.IncludeResource) {
+	if o != nil && !IsNil(o.IncludeResource) {
 		return true
 	}
 
@@ -552,7 +555,7 @@ func (o *IndicatorGaugeResponse) SetIncludeResource(v []string) {
 
 // GetExcludeResource returns the ExcludeResource field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetExcludeResource() []string {
-	if o == nil || isNil(o.ExcludeResource) {
+	if o == nil || IsNil(o.ExcludeResource) {
 		var ret []string
 		return ret
 	}
@@ -562,7 +565,7 @@ func (o *IndicatorGaugeResponse) GetExcludeResource() []string {
 // GetExcludeResourceOk returns a tuple with the ExcludeResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetExcludeResourceOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeResource) {
+	if o == nil || IsNil(o.ExcludeResource) {
 		return nil, false
 	}
 	return o.ExcludeResource, true
@@ -570,7 +573,7 @@ func (o *IndicatorGaugeResponse) GetExcludeResourceOk() ([]string, bool) {
 
 // HasExcludeResource returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasExcludeResource() bool {
-	if o != nil && !isNil(o.ExcludeResource) {
+	if o != nil && !IsNil(o.ExcludeResource) {
 		return true
 	}
 
@@ -584,7 +587,7 @@ func (o *IndicatorGaugeResponse) SetExcludeResource(v []string) {
 
 // GetServerUnavailableSeverityLevel returns the ServerUnavailableSeverityLevel field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetServerUnavailableSeverityLevel() EnumgaugeServerUnavailableSeverityLevelProp {
-	if o == nil || isNil(o.ServerUnavailableSeverityLevel) {
+	if o == nil || IsNil(o.ServerUnavailableSeverityLevel) {
 		var ret EnumgaugeServerUnavailableSeverityLevelProp
 		return ret
 	}
@@ -594,7 +597,7 @@ func (o *IndicatorGaugeResponse) GetServerUnavailableSeverityLevel() EnumgaugeSe
 // GetServerUnavailableSeverityLevelOk returns a tuple with the ServerUnavailableSeverityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetServerUnavailableSeverityLevelOk() (*EnumgaugeServerUnavailableSeverityLevelProp, bool) {
-	if o == nil || isNil(o.ServerUnavailableSeverityLevel) {
+	if o == nil || IsNil(o.ServerUnavailableSeverityLevel) {
 		return nil, false
 	}
 	return o.ServerUnavailableSeverityLevel, true
@@ -602,7 +605,7 @@ func (o *IndicatorGaugeResponse) GetServerUnavailableSeverityLevelOk() (*Enumgau
 
 // HasServerUnavailableSeverityLevel returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasServerUnavailableSeverityLevel() bool {
-	if o != nil && !isNil(o.ServerUnavailableSeverityLevel) {
+	if o != nil && !IsNil(o.ServerUnavailableSeverityLevel) {
 		return true
 	}
 
@@ -616,7 +619,7 @@ func (o *IndicatorGaugeResponse) SetServerUnavailableSeverityLevel(v EnumgaugeSe
 
 // GetServerDegradedSeverityLevel returns the ServerDegradedSeverityLevel field value if set, zero value otherwise.
 func (o *IndicatorGaugeResponse) GetServerDegradedSeverityLevel() EnumgaugeServerDegradedSeverityLevelProp {
-	if o == nil || isNil(o.ServerDegradedSeverityLevel) {
+	if o == nil || IsNil(o.ServerDegradedSeverityLevel) {
 		var ret EnumgaugeServerDegradedSeverityLevelProp
 		return ret
 	}
@@ -626,7 +629,7 @@ func (o *IndicatorGaugeResponse) GetServerDegradedSeverityLevel() EnumgaugeServe
 // GetServerDegradedSeverityLevelOk returns a tuple with the ServerDegradedSeverityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndicatorGaugeResponse) GetServerDegradedSeverityLevelOk() (*EnumgaugeServerDegradedSeverityLevelProp, bool) {
-	if o == nil || isNil(o.ServerDegradedSeverityLevel) {
+	if o == nil || IsNil(o.ServerDegradedSeverityLevel) {
 		return nil, false
 	}
 	return o.ServerDegradedSeverityLevel, true
@@ -634,7 +637,7 @@ func (o *IndicatorGaugeResponse) GetServerDegradedSeverityLevelOk() (*EnumgaugeS
 
 // HasServerDegradedSeverityLevel returns a boolean if a field has been set.
 func (o *IndicatorGaugeResponse) HasServerDegradedSeverityLevel() bool {
-	if o != nil && !isNil(o.ServerDegradedSeverityLevel) {
+	if o != nil && !IsNil(o.ServerDegradedSeverityLevel) {
 		return true
 	}
 
@@ -647,65 +650,65 @@ func (o *IndicatorGaugeResponse) SetServerDegradedSeverityLevel(v EnumgaugeServe
 }
 
 func (o IndicatorGaugeResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["gaugeDataSource"] = o.GaugeDataSource
-	}
-	if !isNil(o.CriticalValue) {
-		toSerialize["criticalValue"] = o.CriticalValue
-	}
-	if !isNil(o.MajorValue) {
-		toSerialize["majorValue"] = o.MajorValue
-	}
-	if !isNil(o.MinorValue) {
-		toSerialize["minorValue"] = o.MinorValue
-	}
-	if !isNil(o.WarningValue) {
-		toSerialize["warningValue"] = o.WarningValue
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.AlertLevel) {
-		toSerialize["alertLevel"] = o.AlertLevel
-	}
-	if !isNil(o.UpdateInterval) {
-		toSerialize["updateInterval"] = o.UpdateInterval
-	}
-	if !isNil(o.SamplesPerUpdateInterval) {
-		toSerialize["samplesPerUpdateInterval"] = o.SamplesPerUpdateInterval
-	}
-	if !isNil(o.IncludeResource) {
-		toSerialize["includeResource"] = o.IncludeResource
-	}
-	if !isNil(o.ExcludeResource) {
-		toSerialize["excludeResource"] = o.ExcludeResource
-	}
-	if !isNil(o.ServerUnavailableSeverityLevel) {
-		toSerialize["serverUnavailableSeverityLevel"] = o.ServerUnavailableSeverityLevel
-	}
-	if !isNil(o.ServerDegradedSeverityLevel) {
-		toSerialize["serverDegradedSeverityLevel"] = o.ServerDegradedSeverityLevel
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o IndicatorGaugeResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["gaugeDataSource"] = o.GaugeDataSource
+	if !IsNil(o.CriticalValue) {
+		toSerialize["criticalValue"] = o.CriticalValue
+	}
+	if !IsNil(o.MajorValue) {
+		toSerialize["majorValue"] = o.MajorValue
+	}
+	if !IsNil(o.MinorValue) {
+		toSerialize["minorValue"] = o.MinorValue
+	}
+	if !IsNil(o.WarningValue) {
+		toSerialize["warningValue"] = o.WarningValue
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.AlertLevel) {
+		toSerialize["alertLevel"] = o.AlertLevel
+	}
+	if !IsNil(o.UpdateInterval) {
+		toSerialize["updateInterval"] = o.UpdateInterval
+	}
+	if !IsNil(o.SamplesPerUpdateInterval) {
+		toSerialize["samplesPerUpdateInterval"] = o.SamplesPerUpdateInterval
+	}
+	if !IsNil(o.IncludeResource) {
+		toSerialize["includeResource"] = o.IncludeResource
+	}
+	if !IsNil(o.ExcludeResource) {
+		toSerialize["excludeResource"] = o.ExcludeResource
+	}
+	if !IsNil(o.ServerUnavailableSeverityLevel) {
+		toSerialize["serverUnavailableSeverityLevel"] = o.ServerUnavailableSeverityLevel
+	}
+	if !IsNil(o.ServerDegradedSeverityLevel) {
+		toSerialize["serverDegradedSeverityLevel"] = o.ServerDegradedSeverityLevel
+	}
+	return toSerialize, nil
 }
 
 type NullableIndicatorGaugeResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyPassThroughAuthenticationHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyPassThroughAuthenticationHandlerRequest{}
+
 // AddThirdPartyPassThroughAuthenticationHandlerRequest struct for AddThirdPartyPassThroughAuthenticationHandlerRequest
 type AddThirdPartyPassThroughAuthenticationHandlerRequest struct {
 	// Name of the new Pass Through Authentication Handler
@@ -121,7 +124,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetExtensionClass
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -131,7 +134,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionArgum
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -139,7 +142,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetExtensionArgum
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetExtensionArgum
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -163,7 +166,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetDescription() 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -171,7 +174,7 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) GetDescriptionOk(
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -184,23 +187,25 @@ func (o *AddThirdPartyPassThroughAuthenticationHandlerRequest) SetDescription(v 
 }
 
 func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyPassThroughAuthenticationHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyPassThroughAuthenticationHandlerRequest struct {

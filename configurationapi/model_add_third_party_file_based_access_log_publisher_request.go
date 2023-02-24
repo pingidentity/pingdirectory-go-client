@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddThirdPartyFileBasedAccessLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddThirdPartyFileBasedAccessLogPublisherRequest{}
+
 // AddThirdPartyFileBasedAccessLogPublisherRequest struct for AddThirdPartyFileBasedAccessLogPublisherRequest
 type AddThirdPartyFileBasedAccessLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -189,7 +192,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogFile(v string) {
 
 // GetLogFilePermissions returns the LogFilePermissions field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogFilePermissions() string {
-	if o == nil || isNil(o.LogFilePermissions) {
+	if o == nil || IsNil(o.LogFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogFilePermissions(
 // GetLogFilePermissionsOk returns a tuple with the LogFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.LogFilePermissions) {
+	if o == nil || IsNil(o.LogFilePermissions) {
 		return nil, false
 	}
 	return o.LogFilePermissions, true
@@ -207,7 +210,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogFilePermissionsO
 
 // HasLogFilePermissions returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogFilePermissions() bool {
-	if o != nil && !isNil(o.LogFilePermissions) {
+	if o != nil && !IsNil(o.LogFilePermissions) {
 		return true
 	}
 
@@ -221,7 +224,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogFilePermissions(
 
 // GetRotationPolicy returns the RotationPolicy field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationPolicy() []string {
-	if o == nil || isNil(o.RotationPolicy) {
+	if o == nil || IsNil(o.RotationPolicy) {
 		var ret []string
 		return ret
 	}
@@ -231,7 +234,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationPolicy() []
 // GetRotationPolicyOk returns a tuple with the RotationPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationPolicy) {
+	if o == nil || IsNil(o.RotationPolicy) {
 		return nil, false
 	}
 	return o.RotationPolicy, true
@@ -239,7 +242,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationPolicyOk() 
 
 // HasRotationPolicy returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasRotationPolicy() bool {
-	if o != nil && !isNil(o.RotationPolicy) {
+	if o != nil && !IsNil(o.RotationPolicy) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetRotationPolicy(v []
 
 // GetRotationListener returns the RotationListener field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationListener() []string {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		var ret []string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationListener() 
 // GetRotationListenerOk returns a tuple with the RotationListener field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationListenerOk() ([]string, bool) {
-	if o == nil || isNil(o.RotationListener) {
+	if o == nil || IsNil(o.RotationListener) {
 		return nil, false
 	}
 	return o.RotationListener, true
@@ -271,7 +274,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRotationListenerOk(
 
 // HasRotationListener returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasRotationListener() bool {
-	if o != nil && !isNil(o.RotationListener) {
+	if o != nil && !IsNil(o.RotationListener) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetRotationListener(v 
 
 // GetRetentionPolicy returns the RetentionPolicy field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRetentionPolicy() []string {
-	if o == nil || isNil(o.RetentionPolicy) {
+	if o == nil || IsNil(o.RetentionPolicy) {
 		var ret []string
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRetentionPolicy() [
 // GetRetentionPolicyOk returns a tuple with the RetentionPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRetentionPolicyOk() ([]string, bool) {
-	if o == nil || isNil(o.RetentionPolicy) {
+	if o == nil || IsNil(o.RetentionPolicy) {
 		return nil, false
 	}
 	return o.RetentionPolicy, true
@@ -303,7 +306,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRetentionPolicyOk()
 
 // HasRetentionPolicy returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasRetentionPolicy() bool {
-	if o != nil && !isNil(o.RetentionPolicy) {
+	if o != nil && !IsNil(o.RetentionPolicy) {
 		return true
 	}
 
@@ -317,7 +320,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetRetentionPolicy(v [
 
 // GetCompressionMechanism returns the CompressionMechanism field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCompressionMechanism() EnumlogPublisherCompressionMechanismProp {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		var ret EnumlogPublisherCompressionMechanismProp
 		return ret
 	}
@@ -327,7 +330,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCompressionMechanis
 // GetCompressionMechanismOk returns a tuple with the CompressionMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCompressionMechanismOk() (*EnumlogPublisherCompressionMechanismProp, bool) {
-	if o == nil || isNil(o.CompressionMechanism) {
+	if o == nil || IsNil(o.CompressionMechanism) {
 		return nil, false
 	}
 	return o.CompressionMechanism, true
@@ -335,7 +338,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCompressionMechanis
 
 // HasCompressionMechanism returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasCompressionMechanism() bool {
-	if o != nil && !isNil(o.CompressionMechanism) {
+	if o != nil && !IsNil(o.CompressionMechanism) {
 		return true
 	}
 
@@ -349,7 +352,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetCompressionMechanis
 
 // GetSignLog returns the SignLog field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSignLog() bool {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		var ret bool
 		return ret
 	}
@@ -359,7 +362,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSignLog() bool {
 // GetSignLogOk returns a tuple with the SignLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSignLogOk() (*bool, bool) {
-	if o == nil || isNil(o.SignLog) {
+	if o == nil || IsNil(o.SignLog) {
 		return nil, false
 	}
 	return o.SignLog, true
@@ -367,7 +370,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSignLogOk() (*bool,
 
 // HasSignLog returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasSignLog() bool {
-	if o != nil && !isNil(o.SignLog) {
+	if o != nil && !IsNil(o.SignLog) {
 		return true
 	}
 
@@ -381,7 +384,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetSignLog(v bool) {
 
 // GetEncryptLog returns the EncryptLog field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptLog() bool {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		var ret bool
 		return ret
 	}
@@ -391,7 +394,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptLog() bool {
 // GetEncryptLogOk returns a tuple with the EncryptLog field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptLogOk() (*bool, bool) {
-	if o == nil || isNil(o.EncryptLog) {
+	if o == nil || IsNil(o.EncryptLog) {
 		return nil, false
 	}
 	return o.EncryptLog, true
@@ -399,7 +402,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptLogOk() (*bo
 
 // HasEncryptLog returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasEncryptLog() bool {
-	if o != nil && !isNil(o.EncryptLog) {
+	if o != nil && !IsNil(o.EncryptLog) {
 		return true
 	}
 
@@ -413,7 +416,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetEncryptLog(v bool) 
 
 // GetEncryptionSettingsDefinitionID returns the EncryptionSettingsDefinitionID field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptionSettingsDefinitionID() string {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		var ret string
 		return ret
 	}
@@ -423,7 +426,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptionSettingsD
 // GetEncryptionSettingsDefinitionIDOk returns a tuple with the EncryptionSettingsDefinitionID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptionSettingsDefinitionIDOk() (*string, bool) {
-	if o == nil || isNil(o.EncryptionSettingsDefinitionID) {
+	if o == nil || IsNil(o.EncryptionSettingsDefinitionID) {
 		return nil, false
 	}
 	return o.EncryptionSettingsDefinitionID, true
@@ -431,7 +434,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetEncryptionSettingsD
 
 // HasEncryptionSettingsDefinitionID returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasEncryptionSettingsDefinitionID() bool {
-	if o != nil && !isNil(o.EncryptionSettingsDefinitionID) {
+	if o != nil && !IsNil(o.EncryptionSettingsDefinitionID) {
 		return true
 	}
 
@@ -445,7 +448,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetEncryptionSettingsD
 
 // GetAppend returns the Append field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAppend() bool {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		var ret bool
 		return ret
 	}
@@ -455,7 +458,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAppend() bool {
 // GetAppendOk returns a tuple with the Append field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAppendOk() (*bool, bool) {
-	if o == nil || isNil(o.Append) {
+	if o == nil || IsNil(o.Append) {
 		return nil, false
 	}
 	return o.Append, true
@@ -463,7 +466,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAppendOk() (*bool, 
 
 // HasAppend returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasAppend() bool {
-	if o != nil && !isNil(o.Append) {
+	if o != nil && !IsNil(o.Append) {
 		return true
 	}
 
@@ -501,7 +504,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetExtensionClass(v st
 
 // GetExtensionArgument returns the ExtensionArgument field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetExtensionArgument() []string {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		var ret []string
 		return ret
 	}
@@ -511,7 +514,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetExtensionArgument()
 // GetExtensionArgumentOk returns a tuple with the ExtensionArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetExtensionArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ExtensionArgument) {
+	if o == nil || IsNil(o.ExtensionArgument) {
 		return nil, false
 	}
 	return o.ExtensionArgument, true
@@ -519,7 +522,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetExtensionArgumentOk
 
 // HasExtensionArgument returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasExtensionArgument() bool {
-	if o != nil && !isNil(o.ExtensionArgument) {
+	if o != nil && !IsNil(o.ExtensionArgument) {
 		return true
 	}
 
@@ -533,7 +536,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetExtensionArgument(v
 
 // GetAsynchronous returns the Asynchronous field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAsynchronous() bool {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		var ret bool
 		return ret
 	}
@@ -543,7 +546,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAsynchronous() bool
 // GetAsynchronousOk returns a tuple with the Asynchronous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAsynchronousOk() (*bool, bool) {
-	if o == nil || isNil(o.Asynchronous) {
+	if o == nil || IsNil(o.Asynchronous) {
 		return nil, false
 	}
 	return o.Asynchronous, true
@@ -551,7 +554,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAsynchronousOk() (*
 
 // HasAsynchronous returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasAsynchronous() bool {
-	if o != nil && !isNil(o.Asynchronous) {
+	if o != nil && !IsNil(o.Asynchronous) {
 		return true
 	}
 
@@ -565,7 +568,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetAsynchronous(v bool
 
 // GetAutoFlush returns the AutoFlush field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAutoFlush() bool {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		var ret bool
 		return ret
 	}
@@ -575,7 +578,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAutoFlush() bool {
 // GetAutoFlushOk returns a tuple with the AutoFlush field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAutoFlushOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoFlush) {
+	if o == nil || IsNil(o.AutoFlush) {
 		return nil, false
 	}
 	return o.AutoFlush, true
@@ -583,7 +586,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetAutoFlushOk() (*boo
 
 // HasAutoFlush returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasAutoFlush() bool {
-	if o != nil && !isNil(o.AutoFlush) {
+	if o != nil && !IsNil(o.AutoFlush) {
 		return true
 	}
 
@@ -597,7 +600,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetAutoFlush(v bool) {
 
 // GetBufferSize returns the BufferSize field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetBufferSize() string {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		var ret string
 		return ret
 	}
@@ -607,7 +610,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetBufferSize() string
 // GetBufferSizeOk returns a tuple with the BufferSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetBufferSizeOk() (*string, bool) {
-	if o == nil || isNil(o.BufferSize) {
+	if o == nil || IsNil(o.BufferSize) {
 		return nil, false
 	}
 	return o.BufferSize, true
@@ -615,7 +618,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetBufferSizeOk() (*st
 
 // HasBufferSize returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasBufferSize() bool {
-	if o != nil && !isNil(o.BufferSize) {
+	if o != nil && !IsNil(o.BufferSize) {
 		return true
 	}
 
@@ -629,7 +632,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetBufferSize(v string
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -639,7 +642,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -647,7 +650,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetQueueSizeOk() (*int
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -661,7 +664,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetQueueSize(v int32) 
 
 // GetTimeInterval returns the TimeInterval field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetTimeInterval() string {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		var ret string
 		return ret
 	}
@@ -671,7 +674,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetTimeInterval() stri
 // GetTimeIntervalOk returns a tuple with the TimeInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetTimeIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.TimeInterval) {
+	if o == nil || IsNil(o.TimeInterval) {
 		return nil, false
 	}
 	return o.TimeInterval, true
@@ -679,7 +682,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetTimeIntervalOk() (*
 
 // HasTimeInterval returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasTimeInterval() bool {
-	if o != nil && !isNil(o.TimeInterval) {
+	if o != nil && !IsNil(o.TimeInterval) {
 		return true
 	}
 
@@ -693,7 +696,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetTimeInterval(v stri
 
 // GetLogConnects returns the LogConnects field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogConnects() bool {
-	if o == nil || isNil(o.LogConnects) {
+	if o == nil || IsNil(o.LogConnects) {
 		var ret bool
 		return ret
 	}
@@ -703,7 +706,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogConnects() bool 
 // GetLogConnectsOk returns a tuple with the LogConnects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogConnectsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogConnects) {
+	if o == nil || IsNil(o.LogConnects) {
 		return nil, false
 	}
 	return o.LogConnects, true
@@ -711,7 +714,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogConnectsOk() (*b
 
 // HasLogConnects returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogConnects() bool {
-	if o != nil && !isNil(o.LogConnects) {
+	if o != nil && !IsNil(o.LogConnects) {
 		return true
 	}
 
@@ -725,7 +728,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogConnects(v bool)
 
 // GetLogDisconnects returns the LogDisconnects field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogDisconnects() bool {
-	if o == nil || isNil(o.LogDisconnects) {
+	if o == nil || IsNil(o.LogDisconnects) {
 		var ret bool
 		return ret
 	}
@@ -735,7 +738,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogDisconnects() bo
 // GetLogDisconnectsOk returns a tuple with the LogDisconnects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogDisconnectsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogDisconnects) {
+	if o == nil || IsNil(o.LogDisconnects) {
 		return nil, false
 	}
 	return o.LogDisconnects, true
@@ -743,7 +746,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogDisconnectsOk() 
 
 // HasLogDisconnects returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogDisconnects() bool {
-	if o != nil && !isNil(o.LogDisconnects) {
+	if o != nil && !IsNil(o.LogDisconnects) {
 		return true
 	}
 
@@ -757,7 +760,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogDisconnects(v bo
 
 // GetLogSecurityNegotiation returns the LogSecurityNegotiation field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSecurityNegotiation() bool {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		var ret bool
 		return ret
 	}
@@ -767,7 +770,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSecurityNegotiat
 // GetLogSecurityNegotiationOk returns a tuple with the LogSecurityNegotiation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSecurityNegotiationOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSecurityNegotiation) {
+	if o == nil || IsNil(o.LogSecurityNegotiation) {
 		return nil, false
 	}
 	return o.LogSecurityNegotiation, true
@@ -775,7 +778,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSecurityNegotiat
 
 // HasLogSecurityNegotiation returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogSecurityNegotiation() bool {
-	if o != nil && !isNil(o.LogSecurityNegotiation) {
+	if o != nil && !IsNil(o.LogSecurityNegotiation) {
 		return true
 	}
 
@@ -789,7 +792,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogSecurityNegotiat
 
 // GetLogClientCertificates returns the LogClientCertificates field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogClientCertificates() bool {
-	if o == nil || isNil(o.LogClientCertificates) {
+	if o == nil || IsNil(o.LogClientCertificates) {
 		var ret bool
 		return ret
 	}
@@ -799,7 +802,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogClientCertificat
 // GetLogClientCertificatesOk returns a tuple with the LogClientCertificates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogClientCertificatesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogClientCertificates) {
+	if o == nil || IsNil(o.LogClientCertificates) {
 		return nil, false
 	}
 	return o.LogClientCertificates, true
@@ -807,7 +810,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogClientCertificat
 
 // HasLogClientCertificates returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogClientCertificates() bool {
-	if o != nil && !isNil(o.LogClientCertificates) {
+	if o != nil && !IsNil(o.LogClientCertificates) {
 		return true
 	}
 
@@ -821,7 +824,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogClientCertificat
 
 // GetLogRequests returns the LogRequests field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogRequests() bool {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		var ret bool
 		return ret
 	}
@@ -831,7 +834,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogRequests() bool 
 // GetLogRequestsOk returns a tuple with the LogRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogRequestsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogRequests) {
+	if o == nil || IsNil(o.LogRequests) {
 		return nil, false
 	}
 	return o.LogRequests, true
@@ -839,7 +842,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogRequestsOk() (*b
 
 // HasLogRequests returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogRequests() bool {
-	if o != nil && !isNil(o.LogRequests) {
+	if o != nil && !IsNil(o.LogRequests) {
 		return true
 	}
 
@@ -853,7 +856,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogRequests(v bool)
 
 // GetLogResults returns the LogResults field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogResults() bool {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		var ret bool
 		return ret
 	}
@@ -863,7 +866,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogResults() bool {
 // GetLogResultsOk returns a tuple with the LogResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.LogResults) {
+	if o == nil || IsNil(o.LogResults) {
 		return nil, false
 	}
 	return o.LogResults, true
@@ -871,7 +874,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogResultsOk() (*bo
 
 // HasLogResults returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogResults() bool {
-	if o != nil && !isNil(o.LogResults) {
+	if o != nil && !IsNil(o.LogResults) {
 		return true
 	}
 
@@ -885,7 +888,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogResults(v bool) 
 
 // GetLogSearchEntries returns the LogSearchEntries field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchEntries() bool {
-	if o == nil || isNil(o.LogSearchEntries) {
+	if o == nil || IsNil(o.LogSearchEntries) {
 		var ret bool
 		return ret
 	}
@@ -895,7 +898,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchEntries() 
 // GetLogSearchEntriesOk returns a tuple with the LogSearchEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchEntriesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSearchEntries) {
+	if o == nil || IsNil(o.LogSearchEntries) {
 		return nil, false
 	}
 	return o.LogSearchEntries, true
@@ -903,7 +906,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchEntriesOk(
 
 // HasLogSearchEntries returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogSearchEntries() bool {
-	if o != nil && !isNil(o.LogSearchEntries) {
+	if o != nil && !IsNil(o.LogSearchEntries) {
 		return true
 	}
 
@@ -917,7 +920,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogSearchEntries(v 
 
 // GetLogSearchReferences returns the LogSearchReferences field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchReferences() bool {
-	if o == nil || isNil(o.LogSearchReferences) {
+	if o == nil || IsNil(o.LogSearchReferences) {
 		var ret bool
 		return ret
 	}
@@ -927,7 +930,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchReferences
 // GetLogSearchReferencesOk returns a tuple with the LogSearchReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchReferencesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogSearchReferences) {
+	if o == nil || IsNil(o.LogSearchReferences) {
 		return nil, false
 	}
 	return o.LogSearchReferences, true
@@ -935,7 +938,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogSearchReferences
 
 // HasLogSearchReferences returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogSearchReferences() bool {
-	if o != nil && !isNil(o.LogSearchReferences) {
+	if o != nil && !IsNil(o.LogSearchReferences) {
 		return true
 	}
 
@@ -949,7 +952,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogSearchReferences
 
 // GetLogIntermediateResponses returns the LogIntermediateResponses field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogIntermediateResponses() bool {
-	if o == nil || isNil(o.LogIntermediateResponses) {
+	if o == nil || IsNil(o.LogIntermediateResponses) {
 		var ret bool
 		return ret
 	}
@@ -959,7 +962,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogIntermediateResp
 // GetLogIntermediateResponsesOk returns a tuple with the LogIntermediateResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogIntermediateResponsesOk() (*bool, bool) {
-	if o == nil || isNil(o.LogIntermediateResponses) {
+	if o == nil || IsNil(o.LogIntermediateResponses) {
 		return nil, false
 	}
 	return o.LogIntermediateResponses, true
@@ -967,7 +970,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLogIntermediateResp
 
 // HasLogIntermediateResponses returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLogIntermediateResponses() bool {
-	if o != nil && !isNil(o.LogIntermediateResponses) {
+	if o != nil && !IsNil(o.LogIntermediateResponses) {
 		return true
 	}
 
@@ -981,7 +984,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLogIntermediateResp
 
 // GetSuppressInternalOperations returns the SuppressInternalOperations field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressInternalOperations() bool {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -991,7 +994,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressInternalOpe
 // GetSuppressInternalOperationsOk returns a tuple with the SuppressInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressInternalOperations) {
+	if o == nil || IsNil(o.SuppressInternalOperations) {
 		return nil, false
 	}
 	return o.SuppressInternalOperations, true
@@ -999,7 +1002,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressInternalOpe
 
 // HasSuppressInternalOperations returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasSuppressInternalOperations() bool {
-	if o != nil && !isNil(o.SuppressInternalOperations) {
+	if o != nil && !IsNil(o.SuppressInternalOperations) {
 		return true
 	}
 
@@ -1013,7 +1016,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetSuppressInternalOpe
 
 // GetSuppressReplicationOperations returns the SuppressReplicationOperations field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressReplicationOperations() bool {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		var ret bool
 		return ret
 	}
@@ -1023,7 +1026,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressReplication
 // GetSuppressReplicationOperationsOk returns a tuple with the SuppressReplicationOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressReplicationOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressReplicationOperations) {
+	if o == nil || IsNil(o.SuppressReplicationOperations) {
 		return nil, false
 	}
 	return o.SuppressReplicationOperations, true
@@ -1031,7 +1034,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSuppressReplication
 
 // HasSuppressReplicationOperations returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasSuppressReplicationOperations() bool {
-	if o != nil && !isNil(o.SuppressReplicationOperations) {
+	if o != nil && !IsNil(o.SuppressReplicationOperations) {
 		return true
 	}
 
@@ -1045,7 +1048,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetSuppressReplication
 
 // GetCorrelateRequestsAndResults returns the CorrelateRequestsAndResults field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCorrelateRequestsAndResults() bool {
-	if o == nil || isNil(o.CorrelateRequestsAndResults) {
+	if o == nil || IsNil(o.CorrelateRequestsAndResults) {
 		var ret bool
 		return ret
 	}
@@ -1055,7 +1058,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCorrelateRequestsAn
 // GetCorrelateRequestsAndResultsOk returns a tuple with the CorrelateRequestsAndResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCorrelateRequestsAndResultsOk() (*bool, bool) {
-	if o == nil || isNil(o.CorrelateRequestsAndResults) {
+	if o == nil || IsNil(o.CorrelateRequestsAndResults) {
 		return nil, false
 	}
 	return o.CorrelateRequestsAndResults, true
@@ -1063,7 +1066,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetCorrelateRequestsAn
 
 // HasCorrelateRequestsAndResults returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasCorrelateRequestsAndResults() bool {
-	if o != nil && !isNil(o.CorrelateRequestsAndResults) {
+	if o != nil && !IsNil(o.CorrelateRequestsAndResults) {
 		return true
 	}
 
@@ -1077,7 +1080,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetCorrelateRequestsAn
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -1087,7 +1090,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetConnectionCriteria(
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -1095,7 +1098,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetConnectionCriteriaO
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -1109,7 +1112,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetConnectionCriteria(
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -1119,7 +1122,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRequestCriteria() s
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -1127,7 +1130,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetRequestCriteriaOk()
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -1141,7 +1144,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetRequestCriteria(v s
 
 // GetResultCriteria returns the ResultCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetResultCriteria() string {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		var ret string
 		return ret
 	}
@@ -1151,7 +1154,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetResultCriteria() st
 // GetResultCriteriaOk returns a tuple with the ResultCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetResultCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ResultCriteria) {
+	if o == nil || IsNil(o.ResultCriteria) {
 		return nil, false
 	}
 	return o.ResultCriteria, true
@@ -1159,7 +1162,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetResultCriteriaOk() 
 
 // HasResultCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasResultCriteria() bool {
-	if o != nil && !isNil(o.ResultCriteria) {
+	if o != nil && !IsNil(o.ResultCriteria) {
 		return true
 	}
 
@@ -1173,7 +1176,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetResultCriteria(v st
 
 // GetSearchEntryCriteria returns the SearchEntryCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchEntryCriteria() string {
-	if o == nil || isNil(o.SearchEntryCriteria) {
+	if o == nil || IsNil(o.SearchEntryCriteria) {
 		var ret string
 		return ret
 	}
@@ -1183,7 +1186,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchEntryCriteria
 // GetSearchEntryCriteriaOk returns a tuple with the SearchEntryCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchEntryCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.SearchEntryCriteria) {
+	if o == nil || IsNil(o.SearchEntryCriteria) {
 		return nil, false
 	}
 	return o.SearchEntryCriteria, true
@@ -1191,7 +1194,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchEntryCriteria
 
 // HasSearchEntryCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasSearchEntryCriteria() bool {
-	if o != nil && !isNil(o.SearchEntryCriteria) {
+	if o != nil && !IsNil(o.SearchEntryCriteria) {
 		return true
 	}
 
@@ -1205,7 +1208,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetSearchEntryCriteria
 
 // GetSearchReferenceCriteria returns the SearchReferenceCriteria field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchReferenceCriteria() string {
-	if o == nil || isNil(o.SearchReferenceCriteria) {
+	if o == nil || IsNil(o.SearchReferenceCriteria) {
 		var ret string
 		return ret
 	}
@@ -1215,7 +1218,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchReferenceCrit
 // GetSearchReferenceCriteriaOk returns a tuple with the SearchReferenceCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchReferenceCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.SearchReferenceCriteria) {
+	if o == nil || IsNil(o.SearchReferenceCriteria) {
 		return nil, false
 	}
 	return o.SearchReferenceCriteria, true
@@ -1223,7 +1226,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetSearchReferenceCrit
 
 // HasSearchReferenceCriteria returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasSearchReferenceCriteria() bool {
-	if o != nil && !isNil(o.SearchReferenceCriteria) {
+	if o != nil && !IsNil(o.SearchReferenceCriteria) {
 		return true
 	}
 
@@ -1237,7 +1240,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetSearchReferenceCrit
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -1247,7 +1250,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetDescription() strin
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -1255,7 +1258,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetDescriptionOk() (*s
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -1293,7 +1296,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -1303,7 +1306,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLoggingErrorBehavio
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -1311,7 +1314,7 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) GetLoggingErrorBehavio
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -1324,125 +1327,123 @@ func (o *AddThirdPartyFileBasedAccessLogPublisherRequest) SetLoggingErrorBehavio
 }
 
 func (o AddThirdPartyFileBasedAccessLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["logFile"] = o.LogFile
-	}
-	if !isNil(o.LogFilePermissions) {
-		toSerialize["logFilePermissions"] = o.LogFilePermissions
-	}
-	if !isNil(o.RotationPolicy) {
-		toSerialize["rotationPolicy"] = o.RotationPolicy
-	}
-	if !isNil(o.RotationListener) {
-		toSerialize["rotationListener"] = o.RotationListener
-	}
-	if !isNil(o.RetentionPolicy) {
-		toSerialize["retentionPolicy"] = o.RetentionPolicy
-	}
-	if !isNil(o.CompressionMechanism) {
-		toSerialize["compressionMechanism"] = o.CompressionMechanism
-	}
-	if !isNil(o.SignLog) {
-		toSerialize["signLog"] = o.SignLog
-	}
-	if !isNil(o.EncryptLog) {
-		toSerialize["encryptLog"] = o.EncryptLog
-	}
-	if !isNil(o.EncryptionSettingsDefinitionID) {
-		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
-	}
-	if !isNil(o.Append) {
-		toSerialize["append"] = o.Append
-	}
-	if true {
-		toSerialize["extensionClass"] = o.ExtensionClass
-	}
-	if !isNil(o.ExtensionArgument) {
-		toSerialize["extensionArgument"] = o.ExtensionArgument
-	}
-	if !isNil(o.Asynchronous) {
-		toSerialize["asynchronous"] = o.Asynchronous
-	}
-	if !isNil(o.AutoFlush) {
-		toSerialize["autoFlush"] = o.AutoFlush
-	}
-	if !isNil(o.BufferSize) {
-		toSerialize["bufferSize"] = o.BufferSize
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.TimeInterval) {
-		toSerialize["timeInterval"] = o.TimeInterval
-	}
-	if !isNil(o.LogConnects) {
-		toSerialize["logConnects"] = o.LogConnects
-	}
-	if !isNil(o.LogDisconnects) {
-		toSerialize["logDisconnects"] = o.LogDisconnects
-	}
-	if !isNil(o.LogSecurityNegotiation) {
-		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
-	}
-	if !isNil(o.LogClientCertificates) {
-		toSerialize["logClientCertificates"] = o.LogClientCertificates
-	}
-	if !isNil(o.LogRequests) {
-		toSerialize["logRequests"] = o.LogRequests
-	}
-	if !isNil(o.LogResults) {
-		toSerialize["logResults"] = o.LogResults
-	}
-	if !isNil(o.LogSearchEntries) {
-		toSerialize["logSearchEntries"] = o.LogSearchEntries
-	}
-	if !isNil(o.LogSearchReferences) {
-		toSerialize["logSearchReferences"] = o.LogSearchReferences
-	}
-	if !isNil(o.LogIntermediateResponses) {
-		toSerialize["logIntermediateResponses"] = o.LogIntermediateResponses
-	}
-	if !isNil(o.SuppressInternalOperations) {
-		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
-	}
-	if !isNil(o.SuppressReplicationOperations) {
-		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
-	}
-	if !isNil(o.CorrelateRequestsAndResults) {
-		toSerialize["correlateRequestsAndResults"] = o.CorrelateRequestsAndResults
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.ResultCriteria) {
-		toSerialize["resultCriteria"] = o.ResultCriteria
-	}
-	if !isNil(o.SearchEntryCriteria) {
-		toSerialize["searchEntryCriteria"] = o.SearchEntryCriteria
-	}
-	if !isNil(o.SearchReferenceCriteria) {
-		toSerialize["searchReferenceCriteria"] = o.SearchReferenceCriteria
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddThirdPartyFileBasedAccessLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["logFile"] = o.LogFile
+	if !IsNil(o.LogFilePermissions) {
+		toSerialize["logFilePermissions"] = o.LogFilePermissions
+	}
+	if !IsNil(o.RotationPolicy) {
+		toSerialize["rotationPolicy"] = o.RotationPolicy
+	}
+	if !IsNil(o.RotationListener) {
+		toSerialize["rotationListener"] = o.RotationListener
+	}
+	if !IsNil(o.RetentionPolicy) {
+		toSerialize["retentionPolicy"] = o.RetentionPolicy
+	}
+	if !IsNil(o.CompressionMechanism) {
+		toSerialize["compressionMechanism"] = o.CompressionMechanism
+	}
+	if !IsNil(o.SignLog) {
+		toSerialize["signLog"] = o.SignLog
+	}
+	if !IsNil(o.EncryptLog) {
+		toSerialize["encryptLog"] = o.EncryptLog
+	}
+	if !IsNil(o.EncryptionSettingsDefinitionID) {
+		toSerialize["encryptionSettingsDefinitionID"] = o.EncryptionSettingsDefinitionID
+	}
+	if !IsNil(o.Append) {
+		toSerialize["append"] = o.Append
+	}
+	toSerialize["extensionClass"] = o.ExtensionClass
+	if !IsNil(o.ExtensionArgument) {
+		toSerialize["extensionArgument"] = o.ExtensionArgument
+	}
+	if !IsNil(o.Asynchronous) {
+		toSerialize["asynchronous"] = o.Asynchronous
+	}
+	if !IsNil(o.AutoFlush) {
+		toSerialize["autoFlush"] = o.AutoFlush
+	}
+	if !IsNil(o.BufferSize) {
+		toSerialize["bufferSize"] = o.BufferSize
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.TimeInterval) {
+		toSerialize["timeInterval"] = o.TimeInterval
+	}
+	if !IsNil(o.LogConnects) {
+		toSerialize["logConnects"] = o.LogConnects
+	}
+	if !IsNil(o.LogDisconnects) {
+		toSerialize["logDisconnects"] = o.LogDisconnects
+	}
+	if !IsNil(o.LogSecurityNegotiation) {
+		toSerialize["logSecurityNegotiation"] = o.LogSecurityNegotiation
+	}
+	if !IsNil(o.LogClientCertificates) {
+		toSerialize["logClientCertificates"] = o.LogClientCertificates
+	}
+	if !IsNil(o.LogRequests) {
+		toSerialize["logRequests"] = o.LogRequests
+	}
+	if !IsNil(o.LogResults) {
+		toSerialize["logResults"] = o.LogResults
+	}
+	if !IsNil(o.LogSearchEntries) {
+		toSerialize["logSearchEntries"] = o.LogSearchEntries
+	}
+	if !IsNil(o.LogSearchReferences) {
+		toSerialize["logSearchReferences"] = o.LogSearchReferences
+	}
+	if !IsNil(o.LogIntermediateResponses) {
+		toSerialize["logIntermediateResponses"] = o.LogIntermediateResponses
+	}
+	if !IsNil(o.SuppressInternalOperations) {
+		toSerialize["suppressInternalOperations"] = o.SuppressInternalOperations
+	}
+	if !IsNil(o.SuppressReplicationOperations) {
+		toSerialize["suppressReplicationOperations"] = o.SuppressReplicationOperations
+	}
+	if !IsNil(o.CorrelateRequestsAndResults) {
+		toSerialize["correlateRequestsAndResults"] = o.CorrelateRequestsAndResults
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.ResultCriteria) {
+		toSerialize["resultCriteria"] = o.ResultCriteria
+	}
+	if !IsNil(o.SearchEntryCriteria) {
+		toSerialize["searchEntryCriteria"] = o.SearchEntryCriteria
+	}
+	if !IsNil(o.SearchReferenceCriteria) {
+		toSerialize["searchReferenceCriteria"] = o.SearchReferenceCriteria
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddThirdPartyFileBasedAccessLogPublisherRequest struct {

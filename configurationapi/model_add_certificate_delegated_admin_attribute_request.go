@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddCertificateDelegatedAdminAttributeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddCertificateDelegatedAdminAttributeRequest{}
+
 // AddCertificateDelegatedAdminAttributeRequest struct for AddCertificateDelegatedAdminAttributeRequest
 type AddCertificateDelegatedAdminAttributeRequest struct {
 	// Specifies the name or OID of the LDAP attribute type.
@@ -108,7 +111,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetSchemas(v []Enumcertif
 
 // GetAllowedMIMEType returns the AllowedMIMEType field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMEType() []EnumdelegatedAdminAttributeAllowedMIMETypeProp {
-	if o == nil || isNil(o.AllowedMIMEType) {
+	if o == nil || IsNil(o.AllowedMIMEType) {
 		var ret []EnumdelegatedAdminAttributeAllowedMIMETypeProp
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMEType() []En
 // GetAllowedMIMETypeOk returns a tuple with the AllowedMIMEType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMETypeOk() ([]EnumdelegatedAdminAttributeAllowedMIMETypeProp, bool) {
-	if o == nil || isNil(o.AllowedMIMEType) {
+	if o == nil || IsNil(o.AllowedMIMEType) {
 		return nil, false
 	}
 	return o.AllowedMIMEType, true
@@ -126,7 +129,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAllowedMIMETypeOk() ([
 
 // HasAllowedMIMEType returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasAllowedMIMEType() bool {
-	if o != nil && !isNil(o.AllowedMIMEType) {
+	if o != nil && !IsNil(o.AllowedMIMEType) {
 		return true
 	}
 
@@ -140,7 +143,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetAllowedMIMEType(v []En
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -158,7 +161,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDescriptionOk() (*stri
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetDisplayName(v string) 
 
 // GetMutability returns the Mutability field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetMutability() EnumdelegatedAdminAttributeMutabilityProp {
-	if o == nil || isNil(o.Mutability) {
+	if o == nil || IsNil(o.Mutability) {
 		var ret EnumdelegatedAdminAttributeMutabilityProp
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetMutability() Enumdeleg
 // GetMutabilityOk returns a tuple with the Mutability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetMutabilityOk() (*EnumdelegatedAdminAttributeMutabilityProp, bool) {
-	if o == nil || isNil(o.Mutability) {
+	if o == nil || IsNil(o.Mutability) {
 		return nil, false
 	}
 	return o.Mutability, true
@@ -214,7 +217,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetMutabilityOk() (*Enumd
 
 // HasMutability returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasMutability() bool {
-	if o != nil && !isNil(o.Mutability) {
+	if o != nil && !IsNil(o.Mutability) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetMutability(v Enumdeleg
 
 // GetMultiValued returns the MultiValued field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetMultiValued() bool {
-	if o == nil || isNil(o.MultiValued) {
+	if o == nil || IsNil(o.MultiValued) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetMultiValued() bool {
 // GetMultiValuedOk returns a tuple with the MultiValued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetMultiValuedOk() (*bool, bool) {
-	if o == nil || isNil(o.MultiValued) {
+	if o == nil || IsNil(o.MultiValued) {
 		return nil, false
 	}
 	return o.MultiValued, true
@@ -246,7 +249,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetMultiValuedOk() (*bool
 
 // HasMultiValued returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasMultiValued() bool {
-	if o != nil && !isNil(o.MultiValued) {
+	if o != nil && !IsNil(o.MultiValued) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetMultiValued(v bool) {
 
 // GetAttributeCategory returns the AttributeCategory field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributeCategory() string {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		var ret string
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributeCategory() st
 // GetAttributeCategoryOk returns a tuple with the AttributeCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributeCategoryOk() (*string, bool) {
-	if o == nil || isNil(o.AttributeCategory) {
+	if o == nil || IsNil(o.AttributeCategory) {
 		return nil, false
 	}
 	return o.AttributeCategory, true
@@ -278,7 +281,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributeCategoryOk() 
 
 // HasAttributeCategory returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasAttributeCategory() bool {
-	if o != nil && !isNil(o.AttributeCategory) {
+	if o != nil && !IsNil(o.AttributeCategory) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetAttributeCategory(v st
 
 // GetDisplayOrderIndex returns the DisplayOrderIndex field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndex() int32 {
-	if o == nil || isNil(o.DisplayOrderIndex) {
+	if o == nil || IsNil(o.DisplayOrderIndex) {
 		var ret int32
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndex() in
 // GetDisplayOrderIndexOk returns a tuple with the DisplayOrderIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() (*int32, bool) {
-	if o == nil || isNil(o.DisplayOrderIndex) {
+	if o == nil || IsNil(o.DisplayOrderIndex) {
 		return nil, false
 	}
 	return o.DisplayOrderIndex, true
@@ -310,7 +313,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDisplayOrderIndexOk() 
 
 // HasDisplayOrderIndex returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasDisplayOrderIndex() bool {
-	if o != nil && !isNil(o.DisplayOrderIndex) {
+	if o != nil && !IsNil(o.DisplayOrderIndex) {
 		return true
 	}
 
@@ -324,7 +327,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetDisplayOrderIndex(v in
 
 // GetReferenceResourceType returns the ReferenceResourceType field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetReferenceResourceType() string {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		var ret string
 		return ret
 	}
@@ -334,7 +337,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetReferenceResourceType(
 // GetReferenceResourceTypeOk returns a tuple with the ReferenceResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetReferenceResourceTypeOk() (*string, bool) {
-	if o == nil || isNil(o.ReferenceResourceType) {
+	if o == nil || IsNil(o.ReferenceResourceType) {
 		return nil, false
 	}
 	return o.ReferenceResourceType, true
@@ -342,7 +345,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetReferenceResourceTypeO
 
 // HasReferenceResourceType returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasReferenceResourceType() bool {
-	if o != nil && !isNil(o.ReferenceResourceType) {
+	if o != nil && !IsNil(o.ReferenceResourceType) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetReferenceResourceType(
 
 // GetAttributePresentation returns the AttributePresentation field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributePresentation() EnumdelegatedAdminAttributeAttributePresentationProp {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		var ret EnumdelegatedAdminAttributeAttributePresentationProp
 		return ret
 	}
@@ -366,7 +369,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributePresentation(
 // GetAttributePresentationOk returns a tuple with the AttributePresentation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributePresentationOk() (*EnumdelegatedAdminAttributeAttributePresentationProp, bool) {
-	if o == nil || isNil(o.AttributePresentation) {
+	if o == nil || IsNil(o.AttributePresentation) {
 		return nil, false
 	}
 	return o.AttributePresentation, true
@@ -374,7 +377,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetAttributePresentationO
 
 // HasAttributePresentation returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasAttributePresentation() bool {
-	if o != nil && !isNil(o.AttributePresentation) {
+	if o != nil && !IsNil(o.AttributePresentation) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetAttributePresentation(
 
 // GetDateTimeFormat returns the DateTimeFormat field value if set, zero value otherwise.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetDateTimeFormat() string {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		var ret string
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDateTimeFormat() strin
 // GetDateTimeFormatOk returns a tuple with the DateTimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) GetDateTimeFormatOk() (*string, bool) {
-	if o == nil || isNil(o.DateTimeFormat) {
+	if o == nil || IsNil(o.DateTimeFormat) {
 		return nil, false
 	}
 	return o.DateTimeFormat, true
@@ -406,7 +409,7 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) GetDateTimeFormatOk() (*s
 
 // HasDateTimeFormat returns a boolean if a field has been set.
 func (o *AddCertificateDelegatedAdminAttributeRequest) HasDateTimeFormat() bool {
-	if o != nil && !isNil(o.DateTimeFormat) {
+	if o != nil && !IsNil(o.DateTimeFormat) {
 		return true
 	}
 
@@ -419,44 +422,46 @@ func (o *AddCertificateDelegatedAdminAttributeRequest) SetDateTimeFormat(v strin
 }
 
 func (o AddCertificateDelegatedAdminAttributeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllowedMIMEType) {
-		toSerialize["allowedMIMEType"] = o.AllowedMIMEType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["displayName"] = o.DisplayName
-	}
-	if !isNil(o.Mutability) {
-		toSerialize["mutability"] = o.Mutability
-	}
-	if !isNil(o.MultiValued) {
-		toSerialize["multiValued"] = o.MultiValued
-	}
-	if !isNil(o.AttributeCategory) {
-		toSerialize["attributeCategory"] = o.AttributeCategory
-	}
-	if !isNil(o.DisplayOrderIndex) {
-		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
-	}
-	if !isNil(o.ReferenceResourceType) {
-		toSerialize["referenceResourceType"] = o.ReferenceResourceType
-	}
-	if !isNil(o.AttributePresentation) {
-		toSerialize["attributePresentation"] = o.AttributePresentation
-	}
-	if !isNil(o.DateTimeFormat) {
-		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddCertificateDelegatedAdminAttributeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["attributeType"] = o.AttributeType
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllowedMIMEType) {
+		toSerialize["allowedMIMEType"] = o.AllowedMIMEType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["displayName"] = o.DisplayName
+	if !IsNil(o.Mutability) {
+		toSerialize["mutability"] = o.Mutability
+	}
+	if !IsNil(o.MultiValued) {
+		toSerialize["multiValued"] = o.MultiValued
+	}
+	if !IsNil(o.AttributeCategory) {
+		toSerialize["attributeCategory"] = o.AttributeCategory
+	}
+	if !IsNil(o.DisplayOrderIndex) {
+		toSerialize["displayOrderIndex"] = o.DisplayOrderIndex
+	}
+	if !IsNil(o.ReferenceResourceType) {
+		toSerialize["referenceResourceType"] = o.ReferenceResourceType
+	}
+	if !IsNil(o.AttributePresentation) {
+		toSerialize["attributePresentation"] = o.AttributePresentation
+	}
+	if !IsNil(o.DateTimeFormat) {
+		toSerialize["dateTimeFormat"] = o.DateTimeFormat
+	}
+	return toSerialize, nil
 }
 
 type NullableAddCertificateDelegatedAdminAttributeRequest struct {

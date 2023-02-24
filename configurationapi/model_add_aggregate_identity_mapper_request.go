@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddAggregateIdentityMapperRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddAggregateIdentityMapperRequest{}
+
 // AddAggregateIdentityMapperRequest struct for AddAggregateIdentityMapperRequest
 type AddAggregateIdentityMapperRequest struct {
 	// Name of the new Identity Mapper
@@ -99,7 +102,7 @@ func (o *AddAggregateIdentityMapperRequest) SetSchemas(v []EnumaggregateIdentity
 
 // GetAllIncludedIdentityMapper returns the AllIncludedIdentityMapper field value if set, zero value otherwise.
 func (o *AddAggregateIdentityMapperRequest) GetAllIncludedIdentityMapper() []string {
-	if o == nil || isNil(o.AllIncludedIdentityMapper) {
+	if o == nil || IsNil(o.AllIncludedIdentityMapper) {
 		var ret []string
 		return ret
 	}
@@ -109,7 +112,7 @@ func (o *AddAggregateIdentityMapperRequest) GetAllIncludedIdentityMapper() []str
 // GetAllIncludedIdentityMapperOk returns a tuple with the AllIncludedIdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetAllIncludedIdentityMapperOk() ([]string, bool) {
-	if o == nil || isNil(o.AllIncludedIdentityMapper) {
+	if o == nil || IsNil(o.AllIncludedIdentityMapper) {
 		return nil, false
 	}
 	return o.AllIncludedIdentityMapper, true
@@ -117,7 +120,7 @@ func (o *AddAggregateIdentityMapperRequest) GetAllIncludedIdentityMapperOk() ([]
 
 // HasAllIncludedIdentityMapper returns a boolean if a field has been set.
 func (o *AddAggregateIdentityMapperRequest) HasAllIncludedIdentityMapper() bool {
-	if o != nil && !isNil(o.AllIncludedIdentityMapper) {
+	if o != nil && !IsNil(o.AllIncludedIdentityMapper) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *AddAggregateIdentityMapperRequest) SetAllIncludedIdentityMapper(v []str
 
 // GetAnyIncludedIdentityMapper returns the AnyIncludedIdentityMapper field value if set, zero value otherwise.
 func (o *AddAggregateIdentityMapperRequest) GetAnyIncludedIdentityMapper() []string {
-	if o == nil || isNil(o.AnyIncludedIdentityMapper) {
+	if o == nil || IsNil(o.AnyIncludedIdentityMapper) {
 		var ret []string
 		return ret
 	}
@@ -141,7 +144,7 @@ func (o *AddAggregateIdentityMapperRequest) GetAnyIncludedIdentityMapper() []str
 // GetAnyIncludedIdentityMapperOk returns a tuple with the AnyIncludedIdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetAnyIncludedIdentityMapperOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyIncludedIdentityMapper) {
+	if o == nil || IsNil(o.AnyIncludedIdentityMapper) {
 		return nil, false
 	}
 	return o.AnyIncludedIdentityMapper, true
@@ -149,7 +152,7 @@ func (o *AddAggregateIdentityMapperRequest) GetAnyIncludedIdentityMapperOk() ([]
 
 // HasAnyIncludedIdentityMapper returns a boolean if a field has been set.
 func (o *AddAggregateIdentityMapperRequest) HasAnyIncludedIdentityMapper() bool {
-	if o != nil && !isNil(o.AnyIncludedIdentityMapper) {
+	if o != nil && !IsNil(o.AnyIncludedIdentityMapper) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *AddAggregateIdentityMapperRequest) SetAnyIncludedIdentityMapper(v []str
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddAggregateIdentityMapperRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *AddAggregateIdentityMapperRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddAggregateIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -181,7 +184,7 @@ func (o *AddAggregateIdentityMapperRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddAggregateIdentityMapperRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -218,26 +221,28 @@ func (o *AddAggregateIdentityMapperRequest) SetEnabled(v bool) {
 }
 
 func (o AddAggregateIdentityMapperRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mapperName"] = o.MapperName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AllIncludedIdentityMapper) {
-		toSerialize["allIncludedIdentityMapper"] = o.AllIncludedIdentityMapper
-	}
-	if !isNil(o.AnyIncludedIdentityMapper) {
-		toSerialize["anyIncludedIdentityMapper"] = o.AnyIncludedIdentityMapper
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddAggregateIdentityMapperRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["mapperName"] = o.MapperName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AllIncludedIdentityMapper) {
+		toSerialize["allIncludedIdentityMapper"] = o.AllIncludedIdentityMapper
+	}
+	if !IsNil(o.AnyIncludedIdentityMapper) {
+		toSerialize["anyIncludedIdentityMapper"] = o.AnyIncludedIdentityMapper
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddAggregateIdentityMapperRequest struct {

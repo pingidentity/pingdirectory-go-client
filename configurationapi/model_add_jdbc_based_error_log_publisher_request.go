@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddJdbcBasedErrorLogPublisherRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddJdbcBasedErrorLogPublisherRequest{}
+
 // AddJdbcBasedErrorLogPublisherRequest struct for AddJdbcBasedErrorLogPublisherRequest
 type AddJdbcBasedErrorLogPublisherRequest struct {
 	// Name of the new Log Publisher
@@ -157,7 +160,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetLogFieldMapping(v string) {
 
 // GetLogTableName returns the LogTableName field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetLogTableName() string {
-	if o == nil || isNil(o.LogTableName) {
+	if o == nil || IsNil(o.LogTableName) {
 		var ret string
 		return ret
 	}
@@ -167,7 +170,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetLogTableName() string {
 // GetLogTableNameOk returns a tuple with the LogTableName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetLogTableNameOk() (*string, bool) {
-	if o == nil || isNil(o.LogTableName) {
+	if o == nil || IsNil(o.LogTableName) {
 		return nil, false
 	}
 	return o.LogTableName, true
@@ -175,7 +178,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetLogTableNameOk() (*string, boo
 
 // HasLogTableName returns a boolean if a field has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) HasLogTableName() bool {
-	if o != nil && !isNil(o.LogTableName) {
+	if o != nil && !IsNil(o.LogTableName) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetLogTableName(v string) {
 
 // GetQueueSize returns the QueueSize field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetQueueSize() int32 {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		var ret int32
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetQueueSize() int32 {
 // GetQueueSizeOk returns a tuple with the QueueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.QueueSize) {
+	if o == nil || IsNil(o.QueueSize) {
 		return nil, false
 	}
 	return o.QueueSize, true
@@ -207,7 +210,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetQueueSizeOk() (*int32, bool) {
 
 // HasQueueSize returns a boolean if a field has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) HasQueueSize() bool {
-	if o != nil && !isNil(o.QueueSize) {
+	if o != nil && !IsNil(o.QueueSize) {
 		return true
 	}
 
@@ -221,7 +224,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetQueueSize(v int32) {
 
 // GetDefaultSeverity returns the DefaultSeverity field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPublisherDefaultSeverityProp {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		var ret []EnumlogPublisherDefaultSeverityProp
 		return ret
 	}
@@ -231,7 +234,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetDefaultSeverity() []EnumlogPub
 // GetDefaultSeverityOk returns a tuple with the DefaultSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]EnumlogPublisherDefaultSeverityProp, bool) {
-	if o == nil || isNil(o.DefaultSeverity) {
+	if o == nil || IsNil(o.DefaultSeverity) {
 		return nil, false
 	}
 	return o.DefaultSeverity, true
@@ -239,7 +242,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetDefaultSeverityOk() ([]Enumlog
 
 // HasDefaultSeverity returns a boolean if a field has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) HasDefaultSeverity() bool {
-	if o != nil && !isNil(o.DefaultSeverity) {
+	if o != nil && !IsNil(o.DefaultSeverity) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetDefaultSeverity(v []EnumlogPub
 
 // GetOverrideSeverity returns the OverrideSeverity field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetOverrideSeverity() []string {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		var ret []string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetOverrideSeverity() []string {
 // GetOverrideSeverityOk returns a tuple with the OverrideSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string, bool) {
-	if o == nil || isNil(o.OverrideSeverity) {
+	if o == nil || IsNil(o.OverrideSeverity) {
 		return nil, false
 	}
 	return o.OverrideSeverity, true
@@ -271,7 +274,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetOverrideSeverityOk() ([]string
 
 // HasOverrideSeverity returns a boolean if a field has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) HasOverrideSeverity() bool {
-	if o != nil && !isNil(o.OverrideSeverity) {
+	if o != nil && !IsNil(o.OverrideSeverity) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetOverrideSeverity(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -303,7 +306,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetDescriptionOk() (*string, bool
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -341,7 +344,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetEnabled(v bool) {
 
 // GetLoggingErrorBehavior returns the LoggingErrorBehavior field value if set, zero value otherwise.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetLoggingErrorBehavior() EnumlogPublisherLoggingErrorBehaviorProp {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		var ret EnumlogPublisherLoggingErrorBehaviorProp
 		return ret
 	}
@@ -351,7 +354,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetLoggingErrorBehavior() Enumlog
 // GetLoggingErrorBehaviorOk returns a tuple with the LoggingErrorBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*EnumlogPublisherLoggingErrorBehaviorProp, bool) {
-	if o == nil || isNil(o.LoggingErrorBehavior) {
+	if o == nil || IsNil(o.LoggingErrorBehavior) {
 		return nil, false
 	}
 	return o.LoggingErrorBehavior, true
@@ -359,7 +362,7 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) GetLoggingErrorBehaviorOk() (*Enu
 
 // HasLoggingErrorBehavior returns a boolean if a field has been set.
 func (o *AddJdbcBasedErrorLogPublisherRequest) HasLoggingErrorBehavior() bool {
-	if o != nil && !isNil(o.LoggingErrorBehavior) {
+	if o != nil && !IsNil(o.LoggingErrorBehavior) {
 		return true
 	}
 
@@ -372,41 +375,39 @@ func (o *AddJdbcBasedErrorLogPublisherRequest) SetLoggingErrorBehavior(v Enumlog
 }
 
 func (o AddJdbcBasedErrorLogPublisherRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["publisherName"] = o.PublisherName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["server"] = o.Server
-	}
-	if true {
-		toSerialize["logFieldMapping"] = o.LogFieldMapping
-	}
-	if !isNil(o.LogTableName) {
-		toSerialize["logTableName"] = o.LogTableName
-	}
-	if !isNil(o.QueueSize) {
-		toSerialize["queueSize"] = o.QueueSize
-	}
-	if !isNil(o.DefaultSeverity) {
-		toSerialize["defaultSeverity"] = o.DefaultSeverity
-	}
-	if !isNil(o.OverrideSeverity) {
-		toSerialize["overrideSeverity"] = o.OverrideSeverity
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.LoggingErrorBehavior) {
-		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddJdbcBasedErrorLogPublisherRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["publisherName"] = o.PublisherName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["server"] = o.Server
+	toSerialize["logFieldMapping"] = o.LogFieldMapping
+	if !IsNil(o.LogTableName) {
+		toSerialize["logTableName"] = o.LogTableName
+	}
+	if !IsNil(o.QueueSize) {
+		toSerialize["queueSize"] = o.QueueSize
+	}
+	if !IsNil(o.DefaultSeverity) {
+		toSerialize["defaultSeverity"] = o.DefaultSeverity
+	}
+	if !IsNil(o.OverrideSeverity) {
+		toSerialize["overrideSeverity"] = o.OverrideSeverity
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.LoggingErrorBehavior) {
+		toSerialize["loggingErrorBehavior"] = o.LoggingErrorBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableAddJdbcBasedErrorLogPublisherRequest struct {

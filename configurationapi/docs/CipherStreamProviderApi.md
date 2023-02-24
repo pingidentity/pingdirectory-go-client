@@ -26,7 +26,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {
@@ -90,7 +90,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {
@@ -98,7 +98,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CipherStreamProviderApi.DeleteCipherStreamProvider(context.Background(), cipherStreamProviderName).Execute()
+    r, err := apiClient.CipherStreamProviderApi.DeleteCipherStreamProvider(context.Background(), cipherStreamProviderName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CipherStreamProviderApi.DeleteCipherStreamProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -156,7 +156,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {
@@ -224,7 +224,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingdirectory-go-client"
 )
 
 func main() {

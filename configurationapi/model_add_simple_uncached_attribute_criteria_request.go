@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSimpleUncachedAttributeCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSimpleUncachedAttributeCriteriaRequest{}
+
 // AddSimpleUncachedAttributeCriteriaRequest struct for AddSimpleUncachedAttributeCriteriaRequest
 type AddSimpleUncachedAttributeCriteriaRequest struct {
 	// Name of the new Uncached Attribute Criteria
@@ -126,7 +129,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) SetAttributeType(v []string)
 
 // GetMinValueCount returns the MinValueCount field value if set, zero value otherwise.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCount() int32 {
-	if o == nil || isNil(o.MinValueCount) {
+	if o == nil || IsNil(o.MinValueCount) {
 		var ret int32
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCount() int32 {
 // GetMinValueCountOk returns a tuple with the MinValueCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int32, bool) {
-	if o == nil || isNil(o.MinValueCount) {
+	if o == nil || IsNil(o.MinValueCount) {
 		return nil, false
 	}
 	return o.MinValueCount, true
@@ -144,7 +147,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinValueCountOk() (*int32
 
 // HasMinValueCount returns a boolean if a field has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) HasMinValueCount() bool {
-	if o != nil && !isNil(o.MinValueCount) {
+	if o != nil && !IsNil(o.MinValueCount) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) SetMinValueCount(v int32) {
 
 // GetMinTotalValueSize returns the MinTotalValueSize field value if set, zero value otherwise.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinTotalValueSize() string {
-	if o == nil || isNil(o.MinTotalValueSize) {
+	if o == nil || IsNil(o.MinTotalValueSize) {
 		var ret string
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinTotalValueSize() strin
 // GetMinTotalValueSizeOk returns a tuple with the MinTotalValueSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinTotalValueSizeOk() (*string, bool) {
-	if o == nil || isNil(o.MinTotalValueSize) {
+	if o == nil || IsNil(o.MinTotalValueSize) {
 		return nil, false
 	}
 	return o.MinTotalValueSize, true
@@ -176,7 +179,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetMinTotalValueSizeOk() (*s
 
 // HasMinTotalValueSize returns a boolean if a field has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) HasMinTotalValueSize() bool {
-	if o != nil && !isNil(o.MinTotalValueSize) {
+	if o != nil && !IsNil(o.MinTotalValueSize) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) SetMinTotalValueSize(v strin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -200,7 +203,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -208,7 +211,7 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSimpleUncachedAttributeCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -245,29 +248,29 @@ func (o *AddSimpleUncachedAttributeCriteriaRequest) SetEnabled(v bool) {
 }
 
 func (o AddSimpleUncachedAttributeCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["attributeType"] = o.AttributeType
-	}
-	if !isNil(o.MinValueCount) {
-		toSerialize["minValueCount"] = o.MinValueCount
-	}
-	if !isNil(o.MinTotalValueSize) {
-		toSerialize["minTotalValueSize"] = o.MinTotalValueSize
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSimpleUncachedAttributeCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["attributeType"] = o.AttributeType
+	if !IsNil(o.MinValueCount) {
+		toSerialize["minValueCount"] = o.MinValueCount
+	}
+	if !IsNil(o.MinTotalValueSize) {
+		toSerialize["minTotalValueSize"] = o.MinTotalValueSize
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddSimpleUncachedAttributeCriteriaRequest struct {

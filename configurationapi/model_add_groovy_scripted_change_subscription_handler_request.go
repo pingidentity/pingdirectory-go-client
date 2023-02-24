@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGroovyScriptedChangeSubscriptionHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGroovyScriptedChangeSubscriptionHandlerRequest{}
+
 // AddGroovyScriptedChangeSubscriptionHandlerRequest struct for AddGroovyScriptedChangeSubscriptionHandlerRequest
 type AddGroovyScriptedChangeSubscriptionHandlerRequest struct {
 	// Name of the new Change Subscription Handler
@@ -126,7 +129,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetScriptClass(v str
 
 // GetScriptArgument returns the ScriptArgument field value if set, zero value otherwise.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptArgument() []string {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		var ret []string
 		return ret
 	}
@@ -136,7 +139,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptArgument() 
 // GetScriptArgumentOk returns a tuple with the ScriptArgument field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptArgumentOk() ([]string, bool) {
-	if o == nil || isNil(o.ScriptArgument) {
+	if o == nil || IsNil(o.ScriptArgument) {
 		return nil, false
 	}
 	return o.ScriptArgument, true
@@ -144,7 +147,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetScriptArgumentOk(
 
 // HasScriptArgument returns a boolean if a field has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) HasScriptArgument() bool {
-	if o != nil && !isNil(o.ScriptArgument) {
+	if o != nil && !IsNil(o.ScriptArgument) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetScriptArgument(v 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -168,7 +171,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetDescription() str
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -176,7 +179,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetDescriptionOk() (
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetEnabled(v bool) {
 
 // GetChangeSubscription returns the ChangeSubscription field value if set, zero value otherwise.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetChangeSubscription() []string {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		var ret []string
 		return ret
 	}
@@ -224,7 +227,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetChangeSubscriptio
 // GetChangeSubscriptionOk returns a tuple with the ChangeSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetChangeSubscriptionOk() ([]string, bool) {
-	if o == nil || isNil(o.ChangeSubscription) {
+	if o == nil || IsNil(o.ChangeSubscription) {
 		return nil, false
 	}
 	return o.ChangeSubscription, true
@@ -232,7 +235,7 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) GetChangeSubscriptio
 
 // HasChangeSubscription returns a boolean if a field has been set.
 func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) HasChangeSubscription() bool {
-	if o != nil && !isNil(o.ChangeSubscription) {
+	if o != nil && !IsNil(o.ChangeSubscription) {
 		return true
 	}
 
@@ -245,29 +248,29 @@ func (o *AddGroovyScriptedChangeSubscriptionHandlerRequest) SetChangeSubscriptio
 }
 
 func (o AddGroovyScriptedChangeSubscriptionHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["scriptClass"] = o.ScriptClass
-	}
-	if !isNil(o.ScriptArgument) {
-		toSerialize["scriptArgument"] = o.ScriptArgument
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.ChangeSubscription) {
-		toSerialize["changeSubscription"] = o.ChangeSubscription
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGroovyScriptedChangeSubscriptionHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["scriptClass"] = o.ScriptClass
+	if !IsNil(o.ScriptArgument) {
+		toSerialize["scriptArgument"] = o.ScriptArgument
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.ChangeSubscription) {
+		toSerialize["changeSubscription"] = o.ChangeSubscription
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGroovyScriptedChangeSubscriptionHandlerRequest struct {

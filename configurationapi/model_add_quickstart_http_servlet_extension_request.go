@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddQuickstartHttpServletExtensionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddQuickstartHttpServletExtensionRequest{}
+
 // AddQuickstartHttpServletExtensionRequest struct for AddQuickstartHttpServletExtensionRequest
 type AddQuickstartHttpServletExtensionRequest struct {
 	// Name of the new HTTP Servlet Extension
@@ -100,7 +103,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetSchemas(v []Enumquickstart
 
 // GetServer returns the Server field value if set, zero value otherwise.
 func (o *AddQuickstartHttpServletExtensionRequest) GetServer() string {
-	if o == nil || isNil(o.Server) {
+	if o == nil || IsNil(o.Server) {
 		var ret string
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetServer() string {
 // GetServerOk returns a tuple with the Server field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetServerOk() (*string, bool) {
-	if o == nil || isNil(o.Server) {
+	if o == nil || IsNil(o.Server) {
 		return nil, false
 	}
 	return o.Server, true
@@ -118,7 +121,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetServerOk() (*string, bool)
 
 // HasServer returns a boolean if a field has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) HasServer() bool {
-	if o != nil && !isNil(o.Server) {
+	if o != nil && !IsNil(o.Server) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetServer(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddQuickstartHttpServletExtensionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -150,7 +153,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetDescription(v string) {
 
 // GetCrossOriginPolicy returns the CrossOriginPolicy field value if set, zero value otherwise.
 func (o *AddQuickstartHttpServletExtensionRequest) GetCrossOriginPolicy() string {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		var ret string
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetCrossOriginPolicy() string
 // GetCrossOriginPolicyOk returns a tuple with the CrossOriginPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*string, bool) {
-	if o == nil || isNil(o.CrossOriginPolicy) {
+	if o == nil || IsNil(o.CrossOriginPolicy) {
 		return nil, false
 	}
 	return o.CrossOriginPolicy, true
@@ -182,7 +185,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetCrossOriginPolicyOk() (*st
 
 // HasCrossOriginPolicy returns a boolean if a field has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) HasCrossOriginPolicy() bool {
-	if o != nil && !isNil(o.CrossOriginPolicy) {
+	if o != nil && !IsNil(o.CrossOriginPolicy) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetCrossOriginPolicy(v string
 
 // GetResponseHeader returns the ResponseHeader field value if set, zero value otherwise.
 func (o *AddQuickstartHttpServletExtensionRequest) GetResponseHeader() []string {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetResponseHeader() []string 
 // GetResponseHeaderOk returns a tuple with the ResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetResponseHeaderOk() ([]string, bool) {
-	if o == nil || isNil(o.ResponseHeader) {
+	if o == nil || IsNil(o.ResponseHeader) {
 		return nil, false
 	}
 	return o.ResponseHeader, true
@@ -214,7 +217,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetResponseHeaderOk() ([]stri
 
 // HasResponseHeader returns a boolean if a field has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) HasResponseHeader() bool {
-	if o != nil && !isNil(o.ResponseHeader) {
+	if o != nil && !IsNil(o.ResponseHeader) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetResponseHeader(v []string)
 
 // GetCorrelationIDResponseHeader returns the CorrelationIDResponseHeader field value if set, zero value otherwise.
 func (o *AddQuickstartHttpServletExtensionRequest) GetCorrelationIDResponseHeader() string {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		var ret string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetCorrelationIDResponseHeade
 // GetCorrelationIDResponseHeaderOk returns a tuple with the CorrelationIDResponseHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) GetCorrelationIDResponseHeaderOk() (*string, bool) {
-	if o == nil || isNil(o.CorrelationIDResponseHeader) {
+	if o == nil || IsNil(o.CorrelationIDResponseHeader) {
 		return nil, false
 	}
 	return o.CorrelationIDResponseHeader, true
@@ -246,7 +249,7 @@ func (o *AddQuickstartHttpServletExtensionRequest) GetCorrelationIDResponseHeade
 
 // HasCorrelationIDResponseHeader returns a boolean if a field has been set.
 func (o *AddQuickstartHttpServletExtensionRequest) HasCorrelationIDResponseHeader() bool {
-	if o != nil && !isNil(o.CorrelationIDResponseHeader) {
+	if o != nil && !IsNil(o.CorrelationIDResponseHeader) {
 		return true
 	}
 
@@ -259,29 +262,33 @@ func (o *AddQuickstartHttpServletExtensionRequest) SetCorrelationIDResponseHeade
 }
 
 func (o AddQuickstartHttpServletExtensionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["extensionName"] = o.ExtensionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Server) {
-		toSerialize["server"] = o.Server
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.CrossOriginPolicy) {
-		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
-	}
-	if !isNil(o.ResponseHeader) {
-		toSerialize["responseHeader"] = o.ResponseHeader
-	}
-	if !isNil(o.CorrelationIDResponseHeader) {
-		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddQuickstartHttpServletExtensionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["extensionName"] = o.ExtensionName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Server) {
+		toSerialize["server"] = o.Server
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.CrossOriginPolicy) {
+		toSerialize["crossOriginPolicy"] = o.CrossOriginPolicy
+	}
+	if !IsNil(o.ResponseHeader) {
+		toSerialize["responseHeader"] = o.ResponseHeader
+	}
+	if !IsNil(o.CorrelationIDResponseHeader) {
+		toSerialize["correlationIDResponseHeader"] = o.CorrelationIDResponseHeader
+	}
+	return toSerialize, nil
 }
 
 type NullableAddQuickstartHttpServletExtensionRequest struct {

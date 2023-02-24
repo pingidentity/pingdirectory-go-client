@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSoftDeletePolicyRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSoftDeletePolicyRequest{}
+
 // AddSoftDeletePolicyRequest struct for AddSoftDeletePolicyRequest
 type AddSoftDeletePolicyRequest struct {
 	// Name of the new Soft Delete Policy
@@ -75,7 +78,7 @@ func (o *AddSoftDeletePolicyRequest) SetPolicyName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddSoftDeletePolicyRequest) GetSchemas() []EnumsoftDeletePolicySchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumsoftDeletePolicySchemaUrn
 		return ret
 	}
@@ -85,7 +88,7 @@ func (o *AddSoftDeletePolicyRequest) GetSchemas() []EnumsoftDeletePolicySchemaUr
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetSchemasOk() ([]EnumsoftDeletePolicySchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -93,7 +96,7 @@ func (o *AddSoftDeletePolicyRequest) GetSchemasOk() ([]EnumsoftDeletePolicySchem
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddSoftDeletePolicyRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *AddSoftDeletePolicyRequest) SetSchemas(v []EnumsoftDeletePolicySchemaUr
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSoftDeletePolicyRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -117,7 +120,7 @@ func (o *AddSoftDeletePolicyRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -125,7 +128,7 @@ func (o *AddSoftDeletePolicyRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSoftDeletePolicyRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *AddSoftDeletePolicyRequest) SetDescription(v string) {
 
 // GetAutoSoftDeleteConnectionCriteria returns the AutoSoftDeleteConnectionCriteria field value if set, zero value otherwise.
 func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteConnectionCriteria() string {
-	if o == nil || isNil(o.AutoSoftDeleteConnectionCriteria) {
+	if o == nil || IsNil(o.AutoSoftDeleteConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -149,7 +152,7 @@ func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteConnectionCriteria() strin
 // GetAutoSoftDeleteConnectionCriteriaOk returns a tuple with the AutoSoftDeleteConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AutoSoftDeleteConnectionCriteria) {
+	if o == nil || IsNil(o.AutoSoftDeleteConnectionCriteria) {
 		return nil, false
 	}
 	return o.AutoSoftDeleteConnectionCriteria, true
@@ -157,7 +160,7 @@ func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteConnectionCriteriaOk() (*s
 
 // HasAutoSoftDeleteConnectionCriteria returns a boolean if a field has been set.
 func (o *AddSoftDeletePolicyRequest) HasAutoSoftDeleteConnectionCriteria() bool {
-	if o != nil && !isNil(o.AutoSoftDeleteConnectionCriteria) {
+	if o != nil && !IsNil(o.AutoSoftDeleteConnectionCriteria) {
 		return true
 	}
 
@@ -171,7 +174,7 @@ func (o *AddSoftDeletePolicyRequest) SetAutoSoftDeleteConnectionCriteria(v strin
 
 // GetAutoSoftDeleteRequestCriteria returns the AutoSoftDeleteRequestCriteria field value if set, zero value otherwise.
 func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteRequestCriteria() string {
-	if o == nil || isNil(o.AutoSoftDeleteRequestCriteria) {
+	if o == nil || IsNil(o.AutoSoftDeleteRequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteRequestCriteria() string {
 // GetAutoSoftDeleteRequestCriteriaOk returns a tuple with the AutoSoftDeleteRequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.AutoSoftDeleteRequestCriteria) {
+	if o == nil || IsNil(o.AutoSoftDeleteRequestCriteria) {
 		return nil, false
 	}
 	return o.AutoSoftDeleteRequestCriteria, true
@@ -189,7 +192,7 @@ func (o *AddSoftDeletePolicyRequest) GetAutoSoftDeleteRequestCriteriaOk() (*stri
 
 // HasAutoSoftDeleteRequestCriteria returns a boolean if a field has been set.
 func (o *AddSoftDeletePolicyRequest) HasAutoSoftDeleteRequestCriteria() bool {
-	if o != nil && !isNil(o.AutoSoftDeleteRequestCriteria) {
+	if o != nil && !IsNil(o.AutoSoftDeleteRequestCriteria) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *AddSoftDeletePolicyRequest) SetAutoSoftDeleteRequestCriteria(v string) 
 
 // GetSoftDeleteRetentionTime returns the SoftDeleteRetentionTime field value if set, zero value otherwise.
 func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetentionTime() string {
-	if o == nil || isNil(o.SoftDeleteRetentionTime) {
+	if o == nil || IsNil(o.SoftDeleteRetentionTime) {
 		var ret string
 		return ret
 	}
@@ -213,7 +216,7 @@ func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetentionTime() string {
 // GetSoftDeleteRetentionTimeOk returns a tuple with the SoftDeleteRetentionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetentionTimeOk() (*string, bool) {
-	if o == nil || isNil(o.SoftDeleteRetentionTime) {
+	if o == nil || IsNil(o.SoftDeleteRetentionTime) {
 		return nil, false
 	}
 	return o.SoftDeleteRetentionTime, true
@@ -221,7 +224,7 @@ func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetentionTimeOk() (*string, bo
 
 // HasSoftDeleteRetentionTime returns a boolean if a field has been set.
 func (o *AddSoftDeletePolicyRequest) HasSoftDeleteRetentionTime() bool {
-	if o != nil && !isNil(o.SoftDeleteRetentionTime) {
+	if o != nil && !IsNil(o.SoftDeleteRetentionTime) {
 		return true
 	}
 
@@ -235,7 +238,7 @@ func (o *AddSoftDeletePolicyRequest) SetSoftDeleteRetentionTime(v string) {
 
 // GetSoftDeleteRetainNumberOfEntries returns the SoftDeleteRetainNumberOfEntries field value if set, zero value otherwise.
 func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntries() int32 {
-	if o == nil || isNil(o.SoftDeleteRetainNumberOfEntries) {
+	if o == nil || IsNil(o.SoftDeleteRetainNumberOfEntries) {
 		var ret int32
 		return ret
 	}
@@ -245,7 +248,7 @@ func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntries() int32 
 // GetSoftDeleteRetainNumberOfEntriesOk returns a tuple with the SoftDeleteRetainNumberOfEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntriesOk() (*int32, bool) {
-	if o == nil || isNil(o.SoftDeleteRetainNumberOfEntries) {
+	if o == nil || IsNil(o.SoftDeleteRetainNumberOfEntries) {
 		return nil, false
 	}
 	return o.SoftDeleteRetainNumberOfEntries, true
@@ -253,7 +256,7 @@ func (o *AddSoftDeletePolicyRequest) GetSoftDeleteRetainNumberOfEntriesOk() (*in
 
 // HasSoftDeleteRetainNumberOfEntries returns a boolean if a field has been set.
 func (o *AddSoftDeletePolicyRequest) HasSoftDeleteRetainNumberOfEntries() bool {
-	if o != nil && !isNil(o.SoftDeleteRetainNumberOfEntries) {
+	if o != nil && !IsNil(o.SoftDeleteRetainNumberOfEntries) {
 		return true
 	}
 
@@ -266,29 +269,35 @@ func (o *AddSoftDeletePolicyRequest) SetSoftDeleteRetainNumberOfEntries(v int32)
 }
 
 func (o AddSoftDeletePolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["policyName"] = o.PolicyName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.AutoSoftDeleteConnectionCriteria) {
-		toSerialize["autoSoftDeleteConnectionCriteria"] = o.AutoSoftDeleteConnectionCriteria
-	}
-	if !isNil(o.AutoSoftDeleteRequestCriteria) {
-		toSerialize["autoSoftDeleteRequestCriteria"] = o.AutoSoftDeleteRequestCriteria
-	}
-	if !isNil(o.SoftDeleteRetentionTime) {
-		toSerialize["softDeleteRetentionTime"] = o.SoftDeleteRetentionTime
-	}
-	if !isNil(o.SoftDeleteRetainNumberOfEntries) {
-		toSerialize["softDeleteRetainNumberOfEntries"] = o.SoftDeleteRetainNumberOfEntries
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSoftDeletePolicyRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["policyName"] = o.PolicyName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.AutoSoftDeleteConnectionCriteria) {
+		toSerialize["autoSoftDeleteConnectionCriteria"] = o.AutoSoftDeleteConnectionCriteria
+	}
+	if !IsNil(o.AutoSoftDeleteRequestCriteria) {
+		toSerialize["autoSoftDeleteRequestCriteria"] = o.AutoSoftDeleteRequestCriteria
+	}
+	if !IsNil(o.SoftDeleteRetentionTime) {
+		toSerialize["softDeleteRetentionTime"] = o.SoftDeleteRetentionTime
+	}
+	if !IsNil(o.SoftDeleteRetainNumberOfEntries) {
+		toSerialize["softDeleteRetainNumberOfEntries"] = o.SoftDeleteRetainNumberOfEntries
+	}
+	return toSerialize, nil
 }
 
 type NullableAddSoftDeletePolicyRequest struct {

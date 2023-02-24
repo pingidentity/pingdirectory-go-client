@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UuidAttributeSyntaxResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UuidAttributeSyntaxResponse{}
+
 // UuidAttributeSyntaxResponse struct for UuidAttributeSyntaxResponse
 type UuidAttributeSyntaxResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -55,7 +58,7 @@ func NewUuidAttributeSyntaxResponseWithDefaults() *UuidAttributeSyntaxResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *UuidAttributeSyntaxResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -65,7 +68,7 @@ func (o *UuidAttributeSyntaxResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -73,7 +76,7 @@ func (o *UuidAttributeSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *UuidAttributeSyntaxResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -87,7 +90,7 @@ func (o *UuidAttributeSyntaxResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *UuidAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *UuidAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmess
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -105,7 +108,7 @@ func (o *UuidAttributeSyntaxResponse) GetUrnpingidentityschemasconfigurationmess
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *UuidAttributeSyntaxResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *UuidAttributeSyntaxResponse) SetId(v string) {
 
 // GetEnableCompaction returns the EnableCompaction field value if set, zero value otherwise.
 func (o *UuidAttributeSyntaxResponse) GetEnableCompaction() bool {
-	if o == nil || isNil(o.EnableCompaction) {
+	if o == nil || IsNil(o.EnableCompaction) {
 		var ret bool
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *UuidAttributeSyntaxResponse) GetEnableCompaction() bool {
 // GetEnableCompactionOk returns a tuple with the EnableCompaction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetEnableCompactionOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableCompaction) {
+	if o == nil || IsNil(o.EnableCompaction) {
 		return nil, false
 	}
 	return o.EnableCompaction, true
@@ -185,7 +188,7 @@ func (o *UuidAttributeSyntaxResponse) GetEnableCompactionOk() (*bool, bool) {
 
 // HasEnableCompaction returns a boolean if a field has been set.
 func (o *UuidAttributeSyntaxResponse) HasEnableCompaction() bool {
-	if o != nil && !isNil(o.EnableCompaction) {
+	if o != nil && !IsNil(o.EnableCompaction) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *UuidAttributeSyntaxResponse) SetEnableCompaction(v bool) {
 
 // GetIncludeAttributeInCompaction returns the IncludeAttributeInCompaction field value if set, zero value otherwise.
 func (o *UuidAttributeSyntaxResponse) GetIncludeAttributeInCompaction() []string {
-	if o == nil || isNil(o.IncludeAttributeInCompaction) {
+	if o == nil || IsNil(o.IncludeAttributeInCompaction) {
 		var ret []string
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *UuidAttributeSyntaxResponse) GetIncludeAttributeInCompaction() []string
 // GetIncludeAttributeInCompactionOk returns a tuple with the IncludeAttributeInCompaction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetIncludeAttributeInCompactionOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttributeInCompaction) {
+	if o == nil || IsNil(o.IncludeAttributeInCompaction) {
 		return nil, false
 	}
 	return o.IncludeAttributeInCompaction, true
@@ -217,7 +220,7 @@ func (o *UuidAttributeSyntaxResponse) GetIncludeAttributeInCompactionOk() ([]str
 
 // HasIncludeAttributeInCompaction returns a boolean if a field has been set.
 func (o *UuidAttributeSyntaxResponse) HasIncludeAttributeInCompaction() bool {
-	if o != nil && !isNil(o.IncludeAttributeInCompaction) {
+	if o != nil && !IsNil(o.IncludeAttributeInCompaction) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *UuidAttributeSyntaxResponse) SetIncludeAttributeInCompaction(v []string
 
 // GetExcludeAttributeFromCompaction returns the ExcludeAttributeFromCompaction field value if set, zero value otherwise.
 func (o *UuidAttributeSyntaxResponse) GetExcludeAttributeFromCompaction() []string {
-	if o == nil || isNil(o.ExcludeAttributeFromCompaction) {
+	if o == nil || IsNil(o.ExcludeAttributeFromCompaction) {
 		var ret []string
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *UuidAttributeSyntaxResponse) GetExcludeAttributeFromCompaction() []stri
 // GetExcludeAttributeFromCompactionOk returns a tuple with the ExcludeAttributeFromCompaction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetExcludeAttributeFromCompactionOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludeAttributeFromCompaction) {
+	if o == nil || IsNil(o.ExcludeAttributeFromCompaction) {
 		return nil, false
 	}
 	return o.ExcludeAttributeFromCompaction, true
@@ -249,7 +252,7 @@ func (o *UuidAttributeSyntaxResponse) GetExcludeAttributeFromCompactionOk() ([]s
 
 // HasExcludeAttributeFromCompaction returns a boolean if a field has been set.
 func (o *UuidAttributeSyntaxResponse) HasExcludeAttributeFromCompaction() bool {
-	if o != nil && !isNil(o.ExcludeAttributeFromCompaction) {
+	if o != nil && !IsNil(o.ExcludeAttributeFromCompaction) {
 		return true
 	}
 
@@ -287,7 +290,7 @@ func (o *UuidAttributeSyntaxResponse) SetEnabled(v bool) {
 
 // GetRequireBinaryTransfer returns the RequireBinaryTransfer field value if set, zero value otherwise.
 func (o *UuidAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
-	if o == nil || isNil(o.RequireBinaryTransfer) {
+	if o == nil || IsNil(o.RequireBinaryTransfer) {
 		var ret bool
 		return ret
 	}
@@ -297,7 +300,7 @@ func (o *UuidAttributeSyntaxResponse) GetRequireBinaryTransfer() bool {
 // GetRequireBinaryTransferOk returns a tuple with the RequireBinaryTransfer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UuidAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireBinaryTransfer) {
+	if o == nil || IsNil(o.RequireBinaryTransfer) {
 		return nil, false
 	}
 	return o.RequireBinaryTransfer, true
@@ -305,7 +308,7 @@ func (o *UuidAttributeSyntaxResponse) GetRequireBinaryTransferOk() (*bool, bool)
 
 // HasRequireBinaryTransfer returns a boolean if a field has been set.
 func (o *UuidAttributeSyntaxResponse) HasRequireBinaryTransfer() bool {
-	if o != nil && !isNil(o.RequireBinaryTransfer) {
+	if o != nil && !IsNil(o.RequireBinaryTransfer) {
 		return true
 	}
 
@@ -318,35 +321,37 @@ func (o *UuidAttributeSyntaxResponse) SetRequireBinaryTransfer(v bool) {
 }
 
 func (o UuidAttributeSyntaxResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.EnableCompaction) {
-		toSerialize["enableCompaction"] = o.EnableCompaction
-	}
-	if !isNil(o.IncludeAttributeInCompaction) {
-		toSerialize["includeAttributeInCompaction"] = o.IncludeAttributeInCompaction
-	}
-	if !isNil(o.ExcludeAttributeFromCompaction) {
-		toSerialize["excludeAttributeFromCompaction"] = o.ExcludeAttributeFromCompaction
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.RequireBinaryTransfer) {
-		toSerialize["requireBinaryTransfer"] = o.RequireBinaryTransfer
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o UuidAttributeSyntaxResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.EnableCompaction) {
+		toSerialize["enableCompaction"] = o.EnableCompaction
+	}
+	if !IsNil(o.IncludeAttributeInCompaction) {
+		toSerialize["includeAttributeInCompaction"] = o.IncludeAttributeInCompaction
+	}
+	if !IsNil(o.ExcludeAttributeFromCompaction) {
+		toSerialize["excludeAttributeFromCompaction"] = o.ExcludeAttributeFromCompaction
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.RequireBinaryTransfer) {
+		toSerialize["requireBinaryTransfer"] = o.RequireBinaryTransfer
+	}
+	return toSerialize, nil
 }
 
 type NullableUuidAttributeSyntaxResponse struct {

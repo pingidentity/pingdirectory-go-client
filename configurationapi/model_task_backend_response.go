@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaskBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaskBackendResponse{}
+
 // TaskBackendResponse struct for TaskBackendResponse
 type TaskBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -76,7 +79,7 @@ func NewTaskBackendResponseWithDefaults() *TaskBackendResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *TaskBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -94,7 +97,7 @@ func (o *TaskBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *TaskBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *TaskBackendResponse) GetUrnpingidentityschemasconfigurationmessages20()
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -126,7 +129,7 @@ func (o *TaskBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *TaskBackendResponse) SetTaskBackingFile(v string) {
 
 // GetMaximumInitialTaskLogMessagesToRetain returns the MaximumInitialTaskLogMessagesToRetain field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int32 {
-	if o == nil || isNil(o.MaximumInitialTaskLogMessagesToRetain) {
+	if o == nil || IsNil(o.MaximumInitialTaskLogMessagesToRetain) {
 		var ret int32
 		return ret
 	}
@@ -294,7 +297,7 @@ func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetain() int32 {
 // GetMaximumInitialTaskLogMessagesToRetainOk returns a tuple with the MaximumInitialTaskLogMessagesToRetain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumInitialTaskLogMessagesToRetain) {
+	if o == nil || IsNil(o.MaximumInitialTaskLogMessagesToRetain) {
 		return nil, false
 	}
 	return o.MaximumInitialTaskLogMessagesToRetain, true
@@ -302,7 +305,7 @@ func (o *TaskBackendResponse) GetMaximumInitialTaskLogMessagesToRetainOk() (*int
 
 // HasMaximumInitialTaskLogMessagesToRetain returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasMaximumInitialTaskLogMessagesToRetain() bool {
-	if o != nil && !isNil(o.MaximumInitialTaskLogMessagesToRetain) {
+	if o != nil && !IsNil(o.MaximumInitialTaskLogMessagesToRetain) {
 		return true
 	}
 
@@ -316,7 +319,7 @@ func (o *TaskBackendResponse) SetMaximumInitialTaskLogMessagesToRetain(v int32) 
 
 // GetMaximumFinalTaskLogMessagesToRetain returns the MaximumFinalTaskLogMessagesToRetain field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int32 {
-	if o == nil || isNil(o.MaximumFinalTaskLogMessagesToRetain) {
+	if o == nil || IsNil(o.MaximumFinalTaskLogMessagesToRetain) {
 		var ret int32
 		return ret
 	}
@@ -326,7 +329,7 @@ func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetain() int32 {
 // GetMaximumFinalTaskLogMessagesToRetainOk returns a tuple with the MaximumFinalTaskLogMessagesToRetain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumFinalTaskLogMessagesToRetain) {
+	if o == nil || IsNil(o.MaximumFinalTaskLogMessagesToRetain) {
 		return nil, false
 	}
 	return o.MaximumFinalTaskLogMessagesToRetain, true
@@ -334,7 +337,7 @@ func (o *TaskBackendResponse) GetMaximumFinalTaskLogMessagesToRetainOk() (*int32
 
 // HasMaximumFinalTaskLogMessagesToRetain returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasMaximumFinalTaskLogMessagesToRetain() bool {
-	if o != nil && !isNil(o.MaximumFinalTaskLogMessagesToRetain) {
+	if o != nil && !IsNil(o.MaximumFinalTaskLogMessagesToRetain) {
 		return true
 	}
 
@@ -348,7 +351,7 @@ func (o *TaskBackendResponse) SetMaximumFinalTaskLogMessagesToRetain(v int32) {
 
 // GetTaskRetentionTime returns the TaskRetentionTime field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetTaskRetentionTime() string {
-	if o == nil || isNil(o.TaskRetentionTime) {
+	if o == nil || IsNil(o.TaskRetentionTime) {
 		var ret string
 		return ret
 	}
@@ -358,7 +361,7 @@ func (o *TaskBackendResponse) GetTaskRetentionTime() string {
 // GetTaskRetentionTimeOk returns a tuple with the TaskRetentionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetTaskRetentionTimeOk() (*string, bool) {
-	if o == nil || isNil(o.TaskRetentionTime) {
+	if o == nil || IsNil(o.TaskRetentionTime) {
 		return nil, false
 	}
 	return o.TaskRetentionTime, true
@@ -366,7 +369,7 @@ func (o *TaskBackendResponse) GetTaskRetentionTimeOk() (*string, bool) {
 
 // HasTaskRetentionTime returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasTaskRetentionTime() bool {
-	if o != nil && !isNil(o.TaskRetentionTime) {
+	if o != nil && !IsNil(o.TaskRetentionTime) {
 		return true
 	}
 
@@ -380,7 +383,7 @@ func (o *TaskBackendResponse) SetTaskRetentionTime(v string) {
 
 // GetNotificationSenderAddress returns the NotificationSenderAddress field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetNotificationSenderAddress() string {
-	if o == nil || isNil(o.NotificationSenderAddress) {
+	if o == nil || IsNil(o.NotificationSenderAddress) {
 		var ret string
 		return ret
 	}
@@ -390,7 +393,7 @@ func (o *TaskBackendResponse) GetNotificationSenderAddress() string {
 // GetNotificationSenderAddressOk returns a tuple with the NotificationSenderAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetNotificationSenderAddressOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationSenderAddress) {
+	if o == nil || IsNil(o.NotificationSenderAddress) {
 		return nil, false
 	}
 	return o.NotificationSenderAddress, true
@@ -398,7 +401,7 @@ func (o *TaskBackendResponse) GetNotificationSenderAddressOk() (*string, bool) {
 
 // HasNotificationSenderAddress returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasNotificationSenderAddress() bool {
-	if o != nil && !isNil(o.NotificationSenderAddress) {
+	if o != nil && !IsNil(o.NotificationSenderAddress) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *TaskBackendResponse) SetNotificationSenderAddress(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -422,7 +425,7 @@ func (o *TaskBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -430,7 +433,7 @@ func (o *TaskBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -468,7 +471,7 @@ func (o *TaskBackendResponse) SetEnabled(v bool) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -478,7 +481,7 @@ func (o *TaskBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -486,7 +489,7 @@ func (o *TaskBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) 
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -500,7 +503,7 @@ func (o *TaskBackendResponse) SetSetDegradedAlertWhenDisabled(v bool) {
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -510,7 +513,7 @@ func (o *TaskBackendResponse) GetReturnUnavailableWhenDisabled() bool {
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -518,7 +521,7 @@ func (o *TaskBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool)
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -532,7 +535,7 @@ func (o *TaskBackendResponse) SetReturnUnavailableWhenDisabled(v bool) {
 
 // GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -542,7 +545,7 @@ func (o *TaskBackendResponse) GetBackupFilePermissions() string {
 // GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		return nil, false
 	}
 	return o.BackupFilePermissions, true
@@ -550,7 +553,7 @@ func (o *TaskBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
 
 // HasBackupFilePermissions returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
+	if o != nil && !IsNil(o.BackupFilePermissions) {
 		return true
 	}
 
@@ -564,7 +567,7 @@ func (o *TaskBackendResponse) SetBackupFilePermissions(v string) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *TaskBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -574,7 +577,7 @@ func (o *TaskBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaskBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -582,7 +585,7 @@ func (o *TaskBackendResponse) GetNotificationManagerOk() (*string, bool) {
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *TaskBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -595,62 +598,56 @@ func (o *TaskBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o TaskBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if true {
-		toSerialize["taskBackingFile"] = o.TaskBackingFile
-	}
-	if !isNil(o.MaximumInitialTaskLogMessagesToRetain) {
-		toSerialize["maximumInitialTaskLogMessagesToRetain"] = o.MaximumInitialTaskLogMessagesToRetain
-	}
-	if !isNil(o.MaximumFinalTaskLogMessagesToRetain) {
-		toSerialize["maximumFinalTaskLogMessagesToRetain"] = o.MaximumFinalTaskLogMessagesToRetain
-	}
-	if !isNil(o.TaskRetentionTime) {
-		toSerialize["taskRetentionTime"] = o.TaskRetentionTime
-	}
-	if !isNil(o.NotificationSenderAddress) {
-		toSerialize["notificationSenderAddress"] = o.NotificationSenderAddress
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaskBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["backendID"] = o.BackendID
+	toSerialize["baseDN"] = o.BaseDN
+	toSerialize["writabilityMode"] = o.WritabilityMode
+	toSerialize["taskBackingFile"] = o.TaskBackingFile
+	if !IsNil(o.MaximumInitialTaskLogMessagesToRetain) {
+		toSerialize["maximumInitialTaskLogMessagesToRetain"] = o.MaximumInitialTaskLogMessagesToRetain
+	}
+	if !IsNil(o.MaximumFinalTaskLogMessagesToRetain) {
+		toSerialize["maximumFinalTaskLogMessagesToRetain"] = o.MaximumFinalTaskLogMessagesToRetain
+	}
+	if !IsNil(o.TaskRetentionTime) {
+		toSerialize["taskRetentionTime"] = o.TaskRetentionTime
+	}
+	if !IsNil(o.NotificationSenderAddress) {
+		toSerialize["notificationSenderAddress"] = o.NotificationSenderAddress
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.BackupFilePermissions) {
+		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableTaskBackendResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddPrivilegeDataSecurityAuditorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddPrivilegeDataSecurityAuditorRequest{}
+
 // AddPrivilegeDataSecurityAuditorRequest struct for AddPrivilegeDataSecurityAuditorRequest
 type AddPrivilegeDataSecurityAuditorRequest struct {
 	// Name of the new Data Security Auditor
@@ -100,7 +103,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetSchemas(v []EnumprivilegeDat
 
 // GetReportFile returns the ReportFile field value if set, zero value otherwise.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetReportFile() string {
-	if o == nil || isNil(o.ReportFile) {
+	if o == nil || IsNil(o.ReportFile) {
 		var ret string
 		return ret
 	}
@@ -110,7 +113,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetReportFile() string {
 // GetReportFileOk returns a tuple with the ReportFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetReportFileOk() (*string, bool) {
-	if o == nil || isNil(o.ReportFile) {
+	if o == nil || IsNil(o.ReportFile) {
 		return nil, false
 	}
 	return o.ReportFile, true
@@ -118,7 +121,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetReportFileOk() (*string, boo
 
 // HasReportFile returns a boolean if a field has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) HasReportFile() bool {
-	if o != nil && !isNil(o.ReportFile) {
+	if o != nil && !IsNil(o.ReportFile) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetReportFile(v string) {
 
 // GetIncludePrivilege returns the IncludePrivilege field value if set, zero value otherwise.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludePrivilege() []EnumdataSecurityAuditorIncludePrivilegeProp {
-	if o == nil || isNil(o.IncludePrivilege) {
+	if o == nil || IsNil(o.IncludePrivilege) {
 		var ret []EnumdataSecurityAuditorIncludePrivilegeProp
 		return ret
 	}
@@ -142,7 +145,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludePrivilege() []Enumdat
 // GetIncludePrivilegeOk returns a tuple with the IncludePrivilege field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludePrivilegeOk() ([]EnumdataSecurityAuditorIncludePrivilegeProp, bool) {
-	if o == nil || isNil(o.IncludePrivilege) {
+	if o == nil || IsNil(o.IncludePrivilege) {
 		return nil, false
 	}
 	return o.IncludePrivilege, true
@@ -150,7 +153,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludePrivilegeOk() ([]Enum
 
 // HasIncludePrivilege returns a boolean if a field has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) HasIncludePrivilege() bool {
-	if o != nil && !isNil(o.IncludePrivilege) {
+	if o != nil && !IsNil(o.IncludePrivilege) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetIncludePrivilege(v []Enumdat
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		return nil, false
 	}
 	return o.Enabled, true
@@ -182,7 +185,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetEnabledOk() (*bool, bool) {
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetEnabled(v bool) {
 
 // GetIncludeAttribute returns the IncludeAttribute field value if set, zero value otherwise.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludeAttribute() []string {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludeAttribute() []string 
 // GetIncludeAttributeOk returns a tuple with the IncludeAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludeAttribute) {
+	if o == nil || IsNil(o.IncludeAttribute) {
 		return nil, false
 	}
 	return o.IncludeAttribute, true
@@ -214,7 +217,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetIncludeAttributeOk() ([]stri
 
 // HasIncludeAttribute returns a boolean if a field has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) HasIncludeAttribute() bool {
-	if o != nil && !isNil(o.IncludeAttribute) {
+	if o != nil && !IsNil(o.IncludeAttribute) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetIncludeAttribute(v []string)
 
 // GetAuditBackend returns the AuditBackend field value if set, zero value otherwise.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditBackend() []string {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		var ret []string
 		return ret
 	}
@@ -238,7 +241,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditBackend() []string {
 // GetAuditBackendOk returns a tuple with the AuditBackend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, bool) {
-	if o == nil || isNil(o.AuditBackend) {
+	if o == nil || IsNil(o.AuditBackend) {
 		return nil, false
 	}
 	return o.AuditBackend, true
@@ -246,7 +249,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditBackendOk() ([]string, 
 
 // HasAuditBackend returns a boolean if a field has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) HasAuditBackend() bool {
-	if o != nil && !isNil(o.AuditBackend) {
+	if o != nil && !IsNil(o.AuditBackend) {
 		return true
 	}
 
@@ -260,7 +263,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetAuditBackend(v []string) {
 
 // GetAuditSeverity returns the AuditSeverity field value if set, zero value otherwise.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditSeverity() EnumdataSecurityAuditorAuditSeverityProp {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		var ret EnumdataSecurityAuditorAuditSeverityProp
 		return ret
 	}
@@ -270,7 +273,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditSeverity() EnumdataSecu
 // GetAuditSeverityOk returns a tuple with the AuditSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditSeverityOk() (*EnumdataSecurityAuditorAuditSeverityProp, bool) {
-	if o == nil || isNil(o.AuditSeverity) {
+	if o == nil || IsNil(o.AuditSeverity) {
 		return nil, false
 	}
 	return o.AuditSeverity, true
@@ -278,7 +281,7 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) GetAuditSeverityOk() (*Enumdata
 
 // HasAuditSeverity returns a boolean if a field has been set.
 func (o *AddPrivilegeDataSecurityAuditorRequest) HasAuditSeverity() bool {
-	if o != nil && !isNil(o.AuditSeverity) {
+	if o != nil && !IsNil(o.AuditSeverity) {
 		return true
 	}
 
@@ -291,32 +294,36 @@ func (o *AddPrivilegeDataSecurityAuditorRequest) SetAuditSeverity(v EnumdataSecu
 }
 
 func (o AddPrivilegeDataSecurityAuditorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["auditorName"] = o.AuditorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ReportFile) {
-		toSerialize["reportFile"] = o.ReportFile
-	}
-	if !isNil(o.IncludePrivilege) {
-		toSerialize["includePrivilege"] = o.IncludePrivilege
-	}
-	if !isNil(o.Enabled) {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeAttribute) {
-		toSerialize["includeAttribute"] = o.IncludeAttribute
-	}
-	if !isNil(o.AuditBackend) {
-		toSerialize["auditBackend"] = o.AuditBackend
-	}
-	if !isNil(o.AuditSeverity) {
-		toSerialize["auditSeverity"] = o.AuditSeverity
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddPrivilegeDataSecurityAuditorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["auditorName"] = o.AuditorName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ReportFile) {
+		toSerialize["reportFile"] = o.ReportFile
+	}
+	if !IsNil(o.IncludePrivilege) {
+		toSerialize["includePrivilege"] = o.IncludePrivilege
+	}
+	if !IsNil(o.Enabled) {
+		toSerialize["enabled"] = o.Enabled
+	}
+	if !IsNil(o.IncludeAttribute) {
+		toSerialize["includeAttribute"] = o.IncludeAttribute
+	}
+	if !IsNil(o.AuditBackend) {
+		toSerialize["auditBackend"] = o.AuditBackend
+	}
+	if !IsNil(o.AuditSeverity) {
+		toSerialize["auditSeverity"] = o.AuditSeverity
+	}
+	return toSerialize, nil
 }
 
 type NullableAddPrivilegeDataSecurityAuditorRequest struct {

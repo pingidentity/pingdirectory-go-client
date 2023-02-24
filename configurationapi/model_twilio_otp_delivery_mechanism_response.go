@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TwilioOtpDeliveryMechanismResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TwilioOtpDeliveryMechanismResponse{}
+
 // TwilioOtpDeliveryMechanismResponse struct for TwilioOtpDeliveryMechanismResponse
 type TwilioOtpDeliveryMechanismResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -70,7 +73,7 @@ func NewTwilioOtpDeliveryMechanismResponseWithDefaults() *TwilioOtpDeliveryMecha
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -80,7 +83,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -88,7 +91,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurat
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -120,7 +123,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetUrnpingidentityschemasconfigurat
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetTwilioAccountSID(v string) {
 
 // GetTwilioAuthToken returns the TwilioAuthToken field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthToken() string {
-	if o == nil || isNil(o.TwilioAuthToken) {
+	if o == nil || IsNil(o.TwilioAuthToken) {
 		var ret string
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthToken() string {
 // GetTwilioAuthTokenOk returns a tuple with the TwilioAuthToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenOk() (*string, bool) {
-	if o == nil || isNil(o.TwilioAuthToken) {
+	if o == nil || IsNil(o.TwilioAuthToken) {
 		return nil, false
 	}
 	return o.TwilioAuthToken, true
@@ -224,7 +227,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenOk() (*string, bo
 
 // HasTwilioAuthToken returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasTwilioAuthToken() bool {
-	if o != nil && !isNil(o.TwilioAuthToken) {
+	if o != nil && !IsNil(o.TwilioAuthToken) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetTwilioAuthToken(v string) {
 
 // GetTwilioAuthTokenPassphraseProvider returns the TwilioAuthTokenPassphraseProvider field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenPassphraseProvider() string {
-	if o == nil || isNil(o.TwilioAuthTokenPassphraseProvider) {
+	if o == nil || IsNil(o.TwilioAuthTokenPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenPassphraseProvide
 // GetTwilioAuthTokenPassphraseProviderOk returns a tuple with the TwilioAuthTokenPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.TwilioAuthTokenPassphraseProvider) {
+	if o == nil || IsNil(o.TwilioAuthTokenPassphraseProvider) {
 		return nil, false
 	}
 	return o.TwilioAuthTokenPassphraseProvider, true
@@ -256,7 +259,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetTwilioAuthTokenPassphraseProvide
 
 // HasTwilioAuthTokenPassphraseProvider returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasTwilioAuthTokenPassphraseProvider() bool {
-	if o != nil && !isNil(o.TwilioAuthTokenPassphraseProvider) {
+	if o != nil && !IsNil(o.TwilioAuthTokenPassphraseProvider) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetPhoneNumberAttributeType(v strin
 
 // GetPhoneNumberJSONField returns the PhoneNumberJSONField field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONField() string {
-	if o == nil || isNil(o.PhoneNumberJSONField) {
+	if o == nil || IsNil(o.PhoneNumberJSONField) {
 		var ret string
 		return ret
 	}
@@ -304,7 +307,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONField() string {
 // GetPhoneNumberJSONFieldOk returns a tuple with the PhoneNumberJSONField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONFieldOk() (*string, bool) {
-	if o == nil || isNil(o.PhoneNumberJSONField) {
+	if o == nil || IsNil(o.PhoneNumberJSONField) {
 		return nil, false
 	}
 	return o.PhoneNumberJSONField, true
@@ -312,7 +315,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONFieldOk() (*strin
 
 // HasPhoneNumberJSONField returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasPhoneNumberJSONField() bool {
-	if o != nil && !isNil(o.PhoneNumberJSONField) {
+	if o != nil && !IsNil(o.PhoneNumberJSONField) {
 		return true
 	}
 
@@ -326,7 +329,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetPhoneNumberJSONField(v string) {
 
 // GetPhoneNumberJSONObjectFilter returns the PhoneNumberJSONObjectFilter field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONObjectFilter() string {
-	if o == nil || isNil(o.PhoneNumberJSONObjectFilter) {
+	if o == nil || IsNil(o.PhoneNumberJSONObjectFilter) {
 		var ret string
 		return ret
 	}
@@ -336,7 +339,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONObjectFilter() st
 // GetPhoneNumberJSONObjectFilterOk returns a tuple with the PhoneNumberJSONObjectFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONObjectFilterOk() (*string, bool) {
-	if o == nil || isNil(o.PhoneNumberJSONObjectFilter) {
+	if o == nil || IsNil(o.PhoneNumberJSONObjectFilter) {
 		return nil, false
 	}
 	return o.PhoneNumberJSONObjectFilter, true
@@ -344,7 +347,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetPhoneNumberJSONObjectFilterOk() 
 
 // HasPhoneNumberJSONObjectFilter returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasPhoneNumberJSONObjectFilter() bool {
-	if o != nil && !isNil(o.PhoneNumberJSONObjectFilter) {
+	if o != nil && !IsNil(o.PhoneNumberJSONObjectFilter) {
 		return true
 	}
 
@@ -382,7 +385,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetSenderPhoneNumber(v []string) {
 
 // GetMessageTextBeforeOTP returns the MessageTextBeforeOTP field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextBeforeOTP() string {
-	if o == nil || isNil(o.MessageTextBeforeOTP) {
+	if o == nil || IsNil(o.MessageTextBeforeOTP) {
 		var ret string
 		return ret
 	}
@@ -392,7 +395,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextBeforeOTP() string {
 // GetMessageTextBeforeOTPOk returns a tuple with the MessageTextBeforeOTP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextBeforeOTPOk() (*string, bool) {
-	if o == nil || isNil(o.MessageTextBeforeOTP) {
+	if o == nil || IsNil(o.MessageTextBeforeOTP) {
 		return nil, false
 	}
 	return o.MessageTextBeforeOTP, true
@@ -400,7 +403,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextBeforeOTPOk() (*strin
 
 // HasMessageTextBeforeOTP returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasMessageTextBeforeOTP() bool {
-	if o != nil && !isNil(o.MessageTextBeforeOTP) {
+	if o != nil && !IsNil(o.MessageTextBeforeOTP) {
 		return true
 	}
 
@@ -414,7 +417,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetMessageTextBeforeOTP(v string) {
 
 // GetMessageTextAfterOTP returns the MessageTextAfterOTP field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextAfterOTP() string {
-	if o == nil || isNil(o.MessageTextAfterOTP) {
+	if o == nil || IsNil(o.MessageTextAfterOTP) {
 		var ret string
 		return ret
 	}
@@ -424,7 +427,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextAfterOTP() string {
 // GetMessageTextAfterOTPOk returns a tuple with the MessageTextAfterOTP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextAfterOTPOk() (*string, bool) {
-	if o == nil || isNil(o.MessageTextAfterOTP) {
+	if o == nil || IsNil(o.MessageTextAfterOTP) {
 		return nil, false
 	}
 	return o.MessageTextAfterOTP, true
@@ -432,7 +435,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetMessageTextAfterOTPOk() (*string
 
 // HasMessageTextAfterOTP returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasMessageTextAfterOTP() bool {
-	if o != nil && !isNil(o.MessageTextAfterOTP) {
+	if o != nil && !IsNil(o.MessageTextAfterOTP) {
 		return true
 	}
 
@@ -446,7 +449,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetMessageTextAfterOTP(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *TwilioOtpDeliveryMechanismResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -456,7 +459,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -464,7 +467,7 @@ func (o *TwilioOtpDeliveryMechanismResponse) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *TwilioOtpDeliveryMechanismResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -501,53 +504,49 @@ func (o *TwilioOtpDeliveryMechanismResponse) SetEnabled(v bool) {
 }
 
 func (o TwilioOtpDeliveryMechanismResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["twilioAccountSID"] = o.TwilioAccountSID
-	}
-	if !isNil(o.TwilioAuthToken) {
-		toSerialize["twilioAuthToken"] = o.TwilioAuthToken
-	}
-	if !isNil(o.TwilioAuthTokenPassphraseProvider) {
-		toSerialize["twilioAuthTokenPassphraseProvider"] = o.TwilioAuthTokenPassphraseProvider
-	}
-	if true {
-		toSerialize["phoneNumberAttributeType"] = o.PhoneNumberAttributeType
-	}
-	if !isNil(o.PhoneNumberJSONField) {
-		toSerialize["phoneNumberJSONField"] = o.PhoneNumberJSONField
-	}
-	if !isNil(o.PhoneNumberJSONObjectFilter) {
-		toSerialize["phoneNumberJSONObjectFilter"] = o.PhoneNumberJSONObjectFilter
-	}
-	if true {
-		toSerialize["senderPhoneNumber"] = o.SenderPhoneNumber
-	}
-	if !isNil(o.MessageTextBeforeOTP) {
-		toSerialize["messageTextBeforeOTP"] = o.MessageTextBeforeOTP
-	}
-	if !isNil(o.MessageTextAfterOTP) {
-		toSerialize["messageTextAfterOTP"] = o.MessageTextAfterOTP
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TwilioOtpDeliveryMechanismResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["twilioAccountSID"] = o.TwilioAccountSID
+	if !IsNil(o.TwilioAuthToken) {
+		toSerialize["twilioAuthToken"] = o.TwilioAuthToken
+	}
+	if !IsNil(o.TwilioAuthTokenPassphraseProvider) {
+		toSerialize["twilioAuthTokenPassphraseProvider"] = o.TwilioAuthTokenPassphraseProvider
+	}
+	toSerialize["phoneNumberAttributeType"] = o.PhoneNumberAttributeType
+	if !IsNil(o.PhoneNumberJSONField) {
+		toSerialize["phoneNumberJSONField"] = o.PhoneNumberJSONField
+	}
+	if !IsNil(o.PhoneNumberJSONObjectFilter) {
+		toSerialize["phoneNumberJSONObjectFilter"] = o.PhoneNumberJSONObjectFilter
+	}
+	toSerialize["senderPhoneNumber"] = o.SenderPhoneNumber
+	if !IsNil(o.MessageTextBeforeOTP) {
+		toSerialize["messageTextBeforeOTP"] = o.MessageTextBeforeOTP
+	}
+	if !IsNil(o.MessageTextAfterOTP) {
+		toSerialize["messageTextAfterOTP"] = o.MessageTextAfterOTP
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableTwilioOtpDeliveryMechanismResponse struct {

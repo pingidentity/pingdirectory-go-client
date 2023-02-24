@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddOpenidConnectIdTokenValidatorRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddOpenidConnectIdTokenValidatorRequest{}
+
 // AddOpenidConnectIdTokenValidatorRequest struct for AddOpenidConnectIdTokenValidatorRequest
 type AddOpenidConnectIdTokenValidatorRequest struct {
 	// Name of the new ID Token Validator
@@ -142,7 +145,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetAllowedSigningAlgorithm(v [
 
 // GetSigningCertificate returns the SigningCertificate field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSigningCertificate() []string {
-	if o == nil || isNil(o.SigningCertificate) {
+	if o == nil || IsNil(o.SigningCertificate) {
 		var ret []string
 		return ret
 	}
@@ -152,7 +155,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSigningCertificate() []stri
 // GetSigningCertificateOk returns a tuple with the SigningCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSigningCertificateOk() ([]string, bool) {
-	if o == nil || isNil(o.SigningCertificate) {
+	if o == nil || IsNil(o.SigningCertificate) {
 		return nil, false
 	}
 	return o.SigningCertificate, true
@@ -160,7 +163,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSigningCertificateOk() ([]s
 
 // HasSigningCertificate returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasSigningCertificate() bool {
-	if o != nil && !isNil(o.SigningCertificate) {
+	if o != nil && !IsNil(o.SigningCertificate) {
 		return true
 	}
 
@@ -174,7 +177,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetSigningCertificate(v []stri
 
 // GetOpenIDConnectProvider returns the OpenIDConnectProvider field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetOpenIDConnectProvider() string {
-	if o == nil || isNil(o.OpenIDConnectProvider) {
+	if o == nil || IsNil(o.OpenIDConnectProvider) {
 		var ret string
 		return ret
 	}
@@ -184,7 +187,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetOpenIDConnectProvider() str
 // GetOpenIDConnectProviderOk returns a tuple with the OpenIDConnectProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (*string, bool) {
-	if o == nil || isNil(o.OpenIDConnectProvider) {
+	if o == nil || IsNil(o.OpenIDConnectProvider) {
 		return nil, false
 	}
 	return o.OpenIDConnectProvider, true
@@ -192,7 +195,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetOpenIDConnectProviderOk() (
 
 // HasOpenIDConnectProvider returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasOpenIDConnectProvider() bool {
-	if o != nil && !isNil(o.OpenIDConnectProvider) {
+	if o != nil && !IsNil(o.OpenIDConnectProvider) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetOpenIDConnectProvider(v str
 
 // GetJwksEndpointPath returns the JwksEndpointPath field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksEndpointPath() string {
-	if o == nil || isNil(o.JwksEndpointPath) {
+	if o == nil || IsNil(o.JwksEndpointPath) {
 		var ret string
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksEndpointPath() string {
 // GetJwksEndpointPathOk returns a tuple with the JwksEndpointPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksEndpointPathOk() (*string, bool) {
-	if o == nil || isNil(o.JwksEndpointPath) {
+	if o == nil || IsNil(o.JwksEndpointPath) {
 		return nil, false
 	}
 	return o.JwksEndpointPath, true
@@ -224,7 +227,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksEndpointPathOk() (*stri
 
 // HasJwksEndpointPath returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasJwksEndpointPath() bool {
-	if o != nil && !isNil(o.JwksEndpointPath) {
+	if o != nil && !IsNil(o.JwksEndpointPath) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetJwksEndpointPath(v string) 
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -256,7 +259,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetDescriptionOk() (*string, b
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -318,7 +321,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetIdentityMapper(v string) {
 
 // GetSubjectClaimName returns the SubjectClaimName field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSubjectClaimName() string {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		var ret string
 		return ret
 	}
@@ -328,7 +331,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSubjectClaimName() string {
 // GetSubjectClaimNameOk returns a tuple with the SubjectClaimName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetSubjectClaimNameOk() (*string, bool) {
-	if o == nil || isNil(o.SubjectClaimName) {
+	if o == nil || IsNil(o.SubjectClaimName) {
 		return nil, false
 	}
 	return o.SubjectClaimName, true
@@ -336,7 +339,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetSubjectClaimNameOk() (*stri
 
 // HasSubjectClaimName returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasSubjectClaimName() bool {
-	if o != nil && !isNil(o.SubjectClaimName) {
+	if o != nil && !IsNil(o.SubjectClaimName) {
 		return true
 	}
 
@@ -374,7 +377,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetIssuerURL(v string) {
 
 // GetClockSkewGracePeriod returns the ClockSkewGracePeriod field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetClockSkewGracePeriod() string {
-	if o == nil || isNil(o.ClockSkewGracePeriod) {
+	if o == nil || IsNil(o.ClockSkewGracePeriod) {
 		var ret string
 		return ret
 	}
@@ -384,7 +387,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetClockSkewGracePeriod() stri
 // GetClockSkewGracePeriodOk returns a tuple with the ClockSkewGracePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetClockSkewGracePeriodOk() (*string, bool) {
-	if o == nil || isNil(o.ClockSkewGracePeriod) {
+	if o == nil || IsNil(o.ClockSkewGracePeriod) {
 		return nil, false
 	}
 	return o.ClockSkewGracePeriod, true
@@ -392,7 +395,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetClockSkewGracePeriodOk() (*
 
 // HasClockSkewGracePeriod returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasClockSkewGracePeriod() bool {
-	if o != nil && !isNil(o.ClockSkewGracePeriod) {
+	if o != nil && !IsNil(o.ClockSkewGracePeriod) {
 		return true
 	}
 
@@ -406,7 +409,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetClockSkewGracePeriod(v stri
 
 // GetJwksCacheDuration returns the JwksCacheDuration field value if set, zero value otherwise.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksCacheDuration() string {
-	if o == nil || isNil(o.JwksCacheDuration) {
+	if o == nil || IsNil(o.JwksCacheDuration) {
 		var ret string
 		return ret
 	}
@@ -416,7 +419,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksCacheDuration() string 
 // GetJwksCacheDurationOk returns a tuple with the JwksCacheDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksCacheDurationOk() (*string, bool) {
-	if o == nil || isNil(o.JwksCacheDuration) {
+	if o == nil || IsNil(o.JwksCacheDuration) {
 		return nil, false
 	}
 	return o.JwksCacheDuration, true
@@ -424,7 +427,7 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) GetJwksCacheDurationOk() (*str
 
 // HasJwksCacheDuration returns a boolean if a field has been set.
 func (o *AddOpenidConnectIdTokenValidatorRequest) HasJwksCacheDuration() bool {
-	if o != nil && !isNil(o.JwksCacheDuration) {
+	if o != nil && !IsNil(o.JwksCacheDuration) {
 		return true
 	}
 
@@ -461,50 +464,44 @@ func (o *AddOpenidConnectIdTokenValidatorRequest) SetEvaluationOrderIndex(v int3
 }
 
 func (o AddOpenidConnectIdTokenValidatorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validatorName"] = o.ValidatorName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
-	}
-	if !isNil(o.SigningCertificate) {
-		toSerialize["signingCertificate"] = o.SigningCertificate
-	}
-	if !isNil(o.OpenIDConnectProvider) {
-		toSerialize["OpenIDConnectProvider"] = o.OpenIDConnectProvider
-	}
-	if !isNil(o.JwksEndpointPath) {
-		toSerialize["jwksEndpointPath"] = o.JwksEndpointPath
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.SubjectClaimName) {
-		toSerialize["subjectClaimName"] = o.SubjectClaimName
-	}
-	if true {
-		toSerialize["issuerURL"] = o.IssuerURL
-	}
-	if !isNil(o.ClockSkewGracePeriod) {
-		toSerialize["clockSkewGracePeriod"] = o.ClockSkewGracePeriod
-	}
-	if !isNil(o.JwksCacheDuration) {
-		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
-	}
-	if true {
-		toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddOpenidConnectIdTokenValidatorRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validatorName"] = o.ValidatorName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["allowedSigningAlgorithm"] = o.AllowedSigningAlgorithm
+	if !IsNil(o.SigningCertificate) {
+		toSerialize["signingCertificate"] = o.SigningCertificate
+	}
+	if !IsNil(o.OpenIDConnectProvider) {
+		toSerialize["OpenIDConnectProvider"] = o.OpenIDConnectProvider
+	}
+	if !IsNil(o.JwksEndpointPath) {
+		toSerialize["jwksEndpointPath"] = o.JwksEndpointPath
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.SubjectClaimName) {
+		toSerialize["subjectClaimName"] = o.SubjectClaimName
+	}
+	toSerialize["issuerURL"] = o.IssuerURL
+	if !IsNil(o.ClockSkewGracePeriod) {
+		toSerialize["clockSkewGracePeriod"] = o.ClockSkewGracePeriod
+	}
+	if !IsNil(o.JwksCacheDuration) {
+		toSerialize["jwksCacheDuration"] = o.JwksCacheDuration
+	}
+	toSerialize["evaluationOrderIndex"] = o.EvaluationOrderIndex
+	return toSerialize, nil
 }
 
 type NullableAddOpenidConnectIdTokenValidatorRequest struct {

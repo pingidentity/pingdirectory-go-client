@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddBlindTrustManagerProviderRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddBlindTrustManagerProviderRequest{}
+
 // AddBlindTrustManagerProviderRequest struct for AddBlindTrustManagerProviderRequest
 type AddBlindTrustManagerProviderRequest struct {
 	// Name of the new Trust Manager Provider
@@ -119,7 +122,7 @@ func (o *AddBlindTrustManagerProviderRequest) SetEnabled(v bool) {
 
 // GetIncludeJVMDefaultIssuers returns the IncludeJVMDefaultIssuers field value if set, zero value otherwise.
 func (o *AddBlindTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() bool {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		var ret bool
 		return ret
 	}
@@ -129,7 +132,7 @@ func (o *AddBlindTrustManagerProviderRequest) GetIncludeJVMDefaultIssuers() bool
 // GetIncludeJVMDefaultIssuersOk returns a tuple with the IncludeJVMDefaultIssuers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddBlindTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*bool, bool) {
-	if o == nil || isNil(o.IncludeJVMDefaultIssuers) {
+	if o == nil || IsNil(o.IncludeJVMDefaultIssuers) {
 		return nil, false
 	}
 	return o.IncludeJVMDefaultIssuers, true
@@ -137,7 +140,7 @@ func (o *AddBlindTrustManagerProviderRequest) GetIncludeJVMDefaultIssuersOk() (*
 
 // HasIncludeJVMDefaultIssuers returns a boolean if a field has been set.
 func (o *AddBlindTrustManagerProviderRequest) HasIncludeJVMDefaultIssuers() bool {
-	if o != nil && !isNil(o.IncludeJVMDefaultIssuers) {
+	if o != nil && !IsNil(o.IncludeJVMDefaultIssuers) {
 		return true
 	}
 
@@ -150,20 +153,22 @@ func (o *AddBlindTrustManagerProviderRequest) SetIncludeJVMDefaultIssuers(v bool
 }
 
 func (o AddBlindTrustManagerProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["providerName"] = o.ProviderName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.IncludeJVMDefaultIssuers) {
-		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddBlindTrustManagerProviderRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["providerName"] = o.ProviderName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.IncludeJVMDefaultIssuers) {
+		toSerialize["includeJVMDefaultIssuers"] = o.IncludeJVMDefaultIssuers
+	}
+	return toSerialize, nil
 }
 
 type NullableAddBlindTrustManagerProviderRequest struct {

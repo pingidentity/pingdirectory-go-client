@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *AccountStatusNotificationHandlerApiService) AddAccountStatusNotificatio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotifica
 	}
 
 	localVarPath := localBasePath + "/account-status-notification-handlers/{account-status-notification-handler-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account-status-notification-handler-name"+"}", url.PathEscape(parameterToString(r.accountStatusNotificationHandlerName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account-status-notification-handler-name"+"}", url.PathEscape(parameterValueToString(r.accountStatusNotificationHandlerName, "accountStatusNotificationHandlerName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *AccountStatusNotificationHandlerApiService) DeleteAccountStatusNotifica
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificatio
 	}
 
 	localVarPath := localBasePath + "/account-status-notification-handlers/{account-status-notification-handler-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account-status-notification-handler-name"+"}", url.PathEscape(parameterToString(r.accountStatusNotificationHandlerName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account-status-notification-handler-name"+"}", url.PathEscape(parameterValueToString(r.accountStatusNotificationHandlerName, "accountStatusNotificationHandlerName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *AccountStatusNotificationHandlerApiService) GetAccountStatusNotificatio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotifica
 	}
 
 	localVarPath := localBasePath + "/account-status-notification-handlers/{account-status-notification-handler-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account-status-notification-handler-name"+"}", url.PathEscape(parameterToString(r.accountStatusNotificationHandlerName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account-status-notification-handler-name"+"}", url.PathEscape(parameterValueToString(r.accountStatusNotificationHandlerName, "accountStatusNotificationHandlerName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *AccountStatusNotificationHandlerApiService) UpdateAccountStatusNotifica
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

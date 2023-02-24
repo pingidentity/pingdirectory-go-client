@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddSubOperationTimingPluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddSubOperationTimingPluginRequest{}
+
 // AddSubOperationTimingPluginRequest struct for AddSubOperationTimingPluginRequest
 type AddSubOperationTimingPluginRequest struct {
 	// Name of the new Plugin
@@ -102,7 +105,7 @@ func (o *AddSubOperationTimingPluginRequest) SetSchemas(v []EnumsubOperationTimi
 
 // GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
@@ -112,7 +115,7 @@ func (o *AddSubOperationTimingPluginRequest) GetPluginType() []EnumpluginPluginT
 // GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
@@ -120,7 +123,7 @@ func (o *AddSubOperationTimingPluginRequest) GetPluginTypeOk() ([]EnumpluginPlug
 
 // HasPluginType returns a boolean if a field has been set.
 func (o *AddSubOperationTimingPluginRequest) HasPluginType() bool {
-	if o != nil && !isNil(o.PluginType) {
+	if o != nil && !IsNil(o.PluginType) {
 		return true
 	}
 
@@ -134,7 +137,7 @@ func (o *AddSubOperationTimingPluginRequest) SetPluginType(v []EnumpluginPluginT
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -144,7 +147,7 @@ func (o *AddSubOperationTimingPluginRequest) GetRequestCriteria() string {
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -152,7 +155,7 @@ func (o *AddSubOperationTimingPluginRequest) GetRequestCriteriaOk() (*string, bo
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *AddSubOperationTimingPluginRequest) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *AddSubOperationTimingPluginRequest) SetRequestCriteria(v string) {
 
 // GetNumMostExpensivePhasesShown returns the NumMostExpensivePhasesShown field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() int32 {
-	if o == nil || isNil(o.NumMostExpensivePhasesShown) {
+	if o == nil || IsNil(o.NumMostExpensivePhasesShown) {
 		var ret int32
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShown() in
 // GetNumMostExpensivePhasesShownOk returns a tuple with the NumMostExpensivePhasesShown field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() (*int32, bool) {
-	if o == nil || isNil(o.NumMostExpensivePhasesShown) {
+	if o == nil || IsNil(o.NumMostExpensivePhasesShown) {
 		return nil, false
 	}
 	return o.NumMostExpensivePhasesShown, true
@@ -184,7 +187,7 @@ func (o *AddSubOperationTimingPluginRequest) GetNumMostExpensivePhasesShownOk() 
 
 // HasNumMostExpensivePhasesShown returns a boolean if a field has been set.
 func (o *AddSubOperationTimingPluginRequest) HasNumMostExpensivePhasesShown() bool {
-	if o != nil && !isNil(o.NumMostExpensivePhasesShown) {
+	if o != nil && !IsNil(o.NumMostExpensivePhasesShown) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *AddSubOperationTimingPluginRequest) SetNumMostExpensivePhasesShown(v in
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *AddSubOperationTimingPluginRequest) GetInvokeForInternalOperations() bo
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -216,7 +219,7 @@ func (o *AddSubOperationTimingPluginRequest) GetInvokeForInternalOperationsOk() 
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddSubOperationTimingPluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *AddSubOperationTimingPluginRequest) SetInvokeForInternalOperations(v bo
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddSubOperationTimingPluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -240,7 +243,7 @@ func (o *AddSubOperationTimingPluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddSubOperationTimingPluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -248,7 +251,7 @@ func (o *AddSubOperationTimingPluginRequest) GetDescriptionOk() (*string, bool) 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddSubOperationTimingPluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -285,32 +288,34 @@ func (o *AddSubOperationTimingPluginRequest) SetEnabled(v bool) {
 }
 
 func (o AddSubOperationTimingPluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginType) {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.NumMostExpensivePhasesShown) {
-		toSerialize["numMostExpensivePhasesShown"] = o.NumMostExpensivePhasesShown
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddSubOperationTimingPluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PluginType) {
+		toSerialize["pluginType"] = o.PluginType
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.NumMostExpensivePhasesShown) {
+		toSerialize["numMostExpensivePhasesShown"] = o.NumMostExpensivePhasesShown
+	}
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddSubOperationTimingPluginRequest struct {

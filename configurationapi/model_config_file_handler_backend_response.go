@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ConfigFileHandlerBackendResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ConfigFileHandlerBackendResponse{}
+
 // ConfigFileHandlerBackendResponse struct for ConfigFileHandlerBackendResponse
 type ConfigFileHandlerBackendResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -73,7 +76,7 @@ func NewConfigFileHandlerBackendResponseWithDefaults() *ConfigFileHandlerBackend
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -91,7 +94,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *ConfigFileHandlerBackendResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *ConfigFileHandlerBackendResponse) GetUrnpingidentityschemasconfiguratio
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -123,7 +126,7 @@ func (o *ConfigFileHandlerBackendResponse) GetUrnpingidentityschemasconfiguratio
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *ConfigFileHandlerBackendResponse) SetWritabilityMode(v EnumbackendWrita
 
 // GetInsignificantConfigArchiveAttribute returns the InsignificantConfigArchiveAttribute field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveAttribute() []string {
-	if o == nil || isNil(o.InsignificantConfigArchiveAttribute) {
+	if o == nil || IsNil(o.InsignificantConfigArchiveAttribute) {
 		var ret []string
 		return ret
 	}
@@ -267,7 +270,7 @@ func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveAttribut
 // GetInsignificantConfigArchiveAttributeOk returns a tuple with the InsignificantConfigArchiveAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveAttributeOk() ([]string, bool) {
-	if o == nil || isNil(o.InsignificantConfigArchiveAttribute) {
+	if o == nil || IsNil(o.InsignificantConfigArchiveAttribute) {
 		return nil, false
 	}
 	return o.InsignificantConfigArchiveAttribute, true
@@ -275,7 +278,7 @@ func (o *ConfigFileHandlerBackendResponse) GetInsignificantConfigArchiveAttribut
 
 // HasInsignificantConfigArchiveAttribute returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasInsignificantConfigArchiveAttribute() bool {
-	if o != nil && !isNil(o.InsignificantConfigArchiveAttribute) {
+	if o != nil && !IsNil(o.InsignificantConfigArchiveAttribute) {
 		return true
 	}
 
@@ -289,7 +292,7 @@ func (o *ConfigFileHandlerBackendResponse) SetInsignificantConfigArchiveAttribut
 
 // GetMirroredSubtreePeerPollingInterval returns the MirroredSubtreePeerPollingInterval field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreePeerPollingInterval() string {
-	if o == nil || isNil(o.MirroredSubtreePeerPollingInterval) {
+	if o == nil || IsNil(o.MirroredSubtreePeerPollingInterval) {
 		var ret string
 		return ret
 	}
@@ -299,7 +302,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreePeerPollingInterval
 // GetMirroredSubtreePeerPollingIntervalOk returns a tuple with the MirroredSubtreePeerPollingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreePeerPollingIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MirroredSubtreePeerPollingInterval) {
+	if o == nil || IsNil(o.MirroredSubtreePeerPollingInterval) {
 		return nil, false
 	}
 	return o.MirroredSubtreePeerPollingInterval, true
@@ -307,7 +310,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreePeerPollingInterval
 
 // HasMirroredSubtreePeerPollingInterval returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasMirroredSubtreePeerPollingInterval() bool {
-	if o != nil && !isNil(o.MirroredSubtreePeerPollingInterval) {
+	if o != nil && !IsNil(o.MirroredSubtreePeerPollingInterval) {
 		return true
 	}
 
@@ -321,7 +324,7 @@ func (o *ConfigFileHandlerBackendResponse) SetMirroredSubtreePeerPollingInterval
 
 // GetMirroredSubtreeEntryUpdateTimeout returns the MirroredSubtreeEntryUpdateTimeout field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeEntryUpdateTimeout() string {
-	if o == nil || isNil(o.MirroredSubtreeEntryUpdateTimeout) {
+	if o == nil || IsNil(o.MirroredSubtreeEntryUpdateTimeout) {
 		var ret string
 		return ret
 	}
@@ -331,7 +334,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeEntryUpdateTimeout(
 // GetMirroredSubtreeEntryUpdateTimeoutOk returns a tuple with the MirroredSubtreeEntryUpdateTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeEntryUpdateTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.MirroredSubtreeEntryUpdateTimeout) {
+	if o == nil || IsNil(o.MirroredSubtreeEntryUpdateTimeout) {
 		return nil, false
 	}
 	return o.MirroredSubtreeEntryUpdateTimeout, true
@@ -339,7 +342,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeEntryUpdateTimeoutO
 
 // HasMirroredSubtreeEntryUpdateTimeout returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasMirroredSubtreeEntryUpdateTimeout() bool {
-	if o != nil && !isNil(o.MirroredSubtreeEntryUpdateTimeout) {
+	if o != nil && !IsNil(o.MirroredSubtreeEntryUpdateTimeout) {
 		return true
 	}
 
@@ -353,7 +356,7 @@ func (o *ConfigFileHandlerBackendResponse) SetMirroredSubtreeEntryUpdateTimeout(
 
 // GetMirroredSubtreeSearchTimeout returns the MirroredSubtreeSearchTimeout field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeSearchTimeout() string {
-	if o == nil || isNil(o.MirroredSubtreeSearchTimeout) {
+	if o == nil || IsNil(o.MirroredSubtreeSearchTimeout) {
 		var ret string
 		return ret
 	}
@@ -363,7 +366,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeSearchTimeout() str
 // GetMirroredSubtreeSearchTimeoutOk returns a tuple with the MirroredSubtreeSearchTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeSearchTimeoutOk() (*string, bool) {
-	if o == nil || isNil(o.MirroredSubtreeSearchTimeout) {
+	if o == nil || IsNil(o.MirroredSubtreeSearchTimeout) {
 		return nil, false
 	}
 	return o.MirroredSubtreeSearchTimeout, true
@@ -371,7 +374,7 @@ func (o *ConfigFileHandlerBackendResponse) GetMirroredSubtreeSearchTimeoutOk() (
 
 // HasMirroredSubtreeSearchTimeout returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasMirroredSubtreeSearchTimeout() bool {
-	if o != nil && !isNil(o.MirroredSubtreeSearchTimeout) {
+	if o != nil && !IsNil(o.MirroredSubtreeSearchTimeout) {
 		return true
 	}
 
@@ -385,7 +388,7 @@ func (o *ConfigFileHandlerBackendResponse) SetMirroredSubtreeSearchTimeout(v str
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -395,7 +398,7 @@ func (o *ConfigFileHandlerBackendResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -403,7 +406,7 @@ func (o *ConfigFileHandlerBackendResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -441,7 +444,7 @@ func (o *ConfigFileHandlerBackendResponse) SetEnabled(v bool) {
 
 // GetSetDegradedAlertWhenDisabled returns the SetDegradedAlertWhenDisabled field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetSetDegradedAlertWhenDisabled() bool {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -451,7 +454,7 @@ func (o *ConfigFileHandlerBackendResponse) GetSetDegradedAlertWhenDisabled() boo
 // GetSetDegradedAlertWhenDisabledOk returns a tuple with the SetDegradedAlertWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetSetDegradedAlertWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.SetDegradedAlertWhenDisabled) {
+	if o == nil || IsNil(o.SetDegradedAlertWhenDisabled) {
 		return nil, false
 	}
 	return o.SetDegradedAlertWhenDisabled, true
@@ -459,7 +462,7 @@ func (o *ConfigFileHandlerBackendResponse) GetSetDegradedAlertWhenDisabledOk() (
 
 // HasSetDegradedAlertWhenDisabled returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasSetDegradedAlertWhenDisabled() bool {
-	if o != nil && !isNil(o.SetDegradedAlertWhenDisabled) {
+	if o != nil && !IsNil(o.SetDegradedAlertWhenDisabled) {
 		return true
 	}
 
@@ -473,7 +476,7 @@ func (o *ConfigFileHandlerBackendResponse) SetSetDegradedAlertWhenDisabled(v boo
 
 // GetReturnUnavailableWhenDisabled returns the ReturnUnavailableWhenDisabled field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetReturnUnavailableWhenDisabled() bool {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		var ret bool
 		return ret
 	}
@@ -483,7 +486,7 @@ func (o *ConfigFileHandlerBackendResponse) GetReturnUnavailableWhenDisabled() bo
 // GetReturnUnavailableWhenDisabledOk returns a tuple with the ReturnUnavailableWhenDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetReturnUnavailableWhenDisabledOk() (*bool, bool) {
-	if o == nil || isNil(o.ReturnUnavailableWhenDisabled) {
+	if o == nil || IsNil(o.ReturnUnavailableWhenDisabled) {
 		return nil, false
 	}
 	return o.ReturnUnavailableWhenDisabled, true
@@ -491,7 +494,7 @@ func (o *ConfigFileHandlerBackendResponse) GetReturnUnavailableWhenDisabledOk() 
 
 // HasReturnUnavailableWhenDisabled returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasReturnUnavailableWhenDisabled() bool {
-	if o != nil && !isNil(o.ReturnUnavailableWhenDisabled) {
+	if o != nil && !IsNil(o.ReturnUnavailableWhenDisabled) {
 		return true
 	}
 
@@ -505,7 +508,7 @@ func (o *ConfigFileHandlerBackendResponse) SetReturnUnavailableWhenDisabled(v bo
 
 // GetBackupFilePermissions returns the BackupFilePermissions field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetBackupFilePermissions() string {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		var ret string
 		return ret
 	}
@@ -515,7 +518,7 @@ func (o *ConfigFileHandlerBackendResponse) GetBackupFilePermissions() string {
 // GetBackupFilePermissionsOk returns a tuple with the BackupFilePermissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetBackupFilePermissionsOk() (*string, bool) {
-	if o == nil || isNil(o.BackupFilePermissions) {
+	if o == nil || IsNil(o.BackupFilePermissions) {
 		return nil, false
 	}
 	return o.BackupFilePermissions, true
@@ -523,7 +526,7 @@ func (o *ConfigFileHandlerBackendResponse) GetBackupFilePermissionsOk() (*string
 
 // HasBackupFilePermissions returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasBackupFilePermissions() bool {
-	if o != nil && !isNil(o.BackupFilePermissions) {
+	if o != nil && !IsNil(o.BackupFilePermissions) {
 		return true
 	}
 
@@ -537,7 +540,7 @@ func (o *ConfigFileHandlerBackendResponse) SetBackupFilePermissions(v string) {
 
 // GetNotificationManager returns the NotificationManager field value if set, zero value otherwise.
 func (o *ConfigFileHandlerBackendResponse) GetNotificationManager() string {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		var ret string
 		return ret
 	}
@@ -547,7 +550,7 @@ func (o *ConfigFileHandlerBackendResponse) GetNotificationManager() string {
 // GetNotificationManagerOk returns a tuple with the NotificationManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigFileHandlerBackendResponse) GetNotificationManagerOk() (*string, bool) {
-	if o == nil || isNil(o.NotificationManager) {
+	if o == nil || IsNil(o.NotificationManager) {
 		return nil, false
 	}
 	return o.NotificationManager, true
@@ -555,7 +558,7 @@ func (o *ConfigFileHandlerBackendResponse) GetNotificationManagerOk() (*string, 
 
 // HasNotificationManager returns a boolean if a field has been set.
 func (o *ConfigFileHandlerBackendResponse) HasNotificationManager() bool {
-	if o != nil && !isNil(o.NotificationManager) {
+	if o != nil && !IsNil(o.NotificationManager) {
 		return true
 	}
 
@@ -568,59 +571,55 @@ func (o *ConfigFileHandlerBackendResponse) SetNotificationManager(v string) {
 }
 
 func (o ConfigFileHandlerBackendResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["backendID"] = o.BackendID
-	}
-	if true {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if true {
-		toSerialize["writabilityMode"] = o.WritabilityMode
-	}
-	if !isNil(o.InsignificantConfigArchiveAttribute) {
-		toSerialize["insignificantConfigArchiveAttribute"] = o.InsignificantConfigArchiveAttribute
-	}
-	if !isNil(o.MirroredSubtreePeerPollingInterval) {
-		toSerialize["mirroredSubtreePeerPollingInterval"] = o.MirroredSubtreePeerPollingInterval
-	}
-	if !isNil(o.MirroredSubtreeEntryUpdateTimeout) {
-		toSerialize["mirroredSubtreeEntryUpdateTimeout"] = o.MirroredSubtreeEntryUpdateTimeout
-	}
-	if !isNil(o.MirroredSubtreeSearchTimeout) {
-		toSerialize["mirroredSubtreeSearchTimeout"] = o.MirroredSubtreeSearchTimeout
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.SetDegradedAlertWhenDisabled) {
-		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
-	}
-	if !isNil(o.ReturnUnavailableWhenDisabled) {
-		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
-	}
-	if !isNil(o.BackupFilePermissions) {
-		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
-	}
-	if !isNil(o.NotificationManager) {
-		toSerialize["notificationManager"] = o.NotificationManager
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ConfigFileHandlerBackendResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	toSerialize["backendID"] = o.BackendID
+	toSerialize["baseDN"] = o.BaseDN
+	toSerialize["writabilityMode"] = o.WritabilityMode
+	if !IsNil(o.InsignificantConfigArchiveAttribute) {
+		toSerialize["insignificantConfigArchiveAttribute"] = o.InsignificantConfigArchiveAttribute
+	}
+	if !IsNil(o.MirroredSubtreePeerPollingInterval) {
+		toSerialize["mirroredSubtreePeerPollingInterval"] = o.MirroredSubtreePeerPollingInterval
+	}
+	if !IsNil(o.MirroredSubtreeEntryUpdateTimeout) {
+		toSerialize["mirroredSubtreeEntryUpdateTimeout"] = o.MirroredSubtreeEntryUpdateTimeout
+	}
+	if !IsNil(o.MirroredSubtreeSearchTimeout) {
+		toSerialize["mirroredSubtreeSearchTimeout"] = o.MirroredSubtreeSearchTimeout
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.SetDegradedAlertWhenDisabled) {
+		toSerialize["setDegradedAlertWhenDisabled"] = o.SetDegradedAlertWhenDisabled
+	}
+	if !IsNil(o.ReturnUnavailableWhenDisabled) {
+		toSerialize["returnUnavailableWhenDisabled"] = o.ReturnUnavailableWhenDisabled
+	}
+	if !IsNil(o.BackupFilePermissions) {
+		toSerialize["backupFilePermissions"] = o.BackupFilePermissions
+	}
+	if !IsNil(o.NotificationManager) {
+		toSerialize["notificationManager"] = o.NotificationManager
+	}
+	return toSerialize, nil
 }
 
 type NullableConfigFileHandlerBackendResponse struct {

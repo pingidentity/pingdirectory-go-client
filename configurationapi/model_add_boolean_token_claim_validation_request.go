@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddBooleanTokenClaimValidationRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddBooleanTokenClaimValidationRequest{}
+
 // AddBooleanTokenClaimValidationRequest struct for AddBooleanTokenClaimValidationRequest
 type AddBooleanTokenClaimValidationRequest struct {
 	// Name of the new Token Claim Validation
@@ -121,7 +124,7 @@ func (o *AddBooleanTokenClaimValidationRequest) SetRequiredValue(v EnumtokenClai
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddBooleanTokenClaimValidationRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -131,7 +134,7 @@ func (o *AddBooleanTokenClaimValidationRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddBooleanTokenClaimValidationRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -139,7 +142,7 @@ func (o *AddBooleanTokenClaimValidationRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddBooleanTokenClaimValidationRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -176,23 +179,23 @@ func (o *AddBooleanTokenClaimValidationRequest) SetClaimName(v string) {
 }
 
 func (o AddBooleanTokenClaimValidationRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["validationName"] = o.ValidationName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["requiredValue"] = o.RequiredValue
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["claimName"] = o.ClaimName
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddBooleanTokenClaimValidationRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["validationName"] = o.ValidationName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["requiredValue"] = o.RequiredValue
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["claimName"] = o.ClaimName
+	return toSerialize, nil
 }
 
 type NullableAddBooleanTokenClaimValidationRequest struct {

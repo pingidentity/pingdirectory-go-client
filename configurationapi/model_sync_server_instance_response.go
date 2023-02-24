@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SyncServerInstanceResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SyncServerInstanceResponse{}
+
 // SyncServerInstanceResponse struct for SyncServerInstanceResponse
 type SyncServerInstanceResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -87,7 +90,7 @@ func NewSyncServerInstanceResponseWithDefaults() *SyncServerInstanceResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *SyncServerInstanceResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -105,7 +108,7 @@ func (o *SyncServerInstanceResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -119,7 +122,7 @@ func (o *SyncServerInstanceResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -129,7 +132,7 @@ func (o *SyncServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessa
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -137,7 +140,7 @@ func (o *SyncServerInstanceResponse) GetUrnpingidentityschemasconfigurationmessa
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *SyncServerInstanceResponse) SetId(v string) {
 
 // GetServerInstanceType returns the ServerInstanceType field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetServerInstanceType() EnumserverInstanceServerInstanceTypeProp {
-	if o == nil || isNil(o.ServerInstanceType) {
+	if o == nil || IsNil(o.ServerInstanceType) {
 		var ret EnumserverInstanceServerInstanceTypeProp
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *SyncServerInstanceResponse) GetServerInstanceType() EnumserverInstanceS
 // GetServerInstanceTypeOk returns a tuple with the ServerInstanceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInstanceServerInstanceTypeProp, bool) {
-	if o == nil || isNil(o.ServerInstanceType) {
+	if o == nil || IsNil(o.ServerInstanceType) {
 		return nil, false
 	}
 	return o.ServerInstanceType, true
@@ -217,7 +220,7 @@ func (o *SyncServerInstanceResponse) GetServerInstanceTypeOk() (*EnumserverInsta
 
 // HasServerInstanceType returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasServerInstanceType() bool {
-	if o != nil && !isNil(o.ServerInstanceType) {
+	if o != nil && !IsNil(o.ServerInstanceType) {
 		return true
 	}
 
@@ -279,7 +282,7 @@ func (o *SyncServerInstanceResponse) SetClusterName(v string) {
 
 // GetServerInstanceLocation returns the ServerInstanceLocation field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetServerInstanceLocation() string {
-	if o == nil || isNil(o.ServerInstanceLocation) {
+	if o == nil || IsNil(o.ServerInstanceLocation) {
 		var ret string
 		return ret
 	}
@@ -289,7 +292,7 @@ func (o *SyncServerInstanceResponse) GetServerInstanceLocation() string {
 // GetServerInstanceLocationOk returns a tuple with the ServerInstanceLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetServerInstanceLocationOk() (*string, bool) {
-	if o == nil || isNil(o.ServerInstanceLocation) {
+	if o == nil || IsNil(o.ServerInstanceLocation) {
 		return nil, false
 	}
 	return o.ServerInstanceLocation, true
@@ -297,7 +300,7 @@ func (o *SyncServerInstanceResponse) GetServerInstanceLocationOk() (*string, boo
 
 // HasServerInstanceLocation returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasServerInstanceLocation() bool {
-	if o != nil && !isNil(o.ServerInstanceLocation) {
+	if o != nil && !IsNil(o.ServerInstanceLocation) {
 		return true
 	}
 
@@ -311,7 +314,7 @@ func (o *SyncServerInstanceResponse) SetServerInstanceLocation(v string) {
 
 // GetHostname returns the Hostname field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetHostname() string {
-	if o == nil || isNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname) {
 		var ret string
 		return ret
 	}
@@ -321,7 +324,7 @@ func (o *SyncServerInstanceResponse) GetHostname() string {
 // GetHostnameOk returns a tuple with the Hostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetHostnameOk() (*string, bool) {
-	if o == nil || isNil(o.Hostname) {
+	if o == nil || IsNil(o.Hostname) {
 		return nil, false
 	}
 	return o.Hostname, true
@@ -329,7 +332,7 @@ func (o *SyncServerInstanceResponse) GetHostnameOk() (*string, bool) {
 
 // HasHostname returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasHostname() bool {
-	if o != nil && !isNil(o.Hostname) {
+	if o != nil && !IsNil(o.Hostname) {
 		return true
 	}
 
@@ -343,7 +346,7 @@ func (o *SyncServerInstanceResponse) SetHostname(v string) {
 
 // GetServerRoot returns the ServerRoot field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetServerRoot() string {
-	if o == nil || isNil(o.ServerRoot) {
+	if o == nil || IsNil(o.ServerRoot) {
 		var ret string
 		return ret
 	}
@@ -353,7 +356,7 @@ func (o *SyncServerInstanceResponse) GetServerRoot() string {
 // GetServerRootOk returns a tuple with the ServerRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetServerRootOk() (*string, bool) {
-	if o == nil || isNil(o.ServerRoot) {
+	if o == nil || IsNil(o.ServerRoot) {
 		return nil, false
 	}
 	return o.ServerRoot, true
@@ -361,7 +364,7 @@ func (o *SyncServerInstanceResponse) GetServerRootOk() (*string, bool) {
 
 // HasServerRoot returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasServerRoot() bool {
-	if o != nil && !isNil(o.ServerRoot) {
+	if o != nil && !IsNil(o.ServerRoot) {
 		return true
 	}
 
@@ -399,7 +402,7 @@ func (o *SyncServerInstanceResponse) SetServerVersion(v string) {
 
 // GetInterServerCertificate returns the InterServerCertificate field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetInterServerCertificate() string {
-	if o == nil || isNil(o.InterServerCertificate) {
+	if o == nil || IsNil(o.InterServerCertificate) {
 		var ret string
 		return ret
 	}
@@ -409,7 +412,7 @@ func (o *SyncServerInstanceResponse) GetInterServerCertificate() string {
 // GetInterServerCertificateOk returns a tuple with the InterServerCertificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetInterServerCertificateOk() (*string, bool) {
-	if o == nil || isNil(o.InterServerCertificate) {
+	if o == nil || IsNil(o.InterServerCertificate) {
 		return nil, false
 	}
 	return o.InterServerCertificate, true
@@ -417,7 +420,7 @@ func (o *SyncServerInstanceResponse) GetInterServerCertificateOk() (*string, boo
 
 // HasInterServerCertificate returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasInterServerCertificate() bool {
-	if o != nil && !isNil(o.InterServerCertificate) {
+	if o != nil && !IsNil(o.InterServerCertificate) {
 		return true
 	}
 
@@ -431,7 +434,7 @@ func (o *SyncServerInstanceResponse) SetInterServerCertificate(v string) {
 
 // GetLdapPort returns the LdapPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetLdapPort() int32 {
-	if o == nil || isNil(o.LdapPort) {
+	if o == nil || IsNil(o.LdapPort) {
 		var ret int32
 		return ret
 	}
@@ -441,7 +444,7 @@ func (o *SyncServerInstanceResponse) GetLdapPort() int32 {
 // GetLdapPortOk returns a tuple with the LdapPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapPort) {
+	if o == nil || IsNil(o.LdapPort) {
 		return nil, false
 	}
 	return o.LdapPort, true
@@ -449,7 +452,7 @@ func (o *SyncServerInstanceResponse) GetLdapPortOk() (*int32, bool) {
 
 // HasLdapPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasLdapPort() bool {
-	if o != nil && !isNil(o.LdapPort) {
+	if o != nil && !IsNil(o.LdapPort) {
 		return true
 	}
 
@@ -463,7 +466,7 @@ func (o *SyncServerInstanceResponse) SetLdapPort(v int32) {
 
 // GetLdapsPort returns the LdapsPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetLdapsPort() int32 {
-	if o == nil || isNil(o.LdapsPort) {
+	if o == nil || IsNil(o.LdapsPort) {
 		var ret int32
 		return ret
 	}
@@ -473,7 +476,7 @@ func (o *SyncServerInstanceResponse) GetLdapsPort() int32 {
 // GetLdapsPortOk returns a tuple with the LdapsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.LdapsPort) {
+	if o == nil || IsNil(o.LdapsPort) {
 		return nil, false
 	}
 	return o.LdapsPort, true
@@ -481,7 +484,7 @@ func (o *SyncServerInstanceResponse) GetLdapsPortOk() (*int32, bool) {
 
 // HasLdapsPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasLdapsPort() bool {
-	if o != nil && !isNil(o.LdapsPort) {
+	if o != nil && !IsNil(o.LdapsPort) {
 		return true
 	}
 
@@ -495,7 +498,7 @@ func (o *SyncServerInstanceResponse) SetLdapsPort(v int32) {
 
 // GetHttpPort returns the HttpPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetHttpPort() int32 {
-	if o == nil || isNil(o.HttpPort) {
+	if o == nil || IsNil(o.HttpPort) {
 		var ret int32
 		return ret
 	}
@@ -505,7 +508,7 @@ func (o *SyncServerInstanceResponse) GetHttpPort() int32 {
 // GetHttpPortOk returns a tuple with the HttpPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpPort) {
+	if o == nil || IsNil(o.HttpPort) {
 		return nil, false
 	}
 	return o.HttpPort, true
@@ -513,7 +516,7 @@ func (o *SyncServerInstanceResponse) GetHttpPortOk() (*int32, bool) {
 
 // HasHttpPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasHttpPort() bool {
-	if o != nil && !isNil(o.HttpPort) {
+	if o != nil && !IsNil(o.HttpPort) {
 		return true
 	}
 
@@ -527,7 +530,7 @@ func (o *SyncServerInstanceResponse) SetHttpPort(v int32) {
 
 // GetHttpsPort returns the HttpsPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetHttpsPort() int32 {
-	if o == nil || isNil(o.HttpsPort) {
+	if o == nil || IsNil(o.HttpsPort) {
 		var ret int32
 		return ret
 	}
@@ -537,7 +540,7 @@ func (o *SyncServerInstanceResponse) GetHttpsPort() int32 {
 // GetHttpsPortOk returns a tuple with the HttpsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.HttpsPort) {
+	if o == nil || IsNil(o.HttpsPort) {
 		return nil, false
 	}
 	return o.HttpsPort, true
@@ -545,7 +548,7 @@ func (o *SyncServerInstanceResponse) GetHttpsPortOk() (*int32, bool) {
 
 // HasHttpsPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasHttpsPort() bool {
-	if o != nil && !isNil(o.HttpsPort) {
+	if o != nil && !IsNil(o.HttpsPort) {
 		return true
 	}
 
@@ -559,7 +562,7 @@ func (o *SyncServerInstanceResponse) SetHttpsPort(v int32) {
 
 // GetReplicationPort returns the ReplicationPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetReplicationPort() int32 {
-	if o == nil || isNil(o.ReplicationPort) {
+	if o == nil || IsNil(o.ReplicationPort) {
 		var ret int32
 		return ret
 	}
@@ -569,7 +572,7 @@ func (o *SyncServerInstanceResponse) GetReplicationPort() int32 {
 // GetReplicationPortOk returns a tuple with the ReplicationPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationPort) {
+	if o == nil || IsNil(o.ReplicationPort) {
 		return nil, false
 	}
 	return o.ReplicationPort, true
@@ -577,7 +580,7 @@ func (o *SyncServerInstanceResponse) GetReplicationPortOk() (*int32, bool) {
 
 // HasReplicationPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasReplicationPort() bool {
-	if o != nil && !isNil(o.ReplicationPort) {
+	if o != nil && !IsNil(o.ReplicationPort) {
 		return true
 	}
 
@@ -591,7 +594,7 @@ func (o *SyncServerInstanceResponse) SetReplicationPort(v int32) {
 
 // GetReplicationServerID returns the ReplicationServerID field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetReplicationServerID() int32 {
-	if o == nil || isNil(o.ReplicationServerID) {
+	if o == nil || IsNil(o.ReplicationServerID) {
 		var ret int32
 		return ret
 	}
@@ -601,7 +604,7 @@ func (o *SyncServerInstanceResponse) GetReplicationServerID() int32 {
 // GetReplicationServerIDOk returns a tuple with the ReplicationServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
-	if o == nil || isNil(o.ReplicationServerID) {
+	if o == nil || IsNil(o.ReplicationServerID) {
 		return nil, false
 	}
 	return o.ReplicationServerID, true
@@ -609,7 +612,7 @@ func (o *SyncServerInstanceResponse) GetReplicationServerIDOk() (*int32, bool) {
 
 // HasReplicationServerID returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasReplicationServerID() bool {
-	if o != nil && !isNil(o.ReplicationServerID) {
+	if o != nil && !IsNil(o.ReplicationServerID) {
 		return true
 	}
 
@@ -623,7 +626,7 @@ func (o *SyncServerInstanceResponse) SetReplicationServerID(v int32) {
 
 // GetReplicationDomainServerID returns the ReplicationDomainServerID field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int32 {
-	if o == nil || isNil(o.ReplicationDomainServerID) {
+	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		var ret []int32
 		return ret
 	}
@@ -633,7 +636,7 @@ func (o *SyncServerInstanceResponse) GetReplicationDomainServerID() []int32 {
 // GetReplicationDomainServerIDOk returns a tuple with the ReplicationDomainServerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, bool) {
-	if o == nil || isNil(o.ReplicationDomainServerID) {
+	if o == nil || IsNil(o.ReplicationDomainServerID) {
 		return nil, false
 	}
 	return o.ReplicationDomainServerID, true
@@ -641,7 +644,7 @@ func (o *SyncServerInstanceResponse) GetReplicationDomainServerIDOk() ([]int32, 
 
 // HasReplicationDomainServerID returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasReplicationDomainServerID() bool {
-	if o != nil && !isNil(o.ReplicationDomainServerID) {
+	if o != nil && !IsNil(o.ReplicationDomainServerID) {
 		return true
 	}
 
@@ -655,7 +658,7 @@ func (o *SyncServerInstanceResponse) SetReplicationDomainServerID(v []int32) {
 
 // GetJmxPort returns the JmxPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetJmxPort() int32 {
-	if o == nil || isNil(o.JmxPort) {
+	if o == nil || IsNil(o.JmxPort) {
 		var ret int32
 		return ret
 	}
@@ -665,7 +668,7 @@ func (o *SyncServerInstanceResponse) GetJmxPort() int32 {
 // GetJmxPortOk returns a tuple with the JmxPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
-	if o == nil || isNil(o.JmxPort) {
+	if o == nil || IsNil(o.JmxPort) {
 		return nil, false
 	}
 	return o.JmxPort, true
@@ -673,7 +676,7 @@ func (o *SyncServerInstanceResponse) GetJmxPortOk() (*int32, bool) {
 
 // HasJmxPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasJmxPort() bool {
-	if o != nil && !isNil(o.JmxPort) {
+	if o != nil && !IsNil(o.JmxPort) {
 		return true
 	}
 
@@ -687,7 +690,7 @@ func (o *SyncServerInstanceResponse) SetJmxPort(v int32) {
 
 // GetJmxsPort returns the JmxsPort field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetJmxsPort() int32 {
-	if o == nil || isNil(o.JmxsPort) {
+	if o == nil || IsNil(o.JmxsPort) {
 		var ret int32
 		return ret
 	}
@@ -697,7 +700,7 @@ func (o *SyncServerInstanceResponse) GetJmxsPort() int32 {
 // GetJmxsPortOk returns a tuple with the JmxsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
-	if o == nil || isNil(o.JmxsPort) {
+	if o == nil || IsNil(o.JmxsPort) {
 		return nil, false
 	}
 	return o.JmxsPort, true
@@ -705,7 +708,7 @@ func (o *SyncServerInstanceResponse) GetJmxsPortOk() (*int32, bool) {
 
 // HasJmxsPort returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasJmxsPort() bool {
-	if o != nil && !isNil(o.JmxsPort) {
+	if o != nil && !IsNil(o.JmxsPort) {
 		return true
 	}
 
@@ -719,7 +722,7 @@ func (o *SyncServerInstanceResponse) SetJmxsPort(v int32) {
 
 // GetPreferredSecurity returns the PreferredSecurity field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetPreferredSecurity() EnumserverInstancePreferredSecurityProp {
-	if o == nil || isNil(o.PreferredSecurity) {
+	if o == nil || IsNil(o.PreferredSecurity) {
 		var ret EnumserverInstancePreferredSecurityProp
 		return ret
 	}
@@ -729,7 +732,7 @@ func (o *SyncServerInstanceResponse) GetPreferredSecurity() EnumserverInstancePr
 // GetPreferredSecurityOk returns a tuple with the PreferredSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInstancePreferredSecurityProp, bool) {
-	if o == nil || isNil(o.PreferredSecurity) {
+	if o == nil || IsNil(o.PreferredSecurity) {
 		return nil, false
 	}
 	return o.PreferredSecurity, true
@@ -737,7 +740,7 @@ func (o *SyncServerInstanceResponse) GetPreferredSecurityOk() (*EnumserverInstan
 
 // HasPreferredSecurity returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasPreferredSecurity() bool {
-	if o != nil && !isNil(o.PreferredSecurity) {
+	if o != nil && !IsNil(o.PreferredSecurity) {
 		return true
 	}
 
@@ -751,7 +754,7 @@ func (o *SyncServerInstanceResponse) SetPreferredSecurity(v EnumserverInstancePr
 
 // GetStartTLSEnabled returns the StartTLSEnabled field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetStartTLSEnabled() bool {
-	if o == nil || isNil(o.StartTLSEnabled) {
+	if o == nil || IsNil(o.StartTLSEnabled) {
 		var ret bool
 		return ret
 	}
@@ -761,7 +764,7 @@ func (o *SyncServerInstanceResponse) GetStartTLSEnabled() bool {
 // GetStartTLSEnabledOk returns a tuple with the StartTLSEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.StartTLSEnabled) {
+	if o == nil || IsNil(o.StartTLSEnabled) {
 		return nil, false
 	}
 	return o.StartTLSEnabled, true
@@ -769,7 +772,7 @@ func (o *SyncServerInstanceResponse) GetStartTLSEnabledOk() (*bool, bool) {
 
 // HasStartTLSEnabled returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasStartTLSEnabled() bool {
-	if o != nil && !isNil(o.StartTLSEnabled) {
+	if o != nil && !IsNil(o.StartTLSEnabled) {
 		return true
 	}
 
@@ -783,7 +786,7 @@ func (o *SyncServerInstanceResponse) SetStartTLSEnabled(v bool) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -793,7 +796,7 @@ func (o *SyncServerInstanceResponse) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -801,7 +804,7 @@ func (o *SyncServerInstanceResponse) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -815,7 +818,7 @@ func (o *SyncServerInstanceResponse) SetBaseDN(v []string) {
 
 // GetMemberOfServerGroup returns the MemberOfServerGroup field value if set, zero value otherwise.
 func (o *SyncServerInstanceResponse) GetMemberOfServerGroup() []string {
-	if o == nil || isNil(o.MemberOfServerGroup) {
+	if o == nil || IsNil(o.MemberOfServerGroup) {
 		var ret []string
 		return ret
 	}
@@ -825,7 +828,7 @@ func (o *SyncServerInstanceResponse) GetMemberOfServerGroup() []string {
 // GetMemberOfServerGroupOk returns a tuple with the MemberOfServerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SyncServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool) {
-	if o == nil || isNil(o.MemberOfServerGroup) {
+	if o == nil || IsNil(o.MemberOfServerGroup) {
 		return nil, false
 	}
 	return o.MemberOfServerGroup, true
@@ -833,7 +836,7 @@ func (o *SyncServerInstanceResponse) GetMemberOfServerGroupOk() ([]string, bool)
 
 // HasMemberOfServerGroup returns a boolean if a field has been set.
 func (o *SyncServerInstanceResponse) HasMemberOfServerGroup() bool {
-	if o != nil && !isNil(o.MemberOfServerGroup) {
+	if o != nil && !IsNil(o.MemberOfServerGroup) {
 		return true
 	}
 
@@ -846,83 +849,81 @@ func (o *SyncServerInstanceResponse) SetMemberOfServerGroup(v []string) {
 }
 
 func (o SyncServerInstanceResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.ServerInstanceType) {
-		toSerialize["serverInstanceType"] = o.ServerInstanceType
-	}
-	if true {
-		toSerialize["serverInstanceName"] = o.ServerInstanceName
-	}
-	if true {
-		toSerialize["clusterName"] = o.ClusterName
-	}
-	if !isNil(o.ServerInstanceLocation) {
-		toSerialize["serverInstanceLocation"] = o.ServerInstanceLocation
-	}
-	if !isNil(o.Hostname) {
-		toSerialize["hostname"] = o.Hostname
-	}
-	if !isNil(o.ServerRoot) {
-		toSerialize["serverRoot"] = o.ServerRoot
-	}
-	if true {
-		toSerialize["serverVersion"] = o.ServerVersion
-	}
-	if !isNil(o.InterServerCertificate) {
-		toSerialize["interServerCertificate"] = o.InterServerCertificate
-	}
-	if !isNil(o.LdapPort) {
-		toSerialize["ldapPort"] = o.LdapPort
-	}
-	if !isNil(o.LdapsPort) {
-		toSerialize["ldapsPort"] = o.LdapsPort
-	}
-	if !isNil(o.HttpPort) {
-		toSerialize["httpPort"] = o.HttpPort
-	}
-	if !isNil(o.HttpsPort) {
-		toSerialize["httpsPort"] = o.HttpsPort
-	}
-	if !isNil(o.ReplicationPort) {
-		toSerialize["replicationPort"] = o.ReplicationPort
-	}
-	if !isNil(o.ReplicationServerID) {
-		toSerialize["replicationServerID"] = o.ReplicationServerID
-	}
-	if !isNil(o.ReplicationDomainServerID) {
-		toSerialize["replicationDomainServerID"] = o.ReplicationDomainServerID
-	}
-	if !isNil(o.JmxPort) {
-		toSerialize["jmxPort"] = o.JmxPort
-	}
-	if !isNil(o.JmxsPort) {
-		toSerialize["jmxsPort"] = o.JmxsPort
-	}
-	if !isNil(o.PreferredSecurity) {
-		toSerialize["preferredSecurity"] = o.PreferredSecurity
-	}
-	if !isNil(o.StartTLSEnabled) {
-		toSerialize["startTLSEnabled"] = o.StartTLSEnabled
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.MemberOfServerGroup) {
-		toSerialize["memberOfServerGroup"] = o.MemberOfServerGroup
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SyncServerInstanceResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.ServerInstanceType) {
+		toSerialize["serverInstanceType"] = o.ServerInstanceType
+	}
+	toSerialize["serverInstanceName"] = o.ServerInstanceName
+	toSerialize["clusterName"] = o.ClusterName
+	if !IsNil(o.ServerInstanceLocation) {
+		toSerialize["serverInstanceLocation"] = o.ServerInstanceLocation
+	}
+	if !IsNil(o.Hostname) {
+		toSerialize["hostname"] = o.Hostname
+	}
+	if !IsNil(o.ServerRoot) {
+		toSerialize["serverRoot"] = o.ServerRoot
+	}
+	toSerialize["serverVersion"] = o.ServerVersion
+	if !IsNil(o.InterServerCertificate) {
+		toSerialize["interServerCertificate"] = o.InterServerCertificate
+	}
+	if !IsNil(o.LdapPort) {
+		toSerialize["ldapPort"] = o.LdapPort
+	}
+	if !IsNil(o.LdapsPort) {
+		toSerialize["ldapsPort"] = o.LdapsPort
+	}
+	if !IsNil(o.HttpPort) {
+		toSerialize["httpPort"] = o.HttpPort
+	}
+	if !IsNil(o.HttpsPort) {
+		toSerialize["httpsPort"] = o.HttpsPort
+	}
+	if !IsNil(o.ReplicationPort) {
+		toSerialize["replicationPort"] = o.ReplicationPort
+	}
+	if !IsNil(o.ReplicationServerID) {
+		toSerialize["replicationServerID"] = o.ReplicationServerID
+	}
+	if !IsNil(o.ReplicationDomainServerID) {
+		toSerialize["replicationDomainServerID"] = o.ReplicationDomainServerID
+	}
+	if !IsNil(o.JmxPort) {
+		toSerialize["jmxPort"] = o.JmxPort
+	}
+	if !IsNil(o.JmxsPort) {
+		toSerialize["jmxsPort"] = o.JmxsPort
+	}
+	if !IsNil(o.PreferredSecurity) {
+		toSerialize["preferredSecurity"] = o.PreferredSecurity
+	}
+	if !IsNil(o.StartTLSEnabled) {
+		toSerialize["startTLSEnabled"] = o.StartTLSEnabled
+	}
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.MemberOfServerGroup) {
+		toSerialize["memberOfServerGroup"] = o.MemberOfServerGroup
+	}
+	return toSerialize, nil
 }
 
 type NullableSyncServerInstanceResponse struct {

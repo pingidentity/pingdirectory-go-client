@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomLoggedStatsResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomLoggedStatsResponse{}
+
 // CustomLoggedStatsResponse struct for CustomLoggedStatsResponse
 type CustomLoggedStatsResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -76,7 +79,7 @@ func NewCustomLoggedStatsResponseWithDefaults() *CustomLoggedStatsResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *CustomLoggedStatsResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -94,7 +97,7 @@ func (o *CustomLoggedStatsResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *CustomLoggedStatsResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *CustomLoggedStatsResponse) GetUrnpingidentityschemasconfigurationmessag
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -126,7 +129,7 @@ func (o *CustomLoggedStatsResponse) GetUrnpingidentityschemasconfigurationmessag
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *CustomLoggedStatsResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetSchemas() []EnumcustomLoggedStatsSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumcustomLoggedStatsSchemaUrn
 		return ret
 	}
@@ -174,7 +177,7 @@ func (o *CustomLoggedStatsResponse) GetSchemas() []EnumcustomLoggedStatsSchemaUr
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetSchemasOk() ([]EnumcustomLoggedStatsSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -182,7 +185,7 @@ func (o *CustomLoggedStatsResponse) GetSchemasOk() ([]EnumcustomLoggedStatsSchem
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *CustomLoggedStatsResponse) SetSchemas(v []EnumcustomLoggedStatsSchemaUr
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -206,7 +209,7 @@ func (o *CustomLoggedStatsResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -214,7 +217,7 @@ func (o *CustomLoggedStatsResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *CustomLoggedStatsResponse) SetMonitorObjectclass(v string) {
 
 // GetIncludeFilter returns the IncludeFilter field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetIncludeFilter() string {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		var ret string
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *CustomLoggedStatsResponse) GetIncludeFilter() string {
 // GetIncludeFilterOk returns a tuple with the IncludeFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetIncludeFilterOk() (*string, bool) {
-	if o == nil || isNil(o.IncludeFilter) {
+	if o == nil || IsNil(o.IncludeFilter) {
 		return nil, false
 	}
 	return o.IncludeFilter, true
@@ -294,7 +297,7 @@ func (o *CustomLoggedStatsResponse) GetIncludeFilterOk() (*string, bool) {
 
 // HasIncludeFilter returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasIncludeFilter() bool {
-	if o != nil && !isNil(o.IncludeFilter) {
+	if o != nil && !IsNil(o.IncludeFilter) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *CustomLoggedStatsResponse) SetAttributeToLog(v []string) {
 
 // GetColumnName returns the ColumnName field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetColumnName() []string {
-	if o == nil || isNil(o.ColumnName) {
+	if o == nil || IsNil(o.ColumnName) {
 		var ret []string
 		return ret
 	}
@@ -342,7 +345,7 @@ func (o *CustomLoggedStatsResponse) GetColumnName() []string {
 // GetColumnNameOk returns a tuple with the ColumnName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetColumnNameOk() ([]string, bool) {
-	if o == nil || isNil(o.ColumnName) {
+	if o == nil || IsNil(o.ColumnName) {
 		return nil, false
 	}
 	return o.ColumnName, true
@@ -350,7 +353,7 @@ func (o *CustomLoggedStatsResponse) GetColumnNameOk() ([]string, bool) {
 
 // HasColumnName returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasColumnName() bool {
-	if o != nil && !isNil(o.ColumnName) {
+	if o != nil && !IsNil(o.ColumnName) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *CustomLoggedStatsResponse) SetStatisticType(v []EnumcustomLoggedStatsSt
 
 // GetHeaderPrefix returns the HeaderPrefix field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetHeaderPrefix() string {
-	if o == nil || isNil(o.HeaderPrefix) {
+	if o == nil || IsNil(o.HeaderPrefix) {
 		var ret string
 		return ret
 	}
@@ -398,7 +401,7 @@ func (o *CustomLoggedStatsResponse) GetHeaderPrefix() string {
 // GetHeaderPrefixOk returns a tuple with the HeaderPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetHeaderPrefixOk() (*string, bool) {
-	if o == nil || isNil(o.HeaderPrefix) {
+	if o == nil || IsNil(o.HeaderPrefix) {
 		return nil, false
 	}
 	return o.HeaderPrefix, true
@@ -406,7 +409,7 @@ func (o *CustomLoggedStatsResponse) GetHeaderPrefixOk() (*string, bool) {
 
 // HasHeaderPrefix returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasHeaderPrefix() bool {
-	if o != nil && !isNil(o.HeaderPrefix) {
+	if o != nil && !IsNil(o.HeaderPrefix) {
 		return true
 	}
 
@@ -420,7 +423,7 @@ func (o *CustomLoggedStatsResponse) SetHeaderPrefix(v string) {
 
 // GetHeaderPrefixAttribute returns the HeaderPrefixAttribute field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetHeaderPrefixAttribute() string {
-	if o == nil || isNil(o.HeaderPrefixAttribute) {
+	if o == nil || IsNil(o.HeaderPrefixAttribute) {
 		var ret string
 		return ret
 	}
@@ -430,7 +433,7 @@ func (o *CustomLoggedStatsResponse) GetHeaderPrefixAttribute() string {
 // GetHeaderPrefixAttributeOk returns a tuple with the HeaderPrefixAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetHeaderPrefixAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.HeaderPrefixAttribute) {
+	if o == nil || IsNil(o.HeaderPrefixAttribute) {
 		return nil, false
 	}
 	return o.HeaderPrefixAttribute, true
@@ -438,7 +441,7 @@ func (o *CustomLoggedStatsResponse) GetHeaderPrefixAttributeOk() (*string, bool)
 
 // HasHeaderPrefixAttribute returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasHeaderPrefixAttribute() bool {
-	if o != nil && !isNil(o.HeaderPrefixAttribute) {
+	if o != nil && !IsNil(o.HeaderPrefixAttribute) {
 		return true
 	}
 
@@ -452,7 +455,7 @@ func (o *CustomLoggedStatsResponse) SetHeaderPrefixAttribute(v string) {
 
 // GetRegexPattern returns the RegexPattern field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetRegexPattern() string {
-	if o == nil || isNil(o.RegexPattern) {
+	if o == nil || IsNil(o.RegexPattern) {
 		var ret string
 		return ret
 	}
@@ -462,7 +465,7 @@ func (o *CustomLoggedStatsResponse) GetRegexPattern() string {
 // GetRegexPatternOk returns a tuple with the RegexPattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetRegexPatternOk() (*string, bool) {
-	if o == nil || isNil(o.RegexPattern) {
+	if o == nil || IsNil(o.RegexPattern) {
 		return nil, false
 	}
 	return o.RegexPattern, true
@@ -470,7 +473,7 @@ func (o *CustomLoggedStatsResponse) GetRegexPatternOk() (*string, bool) {
 
 // HasRegexPattern returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasRegexPattern() bool {
-	if o != nil && !isNil(o.RegexPattern) {
+	if o != nil && !IsNil(o.RegexPattern) {
 		return true
 	}
 
@@ -484,7 +487,7 @@ func (o *CustomLoggedStatsResponse) SetRegexPattern(v string) {
 
 // GetRegexReplacement returns the RegexReplacement field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetRegexReplacement() string {
-	if o == nil || isNil(o.RegexReplacement) {
+	if o == nil || IsNil(o.RegexReplacement) {
 		var ret string
 		return ret
 	}
@@ -494,7 +497,7 @@ func (o *CustomLoggedStatsResponse) GetRegexReplacement() string {
 // GetRegexReplacementOk returns a tuple with the RegexReplacement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetRegexReplacementOk() (*string, bool) {
-	if o == nil || isNil(o.RegexReplacement) {
+	if o == nil || IsNil(o.RegexReplacement) {
 		return nil, false
 	}
 	return o.RegexReplacement, true
@@ -502,7 +505,7 @@ func (o *CustomLoggedStatsResponse) GetRegexReplacementOk() (*string, bool) {
 
 // HasRegexReplacement returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasRegexReplacement() bool {
-	if o != nil && !isNil(o.RegexReplacement) {
+	if o != nil && !IsNil(o.RegexReplacement) {
 		return true
 	}
 
@@ -516,7 +519,7 @@ func (o *CustomLoggedStatsResponse) SetRegexReplacement(v string) {
 
 // GetDivideValueBy returns the DivideValueBy field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetDivideValueBy() string {
-	if o == nil || isNil(o.DivideValueBy) {
+	if o == nil || IsNil(o.DivideValueBy) {
 		var ret string
 		return ret
 	}
@@ -526,7 +529,7 @@ func (o *CustomLoggedStatsResponse) GetDivideValueBy() string {
 // GetDivideValueByOk returns a tuple with the DivideValueBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetDivideValueByOk() (*string, bool) {
-	if o == nil || isNil(o.DivideValueBy) {
+	if o == nil || IsNil(o.DivideValueBy) {
 		return nil, false
 	}
 	return o.DivideValueBy, true
@@ -534,7 +537,7 @@ func (o *CustomLoggedStatsResponse) GetDivideValueByOk() (*string, bool) {
 
 // HasDivideValueBy returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasDivideValueBy() bool {
-	if o != nil && !isNil(o.DivideValueBy) {
+	if o != nil && !IsNil(o.DivideValueBy) {
 		return true
 	}
 
@@ -548,7 +551,7 @@ func (o *CustomLoggedStatsResponse) SetDivideValueBy(v string) {
 
 // GetDivideValueByAttribute returns the DivideValueByAttribute field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetDivideValueByAttribute() string {
-	if o == nil || isNil(o.DivideValueByAttribute) {
+	if o == nil || IsNil(o.DivideValueByAttribute) {
 		var ret string
 		return ret
 	}
@@ -558,7 +561,7 @@ func (o *CustomLoggedStatsResponse) GetDivideValueByAttribute() string {
 // GetDivideValueByAttributeOk returns a tuple with the DivideValueByAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetDivideValueByAttributeOk() (*string, bool) {
-	if o == nil || isNil(o.DivideValueByAttribute) {
+	if o == nil || IsNil(o.DivideValueByAttribute) {
 		return nil, false
 	}
 	return o.DivideValueByAttribute, true
@@ -566,7 +569,7 @@ func (o *CustomLoggedStatsResponse) GetDivideValueByAttributeOk() (*string, bool
 
 // HasDivideValueByAttribute returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasDivideValueByAttribute() bool {
-	if o != nil && !isNil(o.DivideValueByAttribute) {
+	if o != nil && !IsNil(o.DivideValueByAttribute) {
 		return true
 	}
 
@@ -580,7 +583,7 @@ func (o *CustomLoggedStatsResponse) SetDivideValueByAttribute(v string) {
 
 // GetDecimalFormat returns the DecimalFormat field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetDecimalFormat() string {
-	if o == nil || isNil(o.DecimalFormat) {
+	if o == nil || IsNil(o.DecimalFormat) {
 		var ret string
 		return ret
 	}
@@ -590,7 +593,7 @@ func (o *CustomLoggedStatsResponse) GetDecimalFormat() string {
 // GetDecimalFormatOk returns a tuple with the DecimalFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetDecimalFormatOk() (*string, bool) {
-	if o == nil || isNil(o.DecimalFormat) {
+	if o == nil || IsNil(o.DecimalFormat) {
 		return nil, false
 	}
 	return o.DecimalFormat, true
@@ -598,7 +601,7 @@ func (o *CustomLoggedStatsResponse) GetDecimalFormatOk() (*string, bool) {
 
 // HasDecimalFormat returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasDecimalFormat() bool {
-	if o != nil && !isNil(o.DecimalFormat) {
+	if o != nil && !IsNil(o.DecimalFormat) {
 		return true
 	}
 
@@ -612,7 +615,7 @@ func (o *CustomLoggedStatsResponse) SetDecimalFormat(v string) {
 
 // GetNonZeroImpliesNotIdle returns the NonZeroImpliesNotIdle field value if set, zero value otherwise.
 func (o *CustomLoggedStatsResponse) GetNonZeroImpliesNotIdle() bool {
-	if o == nil || isNil(o.NonZeroImpliesNotIdle) {
+	if o == nil || IsNil(o.NonZeroImpliesNotIdle) {
 		var ret bool
 		return ret
 	}
@@ -622,7 +625,7 @@ func (o *CustomLoggedStatsResponse) GetNonZeroImpliesNotIdle() bool {
 // GetNonZeroImpliesNotIdleOk returns a tuple with the NonZeroImpliesNotIdle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLoggedStatsResponse) GetNonZeroImpliesNotIdleOk() (*bool, bool) {
-	if o == nil || isNil(o.NonZeroImpliesNotIdle) {
+	if o == nil || IsNil(o.NonZeroImpliesNotIdle) {
 		return nil, false
 	}
 	return o.NonZeroImpliesNotIdle, true
@@ -630,7 +633,7 @@ func (o *CustomLoggedStatsResponse) GetNonZeroImpliesNotIdleOk() (*bool, bool) {
 
 // HasNonZeroImpliesNotIdle returns a boolean if a field has been set.
 func (o *CustomLoggedStatsResponse) HasNonZeroImpliesNotIdle() bool {
-	if o != nil && !isNil(o.NonZeroImpliesNotIdle) {
+	if o != nil && !IsNil(o.NonZeroImpliesNotIdle) {
 		return true
 	}
 
@@ -643,65 +646,63 @@ func (o *CustomLoggedStatsResponse) SetNonZeroImpliesNotIdle(v bool) {
 }
 
 func (o CustomLoggedStatsResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if true {
-		toSerialize["monitorObjectclass"] = o.MonitorObjectclass
-	}
-	if !isNil(o.IncludeFilter) {
-		toSerialize["includeFilter"] = o.IncludeFilter
-	}
-	if true {
-		toSerialize["attributeToLog"] = o.AttributeToLog
-	}
-	if !isNil(o.ColumnName) {
-		toSerialize["columnName"] = o.ColumnName
-	}
-	if true {
-		toSerialize["statisticType"] = o.StatisticType
-	}
-	if !isNil(o.HeaderPrefix) {
-		toSerialize["headerPrefix"] = o.HeaderPrefix
-	}
-	if !isNil(o.HeaderPrefixAttribute) {
-		toSerialize["headerPrefixAttribute"] = o.HeaderPrefixAttribute
-	}
-	if !isNil(o.RegexPattern) {
-		toSerialize["regexPattern"] = o.RegexPattern
-	}
-	if !isNil(o.RegexReplacement) {
-		toSerialize["regexReplacement"] = o.RegexReplacement
-	}
-	if !isNil(o.DivideValueBy) {
-		toSerialize["divideValueBy"] = o.DivideValueBy
-	}
-	if !isNil(o.DivideValueByAttribute) {
-		toSerialize["divideValueByAttribute"] = o.DivideValueByAttribute
-	}
-	if !isNil(o.DecimalFormat) {
-		toSerialize["decimalFormat"] = o.DecimalFormat
-	}
-	if !isNil(o.NonZeroImpliesNotIdle) {
-		toSerialize["nonZeroImpliesNotIdle"] = o.NonZeroImpliesNotIdle
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomLoggedStatsResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["monitorObjectclass"] = o.MonitorObjectclass
+	if !IsNil(o.IncludeFilter) {
+		toSerialize["includeFilter"] = o.IncludeFilter
+	}
+	toSerialize["attributeToLog"] = o.AttributeToLog
+	if !IsNil(o.ColumnName) {
+		toSerialize["columnName"] = o.ColumnName
+	}
+	toSerialize["statisticType"] = o.StatisticType
+	if !IsNil(o.HeaderPrefix) {
+		toSerialize["headerPrefix"] = o.HeaderPrefix
+	}
+	if !IsNil(o.HeaderPrefixAttribute) {
+		toSerialize["headerPrefixAttribute"] = o.HeaderPrefixAttribute
+	}
+	if !IsNil(o.RegexPattern) {
+		toSerialize["regexPattern"] = o.RegexPattern
+	}
+	if !IsNil(o.RegexReplacement) {
+		toSerialize["regexReplacement"] = o.RegexReplacement
+	}
+	if !IsNil(o.DivideValueBy) {
+		toSerialize["divideValueBy"] = o.DivideValueBy
+	}
+	if !IsNil(o.DivideValueByAttribute) {
+		toSerialize["divideValueByAttribute"] = o.DivideValueByAttribute
+	}
+	if !IsNil(o.DecimalFormat) {
+		toSerialize["decimalFormat"] = o.DecimalFormat
+	}
+	if !IsNil(o.NonZeroImpliesNotIdle) {
+		toSerialize["nonZeroImpliesNotIdle"] = o.NonZeroImpliesNotIdle
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomLoggedStatsResponse struct {

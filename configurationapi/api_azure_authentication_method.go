@@ -13,7 +13,7 @@ package configurationapi
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -105,9 +105,9 @@ func (a *AzureAuthenticationMethodApiService) AddAzureAuthenticationMethodExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -171,7 +171,7 @@ func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethodExe
 	}
 
 	localVarPath := localBasePath + "/azure-authentication-methods/{azure-authentication-method-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"azure-authentication-method-name"+"}", url.PathEscape(parameterToString(r.azureAuthenticationMethodName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"azure-authentication-method-name"+"}", url.PathEscape(parameterValueToString(r.azureAuthenticationMethodName, "azureAuthenticationMethodName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -204,9 +204,9 @@ func (a *AzureAuthenticationMethodApiService) DeleteAzureAuthenticationMethodExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -264,7 +264,7 @@ func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethodExecut
 	}
 
 	localVarPath := localBasePath + "/azure-authentication-methods/{azure-authentication-method-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"azure-authentication-method-name"+"}", url.PathEscape(parameterToString(r.azureAuthenticationMethodName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"azure-authentication-method-name"+"}", url.PathEscape(parameterValueToString(r.azureAuthenticationMethodName, "azureAuthenticationMethodName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -297,9 +297,9 @@ func (a *AzureAuthenticationMethodApiService) GetAzureAuthenticationMethodExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -373,7 +373,7 @@ func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethodExe
 	}
 
 	localVarPath := localBasePath + "/azure-authentication-methods/{azure-authentication-method-name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"azure-authentication-method-name"+"}", url.PathEscape(parameterToString(r.azureAuthenticationMethodName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"azure-authentication-method-name"+"}", url.PathEscape(parameterValueToString(r.azureAuthenticationMethodName, "azureAuthenticationMethodName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -411,9 +411,9 @@ func (a *AzureAuthenticationMethodApiService) UpdateAzureAuthenticationMethodExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

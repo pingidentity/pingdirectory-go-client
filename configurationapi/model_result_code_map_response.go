@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ResultCodeMapResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ResultCodeMapResponse{}
+
 // ResultCodeMapResponse struct for ResultCodeMapResponse
 type ResultCodeMapResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -53,7 +56,7 @@ func NewResultCodeMapResponseWithDefaults() *ResultCodeMapResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -63,7 +66,7 @@ func (o *ResultCodeMapResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -71,7 +74,7 @@ func (o *ResultCodeMapResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -85,7 +88,7 @@ func (o *ResultCodeMapResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -103,7 +106,7 @@ func (o *ResultCodeMapResponse) GetUrnpingidentityschemasconfigurationmessages20
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -141,7 +144,7 @@ func (o *ResultCodeMapResponse) SetId(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetSchemas() []EnumresultCodeMapSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumresultCodeMapSchemaUrn
 		return ret
 	}
@@ -151,7 +154,7 @@ func (o *ResultCodeMapResponse) GetSchemas() []EnumresultCodeMapSchemaUrn {
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetSchemasOk() ([]EnumresultCodeMapSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -159,7 +162,7 @@ func (o *ResultCodeMapResponse) GetSchemasOk() ([]EnumresultCodeMapSchemaUrn, bo
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -173,7 +176,7 @@ func (o *ResultCodeMapResponse) SetSchemas(v []EnumresultCodeMapSchemaUrn) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -183,7 +186,7 @@ func (o *ResultCodeMapResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -191,7 +194,7 @@ func (o *ResultCodeMapResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *ResultCodeMapResponse) SetDescription(v string) {
 
 // GetBindAccountLockedResultCode returns the BindAccountLockedResultCode field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int32 {
-	if o == nil || isNil(o.BindAccountLockedResultCode) {
+	if o == nil || IsNil(o.BindAccountLockedResultCode) {
 		var ret int32
 		return ret
 	}
@@ -215,7 +218,7 @@ func (o *ResultCodeMapResponse) GetBindAccountLockedResultCode() int32 {
 // GetBindAccountLockedResultCodeOk returns a tuple with the BindAccountLockedResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.BindAccountLockedResultCode) {
+	if o == nil || IsNil(o.BindAccountLockedResultCode) {
 		return nil, false
 	}
 	return o.BindAccountLockedResultCode, true
@@ -223,7 +226,7 @@ func (o *ResultCodeMapResponse) GetBindAccountLockedResultCodeOk() (*int32, bool
 
 // HasBindAccountLockedResultCode returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasBindAccountLockedResultCode() bool {
-	if o != nil && !isNil(o.BindAccountLockedResultCode) {
+	if o != nil && !IsNil(o.BindAccountLockedResultCode) {
 		return true
 	}
 
@@ -237,7 +240,7 @@ func (o *ResultCodeMapResponse) SetBindAccountLockedResultCode(v int32) {
 
 // GetBindMissingUserResultCode returns the BindMissingUserResultCode field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int32 {
-	if o == nil || isNil(o.BindMissingUserResultCode) {
+	if o == nil || IsNil(o.BindMissingUserResultCode) {
 		var ret int32
 		return ret
 	}
@@ -247,7 +250,7 @@ func (o *ResultCodeMapResponse) GetBindMissingUserResultCode() int32 {
 // GetBindMissingUserResultCodeOk returns a tuple with the BindMissingUserResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.BindMissingUserResultCode) {
+	if o == nil || IsNil(o.BindMissingUserResultCode) {
 		return nil, false
 	}
 	return o.BindMissingUserResultCode, true
@@ -255,7 +258,7 @@ func (o *ResultCodeMapResponse) GetBindMissingUserResultCodeOk() (*int32, bool) 
 
 // HasBindMissingUserResultCode returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasBindMissingUserResultCode() bool {
-	if o != nil && !isNil(o.BindMissingUserResultCode) {
+	if o != nil && !IsNil(o.BindMissingUserResultCode) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *ResultCodeMapResponse) SetBindMissingUserResultCode(v int32) {
 
 // GetBindMissingPasswordResultCode returns the BindMissingPasswordResultCode field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int32 {
-	if o == nil || isNil(o.BindMissingPasswordResultCode) {
+	if o == nil || IsNil(o.BindMissingPasswordResultCode) {
 		var ret int32
 		return ret
 	}
@@ -279,7 +282,7 @@ func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCode() int32 {
 // GetBindMissingPasswordResultCodeOk returns a tuple with the BindMissingPasswordResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.BindMissingPasswordResultCode) {
+	if o == nil || IsNil(o.BindMissingPasswordResultCode) {
 		return nil, false
 	}
 	return o.BindMissingPasswordResultCode, true
@@ -287,7 +290,7 @@ func (o *ResultCodeMapResponse) GetBindMissingPasswordResultCodeOk() (*int32, bo
 
 // HasBindMissingPasswordResultCode returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasBindMissingPasswordResultCode() bool {
-	if o != nil && !isNil(o.BindMissingPasswordResultCode) {
+	if o != nil && !IsNil(o.BindMissingPasswordResultCode) {
 		return true
 	}
 
@@ -301,7 +304,7 @@ func (o *ResultCodeMapResponse) SetBindMissingPasswordResultCode(v int32) {
 
 // GetServerErrorResultCode returns the ServerErrorResultCode field value if set, zero value otherwise.
 func (o *ResultCodeMapResponse) GetServerErrorResultCode() int32 {
-	if o == nil || isNil(o.ServerErrorResultCode) {
+	if o == nil || IsNil(o.ServerErrorResultCode) {
 		var ret int32
 		return ret
 	}
@@ -311,7 +314,7 @@ func (o *ResultCodeMapResponse) GetServerErrorResultCode() int32 {
 // GetServerErrorResultCodeOk returns a tuple with the ServerErrorResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int32, bool) {
-	if o == nil || isNil(o.ServerErrorResultCode) {
+	if o == nil || IsNil(o.ServerErrorResultCode) {
 		return nil, false
 	}
 	return o.ServerErrorResultCode, true
@@ -319,7 +322,7 @@ func (o *ResultCodeMapResponse) GetServerErrorResultCodeOk() (*int32, bool) {
 
 // HasServerErrorResultCode returns a boolean if a field has been set.
 func (o *ResultCodeMapResponse) HasServerErrorResultCode() bool {
-	if o != nil && !isNil(o.ServerErrorResultCode) {
+	if o != nil && !IsNil(o.ServerErrorResultCode) {
 		return true
 	}
 
@@ -332,35 +335,41 @@ func (o *ResultCodeMapResponse) SetServerErrorResultCode(v int32) {
 }
 
 func (o ResultCodeMapResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.BindAccountLockedResultCode) {
-		toSerialize["bindAccountLockedResultCode"] = o.BindAccountLockedResultCode
-	}
-	if !isNil(o.BindMissingUserResultCode) {
-		toSerialize["bindMissingUserResultCode"] = o.BindMissingUserResultCode
-	}
-	if !isNil(o.BindMissingPasswordResultCode) {
-		toSerialize["bindMissingPasswordResultCode"] = o.BindMissingPasswordResultCode
-	}
-	if !isNil(o.ServerErrorResultCode) {
-		toSerialize["serverErrorResultCode"] = o.ServerErrorResultCode
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ResultCodeMapResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.BindAccountLockedResultCode) {
+		toSerialize["bindAccountLockedResultCode"] = o.BindAccountLockedResultCode
+	}
+	if !IsNil(o.BindMissingUserResultCode) {
+		toSerialize["bindMissingUserResultCode"] = o.BindMissingUserResultCode
+	}
+	if !IsNil(o.BindMissingPasswordResultCode) {
+		toSerialize["bindMissingPasswordResultCode"] = o.BindMissingPasswordResultCode
+	}
+	if !IsNil(o.ServerErrorResultCode) {
+		toSerialize["serverErrorResultCode"] = o.ServerErrorResultCode
+	}
+	return toSerialize, nil
 }
 
 type NullableResultCodeMapResponse struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddGenericWebApplicationExtensionRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddGenericWebApplicationExtensionRequest{}
+
 // AddGenericWebApplicationExtensionRequest struct for AddGenericWebApplicationExtensionRequest
 type AddGenericWebApplicationExtensionRequest struct {
 	// Name of the new Web Application Extension
@@ -105,7 +108,7 @@ func (o *AddGenericWebApplicationExtensionRequest) SetSchemas(v []EnumgenericWeb
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddGenericWebApplicationExtensionRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericWebApplicationExtensionRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -123,7 +126,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetDescriptionOk() (*string, 
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddGenericWebApplicationExtensionRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -161,7 +164,7 @@ func (o *AddGenericWebApplicationExtensionRequest) SetBaseContextPath(v string) 
 
 // GetWarFile returns the WarFile field value if set, zero value otherwise.
 func (o *AddGenericWebApplicationExtensionRequest) GetWarFile() string {
-	if o == nil || isNil(o.WarFile) {
+	if o == nil || IsNil(o.WarFile) {
 		var ret string
 		return ret
 	}
@@ -171,7 +174,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetWarFile() string {
 // GetWarFileOk returns a tuple with the WarFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericWebApplicationExtensionRequest) GetWarFileOk() (*string, bool) {
-	if o == nil || isNil(o.WarFile) {
+	if o == nil || IsNil(o.WarFile) {
 		return nil, false
 	}
 	return o.WarFile, true
@@ -179,7 +182,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetWarFileOk() (*string, bool
 
 // HasWarFile returns a boolean if a field has been set.
 func (o *AddGenericWebApplicationExtensionRequest) HasWarFile() bool {
-	if o != nil && !isNil(o.WarFile) {
+	if o != nil && !IsNil(o.WarFile) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *AddGenericWebApplicationExtensionRequest) SetWarFile(v string) {
 
 // GetDocumentRootDirectory returns the DocumentRootDirectory field value if set, zero value otherwise.
 func (o *AddGenericWebApplicationExtensionRequest) GetDocumentRootDirectory() string {
-	if o == nil || isNil(o.DocumentRootDirectory) {
+	if o == nil || IsNil(o.DocumentRootDirectory) {
 		var ret string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetDocumentRootDirectory() st
 // GetDocumentRootDirectoryOk returns a tuple with the DocumentRootDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericWebApplicationExtensionRequest) GetDocumentRootDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.DocumentRootDirectory) {
+	if o == nil || IsNil(o.DocumentRootDirectory) {
 		return nil, false
 	}
 	return o.DocumentRootDirectory, true
@@ -211,7 +214,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetDocumentRootDirectoryOk() 
 
 // HasDocumentRootDirectory returns a boolean if a field has been set.
 func (o *AddGenericWebApplicationExtensionRequest) HasDocumentRootDirectory() bool {
-	if o != nil && !isNil(o.DocumentRootDirectory) {
+	if o != nil && !IsNil(o.DocumentRootDirectory) {
 		return true
 	}
 
@@ -225,7 +228,7 @@ func (o *AddGenericWebApplicationExtensionRequest) SetDocumentRootDirectory(v st
 
 // GetDeploymentDescriptorFile returns the DeploymentDescriptorFile field value if set, zero value otherwise.
 func (o *AddGenericWebApplicationExtensionRequest) GetDeploymentDescriptorFile() string {
-	if o == nil || isNil(o.DeploymentDescriptorFile) {
+	if o == nil || IsNil(o.DeploymentDescriptorFile) {
 		var ret string
 		return ret
 	}
@@ -235,7 +238,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetDeploymentDescriptorFile()
 // GetDeploymentDescriptorFileOk returns a tuple with the DeploymentDescriptorFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericWebApplicationExtensionRequest) GetDeploymentDescriptorFileOk() (*string, bool) {
-	if o == nil || isNil(o.DeploymentDescriptorFile) {
+	if o == nil || IsNil(o.DeploymentDescriptorFile) {
 		return nil, false
 	}
 	return o.DeploymentDescriptorFile, true
@@ -243,7 +246,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetDeploymentDescriptorFileOk
 
 // HasDeploymentDescriptorFile returns a boolean if a field has been set.
 func (o *AddGenericWebApplicationExtensionRequest) HasDeploymentDescriptorFile() bool {
-	if o != nil && !isNil(o.DeploymentDescriptorFile) {
+	if o != nil && !IsNil(o.DeploymentDescriptorFile) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *AddGenericWebApplicationExtensionRequest) SetDeploymentDescriptorFile(v
 
 // GetTemporaryDirectory returns the TemporaryDirectory field value if set, zero value otherwise.
 func (o *AddGenericWebApplicationExtensionRequest) GetTemporaryDirectory() string {
-	if o == nil || isNil(o.TemporaryDirectory) {
+	if o == nil || IsNil(o.TemporaryDirectory) {
 		var ret string
 		return ret
 	}
@@ -267,7 +270,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetTemporaryDirectory() strin
 // GetTemporaryDirectoryOk returns a tuple with the TemporaryDirectory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericWebApplicationExtensionRequest) GetTemporaryDirectoryOk() (*string, bool) {
-	if o == nil || isNil(o.TemporaryDirectory) {
+	if o == nil || IsNil(o.TemporaryDirectory) {
 		return nil, false
 	}
 	return o.TemporaryDirectory, true
@@ -275,7 +278,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetTemporaryDirectoryOk() (*s
 
 // HasTemporaryDirectory returns a boolean if a field has been set.
 func (o *AddGenericWebApplicationExtensionRequest) HasTemporaryDirectory() bool {
-	if o != nil && !isNil(o.TemporaryDirectory) {
+	if o != nil && !IsNil(o.TemporaryDirectory) {
 		return true
 	}
 
@@ -289,7 +292,7 @@ func (o *AddGenericWebApplicationExtensionRequest) SetTemporaryDirectory(v strin
 
 // GetInitParameter returns the InitParameter field value if set, zero value otherwise.
 func (o *AddGenericWebApplicationExtensionRequest) GetInitParameter() []string {
-	if o == nil || isNil(o.InitParameter) {
+	if o == nil || IsNil(o.InitParameter) {
 		var ret []string
 		return ret
 	}
@@ -299,7 +302,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetInitParameter() []string {
 // GetInitParameterOk returns a tuple with the InitParameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddGenericWebApplicationExtensionRequest) GetInitParameterOk() ([]string, bool) {
-	if o == nil || isNil(o.InitParameter) {
+	if o == nil || IsNil(o.InitParameter) {
 		return nil, false
 	}
 	return o.InitParameter, true
@@ -307,7 +310,7 @@ func (o *AddGenericWebApplicationExtensionRequest) GetInitParameterOk() ([]strin
 
 // HasInitParameter returns a boolean if a field has been set.
 func (o *AddGenericWebApplicationExtensionRequest) HasInitParameter() bool {
-	if o != nil && !isNil(o.InitParameter) {
+	if o != nil && !IsNil(o.InitParameter) {
 		return true
 	}
 
@@ -320,35 +323,37 @@ func (o *AddGenericWebApplicationExtensionRequest) SetInitParameter(v []string) 
 }
 
 func (o AddGenericWebApplicationExtensionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["extensionName"] = o.ExtensionName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["baseContextPath"] = o.BaseContextPath
-	}
-	if !isNil(o.WarFile) {
-		toSerialize["warFile"] = o.WarFile
-	}
-	if !isNil(o.DocumentRootDirectory) {
-		toSerialize["documentRootDirectory"] = o.DocumentRootDirectory
-	}
-	if !isNil(o.DeploymentDescriptorFile) {
-		toSerialize["deploymentDescriptorFile"] = o.DeploymentDescriptorFile
-	}
-	if !isNil(o.TemporaryDirectory) {
-		toSerialize["temporaryDirectory"] = o.TemporaryDirectory
-	}
-	if !isNil(o.InitParameter) {
-		toSerialize["initParameter"] = o.InitParameter
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddGenericWebApplicationExtensionRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["extensionName"] = o.ExtensionName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["baseContextPath"] = o.BaseContextPath
+	if !IsNil(o.WarFile) {
+		toSerialize["warFile"] = o.WarFile
+	}
+	if !IsNil(o.DocumentRootDirectory) {
+		toSerialize["documentRootDirectory"] = o.DocumentRootDirectory
+	}
+	if !IsNil(o.DeploymentDescriptorFile) {
+		toSerialize["deploymentDescriptorFile"] = o.DeploymentDescriptorFile
+	}
+	if !IsNil(o.TemporaryDirectory) {
+		toSerialize["temporaryDirectory"] = o.TemporaryDirectory
+	}
+	if !IsNil(o.InitParameter) {
+		toSerialize["initParameter"] = o.InitParameter
+	}
+	return toSerialize, nil
 }
 
 type NullableAddGenericWebApplicationExtensionRequest struct {

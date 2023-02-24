@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DigestMd5SaslMechanismHandlerResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DigestMd5SaslMechanismHandlerResponse{}
+
 // DigestMd5SaslMechanismHandlerResponse struct for DigestMd5SaslMechanismHandlerResponse
 type DigestMd5SaslMechanismHandlerResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -56,7 +59,7 @@ func NewDigestMd5SaslMechanismHandlerResponseWithDefaults() *DigestMd5SaslMechan
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -66,7 +69,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -74,7 +77,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -98,7 +101,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigu
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -106,7 +109,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetUrnpingidentityschemasconfigu
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) SetId(v string) {
 
 // GetRealm returns the Realm field value if set, zero value otherwise.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetRealm() string {
-	if o == nil || isNil(o.Realm) {
+	if o == nil || IsNil(o.Realm) {
 		var ret string
 		return ret
 	}
@@ -178,7 +181,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetRealm() string {
 // GetRealmOk returns a tuple with the Realm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetRealmOk() (*string, bool) {
-	if o == nil || isNil(o.Realm) {
+	if o == nil || IsNil(o.Realm) {
 		return nil, false
 	}
 	return o.Realm, true
@@ -186,7 +189,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetRealmOk() (*string, bool) {
 
 // HasRealm returns a boolean if a field has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) HasRealm() bool {
-	if o != nil && !isNil(o.Realm) {
+	if o != nil && !IsNil(o.Realm) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) SetIdentityMapper(v string) {
 
 // GetServerFqdn returns the ServerFqdn field value if set, zero value otherwise.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetServerFqdn() string {
-	if o == nil || isNil(o.ServerFqdn) {
+	if o == nil || IsNil(o.ServerFqdn) {
 		var ret string
 		return ret
 	}
@@ -234,7 +237,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetServerFqdn() string {
 // GetServerFqdnOk returns a tuple with the ServerFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.ServerFqdn) {
+	if o == nil || IsNil(o.ServerFqdn) {
 		return nil, false
 	}
 	return o.ServerFqdn, true
@@ -242,7 +245,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetServerFqdnOk() (*string, bool
 
 // HasServerFqdn returns a boolean if a field has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) HasServerFqdn() bool {
-	if o != nil && !isNil(o.ServerFqdn) {
+	if o != nil && !IsNil(o.ServerFqdn) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) SetServerFqdn(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -266,7 +269,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -274,7 +277,7 @@ func (o *DigestMd5SaslMechanismHandlerResponse) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DigestMd5SaslMechanismHandlerResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -311,35 +314,35 @@ func (o *DigestMd5SaslMechanismHandlerResponse) SetEnabled(v bool) {
 }
 
 func (o DigestMd5SaslMechanismHandlerResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Realm) {
-		toSerialize["realm"] = o.Realm
-	}
-	if true {
-		toSerialize["identityMapper"] = o.IdentityMapper
-	}
-	if !isNil(o.ServerFqdn) {
-		toSerialize["serverFqdn"] = o.ServerFqdn
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DigestMd5SaslMechanismHandlerResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Realm) {
+		toSerialize["realm"] = o.Realm
+	}
+	toSerialize["identityMapper"] = o.IdentityMapper
+	if !IsNil(o.ServerFqdn) {
+		toSerialize["serverFqdn"] = o.ServerFqdn
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableDigestMd5SaslMechanismHandlerResponse struct {

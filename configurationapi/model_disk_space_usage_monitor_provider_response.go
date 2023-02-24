@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DiskSpaceUsageMonitorProviderResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DiskSpaceUsageMonitorProviderResponse{}
+
 // DiskSpaceUsageMonitorProviderResponse struct for DiskSpaceUsageMonitorProviderResponse
 type DiskSpaceUsageMonitorProviderResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -64,7 +67,7 @@ func NewDiskSpaceUsageMonitorProviderResponseWithDefaults() *DiskSpaceUsageMonit
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -74,7 +77,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -82,7 +85,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -106,7 +109,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigu
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -114,7 +117,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetUrnpingidentityschemasconfigu
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -176,7 +179,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetId(v string) {
 
 // GetLowSpaceWarningSizeThreshold returns the LowSpaceWarningSizeThreshold field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningSizeThreshold() string {
-	if o == nil || isNil(o.LowSpaceWarningSizeThreshold) {
+	if o == nil || IsNil(o.LowSpaceWarningSizeThreshold) {
 		var ret string
 		return ret
 	}
@@ -186,7 +189,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningSizeThreshold(
 // GetLowSpaceWarningSizeThresholdOk returns a tuple with the LowSpaceWarningSizeThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningSizeThresholdOk() (*string, bool) {
-	if o == nil || isNil(o.LowSpaceWarningSizeThreshold) {
+	if o == nil || IsNil(o.LowSpaceWarningSizeThreshold) {
 		return nil, false
 	}
 	return o.LowSpaceWarningSizeThreshold, true
@@ -194,7 +197,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningSizeThresholdO
 
 // HasLowSpaceWarningSizeThreshold returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasLowSpaceWarningSizeThreshold() bool {
-	if o != nil && !isNil(o.LowSpaceWarningSizeThreshold) {
+	if o != nil && !IsNil(o.LowSpaceWarningSizeThreshold) {
 		return true
 	}
 
@@ -208,7 +211,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningSizeThreshold(
 
 // GetLowSpaceWarningPercentThreshold returns the LowSpaceWarningPercentThreshold field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThreshold() int32 {
-	if o == nil || isNil(o.LowSpaceWarningPercentThreshold) {
+	if o == nil || IsNil(o.LowSpaceWarningPercentThreshold) {
 		var ret int32
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresho
 // GetLowSpaceWarningPercentThresholdOk returns a tuple with the LowSpaceWarningPercentThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresholdOk() (*int32, bool) {
-	if o == nil || isNil(o.LowSpaceWarningPercentThreshold) {
+	if o == nil || IsNil(o.LowSpaceWarningPercentThreshold) {
 		return nil, false
 	}
 	return o.LowSpaceWarningPercentThreshold, true
@@ -226,7 +229,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceWarningPercentThresho
 
 // HasLowSpaceWarningPercentThreshold returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasLowSpaceWarningPercentThreshold() bool {
-	if o != nil && !isNil(o.LowSpaceWarningPercentThreshold) {
+	if o != nil && !IsNil(o.LowSpaceWarningPercentThreshold) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceWarningPercentThresho
 
 // GetLowSpaceErrorSizeThreshold returns the LowSpaceErrorSizeThreshold field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorSizeThreshold() string {
-	if o == nil || isNil(o.LowSpaceErrorSizeThreshold) {
+	if o == nil || IsNil(o.LowSpaceErrorSizeThreshold) {
 		var ret string
 		return ret
 	}
@@ -250,7 +253,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorSizeThreshold() 
 // GetLowSpaceErrorSizeThresholdOk returns a tuple with the LowSpaceErrorSizeThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorSizeThresholdOk() (*string, bool) {
-	if o == nil || isNil(o.LowSpaceErrorSizeThreshold) {
+	if o == nil || IsNil(o.LowSpaceErrorSizeThreshold) {
 		return nil, false
 	}
 	return o.LowSpaceErrorSizeThreshold, true
@@ -258,7 +261,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorSizeThresholdOk(
 
 // HasLowSpaceErrorSizeThreshold returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasLowSpaceErrorSizeThreshold() bool {
-	if o != nil && !isNil(o.LowSpaceErrorSizeThreshold) {
+	if o != nil && !IsNil(o.LowSpaceErrorSizeThreshold) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorSizeThreshold(v 
 
 // GetLowSpaceErrorPercentThreshold returns the LowSpaceErrorPercentThreshold field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold() int32 {
-	if o == nil || isNil(o.LowSpaceErrorPercentThreshold) {
+	if o == nil || IsNil(o.LowSpaceErrorPercentThreshold) {
 		var ret int32
 		return ret
 	}
@@ -282,7 +285,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold
 // GetLowSpaceErrorPercentThresholdOk returns a tuple with the LowSpaceErrorPercentThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThresholdOk() (*int32, bool) {
-	if o == nil || isNil(o.LowSpaceErrorPercentThreshold) {
+	if o == nil || IsNil(o.LowSpaceErrorPercentThreshold) {
 		return nil, false
 	}
 	return o.LowSpaceErrorPercentThreshold, true
@@ -290,7 +293,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetLowSpaceErrorPercentThreshold
 
 // HasLowSpaceErrorPercentThreshold returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasLowSpaceErrorPercentThreshold() bool {
-	if o != nil && !isNil(o.LowSpaceErrorPercentThreshold) {
+	if o != nil && !IsNil(o.LowSpaceErrorPercentThreshold) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetLowSpaceErrorPercentThreshold
 
 // GetOutOfSpaceErrorSizeThreshold returns the OutOfSpaceErrorSizeThreshold field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorSizeThreshold() string {
-	if o == nil || isNil(o.OutOfSpaceErrorSizeThreshold) {
+	if o == nil || IsNil(o.OutOfSpaceErrorSizeThreshold) {
 		var ret string
 		return ret
 	}
@@ -314,7 +317,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorSizeThreshold(
 // GetOutOfSpaceErrorSizeThresholdOk returns a tuple with the OutOfSpaceErrorSizeThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorSizeThresholdOk() (*string, bool) {
-	if o == nil || isNil(o.OutOfSpaceErrorSizeThreshold) {
+	if o == nil || IsNil(o.OutOfSpaceErrorSizeThreshold) {
 		return nil, false
 	}
 	return o.OutOfSpaceErrorSizeThreshold, true
@@ -322,7 +325,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorSizeThresholdO
 
 // HasOutOfSpaceErrorSizeThreshold returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasOutOfSpaceErrorSizeThreshold() bool {
-	if o != nil && !isNil(o.OutOfSpaceErrorSizeThreshold) {
+	if o != nil && !IsNil(o.OutOfSpaceErrorSizeThreshold) {
 		return true
 	}
 
@@ -336,7 +339,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetOutOfSpaceErrorSizeThreshold(
 
 // GetOutOfSpaceErrorPercentThreshold returns the OutOfSpaceErrorPercentThreshold field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThreshold() int32 {
-	if o == nil || isNil(o.OutOfSpaceErrorPercentThreshold) {
+	if o == nil || IsNil(o.OutOfSpaceErrorPercentThreshold) {
 		var ret int32
 		return ret
 	}
@@ -346,7 +349,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresho
 // GetOutOfSpaceErrorPercentThresholdOk returns a tuple with the OutOfSpaceErrorPercentThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresholdOk() (*int32, bool) {
-	if o == nil || isNil(o.OutOfSpaceErrorPercentThreshold) {
+	if o == nil || IsNil(o.OutOfSpaceErrorPercentThreshold) {
 		return nil, false
 	}
 	return o.OutOfSpaceErrorPercentThreshold, true
@@ -354,7 +357,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetOutOfSpaceErrorPercentThresho
 
 // HasOutOfSpaceErrorPercentThreshold returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasOutOfSpaceErrorPercentThreshold() bool {
-	if o != nil && !isNil(o.OutOfSpaceErrorPercentThreshold) {
+	if o != nil && !IsNil(o.OutOfSpaceErrorPercentThreshold) {
 		return true
 	}
 
@@ -392,7 +395,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetAlertFrequency(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -402,7 +405,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -410,7 +413,7 @@ func (o *DiskSpaceUsageMonitorProviderResponse) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *DiskSpaceUsageMonitorProviderResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -447,47 +450,47 @@ func (o *DiskSpaceUsageMonitorProviderResponse) SetEnabled(v bool) {
 }
 
 func (o DiskSpaceUsageMonitorProviderResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.LowSpaceWarningSizeThreshold) {
-		toSerialize["lowSpaceWarningSizeThreshold"] = o.LowSpaceWarningSizeThreshold
-	}
-	if !isNil(o.LowSpaceWarningPercentThreshold) {
-		toSerialize["lowSpaceWarningPercentThreshold"] = o.LowSpaceWarningPercentThreshold
-	}
-	if !isNil(o.LowSpaceErrorSizeThreshold) {
-		toSerialize["lowSpaceErrorSizeThreshold"] = o.LowSpaceErrorSizeThreshold
-	}
-	if !isNil(o.LowSpaceErrorPercentThreshold) {
-		toSerialize["lowSpaceErrorPercentThreshold"] = o.LowSpaceErrorPercentThreshold
-	}
-	if !isNil(o.OutOfSpaceErrorSizeThreshold) {
-		toSerialize["outOfSpaceErrorSizeThreshold"] = o.OutOfSpaceErrorSizeThreshold
-	}
-	if !isNil(o.OutOfSpaceErrorPercentThreshold) {
-		toSerialize["outOfSpaceErrorPercentThreshold"] = o.OutOfSpaceErrorPercentThreshold
-	}
-	if true {
-		toSerialize["alertFrequency"] = o.AlertFrequency
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DiskSpaceUsageMonitorProviderResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.LowSpaceWarningSizeThreshold) {
+		toSerialize["lowSpaceWarningSizeThreshold"] = o.LowSpaceWarningSizeThreshold
+	}
+	if !IsNil(o.LowSpaceWarningPercentThreshold) {
+		toSerialize["lowSpaceWarningPercentThreshold"] = o.LowSpaceWarningPercentThreshold
+	}
+	if !IsNil(o.LowSpaceErrorSizeThreshold) {
+		toSerialize["lowSpaceErrorSizeThreshold"] = o.LowSpaceErrorSizeThreshold
+	}
+	if !IsNil(o.LowSpaceErrorPercentThreshold) {
+		toSerialize["lowSpaceErrorPercentThreshold"] = o.LowSpaceErrorPercentThreshold
+	}
+	if !IsNil(o.OutOfSpaceErrorSizeThreshold) {
+		toSerialize["outOfSpaceErrorSizeThreshold"] = o.OutOfSpaceErrorSizeThreshold
+	}
+	if !IsNil(o.OutOfSpaceErrorPercentThreshold) {
+		toSerialize["outOfSpaceErrorPercentThreshold"] = o.OutOfSpaceErrorPercentThreshold
+	}
+	toSerialize["alertFrequency"] = o.AlertFrequency
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableDiskSpaceUsageMonitorProviderResponse struct {

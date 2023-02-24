@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddFilterBasedUncachedEntryCriteriaRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddFilterBasedUncachedEntryCriteriaRequest{}
+
 // AddFilterBasedUncachedEntryCriteriaRequest struct for AddFilterBasedUncachedEntryCriteriaRequest
 type AddFilterBasedUncachedEntryCriteriaRequest struct {
 	// Name of the new Uncached Entry Criteria
@@ -124,7 +127,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetFilter(v string) {
 
 // GetFilterIdentifiesUncachedEntries returns the FilterIdentifiesUncachedEntries field value if set, zero value otherwise.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncachedEntries() bool {
-	if o == nil || isNil(o.FilterIdentifiesUncachedEntries) {
+	if o == nil || IsNil(o.FilterIdentifiesUncachedEntries) {
 		var ret bool
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncached
 // GetFilterIdentifiesUncachedEntriesOk returns a tuple with the FilterIdentifiesUncachedEntries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncachedEntriesOk() (*bool, bool) {
-	if o == nil || isNil(o.FilterIdentifiesUncachedEntries) {
+	if o == nil || IsNil(o.FilterIdentifiesUncachedEntries) {
 		return nil, false
 	}
 	return o.FilterIdentifiesUncachedEntries, true
@@ -142,7 +145,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetFilterIdentifiesUncached
 
 // HasFilterIdentifiesUncachedEntries returns a boolean if a field has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) HasFilterIdentifiesUncachedEntries() bool {
-	if o != nil && !isNil(o.FilterIdentifiesUncachedEntries) {
+	if o != nil && !IsNil(o.FilterIdentifiesUncachedEntries) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetFilterIdentifiesUncached
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -166,7 +169,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -174,7 +177,7 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) GetDescriptionOk() (*string
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddFilterBasedUncachedEntryCriteriaRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -211,26 +214,26 @@ func (o *AddFilterBasedUncachedEntryCriteriaRequest) SetEnabled(v bool) {
 }
 
 func (o AddFilterBasedUncachedEntryCriteriaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["criteriaName"] = o.CriteriaName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["filter"] = o.Filter
-	}
-	if !isNil(o.FilterIdentifiesUncachedEntries) {
-		toSerialize["filterIdentifiesUncachedEntries"] = o.FilterIdentifiesUncachedEntries
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddFilterBasedUncachedEntryCriteriaRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["criteriaName"] = o.CriteriaName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["filter"] = o.Filter
+	if !IsNil(o.FilterIdentifiesUncachedEntries) {
+		toSerialize["filterIdentifiesUncachedEntries"] = o.FilterIdentifiesUncachedEntries
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddFilterBasedUncachedEntryCriteriaRequest struct {

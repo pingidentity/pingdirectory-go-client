@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PingOnePassThroughAuthenticationPluginResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PingOnePassThroughAuthenticationPluginResponse{}
+
 // PingOnePassThroughAuthenticationPluginResponse struct for PingOnePassThroughAuthenticationPluginResponse
 type PingOnePassThroughAuthenticationPluginResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -92,7 +95,7 @@ func NewPingOnePassThroughAuthenticationPluginResponseWithDefaults() *PingOnePas
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -102,7 +105,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -110,7 +113,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetMetaOk() (*MetaMeta,
 
 // HasMeta returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetUrnpingidentityschem
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -142,7 +145,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetUrnpingidentityschem
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -276,7 +279,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetOAuthClientID(v stri
 
 // GetOAuthClientSecret returns the OAuthClientSecret field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecret() string {
-	if o == nil || isNil(o.OAuthClientSecret) {
+	if o == nil || IsNil(o.OAuthClientSecret) {
 		var ret string
 		return ret
 	}
@@ -286,7 +289,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecret() 
 // GetOAuthClientSecretOk returns a tuple with the OAuthClientSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecretOk() (*string, bool) {
-	if o == nil || isNil(o.OAuthClientSecret) {
+	if o == nil || IsNil(o.OAuthClientSecret) {
 		return nil, false
 	}
 	return o.OAuthClientSecret, true
@@ -294,7 +297,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecretOk(
 
 // HasOAuthClientSecret returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasOAuthClientSecret() bool {
-	if o != nil && !isNil(o.OAuthClientSecret) {
+	if o != nil && !IsNil(o.OAuthClientSecret) {
 		return true
 	}
 
@@ -308,7 +311,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetOAuthClientSecret(v 
 
 // GetOAuthClientSecretPassphraseProvider returns the OAuthClientSecretPassphraseProvider field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecretPassphraseProvider() string {
-	if o == nil || isNil(o.OAuthClientSecretPassphraseProvider) {
+	if o == nil || IsNil(o.OAuthClientSecretPassphraseProvider) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecretPas
 // GetOAuthClientSecretPassphraseProviderOk returns a tuple with the OAuthClientSecretPassphraseProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecretPassphraseProviderOk() (*string, bool) {
-	if o == nil || isNil(o.OAuthClientSecretPassphraseProvider) {
+	if o == nil || IsNil(o.OAuthClientSecretPassphraseProvider) {
 		return nil, false
 	}
 	return o.OAuthClientSecretPassphraseProvider, true
@@ -326,7 +329,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetOAuthClientSecretPas
 
 // HasOAuthClientSecretPassphraseProvider returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasOAuthClientSecretPassphraseProvider() bool {
-	if o != nil && !isNil(o.OAuthClientSecretPassphraseProvider) {
+	if o != nil && !IsNil(o.OAuthClientSecretPassphraseProvider) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetEnvironmentID(v stri
 
 // GetIncludedLocalEntryBaseDN returns the IncludedLocalEntryBaseDN field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetIncludedLocalEntryBaseDN() []string {
-	if o == nil || isNil(o.IncludedLocalEntryBaseDN) {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
 		var ret []string
 		return ret
 	}
@@ -374,7 +377,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetIncludedLocalEntryBa
 // GetIncludedLocalEntryBaseDNOk returns a tuple with the IncludedLocalEntryBaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetIncludedLocalEntryBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedLocalEntryBaseDN) {
+	if o == nil || IsNil(o.IncludedLocalEntryBaseDN) {
 		return nil, false
 	}
 	return o.IncludedLocalEntryBaseDN, true
@@ -382,7 +385,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetIncludedLocalEntryBa
 
 // HasIncludedLocalEntryBaseDN returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasIncludedLocalEntryBaseDN() bool {
-	if o != nil && !isNil(o.IncludedLocalEntryBaseDN) {
+	if o != nil && !IsNil(o.IncludedLocalEntryBaseDN) {
 		return true
 	}
 
@@ -396,7 +399,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetIncludedLocalEntryBa
 
 // GetConnectionCriteria returns the ConnectionCriteria field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetConnectionCriteria() string {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		var ret string
 		return ret
 	}
@@ -406,7 +409,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetConnectionCriteria()
 // GetConnectionCriteriaOk returns a tuple with the ConnectionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetConnectionCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.ConnectionCriteria) {
+	if o == nil || IsNil(o.ConnectionCriteria) {
 		return nil, false
 	}
 	return o.ConnectionCriteria, true
@@ -414,7 +417,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetConnectionCriteriaOk
 
 // HasConnectionCriteria returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasConnectionCriteria() bool {
-	if o != nil && !isNil(o.ConnectionCriteria) {
+	if o != nil && !IsNil(o.ConnectionCriteria) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetConnectionCriteria(v
 
 // GetRequestCriteria returns the RequestCriteria field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetRequestCriteria() string {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		var ret string
 		return ret
 	}
@@ -438,7 +441,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetRequestCriteria() st
 // GetRequestCriteriaOk returns a tuple with the RequestCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetRequestCriteriaOk() (*string, bool) {
-	if o == nil || isNil(o.RequestCriteria) {
+	if o == nil || IsNil(o.RequestCriteria) {
 		return nil, false
 	}
 	return o.RequestCriteria, true
@@ -446,7 +449,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetRequestCriteriaOk() 
 
 // HasRequestCriteria returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasRequestCriteria() bool {
-	if o != nil && !isNil(o.RequestCriteria) {
+	if o != nil && !IsNil(o.RequestCriteria) {
 		return true
 	}
 
@@ -460,7 +463,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetRequestCriteria(v st
 
 // GetTryLocalBind returns the TryLocalBind field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetTryLocalBind() bool {
-	if o == nil || isNil(o.TryLocalBind) {
+	if o == nil || IsNil(o.TryLocalBind) {
 		var ret bool
 		return ret
 	}
@@ -470,7 +473,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetTryLocalBind() bool 
 // GetTryLocalBindOk returns a tuple with the TryLocalBind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetTryLocalBindOk() (*bool, bool) {
-	if o == nil || isNil(o.TryLocalBind) {
+	if o == nil || IsNil(o.TryLocalBind) {
 		return nil, false
 	}
 	return o.TryLocalBind, true
@@ -478,7 +481,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetTryLocalBindOk() (*b
 
 // HasTryLocalBind returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasTryLocalBind() bool {
-	if o != nil && !isNil(o.TryLocalBind) {
+	if o != nil && !IsNil(o.TryLocalBind) {
 		return true
 	}
 
@@ -492,7 +495,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetTryLocalBind(v bool)
 
 // GetOverrideLocalPassword returns the OverrideLocalPassword field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetOverrideLocalPassword() bool {
-	if o == nil || isNil(o.OverrideLocalPassword) {
+	if o == nil || IsNil(o.OverrideLocalPassword) {
 		var ret bool
 		return ret
 	}
@@ -502,7 +505,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetOverrideLocalPasswor
 // GetOverrideLocalPasswordOk returns a tuple with the OverrideLocalPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetOverrideLocalPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.OverrideLocalPassword) {
+	if o == nil || IsNil(o.OverrideLocalPassword) {
 		return nil, false
 	}
 	return o.OverrideLocalPassword, true
@@ -510,7 +513,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetOverrideLocalPasswor
 
 // HasOverrideLocalPassword returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasOverrideLocalPassword() bool {
-	if o != nil && !isNil(o.OverrideLocalPassword) {
+	if o != nil && !IsNil(o.OverrideLocalPassword) {
 		return true
 	}
 
@@ -524,7 +527,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetOverrideLocalPasswor
 
 // GetUpdateLocalPassword returns the UpdateLocalPassword field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPassword() bool {
-	if o == nil || isNil(o.UpdateLocalPassword) {
+	if o == nil || IsNil(o.UpdateLocalPassword) {
 		var ret bool
 		return ret
 	}
@@ -534,7 +537,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPassword(
 // GetUpdateLocalPasswordOk returns a tuple with the UpdateLocalPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPasswordOk() (*bool, bool) {
-	if o == nil || isNil(o.UpdateLocalPassword) {
+	if o == nil || IsNil(o.UpdateLocalPassword) {
 		return nil, false
 	}
 	return o.UpdateLocalPassword, true
@@ -542,7 +545,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPasswordO
 
 // HasUpdateLocalPassword returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasUpdateLocalPassword() bool {
-	if o != nil && !isNil(o.UpdateLocalPassword) {
+	if o != nil && !IsNil(o.UpdateLocalPassword) {
 		return true
 	}
 
@@ -556,7 +559,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetUpdateLocalPassword(
 
 // GetUpdateLocalPasswordDN returns the UpdateLocalPasswordDN field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPasswordDN() string {
-	if o == nil || isNil(o.UpdateLocalPasswordDN) {
+	if o == nil || IsNil(o.UpdateLocalPasswordDN) {
 		var ret string
 		return ret
 	}
@@ -566,7 +569,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPasswordD
 // GetUpdateLocalPasswordDNOk returns a tuple with the UpdateLocalPasswordDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPasswordDNOk() (*string, bool) {
-	if o == nil || isNil(o.UpdateLocalPasswordDN) {
+	if o == nil || IsNil(o.UpdateLocalPasswordDN) {
 		return nil, false
 	}
 	return o.UpdateLocalPasswordDN, true
@@ -574,7 +577,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetUpdateLocalPasswordD
 
 // HasUpdateLocalPasswordDN returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasUpdateLocalPasswordDN() bool {
-	if o != nil && !isNil(o.UpdateLocalPasswordDN) {
+	if o != nil && !IsNil(o.UpdateLocalPasswordDN) {
 		return true
 	}
 
@@ -588,7 +591,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetUpdateLocalPasswordD
 
 // GetAllowLaxPassThroughAuthenticationPasswords returns the AllowLaxPassThroughAuthenticationPasswords field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetAllowLaxPassThroughAuthenticationPasswords() bool {
-	if o == nil || isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+	if o == nil || IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		var ret bool
 		return ret
 	}
@@ -598,7 +601,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetAllowLaxPassThroughA
 // GetAllowLaxPassThroughAuthenticationPasswordsOk returns a tuple with the AllowLaxPassThroughAuthenticationPasswords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetAllowLaxPassThroughAuthenticationPasswordsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+	if o == nil || IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		return nil, false
 	}
 	return o.AllowLaxPassThroughAuthenticationPasswords, true
@@ -606,7 +609,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetAllowLaxPassThroughA
 
 // HasAllowLaxPassThroughAuthenticationPasswords returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasAllowLaxPassThroughAuthenticationPasswords() bool {
-	if o != nil && !isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+	if o != nil && !IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
 		return true
 	}
 
@@ -620,7 +623,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetAllowLaxPassThroughA
 
 // GetIgnoredPasswordPolicyStateErrorCondition returns the IgnoredPasswordPolicyStateErrorCondition field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetIgnoredPasswordPolicyStateErrorCondition() []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp {
-	if o == nil || isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+	if o == nil || IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
 		var ret []EnumpluginIgnoredPasswordPolicyStateErrorConditionProp
 		return ret
 	}
@@ -630,7 +633,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetIgnoredPasswordPolic
 // GetIgnoredPasswordPolicyStateErrorConditionOk returns a tuple with the IgnoredPasswordPolicyStateErrorCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetIgnoredPasswordPolicyStateErrorConditionOk() ([]EnumpluginIgnoredPasswordPolicyStateErrorConditionProp, bool) {
-	if o == nil || isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+	if o == nil || IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
 		return nil, false
 	}
 	return o.IgnoredPasswordPolicyStateErrorCondition, true
@@ -638,7 +641,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetIgnoredPasswordPolic
 
 // HasIgnoredPasswordPolicyStateErrorCondition returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasIgnoredPasswordPolicyStateErrorCondition() bool {
-	if o != nil && !isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+	if o != nil && !IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
 		return true
 	}
 
@@ -700,7 +703,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetUserMappingRemoteJSO
 
 // GetAdditionalUserMappingSCIMFilter returns the AdditionalUserMappingSCIMFilter field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetAdditionalUserMappingSCIMFilter() string {
-	if o == nil || isNil(o.AdditionalUserMappingSCIMFilter) {
+	if o == nil || IsNil(o.AdditionalUserMappingSCIMFilter) {
 		var ret string
 		return ret
 	}
@@ -710,7 +713,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetAdditionalUserMappin
 // GetAdditionalUserMappingSCIMFilterOk returns a tuple with the AdditionalUserMappingSCIMFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetAdditionalUserMappingSCIMFilterOk() (*string, bool) {
-	if o == nil || isNil(o.AdditionalUserMappingSCIMFilter) {
+	if o == nil || IsNil(o.AdditionalUserMappingSCIMFilter) {
 		return nil, false
 	}
 	return o.AdditionalUserMappingSCIMFilter, true
@@ -718,7 +721,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetAdditionalUserMappin
 
 // HasAdditionalUserMappingSCIMFilter returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasAdditionalUserMappingSCIMFilter() bool {
-	if o != nil && !isNil(o.AdditionalUserMappingSCIMFilter) {
+	if o != nil && !IsNil(o.AdditionalUserMappingSCIMFilter) {
 		return true
 	}
 
@@ -732,7 +735,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetAdditionalUserMappin
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -742,7 +745,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetDescription() string
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -750,7 +753,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetDescriptionOk() (*st
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -788,7 +791,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetEnabled(v bool) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -798,7 +801,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetInvokeForInternalOpe
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -806,7 +809,7 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) GetInvokeForInternalOpe
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *PingOnePassThroughAuthenticationPluginResponse) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -819,83 +822,73 @@ func (o *PingOnePassThroughAuthenticationPluginResponse) SetInvokeForInternalOpe
 }
 
 func (o PingOnePassThroughAuthenticationPluginResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["apiURL"] = o.ApiURL
-	}
-	if true {
-		toSerialize["authURL"] = o.AuthURL
-	}
-	if true {
-		toSerialize["OAuthClientID"] = o.OAuthClientID
-	}
-	if !isNil(o.OAuthClientSecret) {
-		toSerialize["OAuthClientSecret"] = o.OAuthClientSecret
-	}
-	if !isNil(o.OAuthClientSecretPassphraseProvider) {
-		toSerialize["OAuthClientSecretPassphraseProvider"] = o.OAuthClientSecretPassphraseProvider
-	}
-	if true {
-		toSerialize["environmentID"] = o.EnvironmentID
-	}
-	if !isNil(o.IncludedLocalEntryBaseDN) {
-		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
-	}
-	if !isNil(o.ConnectionCriteria) {
-		toSerialize["connectionCriteria"] = o.ConnectionCriteria
-	}
-	if !isNil(o.RequestCriteria) {
-		toSerialize["requestCriteria"] = o.RequestCriteria
-	}
-	if !isNil(o.TryLocalBind) {
-		toSerialize["tryLocalBind"] = o.TryLocalBind
-	}
-	if !isNil(o.OverrideLocalPassword) {
-		toSerialize["overrideLocalPassword"] = o.OverrideLocalPassword
-	}
-	if !isNil(o.UpdateLocalPassword) {
-		toSerialize["updateLocalPassword"] = o.UpdateLocalPassword
-	}
-	if !isNil(o.UpdateLocalPasswordDN) {
-		toSerialize["updateLocalPasswordDN"] = o.UpdateLocalPasswordDN
-	}
-	if !isNil(o.AllowLaxPassThroughAuthenticationPasswords) {
-		toSerialize["allowLaxPassThroughAuthenticationPasswords"] = o.AllowLaxPassThroughAuthenticationPasswords
-	}
-	if !isNil(o.IgnoredPasswordPolicyStateErrorCondition) {
-		toSerialize["ignoredPasswordPolicyStateErrorCondition"] = o.IgnoredPasswordPolicyStateErrorCondition
-	}
-	if true {
-		toSerialize["userMappingLocalAttribute"] = o.UserMappingLocalAttribute
-	}
-	if true {
-		toSerialize["userMappingRemoteJSONField"] = o.UserMappingRemoteJSONField
-	}
-	if !isNil(o.AdditionalUserMappingSCIMFilter) {
-		toSerialize["additionalUserMappingSCIMFilter"] = o.AdditionalUserMappingSCIMFilter
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PingOnePassThroughAuthenticationPluginResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["id"] = o.Id
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["apiURL"] = o.ApiURL
+	toSerialize["authURL"] = o.AuthURL
+	toSerialize["OAuthClientID"] = o.OAuthClientID
+	if !IsNil(o.OAuthClientSecret) {
+		toSerialize["OAuthClientSecret"] = o.OAuthClientSecret
+	}
+	if !IsNil(o.OAuthClientSecretPassphraseProvider) {
+		toSerialize["OAuthClientSecretPassphraseProvider"] = o.OAuthClientSecretPassphraseProvider
+	}
+	toSerialize["environmentID"] = o.EnvironmentID
+	if !IsNil(o.IncludedLocalEntryBaseDN) {
+		toSerialize["includedLocalEntryBaseDN"] = o.IncludedLocalEntryBaseDN
+	}
+	if !IsNil(o.ConnectionCriteria) {
+		toSerialize["connectionCriteria"] = o.ConnectionCriteria
+	}
+	if !IsNil(o.RequestCriteria) {
+		toSerialize["requestCriteria"] = o.RequestCriteria
+	}
+	if !IsNil(o.TryLocalBind) {
+		toSerialize["tryLocalBind"] = o.TryLocalBind
+	}
+	if !IsNil(o.OverrideLocalPassword) {
+		toSerialize["overrideLocalPassword"] = o.OverrideLocalPassword
+	}
+	if !IsNil(o.UpdateLocalPassword) {
+		toSerialize["updateLocalPassword"] = o.UpdateLocalPassword
+	}
+	if !IsNil(o.UpdateLocalPasswordDN) {
+		toSerialize["updateLocalPasswordDN"] = o.UpdateLocalPasswordDN
+	}
+	if !IsNil(o.AllowLaxPassThroughAuthenticationPasswords) {
+		toSerialize["allowLaxPassThroughAuthenticationPasswords"] = o.AllowLaxPassThroughAuthenticationPasswords
+	}
+	if !IsNil(o.IgnoredPasswordPolicyStateErrorCondition) {
+		toSerialize["ignoredPasswordPolicyStateErrorCondition"] = o.IgnoredPasswordPolicyStateErrorCondition
+	}
+	toSerialize["userMappingLocalAttribute"] = o.UserMappingLocalAttribute
+	toSerialize["userMappingRemoteJSONField"] = o.UserMappingRemoteJSONField
+	if !IsNil(o.AdditionalUserMappingSCIMFilter) {
+		toSerialize["additionalUserMappingSCIMFilter"] = o.AdditionalUserMappingSCIMFilter
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	return toSerialize, nil
 }
 
 type NullablePingOnePassThroughAuthenticationPluginResponse struct {

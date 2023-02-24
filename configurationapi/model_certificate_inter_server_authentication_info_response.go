@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CertificateInterServerAuthenticationInfoResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CertificateInterServerAuthenticationInfoResponse{}
+
 // CertificateInterServerAuthenticationInfoResponse struct for CertificateInterServerAuthenticationInfoResponse
 type CertificateInterServerAuthenticationInfoResponse struct {
 	Meta                                          *MetaMeta                                               `json:"meta,omitempty"`
@@ -45,7 +48,7 @@ func NewCertificateInterServerAuthenticationInfoResponseWithDefaults() *Certific
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *CertificateInterServerAuthenticationInfoResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -55,7 +58,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CertificateInterServerAuthenticationInfoResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -63,7 +66,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) GetMetaOk() (*MetaMet
 
 // HasMeta returns a boolean if a field has been set.
 func (o *CertificateInterServerAuthenticationInfoResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -77,7 +80,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *CertificateInterServerAuthenticationInfoResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) GetUrnpingidentitysch
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CertificateInterServerAuthenticationInfoResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -95,7 +98,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) GetUrnpingidentitysch
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *CertificateInterServerAuthenticationInfoResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -157,7 +160,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) SetId(v string) {
 
 // GetPurpose returns the Purpose field value if set, zero value otherwise.
 func (o *CertificateInterServerAuthenticationInfoResponse) GetPurpose() []EnuminterServerAuthenticationInfoPurposeProp {
-	if o == nil || isNil(o.Purpose) {
+	if o == nil || IsNil(o.Purpose) {
 		var ret []EnuminterServerAuthenticationInfoPurposeProp
 		return ret
 	}
@@ -167,7 +170,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) GetPurpose() []Enumin
 // GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CertificateInterServerAuthenticationInfoResponse) GetPurposeOk() ([]EnuminterServerAuthenticationInfoPurposeProp, bool) {
-	if o == nil || isNil(o.Purpose) {
+	if o == nil || IsNil(o.Purpose) {
 		return nil, false
 	}
 	return o.Purpose, true
@@ -175,7 +178,7 @@ func (o *CertificateInterServerAuthenticationInfoResponse) GetPurposeOk() ([]Enu
 
 // HasPurpose returns a boolean if a field has been set.
 func (o *CertificateInterServerAuthenticationInfoResponse) HasPurpose() bool {
-	if o != nil && !isNil(o.Purpose) {
+	if o != nil && !IsNil(o.Purpose) {
 		return true
 	}
 
@@ -188,23 +191,27 @@ func (o *CertificateInterServerAuthenticationInfoResponse) SetPurpose(v []Enumin
 }
 
 func (o CertificateInterServerAuthenticationInfoResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.Purpose) {
-		toSerialize["purpose"] = o.Purpose
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CertificateInterServerAuthenticationInfoResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.Purpose) {
+		toSerialize["purpose"] = o.Purpose
+	}
+	return toSerialize, nil
 }
 
 type NullableCertificateInterServerAuthenticationInfoResponse struct {

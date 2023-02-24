@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the JsonLogFieldSyntaxResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &JsonLogFieldSyntaxResponse{}
+
 // JsonLogFieldSyntaxResponse struct for JsonLogFieldSyntaxResponse
 type JsonLogFieldSyntaxResponse struct {
 	Meta                                          *MetaMeta                                          `json:"meta,omitempty"`
@@ -51,7 +54,7 @@ func NewJsonLogFieldSyntaxResponseWithDefaults() *JsonLogFieldSyntaxResponse {
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
 func (o *JsonLogFieldSyntaxResponse) GetMeta() MetaMeta {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		var ret MetaMeta
 		return ret
 	}
@@ -61,7 +64,7 @@ func (o *JsonLogFieldSyntaxResponse) GetMeta() MetaMeta {
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonLogFieldSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
-	if o == nil || isNil(o.Meta) {
+	if o == nil || IsNil(o.Meta) {
 		return nil, false
 	}
 	return o.Meta, true
@@ -69,7 +72,7 @@ func (o *JsonLogFieldSyntaxResponse) GetMetaOk() (*MetaMeta, bool) {
 
 // HasMeta returns a boolean if a field has been set.
 func (o *JsonLogFieldSyntaxResponse) HasMeta() bool {
-	if o != nil && !isNil(o.Meta) {
+	if o != nil && !IsNil(o.Meta) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *JsonLogFieldSyntaxResponse) SetMeta(v MetaMeta) {
 
 // GetUrnpingidentityschemasconfigurationmessages20 returns the Urnpingidentityschemasconfigurationmessages20 field value if set, zero value otherwise.
 func (o *JsonLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20() MetaUrnPingidentitySchemasConfigurationMessages20 {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		var ret MetaUrnPingidentitySchemasConfigurationMessages20
 		return ret
 	}
@@ -93,7 +96,7 @@ func (o *JsonLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessa
 // GetUrnpingidentityschemasconfigurationmessages20Ok returns a tuple with the Urnpingidentityschemasconfigurationmessages20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessages20Ok() (*MetaUrnPingidentitySchemasConfigurationMessages20, bool) {
-	if o == nil || isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o == nil || IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return nil, false
 	}
 	return o.Urnpingidentityschemasconfigurationmessages20, true
@@ -101,7 +104,7 @@ func (o *JsonLogFieldSyntaxResponse) GetUrnpingidentityschemasconfigurationmessa
 
 // HasUrnpingidentityschemasconfigurationmessages20 returns a boolean if a field has been set.
 func (o *JsonLogFieldSyntaxResponse) HasUrnpingidentityschemasconfigurationmessages20() bool {
-	if o != nil && !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
+	if o != nil && !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *JsonLogFieldSyntaxResponse) SetId(v string) {
 
 // GetIncludedSensitiveField returns the IncludedSensitiveField field value if set, zero value otherwise.
 func (o *JsonLogFieldSyntaxResponse) GetIncludedSensitiveField() []string {
-	if o == nil || isNil(o.IncludedSensitiveField) {
+	if o == nil || IsNil(o.IncludedSensitiveField) {
 		var ret []string
 		return ret
 	}
@@ -173,7 +176,7 @@ func (o *JsonLogFieldSyntaxResponse) GetIncludedSensitiveField() []string {
 // GetIncludedSensitiveFieldOk returns a tuple with the IncludedSensitiveField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonLogFieldSyntaxResponse) GetIncludedSensitiveFieldOk() ([]string, bool) {
-	if o == nil || isNil(o.IncludedSensitiveField) {
+	if o == nil || IsNil(o.IncludedSensitiveField) {
 		return nil, false
 	}
 	return o.IncludedSensitiveField, true
@@ -181,7 +184,7 @@ func (o *JsonLogFieldSyntaxResponse) GetIncludedSensitiveFieldOk() ([]string, bo
 
 // HasIncludedSensitiveField returns a boolean if a field has been set.
 func (o *JsonLogFieldSyntaxResponse) HasIncludedSensitiveField() bool {
-	if o != nil && !isNil(o.IncludedSensitiveField) {
+	if o != nil && !IsNil(o.IncludedSensitiveField) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *JsonLogFieldSyntaxResponse) SetIncludedSensitiveField(v []string) {
 
 // GetExcludedSensitiveField returns the ExcludedSensitiveField field value if set, zero value otherwise.
 func (o *JsonLogFieldSyntaxResponse) GetExcludedSensitiveField() []string {
-	if o == nil || isNil(o.ExcludedSensitiveField) {
+	if o == nil || IsNil(o.ExcludedSensitiveField) {
 		var ret []string
 		return ret
 	}
@@ -205,7 +208,7 @@ func (o *JsonLogFieldSyntaxResponse) GetExcludedSensitiveField() []string {
 // GetExcludedSensitiveFieldOk returns a tuple with the ExcludedSensitiveField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonLogFieldSyntaxResponse) GetExcludedSensitiveFieldOk() ([]string, bool) {
-	if o == nil || isNil(o.ExcludedSensitiveField) {
+	if o == nil || IsNil(o.ExcludedSensitiveField) {
 		return nil, false
 	}
 	return o.ExcludedSensitiveField, true
@@ -213,7 +216,7 @@ func (o *JsonLogFieldSyntaxResponse) GetExcludedSensitiveFieldOk() ([]string, bo
 
 // HasExcludedSensitiveField returns a boolean if a field has been set.
 func (o *JsonLogFieldSyntaxResponse) HasExcludedSensitiveField() bool {
-	if o != nil && !isNil(o.ExcludedSensitiveField) {
+	if o != nil && !IsNil(o.ExcludedSensitiveField) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *JsonLogFieldSyntaxResponse) SetExcludedSensitiveField(v []string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *JsonLogFieldSyntaxResponse) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -237,7 +240,7 @@ func (o *JsonLogFieldSyntaxResponse) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonLogFieldSyntaxResponse) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -245,7 +248,7 @@ func (o *JsonLogFieldSyntaxResponse) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *JsonLogFieldSyntaxResponse) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *JsonLogFieldSyntaxResponse) SetDescription(v string) {
 
 // GetDefaultBehavior returns the DefaultBehavior field value if set, zero value otherwise.
 func (o *JsonLogFieldSyntaxResponse) GetDefaultBehavior() EnumlogFieldSyntaxDefaultBehaviorProp {
-	if o == nil || isNil(o.DefaultBehavior) {
+	if o == nil || IsNil(o.DefaultBehavior) {
 		var ret EnumlogFieldSyntaxDefaultBehaviorProp
 		return ret
 	}
@@ -269,7 +272,7 @@ func (o *JsonLogFieldSyntaxResponse) GetDefaultBehavior() EnumlogFieldSyntaxDefa
 // GetDefaultBehaviorOk returns a tuple with the DefaultBehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *JsonLogFieldSyntaxResponse) GetDefaultBehaviorOk() (*EnumlogFieldSyntaxDefaultBehaviorProp, bool) {
-	if o == nil || isNil(o.DefaultBehavior) {
+	if o == nil || IsNil(o.DefaultBehavior) {
 		return nil, false
 	}
 	return o.DefaultBehavior, true
@@ -277,7 +280,7 @@ func (o *JsonLogFieldSyntaxResponse) GetDefaultBehaviorOk() (*EnumlogFieldSyntax
 
 // HasDefaultBehavior returns a boolean if a field has been set.
 func (o *JsonLogFieldSyntaxResponse) HasDefaultBehavior() bool {
-	if o != nil && !isNil(o.DefaultBehavior) {
+	if o != nil && !IsNil(o.DefaultBehavior) {
 		return true
 	}
 
@@ -290,32 +293,36 @@ func (o *JsonLogFieldSyntaxResponse) SetDefaultBehavior(v EnumlogFieldSyntaxDefa
 }
 
 func (o JsonLogFieldSyntaxResponse) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Meta) {
-		toSerialize["meta"] = o.Meta
-	}
-	if !isNil(o.Urnpingidentityschemasconfigurationmessages20) {
-		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.IncludedSensitiveField) {
-		toSerialize["includedSensitiveField"] = o.IncludedSensitiveField
-	}
-	if !isNil(o.ExcludedSensitiveField) {
-		toSerialize["excludedSensitiveField"] = o.ExcludedSensitiveField
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !isNil(o.DefaultBehavior) {
-		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o JsonLogFieldSyntaxResponse) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Meta) {
+		toSerialize["meta"] = o.Meta
+	}
+	if !IsNil(o.Urnpingidentityschemasconfigurationmessages20) {
+		toSerialize["urn:pingidentity:schemas:configuration:messages:2.0"] = o.Urnpingidentityschemasconfigurationmessages20
+	}
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["id"] = o.Id
+	if !IsNil(o.IncludedSensitiveField) {
+		toSerialize["includedSensitiveField"] = o.IncludedSensitiveField
+	}
+	if !IsNil(o.ExcludedSensitiveField) {
+		toSerialize["excludedSensitiveField"] = o.ExcludedSensitiveField
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.DefaultBehavior) {
+		toSerialize["defaultBehavior"] = o.DefaultBehavior
+	}
+	return toSerialize, nil
 }
 
 type NullableJsonLogFieldSyntaxResponse struct {

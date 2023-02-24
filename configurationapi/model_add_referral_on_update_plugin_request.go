@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddReferralOnUpdatePluginRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddReferralOnUpdatePluginRequest{}
+
 // AddReferralOnUpdatePluginRequest struct for AddReferralOnUpdatePluginRequest
 type AddReferralOnUpdatePluginRequest struct {
 	// Name of the new Plugin
@@ -103,7 +106,7 @@ func (o *AddReferralOnUpdatePluginRequest) SetSchemas(v []EnumreferralOnUpdatePl
 
 // GetPluginType returns the PluginType field value if set, zero value otherwise.
 func (o *AddReferralOnUpdatePluginRequest) GetPluginType() []EnumpluginPluginTypeProp {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		var ret []EnumpluginPluginTypeProp
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetPluginType() []EnumpluginPluginTyp
 // GetPluginTypeOk returns a tuple with the PluginType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferralOnUpdatePluginRequest) GetPluginTypeOk() ([]EnumpluginPluginTypeProp, bool) {
-	if o == nil || isNil(o.PluginType) {
+	if o == nil || IsNil(o.PluginType) {
 		return nil, false
 	}
 	return o.PluginType, true
@@ -121,7 +124,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetPluginTypeOk() ([]EnumpluginPlugin
 
 // HasPluginType returns a boolean if a field has been set.
 func (o *AddReferralOnUpdatePluginRequest) HasPluginType() bool {
-	if o != nil && !isNil(o.PluginType) {
+	if o != nil && !IsNil(o.PluginType) {
 		return true
 	}
 
@@ -159,7 +162,7 @@ func (o *AddReferralOnUpdatePluginRequest) SetReferralBaseURL(v []string) {
 
 // GetBaseDN returns the BaseDN field value if set, zero value otherwise.
 func (o *AddReferralOnUpdatePluginRequest) GetBaseDN() []string {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		var ret []string
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetBaseDN() []string {
 // GetBaseDNOk returns a tuple with the BaseDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferralOnUpdatePluginRequest) GetBaseDNOk() ([]string, bool) {
-	if o == nil || isNil(o.BaseDN) {
+	if o == nil || IsNil(o.BaseDN) {
 		return nil, false
 	}
 	return o.BaseDN, true
@@ -177,7 +180,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetBaseDNOk() ([]string, bool) {
 
 // HasBaseDN returns a boolean if a field has been set.
 func (o *AddReferralOnUpdatePluginRequest) HasBaseDN() bool {
-	if o != nil && !isNil(o.BaseDN) {
+	if o != nil && !IsNil(o.BaseDN) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *AddReferralOnUpdatePluginRequest) SetBaseDN(v []string) {
 
 // GetInvokeForInternalOperations returns the InvokeForInternalOperations field value if set, zero value otherwise.
 func (o *AddReferralOnUpdatePluginRequest) GetInvokeForInternalOperations() bool {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		var ret bool
 		return ret
 	}
@@ -201,7 +204,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetInvokeForInternalOperations() bool
 // GetInvokeForInternalOperationsOk returns a tuple with the InvokeForInternalOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferralOnUpdatePluginRequest) GetInvokeForInternalOperationsOk() (*bool, bool) {
-	if o == nil || isNil(o.InvokeForInternalOperations) {
+	if o == nil || IsNil(o.InvokeForInternalOperations) {
 		return nil, false
 	}
 	return o.InvokeForInternalOperations, true
@@ -209,7 +212,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetInvokeForInternalOperationsOk() (*
 
 // HasInvokeForInternalOperations returns a boolean if a field has been set.
 func (o *AddReferralOnUpdatePluginRequest) HasInvokeForInternalOperations() bool {
-	if o != nil && !isNil(o.InvokeForInternalOperations) {
+	if o != nil && !IsNil(o.InvokeForInternalOperations) {
 		return true
 	}
 
@@ -223,7 +226,7 @@ func (o *AddReferralOnUpdatePluginRequest) SetInvokeForInternalOperations(v bool
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddReferralOnUpdatePluginRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -233,7 +236,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddReferralOnUpdatePluginRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -241,7 +244,7 @@ func (o *AddReferralOnUpdatePluginRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddReferralOnUpdatePluginRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -278,32 +281,32 @@ func (o *AddReferralOnUpdatePluginRequest) SetEnabled(v bool) {
 }
 
 func (o AddReferralOnUpdatePluginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["pluginName"] = o.PluginName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.PluginType) {
-		toSerialize["pluginType"] = o.PluginType
-	}
-	if true {
-		toSerialize["referralBaseURL"] = o.ReferralBaseURL
-	}
-	if !isNil(o.BaseDN) {
-		toSerialize["baseDN"] = o.BaseDN
-	}
-	if !isNil(o.InvokeForInternalOperations) {
-		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddReferralOnUpdatePluginRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["pluginName"] = o.PluginName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.PluginType) {
+		toSerialize["pluginType"] = o.PluginType
+	}
+	toSerialize["referralBaseURL"] = o.ReferralBaseURL
+	if !IsNil(o.BaseDN) {
+		toSerialize["baseDN"] = o.BaseDN
+	}
+	if !IsNil(o.InvokeForInternalOperations) {
+		toSerialize["invokeForInternalOperations"] = o.InvokeForInternalOperations
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddReferralOnUpdatePluginRequest struct {

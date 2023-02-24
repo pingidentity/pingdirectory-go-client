@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddOauthBearerSaslMechanismHandlerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddOauthBearerSaslMechanismHandlerRequest{}
+
 // AddOauthBearerSaslMechanismHandlerRequest struct for AddOauthBearerSaslMechanismHandlerRequest
 type AddOauthBearerSaslMechanismHandlerRequest struct {
 	// Name of the new SASL Mechanism Handler
@@ -110,7 +113,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetSchemas(v []EnumoauthBear
 
 // GetAccessTokenValidator returns the AccessTokenValidator field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAccessTokenValidator() []string {
-	if o == nil || isNil(o.AccessTokenValidator) {
+	if o == nil || IsNil(o.AccessTokenValidator) {
 		var ret []string
 		return ret
 	}
@@ -120,7 +123,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAccessTokenValidator() []
 // GetAccessTokenValidatorOk returns a tuple with the AccessTokenValidator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAccessTokenValidatorOk() ([]string, bool) {
-	if o == nil || isNil(o.AccessTokenValidator) {
+	if o == nil || IsNil(o.AccessTokenValidator) {
 		return nil, false
 	}
 	return o.AccessTokenValidator, true
@@ -128,7 +131,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAccessTokenValidatorOk() 
 
 // HasAccessTokenValidator returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasAccessTokenValidator() bool {
-	if o != nil && !isNil(o.AccessTokenValidator) {
+	if o != nil && !IsNil(o.AccessTokenValidator) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetAccessTokenValidator(v []
 
 // GetIdTokenValidator returns the IdTokenValidator field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetIdTokenValidator() []string {
-	if o == nil || isNil(o.IdTokenValidator) {
+	if o == nil || IsNil(o.IdTokenValidator) {
 		var ret []string
 		return ret
 	}
@@ -152,7 +155,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetIdTokenValidator() []stri
 // GetIdTokenValidatorOk returns a tuple with the IdTokenValidator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetIdTokenValidatorOk() ([]string, bool) {
-	if o == nil || isNil(o.IdTokenValidator) {
+	if o == nil || IsNil(o.IdTokenValidator) {
 		return nil, false
 	}
 	return o.IdTokenValidator, true
@@ -160,7 +163,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetIdTokenValidatorOk() ([]s
 
 // HasIdTokenValidator returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasIdTokenValidator() bool {
-	if o != nil && !isNil(o.IdTokenValidator) {
+	if o != nil && !IsNil(o.IdTokenValidator) {
 		return true
 	}
 
@@ -174,7 +177,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetIdTokenValidator(v []stri
 
 // GetRequireBothAccessTokenAndIDToken returns the RequireBothAccessTokenAndIDToken field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetRequireBothAccessTokenAndIDToken() bool {
-	if o == nil || isNil(o.RequireBothAccessTokenAndIDToken) {
+	if o == nil || IsNil(o.RequireBothAccessTokenAndIDToken) {
 		var ret bool
 		return ret
 	}
@@ -184,7 +187,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetRequireBothAccessTokenAnd
 // GetRequireBothAccessTokenAndIDTokenOk returns a tuple with the RequireBothAccessTokenAndIDToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetRequireBothAccessTokenAndIDTokenOk() (*bool, bool) {
-	if o == nil || isNil(o.RequireBothAccessTokenAndIDToken) {
+	if o == nil || IsNil(o.RequireBothAccessTokenAndIDToken) {
 		return nil, false
 	}
 	return o.RequireBothAccessTokenAndIDToken, true
@@ -192,7 +195,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetRequireBothAccessTokenAnd
 
 // HasRequireBothAccessTokenAndIDToken returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasRequireBothAccessTokenAndIDToken() bool {
-	if o != nil && !isNil(o.RequireBothAccessTokenAndIDToken) {
+	if o != nil && !IsNil(o.RequireBothAccessTokenAndIDToken) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetRequireBothAccessTokenAnd
 
 // GetValidateAccessTokenWhenIDTokenIsAlsoProvided returns the ValidateAccessTokenWhenIDTokenIsAlsoProvided field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetValidateAccessTokenWhenIDTokenIsAlsoProvided() EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp {
-	if o == nil || isNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
+	if o == nil || IsNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
 		var ret EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp
 		return ret
 	}
@@ -216,7 +219,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetValidateAccessTokenWhenID
 // GetValidateAccessTokenWhenIDTokenIsAlsoProvidedOk returns a tuple with the ValidateAccessTokenWhenIDTokenIsAlsoProvided field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetValidateAccessTokenWhenIDTokenIsAlsoProvidedOk() (*EnumsaslMechanismHandlerValidateAccessTokenWhenIDTokenIsAlsoProvidedProp, bool) {
-	if o == nil || isNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
+	if o == nil || IsNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
 		return nil, false
 	}
 	return o.ValidateAccessTokenWhenIDTokenIsAlsoProvided, true
@@ -224,7 +227,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetValidateAccessTokenWhenID
 
 // HasValidateAccessTokenWhenIDTokenIsAlsoProvided returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasValidateAccessTokenWhenIDTokenIsAlsoProvided() bool {
-	if o != nil && !isNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
+	if o != nil && !IsNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetValidateAccessTokenWhenID
 
 // GetAlternateAuthorizationIdentityMapper returns the AlternateAuthorizationIdentityMapper field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAlternateAuthorizationIdentityMapper() string {
-	if o == nil || isNil(o.AlternateAuthorizationIdentityMapper) {
+	if o == nil || IsNil(o.AlternateAuthorizationIdentityMapper) {
 		var ret string
 		return ret
 	}
@@ -248,7 +251,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAlternateAuthorizationIde
 // GetAlternateAuthorizationIdentityMapperOk returns a tuple with the AlternateAuthorizationIdentityMapper field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAlternateAuthorizationIdentityMapperOk() (*string, bool) {
-	if o == nil || isNil(o.AlternateAuthorizationIdentityMapper) {
+	if o == nil || IsNil(o.AlternateAuthorizationIdentityMapper) {
 		return nil, false
 	}
 	return o.AlternateAuthorizationIdentityMapper, true
@@ -256,7 +259,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAlternateAuthorizationIde
 
 // HasAlternateAuthorizationIdentityMapper returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasAlternateAuthorizationIdentityMapper() bool {
-	if o != nil && !isNil(o.AlternateAuthorizationIdentityMapper) {
+	if o != nil && !IsNil(o.AlternateAuthorizationIdentityMapper) {
 		return true
 	}
 
@@ -270,7 +273,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetAlternateAuthorizationIde
 
 // GetAllRequiredScope returns the AllRequiredScope field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAllRequiredScope() []string {
-	if o == nil || isNil(o.AllRequiredScope) {
+	if o == nil || IsNil(o.AllRequiredScope) {
 		var ret []string
 		return ret
 	}
@@ -280,7 +283,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAllRequiredScope() []stri
 // GetAllRequiredScopeOk returns a tuple with the AllRequiredScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAllRequiredScopeOk() ([]string, bool) {
-	if o == nil || isNil(o.AllRequiredScope) {
+	if o == nil || IsNil(o.AllRequiredScope) {
 		return nil, false
 	}
 	return o.AllRequiredScope, true
@@ -288,7 +291,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAllRequiredScopeOk() ([]s
 
 // HasAllRequiredScope returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasAllRequiredScope() bool {
-	if o != nil && !isNil(o.AllRequiredScope) {
+	if o != nil && !IsNil(o.AllRequiredScope) {
 		return true
 	}
 
@@ -302,7 +305,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetAllRequiredScope(v []stri
 
 // GetAnyRequiredScope returns the AnyRequiredScope field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAnyRequiredScope() []string {
-	if o == nil || isNil(o.AnyRequiredScope) {
+	if o == nil || IsNil(o.AnyRequiredScope) {
 		var ret []string
 		return ret
 	}
@@ -312,7 +315,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAnyRequiredScope() []stri
 // GetAnyRequiredScopeOk returns a tuple with the AnyRequiredScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAnyRequiredScopeOk() ([]string, bool) {
-	if o == nil || isNil(o.AnyRequiredScope) {
+	if o == nil || IsNil(o.AnyRequiredScope) {
 		return nil, false
 	}
 	return o.AnyRequiredScope, true
@@ -320,7 +323,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetAnyRequiredScopeOk() ([]s
 
 // HasAnyRequiredScope returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasAnyRequiredScope() bool {
-	if o != nil && !isNil(o.AnyRequiredScope) {
+	if o != nil && !IsNil(o.AnyRequiredScope) {
 		return true
 	}
 
@@ -334,7 +337,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetAnyRequiredScope(v []stri
 
 // GetServerFqdn returns the ServerFqdn field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetServerFqdn() string {
-	if o == nil || isNil(o.ServerFqdn) {
+	if o == nil || IsNil(o.ServerFqdn) {
 		var ret string
 		return ret
 	}
@@ -344,7 +347,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetServerFqdn() string {
 // GetServerFqdnOk returns a tuple with the ServerFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetServerFqdnOk() (*string, bool) {
-	if o == nil || isNil(o.ServerFqdn) {
+	if o == nil || IsNil(o.ServerFqdn) {
 		return nil, false
 	}
 	return o.ServerFqdn, true
@@ -352,7 +355,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetServerFqdnOk() (*string, 
 
 // HasServerFqdn returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasServerFqdn() bool {
-	if o != nil && !isNil(o.ServerFqdn) {
+	if o != nil && !IsNil(o.ServerFqdn) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetServerFqdn(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -376,7 +379,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -384,7 +387,7 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) GetDescriptionOk() (*string,
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddOauthBearerSaslMechanismHandlerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -421,44 +424,46 @@ func (o *AddOauthBearerSaslMechanismHandlerRequest) SetEnabled(v bool) {
 }
 
 func (o AddOauthBearerSaslMechanismHandlerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["handlerName"] = o.HandlerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.AccessTokenValidator) {
-		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
-	}
-	if !isNil(o.IdTokenValidator) {
-		toSerialize["idTokenValidator"] = o.IdTokenValidator
-	}
-	if !isNil(o.RequireBothAccessTokenAndIDToken) {
-		toSerialize["requireBothAccessTokenAndIDToken"] = o.RequireBothAccessTokenAndIDToken
-	}
-	if !isNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
-		toSerialize["validateAccessTokenWhenIDTokenIsAlsoProvided"] = o.ValidateAccessTokenWhenIDTokenIsAlsoProvided
-	}
-	if !isNil(o.AlternateAuthorizationIdentityMapper) {
-		toSerialize["alternateAuthorizationIdentityMapper"] = o.AlternateAuthorizationIdentityMapper
-	}
-	if !isNil(o.AllRequiredScope) {
-		toSerialize["allRequiredScope"] = o.AllRequiredScope
-	}
-	if !isNil(o.AnyRequiredScope) {
-		toSerialize["anyRequiredScope"] = o.AnyRequiredScope
-	}
-	if !isNil(o.ServerFqdn) {
-		toSerialize["serverFqdn"] = o.ServerFqdn
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddOauthBearerSaslMechanismHandlerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["handlerName"] = o.HandlerName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.AccessTokenValidator) {
+		toSerialize["accessTokenValidator"] = o.AccessTokenValidator
+	}
+	if !IsNil(o.IdTokenValidator) {
+		toSerialize["idTokenValidator"] = o.IdTokenValidator
+	}
+	if !IsNil(o.RequireBothAccessTokenAndIDToken) {
+		toSerialize["requireBothAccessTokenAndIDToken"] = o.RequireBothAccessTokenAndIDToken
+	}
+	if !IsNil(o.ValidateAccessTokenWhenIDTokenIsAlsoProvided) {
+		toSerialize["validateAccessTokenWhenIDTokenIsAlsoProvided"] = o.ValidateAccessTokenWhenIDTokenIsAlsoProvided
+	}
+	if !IsNil(o.AlternateAuthorizationIdentityMapper) {
+		toSerialize["alternateAuthorizationIdentityMapper"] = o.AlternateAuthorizationIdentityMapper
+	}
+	if !IsNil(o.AllRequiredScope) {
+		toSerialize["allRequiredScope"] = o.AllRequiredScope
+	}
+	if !IsNil(o.AnyRequiredScope) {
+		toSerialize["anyRequiredScope"] = o.AnyRequiredScope
+	}
+	if !IsNil(o.ServerFqdn) {
+		toSerialize["serverFqdn"] = o.ServerFqdn
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddOauthBearerSaslMechanismHandlerRequest struct {

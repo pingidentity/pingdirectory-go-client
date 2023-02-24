@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddConjurExternalServerRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddConjurExternalServerRequest{}
+
 // AddConjurExternalServerRequest struct for AddConjurExternalServerRequest
 type AddConjurExternalServerRequest struct {
 	// Name of the new External Server
@@ -179,7 +182,7 @@ func (o *AddConjurExternalServerRequest) SetConjurAccountName(v string) {
 
 // GetTrustStoreFile returns the TrustStoreFile field value if set, zero value otherwise.
 func (o *AddConjurExternalServerRequest) GetTrustStoreFile() string {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		var ret string
 		return ret
 	}
@@ -189,7 +192,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStoreFile() string {
 // GetTrustStoreFileOk returns a tuple with the TrustStoreFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetTrustStoreFileOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreFile) {
+	if o == nil || IsNil(o.TrustStoreFile) {
 		return nil, false
 	}
 	return o.TrustStoreFile, true
@@ -197,7 +200,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStoreFileOk() (*string, bool) {
 
 // HasTrustStoreFile returns a boolean if a field has been set.
 func (o *AddConjurExternalServerRequest) HasTrustStoreFile() bool {
-	if o != nil && !isNil(o.TrustStoreFile) {
+	if o != nil && !IsNil(o.TrustStoreFile) {
 		return true
 	}
 
@@ -211,7 +214,7 @@ func (o *AddConjurExternalServerRequest) SetTrustStoreFile(v string) {
 
 // GetTrustStorePin returns the TrustStorePin field value if set, zero value otherwise.
 func (o *AddConjurExternalServerRequest) GetTrustStorePin() string {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		var ret string
 		return ret
 	}
@@ -221,7 +224,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStorePin() string {
 // GetTrustStorePinOk returns a tuple with the TrustStorePin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetTrustStorePinOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStorePin) {
+	if o == nil || IsNil(o.TrustStorePin) {
 		return nil, false
 	}
 	return o.TrustStorePin, true
@@ -229,7 +232,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStorePinOk() (*string, bool) {
 
 // HasTrustStorePin returns a boolean if a field has been set.
 func (o *AddConjurExternalServerRequest) HasTrustStorePin() bool {
-	if o != nil && !isNil(o.TrustStorePin) {
+	if o != nil && !IsNil(o.TrustStorePin) {
 		return true
 	}
 
@@ -243,7 +246,7 @@ func (o *AddConjurExternalServerRequest) SetTrustStorePin(v string) {
 
 // GetTrustStoreType returns the TrustStoreType field value if set, zero value otherwise.
 func (o *AddConjurExternalServerRequest) GetTrustStoreType() string {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		var ret string
 		return ret
 	}
@@ -253,7 +256,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStoreType() string {
 // GetTrustStoreTypeOk returns a tuple with the TrustStoreType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetTrustStoreTypeOk() (*string, bool) {
-	if o == nil || isNil(o.TrustStoreType) {
+	if o == nil || IsNil(o.TrustStoreType) {
 		return nil, false
 	}
 	return o.TrustStoreType, true
@@ -261,7 +264,7 @@ func (o *AddConjurExternalServerRequest) GetTrustStoreTypeOk() (*string, bool) {
 
 // HasTrustStoreType returns a boolean if a field has been set.
 func (o *AddConjurExternalServerRequest) HasTrustStoreType() bool {
-	if o != nil && !isNil(o.TrustStoreType) {
+	if o != nil && !IsNil(o.TrustStoreType) {
 		return true
 	}
 
@@ -275,7 +278,7 @@ func (o *AddConjurExternalServerRequest) SetTrustStoreType(v string) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddConjurExternalServerRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -285,7 +288,7 @@ func (o *AddConjurExternalServerRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddConjurExternalServerRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -293,7 +296,7 @@ func (o *AddConjurExternalServerRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddConjurExternalServerRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -306,35 +309,33 @@ func (o *AddConjurExternalServerRequest) SetDescription(v string) {
 }
 
 func (o AddConjurExternalServerRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["serverName"] = o.ServerName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if true {
-		toSerialize["conjurServerBaseURI"] = o.ConjurServerBaseURI
-	}
-	if true {
-		toSerialize["conjurAuthenticationMethod"] = o.ConjurAuthenticationMethod
-	}
-	if true {
-		toSerialize["conjurAccountName"] = o.ConjurAccountName
-	}
-	if !isNil(o.TrustStoreFile) {
-		toSerialize["trustStoreFile"] = o.TrustStoreFile
-	}
-	if !isNil(o.TrustStorePin) {
-		toSerialize["trustStorePin"] = o.TrustStorePin
-	}
-	if !isNil(o.TrustStoreType) {
-		toSerialize["trustStoreType"] = o.TrustStoreType
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddConjurExternalServerRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["serverName"] = o.ServerName
+	toSerialize["schemas"] = o.Schemas
+	toSerialize["conjurServerBaseURI"] = o.ConjurServerBaseURI
+	toSerialize["conjurAuthenticationMethod"] = o.ConjurAuthenticationMethod
+	toSerialize["conjurAccountName"] = o.ConjurAccountName
+	if !IsNil(o.TrustStoreFile) {
+		toSerialize["trustStoreFile"] = o.TrustStoreFile
+	}
+	if !IsNil(o.TrustStorePin) {
+		toSerialize["trustStorePin"] = o.TrustStorePin
+	}
+	if !IsNil(o.TrustStoreType) {
+		toSerialize["trustStoreType"] = o.TrustStoreType
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	return toSerialize, nil
 }
 
 type NullableAddConjurExternalServerRequest struct {

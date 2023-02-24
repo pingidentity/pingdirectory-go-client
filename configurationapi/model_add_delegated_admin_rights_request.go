@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddDelegatedAdminRightsRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddDelegatedAdminRightsRequest{}
+
 // AddDelegatedAdminRightsRequest struct for AddDelegatedAdminRightsRequest
 type AddDelegatedAdminRightsRequest struct {
 	// Name of the new Delegated Admin Rights
@@ -74,7 +77,7 @@ func (o *AddDelegatedAdminRightsRequest) SetRightsName(v string) {
 
 // GetSchemas returns the Schemas field value if set, zero value otherwise.
 func (o *AddDelegatedAdminRightsRequest) GetSchemas() []EnumdelegatedAdminRightsSchemaUrn {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		var ret []EnumdelegatedAdminRightsSchemaUrn
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *AddDelegatedAdminRightsRequest) GetSchemas() []EnumdelegatedAdminRights
 // GetSchemasOk returns a tuple with the Schemas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetSchemasOk() ([]EnumdelegatedAdminRightsSchemaUrn, bool) {
-	if o == nil || isNil(o.Schemas) {
+	if o == nil || IsNil(o.Schemas) {
 		return nil, false
 	}
 	return o.Schemas, true
@@ -92,7 +95,7 @@ func (o *AddDelegatedAdminRightsRequest) GetSchemasOk() ([]EnumdelegatedAdminRig
 
 // HasSchemas returns a boolean if a field has been set.
 func (o *AddDelegatedAdminRightsRequest) HasSchemas() bool {
-	if o != nil && !isNil(o.Schemas) {
+	if o != nil && !IsNil(o.Schemas) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *AddDelegatedAdminRightsRequest) SetSchemas(v []EnumdelegatedAdminRights
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddDelegatedAdminRightsRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -116,7 +119,7 @@ func (o *AddDelegatedAdminRightsRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -124,7 +127,7 @@ func (o *AddDelegatedAdminRightsRequest) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddDelegatedAdminRightsRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *AddDelegatedAdminRightsRequest) SetEnabled(v bool) {
 
 // GetAdminUserDN returns the AdminUserDN field value if set, zero value otherwise.
 func (o *AddDelegatedAdminRightsRequest) GetAdminUserDN() string {
-	if o == nil || isNil(o.AdminUserDN) {
+	if o == nil || IsNil(o.AdminUserDN) {
 		var ret string
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *AddDelegatedAdminRightsRequest) GetAdminUserDN() string {
 // GetAdminUserDNOk returns a tuple with the AdminUserDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetAdminUserDNOk() (*string, bool) {
-	if o == nil || isNil(o.AdminUserDN) {
+	if o == nil || IsNil(o.AdminUserDN) {
 		return nil, false
 	}
 	return o.AdminUserDN, true
@@ -180,7 +183,7 @@ func (o *AddDelegatedAdminRightsRequest) GetAdminUserDNOk() (*string, bool) {
 
 // HasAdminUserDN returns a boolean if a field has been set.
 func (o *AddDelegatedAdminRightsRequest) HasAdminUserDN() bool {
-	if o != nil && !isNil(o.AdminUserDN) {
+	if o != nil && !IsNil(o.AdminUserDN) {
 		return true
 	}
 
@@ -194,7 +197,7 @@ func (o *AddDelegatedAdminRightsRequest) SetAdminUserDN(v string) {
 
 // GetAdminGroupDN returns the AdminGroupDN field value if set, zero value otherwise.
 func (o *AddDelegatedAdminRightsRequest) GetAdminGroupDN() string {
-	if o == nil || isNil(o.AdminGroupDN) {
+	if o == nil || IsNil(o.AdminGroupDN) {
 		var ret string
 		return ret
 	}
@@ -204,7 +207,7 @@ func (o *AddDelegatedAdminRightsRequest) GetAdminGroupDN() string {
 // GetAdminGroupDNOk returns a tuple with the AdminGroupDN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddDelegatedAdminRightsRequest) GetAdminGroupDNOk() (*string, bool) {
-	if o == nil || isNil(o.AdminGroupDN) {
+	if o == nil || IsNil(o.AdminGroupDN) {
 		return nil, false
 	}
 	return o.AdminGroupDN, true
@@ -212,7 +215,7 @@ func (o *AddDelegatedAdminRightsRequest) GetAdminGroupDNOk() (*string, bool) {
 
 // HasAdminGroupDN returns a boolean if a field has been set.
 func (o *AddDelegatedAdminRightsRequest) HasAdminGroupDN() bool {
-	if o != nil && !isNil(o.AdminGroupDN) {
+	if o != nil && !IsNil(o.AdminGroupDN) {
 		return true
 	}
 
@@ -225,26 +228,30 @@ func (o *AddDelegatedAdminRightsRequest) SetAdminGroupDN(v string) {
 }
 
 func (o AddDelegatedAdminRightsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["rightsName"] = o.RightsName
-	}
-	if !isNil(o.Schemas) {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if !isNil(o.AdminUserDN) {
-		toSerialize["adminUserDN"] = o.AdminUserDN
-	}
-	if !isNil(o.AdminGroupDN) {
-		toSerialize["adminGroupDN"] = o.AdminGroupDN
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddDelegatedAdminRightsRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["rightsName"] = o.RightsName
+	if !IsNil(o.Schemas) {
+		toSerialize["schemas"] = o.Schemas
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	if !IsNil(o.AdminUserDN) {
+		toSerialize["adminUserDN"] = o.AdminUserDN
+	}
+	if !IsNil(o.AdminGroupDN) {
+		toSerialize["adminGroupDN"] = o.AdminGroupDN
+	}
+	return toSerialize, nil
 }
 
 type NullableAddDelegatedAdminRightsRequest struct {

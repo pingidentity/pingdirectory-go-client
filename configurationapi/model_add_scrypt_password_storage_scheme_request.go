@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddScryptPasswordStorageSchemeRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddScryptPasswordStorageSchemeRequest{}
+
 // AddScryptPasswordStorageSchemeRequest struct for AddScryptPasswordStorageSchemeRequest
 type AddScryptPasswordStorageSchemeRequest struct {
 	// Name of the new Password Storage Scheme
@@ -103,7 +106,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetSchemas(v []EnumscryptPasswor
 
 // GetScryptCpuMemoryCostFactorExponent returns the ScryptCpuMemoryCostFactorExponent field value if set, zero value otherwise.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponent() int32 {
-	if o == nil || isNil(o.ScryptCpuMemoryCostFactorExponent) {
+	if o == nil || IsNil(o.ScryptCpuMemoryCostFactorExponent) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +116,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExpo
 // GetScryptCpuMemoryCostFactorExponentOk returns a tuple with the ScryptCpuMemoryCostFactorExponent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExponentOk() (*int32, bool) {
-	if o == nil || isNil(o.ScryptCpuMemoryCostFactorExponent) {
+	if o == nil || IsNil(o.ScryptCpuMemoryCostFactorExponent) {
 		return nil, false
 	}
 	return o.ScryptCpuMemoryCostFactorExponent, true
@@ -121,7 +124,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptCpuMemoryCostFactorExpo
 
 // HasScryptCpuMemoryCostFactorExponent returns a boolean if a field has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) HasScryptCpuMemoryCostFactorExponent() bool {
-	if o != nil && !isNil(o.ScryptCpuMemoryCostFactorExponent) {
+	if o != nil && !IsNil(o.ScryptCpuMemoryCostFactorExponent) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetScryptCpuMemoryCostFactorExpo
 
 // GetScryptBlockSize returns the ScryptBlockSize field value if set, zero value otherwise.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSize() int32 {
-	if o == nil || isNil(o.ScryptBlockSize) {
+	if o == nil || IsNil(o.ScryptBlockSize) {
 		var ret int32
 		return ret
 	}
@@ -145,7 +148,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSize() int32 {
 // GetScryptBlockSizeOk returns a tuple with the ScryptBlockSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.ScryptBlockSize) {
+	if o == nil || IsNil(o.ScryptBlockSize) {
 		return nil, false
 	}
 	return o.ScryptBlockSize, true
@@ -153,7 +156,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptBlockSizeOk() (*int32, 
 
 // HasScryptBlockSize returns a boolean if a field has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) HasScryptBlockSize() bool {
-	if o != nil && !isNil(o.ScryptBlockSize) {
+	if o != nil && !IsNil(o.ScryptBlockSize) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetScryptBlockSize(v int32) {
 
 // GetScryptParallelizationParameter returns the ScryptParallelizationParameter field value if set, zero value otherwise.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameter() int32 {
-	if o == nil || isNil(o.ScryptParallelizationParameter) {
+	if o == nil || IsNil(o.ScryptParallelizationParameter) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +180,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParamete
 // GetScryptParallelizationParameterOk returns a tuple with the ScryptParallelizationParameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParameterOk() (*int32, bool) {
-	if o == nil || isNil(o.ScryptParallelizationParameter) {
+	if o == nil || IsNil(o.ScryptParallelizationParameter) {
 		return nil, false
 	}
 	return o.ScryptParallelizationParameter, true
@@ -185,7 +188,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetScryptParallelizationParamete
 
 // HasScryptParallelizationParameter returns a boolean if a field has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) HasScryptParallelizationParameter() bool {
-	if o != nil && !isNil(o.ScryptParallelizationParameter) {
+	if o != nil && !IsNil(o.ScryptParallelizationParameter) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetScryptParallelizationParamete
 
 // GetMaxPasswordLength returns the MaxPasswordLength field value if set, zero value otherwise.
 func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		var ret int32
 		return ret
 	}
@@ -209,7 +212,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLength() int32 {
 // GetMaxPasswordLengthOk returns a tuple with the MaxPasswordLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32, bool) {
-	if o == nil || isNil(o.MaxPasswordLength) {
+	if o == nil || IsNil(o.MaxPasswordLength) {
 		return nil, false
 	}
 	return o.MaxPasswordLength, true
@@ -217,7 +220,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetMaxPasswordLengthOk() (*int32
 
 // HasMaxPasswordLength returns a boolean if a field has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) HasMaxPasswordLength() bool {
-	if o != nil && !isNil(o.MaxPasswordLength) {
+	if o != nil && !IsNil(o.MaxPasswordLength) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetMaxPasswordLength(v int32) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *AddScryptPasswordStorageSchemeRequest) GetDescription() string {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, bool) {
-	if o == nil || isNil(o.Description) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -249,7 +252,7 @@ func (o *AddScryptPasswordStorageSchemeRequest) GetDescriptionOk() (*string, boo
 
 // HasDescription returns a boolean if a field has been set.
 func (o *AddScryptPasswordStorageSchemeRequest) HasDescription() bool {
-	if o != nil && !isNil(o.Description) {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
@@ -286,32 +289,34 @@ func (o *AddScryptPasswordStorageSchemeRequest) SetEnabled(v bool) {
 }
 
 func (o AddScryptPasswordStorageSchemeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["schemeName"] = o.SchemeName
-	}
-	if true {
-		toSerialize["schemas"] = o.Schemas
-	}
-	if !isNil(o.ScryptCpuMemoryCostFactorExponent) {
-		toSerialize["scryptCpuMemoryCostFactorExponent"] = o.ScryptCpuMemoryCostFactorExponent
-	}
-	if !isNil(o.ScryptBlockSize) {
-		toSerialize["scryptBlockSize"] = o.ScryptBlockSize
-	}
-	if !isNil(o.ScryptParallelizationParameter) {
-		toSerialize["scryptParallelizationParameter"] = o.ScryptParallelizationParameter
-	}
-	if !isNil(o.MaxPasswordLength) {
-		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
-	}
-	if !isNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if true {
-		toSerialize["enabled"] = o.Enabled
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddScryptPasswordStorageSchemeRequest) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["schemeName"] = o.SchemeName
+	toSerialize["schemas"] = o.Schemas
+	if !IsNil(o.ScryptCpuMemoryCostFactorExponent) {
+		toSerialize["scryptCpuMemoryCostFactorExponent"] = o.ScryptCpuMemoryCostFactorExponent
+	}
+	if !IsNil(o.ScryptBlockSize) {
+		toSerialize["scryptBlockSize"] = o.ScryptBlockSize
+	}
+	if !IsNil(o.ScryptParallelizationParameter) {
+		toSerialize["scryptParallelizationParameter"] = o.ScryptParallelizationParameter
+	}
+	if !IsNil(o.MaxPasswordLength) {
+		toSerialize["maxPasswordLength"] = o.MaxPasswordLength
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	toSerialize["enabled"] = o.Enabled
+	return toSerialize, nil
 }
 
 type NullableAddScryptPasswordStorageSchemeRequest struct {
